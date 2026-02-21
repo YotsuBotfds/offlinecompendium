@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/gear-cutting-mechanical-transmission.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gear Cutting &amp; Mechanical Transmission</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Metalworking</span> ›
+<span>Gear Cutting &amp; Mechanical Transmission</span>
+</div>
+
+
+<h1>Gear Cutting &amp; Mechanical Transmission</h1>
+<p class="subtitle">Build wooden peg gears, cast metal spur gears, bevel gears, worm gears, and gear trains. Covers tooth geometry, pitch calculations, ratio design, indexing methods, and shaft coupling.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~10 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#gear-types-applications">Gear Types &amp; Applications</a></li>
+<li><a href="#fundamental-geometry">Fundamental Gear Geometry</a></li>
+<li><a href="#gear-ratio-calculations">Gear Ratio Design</a></li>
+<li><a href="#wooden-peg-gears">Wooden Peg Gears</a></li>
+<li><a href="#cast-metal-spur-gears">Cast Metal Spur Gears</a></li>
+<li><a href="#bevel-gears">Bevel Gears (Right-Angle Transmission)</a></li>
+<li><a href="#worm-gears">Worm Gears (High Reduction)</a></li>
+<li><a href="#indexing-methods">Indexing Methods (Tooth Spacing)</a></li>
+<li><a href="#gear-trains">Gear Trains &amp; Compound Arrangements</a></li>
+<li><a href="#shaft-coupling">Shaft Coupling &amp; Bearing Seats</a></li>
+<li><a href="#lubrication-troubleshooting">Lubrication &amp; Troubleshooting</a></li>
+<li><a href="#safety">Safety Considerations</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<h2 id="overview">Overview</h2>
+<p>Gears are the mechanical equivalent of multiplication tables: they translate rotation into adjusted speed and torque. A small gear driving a large gear reduces speed while multiplying force—this transformation underlies watermills, windmills, steam engines, clocks, and modern machinery. Gear-cutting is an advanced craft requiring geometry, precision measurement, and often access to casting or machine tools. However, simple wooden gears (peg gears) can be made with hand tools, and metal gears can be cast or cut with perseverance.</p>
+<div class="info-box">
+<p><strong>Why This Matters</strong>
+Many post-collapse scenarios demand power transmission: a waterwheel needs to spin a millstone, a windmill needs to drive a saw or pump, an engine needs to turn wheels or machinery. Understanding gear geometry allows you to design systems from first principles, match mechanical speeds to practical work rates, and repair or rebuild drives when equipment fails.</p>
+</div>
+<section id="gear-types-applications">
+<h2>Gear Types &amp; Applications</h2>
+<table>
+<thead>
+<tr>
+<th>Gear Type</th>
+<th>Use</th>
+<th>Speed Range</th>
+<th>Complexity</th>
+<th>Efficiency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Spur (parallel axis)</strong></td>
+<td>General power transmission, mills, wheels</td>
+<td>0–80% speed of input</td>
+<td>Moderate</td>
+<td>95–98%</td>
+</tr>
+<tr>
+<td><strong>Bevel (angled axes)</strong></td>
+<td>Right-angle transmission, cornmeal mills</td>
+<td>Similar to spur</td>
+<td>Moderate-high</td>
+<td>90–95%</td>
+</tr>
+<tr>
+<td><strong>Worm (perpendicular axes)</strong></td>
+<td>High reduction ratios, lifts, screws</td>
+<td>10–50× reduction</td>
+<td>High</td>
+<td>50–90% depending on pitch</td>
+</tr>
+<tr>
+<td><strong>Rack-and-pinion</strong></td>
+<td>Linear motion, steering, jacks</td>
+<td>Variable</td>
+<td>Low</td>
+<td>90–95%</td>
+</tr>
+<tr>
+<td><strong>Planetary (epicyclic)</strong></td>
+<td>Compact high ratios, differential, variable speeds</td>
+<td>5–100× reduction</td>
+<td>Very high</td>
+<td>90–97%</td>
+</tr>
+<tr>
+<td><strong>Internal (ring gear)</strong></td>
+<td>Compact, high torque density, anti-backlash</td>
+<td>Low-to-moderate</td>
+<td>High</td>
+<td>95%+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practical recommendations:</strong></p>
+<ul>
+<li><strong>Simple mills:</strong> Spur gears (easiest to cut by hand).</li>
+<li><strong>Right-angle power:</strong> Bevel gears (more complex geometry, but worth the effort for compact design).</li>
+<li><strong>High reduction in small space:</strong> Worm gears (steep learning curve, sacrifices efficiency for compactness).</li>
+<li><strong>Wooden gears (peg-driven):</strong> Spur or bevel only. Worm too complex for wood.</li>
+</ul>
+</section>
+<section id="fundamental-geometry">
+<h2>Fundamental Gear Geometry</h2>
+<p>All gear calculation begins with <strong>module</strong> (M) or <strong>diametral pitch</strong> (DP), which define the tooth size.</p>
+<h3>Key Terms</h3>
+<ul>
+<li><strong>Pitch Circle Diameter (PCD):</strong> The theoretical circle where teeth mesh. PCD = M × Number of Teeth (or PCD = N / DP in imperial).</li>
+<li><strong>Module (M):</strong> Metric standard. M = PCD / N. Practical range: M 1–10 mm for handmade gears.</li>
+<li><strong>Diametral Pitch (DP):</strong> Imperial. DP = N / PCD. Example: DP 16 (small teeth) to DP 2 (large teeth).</li>
+<li><strong>Pressure Angle:</strong> The angle between the tooth profile and the line of centers. Standard 20° (modern) or 14.5° (older mills).</li>
+<li><strong>Addendum:</strong> Height of tooth above PCD. Standard = 1 × M (or 1 / DP in imperial).</li>
+<li><strong>Dedendum:</strong> Depth of root below PCD. Standard = 1.25 × M (allows clearance).</li>
+<li><strong>Module Selection:</strong> Larger module = larger, stronger teeth; smaller module = finer, more precise. For hand-cut gears, M 2–6 mm is practical.</li>
+</ul>
+<div class="formula-box">
+<p><strong>Quick formulas (metric):</strong></p>
+<p>PCD (mm) = Module × Number of Teeth</p>
+<p>Addendum (mm) = 1.0 × Module</p>
+<p>Dedendum (mm) = 1.25 × Module</p>
+<p>Total Depth = 2.25 × Module</p>
+<p>Outside Diameter = PCD + 2 × Addendum</p>
+<p>Center Distance (two gears) = (PCD1 + PCD2) / 2</p>
+</div>
+<h3>Pressure Angle &amp; Tooth Profile</h3>
+<p>The tooth profile must be <strong>involute</strong> (a curve that resembles a spiral when a string unwinds from a circle). Involute profiles have the critical property that they remain in contact at a constant pressure angle regardless of wear or small manufacturing errors—this allows gears to mesh smoothly even if not perfectly centered.</p>
+<p><strong>Why 20° pressure angle is now standard:</strong> Older 14.5° gears had weaker tooth roots and lower contact ratios. 20° is a practical compromise.</p>
+<p><strong>For hand-cut gears:</strong> You don't need perfect involutes. Approximations using circular arcs (epicycloid/hypocycloid approximation) work well at module 3+. Smaller modules demand more precision.</p>
+</section>
+<section id="gear-ratio-calculations">
+<h2>Gear Ratio Design</h2>
+<p>The ratio of two gears determines speed and torque transformation.</p>
+<div class="ratio-calc">
+<div class="ratio-item">
+<div class="ratio-number">Ratio = Driven Teeth / Driver Teeth</div>
+<div class="ratio-label">How much faster/slower the driven gear turns</div>
+</div>
+<div class="ratio-item">
+<div class="ratio-number">Torque Multiplier = Ratio</div>
+<div class="ratio-label">Force advantage (ignoring friction)</div>
+</div>
+</div>
+<h3>Example Calculation</h3>
+<p><strong>Scenario:</strong> A waterwheel drives a millstone. The wheel spins at 15 RPM. The millstone needs 120 RPM for efficient grinding.</p>
+<p><strong>Required ratio:</strong> 120 / 15 = 8:1 (the millstone must turn 8 times faster)</p>
+<p><strong>Gear pair design:</strong></p>
+<ul>
+<li>Driver gear (on waterwheel shaft): 20 teeth</li>
+<li>Driven gear (on millstone shaft): 160 teeth (20 × 8 = 160)</li>
+<li><strong>Ratio:</strong> 160 / 20 = 8:1 ✓</li>
+</ul>
+<p><strong>Center distance (if M = 3 mm):</strong></p>
+<ul>
+<li>Driver PCD = 3 × 20 = 60 mm</li>
+<li>Driven PCD = 3 × 160 = 480 mm</li>
+<li>Center Distance = (60 + 480) / 2 = 270 mm</li>
+</ul>
+<p>The two gear centers must be 27 cm apart for meshing. Design the frame to hold them at this distance.</p>
+<h3>Multi-Stage Gear Trains</h3>
+<p>For larger ratios (e.g., 20:1 or 50:1), use multiple stages to avoid excessively large gears.</p>
+<div class="formula-box">
+<p><strong>Example: 32:1 ratio in two stages</strong></p>
+<p>Stage 1: 8 teeth → 40 teeth (5:1 ratio)
+Stage 2: 8 teeth → 80 teeth (10:1 ratio)
+Overall: 5 × 10 = 50:1</p>
+<p>This keeps individual gears smaller than a single-stage 50:1 pair.</p>
+</div>
+<div class="tip">
+<p><strong>Practical Ratios for Common Tasks:</strong></p>
+<ul>
+<li>Waterwheel (15 RPM) to millstone (120 RPM): 8:1</li>
+<li>Windmill (20–40 RPM) to grain mill (120 RPM): 3–6:1</li>
+<li>Slow crank (60 RPM hand) to generator (1000 RPM): 16:1 (use worm or multi-stage)</li>
+<li>Oxen-driven millstone (10 RPM) to slow saw (40 RPM): 4:1</li>
+</ul>
+</div>
+</section>
+<section id="wooden-peg-gears">
+<h2>Wooden Peg Gears</h2>
+<p>The simplest gears are wooden pegs driven through a hub. Used for centuries in mills.</p>
+<h3>Design &amp; Dimensions</h3>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>Hub: Oak, maple, or dense hardwood, 30–50 mm thick</li>
+<li>Pegs: Hardwood dowels, 20–30 mm diameter, 60–100 mm long</li>
+<li>Rim (optional): Iron band to reinforce</li>
+</ul>
+<p><strong>Construction:</strong></p>
+<ol>
+<li><strong>Turn the hub</strong> on a lathe to a cylinder, ~300–500 mm diameter depending on desired pitch circle.</li>
+<li><strong>Calculate peg positions</strong> around the circumference. For 20 pegs equally spaced: circumferential angle = 360 / 20 = 18° between pegs.</li>
+<li><strong>Drill holes</strong> (diameter = peg diameter + 0.5 mm clearance) at marked positions, angled slightly inward (taper 2–3°) so pegs grip.</li>
+<li><strong>Drive in pegs</strong> with a mallet, leaving 50–70 mm protruding to engage the mating gear.</li>
+<li><strong>Optional:</strong> Cut pegs to uniform length once all are seated; sand faces smooth.</li>
+</ol>
+<h3>Peg Gear Meshing</h3>
+<p>Two peg gears engage like external spur gears. The pitch circle diameters and center distance follow the same rules as toothed gears:</p>
+<ul>
+<li><strong>Center Distance = (PCD1 + PCD2) / 2</strong></li>
+<li>Pegs should mesh with 5–10 mm backlash (intentional looseness) to allow for thermal expansion and wear.</li>
+</ul>
+<div class="warning">
+<p><strong>Peg Gear Limits</strong>
+Peg gears are suitable for:</p>
+<ul>
+<li>Low speeds (&lt;50 RPM per gear)</li>
+<li>Moderate torque (&lt; 200 Nm per peg for hardwood)</li>
+<li>Applications where noise is not critical</li>
+</ul>
+<p>They are NOT suitable for:</p>
+<ul>
+<li>Precision grinding (backlash causes inconsistent grain size)</li>
+<li>High speeds (pegs may shear)</li>
+<li>Reversing loads (wood fibers fatigue)</li>
+</ul>
+</div>
+</section>
+<section id="cast-metal-spur-gears">
+<h2>Cast Metal Spur Gears</h2>
+<p>Metal gears (cast iron or bronze) are stronger, quieter, and more durable than wood. They require foundry access.</p>
+<h3>Pattern Making</h3>
+<p><strong>Process:</strong></p>
+<ol>
+<li><strong>Design in wood:</strong> Create a full-scale wooden pattern of the gear. Since the gear is round, a full pattern is not needed—only a segment (one tooth + surrounding area) is required for a sectional pattern.</li>
+<li><strong>Split the pattern:</strong> The gear pattern is divided into hub and rim sections for easier molding.</li>
+<li><strong>Account for shrinkage:</strong> Cast iron shrinks ~1.5 mm/100 mm as it cools. Enlarge the pattern by this factor.</li>
+<li><strong>Draft angles:</strong> Taper all vertical surfaces 3–5° outward to allow pattern removal from sand.</li>
+</ol>
+<h3>Casting &amp; Finishing</h3>
+<ol>
+<li><strong>Sand mold:</strong> The pattern is pressed into foundry sand (cope-and-drag molding or flask molding).</li>
+<li><strong>Pour metal:</strong> Molten iron or bronze is poured into the mold cavity. The mold burns away and metal fills the gear shape.</li>
+<li><strong>Cool and break out:</strong> Once cooled, the mold is broken apart and the casting removed.</li>
+<li><strong>Rough machine (if possible):</strong> Remove the sprue (feed gate) and flash (thin fins from mold lines) with a cold chisel or grinding wheel. The PCD and bore should be machined to tolerance if a lathe is available.</li>
+<li><strong>File teeth to shape:</strong> If the casting mold was not precise, teeth may need filing to a consistent involute-approximation profile. Use a half-round file and work slowly—aim for smooth engagement with the mating gear.</li>
+</ol>
+<h3>Quality Check</h3>
+<ul>
+<li><strong>Balance the gear:</strong> Spin the finished gear by hand. If it has a heavy spot, it will vibrate in service. Rebalance by grinding material from the heavy side.</li>
+<li><strong>Test mesh:</strong> Install the gear on its shaft and spin it against the mating gear (no load). Listen for chattering or irregular engagement. Adjust bearing spacing if necessary.</li>
+</ul>
+</section>
+<section id="bevel-gears">
+<h2>Bevel Gears (Right-Angle Transmission)</h2>
+<p>Bevel gears enable power transmission between two shafts at an angle (typically 90°).</p>
+<h3>Geometry Fundamentals</h3>
+<p>Bevel gear teeth are <strong>conical</strong> rather than cylindrical. The tooth surfaces lie on a cone surface, which creates more complex geometry than spur gears.</p>
+<p><strong>Key differences:</strong></p>
+<ul>
+<li>Teeth are not parallel to the axis—they are angled on the cone.</li>
+<li>The pressure angle and tooth profile are the same as spur gears (20° typical), but they must be applied to the cone surface.</li>
+<li>Teeth are often shorter (less than a spur gear of the same PCD) because the cone geometry limits tooth height.</li>
+</ul>
+<h3>Straight Bevel Gear Design</h3>
+<p>For simplicity, <strong>straight bevel gears</strong> (teeth parallel to the cone generator) are the most practical for hand or basic foundry work. (Spiral bevel gears are more efficient but require precision machining.)</p>
+<p><strong>Design steps:</strong></p>
+<ol>
+<li><strong>Specify the shaft angle:</strong> Usually 90° (perpendicular), but can be any angle.</li>
+<li><strong>Choose number of teeth:</strong> Typically 15–40 teeth per gear. For a 90° angle, gears of equal tooth count are common (1:1 ratio, equal speeds), but unequal pairs work too.</li>
+<li><strong>Calculate the cone angle:</strong> For two gears at 90°, if both have the same tooth count, each cone angle = 45°. If unequal, use the bevel gear equation (geometry-dependent; see a machinist's reference).</li>
+<li><strong>Design module and PCD:</strong> Same formulas as spur gears apply to the <strong>pitch cone surface</strong>. Addendum and dedendum are calculated perpendicular to the cone surface.</li>
+</ol>
+<h3>Cutting Straight Bevel Gears by Hand</h3>
+<p><strong>Bevel gear teeth can be approximated</strong> by working with a tapered form:</p>
+<ol>
+<li><strong>Cast the blank:</strong> Cast a gear blank with the correct cone shape (tapered from large end to small end).</li>
+<li><strong>Layout teeth:</strong> Mark tooth positions around the large end circumference as if it were a spur gear.</li>
+<li><strong>File each tooth:</strong> Use a tapered file (or special bevel-tooth file if available) to cut along the cone. Teeth will be V-shaped in cross-section when viewed from the axis.</li>
+<li><strong>Check pitch:</strong> Test mesh the two bevel gears on their respective shafts at 90°. Adjust spacing if needed.</li>
+</ol>
+<p>This is painstaking work and results are good but not perfect. For critical applications, outsource to a skilled foundry or machinist if possible.</p>
+</section>
+<section id="worm-gears">
+<h2>Worm Gears (High Reduction)</h2>
+<p>Worm gears provide extreme reduction ratios (10:1 to 50:1 or more) in a compact form.</p>
+<h3>Principle</h3>
+<p>A <strong>worm</strong> is a helical screw thread that meshes with a <strong>worm wheel</strong> (a spur gear with angled teeth). The worm rotates one revolution per tooth on the worm wheel, creating huge mechanical advantage.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Worm with 4 threads (starts)</li>
+<li>Worm wheel with 60 teeth</li>
+<li><strong>Ratio:</strong> 60 / 4 = 15:1</li>
+<li>If the worm turns at 300 RPM, the wheel turns at 300 / 15 = 20 RPM</li>
+</ul>
+<h3>Worm Specifications</h3>
+<ul>
+<li><strong>Lead (distance per revolution):</strong> Lead = Module × Number of Threads (for metric)</li>
+<li><strong>Helix angle:</strong> The pitch of the threads, typically 5–15° for worms.</li>
+<li><strong>Self-locking property:</strong> Shallow-helix worms (high reduction, &gt;10:1) often cannot be driven backward by the wheel—the wheel cannot turn the worm. This is useful for hoists and safety.</li>
+</ul>
+<h3>Cutting a Worm Gear Set</h3>
+<p>This is advanced and requires either a <strong>lathe with gearing to cut helical threads</strong> or hand-filing patience.</p>
+<p><strong>Simple method (hand-filing on a tapered worm wheel):</strong></p>
+<ol>
+<li><strong>Cast the worm wheel</strong> with the correct conical bore to accept the worm thread.</li>
+<li><strong>Cast or machine the worm</strong> as a tapered screw shaft with the right pitch and helix angle. (This usually requires a lathe.)</li>
+<li><strong>Hand-fit:</strong> Mesh the worm and wheel, apply grinding compound, and run them together to lap the surfaces to fit. Repeat until smooth engagement is achieved.</li>
+</ol>
+<p><strong>Practical note:</strong> Unless you have lathe access or are exceptionally patient with files, worm gears are best sourced from salvage (motors, reducers) or a machine shop.</p>
+</section>
+<section id="indexing-methods">
+<h2>Indexing Methods (Tooth Spacing)</h2>
+<p>Accurate tooth spacing is critical to smooth, quiet operation. Several methods exist to divide a circle into equal parts.</p>
+<h3>Dividing Plate Method</h3>
+<p>A <strong>dividing plate</strong> is a disk with concentric circles of holes at various counts (common: 15, 16, 18, 20, 24, 27, 30, 36, 40, 45, 48, 54, 60 holes).</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Mount the gear blank on a lathe spindle or indexing head.</li>
+<li>Position the dividing plate so a pin can engage holes as you rotate.</li>
+<li>Rotate the blank so the pin aligns with the first hole in the circle that corresponds to the desired tooth count.</li>
+<li>Lock the blank, file or cut the first tooth.</li>
+<li><strong>Advance:</strong> Rotate the blank, counting holes to the next position, lock, and cut the next tooth.</li>
+<li>Repeat until all teeth are cut.</li>
+</ol>
+<p><strong>Example:</strong> For a 20-tooth gear, if you use the 40-hole circle on your dividing plate, count 2 holes between each tooth (40 / 20 = 2).</p>
+<h3>Temporal Spacing (by Hand)</h3>
+<p>Without a dividing plate, use <strong>arc measurement</strong> and marking:</p>
+<ol>
+<li><strong>Calculate the angle:</strong> Angle between teeth = 360° / number of teeth. For 20 teeth: 360 / 20 = 18° per tooth.</li>
+<li><strong>Use a protractor or bevel gauge</strong> to mark this angle around the rim repeatedly.</li>
+<li><strong>Mark the positions</strong> with paint or scribed lines.</li>
+<li><strong>File each tooth</strong> at the marked position.</li>
+</ol>
+<p>This is slower and less precise but works in a pinch.</p>
+<h3>Gear-Tooth Grinding Template</h3>
+<p>For production runs, make a <strong>grinding template</strong> (a hardened steel or cast-iron gauge with the tooth profile cut into it). Use this template repeatedly to maintain consistency across all teeth.</p>
+</section>
+<section id="gear-trains">
+<h2>Gear Trains &amp; Compound Arrangements</h2>
+<h3>Simple Gear Train</h3>
+<p>Two gears meshing directly. The ratio is determined by tooth counts.</p>
+<p><strong>Example:</strong> 20-tooth pinion (driver) meshing with 80-tooth gear (driven)</p>
+<ul>
+<li>Ratio = 80 / 20 = 4:1</li>
+<li>The driven gear turns 1/4 as fast as the driver</li>
+</ul>
+<h3>Compound Gear Train</h3>
+<p>Two or more shafts, each carrying two gears. Intermediate shafts allow larger ratios without excessive gear sizes.</p>
+<p><strong>Example:</strong> Waterwheel driving a millstone through two stages</p>
+<p><strong>Stage 1:</strong></p>
+<ul>
+<li>Pinion on waterwheel shaft: 12 teeth</li>
+<li>Intermediate gear (meshed with pinion): 48 teeth</li>
+<li>Ratio: 48 / 12 = 4:1</li>
+</ul>
+<p><strong>Stage 2:</strong></p>
+<ul>
+<li>Pinion on intermediate shaft (part of same disk as 48-tooth gear): 10 teeth</li>
+<li>Gear on millstone shaft: 60 teeth</li>
+<li>Ratio: 60 / 10 = 6:1</li>
+</ul>
+<p><strong>Overall ratio:</strong> 4 × 6 = 24:1</p>
+<ul>
+<li>Waterwheel at 12 RPM → Millstone at 12 / 24 = 0.5 RPM... wait, that's wrong. Let me recalculate:</li>
+<li>Waterwheel at 12 RPM, after Stage 1: 12 / 4 = 3 RPM intermediate</li>
+<li>After Stage 2: 3 × 6 = 18 RPM millstone</li>
+</ul>
+<p>So the overall ratio is actually: (T_driven1 / T_driver1) × (T_driven2 / T_driver2) = (48/12) × (60/10) = 4 × 6 = 24:1 (meaning the millstone turns 24 times faster than the input, or for a waterwheel at 12 RPM, the millstone turns at 12 × 24 = 288 RPM...</p>
+<p>Actually, I need to be clear: <strong>Ratio &gt; 1 means the driven gear turns faster (reduction by speed, but multiplication by torque).</strong> Let me restate:</p>
+<p><strong>Correct interpretation:</strong></p>
+<ul>
+<li>Waterwheel at 12 RPM</li>
+<li>Stage 1: 12-tooth driver, 48-tooth driven. The driven gear turns at 12 × (12/48) = 3 RPM (slower, higher torque on this shaft)</li>
+<li>Stage 2: 10-tooth driver (on the 3 RPM shaft), 60-tooth driven. The millstone turns at 3 × (10/60) = 0.5 RPM</li>
+</ul>
+<p>If the goal was a millstone at high speed (say 120 RPM) from a 12 RPM waterwheel, the ratio would need to be inverted (use the waterwheel shaft's large gear meshing with a pinion on the intermediate shaft).</p>
+<div class="tip">
+<p><strong>Train Notation:</strong>
+To avoid confusion, always write: &quot;Waterwheel (12 RPM) drives a 12-tooth pinion, meshed with a 48-tooth gear (output: 3 RPM).&quot; Be explicit about which end is input and output.</p>
+</div>
+<h3>Planetary Gear Systems</h3>
+<p>Planetary (epicyclic) gears have a central sun gear, orbiting planet gears, and an outer ring gear. This compact arrangement allows multiple speed ratios depending on which element is fixed or driven.</p>
+<p><strong>Key advantage:</strong> Extremely compact, allows multiple ratios from one assembly.</p>
+<p><strong>Disadvantage:</strong> Complex geometry, requires precision.</p>
+<p>Planetary gears are typically found in salvage (automatic transmissions) rather than hand-made. Reverse-engineering them requires advanced geometry understanding.</p>
+</section>
+<section id="shaft-coupling">
+<h2>Shaft Coupling &amp; Bearing Seats</h2>
+<h3>Coupling Methods</h3>
+<p>Gears must be mounted securely on rotating shafts and aligned precisely.</p>
+<p><strong>Methods:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Keyed coupling</strong></td>
+<td>Secure, reversible</td>
+<td>Requires key slot machining</td>
+</tr>
+<tr>
+<td><strong>Tapered bush</strong></td>
+<td>Adjustable, compact</td>
+<td>Requires special bushing</td>
+</tr>
+<tr>
+<td><strong>Set screws (pinch)</strong></td>
+<td>Simple, no machining</td>
+<td>Can slip under load, needs frequent check</td>
+</tr>
+<tr>
+<td><strong>Shrink fit</strong></td>
+<td>Very secure</td>
+<td>Requires heating/cooling, permanent</td>
+</tr>
+<tr>
+<td><strong>Bolted flange</strong></td>
+<td>Strong, easy to assemble</td>
+<td>More material, bulkier</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Keyway design (metric):</strong></p>
+<ul>
+<li>Shaft diameter 20–25 mm: Key width 6 mm, height 6 mm, depth in shaft 3.5 mm</li>
+<li>Shaft diameter 30–40 mm: Key width 8 mm, height 7 mm, depth in shaft 4 mm</li>
+<li>Shaft diameter 50+ mm: Key width 10 mm, height 8 mm, depth in shaft 5 mm</li>
+</ul>
+<h3>Bearing Seats &amp; Alignment</h3>
+<p>Gears must be supported by bearings at precise distances to mesh correctly.</p>
+<p><strong>Frame design:</strong></p>
+<ol>
+<li><strong>Hole spacing:</strong> The distance between bearing holes must equal the center distance of the gears (the distance between gear centers).</li>
+<li><strong>Alignment tolerance:</strong> Bearing holes should be true within 0.5–1 mm over spans of 0.5–1 meter. Use a plumb bob or level to verify frame square.</li>
+<li><strong>Bearing type:</strong>
+<ul>
+<li><strong>Bronze bushings:</strong> Simplest, oil-lubricated, suitable for slow speeds (&lt;50 RPM)</li>
+<li><strong>Roller bearings:</strong> More durable, lower friction, higher initial cost</li>
+<li><strong>Ball bearings:</strong> Precise, quiet, but overkill for simple mills</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="lubrication-troubleshooting">
+<h2>Lubrication &amp; Troubleshooting</h2>
+<h3>Lubrication</h3>
+<p>Gears running without sufficient lubrication fail quickly through scuffing and wear.</p>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><strong>Oil bath:</strong> Gears partially submerged in mineral oil. Recommended for speeds &lt;100 RPM.</li>
+<li><strong>Oil mist/spray:</strong> Periodic application of oil with a can during operation. Works well for production.</li>
+<li><strong>Grease (high-speed gears):</strong> Packed around bearings and gears. Less mess than oil but harder to apply to internal gears.</li>
+</ul>
+<p><strong>Frequency:</strong></p>
+<ul>
+<li>Wooden or slow-speed gears: Every 2–4 hours of operation, or weekly</li>
+<li>Metal gears in continuous use: Daily or automatic oil circulation</li>
+</ul>
+<h3>Common Failures</h3>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Loud grinding noise</strong></td>
+<td>Debris in mesh, tooth breakage, misalignment</td>
+<td>Stop immediately, inspect for broken teeth, check bearing spacing</td>
+</tr>
+<tr>
+<td><strong>Chattering/buzzing</strong></td>
+<td>Excessive backlash or worn teeth</td>
+<td>Reduce gap by shimming gears closer, or replace gears</td>
+</tr>
+<tr>
+<td><strong>One-sided wear</strong></td>
+<td>Misalignment (gears not parallel)</td>
+<td>Adjust bearing positions, check frame squareness</td>
+</tr>
+<tr>
+<td><strong>Stuck or binding</strong></td>
+<td>Debris, swelling (wood), or corrosion</td>
+<td>Clean, remove obstacles, re-oil</td>
+</tr>
+<tr>
+<td><strong>Slow engagement at start</strong></td>
+<td>Low oil viscosity, cold temperature</td>
+<td>Use thicker oil, warm gears before load</td>
+</tr>
+<tr>
+<td><strong>Tooth pitting</strong></td>
+<td>Overload or inadequate oil film</td>
+<td>Reduce load, improve lubrication</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="safety">
+<h2>Safety Considerations</h2>
+<div class="warning">
+<p><strong>Rotating Gear Hazards</strong></p>
+<ul>
+<li>Loose clothing, long hair, and jewelry can be caught. Secure before operating.</li>
+<li>Never reach into moving gears. Use a stick or tool to clear debris.</li>
+<li>Wear eye protection—metal chips and broken teeth can fly.</li>
+<li>Work with a partner when running large mills. One person can disengage power if something goes wrong.</li>
+</ul>
+</div>
+<div class="tip">
+<p><strong>Practical Sense for Gear Reduction</strong>
+If your hand-crank generator needs to turn a 1000 RPM alternator from a 60 RPM crank, you need a 16.7:1 ratio. A single-stage gear pair would require a tiny pinion (12 teeth) and a huge gear (200 teeth), making the system awkward. Instead, use two 4:1 stages (total 16:1) with more manageable sizes. Balance compactness against manufacturability.</p>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="water-mills-windmills.html">Water Mills &amp; Windmills</a>
+<a href="steam-engines.html">Steam Engines &amp; Power Generation</a>
+<a href="machine-tools-basic-fabrication.html">machine-tools-basic-fabrication</a>
+<a href="mechanical-power-transmission.html">Mechanical Power Transmission</a>
+<a href="bicycle-construction.html">Bicycle Construction &amp; Repair</a>
+<a href="blacksmithing-forge-work.html">blacksmithing-forge-work</a>
+<a href="foundry-casting-bronze-iron.html">foundry-casting-bronze-iron</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

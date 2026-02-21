@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Essential Guides — Offline Knowledge Compendium</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .print-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .print-header {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .print-header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        .print-header p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .print-actions {
+            display: flex;
+            gap: 12px;
+            margin: 1.5rem 0 0 0;
+            flex-wrap: wrap;
+        }
+
+        .print-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 200ms ease;
+            font-family: Georgia, serif;
+        }
+
+        .print-btn-primary {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .print-btn-primary:hover { opacity: 0.9; }
+
+        .print-btn-secondary {
+            background: var(--card);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .print-btn-secondary:hover { background: var(--surface); }
+
+        .guide-checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .guide-checklist li {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 14px 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 200ms ease;
+        }
+
+        .guide-checklist li:hover {
+            border-color: var(--accent);
+        }
+
+        .guide-checklist input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .guide-checklist .guide-info {
+            flex: 1;
+        }
+
+        .guide-checklist .guide-title {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .guide-checklist .guide-desc {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .guide-checklist .guide-badge {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .badge-essential {
+            background: rgba(212, 165, 116, 0.2);
+            color: var(--accent);
+        }
+
+        .badge-power {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+
+        .section-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--muted);
+            margin: 1.5rem 0 0.75rem 0;
+            font-weight: 600;
+        }
+
+        .select-controls {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .select-controls button {
+            font-size: 12px;
+            padding: 6px 12px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--card);
+            color: var(--muted);
+            cursor: pointer;
+            font-family: Georgia, serif;
+        }
+
+        .select-controls button:hover {
+            color: var(--text);
+            border-color: var(--accent);
+        }
+
+        .print-status {
+            margin-top: 1rem;
+            padding: 12px 16px;
+            background: var(--card);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--muted);
+            display: none;
+        }
+
+        .print-status.active { display: block; }
+
+        /* Print-specific styles — this is what the printed output looks like */
+        @media print {
+            body { background: white !important; color: black !important; }
+            .print-header, .print-actions, .select-controls, .guide-checklist,
+            .print-status, .back-link, nav, .tools-nav { display: none !important; }
+            #print-output { display: block !important; }
+            #print-output h1 { font-size: 24pt; margin-bottom: 8pt; }
+            #print-output h2 { font-size: 16pt; margin-top: 20pt; border-bottom: 1pt solid #ccc; padding-bottom: 4pt; }
+            #print-output h3 { font-size: 13pt; margin-top: 14pt; }
+            #print-output p, #print-output li { font-size: 10pt; line-height: 1.5; }
+            #print-output table { border-collapse: collapse; width: 100%; font-size: 9pt; }
+            #print-output th, #print-output td { border: 1pt solid #ccc; padding: 4pt 8pt; text-align: left; }
+            #print-output th { background: #f0f0f0 !important; font-weight: bold; }
+            #print-output .guide-separator { page-break-before: always; border-top: 2pt solid black; padding-top: 12pt; margin-top: 0; }
+            #print-output .warning, #print-output .danger { border: 2pt solid #c00; padding: 8pt; margin: 8pt 0; background: #fff5f5 !important; }
+            #print-output .tip, #print-output .info-box { border: 1pt solid #999; padding: 8pt; margin: 8pt 0; }
+            #print-output img, #print-output svg { max-width: 100%; height: auto; }
+        }
+
+        #print-output { display: none; }
+    </style>
+</head>
+<body>
+    <div class="print-container">
+        <a class="back-link" href="../index.html">← Back to Index</a>
+
+        <div class="print-header">
+            <h1>🖨️ Print Essential Guides</h1>
+            <p>Select guides to compile into a printer-friendly document. The output strips all JavaScript, dark theme styling, and interactive elements — just clean black-on-white content sized for standard paper.</p>
+            <p style="margin-top: 8px; font-size: 0.9rem;"><strong>Paper doesn't need electricity.</strong> This is your ultimate fallback.</p>
+
+            <div class="print-actions">
+                <button class="print-btn print-btn-primary" id="btn-print" disabled>
+                    🖨️ Print Selected Guides
+                </button>
+                <button class="print-btn print-btn-secondary" id="btn-preview">
+                    👁️ Preview
+                </button>
+            </div>
+            <div class="print-status" id="print-status"></div>
+        </div>
+
+        <div class="select-controls">
+            <button id="btn-select-all">Select All</button>
+            <button id="btn-select-none">Select None</button>
+            <button id="btn-select-essential">Essential Only</button>
+            <button id="btn-select-power">Power Guides</button>
+        </div>
+
+        <p class="section-label">⚡ Power Bootstrap (Read First)</p>
+        <ul class="guide-checklist" id="power-guides"></ul>
+
+        <p class="section-label">🔥 Phase 0: The First 72 Hours</p>
+        <ul class="guide-checklist" id="phase0-guides"></ul>
+
+        <p class="section-label">🏕️ Phase 1: Stabilization</p>
+        <ul class="guide-checklist" id="phase1-guides"></ul>
+
+        <div id="print-output"></div>
+    </div>
+
+    <script src="../shared/theme-sync.js"></script>
+    <script>
+    (function() {
+        'use strict';
+
+        // Essential guides for printing — curated list of most critical guides
+        const printableGuides = {
+            power: [
+                { slug: 'emergency-power-bootstrap', title: 'Emergency Power Bootstrap', desc: 'Fastest paths to device-charging electricity', badge: 'power', checked: true },
+                { slug: 'solar-technology', title: 'Solar Technology', desc: 'Solar heating, cooking, PV principles', badge: 'power', checked: false },
+                { slug: 'battery-restoration', title: 'Battery Restoration', desc: 'Lead-acid desulfation, reconditioning', badge: 'power', checked: false },
+            ],
+            phase0: [
+                { slug: 'survival-basics', title: 'Survival Basics', desc: 'Core priorities, survival hierarchy, mindset', badge: 'essential', checked: true },
+                { slug: 'first-aid', title: 'First Aid', desc: 'Wound care, CPR, shock prevention', badge: 'essential', checked: true },
+                { slug: 'water-purification', title: 'Water Purification', desc: 'Boiling, chemical methods, basic treatment', badge: 'essential', checked: true },
+                { slug: 'sur-02-fire-starting', title: 'Fire Starting Methods', desc: 'Igniting and sustaining fire', badge: 'essential', checked: true },
+                { slug: 'con-01-shelter-building', title: 'Shelter Building', desc: 'Debris shelters, natural materials', badge: 'essential', checked: true },
+                { slug: 'navigation', title: 'Navigation', desc: 'Direction finding, landmarks, orientation', badge: 'essential', checked: false },
+                { slug: 'disaster-triage', title: 'Disaster Triage', desc: 'Mass casualty assessment', badge: 'essential', checked: false },
+            ],
+            phase1: [
+                { slug: 'foraging-hunting', title: 'Foraging & Hunting', desc: 'Wild food identification, trapping', badge: 'essential', checked: true },
+                { slug: 'food-preservation', title: 'Food Preservation', desc: 'Drying, smoking, salting, canning', badge: 'essential', checked: false },
+                { slug: 'sanitation', title: 'Sanitation', desc: 'Waste disposal, hygiene, disease prevention', badge: 'essential', checked: false },
+                { slug: 'knots-rigging', title: 'Knots & Rigging', desc: 'Essential knots, lashing, rigging', badge: 'essential', checked: false },
+                { slug: 'tool-making', title: 'Tool Making', desc: 'Basic tools from available materials', badge: 'essential', checked: false },
+            ]
+        };
+
+        function createGuideItem(guide) {
+            const li = document.createElement('li');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.checked = guide.checked;
+            checkbox.dataset.slug = guide.slug;
+            checkbox.id = 'chk-' + guide.slug;
+            checkbox.addEventListener('change', updatePrintButton);
+
+            const info = document.createElement('div');
+            info.className = 'guide-info';
+            info.innerHTML = '<div class="guide-title">' + guide.title + '</div>' +
+                '<div class="guide-desc">' + guide.desc + '</div>';
+
+            const badge = document.createElement('span');
+            badge.className = 'guide-badge badge-' + guide.badge;
+            badge.textContent = guide.badge === 'power' ? '⚡ Power' : '★ Essential';
+
+            li.appendChild(checkbox);
+            li.appendChild(info);
+            li.appendChild(badge);
+            return li;
+        }
+
+        function populateLists() {
+            const powerList = document.getElementById('power-guides');
+            const phase0List = document.getElementById('phase0-guides');
+            const phase1List = document.getElementById('phase1-guides');
+
+            printableGuides.power.forEach(function(g) { powerList.appendChild(createGuideItem(g)); });
+            printableGuides.phase0.forEach(function(g) { phase0List.appendChild(createGuideItem(g)); });
+            printableGuides.phase1.forEach(function(g) { phase1List.appendChild(createGuideItem(g)); });
+        }
+
+        function getSelectedSlugs() {
+            return Array.from(document.querySelectorAll('.guide-checklist input:checked')).map(function(cb) {
+                return cb.dataset.slug;
+            });
+        }
+
+        function updatePrintButton() {
+            var selected = getSelectedSlugs();
+            var btn = document.getElementById('btn-print');
+            btn.disabled = selected.length === 0;
+            btn.textContent = selected.length > 0
+                ? '🖨️ Print ' + selected.length + ' Guide' + (selected.length > 1 ? 's' : '')
+                : '🖨️ Print Selected Guides';
+        }
+
+        // Fetch guide HTML and extract the main content
+        async function fetchGuideContent(slug) {
+            try {
+                var response = await fetch('../guides/' + slug + '.html');
+                if (!response.ok) return null;
+                var html = await response.text();
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(html, 'text/html');
+                var main = doc.getElementById('main-content');
+                var title = doc.querySelector('h1');
+                if (!main) return null;
+
+                // Remove scripts, interactive widgets
+                main.querySelectorAll('script, .interactive-widget, button').forEach(function(el) { el.remove(); });
+
+                return {
+                    title: title ? title.textContent : slug,
+                    content: main.innerHTML
+                };
+            } catch (e) {
+                console.error('Failed to fetch guide: ' + slug, e);
+                return null;
+            }
+        }
+
+        async function compilePrintContent() {
+            var slugs = getSelectedSlugs();
+            var status = document.getElementById('print-status');
+            status.className = 'print-status active';
+            status.textContent = 'Compiling ' + slugs.length + ' guides...';
+
+            var output = '<h1>Offline Knowledge Compendium — Essential Guides</h1>';
+            output += '<p style="color: #666; font-size: 10pt; margin-bottom: 20pt;">Printed ' + new Date().toLocaleDateString() + ' · ' + slugs.length + ' guides · zerotoherohero.com</p>';
+
+            for (var i = 0; i < slugs.length; i++) {
+                status.textContent = 'Loading ' + (i + 1) + '/' + slugs.length + '...';
+                var guide = await fetchGuideContent(slugs[i]);
+                if (guide) {
+                    output += '<div class="' + (i > 0 ? 'guide-separator' : '') + '">';
+                    output += '<h2>' + guide.title + '</h2>';
+                    output += guide.content;
+                    output += '</div>';
+                }
+            }
+
+            status.textContent = 'Ready to print!';
+            return output;
+        }
+
+        // Print button
+        document.getElementById('btn-print').addEventListener('click', async function() {
+            var output = await compilePrintContent();
+            document.getElementById('print-output').innerHTML = output;
+            window.print();
+        });
+
+        // Preview button
+        document.getElementById('btn-preview').addEventListener('click', async function() {
+            var output = await compilePrintContent();
+            var previewWin = window.open('', '_blank');
+            previewWin.document.write('<!DOCTYPE html><html><head><title>Print Preview</title>' +
+                '<style>body{font-family:Georgia,serif;max-width:700px;margin:40px auto;padding:0 20px;color:#222;line-height:1.6}' +
+                'h1{font-size:24pt;border-bottom:2pt solid #333;padding-bottom:8pt}' +
+                'h2{font-size:16pt;margin-top:32pt;border-bottom:1pt solid #ccc;padding-bottom:4pt}' +
+                'h3{font-size:13pt}' +
+                'table{border-collapse:collapse;width:100%;font-size:9pt;margin:12pt 0}' +
+                'th,td{border:1pt solid #ccc;padding:6pt 8pt;text-align:left}' +
+                'th{background:#f0f0f0;font-weight:bold}' +
+                '.warning,.danger{border:2pt solid #c00;padding:12pt;margin:12pt 0;background:#fff5f5;border-radius:4pt}' +
+                '.tip,.info-box{border:1pt solid #999;padding:12pt;margin:12pt 0;border-radius:4pt}' +
+                '.guide-separator{border-top:2pt solid #333;padding-top:16pt;margin-top:32pt}' +
+                'img,svg{max-width:100%;height:auto}' +
+                '</style></head><body>' + output + '</body></html>');
+            previewWin.document.close();
+        });
+
+        // Select controls
+        document.getElementById('btn-select-all').addEventListener('click', function() {
+            document.querySelectorAll('.guide-checklist input').forEach(function(cb) { cb.checked = true; });
+            updatePrintButton();
+        });
+        document.getElementById('btn-select-none').addEventListener('click', function() {
+            document.querySelectorAll('.guide-checklist input').forEach(function(cb) { cb.checked = false; });
+            updatePrintButton();
+        });
+        document.getElementById('btn-select-essential').addEventListener('click', function() {
+            document.querySelectorAll('.guide-checklist input').forEach(function(cb) {
+                cb.checked = cb.closest('li').querySelector('.badge-essential') !== null;
+            });
+            updatePrintButton();
+        });
+        document.getElementById('btn-select-power').addEventListener('click', function() {
+            document.querySelectorAll('.guide-checklist input').forEach(function(cb) {
+                cb.checked = cb.closest('li').querySelector('.badge-power') !== null;
+            });
+            updatePrintButton();
+        });
+
+        // Init
+        populateLists();
+        updatePrintButton();
+    })();
+    </script>
+</body>
+</html>

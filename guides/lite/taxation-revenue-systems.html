@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/taxation-revenue-systems.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taxation &amp; Public Revenue Systems</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Resource Management</span> ›
+<span>Taxation &amp; Public Revenue Systems</span>
+</div>
+
+
+<h1>Taxation &amp; Public Revenue Systems</h1>
+<p class="subtitle">Why taxation is necessary, types of taxes (in-kind, corvée, head tax, income, sales, tariff), assessment and collection methods, record-keeping without computers, fairness principles, progressive vs flat taxation, enforcement, public budgeting, and corruption prevention in post-collapse communities.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~25 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#why-taxation">Why Taxation Is Necessary</a></li>
+<li><a href="#tax-types">Types of Taxes and Their Tradeoffs</a></li>
+<li><a href="#assessment-and-collection">Assessment and Collection Methods</a></li>
+<li><a href="#fairness-principles">Fairness Principles: Ability to Pay vs Benefit Received</a></li>
+<li><a href="#progressive-vs-flat">Progressive vs Flat Taxation</a></li>
+<li><a href="#corruption-prevention">Preventing Corruption and Ensuring Transparency</a></li>
+<li><a href="#public-budgeting">Public Budgeting and Transparent Spending</a></li>
+<li><a href="#inter-community-tariffs">Inter-Community Tariffs and Trade Taxation</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Taxation is the mandatory transfer of resources (money, goods, or labor) from individuals to a central authority (government, community council) to fund public goods—defense, infrastructure, education, medicine, justice. In a post-collapse environment with no central government, communities must establish their own taxation systems to survive.</p>
+<p>This guide covers why taxation is necessary, different tax types and their tradeoffs, assessment (determining who owes what), collection (enforcing payment), fairness principles, record-keeping without computers, and prevention of corruption and tax evasion. Well-designed taxation allows communities to pool resources and fund collective security and prosperity. Poorly designed taxation drives people to evasion, tax rebellion, and economic collapse.</p>
+</section>
+<section id="why-taxation">
+<h2>Why Taxation Is Necessary</h2>
+<p>In a post-collapse environment, several public goods cannot be provided by markets alone:</p>
+<h3>Public Defense</h3>
+<p>Markets will not provide defense because:</p>
+<ul>
+<li>Defense is a &quot;public good&quot; (everyone benefits regardless of whether they paid).</li>
+<li>A person who refuses to pay cannot be excluded from protection.</li>
+<li>Individual defense efforts are inefficient (everyone building their own fortifications).</li>
+</ul>
+<p>Solution: Tax residents to fund a communal militia, fortifications, and guards. Taxes make defense mandatory and equitable.</p>
+<h3>Infrastructure</h3>
+<p>Markets underinvest in infrastructure because:</p>
+<ul>
+<li>Roads, aqueducts, and granaries take decades to build.</li>
+<li>Benefits accrue in the far future; investors may not live to see returns.</li>
+<li>Large projects exceed individual wealth.</li>
+</ul>
+<p>Solution: Tax to fund communal projects that increase everyone's prosperity. A road to market towns increases trade; an aqueduct increases water security.</p>
+<h3>Medical Care</h3>
+<p>Markets fail in medical crises because:</p>
+<ul>
+<li>A person in critical condition cannot negotiate (they will accept any price).</li>
+<li>Epidemics require collective action (quarantine, vaccination) not individual markets.</li>
+<li>Some people are too poor to afford care and would die without subsidy.</li>
+</ul>
+<p>Solution: Tax to fund hospitals, doctors, and medicines. Collectivized medicine prevents pandemics and keeps productive people alive.</p>
+<h3>Education</h3>
+<p>Markets underinvest in education because:</p>
+<ul>
+<li>Children cannot sign contracts, and parents may not value education.</li>
+<li>Society benefits from an educated population (reduced crime, better governance) regardless of who paid.</li>
+<li>Long time horizon discourages private investment.</li>
+</ul>
+<p>Solution: Tax to fund schools and teachers. An educated population is more productive and stable.</p>
+<h3>Justice and Rule of Law</h3>
+<p>Markets fail to provide justice because:</p>
+<ul>
+<li>Legal disputes require an impartial third party (a court), not a market transaction.</li>
+<li>The poor cannot afford justice if it is privatized.</li>
+<li>Private justice systems are corruptible and lead to vendetta cycles.</li>
+</ul>
+<p>Solution: Tax to fund courts, judges, and law enforcement. Impartial justice maintains social order and prevents retaliatory violence.</p>
+<h3>Food Storage (Famine Reserve)</h3>
+<p>In scarcity, markets fail because:</p>
+<ul>
+<li>Speculators hoard food, driving prices up and poor people into starvation.</li>
+<li>Individual storage is insufficient for multi-year famines.</li>
+<li>Government granaries buffer multi-year shortfalls and stabilize prices.</li>
+</ul>
+<p>Solution: Tax in-kind (grain) to build communal granaries. In famine years, granaries distribute food, preventing starvation and social collapse.</p>
+<div class="info-box">
+<p><strong>The Tragedy of Neglected Public Goods</strong>: Communities that refuse to tax experience infrastructure decay, epidemic disease, crime, and warfare—all more costly than taxation. Taxation is not optional in a survival scenario; it is a prerequisite for survival.</p>
+</div>
+</section>
+<section id="tax-types">
+<h2>Types of Taxes and Their Tradeoffs</h2>
+<p>Different tax types have different impacts on the community and different administration costs.</p>
+<h3>In-Kind Taxation (Goods)</h3>
+<p>The community imposes a mandatory transfer of goods (grain, livestock, tools) rather than money.</p>
+<p><strong>Example</strong>: &quot;All households must contribute 5% of their annual grain harvest to the community granary.&quot;</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>No currency is needed (useful in a non-monetized economy).</li>
+<li>Directly funds community stores (grain → granary).</li>
+<li>Simple to understand (farmers know what 5% of harvest means).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Difficult for non-producers (merchants, craftspeople) to pay in appropriate goods.</li>
+<li>Goods decay (grain rots, livestock sicken). Storage costs are high.</li>
+<li>Unfair if good values fluctuate (grain is worth 10 tokens one year, 5 the next).</li>
+</ul>
+<p><strong>Best Use</strong>: In agrarian communities with limited currency. Tax grain, livestock, and handicrafts (cloth, tools).</p>
+<h3>Corvée Labor (Mandatory Work Days)</h3>
+<p>Citizens must work a set number of days per year on communal projects (road-building, fortification repair, granary construction).</p>
+<p><strong>Example</strong>: &quot;All adults must contribute 10 work-days per year to communal labor. Failure to contribute incurs a fine of 5 tokens.&quot;</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Builds critical infrastructure without monetary cost.</li>
+<li>Builds community solidarity (people work together).</li>
+<li>Difficult to cheat (absence is visible).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Logistically complex (coordinating hundreds of workers).</li>
+<li>Reduces time people spend on productive private activity.</li>
+<li>Unfair to people with high-value occupations (a doctor's corvée day is more costly than a farmer's).</li>
+</ul>
+<p><strong>Best Use</strong>: One-time or seasonal infrastructure projects (building a bridge, harvesting communal fields). Not suitable for ongoing taxation.</p>
+<h3>Head Tax (Per-Capita)</h3>
+<p>Every person (or household) pays a fixed amount of money or goods, regardless of income or wealth.</p>
+<p><strong>Example</strong>: &quot;Every adult resident pays 1 token per month. Children pay half-rate. The elderly pay quarter-rate.&quot;</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Simple to calculate and collect.</li>
+<li>Everyone contributes equally (perceived fairness).</li>
+<li>Difficult to evade (people are countable).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Regressive (a poor person pays a larger fraction of income than a rich person).</li>
+<li>Creates hardship for low-income people.</li>
+<li>Does not incentivize productive behavior.</li>
+</ul>
+<p><strong>Best Use</strong>: Small, baseline taxation for essential services. Pair with other progressive taxes.</p>
+<h3>Income Tax (Percentage of Earnings)</h3>
+<p>Citizens pay a percentage of annual income (e.g., 10%, 20%, or 30% depending on income level).</p>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>Income 0–500 tokens: 0% tax (poverty threshold; exempt).</li>
+<li>Income 500–2,000 tokens: 10% tax.</li>
+<li>Income 2,000–5,000 tokens: 20% tax.</li>
+<li>Income 5,000+ tokens: 30% tax.</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Progressive (richer people pay more in absolute terms and as a percentage).</li>
+<li>Incentivizes productivity (people who earn more contribute more).</li>
+<li>Flexible (can adjust rates by year based on community needs).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Requires assessing income (difficult without auditing systems).</li>
+<li>Administratively complex (tracking self-employed workers, cottage industries).</li>
+<li>Prone to evasion (underreporting income).</li>
+</ul>
+<p><strong>Best Use</strong>: Monetized economies with diverse income sources and good record-keeping.</p>
+<h3>Sales Tax (Percentage of Transaction)</h3>
+<p>A tax on each trade, market transaction, or sale. Typically 5–15% of transaction value.</p>
+<p><strong>Example</strong>: &quot;A merchant sells grain for 100 tokens. The merchant or buyer pays 10 tokens tax (10% sales tax) to the town.&quot;</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Automatic collection (built into market transactions).</li>
+<li>Difficult to evade entirely (visible transactions).</li>
+<li>Flexible rate (can adjust by goods type; tax luxuries high, tax food low).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Regressive (poor people spend a higher fraction of income on taxed goods).</li>
+<li>Requires market infrastructure (someone to collect at markets).</li>
+<li>Encourages barter to avoid tax.</li>
+</ul>
+<p><strong>Best Use</strong>: Monetized economies with active markets. Pair with exemptions for food and medicine to reduce regressivity.</p>
+<h3>Tariff (Trade Tax)</h3>
+<p>A tax on goods entering or leaving the community. Protects local producers and funds the government.</p>
+<p><strong>Example</strong>: &quot;Any goods imported into Arcata are subject to a 20% tariff. A merchant importing 100 tokens of cloth pays 20 tokens tax.&quot;</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Funds government while protecting local industry.</li>
+<li>Discourages external competition.</li>
+<li>Easy to collect (verify goods at entry points).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Raises prices for consumers (imports become expensive).</li>
+<li>Retaliatory tariffs from other communities (trade wars).</li>
+<li>Inefficient (forces people to buy worse local goods instead of better foreign goods).</li>
+</ul>
+<p><strong>Best Use</strong>: Communities with weak local industry needing protection, or communities with dominant external trade routes.</p>
+<h3>Comparison Table</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Tax Type</strong></th>
+<th><strong>Base</strong></th>
+<th><strong>Fairness</strong></th>
+<th><strong>Admin Cost</strong></th>
+<th><strong>Revenue Stability</strong></th>
+<th><strong>Evasion Risk</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>In-Kind</td>
+<td>Goods/harvest</td>
+<td>Progressive (farmers bear burden)</td>
+<td>High (storage)</td>
+<td>Volatile (harvest varies)</td>
+<td>Moderate (underreporting harvests)</td>
+</tr>
+<tr>
+<td>Corvée</td>
+<td>Labor-days</td>
+<td>Equal (all work same days)</td>
+<td>High (coordination)</td>
+<td>Predictable</td>
+<td>High (claiming illness)</td>
+</tr>
+<tr>
+<td>Head Tax</td>
+<td>Per-capita</td>
+<td>Regressive (poor pay % income)</td>
+<td>Low (simple)</td>
+<td>Stable</td>
+<td>Low (people are visible)</td>
+</tr>
+<tr>
+<td>Income Tax</td>
+<td>Annual income</td>
+<td>Progressive</td>
+<td>High (auditing)</td>
+<td>Stable</td>
+<td>High (underreporting)</td>
+</tr>
+<tr>
+<td>Sales Tax</td>
+<td>Transaction value</td>
+<td>Regressive</td>
+<td>Medium (market collection)</td>
+<td>Stable</td>
+<td>High (barter)</td>
+</tr>
+<tr>
+<td>Tariff</td>
+<td>Imported value</td>
+<td>Regressive</td>
+<td>Low (entry checkpoint)</td>
+<td>Volatile (trade varies)</td>
+<td>Medium (smuggling)</td>
+</tr>
+</tbody>
+</table>
+<div class="tip">
+<p><strong>Diversification</strong>: Use multiple tax types. This prevents over-reliance on one source and reduces total evasion. Example: 30% head tax, 30% sales tax, 20% in-kind, 20% tariff. If people evade sales tax, income tax compensates.</p>
+</div>
+</section>
+<section id="assessment-and-collection">
+<h2>Assessment and Collection Methods</h2>
+<p>Taxation requires two steps: determining what each person owes (assessment) and collecting the payment (collection).</p>
+<h3>Assessment (Determining Tax Liability)</h3>
+<p><strong>Head Tax</strong>
+Assessment is simple: count residents and multiply by rate.</p>
+<ul>
+<li>Method: Annual census (door-to-door count).</li>
+<li>Verification: Require registration with local authorities. Cross-check with marriage/birth/death records.</li>
+<li>Appeal: Allow disputes (e.g., &quot;my child died last year; why am I still paying his tax?&quot;).</li>
+</ul>
+<p><strong>In-Kind Tax</strong>
+Assess the harvestable goods each household produces.</p>
+<ul>
+<li>Method: Crop surveys (inspectors visit farms and estimate grain yield before harvest).</li>
+<li>Verification: Tax inspectors measure actual harvest and reconcile with estimate.</li>
+<li>Appeal: Allow disputes if actual harvest is dramatically lower than estimate (e.g., crop failure). Require documentation (witnesses, photographic evidence if available).</li>
+</ul>
+<p><strong>Income Tax</strong>
+Assess annual earnings.</p>
+<ul>
+<li>Method: Occupational categories. A &quot;full-time farmer&quot; on good land is assumed to earn 1,000 tokens/year; a &quot;merchant&quot; is assumed to earn 2,000 tokens/year. Specific declarations are solicited but not required (to reduce compliance burden).</li>
+<li>Verification: Spot-check declarations by inspecting records (ledgers, transactions, witnesses).</li>
+<li>Appeal: Allow adjustments for hardship (crop failure, injury preventing work, market collapse).</li>
+</ul>
+<p><strong>Sales Tax</strong>
+No pre-assessment needed; tax is collected at point of sale.</p>
+<h3>Collection Methods</h3>
+<p><strong>Tax Collection Points</strong></p>
+<p><strong>Central Tax Office</strong>: A government building where people bring tax payments. Open certain days/hours.</p>
+<p><strong>Market Tax Stations</strong>: Stationed at markets; tax is collected as goods are sold.</p>
+<p><strong>Door-to-Door Collection</strong>: Tax collectors visit homes (for in-kind or head tax). Require two collectors together (to prevent embezzlement) and keep written receipts.</p>
+<p><strong>Occupational Tax Collection</strong>: Tax collected through occupational groups. A guild of merchants collects sales tax from members and remits to government. Reduces government administrative cost.</p>
+<p><strong>Payment Methods</strong></p>
+<p><strong>Monetary Tax</strong>: Accepted in the official currency (tokens, coins, scrip).</p>
+<p><strong>In-Kind Tax</strong>: Accepted in the official commodity (grain, livestock, cloth, tools).</p>
+<p><strong>Corvée Tax</strong>: Accepted as work-days on communal projects.</p>
+<p><strong>Combination</strong>: Allow mixed payment. E.g., &quot;Owe 20 tokens; pay 10 tokens + 1 work-day + 10 lbs grain.&quot;</p>
+<h3>Record-Keeping</h3>
+<p><strong>Tax Ledger</strong> (without computers)</p>
+<p>For each assessed household/business, maintain a page in a ledger:</p>
+<pre><code>Name: John Smith
+Address: Miller Street, House 5
+Occupation: Farmer, grain
+Annual Tax: 100 tokens (20 tokens in currency + 80 lbs grain)
+
+Payment Record:
+Date: 2026-01-15, Received: 20 tokens, Balance Owed: 80 lbs grain
+Date: 2026-03-10, Received: 40 lbs grain, Balance Owed: 40 lbs grain
+Date: 2026-06-01, Received: 40 lbs grain, Balance Owed: 0 (PAID IN FULL)
+
+Collector Signature: [name], [date]
+Witness: [name], [date]
+</code></pre>
+<p><strong>Quarterly Audit</strong></p>
+<p>Every quarter, a committee of citizens (not government staff) audits the tax ledger to:</p>
+<ol>
+<li>Verify all payments recorded are initialed by two independent collectors.</li>
+<li>Verify all assessed taxes sum to the projected budget.</li>
+<li>Identify patterns of evasion or corruption (if certain collectors have unusual write-offs or exemptions).</li>
+<li>Report findings publicly.</li>
+</ol>
+<h3>Delinquency and Enforcement</h3>
+<p><strong>Payment Deadlines</strong></p>
+<p>Tax is due on a specific date. After the deadline, enforcement begins.</p>
+<p><strong>First Notice</strong> (1 week after deadline): A written notice is delivered to the delinquent household, asking them to pay within 7 days or face penalties.</p>
+<p><strong>Penalty</strong> (if payment not received): A fine equal to 10–50% of the tax owed is added to the debt.</p>
+<p><strong>Seizure of Assets</strong> (if payment still not received): Tax collectors seize goods (tools, animals, cloth) worth the owed amount and sell them publicly. The delinquent household is given right of redemption (they can buy back the seized goods within a week at the sale price).</p>
+<p><strong>Legal Action</strong> (if delinquent amount is large): The debtor is brought before a court. If found liable, they may be enslaved for a term (e.g., 1 year of labor per 100 tokens owed), exiled, or their property forfeit.</p>
+<div class="warning">
+<p><strong>Escalating Force</strong>: Taxation is backed by force, but use force as a last resort. Start with reminders, then penalties, then seizure of goods, then legal action. Excessive force (immediate seizure, torture, execution) creates resentment and tax rebellion.</p>
+</div>
+</section>
+<section id="fairness-principles">
+<h2>Fairness Principles: Ability to Pay vs Benefit Received</h2>
+<p>Two competing fairness philosophies exist:</p>
+<h3>Ability-to-Pay Principle</h3>
+<p>Tax according to how much each person can afford to pay. Richer people pay more (absolutely and proportionally).</p>
+<p><strong>Rationale</strong>: The marginal utility of money decreases with wealth. An extra 10 tokens means little to a rich merchant but means survival to a poor farmer. Therefore, taxing the rich is less harmful.</p>
+<p><strong>Implementation</strong>:</p>
+<ul>
+<li>Progressive income tax (higher earners pay higher percentage).</li>
+<li>Exemptions for the very poor (income below survival threshold is untaxed).</li>
+<li>In-kind tax adjusted for ability (a farmer with 100 acres pays 5% tax; a farmer with 10 acres pays 2% tax).</li>
+</ul>
+<p><strong>Advantages</strong>: Reduces inequality, prevents starvation of the poor.</p>
+<p><strong>Disadvantages</strong>: Perceived as unfair by the rich; encourages evasion and emigration of wealthy people; requires complex assessment.</p>
+<h3>Benefit-Received Principle</h3>
+<p>Tax according to the benefit each person receives from government services. A person who uses roads more pays more tax on roads.</p>
+<p><strong>Rationale</strong>: It is fair to pay for what you use, like buying from a market. A person who doesn't use a service shouldn't pay for it.</p>
+<p><strong>Implementation</strong>:</p>
+<ul>
+<li>Sales tax (people who buy more, pay more tax).</li>
+<li>User fees (pay per road toll, per market stall, per water bucket).</li>
+<li>Differentiated tariffs (merchants pay higher tariffs because they benefit more from security and roads).</li>
+</ul>
+<p><strong>Advantages</strong>: Incentivizes efficiency; perceived as fair; simple to implement.</p>
+<p><strong>Disadvantages</strong>: Regressive (poor people pay more relative to income); excludes the poor from government services; doesn't fund essential services like defense (which everyone must use but not all value equally).</p>
+<h3>Practical Hybrid</h3>
+<p>Most functioning societies use a hybrid:</p>
+<ul>
+<li><strong>Progressive income/in-kind tax</strong> (ability-to-pay basis) for essential services (defense, justice, medicine, education).</li>
+<li><strong>Sales tax and user fees</strong> (benefit-received basis) for discretionary services (market maintenance, road tolls, licensing).</li>
+</ul>
+<div class="info-box">
+<p><strong>Historical Example</strong>: Medieval tithe systems combined both principles. A percentage of harvest was mandatory (ability-to-pay), but the church also charged for services (marriage, funeral, blessing)—benefit-received. This funded the church and the local community.</p>
+</div>
+</section>
+<section id="progressive-vs-flat">
+<h2>Progressive vs Flat Taxation</h2>
+<p><strong>Flat Tax</strong>: Everyone pays the same percentage (e.g., 10% of income).</p>
+<p><strong>Progressive Tax</strong>: Higher earners pay a higher percentage (e.g., 5% for low-income, 10% for medium, 20% for high).</p>
+<h3>Flat Tax</h3>
+<p><strong>Example</strong>: Everyone pays 10% of annual income.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Income</strong></th>
+<th><strong>Tax</strong></th>
+<th><strong>After-Tax</strong></th>
+<th><strong>% of Income</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500 tokens</td>
+<td>50 tokens</td>
+<td>450 tokens</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>2,000 tokens</td>
+<td>200 tokens</td>
+<td>1,800 tokens</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>10,000 tokens</td>
+<td>1,000 tokens</td>
+<td>9,000 tokens</td>
+<td>10%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Advantages</strong>:</p>
+<ul>
+<li>Simple to calculate and collect.</li>
+<li>Perceived as &quot;equal.&quot;</li>
+<li>Does not penalize high earners.</li>
+</ul>
+<p><strong>Disadvantages</strong>:</p>
+<ul>
+<li>Regressive in impact (a poor person's life is harder after paying 10% than a rich person's).</li>
+<li>A 10% tax on someone earning 500 tokens leaves them with 450 tokens—barely survival.</li>
+<li>Discourages investment and entrepreneurship (high earners have no incentive if tax is the same).</li>
+</ul>
+<h3>Progressive Tax</h3>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>0–500 tokens: 0% tax</li>
+<li>500–2,000 tokens: 10% tax</li>
+<li>2,000–10,000 tokens: 20% tax</li>
+<li>10,000+ tokens: 30% tax</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Income</strong></th>
+<th><strong>Tax</strong></th>
+<th><strong>After-Tax</strong></th>
+<th><strong>Effective %</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500 tokens</td>
+<td>0 tokens</td>
+<td>500 tokens</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>2,000 tokens</td>
+<td>150 tokens</td>
+<td>1,850 tokens</td>
+<td>7.5%</td>
+</tr>
+<tr>
+<td>10,000 tokens</td>
+<td>2,100 tokens</td>
+<td>7,900 tokens</td>
+<td>21%</td>
+</tr>
+<tr>
+<td>50,000 tokens</td>
+<td>10,100 tokens</td>
+<td>39,900 tokens</td>
+<td>20.2%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Advantages</strong>:</p>
+<ul>
+<li>Poor people are not driven into starvation.</li>
+<li>Generates more revenue from high earners (who can afford to pay).</li>
+<li>Perceived as fair (ability-to-pay).</li>
+</ul>
+<p><strong>Disadvantages</strong>:</p>
+<ul>
+<li>Complex to calculate (requires income brackets, marginal rates).</li>
+<li>High earners may evade or emigrate.</li>
+<li>Requires income verification and auditing.</li>
+</ul>
+<h3>Recommendation</h3>
+<p>For post-collapse communities with limited administrative capacity, <strong>start with flat head tax</strong> (simple to collect) and add progressive income tax only if currency and markets develop. Progressivity requires auditing capacity that early post-collapse communities lack.</p>
+</section>
+<section id="corruption-prevention">
+<h2>Preventing Corruption and Ensuring Transparency</h2>
+<p>Taxation systems are vulnerable to corruption. Tax collectors may embezzle revenue, officials may grant exemptions to cronies, and the system collapses.</p>
+<h3>Structural Safeguards</h3>
+<p><strong>Separation of Duties</strong></p>
+<p>Never allow one person to assess, collect, and authorize tax. Create multiple roles:</p>
+<ul>
+<li><strong>Assessor</strong>: Determines tax liability (e.g., inspects farm and estimates grain yield).</li>
+<li><strong>Collector</strong>: Receives payment and issues receipt.</li>
+<li><strong>Auditor</strong>: Verifies that all revenue collected matches assessment records.</li>
+<li><strong>Treasurer</strong>: Manages the tax revenue and authorizes spending.</li>
+</ul>
+<p>Each role checks the others. Corruption requires collusion of at least two people.</p>
+<p><strong>Mandatory Receipts</strong></p>
+<p>Every tax payment must generate a written receipt, signed by the collector and a witness (not the payer). The payer keeps one copy; the government keeps another.</p>
+<p><strong>Public Audits</strong></p>
+<p>Quarterly, a committee of citizens (elected, representative, non-government) audits the tax ledger. They verify:</p>
+<ul>
+<li>Total assessed tax = total collected + identified delinquencies.</li>
+<li>Exemptions and write-offs are justified.</li>
+<li>Collector signatures are genuine.</li>
+<li>Revenue is accounted for in the budget.</li>
+</ul>
+<p>Audits are published (results posted on town board). Discrepancies are investigated publicly.</p>
+<p><strong>Rotation</strong></p>
+<p>Rotate tax collectors, assessors, and treasurers every 1–2 years. This prevents entrenched corruption and reduces personal relationships that enable fraud.</p>
+<p><strong>Bonding</strong></p>
+<p>Tax collectors are required to post a &quot;bond&quot;—they give a sum of money or goods to the government as collateral. If the collector is found to have embezzled, the bond is forfeited and used to repay the lost revenue. This creates personal financial incentive for honesty.</p>
+<h3>Whistleblower Protection</h3>
+<p>Establish an anonymous complaints process (a sealed box at the town hall where people can post complaints). Complaints are reviewed by the audit committee. Whistleblowers are protected from retaliation (any attempt to harm a whistleblower results in severe punishment).</p>
+<div class="tip">
+<p><strong>Transparency Builds Trust</strong>: Communities that publish tax records, audits, and budgets publicly have higher tax compliance. People pay taxes if they believe:</p>
+<ol>
+<li>Tax is assessed fairly.</li>
+<li>Revenue is actually collected and accounted for.</li>
+<li>Revenue is spent on announced public goods.</li>
+<li>Corruption is detected and punished.</li>
+</ol>
+<p>Opacity breeds evasion.</p>
+</div>
+</section>
+<section id="public-budgeting">
+<h2>Public Budgeting and Transparent Spending</h2>
+<p>Tax revenue must be spent transparently, or people will evade taxation, assuming the money is being stolen.</p>
+<h3>Budget Proposal and Approval</h3>
+<p><strong>Annual Budget Cycle</strong>:</p>
+<ol>
+<li>
+<p><strong>January</strong>: Departments (defense, roads, medicine, education) submit spending requests to the treasurer. E.g., &quot;Defense department requests 500 tokens for weapons and armor; roads department requests 300 tokens for a new bridge.&quot;</p>
+</li>
+<li>
+<p><strong>February</strong>: Treasurer sums requests (e.g., 2,000 tokens total) and compares to projected tax revenue (e.g., 1,800 tokens). Identifies shortfall (200 tokens).</p>
+</li>
+<li>
+<p><strong>March</strong>: Public meeting is held. Budget is presented. Citizens discuss priorities. Should defense be reduced? Should roads be delayed? Are there inefficiencies?</p>
+</li>
+<li>
+<p><strong>April</strong>: Budget is finalized by vote (either community referendum or elected council). Approved budget is published.</p>
+</li>
+<li>
+<p><strong>May–December</strong>: Departments spend according to approved budget. Monthly spending reports are posted publicly.</p>
+</li>
+</ol>
+<h3>Approved Budget Example</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Category</strong></th>
+<th><strong>Allocation</strong></th>
+<th><strong>Justification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Defense (militia, fortifications)</td>
+<td>500 tokens (28%)</td>
+<td>Border threats; repair winter damage</td>
+</tr>
+<tr>
+<td>Roads &amp; Infrastructure</td>
+<td>300 tokens (17%)</td>
+<td>Build new bridge to market towns; repair roads</td>
+</tr>
+<tr>
+<td>Medicine &amp; Public Health</td>
+<td>300 tokens (17%)</td>
+<td>Support hospital; fund vaccine programs</td>
+</tr>
+<tr>
+<td>Education (schools, teachers)</td>
+<td>250 tokens (14%)</td>
+<td>Maintain 2 schools; pay teachers</td>
+</tr>
+<tr>
+<td>Administration &amp; Records</td>
+<td>200 tokens (11%)</td>
+<td>Tax collection, audits, court operations</td>
+</tr>
+<tr>
+<td>Famine Reserve (granary)</td>
+<td>200 tokens (11%)</td>
+<td>Accumulate grain for future shortage</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>1,750 tokens</strong></td>
+<td>Budget balanced to projected revenue</td>
+</tr>
+</tbody>
+</table>
+<h3>Spending Transparency</h3>
+<p>Each month, the treasurer posts a report of actual spending vs budgeted spending:</p>
+<pre><code>MONTHLY SPENDING REPORT - March 2026
+
+Defense: Budgeted 42 tokens, Spent 41 tokens, Variance -1 (within budget)
+Roads: Budgeted 25 tokens, Spent 50 tokens, Variance +25 (OVER BUDGET - emergency bridge repair due to flood)
+Medicine: Budgeted 25 tokens, Spent 24 tokens, Variance -1 (within budget)
+Education: Budgeted 21 tokens, Spent 21 tokens, Variance 0 (on budget)
+Administration: Budgeted 17 tokens, Spent 18 tokens, Variance +1 (within budget)
+Famine Reserve: Budgeted 17 tokens, Spent 15 tokens, Variance -2 (within budget)
+
+TOTAL REVENUE (March): 146 tokens
+TOTAL SPENDING (March): 169 tokens
+DEFICIT: 23 tokens (covered from reserve)
+
+Approved Justification: March spring flood required emergency road repairs. Approved by emergency council decree.
+</code></pre>
+<p>Monthly reports allow citizens to:</p>
+<ul>
+<li>Verify that money is actually being spent.</li>
+<li>Identify departments overspending (possible corruption or mismanagement).</li>
+<li>Adjust budget for next month if needed.</li>
+</ul>
+<div class="warning">
+<p><strong>Budget Overruns</strong>: If a department overspends without authorization, investigate and punish. Establish a rule: &quot;Department heads who overspend without emergency authorization are fined the overage amount from their personal property.&quot; This prevents casual overspending.</p>
+</div>
+</section>
+<section id="inter-community-tariffs">
+<h2>Inter-Community Tariffs and Trade Taxation</h2>
+<p>As trade between communities develops, establish tariff systems to fund government and protect local industry.</p>
+<h3>Tariff Policy</h3>
+<p><strong>Import Tariff</strong>: Tax goods entering the community.</p>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>Grain imported from Northern Farm = 10% tariff.</li>
+<li>Cloth imported from Eastern Weavers = 20% tariff (cloth is produced locally and is protected).</li>
+<li>Salt imported from Coastal Salt Works = 5% tariff (salt is essential and not produced locally; low tariff to keep prices down).</li>
+</ul>
+<p><strong>Export Tariff</strong>: Tax goods leaving the community.</p>
+<p><strong>Example</strong>:</p>
+<ul>
+<li>Blacksmith tools exported = 5% tariff.</li>
+<li>Grain exported = 0% (allow free export to encourage farmers).</li>
+</ul>
+<p><strong>Negotiations</strong>: Tariff rates are negotiated with neighboring communities via treaty. If you impose 20% tariff on their grain, they may impose 20% tariff on your tools in retaliation (trade war). Cooperation and mutual benefit prevent escalation.</p>
+<h3>Revenue from Tariffs</h3>
+<p>Tariffs generate revenue but also raise prices for consumers. Example:</p>
+<p>Without tariff: 100 tokens of imported cloth → price 100 tokens in market.</p>
+<p>With 20% tariff: 100 tokens of cloth + 20 tokens tariff = 120 tokens → price 120 tokens in market.</p>
+<p>Consumers pay 20% more, but the community revenue increases 20 tokens. This protects local weavers (whose cloth is now competitive) and funds government.</p>
+<h3>Trade Facilitation Licenses</h3>
+<p>Allow merchants to trade across borders but require a license (paid annually). License revenue funds trade monitoring and reduces administrative burden.</p>
+<p><strong>Example</strong>: &quot;Foreign merchant license: 10 tokens/year. Allows holder to import and export goods without per-transaction tariff. Simplifies collection and encourages regular trade.&quot;</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="economics-trade.html">Economics &amp; Trade</a>
+<a href="justice-law.html">Justice &amp; Legal Systems</a>
+<a href="community-organizing.html">Community Organizing &amp; Leadership</a>
+<a href="labor-organization.html">Labor Organization &amp; Large-Scale Projects</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

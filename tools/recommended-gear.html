@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Gear — Offline Knowledge Compendium</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .gear-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .gear-header {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .gear-header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        .gear-header p {
+            margin: 0 0 0.5rem 0;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .trust-note {
+            font-size: 0.85rem;
+            padding: 12px 16px;
+            background: var(--card);
+            border-radius: 6px;
+            margin-top: 1rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        .tier-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .tier-label {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 0 0 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tier-desc {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin: 0 0 1rem 0;
+        }
+
+        .gear-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .gear-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 200ms ease;
+        }
+
+        .gear-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .gear-card-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .gear-card h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+
+        .gear-card p {
+            margin: 0 0 12px 0;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--muted);
+        }
+
+        .gear-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .gear-spec {
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: var(--card);
+            color: var(--text);
+        }
+
+        .gear-pros-cons {
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .gear-pro {
+            color: #6dbb6d;
+        }
+
+        .gear-con {
+            color: #d47474;
+        }
+
+        .gear-guide-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--accent);
+        }
+
+        .gear-guide-link:hover {
+            border-bottom-style: solid;
+        }
+
+        .no-purchase {
+            background: var(--card);
+            border-radius: 6px;
+            padding: 14px 16px;
+            margin-top: 12px;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            color: var(--muted);
+        }
+
+        .no-purchase strong {
+            color: var(--accent);
+        }
+
+        .affiliate-disclaimer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-top: 2rem;
+            padding: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 600px) {
+            .gear-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gear-container">
+        <a class="back-link" href="../index.html">← Back to Index</a>
+
+        <div class="gear-header">
+            <h1>⚡ Recommended Gear</h1>
+            <p>Power independence gear organized by urgency. Every recommendation links to the guide that explains how to use it. Every category includes a no-purchase alternative.</p>
+            <div class="trust-note">
+                <strong>Our approach:</strong> Honest pros and cons for every item. No gear is perfect — we tell you the trade-offs. These are genuinely life-critical recommendations, not filler affiliate content.
+            </div>
+        </div>
+
+        <!-- Tier 1: Buy Now While You Can -->
+        <div class="tier-section">
+            <h2 class="tier-label">🔴 Tier 1 — Buy Now While You Can</h2>
+            <p class="tier-desc">Pre-disaster preparation. These are the items to acquire while supply chains still work.</p>
+
+            <div class="gear-grid">
+                <div class="gear-card">
+                    <div class="gear-card-icon">☀️</div>
+                    <h3>Solar Power Bank</h3>
+                    <p>Portable battery with built-in solar panel. Your first line of defense against dead devices.</p>
+                    <div class="gear-specs">
+                        <span class="gear-spec">20,000+ mAh</span>
+                        <span class="gear-spec">Built-in panel</span>
+                        <span class="gear-spec">USB-A + USB-C</span>
+                    </div>
+                    <div class="gear-pros-cons">
+                        <div class="gear-pro">✓ No setup needed — charge and go</div>
+                        <div class="gear-pro">✓ Charges phone 4-5x from stored battery</div>
+                        <div class="gear-con">✗ Built-in panel is slow (8-20 hrs to self-charge)</div>
+                        <div class="gear-con">✗ Panel degrades after 3-5 years</div>
+                    </div>
+                    <div class="no-purchase">
+                        <strong>No-purchase alternative:</strong> Use any vehicle's 12V port with a USB adapter (see Emergency Power Bootstrap guide)
+                    </div>
+                    <a class="gear-guide-link" href="../guides/emergency-power-bootstrap.html">📖 Emergency Power Bootstrap</a>
+                </div>
+
+                <div class="gear-card">
+                    <div class="gear-card-icon">🔋</div>
+                    <h3>Foldable Solar Panel (20W+)</h3>
+                    <p>Lightweight, packable panel that charges devices directly via USB in sunlight.</p>
+                    <div class="gear-specs">
+                        <span class="gear-spec">20-100W</span>
+                        <span class="gear-spec">Foldable</span>
+                        <span class="gear-spec">Direct USB output</span>
+                    </div>
+                    <div class="gear-pros-cons">
+                        <div class="gear-pro">✓ Best watt-per-dollar and watt-per-pound ratio</div>
+                        <div class="gear-pro">✓ Phone charges in 2-3 hrs direct sun</div>
+                        <div class="gear-con">✗ No built-in battery — only works in sunlight</div>
+                        <div class="gear-con">✗ Output drops significantly in clouds/shade</div>
+                    </div>
+                    <div class="no-purchase">
+                        <strong>No-purchase alternative:</strong> Salvage panels from garden lights, road signs, or rooftop installations (see Solar Technology guide)
+                    </div>
+                    <a class="gear-guide-link" href="../guides/solar-technology.html">📖 Solar Technology</a>
+                </div>
+
+                <div class="gear-card">
+                    <div class="gear-card-icon">📻</div>
+                    <h3>Hand-Crank Emergency Radio</h3>
+                    <p>AM/FM/NOAA radio with hand crank, solar panel, flashlight, and USB charging port.</p>
+                    <div class="gear-specs">
+                        <span class="gear-spec">Multi-band radio</span>
+                        <span class="gear-spec">Hand crank</span>
+                        <span class="gear-spec">USB out</span>
+                    </div>
+                    <div class="gear-pros-cons">
+                        <div class="gear-pro">✓ Three power sources: crank, solar, USB-in</div>
+                        <div class="gear-pro">✓ Receives emergency broadcasts (NOAA)</div>
+                        <div class="gear-con">✗ Slow phone charging (~15 min cranking = 5 min talk)</div>
+                        <div class="gear-con">✗ Internal battery loses capacity over years</div>
+                    </div>
+                    <div class="no-purchase">
+                        <strong>No-purchase alternative:</strong> Build a bicycle generator for much higher output (see Power Generation guide)
+                    </div>
+                    <a class="gear-guide-link" href="../guides/electrical-generation.html">📖 Power Generation</a>
+                </div>
+
+                <div class="gear-card">
+                    <div class="gear-card-icon">🔌</div>
+                    <h3>Portable Battery Station</h3>
+                    <p>Large-capacity battery with AC outlets, USB ports, and solar input. Powers laptops, lights, and tools.</p>
+                    <div class="gear-specs">
+                        <span class="gear-spec">300-2000 Wh</span>
+                        <span class="gear-spec">AC + DC + USB</span>
+                        <span class="gear-spec">Solar input</span>
+                    </div>
+                    <div class="gear-pros-cons">
+                        <div class="gear-pro">✓ Powers laptops and small appliances</div>
+                        <div class="gear-pro">✓ 500Wh unit = 40+ phone charges</div>
+                        <div class="gear-con">✗ Heavy (10-50 lbs depending on capacity)</div>
+                        <div class="gear-con">✗ Expensive ($200-$2000+)</div>
+                    </div>
+                    <div class="no-purchase">
+                        <strong>No-purchase alternative:</strong> Recondition a car battery + inverter from any vehicle (see Battery Restoration guide)
+                    </div>
+                    <a class="gear-guide-link" href="../guides/battery-restoration.html">📖 Battery Restoration</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tier 2: Long-Term Power Independence -->
+        <div class="tier-section">
+            <h2 class="tier-label">🟡 Tier 2 — Long-Term Power Independence</h2>
+            <p class="tier-desc">Infrastructure for sustainable off-grid electricity. Invest in these for permanent installations.</p>
+
+            <div class="gear-grid">
+                <div class="gear-card">
+                    <div class="gear-card-icon">⚡</div>
+                    <h3>Rigid Solar Panel Kit + Charge Controller</h3>
+                    <p>Permanent-mount solar panels with MPPT charge controller for efficient battery charging.</p>
+                    <div class="gear-specs">
+                        <span class="gear-spec">100-400W per panel</span>
+                        <span class="gear-spec">25-year lifespan</span>
+                        <span class="gear-spec">MPPT controller</span>
+                    </div>
+                    <div class="gear-pros-cons">
+                        <div class="gear-pro">✓ Most reliable long-term power source</div>
+                        <div class="gear-pro">✓ No moving parts — minimal maintenance</div>
+                        <div class="gear-con">✗ Requires mounting infrastructure</div>
+                        <div class="gear-con">✗ Needs charge controller + batteries for storage</div>
+                    </div>
+                    <div class="no-purchase">
+                        <strong>No-purchase alternative:</strong> Salvage panels from buildings, construction sites, or solar farms. Clean and test — most survive intact.
+                    </div>
+                    <a class="gear-guide-link" href="../guides/solar-technology.html">📖 Solar Technology</a>
+                </div>
+
+                <div class="gear-card">
+                    <div class="gear-card-icon">🔋</div>
+                    <h3>Deep-Cycle Batteries (LiFePO4)</h3>
+                    <p>Lithium iron phosphate batteries for solar energy storage. Safe chemistry, 10+ year lifespan.</p>
+                    <div class="gear-specs">
+                        <span class="gear-spec">100-200 Ah</span>
+                        <span class="gear-spec">12V or 48V</span>
+                        <span class="gear-spec">3000+ cycles</span>
+                    </div>
+                    <div class="gear-pros-cons">
+                        <div class="gear-pro">✓ 10x longer lifespan than lead-acid</div>
+                        <div class="gear-pro">✓ No maintenance, no acid, no gas venting</div>
+                        <div class="gear-con">✗ Higher upfront cost than lead-acid</div>
+                        <div class="gear-con">✗ Cannot be recharged below freezing</div>
+                    </div>
+                    <div class="no-purchase">
+                        <strong>No-purchase alternative:</strong> Recondition salvaged lead-acid batteries from vehicles, UPS units, and alarm systems (see Battery Restoration guide)
+                    </div>
+                    <a class="gear-guide-link" href="../guides/battery-restoration.html">📖 Battery Restoration</a>
+                </div>
+
+                <div class="gear-card">
+                    <div class="gear-card-icon">🌬️</div>
+                    <h3>Small Wind Turbine</h3>
+                    <p>400-1000W wind generator for locations with consistent wind. Complements solar for 24/7 generation.</p>
+                    <div class="gear-specs">
+                        <span class="gear-spec">400-1000W</span>
+                        <span class="gear-spec">12/24V DC</span>
+                        <span class="gear-spec">10-25 mph wind</span>
+                    </div>
+                    <div class="gear-pros-cons">
+                        <div class="gear-pro">✓ Generates power at night and in storms</div>
+                        <div class="gear-pro">✓ Pairs with solar for reliable 24/7 power</div>
+                        <div class="gear-con">✗ Needs consistent wind (coastal, hilltops, plains)</div>
+                        <div class="gear-con">✗ Moving parts require maintenance</div>
+                    </div>
+                    <div class="no-purchase">
+                        <strong>No-purchase alternative:</strong> Build a turbine from a car alternator + PVC pipe blades (see Power Generation guide)
+                    </div>
+                    <a class="gear-guide-link" href="../guides/electrical-generation.html">📖 Power Generation</a>
+                </div>
+
+                <div class="gear-card">
+                    <div class="gear-card-icon">💧</div>
+                    <h3>Micro-Hydro Kit</h3>
+                    <p>Small water turbine for continuous power generation from streams or rivers with sufficient flow and drop.</p>
+                    <div class="gear-specs">
+                        <span class="gear-spec">100-1000W</span>
+                        <span class="gear-spec">Needs 1m+ head</span>
+                        <span class="gear-spec">24/7 output</span>
+                    </div>
+                    <div class="gear-pros-cons">
+                        <div class="gear-pro">✓ Most consistent renewable — runs 24/7/365</div>
+                        <div class="gear-pro">✓ Higher capacity factor than solar or wind</div>
+                        <div class="gear-con">✗ Requires flowing water with elevation drop</div>
+                        <div class="gear-con">✗ Intake screens need regular clearing</div>
+                    </div>
+                    <div class="no-purchase">
+                        <strong>No-purchase alternative:</strong> Build from a salvaged motor + improvised turbine wheel (see Hydroelectric Power guide)
+                    </div>
+                    <a class="gear-guide-link" href="../guides/hydroelectric.html">📖 Hydroelectric Power</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="affiliate-disclaimer">
+            This page contains product category recommendations, not specific brand endorsements. When affiliate links are added in the future, they will be clearly marked. The editorial recommendations above are independent of any affiliate relationships.
+        </div>
+    </div>
+
+    <script src="../shared/theme-sync.js"></script>
+</body>
+</html>

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/signal-communication-visual.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visual Signal Communication</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Communications</span> ›
+<span>Visual Signal Communication</span>
+</div>
+
+
+<h1>Visual Signal Communication</h1>
+<p class="subtitle">International maritime signal flags, heliograph mirror signaling, semaphore alphabet, ground-to-air emergency panels, smoke signals, and torch morse code</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~16 min</span>
+<span>Updated: 2026-02-18</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#maritime-flags">International Maritime Signal Flags</a></li>
+<li><a href="#semaphore">Semaphore Signaling</a></li>
+<li><a href="#heliograph">Heliograph Mirror Signaling</a></li>
+<li><a href="#ground-to-air">Ground-to-Air Emergency Signals</a></li>
+<li><a href="#smoke-signals">Smoke Signals and Smoke Codes</a></li>
+<li><a href="#torch-morse">Torch and Flashlight Morse Code</a></li>
+<li><a href="#flag-hoist">Flag Hoist Procedures for Multi-Station Communication</a></li>
+<li><a href="#summary">Summary</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>When electronic communication is unavailable or unreliable, visual signals remain effective for short- to medium-distance communication. International maritime signal flags standardize meaning across language barriers, allowing ships and shore stations to exchange complex information with simple flag combinations. Semaphore and heliograph techniques extend communication range using human-powered signaling. Emergency ground-to-air panels guide rescue aircraft, while smoke and light signals provide simple but effective warning and distress communication.</p>
+<p>This guide covers practical visual signaling methods that require no electronics, minimal training, and materials available in any environment—essential skills for coordinating across water, air, or open terrain when radio is unavailable.</p>
+</section>
+<section id="maritime-flags">
+<h2>International Maritime Signal Flags</h2>
+<p>The International Code of Signals defines 26 letter flags (A–Z), 10 numeral pennants (0–9), and 3 repeater flags. Each flag represents both a single letter and a standardized meaning when flown alone. When combined, flags spell out messages.</p>
+<h3>Single Flag Meanings (Common)</h3>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Letter</th>
+<th>Meaning When Flown Alone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>A</td>
+<td>&quot;I have a diver down; keep well clear at slow speed&quot;</td>
+</tr>
+<tr>
+<td>B</td>
+<td>B</td>
+<td>&quot;I am taking in, discharging, or carrying dangerous goods&quot;</td>
+</tr>
+<tr>
+<td>C</td>
+<td>C</td>
+<td>&quot;Yes&quot; (affirmative)</td>
+</tr>
+<tr>
+<td>D</td>
+<td>D</td>
+<td>&quot;Keep clear of me; I am maneuvering with difficulty&quot;</td>
+</tr>
+<tr>
+<td>E</td>
+<td>E</td>
+<td>&quot;I am altering my course to starboard&quot;</td>
+</tr>
+<tr>
+<td>F</td>
+<td>F</td>
+<td>&quot;I am disabled; communicate with me&quot;</td>
+</tr>
+<tr>
+<td>G</td>
+<td>G</td>
+<td>&quot;I require a pilot&quot;</td>
+</tr>
+<tr>
+<td>N</td>
+<td>N</td>
+<td>&quot;No&quot; (negative)</td>
+</tr>
+<tr>
+<td>O</td>
+<td>O</td>
+<td>&quot;Man overboard&quot;</td>
+</tr>
+<tr>
+<td>S</td>
+<td>S</td>
+<td>&quot;I am operating astern propulsion&quot;</td>
+</tr>
+<tr>
+<td>V</td>
+<td>V</td>
+<td>&quot;I require assistance&quot;</td>
+</tr>
+<tr>
+<td>W</td>
+<td>W</td>
+<td>&quot;I require medical assistance&quot;</td>
+</tr>
+<tr>
+<td>X</td>
+<td>X</td>
+<td>&quot;Stop carrying out your intentions and watch for my signals&quot;</td>
+</tr>
+</tbody>
+</table>
+<h3>Two-Flag Combinations (Common Phrases)</h3>
+<table>
+<thead>
+<tr>
+<th>Combination</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AA</td>
+<td>&quot;I acknowledge; I have received your signal&quot;</td>
+</tr>
+<tr>
+<td>AB</td>
+<td>&quot;Keep clear of me; I am craft engaged in fishing&quot;</td>
+</tr>
+<tr>
+<td>AN</td>
+<td>&quot;I need a doctor&quot;</td>
+</tr>
+<tr>
+<td>CB</td>
+<td>&quot;I require immediate assistance&quot;</td>
+</tr>
+<tr>
+<td>NC</td>
+<td>&quot;I am in distress and require immediate assistance&quot;</td>
+</tr>
+<tr>
+<td>OF</td>
+<td>&quot;I have abandoned my vessel&quot;</td>
+</tr>
+<tr>
+<td>UM</td>
+<td>&quot;You are running into danger&quot;</td>
+</tr>
+<tr>
+<td>VG</td>
+<td>&quot;I intend to come alongside you&quot;</td>
+</tr>
+<tr>
+<td>WZ</td>
+<td>&quot;Your signal has been received but not understood&quot;</td>
+</tr>
+</tbody>
+</table>
+<div class="info-box">
+<p><strong>Use one, two, or three flag combinations for standard messages.</strong> Beyond three flags, communication becomes slow. For complex messages, establish a set of pre-arranged three-flag combinations beforehand (e.g., FFF = &quot;Return to base&quot;, DDD = &quot;Abandon operations&quot;).</p>
+</div>
+<h3>Flag Hoisting Procedures</h3>
+<ol>
+<li><strong>Prepare flags:</strong> Lay out flags in order, ensuring they won't tangle during hoisting.</li>
+<li><strong>Hoist slowly:</strong> Raise flags to the masthead or highest point, maintaining tension so flags spread in the wind.</li>
+<li><strong>Wait for acknowledgment:</strong> Once flags are fully hoisted, count to 10 and check if the receiving station is lowering flags (acknowledgment). If not acknowledged, repeat the hoist.</li>
+<li><strong>Execute the signal:</strong> Once acknowledged, leave flags up for 1–2 minutes, then lower.</li>
+<li><strong>Record:</strong> Note the date, time, flags hoisted, and any response for your records.</li>
+</ol>
+<p><strong>Visibility improvements:</strong></p>
+<ul>
+<li>Hoist flags where wind is strongest (highest point, exposed location)</li>
+<li>Use the largest flags available (longer flags are visible from greater distance)</li>
+<li>Orient flags perpendicular to observer's line of sight (flags flapping toward you are invisible)</li>
+<li>Schedule important signals for daytime with good sun angle and clear visibility</li>
+<li>Double-check flags are properly unfurled (bunched or inverted flags are misread)</li>
+</ul>
+<div class="warning">
+<p>Upside-down or reversed flags can communicate the opposite meaning or be misunderstood entirely. Always verify flags are oriented correctly before and after hoisting.</p>
+</div>
+<h3>Improvised Flag Signal</h3>
+<p>If standard maritime flags are unavailable:</p>
+<ul>
+<li>Cut cloth strips in contrasting colors (red, white, yellow, blue)</li>
+<li>Attach to lines or poles</li>
+<li>Assign letters or meanings to each color combination</li>
+<li>Use prearranged messages: single color = urgent, two colors = direction, three colors = specific instruction</li>
+</ul>
+<p>Example: Red + Yellow = &quot;Return immediately&quot;, White + Blue = &quot;Food available&quot;, Red alone = &quot;Do not approach&quot;</p>
+</section>
+<section id="semaphore">
+<h2>Semaphore Signaling</h2>
+<p>Semaphore uses two hand-held flags (or arms) to communicate letters and numbers. Each letter has a distinct two-arm position, allowing an operator to spell out messages character by character. Semaphore is faster than maritime flags (alphabet transmission is possible) and visible at medium distances (up to 1 km in good light).</p>
+<h3>Semaphore Alphabet (Simplified)</h3>
+<p>Each letter is represented by a specific arm position relative to the body:</p>
+<ul>
+<li><strong>A:</strong> Left arm up and to the side, right arm down (45° angles)</li>
+<li><strong>B:</strong> Both arms up and to the sides at 45°</li>
+<li><strong>C:</strong> Both arms up vertically</li>
+<li><strong>D:</strong> Left arm up and forward, right arm down</li>
+<li><strong>E:</strong> Left arm out to the side, right arm down</li>
+<li><strong>F:</strong> Left arm forward and up, right arm down</li>
+<li><strong>G:</strong> Left arm up and back, right arm down</li>
+<li><strong>H:</strong> Both arms forward at 45°</li>
+<li><strong>I:</strong> Both arms down at 45°</li>
+<li><strong>J:</strong> Left arm forward, right arm down and back</li>
+<li><strong>K:</strong> Left arm up and forward, right arm out to side</li>
+<li><strong>L:</strong> Left arm up and to side, right arm out to side</li>
+<li><strong>M:</strong> Both arms up and forward at 45°</li>
+<li><strong>N:</strong> Left arm up, right arm down and to side</li>
+<li><strong>O:</strong> Both arms out to sides horizontally</li>
+<li><strong>P:</strong> Left arm down, right arm up and forward</li>
+<li><strong>Q:</strong> Both arms up at steep angle backward</li>
+<li><strong>R:</strong> Left arm out to side, right arm up and to side</li>
+<li><strong>S:</strong> Left arm down and back, right arm down and forward</li>
+<li><strong>T:</strong> Left arm up and back, right arm down and back</li>
+<li><strong>U:</strong> Both arms down vertically</li>
+<li><strong>V:</strong> Both arms down and to sides at 45°</li>
+<li><strong>W:</strong> Left arm down and to side, right arm down and to opposite side</li>
+<li><strong>X:</strong> Both arms crossed in front of body</li>
+<li><strong>Y:</strong> Left arm up and to side, right arm down and forward</li>
+<li><strong>Z:</strong> Left arm down and forward, right arm up and to side</li>
+</ul>
+<h3>Operating Procedures</h3>
+<ol>
+<li><strong>Establish contact:</strong> Position yourself 100 meters or closer to the receiver. If they can see you, start signaling slowly.</li>
+<li><strong>Signal preparation:</strong> Hold flags or arms at waist level ready, then move to the first letter position.</li>
+<li><strong>Clear motions:</strong> Move deliberately and hold each letter for 2–3 seconds. Blur and fast motion reduce clarity.</li>
+<li><strong>Pause between letters:</strong> Lower arms to neutral (waist level) for 1 second between each letter.</li>
+<li><strong>Spacing:</strong> For numbers, use a specific two-flag combination, then proceed to the digits.</li>
+</ol>
+<p><strong>Visibility factors:</strong></p>
+<ul>
+<li>Bright daylight is ideal; dusk/dawn is challenging</li>
+<li>White flags are visible farthest (up to 1 km); colored flags less so</li>
+<li>On water or snow, semaphore is visible 2–3 times farther due to high contrast background</li>
+<li>On dark or forested terrain, visible range drops to 100–300 meters</li>
+</ul>
+<div class="tip">
+<p><strong>Practice semaphore repeatedly before it's needed.</strong> The muscle memory for arm positions develops quickly (few hours of practice), and slow, steady signaling is more readable than fast guessing. Teach all team members the same alphabet so anyone can signal or receive.</p>
+</div>
+</section>
+<section id="heliograph">
+<h2>Heliograph Mirror Signaling</h2>
+<p>A heliograph uses the sun's reflection to create visible light flashes that can be seen 40+ kilometers in daylight, depending on mirror quality and visibility conditions. Heliograph signaling is ideal for daytime long-distance communication across open terrain or water.</p>
+<h3>Heliograph Construction</h3>
+<p><strong>Minimum setup:</strong></p>
+<ul>
+<li>Any shiny reflective surface: mirror, polished metal sheet, CD, or even a piece of wet glass</li>
+<li>A small aiming device: simple sight, nail hole, or notch</li>
+</ul>
+<p><strong>Effective heliograph:</strong></p>
+<ul>
+<li>15–20 cm flat mirror or polished aluminum sheet</li>
+<li>Attached to a stable mount (wooden frame, adjustable stand)</li>
+<li>Simple aiming: two nails or small holes, one near mirror, one farther away, aligned with target</li>
+<li>Flash key: shutter (piece of cardboard) to block/unblock the reflected beam</li>
+</ul>
+<h3>Morse Code by Heliograph</h3>
+<p>Heliograph signals are transmitted in Morse code: dots (short flashes) and dashes (long flashes), with pauses between letters.</p>
+<p><strong>Example transmission of &quot;SOS&quot;:</strong></p>
+<ul>
+<li>S = dot-dot-dot (three short flashes)</li>
+<li>Pause (1 second)</li>
+<li>O = dash-dash-dash (three long flashes)</li>
+<li>Pause (1 second)</li>
+<li>S = dot-dot-dot (three short flashes)</li>
+</ul>
+<p><strong>Timing guidelines:</strong></p>
+<ul>
+<li><strong>Dot:</strong> Flash and unblock immediately; light visible 0.1–0.3 seconds</li>
+<li><strong>Dash:</strong> Block and unblock after 0.3–0.5 seconds; 3× longer than dot</li>
+<li><strong>Letter pause:</strong> 1 second silence</li>
+<li><strong>Word pause:</strong> 2–3 seconds silence</li>
+</ul>
+<h3>Aiming and Sighting</h3>
+<ol>
+<li><strong>Find the sun:</strong> Position yourself with sun at your back.</li>
+<li><strong>Establish sight line:</strong> Using the two-nail aiming sight, aim at the target.</li>
+<li><strong>Adjust mirror:</strong> Rotate mirror so reflected beam hits the target (or as close as possible for distant targets).</li>
+<li><strong>Test flash:</strong> Before signaling, verify the target can see flashes by sending a test dash.</li>
+<li><strong>Begin transmission:</strong> Once test is acknowledged (receiver signals back), transmit message in Morse code.</li>
+</ol>
+<div class="info-box">
+<p><strong>Heliograph range depends on atmospheric clarity.</strong> In clear air with good visibility (&gt;50 km), heliograph signals are visible 40–80 km. In haze or humidity, range drops to 10–20 km. Mountain or water reflection can extend range further.</p>
+</div>
+<h3>Morse Code Quick Reference</h3>
+<table>
+<thead>
+<tr>
+<th>Letter</th>
+<th>Code</th>
+<th>Letter</th>
+<th>Code</th>
+<th>Letter</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>·-</td>
+<td>J</td>
+<td>·---</td>
+<td>S</td>
+<td>···</td>
+</tr>
+<tr>
+<td>B</td>
+<td>-···</td>
+<td>K</td>
+<td>-·-</td>
+<td>T</td>
+<td>-</td>
+</tr>
+<tr>
+<td>C</td>
+<td>-·-·</td>
+<td>L</td>
+<td>·-··</td>
+<td>U</td>
+<td>··-</td>
+</tr>
+<tr>
+<td>D</td>
+<td>-··</td>
+<td>M</td>
+<td>--</td>
+<td>V</td>
+<td>···-</td>
+</tr>
+<tr>
+<td>E</td>
+<td>·</td>
+<td>N</td>
+<td>-·</td>
+<td>W</td>
+<td>·--</td>
+</tr>
+<tr>
+<td>F</td>
+<td>··-·</td>
+<td>O</td>
+<td>---</td>
+<td>X</td>
+<td>-··-</td>
+</tr>
+<tr>
+<td>G</td>
+<td>--·</td>
+<td>P</td>
+<td>·--·</td>
+<td>Y</td>
+<td>-·--</td>
+</tr>
+<tr>
+<td>H</td>
+<td>····</td>
+<td>Q</td>
+<td>--·-</td>
+<td>Z</td>
+<td>--··</td>
+</tr>
+<tr>
+<td>I</td>
+<td>··</td>
+<td>R</td>
+<td>·-·</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ground-to-air">
+<h2>Ground-to-Air Emergency Signals</h2>
+<p>Aircraft searching for downed crew or emergency sites rely on visual signals from the ground. Standard ICAO (International Civil Aviation Organization) ground-to-air signal panels are recognized worldwide.</p>
+<h3>Standard Ground-to-Air Panels</h3>
+<p>Use large letters or symbols made from:</p>
+<ul>
+<li>Colored cloth (white, orange, yellow, red)</li>
+<li>Logs, stones, sand, or cleared ground</li>
+<li>Rocks or snow</li>
+<li>Anything that contrasts with background</li>
+</ul>
+<p><strong>Common signals:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Meaning</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V</td>
+<td>Need help/medical supplies</td>
+<td>Make V at least 3 meters across</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Unable to proceed; need help</td>
+<td>Mark clearly with contrasting materials</td>
+</tr>
+<tr>
+<td>→</td>
+<td>Going this direction</td>
+<td>Arrow at least 3 meters long, point to direction of travel</td>
+</tr>
+<tr>
+<td>SOS</td>
+<td>Extreme distress</td>
+<td>Three dots-three dashes-three dots; each symbol 3+ meters</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Need food/water</td>
+<td>Large F visible from above</td>
+</tr>
+<tr>
+<td>L</td>
+<td>All well</td>
+<td>If sheltering and don't need rescue</td>
+</tr>
+<tr>
+<td>N</td>
+<td>No/Negative</td>
+<td>When aircraft asks a yes/no question</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Yes/Affirmative</td>
+<td>When aircraft asks a yes/no question</td>
+</tr>
+<tr>
+<td>Stripes</td>
+<td>Need medical/technical help</td>
+<td>Alternate colors, each stripe 0.5m wide, 10m total length</td>
+</tr>
+</tbody>
+</table>
+<h3>Layout Principles</h3>
+<ol>
+<li><strong>Make signals large:</strong> Aircraft moving at 100+ mph have seconds to spot and interpret. Use 3–10 meters per symbol.</li>
+<li><strong>Use high contrast:</strong> White cloth on dark ground, or dark signal on light ground (snow, beach sand).</li>
+<li><strong>Position in open:</strong> Place signals in clearings, valleys, or ridgelines where aircraft can see them directly overhead.</li>
+<li><strong>Surround with marker:</strong> Stones or cloth around the signal area so aircraft know it's intentional, not natural formation.</li>
+<li><strong>Maintain signals:</strong> Refresh regularly so they don't become obscured by weather, vegetation, or blown materials.</li>
+</ol>
+<div class="warning">
+<p>Once you create a ground-to-air signal, maintain it actively until rescue. If you stop maintaining it, aircraft may think it's an old, abandoned marker and ignore it.</p>
+</div>
+</section>
+<section id="smoke-signals">
+<h2>Smoke Signals and Smoke Codes</h2>
+<p>Smoke is visible 10–50 km in clear conditions and provides an unmistakable signal of human presence. Smoke signals are especially visible at dawn, dusk, or when contrasting with the sky.</p>
+<h3>Creating Visible Smoke</h3>
+<p><strong>Bright smoke (visible against dark sky or at night):</strong></p>
+<ul>
+<li>Use green wood, leaves, or damp grass on a bright fire</li>
+<li>Add rubber, plastic (not PVC—toxic), or oil-soaked materials</li>
+<li>Smoke should billow upward in a column 50+ meters tall</li>
+</ul>
+<p><strong>Dark smoke (visible against bright sky during day):</strong></p>
+<ul>
+<li>Use completely dry materials</li>
+<li>Burn coal, rubber, or oil if available</li>
+<li>Create dense, dark column</li>
+</ul>
+<h3>Smoke Signal Codes</h3>
+<p><strong>Single smoke column:</strong> Indicates human presence; used as a general distress signal.</p>
+<p><strong>Three smoke columns:</strong> Emergency distress (visual equivalent of SOS); arrange columns 100+ meters apart so all three are visible from air. International maritime and aviation recognition.</p>
+<p><strong>Pulsed smoke:</strong> Block and unblock smoke column with cloth or cardboard to create pulses. Pulsed pattern draws attention and shows intent.</p>
+<p><strong>Moving smoke:</strong> If fire is mobile (on a vehicle or boat), moving the smoke signal left/right or forward/backward indicates direction of travel or urgency.</p>
+<h3>Smoke Signal Timing</h3>
+<ul>
+<li><strong>Continuous smoke:</strong> Safety signal or navigational marker</li>
+<li><strong>Pulsed smoke (on/off):</strong> Distress or request for attention</li>
+<li><strong>Smoke trails (moving):</strong> Direction indicator or following signal</li>
+</ul>
+<div class="info-box">
+<p><strong>Smoke visibility is weather-dependent.</strong> In calm conditions, smoke rises straight up; in wind, it trails. In rain or fog, smoke dissipates quickly. Plan smoke signals for clear, calm weather windows.</p>
+</div>
+</section>
+<section id="torch-morse">
+<h2>Torch and Flashlight Morse Code</h2>
+<p>A simple flashlight or torch can transmit Morse code at night, visible 1–10 km depending on light intensity and darkness. Torch signaling is ideal for short-range night communication with ships, aircraft, or shore stations.</p>
+<h3>Setup</h3>
+<ul>
+<li><strong>Light source:</strong> Flashlight, torch, or even a candle in a reflector</li>
+<li><strong>Control:</strong> Simple on/off switch, or manual blocking (hand in front of light)</li>
+<li><strong>Mount:</strong> Handheld is adequate; tripod or boat rail improves steadiness for long transmissions</li>
+</ul>
+<h3>Morse Timing for Torch</h3>
+<p><strong>Dot:</strong> Light for 0.1–0.2 seconds
+<strong>Dash:</strong> Light for 0.3–0.5 seconds (3× dot length)
+<strong>Letter pause:</strong> 0.5–1 second dark
+<strong>Word pause:</strong> 2–3 seconds dark</p>
+<p>Torch morse is slower than spoken speech, so short, pre-arranged messages work best.</p>
+<h3>Common Night Distress Signals by Torch</h3>
+<ul>
+<li><strong>SOS:</strong> Morse code (···---···)</li>
+<li><strong>Repeating dot:</strong> General attention-getting signal</li>
+<li><strong>Slow morse letters:</strong> Transmit message character by character</li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Station A: Transmits &quot;SOS&quot; by flashing three dots, three dashes, three dots</li>
+<li>Station B: Receives and flashes back &quot;C&quot; (Morse ·-·-) to acknowledge</li>
+<li>Station A: Proceeds to transmit longer message or detailed information</li>
+</ul>
+<div class="tip">
+<p><strong>Before night signaling, agree on a watch time and frequency.</strong> Radio nets with scheduled times are ideal, but if using only visual signals, establish prearranged times (e.g., &quot;flashlight checks at 2100 every night&quot;).</p>
+</div>
+</section>
+<section id="flag-hoist">
+<h2>Flag Hoist Procedures for Multi-Station Communication</h2>
+<p>When multiple flags or signals are needed for a complex message, execute the hoist in a coordinated sequence:</p>
+<ol>
+<li><strong>Pre-arrangement:</strong> Agree on the three-flag combination beforehand (e.g., red-white-blue = &quot;Return to base&quot;)</li>
+<li><strong>Prepare flags:</strong> Lay out in reverse order (top flag on bottom of pile) so they hoist in correct sequence</li>
+<li><strong>Hoist slowly and evenly:</strong> Maintain tension so flags spread as they rise</li>
+<li><strong>Complete hoist:</strong> Raise flags to full height (masthead or antenna)</li>
+<li><strong>Acknowledge receipt:</strong> Receiver acknowledges by lowering their flag or returning a simple signal</li>
+<li><strong>Execute message:</strong> Leave flags hoisted for 1–2 minutes</li>
+<li><strong>Lower flags:</strong> Bring down slowly, same as hoist</li>
+<li><strong>Record and verify:</strong> Log signal, time, and receiver's acknowledgment</li>
+</ol>
+<p><strong>Multi-station relay:</strong> If a signal must reach a station out of line-of-sight, use intermediate stations to relay. Each station receives the signal and re-hoists it, passing the message forward.</p>
+</section>
+<section id="summary">
+<h2>Summary</h2>
+<p>Visual signaling requires no electronics, batteries, or maintenance—only clear communication, good lighting, and practiced technique. Maritime flags provide standardized meanings recognized worldwide. Semaphore and heliograph extend range with human-powered effort. Ground-to-air signals guide rescue aircraft. Smoke and torch signals provide simple distress and navigation. Learn these methods before they're needed, practice the alphabet or codes, and maintain signals actively so they're recognized and responded to. In critical situations, visual signals—combined with radio—provide redundant communication paths that ensure your message gets through.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="ham-radio.html">Ham Radio &amp; Communications</a>
+<a href="navigation.html">Navigation &amp; Timekeeping</a>
+<a href="postal-service-establishment.html">Postal Service &amp; Communication Networks</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

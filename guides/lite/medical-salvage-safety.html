@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/medical-salvage-safety.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Device &amp; Pharmaceutical Salvage</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Medical &amp; Health</span> ›
+<span>Medical Device &amp; Pharmaceutical Salvage</span>
+</div>
+
+
+<h1>Medical Device &amp; Pharmaceutical Salvage</h1>
+<p class="subtitle">Pharmaceutical expiration realities, medication identification, medical device salvage priorities, sterilization of instruments, biohazard assessment, and safe handling protocols for hospital and pharmacy salvage.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~19 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#biohazard-assessment">Hospital and Pharmacy Salvage Safety: Initial Assessment</a></li>
+<li><a href="#medication-expiration">Pharmaceutical Expiration: Realities and Exceptions</a></li>
+<li><a href="#pharmaceutical-storage">Pharmaceutical Storage Requirements</a></li>
+<li><a href="#medication-identification">Medication Identification Without Original Packaging</a></li>
+<li><a href="#device-salvage-priorities">Medical Device Salvage Priorities</a></li>
+<li><a href="#instrument-sterilization">Sterilization of Salvaged Instruments</a></li>
+<li><a href="#radiation-hazards">X-Ray and Imaging Equipment: Radiation Hazards</a></li>
+<li><a href="#controlled-substances">Controlled Substance Handling and Security</a></li>
+<li><a href="#vaccine-salvage">Vaccine Cold Chain Recovery</a></li>
+<li><a href="#veterinary-crossover">Veterinary Medication Crossover Guide</a></li>
+<li><a href="#pharmaceutical-manufacturing">Salvaging Pharmaceutical Manufacturing Equipment</a></li>
+<li><a href="#safety-summary">Biohazard Area Safety Protocols: Summary Checklist</a></li>
+<li><a href="#key-principles">Key Principles Summary</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<h2 id="overview">Overview</h2>
+<p>Abandoned hospitals and pharmacies contain resources that are disproportionately valuable in survival scenarios: medications, diagnostic instruments, and surgical supplies. However, medical facilities also contain serious hazards—biohazardous materials, structural dangers, radiation sources, and pharmacological substances that require careful handling.</p>
+<p>This guide covers assessing the safety of salvage locations, identifying and prioritizing salvageable materials, verifying pharmaceutical integrity, sterilizing salvaged instruments, and managing the hazards unique to medical facility salvage. The goal is maximizing resource recovery while minimizing exposure to contamination, infection, and chemical hazards.</p>
+<section id="biohazard-assessment">
+<h2>Hospital and Pharmacy Salvage Safety: Initial Assessment</h2>
+<p>Before entering any medical facility, assess structural integrity and biohazard levels.</p>
+<h3>Structural Hazards</h3>
+<p><strong>Before entry, observe from a distance:</strong></p>
+<ul>
+<li>Roof integrity (gaps, collapsed sections, hanging debris)</li>
+<li>Wall stability (cracks, bulging, obvious damage)</li>
+<li>Floor condition (visible sagging, holes, collapse indicators)</li>
+<li>Hazardous materials signage (radiation symbols, chemical warnings)</li>
+</ul>
+<p><strong>During entry, move cautiously:</strong></p>
+<ul>
+<li>Test floors at each step; they may be rotted or unstable</li>
+<li>Avoid areas with strong chemical smells (volatile compounds, mold, decay)</li>
+<li>Do not enter areas with water damage, mold growth, or visible contamination</li>
+<li>Use headlamps, not flames; gas pockets may be present</li>
+</ul>
+<p><strong>Exit immediately if:</strong></p>
+<ul>
+<li>Structural movement occurs (creaks, settling, shifting)</li>
+<li>Air becomes difficult to breathe (oxygen depletion, toxic gas)</li>
+<li>Chemical smells intensify</li>
+<li>Visibility drops (smoke, mold spores)</li>
+</ul>
+<h3>Biohazard Levels by Area</h3>
+<p><strong>Critical biohazard zones (enter only with full PPE):</strong></p>
+<ul>
+<li>Operating rooms and surgical suites</li>
+<li>Pathology labs and autopsy areas</li>
+<li>Dialysis units and blood collection areas</li>
+<li>Isolation rooms (tuberculosis, infectious disease wards)</li>
+<li>Tissue and organ preservation areas</li>
+</ul>
+<p><strong>Moderate biohazard zones (enter with standard PPE):</strong></p>
+<ul>
+<li>General wards and patient rooms</li>
+<li>Medication preparation areas</li>
+<li>Radiology departments (if sealed)</li>
+<li>Physical therapy and rehabilitation areas</li>
+</ul>
+<p><strong>Low biohazard zones (standard precautions sufficient):</strong></p>
+<ul>
+<li>Administrative offices</li>
+<li>Supply storage areas (if sealed and dry)</li>
+<li>Pharmacy shelves (unless clearly contaminated)</li>
+<li>Equipment storage rooms</li>
+</ul>
+<h3>Personal Protective Equipment (PPE)</h3>
+<p><strong>Minimum for any medical facility entry:</strong></p>
+<ul>
+<li>Respirator or N95 mask (mold, dust, airborne pathogens)</li>
+<li>Nitrile gloves (at least 2 pairs; inner pair for frequent changes)</li>
+<li>Eye protection (goggles or face shield; mold spores can infect eyes)</li>
+<li>Long sleeves and pants (protect from sharp instruments and contamination)</li>
+<li>Closed-toe boots (broken glass and needles)</li>
+</ul>
+<p><strong>Enhanced for high-biohazard areas:</strong></p>
+<ul>
+<li>Full-face respirator with organic vapor cartridges (chemical hazards)</li>
+<li>Disposable gown or Tyvek suit (fluid contamination)</li>
+<li>Double-glove technique (inner latex/nitrile, outer surgical gloves for rapid removal)</li>
+<li>Leg and foot covers (gross contamination)</li>
+<li>Headcover (mold spores, dust)</li>
+</ul>
+<p><strong>Decontamination after salvage:</strong></p>
+<ul>
+<li>Remove outer PPE (gloves, gown) and dispose immediately</li>
+<li>Wash hands and exposed skin with soap and water</li>
+<li>Change clothes and wash worn items separately</li>
+<li>Shower if possible; at minimum, wash face and neck</li>
+</ul>
+<div class="warning">
+<p>Mold is the most common hazard in abandoned medical facilities. Mold spores are inhaled and can cause respiratory infection. If you see visible mold (black, green, or white growth on surfaces), avoid that area entirely. Do not attempt to clean moldy areas; spores aerosolize during disturbance.</p>
+</div>
+</section>
+<section id="medication-expiration">
+<h2>Pharmaceutical Expiration: Realities and Exceptions</h2>
+<p>A common misconception is that expired medications are useless. Reality is more nuanced—most medications remain effective for years beyond their labeled expiration date. However, some exceptions require careful attention.</p>
+<h3>Why Expiration Dates Are Conservative</h3>
+<p>FDA expiration dating is based on stability testing at standard conditions (25°C, 40% humidity). Most medications degrade very slowly at room temperature, especially if stored in dry conditions and protected from light.</p>
+<p><strong>Stability data:</strong></p>
+<ul>
+<li>Most oral medications (acetaminophen, ibuprofen, antibiotics, antihistamines): 85–100% potency remains at 5+ years post-expiration if stored properly</li>
+<li>Most tablets and capsules: safe even if slightly degraded; reduced potency is primary concern, not safety</li>
+<li>Injectables and liquid suspensions: degrade faster due to water content; use caution with medications &gt;2 years expired</li>
+</ul>
+<p><strong>Rule of thumb:</strong> Medications that are dry, well-sealed, and stored in cool, dark places remain largely intact for many years beyond expiration.</p>
+<h3>Medications That DO Degrade Dangerously</h3>
+<p><strong>Critical exceptions—use caution:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Medication</th>
+<th>Risk</th>
+<th>Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tetracycline antibiotics</td>
+<td>Toxic metabolites form</td>
+<td>&gt;2 years post-expiration</td>
+</tr>
+<tr>
+<td>Nitroglycerin (sublingual)</td>
+<td>Rapidly loses potency; life-threat if relied upon</td>
+<td>Weeks to months; reseal infrequently</td>
+</tr>
+<tr>
+<td>Insulin</td>
+<td>Loses potency; unreliable blood sugar control</td>
+<td>1–2 years if refrigerated; faster if not</td>
+</tr>
+<tr>
+<td>Epinephrine (EpiPen)</td>
+<td>Loses potency; critical for anaphylaxis</td>
+<td>12–18 months post-expiration</td>
+</tr>
+<tr>
+<td>Aspirin (if smells of vinegar)</td>
+<td>Degraded salicylic acid; stomach irritation</td>
+<td>Variable; discard if vinegar smell present</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Questionable storage:</strong></p>
+<ul>
+<li>Medications exposed to heat (likely degraded past 5 years)</li>
+<li>Medications exposed to moisture (liquid suspensions especially; growth of mold/bacteria possible)</li>
+<li>Medications in open or damaged containers (contamination risk)</li>
+</ul>
+<h3>Assessing Salvaged Medications</h3>
+<p><strong>Visual inspection:</strong></p>
+<ul>
+<li>Discoloration (brown, yellow, or darkened tablets/capsules) = likely degradation</li>
+<li>Crystallization or separation in liquids = degradation</li>
+<li>Visible mold or contamination = discard immediately</li>
+<li>Distinct vinegar smell (aspirin) = discard</li>
+<li>Tablets or capsules intact and clear labeling = likely safe</li>
+</ul>
+<p><strong>Stability indicators:</strong></p>
+<ul>
+<li>Original sealed, desiccant-containing bottles = high likelihood of stability</li>
+<li>Medications stored in cool, dark spaces = better stability than sunlight or heat exposure</li>
+<li>Dry environment (low mold, no water damage) = better stability than humid areas</li>
+</ul>
+<p><strong>Use decisions:</strong></p>
+<ul>
+<li>For routine conditions: use salvaged medications that appear intact and are &lt;10 years post-expiration</li>
+<li>For life-or-death situations: use salvaged medications even if older, as benefit outweighs degradation risk</li>
+<li>For critical medications (insulin, epinephrine, nitroglycerin): prefer fresh supplies; older salvage is backup only</li>
+</ul>
+<div class="tip">
+<p>Create a pharmaceutical inventory system. When salvaging medications, note the medication name, quantity, expiration date, and apparent storage condition. Prioritize medications nearing critical shortage (antibiotics, painkillers) and those with critical uses (cardiac, diabetes, emergency).</p>
+</div>
+</section>
+<section id="pharmaceutical-storage">
+<h2>Pharmaceutical Storage Requirements</h2>
+<p>Proper storage extends medication life and reduces degradation risk.</p>
+<h3>Temperature Control</h3>
+<p><strong>Optimal storage:</strong> 15–25°C (room temperature is acceptable)</p>
+<p><strong>Degradation increases with temperature:</strong></p>
+<ul>
+<li>At 25°C: baseline degradation rate</li>
+<li>At 35°C: 2–3x faster degradation</li>
+<li>At 45°C: 5–10x faster degradation</li>
+</ul>
+<p><strong>Implication:</strong> Medications salvaged from refrigerated areas (pharmacy freezers, vaccine storage) likely maintain stability longer. Store salvaged medications in the coolest available location.</p>
+<p><strong>Problem substances:</strong></p>
+<ul>
+<li>Insulin and biologics: must be refrigerated (2–8°C) or they degrade rapidly</li>
+<li>Nitroglycerin: sensitive to heat and light; store in original opaque, glass bottles</li>
+<li>Epinephrine: store away from light; heat exposure reduces potency</li>
+</ul>
+<h3>Light Protection</h3>
+<p>Most medications photodegrade if exposed to direct sunlight or bright artificial light.</p>
+<ul>
+<li>Store in dark containers (opaque plastic or amber glass)</li>
+<li>Keep away from windows and direct light sources</li>
+<li>Store in interior closets, cellars, or dark shelves</li>
+<li>Wrap transparent containers in cloth or paper for long-term storage</li>
+</ul>
+<h3>Moisture Control</h3>
+<p>Moisture causes tablet dissolution, capsule degradation, and bacterial growth in suspensions.</p>
+<ul>
+<li>Store in sealed containers with desiccants (silica gel, dry rice)</li>
+<li>Keep away from bathrooms and damp areas</li>
+<li>Store below ground level if possible (naturally drier)</li>
+<li>Replace desiccants every 6–12 months if stored long-term</li>
+<li>Store liquid medications (syrups, suspensions) in sealed bottles; use immediately after opening</li>
+</ul>
+<h3>Organization and Labeling</h3>
+<ul>
+<li>Label salvaged medications with original name, dosage, and salvage date</li>
+<li>Group by category (antibiotics, painkillers, cardiac, etc.) for rapid access</li>
+<li>Keep an inventory list with quantity, storage location, and expiration date</li>
+<li>Rotate stock: use older medications first</li>
+<li>Check inventory quarterly for visible degradation</li>
+</ul>
+</section>
+<section id="medication-identification">
+<h2>Medication Identification Without Original Packaging</h2>
+<p>Salvaged medications may be loose tablets or in unlabeled bottles. Identifying them is critical for safe use.</p>
+<h3>Tablet and Capsule Markings</h3>
+<p>Almost all commercial tablets and capsules bear imprinted codes that can be looked up to identify the medication.</p>
+<p><strong>How to identify:</strong></p>
+<ol>
+<li>Locate the imprinted code (letters and/or numbers on the tablet surface)</li>
+<li>Note the color, shape, and size</li>
+<li>If possible, consult a pharmaceutical reference (pill identifier book, internet if available)</li>
+<li>Alternative: ask experienced medical personnel to identify by appearance</li>
+</ol>
+<p><strong>Reference sources:</strong></p>
+<ul>
+<li>Pill identifier guides (printed reference books salvaged from pharmacies)</li>
+<li>Pharmacy staff or medical professionals with visual memory</li>
+<li>Comparison with known medications (if you have labeled examples)</li>
+</ul>
+<p><strong>Important:</strong> Misidentification of medication can be serious. When in doubt, err on the side of caution. Do not administer a medication you cannot confidently identify.</p>
+<h3>Liquid Medications</h3>
+<p><strong>Suspensions and syrups:</strong></p>
+<ul>
+<li>Color, smell, and label (if present) may indicate type</li>
+<li>Bacterial growth (cloudiness, mold, foul smell) = discard immediately</li>
+<li>Separation of ingredients = normal for some suspensions; gentle shaking may restore uniformity</li>
+<li>Discard if any visible mold, growth, or contamination</li>
+</ul>
+<p><strong>Injectables:</strong></p>
+<ul>
+<li>Discoloration or cloudiness = likely degradation or contamination; discard</li>
+<li>Crystals or precipitate = discard</li>
+<li>Visible label = use if label is readable and medication is intact</li>
+</ul>
+<h3>Dosage Estimation</h3>
+<p>If you identify a medication but lack dosage guidance:</p>
+<ul>
+<li>Consult any available medical references or first-aid guides for standard doses</li>
+<li>Ask experienced medical personnel if available</li>
+<li>Use conservative dosing (lower rather than higher) if uncertain</li>
+<li>For antibiotics: typical oral doses are 250–500 mg per dose, 3–4 times daily (consult reference for the specific antibiotic)</li>
+<li>For pain: acetaminophen 500–1000 mg per dose; ibuprofen 200–400 mg per dose</li>
+</ul>
+<div class="warning">
+<p>Do not guess at medication identification or dosing. If you cannot reliably identify a medication, do not administer it. Misidentification can cause serious harm or death.</p>
+</div>
+</section>
+<section id="device-salvage-priorities">
+<h2>Medical Device Salvage Priorities</h2>
+<p>Hospital and surgical supply stockrooms contain dozens of device types. Prioritize by usefulness and durability.</p>
+<h3>Highest Priority Devices</h3>
+<p><strong>Surgical instruments (forceps, hemostats, scissors, scalpels, needle holders):</strong></p>
+<ul>
+<li>Durability: decades if properly stored and sterilized</li>
+<li>Salvage method: soak in dilute bleach, rinse, boil for sterilization</li>
+<li>Use: essential for wound closure, suturing, surgical procedures</li>
+</ul>
+<p><strong>IV supplies (catheters, tubing, bags, filters):</strong></p>
+<ul>
+<li>Durability: 1–5 years depending on storage and seal integrity</li>
+<li>Salvage method: use only if sealed and sterile; discard if packaging is damaged</li>
+<li>Use: critical for rehydration, medication delivery, blood transfusion</li>
+</ul>
+<p><strong>Oxygen delivery equipment (masks, nasal cannulas, tubing, portable cylinders):</strong></p>
+<ul>
+<li>Durability: decades for cylinders; years for tubing and masks</li>
+<li>Salvage method: inspect cylinders for damage; sterilize reusable masks and tubing</li>
+<li>Use: critical for respiratory support, especially for infants and elderly</li>
+</ul>
+<p><strong>Diagnostic instruments (stethoscopes, blood pressure cuffs, thermometers, otoscopes):</strong></p>
+<ul>
+<li>Durability: very high; mechanical instruments last decades</li>
+<li>Salvage method: clean with disinfectant; test before use</li>
+<li>Use: essential for basic diagnosis and vital sign monitoring</li>
+</ul>
+<p><strong>Sutures and wound closure supplies:</strong></p>
+<ul>
+<li>Durability: high if sealed and dry; sterile if unopened packaging is intact</li>
+<li>Salvage method: use only if sealed in original sterile packaging</li>
+<li>Use: essential for wound closure, surgical procedures</li>
+</ul>
+<h3>Medium Priority Devices</h3>
+<p><strong>Bandages, gauze, and wound dressings:</strong></p>
+<ul>
+<li>Durability: several years if sealed and dry</li>
+<li>Salvage method: use if sealed and free of visible mold/contamination</li>
+<li>Use: wound management, infection control</li>
+</ul>
+<p><strong>Splints, braces, and orthopedic equipment:</strong></p>
+<ul>
+<li>Durability: very high; plastic and metal components last decades</li>
+<li>Salvage method: clean and inspect for damage</li>
+<li>Use: fracture stabilization, mobility support</li>
+</ul>
+<p><strong>Examination lights and magnification equipment:</strong></p>
+<ul>
+<li>Durability: very high if electrical components are protected</li>
+<li>Salvage method: test electrical function; clean optics carefully</li>
+<li>Use: wound examination, surgical procedures, visual inspection</li>
+</ul>
+<p><strong>Specimen collection containers and lab supplies:</strong></p>
+<ul>
+<li>Durability: variable; depends on seal and storage</li>
+<li>Salvage method: discard if seal is broken or contamination suspected</li>
+<li>Use: blood collection, urine testing, microbiology</li>
+</ul>
+<h3>Lower Priority Devices (High Volume, Limited Utility)</h3>
+<p><strong>Electronic monitors (cardiac, blood oxygen, blood pressure monitors):</strong></p>
+<ul>
+<li>Durability: depends on battery and electrical integrity</li>
+<li>Salvage method: test function; replace batteries if available</li>
+<li>Use: useful but not essential; mechanical blood pressure cuffs are more reliable long-term</li>
+</ul>
+<p><strong>Mobility aids (crutches, canes, wheelchairs, walkers):</strong></p>
+<ul>
+<li>Durability: very high; simple mechanics</li>
+<li>Salvage method: clean and inspect; replace worn parts</li>
+<li>Use: important for disabled individuals, less critical for general survival</li>
+</ul>
+<p><strong>Enteral feeding supplies (nasogastric tubes, feeding bags, pumps):</strong></p>
+<ul>
+<li>Durability: variable; tubes degrade if exposed to light or heat</li>
+<li>Salvage method: inspect for cracks or discoloration; sterile if unopened</li>
+<li>Use: for patients unable to eat orally; specialized use case</li>
+</ul>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Hospital floor plan showing salvage priority zones with pharmacy as highest, operating room and surgical suite as high, laboratory as medium, and offices as low priority. Biohazard zones are clearly marked.">
+  <defs>
+    <style>
+      .priority-highest { fill: var(--accent); opacity: 0.7; }
+      .priority-high { fill: var(--accent2); opacity: 0.6; }
+      .priority-medium { fill: var(--surface); opacity: 0.4; }
+      .priority-low { fill: var(--muted); opacity: 0.3; }
+      .biohazard { fill: var(--danger, #d32f2f); opacity: 0.3; }
+      .wall { stroke: var(--border); stroke-width: 3; fill: none; }
+      .label { font-family: sans-serif; font-size: 13px; fill: var(--text); font-weight: bold; text-anchor: middle; }
+      .label-small { font-family: sans-serif; font-size: 11px; fill: var(--text); text-anchor: middle; }
+      .label-tiny { font-family: sans-serif; font-size: 10px; fill: var(--text); text-anchor: middle; opacity: 0.7; }
+      .warning-symbol { font-size: 20px; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+  </defs>
+
+  <!-- Building outline -->
+  <rect x="20" y="20" width="760" height="440" class="wall"/>
+
+  <!-- Title -->
+  <text x="400" y="490" class="label" font-size="14">Hospital Floor Plan: Salvage Priority Zones</text>
+
+  <!-- Entry -->
+  <rect x="20" y="200" width="15" height="40" fill="var(--border)"/>
+  <text x="10" y="230" class="label-small">Entry</text>
+
+  <!-- Pharmacy (Highest Priority) -->
+  <rect x="40" y="40" width="120" height="100" class="priority-highest"/>
+  <rect x="40" y="40" width="120" height="100" class="wall"/>
+  <text x="100" y="85" class="label">Pharmacy</text>
+  <text x="100" y="105" class="label-small">⭐⭐⭐</text>
+  <text x="100" y="120" class="label-tiny">Priority: HIGHEST</text>
+
+  <!-- Storage Room (High Priority) -->
+  <rect x="40" y="160" width="120" height="100" class="priority-high"/>
+  <rect x="40" y="160" width="120" height="100" class="wall"/>
+  <text x="100" y="200" class="label">Supply</text>
+  <text x="100" y="218" class="label">Storage</text>
+  <text x="100" y="235" class="label-small">⭐⭐</text>
+
+  <!-- Operating Room (High Priority + Biohazard) -->
+  <rect x="180" y="40" width="140" height="100" class="biohazard"/>
+  <rect x="180" y="40" width="140" height="100" class="priority-high"/>
+  <rect x="180" y="40" width="140" height="100" class="wall"/>
+  <text x="250" y="80" class="label">Operating</text>
+  <text x="250" y="100" class="label">Room</text>
+  <text x="250" y="120" class="label-tiny">Biohazard!</text>
+  <text x="250" y="130" class="warning-symbol">☣️</text>
+
+  <!-- Surgical Suite (High Priority + Biohazard) -->
+  <rect x="340" y="40" width="140" height="100" class="biohazard"/>
+  <rect x="340" y="40" width="140" height="100" class="priority-high"/>
+  <rect x="340" y="40" width="140" height="100" class="wall"/>
+  <text x="410" y="80" class="label">Surgical</text>
+  <text x="410" y="100" class="label">Suite</text>
+  <text x="410" y="120" class="label-tiny">Biohazard!</text>
+  <text x="410" y="130" class="warning-symbol">☣️</text>
+
+  <!-- Laboratory (Medium Priority + Biohazard) -->
+  <rect x="500" y="40" width="120" height="100" class="biohazard"/>
+  <rect x="500" y="40" width="120" height="100" class="priority-medium"/>
+  <rect x="500" y="40" width="120" height="100" class="wall"/>
+  <text x="560" y="80" class="label">Lab</text>
+  <text x="560" y="100" class="label">Biohazard!</text>
+  <text x="560" y="120" class="label-tiny">⭐</text>
+  <text x="560" y="130" class="warning-symbol">☣️</text>
+
+  <!-- Radiology (Medium Priority + Hazard) -->
+  <rect x="640" y="40" width="120" height="100" class="priority-medium"/>
+  <rect x="640" y="40" width="120" height="100" class="wall"/>
+  <text x="700" y="80" class="label">Radiology</text>
+  <text x="700" y="100" class="label">⚠️</text>
+  <text x="700" y="120" class="label-tiny">Radiation</text>
+
+  <!-- Patient Wards (Medium Priority + Biohazard) -->
+  <rect x="180" y="160" width="140" height="100" class="biohazard"/>
+  <rect x="180" y="160" width="140" height="100" class="priority-medium"/>
+  <rect x="180" y="160" width="140" height="100" class="wall"/>
+  <text x="250" y="200" class="label">Patient</text>
+  <text x="250" y="220" class="label">Wards</text>
+  <text x="250" y="240" class="label-tiny">Moderate hazard</text>
+
+  <!-- Physical Therapy (Low Priority) -->
+  <rect x="340" y="160" width="140" height="100" class="priority-low"/>
+  <rect x="340" y="160" width="140" height="100" class="wall"/>
+  <text x="410" y="200" class="label">Physical</text>
+  <text x="410" y="220" class="label">Therapy</text>
+  <text x="410" y="240" class="label-small">⭐</text>
+
+  <!-- Administrative Offices (Low Priority) -->
+  <rect x="500" y="160" width="260" height="100" class="priority-low"/>
+  <rect x="500" y="160" width="260" height="100" class="wall"/>
+  <text x="630" y="200" class="label">Administrative</text>
+  <text x="630" y="220" class="label">Offices</text>
+  <text x="630" y="240" class="label-tiny">Low priority</text>
+
+  <!-- Basement/Storage -->
+  <rect x="40" y="280" width="360" height="140" class="priority-medium"/>
+  <rect x="40" y="280" width="360" height="140" class="wall"/>
+  <text x="220" y="330" class="label">Basement Storage</text>
+  <text x="220" y="350" class="label-small">(Medications, Equipment)</text>
+  <text x="220" y="368" class="label-tiny">Check for water damage, mold</text>
+
+  <!-- Utility/Maintenance (Low Priority) -->
+  <rect x="420" y="280" width="340" height="140" class="priority-low"/>
+  <rect x="420" y="280" width="340" height="140" class="wall"/>
+  <text x="590" y="330" class="label">Utility & Maintenance</text>
+  <text x="590" y="350" class="label-small">HVAC, Generators, Plumbing</text>
+  <text x="590" y="368" class="label-tiny">Low salvage value</text>
+
+  <!-- Legend -->
+  <g transform="translate(50, 440)">
+    <text x="0" y="0" class="label" font-size="11" font-weight="normal" text-anchor="start">Legend:</text>
+
+    <rect x="130" y="-10" width="16" height="16" class="priority-highest"/>
+    <text x="155" y="-2" class="label-tiny" text-anchor="start">Highest Priority</text>
+
+    <rect x="290" y="-10" width="16" height="16" class="priority-high"/>
+    <text x="315" y="-2" class="label-tiny" text-anchor="start">High Priority</text>
+
+    <rect x="430" y="-10" width="16" height="16" class="priority-medium"/>
+    <text x="455" y="-2" class="label-tiny" text-anchor="start">Medium Priority</text>
+
+    <rect x="570" y="-10" width="16" height="16" class="priority-low"/>
+    <text x="595" y="-2" class="label-tiny" text-anchor="start">Low Priority</text>
+
+    <rect x="130" y="8" width="16" height="16" class="biohazard"/>
+    <text x="155" y="16" class="label-tiny" text-anchor="start">Biohazard Zone</text>
+  </g>
+
+</svg>
+</p>
+</section>
+<section id="instrument-sterilization">
+<h2>Sterilization of Salvaged Instruments</h2>
+<p>Reusing surgical instruments requires rigorous sterilization to prevent infection.</p>
+<h3>Cleaning Before Sterilization</h3>
+<p><strong>Manual cleaning (required before all sterilization methods):</strong></p>
+<ol>
+<li>Soak instruments in 0.5% bleach solution for 10 minutes (kills most pathogens)</li>
+<li>Scrub with a brush under running water to remove visible blood, tissue, and debris</li>
+<li>Rinse thoroughly with clean water (3–4 rinses; chlorine smell should fade)</li>
+<li>Inspect for remaining contamination; repeat if necessary</li>
+</ol>
+<p><strong>For heavily contaminated instruments:</strong></p>
+<ul>
+<li>Soak longer (15–30 minutes) in bleach solution</li>
+<li>Use a soft brush to avoid damaging instrument edges</li>
+<li>For needle holders and forceps: open and close repeatedly while soaking to reach internal surfaces</li>
+</ul>
+<h3>Sterilization Methods</h3>
+<p><strong>Boiling (most accessible method):</strong></p>
+<ol>
+<li>Fill a large pot with water</li>
+<li>Bring to a rolling boil</li>
+<li>Place clean instruments in the boiling water</li>
+<li>Boil for 15–20 minutes (longer for heavily contaminated items)</li>
+<li>Remove with sterilized tongs or forceps</li>
+<li>Allow to cool on a clean, sterile cloth</li>
+<li>Store in a sealed container until use</li>
+</ol>
+<p><strong>Pressure cooking (faster, more thorough):</strong></p>
+<ol>
+<li>Place 1 cup of water in the bottom of the pressure cooker</li>
+<li>Put a rack or trivet in the bottom</li>
+<li>Place clean instruments on the rack</li>
+<li>Seal the cooker; bring to pressure (15 PSI)</li>
+<li>Maintain pressure for 3 minutes</li>
+<li>Allow pressure to release naturally</li>
+<li>Remove instruments and cool on sterile cloth</li>
+</ol>
+<p><strong>Dry heat (oven):</strong></p>
+<ol>
+<li>Place clean instruments on a baking sheet lined with aluminum foil</li>
+<li>Heat oven to 160°C (320°F)</li>
+<li>Bake for 2 hours (longer for larger items)</li>
+<li>Allow to cool in the oven</li>
+<li>Transfer to sealed container</li>
+<li>Note: dry heat is slower and less reliable than wet heat</li>
+</ol>
+<p><strong>Chemical sterilization (if heat is unavailable):</strong></p>
+<ol>
+<li>Submerge instruments in 70% alcohol or 0.5% bleach solution</li>
+<li>Soak for 30 minutes (alcohol) or 1 hour (bleach)</li>
+<li>Rinse thoroughly with sterile water if bleach is used</li>
+<li>Allow to air-dry on a sterile cloth</li>
+<li>Use immediately; instruments are not stable after chemical sterilization</li>
+</ol>
+<h3>Preventing Re-Contamination After Sterilization</h3>
+<ul>
+<li>Store sterilized instruments in sealed, clean containers (glass jars, metal boxes)</li>
+<li>Line containers with sterile cloth</li>
+<li>Label with sterilization date</li>
+<li>Use within 1 month if stored in dry, cool conditions</li>
+<li>Re-sterilize before use if storage conditions were uncertain (heat, humidity, dust)</li>
+</ul>
+<div class="info-box">
+<p>Effective sterilization requires clean instruments first. Do not skip the cleaning step; sterilization methods only kill pathogens, they do not remove visible contamination (blood, tissue, dirt). Clean first, then sterilize.</p>
+</div>
+</section>
+<section id="radiation-hazards">
+<h2>X-Ray and Imaging Equipment: Radiation Hazards</h2>
+<p>Hospital radiology departments contain diagnostic X-ray equipment and, less commonly, radioactive sources. Salvaging imaging equipment requires special care.</p>
+<h3>X-Ray Machine Assessment</h3>
+<p><strong>Safety approach:</strong></p>
+<ul>
+<li>Do not attempt to remove large X-ray equipment; specialized training is required</li>
+<li>X-ray generators are only dangerous when powered on; unplugged equipment is generally safe</li>
+<li>Structural damage to X-ray tube housing increases radiation risk significantly</li>
+</ul>
+<p><strong>When equipment can be safely salvaged:</strong></p>
+<ul>
+<li>Portable X-ray machines (if undamaged) may be salvageable by qualified technicians</li>
+<li>X-ray film and protective lead aprons are safe to salvage</li>
+<li>Film processing chemicals (if sealed) can be used safely with proper precautions</li>
+</ul>
+<p><strong>When to avoid:</strong></p>
+<ul>
+<li>Any X-ray equipment with visible damage to the tube housing</li>
+<li>Equipment that cannot be reliably turned off or disabled</li>
+<li>Any equipment with active warning labels indicating radioactive material</li>
+<li>Fluoroscopy equipment (continuous radiation exposure risk)</li>
+</ul>
+<h3>Radioactive Material Warning Signs</h3>
+<ul>
+<li>Trefoil symbol (three-bladed radiation hazard symbol)</li>
+<li>Labels stating &quot;Radioactive Material,&quot; &quot;Caution: Radiation Area,&quot; or &quot;High Radiation Area&quot;</li>
+<li>Medical isotope containers (molybdenum-99, technetium-99m generators)</li>
+<li>Sealed radiation sources (brachytherapy seeds, cobalt sources)</li>
+</ul>
+<p><strong>If found, do NOT touch or attempt to salvage.</strong> Radioactive materials require licensed disposal and specialist handling. Mark the location and report to radiation safety authorities if they exist.</p>
+<h3>Safe Salvage from Radiology Departments</h3>
+<p><strong>Lead aprons and protective gear:</strong></p>
+<ul>
+<li>Durability: decades if not bent or creased</li>
+<li>Inspection: feel for cracks or separation in lead layers</li>
+<li>Use: wear during diagnostic X-ray procedures to protect from scattered radiation</li>
+</ul>
+<p><strong>X-ray film and unexposed film stock:</strong></p>
+<ul>
+<li>Durability: high if protected from heat and light</li>
+<li>Inspection: check expiration date; film older than 10 years may be less sensitive</li>
+<li>Use: diagnostic imaging; less critical if digital alternatives are available</li>
+</ul>
+<p><strong>Film processing chemicals (if sealed):</strong></p>
+<ul>
+<li>Developer and fixer solutions can be salvaged if containers are intact</li>
+<li>Follow original instruction labels for dilution and use</li>
+<li>Discard if container is leaking or corroded</li>
+</ul>
+</section>
+<section id="controlled-substances">
+<h2>Controlled Substance Handling and Security</h2>
+<p>Pharmaceutical stockrooms may contain scheduled drugs (opioids, benzodiazepines, stimulants). These carry special considerations.</p>
+<h3>Legal and Safety Considerations</h3>
+<p>In most jurisdictions, possession of prescription medications is legal for personal use, but:</p>
+<ul>
+<li>Distribution of prescription or controlled substances without a license is illegal</li>
+<li>Possession with intent to distribute carries criminal penalties</li>
+<li>Improper storage and handling create overdose and addiction risks</li>
+<li>Children and non-intended users may access medications, causing harm</li>
+</ul>
+<h3>Salvage Decisions for Controlled Substances</h3>
+<p><strong>Consider salvaging if:</strong></p>
+<ul>
+<li>You have injured or medically vulnerable people who may need pain relief</li>
+<li>You have trained medical personnel who can appropriately administer medications</li>
+<li>You can secure medications in locked containers away from unauthorized access</li>
+</ul>
+<p><strong>Consider NOT salvaging if:</strong></p>
+<ul>
+<li>You lack medical expertise to administer appropriately</li>
+<li>You lack secure storage to prevent theft or accidental access by children</li>
+<li>Your community is at risk of violence or instability (drugs become targets for theft or coercion)</li>
+</ul>
+<h3>Secure Storage of Controlled Substances</h3>
+<ul>
+<li>Keep in a locked container (cabinet, safe, or wooden box with a lock)</li>
+<li>Store in a location known only to 2–3 responsible people</li>
+<li>Maintain an inventory log (medication name, quantity, date dispensed, patient, administering person)</li>
+<li>Dispose of unused medication by burial in a remote location or burning (if legal in your area)</li>
+</ul>
+<div class="warning">
+<p>Do not keep large quantities of prescription opioids or benzodiazepines in salvaged stockpiles. These are theft targets and addiction risks. Use them for legitimate medical purposes only, then dispose of remainder by secure means.</p>
+</div>
+</section>
+<section id="vaccine-salvage">
+<h2>Vaccine Cold Chain Recovery</h2>
+<p>Vaccines are temperature-sensitive biologics that lose efficacy if exposed to heat or freezing. Salvaging vaccines requires assessing cold chain integrity.</p>
+<h3>Cold Chain Integrity Assessment</h3>
+<p><strong>Safe to salvage if:</strong></p>
+<ul>
+<li>Vaccines were stored in a continuous-duty refrigerator (no power loss during your absence)</li>
+<li>Temperature logs show storage between 2–8°C consistently</li>
+<li>Freezer unit intact and sealed; no signs of frost or water damage</li>
+<li>Vaccines still frozen if they were frozen vaccines (varicella, measles, rubella, MMR)</li>
+</ul>
+<p><strong>Unsafe to salvage if:</strong></p>
+<ul>
+<li>Unknown storage history (how long were they without refrigeration?)</li>
+<li>Visible ice crystal formation (freezing damages some vaccines: diphtheria, pertussis, tetanus)</li>
+<li>Visible leakage or damage to vial seals</li>
+<li>Frostbite or discoloration of vaccine fluid</li>
+</ul>
+<h3>Salvage Procedure</h3>
+<ol>
+<li>Verify cold storage equipment is functional or can be made functional</li>
+<li>Transfer vaccines to appropriate temperature storage immediately upon salvage</li>
+<li>Establish a temperature log; record readings daily for at least 1 week</li>
+<li>Do not use vaccines if temperature excursions (freezing or &gt;8°C) are suspected</li>
+<li>If possible, consult with medical personnel for viability assessment</li>
+</ol>
+<h3>Long-Term Vaccine Storage</h3>
+<ul>
+<li>Maintain continuous refrigeration (2–8°C)</li>
+<li>Use vaccines in order of expiration date (FIFO: first in, first out)</li>
+<li>Do not re-freeze thawed vaccines</li>
+<li>Maintain temperature logs and expiration date records</li>
+<li>Discard vaccines after expiration date or if cold chain is broken</li>
+</ul>
+</section>
+<section id="veterinary-crossover">
+<h2>Veterinary Medication Crossover Guide</h2>
+<p>Veterinary pharmaceuticals are often chemically identical to human medications and can be repurposed in survival scenarios.</p>
+<h3>Common Veterinary-to-Human Medications</h3>
+<table>
+<thead>
+<tr>
+<th>Veterinary Use</th>
+<th>Human Equivalent</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amoxicillin (veterinary powder)</td>
+<td>Amoxicillin (human)</td>
+<td>Same molecule; dosing is weight-based</td>
+</tr>
+<tr>
+<td>Doxycycline (vet)</td>
+<td>Doxycycline (human)</td>
+<td>Identical; watch for expiration</td>
+</tr>
+<tr>
+<td>Metronidazole (vet)</td>
+<td>Metronidazole (human)</td>
+<td>Same antibiotic; taste is bitter</td>
+</tr>
+<tr>
+<td>Ibuprofen (vet)</td>
+<td>Ibuprofen (human)</td>
+<td>Identical; veterinary form often higher concentration</td>
+</tr>
+<tr>
+<td>Acetaminophen (vet)</td>
+<td>Acetaminophen (human)</td>
+<td>Same molecule; standard dosing applies</td>
+</tr>
+<tr>
+<td>Epinephrine (vet)</td>
+<td>Epinephrine (human)</td>
+<td>Critical: confirm concentration (1:1000 vs 1:10,000)</td>
+</tr>
+</tbody>
+</table>
+<h3>Dosage Conversion</h3>
+<p>Veterinary medications are typically dosed by animal weight. To repurpose for humans:</p>
+<ol>
+<li>Identify the medication and its concentration (e.g., &quot;Amoxicillin 250 mg/mL&quot;)</li>
+<li>Look up standard human dose (e.g., &quot;Amoxicillin 500 mg per dose&quot;)</li>
+<li>Calculate volume: volume = desired dose / concentration</li>
+<li>Example: 500 mg ÷ 250 mg/mL = 2 mL per dose</li>
+</ol>
+<p><strong>Rule of thumb:</strong> For oral medications, human dosing is usually 500 mg to 1 gram per dose, 3–4 times daily (consult reference guides for the specific medication).</p>
+<h3>Warnings</h3>
+<p><strong>Do NOT use veterinary medications if:</strong></p>
+<ul>
+<li>Formulation includes additives harmful to humans (e.g., heartworm prevention chemicals added to antibiotics)</li>
+<li>Concentration is significantly different from human formulations</li>
+<li>You cannot identify the medication with certainty</li>
+<li>Expiration date is unknown or very old</li>
+</ul>
+<p><strong>Veterinary medications have lower regulatory oversight than human medications</strong>, so purity and sterility standards may differ. Use as a last resort if human medications are unavailable.</p>
+</section>
+<section id="pharmaceutical-manufacturing">
+<h2>Salvaging Pharmaceutical Manufacturing Equipment</h2>
+<p>Small-scale pharmaceutical manufacturing equipment (pill presses, capsule fillers, mixing vessels) is salvageable but requires expertise to use.</p>
+<h3>High-Value Equipment</h3>
+<ul>
+<li><strong>Tablet/capsule presses:</strong> Can repurpose common supplements or medications if you obtain the correct dies</li>
+<li><strong>Mortar and pestle:</strong> For grinding and mixing pharmaceutical powders</li>
+<li><strong>Measuring scales:</strong> Accurate weights (±0.01g) are essential for correct dosing</li>
+<li><strong>pH testing equipment:</strong> For assessing pharmaceutical solution quality</li>
+<li><strong>Distillation apparatus:</strong> For producing pharmaceutical-grade alcohol or extracting plant medicines</li>
+</ul>
+<h3>When to Salvage</h3>
+<p>Attempt pharmaceutical manufacturing only if:</p>
+<ul>
+<li>You have trained personnel with pharmaceutical or chemistry background</li>
+<li>You have reliable source materials (raw chemicals, plant sources)</li>
+<li>You have ability to test products for purity and potency</li>
+<li>You have sterilization capability (autoclaves, boiling)</li>
+</ul>
+<h3>When NOT to Salvage</h3>
+<ul>
+<li>Attempting to manufacture complex medications (antibiotics, antivirals) without advanced chemistry knowledge is dangerous and futile; these require expensive precursors and complex synthesis</li>
+<li>Small-scale manufacturing of oral medications (tablets, capsules) is feasible only with accurate scales and proper equipment</li>
+<li>Do not attempt to manufacture injectable medications without pharmaceutical training and sterilization capability</li>
+</ul>
+<p><strong>Realistic manufacturing focus:</strong> Supplementary medications (vitamin tablets, herbal remedies) and repurposing existing medications (reformulating tablets into injectable solutions) are feasible. Full pharmaceutical synthesis is not.</p>
+</section>
+<section id="safety-summary">
+<h2>Biohazard Area Safety Protocols: Summary Checklist</h2>
+<h3>Before Entering Any Abandoned Medical Facility</h3>
+<ul>
+<li>[ ] Assess structural integrity from outside; do not enter if roof or walls show major damage</li>
+<li>[ ] Identify biohazard zones (high-risk areas: ORs, labs, isolation rooms)</li>
+<li>[ ] Prepare appropriate PPE (N95 minimum; full suit for high-biohazard areas)</li>
+<li>[ ] Brief all team members on exit procedures and hazard signals</li>
+<li>[ ] Establish a perimeter and lookout position outside the facility</li>
+<li>[ ] Plan time limit (2–4 hours maximum; fatigue increases accidents)</li>
+</ul>
+<h3>During Salvage Operations</h3>
+<ul>
+<li>[ ] Move slowly and deliberately; avoid disturbing settled dust or debris</li>
+<li>[ ] Do not open sealed containers until you can examine contents carefully</li>
+<li>[ ] Remove only items that are clearly identifiable and safe</li>
+<li>[ ] Stop immediately if respiratory distress, dizziness, or chemical smell intensifies</li>
+<li>[ ] Periodically exit for fresh air (every 30–60 minutes in high-biohazard areas)</li>
+</ul>
+<h3>After Exiting</h3>
+<ul>
+<li>[ ] Remove and dispose of outer PPE before leaving the contamination zone</li>
+<li>[ ] Decontaminate hands and exposed skin immediately</li>
+<li>[ ] Change clothes and wash them separately from other laundry</li>
+<li>[ ] Shower if possible; at minimum, wash face and neck</li>
+<li>[ ] Monitor for symptoms over the next 24–48 hours (respiratory distress, fever, rash)</li>
+</ul>
+</section>
+<section id="key-principles">
+<h2>Key Principles Summary</h2>
+<ul>
+<li><strong>Medication expiration is conservative.</strong> Most medications remain effective for years past expiration if stored properly, but some (tetracycline, nitroglycerin, insulin, epinephrine) degrade dangerously.</li>
+<li><strong>Proper storage extends medication life.</strong> Cool, dark, dry conditions preserve medications far longer than exposure to heat, light, or moisture.</li>
+<li><strong>Sterilization requires cleaning first.</strong> Sterilization kills pathogens; it does not remove visible contamination.</li>
+<li><strong>Surgical instruments are durable.</strong> With proper sterilization, salvaged instruments can be safely reused for decades.</li>
+<li><strong>Biohazard assessment is non-negotiable.</strong> Do not enter medical facilities without assessing structural safety and biohazard levels first.</li>
+<li><strong>Mold is the most common hazard.</strong> Avoid moldy areas; spores aerosolize and cause respiratory infection.</li>
+<li><strong>Pharmaceutical identification is critical.</strong> Misidentification of medications can be serious; when in doubt, do not use.</li>
+<li><strong>Radioactive materials require specialist handling.</strong> Do not attempt to salvage equipment with radiation warning symbols.</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="medications.html">Essential Medications</a>
+<a href="first-aid.html">First Aid and Emergency Response</a>
+<a href="infection-control.html">Infection Control</a>
+<a href="sterilization-methods.html">Sterilization Methods</a>
+<a href="chemical-safety.html">Chemical Safety</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

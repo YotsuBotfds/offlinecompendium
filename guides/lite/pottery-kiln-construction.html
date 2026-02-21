@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/pottery-kiln-construction.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pottery Kiln Construction</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Building &amp; Engineering</span> ›
+<span>Pottery Kiln Construction</span>
+</div>
+
+
+<h1>Pottery Kiln Construction</h1>
+<p class="subtitle">Build open-pit firing setups, updraft kilns, downdraft kilns, and crossdraft kilns. Covers clay body selection, dome/arch construction, firebox design, temperature zones (600°C-1300°C).</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~9 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#kiln-types-comparison">Kiln Types Comparison</a></li>
+<li><a href="#open-pit-firing">Open-Pit Firing</a></li>
+<li><a href="#updraft-kiln">Updraft Kiln Construction</a></li>
+<li><a href="#downdraft-kiln">Downdraft Kiln</a></li>
+<li><a href="#crossdraft-kiln">Crossdraft Kiln</a></li>
+<li><a href="#materials-selection">Materials Selection</a></li>
+<li><a href="#firebox-design">Firebox Design</a></li>
+<li><a href="#flue-sizing">Flue Sizing</a></li>
+<li><a href="#temperature-zones-firing">Temperature Zones &amp; Firing Schedule</a></li>
+<li><a href="#loading-stacking">Loading &amp; Stacking</a></li>
+<li><a href="#cooling-protocols">Cooling Protocols</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Pottery kilns are the heat engines that transform clay into durable ceramic. Different kiln designs suit different purposes: pit firings for earthenware (600–900°C), updraft kilns for stoneware (1200°C), and sophisticated downdraft/crossdraft kilns for precise temperature control. A single kiln burn can fire 50–500+ pieces depending on capacity, so investment in a good kiln pays off quickly in a production pottery.</p>
+<p>This guide covers <strong>four proven kiln designs</strong> suited to low-tech environments, from simple open-pit firings (minimum materials) to sophisticated crossdraft kilns (higher efficiency, more control). Each design is explained with construction details, firing schedules, and troubleshooting.</p>
+<div class="info-box">
+<p><strong>Typical kiln temperatures:</strong></p>
+<ul>
+<li><strong>Earthenware (bisque):</strong> 600–900°C</li>
+<li><strong>Stoneware (cone 6–10):</strong> 1200–1300°C</li>
+<li><strong>Porcelain (cone 11+):</strong> 1300°C+</li>
+<li><strong>Raku:</strong> 900–1100°C (fast, unpredictable)</li>
+</ul>
+<p>Cone numbers (Orton cones) are self-supporting sticks that melt at specific temperatures — a standard way to monitor firing progress. Cone 6 = 1222°C; Cone 10 = 1305°C.</p>
+</div>
+</section>
+<section id="kiln-types-comparison">
+<h2>Kiln Types Comparison</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Kiln Type</strong></th>
+<th><strong>Max Temp</strong></th>
+<th><strong>Firing Time</strong></th>
+<th><strong>Fuel Efficiency</strong></th>
+<th><strong>Build Complexity</strong></th>
+<th><strong>Best For</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Open pit</strong></td>
+<td>600–900°C</td>
+<td>4–8 hours</td>
+<td>Low</td>
+<td>Very simple</td>
+<td>Earthenware, pottery (primitive method)</td>
+</tr>
+<tr>
+<td><strong>Updraft</strong></td>
+<td>900–1250°C</td>
+<td>12–24 hours</td>
+<td>Moderate</td>
+<td>Simple</td>
+<td>Bisque, low-temp stoneware</td>
+</tr>
+<tr>
+<td><strong>Downdraft</strong></td>
+<td>1200–1350°C</td>
+<td>18–36 hours</td>
+<td>High</td>
+<td>Moderate</td>
+<td>Production stoneware/porcelain</td>
+</tr>
+<tr>
+<td><strong>Crossdraft</strong></td>
+<td>1200–1350°C</td>
+<td>18–36 hours</td>
+<td>Very high</td>
+<td>Complex</td>
+<td>Fine art pottery, consistent results</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="open-pit-firing">
+<h2>Open-Pit Firing</h2>
+<p>The simplest kiln is no kiln at all — a bonfire. Open-pit firings reach 600–900°C, sufficient for earthenware and low-fire ceramics.</p>
+<p><strong>Site selection:</strong></p>
+<ul>
+<li>Level, well-drained ground</li>
+<li>Clear 30+ feet of dry vegetation</li>
+<li>Close water source for cooling after firing</li>
+<li>Sheltered from strong wind (wind cools the pit and increases fuel consumption)</li>
+</ul>
+<p><strong>Pit preparation:</strong></p>
+<ol>
+<li>Dig a shallow depression (8–12 inches deep, 3–4 feet diameter) or use a flat area with a low clay/rock border</li>
+<li>Line with coarse sand or clay to prevent ash from mixing with pottery</li>
+<li>Arrange pieces in loose stacks, leaving gaps for air circulation</li>
+</ol>
+<p><strong>Loading arrangement (critical):</strong></p>
+<ul>
+<li>Place less temperature-sensitive ware (tiles, rough vessels) at edges where temps are cooler (700–800°C)</li>
+<li>Place refined pieces (small bottles, thin walls) in the center where heat is most intense (850–900°C)</li>
+<li>Avoid stacking pieces directly on top of each other — support on stilts or shells (calcium carbonate creates posts that disintegrate after firing)</li>
+</ul>
+<p><strong>Fueling:</strong></p>
+<ul>
+<li>Use <strong>fast-burning wood</strong> (pine, split into 2–4 inch diameter pieces) to reach temperature quickly</li>
+<li>Arrange wood in a <strong>crisscross pattern</strong> to allow airflow</li>
+<li>Ignite from the center; let flames rise and consume wood gradually over 4–8 hours</li>
+<li>The pottery should be <strong>completely surrounded by hot coals and ash</strong>, not exposed to open flame (direct flames cause spotting and uneven heating)</li>
+</ul>
+<p><strong>Temperature monitoring:</strong></p>
+<ul>
+<li>Ore cone (homemade): Push a small clay cone (½ inch tall, hand-molded) into a gap where you can see it. When it bends, peak temperature has been reached.</li>
+<li><strong>Color observation:</strong> Pottery interior surface should glow orange-red (800°C) to bright orange (900°C).</li>
+</ul>
+<p><strong>Cooling:</strong></p>
+<ul>
+<li><strong>Critical:</strong> Do NOT spray water or expose pottery to air drafts while hot. Rapid cooling causes cracking.</li>
+<li>Let the pit cool for 6–12 hours; do not open or disturb</li>
+<li>Once cool, carefully excavate pottery from ash</li>
+</ul>
+<p><strong>Yield:</strong> 50–200 pieces depending on pit size and ware thickness.</p>
+<div class="tip">
+<p>Open-pit firing is unpredictable — some pieces will be under-fired (still slightly soft) and others over-fired (vitrified, darker). This variation is part of the aesthetic for primitive pottery.</p>
+</div>
+</section>
+<section id="updraft-kiln">
+<h2>Updraft Kiln Construction</h2>
+<p>An updraft kiln is a chimney-like structure where hot gases rise through the loading chamber and exit via a flue at the top. It's more efficient than pit firing and reaches 900–1250°C.</p>
+<p><strong>Materials:</strong></p>
+<ul>
+<li><strong>Firebrick:</strong> 100–200 standard firebricks (9 × 4.5 × 2.5 inches). High-alumina refractory preferred for top/chimney.</li>
+<li><strong>Refractory mortar:</strong> Clay-sand mix (2 parts fireclay, 1 part sand, 1 part Portland cement for strength)</li>
+<li><strong>Insulation:</strong> Kaolin fiber blanket or straw-clay mixture (optional, improves efficiency)</li>
+<li><strong>Castable refractory:</strong> For the firebox floor and bottom of chamber</li>
+<li><strong>Dampers and peepholes:</strong> Soft iron pieces and refractory plugs</li>
+</ul>
+<p><strong>Foundation and base:</strong></p>
+<ol>
+<li><strong>Dig a trench</strong> 18 inches deep, 2 feet wider than the kiln on all sides (to support the structure and prevent settling)</li>
+<li><strong>Pack the trench</strong> with gravel and level sand (4–6 inches) — this is the foundation</li>
+<li><strong>Mark the base outline:</strong> The main chamber should be roughly 3 feet wide × 4 feet long × 4 feet tall (adjustable to your firing volume)</li>
+</ol>
+<p><strong>Firebox (below main chamber):</strong></p>
+<ol>
+<li>Build the <strong>firebox walls</strong> with firebrick (3 bricks thick = 6.75 inches of insulation). This is where fuel is burned.</li>
+<li><strong>Firebox floor:</strong> Cast a 4-inch-thick slab of castable refractory over a metal grate (so ash falls below for easy removal). The grate prevents coal from blocking air intake.</li>
+<li><strong>Firebox dimensions:</strong> 2 feet wide × 1.5 feet deep × 2.5 feet tall (roughly). The size depends on your fuel type (wood, coal, gas).</li>
+<li><strong>Fireplace opening:</strong> Leave a 12-inch-wide × 18-inch-tall opening at the front for fuel loading and ash removal.</li>
+</ol>
+<p><strong>Main chamber (above firebox):</strong></p>
+<ol>
+<li><strong>Walls:</strong> Build up from the firebox in firebrick courses, maintaining 3-brick thickness (6.75 inches)</li>
+<li><strong>Interior dimensions:</strong> 3 × 4 feet base, 4 feet tall (this can hold 150–300 pieces depending on size)</li>
+<li><strong>Entrance arch:</strong> Construct a segmental arch (curved opening) at the firebox-to-chamber transition — this smoothly guides hot gases upward</li>
+<li><strong>Interior shelf (optional):</strong> A refractory shelf halfway up the chamber increases loading capacity (fire below and above the shelf)</li>
+<li><strong>Peepholes:</strong> Drill 1.5-inch holes at three heights (low, mid, high) in the front wall for temperature measurement with witness cones</li>
+</ol>
+<p><strong>Dome/top arch:</strong></p>
+<ol>
+<li>Span the main chamber with a semi-circular arch of firebrick. The arch must be perfectly symmetric — use a wooden form (circular segment) as a guide during construction.</li>
+<li><strong>Springline</strong> (where arch meets walls): Mark this line carefully; it's the critical load-bearing point.</li>
+<li><strong>Keystone:</strong> The center brick at the top of the arch locks everything in place. Install it last.</li>
+</ol>
+<p><strong>Flue and chimney:</strong></p>
+<ol>
+<li><strong>Main flue opening:</strong> Leave a 4-6-inch-square opening at the peak of the dome</li>
+<li><strong>Chimney pipe:</strong> Extend a metal or ceramic flue pipe 5–8 feet above the kiln top (height creates draft). The pipe draws hot gases upward, pulling fresh air through the firebox.</li>
+<li><strong>Damper:</strong> Install a metal or refractory plug near the base of the chimney (in a refractory socket). Closing the damper 50–75% at the end of the firing slows cooling and evens the soak temperature.</li>
+</ol>
+<p><strong>Kiln door:</strong></p>
+<p>Build a removable refractory brick plug for the main chamber opening, or use a metal frame with a clay-brick infill. The door should fit snugly to minimize cracks/gaps.</p>
+<p><strong>Firing procedure (updraft kiln):</strong></p>
+<p><strong>Hours 0–2 (Lighting phase):</strong></p>
+<ul>
+<li>Light a small wood fire in the firebox with kindling and dry wood (½-inch diameter pieces)</li>
+<li>Let flames establish; then gradually add larger pieces (1–2 inch diameter)</li>
+<li>Smoke should be visible at the peephole (gray/white) as the kiln warms</li>
+</ul>
+<p><strong>Hours 2–8 (Ramp-up):</strong></p>
+<ul>
+<li>Increase fuel rate steadily (not suddenly — thermal shock cracks the structure)</li>
+<li>Internal color at peepholes should shift from dark to dark red (600°C) to bright red (800°C)</li>
+<li>Load witness cones at each peephole height: low=Cone 6, mid=Cone 8, high=Cone 10 (this reveals temperature gradients)</li>
+</ul>
+<p><strong>Hours 8–18 (Main firing):</strong></p>
+<ul>
+<li>Maintain high fuel rate; keep the firebox actively burning</li>
+<li>Gases should roar through the kiln (audible draft)</li>
+<li>Peephole colors should approach orange-yellow (1100–1250°C)</li>
+<li>When cones start to bend, maintain temperature (called the &quot;soak&quot;) for 2–4 hours to even out temperature zones</li>
+</ul>
+<p><strong>Hours 18–24 (Cooling begins):</strong></p>
+<ul>
+<li>Shut down fuel supply; allow the fire to burn out naturally</li>
+<li><strong>Do NOT open the door.</strong> The kiln must cool slowly (12–24 hours minimum).</li>
+<li>Gradual cooling (1–2°C per minute, estimated) prevents cracking of large pieces and the kiln itself</li>
+</ul>
+<p><strong>Cooling phase (Day 2–3):</strong></p>
+<ul>
+<li>After 24 hours, open the peepholes slightly to accelerate cooling, but don't expose pottery to direct drafts</li>
+<li>After 36–48 hours, the exterior should be cool enough to touch (test with your palm on the exterior)</li>
+</ul>
+<div class="warning">
+<p>Do NOT splash water on a hot kiln or remove pieces early. Steam explosions and dunting (thermal shock cracking) will destroy work and the kiln.</p>
+</div>
+</section>
+<section id="downdraft-kiln">
+<h2>Downdraft Kiln</h2>
+<p>A downdraft kiln redirects hot gases downward and then out a flue below the main chamber. This creates more uniform heating (hotter at the top, less cool spots at the bottom) and allows higher peak temperatures.</p>
+<p><strong>Key difference from updraft:</strong></p>
+<p>In an updraft kiln, the hottest zone is midway up the chamber (where flames enter) and cooler at top and bottom. In a downdraft, heat is distributed more evenly because gases pass over the load twice: down the front, across the shelf, and back up the flue. This &quot;circulation&quot; irons out temperature differences.</p>
+<p><strong>Downdraft construction (modifications to updraft design):</strong></p>
+<ol>
+<li><strong>Flue location:</strong> Instead of exiting at the dome peak, the main flue is positioned at the <strong>floor level of the main chamber</strong> (or on the opposite side).</li>
+<li><strong>Return path:</strong> Gases are diverted by an arch or shelf arrangement to exit <strong>downward and sideways</strong> into a flue below the chamber floor.</li>
+<li><strong>External flue:</strong> The exhaust flue runs outside the kiln, below grade or alongside, and exits 5–8 feet away (not directly above the kiln, which would allow hot air to re-enter).</li>
+</ol>
+<p><strong>Advantage:</strong> More even temperatures; better for production pottery where consistency matters.</p>
+<p><strong>Disadvantage:</strong> More complex construction (additional arch and flue). Higher build cost and risk of flue blockage.</p>
+</section>
+<section id="crossdraft-kiln">
+<h2>Crossdraft Kiln</h2>
+<p>A crossdraft kiln is a <strong>tunnel-like chamber</strong> where hot gases enter one side (firebox), travel horizontally across the load, and exit through a flue on the opposite side. This design is used by professional potters for its consistency and fuel efficiency.</p>
+<p><strong>Structure:</strong></p>
+<ul>
+<li><strong>Firebox:</strong> On the left side (or bottom); heats the floor</li>
+<li><strong>Main chamber:</strong> Horizontal tunnel, 2–3 feet wide × 2–3 feet tall × 6–8 feet long</li>
+<li><strong>Exit flue:</strong> On the right side (or top); gases drawn across the entire load</li>
+<li><strong>Chimney:</strong> 6–10 feet tall, creating strong draft</li>
+</ul>
+<p><strong>Firing:</strong></p>
+<p>Heat is drawn horizontally across the pottery, ensuring even exposure. Tall stacks can be loaded (floor to ceiling) and experience similar temperatures, unlike an updraft kiln where the top and bottom differ by 50–100°C.</p>
+<p><strong>Build complexity:</strong> Requires careful brickwork to span a long chamber without a supporting arch (though a tunnel arch is sometimes used). Not recommended for beginners.</p>
+</section>
+<section id="materials-selection">
+<h2>Materials Selection</h2>
+<p><strong>Firebrick types:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Density</th>
+<th>Max Temp</th>
+<th>Cost</th>
+<th>Best Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Firebrick (standard)</strong></td>
+<td>130 lbs/cf</td>
+<td>1400°C</td>
+<td>$</td>
+<td>Firebox, lower kiln</td>
+</tr>
+<tr>
+<td><strong>High-alumina (insulating)</strong></td>
+<td>40–60 lbs/cf</td>
+<td>1600°C</td>
+<td>$$</td>
+<td>Arch, upper chamber</td>
+</tr>
+<tr>
+<td><strong>Kaolin fiber</strong></td>
+<td>10 lbs/cf</td>
+<td>1400°C</td>
+<td>$$$</td>
+<td>Insulation blanket (expensive)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Refractory mortar:</strong></p>
+<ul>
+<li><strong>Recipe:</strong> 2 parts fireclay (powder) + 1 part sand + 1 part Portland cement + water to paste consistency</li>
+<li><strong>Application:</strong> Joints should be ⅛ inch (thin) for maximum strength</li>
+<li><strong>Alternative:</strong> Air-set clay (no cement) shrinks less and works in traditional builds, but needs complete drying before firing</li>
+</ul>
+<p><strong>Castable refractory:</strong></p>
+<ul>
+<li><strong>Use:</strong> Firebox floor, burner blocks, high-wear areas</li>
+<li><strong>Installation:</strong> Mix with water, pour into forms, allow to set for 24+ hours before firing</li>
+</ul>
+</section>
+<section id="firebox-design">
+<h2>Firebox Design</h2>
+<p>The firebox is where fuel burns and must withstand the hottest temperatures (often 100–200°C hotter than the main chamber).</p>
+<p><strong>Fuel input:</strong></p>
+<ul>
+<li><strong>Wood firing:</strong> Firebox opening 12–18 inches wide × 18–24 inches tall. Wood is pushed in horizontally.</li>
+<li><strong>Coal firing:</strong> Opening can be smaller (10 × 10 inches); coal is denser and burns more intensely.</li>
+<li><strong>Gas firing:</strong> Burner mounted low in the firebox; opening can be sealed once flames establish.</li>
+</ul>
+<p><strong>Air supply:</strong></p>
+<ul>
+<li><strong>Grate:</strong> Metal bars or a cast iron grate prevents coal ash from blocking air</li>
+<li><strong>Undergrate ash pit:</strong> Below the grate, 12–18 inches deep, for ash collection and removal (keeps the grate clear)</li>
+<li><strong>Draft management:</strong> The firebox must have adequate height (2–3 feet) so flames detach from the grate and rise into the main chamber, rather than blasting directly at the load</li>
+</ul>
+<p><strong>Temperature zonation:</strong></p>
+<ul>
+<li>The firebox operating temperature is 1300–1400°C (hot flames and embers)</li>
+<li>The main chamber stays 200–300°C cooler (due to energy loss in radiation and the distance from the heat source)</li>
+<li>This is <strong>intentional</strong> — pottery cannot withstand 1400°C, but it benefits from the radiant heat from the firebox arch (which glows visibly)</li>
+</ul>
+</section>
+<section id="flue-sizing">
+<h2>Flue Sizing</h2>
+<p>Flue diameter and height directly affect draft strength and burn rate.</p>
+<p><strong>Rule of thumb:</strong></p>
+<ul>
+<li><strong>Flue diameter:</strong> 4–6 inches for small kilns (3 × 4 feet chamber)</li>
+<li><strong>Flue height:</strong> 5–10 feet above the kiln top. Each additional foot adds ~0.05 inches of water pressure (draft).</li>
+<li><strong>Flue area:</strong> Should be roughly 1 square inch of flue per 100 cubic inches of chamber volume (very approximate).</li>
+</ul>
+<p><strong>Too large a flue:</strong> Fire draws faster, fuel consumption increases, temperature peaks faster, and soak phase becomes harder to control.</p>
+<p><strong>Too small a flue:</strong> Insufficient draft; fires burn lazily and never reach peak temperature. Gases back up into the kiln.</p>
+<p><strong>Flue blockage:</strong> Carbon buildup and ash in the flue reduces draft. Clean flues monthly during heavy firing season.</p>
+</section>
+<section id="temperature-zones-firing">
+<h2>Temperature Zones &amp; Firing Schedule</h2>
+<p><strong>Firing phases (typical stoneware firing, 18–24 hours):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Hours</th>
+<th>Target Zone</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Candling</strong></td>
+<td>0–1</td>
+<td>&lt;200°C</td>
+<td>Very slow fuel; dry moisture from pottery</td>
+</tr>
+<tr>
+<td><strong>Ramp-up</strong></td>
+<td>1–8</td>
+<td>200–1100°C</td>
+<td>Steady fuel increase; avoid thermal shock</td>
+</tr>
+<tr>
+<td><strong>Main fire</strong></td>
+<td>8–18</td>
+<td>1100–1300°C</td>
+<td>Full fuel rate; maintain high heat</td>
+</tr>
+<tr>
+<td><strong>Soak</strong></td>
+<td>18–20</td>
+<td>1300°C</td>
+<td>Minimize fuel; let temperature stabilize</td>
+</tr>
+<tr>
+<td><strong>Cool-down</strong></td>
+<td>20–48+</td>
+<td>1300→500°C</td>
+<td>Shut fuel; slow natural cooling</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bisque firing (lower temp, faster):</strong></p>
+<ul>
+<li>Same phases, but peak at 900–1000°C</li>
+<li>Total time: 12–16 hours</li>
+<li>Used to fire greenware to an intermediate hardness before glazing</li>
+</ul>
+<p><strong>Glaze firing (high temp, long soak):</strong></p>
+<ul>
+<li>Peak at 1250–1300°C</li>
+<li>Soak for 4–6 hours to mature glazes</li>
+<li>Total time: 24–36 hours</li>
+</ul>
+<div class="tip">
+<p><strong>Witness cones:</strong> Always load Orton cones at the exit end of your kiln (where temperature is typically coolest). When the target cone bends, your loading area has reached the desired temperature. Rotate cones slightly — if the tip is perfectly vertical before firing and bent at any angle after, it's been exposed to the target temperature.</p>
+</div>
+</section>
+<section id="loading-stacking">
+<h2>Loading &amp; Stacking</h2>
+<p><strong>Arrangement principles:</strong></p>
+<ul>
+<li><strong>Glazed ware:</strong> Glazed pieces must NOT touch the kiln shelf directly (glaze fuses to the shelf). Use stilts or setters (shallow refractory dishes).</li>
+<li><strong>Unglazed bisque:</strong> Can sit directly on refractory shelf.</li>
+<li><strong>Stacking height:</strong> Pieces can be stacked vertically (one on top of another) if they don't touch glaze-to-glaze (which fuses them together).</li>
+<li><strong>Heat gradient:</strong> Hottest zone is usually at the kiln's center/middle height. Place your most important pieces (finest glazes, thinnest walls) there. Rougher work at the cooler extremes.</li>
+<li><strong>Air circulation:</strong> Leave small gaps (½ inch) between pieces to allow hot gas to flow around them. Dense packing = temperature dead spots.</li>
+</ul>
+<p><strong>Kiln shelves (setters):</strong></p>
+<ul>
+<li><strong>Material:</strong> High-alumina refractory or ceramic shell</li>
+<li><strong>Spacing:</strong> Use supports (stilts, props, or shelf posts) to hold the shelf 3–4 inches above the shelf below</li>
+<li><strong>Thickness:</strong> ½–1 inch minimum (thicker = better heat distribution, heavier to handle)</li>
+</ul>
+<p><strong>Stilts and trivets:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Prevent glazed ware from fusing to the shelf</li>
+<li><strong>DIY stilts:</strong> Stack three small clay balls or pebbles into a tripod arrangement; set the piece on top. These disintegrate during firing and wash away afterward.</li>
+<li><strong>Commercial stilts:</strong> Bought from pottery suppliers; reusable.</li>
+</ul>
+<div class="warning">
+<p>Never stack unglazed greenware in a kiln — it will collapse or slump during firing. Always bisque-fire first (900–1000°C) to harden the clay before applying glaze and final firing.</p>
+</div>
+</section>
+<section id="cooling-protocols">
+<h2>Cooling Protocols</h2>
+<p><strong>Critical:</strong> Cooling rate strongly affects final glaze surface and piece strength.</p>
+<p><strong>Slow cooling (preferred for production):</strong></p>
+<ul>
+<li>Shut fuel and allow natural cooling for 24–48 hours</li>
+<li>Do not open the kiln until it's cool enough to touch on the exterior</li>
+<li>This ensures glazes mature evenly and pieces anneal (internal stresses relax)</li>
+</ul>
+<p><strong>Fast cooling (raku firing only):</strong></p>
+<ul>
+<li>Raku is a special technique where pieces are removed while red-hot and plunged in reduction (sawdust, leaves) or water</li>
+<li>Creates unpredictable colors and metallic effects</li>
+<li>Dangerous and requires special safety precautions; not recommended for beginners</li>
+</ul>
+<p><strong>Crack prevention:</strong></p>
+<ul>
+<li>Never open the kiln while hot (steam + temperature shock = dunting, catastrophic cracking)</li>
+<li>Never spray water on a hot kiln exterior (thermal shock to the structure)</li>
+<li>For very thick pieces, cool even slower (48–72 hours) to avoid internal stress cracks</li>
+</ul>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kiln won't reach temperature</strong></td>
+<td>Flue blocked, insufficient fuel, poor draft</td>
+<td>Clean chimney/flue. Increase fuel supply. Increase chimney height. Check for cracks (air leaks).</td>
+</tr>
+<tr>
+<td><strong>Temperature stratification (top much hotter than bottom)</strong></td>
+<td>Updraft kiln design; hot gases rush up</td>
+<td>Add shelves/props to create turbulence. Use a downdraft design for next kiln.</td>
+</tr>
+<tr>
+<td><strong>Pieces crack during cooling</strong></td>
+<td>Too-rapid cooling or thermal shock</td>
+<td>Soak longer to even temperatures before cooling. Cool more slowly (24+ hours).</td>
+</tr>
+<tr>
+<td><strong>Glaze crawls or beads up (doesn't stick)</strong></td>
+<td>Glaze incompatibility or dry biscuit</td>
+<td>Test glaze on sample tiles first. Spray-mist bisque before glazing to hydrate surface.</td>
+</tr>
+<tr>
+<td><strong>Kiln cracks develop in the arch</strong></td>
+<td>Uneven heating, settling, or poor mortar joints</td>
+<td>Rebuild with thicker joints or stronger refractory mortar. Slow thermal cycling (ramp up/down gradually). Reinforce with iron bands.</td>
+</tr>
+<tr>
+<td><strong>Pottery comes out underfired (soft)</strong></td>
+<td>Peak temp not reached or soak too short</td>
+<td>Increase fuel rate, verify flue is clear, extend soak phase. Use witness cones to measure actual temp.</td>
+</tr>
+<tr>
+<td><strong>Pottery comes out overfired (vitrified, warped)</strong></td>
+<td>Temperature too high or soak too long</td>
+<td>Reduce fuel rate, shorten soak, or use cones to hit target more precisely. Check pyrometer calibration.</td>
+</tr>
+<tr>
+<td><strong>Kiln shelves slump or warp</strong></td>
+<td>Overheating, improper support, poor refractory</td>
+<td>Replace with higher-alumina shelves. Add more props to distribute load. Allow longer cool-down between firings.</td>
+</tr>
+<tr>
+<td><strong>Flue clogs with buildup</strong></td>
+<td>Ash, carbon, or glaze condensate</td>
+<td>Clean flue every 10–20 firings. Use a stiff brush or compressed air. Install a cleanout door at the base.</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="pottery-ceramics.html">Pottery &amp; Ceramics</a>
+<a href="brick-making-fired-earth.html">Brick Making &amp; Fired Earth</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

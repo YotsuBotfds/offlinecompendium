@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/biodiesel-production.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biodiesel Production from Waste Oils</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Power Generation</span> ›
+<span>Biodiesel Production from Waste Oils</span>
+</div>
+
+
+<h1>Biodiesel Production from Waste Oils</h1>
+<p class="subtitle">Transesterification process for converting waste vegetable oils and animal fats into biodiesel fuel, including feedstock selection, chemistry, catalyst ratios, washing and purification, cold-weather performance, and storage.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~13 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#feedstock">Feedstock Selection and Preparation</a></li>
+<li><a href="#transesterification-chemistry">Transesterification Chemistry and Reactions</a></li>
+<li><a href="#production-procedure">Biodiesel Production Procedure</a></li>
+<li><a href="#purification">Purification and Washing</a></li>
+<li><a href="#diy-quality-testing">DIY Quality Testing Methods</a></li>
+<li><a href="#cold-weather">Cold Weather Performance and Adjustments</a></li>
+<li><a href="#storage">Storage and Long-Term Stability</a></li>
+<li><a href="#glycerin">Byproduct: Glycerin Recovery and Use</a></li>
+<li><a href="#safety-summary">Safety Summary</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Biodiesel—fatty acid methyl esters (FAME)—is a renewable diesel replacement that can be produced from waste vegetable oils, animal fats, and fresh oil crops using a simple transesterification chemical process. A diesel engine modified only slightly (or unmodified, in many cases) can burn biodiesel with minimal performance loss and substantial reduction in petroleum consumption. This guide covers feedstock selection, the chemistry and mechanics of transesterification, catalyst and methanol ratios, the three-stage purification process (wash, neutralize, dry), quality testing, cold-weather adjustments, and safe storage.</p>
+<p>Producing biodiesel at scale requires basic chemical knowledge and strict adherence to safety protocols. Improper handling of methanol (toxic and flammable) and sodium hydroxide (caustic) creates serious hazards. This guide assumes operation at small-batch scale (50–200 liters per batch) for personal or small-community use.</p>
+</section>
+<section id="feedstock">
+<h2>Feedstock Selection and Preparation</h2>
+<h3>Oil Types and Sourcing</h3>
+<p>Three primary feedstock categories exist:</p>
+<p><strong>Waste vegetable oil (WVO):</strong> The most accessible feedstock for small-scale biodiesel production. Sources include restaurants, commercial kitchens, food processing facilities, and household used cooking oil. Advantages: free or very low cost, locally available, diverts waste. Disadvantages: variable quality, often contains food residue and water, requires extensive pre-treatment.</p>
+<p><strong>Virgin vegetable oils:</strong> Fresh, unheated oils from oil crops (soybean, rapeseed, palm, sunflower) are chemically pure but expensive. Use this route only if WVO is unavailable or the project has surplus capital for fuel production.</p>
+<p><strong>Animal fats:</strong> Tallow (beef fat) and lard (pork fat) are often available from butchers, rendering facilities, or slaughterhouses. They are cheap but require careful handling due to higher saturated fat content (see cold-weather performance section). Tallow is often contaminated with meat particles and water; extensive straining and drying is necessary.</p>
+<h3>Pre-Treatment of Waste Oil</h3>
+<p>Waste oil contains water, food particles, and polar compounds that interfere with transesterification. Pre-treat as follows:</p>
+<ol>
+<li>
+<p><strong>Settling and straining:</strong> Pour waste oil into a container and allow it to settle for 24–48 hours. Large food particles and water settle to the bottom. Carefully decant the clear oil into a new container, leaving behind sediment.</p>
+</li>
+<li>
+<p><strong>Fine filtration:</strong> Pass the oil through a fine-mesh filter (100 mesh or finer, ~150 µm) or coffee filters (4 layers) into a clean container. This removes suspended particles.</p>
+</li>
+<li>
+<p><strong>Water removal:</strong> Heat the oil to 100–110°C for 2–4 hours in a covered pot (to prevent water from splattering and to drive off dissolved water as steam). The oil should appear clear and dry. This step is critical; even 1–2% residual water interferes with transesterification and produces emulsified, unusable product.</p>
+</li>
+<li>
+<p><strong>Acid number (TAN) testing:</strong> Measure the total acid number to determine if the oil has degraded (high TAN indicates free fatty acids, which consume catalyst and reduce yield). See the Quality Testing section for TAN measurement.</p>
+</li>
+</ol>
+<div class="warning">
+<p>Never heat oil above 150°C in an unattended pot. Oil can ignite if overheated. Use a thermometer to monitor temperature and remove from heat at 110°C.</p>
+</div>
+<h3>Feedstock Acid Number Acceptance</h3>
+<p>The acid number indicates how much the oil has degraded:</p>
+<ul>
+<li><strong>Fresh oil (TAN &lt;0.5 mg KOH/g):</strong> Requires only standard transesterification catalyst.</li>
+<li><strong>WVO (TAN 0.5–2 mg KOH/g):</strong> Requires a pre-esterification step (see below).</li>
+<li><strong>Severely degraded oil (TAN &gt;2 mg KOH/g):</strong> Better used for soap or compost than biodiesel; esterification becomes economically inefficient.</li>
+</ul>
+<p>For WVO with TAN 0.5–2, perform a pre-esterification step:</p>
+<div class="danger">
+<p><strong>Sulfuric Acid Safety — Industrial-Grade Precautions Required:</strong>
+Concentrated H₂SO₄ causes immediate, severe chemical burns on contact with skin, eyes, or mucous membranes. It is exothermic when mixed with water — ALWAYS add acid to water (never water to acid) to prevent violent boiling and spattering.</p>
+<p><strong>Mandatory equipment:</strong> Chemical splash goggles (not safety glasses), face shield, acid-resistant gloves (neoprene or nitrile, NOT latex), chemical-resistant apron, closed-toe shoes. An eyewash station with at least 15 minutes of flushing capacity MUST be within 10 seconds of the work area. A safety shower is strongly recommended.</p>
+<p><strong>Spill response:</strong> Neutralize small spills with sodium bicarbonate (baking soda). Do NOT attempt to neutralize large spills — evacuate and ventilate. H₂SO₄ reacts with organic materials and can generate heat and toxic fumes.</p>
+</div>
+<ol>
+<li>Mix the oil with 1–2% H₂SO₄ (concentrated sulfuric acid, by weight of oil) and heat to 50°C</li>
+<li>Stir gently for 1 hour</li>
+<li>Heat to 100°C and hold for 2–4 hours (this drives off water)</li>
+<li>Cool to 50°C, allow the aqueous acid layer to settle, and carefully decant the oil</li>
+<li>Repeat the acid number test; if TAN is now &lt;0.5, proceed with standard transesterification</li>
+</ol>
+</section>
+<section id="transesterification-chemistry">
+<h2>Transesterification Chemistry and Reactions</h2>
+<h3>The Transesterification Reaction</h3>
+<p>Biodiesel production proceeds via transesterification, in which triglycerides (the main component of oils and fats) react with methanol in the presence of a strong base catalyst:</p>
+<p><strong>Triglyceride + 3 Methanol → 3 Fatty Acid Methyl Esters (FAME) + 1 Glycerin</strong></p>
+<p>The reaction is reversible and reaches equilibrium. To drive completion toward products, use excess methanol (ratio 6:1 to 9:1 methanol:oil by molar amount, typically 0.25–0.3 liters methanol per liter of oil).</p>
+<h3>Catalyst Selection and Dosing</h3>
+<p><strong>Sodium hydroxide (NaOH):</strong> The most common catalyst for small-scale production.</p>
+<ul>
+<li>Typical dosing: 3.5–5 g NaOH per liter of oil (0.35–0.5% by weight)</li>
+<li>Advantages: cheap, readily available, fast reaction</li>
+<li>Disadvantages: reacts with free fatty acids, consuming catalyst; reacts with atmospheric CO₂ if stored incorrectly</li>
+</ul>
+<p><strong>Potassium hydroxide (KOH):</strong> Alternative to sodium hydroxide.</p>
+<ul>
+<li>Typical dosing: 5–7 g KOH per liter of oil (0.5–0.7% by weight)</li>
+<li>Advantages: slower reaction (more control), less sensitive to free fatty acids</li>
+<li>Disadvantages: more expensive, hygroscopic (absorbs water)</li>
+</ul>
+<p><strong>Methoxide preparation:</strong> For precise dosing and faster reaction, prepare sodium or potassium methoxide:</p>
+<ol>
+<li>Dissolve NaOH or KOH in dry methanol (e.g., dissolve 5 g NaOH in 250 mL of methanol)</li>
+<li>Stir until fully dissolved; the solution becomes warm</li>
+<li>Add immediately to the oil (do not let methoxide sit, as it absorbs CO₂ and water from air)</li>
+</ol>
+<p>For simplified procedures without methoxide, dissolve the solid catalyst directly in the oil and methanol mixture (see procedure below).</p>
+<h3>Determining Catalyst Dose from Acid Number</h3>
+<p>If the acid number is known, calculate the exact catalyst needed:</p>
+<p><strong>NaOH required (grams) = [Acid Number (mg KOH/g) / 1000] × [Oil mass (g) / 0.56] + [5.0 × Oil volume (mL) / 1000]</strong></p>
+<p>The first term compensates for free fatty acids; the second term is the standard catalyst dose. For WVO with TAN 1.5 and 100 L of oil:</p>
+<p>NaOH = [1.5 / 1000] × [100,000 / 0.56] + [5.0 × 100,000 / 1000] = 267 + 500 = 767 g ≈ 7.7 g/liter</p>
+</section>
+<section id="production-procedure">
+<h2>Biodiesel Production Procedure</h2>
+<h3>Equipment and Safety Setup</h3>
+<p><strong>Essential equipment:</strong></p>
+<ul>
+<li>Thermometer (0–100°C range)</li>
+<li>Stainless steel or food-grade plastic bucket (10–20 L capacity)</li>
+<li>Immersion heater or hot water bath for temperature control</li>
+<li>Mixing paddle or stick (wood or plastic)</li>
+<li>Separatory funnel (for decanting distinct layers)</li>
+<li>Graduated cylinders and measuring cups</li>
+<li>Fine-mesh strainer</li>
+<li>pH test strips or digital pH meter</li>
+</ul>
+<p><strong>Safety gear:</strong></p>
+<ul>
+<li>Chemical-resistant gloves (nitrile breaks down in methanol; use butyl rubber or neoprene)</li>
+<li>Face shield and safety glasses</li>
+<li>Respirator with organic vapor and acid gas cartridges</li>
+<li>Apron and long sleeves</li>
+<li>Work in a well-ventilated area (outdoors or in a hood)</li>
+</ul>
+<p><strong>Hazardous materials:</strong></p>
+<ul>
+<li>Methanol: flammable, toxic by inhalation and skin absorption</li>
+<li>Sodium hydroxide: caustic; causes chemical burns</li>
+<li>Biodiesel byproducts: contain unreacted methanol (volatile and toxic)</li>
+</ul>
+<p>Keep a fire extinguisher (ABC type) and a spill kit (absorbent material, neutralizing agent for caustics) within arm's reach.</p>
+<h3>Standard Transesterification Procedure</h3>
+<p><strong>Step 1: Pre-heat oil</strong></p>
+<ul>
+<li>Pour ~50 L of cleaned oil into a bucket</li>
+<li>Heat to 50–55°C using an immersion heater or hot water bath</li>
+<li>Stir gently to ensure even temperature</li>
+</ul>
+<p><strong>Step 2: Prepare methoxide</strong></p>
+<ul>
+<li>Measure 13–15 liters of anhydrous methanol (must be dry; if exposed to air for &gt;1 day, discard)</li>
+<li>If using solid catalyst: dissolve 250–350 g of NaOH in the methanol (use less for high-acid oils, more for low-acid)</li>
+<li>If using pre-made methoxide: use ~250 mL of pre-dissolved methoxide solution</li>
+<li>The mixture becomes warm due to the exothermic reaction</li>
+</ul>
+<p><strong>Step 3: Mix methoxide into oil</strong></p>
+<ul>
+<li>Slowly pour the methoxide solution into the warm oil while stirring steadily</li>
+<li>Do NOT add oil to methoxide (reverse addition causes violent spattering)</li>
+<li>Stir continuously for 1–2 minutes until the mixture appears homogeneous (opaque amber color)</li>
+</ul>
+<p><strong>Step 4: React</strong></p>
+<ul>
+<li>Maintain temperature at 50–55°C for 1–2 hours</li>
+<li>Stir occasionally (every 15–20 minutes) to keep the reaction mixture moving</li>
+<li>The mixture will gradually become less opaque as the reaction proceeds</li>
+<li>After 2 hours, the reaction is typically &gt;95% complete</li>
+</ul>
+<p><strong>Step 5: Cool and settle</strong></p>
+<ul>
+<li>Turn off the heater and allow the mixture to cool to room temperature (4–8 hours)</li>
+<li>Do not agitate; allow the mixture to separate into two distinct layers:
+<ul>
+<li><strong>Top layer:</strong> Biodiesel (lighter, amber-colored)</li>
+<li><strong>Bottom layer:</strong> Glycerin, excess methanol, catalyst byproducts (darker, denser)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Step 6: Separate layers</strong></p>
+<ul>
+<li>Using a separatory funnel, carefully drain the bottom layer (glycerin) into a waste container</li>
+<li>The glycerin can be recovered and refined into soap or compost feedstock</li>
+<li>Retain the top layer (biodiesel + some residual methanol and soap)</li>
+</ul>
+<div class="tip">
+<p>The separation is cleaner if you allow 12–24 hours of settling before separating. If the two layers are slow to separate, add a small amount of distilled water (50 mL per 50 L batch) to increase density difference; allow another 4 hours of settling.</p>
+</div>
+</section>
+<section id="purification">
+<h2>Purification and Washing</h2>
+<p>Raw biodiesel from the transesterification step contains dissolved methanol, residual catalyst, soap (from catalyst hydrolysis), and glycerin traces. Three washes remove these contaminants.</p>
+<h3>Water Washing Procedure</h3>
+<p><strong>Step 1: Warm wash</strong></p>
+<ul>
+<li>Add 50–100 mL of distilled water per liter of raw biodiesel</li>
+<li>Heat the mixture to 50–55°C</li>
+<li>Stir vigorously for 2–3 minutes to disperse the water throughout the biodiesel</li>
+<li>Stop stirring and allow to settle for 4–8 hours</li>
+</ul>
+<p><strong>Step 2: Drain and repeat</strong></p>
+<ul>
+<li>Drain the bottom layer (water + contaminants) into a waste container</li>
+<li>Add fresh distilled water again (50–100 mL/L) and repeat the wash at 50–55°C</li>
+<li>Perform a second and third wash (total of three washes)</li>
+</ul>
+<p><strong>Step 3: Final rinse at low temperature</strong></p>
+<ul>
+<li>After the third wash, add distilled water at room temperature</li>
+<li>Stir gently and allow to settle for 12–24 hours</li>
+<li>This cold rinse removes any residual soap</li>
+</ul>
+<p><strong>Step 4: Drain final water</strong></p>
+<ul>
+<li>Once water and biodiesel separate completely (water sinks to the bottom), drain all water</li>
+</ul>
+<h3>Testing for Complete Washing</h3>
+<p>Incomplete washing leaves residual soap and catalyst, which causes filter plugging and corrosion. Test with the methylene blue test:</p>
+<ol>
+<li>Mix 10 mL of purified biodiesel with 10 mL of distilled water and shake vigorously</li>
+<li>Let settle for 5 minutes</li>
+<li>If the water layer remains clear or barely tinted, the biodiesel is clean</li>
+<li>If the water layer is distinctly blue-colored, soap remains; perform additional washes</li>
+</ol>
+<h3>Drying</h3>
+<p>After washing, small amounts of water remain emulsified or suspended in the biodiesel. Remove this by heating:</p>
+<ol>
+<li>Heat the biodiesel to 100–120°C under gentle ventilation (fume hood or outdoors)</li>
+<li>Allow water to evaporate as steam for 30–60 minutes</li>
+<li>Cool to room temperature</li>
+<li>Final biodiesel should be clear and free-flowing</li>
+</ol>
+<p>For large batches, use a rotary evaporator or vacuum drying. For small batches, gentle heat-and-vent is sufficient.</p>
+</section>
+<section id="diy-quality-testing">
+<h2>DIY Quality Testing Methods</h2>
+<p>Professional biodiesel quality testing requires specialized laboratory equipment. However, simple field tests enable assessment of key parameters without expensive instruments.</p>
+<h3>Wash Test (Water Clarity Method)</h3>
+<p>This test verifies that soap and excess catalyst have been removed during washing.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Pour 10 mL of purified biodiesel into a clear test tube or glass</li>
+<li>Add 10 mL of distilled water</li>
+<li>Cover and shake vigorously for 30 seconds</li>
+<li>Allow to settle for 5 minutes (water sinks to bottom)</li>
+<li>Observe color and clarity of water layer</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li><strong>Clear water:</strong> Good quality; washing complete</li>
+<li><strong>Slightly cloudy water:</strong> Acceptable; small amount of soap remains</li>
+<li><strong>Distinctly colored water (white, tan, blue-tinted):</strong> Excess soap present; perform additional wash cycles</li>
+<li><strong>Emulsified (water/biodiesel mix, cloudy throughout):</strong> Soap content too high; restart purification</li>
+</ul>
+<p>**Repeat the wash test after additional water washing until water layer remains clear.</p>
+<h3>27/3 Conversion Test</h3>
+<p>This test estimates transesterification conversion efficiency (percentage of oil converted to biodiesel).</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Heat 27 mL of purified biodiesel and 3 mL of distilled water to 50°C in test tube</li>
+<li>Shake vigorously for 1 minute</li>
+<li>Allow to settle for 10 minutes (two distinct layers form: water below, biodiesel above)</li>
+<li>Observe clarity of water layer and any precipitation in biodiesel</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li><strong>Clear water, clear biodiesel:</strong> Conversion 95%+ (excellent)</li>
+<li><strong>Slightly hazy water:</strong> Conversion 90-95% (good)</li>
+<li><strong>Cloudy water:</strong> Conversion 80-90% (acceptable)</li>
+<li><strong>Emulsified or white precipitate:</strong> Conversion &lt;80% (poor; re-process or discard)</li>
+</ul>
+<p><strong>Note:</strong> Incomplete conversion indicates unreacted triglycerides remaining in biodiesel, affecting engine performance and fuel quality.</p>
+<h3>Soap Test (Traditional &quot;Soap Bubble&quot; Method)</h3>
+<p>This test detects residual catalyst (lye) and soap in biodiesel.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Mix equal volumes (5 mL each) of purified biodiesel and distilled water in small container</li>
+<li>Add 1-2 drops of household vinegar (weak acetic acid)</li>
+<li>Shake vigorously for 30 seconds</li>
+<li>Observe for foam/bubbles formation</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li><strong>No foam:</strong> Catalyst removed; biodiesel is clean</li>
+<li><strong>Light foam that dissipates quickly:</strong> Minor soap content; acceptable</li>
+<li><strong>Persistent foam/suds:</strong> Excess soap/catalyst remains; perform additional water washing</li>
+</ul>
+<p><strong>Science:</strong> Vinegar neutralizes any remaining hydroxide catalyst (NaOH or KOH), causing a chemical reaction visible as foam if soap is present.</p>
+<h3>pH Testing with Improvised Indicators</h3>
+<p>No commercial pH strips? Create pH indicators from plant materials.</p>
+<p><strong>Cabbage Juice Indicator (for pH 4-8 range):</strong></p>
+<ol>
+<li>Chop red cabbage finely; add distilled water (2:1 water to cabbage by volume)</li>
+<li>Simmer 15 minutes until water turns purple-blue</li>
+<li>Strain through cloth; save colored liquid</li>
+<li>Add drops of biodiesel to cabbage juice sample; observe color change:
+<ul>
+<li><strong>Purple:</strong> pH 7 (neutral) — acceptable</li>
+<li><strong>Pink/red:</strong> pH &lt; 6 (acidic) — indicates free fatty acids or excess acid from previous esterification</li>
+<li><strong>Blue/green:</strong> pH &gt; 8 (basic) — indicates residual catalyst</li>
+<li><strong>Blue-purple:</strong> pH 8-9 — acceptable slight alkalinity</li>
+</ul>
+</li>
+</ol>
+<p><strong>Turmeric/Ginger Root Indicator (for pH 7-10+ range):</strong></p>
+<ol>
+<li>Grind dried turmeric or ginger root; soak in ethanol (spirits, if available) or water for 24 hours</li>
+<li>Strain; save liquid</li>
+<li>Mix with biodiesel sample; color changes indicate pH:
+<ul>
+<li><strong>Yellow:</strong> Neutral pH</li>
+<li><strong>Orange-red:</strong> Slightly basic (pH 8-9) — acceptable</li>
+<li><strong>Red-brown:</strong> More alkaline (pH 9-10) — excess catalyst present</li>
+</ul>
+</li>
+</ol>
+<p><strong>Target pH range:</strong> Biodiesel should be pH 6-8 (neutral to slightly acidic). PH &lt;5 indicates excessive free fatty acids; pH &gt;9 indicates residual catalyst.</p>
+<h3>Methanol Content Check</h3>
+<p>Residual methanol (volatile, toxic) must be removed. Simple evaporation test detects significant methanol presence.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Pour 5 mL biodiesel into clean glass dish in well-ventilated area (outdoors preferable)</li>
+<li>Mark liquid level with tape or pencil mark on outside of dish</li>
+<li>Allow to evaporate at room temperature for 1 hour</li>
+<li>Observe final volume; check for odor</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li><strong>No odor, minimal volume loss:</strong> Methanol absent; biodiesel is dry</li>
+<li><strong>Strong chemical/solvent smell:</strong> Significant methanol remaining; re-heat and dry batch</li>
+<li><strong>&gt;10% volume loss:</strong> Excessive methanol; biodiesel not suitable for use</li>
+</ul>
+<p><strong>Note:</strong> This method is qualitative (yes/no) rather than quantitative. If significant methanol odor is present, the batch requires additional drying.</p>
+<h3>Glycerin Settling Test</h3>
+<p>Excess glycerin remaining in biodiesel indicates incomplete separation or insufficient washing.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Pour biodiesel sample into clear glass cylinder (100 mL minimum)</li>
+<li>Mark initial level with tape</li>
+<li>Allow to stand undisturbed for 24 hours at room temperature</li>
+<li>Observe for sediment accumulation at bottom of cylinder</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li><strong>No visible sediment:</strong> &lt;0.02% glycerin (excellent)</li>
+<li><strong>Faint sediment layer &lt;1mm:</strong> 0.02-0.05% glycerin (acceptable)</li>
+<li><strong>Visible sediment layer &gt;1mm:</strong> &gt;0.05% glycerin (poor separation; inadequate washing)</li>
+<li><strong>Two distinct layers:</strong> Glycerin/water layer at bottom; insufficient separation</li>
+</ul>
+<p><strong>Note:</strong> ASTM standard allows maximum 0.24% glycerin in biodiesel. Excessive glycerin causes storage problems (gelling) and filter plugging in engines.</p>
+<h3>Cold Filter Plugging Point Test (Improvised)</h3>
+<p>This test approximates pour point and cold-flow properties without commercial equipment.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>
+<p>Fill test tube with biodiesel sample</p>
+</li>
+<li>
+<p>Place in freezer at lowest temperature setting (-18°C typical)</p>
+</li>
+<li>
+<p>Check every 15 minutes; observe for:</p>
+<ul>
+<li>Liquid thickening/slurring</li>
+<li>Crystal formation</li>
+<li>Loss of flow when tilted</li>
+</ul>
+</li>
+<li>
+<p>Record temperature at which flow stops</p>
+</li>
+<li>
+<p>Compare to winter ambient temperature in your region</p>
+</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li><strong>Remains pourable at expected winter low:</strong> Biodiesel suitable for use</li>
+<li><strong>Becomes cloudy/crystals form 5-10°C above winter low:</strong> Acceptable for season; may need heating</li>
+<li><strong>Becomes thick or gels at winter temperature:</strong> Will plug fuel lines; requires winterization or B20 blend</li>
+<li><strong>Gels well above winter temperature:</strong> Unsuitable for cold-weather use without modification</li>
+</ul>
+<h3>Visual Clarity Assessment</h3>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Pour biodiesel into clear glass container</li>
+<li>Hold up to light and observe:
+<ul>
+<li>Color (should be amber/golden-brown)</li>
+<li>Clarity (should be clear, not cloudy)</li>
+<li>Sediment (should be absent)</li>
+</ul>
+</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li><strong>Clear amber liquid:</strong> Good quality</li>
+<li><strong>Slightly hazy/cloudy:</strong> Minor contamination or water; acceptable</li>
+<li><strong>Dark brown or opaque:</strong> Oxidation, contamination, or degradation; monitor or discard</li>
+<li><strong>Visible particles:</strong> Contamination; filter through fine cloth and retest</li>
+<li><strong>Two layers visible:</strong> Water/glycerin separation incomplete; perform water washing again</li>
+</ul>
+<p><strong>Note:</strong> Darkness alone is not a defect (biodiesel naturally darkens with age), but sudden dark discoloration indicates oxidation or contamination.</p>
+<div class="tip">
+<p><strong>Simple Quality Protocol:</strong> After each production run, perform wash test, 27/3 test, and visual clarity check. These three tests provide good assurance of quality without specialized equipment. If all three tests pass, biodiesel is probably suitable for use. If any test shows poor results, perform corrective action (additional washing, re-drying, or reprocessing).</p>
+</div>
+</section>
+<section id="quality">
+<h3>Essential Tests for Engine Use</h3>
+<p><strong>Acid number (TAN):</strong> Indicates free fatty acids and residual catalyst.</p>
+<ul>
+<li><strong>Method:</strong> Titrate against KOH (standardized test, ASTM D664)</li>
+<li><strong>Acceptable range:</strong> &lt;0.5 mg KOH/g</li>
+<li><strong>DIY check:</strong> Add a few drops of biodiesel to distilled water; if it turns cloudy pink with phenolphthalein, excess soap remains</li>
+</ul>
+<p><strong>Kinematic viscosity:</strong> Affects injection and combustion in diesel engines.</p>
+<ul>
+<li><strong>Acceptable range:</strong> 3.5–5.0 cSt at 40°C (centistokes)</li>
+<li><strong>DIY check:</strong> At room temperature (~20°C), biodiesel should flow through a funnel slightly slower than mineral diesel but faster than honey; if it's much slower or forms a gel, the oil contains saturated fats (see cold-weather section)</li>
+</ul>
+<p><strong>Water content:</strong> Causes emulsification, corrosion, and microbial growth.</p>
+<ul>
+<li><strong>ASTM test:</strong> Karl Fischer titration (requires specialized equipment)</li>
+<li><strong>DIY check:</strong> Heat a small sample to 100°C; if it pops or spits, water is present; if steam rises visibly, excessive water remains</li>
+</ul>
+<p><strong>Residual methanol:</strong> Toxic and flammable; must be below 0.05% by volume.</p>
+<ul>
+<li><strong>ASTM test:</strong> Gas chromatography (requires lab equipment)</li>
+<li><strong>DIY check:</strong> Evaporate a small sample under a fume hood; if a strong solvent smell persists after 1 minute, methanol remains; re-heat and dry the batch</li>
+</ul>
+<h3>3/27 Test</h3>
+<p>A simple field test combines viscosity and cleanliness checks:</p>
+<ol>
+<li>Heat 3 mL of biodiesel and 27 mL of distilled water to 50°C in a test tube</li>
+<li>Shake vigorously for 1 minute</li>
+<li>Allow to settle for 10 minutes</li>
+<li>Observe the water layer:
+<ul>
+<li>Clear: good</li>
+<li>Slightly hazy: acceptable</li>
+<li>Cloudy or colored: soap or catalyst remains; re-wash</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="cold-weather">
+<h2>Cold Weather Performance and Adjustments</h2>
+<p>Biodiesel has a higher pour point (temperature at which it begins to gel) than mineral diesel, making it problematic in cold climates.</p>
+<h3>Saturated Fat Content and Viscosity</h3>
+<p>Pure soybean biodiesel gels at ~1°C; pure tallow biodiesel gels at ~10°C. This is because saturated fats (palmitic, stearic acid) solidify at low temperatures, while unsaturated fats (oleic, linoleic acid) remain liquid.</p>
+<p>To check if biodiesel will gel in your climate:</p>
+<ul>
+<li>Place a sample in a freezer at the expected winter low temperature</li>
+<li>If it remains pourable after 1 hour, it will work; if it thickens or gels, adjust per below</li>
+</ul>
+<h3>Blending Strategies</h3>
+<p><strong>B20 or B50 blend:</strong> Mix 20–50% biodiesel with 50–80% mineral diesel (petrodiesel). This lowers pour point substantially:</p>
+<ul>
+<li>B20 (20% biodiesel): Pour point typically ~-5°C (works in most temperate climates)</li>
+<li>B50 (50% biodiesel): Pour point typically ~-10°C (usable in cold climates)</li>
+<li>B100 (pure biodiesel): Pour point ~0–10°C depending on feedstock (suitable only for subtropical regions or heated storage)</li>
+</ul>
+<p><strong>Feedstock selection:</strong> Choose biodiesel made from oils with high unsaturated fat content:</p>
+<ul>
+<li><strong>Best:</strong> Rapeseed (pour point ~-20°C), sunflower (pour point ~-15°C)</li>
+<li><strong>Moderate:</strong> Soybean (pour point ~0°C), used vegetable oil blend (typically ~-5°C)</li>
+<li><strong>Worst:</strong> Tallow (pour point ~+10°C), palm oil (pour point ~+15°C)</li>
+</ul>
+<h3>Winterization and Additives</h3>
+<p>If pure biodiesel must be used in cold weather:</p>
+<ol>
+<li>
+<p><strong>Winterization:</strong> Pass the biodiesel through a fine filter while cooled to 5°C. Saturated fats crystallize and are removed by filtration, raising the usable low temperature by 5–10°C. Yield is reduced by 10–15%.</p>
+</li>
+<li>
+<p><strong>Pour point depressants:</strong> Add cetane improver (0.2–0.5% by volume) to lower viscosity at low temperature. These are proprietary blends; commercial examples include Fuel-Gard and Biobor.</p>
+</li>
+<li>
+<p><strong>Tank and fuel line heating:</strong> For stationary engines, wrap fuel lines with heating tape and insulate the fuel tank. For vehicles, use a fuel heater in the filter assembly.</p>
+</li>
+</ol>
+<h3>Engine Adjustments</h3>
+<p>Cold biodiesel reduces engine power output (lower energy density and slower combustion). Adjust:</p>
+<ul>
+<li><strong>Injection timing:</strong> Advance by 2–5° to compensate for slower flame speed</li>
+<li><strong>Fuel pressure:</strong> Increase by 10–20% if the injection pump allows</li>
+<li><strong>Glow plugs:</strong> Increase pre-heat time by 2–3 seconds for reliable cold starts</li>
+</ul>
+</section>
+<section id="storage">
+<h2>Storage and Long-Term Stability</h2>
+<p>Biodiesel oxidizes faster than mineral diesel, especially if exposed to air and light.</p>
+<h3>Storage Conditions</h3>
+<ul>
+<li><strong>Temperature:</strong> 10–20°C is ideal; avoid &gt;30°C (accelerates oxidation) or &lt;0°C (promotes crystallization of saturated components)</li>
+<li><strong>Containers:</strong> Use dark (opaque), food-grade plastic (HDPE) or stainless steel; avoid clear bottles and iron or copper containers (catalyze oxidation)</li>
+<li><strong>Ventilation:</strong> Seal tightly to minimize air exposure; use nitrogen purging for long-term storage if available</li>
+<li><strong>Additives:</strong> Add 0.05–0.1% (by volume) of Biobor or similar antioxidant to extend shelf life to 1–2 years; without additive, use within 6 months</li>
+</ul>
+<h3>Microbial Growth</h3>
+<p>Biodiesel stored in tanks with water present is prone to microbial (bacterial and fungal) contamination at the water-biodiesel interface. This clogs fuel filters and corrodes tank internals.</p>
+<ul>
+<li>Keep storage tanks dry</li>
+<li>For tanks in humid climates, vent through a desiccant cartridge (silica gel) to prevent moisture absorption</li>
+<li>Monthly visual inspections: biodiesel should be clear; if dark particles or sludge appear, contamination has begun—drain and re-filter</li>
+</ul>
+<h3>Blended Fuel (B20–B50) Storage</h3>
+<p>Blended fuels are more stable than pure biodiesel:</p>
+<ul>
+<li>B20: shelf life 1 year without additives; 2+ years with antioxidant</li>
+<li>B50: shelf life 6 months without additives; 18 months with antioxidant</li>
+</ul>
+<p>Mineral diesel acts as a preservative, extending the usable life of the blend.</p>
+</section>
+<section id="glycerin">
+<h2>Byproduct: Glycerin Recovery and Use</h2>
+<h3>Composition of Raw Glycerin</h3>
+<p>The bottom layer from transesterification is a mixture of:</p>
+<ul>
+<li>50–60% glycerin</li>
+<li>20–30% methanol (volatile, toxic)</li>
+<li>5–10% soap (from catalyst hydrolysis)</li>
+<li>5–10% water</li>
+</ul>
+<p>This &quot;crude glycerin&quot; can be recovered and refined into soap or used as a soil amendment.</p>
+<h3>Simple Glycerin Purification</h3>
+<ol>
+<li><strong>Acid neutralization:</strong> Add enough acetic acid or dilute sulfuric acid to neutralize residual catalyst until pH is 7–8 (test with pH strips)</li>
+<li><strong>Settling:</strong> Allow 24 hours for soap to precipitate and settle</li>
+<li><strong>Drain water layer:</strong> Remove the aqueous phase; the remaining paste is crude glycerin</li>
+<li><strong>Evaporation:</strong> Heat under gentle ventilation to 120°C for 2–4 hours to drive off methanol; cool</li>
+<li><strong>Result:</strong> A thick, translucent paste (60–80% glycerin) suitable for soap making or compost</li>
+</ol>
+<h3>Soap Production from Glycerin</h3>
+<p>Mix crude glycerin (60% purity minimum) with caustic soda (NaOH) and salt:</p>
+<ul>
+<li>Heat crude glycerin to 60°C</li>
+<li>Add NaOH (10% by mass of glycerin) and stir</li>
+<li>Add salt (5–10% by mass) to promote saponification</li>
+<li>Heat to 100°C for 1 hour</li>
+<li>Cool; the resulting paste is crude soap (usable for laundry or cleaning, after additional drying)</li>
+</ul>
+<p>Refining to commercial-quality soap requires fractional crystallization and distillation (beyond this guide).</p>
+</section>
+<section id="safety-summary">
+<h2>Safety Summary</h2>
+<div class="warning">
+<p>Methanol is toxic by inhalation, ingestion, and skin contact. Sodium hydroxide is caustic and causes chemical burns. Never work with these chemicals without proper ventilation, protective equipment, and familiarity with emergency procedures.</p>
+</div>
+<ul>
+<li><strong>Methanol spill:</strong> Evacuate, ventilate, absorb with sand or towel, neutralize with baking soda, dispose in hazardous waste</li>
+<li><strong>Sodium hydroxide burn:</strong> Flush immediately with copious water for 15 minutes; do not use oil or vinegar (these are myths); for large burns, seek medical care</li>
+<li><strong>Biodiesel fire:</strong> Use a Class B extinguisher or foam; water is ineffective (biodiesel is less dense than water and floats, spreading flames)</li>
+<li><strong>Methanol odor in product:</strong> Do not use; re-heat and dry the batch; discard if odor persists</li>
+</ul>
+</section>
+<section id="conclusion">
+<h2>Conclusion</h2>
+<p>Biodiesel production from waste oils is a practical method to stretch fuel supplies and utilize waste products. The chemistry is straightforward, but success depends on careful feedstock preparation (especially water removal), precise catalyst dosing, thorough washing, and realistic assessment of cold-weather performance limits. Start with small batches (20–50 liters) to develop skill and confidence; scale up once you have produced several batches of acceptable quality. Always prioritize safety—improper handling of methanol and caustic chemicals can cause serious injury.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="agriculture.html">Agriculture &amp; Gardening</a>
+<a href="chemistry-fundamentals.html">Chemistry from Scratch</a>
+<a href="energy-systems.html">Energy Systems</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

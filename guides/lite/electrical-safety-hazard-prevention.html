@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/electrical-safety-hazard-prevention.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrical Safety &amp; Hazard Prevention</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Power Generation</span> ›
+<span>Electrical Safety &amp; Hazard Prevention</span>
+</div>
+
+
+<h1>Electrical Safety &amp; Hazard Prevention</h1>
+<p class="subtitle">Comprehensive electrical safety for post-infrastructure environments including grounding principles, insulation testing, circuit protection, lockout/tagout procedures, common electrocution scenarios and prevention, working safely with salvaged electrical equipment, arc flash awareness, and emergency response to electrical injuries.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~14 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview: Electrical Safety in Rebuilt Systems</a></li>
+<li><a href="#grounding">Grounding: The Foundation of Electrical Safety</a></li>
+<li><a href="#insulation">Insulation &amp; Conductor Safety</a></li>
+<li><a href="#circuit-protection">Circuit Protection</a></li>
+<li><a href="#lockout-tagout">Lockout/Tagout Procedures</a></li>
+<li><a href="#electrocution-scenarios">Common Electrocution Scenarios &amp; Prevention</a></li>
+<li><a href="#salvaged-equipment">Working with Salvaged Electrical Equipment</a></li>
+<li><a href="#arc-flash">Arc Flash Awareness</a></li>
+<li><a href="#emergency-response">Emergency Response to Electrical Injuries</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview: Electrical Safety in Rebuilt Systems</h2>
+<p>Electricity is among the most dangerous forces that post-collapse communities will work with regularly. Unlike fire, which announces itself with heat and light, electrical hazards are invisible. A wire that looks identical to a safe one can carry a lethal charge. Salvaged equipment may have degraded insulation, incorrect wiring, or hidden faults that create deadly traps for anyone who touches, connects, or works near them.</p>
+<p><strong>Why this guide exists:</strong> In the pre-collapse world, electrical safety was enforced by building codes, licensed electricians, inspection systems, and circuit protection devices manufactured to strict standards. In a rebuilding environment, none of those safeguards exist automatically. Every community generating, distributing, or using electricity must build its own safety culture from the ground up.</p>
+<p><strong>The lethal equation:</strong> As little as 50 milliamps (0.05 amps) of current flowing through the heart can cause ventricular fibrillation and death. A standard 12-volt automotive battery can deliver hundreds of amps. A small generator produces enough current to kill dozens of people simultaneously. Respect for electricity is not optional — it is survival.</p>
+<p>For foundational electrical theory, see <a href="electricity-basics-for-beginners.html">Electricity Basics for Beginners</a>. For wiring installation methods, see <a href="electrical-wiring.html">Electrical Wiring</a>.</p>
+</section>
+<section id="grounding">
+<h2>Grounding: The Foundation of Electrical Safety</h2>
+<h3>What Grounding Does</h3>
+<p>Grounding provides a low-resistance path for fault current to flow to earth, rather than through a person. When equipment insulation fails and a &quot;hot&quot; conductor touches a metal enclosure, grounding ensures that the resulting current flows through the ground wire to earth — tripping a breaker or blowing a fuse — instead of waiting for a person to touch the enclosure and complete the circuit through their body.</p>
+<p><strong>Without grounding:</strong> A fault energizes the equipment enclosure at full line voltage. The next person who touches it while also touching earth (wet ground, another grounded object, a water pipe) completes the circuit through their body. Electrocution follows.</p>
+<p><strong>With proper grounding:</strong> The fault current immediately flows through the ground conductor, which has much lower resistance than a human body. The overcurrent protection device (fuse or breaker) trips, de-energizing the circuit. The person touching the enclosure feels nothing.</p>
+<h3>Ground Rod Installation</h3>
+<p>A ground rod creates the earth connection for an electrical system:</p>
+<ol>
+<li><strong>Material:</strong> Copper-clad steel rod, 8 feet (2.4 meters) minimum length, 5/8 inch diameter</li>
+<li><strong>Driving:</strong> Drive rod fully into earth using a sledgehammer or post driver — top should be flush with or slightly below grade</li>
+<li><strong>Location:</strong> Within 2 feet of the electrical panel or service entrance; in moist soil if possible (dry sandy soil has high resistance)</li>
+<li><strong>Connection:</strong> Attach ground wire (bare copper, 6 AWG minimum for residential, 4 AWG for larger systems) to rod using a listed ground clamp — never rely on wire wrapped around the rod</li>
+<li><strong>Testing:</strong> If a multimeter is available, measure resistance between the rod and a distant earth reference — target is 25 ohms or less; lower is better</li>
+</ol>
+<div class="tip">
+<p><strong>Improving ground rod performance:</strong> If soil is dry or sandy (high resistance), several techniques help: drive two rods 8 feet apart and bond them together; pour a ring of salt water around the rod base periodically; dig a trench radiating from the rod and fill with charcoal mixed with salt (traditional technique that maintains moisture and lowers soil resistivity). Multiple rods bonded together always outperform a single rod.</p>
+</div>
+<h3>Equipment Grounding</h3>
+<p>Every piece of metal electrical equipment must be grounded:</p>
+<ul>
+<li><strong>Generators:</strong> Ground the frame to a ground rod with heavy copper conductor (4 AWG minimum)</li>
+<li><strong>Panels and distribution boxes:</strong> Ground the enclosure and the neutral bus (for service panels)</li>
+<li><strong>Motors:</strong> Ground the motor frame to the equipment grounding conductor in the supply cable</li>
+<li><strong>Tools:</strong> Use three-prong plugs; never remove the ground pin from a plug to fit a two-prong outlet</li>
+<li><strong>Metal conduit:</strong> When used, metal conduit serves as an equipment ground path — ensure all joints are tight and conductive</li>
+</ul>
+<div class="danger">
+<p><strong>Removing ground connections kills people.</strong> Never disconnect, bypass, or &quot;float&quot; a ground connection to stop a breaker from tripping. A tripping breaker is telling you there is a fault in the system. Investigate and fix the fault. The ground connection is the last line of defense between a wiring fault and a fatality.</p>
+</div>
+</section>
+<section id="insulation">
+<h2>Insulation &amp; Conductor Safety</h2>
+<h3>Insulation Degradation in Salvaged Equipment</h3>
+<p>Electrical insulation (rubber, PVC, cloth, enamel) degrades over time due to:</p>
+<ul>
+<li><strong>Heat:</strong> Operating temperatures above rated values accelerate breakdown — insulation life halves for every 10 degrees C above rating</li>
+<li><strong>Moisture:</strong> Water penetration reduces dielectric strength and creates conductive paths</li>
+<li><strong>UV exposure:</strong> Sunlight degrades PVC and rubber (outdoor wiring without UV-resistant jacket)</li>
+<li><strong>Chemical exposure:</strong> Oil, solvents, and acids attack many insulation types</li>
+<li><strong>Mechanical damage:</strong> Abrasion, crushing, rodent gnawing, vibration fatigue</li>
+<li><strong>Age:</strong> All organic insulation materials degrade over decades even in ideal conditions</li>
+</ul>
+<h3>Visual Inspection Criteria</h3>
+<p>Before energizing any salvaged equipment or wiring:</p>
+<ul>
+<li><strong>Cracking:</strong> Flex insulation gently — if it cracks, flakes, or crumbles, it has lost dielectric strength</li>
+<li><strong>Discoloration:</strong> Charring (brown/black) indicates overheating; white powder on rubber indicates oxidation</li>
+<li><strong>Brittleness:</strong> Insulation should be flexible; if it snaps when bent, replace the conductor</li>
+<li><strong>Moisture:</strong> Any wire or equipment that has been submerged should be thoroughly dried and inspected before use</li>
+<li><strong>Rodent damage:</strong> Look for gnaw marks, especially in residential and warehouse settings</li>
+</ul>
+<div class="warning">
+<p><strong>Cloth-insulated wiring is automatically suspect.</strong> Wiring with fabric (cloth) insulation dates from before the 1960s and has almost certainly degraded beyond safe use. The cloth provides no moisture barrier and often conceals cracked rubber underneath. Do NOT energize cloth-insulated wiring systems without complete rewiring of affected circuits.</p>
+</div>
+<h3>Improvised Insulation</h3>
+<p>When proper insulation materials are unavailable:</p>
+<ul>
+<li><strong>Electrical tape:</strong> Multiple wraps of vinyl electrical tape provide temporary insulation for splices — minimum 3 half-lapped layers, with each layer extending 1 inch beyond the previous</li>
+<li><strong>Heat-shrink tubing:</strong> Superior to tape if available — provides sealed, mechanically durable insulation</li>
+<li><strong>Rubber tubing:</strong> Cut sections of rubber hose or tubing can sleeve conductor splices</li>
+<li><strong>Dry wood:</strong> Wooden enclosures (dry, unpainted) provide reasonable insulation for low-voltage connections — NOT suitable for wet environments</li>
+<li><strong>Ceramic and glass:</strong> Excellent insulators for high-voltage applications — salvage from old power line insulators, spark plug ceramics, glass bottles</li>
+</ul>
+<p><strong>Materials that are NOT insulators despite common belief:</strong> Dry rope (can be conductive when damp), leather (marginal at best), most plastics when thin (many become conductive with heat), painted metal (paint is not rated insulation).</p>
+</section>
+<section id="circuit-protection">
+<h2>Circuit Protection</h2>
+<h3>Fuses</h3>
+<p>Fuses are the simplest and most reliable circuit protection devices. A fuse contains a metal element that melts when current exceeds its rating, breaking the circuit.</p>
+<p><strong>Key fuse principles:</strong></p>
+<ul>
+<li>Always replace a blown fuse with the same amperage rating — NEVER substitute a higher-rated fuse</li>
+<li>A fuse that blows repeatedly is indicating a fault — find and fix the fault, not the fuse</li>
+<li>Fuses do not degrade with age if stored dry — salvaged fuses in intact packaging are usable</li>
+<li>For DC circuits, use fuses rated for DC service (DC arcs are harder to extinguish than AC arcs)</li>
+</ul>
+<h3>Circuit Breakers</h3>
+<p>Circuit breakers perform the same function as fuses but can be reset. Salvaged breakers require testing:</p>
+<ol>
+<li><strong>Visual inspection:</strong> Check for charring, melted plastic, or corroded contacts</li>
+<li><strong>Mechanical test:</strong> Toggle on-off several times — mechanism should snap crisply</li>
+<li><strong>Trip test:</strong> If possible, connect to a controlled load and gradually increase current to verify the breaker trips at or near its rated amperage</li>
+</ol>
+<div class="warning">
+<p><strong>Breakers can fail in the ON position.</strong> A circuit breaker that has been tripped many times, exposed to moisture, or damaged internally may fail to trip on overcurrent. This creates a fire and electrocution hazard because the circuit appears protected but is not. Inspect breakers regularly and replace any that show signs of damage or sluggish operation.</p>
+</div>
+<h3>Ground Fault Circuit Interrupters (GFCIs)</h3>
+<p>GFCIs are the single most effective electrical safety device for preventing electrocution. A GFCI monitors the current flowing out on the hot conductor and returning on the neutral — if these differ by more than 5 milliamps (indicating current is flowing through an unintended path, possibly a person), the GFCI trips in less than 1/40th of a second.</p>
+<p><strong>Where GFCIs are critical:</strong></p>
+<ul>
+<li>Any outlet near water (kitchens, bathrooms, outdoor locations, workshops)</li>
+<li>Portable generator connections</li>
+<li>Any temporary wiring installation</li>
+<li>All circuits in wet or damp environments</li>
+</ul>
+<p><strong>GFCI testing:</strong> Press the &quot;TEST&quot; button monthly — the device should trip immediately. If it does not trip, replace it. GFCIs have a finite lifespan (10-15 years typically) and fail more often as they age. After power surges or lightning strikes, test all GFCIs.</p>
+<div class="tip">
+<p><strong>GFCI outlets are high-value salvage items.</strong> A single GFCI outlet can protect an entire circuit downstream of its installation point. Prioritize salvaging GFCI outlets and GFCI-equipped breakers from residential and commercial buildings. Even if the outlet face is damaged, the internal mechanism may be functional — test before discarding.</p>
+</div>
+</section>
+<section id="lockout-tagout">
+<h2>Lockout/Tagout Procedures</h2>
+<h3>Purpose</h3>
+<p>Lockout/tagout (LOTO) prevents the unexpected energization of equipment during maintenance or repair. In pre-collapse industry, LOTO violations were a leading cause of electrical fatalities. In post-collapse environments where procedures may be informal and communication imperfect, LOTO discipline is even more critical.</p>
+<h3>Procedure</h3>
+<ol>
+<li><strong>Notify</strong> — inform all affected persons that the equipment will be de-energized</li>
+<li><strong>Identify all energy sources</strong> — electrical, mechanical (springs, gravity), hydraulic, pneumatic, thermal</li>
+<li><strong>Isolate</strong> — open disconnects, switches, and breakers for all identified energy sources</li>
+<li><strong>Lock</strong> — apply a padlock to each disconnect/switch/breaker in the OFF position; only the person performing the work holds the key</li>
+<li><strong>Tag</strong> — attach a written tag stating: who locked it, when, why, and expected completion time</li>
+<li><strong>Verify</strong> — attempt to start the equipment to confirm de-energization; use a voltage tester to verify zero energy on conductors</li>
+<li><strong>Work</strong> — perform the maintenance or repair</li>
+<li><strong>Remove</strong> — only the person who applied the lock removes it; verify all tools, materials, and personnel are clear before re-energizing</li>
+</ol>
+<div class="danger">
+<p><strong>Never remove another person's lock.</strong> Even if you believe the work is complete, even if the person is unavailable, even if production is waiting. The person who placed the lock is the ONLY person authorized to remove it. Violating this rule has killed experienced electricians who were working inside equipment that someone else re-energized. In a community setting, make this an inviolable rule backed by the strongest available social enforcement.</p>
+</div>
+<h3>Improvised Lockout Devices</h3>
+<p>When commercial lockout devices are unavailable:</p>
+<ul>
+<li><strong>Padlocks on breaker panels:</strong> Drill a hole in the panel door or breaker handle; insert a padlock hasp</li>
+<li><strong>Chain and lock:</strong> Wrap a chain through switch handles and secure with padlock</li>
+<li><strong>Wire and tag:</strong> As a last resort, wire a disconnect in the open position with heavy-gauge wire and attach a clearly written warning tag — this provides no physical security but communicates intent</li>
+<li><strong>Breaker removal:</strong> For critical situations, physically remove the circuit breaker from the panel and keep it with you — the circuit cannot be re-energized without the breaker</li>
+</ul>
+</section>
+<section id="electrocution-scenarios">
+<h2>Common Electrocution Scenarios &amp; Prevention</h2>
+<h3>Scenario 1: Generator Backfeed</h3>
+<p><strong>What happens:</strong> A portable generator is connected to a building's electrical panel without a transfer switch. Power feeds backward through the panel, into the utility transformer, and steps UP to distribution voltage on power lines that appear dead. A line worker or neighbor contacts the &quot;dead&quot; line and is electrocuted at thousands of volts.</p>
+<p><strong>Prevention:</strong> Always use a transfer switch or interlock that physically prevents the generator and utility from being connected simultaneously. If no transfer switch exists, use the generator only through extension cords — never connect to building wiring.</p>
+<h3>Scenario 2: Wet Contact</h3>
+<p><strong>What happens:</strong> A person standing in water or on wet ground contacts an energized conductor. Water reduces skin resistance from ~100,000 ohms (dry) to ~1,000 ohms (wet), increasing current flow 100x for the same voltage. What would be a mild tingle at 120V dry becomes a lethal shock wet.</p>
+<p><strong>Prevention:</strong> Never work on electrical equipment while standing in water or on wet surfaces. Wear rubber-soled boots. Use GFCIs on all circuits in wet environments. Use insulated tools.</p>
+<h3>Scenario 3: Assumed Dead Circuit</h3>
+<p><strong>What happens:</strong> A person assumes a circuit is de-energized because the switch is off, then contacts a conductor that is still energized due to a wiring error, shared neutral, or feedback from another source.</p>
+<p><strong>Prevention:</strong> ALWAYS verify zero energy with a voltage tester before touching any conductor. Never trust a switch position alone. Test the tester on a known live source before and after testing the work circuit (this catches a failed tester giving a false &quot;safe&quot; reading).</p>
+<h3>Scenario 4: Capacitor Discharge</h3>
+<p><strong>What happens:</strong> A person works on de-energized equipment containing large capacitors (motor starters, power supplies, generators, inverters). The capacitors retain a lethal charge for hours or days after power is removed. Touching a capacitor terminal discharges the stored energy through the person.</p>
+<p><strong>Prevention:</strong> After de-energizing equipment, wait at least 5 minutes, then discharge all capacitors using an insulated shorting probe (insulated handle with a resistor in series with the shorting conductor). Verify zero voltage with a meter before working.</p>
+<h3>Scenario 5: Overhead Contact</h3>
+<p><strong>What happens:</strong> A person carrying a metal ladder, pipe, antenna, or irrigation equipment contacts overhead power lines. Even lines that appear dead may be energized. Contact transmits lethal current through the object and through the person to ground.</p>
+<p><strong>Prevention:</strong> Maintain a minimum 10-foot clearance from any overhead lines. Assume all overhead lines are energized unless personally verified as de-energized and grounded. When working near overhead lines, use a spotter whose sole job is watching clearance.</p>
+<div class="warning">
+<p><strong>The &quot;one hand rule&quot;:</strong> When testing or probing live electrical equipment, keep one hand behind your back or in your pocket. This prevents current from flowing hand-to-hand across the chest (through the heart). Current flowing in one hand and out through the feet is still dangerous but less likely to cause cardiac arrest than the hand-to-hand path.</p>
+</div>
+</section>
+<section id="salvaged-equipment">
+<h2>Working with Salvaged Electrical Equipment</h2>
+<h3>Pre-Energization Checklist</h3>
+<p>Before connecting power to any salvaged electrical device:</p>
+<ol>
+<li><strong>Visual inspection</strong> — check for physical damage, water intrusion evidence, rodent damage, corrosion, missing covers</li>
+<li><strong>Insulation check</strong> — inspect all visible wiring for cracked, frayed, or missing insulation</li>
+<li><strong>Ground continuity</strong> — verify the ground conductor is intact from plug to equipment frame using a continuity tester or ohmmeter</li>
+<li><strong>Smell test</strong> — burnt insulation, overheated components, and electrical fires have a distinctive acrid smell; if the equipment smells burnt, investigate before energizing</li>
+<li><strong>Mechanical freedom</strong> — for motors and generators, rotate the shaft by hand to verify it turns freely (seized bearings can cause immediate overload)</li>
+<li><strong>Nameplate data</strong> — verify that the equipment's voltage and frequency ratings match your power source</li>
+<li><strong>First energization</strong> — connect through a GFCI outlet; stand clear of the equipment; apply power for 5 seconds then de-energize and inspect for heat, smoke, or unusual sounds</li>
+</ol>
+<div class="tip">
+<p><strong>The light bulb limiter:</strong> When first testing salvaged equipment of unknown condition, wire a 100-watt incandescent light bulb in series with one power conductor. If the equipment has a short circuit, the light bulb limits current to less than 1 amp and glows brightly, preventing damage to the equipment and the circuit. If the equipment is healthy, the bulb glows dimly or not at all (equipment draws normal current through the bulb). This simple technique has saved countless pieces of salvaged electronics from destruction during first power-up.</p>
+</div>
+<h3>Motor Safety</h3>
+<p>Salvaged electric motors are among the most valuable and most dangerous electrical components:</p>
+<ul>
+<li><strong>Verify winding integrity</strong> before energizing — measure resistance between each winding and the frame (should read infinity/open); any reading indicates insulation failure</li>
+<li><strong>Check bearing condition</strong> — seized or rough bearings cause the motor to stall, drawing locked-rotor current (6-8x normal), which causes rapid overheating and potential fire</li>
+<li><strong>Ensure proper overload protection</strong> — a motor without overload protection that stalls will draw enormous current until the wiring catches fire or the motor burns out</li>
+<li><strong>Secure mounting</strong> — an unbolted motor under starting torque can spin, walk across a bench, or throw objects; bolt it down firmly before energizing</li>
+</ul>
+<p>For motor rewinding and repair procedures, see <a href="electric-motor-rewinding.html">Electric Motor Rewinding</a>.</p>
+</section>
+<section id="arc-flash">
+<h2>Arc Flash Awareness</h2>
+<h3>What Arc Flash Is</h3>
+<p>An arc flash is an explosive release of energy when an electrical arc forms between conductors or between a conductor and ground. The arc creates:</p>
+<ul>
+<li><strong>Temperatures up to 35,000 degrees F</strong> (hotter than the sun's surface) — causes severe burns at distances up to 10 feet</li>
+<li><strong>Intense light</strong> — can cause temporary or permanent blindness</li>
+<li><strong>Pressure wave</strong> — the explosive expansion of air can throw a person across a room, rupture eardrums, and collapse lungs</li>
+<li><strong>Molten metal shrapnel</strong> — copper and steel conductors vaporize and re-condense as molten droplets</li>
+</ul>
+<h3>When Arc Flash Occurs</h3>
+<p>Arc flash typically occurs during:</p>
+<ul>
+<li>Working on or near energized equipment</li>
+<li>Closing a switch or breaker onto a faulted circuit</li>
+<li>Equipment failure (insulation breakdown, mechanical failure)</li>
+<li>Accidental contact between phases or between phase and ground</li>
+<li>Dropping a tool across bus bars</li>
+</ul>
+<h3>Prevention</h3>
+<ul>
+<li><strong>De-energize before working</strong> — this eliminates arc flash risk entirely</li>
+<li><strong>Maintain clearance</strong> — when equipment must remain energized, maintain maximum practical distance</li>
+<li><strong>Use insulated tools</strong> — rated for the voltage present</li>
+<li><strong>Wear appropriate PPE</strong> — flame-resistant clothing, face shield, safety glasses underneath</li>
+<li><strong>Remove metal jewelry</strong> — rings, watches, and necklaces can bridge conductors and initiate arcs</li>
+<li><strong>Avoid working alone</strong> — a second person can call for help and provide first aid</li>
+</ul>
+</section>
+<section id="emergency-response">
+<h2>Emergency Response to Electrical Injuries</h2>
+<h3>Rescuing a Shock Victim</h3>
+<div class="danger">
+<p><strong>Do NOT touch a person who is in contact with an energized conductor.</strong> You will become a second victim. De-energize the source FIRST. If you cannot de-energize, use a dry, non-conductive object (wooden board, dry rope, leather belt) to separate the victim from the conductor. Stand on dry, insulating material (rubber mat, dry wood) while attempting rescue.</p>
+</div>
+<h3>First Aid for Electrical Injury</h3>
+<ol>
+<li><strong>Ensure the scene is safe</strong> — verify power is off; check for secondary hazards</li>
+<li><strong>Check responsiveness</strong> — if the victim is unconscious, check for breathing and pulse</li>
+<li><strong>Begin CPR if needed</strong> — electrical shock often causes cardiac arrest; immediate CPR is the most important intervention</li>
+<li><strong>Treat burns</strong> — electrical burns may be more severe internally than they appear externally; cool with clean water, cover with sterile dressings</li>
+<li><strong>Immobilize the spine</strong> — if the victim was thrown or fell, treat as a potential spinal injury</li>
+<li><strong>Monitor continuously</strong> — cardiac arrhythmias can develop hours after electrical contact; keep the victim at rest and under observation for at least 24 hours</li>
+</ol>
+<h3>Burn Pattern Awareness</h3>
+<p>Electrical burns occur at entry and exit points. The current path between these points determines internal damage:</p>
+<ul>
+<li><strong>Hand-to-hand:</strong> Current crosses the chest — highest risk of cardiac arrest</li>
+<li><strong>Hand-to-foot:</strong> Current traverses the entire trunk — damage to heart, lungs, abdominal organs</li>
+<li><strong>Foot-to-foot (step potential):</strong> Current flows through legs — less cardiac risk but can cause falls, leg muscle damage</li>
+</ul>
+<p>Internal tissue damage from electrical current is frequently far more extensive than visible surface burns suggest. Any person who has received an electrical shock significant enough to cause unconsciousness, burns, or muscle contractions should be treated as having serious internal injuries until proven otherwise.</p>
+<p>For general power distribution safety, see <a href="power-distribution.html">Power Distribution</a>. For battery-specific safety, see <a href="batteries.html">Batteries</a>. For broader energy system design, see <a href="energy-systems.html">Energy Systems</a>.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="electrical-wiring.html">Electrical Wiring</a>
+<a href="electricity-basics-for-beginners.html">Electricity Basics for Beginners</a>
+<a href="energy-systems.html">Energy Systems</a>
+<a href="power-distribution.html">Power Distribution &amp; Micro-Grids</a>
+<a href="batteries.html">Battery Construction</a>
+<a href="electric-motor-rewinding.html">Electric Motor Rewinding</a>
+<a href="microgrid-design-distribution.html">Micro-Grid Design &amp; Distribution</a>
+<a href="solar-technology.html">Solar Technology</a>
+<a href="hand-crank-generator-construction.html">Hand-Crank Generator Construction</a>
+<a href="transformer-construction.html">Transformer Construction</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

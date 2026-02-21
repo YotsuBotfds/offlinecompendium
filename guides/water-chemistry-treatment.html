@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/water-chemistry-treatment.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water Chemistry &amp; Treatment - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.water-table { width: 100%; margin: 1rem 0; }
+.water-table th, .water-table td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
+.dosing-chart { margin: 1rem 0; padding: 1rem; background: var(--card); border-left: 4px solid var(--accent); }
+
+</style>
+<meta name="description" content="pH adjustment, coagulation, filtration, chlorination, hardness removal, and contaminant reduction">
+<link rel="canonical" href="https://zerotoherohero.com/guides/water-chemistry-treatment.html">
+<meta property="og:title" content="Water Chemistry &amp; Treatment">
+<meta property="og:description" content="pH adjustment, coagulation, filtration, chlorination, hardness removal, and contaminant reduction">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Industrial Chemistry", "item": "https://zerotoherohero.com/#sec-chemistry"},
+    {"@type": "ListItem", "position": 3, "name": "Water Chemistry &amp; Treatment", "item": "https://zerotoherohero.com/guides/water-chemistry-treatment.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Water Chemistry &amp; Treatment",
+  "description": "pH adjustment, coagulation, filtration, chlorination, hardness removal, and contaminant reduction",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-423">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-chemistry">Industrial Chemistry</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Water Chemistry &amp; Treatment</span>
+</nav>
+<header>
+<h1>Water Chemistry &amp; Treatment</h1>
+<p class="subtitle">pH adjustment, coagulation, filtration, chlorination, hardness removal, and contaminant reduction</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~16 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#water-quality-basics">Water Quality Basics</a></li>
+<li><a href="#ph-adjustment">pH Adjustment</a></li>
+<li><a href="#coagulation-flocculation">Coagulation and Flocculation</a></li>
+<li><a href="#sedimentation-design">Sedimentation Vessel Design</a></li>
+<li><a href="#filtration-media">Filtration Media and Methods</a></li>
+<li><a href="#chlorination">Chlorination and Disinfection</a></li>
+<li><a href="#iron-manganese-removal">Iron and Manganese Removal</a></li>
+<li><a href="#hardness-treatment">Hardness Treatment</a></li>
+<li><a href="#arsenic-fluoride-removal">Arsenic and Fluoride Removal</a></li>
+<li><a href="#taste-odor-control">Taste and Odor Control</a></li>
+<li><a href="#water-treatment-summary">Simple Field Treatment Sequence</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<p>Water quality determines health, and water treatment removes pathogens, suspended solids, and dissolved contaminants. This guide covers the chemistry and field methods for treating raw water in austere environments.</p>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Water Treatment Process Flow">
+  <defs>
+    <style>
+      .water-label { font-family: Arial, sans-serif; font-size: 12px; fill: var(--text); }
+      .water-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: var(--text); }
+      .step-box { stroke: var(--border); stroke-width: 1.5; rx: 4; }
+      .water-line { stroke: var(--accent); stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="var(--bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="30" class="water-title" text-anchor="middle">Water Treatment Process Flow</text>
+
+  <!-- Raw water input -->
+  <g>
+    <text x="50" y="70" class="water-label" style="font-weight: bold;">Raw Water</text>
+    <rect x="20" y="85" width="60" height="40" fill="#4a7c9f" stroke="var(--text)" stroke-width="1.5"/>
+    <text x="50" y="110" class="water-label" text-anchor="middle" style="fill: white;">Turbid</text>
+  </g>
+
+  <!-- Step 1: Coagulation -->
+  <g>
+    <line x1="85" y1="105" x2="120" y2="105" class="water-line"/>
+    <text x="100" y="100" class="water-label" style="font-size: 10px;">Alum</text>
+
+    <rect x="120" y="80" width="60" height="50" fill="var(--card)" class="step-box"/>
+    <text x="150" y="100" class="water-label" text-anchor="middle" style="font-weight: bold;">1</text>
+    <text x="150" y="118" class="water-label" text-anchor="middle" style="font-size: 10px;">Coagulation</text>
+  </g>
+
+  <!-- Step 2: Flocculation -->
+  <g>
+    <line x1="185" y1="105" x2="220" y2="105" class="water-line"/>
+
+    <rect x="220" y="80" width="60" height="50" fill="var(--card)" class="step-box"/>
+    <text x="250" y="100" class="water-label" text-anchor="middle" style="font-weight: bold;">2</text>
+    <text x="250" y="118" class="water-label" text-anchor="middle" style="font-size: 10px;">Flocculation</text>
+  </g>
+
+  <!-- Step 3: Sedimentation -->
+  <g>
+    <line x1="285" y1="105" x2="320" y2="105" class="water-line"/>
+
+    <rect x="320" y="70" width="60" height="70" fill="var(--card)" class="step-box"/>
+    <text x="350" y="100" class="water-label" text-anchor="middle" style="font-weight: bold;">3</text>
+    <text x="350" y="118" class="water-label" text-anchor="middle" style="font-size: 10px;">Settling</text>
+    <rect x="325" y="130" width="50" height="8" fill="var(--muted)" opacity="0.6"/>
+    <text x="350" y="142" class="water-label" text-anchor="middle" style="font-size: 9px;">Sludge</text>
+  </g>
+
+  <!-- Step 4: Filtration -->
+  <g>
+    <line x1="380" y1="105" x2="415" y2="105" class="water-line"/>
+
+    <rect x="415" y="70" width="60" height="70" fill="var(--card)" class="step-box"/>
+    <text x="445" y="100" class="water-label" text-anchor="middle" style="font-weight: bold;">4</text>
+    <text x="445" y="118" class="water-label" text-anchor="middle" style="font-size: 10px;">Sand/Char</text>
+    <line x1="420" y1="80" x2="455" y2="80" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"/>
+    <line x1="420" y1="90" x2="455" y2="90" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"/>
+    <line x1="420" y1="100" x2="455" y2="100" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"/>
+    <line x1="420" y1="110" x2="455" y2="110" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="437" cy="125" r="3" fill="var(--muted)" opacity="0.6"/>
+  </g>
+
+  <!-- Step 5: pH Adjustment -->
+  <g>
+    <line x1="480" y1="105" x2="515" y2="105" class="water-line"/>
+    <text x="500" y="100" class="water-label" style="font-size: 10px;">+Lime</text>
+
+    <rect x="515" y="80" width="60" height="50" fill="var(--card)" class="step-box"/>
+    <text x="545" y="100" class="water-label" text-anchor="middle" style="font-weight: bold;">5</text>
+    <text x="545" y="118" class="water-label" text-anchor="middle" style="font-size: 10px;">pH Adjust</text>
+  </g>
+
+  <!-- Step 6: Disinfection -->
+  <g>
+    <line x1="580" y1="105" x2="615" y2="105" class="water-line"/>
+    <text x="600" y="100" class="water-label" style="font-size: 10px;">+Cl₂</text>
+
+    <rect x="615" y="80" width="60" height="50" fill="var(--card)" class="step-box"/>
+    <text x="645" y="100" class="water-label" text-anchor="middle" style="font-weight: bold;">6</text>
+    <text x="645" y="118" class="water-label" text-anchor="middle" style="font-size: 10px;">Disinfect</text>
+  </g>
+
+  <!-- Clean water output -->
+  <g>
+    <line x1="680" y1="105" x2="715" y2="105" class="water-line"/>
+    <text x="730" y="70" class="water-label" style="font-weight: bold;">Safe Water</text>
+    <rect x="720" y="85" width="60" height="40" fill="#4a9f7f" stroke="var(--text)" stroke-width="1.5"/>
+    <text x="750" y="110" class="water-label" text-anchor="middle" style="fill: white;">Clear</text>
+  </g>
+
+  <!-- Time indicators below -->
+  <text x="150" y="155" class="water-label" style="font-size: 10px;" text-anchor="middle">2 min</text>
+  <text x="250" y="155" class="water-label" style="font-size: 10px;" text-anchor="middle">15–30 min</text>
+  <text x="350" y="155" class="water-label" style="font-size: 10px;" text-anchor="middle">60 min</text>
+  <text x="445" y="155" class="water-label" style="font-size: 10px;" text-anchor="middle">Ongoing</text>
+  <text x="545" y="155" class="water-label" style="font-size: 10px;" text-anchor="middle">Mix</text>
+  <text x="645" y="155" class="water-label" style="font-size: 10px;" text-anchor="middle">30 min wait</text>
+
+  <!-- Water Quality Parameters Section -->
+  <text x="50" y="200" class="water-title">Water Quality Parameters:</text>
+
+  <!-- Turbidity -->
+  <g>
+    <rect x="50" y="220" width="150" height="100" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="65" y="240" class="water-label" style="font-weight: bold;">Turbidity (NTU)</text>
+    <text x="65" y="260" class="water-label">Raw: 5–100+ NTU</text>
+    <text x="65" y="278" class="water-label">Target: &lt;1 NTU</text>
+    <text x="65" y="296" class="water-label" style="font-size: 10px;">Tool: Secchi disk</text>
+    <text x="65" y="310" class="water-label" style="font-size: 10px;">or visual clarity</text>
+  </g>
+
+  <!-- pH -->
+  <g>
+    <rect x="215" y="220" width="150" height="100" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="230" y="240" class="water-label" style="font-weight: bold;">pH (Acidity)</text>
+    <text x="230" y="260" class="water-label">Scale: 0–14</text>
+    <text x="230" y="278" class="water-label">Target: 7.0–8.0</text>
+    <text x="230" y="296" class="water-label" style="font-size: 10px;">Tool: pH paper</text>
+    <text x="230" y="310" class="water-label" style="font-size: 10px;">or kit</text>
+  </g>
+
+  <!-- Hardness -->
+  <g>
+    <rect x="380" y="220" width="150" height="100" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="395" y="240" class="water-label" style="font-weight: bold;">Hardness (Ca²⁺/Mg²⁺)</text>
+    <text x="395" y="260" class="water-label">Soft: &lt;60 mg/L</text>
+    <text x="395" y="278" class="water-label">Hard: &gt;120 mg/L</text>
+    <text x="395" y="296" class="water-label" style="font-size: 10px;">Soap test: suds</text>
+    <text x="395" y="310" class="water-label" style="font-size: 10px;">formation</text>
+  </g>
+
+  <!-- Chlorine -->
+  <g>
+    <rect x="545" y="220" width="150" height="100" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="560" y="240" class="water-label" style="font-weight: bold;">Chlorine Residual</text>
+    <text x="560" y="260" class="water-label">Target: 0.5–1.0 mg/L</text>
+    <text x="560" y="278" class="water-label">Smell test: faint</text>
+    <text x="560" y="296" class="water-label" style="font-size: 10px;">DPD color strips</text>
+    <text x="560" y="310" class="water-label" style="font-size: 10px;">(if available)</text>
+  </g>
+
+  <!-- Contaminant removal section -->
+  <text x="50" y="360" class="water-title">Contaminant Removal Methods:</text>
+
+  <g>
+    <rect x="50" y="380" width="200" height="100" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="65" y="400" class="water-label" style="font-weight: bold;">Suspended Solids</text>
+    <text x="65" y="420" class="water-label">• Coagulation</text>
+    <text x="65" y="435" class="water-label">• Sedimentation</text>
+    <text x="65" y="450" class="water-label">• Sand/Char Filtration</text>
+    <text x="65" y="465" class="water-label">Removal: 95–99%</text>
+  </g>
+
+  <g>
+    <rect x="275" y="380" width="200" height="100" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="290" y="400" class="water-label" style="font-weight: bold;">Bacteria &amp; Viruses</text>
+    <text x="290" y="420" class="water-label">• Filtration (0.2 µm)</text>
+    <text x="290" y="435" class="water-label">• Chlorination</text>
+    <text x="290" y="450" class="water-label">• Boiling (100°C)</text>
+    <text x="290" y="465" class="water-label">Removal: 99.9%+</text>
+  </g>
+
+  <g>
+    <rect x="500" y="380" width="250" height="100" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="515" y="400" class="water-label" style="font-weight: bold;">Iron, Manganese, Taste/Odor</text>
+    <text x="515" y="420" class="water-label">• Aeration (O₂ exposure)</text>
+    <text x="515" y="435" class="water-label">• Oxidation (permanganate)</text>
+    <text x="515" y="450" class="water-label">• Activated charcoal</text>
+    <text x="515" y="465" class="water-label">Removal: 80–99%</text>
+  </g>
+
+</svg>
+</p>
+<section id="water-quality-basics">
+<h2>Water Quality Basics</h2>
+<p>Water quality is characterized by multiple parameters:</p>
+<p><strong>Physical parameters:</strong></p>
+<ul>
+<li><strong>Turbidity:</strong> Suspended particles (clay, silt, algae). Measured in Nephelometric Turbidity Units (NTU) or Formazin Nephelometric Units (FNU). Target: &lt;1 NTU for drinking.</li>
+<li><strong>Color:</strong> Dissolved organic matter (tannins, lignin). Brown/amber color often indicates high organic content.</li>
+<li><strong>Temperature:</strong> Affects bacterial growth rates and chemical reaction speed.</li>
+</ul>
+<p><strong>Chemical parameters:</strong></p>
+<ul>
+<li><strong>pH:</strong> Acidity or alkalinity. Scale 0–14; 7 is neutral. Drinking water typically 6.5–8.5.</li>
+<li><strong>Hardness:</strong> Dissolved calcium (Ca²⁺) and magnesium (Mg²⁺). Measured in mg/L as CaCO₃. Soft: &lt;60 mg/L; Hard: &gt;120 mg/L.</li>
+<li><strong>Iron (Fe) and Manganese (Mn):</strong> Dissolved in anaerobic water (without oxygen). Cause staining and metallic taste. Target: &lt;0.3 mg/L Fe, &lt;0.05 mg/L Mn.</li>
+<li><strong>Alkalinity:</strong> Buffering capacity (HCO₃⁻, CO₃²⁻, OH⁻). Helps resist pH change.</li>
+</ul>
+<p><strong>Biological parameters:</strong></p>
+<ul>
+<li><strong>Bacteria:</strong> E. coli, pathogens. Target: 0 CFU/100 mL (colony-forming units) for drinking.</li>
+<li><strong>Viruses:</strong> Hepatitis A, rotavirus, norovirus.</li>
+<li><strong>Protozoa:</strong> Giardia, Cryptosporidium cysts resistant to chlorine; require filtration.</li>
+</ul>
+<div class="warning">
+<p>Turbid water (&gt;5 NTU) is difficult to disinfect with chlorine alone because particles shield pathogens. Always clarify turbid water (coagulation + sedimentation + filtration) before disinfection.</p>
+</div>
+</section>
+<section id="ph-adjustment">
+<h2>pH Adjustment</h2>
+<p>Water pH must be adjusted to allow disinfectants to work efficiently and to prevent corrosion or scale buildup in pipes.</p>
+<h3>Raising pH (Alkaline Adjustment)</h3>
+<p><strong>Lime (calcium hydroxide, Ca(OH)₂):</strong> Most practical in austere settings.</p>
+<ul>
+<li><strong>Dose:</strong> 10–50 mg/L, depending on starting pH and alkalinity.</li>
+<li><strong>Procedure:</strong> Add powdered hydrated lime (slaked lime) to a bucket of water; let settle for 30 minutes. Decant the clear liquid. The settled sludge contains excess lime.</li>
+<li><strong>Target:</strong> pH 7.0–7.5 for drinking; pH 8.3–8.5 for coagulation processes.</li>
+</ul>
+<p><strong>Soda ash (sodium carbonate, Na₂CO₃):</strong> More soluble than lime; no settling required.</p>
+<ul>
+<li><strong>Dose:</strong> 10–40 mg/L.</li>
+<li><strong>Procedure:</strong> Dissolve in water and mix thoroughly.</li>
+</ul>
+<h3>Lowering pH (Acidic Adjustment)</h3>
+<p><strong>Vinegar (acetic acid, 5% CH₃COOH):</strong></p>
+<ul>
+<li><strong>Dose:</strong> 5 mL per 10 liters to lower pH by ~0.5 units (varies with alkalinity).</li>
+<li><strong>Procedure:</strong> Add slowly while stirring; test with pH paper frequently.</li>
+</ul>
+<p><strong>Carbon dioxide (CO₂) bubbling:</strong> Requires a carbonic acid generator or fermentation source.</p>
+<ul>
+<li><strong>Dose:</strong> Bubble CO₂ through water until desired pH reached (~6.5–7.0).</li>
+<li><strong>Procedure:</strong> Natural fermentation (yeast + sugar) produces CO₂; bubble through water in a tube.</li>
+</ul>
+<div class="tip">
+<p>Alkaline water (pH 8.5+) requires less chlorine disinfectant and resists corrosion better. Slightly acidic water (pH 6.5–7.0) may require more chlorine. Target 7.5–8.0 for optimal balance.</p>
+</div>
+</section>
+<section id="coagulation-flocculation">
+<h2>Coagulation and Flocculation</h2>
+<p>These processes remove suspended solids (turbidity) by causing fine particles to clump and settle.</p>
+<p><strong>Mechanism:</strong> Metal salts (aluminum sulfate, ferric chloride) hydrolyze in water, producing positively charged hydroxide polymers that neutralize the negative charges on suspended particles. The particles clump (coagulate), then settle (flocculation).</p>
+<h3>Aluminum Sulfate (Alum, Al₂(SO₄)₃·18H₂O)</h3>
+<p><strong>Dose:</strong> 5–30 mg/L (typically 10–20 mg/L).</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Measure raw water turbidity if possible (estimated as cloudiness to the eye).</li>
+<li>Dissolve alum powder in a small amount of warm water.</li>
+<li>Add the alum solution to the main water batch.</li>
+<li>Stir rapidly for 2–3 minutes (rapid mix).</li>
+<li>Stir slowly for 15–30 minutes (flocculation).</li>
+<li>Allow to settle without disturbance for 30–60 minutes.</li>
+<li>Decant the clear liquid carefully; the settled sludge contains the floc.</li>
+</ol>
+<p><strong>Jar test (dose optimization):</strong> Use six identical jars filled with raw water. Add different doses of alum (e.g., 5, 10, 15, 20, 25, 30 mg/L) to each jar. Stir and settle; compare clarity. The dose producing the best clarity is optimal.</p>
+<h3>Ferric Chloride (FeCl₃)</h3>
+<p><strong>Dose:</strong> 10–30 mg/L.</p>
+<p><strong>Advantages:</strong> Works better at low pH and low temperature than alum; produces larger, faster-settling floc.</p>
+<p><strong>Disadvantage:</strong> Imparts a yellow-brown color; requires careful pH control to avoid color in treated water.</p>
+<h3>Moringa Seeds (Herbal Coagulant)</h3>
+<p>In tropical regions, moringa seeds (Moringa oleifera) are an effective, natural coagulant.</p>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Harvest mature moringa seed pods.</li>
+<li>Extract seeds and dry thoroughly.</li>
+<li>Pound or grind into fine powder.</li>
+<li>Store in a cool, dry location.</li>
+</ol>
+<p><strong>Use:</strong></p>
+<ol>
+<li><strong>Dose:</strong> 5–30 mg/L (typically 10 mg/L).</li>
+<li><strong>Preparation:</strong> Soak powder in a small volume of raw water for 1 hour to activate the coagulant compound (4-α-L-rhamnosyloxy-benzyl-isothiocyanate).</li>
+<li><strong>Add to main water:</strong> Pour the seed suspension into the water to be treated.</li>
+<li><strong>Stir:</strong> Rapid stir for 2 minutes, then slow stir for 10–15 minutes.</li>
+<li><strong>Settle:</strong> Allow 30–60 minutes for floc to settle.</li>
+</ol>
+<p><strong>Advantages:</strong> Natural; sustainable; improves taste; no chemical residue.</p>
+<p><strong>Disadvantages:</strong> Less effective than aluminum sulfate; requires higher dose; fewer published dosing guidelines.</p>
+</section>
+<section id="sedimentation-design">
+<h2>Sedimentation Vessel Design</h2>
+<p>A settling tank allows floc (and other suspended solids) to fall to the bottom before filtration.</p>
+<p><strong>Key parameters:</strong></p>
+<ul>
+<li><strong>Detention time:</strong> Time water spends in the tank. Minimum 30 minutes at design flow rate.</li>
+<li><strong>Surface loading rate:</strong> Volume per unit area per hour. Target: 0.5–2 m³/(m²·h) for conventional clarification.</li>
+<li><strong>Depth:</strong> 2–4 meters typical; water must remain undisturbed while floc settles.</li>
+</ul>
+<p><strong>Simple design (for small systems):</strong></p>
+<ol>
+<li>Use a rectangular tank (e.g., wooden frame, plastic liner, concrete).</li>
+<li>Inlet at one end; outlet at the opposite end, elevated ~0.5 m above the bottom to avoid re-suspension.</li>
+<li>Bottom sloped gently (2–5%) toward a drain for sludge removal.</li>
+<li>Baffle to reduce short-circuiting (preferably a weir or perforated pipe).</li>
+<li>Example: 1 m × 1 m × 1 m tank can treat 1 m³/h with 1 hour detention.</li>
+</ol>
+<div class="tip">
+<p>A settling tank should be covered to exclude light (preventing algae growth) and debris (leaves, insects). A simple wooden frame with cloth cover works well.</p>
+</div>
+</section>
+<section id="filtration-media">
+<h2>Filtration Media and Methods</h2>
+<p>After sedimentation, filtration removes remaining suspended solids and some microorganisms.</p>
+<h3>Sand Filtration</h3>
+<p><strong>Media:</strong> Sand (effective particle size 0.5–1.0 mm, depth 0.5–1 m).</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Layer sand in a container or pit (0.5–1 m deep).</li>
+<li>Support sand on a layer of gravel or river stones (5 cm).</li>
+<li>Support gravel on coarse stones (10 cm).</li>
+<li>Pour water onto the top of the sand layer slowly.</li>
+<li>Water percolates downward, trapping particles.</li>
+<li>Collect clear water from the bottom.</li>
+</ol>
+<p><strong>Flow rate:</strong> 2–5 m³/(m²·day) for slow sand filters; up to 10 m³/(m²·day) for rapid filters.</p>
+<p><strong>Cleaning:</strong> When flow slows, backflush with clean water from the bottom upward. Or remove the top 5 cm of sand (biofilm layer where microorganisms concentrate) and replace with fresh sand.</p>
+<h3>Activated Charcoal Filtration</h3>
+<p><strong>Media:</strong> Activated charcoal (prepared by heating wood or coconut charcoal to create porosity).</p>
+<p><strong>Function:</strong> Adsorbs dissolved organic compounds (color, taste, odor); not effective against bacteria or viruses without pre-filtration.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Crush charcoal into small pieces (1–5 mm).</li>
+<li>Layer in a filter column above sand.</li>
+<li>Water percolates through charcoal first, then sand.</li>
+<li>Charcoal removes organic compounds; sand removes particles.</li>
+</ol>
+<p><strong>Saturation:</strong> Charcoal eventually becomes saturated (adsorption capacity exhausted). Reactivate by heating to 700–800°C in a low-oxygen furnace, or replace.</p>
+<h3>Ceramic Filters</h3>
+<p><strong>Advantage:</strong> Durable; can be cleaned by backflushing.</p>
+<p><strong>Method:</strong> Pour water through a ceramic candle or disc (pore size 0.2–2 µm) into a collection vessel. Very effective at removing bacteria and some protozoa.</p>
+<p><strong>Limitation:</strong> No disinfectant residual; microorganisms removed but not killed.</p>
+</section>
+<section id="chlorination">
+<h2>Chlorination and Disinfection</h2>
+<p>Chlorine (Cl₂) oxidizes microorganism cell walls and DNA, killing pathogens. Chlorine can be applied as gas, liquid (sodium hypochlorite), or solid (calcium hypochlorite, HTH).</p>
+<h3>Dosing Chlorine</h3>
+<p><strong>Target:</strong> 0.5–1.0 mg/L free chlorine residual after 30 minutes contact time.</p>
+<p><strong>Method 1: Calcium hypochlorite powder</strong></p>
+<ul>
+<li><strong>Strength:</strong> ~60–70% available chlorine.</li>
+<li><strong>Dose:</strong> 1–2 mg/L for drinking water.</li>
+<li><strong>Procedure:</strong> Dissolve powder in a small amount of water. Calculate dose = (desired residual mg/L) × (water volume L) ÷ (% available chlorine). Add to water and mix.</li>
+<li><strong>Example:</strong> Treat 100 L at 0.8 mg/L using 70% hypochlorite. Dose = 0.8 × 100 ÷ 70 × 100 = ~1.14 grams.</li>
+</ul>
+<p><strong>Method 2: Liquid sodium hypochlorite (household bleach)</strong></p>
+<ul>
+<li><strong>Strength:</strong> ~3–6% available chlorine (check label).</li>
+<li><strong>Dose:</strong> 2 drops per liter for household bleach (~0.5 mg/L).</li>
+<li><strong>Procedure:</strong> Add drops to water; stir well.</li>
+</ul>
+<p><strong>Contact time:</strong> Allow at least 30 minutes before drinking. Turbid water requires longer contact time (60+ minutes).</p>
+<h3>Testing Chlorine Residual (Field Method)</h3>
+<p>Use <strong>DPD colorimetric test strips</strong> (Diethyl-p-phenylenediamine) if available. The test turns from yellow to pink at 0.5–1.0 mg/L chlorine.</p>
+<p><strong>Without test strips:</strong> No simple field test exists. Chlorine smell (bleach odor) indicates residual, but quantification is unreliable.</p>
+<div class="warning">
+<p>Do not over-chlorinate. Excess chlorine (&gt;2 mg/L) produces unpleasant taste and forms disinfection by-products (trihalomethanes) if organic matter is present. Keep residual at 0.5–1.0 mg/L.</p>
+</div>
+</section>
+<section id="iron-manganese-removal">
+<h2>Iron and Manganese Removal</h2>
+<p>These metals dissolve in anaerobic water (groundwater without oxygen). Upon aeration and oxidation, they precipitate and can be filtered.</p>
+<p><strong>Removal method:</strong></p>
+<ol>
+<li><strong>Aeration:</strong> Bubble air through water or cascade water over rocks to add oxygen.</li>
+<li><strong>Oxidation:</strong> Iron oxidizes to Fe(OH)₃ (reddish-brown); manganese to MnO₂ (black). Reaction time: 5–30 minutes.</li>
+<li><strong>Settling:</strong> Allow precipitate to settle for 30 minutes.</li>
+<li><strong>Filtration:</strong> Run through sand filter to remove precipitate.</li>
+</ol>
+<p><strong>Alternatively:</strong> Add potassium permanganate (KMnO₄, 2–5 mg/L) as an oxidant. Permanganate oxidizes both iron and manganese to insoluble forms. Excess permanganate (giving a slight pink color) indicates complete reaction.</p>
+</section>
+<section id="hardness-treatment">
+<h2>Hardness Treatment</h2>
+<p>Hard water (high Ca²⁺ and Mg²⁺) causes scaling in pipes and reduces soap effectiveness.</p>
+<p><strong>Lime-soda softening:</strong> Add lime (to precipitate Mg²⁺ as Mg(OH)₂) and soda ash (to precipitate Ca²⁺ as CaCO₃).</p>
+<p><strong>Dosing:</strong></p>
+<ul>
+<li><strong>Lime:</strong> 1 mg/L for every 1 mg/L of Mg²⁺; additional lime to raise pH to 10.5 for optimal precipitation.</li>
+<li><strong>Soda ash:</strong> 1.06 mg/L for every 1 mg/L of temporary hardness (due to CO₂); 1.06 mg/L + margin for every 1 mg/L of permanent hardness (due to Ca²⁺ and Mg²⁺ chlorides/sulfates).</li>
+</ul>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Add lime solution; stir for 2 minutes.</li>
+<li>Add soda ash solution; stir for 2 minutes.</li>
+<li>Settle for 1–2 hours.</li>
+<li>Decant clear water.</li>
+</ol>
+<p><strong>Result:</strong> Treated water has hardness reduced by 50–95%, depending on dosing accuracy.</p>
+</section>
+<section id="arsenic-fluoride-removal">
+<h2>Arsenic and Fluoride Removal</h2>
+<p>Both are toxic at elevated concentrations; removal requires specific media.</p>
+<p><strong>Arsenic removal:</strong> Iron oxide (Fe₂O₃) or iron hydroxide (Fe(OH)₃) adsorbs arsenic.</p>
+<ul>
+<li><strong>Dose:</strong> 1–5 mg Fe/L as ferric salt.</li>
+<li><strong>Procedure:</strong> Add ferric chloride or ferric sulfate; allow 30 minutes contact; filter through sand.</li>
+<li><strong>Effectiveness:</strong> Removes 80–99% of As(III) and As(V).</li>
+</ul>
+<p><strong>Fluoride removal:</strong> Aluminum oxide (Al₂O₃) or bone charcoal adsorbs fluoride.</p>
+<ul>
+<li><strong>Dose:</strong> 5–10 mg of adsorbent per liter.</li>
+<li><strong>Procedure:</strong> Mix adsorbent into water; settle for 1–2 hours; filter.</li>
+<li><strong>Effectiveness:</strong> Removes 50–95% of fluoride, depending on adsorbent type.</li>
+</ul>
+</section>
+<section id="taste-odor-control">
+<h2>Taste and Odor Control</h2>
+<p>Off-flavors often result from algae (earthy notes), chlorine by-products, or hydrogen sulfide (rotten egg smell).</p>
+<p><strong>Activated charcoal:</strong> 5–20 mg/L adsorbs most taste/odor compounds. Allow 30 minutes contact before filtration.</p>
+<p><strong>Aeration:</strong> Cascading water or bubble aeration removes volatile compounds (H₂S, chlorine).</p>
+<p><strong>Oxidation:</strong> Permanganate or chlorine oxidizes organic compounds producing off-odors.</p>
+</section>
+<section id="water-treatment-summary">
+<h2>Simple Field Treatment Sequence</h2>
+<p>For turbid, untreated surface water:</p>
+<ol>
+<li><strong>Coagulation:</strong> Add alum (10–20 mg/L) or moringa seed powder (10 mg/L).</li>
+<li><strong>Slow stir:</strong> 15–30 minutes to allow floc formation.</li>
+<li><strong>Settling:</strong> 1–2 hours in an undisturbed tank.</li>
+<li><strong>Decanting:</strong> Carefully pour clear water into a filtration vessel, leaving settled sludge behind.</li>
+<li><strong>Filtration:</strong> Pass through sand (0.5 m) + activated charcoal (0.2 m).</li>
+<li><strong>pH adjustment:</strong> If pH is low (&lt;6.5), add 10–20 mg/L lime.</li>
+<li><strong>Chlorination:</strong> Add 0.8–1.0 mg/L chlorine as hypochlorite.</li>
+<li><strong>Contact time:</strong> Wait 30+ minutes.</li>
+<li><strong>Storage:</strong> Keep in sealed, dark container away from sunlight.</li>
+</ol>
+<p><strong>Result:</strong> Water safe for drinking, with &lt;1 NTU turbidity, &lt;1 mg/L iron, 0 pathogens (theoretically), and 0.5–1.0 mg/L chlorine residual.</p>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="water-purification.html">Water Purification</a>
+<a href="chemical-safety.html">Chemical Safety</a>
+<a href="homestead-chemistry.html">Homestead Chemistry</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/steel-making.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steel Making</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Metalworking</span> ›
+<span>Steel Making</span>
+</div>
+
+<div class="danger">
+<strong>⚠ SAFETY WARNING</strong><br>This guide covers activities with significant risk of injury or harm. Professional training may be required.
+</div>
+
+<h1>Steel Making</h1>
+<p class="subtitle">Bloomery/blast furnace, wrought vs cast iron, crucible steel, Bessemer process, heat treatment, and alloy selection.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~8 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#metallurgy">Iron and Steel Metallurgy</a></li>
+<li><a href="#ore-sourcing">Ore Sourcing and Testing</a></li>
+<li><a href="#ore-processing">Ore Processing and Reduction</a></li>
+<li><a href="#bloomery">Bloomery Furnaces</a></li>
+<li><a href="#blast-furnace">Blast Furnace Basics</a></li>
+<li><a href="#carbon-control">Carbon Content Control</a></li>
+<li><a href="#alloys">Alloy Steel Production</a></li>
+<li><a href="#bessemer">Bessemer Process Fundamentals</a></li>
+<li><a href="#crucible">Crucible Steel</a></li>
+<li><a href="#testing">Material Testing and Identification</a></li>
+<li><a href="#alloys-bronze">Bronze, Pewter, and Solder Alloys</a></li>
+<li><a href="#hardening">Heat Treatment and Hardening</a></li>
+<li><a href="#troubleshooting">Troubleshooting Common Furnace and Process Problems</a></li>
+<li><a href="#common-mistakes">Common Mistakes and How to Avoid Them</a></li>
+<li><a href="#safety-summary">Safety Summary</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>DO NOT ATTEMPT in enclosed spaces.</strong> Steel-making processes produce large quantities of carbon monoxide (CO), a deadly, colorless, odorless gas. ALL smelting and steel-making operations MUST occur outdoors or in purpose-built facilities with forced ventilation. Never work alone — require a safety observer present at all times.</p>
+<p><strong>SPECIFIC HAZARDS:</strong></p>
+<ul>
+<li><strong>Molten Metal Burns (1500°C+):</strong> Crucible failure releases molten metal instantly. All molds, tools, and equipment must be completely dry before use. Thermal shock from moisture causes violent explosions.</li>
+<li><strong>Carbon Monoxide Poisoning:</strong> Symptoms include headache, dizziness, nausea, confusion, loss of consciousness, and death. Early symptoms are easily confused with fatigue. If anyone shows symptoms, evacuate immediately to fresh air and seek emergency medical help.</li>
+<li><strong>Thermal Shock Explosions:</strong> Contact between molten metal and moisture causes violent steam explosions. Never allow water near the work area during active smelting.</li>
+</ul>
+<p><strong>REQUIRED PERSONAL PROTECTIVE EQUIPMENT:</strong></p>
+<ul>
+<li>Face shield (not just goggles) — molten metal splashes unpredictably</li>
+<li>Heavy leather apron — covers torso and thighs</li>
+<li>Heat-resistant leather gloves rated to at least 500°C</li>
+<li>Steel-toed boots (closed-toe, not sandals)</li>
+<li>Respirator capable of filtering particulates (N95 minimum; preferred is respirator with cartridges for fumes)</li>
+<li>Long sleeves and long pants (leather if available; never synthetic fabrics which melt onto skin)</li>
+</ul>
+<p><strong>EMERGENCY PROCEDURES:</strong></p>
+<ul>
+<li>Evacuate to fresh air immediately if CO poisoning symptoms appear</li>
+<li>For severe burns, cool with water (not ice) for 15+ minutes, cover with clean cloth, seek immediate medical attention</li>
+<li>Keep first aid kit and water supply immediately accessible</li>
+<li>Do not attempt to rescue someone in danger alone — call emergency services first</li>
+</ul>
+</div>
+<section id="metallurgy">
+<h2>Iron and Steel Metallurgy</h2>
+<p>Steel is iron alloyed with carbon (0.1-2% by weight) and optional other metals. Pure iron is soft and weak. Carbon atoms interrupt crystal lattice, increasing strength and hardness but reducing ductility. Iron-carbon phase diagram shows that austenite (FCC crystal structure, holds carbon in solution) at high temperature rapidly transforms to ferrite + cementide (pearlite) on cooling, creating hardened structure.</p>
+<p>Wrought iron (pure iron, &lt;0.08% carbon) is malleable, weldable, corrosion-resistant but weak. Cast iron (2-4% carbon) is brittle but easily cast. Steel (0.1-2% carbon) balances strength, hardness, and workability - most useful material.</p>
+<p><svg aria-label="Steel Making diagram 1" style="background:#1a2e1a;margin:20px 0;border-radius:8px;max-width:100%;height:auto" viewBox="0 0 650 400"><rect fill="#1a2e1a" height="400" width="650"></rect><text fill="#d4a574" font-size="18" font-weight="bold" text-anchor="middle" x="325" y="30">Blast Furnace Cross-Section</text><path d="M 150 80 L 180 100 L 180 320 L 170 350 L 130 350 L 120 320 L 120 100 Z" fill="none" stroke="#b8956a" stroke-width="2/"><text fill="#d4a574" font-size="11" font-weight="bold" text-anchor="middle" x="150" y="120">Stack Zone</text><text fill="#f5f0e8" font-size="9" text-anchor="middle" x="150" y="135">(Preheating)</text><path d="M 180 200 L 220 200 L 220 280 L 180 280 Z" fill="none" stroke="#d4a574" stroke-width="2/"><text fill="#d4a574" font-size="11" text-anchor="middle" x="200" y="235">Furnace</text><text fill="#d4a574" font-size="10" text-anchor="middle" x="200" y="250">Proper</text><text fill="#f5f0e8" font-size="9" text-anchor="middle" x="200" y="265">(1600-1700°C)</text><path d="M 220 240 L 260 240 L 265 250 L 260 260 L 220 260" fill="#8b5a2b" stroke="#b8956a" stroke-width="1/"><text fill="#f5f0e8" font-size="9" x="280" y="250">Molten Iron</text><path d="M 220 280 L 220 310 L 240 330 L 200 330 L 200 310 Z" fill="none" stroke="#d4a574" stroke-width="2/"><text fill="#d4a574" font-size="10" text-anchor="middle" x="220" y="320">Hearth</text><text fill="#f5f0e8" font-size="9" x="280" y="290">Slag layer (lighter)</text><text fill="#f5f0e8" font-size="9" x="280" y="310">Tap holes at bottom</text><line stroke="#b8956a" stroke-width="2/" x1="80" x2="60" y1="100" y2="80"><text fill="#f5f0e8" font-size="9" x="35" y="85">Ore + Coke</text><text fill="#f5f0e8" font-size="8" x="35" y="100">Feed (top)</text><line stroke="#d4a574" stroke-width="3/" x1="100" x2="70" y1="200" y2="200"><text fill="#f5f0e8" font-size="9" x="50" y="195">Hot air blast</text><text fill="#f5f0e8" font-size="8" x="50" y="210">(800-1000°C)</text><circle cx="410" cy="200" fill="none" r="100" stroke="#b8956a" stroke-dasharray="5,5" stroke-width="2"></circle><text fill="#d4a574" font-size="11" text-anchor="middle" x="410" y="180">Temperature</text><text fill="#d4a574" font-size="10" text-anchor="middle" x="410" y="200">Profile</text><text fill="#f5f0e8" font-size="9" text-anchor="middle" x="410" y="225">Top: ~200°C</text><text fill="#f5f0e8" font-size="9" text-anchor="middle" x="410" y="240">Middle: ~1000°C</text><text fill="#f5f0e8" font-size="9" text-anchor="middle" x="410" y="255">Furnace: ~1700°C</text><line stroke="#b8956a" stroke-width="2/" x1="240" x2="240" y1="340" y2="370"><text fill="#f5f0e8" font-size="9" x="260" y="360">Iron output</text><text fill="#f5f0e8" font-size="9" x="260" y="375">(pig iron, 4-5% C)</text></line></line></line></path></path></path></path></svg></p>
+<div class="info-box">
+<p><strong>Carbon Content Reference:</strong> The percentage of carbon in iron determines its final properties. Below 0.08% C = wrought iron (malleable). 0.1-0.3% C = low-carbon steel (mild steel, weldable). 0.3-0.8% C = medium-carbon steel (balanced strength/hardness). 0.8-2% C = high-carbon steel (hard, brittle). Above 2% C = cast iron (non-malleable).</p>
+</div>
+<section id="ore-sourcing">
+<h2>Ore Sourcing and Testing</h2>
+<p>Steel production begins with iron ore identification and quality assessment. Not all iron-bearing minerals are suitable for smelting. Success depends on locating ore with sufficient iron content and manageable impurity levels, then testing to confirm viability before committing furnace time and fuel.</p>
+<h3>Iron Ore Identification</h3>
+<p>Iron ores occur in multiple mineral forms. Field identification requires basic techniques for preliminary assessment.</p>
+<p><strong>Common iron ore minerals:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Mineral</th>
+<th>Chemical Formula</th>
+<th>Color</th>
+<th>Properties</th>
+<th>Iron Content</th>
+<th>Suitability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hematite</td>
+<td>Fe₂O₃</td>
+<td>Red, gray, black</td>
+<td>Hard, heavy, streak red</td>
+<td>70%</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Magnetite</td>
+<td>Fe₃O₄</td>
+<td>Black, shiny</td>
+<td>Magnetic, heavy, streak black</td>
+<td>72%</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Limonite (Goethite)</td>
+<td>2Fe₂O₃·3H₂O</td>
+<td>Yellow, brown</td>
+<td>Lightweight, crumbly, hydrated</td>
+<td>50-60%</td>
+<td>Good (roasting improves)</td>
+</tr>
+<tr>
+<td>Siderite (Iron carbonate)</td>
+<td>FeCO₃</td>
+<td>Brown, yellow</td>
+<td>Sparkles in light, reactive to acid</td>
+<td>48%</td>
+<td>Fair (requires calcination)</td>
+</tr>
+<tr>
+<td>Taconite</td>
+<td>Mixed oxides</td>
+<td>Banded red/gray</td>
+<td>Very hard, require crushing</td>
+<td>25-35%</td>
+<td>Poor (requires concentration)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Field identification techniques:</strong></p>
+<ol>
+<li><strong>Color and streak:</strong> Rub ore on unglazed ceramic tile. Red/dark red streak indicates hematite; black streak indicates magnetite; yellow-brown indicates limonite</li>
+<li><strong>Weight/density:</strong> Iron ore is noticeably heavy compared to similar-sized rocks. Magnetite particularly heavy</li>
+<li><strong>Magnetism:</strong> Pass magnet near ore sample. Magnetite is strongly attracted; hematite slightly</li>
+<li><strong>Hardness:</strong> Use steel file. Magnetite file marks easily; hematite resists filing</li>
+<li><strong>Luster:</strong> Magnetite is shiny/metallic; hematite duller; limonite earthy</li>
+</ol>
+<h3>Ore Deposit Location</h3>
+<p>Iron ore deposits occur in specific geologic settings:</p>
+<p><strong>Primary deposits (bedrock formation):</strong></p>
+<ul>
+<li><strong>Banded iron formations (BIFs):</strong> Ancient sedimentary rock layers (red/gray striped); most reliable source; often metamorphosed to hard ironstone</li>
+<li><strong>Volcanic deposits:</strong> Magnetite-rich deposits from ancient volcanism; often in mountainous terrain</li>
+<li><strong>Replacement deposits:</strong> Ore replacing other rock types along fractures or fault zones</li>
+</ul>
+<p><strong>Secondary deposits (weathering concentration):</strong></p>
+<ul>
+<li><strong>Laterite:</strong> Soil-weathered iron oxide, concentrated near surface in tropical/subtropical climates; soft, easily mined</li>
+<li><strong>Alluvial ore:</strong> Iron-rich gravels in streambeds and ancient stream channels; easily panned</li>
+<li><strong>Gossan (iron hat):</strong> Oxidized zone above buried ore; surface indicator of deeper ore body</li>
+</ul>
+<p><strong>Finding ore: Fieldwork approach</strong></p>
+<ol>
+<li>Examine stream gravels for dark iron-rich pebbles (magnetite, hematite)</li>
+<li>Look for distinctive red/rust-colored soil patches (weathered ore)</li>
+<li>Check road cuts and natural erosion for banded rock formations</li>
+<li>Ask locals about historical mining areas or &quot;iron-colored&quot; soil/rock</li>
+<li>Map locations of deposits; test multiple samples</li>
+</ol>
+<h3>Field Assay Methods (Preliminary Testing)</h3>
+<p>Before committing resources to smelting, test ore quality to estimate iron content and impurity levels.</p>
+<p><strong>Simple weight-and-volume test (density method):</strong></p>
+<ol>
+<li>Collect ore sample (~500g)</li>
+<li>Measure sample volume: displace water in graduated container (ml water displacement = cm³ volume)</li>
+<li>Weigh sample on balance scale</li>
+<li>Calculate density: weight (g) ÷ volume (cm³) = density (g/cm³)</li>
+<li>Reference densities: hematite ~5.3 g/cm³, magnetite ~5.2 g/cm³, limonite ~3.5-4.0 g/cm³, rock/gangue ~2.5-2.8 g/cm³</li>
+<li>Higher density indicates higher iron ore proportion</li>
+</ol>
+<p><strong>Acid dissolution test (iron content estimate):</strong></p>
+<ol>
+<li>Pulverize ore sample to fine powder</li>
+<li>Measure 10g ore powder, place in glass container</li>
+<li>Add dilute acid (hydrochloric, vinegar, or fermentation acid): 100ml</li>
+<li>Stir for 10-30 minutes; some ores react vigorously</li>
+<li>Filter solution; observe color: yellow-orange indicates dissolved iron</li>
+<li>Visual intensity estimates iron content roughly: pale = low, dark = high</li>
+<li>This is non-quantitative but indicates whether ore contains significant iron</li>
+</ol>
+<p><strong>Magnetic separation test (magnetite content):</strong></p>
+<ol>
+<li>Pulverize ore sample, spread on flat surface</li>
+<li>Pass strong magnet (neodymium magnet ideal) over powder</li>
+<li>Separate magnetic particles using magnet in plastic bag</li>
+<li>Weigh magnetic portion vs. total</li>
+<li>Percentage of magnetic material indicates magnetite proportion</li>
+</ol>
+<h3>Ore Quality Criteria for Smelting</h3>
+<p><strong>Acceptable ore for bloomery/small furnace:</strong></p>
+<ul>
+<li>Iron oxide content (hematite + magnetite): ≥40% of total weight</li>
+<li>Silica impurities: &lt;30% (silica forms slag; too much reduces efficiency)</li>
+<li>Sulfur content: &lt;0.5% (sulfur degrades steel quality)</li>
+<li>Phosphorus: &lt;0.5% (phosphorus makes iron brittle)</li>
+<li>Physical form: friable (crushable) or soft; hard taconite unsuitable without major concentration effort</li>
+</ul>
+<p><strong>Testing workflow:</strong></p>
+<ol>
+<li>Collect 5-10 kg ore sample from deposit</li>
+<li>Perform field assays (density, acid dissolution, magnetic separation)</li>
+<li>If promising (high density, strong acid reaction, significant magnetic portion), proceed to small test roast</li>
+<li>Roast 1-2 kg at 800-900°C for 2-4 hours (see Ore Processing)</li>
+<li>If roasted ore shows reduction (weight loss, color change), ore is viable for smelting</li>
+<li>Only then commit to full furnace run with large ore quantities</li>
+</ol>
+</section>
+<section id="ore-processing">
+<h2>Ore Processing and Reduction</h2>
+<p>Iron ore contains iron oxides (hematite Fe₂O₃, magnetite Fe₃O₄, limonite 2Fe₂O₃·3H₂O) mixed with silica (SiO₂) gangue. Reduction occurs via: Fe₂O₃ + 3CO → 2Fe + 3CO₂, or Fe₂O₃ + 3H₂ → 2Fe + 3H₂O. Carbon monoxide (from coke burning) is preferred reducer in traditional furnaces. The key challenge: maintaining reducing atmosphere while reaching sufficient temperature for metal to form.</p>
+<h3>Ore Preparation</h3>
+<p>Crush ore to &lt;25mm particles for maximum surface exposure. Roast at 800-900°C to remove moisture, convert limonite to hematite (Fe₂O₃), and expose internal surfaces to reduction gases. Roasting time: 2-4 hours in open air blast or enclosed kiln. Cooled ore becomes friable (crumbly), easier to load into furnace without compacting.</p>
+<h4>Roasting Procedure</h4>
+<ol>
+<li>Load ore into roasting pit or kiln</li>
+<li>Ignite charcoal/coke bed to reach 800-900°C</li>
+<li>Maintain temperature for 2-4 hours</li>
+<li>Monitor color change - ore transitions from red to dark red (indicates dehydration)</li>
+<li>Cool slowly to avoid cracking</li>
+<li>Result: ore mass reduced by 20-30% (water loss), friable structure ready for furnace</li>
+</ol>
+<h3>Coke Production</h3>
+<p>Coke (nearly pure carbon) is superior fuel to charcoal for blast furnaces - higher temperature (1800°C vs. 1500°C with charcoal), better permeability through furnace, higher carbon concentration. Coal heated to 1000-1200°C without air (destructive distillation) produces coke. Traditional method: heap coal 2-3m tall, cover with turf/clay to restrict air, ignite top, allow slow burn (weeks). Modern: industrial retort coking over 24-36 hours. Result: 80% of coal weight becomes coke, 20% lost as volatiles/ash.</p>
+<p>For small operations, hardwood charcoal acceptable substitute, though flame temperature lower. Charcoal production: hardwood burned in covered pit for 2-3 weeks, cooled slowly. Yield: 1 ton wood → 0.2-0.3 tons charcoal.</p>
+<div class="tip">
+<p><strong>Fuel Efficiency:</strong> Proper coke sizing (40-60mm chunks) improves furnace permeability. Small fines (&lt;5mm) cause bridging and poor air flow. Sieve coke before loading to maximize burn efficiency.</p>
+</div>
+</section>
+<section id="bloomery">
+<h2>Bloomery Furnaces</h2>
+<div class="danger">
+<p><strong>CARBON MONOXIDE (CO) WARNING</strong>: Bloomery furnaces produce deadly carbon monoxide gas. CO is odorless and colorless — you cannot detect it without instruments. Work ONLY in well-ventilated outdoor areas. Never operate a bloomery indoors or in enclosed spaces. Symptoms of CO poisoning: headache, dizziness, nausea, confusion, loss of consciousness, death. If anyone shows symptoms, move immediately to fresh air and seek emergency medical help.</p>
+</div>
+<p>Ancient furnaces (2000+ years) still viable for small-scale iron production. Simpler than blast furnaces, lower throughput (~20kg/run) but reliable and requires minimal equipment.</p>
+<h3>Basic Operation</h3>
+<p>Bloomery is pit furnace (~1m diameter, 1-2m deep) lined with clay. Load alternate layers: charcoal at bottom 30cm, ore 10-15cm, charcoal, ore, etc. Fire from top with air blast (bellows). Temperature reaches 1100-1300°C (red heat). At this temperature, iron cannot fully melt (melting point 1538°C) but becomes plastic/spongy. Carbon from charcoal dissolves into iron forming decarburized outer layer (wrought iron). Run continuously 8-12 hours until large mass (bloom) accumulates at furnace bottom. Remove bloom and hammer repeatedly while hot (red heat) to squeeze out slag, consolidate metal, and remove oxide skin.</p>
+<h4>Bloomery Run Timing</h4>
+<ul>
+<li><strong>Hours 0-1:</strong> Temperature ramp (1000-1100°C), initial ore reduction begins</li>
+<li><strong>Hours 1-8:</strong> Steady reduction (maintain 1100-1300°C), bloom accumulation</li>
+<li><strong>Hours 8-12:</strong> Final pushing (harder bellows work), consolidation of spongy mass</li>
+<li><strong>Final:</strong> Extraction and hammering while cherry-red</li>
+</ul>
+<div class="warning">
+<p><strong>Decarburization Control:</strong> If furnace runs too cool (&lt;1050°C), reduction stalls and carbon content remains high. Too hot (&gt;1350°C) and iron begins melting, mixing with slag. Target 1200°C for optimal wrought iron (minimal carbon pickup).</p>
+</div>
+<h3>Bloom Yield and Consolidation</h3>
+<p>Starting charge: 100kg ore + 30kg charcoal typically yields 20-30kg wrought iron bloom (20-30% ore reduction efficiency). Remaining material: slag (iron silicates) which flows into pit bottom, charcoal ash. Bloom requires extensive consolidation hammering - yields 15-20kg usable iron after smithing.</p>
+<p>Hammering technique: strike bloom with flat hammer face at red heat, rotate 90° between strikes, repeat 20-30 times. Remove visible slag layers as they form. Final product: denser, lower oxide content.</p>
+</section>
+<section id="blast-furnace">
+<h2>Blast Furnace Basics</h2>
+<div class="danger">
+<p><strong>CARBON MONOXIDE (CO) WARNING</strong>: Blast furnaces produce deadly carbon monoxide gas in large quantities. CO is odorless and colorless — you cannot detect it without instruments. Work ONLY in well-ventilated outdoor areas or in purpose-built facilities with forced ventilation. Never operate a blast furnace indoors or in enclosed spaces. Symptoms of CO poisoning: headache, dizziness, nausea, confusion, loss of consciousness, death. If anyone shows symptoms, move immediately to fresh air and seek emergency medical help.</p>
+</div>
+<p>Large-scale furnace (5-15m tall, 2-4m diameter) produces pig iron (cast iron with 3-5% carbon). Advantages: continuous operation, higher temperature (1600-1700°C), molten iron separation from slag. Disadvantages: higher capital cost, requires hot air blast generation, more skill.</p>
+<h3>Essential Components</h3>
+<ol>
+<li><strong>Stack:</strong> Conical vessel narrowing toward furnace proper. Ore/coke loaded at top fall through preheating zone</li>
+<li><strong>Furnace proper:</strong> Hottest zone where reduction occurs and iron melts</li>
+<li><strong>Hearth:</strong> Bottom collection zone - molten iron drains via tap hole to collection vessel</li>
+<li><strong>Tuyeres:</strong> Pipes injecting hot air (air blast). Located above hearth, angled slightly downward (15-20° angle)</li>
+<li><strong>Bellows system:</strong> Generate air blast 0.5-2 m³/minute at 30-50 kPa pressure. Hand-operated (labor-intensive) or water-wheel driven (traditional power)</li>
+<li><strong>Flue system:</strong> Exhaust gases directed to waste heat recovery or stove preheating air</li>
+</ol>
+<h3>Furnace Chemistry and Temperature Zones</h3>
+<p>Zone 1 (Stack, 200-900°C): Preheating of ore/coke, initial water removal. Ore color changes indicate temperature (red → dark red at 600°C). Zone 2 (Bosh, 900-1600°C): Active reduction. Fe₂O₃ → Fe₃O₄ → FeO → Fe as temperature increases. Carbon monoxide (produced from coke oxidation: 2C + O₂ → 2CO at ~200°C furnace temperature) is primary reducer.</p>
+<p>Zone 3 (Furnace proper, 1600-1700°C): Iron melts, absorbs carbon (becomes cast iron), dissolves in molten slag. Slag composition (SiO₂ + CaO) becomes liquid at 1200-1300°C, floats on iron, protects it from oxygen. Iron density 7.87 g/cm³ &gt; slag density 2.7-3.0 g/cm³, naturally separates.</p>
+<h3>Pig Iron Characteristics</h3>
+<p>Contains 3-5% carbon (sometimes up to 8%), 0.5-3% silicon, 0.1-2% manganese, 0.1-1% phosphorus, 0.05-0.15% sulfur. Very brittle - cannot be forged. Must be remelted for casting or refined (carbon removed) to produce wrought iron/steel. Pig iron easily cast (low melting point 1150-1200°C) but not suitable for tools/weapons without further processing.</p>
+<div class="danger">
+<p><strong>Molten Iron Hazards:</strong> Pig iron remains liquid at 1150-1200°C. Contact with moisture causes steam explosion (violent, dangerous). Never allow water near tapping area. Wet ore blocks furnace flow. Ensure all tools/molds completely dry before molten iron contact.</p>
+</div>
+</section>
+<section id="carbon-control">
+<h2>Carbon Content Control</h2>
+<p>Final product properties depend critically on carbon content. Control achieved through multiple methods depending on starting material and desired endpoint.</p>
+<h3>Direct Reduction (Bloomery)</h3>
+<p>Produces wrought iron (high Fe purity, &lt;0.1% carbon). Achieved by incomplete reduction in bloomery - iron remains solid, carbon doesn't dissolve. Extensive hammering squeezes out remaining carbon and slag. This method is inherently carbon-limiting because solid iron cannot absorb much carbon from charcoal at bloomery temperatures.</p>
+<h3>Pig Iron Refinement (Puddling)</h3>
+<p>Convert high-carbon pig iron to lower-carbon wrought iron/steel. Traditional puddling procedure:</p>
+<ol>
+<li><strong>Melt pig iron:</strong> In reverberatory furnace at 1200-1300°C (takes 1.5-2 hours for 100kg charge)</li>
+<li><strong>Add iron oxide:</strong> Mix in 10-15% ore (by weight) which oxidizes carbon/silicon: Fe₂O₃ + 3C → 3CO↑ + 2Fe</li>
+<li><strong>Stir vigorously:</strong> Use iron rod to expose fresh surface to oxidizing flame, continuously break surface oxide skin forming</li>
+<li><strong>Monitor carbon loss:</strong> Gas evolution slows as carbon depletes (observe CO flame color/intensity)</li>
+<li><strong>Collect ball:</strong> As carbon leaves (CO gas evolution), metal stiffens into pasty ball (~30-45 minutes total)</li>
+<li><strong>Extract and hammer:</strong> Remove from heat, hammer hot to squeeze out slag and consolidate metal</li>
+</ol>
+<p>Result: wrought iron at 0.05-0.1% carbon (malleable), or low-carbon steel at 0.2-0.5% carbon depending on incomplete decarburization (time controlled).</p>
+<div class="warning">
+<p><strong>Decarburization Timing:</strong> Under-puddling leaves 1-2% carbon (still brittle). Over-puddling removes all carbon (wrought iron, too soft for tools). Target time: 30-45 minutes for low-carbon steel. Experience and observation of metal behavior (stiffness) essential - no substitute for practice.</p>
+</div>
+<h3>Cementation (for Steel)</h3>
+<p>Pack wrought iron bars (thin 5-10mm strips) in charcoal powder in clay vessel, seal, heat to 1000°C for 1-2 weeks. Carbon penetrates iron surface 1-2mm depth (slow diffusion process). Result: outer layer becomes high-carbon steel (0.8-1.2% C), inner remains wrought iron. Blister steel (shows blisters from outgassing). Can be remelted for uniform composition.</p>
+<h4>Cementation Procedure</h4>
+<ol>
+<li>Layer charcoal powder (hardwood, not contaminated) in clay container</li>
+<li>Lay wrought iron bars on charcoal (do not allow direct contact with container walls)</li>
+<li>Cover with more charcoal, seal container</li>
+<li>Heat to 1000°C (bright red) - maintain for 1-2 weeks depending on bar thickness</li>
+<li>Cool slowly (days in kiln)</li>
+<li>Result: outer 1-2mm darkened (carburized), inner still lighter (uncarburized)</li>
+</ol>
+<h3>Crucible Steel</h3>
+<p>Melt pure iron + calculated carbon (charcoal powder) in sealed crucible at 1600°C. Carbon dissolves into liquid iron. Cool controlled to form uniform steel. Labor-intensive but produces consistent high-carbon steel (1.0-1.5% carbon). Superior to blister steel for tooling. Each run produces 2-8kg of steel, smaller batches but premium quality.</p>
+<p><strong>Carbon Absorption Mechanism:</strong></p>
+<p>Liquid iron at 1600°C readily absorbs carbon from charcoal powder. The charcoal doesn't fully oxidize (no air present in sealed crucible)—instead, carbon atoms diffuse into the molten iron. Temperature must remain above 1550°C for absorption to occur; cooling below this point stops carbon absorption. The longer the melt remains liquid at temperature, the more completely carbon disperses throughout. However, excessive time (&gt;1 hour) can cause iron to oxidize from trace air or absorbed water, degrading quality.</p>
+<div class="info-box">
+<p><strong>Crucible Composition Targeting:</strong> For 2kg charge targeting 0.8% carbon: use 1.95kg pure iron + 50g charcoal powder (2.5% by weight). For 1.2% carbon: use 1.95kg pure iron + 75g charcoal powder (3.8%). Adjust based on visual progress (darker melt = more carbon absorbed). Charcoal particle size matters—very fine powder dissolves more completely and evenly than chunks. Grind charcoal to talc-like consistency for best results (takes 15-20 minutes with mortar and pestle).</p>
+</div>
+</section>
+<section id="alloys">
+<h2>Alloy Steel Production</h2>
+<p>Adding metals to steel creates specialized properties. Alloy selection depends on final application and available materials.</p>
+<table class="alloy-table"><thead><tr><th scope="row">Alloy</th><th scope="row">% Content</th><th scope="row">Properties</th><th scope="row">Applications</th></tr></thead><tbody><tr><td>Manganese</td><td>0.5-2%</td><td>Hardness, toughness, wear resistance</td><td>Tools, rail steel</td></tr><tr><td>Silicon</td><td>0.5-2%</td><td>Strength, spring properties</td><td>Springs, structural steel</td></tr><tr><td>Chromium</td><td>1-5%</td><td>Corrosion resistance, hardness</td><td>Stainless steel, cutlery</td></tr><tr><td>Molybdenum</td><td>0.2-1%</td><td>Hardness at high temp, toughness</td><td>High-speed tools, machinery</td></tr><tr><td>Tungsten</td><td>2-20%</td><td>Very high hardness, heat resistance</td><td>Cutting tools, dies</td></tr><tr><td>Vanadium</td><td>0.1-1%</td><td>Hardness, toughness, spring properties</td><td>Tools, springs, gears</td></tr><tr><td>Nickel</td><td>1-5%</td><td>Toughness, impact resistance</td><td>Armor, machinery</td></tr></tbody></table>
+<p>Addition method: melt steel in crucible, add pure metal or metallic alloy powder (pre-weighed), stir until dissolved, pour into mold. High temperatures (&gt;1600°C) required for tungsten/molybdenum addition - challenging for small operations. Alternative: buy alloyed metals if available, melt directly rather than attempting alloying from elements.</p>
+<div class="tip">
+<p><strong>Alloy Addition Order:</strong> Add high-melting-point metals first (tungsten, molybdenum) to ensure complete dissolution. Low-melting metals (manganese, silicon) added last, 5-10 minutes before pouring. Thorough stirring prevents segregation (uneven distribution).</p>
+</div>
+<h3>Manganese Steel Example</h3>
+<p>To produce 2kg manganese steel (0.5% Mn content): Melt 2kg base steel at 1600°C, add 10g manganese powder (0.5% by weight), stir 5 minutes, pour. Manganese dissolves readily, improving hardenability and wear resistance. Result: harder, tougher tool steel.</p>
+</section>
+<section id="bessemer">
+<h2>Bessemer Process Fundamentals</h2>
+<p>Industrial breakthrough (1850s) that made steel production economical. Principle: blow air through molten pig iron - oxygen burns out carbon, silicon, manganese, phosphorus. Exothermic reaction heats metal further. Output: 20-25 minutes produces hundreds of kilograms from single run.</p>
+<h3>Basic Procedure</h3>
+<ol>
+<li>Load 10-20 tons molten pig iron into Bessemer converter (pear-shaped vessel, 3-4m tall)</li>
+<li>Close top, lower tuyeres (air pipes) through bottom</li>
+<li>Blow air at high pressure (air blast 0.5-2 m³/min at 30-50 kPa) - reaction is vigorous</li>
+<li>Decarburization: C + O₂ → CO↑ (exothermic, produces brilliant flame at converter top at 1800°C+)</li>
+<li>Monitor - flame dies as carbon depletes (indicator that decarburization complete)</li>
+<li>Remove tuyeres, add carbon/alloy adjustments as needed</li>
+<li>Pour into ladle (liquid steel &lt;30 minutes before cooling/solidifying)</li>
+<li>Run time: 20-25 minutes total (highly time-sensitive)</li>
+</ol>
+<h3>Key Reactions</h3>
+<p>C + O₂ → CO | Si + O₂ → SiO₂ | 2Mn + O₂ → 2MnO | 4P + 5O₂ → P₄O₁₀. Heat released (exothermic) keeps metal liquid and very hot (temperature rises to 1650-1700°C during blow). Slag produced floats on surface, can be skimmed or allowed to cool and removed later.</p>
+<h3>Challenges and Limitations</h3>
+<p>Oxygen burns too much carbon initially, can remove all carbon (dead mild - too soft). Recarburization with small charges of coke/spiegeleisen (iron-manganese-carbon alloy, 20% Mn content) adjusts final carbon. Excessive heat generation can boil metal (violent bursts of molten material), requiring careful control. Phosphorus remains in final steel (causes brittleness at cold temperature) - solved by using low-phosphorus pig iron or basic oxygen furnace modification.</p>
+<div class="danger">
+<p><strong>Converter Safety:</strong> Bessemer converter operation is extremely hazardous. Molten metal splashing, violent CO gas ignition at converter mouth, high pressure air systems - all create serious burn/injury risk. For small-scale work, impractical and unsafe. Better to use crucible refining methods instead.</p>
+</div>
+<p>For small-scale, Bessemer process is impractical due to scale requirements and safety hazards - better to use crucible refining methods which are controllable and safe.</p>
+</section>
+<section id="crucible">
+<h2>Crucible Steel</h2>
+<div class="danger">
+<p><strong>CARBON MONOXIDE (CO) WARNING</strong>: Crucible steel melting in furnaces produces carbon monoxide gas. CO is odorless and colorless — you cannot detect it without instruments. Work ONLY in well-ventilated outdoor areas. Never operate crucible furnaces indoors or in enclosed spaces. Additionally, crucible failure during melting releases molten metal at temperatures exceeding 1,500°C — ensure all molds and tools are completely dry, and maintain clear escape paths. Symptoms of CO poisoning: headache, dizziness, nausea, confusion, loss of consciousness, death. If anyone shows symptoms, move immediately to fresh air and seek emergency medical help.</p>
+</div>
+<p>Superior method for quality steel production at smaller scale. Melting pure iron or wrought iron + carbon in sealed vessel produces uniform, clean steel. Produces premium tool steel without the hazards of larger processes.</p>
+<h3>Setup and Materials</h3>
+<p><strong>Crucible:</strong> Ceramic (graphite or clay-graphite composite) vessel 2-10 liter capacity, must withstand 1600°C without cracking. Graphite crucibles preferred (superior thermal conductivity), but clay-graphite acceptable. Do not use pure clay (too porous to molten metal). Loading: wrought iron chips/scrap (0.5-2kg per liter capacity) + calculated carbon source (charcoal powder, 2-8% by weight depending on desired carbon content).</p>
+<p><strong>Furnace:</strong> Coal or coke fire achieving 1600°C at crucible. Refractory lining (firebrick, clay) prevents heat loss and extends furnace life. Air draft essential for flame temperature (1600-1700°C needed). Total run: 2-4 hours for crucible to reach temperature and complete melting.</p>
+<h3>Procedure - Step by Step</h3>
+<ol>
+<li><strong>Preheat crucible at 1000°C for 30 minutes</strong> (prevents thermal shock cracking from rapid temperature change)</li>
+<li><strong>Place crucible in hottest part of furnace</strong> (center of flame, not edges)</li>
+<li><strong>Monitor temperature</strong> - should reach 1600°C (bright orange-white heat, no longer pure red) within 1-2 hours</li>
+<li><strong>Metal melts completely</strong> - observe by opening peephole (carefully, with shield)</li>
+<li><strong>Allow 20-30 minutes at temperature</strong> for complete dissolution of carbon and degassing (bubbles escape - indicates gas leaving molten metal)</li>
+<li><strong>When ready</strong> (metal still, no more bubbles), remove crucible with long tongs/ceramic rod, pour into preheated (800°C) steel mold or cast-iron mold</li>
+<li><strong>Cool slowly</strong> (wrap in sand/blankets/ashes) for first hour, then allow natural cooling - rapid cooling causes cracking</li>
+</ol>
+<table class="crucible-temps"><thead><tr><th scope="row">Temperature Indicator</th><th scope="row">Visual Appearance</th><th scope="row">Approximate °C</th><th scope="row">Stage</th></tr></thead><tbody><tr><td>Black heat</td><td>Cannot see glow in daylight</td><td>~400-500°C</td><td>Preheat phase</td></tr><tr><td>Dark red</td><td>Red visible in dim light only</td><td>~700°C</td><td>Preheating</td></tr><tr><td>Cherry red</td><td>Bright red in daylight</td><td>~750-800°C</td><td>Hardening temp</td></tr><tr><td>Orange</td><td>Orange-yellow color visible</td><td>~900-1000°C</td><td>Approaching melt</td></tr><tr><td>Bright orange</td><td>Very bright orange</td><td>~1200-1400°C</td><td>Near melting</td></tr><tr><td>Bright white</td><td>Almost white, very bright</td><td>~1600°C</td><td>Melting complete</td></tr></tbody></table>
+<h3>Product Quality and Characteristics</h3>
+<p>Crucible steel is superior to Bessemer - cleaner (fewer oxides from prolonged molten contact), uniform carbon distribution, better mechanical properties. Each crucible run produces 2-8kg depending on size. Small batches but consistent high quality. Carbon content 0.5-1.5% easily controlled by weight of charcoal charged. Final steel properties excellent for tool-making, blades, dies.</p>
+<div class="warning">
+<p><strong>Crucible Failure:</strong> Cracks in crucible appear suddenly under thermal stress. Never pour molten steel into damaged crucible. Always inspect before heating. Spare crucibles recommended - runs frequently fail. Cost: $50-200 per crucible depending on size and quality.</p>
+</div>
+</section>
+<section id="testing">
+<h2>Material Testing and Identification</h2>
+<p>Determining carbon content and quality of final product essential for proper application. Multiple simple tests available requiring minimal equipment.</p>
+<h3>Spark Test</h3>
+<p>Grind sample against high-speed grinding wheel (or file against spinning stone), observe spark stream:</p>
+<ol>
+<li><strong>Wrought iron:</strong> Few sparks, short stream, orange color, minimal branching</li>
+<li><strong>Low-carbon steel (0.1-0.3%C):</strong> More sparks, longer stream, orange with slight branching</li>
+<li><strong>Medium steel (0.3-0.8%C):</strong> Prolific sparks, branched, yellow-white color</li>
+<li><strong>High-carbon steel (0.8-1.5%C):</strong> Very prolific, fine branching, white sparks with little explosions/sparklers at end</li>
+<li><strong>Cast iron (3-4%C):</strong> Short dull sparks, few branches, gray color</li>
+</ol>
+<h3>Hardness Testing</h3>
+<p><strong>File test:</strong> Hardened steel resists file cutting (file skids across surface without biting). Unhardened soft steel files easily. Cast iron resists file (hardness from brittleness, not strength) - file skids like on hardened steel but material is actually brittle.</p>
+<p><strong>Scratch test:</strong> Hardened steel scratches with difficulty; soft iron scratches easily. Useful for quick identification without damaging sample. Use corner of file or hardened nail.</p>
+<h3>Breaking Test</h3>
+<p>Heat small sample to cherry-red (~800°C), cool in water (quench). Attempt to break by bending or impact:</p>
+<ol>
+<li><strong>Wrought iron:</strong> Bends severely (30-90°) before breaking, fracture shows fibrous texture</li>
+<li><strong>Soft steel:</strong> Bends slightly (10-30°) then breaks, mixed texture</li>
+<li><strong>Hardened high-carbon steel:</strong> Breaks suddenly with crystalline fracture surface (shiny facets), brittle</li>
+<li><strong>Cast iron:</strong> Breaks suddenly with coarse gray surface, very brittle</li>
+</ol>
+<p>Fracture surface analysis reveals: fine crystal structure = good quality, coarse grains = poor, inclusions = contamination.</p>
+<h3>Chemical Composition (Advanced)</h3>
+<p>If sulfuric acid available: dissolve small sample in dilute H₂SO₄. Rate of bubble evolution (hydrogen gas) indicates iron purity - pure iron reacts briskly; phosphorus/sulfur impurities slow reaction. Slag inclusions visible as dark residue. Not quantitative but useful qualitative check. Wrought iron dissolves smoothly; high-carbon steel may show surface resistance.</p>
+<h3>Sound Testing</h3>
+<p>Metal quality often correlates with acoustic properties. A test involves striking steel sample with hammer and listening to the ring.</p>
+<p><strong>High-carbon hardened steel:</strong> Produces clear, ringing tone (bell-like) that sustains several seconds. Sound pitch relatively high. This ring indicates crystalline structure and brittleness.</p>
+<p><strong>Medium-carbon or properly tempered steel:</strong> Produces moderate ring that dies after 1-2 seconds. Pitch lower than hardened steel. This indicates balanced hardness and toughness.</p>
+<p><strong>Wrought iron or very soft steel:</strong> Produces dull thud with minimal ring. Sound dies immediately. Indicates ductile, non-hardened material.</p>
+<p>This test is subjective but experienced metalworkers can judge relative quality by ear. Strike consistently (same location, similar force) for fair comparison. The test is most useful for comparing samples—if one produces significantly different tone than another, they likely differ in carbon content or hardening.</p>
+<div class="tip">
+<p><strong>Combining Tests for Confidence:</strong> Never rely on single test for critical applications. Spark test, hardness test, and breaking test together provide comprehensive assessment. If tests disagree (e.g., spark test shows high carbon but hardness test shows soft), material may be improperly hardened or tempered. This indicates need for re-treatment or rejection.</p>
+</div>
+</section>
+<section id="alloys-bronze">
+<h2>Bronze, Pewter, and Solder Alloys</h2>
+<h3>Bronze Compositions</h3>
+<p>Bronze (copper + tin) properties vary with tin percentage:</p>
+<ul>
+<li><strong>90% Cu/10% Sn:</strong> General purpose tools/bells, moderate hardness, good castability</li>
+<li><strong>85% Cu/15% Sn:</strong> Harder, better bearing properties, reduced castability</li>
+<li><strong>80% Cu/20% Sn:</strong> Bell bronze, superior resonant tone, very brittle</li>
+</ul>
+<p>Casting temperature 2100-2200°F (1150-1200°C). Bronze stronger than copper, machines cleanly, resists water corrosion (maritime use). Tin lowers melting point, improves castability. Too much tin (&gt;20%) produces brittle, difficult-to-cast bronze.</p>
+<h3>Pewter (Lead-Free)</h3>
+<p>Modern pewter: 92% Tin / 6% Antimony / 2% Copper. Melting point 400-500°F (200-260°C). Soft, malleable, takes polish. Safe for eating vessels (lead-free). Historical pewter often contained 20-50% lead - toxic, avoid. Lead dissolves into food/drink causing accumulation poisoning.</p>
+<h3>Soft Solder (Electrical/Plumbing)</h3>
+<p>60% Tin / 40% Lead (traditional) or 96.5% Tin / 3% Silver / 0.5% Cu (lead-free). Melting point ~183°C. Flows easily, creates watertight joints. Electrical wiring, plumbing connections. Lead solder superior wettability and ease of use, but environmental/health concerns favor lead-free.</p>
+<h3>Hard Solder (Silver Solder)</h3>
+<p>45% Silver / 30% Copper / 25% Zinc. Melting point ~620°C (torch required). Very strong, excellent corrosion resistance. Jewelry, high-strength mechanical joints. More difficult to use than soft solder (higher temp required), but produces superior joints.</p>
+</section>
+<section id="hardening">
+<h2>Heat Treatment and Hardening</h2>
+<p>Steel properties dramatically change with thermal processing. The key to tool performance - temperature control is critical.</p>
+<h3>Hardening Process - Core Steps</h3>
+<p>Heat steel to critical temperature (above which austenite forms, dissolves cementite), cool rapidly (quench):</p>
+<ol>
+<li><strong>Heat in coal fire</strong> to bright cherry-red (~750°C) for low-carbon steel, or bright orange-red (~800°C) for medium-carbon steel. Color indicates temperature reliably when pyrometer unavailable.</li>
+<li><strong>Plunge into water/oil</strong> (water cools faster causing maximum hardness, oil more controlled cooling). Steel makes characteristic hissing sound</li>
+<li><strong>Result: hard brittle steel</strong> - excessive hardness makes tools prone to chipping/breaking under impact</li>
+<li><strong>Temper by reheating to 200-400°C</strong> (exact temperature depends on color: pale yellow for max hardness/brittleness, straw yellow for balance, purple/blue for toughness). Cool naturally (do not quench again)</li>
+</ol>
+<h3>Tempering Color Guide and Applications</h3>
+<table><thead><tr><th scope="row">Color</th><th scope="row">Temperature</th><th scope="row">Hardness</th><th scope="row">Toughness</th><th scope="row">Application</th></tr></thead><tbody><tr><td>Pale Yellow</td><td>~200°C</td><td>Maximum</td><td>Minimum</td><td>Razors, high-speed tools, fine edges</td></tr><tr><td>Straw Yellow</td><td>~220°C</td><td>Very High</td><td>Low</td><td>Chisels, plane blades, cutting edges</td></tr><tr><td>Brown</td><td>~240°C</td><td>High</td><td>Moderate</td><td>Knives, general tool steels</td></tr><tr><td>Light Purple</td><td>~260°C</td><td>Moderate-High</td><td>Good</td><td>Scissors, shear blades</td></tr><tr><td>Purple</td><td>~280°C</td><td>Moderate</td><td>High</td><td>Springs, hammers, impact tools</td></tr><tr><td>Dark Purple</td><td>~295°C</td><td>Moderate-Low</td><td>Very High</td><td>Heavy hammers, chisels for impact</td></tr><tr><td>Blue</td><td>~310°C</td><td>Low</td><td>Very High</td><td>Axes, cold chisels, pry bars</td></tr><tr><td>Light Blue</td><td>~325°C</td><td>Very Low</td><td>Maximum</td><td>Large springs, flexible tools</td></tr></tbody></table>
+<p>Color indicates temperature by oxide film thickness on heated steel surface - useful when pyrometer unavailable. Steel tool exposed to heat oxidizes surface, color deepens with continued heating. Watch carefully - progression is rapid once above pale yellow (1-2 minutes from straw to brown).</p>
+<div class="warning">
+<p><strong>Quench Safety:</strong> Water quenching produces violent steam evolution. Never use standing water (splash hazard) - use flowing water or oil. Hot steel can ignite if plunged too quickly into oil. Use tongs, never hand-held tools. Wear protective gear.</p>
+</div>
+<h3>Annealing (Softening)</h3>
+<p>Heat steel to bright cherry-red (750°C), cool very slowly (wrap in sand/ashes, buried in kiln, cool over hours). Relieves hardness and internal stress, restores ductility. Used between hammer strikes during smithing to prevent work-hardening. Also used before hardening to ensure uniform microstructure.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting Common Furnace and Process Problems</h2>
+<h3>Problem: Furnace Won't Reach Temperature</h3>
+<p><strong>Causes:</strong> Insufficient fuel, poor air draft, excessive ore loading, air blast pressure too low.</p>
+<p><strong>Solutions:</strong> (1) Add more coke/charcoal, (2) increase bellows pressure (test with hand before furnace), (3) reduce ore loading - use lighter batches, (4) ensure stack and tuyeres clear of blockages, (5) inspect for air leaks in furnace shell.</p>
+<h3>Problem: Molten Metal Appears Foamy/Bubbly</h3>
+<p><strong>Causes:</strong> Moisture in ore, dampness in charcoal, oxygen-rich environment causing oxidation.</p>
+<p><strong>Solutions:</strong> (1) Dry all ore completely before loading (roast 4-6 hours), (2) ensure charcoal stored dry, (3) reduce bellows pressure slightly (over-oxygenation), (4) allow metal to degas longer before pouring.</p>
+<div class="danger">
+<p><strong>Furnace Carbon Monoxide:</strong> Reduce furnaces (bloomery, blast furnace, puddling) produce carbon monoxide gas - colorless, odorless, lethal. All furnace work MUST occur outdoors or with forced ventilation. Never work alone. Symptoms of CO poisoning: headache, dizziness, nausea, confusion. Evacuate immediately if experienced.</p>
+</div>
+<h3>Problem: Crucible Cracks/Failure</h3>
+<p><strong>Causes:</strong> Thermal shock (rapid cooling/heating), manufacturing defect, impure graphite, overheating.</p>
+<p><strong>Solutions:</strong> (1) Preheat crucibles slowly, never jump from room temp to 1600°C, (2) cool crucibles slowly after use, (3) use quality crucibles from reputable source, (4) verify furnace doesn't exceed 1700°C (causes graphite oxidation), (5) maintain backup crucibles.</p>
+<h3>Problem: Final Steel Too Brittle</h3>
+<p><strong>Causes:</strong> Over-hardening (quench too violent), insufficient tempering, excess carbon content.</p>
+<p><strong>Solutions:</strong> (1) Use oil quench instead of water (slower cooling), (2) ensure proper tempering color achieved for application, (3) verify carbon content via spark test (may have added excess charcoal), (4) re-temper at higher temperature (purple instead of straw color).</p>
+<h3>Problem: Final Steel Too Soft</h3>
+<p><strong>Causes:</strong> Under-hardening (quench temperature too low), over-tempering, insufficient carbon content.</p>
+<p><strong>Solutions:</strong> (1) ensure hardening temperature reached (bright cherry-red minimum), (2) ensure quench medium cold (water/fresh oil), (3) reduce tempering temperature (use lighter color), (4) if still soft, may need higher carbon steel base - start with higher-carbon iron or add more charcoal during cementation.</p>
+</section>
+<section id="common-mistakes">
+<h2>Common Mistakes and How to Avoid Them</h2>
+<h3>Mistake 1: Wrong Ore Type</h3>
+<p>Many iron ores are actually silica or other minerals - rust doesn't mean iron ore. True iron ore (hematite, magnetite) weighs heavily and produces magnetic material when reduced.</p>
+<p><strong>Fix:</strong> Test ore before major investment. Reduce 5kg sample, test with magnet. If nonmagnetic, not iron ore.</p>
+<h3>Mistake 2: Oversized Charge</h3>
+<p>Loading too much ore into furnace causes: bridging (material jams, air can't flow), incomplete reduction (ore doesn't stay in furnace long enough), excess slag production.</p>
+<p><strong>Fix:</strong> Load smaller batches - 15-20kg ore per bloomery run is safe. Multiple runs better than overloading single run.</p>
+<h3>Mistake 3: Charcoal Quality</h3>
+<p>Low-quality charcoal (incomplete burn, high ash content) produces weak reducing atmosphere and ash that mixes with product.</p>
+<p><strong>Fix:</strong> Make or source pure hardwood charcoal. Perform quick test: burn chunk, should produce bright white ash residue (calcium), dark gray ash indicates incomplete burn (reject).</p>
+<h3>Mistake 4: Insufficient Hammering</h3>
+<p>Bloom containing slag appears larger but is weak, crumbly. Insufficient hammering leaves slag trapped inside.</p>
+<p><strong>Fix:</strong> Hammer hot until metal becomes dense, uniform color, slag appears as discrete layers that can be removed. Spend 30-45 minutes hammering per 20kg bloom.</p>
+<h3>Mistake 5: Quenching Wet Steel</h3>
+<p>Steel containing moisture quenches explosively (steam formation). Worse than just violent - can damage furnace, injure operator.</p>
+<p><strong>Fix:</strong> Always dry steel completely before hardening. Heat to dull red (~500°C) for 5 minutes, allow air dry, then proceed to hardening heat.</p>
+<h3>Mistake 6: Tempering Too Hot</h3>
+<p>Tempering above critical temperature (&gt;350°C) removes almost all hardness, defeats purpose of hardening.</p>
+<p><strong>Fix:</strong> Monitor color carefully. Straw yellow is maximum safe temperature for most tools. If unsure, temper cooler (less hardness, more toughness - safer).</p>
+<h3>Mistake 7: Ignoring Quench Medium Temperature</h3>
+<p>Cold-water quench is fast (maximum hardness), but lukewarm water is slow and inconsistent. Oil must be fresh (rancid oil causes uneven quench).</p>
+<p><strong>Fix:</strong> Use ice water for maximum hardness, mineral oil for controlled hardness. Store oil sealed to prevent rancidity. Test with thermometer - quench medium should be &lt;20°C for optimal results.</p>
+<h3>Mistake 8: Inaccurate Temperature Judgment</h3>
+<p>Judging hardening temperature by color alone introduces significant error. Different lighting conditions, forge location, and operator experience all affect color perception. Under-hardening (too-cool heating) produces soft steel; over-hardening risks brittle, cracked results.</p>
+<p><strong>Fix:</strong> When pyrometer available, use it exclusively—removes all guesswork. Without pyrometer, compare heated steel to known reference samples. Keep reference pieces (fully hardened examples in known colors) visible during work. Work in consistent lighting. Have second person verify color match independently (reduces individual error). If unsure whether temperature is sufficient, heat slightly more rather than less—soft steel can be re-hardened, but over-hardened brittle steel is more difficult to fix (requires careful tempering).</p>
+<h3>Mistake 9: Crucible Preheating Neglected</h3>
+<p>Loading cold crucible into 1600°C furnace causes violent thermal shock. Crucibles shatter suddenly, releasing molten metal onto surroundings.</p>
+<p><strong>Fix:</strong> Preheat crucibles to minimum 600°C before loading into furnace. Use separate small fire 30-45 minutes before scheduled melt. Move preheated crucible carefully using tongs to main furnace. The five-minute preheating step saves crucibles and prevents dangerous accidents.</p>
+</section>
+<section id="safety-summary">
+<h2>Safety Summary</h2>
+<p>Steel-making involves extreme temperatures, toxic gases, explosive reactions, and molten metal. No casual operation.</p>
+<p><strong>Required safeguards:</strong></p>
+<ul>
+<li>Outdoor furnace location with forced ventilation (carbon monoxide hazard)</li>
+<li>Never work alone - require safety observer</li>
+<li>Full face protection, heat-resistant clothing, heavy leather apron</li>
+<li>Tongs and tools with long handles to maintain distance from heat</li>
+<li>Never quench or plunge anything into water without checking for moisture first</li>
+<li>First aid station nearby with burn treatment supplies</li>
+</ul>
+<p><strong>Medical response:</strong></p>
+<ul>
+<li>Carbon monoxide poisoning: evacuate to fresh air immediately, call emergency services</li>
+<li>Severe burns: cool with water (not ice), cover with clean cloth, do not apply ointments, seek medical attention immediately</li>
+<li>Eye injuries: flush with water 15+ minutes, seek medical attention immediately</li>
+</ul>
+</section>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="abrasives-manufacturing.html">Abrasives Manufacturing</a>
+<a href="bloomery-furnace.html">Bloomery Furnace Construction</a>
+<a href="foundry-casting.html">Foundry &amp; Metal Casting</a>
+<a href="machine-tools.html">Machine Tools &amp; Workshop</a>
+<a href="magnet-production.html">Magnet Production</a>
+<a href="metallurgy-basics.html">Metallurgy Fundamentals</a>
+<a href="metalworking.html">Metalworking &amp; Blacksmithing</a>
+<a href="spring-manufacturing.html">Spring Manufacturing</a>
+<a href="wire-drawing.html">Wire Drawing &amp; Cable Production</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

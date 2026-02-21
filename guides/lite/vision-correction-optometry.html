@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/vision-correction-optometry.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision Correction &amp; Field Optometry</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Medical &amp; Health</span> ›
+<span>Vision Correction &amp; Field Optometry</span>
+</div>
+
+
+<h1>Vision Correction &amp; Field Optometry</h1>
+<p class="subtitle">Lens grinding, eye testing, frame manufacturing, diopter calculations, and magnifying glass construction.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~5 min</span>
+<span>Updated: 2026-02-15</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">1. Overview: Vision Impairment Post-Collapse</a></li>
+<li><a href="#vision-problems">2. Understanding Vision Problems</a></li>
+<li><a href="#eye-testing">3. Simple Eye Testing: Snellen Chart Construction</a></li>
+<li><a href="#pinhole-test">4. Pinhole Test for Refractive Errors</a></li>
+<li><a href="#lens-grinding">5. Lens Grinding Basics: Materials and Techniques</a></li>
+<li><a href="#lens-curves">6. Lens Curves and Diopter Calculations</a></li>
+<li><a href="#frame-manufacturing">7. Frame Manufacturing: Materials and Methods</a></li>
+<li><a href="#trial-lens-set">8. Trial Lens Set Creation</a></li>
+<li><a href="#fitting-adjustment">9. Fitting &amp; Adjustment: Ensuring Comfort and Function</a></li>
+<li><a href="#magnifying-glasses">10. Magnifying Glasses for Near Work</a></li>
+<li><a href="#protecting-glasses">11. Protecting and Maintaining Eyeglasses</a></li>
+<li><a href="#common-mistakes">12. Common Mistakes and How to Avoid Them</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>1. Overview: Vision Impairment Post-Collapse</h2>
+<p>Vision correction ranks among the most critical survival skills in any collapse scenario. Without access to modern optometry, millions will face debilitating vision impairment. The ability to test vision, grind lenses, and manufacture eyeglasses becomes essential medical knowledge.</p>
+<p>This guide covers the complete process of field optometry: from identifying refractive errors to manufacturing functional spectacles using improvised materials and traditional grinding techniques.</p>
+<div class="tip">
+<p>Approximately 25-30% of adults require some form of vision correction. In collapse scenarios, this percentage rises significantly as stress and malnutrition affect ocular health.</p>
+</div>
+<h3>Why This Matters</h3>
+<ul>
+<li>Vision impairment reduces safety and productivity by 40-60%</li>
+<li>Untreated presbyopia (age-related) affects 90% of people over 45</li>
+<li>Myopia (nearsightedness) increased 66% in last 30 years due to screen use</li>
+<li>Corrected vision significantly improves quality of life and mental health</li>
+<li>Craftspeople, gardeners, and leaders require sharp vision for survival tasks</li>
+</ul>
+<div class="note">
+<p>Historical record: During the Great Depression and WWII, communities often had at least one person trained in basic lens grinding. This skill disappeared from general knowledge by 1970.</p>
+</div>
+<h3>Prerequisites</h3>
+<ul>
+<li>Basic understanding of optics and light refraction</li>
+<li>Manual dexterity and patience for precision work</li>
+<li>Access to glass, polishing compounds, and grinding tools</li>
+<li>Ability to perform basic mathematics (diopter calculations)</li>
+<li>Materials for frame construction (wire, wood, or polymer)</li>
+</ul>
+</section>
+<section id="vision-problems">
+<h2>2. Understanding Vision Problems</h2>
+<p>The human eye focuses light onto the retina, where it's converted to neural signals sent to the brain. Refractive errors occur when the eye's shape or corneal curvature prevents proper focusing.</p>
+<p><svg aria-label="👓 Vision Correction &amp; Field Optometry diagram 1" height="200" viewBox="0 0 400 200" width="400"><defs><marker id="arrowhead" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="3"><polygon fill="#53d8a8" points="0 0, 10 3, 0 6"></polygon></marker></defs><circle cx="50" cy="100" fill="none" r="20" stroke="#53d8a8" stroke-width="2"></circle><circle cx="50" cy="100" fill="none" r="15" stroke="#e94560" stroke-width="1"></circle><line marker-end="url(#arrowhead)" stroke="#53d8a8" stroke-width="2" x1="10" x2="30" y1="100" y2="100"></line><text fill="#aaa" font-size="12" x="20" y="120">Light</text><circle cx="70" cy="100" fill="#e94560" r="2"></circle><text fill="#53d8a8" font-size="14" text-anchor="middle" x="40" y="140">NORMAL</text><circle cx="150" cy="100" fill="none" r="22" stroke="#e94560" stroke-width="2"></circle><circle cx="150" cy="100" fill="none" r="15" stroke="#e94560" stroke-width="1"></circle><line marker-end="url(#arrowhead)" stroke="#e94560" stroke-width="2" x1="110" x2="128" y1="100" y2="100"></line><text fill="#aaa" font-size="12" x="120" y="120">Light</text><circle cx="155" cy="95" fill="#e94560" r="2"></circle><text fill="#e94560" font-size="14" text-anchor="middle" x="150" y="140">MYOPIA</text><circle cx="280" cy="100" fill="none" r="18" stroke="#53d8a8" stroke-width="2"></circle><circle cx="280" cy="100" fill="none" r="15" stroke="#53d8a8" stroke-width="1"></circle><line marker-end="url(#arrowhead)" stroke="#53d8a8" stroke-width="2" x1="240" x2="262" y1="100" y2="100"></line><text fill="#aaa" font-size="12" x="250" y="120">Light</text><circle cx="285" cy="100" fill="#53d8a8" r="2"></circle><text fill="#53d8a8" font-size="14" text-anchor="middle" x="280" y="140">HYPEROPIA</text></svg></p>
+<h3>Myopia (Nearsightedness)</h3>
+<p>The eye is too long or cornea is too curved. Light focuses in front of the retina, making distant objects blurry.</p>
+<table><thead><tr><th scope="row">Symptom</th><th scope="row">Severity Indicator</th></tr></thead><tbody><tr><td>Can't read signs at distance</td><td>Mild (up to -2.00 diopters)</td></tr><tr><td>Cannot focus beyond arm's length</td><td>Moderate (-2.00 to -5.00)</td></tr><tr><td>Only sees clearly within 6 inches</td><td>High (below -5.00)</td></tr></tbody></table>
+<h3>Hyperopia (Farsightedness)</h3>
+<p>The eye is too short or cornea is too flat. Light focuses behind the retina, making near objects blurry.</p>
+<table><thead><tr><th scope="row">Symptom</th><th scope="row">Severity Indicator</th></tr></thead><tbody><tr><td>Difficulty reading small text</td><td>Mild (up to +2.00 diopters)</td></tr><tr><td>Blurry vision at reading distance</td><td>Moderate (+2.00 to +5.00)</td></tr><tr><td>All distances blurry, especially close</td><td>High (above +5.00)</td></tr></tbody></table>
+<h3>Astigmatism</h3>
+<p>The cornea or lens is irregularly shaped, like a football rather than a sphere. Multiple focal points create blurry vision at all distances.</p>
+<ul>
+<li><strong>Corneal astigmatism:</strong> Irregular cornea shape (most common)</li>
+<li><strong>Lenticular astigmatism:</strong> Lens shape abnormality</li>
+<li><strong>Mixed:</strong> Combination of myopia/hyperopia with astigmatism</li>
+</ul>
+<div class="warning">
+<p>Astigmatism is the most difficult refractive error to correct in field conditions and requires specialized lens grinding techniques.</p>
+</div>
+<h3>Presbyopia (Age-Related)</h3>
+<p>The lens loses elasticity with age, reducing ability to focus on near objects. Typically begins around age 45.</p>
+<ul>
+<li>Occurs in everyone eventually (not a disease)</li>
+<li>Accelerated by close work and eye strain</li>
+<li>Corrected with reading glasses (typically +1.00 to +3.50)</li>
+<li>May be combined with other refractive errors</li>
+</ul>
+<div class="note">
+<p>In collapse scenarios without modern nutrition, presbyopia may develop earlier (late 30s) due to oxidative stress and inflammation affecting lens proteins.</p>
+</div>
+</section>
+<section id="eye-testing">
+<h2>3. Simple Eye Testing: Snellen Chart Construction</h2>
+<p>The Snellen chart measures visual acuity by testing the ability to distinguish details at specific distances. A 20/20 line is readable at 20 feet; 20/200 is readable only at 20 feet that a normal eye sees at 200 feet.</p>
+<h3>DIY Snellen Chart Construction</h3>
+<p>Building a field-usable vision chart requires precision with letter sizing and spacing.</p>
+<p>Print or draw letters with precise proportions: Each letter occupies a 5x5 grid of &quot;modules&quot; (small units), with strokes 1 module thick.
+Use Arial or similar sans-serif font family for consistency and clarity.
+Mount on high-contrast background (black letters on white, or white on black).
+Ensure uniform lighting: avoid glare and shadows during testing.
+Calibrate distance: most testing is done at 20 feet (6 meters). Mark position clearly.</p>
+<table><thead><tr><th scope="row">Visual Acuity</th><th scope="row">Letter Height at 20 ft</th><th scope="row">Top Line Letter Size</th><th scope="row">Indication</th></tr></thead><tbody><tr><td>20/200</td><td>87.6 mm</td><td>88.5 mm</td><td>Legally blind threshold</td></tr><tr><td>20/100</td><td>43.8 mm</td><td>44.3 mm</td><td>Needs correction</td></tr><tr><td>20/70</td><td>30.6 mm</td><td>31.0 mm</td><td>Mild impairment</td></tr><tr><td>20/40</td><td>17.5 mm</td><td>17.7 mm</td><td>Moderate impairment</td></tr><tr><td>20/20</td><td>8.75 mm</td><td>8.87 mm</td><td>Normal vision</td></tr></tbody></table>
+<h3>Testing Protocol</h3>
+<p>Have patient cover one eye with occluder (not hand, which allows peeking).
+Start from largest (top) line; patient reads progressively smaller lines.
+Record smallest line readable with ≤2 errors as visual acuity for that eye.
+Repeat for other eye, then test both eyes together.
+Allow 2-3 seconds per line for accommodation.</p>
+<h3>Interpreting Results</h3>
+<ul>
+<li><strong>20/20:</strong> Normal vision; no correction needed for distance</li>
+<li><strong>20/30-20/60:</strong> Mild myopia; correction recommended for safety</li>
+<li><strong>20/100+:</strong> Significant myopia; vision correction essential</li>
+<li><strong>Difference between eyes:</strong> Indicates possible astigmatism or anisometropia (different prescriptions each eye)</li>
+</ul>
+<div class="tip">
+<p>Always test in consistent lighting conditions. Test during consistent times of day, as vision can vary with fatigue, time of day, and ambient light intensity.</p>
+</div>
+</section>
+<section id="pinhole-test">
+<h2>4. Pinhole Test for Refractive Errors</h2>
+<p>The pinhole test uses a simple aperture to improve vision regardless of refractive error. It works by reducing spherical aberration and increasing depth of field.</p>
+<h3>How It Works</h3>
+<p>A pinhole (diameter 1-2mm) allows only light rays that travel straight through the eye's center, bypassing imperfections in corneal curvature and lens shape.</p>
+<p><svg aria-label="👓 Vision Correction &amp; Field Optometry diagram 2" height="250" viewBox="0 0 500 250" width="500"><text fill="#53d8a8" font-size="16" font-weight="bold" text-anchor="middle" x="250" y="30">Pinhole Effect on Light Rays</text><text fill="#aaa" font-size="12" x="100" y="60">Without Pinhole</text><circle cx="100" cy="120" fill="none" r="30" stroke="#e94560" stroke-width="2"></circle><line stroke="#e94560" stroke-width="2" x1="40" x2="70" y1="110" y2="110"></line><line stroke="#e94560" stroke-width="2" x1="45" x2="70" y1="120" y2="125"></line><line stroke="#e94560" stroke-width="2" x1="50" x2="70" y1="130" y2="130"></line><circle cx="150" cy="120" fill="#e94560" r="3"></circle><text fill="#aaa" font-size="11" text-anchor="middle" x="100" y="180">Multiple rays blur</text><text fill="#aaa" font-size="11" text-anchor="middle" x="100" y="195">at focal plane</text><text fill="#53d8a8" font-size="12" x="380" y="60">With Pinhole</text><circle cx="380" cy="120" fill="none" r="30" stroke="#53d8a8" stroke-width="2"></circle><circle cx="380" cy="120" fill="#53d8a8" r="3"></circle><line stroke="#53d8a8" stroke-width="1" x1="320" x2="377" y1="120" y2="120"></line><circle cx="430" cy="120" fill="#53d8a8" r="2"></circle><text fill="#aaa" font-size="11" text-anchor="middle" x="380" y="180">Central ray only</text><text fill="#aaa" font-size="11" text-anchor="middle" x="380" y="195">sharp focus</text><line marker-end="url(#arrowhead)" stroke="#53d8a8" stroke-width="2" x1="210" x2="290" y1="120" y2="120"></line><text fill="#53d8a8" font-size="12" text-anchor="middle" x="250" y="115">Add pinhole</text></svg></p>
+<h3>Construction of a Pinhole Occluder</h3>
+<p>Take a piece of thin metal (aluminum foil, thin brass, or steel) about 1mm thick.
+Create a hole using a needle or fine drill bit: target diameter 1.0-1.5mm (smaller = sharper, but dimmer).
+Use a piece of foam or rubber as backing to prevent eye injury.
+Mount in a handle made from wood, bone, or plastic for comfortable holding.</p>
+<h3>Testing Procedure</h3>
+<ol>
+<li>Have patient look at eye chart without correction and note visual acuity</li>
+<li>Place pinhole occluder in front of eye, keeping distance ~1 inch</li>
+<li>Ask patient to look through pinhole and read chart again</li>
+<li>Compare acuity with and without pinhole</li>
+</ol>
+<h3>Interpreting Results</h3>
+<table><thead><tr><th scope="row">Result</th><th scope="row">Interpretation</th><th scope="row">Implication</th></tr></thead><tbody><tr><td>Vision improves significantly</td><td>Refractive error (myopia/hyperopia)</td><td>Lens correction will help</td></tr><tr><td>Vision improves slightly</td><td>Astigmatism with refractive error</td><td>Requires cylindrical lens</td></tr><tr><td>No improvement or worse</td><td>Possible corneal scarring or retinal damage</td><td>Glasses won't help; seek diagnosis</td></tr></tbody></table>
+<div class="warning">
+<p>If vision does not improve with pinhole test, the problem may not be a simple refractive error. Suspect cataracts, corneal scarring, or retinal disease.</p>
+</div>
+<div class="tip">
+<p>Pinhole test is not a substitute for proper refraction but a quick diagnostic tool. It helps distinguish refractive errors from other causes of vision loss.</p>
+</div>
+</section>
+<section id="lens-grinding">
+<h2>5. Lens Grinding Basics: Materials and Techniques</h2>
+<p>Grinding lenses is a precision craft that combines geometry, physics, and manual skill. The goal is to create a curved surface that focuses light at a precise distance from the lens.</p>
+<h3>Material Selection</h3>
+<h4>Crown Glass</h4>
+<ul>
+<li><strong>Properties:</strong> Low refractive index (1.52), low dispersion, excellent clarity</li>
+<li><strong>Advantages:</strong> Easy to work with, doesn't crack easily, maintains precision</li>
+<li><strong>Disadvantages:</strong> Thicker lenses for high prescriptions</li>
+<li><strong>Source:</strong> Recycled eyeglasses, old test lenses, window glass (less ideal)</li>
+</ul>
+<h4>Flint Glass</h4>
+<ul>
+<li><strong>Properties:</strong> Higher refractive index (1.6-1.75), higher dispersion (more color fringing)</li>
+<li><strong>Advantages:</strong> Thinner lenses, more powerful corrections in compact form</li>
+<li><strong>Disadvantages:</strong> More difficult to grind, prone to chipping, requires skill</li>
+<li><strong>Source:</strong> Specialized optical suppliers or salvage from laboratory equipment</li>
+</ul>
+<h4>Plastic (Polycarbonate/CR-39)</h4>
+<ul>
+<li><strong>Properties:</strong> Refractive index 1.55-1.58, lighter, safe (won't shatter)</li>
+<li><strong>Advantages:</strong> Impact resistant, lighter for high prescriptions, easier to shape</li>
+<li><strong>Disadvantages:</strong> Scratches easily, requires special polishing compounds, yellows with age</li>
+<li><strong>Source:</strong> Salvaged lenses, 3D printing in advanced scenarios</li>
+</ul>
+<div class="note">
+<p>Crown glass from old eyeglasses is the most practical material for collapse scenarios. Verify glass type by checking old prescription: if labeled with refractive index, crown glass will be ~1.5.</p>
+</div>
+<h3>Essential Tools for Lens Grinding</h3>
+<table><thead><tr><th scope="row">Tool</th><th scope="row">Purpose</th><th scope="row">Improvisation</th></tr></thead><tbody><tr><td>Grinding wheel</td><td>Shape glass to rough curve</td><td>Emery wheel on lathe or hand-powered tool</td></tr><tr><td>Grinding stone (various grits)</td><td>Refine curve shape</td><td>Whetstone, sandstone, carborundum</td></tr><tr><td>Polishing pad</td><td>Create optical surface</td><td>Soft cloth with polishing compound (rouge, tin oxide)</td></tr><tr><td>Radius gauge</td><td>Measure curve accuracy</td><td>Manufactured gauges or home-made with known-diameter curves</td></tr><tr><td>Optical bench/straightedge</td><td>Check surface flatness</td><td>Polished steel rod or carefully made straightedge</td></tr><tr><td>Calipers</td><td>Measure lens thickness</td><td>Vernier calipers or improvised thickness gauge</td></tr></tbody></table>
+<h3>Basic Lens Grinding Process</h3>
+<p>Secure raw glass blank in a wooden or metal holder that protects hands and eyes from flying particles. Safety glasses essential.
+Begin grinding with coarse stone (100-150 grit) to establish basic curve shape matching calculated radius.
+Progress to medium grit (240-400) for better surface definition and to remove coarse scratches.
+Use fine grit (600-1000) to prepare surface for polishing; check radius accuracy frequently.
+Polish with fine compound (tin oxide or cerium oxide) on soft pad, applying moderate pressure in circular motions.
+Test lens optically: look through it at known distance to verify focal length matches prescription.
+Clean thoroughly before use to remove all grinding dust (critical for optical quality).</p>
+<div class="warning">
+<p>Grinding glass creates fine sharp particles. Always wear: safety glasses, dust mask (N95 minimum), work gloves. Secure work area to prevent glass shards from becoming projectiles.</p>
+</div>
+<h3>Achieving Precision</h3>
+<p>The key to quality lens grinding is understanding that the curve radius directly determines focal length:</p>
+<p>Focal Length (mm) = Radius of Curvature (mm) × (Refractive Index - 1) / 2</p>
+<p>For crown glass (n=1.52) with 500mm radius: focal length = 500 × 0.52 / 2 = 130mm = 7.7 diopters</p>
+<div class="tip">
+<p>Keep a reference sample of each radius you create. This becomes invaluable for comparing work and troubleshooting. Mark clearly with radius value.</p>
+</div>
+</section>
+<section id="lens-curves">
+<h2>6. Lens Curves and Diopter Calculations</h2>
+<p>A diopter (D) is the unit of lens power, defined as the reciprocal of focal length in meters: Power (D) = 1 / Focal Length (m).</p>
+<h3>Single-Vision Lens Calculations</h3>
+<p>For a single refracting surface (plano-curved lens), the power depends on three factors:</p>
+<p>Power (D) = (n₂ - n₁) / Radius of Curvature (m)
+Where:
+n₂ = refractive index of glass
+n₁ = refractive index of air (1.0)
+Radius = radius of curvature in meters (positive for convex)</p>
+<table><thead><tr><th scope="row">Prescription (D)</th><th scope="row">Radius Crown Glass (mm)</th><th scope="row">Radius Flint Glass (mm)</th><th scope="row">Clinical Use</th></tr></thead><tbody><tr><td>+1.00</td><td>1038</td><td>833</td><td>Mild hyperopia, reading add</td></tr><tr><td>+2.00</td><td>519</td><td>417</td><td>Moderate hyperopia</td></tr><tr><td>+3.00</td><td>346</td><td>278</td><td>Strong hyperopia/presbyopia</td></tr><tr><td>-1.00</td><td>-1038</td><td>-833</td><td>Mild myopia</td></tr><tr><td>-2.00</td><td>-519</td><td>-417</td><td>Moderate myopia</td></tr><tr><td>-3.00</td><td>-346</td><td>-278</td><td>Strong myopia</td></tr></tbody></table>
+<h3>Bicurve (Both Sides Curved) Lenses</h3>
+<p>For improved optical quality and thinner lenses, both surfaces are curved. The powers combine:</p>
+<p>Total Power = Power Front Surface + Power Back Surface -
+(Center Thickness / Refractive Index) × Power Front × Power Back</p>
+<p>For practical field work, a simpler approximation works when thickness is small:</p>
+<p>Total Power ≈ Power Front + Power Back</p>
+<h3>Understanding Cylinder Power (Astigmatism)</h3>
+<p>Astigmatism requires different focal lengths in two perpendicular meridians. This is corrected with cylindrical lenses:</p>
+<ul>
+<li><strong>Spherical:</strong> Same power in all meridians (affects both distance and direction equally)</li>
+<li><strong>Cylindrical:</strong> Power only in one meridian, zero power perpendicular (corrects astigmatism)</li>
+<li><strong>Spherocylindrical:</strong> Combination of sphere and cylinder (most prescriptions)</li>
+</ul>
+<div class="warning">
+<p>Grinding cylindrical lenses requires advanced skill and specialized equipment. In field conditions, prioritize getting spherical corrections right first.</p>
+</div>
+<h3>Prescription Format</h3>
+<p>Standard optical notation:</p>
+<p>Sphere (Cyl) × Axis
+Example: -1.50 (-0.75) × 180
+Sphere: -1.50 D (myopia)
+Cylinder: -0.75 D (additional myopia in 180° meridian)
+Axis: 180° (horizontal orientation of cylinder)</p>
+<div class="tip">
+<p>When grinding for a customer without detailed prescription records, start with sphere correction only. Cylinder correction requires the patient to describe directional blurriness (e.g., &quot;horizontal lines fuzzy, vertical OK&quot;).</p>
+</div>
+</section>
+<section id="frame-manufacturing">
+<h2>7. Frame Manufacturing: Materials and Methods</h2>
+<p>The frame must hold lenses precisely, be comfortable for extended wear, and resist corrosion. Multiple material options exist for collapse scenarios.</p>
+<h3>Wire Frames</h3>
+<p>Traditional method using flexible metal wire, excellent for low-resource scenarios.</p>
+<h4>Materials</h4>
+<ul>
+<li><strong>Stainless steel wire:</strong> Best option; won't rust, durable, flexible</li>
+<li><strong>Copper wire:</strong> Good alternative; green patina prevents further corrosion</li>
+<li><strong>Bronze/brass:</strong> Acceptable; requires regular polishing to prevent tarnish</li>
+<li><strong>Aluminum:</strong> Avoid; oxidizes quickly, weak at joints</li>
+</ul>
+<h4>Construction Method</h4>
+<p>Form front frame shape: bend wire to create oval or rectangular eye openings, with bridge connecting both sides.
+Create lens grooves: craft small notches or grooves in wire at precise locations where lens edges will rest.
+Cut and polish lens edges: grind lens edges to fit wire grooves, ensuring uniform thickness at edge.
+Secure lenses: set lenses in grooves, optionally using dental cement or thin binding wire to hold permanently.
+Form temple (arm) extensions: bend additional wire segments at hinge points, extending backward to ears.
+Create ear pieces: bend ends of temples into hoops that fit comfortably around ears.
+Adjust bridge fit: fine-tune nose bridge to sit comfortably (should rest on nose, not pinch bridge or slip).</p>
+<p><svg aria-label="👓 Vision Correction &amp; Field Optometry diagram 3" height="250" viewBox="0 0 400 250" width="400"><text fill="#53d8a8" font-size="14" font-weight="bold" text-anchor="middle" x="200" y="25">Wire Frame Construction</text><text fill="#aaa" font-size="12" x="100" y="50">Front View</text><ellipse cx="70" cy="100" fill="none" rx="30" ry="35" stroke="#53d8a8" stroke-width="2"></ellipse><ellipse cx="130" cy="100" fill="none" rx="30" ry="35" stroke="#53d8a8" stroke-width="2"></ellipse><path d="M 100 100 L 100 100" stroke="#53d8a8" stroke-width="2"></path><line stroke="#e94560" stroke-dasharray="3,3" stroke-width="1" x1="100" x2="100" y1="95" y2="105"></line><text fill="#muted" font-size="10" text-anchor="middle" x="100" y="120">Bridge</text><text fill="#aaa" font-size="12" x="300" y="50">Side View</text><ellipse cx="280" cy="100" fill="none" rx="25" ry="30" stroke="#53d8a8" stroke-width="2"></ellipse><path d="M 305 100 Q 330 100 340 110" fill="none" stroke="#53d8a8" stroke-width="2"></path><circle cx="345" cy="115" fill="none" r="8" stroke="#53d8a8" stroke-width="2"></circle><text fill="#muted" font-size="10" text-anchor="middle" x="280" y="150">Lens eye</text><text fill="#muted" font-size="10" text-anchor="middle" x="340" y="150">Temple arm &amp; ear piece</text><text fill="#aaa" font-size="12" text-anchor="middle" x="200" y="190">Lens Edge Detail</text><rect fill="none" height="15" stroke="#aaa" stroke-width="1" width="100" x="150" y="210"></rect><circle cx="160" cy="217" fill="#e94560" r="2"></circle><circle cx="170" cy="217" fill="#e94560" r="2"></circle><circle cx="180" cy="217" fill="#e94560" r="2"></circle><circle cx="190" cy="217" fill="#e94560" r="2"></circle><circle cx="200" cy="217" fill="#e94560" r="2"></circle><circle cx="210" cy="217" fill="#e94560" r="2"></circle><circle cx="220" cy="217" fill="#e94560" r="2"></circle><circle cx="230" cy="217" fill="#e94560" r="2"></circle><circle cx="240" cy="217" fill="#e94560" r="2"></circle><text fill="#muted" font-size="10" text-anchor="middle" x="200" y="235">Wire grooves every 3-5mm</text></svg></p>
+<h3>Wood Frames</h3>
+<p>Lightweight, comfortable, and beautiful when properly finished.</p>
+<ul>
+<li><strong>Materials:</strong> Hardwood (walnut, oak, maple), must be dry to prevent warping</li>
+<li><strong>Advantages:</strong> Warm feel, easy to carve, adjustable</li>
+<li><strong>Disadvantages:</strong> Requires more skill, susceptible to humidity changes</li>
+<li><strong>Construction:</strong> Carve eye openings, bore holes for lens edges, create temple hinges with dowels</li>
+</ul>
+<h3>Molded/Cast Frames</h3>
+<p>Using available polymers or recycled materials.</p>
+<ul>
+<li><strong>Thermoplastic:</strong> Salvaged plastic, heated and molded to frame shape</li>
+<li><strong>3D Printed:</strong> Advanced scenarios with functional plastic (PETG, nylon)</li>
+<li><strong>Cast:</strong> Metal casting techniques for aluminum or bronze frames</li>
+</ul>
+<div class="tip">
+<p>Regardless of material, ensure the bridge width matches the wearer's interpupillary distance (IPD). Average adult IPD is 62-64mm, but ranges 54-74mm. Incorrect IPD causes eye strain and headaches.</p>
+</div>
+</section>
+<section id="trial-lens-set">
+<h2>8. Trial Lens Set Creation</h2>
+<p>A trial lens set is a collection of standardized lenses used to determine exact prescription. Building one is a major project but invaluable for testing vision in your community.</p>
+<h3>Minimal Functional Set</h3>
+<p>Start with these powers for most refractive errors:</p>
+<table><thead><tr><th scope="row">Power</th><th scope="row">Quantity</th><th scope="row">Purpose</th></tr></thead><tbody><tr><td>+0.25, +0.50, +0.75, +1.00</td><td>2 each (OD, OS)</td><td>Mild hyperopia, reading adds</td></tr><tr><td>+1.50, +2.00, +2.50, +3.00</td><td>1 each</td><td>Moderate-strong hyperopia</td></tr><tr><td>-0.25, -0.50, -0.75, -1.00</td><td>2 each (OD, OS)</td><td>Mild myopia</td></tr><tr><td>-1.50, -2.00, -2.50, -3.00</td><td>1 each</td><td>Moderate-strong myopia</td></tr><tr><td>-4.00, -5.00, -6.00</td><td>1 each</td><td>High myopia</td></tr></tbody></table>
+<h3>Sourcing Lenses for Your Set</h3>
+<ol>
+<li>Collect old eyeglasses and preserved trial lenses from medical facilities, optometrists, or salvage</li>
+<li>Grind custom lenses for powers not found in salvage materials</li>
+<li>Label each lens clearly with power (e.g., &quot;+2.00 OD&quot; for right eye, positive)</li>
+<li>Store in protective case, keeping lenses organized by power and eye</li>
+<li>Include carrying case or organized box with foam inserts</li>
+</ol>
+<div class="warning">
+<p>Never mix prescription strengths in storage. Mislabeling causes significant errors during vision testing and customer dissatisfaction or worse.</p>
+</div>
+<h3>Using Trial Lenses for Refraction</h3>
+<p>Start with pinhole test to establish whether vision improves with smaller aperture (likely refractive error).
+Place weakest (+) lens in trial frame; ask if vision improves or worsens. If improves, progressively add stronger + lenses.
+If no improvement with +, switch to (-) lenses; ask which power gives best clarity.
+Fine-tune: once you find approximate power, try lenses in 0.25 D increments nearby.
+Ask patient which of two powers looks clearer: &quot;-1.00 or -1.25?&quot; (never offer more than two choices)
+Verify by reading eye chart: patient should read one line better than without correction.
+Test other eye same way.
+Test both eyes together: verify prescription doesn't cause imbalance or focusing strain.</p>
+<div class="note">
+<p>During crisis, a simple trial set of ±0.50, ±1.00, ±1.50, ±2.00, ±3.00 will cover 80% of refractive errors. Expanding to 0.25 increments improves accuracy significantly.</p>
+</div>
+</section>
+<section id="fitting-adjustment">
+<h2>9. Fitting &amp; Adjustment: Ensuring Comfort and Function</h2>
+<p>Even perfect lenses fail if the frame doesn't fit properly. Proper fitting maximizes comfort, prevents headaches, and ensures intended correction.</p>
+<h3>Fitting Measurements</h3>
+<table><thead><tr><th scope="row">Measurement</th><th scope="row">Method</th><th scope="row">Typical Range</th><th scope="row">Impact if Wrong</th></tr></thead><tbody><tr><td>Interpupillary Distance (IPD)</td><td>Measure center to center distance between pupils</td><td>54-74 mm</td><td>Strain, image misalignment, headache</td></tr><tr><td>Bridge width</td><td>Measure inner edge of each lens eye</td><td>14-18 mm</td><td>Uncomfortable fit, slipping</td></tr><tr><td>Lens eye height</td><td>Vertical measurement of lens opening</td><td>28-38 mm</td><td>Limited field of view if too small</td></tr><tr><td>Temple length</td><td>Back of lens eye to ear piece end</td><td>120-150 mm</td><td>Slipping or pinching at ears</td></tr></tbody></table>
+<h3>Fitting Process</h3>
+<p>Measure patient's IPD: have them look straight ahead, mark pupil centers with ruler, measure distance.
+Position frame on face: optical centers should align with pupils (within 2mm tolerance).
+Check temple fit: should sit comfortably along temple bone without pinching or slipping.
+Verify bridge: should rest on nose bridge without pressure, not touching too high (bridge of nose) or too low (tip).
+Adjust if needed: wire frames can be bent carefully for fit; wooden frames may need carving adjustments.
+Test comfort: have wearer wear for 15 minutes, checking for pressure points or slipping.</p>
+<h3>Common Adjustment Issues and Solutions</h3>
+<table><thead><tr><th scope="row">Problem</th><th scope="row">Cause</th><th scope="row">Solution</th></tr></thead><tbody><tr><td>Glasses slip down</td><td>Temple angle too wide, nose bridge too wide</td><td>Bend temples inward, increase nose bridge height slightly</td></tr><tr><td>Pressure on nose</td><td>Bridge too tight or resting wrong position</td><td>Widen bridge gently, adjust nose rest pads</td></tr><tr><td>Earache or temple pressure</td><td>Temple too short or angled wrong</td><td>Lengthen temples or adjust ear piece angle</td></tr><tr><td>Blurry at edges or centers</td><td>Lens optical centers misaligned with pupils</td><td>Reposition lenses in frame or refit frame to face</td></tr><tr><td>Headache after wearing</td><td>Prescription imbalance, IPD mismatch, or poor fit</td><td>Verify prescription and frame alignment; test with trial lenses</td></tr></tbody></table>
+<div class="tip">
+<p>When adjusting wire frames, heat gently in water bath first (if available) to make material more pliable. Never bend cold metal rapidly as it can snap or crack.</p>
+</div>
+</section>
+<section id="magnifying-glasses">
+<h2>10. Magnifying Glasses for Near Work</h2>
+<p>Beyond vision correction, people need magnification for detailed work: sewing, reading, mechanical repair, jewelry making. Simple magnifiers extend productive years significantly.</p>
+<h3>Magnification Calculations</h3>
+<p>Magnification power relates directly to diopter strength:</p>
+<p>Magnification ≈ Diopter Power / 4
+Examples:
++4.00 D lens = 1× magnification (minimal)
++8.00 D lens = 2× magnification
++16.00 D lens = 4× magnification
++20.00 D lens = 5× magnification</p>
+<h3>Simple Hand Magnifier Construction</h3>
+<p>Source or grind a high-power positive lens (+8.00 to +20.00 D is typical).
+Mount in a handle made of wood, bone, or molded plastic with opening roughly 25-35mm diameter.
+Ensure lens is secure and centered; glue or mechanical clips work.
+Add optional handle features: leather wrapping for grip, adjustable eye loop for consistency.</p>
+<h3>Loupe Magnifier (Jeweler's Style)</h3>
+<ul>
+<li>High-magnification (10-20×) for very fine detail work</li>
+<li>Compact, fits in pocket or worn on cord around neck</li>
+<li>Requires steady hand and close working distance (25-50mm)</li>
+<li>Most useful for craftspeople: jewelers, watch repairers, electricians</li>
+</ul>
+<p><svg aria-label="👓 Vision Correction &amp; Field Optometry diagram 4" height="250" viewBox="0 0 400 250" width="400"><text fill="#53d8a8" font-size="14" font-weight="bold" text-anchor="middle" x="200" y="25">Magnifier Types and Field of View</text><text fill="#aaa" font-size="12" x="100" y="50">Simple Hand Lens</text><circle cx="80" cy="120" fill="none" r="25" stroke="#53d8a8" stroke-width="3"></circle><rect fill="#8b7355" height="30" stroke="#aaa" stroke-width="1" width="60" x="50" y="140"></rect><text fill="#eee" font-size="9" text-anchor="middle" x="80" y="160">Wood handle</text><text fill="#aaa" font-size="11" text-anchor="middle" x="80" y="210">2-4× magnification</text><text fill="#aaa" font-size="11" text-anchor="middle" x="80" y="225">Large field of view</text><text fill="#aaa" font-size="12" x="300" y="50">Loupe Magnifier</text><circle cx="280" cy="100" fill="none" r="18" stroke="#53d8a8" stroke-width="3"></circle><circle cx="280" cy="100" fill="none" r="14" stroke="#53d8a8" stroke-dasharray="3,3" stroke-width="1"></circle><polygon fill="#8b7355" points="280,118 290,135 270,135" stroke="#aaa"></polygon><text fill="#aaa" font-size="11" text-anchor="middle" x="280" y="180">10-20× magnification</text><text fill="#aaa" font-size="11" text-anchor="middle" x="280" y="195">Narrow field of view</text><text fill="#aaa" font-size="11" text-anchor="middle" x="280" y="210">Compact, portable</text></svg></p>
+<h3>Magnifying Light Box (Advanced)</h3>
+<p>For detailed work, combining magnification with light improves visibility dramatically:</p>
+<ul>
+<li>Mount magnifier above task board with focused light source (oil lamp, daylight tube)</li>
+<li>Creates hands-free workspace for detailed assembly or repair</li>
+<li>Reduces eye strain significantly for prolonged work</li>
+<li>Essential for craftspeople in collapse scenarios</li>
+</ul>
+<div class="note">
+<p>A 3-4× hand magnifier covers 95% of practical needs for most people: reading, crafting, inspection. Higher magnifications useful but require steadier hands and closer working distance.</p>
+</div>
+</section>
+<section id="protecting-glasses">
+<h2>11. Protecting and Maintaining Eyeglasses</h2>
+<p>In collapse scenarios, a pair of eyeglasses may be irreplaceable for months or longer. Protective practices extend their life significantly.</p>
+<h3>Storage Best Practices</h3>
+<ul>
+<li><strong>Case:</strong> Hard case provides best protection; soft cases acceptable if rigid inner lining added</li>
+<li><strong>Environment:</strong> Keep away from heat (&gt;60°C), extreme cold, moisture, dust</li>
+<li><strong>Position:</strong> Store lens-up in case (lenses don't contact surfaces)</li>
+<li><strong>Backup pair:</strong> Maintain backup glasses (even if older prescription) for critical situations</li>
+<li><strong>Children:</strong> Keep safely stored away from children who may damage or lose</li>
+</ul>
+<h3>Cleaning and Care</h3>
+<p>Rinse lenses with clean water or gentle breath moisture before wiping.
+Wipe with soft cloth (microfiber, clean cotton) using gentle circular motions.
+For stubborn residue, use mild soap and water; rinse thoroughly and dry completely.
+Never use harsh chemicals, solvents, or abrasive cloths (paper towels, clothing).
+Inspect regularly for scratches, loose lenses, bent frames, corroded hinges.
+Check nose pads and ear pieces: replace or adjust if uncomfortable or worn.</p>
+<h3>Minor Repairs</h3>
+<table><thead><tr><th scope="row">Problem</th><th scope="row">Repair Method</th><th scope="row">Materials Needed</th></tr></thead><tbody><tr><td>Loose screw at hinge</td><td>Tighten with small screwdriver, add tiny drop of clear epoxy to prevent loosening</td><td>Screwdriver, epoxy adhesive</td></tr><tr><td>Cracked lens</td><td>If small crack, seal edge with clear epoxy to prevent spreading; otherwise replace lens</td><td>Clear epoxy, small brush</td></tr><tr><td>Bent frame</td><td>Gently heat in warm water (not boiling); bend carefully back to original shape</td><td>Warm water, patience</td></tr><tr><td>Worn nose pads</td><td>Replace with new pads (salvaged from old glasses) or pad with thin cork/felt</td><td>Replacement pads or cork</td></tr><tr><td>Corroded hinge</td><td>Clean with fine steel wool or wire brush; apply light oil (sewing machine oil)</td><td>Steel wool, oil</td></tr></tbody></table>
+<h3>Scratched Lens Prevention and Treatment</h3>
+<ul>
+<li><strong>Prevention:</strong> Always use protective case, never set lenses-down on hard surfaces, use microfiber cloth for cleaning</li>
+<li><strong>Minor scratches:</strong> Often not visible once worn (refractive effect minimal if small)</li>
+<li><strong>Visible scratches:</strong> Polish gently with fine polishing compound (tin oxide, cerium oxide) on soft pad; limited success</li>
+<li><strong>Deep scratches:</strong> May require lens replacement if affecting central optical area</li>
+</ul>
+<div class="warning">
+<p>Scratched lenses that affect central vision area should be replaced. Attempting to use severely scratched lenses causes eye strain, headaches, and reduced safety.</p>
+</div>
+<h3>Prescription Verification Over Time</h3>
+<p>Vision changes gradually; periodically verify prescription remains correct:</p>
+<ul>
+<li>Test with pinhole occluder every 6-12 months</li>
+<li>Read eye chart with current glasses; should still read 20/20 or better</li>
+<li>If vision degradation noted, perform full refraction with trial lenses</li>
+<li>Update prescription if change &gt;0.50 D detected</li>
+</ul>
+<div class="tip">
+<p>Keep detailed records of each person's prescription and when glasses were made. This helps track changes over time and troubleshoot if new symptoms emerge.</p>
+</div>
+</section>
+<section id="common-mistakes">
+<h2>12. Common Mistakes and How to Avoid Them</h2>
+<p>Learning from others' errors prevents wasted materials, time, and customer dissatisfaction.</p>
+<h3>Prescription and Measurement Errors</h3>
+<ul>
+<li>
+<p><strong>Mistake:</strong> Confusing right and left eye prescriptions (transposing OD and OS)</p>
+</li>
+<li>
+<p><strong>Result:</strong> Customer receives completely wrong prescription; significant vision dysfunction</p>
+</li>
+<li>
+<p><strong>Prevention:</strong> Always mark OD/OS clearly on test lenses and during refraction; double-check before manufacturing</p>
+</li>
+<li>
+<p><strong>Mistake:</strong> Testing vision in poor lighting or with reflections</p>
+</li>
+<li>
+<p><strong>Result:</strong> Inaccurate refractive error measurement; customer receives wrong prescription</p>
+</li>
+<li>
+<p><strong>Prevention:</strong> Test in consistent, bright, non-glare environment; repeat test multiple times if patient seems uncertain</p>
+</li>
+<li>
+<p><strong>Mistake:</strong> Not measuring interpupillary distance; assuming standard 62-64mm</p>
+</li>
+<li>
+<p><strong>Result:</strong> Optical centers misaligned with pupils; headaches, eye strain, image distortion</p>
+</li>
+<li>
+<p><strong>Prevention:</strong> Measure IPD for every customer without exception</p>
+</li>
+</ul>
+<h3>Lens Grinding Errors</h3>
+<ul>
+<li>
+<p><strong>Mistake:</strong> Not checking glass cleanliness before grinding; dust particles scratch lens during process</p>
+</li>
+<li>
+<p><strong>Result:</strong> Scatched lenses requiring restart of entire grinding process</p>
+</li>
+<li>
+<p><strong>Prevention:</strong> Inspect glass carefully; wipe thoroughly with clean cloth; grind in clean space away from dust sources</p>
+</li>
+<li>
+<p><strong>Mistake:</strong> Grinding radius incorrectly; miscalculating required radius for desired diopter power</p>
+</li>
+<li>
+<p><strong>Result:</strong> Lenses have wrong power; customer receives ineffective or harmful prescription</p>
+</li>
+<li>
+<p><strong>Prevention:</strong> Double-check radius calculation before grinding; verify against reference samples; test optically before finishing</p>
+</li>
+<li>
+<p><strong>Mistake:</strong> Stopping polishing too early; leaving scratches from grinding stone on optical surface</p>
+</li>
+<li>
+<p><strong>Result:</strong> Lenses appear hazy, optically defective; low-quality vision through glasses</p>
+</li>
+<li>
+<p><strong>Prevention:</strong> Continue polishing until surface is completely smooth and clear; inspect under good light before declaring finished</p>
+</li>
+</ul>
+<h3>Frame and Fitting Errors</h3>
+<ul>
+<li>
+<p><strong>Mistake:</strong> Making bridge too wide for patient's face; glasses slide down or don't sit properly</p>
+</li>
+<li>
+<p><strong>Result:</strong> Customer must constantly adjust glasses; comfort reduced; vision interrupted</p>
+</li>
+<li>
+<p><strong>Prevention:</strong> Measure face width and bridge fit carefully; test frame fit before finalizing lens installation</p>
+</li>
+<li>
+<p><strong>Mistake:</strong> Using low-quality materials in frame that degrade (rust, warp, crack) after weeks of use</p>
+</li>
+<li>
+<p><strong>Result:</strong> Customer returns with damaged glasses; loses confidence in your craftsmanship</p>
+</li>
+<li>
+<p><strong>Prevention:</strong> Invest in quality materials (stainless steel, hardwood, good polymer); test materials before committing to frames</p>
+</li>
+</ul>
+<div class="note">
+<p>Keep a log of every pair of glasses you make: customer name, prescription, frame type, date, materials used. This documents your work and helps identify patterns if problems emerge.</p>
+</div>
+<h3>Safety Errors</h3>
+<ul>
+<li>
+<p><strong>Mistake:</strong> Not wearing proper eye protection during grinding; glass shards strike eyes</p>
+</li>
+<li>
+<p><strong>Result:</strong> Eye injury, potentially permanent vision loss</p>
+</li>
+<li>
+<p><strong>Prevention:</strong> Always wear full safety glasses during any grinding or cutting work</p>
+</li>
+<li>
+<p><strong>Mistake:</strong> Not warning customer about fragile glasses or prescription limitations</p>
+</li>
+<li>
+<p><strong>Result:</strong> Customer breaks glasses, thinks prescription is wrong, or relies on glasses unsuitable for their tasks</p>
+</li>
+<li>
+<p><strong>Prevention:</strong> Provide clear instructions on care and limitations; discuss visual tasks they need to perform and adjust prescription accordingly</p>
+</li>
+</ul>
+<div class="warning">
+<p>Document all instructions provided to customers about vision prescription, safe use, and care. This protects you if problems arise later and ensures patient safety.</p>
+</div>
+</section>
+<!-- Interactive widget: custom for vision-correction-optometry -->
+
+
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="lens-grinding.html">Lens Grinding &amp; Optics</a>
+<a href="optics-vision.html">Optics &amp; Vision Care</a>
+<a href="microscopy.html">Microscopy &amp; Magnification</a>
+<a href="mathematics.html">Mathematics &amp; Measurement</a>
+<a href="precision-measurement.html">Precision Measurement Standards</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

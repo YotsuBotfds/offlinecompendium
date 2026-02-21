@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/spinning-wheel-construction.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spinning Wheel Construction</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Crafts &amp; Trade Skills</span> ›
+<span>Spinning Wheel Construction</span>
+</div>
+
+
+<h1>Spinning Wheel Construction</h1>
+<p class="subtitle">Build great wheels, Saxony treadle wheels, and charkha portable wheels. Covers wheel geometry, axle bearings, treadle linkage, flyer/bobbin assembly, and drive band ratios.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~8 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#wheel-types-comparison">Wheel Types Comparison</a></li>
+<li><a href="#wheel-construction">Wheel Construction</a></li>
+<li><a href="#great-wheel">Great Wheel / Walking Wheel</a></li>
+<li><a href="#saxony-wheel">Saxony Wheel / Treadle Wheel</a></li>
+<li><a href="#charkha">Charkha / Portable Wheel</a></li>
+<li><a href="#drive-band-ratios-worked-examples">Drive Band Ratios (Worked Examples)</a></li>
+<li><a href="#tension-adjustment">Tension Adjustment</a></li>
+<li><a href="#alignment-tuning">Alignment &amp; Tuning</a></li>
+<li><a href="#first-spinning-session">First Spinning Session</a></li>
+<li><a href="#maintenance">Maintenance</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>A spinning wheel multiplies hand strength, converting human muscle power into twist. Where a hand spindle can spin 1–2 kg of fiber per day, a wheel can process 5–10 kg daily in a community setting. Spinning wheels are the critical bottleneck between raw fiber (wool, flax, cotton) and yarn for weaving or knitting.</p>
+<p>Three main types exist: the <strong>great wheel</strong> (simple, intermittent), the <strong>Saxony treadle wheel</strong> (continuous, most versatile), and the <strong>charkha</strong> (portable, optimized for cotton/fine fiber). This guide covers construction of all three, with detailed measurements and geometry.</p>
+<div class="info-box">
+<p><strong>Key fact:</strong> A properly built spinning wheel can last 100+ years with minimal maintenance. Historical wheels from the 1700s–1800s remain in daily use.</p>
+</div>
+</section>
+<section id="wheel-types-comparison">
+<h2>Wheel Types Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Spin Rate</th>
+<th>Portability</th>
+<th>Fiber Type</th>
+<th>Complexity</th>
+<th>Cost to Build</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Great Wheel</strong><br>(walking wheel)</td>
+<td>1:1 ratio<br>(wheel speed = spindle speed)</td>
+<td>High (light, compact)</td>
+<td>Wool, long fibers</td>
+<td>Low</td>
+<td>$40–80</td>
+</tr>
+<tr>
+<td><strong>Saxony/Treadle</strong></td>
+<td>8:1 to 10:1<br>(wheel × ratio)</td>
+<td>Stationary</td>
+<td>Wool, cotton, all fiber</td>
+<td>High</td>
+<td>$100–300</td>
+</tr>
+<tr>
+<td><strong>Charkha</strong><br>(Indian spinning wheel)</td>
+<td>Variable, 6:1–20:1</td>
+<td>Very high (hand-held)</td>
+<td>Cotton, fine fiber</td>
+<td>Medium</td>
+<td>$30–60</td>
+</tr>
+</tbody>
+</table>
+<div class="tip">
+<p>Choose a <strong>great wheel</strong> for your first build—it requires zero bearings, treadles, or gearing. A well-made great wheel costs under $100 in materials and takes 40–60 hours to build.</p>
+</div>
+</section>
+<section id="wheel-construction">
+<h2>Wheel Construction</h2>
+<p>All spinning wheels require a rotating disk (the drive wheel). This section covers the geometry and assembly.</p>
+<h3>Rim Construction</h3>
+<p><strong>Option 1: Bent wood rim</strong></p>
+<ul>
+<li>A single piece of flexible wood (ash, oak, elm) is carefully steamed or soaked and bent into a circle.</li>
+<li><strong>Diameter:</strong> 1.0–1.2 m for a great wheel (smaller, ~60–80 cm, for Saxony wheels).</li>
+<li><strong>Thickness:</strong> 3–5 cm × 1.5–2 cm cross-section.</li>
+<li>The rim is clamped until dry (2–3 weeks).</li>
+<li>Lap-joinery at the seam (the two ends overlap by 10 cm and are glued).</li>
+</ul>
+<p><strong>Option 2: Segmented rim</strong></p>
+<ul>
+<li>12–16 wooden segments (like a puzzle ring) are glued to form a circle.</li>
+<li>Advantage: uses smaller, more readily available wood pieces.</li>
+<li>Disadvantage: more complex joinery; glue lines can fail if stressed.</li>
+<li>Each segment is roughly a 30° trapezoid.</li>
+</ul>
+<p><strong>Rim diameter calculation:</strong> Depends on the desired spin ratio (see Treadle Linkage section). A 1 m diameter rim rotating at 100 RPM produces a surface speed of 314 m/min—suitable for all fiber types.</p>
+<h3>Hub</h3>
+<p>The hub is a wooden cylinder (8–12 cm diameter, 10–15 cm long) that sits at the wheel's center.</p>
+<ul>
+<li><strong>Material:</strong> Hardwood (maple, oak) to resist splitting under torsional stress.</li>
+<li><strong>Axle hole:</strong> 1 cm diameter, precisely centered. The axle passes through here.</li>
+<li><strong>Spoke sockets:</strong> 4–6 sockets (for spokes) are drilled radially from the hub circumference, angled slightly inward (5–10° taper) to wedge spokes tightly.</li>
+</ul>
+<h3>Spokes</h3>
+<p>Spokes transmit torque from the hub to the rim.</p>
+<ul>
+<li><strong>Number:</strong> 8–12 spokes (more = better load distribution; 12 is traditional).</li>
+<li><strong>Material:</strong> Hardwood (ash, maple). Softwood spokes crack easily.</li>
+<li><strong>Diameter:</strong> 1.5–2 cm at the hub, tapering to 1 cm at the rim.</li>
+<li><strong>Length:</strong> Calculated from the hub radius, spoke angle, and rim thickness.</li>
+</ul>
+<p><strong>Spoke length formula:</strong>
+L = √[(R − r)² + (t/2)²] × sin(90° − α/2)</p>
+<p>Where:</p>
+<ul>
+<li>R = rim outer radius (cm)</li>
+<li>r = hub outer radius (cm)</li>
+<li>t = rim thickness (cm)</li>
+<li>α = taper angle</li>
+</ul>
+<p>For a 50 cm hub radius, 4 cm hub radius, 4 cm rim thickness, and 5° taper:
+L ≈ √[(50−4)² + 4²] × sin(42.5°) ≈ 46 × 0.68 ≈ 31 cm</p>
+<p><strong>Spoke fitting:</strong></p>
+<ul>
+<li>Wedge spokes into hub sockets (snug fit with wood glue).</li>
+<li>Drill receiving holes in the rim circumference.</li>
+<li>Glue or pin spokes into the rim (some traditional wheels used wooden pegs for retention).</li>
+<li>The wheel is then balanced (rim should not wobble on the axle).</li>
+</ul>
+<h3>Axle &amp; Bearings</h3>
+<p>The axle is the spinning shaft running through the hub.</p>
+<p><strong>Axle material:</strong></p>
+<ul>
+<li><strong>Hardwood (oak, ash):</strong> Traditional, low friction with proper lubrication. 1–1.2 cm diameter.</li>
+<li><strong>Wrought iron:</strong> Better durability, lower friction. Diameter ≈ 1 cm.</li>
+</ul>
+<p><strong>Bearing options:</strong></p>
+<ol>
+<li>
+<p><strong>Wood-on-wood (oilstone bearings):</strong></p>
+<ul>
+<li>The axle spins in hollowed wooden cups (bearing blocks), lined with smooth stone (slate, marble) or hardwood.</li>
+<li>Lubricate with olive oil, linseed oil, or tallow.</li>
+<li>Simple but requires frequent oiling.</li>
+</ul>
+</li>
+<li>
+<p><strong>Metal bushings (modern upgrade):</strong></p>
+<ul>
+<li>Bronze or brass sleeves fit inside the bearing blocks, reducing friction.</li>
+<li>The axle spins inside the bushings.</li>
+<li>Requires machining but lasts longer between oil-ups.</li>
+</ul>
+</li>
+<li>
+<p><strong>Ball bearings (contemporary):</strong></p>
+<ul>
+<li>Salvaged from machinery (old lathes, washing machines).</li>
+<li>Dramatically reduce friction and maintenance.</li>
+<li>Not traditional but extremely practical.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Bearing block design:</strong></p>
+<ul>
+<li>Two bearing blocks (one on each side of the wheel) support the axle.</li>
+<li>Each block is a hardwood cup (5 cm diameter, 4 cm deep) with a smooth interior surface.</li>
+<li>A screw mechanism allows vertical adjustment to remove axle play (wobble).</li>
+</ul>
+<div class="warning">
+<p><strong>Axle wobble causes uneven spin and premature wear.</strong> Adjust the bearing blocks so the axle rotates freely but with zero radial play. Test by spinning the wheel—it should slow to a stop over 10–15 seconds, not 2–3 seconds (indicating excessive friction).</p>
+</div>
+</section>
+<section id="great-wheel">
+<h2>Great Wheel / Walking Wheel</h2>
+<p>The simplest spinning wheel design.</p>
+<p><strong>Operation:</strong></p>
+<ul>
+<li>The spinner holds fiber in one hand and gently feeds it to the spinning spindle.</li>
+<li>The other hand spins the wheel (a large drive wheel, 1+ m diameter).</li>
+<li>The spindle speed equals the wheel speed (1:1 ratio).</li>
+<li>A hookup (single piece of yarn) from the wheel rim to the spindle axle drives the spindle.</li>
+</ul>
+<p><strong>Assembly:</strong></p>
+<ol>
+<li>
+<p><strong>Build the wheel:</strong> Follow the geometry above; aim for 1.0–1.2 m diameter.</p>
+</li>
+<li>
+<p><strong>Spindle assembly:</strong></p>
+<ul>
+<li>A wooden spindle (10–15 cm long, 2 cm diameter) is mounted on a horizontal axle.</li>
+<li>The spindle has a flyer hook or simple knob at one end (for hookup attachment).</li>
+<li>Bearings support the spindle axle (small wooden cups or metal bushings).</li>
+</ul>
+</li>
+<li>
+<p><strong>Hookup:</strong></p>
+<ul>
+<li>A single-ply yarn (hemp, linen, or wool) runs from the wheel rim, up to the spindle hook.</li>
+<li>As the wheel rotates, the hookup drives the spindle.</li>
+<li>Adjust the hookup length so the spindle is &quot;active&quot; (spinning at maximum speed) when the wheel is near the spinner.</li>
+</ul>
+</li>
+<li>
+<p><strong>Operation:</strong></p>
+<ul>
+<li>The spinner pushes the wheel to rotate it.</li>
+<li>As the wheel slows, the spinner feeds fiber to the spindle.</li>
+<li>Fiber is twisted as it feeds, forming yarn.</li>
+<li>Once the spindle fills (5–10 minutes), the yarn is wound onto a bobbin and a fresh spindle is mounted.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Advantages:</strong> Minimal moving parts, low cost, portable.
+<strong>Disadvantages:</strong> Tiring (constant hand-wheel cranking), intermittent (pause to load bobbins), not suitable for fine cotton.</p>
+</section>
+<section id="saxony-wheel">
+<h2>Saxony Wheel / Treadle Wheel</h2>
+<p>The Saxony is the most common spinning wheel design. Treadle operation frees both hands for fiber control.</p>
+<p><strong>Key components:</strong></p>
+<ol>
+<li><strong>Drive wheel:</strong> 1 m diameter, mounted on a crankshaft axle.</li>
+<li><strong>Crankshaft:</strong> Connected to the treadle via crank arms (similar to a bicycle crankset).</li>
+<li><strong>Treadle:</strong> Foot-operated lever that rocks back and forth, driving the crankshaft.</li>
+<li><strong>Flyer &amp; bobbin:</strong> The driven (output) components that twist and wind yarn.</li>
+</ol>
+<h3>Treadle &amp; Crankshaft Linkage</h3>
+<p><strong>Crankshaft design:</strong></p>
+<ul>
+<li>A metal (iron) or hardwood axle with two crank arms (offset 90°, like a car engine crankshaft).</li>
+<li>Crank arm length: 8–12 cm (longer arms = more mechanical advantage, but slower spin; shorter = faster but harder work).</li>
+<li>The crankshaft rotates on bearings in the wheel frame.</li>
+</ul>
+<p><strong>Treadle mechanism:</strong></p>
+<ul>
+<li>A wooden treadle (pedal) is pivoted at one end.</li>
+<li>A connecting rod (oak or ash) links the treadle to one crank arm.</li>
+<li>As the spinner presses the treadle down, the crank rotates. As the treadle is released, a spring returns it, and the crank completes the other half-rotation.</li>
+<li>The motion is continuous (unlike a great wheel's intermittent pushing).</li>
+</ul>
+<p><strong>Geometry example:</strong></p>
+<ul>
+<li>Crankshaft diameter (axle): 1.2 cm</li>
+<li>Crank arm length: 10 cm</li>
+<li>Treadle length: 40 cm</li>
+<li>Treadle pivot to connecting-rod attachment point: 30 cm</li>
+</ul>
+<p>When the crank arm is at its lowest point (6 cm drop), the treadle moves:
+Treadle drop = 6 × (30/10) = 18 cm</p>
+<p>A comfortable treadle stroke is 15–20 cm—adjust crank arm length and treadle geometry to match.</p>
+<h3>Drive Band &amp; Whorl Ratios</h3>
+<p>The drive wheel is connected to the flyer spindle via a drive band (thin rope or cord).</p>
+<p><strong>Single-whorl design:</strong></p>
+<ul>
+<li>One groove around the wheel rim (the &quot;whorl&quot; is a groove carved or glued onto the wheel).</li>
+<li>The drive band loops around the wheel grooves and the spindle whorl.</li>
+<li>Spin ratio = wheel diameter / spindle whorl diameter</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li>Wheel diameter: 100 cm, circumference: 314 cm</li>
+<li>Spindle whorl diameter: 4 cm, circumference: 12.6 cm</li>
+<li>Spin ratio: 314 / 12.6 ≈ 25:1</li>
+</ul>
+<p>This ratio means the spindle rotates 25 times for each wheel rotation. At 100 RPM wheel speed, the spindle spins at 2500 RPM—far too fast for thick yarn.</p>
+<p><strong>Multi-whorl design (standard):</strong></p>
+<ul>
+<li>Two or three grooves on the wheel, at different diameters (e.g., 80 cm, 90 cm, 100 cm OD).</li>
+<li>Matching whorls on the spindle (e.g., 3 cm, 4 cm, 5 cm).</li>
+<li>The spinner can swap the drive band between whorls to change spin ratios.</li>
+</ul>
+<p><strong>Typical spin ratios for Saxony wheels:</strong></p>
+<ul>
+<li><strong>Coarse wool:</strong> 8:1 to 12:1</li>
+<li><strong>Fine wool/cotton:</strong> 15:1 to 20:1</li>
+<li><strong>Very fine yarn:</strong> 25:1+</li>
+</ul>
+<p>Choose whorl sizes to provide ratios in these ranges.</p>
+<div class="tip">
+<p><strong>Whorl sizing formula:</strong>
+d_spindle = d_wheel / desired_ratio</p>
+<p>For a 100 cm wheel:</p>
+<ul>
+<li>10:1 ratio → spindle whorl = 10 cm</li>
+<li>15:1 ratio → spindle whorl = 6.7 cm</li>
+<li>20:1 ratio → spindle whorl = 5 cm</li>
+</ul>
+<p>Sand whorls to size if needed.</p>
+</div>
+<h3>Flyer &amp; Bobbin Assembly</h3>
+<p>The flyer is a U-shaped frame that twists fiber; the bobbin winds the yarn.</p>
+<p><strong>Flyer:</strong></p>
+<ul>
+<li>Two parallel arms (20–25 cm long) with multiple hooks along their length (4–8 hooks per arm).</li>
+<li>The hooks guide the yarn as it winds onto the bobbin.</li>
+<li>The flyer rotates on a central axle (the spindle).</li>
+</ul>
+<p><strong>Bobbin:</strong></p>
+<ul>
+<li>A hollow cylindrical tube (8 cm diameter, 15–20 cm long) that sits coaxially inside the flyer arms.</li>
+<li>Yarn winds around the bobbin as it rotates.</li>
+<li>When full, the bobbin is removed and a fresh one inserted.</li>
+</ul>
+<p><strong>Mechanical relationship:</strong></p>
+<ul>
+<li>The flyer and bobbin rotate on the same axle.</li>
+<li>Initially, they rotate together (via friction or a gear).</li>
+<li>As yarn builds up on the bobbin, it presses against the flyer, creating slip (the bobbin slows relative to the flyer).</li>
+<li>This &quot;sliding&quot; automatically adjusts to the yarn's growing thickness, keeping tension constant.</li>
+</ul>
+<p>Some wheels use <strong>Scotch tension:</strong> a leather brake band around the bobbin, adjustable via a thumbscrew. Tightening increases drag on the bobbin, making it easier to load yarn.</p>
+</section>
+<section id="charkha">
+<h2>Charkha / Portable Wheel</h2>
+<p>The Indian charkha is a hand-held spinning wheel designed for cotton and fine fibers.</p>
+<p><strong>Design:</strong></p>
+<ul>
+<li>A small wheel (20–40 cm diameter) mounted on a wooden frame.</li>
+<li>The frame is held in the lap or under one arm.</li>
+<li>The spinner's one hand spins the wheel; the other hand feeds fiber.</li>
+<li>A spindle and flyer are integrated into the wheel axle.</li>
+</ul>
+<p><strong>Construction:</strong></p>
+<ul>
+<li>The wheel, hub, spokes, and axle follow the same principles as larger wheels, scaled down.</li>
+<li>Bearing blocks are compact and mounted on a wooden base (15 × 25 cm, 3–4 cm thick).</li>
+<li>The axle typically has a handle (8 cm long, 2 cm diameter) at one end for hand-spinning.</li>
+</ul>
+<p><strong>Drive band:</strong></p>
+<ul>
+<li>A single drive band loops from the wheel rim to a small whorl on the spindle axle.</li>
+<li>Spin ratios are typically 8:1 to 15:1 (lower than Saxony, suitable for fine fiber).</li>
+</ul>
+<p><strong>Advantages:</strong> Extremely portable, low cost, excellent for fine cotton.
+<strong>Disadvantages:</strong> Tiring for long sessions (hand-cranking), slow production.</p>
+<p>See <a href="spinning-fiber-production.html">Spinning Fiber Production</a> for fiber preparation techniques.</p>
+</section>
+<section id="drive-band-ratios-worked-examples">
+<h2>Drive Band Ratios (Worked Examples)</h2>
+<p><strong>Scenario 1: Building a Saxony wheel for wool</strong></p>
+<p>Goal: Spin medium wool yarn (14 microns) at a ratio of 12:1.</p>
+<p>Constraints:</p>
+<ul>
+<li>Drive wheel diameter: 100 cm (circumference: 314 cm).</li>
+<li>Treadle cadence: 60 RPM (realistic for extended spinning).</li>
+<li>Desired spindle speed: 12 × 60 = 720 RPM.</li>
+</ul>
+<p>Spindle whorl diameter:
+d = 100 cm / 12 = 8.3 cm</p>
+<p>Yarn exit speed (linear speed at the flyer):
+v = (100 cm circumference) × 60 RPM × 12:1 / 100 = 72 m/min</p>
+<p>This speed is comfortable for medium wool (2–3 cm draft per second).</p>
+<p><strong>Scenario 2: Fine cotton charkha</strong></p>
+<p>Goal: Spin fine cotton (20 microns) at 18:1 ratio, hand-spinning.</p>
+<p>Hand-spinning cadence: ~40 RPM (sustainable, less tiring than treadle).</p>
+<p>Spindle speed: 40 × 18 = 720 RPM (same as above—20 microns cotton at 72 m/min).</p>
+<p>Wheel diameter: Assuming 30 cm (compact, handheld).</p>
+<p>Spindle whorl diameter: 30 cm / 18 = 1.67 cm (very small, requires careful machining).</p>
+<p>Alternatively, use a 36 cm wheel and a 2 cm whorl for easier construction.</p>
+</section>
+<section id="tension-adjustment">
+<h2>Tension Adjustment</h2>
+<p>Two main systems for adjusting how yarn is wound onto the bobbin:</p>
+<p><strong>1. Scotch Tension (single-drive):</strong></p>
+<ul>
+<li>A leather or rope brake around the bobbin.</li>
+<li>Tightening the brake (thumbscrew) increases drag, forcing the spinner to pull harder.</li>
+<li>Adjustable on-the-fly while spinning.</li>
+<li>Advantages: Simple, requires only one whorl.</li>
+<li>Disadvantages: Requires active tension management; if the brake is too tight, yarn breaks; too loose, it doesn't wind evenly.</li>
+</ul>
+<p><strong>2. Double-drive (flyer and bobbin):</strong></p>
+<ul>
+<li>Both the flyer and bobbin are driven by separate grooves on the wheel.</li>
+<li>The flyer whorl is typically larger (e.g., 8 cm) than the bobbin whorl (e.g., 5 cm).</li>
+<li>The flyer always runs slightly faster than the bobbin, automatically pulling fiber onto the bobbin.</li>
+<li>Advantages: Automatic, consistent winding, less skill required.</li>
+<li>Disadvantages: Requires two whorls on both wheel and spindle; more complex machining.</li>
+</ul>
+<div class="tip">
+<p><strong>For first-time builders:</strong> Scotch tension is simpler to construct and understand. Master it before attempting double-drive.</p>
+</div>
+</section>
+<section id="alignment-tuning">
+<h2>Alignment &amp; Tuning</h2>
+<p>After assembly, the wheel must be carefully aligned.</p>
+<p><strong>Wheel wobble:</strong> Spin the wheel freely (no treadle). It should rotate 10+ seconds before stopping. If it stops in 3–5 seconds, friction is too high (adjust bearing blocks). If it wobbles side-to-side, the wheel is out of plane (adjust spoke tensioning or rebuild the wheel).</p>
+<p><strong>Drive band tension:</strong> The drive band should be snug but not tight. With gentle pressure on the wheel rim, it should slip slightly (1–2 cm of give). If too tight, the treadle becomes hard to pump and wears the band quickly. If too loose, the spindle slips, causing uneven twist.</p>
+<p><strong>Flyer hook alignment:</strong> The hooks should be perpendicular to the spindle axis, so yarn feeds smoothly from the hook to the bobbin without binding.</p>
+<p><strong>Spindle runout:</strong> The spindle should rotate concentrically (no wobble relative to its axis). Test by spinning the wheel and watching for visible side-to-side motion. If present, the spindle is bent or the bearings are misaligned—adjust or replace.</p>
+</section>
+<section id="first-spinning-session">
+<h2>First Spinning Session</h2>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Oil all bearings lightly with machine oil or linseed oil.</li>
+<li>Load a fresh bobbin.</li>
+<li>Prepare fiber (carded wool, combed flax, or cleaned cotton).</li>
+<li>Attach the drive band to both wheel and spindle whorls.</li>
+</ol>
+<p><strong>Steps:</strong></p>
+<ol>
+<li><strong>Start the wheel:</strong> Gently press the treadle to begin rotating the drive wheel at ~60 RPM.</li>
+<li><strong>Attach fiber:</strong> Hold a pinch of fiber near the flyer hooks and bring it into contact with the emerging yarn.</li>
+<li><strong>Feed gradually:</strong> Slowly pull fiber from your supply, allowing it to draft through your hand. The tension in your hand controls the yarn thickness.</li>
+<li><strong>Guide the yarn:</strong> Use the flyer hooks to distribute yarn evenly across the bobbin as you feed.</li>
+<li><strong>Adjust tension:</strong> If yarn breaks frequently, reduce the Scotch brake tension. If it doesn't wind evenly, increase tension.</li>
+</ol>
+<p><strong>Common early mistakes:</strong></p>
+<ul>
+<li><strong>Too much fiber fed at once:</strong> Results in thick, uneven yarn. Feed slowly (thumb and forefinger only).</li>
+<li><strong>Treadle speed too fast:</strong> Hard to control fiber. Start at 40–50 RPM.</li>
+<li><strong>Yarn slipping on bobbin:</strong> Increase Scotch brake or reduce treadle pressure slightly.</li>
+</ul>
+<p>After 30 minutes, you should have 10–20 meters of spun yarn. Quality improves with practice (muscle memory and hand feel develop over several hours).</p>
+</section>
+<section id="maintenance">
+<h2>Maintenance</h2>
+<p><strong>Monthly:</strong></p>
+<ul>
+<li>Oil all bearing blocks and spindle axle. A light drizzle of oil (not soaking) every 4–8 hours of spinning.</li>
+<li>Check drive band for fraying or wear. Replace if showing breaks.</li>
+</ul>
+<p><strong>Annually:</strong></p>
+<ul>
+<li>Inspect all wooden joints for cracks or looseness. Tighten wedges or reglue.</li>
+<li>Examine wheel rim for splits. Small cracks can be glued; large ones require rim replacement.</li>
+<li>Check spoke tension (tap each spoke; all should ring at the same pitch). Retension as needed using shims under the bearing blocks.</li>
+</ul>
+<p><strong>Long-term:</strong></p>
+<ul>
+<li>Wooden axes may wear (become slightly thinner) over decades. Wrapping with thin leather or replacing prevents slop.</li>
+<li>Gears or whorls may chip—replacements can be hand-carved from hardwood or turned on a lathe if available.</li>
+</ul>
+<p>A well-maintained spinning wheel lasts 50–100 years.</p>
+<p>For fiber preparation, see <a href="spinning-fiber-production.html">Spinning Fiber Production</a>. For yarn uses, see <a href="fiber-to-fabric-pipeline.html">Fiber-to-Fabric Pipeline</a> and <a href="loom-construction-weaving-frame.html">Loom Construction &amp; Weaving Frame</a>.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="spinning-fiber-production.html">Spinning and Fiber Production</a>
+<a href="textiles.html">Textiles &amp; Fiber Arts</a>
+<a href="fiber-to-fabric-pipeline.html">Fiber to Fabric Pipeline</a>
+<a href="loom-construction-weaving-frame.html">Loom Construction &amp; Weaving Frames</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

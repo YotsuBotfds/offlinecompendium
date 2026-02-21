@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/the-go-bag.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Go-Bag</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Immediate Survival</span> ›
+<span>The Go-Bag</span>
+</div>
+
+
+<h1>The Go-Bag</h1>
+<p class="subtitle">A 10-minute grab-and-go kit for Minnesota ice storms and power outages. Realistic packing list, vehicle prep, seasonal rotation, and weight management.</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~10 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#the-10-minute-decision">The 10-Minute Decision</a></li>
+<li><a href="#why-a-go-bag">Why a Go-Bag?</a></li>
+<li><a href="#the-core-bag-what-fits-in-10-minutes">The Core Bag: What Fits in 10 Minutes</a></li>
+<li><a href="#layer-1-immediate-essentials-outer-pockets-on-you">Layer 1: Immediate Essentials (Outer Pockets, On You)</a></li>
+<li><a href="#layer-2-water-and-food-bottom-of-bag-6-8-lbs">Layer 2: Water and Food (Bottom of Bag, 6–8 lbs)</a></li>
+<li><a href="#layer-3-warmth-and-shelter-middle-of-bag-5-7-lbs">Layer 3: Warmth and Shelter (Middle of Bag, 5–7 lbs)</a></li>
+<li><a href="#layer-4-documents-and-first-aid-top-of-bag-2-3-lbs">Layer 4: Documents and First Aid (Top of Bag, 2–3 lbs)</a></li>
+<li><a href="#weight-breakdown-what-goes-where">Weight Breakdown: What Goes Where</a></li>
+<li><a href="#vehicle-preparedness-your-backup-shelter">Vehicle Preparedness: Your Backup Shelter</a></li>
+<li><a href="#seasonal-rotation-checklist">Seasonal Rotation Checklist</a></li>
+<li><a href="#climate-adaptation-beyond-minnesota">Climate Adaptation: Beyond Minnesota</a></li>
+<li><a href="#what-not-to-pack">What NOT to Pack</a></li>
+<li><a href="#testing-your-go-bag">Testing Your Go-Bag</a></li>
+<li><a href="#cross-reference-and-next-steps">Cross-Reference and Next Steps</a></li>
+<li><a href="#summary-the-10-minute-drill">Summary: The 10-Minute Drill</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<h2 id="the-10-minute-decision">The 10-Minute Decision</h2>
+<p>It's Tuesday afternoon. Ice clings to power lines, roads are glazed, the grid is straining. Your phone buzzes: &quot;Winter storm warning extended.&quot; The power's been flickering for six hours. Then it cuts out. Silence. No Wi-Fi. No electric heat.</p>
+<p>You have two options: sit tight and hope it comes back in a few hours (it won't), or gather what matters and move to your backup shelter—a relative's house uptown with a generator, a warming center, your vehicle if roads permit. You have ten minutes before dark, traffic becomes impossible, or conditions deteriorate further.</p>
+<p>What do you grab?</p>
+<p>This is the <strong>Go-Bag</strong>—not a prepper bug-out kit for societal collapse, not a three-month expedition pack. This is a real, lightweight, realistic bag that sits by your door from October through April in Minnesota. It answers the question: <em>If I have ten minutes and my house is no longer safe, what do I need to survive 72 hours away from it?</em></p>
+<div class="info-box">
+<p>A go-bag is not a security blanket. It exists for the 36 hours when your county is under a winter weather emergency—power out, roads treacherous, shelters opening. It is worth assembling precisely because those windows are short and foreseeable in Minnesota.</p>
+</div>
+<h2 id="why-a-go-bag">Why a Go-Bag?</h2>
+<p>Minnesota's grid is reliable most of the time. But three to five times per winter, extended outages occur:</p>
+<ul>
+<li><strong>Ice storms</strong> (Feb–Mar): Ice accumulation on power lines. Outages last 24–72 hours. Roads become impassable. Shelters open at community centers.</li>
+<li><strong>Snow+wind</strong> (Dec–Jan): Blizzard conditions. Visibility &lt;¼ mile. Road closures. Drifting blocks exits. Stranding risk is real.</li>
+<li><strong>Spring freeze</strong> (Apr–May): Late cold snap, ice, power demand peaks, generation lags. Rolling brownouts, then outages.</li>
+</ul>
+<p>Each scenario has the same exit strategy: you cannot wait at home. Your furnace runs on electricity (or natural gas with an electric pilot), your well pump needs power, your backup heat (space heater) draws it too. After 12 hours without power, your house drops below 50°F indoors. After 24 hours, pipes begin freezing. After 36 hours, you need warmth elsewhere.</p>
+<p>A go-bag answers:</p>
+<ul>
+<li><strong>Do I have my documents</strong> (ID, insurance, property photos)?</li>
+<li><strong>Can I feed and hydrate myself</strong> for 72 hours without the grid?</li>
+<li><strong>Can I stay warm</strong> if my car or a shelter is my refuge?</li>
+<li><strong>Do I have cash</strong> to buy gas or supplies (card readers won't work)?</li>
+<li><strong>Can I navigate</strong> if Google Maps is unavailable?</li>
+</ul>
+<p>Assembling it takes 2–3 hours. Maintaining it takes 15 minutes quarterly. Using it—hopefully—takes ten minutes.</p>
+<div class="tip">
+<p>Your go-bag is <em>not</em> a substitute for a backup heating plan. If you own your home, a portable propane heater (used safely, outside or with ventilation) is your first line. A go-bag is your second line when leaving becomes safer than staying.</p>
+</div>
+<h2 id="the-core-bag-what-fits-in-10-minutes">The Core Bag: What Fits in 10 Minutes</h2>
+<p>Choose a bag you own <em>right now</em>. Do not buy a special tactical pack. Use:</p>
+<ul>
+<li>A school backpack (35–40L capacity)</li>
+<li>A hiking daypack (20–30L)</li>
+<li>A rolling carry-on suitcase (if you're less mobile)</li>
+<li>A duffel bag hanging in your closet</li>
+</ul>
+<p>The bag lives by your main exit (coat closet, car trunk, or garage shelf) from October 1 to April 30. You touch it monthly to check batteries and rotate food. When you grab it, you have everything you need; you do not go room-to-room deciding what to take.</p>
+<div class="warning">
+<p>Do not pre-stage your go-bag in a closet and forget it until January. Test it now. Walk to your car with it on your back. Walk up one flight of stairs. See if the straps dig into your shoulders. If it's unbearable after 2 minutes, it will be unbearable after 10 minutes in an emergency.</p>
+</div>
+<h3>The Anatomy of the Bag</h3>
+<p><strong>Total target weight:</strong> 25–35 lbs (achievable for most people, under 12 kg).
+<strong>Total cost (initial):</strong> $200–400 (reusable items, not disposable consumables).
+<strong>Total cost (annual refresh):</strong> $40–80 (food rotation, battery replacement).</p>
+<p>The bag breaks into four layers:</p>
+<ol>
+<li><strong>Immediate essentials</strong> (on your person or in outer pockets): phone + charger, headlamp, flashlight, knife, cash</li>
+<li><strong>Water and food</strong> (bottom of bag, heaviest): water bottles, filter, bars, nuts</li>
+<li><strong>Warmth and shelter</strong> (middle/core): blankets, extra layers, socks</li>
+<li><strong>Everything else</strong> (top, easiest to access): documents, first aid, comfort items</li>
+</ol>
+<hr>
+<h2 id="layer-1-immediate-essentials-outer-pockets-on-you">Layer 1: Immediate Essentials (Outer Pockets, On You)</h2>
+<p>These items are in your hands or pockets <em>before</em> you pick up the bag.</p>
+<h3>This App + Physical Guides (0.5 lbs)</h3>
+<p><strong>What to take:</strong></p>
+<ul>
+<li><strong>Charged phone or tablet</strong> with this app offline-cached</li>
+<li><strong>Printed emergency contact list</strong> (single sheet, folded)</li>
+<li><strong>Printed copies of 2–3 key guides:</strong>
+<ul>
+<li><a href="family-emergency-plan.html">Family Emergency Plan</a></li>
+<li><a href="first-aid.html">First Aid</a></li>
+<li><a href="winter-survival-systems.html">Winter Survival Systems</a> (summary section only, not full guide)</li>
+<li><a href="navigation.html">Navigation</a> (if you're unfamiliar with map-reading)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Why:</strong></p>
+<ul>
+<li>This app is your access to every guide in the Compendium. A charged phone is your most valuable tool.</li>
+<li>Printed guides mean you can reference them if your phone dies or falls in snow.</li>
+<li>An emergency contact list prevents you from panicking when you realize you don't memorize your sister's number.</li>
+</ul>
+<p><strong>Specific setup:</strong></p>
+<ul>
+<li>Download and install this app on your phone before winter. Keep it updated.</li>
+<li>Open the app every week and confirm &quot;Offline&quot; appears in the bottom-right corner. This confirms the service worker has cached all guides.</li>
+<li>Visit your carrier's website and verify your phone has 5 GB of data rollover (or the lowest monthly cap your plan offers). You won't use it, but if towers are up and the grid is down, data works.</li>
+<li>Print the 2–3 guides as PDF from your browser (one-sided to save paper, or duplex if your printer supports it). Fold them and place in a ziplock. One set lives in your go-bag. One set lives in your vehicle.</li>
+</ul>
+<p><strong>Device charging:</strong></p>
+<ul>
+<li>Keep your phone on a wireless charger in the evening, so it's always fully charged before bed.</li>
+<li>If an outage happens during the day, your phone has 8–12 hours of battery for calls, maps, emergency data.</li>
+</ul>
+<div class="info-box">
+<p><strong>Why print guides if the app is offline?</strong> Because phones die. Paper does not. And in genuine high-stress situations, many people freeze and forget they can read a screen. A physical guide in hand, one decision on the page—&quot;Call this number&quot; or &quot;Do this first aid step&quot;—is psychologically grounding.</p>
+</div>
+<h3>Headlamp with Spare Batteries (0.3 lbs)</h3>
+<p><strong>What to take:</strong></p>
+<ul>
+<li><strong>1 × LED headlamp</strong> (e.g., Black Diamond Icon, Petzl Tikka, or Streamlight Enduro): hands-free light, crucial if you're walking to your car in the dark or sheltering without electricity</li>
+<li><strong>4 × extra batteries</strong> (AA or AAA, depending on headlamp model) in a waterproof pouch</li>
+</ul>
+<p><strong>Why:</strong></p>
+<ul>
+<li>Headlamps preserve night vision better than handheld flashlights.</li>
+<li>Hands-free means you can hold a rail while descending icy stairs, or handle documents while reading by headlamp in a car.</li>
+<li>Four batteries = two full resets of a typical LED headlamp, good for 20–40 hours of runtime.</li>
+</ul>
+<p><strong>Setup:</strong></p>
+<ul>
+<li>Test your headlamp before winter. Make sure it still works.</li>
+<li>Swap batteries annually in August (doesn't matter when, just before winter).</li>
+<li>Store headlamp in an outer pocket or attached to your backpack's chest strap, NOT at the bottom of the bag.</li>
+</ul>
+<h3>Flashlight (0.1 lbs)</h3>
+<p><strong>What to take:</strong></p>
+<ul>
+<li><strong>1 × compact pocket flashlight</strong> (e.g., Fenix PD35, Olight i3T, or Streamlight Microstream): small enough for your pocket, bright enough for 20–30 feet</li>
+<li><strong>Backup batteries stored with headlamp batteries</strong></li>
+</ul>
+<p><strong>Why:</strong></p>
+<ul>
+<li>Your headlamp reserves its batteries for darkness when you're away from the bag.</li>
+<li>A pocket flashlight lets you navigate inside shelters, warming centers, or temporary shelters without headlamp drain.</li>
+<li>Redundancy: if one light fails, you have another.</li>
+</ul>
+<hr>
+<h2 id="layer-2-water-and-food-bottom-of-bag-6-8-lbs">Layer 2: Water and Food (Bottom of Bag, 6–8 lbs)</h2>
+<h3>Water: 2 Liters Fresh + Filter (2.5 lbs)</h3>
+<p><strong>What to take:</strong></p>
+<ul>
+<li><strong>2 × 1-liter collapsible water bottles</strong> (Vapur, Platypus, or similar flexible bottles, ~3 oz each empty)</li>
+<li><strong>1 × compact water filter</strong> (LifeStraw, Grayl, or Sawyer Squeeze, ~5 oz):
+<ul>
+<li>LifeStraw Personal: 0.3L capacity, filters up to 1000L, drinks directly from bottle</li>
+<li>Grayl Geopress: filters and stores 16.9 oz, faster flow, ~8 oz weight</li>
+<li>Sawyer Squeeze: lightweight, works with collapsible bottles, ~3 oz</li>
+</ul>
+</li>
+</ul>
+<p><strong>Why:</strong></p>
+<ul>
+<li>Two liters = one day of hydration for an adult at rest (three liters in active winter conditions).</li>
+<li>Collapsible bottles save space and weight when empty.</li>
+<li>A filter lets you refill from any non-stagnant water source: stream, pond, melted snow. Critical if you're stranded &gt;48 hours.</li>
+</ul>
+<p><strong>Setup:</strong></p>
+<ul>
+<li>Fill both bottles before you leave home. Do not rely on finding water later.</li>
+<li>Keep the filter sealed in a ziplock until needed.</li>
+<li>In winter, water freezes. Carry bottles inside your coat or sleeping bag if you're sheltering outdoors. Drink before sleep to avoid waking with frozen bottles.</li>
+</ul>
+<div class="info-box">
+<p><strong>Winter water:</strong> Snow is not water. Eating snow causes hypothermia (your core body temperature drops as snow melts inside). Always melt snow over heat, or use a filter designed for cold water (all commercial filters work in cold). If you have only snow, <em>ration</em> it by melting small quantities over a lighter or stove, sipping the melted water continuously to maintain core warmth.</p>
+</div>
+<h3>Food: 3 Days of Calorie-Dense Items (2–3 lbs)</h3>
+<p><strong>What to take:</strong></p>
+<p>A realistic 72-hour food plan does not require meal preparation. Pack items that:</p>
+<ul>
+<li>Need no cooking</li>
+<li>Are shelf-stable year-round</li>
+<li>Taste okay after 6 months</li>
+<li>Provide 2000+ calories per day</li>
+</ul>
+<p><strong>Suggested list (pick one option per category):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Item</th>
+<th>Quantity</th>
+<th>Calories</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bars</strong></td>
+<td>Kind Bars (nuts + honey)</td>
+<td>9</td>
+<td>190 ea.</td>
+<td>1710 total</td>
+</tr>
+<tr>
+<td></td>
+<td>RXBAR (egg white)</td>
+<td>6</td>
+<td>210 ea.</td>
+<td>1260 total</td>
+</tr>
+<tr>
+<td></td>
+<td>Clif Bars (oats + nuts)</td>
+<td>9</td>
+<td>240 ea.</td>
+<td>2160 total</td>
+</tr>
+<tr>
+<td><strong>Nuts</strong></td>
+<td>Raw almonds or cashews</td>
+<td>12 oz</td>
+<td>165 per oz</td>
+<td>1980 total</td>
+</tr>
+<tr>
+<td></td>
+<td>Trail mix (nuts + dried fruit)</td>
+<td>1.5 lbs</td>
+<td>150 per oz</td>
+<td>2400 total</td>
+</tr>
+<tr>
+<td><strong>Meat</strong></td>
+<td>Beef jerky or salmon jerky</td>
+<td>8 oz</td>
+<td>70–90 per oz</td>
+<td>560–720 total</td>
+</tr>
+<tr>
+<td></td>
+<td>Pepperoni slices or beef sticks</td>
+<td>6 sticks</td>
+<td>80 ea.</td>
+<td>480 total</td>
+</tr>
+<tr>
+<td><strong>Other</strong></td>
+<td>Peanut butter packets</td>
+<td>6</td>
+<td>190 ea.</td>
+<td>1140 total</td>
+</tr>
+<tr>
+<td></td>
+<td>Whole grain crackers</td>
+<td>1 box (9 oz)</td>
+<td>130 per oz</td>
+<td>1170 total</td>
+</tr>
+<tr>
+<td></td>
+<td>Dried fruit (cranberries, raisins)</td>
+<td>4 oz</td>
+<td>80 per oz</td>
+<td>320 total</td>
+</tr>
+<tr>
+<td></td>
+<td>Dark chocolate (emergency morale)</td>
+<td>4 oz</td>
+<td>150 per oz</td>
+<td>600 total</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample 3-day composition (2800 calories/day):</strong></p>
+<ul>
+<li>9 × Kind Bars (1710 cal)</li>
+<li>8 oz almonds (1320 cal)</li>
+<li>6 oz beef jerky (420–540 cal)</li>
+<li>3 peanut butter packets (570 cal)</li>
+<li>4 oz dark chocolate (600 cal)</li>
+<li><strong>Total: ~5200–5300 calories</strong></li>
+</ul>
+<p><strong>Total weight: 2.5–3 lbs. Total cost: $30–50.</strong></p>
+<p><strong>Setup:</strong></p>
+<ul>
+<li>Buy these items during your next two grocery trips (don't buy them all at once and forget them).</li>
+<li>Pack them in gallon-sized ziplocks by day: &quot;Day 1,&quot; &quot;Day 2,&quot; &quot;Day 3.&quot;</li>
+<li>Rotate annually: in September, eat the old bars and nuts, replace with fresh stock.</li>
+<li>Do not buy military MREs unless you enjoy them. They're heavier, more expensive, and psychologically depressing in an already stressful situation.</li>
+</ul>
+<div class="tip">
+<p>Do not overthink this. You are not hiking the Appalachian Trail. You are trying to have a meal during a 72-hour period when the power is out. An apple, a granola bar, and a handful of nuts in the afternoon is a win. Comfort food matters—include a few items you genuinely like, not just efficient calories.</p>
+</div>
+<div class="warning">
+<p><strong>Check expiration dates.</strong> Nuts go rancid in heat. Bars dry out. Jerky can mold in humidity. Store your bag in a cool, dry place (not the garage in summer, not an attic). Rotate food every autumn.</p>
+</div>
+<hr>
+<h2 id="layer-3-warmth-and-shelter-middle-of-bag-5-7-lbs">Layer 3: Warmth and Shelter (Middle of Bag, 5–7 lbs)</h2>
+<h3>Base Layers and Insulation (October–April Default)</h3>
+<p><strong>What to wear (not just pack):</strong></p>
+<ul>
+<li><strong>Merino wool base layer</strong> (top and bottom, ~8 oz total): Icebreaker, Smartwool, or budget brand from Target</li>
+<li><strong>Insulated jacket</strong>: down parka or synthetic insulated winter coat you already own (not in the bag; you wear it)</li>
+<li><strong>Wool or fleece hat</strong> (in your pocket)</li>
+<li><strong>Insulated, waterproof gloves</strong> (in your pocket)</li>
+<li><strong>Wool socks</strong> × 2 pairs (one on feet, one in bag)</li>
+<li><strong>Insulated winter boots</strong> with grip soles (on your feet, not in bag)</li>
+</ul>
+<p><strong>Additional in the bag:</strong></p>
+<ul>
+<li><strong>1 × fleece layer or wool sweater</strong> (if you cannot fit one in your jacket): 12 oz</li>
+<li><strong>1 × wool or fleece pants</strong> (if you might shelter in a cold location): 1–1.5 lbs</li>
+<li><strong>1 × extra pair wool socks</strong> (in addition to the pair on your feet): 2 oz</li>
+</ul>
+<p><strong>Why:</strong></p>
+<ul>
+<li>Merino wool dries faster and retains heat when wet. Cotton kills you in winter.</li>
+<li>Layers are modular. If you reach a warm shelter, you strip layers and pack them back.</li>
+<li>Extra socks are critical. Wet feet mean lost toes in an 18-hour exposure.</li>
+</ul>
+<p><strong>Setup:</strong></p>
+<ul>
+<li>This is your <em>clothing</em>, not your survival kit. Wear weather-appropriate clothes every October through April, not special &quot;go-bag clothes.&quot;</li>
+<li>Your insulated winter boots should already be your default shoes, not emergency gear.</li>
+<li>Before winter, inspect your jacket for tears or rips. Ensure zippers work. Test your gloves for dexterity (can you hold a phone?).</li>
+</ul>
+<h3>Blankets and Emergency Shelter (3–4 lbs)</h3>
+<p><strong>What to take:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Weight</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wool blanket</strong> (2-lb machine washable)</td>
+<td>2 lbs</td>
+<td>Primary warmth. Does not require batteries. Stays warm when wet.</td>
+</tr>
+<tr>
+<td><strong>Emergency space blanket</strong> (aluminized Mylar) × 2</td>
+<td>0.1 oz each</td>
+<td>Backup. Minimal weight. Reflective.</td>
+</tr>
+<tr>
+<td><strong>Heavy-duty trash bags</strong> × 4</td>
+<td>0.1 oz each</td>
+<td>Waterproofing. Ground isolation. Emergency poncho.</td>
+</tr>
+<tr>
+<td><strong>Duct tape (small roll)</strong></td>
+<td>0.3 oz</td>
+<td>Insulation repair, sealing gaps.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why:</strong></p>
+<ul>
+<li>A wool blanket is your most reliable warmth source after your own clothing. It does not require batteries, fuel, or technology.</li>
+<li>Space blankets (Mylar emergency blankets) are a backup layer. They're light and compact but crinkly and prone to tearing. Two is redundancy.</li>
+<li>Trash bags are multi-use: waterproofing a blanket, insulating yourself, creating wind breaks, lining a shelter's floor.</li>
+</ul>
+<p><strong>Setup:</strong></p>
+<ul>
+<li>Buy a 2-lb machine-washable wool blanket (Pendleton makes good ones, ~$50–80). Wash it annually to keep it fresh.</li>
+<li>Space blankets are $2–3 each. Buy two and rotate them every two years.</li>
+<li>Duct tape: wrap a portion around a cardboard cylinder (not a full roll; saves weight).</li>
+</ul>
+<div class="tip">
+<p><strong>Wool blanket care:</strong> Wool can smell like sheep. Hang it in your garage in summer to air out. Wash it once a year in cool water with wool soap. Do not dry clean or tumble dry. A clean, aired blanket is not unpleasant and is genuinely life-saving.</p>
+</div>
+<h3>Sleeping Bag or Bivy (Optional, for Extended Sheltering)</h3>
+<p>If you're worried you might <em>not</em> reach a warming center or shelter and instead sleep in your car or temporarily outdoors:</p>
+<ul>
+<li><strong>Lightweight emergency bivy</strong> (e.g., SOL Escape Bivy or Survival Systems Bivy): 5–8 oz, seals in body heat, waterproof</li>
+<li><strong>OR a compact sleeping bag</strong> (20°F rated, ~3 lbs): Heavier but more comfortable than a bivy</li>
+</ul>
+<p><strong>Setup:</strong></p>
+<ul>
+<li>A bivy is overkill for Minnesota ice storms (you will reach a shelter). Pack one only if you've planned to shelter in your car multiple times.</li>
+<li>If you're sheltering at a warming center or family member's home, you will not need a sleeping bag.</li>
+</ul>
+<hr>
+<h2 id="layer-4-documents-and-first-aid-top-of-bag-2-3-lbs">Layer 4: Documents and First Aid (Top of Bag, 2–3 lbs)</h2>
+<h3>Documents Pouch (0.5 lbs)</h3>
+<p><strong>Do not duplicate information from the</strong> <a href="home-inventory.html">Home Inventory</a> <strong>guide.</strong> That guide covers in detail what property records to keep and where to store them. For your go-bag, create a <em>summary pouch</em> containing:</p>
+<p><strong>What to include:</strong></p>
+<ul>
+<li><strong>ID and insurance cards</strong> in a waterproof pouch:
+<ul>
+<li>Driver's license or state ID</li>
+<li>Health insurance card (front and back)</li>
+<li>Auto insurance card (if you're driving)</li>
+<li>Home insurance policy summary (one page, not full policy)</li>
+</ul>
+</li>
+<li><strong>Emergency contact list</strong> (printed, one sheet):
+<ul>
+<li>Spouse/partner phone, work, secondary contact</li>
+<li>Children's school, daycare, or current location</li>
+<li>Parent or guardian phone numbers</li>
+<li>Neighbor's phone number (in-town or in-state)</li>
+<li>Out-of-state contact (for family communications during widespread outage)</li>
+</ul>
+</li>
+<li><strong>Property photo summary</strong> (printed, one sheet):
+<ul>
+<li>3–4 photos of your home's exterior (for insurance claim if damaged by ice/fire)</li>
+<li>3–4 photos of major appliances, HVAC system, roof (condition before the emergency)</li>
+</ul>
+</li>
+<li><strong>Home address and GPS coordinates</strong> (printed, one card):
+<ul>
+<li>Why: If you're away from home and your phone dies, you may not remember your full address to tell a shelter coordinator or first responder.</li>
+<li>Format: &quot;123 Main St, Minneapolis, MN 55401 | GPS: 44.9736, -93.2655&quot;</li>
+</ul>
+</li>
+</ul>
+<p><strong>Why:</strong></p>
+<ul>
+<li>In a real emergency, you will not have time to search for your insurance card. It's in the bag.</li>
+<li>Photos are your proof of damage and property value for insurance claims.</li>
+<li>An out-of-state contact is especially important in Minnesota. When a regional outage affects 200,000 people, local lines are jammed. But a relative in Wisconsin or Illinois can receive messages from family outside the disaster zone.</li>
+</ul>
+<p><strong>Setup:</strong></p>
+<ul>
+<li>Use a large ziplock (gallon-sized) or a thin waterproof document pouch (e.g., Travelon or opsak brand).</li>
+<li>Update this annually in August: renew insurance cards if they've expired, check phone numbers, confirm photos are recent.</li>
+<li>Do not include bank account numbers, Social Security numbers, or passwords. If your bag is lost, you don't want identity theft on top of an outage.</li>
+</ul>
+<h3>First Aid Kit (1 lb)</h3>
+<p><strong>What to include:</strong></p>
+<p>Purchase a compact commercial first aid kit (e.g., Adventure Medical Kits Ultralight, ~$25–40) or build your own from a gallon ziplock:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Quantity</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adhesive bandages (various sizes)</td>
+<td>20</td>
+<td>Cuts, blisters</td>
+</tr>
+<tr>
+<td>Gauze pads (2×2)</td>
+<td>8</td>
+<td>Wound cleaning</td>
+</tr>
+<tr>
+<td>Antibiotic ointment packets</td>
+<td>4</td>
+<td>Infection prevention</td>
+</tr>
+<tr>
+<td>Burn gel packets</td>
+<td>2</td>
+<td>Burns (rare but possible near a heater)</td>
+</tr>
+<tr>
+<td>Tweezers</td>
+<td>1</td>
+<td>Splinter removal</td>
+</tr>
+<tr>
+<td>Aspirin or ibuprofen packets</td>
+<td>8</td>
+<td>Pain, fever</td>
+</tr>
+<tr>
+<td>Acetaminophen packets</td>
+<td>4</td>
+<td>Pain (alternative to ibuprofen)</td>
+</tr>
+<tr>
+<td>Antihistamine tablets</td>
+<td>4</td>
+<td>Allergic reactions</td>
+</tr>
+<tr>
+<td>Antacid tablets</td>
+<td>4</td>
+<td>Stomach upset from stress or odd food</td>
+</tr>
+<tr>
+<td>Elastic bandage wrap (ACE)</td>
+<td>1</td>
+<td>Sprains</td>
+</tr>
+<tr>
+<td>Antihistamine cream</td>
+<td>1 small tube</td>
+<td>Itching</td>
+</tr>
+<tr>
+<td>Thermometer</td>
+<td>1</td>
+<td>Fever assessment</td>
+</tr>
+<tr>
+<td>Lip balm with SPF</td>
+<td>1</td>
+<td>Windburn (critical in winter)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why:</strong></p>
+<ul>
+<li>A compact kit handles the common issues: cuts, blisters, pain, fever.</li>
+<li>Blister prevention and treatment is <em>critical</em> in winter. If you're walking in snow with ice on roads, your feet take impact. Wet socks = blisters = infection risk.</li>
+<li>Reference: <a href="first-aid.html">First Aid</a> guide for detailed wound care.</li>
+</ul>
+<p><strong>Setup:</strong></p>
+<ul>
+<li>Buy a pre-made kit or assemble one from drugstore packets.</li>
+<li>Rotate it annually: expired items go home and get refreshed.</li>
+<li>Do not pack prescription medications here (those stay in your purse or medicine cabinet). This kit is for common issues.</li>
+</ul>
+<h3>Comfort and Misc Items (0.5 lbs)</h3>
+<ul>
+<li><strong>Lip balm</strong> (already listed in first aid, but critical enough to carry duplicates)</li>
+<li><strong>Hand warmers</strong> × 2 (disposable chemical packets, 12-hour duration): tuck into pockets or gloves</li>
+<li><strong>Wipes or damp cloth</strong> (in ziplock): hygiene during extended sheltering</li>
+<li><strong>Tissues</strong> (compact travel pack): for runny nose in cold</li>
+<li><strong>Gum or hard candy</strong>: morale, hydration stimulus</li>
+<li><strong>Pain reliever</strong>: already in first aid kit, but repeat because you will want it</li>
+</ul>
+<hr>
+<h2 id="weight-breakdown-what-goes-where">Weight Breakdown: What Goes Where</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Weight</th>
+<th>Location in Bag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Immediate essentials</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Phone + charger cable</td>
+<td>0.5 lbs</td>
+<td>Outer pocket or wrist strap</td>
+</tr>
+<tr>
+<td>Headlamp + batteries</td>
+<td>0.3 lbs</td>
+<td>Chest strap or outer pocket</td>
+</tr>
+<tr>
+<td>Flashlight + batteries</td>
+<td>0.1 lbs</td>
+<td>Pants pocket</td>
+</tr>
+<tr>
+<td>Knife or multitool</td>
+<td>0.3 lbs</td>
+<td>Pants pocket</td>
+</tr>
+<tr>
+<td>Emergency contact printouts</td>
+<td>0.1 lbs</td>
+<td>Outer pocket</td>
+</tr>
+<tr>
+<td><strong>Water and food</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Water bottles (filled)</td>
+<td>4.2 lbs</td>
+<td>Bottom of bag</td>
+</tr>
+<tr>
+<td>Water filter</td>
+<td>0.2 lbs</td>
+<td>Bottom of bag</td>
+</tr>
+<tr>
+<td>Bars + nuts + jerky + chocolate</td>
+<td>2.5 lbs</td>
+<td>Ziplock compartments, lower-middle</td>
+</tr>
+<tr>
+<td><strong>Warmth</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Wool blanket</td>
+<td>2 lbs</td>
+<td>Middle-to-top, rolled</td>
+</tr>
+<tr>
+<td>Space blankets</td>
+<td>0.1 lbs</td>
+<td>Small outer pocket</td>
+</tr>
+<tr>
+<td>Extra socks and layers</td>
+<td>1 lb</td>
+<td>In with blankets</td>
+</tr>
+<tr>
+<td><strong>Documents and first aid</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Documents pouch</td>
+<td>0.5 lbs</td>
+<td>Top, easy access</td>
+</tr>
+<tr>
+<td>First aid kit</td>
+<td>1 lb</td>
+<td>Top, easy access</td>
+</tr>
+<tr>
+<td><strong>Misc</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Hand warmers, wipes, comfort items</td>
+<td>0.5 lbs</td>
+<td>Side pockets</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>13–15 lbs</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="info-box">
+<p><strong>Why is this under 20 lbs, not 40?</strong> Because you will carry this bag on foot, in winter, in an emergency. If your bag weighs 40 lbs and you're walking a mile in ice and darkness, you will drop it. A 15-lb bag is carried for miles without exhaustion. Distribute weight evenly: water and heavy items in the center, lightweight items on top.</p>
+</div>
+<hr>
+<h2 id="vehicle-preparedness-your-backup-shelter">Vehicle Preparedness: Your Backup Shelter</h2>
+<p>Your go-bag assumes you can reach a shelter—a warming center, family home, or safe vehicle. To ensure that, your vehicle is year-round equipped from October through April.</p>
+<h3>Winter Vehicle Kit (in your trunk, always)</h3>
+<p><strong>What to keep:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Qty</th>
+<th>Purpose</th>
+<th>Replaces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Blanket or sleeping bag</strong></td>
+<td>1</td>
+<td>Warmth if stranded</td>
+<td>Go-bag blanket</td>
+</tr>
+<tr>
+<td><strong>Jumper cables</strong> (heavy-duty, 12 gauge)</td>
+<td>1</td>
+<td>Battery restart</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Tow strap or tow rope</strong> (5000+ lbs rated)</td>
+<td>1</td>
+<td>Extract yourself from ditch</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Sand or kitty litter</strong> (5-lb bag)</td>
+<td>1</td>
+<td>Wheel traction on ice</td>
+<td>Dig out wheels</td>
+</tr>
+<tr>
+<td><strong>Ice scraper and small shovel</strong></td>
+<td>1</td>
+<td>Clear windshield and dig out</td>
+<td>Essential</td>
+</tr>
+<tr>
+<td><strong>Spare tire (full-size preferred, not donut)</strong></td>
+<td>1</td>
+<td>Blowout repair</td>
+<td>OEM tire</td>
+</tr>
+<tr>
+<td><strong>Jack and lug wrench</strong></td>
+<td>1 set</td>
+<td>Tire change</td>
+<td>OEM</td>
+</tr>
+<tr>
+<td><strong>First aid kit (larger)</strong></td>
+<td>1</td>
+<td>Injury treatment</td>
+<td>go-bag kit</td>
+</tr>
+<tr>
+<td><strong>Flares or reflective triangles</strong></td>
+<td>3</td>
+<td>Visibility if broken down</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Battery jump starter</strong> (portable battery pack)</td>
+<td>1</td>
+<td>Restart battery without another car</td>
+<td>Jumper cables backup</td>
+</tr>
+<tr>
+<td><strong>Multi-bit screwdriver</strong></td>
+<td>1</td>
+<td>Basic repairs</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Duct tape</strong> (full roll)</td>
+<td>1</td>
+<td>Hose leaks, quick fixes</td>
+<td>Bag's small roll</td>
+</tr>
+<tr>
+<td><strong>Spare belts for serpentine</strong></td>
+<td>1</td>
+<td>Engine belt failure</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Flashlight with spare batteries</strong></td>
+<td>1</td>
+<td>Roadside visibility</td>
+<td>Duplicate headlamp</td>
+</tr>
+<tr>
+<td><strong>Phone charger (car + USB cable)</strong></td>
+<td>1</td>
+<td>Device charging while driving</td>
+<td>Go-bag charger</td>
+</tr>
+<tr>
+<td><strong>Window breaker + seatbelt cutter</strong></td>
+<td>1</td>
+<td>Emergency egress if submerged</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Coolant and washer fluid</strong></td>
+<td>1 gallon each</td>
+<td>Top off before winter</td>
+<td>Prevent overheating</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total cost: $150–250 (one-time, then annual replacement of consumables).</strong></p>
+<p><strong>Setup:</strong></p>
+<ul>
+<li>Assemble this kit in September. Do not wait until November.</li>
+<li>Check battery terminals for corrosion. Clean with baking soda and water.</li>
+<li>Test jumper cables on a friend's car in daylight, so you're confident they work before winter.</li>
+<li>Practice changing a tire in good weather, not on an icy highway at 11 PM.</li>
+</ul>
+<h3>Fuel and Route Planning</h3>
+<p><strong>Half-tank rule:</strong></p>
+<ul>
+<li>From October 1 to April 30, never let your gas tank drop below half-full.</li>
+<li>Why: In a widespread outage, gas pumps are non-functional (no power, no payment processing). If you're halfway to a shelter and need to backtrack or reroute, an empty tank ends the decision.</li>
+<li>Set a phone alarm for Friday afternoons: &quot;Check gas gauge.&quot; If it's below 50%, fill up before the weekend.</li>
+</ul>
+<p><strong>Know your routes:</strong></p>
+<p>Before winter, decide:</p>
+<ol>
+<li>
+<p><strong>Primary shelter:</strong> Where will you go if your home is unheated for 48+ hours?</p>
+<ul>
+<li>A relative or friend uptown with a generator?</li>
+<li>A warming center (search &quot;[Your city] winter warming centers&quot;)?</li>
+<li>A hotel 10 miles away with a parking garage (garages hold heat)?</li>
+</ul>
+</li>
+<li>
+<p><strong>Secondary shelter:</strong> If the primary is unreachable (icy roads, staff overflow), where's the backup?</p>
+<ul>
+<li>Another family member?</li>
+<li>A church or community center?</li>
+<li>A hotel further away but on less-icy roads?</li>
+</ul>
+</li>
+<li>
+<p><strong>Route to each shelter:</strong></p>
+<ul>
+<li>Use Google Maps <em>now</em> (not in an emergency) to find the route.</li>
+<li>Note main roads vs. back roads. Main roads are salted and plowed first.</li>
+<li>Identify landmarks in case your phone dies: &quot;Turn right at the Target, follow 494 east for 5 miles.&quot;</li>
+<li>Write the address, distance, and landmarks on a card in your glove box.</li>
+</ul>
+</li>
+<li>
+<p><strong>Shelter-in-place alternative:</strong></p>
+<ul>
+<li>Even with careful planning, roads may become impassable.</li>
+<li>Decide: Can you gather your family, pets, valuables into one room and hunker down?</li>
+<li>Stock that room with blankets, water, food, heat source <em>now</em>, so it's ready if you can't leave.</li>
+</ul>
+</li>
+</ol>
+<div class="warning">
+<p><strong>Ice storms close roads without warning.</strong> You may leave your driveway and encounter black ice 2 miles away. If you're uncomfortable driving in winter conditions, do not attempt to reach a shelter alone. Call a neighbor or local non-emergency line (211 is Minnesota's United Way helpline) and ask for a ride. No shame. A warming center vehicle will collect you.</p>
+</div>
+<hr>
+<h2 id="seasonal-rotation-checklist">Seasonal Rotation Checklist</h2>
+<p>Run this quarterly to keep your go-bag combat-ready.</p>
+<h3>August (Back-to-School, Prep for Fall)</h3>
+<ul>
+<li>[ ] Replace all food (bars, nuts, jerky expiration date check; discard anything more than 6 months old)</li>
+<li>[ ] Test headlamp: click it on for 30 seconds, confirm brightness</li>
+<li>[ ] Replace headlamp batteries if used since May</li>
+<li>[ ] Inspect wool blanket: hand-wash if needed, hang to dry, smell-check</li>
+<li>[ ] Check all ziplock bags for leaks or tears</li>
+<li>[ ] Renew printed emergency contacts (verify phone numbers are current)</li>
+<li>[ ] Renew insurance cards photocopy (if you have new cards)</li>
+<li>[ ] Update property photos (take new exterior and interior photos)</li>
+<li>[ ] Check vehicle kit: tire pressure, fluid levels, belt condition</li>
+</ul>
+<h3>November (Pre-Winter Confirmation)</h3>
+<ul>
+<li>[ ] Full walkthrough: remove bag, lay out all items on a table</li>
+<li>[ ] Confirm water bottles seal (fill with water, invert over sink—if it drips, replace)</li>
+<li>[ ] Confirm water filter cap is tight</li>
+<li>[ ] Test all lights (headlamp, flashlight) again—different lighting, different battery brand, etc.</li>
+<li>[ ] Inspect boots: check for salt damage, cracks in sole, tread depth</li>
+<li>[ ] Verify jacket zips and has no rips</li>
+<li>[ ] Spin-check: put bag on and walk 100 yards. Any pain, shifting, or discomfort? Adjust packing.</li>
+<li>[ ] Vehicle pre-winter: tire rotation, coolant flush, battery terminal cleaning</li>
+</ul>
+<h3>February (Mid-Winter, After Storm Season)</h3>
+<ul>
+<li>[ ] If you've used any items from the bag, replace them immediately</li>
+<li>[ ] Rotate food again (nuts and bars go rancid in February cold; fresh stock)</li>
+<li>[ ] Check phone charger cable for cracks (repeated charging/uncharging wears them)</li>
+<li>[ ] Inspect first aid kit: any items used? Any expired? Restock</li>
+<li>[ ] Confirm vehicle fuel is above half-tank (weekend check-in)</li>
+</ul>
+<h3>April (Pre-Spring, Seasonal Transition)</h3>
+<ul>
+<li>[ ] Replace all food (last time until September)</li>
+<li>[ ] Remove heavy items from vehicle: sand, extra blanket (move to garage/basement)</li>
+<li>[ ] Deep-clean and air out wool blanket</li>
+<li>[ ] Swap winter boots for lighter footwear (if you do that)</li>
+<li>[ ] Check phone charger for next season (winter strain is over; can reduce to light-duty cable)</li>
+</ul>
+<hr>
+<h2 id="climate-adaptation-beyond-minnesota">Climate Adaptation: Beyond Minnesota</h2>
+<p>The go-bag framework is universal, but specific items must adapt to your climate and geography. This guide is Minnesota-focused (cold, seasonal outages). Adapt for your region.</p>
+<h3>Hot/Arid Climates (Desert Southwest, Mediterranean)</h3>
+<p><strong>Primary hazard:</strong> Heat exhaustion, dehydration, sun exposure, dust storms, extended power outages (cooling overload).</p>
+<p><strong>Modified gear list:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Minnesota Item</th>
+<th>Arid Climate Adaptation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Water</strong></td>
+<td>2 liters</td>
+<td><strong>4-6 liters minimum</strong> (heat accelerates dehydration; humans need 1 liter per hour in extreme heat)</td>
+</tr>
+<tr>
+<td><strong>Clothing</strong></td>
+<td>Wool base layers, insulated jacket</td>
+<td><strong>Lightweight long-sleeve shirt (cotton or linen), lightweight pants</strong> (protects from sun while dissipating heat)</td>
+</tr>
+<tr>
+<td><strong>Head covering</strong></td>
+<td>Wool or fleece hat</td>
+<td><strong>Wide-brimmed hat or headwrap</strong> (prevents sun-induced dehydration; sunburn increases heat loss)</td>
+</tr>
+<tr>
+<td><strong>Gloves</strong></td>
+<td>Insulated gloves</td>
+<td><strong>Lightweight work gloves</strong> (sun and blister protection, not warmth)</td>
+</tr>
+<tr>
+<td><strong>Footwear</strong></td>
+<td>Insulated winter boots</td>
+<td><strong>Lightweight hiking boots or canvas shoes</strong> (breathability &gt; insulation)</td>
+</tr>
+<tr>
+<td><strong>Shelter</strong></td>
+<td>Wool blanket</td>
+<td><strong>Lightweight tarp or space blanket</strong> (reflects heat; provides shade)</td>
+</tr>
+<tr>
+<td><strong>Sleeping</strong></td>
+<td>Blanket (warmth-focused)</td>
+<td><strong>Lightweight bivy or sleeping bag rated 40°F+</strong> (for cool desert nights)</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>N/A</td>
+<td><strong>Electrolyte tablets or powder</strong> (salt/minerals replace sweat loss)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>High-SPF sunscreen</strong> (prevent sun damage affecting thermoregulation)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>Dust mask/respirator</strong> (dust storms, air quality crises)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Water storage note:</strong> 4-6 liters weighs 30+ lbs. Split between two 2-liter bottles and a hydration pack if weight is limiting. Rotate water weekly (algae growth in static water).</p>
+<p><strong>Shelter emphasis:</strong> In arid regions, shade is more critical than insulation. A tarp providing shade on a hot day keeps core temperature 10-15°F lower than direct sun exposure.</p>
+<p><strong>Food adaptation:</strong> Calorie needs are lower in heat (less thermoregulation). However, appetite suppression in heat makes eating difficult. Include items that are appetizing when overheated: dried fruit, salted nuts, isotonic drinks.</p>
+<h3>Tropical/Humid Climates (Southeast US, Central America, Southeast Asia)</h3>
+<p><strong>Primary hazard:</strong> Humidity, mold/fungal infections, dehydration despite high water availability, insect-borne disease, flooding.</p>
+<p><strong>Modified gear list:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Minnesota Item</th>
+<th>Tropical Adaptation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Water</strong></td>
+<td>2 liters + filter</td>
+<td><strong>Water filter (CRITICAL—parasites in tropical water)</strong> Use portable filter capable of 0.2-micron filtration (removes protozoa, bacteria)</td>
+</tr>
+<tr>
+<td><strong>Clothing</strong></td>
+<td>Wool base layers</td>
+<td><strong>Lightweight moisture-wicking synthetic</strong> (merino wool retains moisture; mold/mildew risk)</td>
+</tr>
+<tr>
+<td><strong>Jacket</strong></td>
+<td>Insulated winter parka</td>
+<td><strong>Lightweight rain jacket</strong> (waterproof, not insulated; focus on shedding water)</td>
+</tr>
+<tr>
+<td><strong>Socks</strong></td>
+<td>Wool socks</td>
+<td><strong>Synthetic quick-dry socks</strong> (wool retains moisture; fungal infection risk)</td>
+</tr>
+<tr>
+<td><strong>Footwear</strong></td>
+<td>Insulated boots</td>
+<td><strong>Open-toe sandals + socks OR mesh hiking boots</strong> (breathability &gt; protection)</td>
+</tr>
+<tr>
+<td><strong>Blanket</strong></td>
+<td>Wool blanket</td>
+<td><strong>Lightweight sleeping sheet</strong> (airflow &gt; insulation)</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>N/A</td>
+<td><strong>Antifungal powder</strong> (prevents athlete's foot, jock itch in humid conditions)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>Insect repellent (DEET-based)</strong> (mosquitoes carry dengue, malaria, Zika)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>Permethrin-treated net</strong> (sleeping under net prevents bites)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>Fast-dry towel</strong> (prevent mold growth on regular cloth)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Water safety critical:</strong> Tropical water sources are high-risk for parasites (giardia, cryptosporidium). Even boiling may not kill some cysts. Use high-quality filter (not just chlorination).</p>
+<p><strong>Mold prevention:</strong> All damp items are mold risk. Hang wet clothing in sun immediately. Use silica packets in bag to absorb moisture. Inspect bag weekly for mold growth and air out in direct sun.</p>
+<p><strong>Insect defense:</strong> Mosquitoes are vector for serious disease. Permethrin-treated bed net and DEET repellent are non-negotiable. Sleeping in enclosed shelter (tent, sealed room) preferred.</p>
+<h3>Coastal/Maritime Climates (Pacific Northwest, British Isles, Gulf Coast)</h3>
+<p><strong>Primary hazard:</strong> Persistent dampness, rapid temperature swings, wind, fog/low visibility, salt corrosion, flooding/storm surge, high humidity.</p>
+<p><strong>Modified gear list:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Minnesota Item</th>
+<th>Coastal Adaptation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Water</strong></td>
+<td>2 liters</td>
+<td><strong>2 liters (rainfall common; fresh water availability higher)</strong></td>
+</tr>
+<tr>
+<td><strong>Clothing</strong></td>
+<td>Insulated jacket, wool layers</td>
+<td><strong>Synthetic insulated jacket (down loses insulation when wet)</strong> Merino wool or synthetic base layers</td>
+</tr>
+<tr>
+<td><strong>Gloves</strong></td>
+<td>Standard insulated</td>
+<td><strong>Waterproof gloves</strong> (wet hands lose heat rapidly in wind)</td>
+</tr>
+<tr>
+<td><strong>Footwear</strong></td>
+<td>Insulated boots</td>
+<td><strong>Waterproof hiking boots</strong> (most important—wet feet = hypothermia risk)</td>
+</tr>
+<tr>
+<td><strong>Blanket</strong></td>
+<td>Wool blanket</td>
+<td><strong>Waterproof emergency bivyy or space blanket</strong> (prevents hypothermia from wet exposure)</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>N/A</td>
+<td><strong>Waterproof bag/dry bag</strong> (protect electronics, documents, food from sea spray/rain)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>Extra socks</strong> (wet feet are primary hypothermia vector; need to change immediately)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>Fishing line/hooks</strong> (coastal food source if sheltering extended)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>Seasickness medication</strong> (if evacuation involves water travel)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Wind management:</strong> Coastal wind is relentless and causes rapid heat loss. Windbreaker layer critical. Multiple smaller layers better than single thick layer (allows ventilation).</p>
+<p><strong>Salt corrosion:</strong> Metal tools and gear corrode rapidly in salty air. Inspect zippers, tools, and instruments weekly for salt buildup. Rinse with fresh water.</p>
+<p><strong>Visibility hazard:</strong> Fog can reduce visibility to &lt;10 meters. Headlamp, whistle, and reflective gear more critical than in other climates. If sheltering in coastal area during fog, have high-visibility marker or signal (to prevent being missed by rescuers).</p>
+<h3>Mountainous/Alpine Climates (Rockies, Appalachia, Alps, Himalayas)</h3>
+<p><strong>Primary hazard:</strong> Extreme cold at elevation, rapid weather changes, steep terrain, isolation, altitude sickness, avalanche (seasonal), exposure.</p>
+<p><strong>Modified gear list:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Minnesota Item</th>
+<th>Alpine Adaptation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Water</strong></td>
+<td>2 liters</td>
+<td><strong>Insulated bottles to prevent freezing</strong> (water freezes at high altitude faster than at sea level due to wind)</td>
+</tr>
+<tr>
+<td><strong>Clothing</strong></td>
+<td>Standard winter layers</td>
+<td><strong>Heavy insulation + windproof outer layer</strong> (alpine winds 30+ mph common)</td>
+</tr>
+<tr>
+<td><strong>Base layers</strong></td>
+<td>Merino wool</td>
+<td><strong>Merino wool or synthetic</strong> (same as Minnesota; very effective)</td>
+</tr>
+<tr>
+<td><strong>Jacket</strong></td>
+<td>Down or synthetic insulated</td>
+<td><strong>Synthetic (down loses insulation when wet; moisture from exertion becomes major risk)</strong></td>
+</tr>
+<tr>
+<td><strong>Hat/gloves</strong></td>
+<td>Standard winter</td>
+<td><strong>Insulated balaclava</strong> (protects face from wind); <strong>mittens</strong> (superior warmth vs. gloves)</td>
+</tr>
+<tr>
+<td><strong>Footwear</strong></td>
+<td>Winter boots</td>
+<td><strong>Insulated hiking boots rated for -20°F+</strong> (altitude cold is severe)</td>
+</tr>
+<tr>
+<td><strong>Blanket</strong></td>
+<td>2 lb wool blanket</td>
+<td><strong>3-4 lb wool blanket + emergency bivvy</strong> (alpine sheltering may require outdoor overnight)</td>
+</tr>
+<tr>
+<td><strong>Sleeping</strong></td>
+<td>Not needed in guide</td>
+<td><strong>Lightweight sleeping bag rated -10°F+</strong> (if sheltering outdoors)</td>
+</tr>
+<tr>
+<td><strong>Additional items</strong></td>
+<td>N/A</td>
+<td><strong>High-calorie snacks</strong> (metabolism burned fast in cold/elevation)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>Altitude sickness medication</strong> (if traveling above 8000 ft; prevents acute mountain sickness)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>Sunscreen SPF 50+</strong> (UV radiation intense at elevation; snow reflection increases exposure)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Altitude considerations:</strong> At 8000+ feet, oxygen availability drops 25%. Physical exertion becomes exhausting. Humans acclimatize within 2-3 days; first day at altitude is highest risk for headache and nausea. Go-bag should encourage staying put rather than traveling downhill in darkness (fall injury risk high).</p>
+<p><strong>Avalanche risk (winter):</strong> In avalanche terrain, carry avalanche beacon and know how to use probe/shovel (beyond scope of go-bag guide; requires specialized training). If caught in avalanche, deploy emergency beacon immediately and signal rescuers.</p>
+<p><strong>Rapid weather:</strong> Alpine weather changes in minutes. Clear sky becomes whiteout in an hour. Never leave shelter in unclear conditions. Wind-chill at altitude can reach -50°F+ in minutes.</p>
+<h3>Practical Climate Selection Framework</h3>
+<p><strong>When assembling your go-bag:</strong></p>
+<ol>
+<li><strong>Define your climate zone</strong> (hot/arid, tropical, coastal, alpine, or mixed—e.g., &quot;coastal temperate winter&quot;)</li>
+<li><strong>Identify primary hazards</strong> (heat, water scarcity, flooding, hypothermia, etc.)</li>
+<li><strong>Modify template items</strong> to address primary hazards</li>
+<li><strong>Test items in your climate</strong> (don't pack a synthetic jacket if it's inadequate in your region's winter)</li>
+<li><strong>Maintain seasonal rotation</strong> (swap winter for summer gear on appropriate dates for your region)</li>
+</ol>
+<p><strong>Cross-regional travel:</strong> If you travel between climates frequently (e.g., winter in warm location, summer in cold mountains), maintain <strong>two go-bags</strong> or <strong>modular system</strong> (swap insulation/water capacity based on destination).</p>
+<h3>Water Requirements by Climate</h3>
+<p>Universal guideline is insufficient. Adjust water carrying based on availability and scarcity:</p>
+<table>
+<thead>
+<tr>
+<th>Climate</th>
+<th>Water Availability</th>
+<th>Go-Bag Capacity</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arid/Desert</td>
+<td>Very scarce</td>
+<td>4-6 liters</td>
+<td>Multiple filling stops; dehydration is primary risk</td>
+</tr>
+<tr>
+<td>Tropical</td>
+<td>Abundant (risky)</td>
+<td>2-3 liters + filter</td>
+<td>Can source water easily; filtering is critical</td>
+</tr>
+<tr>
+<td>Coastal/Maritime</td>
+<td>Abundant (salty)</td>
+<td>2-3 liters + salt-water filter</td>
+<td>Ocean/brackish water plentiful; need salt-water filter or desalination</td>
+</tr>
+<tr>
+<td>Alpine</td>
+<td>Limited (seasonal)</td>
+<td>2-3 liters + filter</td>
+<td>Snow melt available winter; streams dry summer</td>
+</tr>
+<tr>
+<td>Temperate (Minnesota)</td>
+<td>Moderate</td>
+<td>2 liters + filter</td>
+<td>This guide's baseline; works for most developed regions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-not-to-pack">What NOT to Pack</h2>
+<p><strong>Do not include:</strong></p>
+<ul>
+<li><strong>Sentimental items:</strong> Your photo album, your grandmother's jewelry, heirlooms. In an emergency, these slow you down and create emotional paralysis. Your family's <em>presence</em> is what matters, not their possessions. Leave them.</li>
+<li><strong>Documents you cannot quickly verify:</strong> Mortgages, full insurance policies, tax returns. If you need them, they'll be in your home or cloud storage later. Go-bag is for <em>immediate access</em> items.</li>
+<li><strong>Untested gear:</strong> Do not pack a water filter you've never used, a camping stove you're not sure works, or a first aid tourniquet you don't know how to apply. Everything in the bag should be familiar.</li>
+<li><strong>Duplicate items unless redundant by design:</strong> One flashlight, one headlamp, one water filter (unless your second filter is an older backup). Redundancy is intentional; duplication is waste.</li>
+<li><strong>Fashion items:</strong> Your favorite jacket might be pretty, but if it's not insulated, leave it. Wear function.</li>
+<li><strong>Prescription medications:</strong> These stay in your purse, coat pocket, or car's glovebox, not the go-bag. Your go-bag is grabbed in 10 minutes; you have time to pocket your meds.</li>
+<li><strong>Pets or livestock:</strong> A go-bag is for <em>you</em>. Pet evacuation requires a separate, larger kit and a pre-arranged pet-friendly shelter. Plan that separately.</li>
+</ul>
+<div class="tip">
+<p>If you find yourself second-guessing an item (&quot;Is this really necessary?&quot;), remove it. A lighter bag you actually grab is better than a comprehensive bag that's so heavy you abandon it. After a few months, you'll learn what you'd genuinely use in an outage and what's extra.</p>
+</div>
+<hr>
+<h2 id="testing-your-go-bag">Testing Your Go-Bag</h2>
+<p>Before winter (September–October), do a dry run:</p>
+<ol>
+<li><strong>Pack the bag completely.</strong> Nothing missing, nothing forgotten.</li>
+<li><strong>Close it and weigh it</strong> (bathroom scale, or estimate by lifting).</li>
+<li><strong>Put it on and walk.</strong> Shoulder comfort? Balanced weight? Can you ascend stairs?</li>
+<li><strong>In daylight, practice with your flashlight and headlamp.</strong> Click them on. Off. On. Notice the brightness.</li>
+<li><strong>Open every pocket.</strong> Is anything hard to find? Reorganize for faster access.</li>
+<li><strong>Eat one of the bars.</strong> Honestly rate whether you'd eat it again in an emergency. Swap if necessary.</li>
+<li><strong>Call your planned shelter.</strong> Confirm they accept walk-in arrivals during outages and ask for direction.</li>
+<li><strong>Drive your route.</strong> Time how long it takes. Make mental notes of landmarks.</li>
+</ol>
+<p>After this dry run, you are ready. Your go-bag sits by your door, your vehicle is stocked, and you have a plan. That plan—not the bag itself—is what saves your life.</p>
+<div class="info-box">
+<p>A go-bag is not an insurance policy. It's a <em>decision tool</em>. Its presence means you've already decided: if the power is out and the house is cold, I leave. I don't second-guess or hesitate. I grab the bag and go to the shelter. Having made that decision in advance—before the emergency—is the real value.</p>
+</div>
+<hr>
+<h2 id="cross-reference-and-next-steps">Cross-Reference and Next Steps</h2>
+<ul>
+<li><strong>Detailed shelter planning:</strong> <a href="family-emergency-plan.html">Family Emergency Plan</a></li>
+<li><strong>Document storage (photos, insurance):</strong> <a href="home-inventory.html">Home Inventory</a></li>
+<li><strong>In-shelter first aid:</strong> <a href="first-aid.html">First Aid</a></li>
+<li><strong>Navigating without GPS:</strong> <a href="navigation.html">Navigation</a></li>
+<li><strong>Extended winter sheltering:</strong> <a href="winter-survival-systems.html">Winter Survival Systems</a></li>
+<li><strong>Long-term power outage survival:</strong> <a href="survival-basics.html">Survival Basics</a></li>
+<li><strong>This app (offline access):</strong> <a href="keep-this-app-ready.html">Keep This App Ready</a></li>
+</ul>
+<p>Your go-bag is <em>one layer</em> of a comprehensive emergency plan. It works best alongside a family communication plan, a home heating backup, and clear decision-making. Start with the bag. Then cross-reference the related guides to build the full picture.</p>
+<hr>
+<h2 id="summary-the-10-minute-drill">Summary: The 10-Minute Drill</h2>
+<p>Power is out. It's dark. You have ten minutes. What do you grab?</p>
+<ol>
+<li><strong>Your phone</strong> (charged, with this app cached offline)</li>
+<li><strong>Your documents pouch</strong> (ID, contact list, property photos)</li>
+<li><strong>Your go-bag</strong> (already by the door, already packed)</li>
+<li><strong>Your family/household</strong> (if you're sheltering with others)</li>
+<li><strong>You walk or drive to your shelter</strong> with the blanket, water, food, warmth, and first aid you've pre-packed</li>
+</ol>
+<p>You do not panic because you've already decided. You do not second-guess because the decision is in the bag. You arrive at the shelter hydrated, fed, warm, and documented.</p>
+<p>That's the go-bag.</p>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="keep-this-app-ready.html">Keep This App Ready</a>
+<a href="home-inventory.html">Home Inventory</a>
+<a href="family-emergency-plan.html">Family Emergency Plan</a>
+<a href="survival-basics.html">Survival Basics &amp; First 72 Hours</a>
+<a href="first-aid.html">First Aid and Emergency Response</a>
+<a href="winter-survival-systems.html">Winter Survival Systems</a>
+<a href="navigation.html">Navigation &amp; Timekeeping</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

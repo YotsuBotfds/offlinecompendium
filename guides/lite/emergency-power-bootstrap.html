@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/emergency-power-bootstrap.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emergency Power Bootstrap</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Power Generation</span> ›
+<span>Emergency Power Bootstrap</span>
+</div>
+
+<div class="warning">
+<strong>Safety Notice:</strong> This guide covers activities that carry some risk. Follow all safety precautions carefully.
+</div>
+
+<h1>Emergency Power Bootstrap</h1>
+<p class="subtitle">Fastest paths to device-charging electricity — keep your screen on to access everything else.</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~5 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#decision-tree">What Do You Have Access To?</a></li>
+<li><a href="#method-1-vehicle-power">Method 1: Vehicle Power</a></li>
+<li><a href="#method-2-ready-devices">Method 2: Ready-Made Charging Devices</a></li>
+<li><a href="#method-3-scavenge">Method 3: Scavenge Existing Infrastructure</a></li>
+<li><a href="#method-4-build">Method 4: Build a Generator</a></li>
+<li><a href="#method-5-improvise">Method 5: Extreme Improvisation</a></li>
+<li><a href="#long-term">Long-Term Power Strategy</a></li>
+<li><a href="#conserve">Conserve What You Have</a></li>
+<li><a href="#load-prioritization">Load Prioritization and Device Triage</a></li>
+<li><a href="#generator-sizing">Generator Sizing for Sustainable Power</a></li>
+<li><a href="#fuel-storage">Fuel Storage Safety and Management</a></li>
+<li><a href="#grid-tie-isolation">Grid-Tie System Isolation and Safety</a></li>
+<li><a href="#battery-bank-basics">Battery Bank Basics and Expansion</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="tldr-box">
+<h3>⚡ TL;DR — Fastest Path to Power</h3>
+<p><strong>If you have a car:</strong> Connect a USB car charger to the cigarette lighter. Start the engine for 15 minutes. You now have a full phone charge. Read the rest of this compendium.</p>
+<p><strong>If you have any solar panel:</strong> Place it in direct sunlight, connect your device via USB. Charging begins immediately.</p>
+<p><strong>If you have neither:</strong> Skip to the Salvage &amp; Build section below.</p>
+</div>
+<div class="danger">
+<p><strong>This guide exists because your battery is dying.</strong> Read fast, act on one method, then come back when you have power. Every section has a time estimate — pick the fastest option you can actually do right now.</p>
+</div>
+<div class="battery-saver">
+<p><strong>🔋 Battery Saving While You Read:</strong> Turn on airplane mode. Set screen brightness to minimum. Close all other apps. On OLED screens, dark mode (already enabled) saves 30-50% power.</p>
+</div>
+<section id="decision-tree">
+<h2>What Do You Have Access To?</h2>
+<p>Use this decision tree to find your fastest path. Pick the first option that applies.</p>
+<div class="decision-branch">
+<h4>✅ A vehicle with a working battery? <span class="time-badge">⏱ 2 min</span></h4>
+<p>→ Go to <a href="#method-1-vehicle">Method 1: Vehicle Power</a></p>
+</div>
+<div class="decision-branch">
+<h4>✅ A solar panel, power bank, or hand-crank device? <span class="time-badge">⏱ 0–30 min</span></h4>
+<p>→ Go to <a href="#method-2-ready-devices">Method 2: Ready-Made Devices</a></p>
+</div>
+<div class="decision-branch">
+<h4>✅ Access to a building with intact wiring? <span class="time-badge">⏱ 10–60 min</span></h4>
+<p>→ Go to <a href="#method-3-scavenge">Method 3: Scavenge Existing Infrastructure</a></p>
+</div>
+<div class="decision-branch">
+<h4>✅ A bicycle, running water, or motor from an appliance? <span class="time-badge">⏱ 2–8 hrs</span></h4>
+<p>→ Go to <a href="#method-4-build">Method 4: Build a Generator</a></p>
+</div>
+<div class="decision-branch">
+<h4>❌ None of the above? <span class="time-badge">⏱ Varies</span></h4>
+<p>→ Go to <a href="#method-5-improvise">Method 5: Extreme Improvisation</a></p>
+</div>
+</section>
+<section id="method-1-vehicle">
+<p>For building generators from scratch, see <a href="hand-crank-generator-construction.html">Hand-Crank Generator Construction</a>.</p>
+<h2 id="method-1-vehicle-power">Method 1: Vehicle Power</h2>
+<p><strong>Time to first charge:</strong> 2 minutes | <strong>Skill:</strong> None | <strong>Equipment:</strong> Vehicle, USB adapter</p>
+<p>Any vehicle with a 12V battery can charge USB devices.</p>
+<div class="tip">
+<p>A typical car battery holds 40–60 amp-hours. A smartphone needs about 0.5 Ah to fully charge. That means one car battery can charge a phone <strong>80–120 times</strong> without the engine running — though you should start the engine periodically to avoid draining the starter battery.</p>
+</div>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Locate the 12V accessory port (cigarette lighter socket) in the dashboard or center console</li>
+<li>Plug in a USB car charger adapter (extremely common — check glove boxes, center consoles, and any nearby vehicles)</li>
+<li>If the port is dead with the key out, turn the ignition to ACC (accessory) position — no need to start the engine</li>
+<li>For extended charging: start the engine and let it idle for 15–20 minutes</li>
+</ol>
+<p><strong>No USB adapter?</strong> Cut any USB cable to expose the red (+) and black (−) wires. Connect red to the positive terminal of a 12V source and black to negative through a resistor or 12V-to-5V converter. <strong>Direct 12V will destroy your phone</strong> — you must step down to 5V.</p>
+<div class="warning">
+<p><strong>Never short-circuit a car battery.</strong> The spark can ignite hydrogen gas. Keep metal tools away from terminals. Do not bridge positive and negative posts.</p>
+</div>
+<p><strong>Alternative vehicle sources:</strong> RV/camper house batteries, boat batteries, motorcycle batteries, golf cart batteries (6V — may need two in series), forklift batteries, UPS backup units in server rooms.</p>
+</section>
+<section id="method-2-ready-devices">
+<h2>Method 2: Ready-Made Charging Devices</h2>
+<p><strong>Time to first charge:</strong> Immediate to 30 min | <strong>Skill:</strong> None</p>
+<table class="method-table"><thead><tr><th>Device</th><th>Output</th><th>Notes</th></tr></thead><tbody><tr><td><strong>Solar power bank</strong></td><td>5V USB, 1-2A</td><td>Built-in panel is slow (8-20 hrs to self-charge). Use stored battery first.</td></tr><tr><td><strong>Foldable solar panel (20W+)</strong></td><td>5V USB, 2-3A</td><td>Phone charges in 2-3 hrs in direct sun. Best power-to-weight ratio.</td></tr><tr><td><strong>Hand-crank charger</strong></td><td>5V USB, ~0.5A</td><td>~15 min cranking = ~5 min talk time. Exhausting but reliable.</td></tr><tr><td><strong>Battery station (Jackery etc.)</strong></td><td>Multiple outputs</td><td>Can power laptops. 500Wh unit = 40+ phone charges.</td></tr><tr><td><strong>Car jump starter pack</strong></td><td>5V USB, 2A</td><td>Often overlooked. Most have USB ports. Check trunks and garages.</td></tr></tbody></table>
+<div class="tip">
+<p><strong>Scavenge checklist:</strong> Check emergency kits, camping gear, car trunks, garage shelves, junk drawers, office supply closets, and any outdoor/sporting goods stores. Solar chargers and power banks are extremely common consumer items.</p>
+</div>
+</section>
+<section id="method-3-scavenge">
+<h2>Method 3: Scavenge Existing Infrastructure</h2>
+<p><strong>Time to first charge:</strong> 10–60 min | <strong>Skill:</strong> Basic | <strong>Risk:</strong> Electrical shock</p>
+<div class="warning">
+<p><strong>Electricity kills.</strong> Never touch exposed wires without confirming they are de-energized. Assume all wires are live until proven otherwise. Water and electricity are lethal together. If you are not comfortable with basic wiring, skip to Method 4.</p>
+</div>
+<p><strong>Backup batteries to look for:</strong></p>
+<ul>
+<li><strong>UPS units</strong> (offices, server rooms, hospitals): These contain 12V sealed lead-acid batteries and often have USB or standard outlets. Press the power button — many will work for hours after grid failure.</li>
+<li><strong>Emergency lighting</strong>: Commercial buildings have battery-backed exit signs and emergency lights with 6V or 12V batteries inside. Remove the battery, connect to a USB voltage regulator.</li>
+<li><strong>Alarm systems</strong>: Residential and commercial alarm panels contain 12V backup batteries. Check near main electrical panels.</li>
+<li><strong>Telecommunications boxes</strong>: Outdoor telecom cabinets often contain 48V battery banks. <strong>Dangerous — high voltage.</strong></li>
+</ul>
+<p><strong>Solar panels on buildings:</strong></p>
+<p>Rooftop solar installations continue producing power whenever the sun is out, even after grid failure. However, most grid-tied systems have automatic shutoffs. Look for systems with battery backup — the batteries may still be charged. See the <a href="solar-technology.html">Solar Technology</a> guide for safe handling.</p>
+</section>
+<section id="method-4-build">
+<h2>Method 4: Build a Generator</h2>
+<p><strong>Time to first charge:</strong> 2–8 hours | <strong>Skill:</strong> Moderate</p>
+<p>These methods generate AC or DC electricity from mechanical energy. All require converting the output to safe 5V DC for device charging.</p>
+<p><strong>Bicycle generator:</strong></p>
+<ol>
+<li>Flip a bicycle upside down so the rear wheel spins freely</li>
+<li>Salvage a DC motor from a treadmill, power drill, or car alternator</li>
+<li>Press the motor's shaft against the rear tire so pedaling spins the motor</li>
+<li>Motor generates DC voltage proportional to speed — a car alternator at pedaling speed produces 12-14V</li>
+<li>Connect to a USB car charger adapter to step down to 5V</li>
+<li>Pedal at moderate speed. Expect 20-50W output — enough to charge a phone in 1-2 hours</li>
+</ol>
+<p><strong>Stream micro-hydro:</strong></p>
+<p>If near flowing water with at least 1m drop:</p>
+<ol>
+<li>Salvage a motor (washing machine, treadmill, ceiling fan)</li>
+<li>Attach improvised turbine blades (cut plastic or shaped wood) to the motor shaft</li>
+<li>Position in water flow so current spins the blades</li>
+<li>Route output through a voltage regulator to 5V USB</li>
+<li>Produces continuous power 24/7 — no pedaling required</li>
+</ol>
+<div class="info-box">
+<p>For comprehensive energy system design and integration, see the <a href="energy-systems.html">Energy Systems</a> guide.</p>
+</div>
+<p><strong>See also:</strong> Power Generation guide, Hydroelectric Power guide</p>
+</section>
+<section id="method-5-improvise">
+<h2>Method 5: Extreme Improvisation</h2>
+<p><strong>Time to first charge:</strong> Hours to days | <strong>Skill:</strong> High</p>
+<p>When no vehicles, batteries, or motors are available:</p>
+<ul>
+<li><strong>Thermoelectric generation (TEG/Peltier):</strong> Salvage a Peltier module from a portable cooler. Heat one side (fire), cool the other (water). Produces 1-3V per module. Stack 2-3 in series for 5V. Low output (~1W) but works with any heat source.</li>
+<li><strong>Lemon/earth battery:</strong> Insert copper and zinc electrodes into acidic fruit or moist earth. Each cell produces ~0.7V. Wire 8+ cells in series for 5V. Output is too low for direct charging but can trickle-charge a small battery over many hours.</li>
+<li><strong>Salvaged alternator + manual crank:</strong> Remove an alternator from any vehicle. Build a hand crank or lever mechanism. Produces 12V+ when spun at sufficient RPM.</li>
+</ul>
+<div class="info-box">
+<p><strong>Reality check:</strong> Methods 1-3 are realistic for keeping devices charged. Methods 4-5 require significant effort and knowledge. If you're reading this on a dying battery, focus on Methods 1-3. Come back to 4-5 when you have stable power.</p>
+</div>
+</section>
+<section id="long-term">
+<h2>Long-Term Power Strategy</h2>
+<p>Once you have immediate charging solved, build toward sustainable power:</p>
+<table class="method-table"><thead><tr><th>Timeframe</th><th>Goal</th><th>Guide</th></tr></thead><tbody><tr><td><strong>Day 1</strong></td><td>Emergency device charging</td><td>You are here</td></tr><tr><td><strong>Week 1</strong></td><td>Reliable daily charging source</td><td>Solar Technology</td></tr><tr><td><strong>Month 1</strong></td><td>Battery bank for overnight power</td><td>Battery Restoration</td></tr><tr><td><strong>Month 3</strong></td><td>Lighting, tools, communications</td><td>Power Generation</td></tr><tr><td><strong>Month 6+</strong></td><td>Micro-grid for community</td><td>Power Distribution</td></tr></tbody></table>
+<p><strong>The power guides in this compendium, in recommended reading order:</strong></p>
+<ol>
+<li><strong>Emergency Power Bootstrap</strong> (this guide) — Get your device charged now</li>
+<li><strong>Solar Technology</strong> — Most accessible renewable source</li>
+<li><strong>Battery Restoration</strong> — Recondition salvaged batteries</li>
+<li><strong>Electricity &amp; Magnetism</strong> — Understand the fundamentals</li>
+<li><strong>Power Generation</strong> — Build generators and turbines</li>
+<li><strong>Hydroelectric Power</strong> — Continuous water-powered generation</li>
+<li><strong>Power Distribution</strong> — Wire buildings and communities</li>
+<li><strong>Electrical Wiring</strong> — Safe installation practices</li>
+</ol>
+</section>
+<section id="conserve">
+<h2>Conserve What You Have</h2>
+<p>While building a charging solution, maximize your device's remaining battery:</p>
+<ul>
+<li><strong>Airplane mode</strong> saves 30-50% by disabling radios</li>
+<li><strong>Minimum brightness</strong> is the single biggest battery saver on any device</li>
+<li><strong>Dark mode on OLED</strong> screens draws less power (black pixels are truly off)</li>
+<li><strong>Close background apps</strong> and disable location services, Bluetooth, NFC</li>
+<li><strong>Disable auto-sync</strong>, email push, and notifications</li>
+<li><strong>Power off completely</strong> when not actively reading — a phone in standby still drains</li>
+<li><strong>Cold extends battery life</strong> slightly (keep device cool, not frozen)</li>
+<li><strong>A phone at 1% can still display a guide for 5-10 minutes</strong> — don't give up on a low battery warning</li>
+</ul>
+<div class="tip">
+<p><strong>Download this entire app first.</strong> If you still have connectivity, install the PWA now (tap &quot;Add to Home Screen&quot; or &quot;Install&quot;). All 291 guides will be cached offline. Do this before you lose power or signal.</p>
+</div>
+</section>
+<section id="load-prioritization">
+<h2>Load Prioritization and Device Triage</h2>
+<p>When charging capacity is limited, prioritize charging strategically. Not all devices are equally valuable in survival.</p>
+<h3>Priority Ranking</h3>
+<p><strong>Tier 1 (Critical):</strong> Communications and information access</p>
+<ul>
+<li>Smartphone/mobile phone: Can call for help, access maps, guides, communication</li>
+<li>Satellite messenger (if available): Direct distress capability</li>
+<li>Two-way radio: Essential if others nearby use compatible radios</li>
+</ul>
+<p><strong>Tier 2 (High Value):</strong> Medical and navigation</p>
+<ul>
+<li>Diabetes pump or medical device: Life-critical</li>
+<li>GPS unit or navigation device: Prevents getting lost</li>
+<li>Flashlight or headlamp: Light after dark is safety-critical</li>
+</ul>
+<p><strong>Tier 3 (Moderate):</strong> Tools and extended survival</p>
+<ul>
+<li>Laptop or tablet: Can run applications, store documents, provide entertainment</li>
+<li>Camera: Documentation and evidence</li>
+<li>Power bank: Stores charge for later redistribution</li>
+</ul>
+<p><strong>Tier 4 (Low):</strong> Luxuries (lowest priority when charging scarce)</p>
+<ul>
+<li>Gaming devices, music players, non-critical entertainment</li>
+<li>Unnecessary lighting (use ambient light if available)</li>
+</ul>
+<p><strong>Decision Rule:</strong> If you can charge 1 device in 2 hours, choose the device that provides the most survival value. A phone with maps and guides outranks a laptop for hiking. A medical device always outranks entertainment.</p>
+<h3>Charging in Sequence</h3>
+<p>When power source can charge multiple devices but takes time (solar panel with 5W output):</p>
+<ol>
+<li><strong>First device:</strong> The highest-priority item (usually phone)</li>
+<li><strong>Second device:</strong> While first charges, prepare second device</li>
+<li><strong>Rotation:</strong> Once first reaches 50%, switch to second (first will hold charge at 50% longer than charging from 0%)</li>
+<li><strong>Monitor voltage:</strong> Some chargers reduce output quality as input voltage drops—monitor and adjust if charging slows</li>
+</ol>
+<h3>Rationing Charge Across Devices</h3>
+<p>If you have one power source and multiple devices:</p>
+<p><strong>Scenario:</strong> Solar power bank with 10,000 mAh capacity (enough for 2-3 phone charges). Three people, three phones.</p>
+<ul>
+<li>Don't give each person equal charge</li>
+<li>Instead: Charge one phone to 100%, then move to the next</li>
+<li>Reason: A fully-charged phone works normally. A 30%-charged phone is unreliable and dies suddenly</li>
+<li>Fairer outcome: 1 person has full capability; 2 people have nothing; rotate tomorrow</li>
+</ul>
+<div class="decision-branch">
+<h4>Alternative: Create &quot;Communication Hub&quot;</h4>
+<p>Charge one device to full. Use it as central communications point. All three people gather when making calls/accessing maps. After 2-3 hours, swap devices. This way each person gets guaranteed full-power communication period rather than three partially-dead phones.</p>
+</div>
+</section>
+<section id="generator-sizing">
+<h2>Generator Sizing for Sustainable Power</h2>
+<p>Once you solve immediate charging, plan for sustained power output. Generator sizing depends on your loads and available resources.</p>
+<h3>Understanding Power (Watts) vs Energy (Watt-Hours)</h3>
+<p><strong>Power (W):</strong> How fast energy is consumed right now. A phone charger draws 5W continuously.
+<strong>Energy (Wh):</strong> Total power over time. Charging a 3000 mAh phone at 5V requires ~15 Wh.</p>
+<p>A bicycle generator that produces 50W can charge a phone (5W draw) while simultaneously powering a 40W LED light.</p>
+<h3>Sizing Your Generator</h3>
+<p><strong>Method 1: Sum Your Loads</strong></p>
+<ol>
+<li>
+<p>List all devices that might run simultaneously:</p>
+<ul>
+<li>LED lamp: 5W</li>
+<li>Phone charging: 5W</li>
+<li>Water pump: 20W</li>
+<li>Radio: 2W</li>
+<li>Total: 32W continuous demand</li>
+</ul>
+</li>
+<li>
+<p>Your generator must produce at least 32W sustained output. A pedal-powered generator that produces 50W handles this with 18W headroom.</p>
+</li>
+<li>
+<p>If simultaneous demand exceeds what generator produces, prioritize: run lights and radio (27W), skip pump. Run pump separately.</p>
+</li>
+</ol>
+<h3>Common Generator Power Ratings</h3>
+<table class="method-table"><thead><tr><th>Generator Type</th><th>Sustained Output</th><th>Peak Output</th><th>Duration Before Fatigue</th><th>Efficiency</th></tr></thead><tbody><tr><td>Hand-crank alternator</td><td>5-10W</td><td>20W (brief)</td><td>5-10 min continuous</td><td>40%</td></tr><tr><td>Bicycle pedal generator</td><td>50-75W</td><td>150W (sprint)</td><td>30-60 min continuous</td><td>60%</td></tr><tr><td>Treadmill motor (salvaged)</td><td>100-200W</td><td>500W peak</td><td>Hours if powered</td><td>70%</td></tr><tr><td>Stream micro-hydro (1m drop)</td><td>20-50W</td><td>Same (constant)</td><td>24/7 (water dependent)</td><td>65%</td></tr><tr><td>Solar panel (20W rated, full sun)</td><td>15-20W</td><td>20W max</td><td>8 hours/day (weather dependent)</td><td>80%</td></tr></tbody></table>
+<p><strong>Reality Check:</strong> Humans can sustain 50W of pedal power for 1 hour, then need rest. Expecting 200W continuous from a bicycle is unrealistic—plan for 3-4 people rotating shifts.</p>
+</section>
+<section id="fuel-storage">
+<h2>Fuel Storage Safety and Management</h2>
+<p>If using chemical fuel (gasoline, diesel, propane), proper storage prevents fire and contamination.</p>
+<h3>Gasoline Storage</h3>
+<div class="danger">
+<p><strong>Gasoline is explosive.</strong> Vapors ignite at room temperature if spark/flame present. Never store indoors. Never refuel near open flame.</p>
+</div>
+<p><strong>Safe storage:</strong></p>
+<ol>
+<li>Use approved fuel container (red metal or plastic container labeled for gasoline)</li>
+<li>Store outside, away from buildings and ignition sources</li>
+<li>Keep away from children and animals</li>
+<li>Cap tightly—gasoline evaporates, losing potency over time</li>
+<li>Store in cool location; heat accelerates evaporation and increases vapor pressure</li>
+<li>Never store more than 25 liters without regulatory approval</li>
+<li>Keep smaller containers (1-5L) for immediate use; larger reserves in protected storage shed</li>
+</ol>
+<p><strong>Fuel stabilization (extends shelf life):</strong></p>
+<ul>
+<li>Add fuel stabilizer (if available) according to instructions—extends usable life from 3-6 months to 1-2 years</li>
+<li>Without stabilizer: gasoline degrades within 3-6 months as volatile components evaporate</li>
+<li>Ethanol-blended fuel (10% ethanol) degrades faster than pure gasoline</li>
+</ul>
+<p><strong>Rotation:</strong> Use oldest fuel first. Mark containers with purchase date. Every 6 months, rotate oldest fuel into active use.</p>
+<h3>Diesel Fuel Storage</h3>
+<p>Diesel is less flammable than gasoline but still dangerous.</p>
+<ul>
+<li>Store in dark, cool location (sunlight and heat accelerate degradation)</li>
+<li>Diesel fuel has longer shelf life (6-12 months) than gasoline</li>
+<li>Risk: Microbial growth in tanks with water contamination—use fuel with biocide additives if storing long-term</li>
+<li>Proper container: Approved metal or plastic diesel container, tightly capped</li>
+</ul>
+<h3>Propane Safety</h3>
+<p>Propane for generators or heating requires proper storage:</p>
+<ul>
+<li>Store upright in approved metal cylinder</li>
+<li>Keep away from heat sources</li>
+<li>Never store indoors or in living spaces</li>
+<li>Ensure valve is tight and cap is in place</li>
+<li>Check for leaks by applying soapy water to valve connection; bubbles = leak</li>
+<li>Replace cylinder if corroded or leaking</li>
+<li>Never refill your own propane cylinder (dangerous, illegal in most places)</li>
+</ul>
+<h3>Battery Storage</h3>
+<p>If relying on rechargeable battery banks (not chemical fuel):</p>
+<ul>
+<li>Store in cool, dry location</li>
+<li>Keep at 40-60% charge if storing long-term (keeps battery healthy)</li>
+<li>Check monthly to ensure charge hasn't self-discharged completely</li>
+<li>Avoid extreme temperatures (heat and cold both degrade batteries)</li>
+</ul>
+</section>
+<section id="grid-tie-isolation">
+<h2>Grid-Tie System Isolation and Safety</h2>
+<p>If your area has rooftop solar or community micro-hydro systems with grid-tie inverters, understand the automatic shutoff risk. <strong>Grid-tied systems automatically stop producing power during blackouts</strong> to protect lineworkers.</p>
+<h3>How Grid-Tie Works</h3>
+<p>Most modern solar installations tie directly to the grid. When the grid is live, the system feeds power. When grid fails:</p>
+<ol>
+<li>Inverter detects AC voltage drop</li>
+<li>Within milliseconds, inverter disconnects from grid</li>
+<li>System shuts down to zero output</li>
+<li>This is intentional and safety-critical (prevents worker electrocution)</li>
+</ol>
+<p><strong>The problem:</strong> Grid-tied solar can't power your home during a blackout—even though the sun is shining and panels are producing power.</p>
+<h3>Adding Battery Backup to Grid-Tie</h3>
+<p>To retain power when grid is down, add a battery-backup subsystem:</p>
+<ol>
+<li><strong>Hybrid inverter:</strong> Replaces standard inverter. Detects grid failure automatically.</li>
+<li><strong>Battery bank:</strong> 5-15 kWh (depending on needs). Charges from solar when grid is live.</li>
+<li><strong>Essential loads panel:</strong> Sub-panel that can be powered by battery during outage.</li>
+<li><strong>Battery-to-solar connection:</strong> Allows solar to charge batteries even if grid is down.</li>
+</ol>
+<p><strong>Cost and complexity:</strong> This upgrade is expensive and requires professional installation. For emergency scenarios, simpler solutions (portable solar + power bank) may be more practical.</p>
+<h3>Salvaging Backup Batteries from Grid-Tied Systems</h3>
+<p>If you encounter commercial grid-tied solar with existing battery backup (newer installations sometimes have this):</p>
+<ol>
+<li><strong>Check for battery:</strong> Inverter room may have 48V battery bank in metal enclosure</li>
+<li><strong>Power off the system:</strong> Disconnect from AC supply at breaker</li>
+<li><strong>Test battery voltage:</strong> Use multimeter—battery may be charged and usable</li>
+<li><strong>Extract if safe:</strong> Batteries may be removable; consult documentation if available</li>
+<li><strong>Use as emergency bank:</strong> Repurpose for emergency power (with proper voltage regulation for devices)</li>
+</ol>
+<div class="warning">
+<p>Never attempt to modify or reconfigure grid-tie systems if you're unsure. Electrocution and fire risks are severe. Treat all large electrical systems as dangerous until proven safe.</p>
+</div>
+</section>
+<section id="battery-bank-basics">
+<h2>Battery Bank Basics and Expansion</h2>
+<p>Once you have a working charging solution, think about building a simple battery bank to store power for overnight or cloudy-day use.</p>
+<h3>Series vs Parallel Configuration</h3>
+<p><strong>Parallel (for capacity):</strong> Connect batteries positive-to-positive, negative-to-negative. Voltage stays same; capacity adds.</p>
+<ul>
+<li>Two 12V 100Ah batteries in parallel = 12V 200Ah total</li>
+<li>Useful for: Extending runtime without changing voltage</li>
+<li>Risk: Unequal discharge if one battery has different internal resistance</li>
+</ul>
+<p><strong>Series (for voltage):</strong> Connect positive of first to negative of second. Voltage adds; capacity stays same.</p>
+<ul>
+<li>Two 12V 100Ah batteries in series = 24V 100Ah total</li>
+<li>Useful for: Running 24V motors or higher-power systems</li>
+<li>Risk: One weak battery limits entire bank</li>
+</ul>
+<p><strong>Most common survival setup:</strong> Parallel array of 12V batteries, allowing solar chargers and car alternators to charge them directly.</p>
+<h3>Battery Selection for Long-Term Storage</h3>
+<p><strong>Lead-acid (car battery type):</strong></p>
+<ul>
+<li>Pros: Common, recyclable, robust</li>
+<li>Cons: Heavy; self-discharge over weeks; need periodic charging to stay healthy</li>
+<li>Best for: Short-term emergency storage (weeks), primary load</li>
+</ul>
+<p><strong>Lithium iron phosphate (LiFePO4, if available from salvage):</strong></p>
+<ul>
+<li>Pros: Lighter; retain charge for months; more cycles</li>
+<li>Cons: Expensive; need special charger; harder to salvage</li>
+<li>Best for: Long-term storage; portable systems</li>
+</ul>
+<p><strong>Nickel-metal hydride (NiMH, from hybrid car packs):</strong></p>
+<ul>
+<li>Pros: Lighter than lead-acid; good for seasonal use</li>
+<li>Cons: Difficult to repurpose; need specialized knowledge</li>
+<li>Best for: Not recommended unless you have expertise</li>
+</ul>
+<h3>Simple Bank Setup (Beginner)</h3>
+<ol>
+<li>Obtain two 12V lead-acid batteries (car batteries or deep-cycle marine batteries)</li>
+<li>Connect in parallel with heavy-gauge wire (4 AWG or thicker)</li>
+<li>Install breaker between battery positive terminal and load (50A breaker for typical setup)</li>
+<li>Use 12V-to-5V buck converter for device charging</li>
+<li>Charge via solar panel with charge controller, car alternator, or hand crank</li>
+</ol>
+<p><strong>Capacity check:</strong> Two 100Ah batteries = 2.4 kWh storage. Enough for: phone (15Wh × 10 devices), lights (5W × 12 hours = 60Wh), small radio (2W × 24 hours = 48Wh). Total ~1.5 kWh, leaving 900Wh buffer.</p>
+<h3>Maintenance of Battery Banks</h3>
+<ul>
+<li><strong>Monthly:</strong> Check for corrosion at terminals; clean with baking soda and water if needed</li>
+<li><strong>Quarterly:</strong> Measure voltage under load; should be 11V+ on each 12V battery</li>
+<li><strong>Annually:</strong> Top off water in lead-acid batteries (if non-sealed); use distilled water only</li>
+<li><strong>Monitor deeply:</strong> If voltage drops below 10.5V under normal load, battery is failing—replace</li>
+<li><strong>Protect from cold:</strong> Battery capacity drops 30% at 0°C; bring critical batteries indoors in winter</li>
+</ul>
+<div class="info-box">
+<p><strong>Reality of battery banks:</strong> They work well for 3-5 years, then fail. Plan for replacement. In survival scenarios, prioritize solar/hydro/pedal power that generates fresh electricity daily over relying entirely on stored batteries.</p>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="battery-restoration.html">Battery Restoration &amp; Reconditioning</a>
+<a href="electrical-generation.html">Power Generation</a>
+<a href="electrical-wiring.html">Electrical Wiring</a>
+<a href="electricity.html">Electricity &amp; Magnetism</a>
+<a href="keep-this-app-ready.html">Keep This App Ready</a>
+<a href="power-distribution.html">Power Distribution &amp; Micro-Grids</a>
+<a href="solar-technology.html">Solar Technology</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

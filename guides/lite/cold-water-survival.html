@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/cold-water-survival.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cold Water Survival &amp; Immersion Hypothermia</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Immediate Survival</span> ›
+<span>Cold Water Survival &amp; Immersion Hypothermia</span>
+</div>
+
+
+<h1>Cold Water Survival &amp; Immersion Hypothermia</h1>
+<p class="subtitle">Cold shock response (1-3 min), swimming failure (3-30 min), hypothermia onset (30+ min), cold water immersion positions (HELP, huddle), survival time by water temp, rewarming protocols, near-drowning, ice rescue.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~30 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#cold-shock">Cold Shock Response (0–3 minutes)</a></li>
+<li><a href="#swimming-failure">Swimming Failure Phase (3–30 minutes)</a></li>
+<li><a href="#hypothermia-phases">Hypothermia Progression (30+ minutes)</a></li>
+<li><a href="#survival-time">Survival Time by Water Temperature</a></li>
+<li><a href="#immersion-positions">Immersion Survival Positions</a></li>
+<li><a href="#rescue">Cold Water Rescue Techniques</a></li>
+<li><a href="#rewarming">Rewarming Protocols</a></li>
+<li><a href="#near-drowning">Near-Drowning and Secondary Drowning</a></li>
+<li><a href="#ice-rescue">Ice Rescue (Cold Water Under Ice)</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="danger">
+<p>Cold water immersion is a leading cause of outdoor deaths in temperate and polar regions. This guide addresses survival physiology, field response, and rewarming protocols. Hypothermia can be rapidly fatal (death in minutes), or chronic (hours), depending on water temperature and individual factors.</p>
+</div>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Survival time by water temperature chart showing exponential decrease in survival time as temperature drops.">
+  <!-- Background -->
+  <rect width="800" height="500" fill="var(--bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="30" font-size="22" font-weight="bold" text-anchor="middle" fill="var(--text)">Cold Water Survival Time by Temperature</text>
+
+  <!-- Axes -->
+  <line x1="100" y1="80" x2="100" y2="420" stroke="var(--text)" stroke-width="2"/>
+  <line x1="100" y1="420" x2="750" y2="420" stroke="var(--text)" stroke-width="2"/>
+
+  <!-- Y-axis label -->
+  <text x="25" y="250" font-size="12" text-anchor="middle" fill="var(--text)" transform="rotate(-90 25 250)">Survival Time (minutes)</text>
+
+  <!-- X-axis label -->
+  <text x="425" y="460" font-size="12" text-anchor="middle" fill="var(--text)">Water Temperature (°C)</text>
+
+  <!-- Y-axis ticks and labels -->
+  <line x1="95" y1="420" x2="100" y2="420" stroke="var(--text)" stroke-width="1"/>
+  <text x="85" y="425" font-size="10" text-anchor="end" fill="var(--text)">0</text>
+
+  <line x1="95" y1="360" x2="100" y2="360" stroke="var(--text)" stroke-width="1"/>
+  <text x="85" y="365" font-size="10" text-anchor="end" fill="var(--text)">60</text>
+
+  <line x1="95" y1="300" x2="100" y2="300" stroke="var(--text)" stroke-width="1"/>
+  <text x="85" y="305" font-size="10" text-anchor="end" fill="var(--text)">120</text>
+
+  <line x1="95" y1="240" x2="100" y2="240" stroke="var(--text)" stroke-width="1"/>
+  <text x="85" y="245" font-size="10" text-anchor="end" fill="var(--text)">180</text>
+
+  <line x1="95" y1="180" x2="100" y2="180" stroke="var(--text)" stroke-width="1"/>
+  <text x="85" y="185" font-size="10" text-anchor="end" fill="var(--text)">300</text>
+
+  <!-- X-axis ticks and labels -->
+  <line x1="100" y1="420" x2="100" y2="425" stroke="var(--text)" stroke-width="1"/>
+  <text x="100" y="445" font-size="10" text-anchor="middle" fill="var(--text)">0</text>
+
+  <line x1="200" y1="420" x2="200" y2="425" stroke="var(--text)" stroke-width="1"/>
+  <text x="200" y="445" font-size="10" text-anchor="middle" fill="var(--text)">5</text>
+
+  <line x1="300" y1="420" x2="300" y2="425" stroke="var(--text)" stroke-width="1"/>
+  <text x="300" y="445" font-size="10" text-anchor="middle" fill="var(--text)">10</text>
+
+  <line x1="400" y1="420" x2="400" y2="425" stroke="var(--text)" stroke-width="1"/>
+  <text x="400" y="445" font-size="10" text-anchor="middle" fill="var(--text)">15</text>
+
+  <line x1="500" y1="420" x2="500" y2="425" stroke="var(--text)" stroke-width="1"/>
+  <text x="500" y="445" font-size="10" text-anchor="middle" fill="var(--text)">20</text>
+
+  <line x1="600" y1="420" x2="600" y2="425" stroke="var(--text)" stroke-width="1"/>
+  <text x="600" y="445" font-size="10" text-anchor="middle" fill="var(--text)">25</text>
+
+  <line x1="700" y1="420" x2="700" y2="425" stroke="var(--text)" stroke-width="1"/>
+  <text x="700" y="445" font-size="10" text-anchor="middle" fill="var(--text)">30</text>
+
+  <!-- Data points and curve -->
+  <!-- 0°C: 15 min -->
+  <circle cx="100" cy="360" r="4" fill="var(--accent)"/>
+
+  <!-- 4°C: 30 min -->
+  <circle cx="150" cy="300" r="4" fill="var(--accent)"/>
+
+  <!-- 10°C: 60 min -->
+  <circle cx="300" cy="240" r="4" fill="var(--accent)"/>
+
+  <!-- 15°C: 120 min -->
+  <circle cx="400" cy="180" r="4" fill="var(--accent)"/>
+
+  <!-- 20°C: 300+ min -->
+  <circle cx="500" cy="100" r="4" fill="var(--accent)"/>
+
+  <!-- 25°C: 500+ min -->
+  <circle cx="600" cy="80" r="4" fill="var(--accent)"/>
+
+  <!-- Curve connecting points -->
+  <path d="M 100 360 Q 225 310 300 240 T 500 100" stroke="var(--accent)" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+
+  <!-- Temperature zone colors -->
+  <rect x="100" y="90" width="100" height="330" fill="#0066cc" opacity="0.1"/>
+  <text x="120" y="435" font-size="9" fill="#0066cc" font-weight="bold">Ice</text>
+
+  <rect x="200" y="90" width="100" height="330" fill="#003399" opacity="0.1"/>
+  <text x="240" y="435" font-size="9" fill="#003399" font-weight="bold">Very Cold</text>
+
+  <rect x="300" y="90" width="100" height="330" fill="#006699" opacity="0.1"/>
+  <text x="335" y="435" font-size="9" fill="#006699" font-weight="bold">Cold</text>
+
+  <rect x="400" y="90" width="300" height="330" fill="#009999" opacity="0.1"/>
+  <text x="520" y="435" font-size="9" fill="#009999" font-weight="bold">Cool/Warm</text>
+
+  <!-- Key findings box -->
+  <rect x="50" y="100" width="200" height="130" rx="5" fill="var(--card)" stroke="var(--accent)" stroke-width="1"/>
+  <text x="150" y="120" font-size="11" font-weight="bold" text-anchor="middle" fill="var(--accent)">Key Findings</text>
+  <text x="60" y="140" font-size="10" fill="var(--text)">• 0-4°C: 15-30 min</text>
+  <text x="60" y="155" font-size="10" fill="var(--text)">• 10°C: 1 hour</text>
+  <text x="60" y="170" font-size="10" fill="var(--text)">• 15°C: 2 hours</text>
+  <text x="60" y="185" font-size="10" fill="var(--text)">• 20°C+: Many hours</text>
+  <text x="60" y="200" font-size="10" fill="var(--text)">• Every 1°C matters</text>
+  <text x="60" y="215" font-size="10" fill="var(--text)">• Vary by body fat</text>
+</svg>
+</p>
+<section id="cold-shock">
+<h2>Cold Shock Response (0–3 minutes)</h2>
+<p>Cold water submersion triggers immediate physiological responses independent of hypothermia.</p>
+<h3>Gasp Reflex and Breath-Hold Breakpoint</h3>
+<p><strong>Cold shock response:</strong></p>
+<ol>
+<li><strong>Gasp and gasping:</strong> Immersion in water &lt;15°C triggers uncontrollable gasping for air. Facial immersion worsens response.</li>
+<li><strong>Hyperventilation:</strong> Respiratory rate spikes to 20–30 breaths/min, reducing blood CO2.</li>
+<li><strong>Aspiration hazard:</strong> Water enters mouth and airway; drowning risk high even in shallow water.</li>
+<li><strong>Loss of cognitive control:</strong> Panic overrides normal breathing control.</li>
+</ol>
+<p><strong>Breath-hold time:</strong></p>
+<ul>
+<li>Most humans can hold breath 30–90 seconds voluntarily.</li>
+<li>Cold water immersion reduces this to 5–15 seconds (loss of voluntary control).</li>
+<li>Hyperventilation before immersion does NOT extend breath-hold (myth); it reduces CO2 until syncope occurs underwater.</li>
+</ul>
+<h3>Cardiovascular Response</h3>
+<p><strong>Diving reflex (mammalian dive response):</strong></p>
+<ul>
+<li>Facial immersion triggers parasympathetic response: <strong>bradycardia</strong> (slower heart rate), vasoconstriction (blood shunted to vital organs).</li>
+<li>Useful evolutionary mechanism; becomes problematic with panic + elevated heart rate from cold water.</li>
+</ul>
+<p><strong>Initial tachycardia:</strong> Cold water triggers sympathetic response (adrenaline), raising heart rate 20–30 bpm above normal. Arrhythmias possible, especially in pre-existing cardiac disease.</p>
+<h3>Immediate Actions</h3>
+<ul>
+<li><strong>If conscious in water:</strong> Do not swim hard (exhaustion risk). Assume survival floating position (HELP or huddle).</li>
+<li><strong>If face submerged:</strong> Hold breath; surface immediately for controlled breathing.</li>
+<li><strong>Avoid panic:</strong> Recognize gasp reflex as involuntary. Train breathing control before immersion in cold water.</li>
+</ul>
+</section>
+<section id="swimming-failure">
+<h2>Swimming Failure Phase (3–30 minutes)</h2>
+<p>After cold shock subsides, immersion hypothermia begins, reducing muscle function and cognitive control.</p>
+<h3>Mechanism</h3>
+<p><strong>Peripheral cooling:</strong></p>
+<ul>
+<li>Muscles in extremities cool rapidly (hands/feet reach ~10°C within minutes in 4°C water).</li>
+<li>Cold reduces muscle contractility and coordination.</li>
+<li>Lactic acid accumulation; metabolic exhaustion accelerates.</li>
+</ul>
+<p><strong>Core temperature decline:</strong></p>
+<ul>
+<li>Water removes heat 25× faster than air.</li>
+<li>Core temperature drops 0.1–1°C per minute in very cold water (&lt;4°C).</li>
+<li>Shivering thermogenesis insufficient to maintain core.</li>
+</ul>
+<p><strong>Loss of muscle control:</strong></p>
+<ul>
+<li>Fine motor control fails first (grip, precise movements).</li>
+<li>Gross motor control degrades (swimming becomes uncoordinated).</li>
+<li>Stumbling and flailing (&quot;cold water immersion shock&quot;).</li>
+</ul>
+<h3>Swimming Failure Symptoms</h3>
+<ul>
+<li><strong>Stroke inefficiency:</strong> Swimming speed drops 50% in minutes.</li>
+<li><strong>Incoordination:</strong> Uncontrolled arm/leg movements; can't follow intended path.</li>
+<li><strong>Cognitive decline:</strong> Difficulty making decisions, confusion, loss of memory.</li>
+<li><strong>Loss of grip:</strong> Hands numb; can't hold rescue equipment.</li>
+</ul>
+<h3>Survival Strategy During Swimming Failure</h3>
+<ol>
+<li><strong>Assume survival position immediately</strong> (HELP or huddle) rather than attempting to swim.</li>
+<li><strong>Avoid vigorous swimming</strong> — increases heat loss and exhaustion.</li>
+<li><strong>Conserve energy</strong> — Remain still or move minimally.</li>
+<li><strong>Call for help</strong> — If witnesses present, vocalize location.</li>
+<li><strong>Tread water minimally</strong> — Only vertical bobbing motion; horizontal swimming wastes energy.</li>
+</ol>
+</section>
+<section id="hypothermia-phases">
+<h2>Hypothermia Progression (30+ minutes)</h2>
+<p>Hypothermia is defined as core body temperature &lt;35°C (95°F). Progression has distinct phases:</p>
+<div class="cold-timeline">
+<h3>Phase 1: Shivering (32–35°C / 90–95°F)</h3>
+<p><strong>Duration:</strong> 30 min to 2 hours (depends on water temp, body composition).</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Intense uncontrollable shivering</li>
+<li>Mild confusion, difficulty concentrating</li>
+<li>Mild tachycardia and tachypnea (elevated breathing)</li>
+<li>Vasoconstriction (pale, bluish lips/extremities)</li>
+<li>Reduced dexterity</li>
+</ul>
+<p><strong>Survival action:</strong> Keep patient awake, prevent further heat loss, consume warm liquids if conscious and able to swallow.</p>
+<h3>Phase 2: Decreased Shivering (28–32°C / 82–90°F)</h3>
+<p><strong>Duration:</strong> 1–4 hours (variable).</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Shivering may paradoxically decrease (paradoxical undressing: patient removes layers—dangerous).</li>
+<li>Significant confusion, irrational behavior, apathy</li>
+<li>Reduced speech coherence; slurred speech</li>
+<li>Drowsiness; loss of protective reflexes</li>
+<li>Muscle rigidity; slow reflexes</li>
+</ul>
+<p><strong>Survival action:</strong> Assume rescue will occur. Keep patient horizontal (prevent sudden movement, which can trigger cardiac arrhythmias). Gentle rewarming.</p>
+<h3>Phase 3: Severe Hypothermia (&lt;28°C / &lt;82°F)</h3>
+<p><strong>Duration:</strong> Hours; some survive after extreme hypothermia (8+ hours).</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Extreme confusion, loss of consciousness</li>
+<li>Shivering absent</li>
+<li>Fixed, dilated pupils (may appear dead)</li>
+<li>Bradycardia (heartbeat slow and irregular; may be undetectable)</li>
+<li>Breathing shallow, possibly undetectable</li>
+<li>Muscle rigidity</li>
+<li><strong>Appearance:</strong> Patient appears dead</li>
+</ul>
+<p><strong>Critical concept — &quot;No one is dead until they are warm and dead&quot;:</strong>
+Many severely hypothermic patients have survived after hours of apparent death (core temp &lt;20°C) due to neuroprotective effects of cold. Resuscitation has succeeded in cases with no vital signs for 3+ hours.</p>
+<p><strong>Survival action:</strong> Assume patient is alive. Begin gentle rewarming (see rewarming section). Do not apply rough handling or CPR unless clearly indicated.</p>
+</div>
+</section>
+<section id="survival-time">
+<h2>Survival Time by Water Temperature</h2>
+<table class="temp-table">
+<thead>
+<tr>
+<th>Water Temp</th>
+<th>Expected Survival Time</th>
+<th>Immediate Hazards</th>
+<th>Dominant Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0–4°C (32–39°F)</strong><br>Ice water</td>
+<td>15–45 min</td>
+<td>Cold shock, gasping, aspiration</td>
+<td>Cold shock + swimming failure</td>
+</tr>
+<tr>
+<td><strong>4–10°C (39–50°F)</strong><br>Very cold</td>
+<td>45 min to 3 hours</td>
+<td>Hypothermia onset, loss of dexterity</td>
+<td>Swimming failure + early hypothermia</td>
+</tr>
+<tr>
+<td><strong>10–15°C (50–59°F)</strong><br>Cold</td>
+<td>2–7 hours</td>
+<td>Progressive hypothermia, confusion</td>
+<td>Hypothermia</td>
+</tr>
+<tr>
+<td><strong>15–20°C (59–68°F)</strong><br>Cool</td>
+<td>2–40 hours</td>
+<td>Slow hypothermia, endurance-dependent</td>
+<td>Prolonged hypothermia</td>
+</tr>
+<tr>
+<td><strong>>20°C (>68°F)</strong><br>Warm temperate</td>
+<td>Indefinite without other hazards</td>
+<td>Exhaustion, salt-water aspiration</td>
+<td>Drowning, not hypothermia</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variables affecting survival time:</strong></p>
+<ul>
+<li><strong>Body composition:</strong> Fatty tissue insulates; lean individuals cool 30% faster.</li>
+<li><strong>Age:</strong> Children and elderly cool rapidly; young adults typically slower.</li>
+<li><strong>Clothing:</strong> Insulation reduces heat loss by 50–80%.</li>
+<li><strong>Fitness:</strong> Better cardiovascular fitness extends survival slightly.</li>
+<li><strong>Prior cold exposure:</strong> Acclimatization possible (diving reflex enhancement).</li>
+</ul>
+</section>
+<section id="immersion-positions">
+<h2>Immersion Survival Positions</h2>
+<h3>HELP Position (Heat Escape Lessening Posture)</h3>
+<p>Used in cold water with lifejacket/buoyancy aid. Minimizes heat loss while maintaining flotation.</p>
+<p><strong>Technique:</strong></p>
+<ol>
+<li><strong>Assume fetal position</strong> while floating on front.</li>
+<li><strong>Cross arms over chest</strong> (embrace lifejacket or barrel).</li>
+<li><strong>Thighs crossed,</strong> knees to chest as much as possible.</li>
+<li><strong>Head back, face clear of water.</strong></li>
+</ol>
+<p><strong>Advantage:</strong> Reduces heat loss from core body compared to horizontal floating. Suitable for single person.</p>
+<p><strong>Time:</strong> Sustainable indefinitely if buoyancy maintained and no other hazards.</p>
+<h3>Huddle Position (Group Survival)</h3>
+<p>Used when multiple people are immersed in very cold water.</p>
+<p><strong>Technique:</strong></p>
+<ol>
+<li><strong>Three or more people</strong> form tight circle.</li>
+<li><strong>Children placed in center</strong> (adults insulate).</li>
+<li><strong>Arms around each other's shoulders.</strong></li>
+<li><strong>Torsos touching; faces inward.</strong></li>
+<li><strong>All wear lifejackets or maintain buoyancy.</strong></li>
+</ol>
+<p><strong>Advantage:</strong> Group body heat shared; heat loss from each individual reduced by 25–50% compared to solo floating.</p>
+<p><strong>Disadvantage:</strong> Requires coordination and multiple people.</p>
+<p><strong>Time:</strong> Extends survival time by 1–2 hours in very cold water.</p>
+<h3>Dead Man's Float (Passive)</h3>
+<p>If exhausted and no lifejacket:</p>
+<ol>
+<li><strong>Lie face down in water.</strong></li>
+<li><strong>Hang arms and legs limp.</strong></li>
+<li><strong>Every 10–30 seconds, lift head, breathe, return to face-down.</strong></li>
+</ol>
+<p><strong>Advantage:</strong> Minimal energy expenditure. Reduces panic.</p>
+<p><strong>Disadvantage:</strong> Risk of aspiration if unconscious; only use if alert.</p>
+</section>
+<section id="rescue">
+<h2>Cold Water Rescue Techniques</h2>
+<h3>Self-Rescue (If Near Shore)</h3>
+<ol>
+<li><strong>Assume HELP position</strong> — Do not thrash.</li>
+<li><strong>Move hands and feet minimally</strong> — Use survival floating for 20–30 min while reviewing escape routes.</li>
+<li><strong>Identify exit point</strong> — Nearest shore, obstacle, or debris.</li>
+<li><strong>Plan path</strong> — Minimize distance; take longest rest stops in shallow water.</li>
+<li><strong>Exit water gradually</strong> — Climb out slowly (prevent post-rescue collapse, see below).</li>
+</ol>
+<h3>Assisted Rescue (Bystander or Trained Responder)</h3>
+<p><strong>Throw rescue:</strong></p>
+<ol>
+<li><strong>Throw floatable object</strong> (rope, ring buoy, board, log) to victim.</li>
+<li><strong>Victim grasps object</strong> and floats passively.</li>
+<li><strong>Rescuer pulls to shore</strong> slowly and steadily.</li>
+</ol>
+<p><strong>Wading rescue (if water &lt;chest depth):</strong></p>
+<ol>
+<li><strong>Rescuer extends pole or branch</strong> to victim.</li>
+<li><strong>Victim grasps and is guided to shore.</strong></li>
+</ol>
+<p><strong>Swimming rescue (trained only):</strong></p>
+<ol>
+<li><strong>Approach victim from behind</strong> (exhausted swimmers panic and may pull rescuer under).</li>
+<li><strong>Grasp under arms or chin</strong> for tow.</li>
+<li><strong>Swim to shore</strong> using side stroke.</li>
+</ol>
+<p><strong>Boat rescue:</strong></p>
+<ol>
+<li><strong>Approach from downwind</strong> (easier maneuvering).</li>
+<li><strong>Use boarding ladder</strong> or low gunwale to minimize victim's effort.</li>
+<li><strong>Two persons assist</strong> if possible.</li>
+</ol>
+<h3>Immobilization After Rescue</h3>
+<p><strong>Prevent post-rescue collapse:</strong></p>
+<ul>
+<li>Do NOT allow victim to stand immediately after rescue.</li>
+<li>Keep supine or semi-reclined (horizontal position).</li>
+<li>Sudden movement or vertical position can trigger cardiovascular collapse (&quot;afterdrop&quot;) — delayed fatal arrhythmia after rescue.</li>
+</ul>
+</section>
+<section id="rewarming">
+<h2>Rewarming Protocols</h2>
+<p>Rewarming speed depends on severity of hypothermia and available resources.</p>
+<div class="rewarming-steps">
+<h3>Mild Hypothermia (32–35°C) — Active Rewarming</h3>
+<p><strong>Conscious, shivering, able to generate heat:</strong></p>
+<ol>
+<li><strong>Remove wet clothing</strong> — Evaporative cooling stops only when dry.</li>
+<li><strong>Passive external rewarming:</strong> Dry shelter, blankets, warm beverages if alert and able to swallow.</li>
+<li><strong>Active external rewarming:</strong> Apply external heat sources (not direct to skin, risk burns):
+<ul>
+<li>Warm water bottles (not &gt;40°C) to groin, armpits, neck.</li>
+<li>Heat lamp or radiant heater (maintain distance).</li>
+<li>Skin-to-skin contact in sleeping bag (controversial; works if both persons thermoregulate well).</li>
+</ul>
+</li>
+<li><strong>Warm fluids:</strong> Sweet drinks, broth, or warm (not hot) water. Avoid alcohol (dilates vessels, worsens heat loss).</li>
+<li><strong>Monitoring:</strong> Watch for shivering cessation (sign of deterioration).</li>
+</ol>
+<p><strong>Expected rewarming rate:</strong> 1–2°C per hour.</p>
+<p><strong>Duration:</strong> 2–6 hours to full recovery.</p>
+<h3>Moderate Hypothermia (28–32°C) — Gentle Rewarming</h3>
+<p><strong>Conscious but confused, minimal shivering:</strong></p>
+<ol>
+<li><strong>Remove wet clothing carefully</strong> — Minimize movement.</li>
+<li><strong>Passive external rewarming:</strong> Dry shelter, blankets, warm (not hot) beverages.</li>
+<li><strong>Avoid vigorous external heat</strong> — Peripheral vasodilation can cause &quot;afterdrop&quot; (paradoxical core temperature drop).</li>
+<li><strong>Monitor vitals:</strong> Heart rate, breathing; watch for arrhythmias.</li>
+<li><strong>No CPR unless indicated</strong> — Hold CPR if patient has detectable pulse/breathing.</li>
+</ol>
+<p><strong>Expected rewarming rate:</strong> 0.5–1°C per hour.</p>
+<p><strong>Duration:</strong> 4–12+ hours.</p>
+<h3>Severe Hypothermia (&lt;28°C) — Extracorporeal Rewarming (Hospital Only)</h3>
+<p><strong>Unconscious, no detectable pulse, fixed pupils:</strong></p>
+<p><strong>Field management:</strong></p>
+<ol>
+<li><strong>Do not attempt active rewarming</strong> — Risk of afterdrop and arrhythmia.</li>
+<li><strong>Keep horizontal</strong> — Minimize movement.</li>
+<li><strong>Dry clothing</strong> — Prevent further heat loss.</li>
+<li><strong>Gentle transport</strong> to hospital with ECMO/bypass capability.</li>
+<li><strong>Assume patient alive</strong> — Resuscitation has succeeded in cases with core temp &lt;20°C after prolonged submersion.</li>
+</ol>
+<p><strong>Hospital management:</strong> ECMO (extracorporeal membrane oxygenation) or venoarterial bypass provides active core rewarming by circulating blood through external warmer. Only available in specialized centers.</p>
+<p><strong>Survival rate:</strong> 50–70% if rewarmed via ECMO, even with prolonged cardiac arrest (up to 8 hours in some cases).</p>
+</div>
+</section>
+<section id="near-drowning">
+<h2>Near-Drowning and Secondary Drowning</h2>
+<p><strong>Near-drowning:</strong> Surviving water submersion with respiratory compromise.</p>
+<h3>Submersion Incident</h3>
+<p><strong>Immediate (0–30 min after rescue):</strong></p>
+<ul>
+<li>Aspiration (water in lungs) causes hypoxia and pulmonary edema.</li>
+<li>Breath-holding underwater can lead to hypoxic seizures.</li>
+<li>&quot;Dry drowning&quot; — Laryngospasm prevents water entry but also prevents breathing; hypoxia results.</li>
+</ul>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Coughing, gasping, frothy sputum</li>
+<li>Chest tightness, wheezing</li>
+<li>Agitation, restlessness</li>
+<li>Altered consciousness</li>
+</ul>
+<h3>Field Management</h3>
+<ol>
+<li><strong>Airway:</strong> If unconscious, position on side to drain fluid.</li>
+<li><strong>Oxygen:</strong> Administer if available (high-flow oxygen, 10–15 L/min).</li>
+<li><strong>Monitor breathing:</strong> Watch for deterioration (respiratory distress, altered voice quality).</li>
+<li><strong>Do not remove from water too rapidly</strong> — If severely hypothermic, slow rewarming takes priority over immediate extrication.</li>
+</ol>
+<h3>Secondary Drowning (Delayed)</h3>
+<p><strong>Pulmonary edema onset 4–48 hours post-rescue:</strong></p>
+<ul>
+<li>Water in lungs triggers inflammatory response.</li>
+<li>Fluid accumulation worsens hypoxia.</li>
+<li>Can be fatal even if initial rescue successful.</li>
+</ul>
+<p><strong>Warning signs:</strong></p>
+<ul>
+<li>Progressive difficulty breathing (dyspnea)</li>
+<li>Rales/crackles in lungs on auscultation</li>
+<li>Frothy pink sputum</li>
+<li>Cyanosis</li>
+<li>Altered consciousness</li>
+</ul>
+<p><strong>Management:</strong> Oxygen, positive pressure ventilation (CPAP or intubation), diuretics to reduce pulmonary edema. Hospital care essential.</p>
+<p><strong>Prevention:</strong> Hospitalize all drowning victims for 24–48 hr observation, even if initially alert.</p>
+</section>
+<section id="ice-rescue">
+<h2>Ice Rescue (Cold Water Under Ice)</h2>
+<p>Submersion under ice is universally fatal without rapid rescue (10–15 min before unconsciousness).</p>
+<h3>Prevention</h3>
+<ul>
+<li><strong>Avoid thin ice</strong> — Stay &gt;10 cm thickness minimum (palm-sized hand sinks through thinner ice).</li>
+<li><strong>Use ice picks</strong> — Specialized picks with chain help self-rescue.</li>
+<li><strong>Buddy system</strong> — Never cross ice alone.</li>
+</ul>
+<h3>Self-Rescue (If Ice Breaks)</h3>
+<ol>
+<li><strong>Do not panic</strong> — Thrashing accelerates exhaustion.</li>
+<li><strong>Reach toward solid ice edge</strong> — Do not climb up; ice likely breaks under pressure.</li>
+<li><strong>Kick legs behind</strong> — Create horizontal position to distribute weight.</li>
+<li><strong>Slide belly onto ice</strong> — Drag yourself forward using arm strength (legs trailing in water).</li>
+<li><strong>Roll away from hole</strong> — Once partially on ice, roll sideways away from opening.</li>
+<li><strong>Crawl to shore</strong> — Do not stand; weight spreads over wider area if crawling.</li>
+</ol>
+<p><strong>Time:</strong> 30–60 seconds to escape.</p>
+<h3>Assisted Rescue</h3>
+<ol>
+<li><strong>Do not approach hole directly</strong> — Rescuer may fall through.</li>
+<li><strong>Use long pole or ladder</strong> — Extend from solid ice at 45° angle.</li>
+<li><strong>Lay ladder or plank flat</strong> — Rescuer lies flat (distributes weight), reaching victim.</li>
+<li><strong>Pull victim horizontally</strong> onto ice.</li>
+</ol>
+<h3>Submersion Under Ice</h3>
+<p>If victim goes under ice:</p>
+<ol>
+<li><strong>Mark hole location</strong> — Pace along ice edge to estimate drift (current carries underwater body).</li>
+<li><strong>Check downstream</strong> — Move 1–2 meters downwind/downstream; often body drifts.</li>
+<li><strong>Probe ice</strong> — Use pole to feel for body beneath ice.</li>
+<li><strong>Chisel hole</strong> — Break ice in search area to retrieve body.</li>
+<li><strong>Resuscitate</strong> — Begin CPR immediately; hypothermia provides neuroprotection (patients have survived 45 min submerged).</li>
+</ol>
+<p><strong>Key:</strong> Even if unresponsive and apparently dead, resuscitate all cold-water submersion victims. Do not declare death until patient is warm.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="winter-survival-systems.html">Winter Survival Systems</a>
+<a href="first-aid.html">First Aid and Emergency Response</a>
+<a href="river-crossing-techniques.html">River Crossing Techniques</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

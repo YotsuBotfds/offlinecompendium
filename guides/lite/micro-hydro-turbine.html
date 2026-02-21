@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/micro-hydro-turbine.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micro-Hydro Turbine Systems</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Power Generation</span> ›
+<span>Micro-Hydro Turbine Systems</span>
+</div>
+
+
+<h1>Micro-Hydro Turbine Systems</h1>
+<p class="subtitle">Design and construction of small-scale hydroelectric turbine systems including head and flow measurement, power calculations, Pelton wheel and crossflow turbine design, penstock and intake construction, generator coupling, load controllers, and grid-tie considerations.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~14 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#site-assessment">Site Assessment: Head and Flow Measurement</a></li>
+<li><a href="#power-calculation">Power Calculations and System Sizing</a></li>
+<li><a href="#penstock-intake">Penstock Design and Intake Construction</a></li>
+<li><a href="#turbine-construction">Turbine and Generator Coupling</a></li>
+<li><a href="#load-control">Load Control and Power Management</a></li>
+<li><a href="#maintenance">Maintenance and Operational Monitoring</a></li>
+<li><a href="#environmental">Environmental and Regulatory Considerations</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Micro-hydro turbines (0.5–50 kW) convert the energy of flowing water into mechanical or electrical power with high reliability and minimal environmental impact. A well-designed system can operate continuously for decades with minimal maintenance. This guide covers site assessment (measuring head and flow), power calculations, turbine selection and construction, penstock design, intake and trash rack installation, generator and alternator coupling, load control, and grid interconnection for systems with battery backup or utility tie-in.</p>
+<p>Micro-hydro development requires civil engineering work (digging trenches, building intake structures) and mechanical skill (fitting turbine wheels, aligning shafts). The payoff is energy independence: a 5 kW system can supply a small community's electrical needs year-round if the water source is reliable.</p>
+</section>
+<section id="site-assessment">
+<h2>Site Assessment: Head and Flow Measurement</h2>
+<p>The power available from water is proportional to head (vertical drop) and flow rate. Accurate measurement is essential because small errors compound into large power estimate errors.</p>
+<h3>Head Measurement</h3>
+<p><strong>Gross head:</strong> The vertical distance from the water surface at the intake to the water surface at the discharge point (tailrace).</p>
+<p><strong>Effective head:</strong> Gross head minus losses in the penstock and intake (friction loss, turbulence).</p>
+<p><strong>Measurement methods:</strong></p>
+<ol>
+<li>
+<p><strong>Surveying with a level (most accurate):</strong></p>
+<ul>
+<li>Mark a reference height at the intake (e.g., 1 meter above water surface)</li>
+<li>Use a surveyor's level or home-made water level (clear hose filled with water, held at both ends)</li>
+<li>Measure the vertical distance from the reference mark to the same relative height at the discharge</li>
+<li>Repeat in multiple segments if the distance is large (&gt;500 m) to improve accuracy</li>
+</ul>
+</li>
+<li>
+<p><strong>GPS elevation (smartphone-acceptable):</strong></p>
+<ul>
+<li>Record GPS elevation at intake and discharge points using a smartphone GPS app or handheld GPS unit</li>
+<li>Typical GPS vertical accuracy is ±5–10 m; suitable for rough screening but not final design</li>
+<li>Use smartphone apps like &quot;Elevation&quot; or &quot;AllTrails&quot; to compare elevations</li>
+</ul>
+</li>
+<li>
+<p><strong>Barometric altimeter:</strong></p>
+<ul>
+<li>A portable barometer can estimate elevation change</li>
+<li>Accuracy is ±1–2 meters with careful calibration</li>
+</ul>
+</li>
+</ol>
+<p><strong>Practical approach:</strong> For a 1000-foot (300 m) elevation drop over a 5-mile water course, a 5-meter measurement error is only 1.7%; acceptable for design purposes. For drops &lt;100 m, aim for &lt;0.5 m accuracy.</p>
+<h3>Flow Measurement</h3>
+<p>Measure the stream's volumetric flow rate (cubic meters per second or liters per second) during the lowest water season expected during operation. This is the limiting factor for power generation in seasonal climates.</p>
+<p><strong>Method 1: Bucket and stopwatch (simple, adequate for flows &lt;50 L/s):</strong></p>
+<ul>
+<li>Dig a small pool (0.5 m diameter, 0.3 m deep) in the streambed downstream of the intake</li>
+<li>Allow water to fill the pool undisturbed</li>
+<li>Time how long it takes to fill a known volume (e.g., a 10-liter bucket)</li>
+<li>Flow rate = bucket volume / time in seconds</li>
+<li>Example: 10 liters fills in 5 seconds → flow = 2 L/s</li>
+</ul>
+<p><strong>Method 2: Weir box (V-notch or rectangular, for flows 5–100 L/s):</strong></p>
+<ul>
+<li>Construct a wooden or concrete structure with a notch of known shape (V-notch or rectangular opening)</li>
+<li>The notch is sized so water level above the notch indicates flow rate</li>
+<li>Standard V-notch weir formulas relate water depth to flow; tables are available from hydraulic engineering references</li>
+<li>Build the weir across the stream and measure water depth above the notch to estimate flow</li>
+</ul>
+<p><strong>Method 3: Current meter (professional, for flows &gt;100 L/s):</strong></p>
+<ul>
+<li>Use a propeller-type current meter to measure water velocity at multiple points across the stream cross-section</li>
+<li>Flow = velocity × cross-sectional area</li>
+<li>Rent a meter from surveying equipment suppliers if accuracy is critical</li>
+</ul>
+<p><strong>Seasonal variation:</strong> Measure flow at multiple times (spring, summer, fall, winter) if possible. Design the system for the driest season's flow; surplus power in wet seasons can be spilled or used for other purposes.</p>
+<div class="tip">
+<p>Conservative design: Always assume the lowest measured flow and plan for drought. A system sized for average flow will underperform during dry seasons.</p>
+</div>
+</section>
+<section id="power-calculation">
+<h2>Power Calculations and System Sizing</h2>
+<h3>Theoretical Power Available</h3>
+<p><strong>Power (kW) = Head (m) × Flow (L/s) × 0.0098</strong></p>
+<p>This formula assumes water density of 1000 kg/m³ and gravitational acceleration of 9.81 m/s². The result is theoretical power; actual output depends on turbine and generator efficiency.</p>
+<p><strong>Example:</strong> 50 m head, 30 L/s flow</p>
+<ul>
+<li>Power = 50 × 30 × 0.0098 = 14.7 kW theoretical</li>
+</ul>
+<h3>System Efficiency</h3>
+<p>Practical losses reduce power output:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Typical Loss</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intake and trash rack</td>
+<td>2–5%</td>
+</tr>
+<tr>
+<td>Penstock friction</td>
+<td>3–8% (varies with pipe diameter and length)</td>
+</tr>
+<tr>
+<td>Turbine mechanical efficiency</td>
+<td>70–85% (Pelton: 85–90%; crossflow: 75–82%; Turgo: 80–85%)</td>
+</tr>
+<tr>
+<td>Generator/alternator efficiency</td>
+<td>85–95% (synchronous: 90–95%; induction: 85–92%)</td>
+</tr>
+<tr>
+<td>Rectifier (if DC output)</td>
+<td>95–98%</td>
+</tr>
+<tr>
+<td><strong>Overall system efficiency</strong></td>
+<td><strong>45–65%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Net power (kW) = Theoretical power × Overall efficiency</strong></p>
+<p>For the 14.7 kW example with 55% overall efficiency:</p>
+<ul>
+<li>Net power = 14.7 × 0.55 = 8.1 kW (usable electrical output)</li>
+</ul>
+<h3>Turbine Selection</h3>
+<p><strong>Pelton wheel:</strong> Best for high-head, low-flow applications.</p>
+<ul>
+<li>Head range: 100–1000 m</li>
+<li>Flow range: 1–50 L/s</li>
+<li>Efficiency: 85–90%</li>
+<li>Construction: Simple; a single spoon-shaped bucket row rotating on a shaft</li>
+<li>Best for mountainous terrain with steep elevation drop</li>
+</ul>
+<p><strong>Crossflow (Banki) turbine:</strong> Best for medium-head, medium-flow applications.</p>
+<ul>
+<li>Head range: 5–60 m</li>
+<li>Flow range: 50–500 L/s</li>
+<li>Efficiency: 75–82%</li>
+<li>Construction: Rotates on the axis of the nozzle; water passes through twice</li>
+<li>Best for lowland streams with significant flow</li>
+</ul>
+<p><strong>Turgo wheel:</strong> Intermediate between Pelton and crossflow.</p>
+<ul>
+<li>Head range: 30–300 m</li>
+<li>Flow range: 10–200 L/s</li>
+<li>Efficiency: 80–85%</li>
+<li>Similar construction to Pelton but with wider bucket entrance</li>
+</ul>
+<p><strong>Turgo or Pelton mixed-flow:</strong> Optimal for mid-range conditions.</p>
+<ul>
+<li>Head range: 20–150 m</li>
+<li>Flow range: 10–200 L/s</li>
+<li>Efficiency: 75–85%</li>
+</ul>
+<p>For a micro-hydro system in the 5–50 kW range, Pelton or Turgo wheels are most practical because they are simpler to construct than crossflow turbines.</p>
+<h3>Power Calculations Reference: Comprehensive Framework</h3>
+<p>The fundamental relationship between water characteristics and available power forms the basis for all micro-hydro design decisions.</p>
+<h4>Head Measurement Accuracy</h4>
+<p>Accurate head measurement is critical because power scales linearly with head. A 10% error in head measurement leads to 10% error in power estimate.</p>
+<p><strong>Measurement methods comparison:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Accuracy</th>
+<th>Cost</th>
+<th>Practical Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Surveyor's level (water level tube)</td>
+<td>±0.1–0.2 m</td>
+<td>$20 (DIY), $500+ (transit)</td>
+<td>Requires two people, care to keep level horizontal</td>
+</tr>
+<tr>
+<td>GPS elevation (smartphone)</td>
+<td>±5–10 m</td>
+<td>$0 (smartphone)</td>
+<td>Simple but poor for &lt;100 m drops</td>
+</tr>
+<tr>
+<td>Barometric altimeter</td>
+<td>±1–2 m</td>
+<td>$100–300</td>
+<td>Requires calibration, stable weather</td>
+</tr>
+<tr>
+<td>Professional transit + rod</td>
+<td>±0.05 m</td>
+<td>$2000+</td>
+<td>Professional surveying, overkill for most applications</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommended approach for typical micro-hydro site:</strong></p>
+<ul>
+<li>Use water level method (clear hose, water finds equal level): accurate, requires only clear tubing and patience</li>
+<li>Measure intake elevation (set reference mark 1 meter above water surface at intake)</li>
+<li>Measure discharge elevation (same reference height at discharge point)</li>
+<li>Subtract to get gross head; typically lose 5–15% of gross head to penstock friction</li>
+</ul>
+<h4>Flow Rate Measurement Methods</h4>
+<p>Low flow rate estimates lead to undersized systems; high estimates lead to oversized, expensive installations.</p>
+<p><strong>Method 1: Bucket and stopwatch (flows 5–50 L/s)</strong></p>
+<p>Procedure:</p>
+<ol>
+<li>Find a section of stream where water flows relatively straight and undisturbed</li>
+<li>Toss a floating object (stick, leaf) and measure time to travel known distance (10–20 meters)</li>
+<li>Velocity (m/s) = distance (m) / time (seconds)</li>
+<li>Measure stream cross-sectional area at same location (width × average depth, in square meters)</li>
+<li>Flow (m³/s) = velocity × area</li>
+<li>Convert to liters/second: multiply by 1000</li>
+</ol>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Stick travels 15 meters in 3 seconds → velocity = 5 m/s</li>
+<li>Stream width 1.5 m, average depth 0.4 m → area = 0.6 m²</li>
+<li>Flow = 5 × 0.6 = 3 m³/s = 3000 L/s (large stream)</li>
+</ul>
+<p><strong>Method 2: V-notch weir (flows 10–100 L/s)</strong></p>
+<p>A V-notch weir is a dam with a V-shaped cutout, designed so water depth above the notch indicates flow rate.</p>
+<p>Construction:</p>
+<ol>
+<li>Build low dam (12–18 inches high) across stream, using concrete, wood, or sandbags</li>
+<li>Cut V-shaped notch (apex angle 90°, width at top 0.5–1 meter)</li>
+<li>Measure water depth (head) at notch point, 2–3 meters upstream of weir</li>
+<li>Use formula: Q = 1.38 × H^2.5, where Q is flow in cubic feet per second, H is head in feet</li>
+<li>Alternative metric formula: Q (L/s) ≈ 6.8 × h^2.5, where h is head in centimeters</li>
+</ol>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Water depth 10 cm above V-notch</li>
+<li>Q = 6.8 × 10^2.5 = 6.8 × 316 ≈ 2150 L/s</li>
+</ul>
+<p><strong>Method 3: Bucket fill timing (smallest flows, &lt;10 L/s)</strong></p>
+<p>Simplest but least accurate:</p>
+<ol>
+<li>Divert water into calibrated container (bucket, jug)</li>
+<li>Time how long to fill known volume</li>
+<li>Flow = volume / time</li>
+</ol>
+<p><strong>Example:</strong></p>
+<ul>
+<li>10-liter bucket fills in 5 seconds</li>
+<li>Flow = 10 L / 5 s = 2 L/s</li>
+</ul>
+<h4>Theoretical Power Formula Derivation</h4>
+<p>Understanding the power formula helps predict system behavior.</p>
+<p><strong>Foundation:</strong></p>
+<ul>
+<li>Gravitational potential energy: E = m × g × h (mass × gravity × head)</li>
+<li>Power: P = Energy / time = (m × g × h) / time</li>
+<li>Mass flow rate: m/time = ρ × Q, where ρ = water density (1000 kg/m³), Q = volumetric flow (m³/s)</li>
+</ul>
+<p><strong>Therefore:</strong></p>
+<ul>
+<li>P (watts) = ρ × g × Q × h</li>
+<li>P (watts) = 1000 × 9.81 × Q (m³/s) × h (meters)</li>
+<li>P (watts) = 9810 × Q × h</li>
+<li>P (kW) = 9.81 × Q (m³/s) × h OR 0.0098 × Q (L/s) × h (meters)</li>
+</ul>
+<p><strong>Key insight:</strong> Power depends equally on head and flow. Doubling either doubles the power available.</p>
+<h4>Efficiency by Turbine Type</h4>
+<p>Different turbine designs have different efficiency ranges. Selecting the right turbine for site conditions is crucial for maximizing power output.</p>
+<p><strong>Pelton Wheel (Impulse Turbine)</strong></p>
+<ul>
+<li><strong>Efficiency range:</strong> 70–90%, typically 80–85% for well-designed systems</li>
+<li><strong>High efficiency conditions:</strong> High head (&gt;50 m), low to moderate flow (&lt;100 L/s)</li>
+<li><strong>Design:</strong> Single row of spoon-shaped buckets; water jet strikes buckets tangentially</li>
+<li><strong>Adjustment:</strong> Spear valve controls jet size to maintain constant speed despite load variation</li>
+<li><strong>Pros:</strong> High efficiency, simple construction, handles variable load well</li>
+<li><strong>Cons:</strong> Requires high head; poor efficiency at low head; expensive to construct precisely</li>
+</ul>
+<p><strong>Turgo Wheel</strong></p>
+<ul>
+<li><strong>Efficiency range:</strong> 70–85%, typically 75–80%</li>
+<li><strong>High efficiency conditions:</strong> Moderate to high head (30–300 m), low to moderate flow (10–150 L/s)</li>
+<li><strong>Design:</strong> Similar to Pelton but with wider bucket entrance; water enters and exits same bucket</li>
+<li><strong>Advantage over Pelton:</strong> Handles wider flow range, lower head acceptable</li>
+<li><strong>Pros:</strong> Good efficiency range, simpler construction than Pelton</li>
+<li><strong>Cons:</strong> Still requires decent head; moderate flow range</li>
+</ul>
+<p><strong>Crossflow (Banki) Turbine</strong></p>
+<ul>
+<li><strong>Efficiency range:</strong> 60–82%, typically 75–80% for well-designed systems</li>
+<li><strong>High efficiency conditions:</strong> Low to moderate head (5–60 m), high flow (50–500 L/s)</li>
+<li><strong>Design:</strong> Water enters tangentially, passes through turbine blade assembly twice (unusual flow path)</li>
+<li><strong>Adjustment:</strong> Needle valve or sliding nozzle varies flow</li>
+<li><strong>Pros:</strong> Works well with low head, high flow; good efficiency in sweet spot</li>
+<li><strong>Cons:</strong> Efficiency drops significantly outside optimal head/flow range; more complex construction</li>
+</ul>
+<p><strong>Propeller (Kaplan) Turbine</strong></p>
+<ul>
+<li><strong>Efficiency range:</strong> 70–90% in optimal range, 60–70% outside optimal range</li>
+<li><strong>High efficiency conditions:</strong> Low head (2–20 m), very high flow (&gt;500 L/s)</li>
+<li><strong>Design:</strong> Resembles ship propeller; adjustable blade pitch</li>
+<li><strong>Challenge:</strong> Requires very precise blade angle adjustment; hard to DIY</li>
+<li><strong>Pros:</strong> Excellent efficiency in optimal range; works with very low heads and high flows</li>
+<li><strong>Cons:</strong> Complex mechanical adjustment; difficult to construct</li>
+</ul>
+<h4>Worked Examples: Real-World System Design</h4>
+<p><strong>Example 1: Mountain Stream (Typical Pelton System)</strong></p>
+<p>Site characteristics:</p>
+<ul>
+<li>Head: 100 meters (measured with surveyor's level)</li>
+<li>Flow: 20 L/s (measured by float method during dry season)</li>
+<li>Required power: 15 kW continuous</li>
+</ul>
+<p>Calculations:</p>
+<ul>
+<li>Theoretical power = 100 × 20 × 0.0098 = 19.6 kW</li>
+<li>Penstock losses (100 m, 50 mm pipe): ~6% loss</li>
+<li>Effective head = 100 × (1 - 0.06) = 94 m</li>
+<li>Pelton efficiency: 85%</li>
+<li>Generator efficiency: 92%</li>
+<li>Net power = 94 × 20 × 0.0098 × 0.85 × 0.92 ≈ 15 kW</li>
+</ul>
+<p><strong>Design decision:</strong> A 15 kW Pelton wheel system is appropriate. Size turbine for 20 L/s peak flow; system will operate at part load during drought (acceptable for Pelton).</p>
+<p><strong>Example 2: Lowland Stream (Crossflow System)</strong></p>
+<p>Site characteristics:</p>
+<ul>
+<li>Head: 12 meters (measured by water level tube)</li>
+<li>Flow: 300 L/s (measured by V-notch weir)</li>
+<li>Required power: 25 kW continuous</li>
+</ul>
+<p>Calculations:</p>
+<ul>
+<li>Theoretical power = 12 × 300 × 0.0098 = 35.3 kW</li>
+<li>Penstock losses (200 m, 100 mm pipe): ~4% loss</li>
+<li>Effective head = 12 × 0.96 = 11.5 m</li>
+<li>Crossflow efficiency: 78%</li>
+<li>Generator efficiency: 92%</li>
+<li>Net power = 11.5 × 300 × 0.0098 × 0.78 × 0.92 ≈ 25 kW</li>
+</ul>
+<p><strong>Design decision:</strong> A 25 kW crossflow system is appropriate. Crossflow handles high flow well; size for 300 L/s nominal flow.</p>
+<p><strong>Example 3: Moderate Stream (Turgo System)</strong></p>
+<p>Site characteristics:</p>
+<ul>
+<li>Head: 45 meters (GPS-estimated, should verify with surveyor level)</li>
+<li>Flow: 80 L/s (bucket method, averaged over 3 seasonal measurements)</li>
+<li>Target power: 30 kW peak, 20 kW continuous</li>
+</ul>
+<p>Calculations:</p>
+<ul>
+<li>Theoretical power = 45 × 80 × 0.0098 = 35.3 kW</li>
+<li>Penstock losses (150 m, 75 mm pipe): ~7% loss</li>
+<li>Effective head = 45 × 0.93 = 42 m</li>
+<li>Turgo efficiency: 80%</li>
+<li>Generator efficiency: 92%</li>
+<li>Net power = 42 × 80 × 0.0098 × 0.80 × 0.92 ≈ 24 kW continuous</li>
+</ul>
+<p><strong>Design decision:</strong> A 25 kW Turgo system sized for 80 L/s. System provides 24 kW under normal conditions. In wet season, flow may increase to 120+ L/s; spear valve will regulate to prevent overspeed.</p>
+<h4>Seasonal Variation and System Sizing Strategy</h4>
+<p>Most streams vary seasonally, with dry season flow 30–70% of wet season flow.</p>
+<p><strong>Conservative design approach:</strong></p>
+<ul>
+<li>Size system for dry season flow (minimum expected)</li>
+<li>Oversizing is wasteful and expensive; undersizing leads to insufficient power during critical months</li>
+<li>In wet season, excess flow is wasted (spill valve releases unneeded water)</li>
+</ul>
+<p><strong>Load management:</strong></p>
+<ul>
+<li>Critical loads (medical, lighting, food preservation): size for dry season</li>
+<li>Flexible loads (battery charging, pumping): use excess wet season power</li>
+<li>Load control (dump load): dissipate excess power as heat (resistive heater) rather than letting turbine overspeed</li>
+</ul>
+<h4>System Power Estimation Checklist</h4>
+<p>Before purchasing turbine or generator:</p>
+<ol>
+<li>✓ Measure head with surveyor's level or water level tube (target accuracy: ±0.5 m)</li>
+<li>✓ Measure flow at least 3 seasons (or single measurement during median season)</li>
+<li>✓ Measure penstock length and plan pipe size</li>
+<li>✓ Calculate theoretical power using formula</li>
+<li>✓ Estimate losses (penstock: 3–8%, turbine: 15–30%, generator: 5–15%)</li>
+<li>✓ Calculate net power (conservative: assume 50–60% overall efficiency)</li>
+<li>✓ Select turbine type based on head/flow combination</li>
+<li>✓ Size generator 20–30% larger than peak expected power (safety margin)</li>
+<li>✓ Plan dump load for excess power in wet season</li>
+</ol>
+</section>
+<section id="penstock-intake">
+<h2>Penstock Design and Intake Construction</h2>
+<h3>Penstock Sizing</h3>
+<p>The penstock (pipe from intake to turbine) must be large enough to minimize friction loss while remaining economically affordable. Larger diameter means less loss but higher material cost.</p>
+<p><strong>Friction loss formula (Hazen-Williams):</strong></p>
+<p><strong>Loss (m) = 10.7 × L × Q^1.85 / (C × D^4.87)</strong></p>
+<p>Where:</p>
+<ul>
+<li>L = length of pipe (m)</li>
+<li>Q = flow (L/s)</li>
+<li>C = roughness coefficient (130 for new plastic, 120 for steel, 110 for older steel)</li>
+<li>D = internal diameter (cm)</li>
+</ul>
+<p>For practical applications, aim for friction loss &lt;5% of total head:</p>
+<p><strong>Maximum acceptable loss = Total head × 0.05</strong></p>
+<p>Example: 50 m head, acceptable loss = 2.5 m; 30 L/s flow
+Using the formula (with C=130 for plastic) and solving for D, we find a nominal 50 mm (2-inch) internal diameter pipe is appropriate.</p>
+<p><strong>Material selection:</strong></p>
+<ul>
+<li><strong>PVC pipe:</strong> Lightweight, low friction, low cost; good for non-potable water use. Use Schedule 80 or 120 (thick-wall) for high-pressure applications (&gt;50 m head). Pressure rating example: 100 mm Schedule 80 PVC is rated for 16 bar (160 m equivalent head).</li>
+<li><strong>HDPE (polyethylene):</strong> Very flexible, scratch-resistant, lower pressure rating than PVC. Suitable for &lt;20 m head systems.</li>
+<li><strong>Steel pipe:</strong> Heavier, higher friction, durable; recommended for very long runs or high-pressure systems (&gt;100 m head).</li>
+<li><strong>Copper:</strong> Excellent corrosion resistance, high cost; not necessary for remote installations.</li>
+</ul>
+<p><strong>Slope and support:</strong> Install the penstock at a slope (not suspended in mid-air) to prevent sagging, which reduces effective head. Support with wooden frames or straps every 2–3 meters. Slope should be generally downward (not upward).</p>
+<h3>Intake Design and Trash Rack</h3>
+<p>The intake structure diverts water from the stream into the penstock. Poor design causes erosion, clogs, and flow loss.</p>
+<p><strong>Simple intake (small flows &lt;20 L/s):</strong></p>
+<ul>
+<li>Dig a small pool at the stream bank</li>
+<li>Build a low concrete or wooden dam to raise water level slightly (0.2–0.5 m)</li>
+<li>Install a trash rack (grate) over the intake opening to prevent debris (leaves, sticks, rocks) from entering the penstock</li>
+<li>The trash rack should have bar spacing of 3–10 mm (smaller spacing = more protection but higher cleaning frequency)</li>
+</ul>
+<p><strong>Sedimentation forebay (larger systems):</strong></p>
+<ul>
+<li>Construct a concrete or excavated basin at the intake</li>
+<li>Water enters the basin and fine sediment settles out</li>
+<li>Water draws from a screened opening near the basin bottom, leaving sediment behind</li>
+<li>Benefits: reduces sediment clogging in the penstock and turbine</li>
+<li>Drawback: requires periodic sediment removal (monthly to seasonally)</li>
+</ul>
+<p><strong>Trash rack design:</strong></p>
+<ul>
+<li>Angled bars at 45° to horizontal; water flows through, debris slides down</li>
+<li>Spacing between bars: 5–10 mm</li>
+<li>Cross-sectional area of trash rack (openings) should be 2–3× the penstock inlet area to minimize head loss across the rack</li>
+<li>Example: if the penstock inlet is 50 mm diameter (area ≈ 2000 mm²), the trash rack should have total opening area ≈ 5000 mm² (total bar + space area = 10,000 mm²)</li>
+</ul>
+<p><strong>Intake box (fish-friendly design):</strong></p>
+<ul>
+<li>Many jurisdictions now require low-velocity intake screens to prevent fish from being drawn into the turbine</li>
+<li>Typical requirement: water velocity through screens &lt;0.1 m/s (requires very large screen area)</li>
+<li>Install a passive fish bypass: a pipe that redirects fish back to the stream using a gentle flow gradient</li>
+</ul>
+<h3>Settling Basin (for sediment reduction)</h3>
+<p>Water from streams often carries fine silt and sand. Sediment damages turbine wheels by causing erosion and clogging nozzles.</p>
+<p><strong>Settling basin design:</strong></p>
+<ul>
+<li>Size for 1–2 hours of residence time: Basin volume = 1.5 × Flow (L/s) × 60 (minutes) × 1 to 2 hours / 1000 = Flow (L/s) × 90 to 180 (liters)</li>
+<li>Example: for 30 L/s flow, basin volume = 2700–5400 liters (3–5 cubic meters)</li>
+<li>Construct as a concrete or excavated pond</li>
+<li>Inlet at one end, settling area in middle (no flow disturbance), draw-off from near the opposite end above the sediment layer</li>
+<li>Periodically drain the basin and remove accumulated sediment (usually 2–4 times per year)</li>
+</ul>
+<p>Alternatively, use a centrifugal sand trap (hydrocyclone) to continuously remove fine sediment.</p>
+</section>
+<section id="turbine-construction">
+<h2>Turbine and Generator Coupling</h2>
+<h3>Pelton Wheel Construction (DIY-Friendly)</h3>
+<p>For micro-hydro applications, Pelton wheels are most practical to construct or modify from existing designs.</p>
+<p><strong>Spoon dimensions (for 20 m head, 20 L/s flow, ~2 kW):</strong></p>
+<ul>
+<li>Wheel diameter: ~200 mm</li>
+<li>Bucket width: ~50 mm</li>
+<li>Bucket depth: ~40 mm</li>
+<li>Nozzle diameter: ~12 mm</li>
+<li>Wheel rotational speed: ~800 rpm (coupled to a 1500 rpm generator via a 2:1 reduction belt or gearbox)</li>
+</ul>
+<p><strong>Construction approach:</strong></p>
+<ol>
+<li>Cast the wheel body and buckets from aluminum or steel (requires access to a foundry or purchase of a pre-cast wheel)</li>
+<li>OR, fabricate buckets from sheet metal (copper or stainless steel) and weld to a steel hub</li>
+<li>Machine the wheel bore to fit a stainless steel shaft (typically 20–25 mm diameter)</li>
+<li>Install rolling-element bearings (sealed, grease-lubricated) at each end of the shaft</li>
+<li>Mount the wheel on a steel frame with adjustable nozzle positioning</li>
+</ol>
+<p><strong>Nozzle design:</strong></p>
+<ul>
+<li>A convergent nozzle accelerates water into a high-speed jet (50–100 m/s for 20–50 m head)</li>
+<li>Jet diameter = nozzle outlet diameter (typically 10–20 mm)</li>
+<li>Jet strikes the bucket center, splitting and flowing to both sides</li>
+<li>Bucket shape directs water away from the wheel, leaving behind kinetic energy</li>
+<li>Rotational speed adjusts with jet impact force; faster heads = faster rotation</li>
+</ul>
+<h3>Crossflow Turbine (Alternative)</h3>
+<p>Crossflow turbines are easier to construct than Pelton wheels but less efficient. Construction involves:</p>
+<ol>
+<li>A cylindrical drum (30–50 cm diameter, 60–100 cm width)</li>
+<li>Two rows of curved turbine buckets welded to the drum body</li>
+<li>Water enters from a nozzle on one side and exits from a drain tube on the opposite side</li>
+<li>Rotation speed: typically 100–300 rpm (requires high gear reduction to couple to a standard generator)</li>
+</ol>
+<p>Crossflow construction is beyond simple hand-tools; prefabricated units are more practical for small-scale systems.</p>
+<h3>Generator Coupling</h3>
+<p><strong>Generator types:</strong></p>
+<ul>
+<li><strong>AC induction motor (repurposed):</strong> Run as a generator; simplest for grid-tie systems. Requires a stable input speed (within ±2% of synchronous speed).</li>
+<li><strong>Permanent magnet (PM) alternator:</strong> Output voltage varies with speed; requires a rectifier and voltage regulator. Suitable for battery charging or DC load systems.</li>
+<li><strong>Synchronous AC alternator:</strong> Generates fixed 50/60 Hz AC at the correct input speed. Requires speed regulation (governor).</li>
+</ul>
+<p><strong>Coupling methods:</strong></p>
+<ol>
+<li>
+<p><strong>Direct coupling (high-speed turbine, low-speed generator):</strong></p>
+<ul>
+<li>Pelton wheels at 1500+ rpm can couple directly to a 1500 rpm AC generator (same shaft)</li>
+<li>Minimal power loss; simplest design</li>
+<li>Requires precise speed control to maintain generator frequency</li>
+</ul>
+</li>
+<li>
+<p><strong>Belt drive (reduction):</strong></p>
+<ul>
+<li>Turbine shaft (high speed) drives a small pulley</li>
+<li>Generator shaft (low speed) is driven by a large pulley (2:1 to 10:1 ratio)</li>
+<li>Allows the turbine to run at optimal speed while the generator runs at a fixed low speed</li>
+<li>Belt slip loss: 2–5%</li>
+</ul>
+</li>
+<li>
+<p><strong>Gearbox:</strong></p>
+<ul>
+<li>Industrial gearbox provides fixed mechanical advantage</li>
+<li>Suitable for &lt;10 kW systems (larger gearboxes are expensive)</li>
+<li>Efficiency: 95–98%</li>
+</ul>
+</li>
+</ol>
+<p><strong>Speed control (governor):</strong></p>
+<p>A governor adjusts water flow (or nozzle position) to maintain constant rotational speed despite load changes:</p>
+<ol>
+<li>
+<p><strong>Mechanical flyball governor:</strong> Weights on a rotating shaft fly outward as speed increases, actuating a valve to reduce water flow. Simple and robust; used on Pelton systems.</p>
+</li>
+<li>
+<p><strong>Electronic load controller (ELC):</strong> Measures generator frequency and adjusts a solenoid valve or spear valve to dump excess power into a resistive load (heater) when frequency rises. Maintains stable AC frequency for AC loads. Cost: $200–1000 for small systems.</p>
+</li>
+<li>
+<p><strong>DC load dump:</strong> For battery-charging systems, divert excess power to a water heater or space heater when the battery reaches full charge.</p>
+</li>
+</ol>
+</section>
+<section id="load-control">
+<h2>Load Control and Power Management</h2>
+<h3>Battery Charging Systems (Off-Grid)</h3>
+<p>For a system powering a remote cabin or village, storage batteries smooth out variations in generation and load:</p>
+<ol>
+<li>
+<p><strong>Generator + Rectifier + DC load controller:</strong></p>
+<ul>
+<li>Turbine drives an AC alternator or PM generator</li>
+<li>Rectifier converts AC to DC</li>
+<li>DC load controller (MPPT or PWM charge controller) regulates current into the battery</li>
+<li>Output voltage stabilizes to the battery voltage (12, 24, or 48 VDC typical)</li>
+<li>Excess power diverts to a resistive load (heater)</li>
+</ul>
+</li>
+<li>
+<p><strong>Battery sizing:</strong></p>
+<ul>
+<li>Battery capacity = Daily energy consumption (kWh) / Maximum depth of discharge (typically 0.5)</li>
+<li>For a 5 kWh/day system with 0.5 DoD: Battery = 5 / 0.5 = 10 kWh (lead-acid or lithium)</li>
+<li>Cost: $2000–5000 for 10 kWh lithium battery system</li>
+</ul>
+</li>
+<li>
+<p><strong>AC inverter:</strong></p>
+<ul>
+<li>Converts DC (from battery) to 120/240 VAC for household appliances</li>
+<li>Efficiency: 92–98%</li>
+<li>Capacity should match peak household load (typically 3–5 kW for a small home)</li>
+</ul>
+</li>
+</ol>
+<h3>Utility Grid-Tie (On-Grid)</h3>
+<p>For a system connected to the electrical utility grid:</p>
+<ol>
+<li>
+<p><strong>Generator frequency synchronization:</strong></p>
+<ul>
+<li>Must match the grid frequency (50 or 60 Hz) precisely (±0.1%)</li>
+<li>Turbine speed is tightly regulated by a governor or electronic load controller</li>
+</ul>
+</li>
+<li>
+<p><strong>Synchronization method (induction generator):</strong></p>
+<ul>
+<li>An AC induction motor, when driven above synchronous speed, acts as a generator</li>
+<li>Slip = (Synchronous speed - Actual speed) / Synchronous speed</li>
+<li>Positive slip → power flows from the motor into the grid</li>
+<li>Electronic governor adjusts water flow to maintain 1–3% slip</li>
+</ul>
+</li>
+<li>
+<p><strong>Interconnection equipment:</strong></p>
+<ul>
+<li>Isolation transformer (isolates microgenerator from grid to prevent ground faults)</li>
+<li>Fuses and disconnect switches (for maintenance safety)</li>
+<li>Bidirectional meter (measures power flow in both directions for net metering)</li>
+<li>Utility approval required (varies by jurisdiction)</li>
+</ul>
+</li>
+<li>
+<p><strong>Grid-tie protection:</strong></p>
+<ul>
+<li>Must detect grid failure and disconnect immediately (anti-islanding protection)</li>
+<li>Prevents the generator from feeding current into a de-energized power line, which could electrocute maintenance workers</li>
+<li>Built into most modern grid-tie inverters</li>
+</ul>
+</li>
+</ol>
+<h3>Load Dump and Excess Power Management</h3>
+<p>When the load is low and the generator is producing excess power:</p>
+<ol>
+<li>
+<p><strong>Heater load dump:</strong> Divert excess power to a resistive heating element (water heater, space heater, ice melt system). Simple and reliable.</p>
+</li>
+<li>
+<p><strong>Mechanical spill:</strong> Open a bypass channel or spill weir to divert excess water back to the stream. Minimal control but reliable.</p>
+</li>
+<li>
+<p><strong>Nozzle deflection:</strong> Move the Pelton wheel nozzle slightly to one side; water jets miss the buckets and spill away. Provides fine control; requires hydraulic or electric actuators.</p>
+</li>
+<li>
+<p><strong>Valve throttling:</strong> Close a valve upstream of the turbine to reduce flow. Simple but generates pressure surges; requires surge tank design to prevent pipe rupture.</p>
+</li>
+</ol>
+<p><strong>Best practice:</strong> Combine a governor (to regulate speed) with an electronic load controller (to dump excess power into a resistive load when needed). This ensures stable operation under variable loads and water flow.</p>
+</section>
+<section id="maintenance">
+<h2>Maintenance and Operational Monitoring</h2>
+<h3>Daily Monitoring</h3>
+<ul>
+<li><strong>Water flow:</strong> Visually check intake and stream for changes (droughts, floods)</li>
+<li><strong>Penstock:</strong> Look for leaks or ice buildup (in winter)</li>
+<li><strong>Turbine noise:</strong> Listen for unusual vibration or grinding (sign of sediment damage or bearing wear)</li>
+<li><strong>Generator vibration:</strong> Check for excessive movement or heat</li>
+<li><strong>Output voltage and current:</strong> Monitor with a simple voltmeter/ammeter (verify normal operation)</li>
+</ul>
+<h3>Weekly Maintenance</h3>
+<ul>
+<li><strong>Trash rack cleaning:</strong> Clear leaves and debris accumulated on the rack</li>
+<li><strong>Settling basin:</strong> Observe sediment depth; drain if &gt;20% full</li>
+<li><strong>Bearing temperature:</strong> Feel bearings with a hand (should be warm but not hot &gt;60°C)</li>
+<li><strong>Oil level (if gearbox or bearing oil used):</strong> Check and top up as needed</li>
+</ul>
+<h3>Seasonal Maintenance</h3>
+<ul>
+<li><strong>Spring:</strong> After high water flow, inspect penstock for damage; clean intake structure</li>
+<li><strong>Summer:</strong> None typically needed if dry season (minimal flow may mean less debris)</li>
+<li><strong>Fall:</strong> Prepare for winter (drain any exposed penstock sections, clean intake)</li>
+<li><strong>Winter:</strong> Monitor for ice buildup on intake; clear snow from settling basin</li>
+</ul>
+<h3>Annual Overhaul</h3>
+<ul>
+<li>Replace worn bearings (every 3–5 years, depending on operating hours)</li>
+<li>Repaint steel frame and penstock supports</li>
+<li>Inspect and tighten all bolts and fasteners</li>
+<li>Replace turbine bucket spoons if eroded (every 5–10 years, depending on sediment)</li>
+<li>Test electrical connections and switches</li>
+</ul>
+<div class="tip">
+<p>Keep detailed operating logs: daily flow, output, maintenance dates. This history helps predict when major components need replacement and optimizes the system's lifespan.</p>
+</div>
+</section>
+<section id="environmental">
+<h2>Environmental and Regulatory Considerations</h2>
+<h3>Fish and Ecological Impact</h3>
+<ul>
+<li><strong>Minimum flow requirement:</strong> Many regions mandate that a minimum flow remain in the stream (e.g., 30% of average flow) for ecological health</li>
+<li><strong>Fish ladder or bypass:</strong> Some jurisdictions require a way for fish to pass the intake structure or turbine</li>
+<li><strong>Intake screening:</strong> Water velocity through screens must be &lt;0.1 m/s to avoid fish impingement</li>
+<li><strong>Sediment impact:</strong> Removing water upstream affects sediment transport and can destabilize the streambed</li>
+</ul>
+<p>Consult local environmental regulations before developing a site.</p>
+<h3>Permitting and Licensing</h3>
+<ul>
+<li><strong>Water rights:</strong> In many regions, water diversion requires a permit or license</li>
+<li><strong>Environmental assessment:</strong> Projects above a certain size may require environmental impact studies</li>
+<li><strong>Building permits:</strong> Construction of intake structures and penstock may require permits</li>
+</ul>
+<p>Check with your local water authority, environmental agency, and building department before starting construction.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion</h2>
+<p>Micro-hydro systems are among the most reliable renewable energy technologies, capable of generating power continuously for decades with minimal maintenance. Success depends on accurate site assessment (head and flow measurement), appropriate turbine and generator selection, and careful penstock design to minimize friction losses. For communities with access to reliable streams or rivers, a well-designed micro-hydro system can provide energy independence and substantially reduce dependence on fossil fuels or diesel generators.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="hydroelectric.html">Hydroelectric Power</a>
+<a href="electrical-generation.html">Power Generation</a>
+<a href="energy-systems.html">Energy Systems</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

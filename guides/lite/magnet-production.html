@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/magnet-production.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magnet Production</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Foundational Sciences</span> ›
+<span>Magnet Production</span>
+</div>
+
+
+<h1>Magnet Production</h1>
+<p class="subtitle">Natural magnets, magnetization methods, electromagnets, compass construction, motors and generators</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~5 min</span>
+<span>Updated: 2026-02-16</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#fundamentals">Magnetism Fundamentals</a></li>
+<li><a href="#natural">Natural Magnets &amp; Lodestone</a></li>
+<li><a href="#magnetization">Magnetization Methods</a></li>
+<li><a href="#electromagnets">Electromagnets</a></li>
+<li><a href="#compass">Compass Construction</a></li>
+<li><a href="#applications">Practical Applications</a></li>
+<li><a href="#permanent">Permanent vs Temporary Magnets</a></li>
+<li><a href="#motor">Motors &amp; Generators</a></li>
+<li><a href="#diagrams">Reference Diagrams</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="fundamentals">
+<h2>Magnetism Fundamentals</h2>
+<h3>Magnetic Domains &amp; Field Lines</h3>
+<p>Magnetism arises from the orbital motion and spin of electrons. In most materials, electrons spin and orbit randomly, producing no net magnetic field. In magnetic materials like iron, cobalt, and nickel, electron spins can align, creating a coordinated field.</p>
+<p>The basic concept is the &quot;magnetic domain&quot;—a region where millions of atoms have their electron spins aligned in the same direction. Each domain acts like a tiny magnet. In an unmagnetized piece of iron, domains point randomly, canceling each other out. In a magnetized piece, most domains point the same direction, producing a strong combined field.</p>
+<h3>Magnetic Field Lines</h3>
+<p>Magnetic fields are visualized as invisible lines of force flowing from the north pole to the south pole. Key properties:</p>
+<ul>
+<li><strong>Direction:</strong> Lines always flow from north to south outside the magnet (inside, they flow south to north)</li>
+<li><strong>Concentration:</strong> Denser field lines indicate stronger field</li>
+<li><strong>Visualization:</strong> Iron filings sprinkled on paper above a magnet align with field lines, making them visible</li>
+<li><strong>Strength:</strong> Field strength decreases with distance from the magnet</li>
+</ul>
+<h3>Magnetic Poles</h3>
+<p>Every magnet has two poles:</p>
+<ul>
+<li><strong>North Pole:</strong> Where field lines exit the magnet (and enter inside)</li>
+<li><strong>South Pole:</strong> Where field lines enter the magnet (and exit inside)</li>
+<li><strong>Attraction:</strong> Opposite poles (N-S) attract each other</li>
+<li><strong>Repulsion:</strong> Like poles (N-N or S-S) repel each other</li>
+<li><strong>Cannot Separate:</strong> Cutting a magnet in half produces two new magnets, each with N and S poles</li>
+</ul>
+<h3>Magnetic Force &amp; Gradient</h3>
+<p>The force on a magnetic material depends not just on field strength but on field gradient (how quickly it changes over distance). A strong, uniform field exerts less force than a weaker but highly non-uniform field. This is why electromagnets with shaped pole pieces (producing gradients) are effective for picking up metal.</p>
+<p>Magnetic force falls off with distance. For a simple dipole magnet:</p>
+<ul>
+<li>Force ∝ 1/r⁴ (drops dramatically with distance)</li>
+<li>Practical range for hand-sized magnets: 5-10cm for strong effects, up to 30cm for weak effects</li>
+</ul>
+<div class="info-box">
+<p><strong>Magnetic Dipole Formula:</strong> For a magnetic dipole with moment m in field gradient ∇B: F = ∇(m·B). The force on a magnet depends critically on the field gradient, not just the field strength. A highly non-uniform field (steep gradient) produces stronger forces even if peak field is weaker.</p>
+</div>
+</section>
+<section id="natural">
+<h2>Natural Magnets &amp; Lodestone</h2>
+<h3>Magnetite: The Magnetic Iron Ore</h3>
+<p>Magnetite (Fe₃O₄) is an iron oxide mineral that is naturally magnetic. It has been used as a magnet for thousands of years. The magnetic properties arise from iron atoms in the crystal structure that align with the Earth's magnetic field.</p>
+<p><strong>Identification of Magnetite:</strong></p>
+<ul>
+<li><strong>Color:</strong> Black or dark gray, very dark metallic luster</li>
+<li><strong>Streak:</strong> Black streak on white ceramic (all iron ores do this)</li>
+<li><strong>Weight:</strong> Heavy for its size—magnetite is dense (5.2 g/cm³, compared to 2.65 for quartz)</li>
+<li><strong>Magnetic Test:</strong> Attracts a compass needle or iron filings strongly</li>
+<li><strong>Shape:</strong> Octahedral or irregular crystals; rough, unpolished specimens are common</li>
+</ul>
+<h3>Lodestone: Natural Permanent Magnets</h3>
+<p>Lodestone is magnetite that has been magnetized by the Earth's magnetic field over millions of years. Some magnetite deposits become magnetized; others do not. A true lodestone will:</p>
+<ul>
+<li>Attract iron filings without any additional magnetization</li>
+<li>Orient itself north-south when suspended (compass behavior)</li>
+<li>Have permanent poles that don't fade quickly</li>
+<li>Repel another lodestone's like pole</li>
+</ul>
+<h3>Finding Lodestone in the Field</h3>
+<p>Lodestone deposits occur in areas with iron-rich geology. Likely locations:</p>
+<ul>
+<li><strong>Areas with magnetite mining history:</strong> Old iron mines are good prospects</li>
+<li><strong>Black sand deposits:</strong> Beaches or riverbeds with heavy concentrations of iron minerals (magnetite, hematite)</li>
+<li><strong>Volcanic regions:</strong> Basaltic flows often contain magnetite</li>
+<li><strong>Geological maps:</strong> Iron ore deposits are documented; local geological surveys help locate them</li>
+</ul>
+<p><strong>Testing Magnetite for Lodestone Properties:</strong></p>
+<ol>
+<li>Crush a small sample of magnetite and see if iron filings stick to it consistently</li>
+<li>Suspend a specimen by a thread and observe if it aligns north-south</li>
+<li>Test if one end repels a compass needle while the other attracts it</li>
+</ol>
+<p>Many magnetite specimens are weakly magnetic but not true lodestones. True lodestones are rare but invaluable—they work without external power and maintain magnetism indefinitely.</p>
+<h3>Magnetite Quality Variation</h3>
+<p>Not all magnetite is equally magnetic. Factors affecting strength:</p>
+<ul>
+<li><strong>Purity:</strong> Pure Fe₃O₄ is stronger than samples with quartz or other mineral inclusions</li>
+<li><strong>Crystallinity:</strong> Well-formed crystals align better than amorphous material</li>
+<li><strong>Age &amp; Weathering:</strong> Ancient deposits may have stronger magnetization than recent ones</li>
+<li><strong>Past Heating:</strong> Magnetite heated above 580°C (Curie point) loses magnetization; if cooled in Earth's field, it remagnetizes</li>
+</ul>
+<p>A high-quality lodestone specimen can be cut and shaped with diamond saws (or, traditionally, with abrasive grinding) to create useful magnet forms.</p>
+</section>
+<section id="magnetization">
+<h2>Magnetization Methods</h2>
+<h3>Stroking with an Existing Magnet</h3>
+<p>If you have one magnet (either natural lodestone or an old permanent magnet), you can magnetize other ferrous materials by stroking:</p>
+<p><strong>Single-Stroke Method (Weakest):</strong></p>
+<ol>
+<li>Take an iron or steel bar that you want to magnetize</li>
+<li>Hold it on a table or vise</li>
+<li>Stroke repeatedly in one direction with the N-pole of your magnet, always lifting the magnet after each stroke</li>
+<li>Make 50-100 strokes; the iron will gradually become magnetized</li>
+<li>The bar will acquire an N-pole at one end and S-pole at the other</li>
+</ol>
+<p><strong>Why this works:</strong> The stroking magnet aligns the domains in the iron bar. By always stroking in the same direction and lifting the magnet between strokes (rather than dragging back), you preferentially align domains in one direction.</p>
+<p><strong>Double-Stroke Method (Stronger):</strong></p>
+<ol>
+<li>Use two magnets, one in each hand</li>
+<li>Stroke the iron bar from end to end, with one magnet's N-pole always leading, the other magnet's S-pole always following behind</li>
+<li>The double field reinforces alignment</li>
+<li>50 strokes with two magnets is more effective than 100 with one</li>
+</ol>
+<div class="tip">
+<p><strong>Quick Magnetization Check:</strong> After stroking, test the iron bar by holding it horizontal and slowly bringing a compass near the ends. The compass needle should deflect strongly when near the poles and point away from like-poles. If deflection is weak, the bar isn't fully magnetized yet—continue stroking.</p>
+</div>
+<h3>Electromagnetic Coil Magnetization</h3>
+<p>If you can generate electrical current, an electromagnet can magnetize ferrous materials rapidly and strongly:</p>
+<p><strong>Basic Setup:</strong></p>
+<ol>
+<li>Wind a coil around an iron rod or pipe (see Electromagnets section)</li>
+<li>Pass electrical current through the coil</li>
+<li>Place the material to be magnetized inside the coil</li>
+<li>The current creates a magnetic field; materials inside are magnetized aligned with this field</li>
+<li>Remove the material while current is still flowing for best magnetization</li>
+</ol>
+<p><strong>Why this works:</strong> Electrical current flowing through a coil creates a magnetic field (Ampere's law). If current is AC (alternating), domains are driven back and forth and end up randomly aligned when current stops. If current is DC (direct), domains align with the current direction and stay aligned.</p>
+<h3>Earth's Magnetic Field Method</h3>
+<p>In a pinch, you can magnetize iron using the Earth's magnetic field, though it's slow and weak:</p>
+<ol>
+<li><strong>Heat the iron:</strong> Heat a piece of iron to bright red (600-700°C) in a fire</li>
+<li><strong>Align with field:</strong> Rotate it so its long axis points north-south, with one end pointing north</li>
+<li><strong>Cool slowly:</strong> Bury in sand or ash and cool very slowly (takes hours to overnight)</li>
+<li><strong>Result:</strong> The north-pointing end becomes a south pole (compass needle behavior), and the south-pointing end becomes a north pole (counterintuitive but correct)</li>
+</ol>
+<p>The cooling must be very slow while the iron is above its Curie point (580°C for iron). Below this temperature, domain orientation freezes in place. Very slow cooling allows domains to align with the Earth's field.</p>
+<div class="info-box">
+<p><strong>Curie Point (Critical Temperature):</strong> Each magnetic material has a Curie temperature above which it loses all permanent magnetization. For iron: 580°C. For cobalt: 1115°C. For nickel: 358°C. Above this temperature, thermal vibration randomizes magnetic domains irreversibly. This is used both for magnetizing (heating to Curie point + cooling aligned = permanent magnet) and demagnetizing materials.</p>
+</div>
+<p><strong>Combined Method (Strongest without Electricity):</strong></p>
+<ol>
+<li>Heat iron to red heat and cool slowly aligned north-south (gives a weak initial magnetization)</li>
+<li>Once cool, stroke repeatedly with a strong lodestone magnet</li>
+<li>The combination produces stronger magnetization than either method alone</li>
+</ol>
+<h3>Mechanical Shock &amp; Vibration</h3>
+<p>Mechanical shock can align magnetic domains slightly. This is not a reliable magnetization method but can be part of a process:</p>
+<ul>
+<li>Hammer a heated (red-hot) iron bar that's oriented north-south; the vibrations help domain alignment</li>
+<li>This works synergistically with Earth's field and heating/cooling</li>
+<li>Traditional blacksmiths sometimes used this technique</li>
+</ul>
+<div class="warning">
+<p>Do not heat steel or iron above 580°C repeatedly in random orientations—this can randomize domain orientation and permanently destroy any existing magnetization. Always cool aligned with a known magnetic field if heating above 580°C.</p>
+</div>
+</section>
+<section id="electromagnets">
+<h2>Electromagnets</h2>
+<h3>Basic Principles</h3>
+<p>An electromagnet is a magnet powered by electrical current. When current flows through a coil of wire wrapped around an iron core, the core becomes magnetized. Stop the current, and the magnetization stops (unless the core is permanent magnet material).</p>
+<h3>Coil Winding</h3>
+<p>The strength of an electromagnet depends on:</p>
+<ul>
+<li><strong>Number of turns (N):</strong> More turns = stronger field. Double the turns doubles the field (roughly)</li>
+<li><strong>Current (I):</strong> More current = stronger field. Double the current doubles the field</li>
+<li><strong>Wire gauge:</strong> Thinner wire can fit more turns but carries less current</li>
+<li><strong>Core material:</strong> Iron or steel cores amplify the field dramatically compared to air</li>
+</ul>
+<p><strong>Winding Procedure:</strong></p>
+<ol>
+<li><strong>Prepare core:</strong> Use an iron rod or pipe, 10-25mm diameter</li>
+<li><strong>Wrap insulation:</strong> Wrap the core with cloth or paper tape to protect wire insulation from iron surface</li>
+<li><strong>Start winding:</strong> Fix one end of insulated copper wire at the base of the core</li>
+<li><strong>Wind tightly:</strong> Wrap wire around core in tight, orderly coils. Work from one end toward the other</li>
+<li><strong>Multiple layers:</strong> After one layer reaches the end, start a second layer on top</li>
+<li><strong>Number of turns:</strong> For hand-powered systems, 500-2000 turns is typical; for battery/generator, 100-500 turns works well</li>
+<li><strong>Wind uniformly:</strong> Even spacing gives better field uniformity</li>
+<li><strong>Secure end:</strong> Tie off the wire at the end, securing it tightly</li>
+</ol>
+<p><strong>Wire Gauge Selection:</strong></p>
+<table><thead><tr><th scope="row">Wire Gauge (AWG)</th><th scope="row">Diameter</th><th scope="row">Max Current</th><th scope="row">Turns per Layer (25mm core)</th><th scope="row">Best Use</th></tr></thead><tbody><tr><td>22</td><td>0.64mm</td><td>0.5A</td><td>~40 per layer</td><td>Hand crank (low power)</td></tr><tr><td>20</td><td>0.81mm</td><td>1A</td><td>~30 per layer</td><td>Small batteries</td></tr><tr><td>18</td><td>1.02mm</td><td>2A</td><td>~24 per layer</td><td>Medium batteries/generators</td></tr><tr><td>16</td><td>1.29mm</td><td>3A</td><td>~19 per layer</td><td>Generator or large battery</td></tr></tbody></table>
+<h3>Iron Core Properties</h3>
+<p>The iron core dramatically amplifies the magnetic field. Why?</p>
+<ul>
+<li><strong>Permeability:</strong> Iron has high permeability (μ ≈ 4000), meaning it concentrates magnetic field lines efficiently</li>
+<li><strong>Saturation:</strong> Iron can only be magnetized so much; beyond saturation, adding more current doesn't increase field strength proportionally</li>
+<li><strong>Soft vs Hard iron:</strong> &quot;Soft iron&quot; (low carbon) magnetizes easily but loses magnetization quickly. &quot;Hard steel&quot; (high carbon) magnetizes less strongly but retains magnetization longer</li>
+<li><strong>Lamination:</strong> For AC electromagnets, iron should be laminated (thin layers) to reduce eddy current losses</li>
+</ul>
+<h3>Powering Electromagnets</h3>
+<p><strong>From Batteries:</strong></p>
+<ul>
+<li>Direct current from batteries powers electromagnets steadily</li>
+<li>Wire voltage = battery voltage; current = voltage / resistance</li>
+<li>Higher voltage = stronger field (if wire resistance allows)</li>
+<li>Typical: 6V or 12V batteries with 50-500 turn coils</li>
+</ul>
+<p><strong>From Hand-Crank Generator:</strong></p>
+<ul>
+<li>A hand-crank generator produces AC or pulsed DC</li>
+<li>For AC, the electromagnet field oscillates; metal objects are attracted regardless of polarity</li>
+<li>For pulsed DC (better), the field pulses in one direction; more efficient</li>
+<li>Typically produces 5-30V depending on crank speed and generator design</li>
+</ul>
+<div class="warning">
+<p><strong>Electromagnet Coil Overheating Hazard:</strong> Running high current through a coil for extended periods generates dangerous heat. The coil can reach temperatures exceeding 100°C, scorching insulation and starting fires. Always limit current to safe levels (use thick wire for lower resistance), take breaks during operation, and monitor coil temperature by touch. Never leave an active electromagnet unattended.</p>
+</div>
+<p><strong>From Foot-Powered Generator:</strong></p>
+<ul>
+<li>More consistent power than hand crank</li>
+<li>Can sustain operation for extended periods</li>
+<li>Bicycle dynamo or treadle-powered generator ideal</li>
+</ul>
+<div class="info-box">
+<p><strong>Electromagnetic Force Formula:</strong> For a coil with N turns, current I, and inductance L in a field gradient: F ≈ N·I·μ₀·A·(∇B). Doubling the number of turns doubles the force. Doubling current quadruples the force (since magnetic moment ∝ I). Iron cores with high permeability (μ ≈ 4000) amplify this effect dramatically compared to air-core coils.</p>
+</div>
+<h3>Electromagnet Applications</h3>
+<p><strong>Metal Sorting &amp; Separation:</strong></p>
+<ul>
+<li>Suspend electromagnet above conveyor belt</li>
+<li>Iron-containing materials stick to electromagnet, others fall through</li>
+<li>Periodically switch off electromagnet to drop collected material</li>
+</ul>
+<p><strong>Electrical Relays &amp; Switches:</strong></p>
+<ul>
+<li>Small electromagnet attracts a lever or contact arm</li>
+<li>Lever movement opens or closes another circuit</li>
+<li>Allows small signals to control larger circuits</li>
+</ul>
+<p><strong>Mechanical Motion:</strong></p>
+<ul>
+<li>Electromagnet pulls an iron slug or plunger</li>
+<li>Plunger movement actuates machinery</li>
+<li>Traditional telegraph sounder uses this principle</li>
+</ul>
+<div class="note">
+<p><strong>Tip:</strong> Electromagnets are weakest (least efficient) when saturated. Iron cores saturate at moderate current levels. Beyond saturation, additional current wastes energy as heat rather than creating magnetic field. For practical electromagnets, avoid pushing them beyond saturation point.</p>
+</div>
+</section>
+<section id="compass">
+<h2>Compass Construction</h2>
+<h3>Simple Water Float Compass</h3>
+<p>The easiest compass to make uses a magnetized needle floating on water:</p>
+<p><strong>Materials Needed:</strong></p>
+<ul>
+<li>Sewing needle or thin wire (iron or steel)</li>
+<li>Lodestone, permanent magnet, or electromagnet</li>
+<li>Small piece of cork, wood, or foam</li>
+<li>Shallow bowl of water</li>
+<li>Optional: North-South reference (sun observation or star charts)</li>
+</ul>
+<p><strong>Construction Steps:</strong></p>
+<ol>
+<li><strong>Magnetize the needle:</strong> Stroke it 50-100 times with a magnet, always in the same direction</li>
+<li><strong>Mark poles:</strong> Mark one end with a scratch or dab of paint—this will be north-seeking pole</li>
+<li><strong>Float the needle:</strong> Balance the needle on a small cork floating in water</li>
+<li><strong>Allow settling:</strong> It will rotate and align north-south</li>
+<li><strong>Calibrate:</strong> Observe which end points north (use Earth's magnetic field, or determine north from sun/stars first)</li>
+</ol>
+<div class="tip">
+<p><strong>Minimizing Water Compass Friction:</strong> Use the smallest cork possible (just enough to float the needle) and ensure the needle is balanced perfectly. A cork that's too large increases water friction and sluggishness. Test the bearing balance by gently spinning the compass—it should rotate freely with minimal damping.</p>
+</div>
+<h3>Pivot Compass (More Durable)</h3>
+<p>For repeated use, a needle pivoting on a point is more practical:</p>
+<ol>
+<li><strong>Create pivot point:</strong> A fine wire or sewing needle standing vertically in a wooden base</li>
+<li><strong>Balance the magnetic needle:</strong> Magnetize a slightly larger needle or thin iron rod</li>
+<li><strong>Balance carefully:</strong> The needle must balance on the pivot point, neither tipped forward nor backward</li>
+<li><strong>Reduce friction:</strong> The pivot should be as fine and smooth as possible—a jeweler's tool, watch part, or specially prepared point</li>
+<li><strong>House in compass rose:</strong> Optional: Encase in a wooden or metal case marked with cardinal directions</li>
+</ol>
+<h3>Compass Declination</h3>
+<p>Magnetic north is not true geographic north. The difference is called declination and varies by location and time:</p>
+<ul>
+<li><strong>Current declination:</strong> In many places, ranges from 5-25° east or west of true north</li>
+<li><strong>Changes with time:</strong> Declination drifts 5-10° per century due to Earth's core changes</li>
+<li><strong>Varies by location:</strong> East coast of North America has westward declination; Pacific coast has eastward</li>
+<li><strong>Correction:</strong> If you need true north, apply a correction factor based on your location and the current year</li>
+</ul>
+<p>For most practical post-collapse purposes, magnetic north is accurate enough. But for precision navigation or astronomy, declination matters.</p>
+<h3>Testing &amp; Verification</h3>
+<p><strong>Method 1: Sun Observation</strong></p>
+<ul>
+<li>At solar noon (when sun is highest), the sun is due south in Northern Hemisphere</li>
+<li>Compare compass direction with sun position</li>
+<li>Account for time of year (sun not exactly due south at all times)</li>
+</ul>
+<p><strong>Method 2: Star Observation</strong></p>
+<ul>
+<li>Locate Polaris (North Star) at night</li>
+<li>Polaris is nearly true north (within 1°)</li>
+<li>Compare compass direction with Polaris</li>
+</ul>
+<p><strong>Method 3: Consistent Landmarks</strong></p>
+<ul>
+<li>If you know a distant landmark's true direction (from maps or earlier observations), use it as reference</li>
+<li>Compare compass reading with known direction</li>
+</ul>
+</section>
+<section id="applications">
+<h2>Practical Applications</h2>
+<h3>Generators &amp; Power Production</h3>
+<p>Magnets are essential for generating electricity. A magnet rotating past coils of wire induces electrical current (electromagnetic induction):</p>
+<ul>
+<li><strong>Hand-crank generator:</strong> Rotating magnet inside wire coil produces 5-30V at crank speeds</li>
+<li><strong>Water wheel generator:</strong> Water power rotates magnet continuously</li>
+<li><strong>Wind generator:</strong> Wind power rotates magnet continuously</li>
+<li><strong>Bicycle dynamo:</strong> Rider's motion rotates magnet, producing light power for headlight</li>
+</ul>
+<h3>Electric Motors</h3>
+<p>Motors reverse the generator principle: electrical current flowing through a coil in a magnetic field causes rotation:</p>
+<ul>
+<li><strong>DC motor:</strong> Electromagnet rotating between permanent magnets; current direction switches via commutator</li>
+<li><strong>AC motor:</strong> Electromagnet rotating in AC field; field naturally alternates polarity</li>
+<li><strong>Simple hand-made motor:</strong> Battery-powered electromagnet coil rotating between permanent magnets</li>
+</ul>
+<h3>Speakers &amp; Sound Production</h3>
+<p>Speakers use permanent magnets and electromagnets to convert electrical signals into mechanical vibration:</p>
+<ul>
+<li><strong>Voice coil:</strong> Electromagnet suspended in permanent magnet field</li>
+<li><strong>Audio signal:</strong> Current fluctuations make voice coil vibrate</li>
+<li><strong>Cone coupling:</strong> Voice coil attached to paper cone; cone vibration produces sound</li>
+</ul>
+<h3>Magnetic Sensors</h3>
+<p>Magnets can detect motion and position:</p>
+<ul>
+<li><strong>Reed switches:</strong> Magnetic field closes metal contacts when magnet approaches</li>
+<li><strong>Magnetic position indicators:</strong> Magnet position visible from outside sealed container</li>
+<li><strong>Metal detectors:</strong> Changing magnetic field when metal nears detector coil triggers alarm</li>
+</ul>
+<h3>Magnetic Separation &amp; Sorting</h3>
+<p>Industrial-scale uses:</p>
+<ul>
+<li><strong>Scrap sorting:</strong> Electromagnet removes iron from non-ferrous scrap</li>
+<li><strong>Mineral processing:</strong> Magnetic separation concentrates iron ore</li>
+<li><strong>Waste management:</strong> Remove ferrous metals from mixed waste streams</li>
+</ul>
+</section>
+<section id="permanent">
+<h2>Permanent vs Temporary Magnets</h2>
+<h3>Permanent Magnets</h3>
+<p>Materials that retain magnetization indefinitely (on human timescales):</p>
+<ul>
+<li><strong>Natural lodestone:</strong> Magnetite with permanent alignment from Earth's field</li>
+<li><strong>Hardened steel:</strong> High-carbon steel that has been magnetized and hardened retains magnetization</li>
+<li><strong>Alnico magnets:</strong> Aluminum-nickel-cobalt alloys (rare in post-collapse scenario)</li>
+<li><strong>Ferrite magnets:</strong> Ceramic magnets (typically from modern electronics, not easily made)</li>
+</ul>
+<p><strong>Advantages:</strong> No power needed; reliable and consistent</p>
+<p><strong>Disadvantages:</strong> Cannot be easily turned off; magnetization gradually decreases over decades (especially if heated or impacted); strength limited</p>
+<h3>Temporary Magnets</h3>
+<p>Materials that are magnetic only when powered:</p>
+<ul>
+<li><strong>Soft iron:</strong> Low-carbon iron becomes magnetic with current, loses magnetization when current stops</li>
+<li><strong>Electromagnets:</strong> Wire coil around iron core</li>
+</ul>
+<p><strong>Advantages:</strong> Can be switched on/off; strength can be controlled with current level; no permanent magnet fatigue</p>
+<p><strong>Disadvantages:</strong> Require external power; generate heat; efficiency depends on electrical losses</p>
+<h3>Demagnetization</h3>
+<p>If you need to remove magnetization from a permanent magnet:</p>
+<p><strong>Heat Method (Least Controlled):</strong></p>
+<ul>
+<li>Heat to above Curie point (580°C for iron)</li>
+<li>Cool randomly in no particular orientation</li>
+<li>Domains randomize; magnet loses magnetization</li>
+</ul>
+<p><strong>AC Electromagnet Method (More Controlled):</strong></p>
+<ul>
+<li>Place permanent magnet inside an AC electromagnet coil</li>
+<li>AC field alternates, driving domains back and forth with decreasing amplitude</li>
+<li>Gradually reduce AC current to zero</li>
+<li>Domains end up randomized; magnet is demagnetized</li>
+</ul>
+<p><strong>Mechanical Impact:</strong></p>
+<ul>
+<li>Repeated heavy impacts can randomize domains (not recommended—unreliable)</li>
+<li>Vibration while passing through randomizing magnetic field is more controlled</li>
+</ul>
+</section>
+<section id="motor">
+<h2>Motors &amp; Generators</h2>
+<h3>Simple DC Motor</h3>
+<p>A basic motor demonstrates electromagnetic principles:</p>
+<p><strong>Components:</strong></p>
+<ul>
+<li><strong>Permanent magnets:</strong> Provide constant magnetic field (N and S poles facing each other)</li>
+<li><strong>Electromagnet coil:</strong> Rotates between the permanent magnets</li>
+<li><strong>Power source:</strong> Battery or generator providing DC current</li>
+<li><strong>Commutator:</strong> Split ring that switches current direction every half rotation</li>
+<li><strong>Brushes:</strong> Carbon contacts that deliver current to commutator</li>
+<li><strong>Bearings:</strong> Allow smooth rotation</li>
+</ul>
+<p><strong>Operating Principle:</strong></p>
+<ol>
+<li>Current flows through coil via one brush and commutator segment</li>
+<li>Coil becomes electromagnet, repelled by same pole and attracted to opposite pole</li>
+<li>Coil rotates 180°</li>
+<li>Commutator switches current direction to opposite coil segments</li>
+<li>Coil poles reverse, maintaining attraction/repulsion for continuous rotation</li>
+<li>Process repeats indefinitely as long as current flows</li>
+</ol>
+<h3>Hand-Cranked Generator</h3>
+<p>Reverse the motor principle to generate electricity:</p>
+<p><strong>Components:</strong></p>
+<ul>
+<li><strong>Rotating magnet(s):</strong> Permanent magnets or electromagnet powered from external source</li>
+<li><strong>Stationary coil(s):</strong> Wire coil around the magnet's rotation path</li>
+<li><strong>Mechanical input:</strong> Crank or handle turned by hand</li>
+<li><strong>Bearings:</strong> Allow smooth rotation</li>
+</ul>
+<p><strong>Operating Principle:</strong></p>
+<ol>
+<li>As permanent magnet rotates, its field passes through the stationary coil</li>
+<li>Changing magnetic flux induces electrical current in the coil (Faraday's law)</li>
+<li>AC current is produced directly; DC can be obtained with a rectifier (commutator with diodes)</li>
+<li>Faster rotation = higher voltage and current output</li>
+</ol>
+<p><strong>Practical Design for Hand Crank:</strong></p>
+<ul>
+<li><strong>Magnet arrangement:</strong> 4-8 permanent magnets arranged around a cylinder</li>
+<li><strong>Coil:</strong> Typically 100-500 turns for useful voltage/current ratio</li>
+<li><strong>Voltage output:</strong> 5-30V depending on crank speed (2-4 fast cranks per second = 10-20V)</li>
+<li><strong>Current output:</strong> 0.1-1A depending on coil resistance and load</li>
+<li><strong>Power output:</strong> ~10-20W sustained from vigorous hand cranking</li>
+</ul>
+<h3>Water Wheel Generator</h3>
+<p>For continuous power in a stream or river:</p>
+<ul>
+<li><strong>Water wheel:</strong> Traditional design, dips into flowing water</li>
+<li><strong>Shaft:</strong> Connected to generator rotor through gearing or direct coupling</li>
+<li><strong>Gearing:</strong> Water wheels typically rotate slowly; gearing speeds up rotor for better generator efficiency</li>
+<li><strong>Generator:</strong> Same design as hand crank but powered by water instead</li>
+<li><strong>Voltage/current:</strong> Depends on water flow and head (height difference); can be 12V or more with proper design</li>
+</ul>
+<h3>Wind Generator</h3>
+<p>For continuous power in a windy location:</p>
+<ul>
+<li><strong>Rotor blades:</strong> Traditional windmill or propeller design</li>
+<li><strong>Shaft &amp; gearing:</strong> Similar to water wheel; converts slow blade rotation to fast generator rotation</li>
+<li><strong>Generator:</strong> Same principles; output depends on wind speed</li>
+<li><strong>Height placement:</strong> Higher placement (20m+ above obstacles) catches more consistent wind</li>
+<li><strong>Power output:</strong> Highly variable, 10-100W+ depending on wind and design</li>
+</ul>
+</section>
+<section id="diagrams">
+<h2>Reference Diagrams</h2>
+<h3>Magnetic Field Lines Around a Bar Magnet</h3>
+<p><svg aria-label="Magnet Production diagram 1" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><style>
+.magnet { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
+.pole-label { fill: var(--text); font-size: 16px; font-weight: bold; }
+.field-line { stroke: var(--accent2); stroke-width: 1.5; fill: none; }
+.arrow { fill: var(--accent2); }
+.label { fill: var(--muted); font-size: 11px; }
+</style><rect class="magnet" height="100" rx="5" width="100" x="150" y="100"></rect><text class="pole-label" x="165" y="160">N</text><text class="pole-label" x="240" y="160">S</text><path class="field-line" d="M 160 85 Q 80 70 60 120 Q 70 180 160 210"></path><path class="field-line" d="M 170 75 Q 60 50 30 100 Q 30 200 170 220"></path><path class="field-line" d="M 190 70 Q 50 30 20 120 Q 10 200 190 230"></path><path class="field-line" d="M 240 85 Q 320 70 340 120 Q 330 180 240 210"></path><path class="field-line" d="M 230 75 Q 340 50 370 100 Q 370 200 230 220"></path><path class="field-line" d="M 210 70 Q 350 30 380 120 Q 390 200 210 230"></path><path class="field-line" d="M 260 110 L 160 110"></path><path class="field-line" d="M 260 130 L 160 130"></path><path class="field-line" d="M 260 150 L 160 150"></path><path class="field-line" d="M 260 170 L 160 170"></path><path class="field-line" d="M 260 190 L 160 190"></path><polygon class="arrow" points="260,110 255,107 257,113"></polygon><polygon class="arrow" points="95,110 90,107 92,113"></polygon><polygon class="arrow" points="340,120 335,118 338,125"></polygon><polygon class="arrow" points="75,150 70,147 72,153"></polygon><text class="label" x="155" y="35">Field lines exit North pole</text><text class="label" x="235" y="35">Field lines enter South pole</text><text class="label" x="20" y="150">Field lines curve around outside</text><text class="label" x="245" y="75">Invisible inside bar (S to N)</text></svg></p>
+<p>Figure 1: Magnetic field lines around a bar magnet - lines exit N-pole, curve around, enter S-pole</p>
+<h3>Stroking Magnetization Method</h3>
+<p><svg aria-label="Magnet Production diagram 2" viewBox="0 0 450 280" xmlns="http://www.w3.org/2000/svg"><style>
+.iron-bar { fill: var(--surface); stroke: var(--accent2); stroke-width: 2; }
+.magnet { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
+.arrow { fill: var(--accent); stroke: var(--accent); stroke-width: 2; }
+.label { fill: var(--text); font-size: 12px; }
+.step-num { fill: var(--accent2); font-size: 14px; font-weight: bold; }
+.domain { fill: none; stroke: var(--muted); stroke-width: 0.5; }
+</style><text class="step-num" x="20" y="25">Step 1: Start (random domains)</text><rect class="iron-bar" height="40" width="150" x="30" y="50"></rect><line class="domain" x1="40" x2="40" y1="50" y2="90"></line><line class="domain" x1="50" x2="50" y1="50" y2="90"></line><line class="domain" x1="60" x2="60" y1="50" y2="90"></line><line class="domain" x1="70" x2="70" y1="50" y2="90"></line><line class="domain" x1="80" x2="80" y1="50" y2="90"></line><line class="domain" x1="90" x2="90" y1="50" y2="90"></line><line class="domain" x1="100" x2="100" y1="50" y2="90"></line><line class="domain" x1="110" x2="110" y1="50" y2="90"></line><line class="domain" x1="120" x2="120" y1="50" y2="90"></line><line class="domain" x1="130" x2="130" y1="50" y2="90"></line><path d="M 40 65 L 45 60" stroke="var(--muted)" stroke-width="1"></path><path d="M 50 70 L 55 75" stroke="var(--muted)" stroke-width="1"></path><path d="M 60 62 L 65 58" stroke="var(--muted)" stroke-width="1"></path><path d="M 70 75 L 75 72" stroke="var(--muted)" stroke-width="1"></path><text class="label" x="30" y="110">No net magnetization</text><text class="step-num" x="240" y="25">Step 2: Stroke with magnet</text><rect class="iron-bar" height="40" width="150" x="250" y="50"></rect><rect class="magnet" height="20" rx="3" width="40" x="240" y="35"></rect><text class="label" style="font-size: 10px;" x="245" y="48">N</text><path class="arrow" d="M 280 32 L 380 32" marker-end="url(#arrowhead)" stroke-width="2"></path><text class="label" x="320" y="25">Stroke direction</text><path d="M 260 65 L 265 60" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 270 65 L 275 60" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 280 65 L 285 60" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 290 65 L 295 60" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 300 65 L 305 60" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 310 65 L 315 60" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 320 65 L 325 60" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 330 65 L 335 60" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 340 65 L 345 60" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 350 65 L 355 60" stroke="var(--accent2)" stroke-width="1.5"></path><text class="label" x="250" y="110">Domains align with N-pole</text><text class="step-num" x="20" y="150">Step 3: Lift magnet between strokes</text><rect class="iron-bar" height="40" width="150" x="30" y="175"></rect><rect class="magnet" height="20" rx="3" width="40" x="200" y="175"></rect><path d="M 40 190 L 45 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 50 190 L 55 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 60 190 L 65 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 70 190 L 75 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 80 190 L 85 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 90 190 L 95 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 100 190 L 105 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 110 190 L 115 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 120 190 L 125 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 130 190 L 135 185" stroke="var(--accent2)" stroke-width="1.5"></path><text class="label" x="30" y="235">Repeat 50-100 times for strong magnetization</text><text class="step-num" x="240" y="150">Result: Magnetized bar</text><rect class="iron-bar" height="40" width="150" x="250" y="175"></rect><text class="label" style="font-weight: bold; color: var(--accent2);" x="260" y="170">N-pole</text><text class="label" style="font-weight: bold; color: var(--accent);" x="365" y="170">S-pole</text><path d="M 260 190 L 265 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 270 190 L 275 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 280 190 L 285 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 290 190 L 295 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 300 190 L 305 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 310 190 L 315 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 320 190 L 325 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 330 190 L 335 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 340 190 L 345 185" stroke="var(--accent2)" stroke-width="1.5"></path><path d="M 350 190 L 355 185" stroke="var(--accent2)" stroke-width="1.5"></path><text class="label" x="280" y="235">All domains aligned - strong magnet!</text></svg></p>
+<p>Figure 2: Stroking magnetization - repeated strokes align magnetic domains</p>
+<h3>Electromagnet Coil Winding</h3>
+<p><svg aria-label="Magnet Production diagram 3" viewBox="0 0 450 250" xmlns="http://www.w3.org/2000/svg"><style>
+.core { fill: var(--accent); opacity: 0.3; }
+.wire { fill: none; stroke: var(--accent2); stroke-width: 2; }
+.label { fill: var(--text); font-size: 12px; }
+.title { fill: var(--accent); font-size: 13px; font-weight: bold; }
+.dimension { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3,3; }
+</style><text class="title" x="40" y="25">Electromagnet Coil (Side View)</text><rect class="core" height="120" rx="15" width="30" x="80" y="60"></rect><rect fill="none" height="120" rx="15" stroke="var(--accent)" stroke-width="2" width="30" x="80" y="60"></rect><circle cx="95" cy="75" fill="none" r="25" stroke="var(--accent2)" stroke-width="2"></circle><circle cx="95" cy="95" fill="none" r="26" stroke="var(--accent2)" stroke-width="2"></circle><circle cx="95" cy="115" fill="none" r="26" stroke="var(--accent2)" stroke-width="2"></circle><circle cx="95" cy="135" fill="none" r="26" stroke="var(--accent2)" stroke-width="2"></circle><circle cx="95" cy="155" fill="none" r="25" stroke="var(--accent2)" stroke-width="2"></circle><ellipse cx="95" cy="75" fill="none" opacity="0.7" rx="30" ry="27" stroke="var(--accent2)" stroke-width="1.5"></ellipse><ellipse cx="95" cy="95" fill="none" opacity="0.7" rx="31" ry="28" stroke="var(--accent2)" stroke-width="1.5"></ellipse><ellipse cx="95" cy="115" fill="none" opacity="0.7" rx="31" ry="28" stroke="var(--accent2)" stroke-width="1.5"></ellipse><ellipse cx="95" cy="135" fill="none" opacity="0.7" rx="31" ry="28" stroke="var(--accent2)" stroke-width="1.5"></ellipse><ellipse cx="95" cy="155" fill="none" opacity="0.7" rx="30" ry="27" stroke="var(--accent2)" stroke-width="1.5"></ellipse><line stroke="var(--accent2)" stroke-width="2" x1="65" x2="45" y1="75" y2="60"></line><text class="label" x="30" y="55">To power source</text><line stroke="var(--accent2)" stroke-width="2" x1="130" x2="150" y1="155" y2="170"></line><text class="label" x="155" y="175">From power source</text><line class="dimension" x1="110" x2="135" y1="60" y2="60"></line><text class="label" x="125" y="55">Wire diameter</text><line class="dimension" x1="65" x2="65" y1="60" y2="180"></line><text class="label" x="30" y="125">Coil length</text><line class="dimension" x1="65" x2="80" y1="175" y2="175"></line><text class="label" x="60" y="195">Core diameter</text><text class="title" x="240" y="25">Electromagnet Coil (End View)</text><circle cx="310" cy="90" fill="var(--accent)" opacity="0.3" r="12"></circle><circle cx="310" cy="90" fill="none" r="12" stroke="var(--accent)" stroke-width="2"></circle><circle cx="310" cy="90" fill="none" r="22" stroke="var(--accent2)" stroke-width="2"></circle><circle cx="310" cy="90" fill="none" r="32" stroke="var(--accent2)" stroke-width="2"></circle><circle cx="310" cy="90" fill="none" r="42" stroke="var(--accent2)" stroke-width="2"></circle><line opacity="0.6" stroke="var(--accent2)" stroke-dasharray="3,3" stroke-width="1.5" x1="310" x2="310" y1="65" y2="115"></line><text class="label" style="font-size: 10px; opacity: 0.7;" x="320" y="95">Magnetic field</text><path d="M 280 70 Q 260 60 250 90" fill="none" opacity="0.5" stroke="var(--accent)" stroke-dasharray="3,3" stroke-width="1"></path><path d="M 340 70 Q 360 60 370 90" fill="none" opacity="0.5" stroke="var(--accent)" stroke-dasharray="3,3" stroke-width="1"></path><path d="M 280 110 Q 260 120 250 90" fill="none" opacity="0.5" stroke="var(--accent)" stroke-dasharray="3,3" stroke-width="1"></path><path d="M 340 110 Q 360 120 370 90" fill="none" opacity="0.5" stroke="var(--accent)" stroke-dasharray="3,3" stroke-width="1"></path><rect fill="var(--card)" height="80" rx="5" stroke="var(--border)" stroke-width="1" width="180" x="240" y="160"></rect><text class="label" x="250" y="180">Typical specifications:</text><text class="label" x="250" y="195">Wire gauge: 18-22 AWG</text><text class="label" x="250" y="210">Turns: 100-2000</text><text class="label" x="250" y="225">Current: 0.5-3 A</text><text class="label" x="250" y="240">Voltage: 6-12 V</text></svg></p>
+<p>Figure 3: Electromagnet construction - coil wrapping and magnetic field</p>
+<h3>Simple DC Motor Principle</h3>
+<p><svg aria-label="Magnet Production diagram 4" viewBox="0 0 450 280" xmlns="http://www.w3.org/2000/svg"><style>
+.magnet { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
+.coil { fill: none; stroke: var(--accent2); stroke-width: 2; }
+.pole-label { fill: var(--text); font-size: 14px; font-weight: bold; }
+.arrow { fill: var(--accent); stroke: var(--accent); stroke-width: 1.5; }
+.label { fill: var(--text); font-size: 11px; }
+.current-arrow { fill: none; stroke: var(--accent2); stroke-width: 2; marker-end: url(#arrowhead); }
+</style><rect class="magnet" height="140" rx="5" width="40" x="30" y="80"></rect><rect class="magnet" height="140" rx="5" width="40" x="380" y="80"></rect><text class="pole-label" x="40" y="165">N</text><text class="pole-label" x="390" y="165">S</text><rect fill="none" height="100" stroke="var(--accent2)" stroke-width="2" width="80" x="180" y="100"></rect><circle cx="220" cy="150" fill="var(--accent)" r="5" stroke="var(--accent)" stroke-width="1"></circle><path class="current-arrow" d="M 185 105 L 255 105"></path><path class="current-arrow" d="M 255 145 L 185 145"></path><path class="current-arrow" d="M 185 195 L 255 195"></path><path class="arrow" d="M 175 125 L 150 125" marker-end="url(#arrowhead)"></path><text class="label" x="130" y="120">Repulsion from N</text><path class="arrow" d="M 275 175 L 300 175" marker-end="url(#arrowhead)"></path><text class="label" x="305" y="180">Attraction to S</text><path d="M 220 85 A 35 35 0 0 1 250 150" fill="none" stroke="var(--accent)" stroke-dasharray="3,3" stroke-width="2"></path><path class="arrow" d="M 250 140 L 260 150"></path><text class="label" x="260" y="110">Rotation</text><circle cx="220" cy="220" fill="var(--card)" r="8" stroke="var(--accent)" stroke-width="1.5"></circle><line stroke="var(--accent2)" stroke-width="2" x1="215" x2="210" y1="228" y2="240"></line><line stroke="var(--accent2)" stroke-width="2" x1="225" x2="230" y1="228" y2="240"></line><circle cx="210" cy="245" fill="var(--accent2)" r="3"></circle><circle cx="230" cy="245" fill="var(--accent2)" r="3"></circle><text class="label" x="190" y="260">Brushes deliver current</text><text class="label" x="190" y="275">to commutator</text><line stroke="var(--accent2)" stroke-width="2" x1="210" x2="180" y1="245" y2="245"></line><line stroke="var(--accent2)" stroke-width="2" x1="230" x2="260" y1="245" y2="245"></line><rect fill="var(--surface)" height="20" stroke="var(--accent2)" stroke-width="1" width="15" x="165" y="240"></rect><rect fill="var(--surface)" height="20" stroke="var(--accent2)" stroke-width="1" width="15" x="260" y="240"></rect><defs><marker id="arrowhead" markerheight="7" markerwidth="10" orient="auto" refx="9" refy="3.5"><polygon fill="var(--accent)" points="0 0, 10 3.5, 0 7"></polygon></marker></defs></svg></p>
+<p>Figure 4: DC Motor principle - current in coil creates forces that cause rotation</p>
+</section>
+<section id="mistakes">
+<h3>Common Mistakes &amp; Solutions</h3>
+<ul>
+<li><strong>Magnet Loses Strength Quickly:</strong> Possible causes: heating above 580°C, repeated impact, exposure to strong opposing fields, or simply age. Solution: Store magnets separated from each other (opposing poles repel, staying apart). Keep away from heat. Avoid dropping or striking.</li>
+<li><strong>Stroking Produces Weak Magnet:</strong> Not enough strokes or insufficient pressure from magnetizing magnet. Solution: Increase number of strokes to 200-300. Ensure the stroking magnet is strong and in good contact with the iron.</li>
+<li><strong>Compass Needle Doesn't Align North-South:</strong> Magnetization is too weak, or the needle is not balanced properly. Solution: If magnetization is weak, remagnetize with more strokes. If balance is the problem, carefully file or sand the pivot end until needle balances perfectly.</li>
+<li><strong>Electromagnet Doesn't Pull Iron:</strong> Insufficient current, too few turns, iron core not seated properly, or wire insulation breaking continuity. Solution: Check power supply voltage and current. If current is low, reduce resistance (thicker wire for next coil). Increase number of turns. Ensure continuous core contact. Test wire continuity with a simple circuit.</li>
+<li><strong>Motor Doesn't Spin:</strong> Commutator misaligned, brushes not in contact with commutator, coil unbalanced, or bearings too tight. Solution: Ensure brushes are springy and contact commutator reliably. Balance coil carefully; should spin freely by hand with only minor friction. Check bearing clearance is adequate.</li>
+<li><strong>Generator Produces No Output:</strong> No rotation of magnet rotor, insufficient magnets, coil not aligned properly, or broken wire. Solution: Check for mechanical resistance preventing rotation. Verify magnet strength (test with iron filings). Reposition coil to be in the strong field region. Test coil continuity with a multimeter or simple continuity tester.</li>
+<li><strong>Lodestone Difficult to Find:</strong> Not in right geology, or deposits too deep. Solution: Research local mining history and geological maps. Visit known magnetite deposits. Test multiple rock samples—true lodestones are rare; most magnetite is weakly magnetic.</li>
+<li><strong>Magnetic Separation Too Slow:</strong> Electromagnet not strong enough or positioned too far from material. Solution: Increase current and number of turns. Move electromagnet closer to material (within 10cm of strong field). Use multiple electromagnets for larger operations.</li>
+<li><strong>Coil Overheats During Use:</strong> Excessive current or wire resistance too high. Solution: Reduce current (increase resistance in circuit, use thicker power source). Check for shorted turns (wire insulation damaged). Use thicker wire to reduce resistance and heat generation.</li>
+<li><strong>Cannot Achieve Proper Magnetization Temperature:</strong> Furnace or fire not hot enough, or material cools too quickly. Solution: Use bellows to increase fire temperature. Bury cooling material in sand or ash to slow cooling rate. Alternatively, use electromagnet method which doesn't require heating.</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="blacksmithing.html">Blacksmithing</a>
+<a href="bloomery-furnace.html">Bloomery Furnace Construction</a>
+<a href="electricity.html">Electricity &amp; Magnetism</a>
+<a href="foundry-casting.html">Foundry &amp; Metal Casting</a>
+<a href="steel-making.html">Steel Making</a>
+<a href="metalworking.html">Metalworking &amp; Blacksmithing</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

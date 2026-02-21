@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/wood-gas-producer.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wood Gas Producer Systems</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Power Generation</span> ›
+<span>Wood Gas Producer Systems</span>
+</div>
+
+
+<h1>Wood Gas Producer Systems</h1>
+<p class="subtitle">Design and operation of wood gasification systems for producer gas generation, including updraft and downdraft gasifier design, tar cracking, gas cleaning, and carburetor modification for internal combustion engines.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~14 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#gasifier-types">Gasifier Types and Design Principles</a></li>
+<li><a href="#tar-cracking">Tar Cracking and Gas Cleaning</a></li>
+<li><a href="#engine-modification">Carburetor Modification for Producer Gas</a></li>
+<li><a href="#feedstock">Feedstock Preparation and Moisture Control</a></li>
+<li><a href="#operation">Operating Procedures and Safety</a></li>
+<li><a href="#safety">Critical Safety Hazards</a></li>
+<li><a href="#efficiency">System Efficiency and Energy Balance</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Wood gas producers (gasifiers) convert solid biomass fuel into combustible gas through a thermochemical process called pyrolysis and partial oxidation. The resulting gas—a mixture of carbon monoxide (CO), hydrogen (H₂), nitrogen (N₂), and carbon dioxide (CO₂)—can power internal combustion engines when properly cleaned and regulated. During periods when liquid fuels are unavailable, wood gas systems represent a viable method to generate heat and mechanical power from locally available biomass.</p>
+<p>This guide covers gasifier design principles, construction methods, gas cleaning systems, engine modification, feedstock preparation, operating procedures, and critical safety considerations. Wood gas production requires careful attention to chemistry and engineering; improper design or operation creates hazardous conditions including CO poisoning, explosion risk, and engine damage.</p>
+</section>
+<section id="gasifier-types">
+<h2>Gasifier Types and Design Principles</h2>
+<p>Two primary gasifier configurations exist: updraft (counter-current) and downdraft (co-current) systems. Each has distinct advantages and limitations.</p>
+<h3>Updraft Gasifiers</h3>
+<p>In an updraft gasifier, fuel is loaded into a tall vertical chamber and air is injected near the bottom. Hot combustion gases pass upward through the fuel bed, drying, pyrolyzing, and partially oxidizing the wood. The resulting gas exits at the top while ash collects at the bottom.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Higher fuel throughput per unit volume</li>
+<li>Better tolerance for moisture in feedstock</li>
+<li>Simpler construction (fewer complex internals)</li>
+<li>Lower operating temperature in upper sections</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Tar content in exit gas is high (5–10 g/m³)</li>
+<li>Requires extensive downstream tar removal</li>
+<li>Sensitive to fuel size uniformity</li>
+<li>Poor turndown ratio (difficult to operate at partial load)</li>
+</ul>
+<p><strong>Construction overview:</strong> A typical updraft gasifier consists of a conical or cylindrical vessel, 60–80 cm tall and 30–50 cm diameter for vehicle-scale applications. The air inlet nozzle enters near the bottom at a slight angle, creating a vortex that helps distribute air across the fuel bed. A grate (typically stainless steel bars spaced 1–1.5 cm apart) supports the fuel bed. Ash is removed from a hopper below the grate.</p>
+<h3>Downdraft Gasifiers</h3>
+<p>Downdraft gasifiers force air into a secondary combustion zone partway down the reactor, creating intense heat (900–1200°C) that cracks tar molecules into smaller hydrocarbons and synthesis gas. The gas exits below the combustion zone.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Significantly lower tar output (0.1–1 g/m³)</li>
+<li>Better gas quality for engine use</li>
+<li>More compact construction</li>
+<li>Faster cold-start capability</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>More complex internal design</li>
+<li>Sensitive to operating parameters</li>
+<li>Higher sensible heat loss (gas exits hot)</li>
+<li>Increased risk of bridging (fuel arching over the combustion zone)</li>
+</ul>
+<p><strong>Throat and hopper design:</strong> The critical component is a narrow &quot;throat&quot; section above the combustion zone where the fuel converges. This creates back-pressure that maintains a packed bed and forces air into the combustion zone. Typical throat diameter is 8–15 cm. The hopper above the throat must have sloped walls (35–45° angle) to prevent bridging. Some designs incorporate a vibrator or mechanical stirrer to prevent fuel hang-up.</p>
+</section>
+<section id="tar-cracking">
+<h2>Tar Cracking and Gas Cleaning</h2>
+<p>Tar—a complex mixture of hydrocarbons and organic compounds—is the primary challenge in wood gas production. Raw gas from an updraft gasifier contains 5–10 g/m³ of tar; downdraft systems reduce this to 0.1–1 g/m³. However, even &quot;clean&quot; downdraft gas often requires additional treatment.</p>
+<h3>Tar Formation and Cracking Mechanisms</h3>
+<p>Tar forms during drying and pyrolysis zones in the gasifier. Most tars are large, heavy molecules (&gt;100 amu) that condense when gas cools below 150°C, fouling pipes, filters, and engine cylinders. Thermal cracking (heating tar to &gt;700°C) breaks these molecules into lighter hydrocarbons and synthesis gas. Catalytic cracking (using iron oxide, lime, or other catalysts) can lower the cracking temperature to 400–600°C.</p>
+<h3>In-Gasifier Tar Reduction</h3>
+<p>The most effective approach is to crack tar inside the gasifier itself:</p>
+<ol>
+<li>
+<p><strong>Secondary air injection:</strong> Inject additional air 20–30 cm above the primary air zone, creating a secondary combustion zone. This reheats and cracks tar molecules passing through. Control secondary air ratio to maintain 700–900°C without excessive back-pressure or fuel bed temperature loss.</p>
+</li>
+<li>
+<p><strong>Hot reforming zone:</strong> Design the combustion zone with a narrow throat and extended burnout region to maximize residence time at high temperature.</p>
+</li>
+<li>
+<p><strong>Catalytic inserts:</strong> Place a layer of iron oxide (rust-rich steel wool or granules) or calcined limestone 10–15 cm above the primary air injection. As gas passes through, catalytic cracking reduces tar content by 30–50%.</p>
+</li>
+</ol>
+<h3>Cyclone Separator</h3>
+<p>A cyclone removes the largest tar droplets and particulates before gas enters the cooling and filtering stage. Design considerations:</p>
+<ul>
+<li><strong>Inlet velocity:</strong> 15–25 m/s (higher velocity improves collection)</li>
+<li><strong>Body diameter:</strong> 10–15 cm for vehicle-scale systems</li>
+<li><strong>Exit pipe:</strong> Tangential inlet with axial exit (gas spirals and flings particles outward)</li>
+<li><strong>Tar drain:</strong> Sloped outlet at bottom with ball valve for periodic drainage</li>
+</ul>
+<p>The cyclone should be mounted immediately downstream of the gasifier (before cooling) so tar remains liquid and drains rather than accumulating as solid residue. Accept that a cyclone removes only particles &gt;5 µm; submicron aerosol requires downstream filtration.</p>
+<h3>Fabric Filtration</h3>
+<p>A fabric filter (baghouse) removes fine tar aerosol and particulates that escape the cyclone. Industrial fabric filters use large surface areas and periodic backflushing. For small gasifier systems:</p>
+<ul>
+<li><strong>Bag material:</strong> Glass fiber, polyester felt, or PTFE (Teflon) fabric rated for 80–120°C</li>
+<li><strong>Filtration velocity:</strong> 1–2 m/min (air pass rate / bag area)</li>
+<li><strong>Cleaning mechanism:</strong> Manual shaking or reverse-air pulse system</li>
+<li><strong>Filter area:</strong> Minimum 0.5–1 m² for 10 kW gas output</li>
+</ul>
+<p>A typical cartridge filter (4 in. diameter, 12 in. tall) provides ~1 m² of surface area. Mount the filter vertically with a conical hopper underneath to collect cleaned tar and dust. Every 8–24 hours of operation, shake or pulse the bag to dislodge accumulated material, which falls into the hopper for disposal.</p>
+<h3>Condensation and Washing</h3>
+<p>After particulate removal, cool and condense the gas to remove dissolved tar and moisture. Two approaches:</p>
+<p><strong>Water-cooled heat exchanger:</strong> Pipe the gas through a tube bundle immersed in cool water. As gas cools from ~50°C to 20–30°C, tar and water condense inside the tubes. Periodically drain the condensate (mix of tar, water, and ash). Install a demister pad downstream to remove water droplets from gas exiting the cooler.</p>
+<p><strong>Scrubber tower:</strong> Spray water into the gas stream, which coalesces tar aerosol and dissolves water-soluble organics. The water is continuously recirculated and periodically drained when tar saturation reaches a threshold. A mist eliminator (mesh pad or vane) removes water droplets from the exit gas.</p>
+</section>
+<section id="engine-modification">
+<h2>Carburetor Modification for Producer Gas</h2>
+<p>Gasoline carburetors are designed for liquid fuel with a stoichiometric air-fuel ratio of 14.7:1 by mass. Producer gas requires a very different approach because:</p>
+<ul>
+<li>Gas has lower volumetric energy density than liquid fuel</li>
+<li>Gas mixing is simpler (no atomization needed)</li>
+<li>Lean-burn operation (air-rich) improves efficiency but requires timing adjustment</li>
+<li>No liquid film cooling of intake valves</li>
+</ul>
+<h3>Mixing Gas and Air</h3>
+<p>For a simple retrofit, construct a gas mixer upstream of the carburetor:</p>
+<ol>
+<li>
+<p><strong>Gas supply line:</strong> 3/8&quot; or 1/2&quot; ID hose from the gasifier outlet. Include a manual flow control valve (needle valve) and a one-way check valve to prevent backflow.</p>
+</li>
+<li>
+<p><strong>Mixing chamber:</strong> A 2-liter steel or aluminum vessel with ports for gas inlet (top), air inlet (from carburetor), and outlet (to carburetor inlet). Gas and air mix by turbulence rather than precise metering.</p>
+</li>
+<li>
+<p><strong>Air control:</strong> Modify the carburetor's choke and idle mixture screws to lean out the idle and part-load mixture. Open the choke fully when running on gas (no cold-start enrichment needed).</p>
+</li>
+<li>
+<p><strong>Throttle linkage:</strong> Connect the gas flow control valve to the throttle lever with a cable so that opening the throttle simultaneously enriches the gas mixture.</p>
+</li>
+</ol>
+<h3>Full Gasoline-to-Gas Conversion</h3>
+<p>For dedicated producer gas engines, remove the carburetor and gasoline tank entirely:</p>
+<ul>
+<li><strong>Gas regulator:</strong> Install a pressure regulator set to 5–10 kPa (0.05–0.1 bar) to maintain constant gas supply pressure as gasifier load varies.</li>
+<li><strong>Fuel injector equivalent:</strong> Route gas to multiple ports (intake manifold or cylinder head intake valves) rather than a single carburetor. This improves distribution and reduces backfire risk.</li>
+<li><strong>Throttle valve:</strong> A butterfly valve downstream of the gas injection points controls engine power.</li>
+<li><strong>Ignition timing:</strong> Advance spark timing by 5–10° compared to gasoline operation. Producer gas has a slower flame speed than gasoline, and advanced timing compensates.</li>
+</ul>
+<h3>Load Control and Fuel Flow Regulation</h3>
+<p>Producer gas output varies with gasifier operating point. To maintain stable engine operation:</p>
+<ol>
+<li>
+<p><strong>Constant-pressure regulator:</strong> Reduces gas pressure to 5–10 kPa. Without this, fuel mixture becomes richer as gasifier pressure rises.</p>
+</li>
+<li>
+<p><strong>Fuel flow limiter:</strong> In full conversions, implement a flow restrictor (orifice plate or needle valve) sized so that full engine load corresponds to maximum gasifier output. This prevents fuel-rich stalling.</p>
+</li>
+<li>
+<p><strong>Engine load feedback:</strong> If available, use a load sensor (exhaust oxygen sensor or intake manifold pressure) to adjust gas flow in response to engine demand. Manual control via a cable-actuated needle valve is acceptable for single-speed stationary applications.</p>
+</li>
+</ol>
+<div class="warning">
+<p>Do not operate a gasoline carburetor with gasifier pressure above 15 kPa without regulating to a lower working pressure. Excessive pressure will flood the carburetor bowl and overflow fuel into the engine.</p>
+</div>
+</section>
+<section id="feedstock">
+<h2>Feedstock Preparation and Moisture Control</h2>
+<p>Wood gas system efficiency and reliability depend critically on fuel moisture and size consistency.</p>
+<h3>Moisture Content</h3>
+<p>Wood with &gt;30% moisture content (wet basis) will not gasify properly:</p>
+<ul>
+<li>Water evaporation consumes sensible heat, lowering combustion zone temperature</li>
+<li>Wet fuel produces more tar and tars condense at lower temperatures</li>
+<li>Output gas contains excessive steam, diluting combustion gases</li>
+</ul>
+<p>Target moisture is 10–20% for most gasifiers. Measure using a wood moisture meter or by oven-drying: dry a known mass of wood at 105°C until weight stabilizes, then calculate (wet mass – dry mass) / dry mass × 100%.</p>
+<p>To dry wood:</p>
+<ul>
+<li>Split to 3–5 cm cross-section (larger pieces retain moisture in the core)</li>
+<li>Stack in a covered shed with air circulation for 6–12 months</li>
+<li>In urgent situations, kiln-dry at 60–80°C for 1–2 weeks</li>
+</ul>
+<h3>Fuel Size and Shape</h3>
+<p>Inconsistent fuel size causes channeling (gas flowing through large gaps) and bridging (fuel jamming above the combustion zone). Target specifications:</p>
+<ul>
+<li><strong>Updraft gasifiers:</strong> 3–8 cm chunks; relatively uniform size is less critical</li>
+<li><strong>Downdraft gasifiers:</strong> 2–5 cm chunks; uniformity is essential to prevent bridging</li>
+<li><strong>Avoid:</strong> Powder, sawdust, bark (excessive ash and volatiles), knots and grain junctions (irregular burning)</li>
+</ul>
+<p>Run fuel through a trommel screen or hand-sort to achieve size consistency.</p>
+<h3>Feedstock Types</h3>
+<p><strong>Hardwoods</strong> (oak, ash, beech, maple) are preferred:</p>
+<ul>
+<li>High bulk density (~600 kg/m³ for dry wood) reduces fuel volume</li>
+<li>Lower volatile content produces less tar</li>
+<li>Ash content 0.5–2%</li>
+</ul>
+<p><strong>Softwoods</strong> (pine, spruce) are acceptable but less efficient:</p>
+<ul>
+<li>Lower bulk density requires more volume</li>
+<li>Higher volatile and resin content increases tar</li>
+<li>Ash content 0.3–1%</li>
+</ul>
+<p><strong>Avoid:</strong> Treated wood (releases toxic organics), painted wood, wet wood, bark-rich fuel (high ash and tar).</p>
+<h3>Ash and Clinker Management</h3>
+<p>As fuel gasifies, mineral content (calcium, silica, potassium) concentrates in ash. In updraft systems, ash falls into a hopper; in downdraft systems, ash exits below the combustion zone. High-temperature ash can melt and form clinkers (hard slag) that block grates and reduce gas flow.</p>
+<ul>
+<li>Ash melting point for wood: 1200–1300°C</li>
+<li>Keep combustion zone temperature 900–1100°C (below ash melting)</li>
+<li>Remove ash regularly (every 4–8 hours for 10 kW system)</li>
+<li>Break clinkers with a poker and allow to cool before removal</li>
+</ul>
+</section>
+<section id="operation">
+<h2>Operating Procedures and Safety</h2>
+<h3>Cold Start Sequence</h3>
+<ol>
+<li><strong>Load fuel:</strong> Fill the hopper with dry wood chunks.</li>
+<li><strong>Ignite gasifier:</strong> Drop a burning piece of charcoal or a torch down the fuel inlet to ignite the top of the fuel bed. Alternatively, prime with a small amount of gasoline or alcohol in the primary air zone.</li>
+<li><strong>Establish draft:</strong> Once combustion starts, increase primary air flow gradually (open air inlet valve). The gasifier will draw gas out of the hopper.</li>
+<li><strong>Wait for steady operation:</strong> 5–15 minutes, depending on gasifier size. Combustion zone temperature should reach 800°C (measure with an infrared thermometer on the exterior shell).</li>
+<li><strong>Bleed gas line:</strong> Open the gas outlet line (without connecting to engine) and allow gas to flow for 30–60 seconds to displace air and purge steam from the cooling system.</li>
+<li><strong>Start engine:</strong> Connect gas line to the engine and start using the kickstarter or electric starter. The engine may backfire initially; adjust the fuel-air mixture screw until the engine idles smoothly.</li>
+</ol>
+<h3>Steady-State Operation</h3>
+<ul>
+<li><strong>Fuel hopper:</strong> Maintain fuel level; replenish every 1–2 hours (depending on power demand)</li>
+<li><strong>Air flow:</strong> Adjust air inlet valve to maintain 900–1100°C in the combustion zone (monitor with thermometer)</li>
+<li><strong>Engine power:</strong> Throttle the engine to match the load (generator power output, pump load, etc.)</li>
+<li><strong>Gas output:</strong> Listen for a whistling sound from the gasifier; if gas output decreases, increase air flow or check for bridging</li>
+</ul>
+<h3>Monitoring and Troubleshooting</h3>
+<p><strong>Symptom: Engine misfires or loses power</strong></p>
+<ul>
+<li>Cause: Insufficient gas flow (air too lean)</li>
+<li>Fix: Open air inlet valve to increase gasifier output; adjust engine fuel-air ratio screw to richen mixture</li>
+</ul>
+<p><strong>Symptom: Engine overspeeds (runaway)</strong></p>
+<ul>
+<li>Cause: Excessive gas flow (mixture too rich)</li>
+<li>Fix: Close air inlet valve; lean out engine fuel-air ratio; check for leaks in gas lines that allow extra air entry</li>
+</ul>
+<p><strong>Symptom: Heavy white smoke from exhaust</strong></p>
+<ul>
+<li>Cause: Wet fuel or cooling system condensate (water) entering engine</li>
+<li>Fix: Stop engine, drain water from fuel filter and cooling system; switch to drier fuel</li>
+</ul>
+<p><strong>Symptom: Popping sounds from exhaust</strong></p>
+<ul>
+<li>Cause: Incomplete combustion in engine (lean or uneven mixture)</li>
+<li>Fix: Richen engine mixture; check for air leaks in intake manifold (use soapy water to find leaks)</li>
+</ul>
+<p><strong>Symptom: High back-pressure (hard to start, runs rough)</strong></p>
+<ul>
+<li>Cause: Tar buildup in gas line, cyclone, or filter</li>
+<li>Fix: Stop engine, cool system, disconnect gas line and drain accumulated tar; clean cyclone hopper and filter cartridge</li>
+</ul>
+<h3>Shutdown Sequence</h3>
+<ol>
+<li><strong>Reduce load:</strong> Lower throttle to idle</li>
+<li><strong>Cut off fuel:</strong> Close the primary air valve or the gas flow control valve at the gasifier</li>
+<li><strong>Let engine idle:</strong> 2–3 minutes to cool intake and exhaust valves</li>
+<li><strong>Stop engine:</strong> Turn off ignition or open fuel shutoff valve (if fitted)</li>
+<li><strong>Cool system:</strong> Allow the gasifier to cool naturally; do not pour water on it (thermal shock can damage refractory or metal)</li>
+</ol>
+<div class="tip">
+<p>Never attempt a rapid shutdown by closing the air inlet while the engine is still running. The engine will suck air back through the fuel system, creating a vacuum that draws cold air into the gasifier, quenching combustion and causing the system to backfire and flood with tar-rich condensate.</p>
+</div>
+</section>
+<section id="safety">
+<h2>Critical Safety Hazards</h2>
+<h3>Carbon Monoxide (CO) Poisoning</h3>
+<p>Producer gas contains 15–25% CO, which binds to hemoglobin in blood with 200–300 times greater affinity than oxygen. Exposure to 0.1% CO (1000 ppm) for 1 hour can cause severe poisoning; 0.4% (4000 ppm) is rapidly fatal.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Never run a producer gas system in an enclosed space without ventilation</li>
+<li>Always operate the gasifier and engine in the open air or a well-ventilated shed</li>
+<li>Use appropriate respiratory protection (SCBA or cartridge respirator) when working near the gasifier or engine exhaust</li>
+<li>Train personnel to recognize CO symptoms: dizziness, headache, confusion, loss of consciousness</li>
+</ul>
+<h3>Explosion and Backfire Risk</h3>
+<p>Raw producer gas (containing hydrogen and carbon monoxide) is explosive in air concentrations of 4–75% by volume. A spark or flame in an air-gas mixture can ignite.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Install a one-way check valve in the gas line to prevent backflow</li>
+<li>Ensure all gas line connections are airtight; test with soapy water</li>
+<li>Do not allow sparks or flames near the gasifier air inlet or gas outlet line</li>
+<li>Use copper or steel tubing for gas lines (flexible hose can degrade and leak)</li>
+<li>Install a pressure relief valve on the gasifier (set at 5 kPa) to prevent dangerous overpressure</li>
+</ul>
+<h3>Hot Surface and Thermal Burns</h3>
+<p>The gasifier combustion zone reaches 900–1200°C; the exterior shell is typically 100–150°C. Tar lines and condensate traps can be 60–80°C even after shutting down.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Install guards or insulation around hot surfaces</li>
+<li>Use heat-resistant gloves when handling fuel or servicing the system</li>
+<li>Allow the system to cool for 30–60 minutes before draining tar or cleaning filters</li>
+<li>Never touch the gas outlet line directly; wrap it in insulation or use a rope pull to manipulate valves</li>
+</ul>
+<h3>Engine Over-Speed and Mechanical Failure</h3>
+<p>If fuel flow control fails, the engine can oversped to destructively high RPM, causing bearing failure, rod breakage, or valve collision with pistons.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Fit a mechanical governor (centrifugal weights) on the engine crankshaft, or</li>
+<li>Use a fuel shutoff solenoid wired to a tachometer with an over-speed cutout</li>
+<li>Regularly inspect the fuel control linkage and needle valve for smooth operation</li>
+<li>Never operate the engine unattended</li>
+</ul>
+</section>
+<section id="efficiency">
+<h2>System Efficiency and Energy Balance</h2>
+<p>A complete wood gas system (gasifier + gas cleanup + engine) achieves 15–25% overall electrical efficiency if coupled to a generator, compared to 30–35% for a gasoline engine. The lower efficiency is due to:</p>
+<ul>
+<li>Heat loss through gasifier walls (10–15%)</li>
+<li>Sensible heat carried away in hot exit gas (20–25%)</li>
+<li>Tar and other incomplete combustion products (5–10%)</li>
+<li>Mechanical losses in gas cleanup (pressure drop across filters and coolers)</li>
+</ul>
+<p>To improve efficiency:</p>
+<ol>
+<li><strong>Insulate the gasifier:</strong> Wrap with ceramic fiber blanket (2–3 inches) to reduce shell heat loss to &lt;5%</li>
+<li><strong>Recover waste heat:</strong> Run hot gas through a heat exchanger to preheat incoming air or provide space heating before cooling for the engine</li>
+<li><strong>Optimize fuel:</strong> Use well-seasoned (10–20% moisture), consistent-sized hardwood chunks</li>
+<li><strong>Match engine to gasifier:</strong> Select an engine size where the gasifier operates near full load (avoid part-load operation at low temperature)</li>
+</ol>
+<p>For a 10 kW gasifier producing ~30 m³/h of gas, expect to consume 25–35 kg of wood per 8 hours of operation. For perspective, this is roughly 1 full cord of split hardwood per 80 hours of full-power operation.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion</h2>
+<p>Wood gas systems are viable power sources in settings where fossil fuels are unavailable, but they require careful design, meticulous operation, and rigorous safety discipline. The primary engineering challenges are tar management and engine integration; the primary operational challenges are feedstock preparation and monitoring combustion conditions. Before building a full system, construct a small test gasifier to understand the chemistry and develop operational skill. Always prioritize safety over convenience—improper design or operation creates lethal hazards including CO poisoning, explosion, and mechanical failure.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="charcoal-fuels.html">Charcoal &amp; Fuels</a>
+<a href="internal-combustion.html">Internal Combustion Engines</a>
+<a href="energy-systems.html">Energy Systems</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

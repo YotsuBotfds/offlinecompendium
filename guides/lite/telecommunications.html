@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/telecommunications.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telecommunications</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Communications</span> ›
+<span>Telecommunications</span>
+</div>
+
+
+<h1>Telecommunications</h1>
+<p class="subtitle">Telegraph construction, telephone systems, Morse code, switchboard design, wire networks, mesh networks, optical signaling, relay stations, antenna theory, encryption, and community network planning.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~35 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#wired-communications">Wired Communication Systems: Telegraph &amp; Telephone</a></li>
+<li><a href="#radio-fundamentals">Radio Fundamentals</a></li>
+<li><a href="#frequency-bands">Frequency Bands &amp; Regulations</a></li>
+<li><a href="#antenna-design">Antenna Design &amp; Types</a></li>
+<li><a href="#transmitters">Transmitter Basics</a></li>
+<li><a href="#receivers">Receiver Design</a></li>
+<li><a href="#morse-code">Morse Code &amp; CW</a></li>
+<li><a href="#signal-propagation">Signal Propagation Modes</a></li>
+<li><a href="#repeaters">Repeater Stations</a></li>
+<li><a href="#telephone-networks">Telephone Network Architecture (Modern)</a></li>
+<li><a href="#setup-configuration">Setup &amp; Configuration</a></li>
+<li><a href="#operating-procedures">Operating Procedures &amp; Protocols</a></li>
+<li><a href="#range-performance">Range &amp; Performance Predictions</a></li>
+<li><a href="#troubleshooting">Troubleshooting Common Problems</a></li>
+<li><a href="#maintenance">Maintenance &amp; Care</a></li>
+<li><a href="#community-pa">Community PA/Announcement Systems &amp; Warning Sirens</a></li>
+<li><a href="#common-mistakes">Common Mistakes &amp; How to Avoid Them</a></li>
+<li><a href="#security-encryption">Security &amp; Encryption</a></li>
+<li><a href="#safety">Safety Considerations</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="warning">
+<p><strong>Legal &amp; Safety Notice:</strong> Radio transmission is regulated in most countries. Unlicensed transmission on certain frequencies is illegal. Improvised antennas and transmitters may cause radiation hazards if not properly shielded. High-voltage transmission equipment can cause electrocution. Always follow local regulations, obtain proper licensing before transmitting, and ensure all equipment meets safety standards. In post-collapse scenarios, these restrictions may not apply, but knowledge of regulations prevents interference with emergency services.</p>
+</div>
+<section id="overview">
+<h2>Overview</h2>
+<p>Telecommunications systems enable human communication across distances beyond shouting range. In survival and post-collapse scenarios, understanding radio fundamentals, antenna design, and network operation becomes critical—broadcast infrastructure may be damaged or non-functional, requiring improvised or salvaged equipment.</p>
+<p><strong>Communication Methods &amp; Their Roles:</strong></p>
+<ul>
+<li><strong>Radio (HF/VHF/UHF):</strong> Long-distance resilient communication; depends on ionosphere (HF) or line-of-sight (VHF/UHF). Requires license in most countries but extremely valuable for emergency coordination.</li>
+<li><strong>Morse code (CW):</strong> Ultra-reliable narrow-band transmission; tolerates poor signal conditions; requires operator training.</li>
+<li><strong>Optical signaling:</strong> Mirror flashes, signal flags (no power required, line-of-sight only, limited range).</li>
+<li><strong>PA systems:</strong> Community announcements; can be acoustic (no electricity) or electronic (requires power but reaches entire settlement).</li>
+<li><strong>Telephone networks:</strong> Legacy wired systems resilient to power loss (powered by central office); cellular networks fragile (dependent on continuous grid power and infrastructure).</li>
+<li><strong>Telegraph:</strong> Discrete on/off signals encoding Morse code via copper wire; range 10-100 miles per station (unlimited with relays); requires only 6-12V battery per station.</li>
+<li><strong>Telephone (wired):</strong> Continuous analog voice signals over copper wire; range 1-10 miles direct (20-100 miles with amplifiers); requires 6-12V battery plus hand-crank magneto for ringing.</li>
+</ul>
+<p><strong>Practical Range &amp; Power:</strong></p>
+<ul>
+<li>HF radio: 500+ km per hop (ionospheric bounce), 1-100W power typical</li>
+<li>VHF radio: 10-100 km line-of-sight, 5-50W typical</li>
+<li>UHF radio: 5-50 km, higher frequency loss, 1-25W typical</li>
+<li>Morse code: 3-5× greater effective range than voice at same power</li>
+<li>Optical flash: 10-50 km (daytime limited)</li>
+</ul>
+<div class="info-box">
+<p><strong>Why radio matters in collapse scenarios:</strong> Grid-dependent cell networks fail completely without power. Radio propagates without infrastructure—it needs only power source and antenna, making it the most resilient long-distance communication technology.</p>
+</div>
+</section>
+<section id="wired-communications">
+<h2>Wired Communication Systems: Telegraph &amp; Telephone</h2>
+<p><svg aria-label="Telegraph, Telephone &amp; Wired Communication diagram 1" viewBox="0 0 600 300" width="100%" xmlns="http://www.w3.org/2000/svg"><rect fill="#0d1117" height="300" width="600"></rect><text fill="#79c0ff" font-size="18" font-weight="bold" text-anchor="middle" x="300" y="25"> Basic Telegraph Circuit </text><rect fill="none" height="80" stroke="#238636" stroke-width="2" width="40" x="50" y="100"></rect><line stroke="#238636" stroke-width="3" x1="55" x2="85" y1="110" y2="110"></line><line stroke="#238636" stroke-width="2" x1="60" x2="80" y1="125" y2="125"></line><text fill="#c9d1d9" font-size="12" text-anchor="middle" x="70" y="200"> Battery </text><text fill="#8b949e" font-size="10" text-anchor="middle" x="70" y="215"> + / - </text><line stroke="#a371f7" stroke-width="2" x1="90" x2="150" y1="110" y2="110"></line><rect fill="none" height="30" rx="4" stroke="#79c0ff" stroke-width="2" width="70" x="150" y="95"></rect><text fill="#79c0ff" font-size="12" text-anchor="middle" x="185" y="115"> Key </text><circle cx="195" cy="110" fill="#238636" r="3"></circle><line stroke="#a371f7" stroke-width="2" x1="220" x2="300" y1="110" y2="110"></line><circle cx="350" cy="110" fill="none" r="25" stroke="#79c0ff" stroke-width="2"></circle><ellipse cx="350" cy="110" fill="none" rx="15" ry="20" stroke="#79c0ff" stroke-width="1"></ellipse><text fill="#79c0ff" font-size="12" text-anchor="middle" x="350" y="115"> Coil </text><line stroke="#a371f7" stroke-width="2" x1="375" x2="450" y1="110" y2="110"></line><line stroke="#a371f7" stroke-width="2" x1="450" x2="450" y1="110" y2="200"></line><line stroke="#a371f7" stroke-width="2" x1="440" x2="460" y1="200" y2="200"></line><line stroke="#a371f7" stroke-width="2" x1="437" x2="463" y1="210" y2="210"></line><line stroke="#a371f7" stroke-width="2" x1="434" x2="466" y1="220" y2="220"></line><text fill="#8b949e" font-size="12" x="480" y="210"> Ground </text><line stroke="#a371f7" stroke-width="2" x1="450" x2="450" y1="230" y2="260"></line><line stroke="#a371f7" stroke-width="2" x1="450" x2="70" y1="260" y2="260"></line><line stroke="#a371f7" stroke-width="2" x1="70" x2="70" y1="260" y2="180"></line><text fill="#8b949e" font-size="11" x="180" y="80"> Switch opens/closes </text><text fill="#8b949e" font-size="11" x="300" y="80"> Signal device </text></svg></p>
+<p><svg aria-label="Telegraph, Telephone &amp; Wired Communication diagram 2" viewBox="0 0 500 350" width="100%" xmlns="http://www.w3.org/2000/svg"><rect fill="#0d1117" height="350" width="500"></rect><text fill="#79c0ff" font-size="18" font-weight="bold" text-anchor="middle" x="250" y="25"> Carbon Granule Microphone Cross-Section </text><rect fill="none" height="120" rx="4" stroke="#79c0ff" stroke-width="2" width="50" x="80" y="80"></rect><text fill="#8b949e" font-size="11" text-anchor="middle" x="105" y="225"> Tin can </text><text fill="#8b949e" font-size="10" text-anchor="middle" x="105" y="240"> (case) </text><rect fill="none" height="90" stroke="#238636" stroke-width="2" width="10" x="75" y="95"></rect><path d="M 75 140 Q 70 140 70 145 Q 70 150 75 150" fill="none" stroke="#238636" stroke-width="2"></path><text fill="#8b949e" font-size="11" x="50" y="145"> Thin metal </text><text fill="#8b949e" font-size="11" x="50" y="160"> diaphragm </text><circle cx="120" cy="110" fill="#a371f7" opacity="0.6" r="3"></circle><circle cx="130" cy="115" fill="#a371f7" opacity="0.6" r="3"></circle><circle cx="115" cy="125" fill="#a371f7" opacity="0.6" r="3"></circle><circle cx="125" cy="130" fill="#a371f7" opacity="0.6" r="3"></circle><circle cx="110" cy="135" fill="#a371f7" opacity="0.6" r="3"></circle><circle cx="130" cy="140" fill="#a371f7" opacity="0.6" r="3"></circle><circle cx="120" cy="150" fill="#a371f7" opacity="0.6" r="3"></circle><circle cx="115" cy="160" fill="#a371f7" opacity="0.6" r="3"></circle><rect fill="none" height="80" stroke="#a371f7" stroke-dasharray="5,5" stroke-width="1" width="35" x="110" y="100"></rect><text fill="#8b949e" font-size="11" x="178" y="145"> Carbon granules </text><text fill="#8b949e" font-size="10" x="178" y="160"> (variable resistance) </text><rect fill="none" height="120" rx="4" stroke="#79c0ff" stroke-width="2" width="50" x="150" y="80"></rect><text fill="#8b949e" font-size="11" text-anchor="middle" x="175" y="225"> Tin can </text><text fill="#8b949e" font-size="10" text-anchor="middle" x="175" y="240"> (back) </text><rect fill="none" height="90" stroke="#238636" stroke-width="2" width="10" x="195" y="95"></rect><text fill="#8b949e" font-size="11" x="220" y="145"> Contact </text><text fill="#8b949e" font-size="11" x="220" y="160"> plate </text><path d="M 70 70 Q 80 60 90 70" fill="none" stroke="#79c0ff" stroke-width="1.5"></path><path d="M 60 70 Q 65 55 75 70" fill="none" opacity="0.5" stroke="#79c0ff" stroke-width="1.5"></path><text fill="#8b949e" font-size="11" x="40" y="75"> Sound </text><text fill="#8b949e" font-size="11" x="40" y="88"> waves </text><line stroke="#79c0ff" stroke-width="2" x1="80" x2="60" y1="210" y2="240"></line><line stroke="#79c0ff" stroke-width="2" x1="200" x2="220" y1="210" y2="240"></line><circle cx="60" cy="245" fill="none" r="4" stroke="#79c0ff" stroke-width="2"></circle><circle cx="220" cy="245" fill="none" r="4" stroke="#79c0ff" stroke-width="2"></circle><text fill="#8b949e" font-size="10" text-anchor="middle" x="60" y="270"> To circuit </text><text fill="#8b949e" font-size="10" text-anchor="middle" x="220" y="270"> From battery </text><rect fill="#1c2128" height="50" rx="4" stroke="#30363d" stroke-width="1" width="420" x="40" y="290"></rect><text fill="#c9d1d9" font-size="12" text-anchor="middle" x="250" y="310"><tspan dy="0" x="250"> Sound vibrates diaphragm → compresses carbon granules → resistance drops → current increases </tspan></text><text fill="#c9d1d9" font-size="12" text-anchor="middle" x="250" y="330"> Silence releases granules → resistance rises → current decreases. Voice modulates DC current. </text></svg></p>
+<p>Wired electrical communication--telegraph and telephone--represents the first technology that allows rapid exchange of information across distances beyond shouting range. Unlike runners or horseback riders, electrical signals travel at the speed of light through copper wire, enabling coordination of commerce, defense, and communities across continents. Both systems depend on identical infrastructure: copper wire, insulators, poles, and ground returns.</p>
+<div class="warning">
+<p>Telegraph and telephone systems involve electrical circuits that can store dangerous voltages. Battery-powered telegraph systems are low-voltage (safe), but large installation telegraph batteries can deliver high current causing electrical burns. Telephone magnetos (hand-crank ringers) generate significant AC voltage (50-100V) that can cause shock. Never work on energized telegraph/telephone circuits. Insulate all connections. Always discharge capacitors before handling telephone equipment.</p>
+</div>
+<h3>How Wired Electrical Signals Work</h3>
+<p>All wired communication depends on a complete circuit: electrons flow from a battery's positive terminal, through the circuit (switch, wire, receiver), and back to the battery's negative terminal. No current flows unless the circuit is complete.</p>
+<p><strong>The basic telegraph circuit:</strong> Battery (+) -&gt; Key (switch) -&gt; Long-distance wire -&gt; Sounder electromagnet -&gt; Return wire -&gt; Battery (-)</p>
+<p>When the key is pressed (circuit completes), current flows through the sounder's coil, creating a magnetic field that pulls an iron armature. The armature strikes a metal piece, producing a &quot;click.&quot; Release the key (circuit opens), current stops, spring pushes the armature back--&quot;clack.&quot; Morse code is created by varying the timing of clicks.</p>
+<p><strong>The basic telephone circuit:</strong> Battery (+) -&gt; Microphone -&gt; Long-distance wire -&gt; Earpiece -&gt; Return wire -&gt; Battery (-)</p>
+<p>Unlike telegraph's binary on/off, telephone modulates the current continuously. The microphone varies electrical resistance in response to sound waves. This modulation travels down the wire and drives an electromagnet in the earpiece, which vibrates to recreate the original sound.</p>
+<h3>Signal Strength and Distance</h3>
+<p>Electrical current flowing through wire encounters resistance proportional to wire length and inversely proportional to wire thickness. Over distance, the signal weakens.</p>
+<p><strong>Resistance in copper wire:</strong></p>
+<ul>
+<li>#14 AWG (thin): ~2.5 ohms per 1000 feet</li>
+<li>#12 AWG (medium): ~1.6 ohms per 1000 feet</li>
+<li>#10 AWG (thick): ~1 ohm per 1000 feet</li>
+</ul>
+<p><strong>Resistance in steel wire:</strong></p>
+<ul>
+<li>#12 AWG: ~6 ohms per 1000 feet (4x worse than copper)</li>
+<li>#10 AWG: ~4 ohms per 1000 feet</li>
+</ul>
+<div class="tip">
+<p>For every doubling of wire gauge (e.g., #18 to #16 to #14), resistance is roughly halved. Thick wire is the first choice for extending range.</p>
+</div>
+<h3>Telegraph Equipment</h3>
+<p><strong>Telegraph Key:</strong> A manually operated switch tapped in Morse code patterns. Contact points should be copper, silver-plated, or hard brass with 1/4&quot; to 3/8&quot; gap when open. Salvageable from old telephone equipment, radio transmitters, or vintage musical instrument switches. Can be improvised from steel spring strip, copper coins, and a wooden base.</p>
+<p><strong>Sounder/Buzzer:</strong> An electromagnet that produces audible clicks. Coil: 100-400 turns of #20-#24 magnet wire around iron bolt. Armature gap: 1/8&quot; to 1/4&quot; (critical for response). Operating voltage: 4-12V. Current draw: 0.1-0.5 amps. Salvageable from old door buzzers, electric bells, or relay coils.</p>
+<p><strong>Carbon Granule Microphone:</strong> Converts voice vibrations into electrical current changes. Carbon granules (salvaged from worn-out dry-cell batteries) have pressure-sensitive resistance. Diaphragm: thin metal disk (~0.5mm thick). Frequency response: 100-3000 Hz (adequate for speech).</p>
+<p><strong>Earpiece:</strong> A small electromagnet with a diaphragm. Permanent magnet (salvaged from old speaker or motor), coil of 100-300 turns of #24-#28 magnet wire. Diaphragm: thin iron disk (0.3-0.5mm), mounted 1/32&quot; from magnet face. Frequency response: 200-3000 Hz.</p>
+<h3>Wire and Insulators</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Gauge</th>
+<th>Resistance/1000 ft</th>
+<th>Cost</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Copper</td>
+<td>#12</td>
+<td>1.6 ohm</td>
+<td>High</td>
+<td>Long distances, critical lines</td>
+</tr>
+<tr>
+<td>Copper</td>
+<td>#14</td>
+<td>2.5 ohm</td>
+<td>High</td>
+<td>Medium distances (2-5 miles)</td>
+</tr>
+<tr>
+<td>Steel</td>
+<td>#10</td>
+<td>4 ohm</td>
+<td>Low</td>
+<td>Short distances with high voltage</td>
+</tr>
+<tr>
+<td>Steel</td>
+<td>#12</td>
+<td>6 ohm</td>
+<td>Very low</td>
+<td>Temporary lines, short range</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Insulator materials (in order of preference):</strong></p>
+<ol>
+<li>Glass or ceramic--ideal, nearly infinite resistance, weather-proof</li>
+<li>Porcelain--good, durable, resists temperature swings</li>
+<li>Hard plastic--adequate, may degrade in UV light</li>
+<li>Dry hardwood (oak)--temporary only, rots over months</li>
+<li>Paper or cloth--never use (conducts when wet)</li>
+</ol>
+<h3>Two-Station Telegraph Setup</h3>
+<ol>
+<li><strong>Select stations:</strong> Choose two locations with clear line-of-sight or along roads. Ideal spacing: 1-10 miles.</li>
+<li><strong>Install poles:</strong> Drive wooden poles 20-30 feet tall, 100-300 feet apart, 3-4 feet into the ground. Guy-wire corner and exposed poles heavily.</li>
+<li><strong>Mount insulators:</strong> Attach glass or ceramic insulators to poles with metal rings.</li>
+<li><strong>Run wire:</strong> Unroll copper or steel wire, securing with binding wire through each insulator. Leave slight slack for wind and temperature expansion.</li>
+<li><strong>Ground system:</strong> Drive a copper rod 6-8 feet into moist earth at each station (near a spring or stream is ideal).</li>
+<li><strong>Station equipment:</strong> Mount telegraph key and sounder on a wooden shelf inside a weatherproof shelter. Connect battery in series with the key-sounder circuit.</li>
+<li><strong>Test:</strong> Start with short range (100-200 feet of wire). Extend gradually, testing at each point.</li>
+</ol>
+<h3>Two-Station Telephone Setup</h3>
+<p>Each station needs a microphone (for speaking) and earpiece (for hearing). Two-wire configuration uses 1 pair of conductors (adequate for 1-5 miles). Four-wire uses two separate pairs (better for distances &gt;5 miles). Each station requires its own battery in series with the local microphone. Optional magneto ringer at each station for calling attention.</p>
+<p><strong>Wiring diagram for 2-wire telephone:</strong></p>
+<pre><code>Station A                                    Station B
+Battery (+)                                  Battery (+)
+   |                                            |
+Microphone --- Long-distance wire --- Earpiece
+   |                                            |
+Earpiece --- Return wire (or ground) --- Microphone
+   |                                            |
+Battery (-)                                  Battery (-)
+</code></pre>
+<h3>Multi-Station Switchboard Network</h3>
+<p>For 3+ stations, a switchboard at a central office connects any two lines:</p>
+<ol>
+<li><strong>Central office:</strong> Locate at a central community position (town hall, general store).</li>
+<li><strong>Jack panel:</strong> One jack per station on the switchboard.</li>
+<li><strong>Patch cords:</strong> Flexible cords with plugs. Inserting into two jacks connects those stations.</li>
+<li><strong>Operator:</strong> Trained person who answers the ringer signal, determines routing, and inserts patch cords.</li>
+<li><strong>Magneto ringers:</strong> Each remote station has a hand-crank magneto to alert the central operator.</li>
+</ol>
+<div class="info-box">
+<p>Early switchboards (1880s) were fully manual. Operators wore headsets, listened to calls, and controlled connections via patch cords. This job created one of the first mass-employment opportunities for women in industrialized countries.</p>
+</div>
+<h3>Party Line Etiquette</h3>
+<p>On a party line (multiple stations sharing one line), everyone can hear everyone else's calls:</p>
+<ol>
+<li><strong>Check line before cranking:</strong> Listen on your earpiece first. If someone is using the line, wait.</li>
+<li><strong>Keep calls brief:</strong> Other stations are waiting.</li>
+<li><strong>Privacy:</strong> Don't listen to other parties' conversations.</li>
+<li><strong>Emergency priority:</strong> If someone cranks the emergency signal (continuous crank), all other stations disconnect immediately.</li>
+</ol>
+<h3>Wired Communication Range</h3>
+<p><strong>Telegraph vs. Telephone range:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Telegraph</th>
+<th>Telephone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct, 1 mile</td>
+<td>Excellent</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Direct, 5 miles</td>
+<td>Good</td>
+<td>Acceptable</td>
+</tr>
+<tr>
+<td>Direct, 10 miles</td>
+<td>Weak but readable</td>
+<td>Barely audible</td>
+</tr>
+<tr>
+<td>With relay station</td>
+<td>No distance limit</td>
+<td>Requires amplifier</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Factors affecting range:</strong></p>
+<ul>
+<li><strong>Wire:</strong> Copper #12 wire: ~5 miles at 6V. Copper #10: ~10 miles at 6V. Steel #12: ~2 miles at 6V.</li>
+<li><strong>Battery:</strong> 12V battery gives ~1.5x range over 6V. Beyond 20V, limited benefit.</li>
+<li><strong>Ground quality:</strong> Wet soil near water: &lt;1 ohm resistance (~10% better range). Dry sandy soil: 10-100+ ohms (~30-50% worse range).</li>
+<li><strong>Atmospheric:</strong> Fog/humidity degrades signal 5-10% via insulator moisture. Thunderstorms induce noise.</li>
+</ul>
+<div class="warning">
+<p>Beyond 50 miles direct telephone range, signal becomes unrecognizable due to attenuation and noise. Relay stations with human repeaters (telegraph only) or vacuum tube amplifiers (telephone) become necessary for reliable communication.</p>
+</div>
+<h3>Wired System Troubleshooting</h3>
+<p><strong>No signal:</strong> Check battery (test with light bulb), connections (tug each wire), key/microphone operation, wire continuity (walk the line or use multimeter), and ground faults. Start at the local station and isolate systematically.</p>
+<p><strong>Weak or intermittent signal:</strong> Root causes include battery aging (voltage sags &gt;20% under load), corroded contacts (clean with fine sandpaper), wet insulators (replace cracked ones), ground faults (test wire-to-ground resistance; should be &gt;1 megohm), and loose insulation (wrap with electrical tape or splice with solder).</p>
+<p><strong>Static, noise, or interference:</strong> Loose connections (solder dry joints), corroded contact surfaces, ground loops (ensure single ground connection), nearby AC power lines (route wires 6-8 feet away), and atmospheric electricity (install spark gap at each station).</p>
+<h3>Wired Equipment Maintenance</h3>
+<p><strong>Weekly:</strong> Test local equipment with short test wire, check battery voltage, listen for unusual noise.</p>
+<p><strong>Monthly:</strong> Walk the entire line looking for damage, test ground rod resistance (&lt;1 ohm), clean key/sounder contacts with fine sandpaper, test wire continuity.</p>
+<p><strong>Seasonally:</strong> Check pole anchoring and guy-wires, clean insulators of dirt and bird droppings, inspect for tree branches touching wire, test during rain/fog conditions.</p>
+<p><strong>Equipment care:</strong> Clean telegraph key contact surfaces monthly with 180-grit sandpaper. Adjust sounder armature gap to 1/4&quot; for best response. Never tap or drop microphone (diaphragm can dent). Keep earpiece magnets away from steel tools and heat above 100C. Inspect poles for rot at ground level. Check ground rod connections and measure resistance monthly.</p>
+<div class="tip">
+<p>A well-maintained telegraph/telephone system can operate reliably for decades. Preventative maintenance is much cheaper than emergency repairs. Set a regular schedule and stick to it.</p>
+</div>
+<h3>Wire Security Concerns</h3>
+<p>Telegraph and telephone signals travel along physical wires that can be intercepted. Anyone with access to the wire can connect a receiver and listen in. Someone could cut the wire and insert a repeater to copy all messages. Operators with switchboard access could listen to any call.</p>
+<p><strong>Physical security:</strong> Locate the telegraph/telephone office in a locked, guarded building. Run wires through private property only. Install lightning protection but also physical barriers to prevent tampering.</p>
+<p><strong>Morse code encryption:</strong> Raw Morse code is readable by anyone with a sounder. Use substitution ciphers (vulnerable to frequency analysis after 30+ words) or one-time pads (mathematically unbreakable if pad is truly random and never reused). See the <a href="cryptography-codes.html">Cryptography &amp; Codes</a> guide for detailed encryption methods.</p>
+<h3>Morse Code Quick Reference</h3>
+<table>
+<thead>
+<tr>
+<th>Letter</th>
+<th>Code</th>
+<th>Letter</th>
+<th>Code</th>
+<th>Number</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>. --</td>
+<td>N</td>
+<td>-- .</td>
+<td>0</td>
+<td>-- -- -- -- --</td>
+</tr>
+<tr>
+<td>B</td>
+<td>-- . . .</td>
+<td>O</td>
+<td>-- -- --</td>
+<td>1</td>
+<td>. -- -- -- --</td>
+</tr>
+<tr>
+<td>C</td>
+<td>-- . -- .</td>
+<td>P</td>
+<td>. -- -- .</td>
+<td>2</td>
+<td>. . -- -- --</td>
+</tr>
+<tr>
+<td>D</td>
+<td>-- . .</td>
+<td>Q</td>
+<td>-- -- . --</td>
+<td>3</td>
+<td>. . . -- --</td>
+</tr>
+<tr>
+<td>E</td>
+<td>.</td>
+<td>R</td>
+<td>. -- .</td>
+<td>4</td>
+<td>. . . . --</td>
+</tr>
+<tr>
+<td>F</td>
+<td>. . -- .</td>
+<td>S</td>
+<td>. . .</td>
+<td>5</td>
+<td>. . . . .</td>
+</tr>
+<tr>
+<td>G</td>
+<td>-- -- .</td>
+<td>T</td>
+<td>--</td>
+<td>6</td>
+<td>-- . . . .</td>
+</tr>
+<tr>
+<td>H</td>
+<td>. . . .</td>
+<td>U</td>
+<td>. . --</td>
+<td>7</td>
+<td>-- -- . . .</td>
+</tr>
+<tr>
+<td>I</td>
+<td>. .</td>
+<td>V</td>
+<td>. . . --</td>
+<td>8</td>
+<td>-- -- -- . .</td>
+</tr>
+<tr>
+<td>J</td>
+<td>. -- -- --</td>
+<td>W</td>
+<td>. -- --</td>
+<td>9</td>
+<td>-- -- -- -- .</td>
+</tr>
+<tr>
+<td>K</td>
+<td>-- . --</td>
+<td>X</td>
+<td>-- . . --</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>L</td>
+<td>. -- . .</td>
+<td>Y</td>
+<td>-- . -- --</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>M</td>
+<td>-- --</td>
+<td>Z</td>
+<td>-- -- . .</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Wire Performance Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Wire Type</th>
+<th>Gauge</th>
+<th>Resistance per 1000 ft</th>
+<th>1-Mile Range at 6V</th>
+<th>Cost Factor</th>
+<th>Best Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Copper</td>
+<td>#10</td>
+<td>1.0 ohm</td>
+<td>Excellent (10+ mi)</td>
+<td>High</td>
+<td>Long trunk lines</td>
+</tr>
+<tr>
+<td>Copper</td>
+<td>#12</td>
+<td>1.6 ohm</td>
+<td>Excellent (8-10 mi)</td>
+<td>Medium</td>
+<td>Standard installation</td>
+</tr>
+<tr>
+<td>Copper</td>
+<td>#14</td>
+<td>2.5 ohm</td>
+<td>Good (5-8 mi)</td>
+<td>Medium</td>
+<td>Short to medium</td>
+</tr>
+<tr>
+<td>Steel</td>
+<td>#10</td>
+<td>4 ohm</td>
+<td>Good (5 mi at 12V)</td>
+<td>Very Low</td>
+<td>Budget short range</td>
+</tr>
+<tr>
+<td>Steel</td>
+<td>#12</td>
+<td>6 ohm</td>
+<td>Fair (2-3 mi at 6V)</td>
+<td>Very Low</td>
+<td>Temporary lines only</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="radio-fundamentals">
+<h2>Radio Fundamentals</h2>
+<h3>Electromagnetic Radiation</h3>
+<p>Radio waves: oscillating electric and magnetic fields perpendicular to propagation direction. Frequency f and wavelength λ related: c = f × λ where c = 299,792,458 m/s (speed of light). Examples: 1 MHz radio → 300m wavelength. 100 MHz FM → 3m wavelength. 2.4 GHz WiFi → 12.5 cm wavelength. Higher frequency = shorter wavelength = smaller antenna = higher bandwidth.</p>
+<h3>Amplitude Modulation (AM)</h3>
+<p>Amplitude of carrier wave varied at audio frequency. Audio signal modulates carrier amplitude: A(t) = A₀[1 + m sin(ωₐt)] sin(ωc t) where m is modulation index (0-1), ωₐ is audio frequency, ωc is carrier. Bandwidth = 2 × audio frequency (single sideband 1 × audio). AM 540-1700 kHz band: each station occupies 10 kHz (maximum audio frequency 5 kHz). Susceptible to noise and interference (amplitude fluctuations carry noise).</p>
+<h3>Frequency Modulation (FM)</h3>
+<p>Frequency of carrier varied at audio frequency. Audio modulates frequency: f(t) = fc + Δf sin(ωₐ t) where Δf is frequency deviation (±75 kHz typical for FM broadcast). Bandwidth = 2(Δf + fₐ) = 2(75 + 5) = 160 kHz per station. FM 88-108 MHz band: 100 stations possible. Better noise immunity (frequency variations don't affect amplitude, noise usually amplitude modulation). Wider bandwidth = fewer stations per band but higher audio quality.</p>
+</section>
+<section id="frequency-bands">
+<h2>Frequency Bands &amp; Regulations</h2>
+<h3>Amateur Radio Allocations</h3>
+<p><strong>HF (3-30 MHz):</strong> 160m, 80m, 40m, 20m, 15m, 10m bands. Long-distance communication via ionosphere reflection (skip). Prone to interference, atmospheric noise (especially 160m/80m).</p>
+<p><strong>VHF (30-300 MHz):</strong> 2m, 70cm bands (144-148 MHz, 420-450 MHz). Line-of-sight propagation 10-100 km range typical. Local communication, repeaters.</p>
+<p><strong>UHF (300-3000 MHz):</strong> 23cm, 13cm bands and higher. Very short-range line-of-sight, high bandwidth. Propagation losses significant (path loss = 20 log₁₀(f×d) where f is frequency MHz, d is distance miles).</p>
+<h3>Transmitter Power Limits</h3>
+<p>FCC Amateur Radio: 1500W PEP (peak envelope power) on HF, 1200W on VHF/UHF, less on higher frequencies. Higher power = greater range but more interference potential. Low-power operation (QRP) 5-10W common for emergency communication and portable operation (lower power consumption, smaller battery, lighter equipment).</p>
+<h3>Licensing &amp; Regulations</h3>
+<p>Amateur radio license required in most countries. US FCC Technician class license allows VHF/UHF transmission after written exam. General class adds HF privileges. Requirements: equipment must not radiate outside licensed frequency band (within ±5 ppm accuracy typical). Call sign required, transmitted periodically (every 10 minutes minimum). Fines: $250,000 maximum for violating frequency restrictions or operating without license.</p>
+<div class="warning">
+<p>In genuine post-collapse scenarios (government infrastructure non-functional), licensing becomes moot. However, understanding frequency allocations and protocols prevents unintended interference with remaining organized emergency services.</p>
+</div>
+</section>
+<section id="antenna-design">
+<h2>Antenna Design &amp; Types</h2>
+<h3>Dipole Antenna</h3>
+<p>Simplest antenna: two quarter-wavelength conductors extending opposite directions from feedpoint. Total length ≈ λ/2 (slight shortening factor 0.96 typical). Example: 40m band (7 MHz) dipole = 0.96 × 40/2 = 19.2 meters long. Resonant at design frequency (lowest impedance ~70Ω at feedpoint, easily matched). Radiation pattern: maximum radiation broadside (perpendicular to antenna), minimum (nulls) at ends.</p>
+<p><strong>Construction:</strong> Use #12 copper wire (easily soldered), insulated or bare. Hang horizontally between trees or poles, raise 30-50 feet above ground for best performance. Feedpoint (center junction) connects to 50Ω coaxial cable via connector. For temporary portable dipole, use 20-30 feet of #14 wire, suspend via rope.</p>
+<h3>Monopole Antenna</h3>
+<p>Quarter-wavelength conductor mounted vertical, ground plane below. Radiation pattern: omnidirectional (horizontal). Length = λ/4. Example: 2m VHF band monopole = 0.96 × 2/4 = 0.48 meters (19 inches). Ground plane improves radiation (should be 1-2 wavelengths minimum area). Used in mobile/fixed installations where low profile desired.</p>
+<p><strong>Construction:</strong> Vertical rod (aluminum, copper, or fiberglass), base mounting with radial ground straps (4-8 copper wires extending outward from base). Radials should be as long as antenna height. Vehicle roof acts as excellent ground plane for mobile monopole.</p>
+<h3>Yagi Antenna</h3>
+<p>Directional antenna: driven element (dipole) plus parasitic elements (reflector 5% longer, directors 5% shorter). Gains 7-10 dB (5-10× power increase). Narrow beamwidth 30-50 degrees. Popular for directional communication and long-distance links. Three-element Yagi 3-4 feet long on 2m band (frequency determines size).</p>
+<p><strong>Construction:</strong> Aluminum boom (1-inch diameter), aluminum tubing or rod for elements. Driven element connects to coaxial feed. Spacing: typical 0.2-0.3 wavelengths between elements. Mounting: rotator allows pointing toward desired direction. Excellent for repeater access or weak-signal reception.</p>
+<h3>Parabolic Dish</h3>
+<p>High-gain antenna: small dipole or horn at focus of large reflector. Gain increases with dish size and frequency (proportional to (2πd/λ)² where d is dish diameter). 1-meter dish at 2.4 GHz = 34 dB gain = 2500× power multiplication. Used in microwave links and satellite communications. Very narrow beamwidth requires careful aiming.</p>
+<p><strong>Construction:</strong> Salvage satellite TV dish (C-band or Ku-band). Remove LNB (low-noise block downconverter). Mount small dipole or horn at focus. Achieves extraordinary gain at microwave frequencies. Alignment critical—even 2-3 degree offset reduces signal significantly.</p>
+<div class="tip">
+<p><strong>Antenna optimization:</strong> Height is more valuable than power. A modest 5W transceiver with antenna 50 feet high often outperforms 50W radio at ground level. Elevation advantage overcomes path loss better than raw transmit power.</p>
+</div>
+<!-- SVG-TODO: Antenna radiation patterns for dipole, monopole, and Yagi -->
+</section>
+<section id="transmitters">
+<h2>Transmitter Basics</h2>
+<h3>Oscillator</h3>
+<p>Generates carrier frequency signal. Crystal oscillator most stable: piezoelectric quartz crystal resonates at design frequency (typically 0.001% accuracy). Common frequencies: 1-50 MHz range. Higher frequencies less stable (frequency changes with temperature). Temperature compensation (TXCO): oscillator frequency varies with temperature, automatic correction maintains ±0.5 ppm accuracy.</p>
+<p><strong>Stability requirement:</strong> Frequency must remain constant during transmission to avoid QRM (interference to adjacent channels). 0.1% frequency drift = 50 Hz shift on 50 kHz channel (acceptable). 1% drift = 500 Hz shift (objectionable, interferes with adjacent channel).</p>
+<h3>Modulation Stage</h3>
+<p>Modulator mixes audio signal with carrier. Amplitude modulation: audio controls amplifier bias/gain. Frequency modulation: audio-controlled oscillator frequency varies carrier. Phase modulation: audio varies oscillator phase. Resulting signal: carrier frequency ± (modulation frequency × deviation factor). Output typically 10-100 mW, must be amplified.</p>
+<h3>Power Amplifier</h3>
+<p>Amplifier increases modulated signal to desired transmit power. Class A amplifier: linear (output proportional to input), good for SSB modulation. Efficiency ~50%. Class C amplifier: highly efficient (80-90%) but non-linear (unsuitable for SSB). Good for FM/ASK modulation. Requires efficient heat sinking to dissipate wasted power: 100W transmitter, 90% efficiency = 10W waste heat (must dissipate via heatsink).</p>
+<h3>Output Stage &amp; Impedance Matching</h3>
+<p>Final amplifier stage feeds antenna. Low-impedance output 50Ω typically (matches transmission line and antenna). Impedance matching transformer or tuner ensures maximum power transfer (minimum reflection). Reflected power from antenna mismatch causes heat in transmission line and efficiency loss. SWR (standing wave ratio) &lt;1.5:1 acceptable, &lt;1.2:1 excellent.</p>
+<p><strong>SWR measurement:</strong> Use analog or digital SWR meter in transmission line. Place meter between amplifier output and antenna. If SWR &gt;2:1, antenna is severely mismatched—adjust length, feedpoint location, or add matching network.</p>
+<div class="warning">
+<p>Mismatched antenna with SWR &gt;3:1 on high-power amplifier causes coaxial cable heating. Severe mismatch can melt cable insulation and create fire hazard. Always verify SWR &lt;2:1 before high-power operation.</p>
+</div>
+</section>
+<section id="receivers">
+<h2>Receiver Design</h2>
+<h3>Tuned RF Amplifier</h3>
+<p>Receives weak antenna signal (µV range typical). RF amplifier with tuned input filters desired frequency, rejects out-of-band interference. Gain 10-20 dB (10-100×). Noise figure 2-5 dB (determines receiver sensitivity). Low-noise amplifier (LNA) essential for weak-signal reception: noise figure &lt;1 dB achievable with careful design.</p>
+<p><strong>Noise figure explained:</strong> A receiver with noise figure 6 dB has internal noise equal to 6 dB amplification of input noise. Weak signals get amplified equally with noise, reducing signal-to-noise ratio. Lower noise figure = better weak-signal reception. Critical for CW (Morse code) reception where signal may be barely audible.</p>
+<h3>Superheterodyne Receiver</h3>
+<p>Received signal mixed (frequency conversion) with local oscillator. Intermediate frequency (IF) = Receive frequency - Local oscillator frequency (or + for upper sideband). Example: 146 MHz signal mixed with 145 MHz local oscillator = 1 MHz IF. All received stations converted to same IF, then amplified and filtered (IF filter). Then demodulated to recover modulation (audio).</p>
+<h3>Demodulation</h3>
+<p><strong>AM demodulation:</strong> Diode detector or synchronous detector. Simple diode: rectifies AM signal, capacitor filter removes RF ripple, leaving audio. Synchronous: multiplies received signal by recovered carrier frequency, more selective (better rejection of adjacent stations).</p>
+<p><strong>FM demodulation:</strong> Frequency discriminator or phase-locked loop (PLL). Discriminator: frequency-sensitive filter converts frequency deviation to amplitude, demodulates like AM. PLL: locks oscillator to incoming frequency, control voltage output is demodulated audio. PLL more robust to interference.</p>
+<h3>Automatic Gain Control (AGC)</h3>
+<p>Receiver gain varies with signal strength (strong signals overload, weak signals inaudible). AGC circuit adjusts gain automatically: strong signal → reduce gain, weak signal → increase gain. Maintains relatively constant audio output regardless of received signal strength. Attack time (fast gain reduction) 100 ms, decay time (slow gain recovery) 1-2 seconds. AGC prevents receiver saturation and improves dynamic range.</p>
+<div class="tip">
+<p><strong>Manual gain override:</strong> For weak-signal CW reception, disable AGC and manually set RF/AF gain. AGC's attack time causes fading—manual control allows operator to compensate for QSB (signal fading).</p>
+</div>
+</section>
+<section id="morse-code">
+<h2>Morse Code &amp; CW</h2>
+<h3>Morse Code Basics</h3>
+<p>Dots (dit) and dashes (dah) represent letters/numbers. Timing: dot duration = 1 unit, dash = 3 units, space between elements = 1 unit, space between letters = 3 units, space between words = 7 units. Speed measured in words-per-minute (WPM): PARIS standard word (50 dots) at 1 WPM = 1.2 seconds per word. Typical speeds: 5-25 WPM novice, 25-40 WPM experienced operator.</p>
+<p><strong>Common letters:</strong> E (•), T (-), A (•-), N (-•), I (••), O (---), S (•••), H (••••), SOS distress (•••---•••).</p>
+<h3>CW Transmission</h3>
+<p>Continuous wave: carrier frequency modulated on/off at Morse code rate. No amplitude or frequency modulation, just on/off keying. Requires: oscillator, keyer (electronic circuit switching carrier on/off), power amplifier. Very simple transmitter (can be hand-built in hours). Requires training to send/receive (motor skill, hearing interpretation).</p>
+<p><strong>Hand-keying vs electronic keyer:</strong> Hand-key (straight key) produces variable timing, less precise but works with simple equipment. Electronic keyer generates perfect dot/dash timing, easier on wrist, more consistent speed.</p>
+<h3>CW Reception</h3>
+<p>Received CW signal very weak (µV typically). RF amplifier must achieve high gain (20-30 dB minimum) to pull signal out of noise. Tuned receiver (narrow filter, &lt;100 Hz bandwidth) rejects interference outside frequency. Audio oscillator (beat frequency oscillator, BFO) shifted 700 Hz from receiver frequency produces audio tone audible to operator. Operator listens to audio tone pattern, decodes Morse code.</p>
+<h3>Advantages of CW</h3>
+<p>Narrow bandwidth (100-300 Hz vs 2.7 kHz for SSB voice = 27× less spectral space). CW signal 3 dB stronger than voice for same transmit power (because CW is continuous during transmission, voice has 50% average power due to speech pauses). Result: CW effective range 5-10× greater than voice at same power. CW immunity to interference superior: pulse noise causes minimal disruption to Morse code reception (operator can tolerate 30% noise corruption).</p>
+<p><strong>Survival advantage:</strong> CW requires no microphone, preamp, or modulator—just oscillator, keyer, and amplifier. Hand-cranked generator can power CW transmitter. Voice transmitter requires stable power (battery or solar), sensitive audio circuitry.</p>
+<div class="info-box">
+<p><strong>CW Effective Range Table:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Transmit Power</th>
+<th>Voice Range (line-of-sight)</th>
+<th>CW Range</th>
+<th>Conditions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5W</td>
+<td>10-20 km</td>
+<td>50-100 km</td>
+<td>2m band, clear terrain</td>
+</tr>
+<tr>
+<td>20W</td>
+<td>20-40 km</td>
+<td>100-200 km</td>
+<td>2m band, repeater access</td>
+</tr>
+<tr>
+<td>100W HF</td>
+<td>500+ km</td>
+<td>2000+ km</td>
+<td>Skip propagation possible</td>
+</tr>
+<tr>
+<td>1W</td>
+<td>5-10 km direct</td>
+<td>30-50 km</td>
+<td>2m portable, hilltop antenna</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="signal-propagation">
+<h2>Signal Propagation Modes</h2>
+<h3>Ground Wave</h3>
+<p>Signal follows Earth's curvature, diffraction around terrain. Most effective at low frequencies (LF, MF, HF). Range depends on frequency and power: 1 MHz at 1 kW ground wave reaches ~100 km. 100 MHz (VHF) ground wave ~10 km only. Ground conductivity significant: seawater excellent (extends range), sand poor (reduces range). Used for maritime communication and long-distance broadcasting at HF/MF.</p>
+<h3>Ionospheric Reflection (Skip)</h3>
+<p>Radio waves at HF frequencies (3-30 MHz) refracted by ionosphere (charged particle layers 80-400 km altitude). Rays bounce off ionosphere, returning to Earth, reflecting off ground, bouncing back to ionosphere, repeated globally. Range: 500-3000 km per hop (one bounce). Multiple hops enable worldwide communication at low power.</p>
+<h3>Ionosphere Variability</h3>
+<p>Ionosphere strength varies: daily (weakest at night), seasonally (weakest in summer), and with 11-year solar cycle. Solar flares increase ionospheric density (extends range, improves propagation). Sunspots increase frequency of flares. Current solar cycle (2024): cycle 25, approaching peak (high sunspot activity). Best HF conditions last 1-2 years around solar maximum.</p>
+<h3>Tropospheric Propagation</h3>
+<p>VHF/UHF signals refracted by troposphere (weather layer, 0-15 km altitude). Under normal conditions: line-of-sight only (horizon limit). Temperature inversion (warm layer above cold layer) causes ducting: signals guided around Earth's curvature, extending range 300-500 km. Occurs after sunset during stable atmospheric conditions. Rare but dramatic improvement enables long-distance 2m band contacts.</p>
+<div class="tip">
+<p><strong>Predicting skip on HF:</strong> Check solar flux index (SFI) and K-index. SFI &gt;100 indicates good skip propagation. K-index &lt;4 means low geomagnetic storm activity (favorable). Check Space Weather Prediction Center (NOAA) before attempting long-distance HF contacts.</p>
+</div>
+<!-- SVG-TODO: Ionosphere refraction diagram showing skip zones and dead zones -->
+</section>
+<section id="repeaters">
+<h2>Repeater Stations</h2>
+<h3>Repeater Function</h3>
+<p>Fixed station receiving weak VHF/UHF signal from mobile, retransmitting amplified signal on different frequency. Extends communication range: mobile-to-mobile direct range 10-50 km, mobile-to-repeater 50 km, repeater-to-mobile 50 km = total 100 km. Repeater typically located on high hill (maximizes line-of-sight coverage). Operates 24/7, shared community resource.</p>
+<h3>Duplex Operation</h3>
+<p>Repeater transmits and receives simultaneously on different frequencies (duplex spacing). Example: 146.52 MHz input, 146.92 MHz output (±0.6 MHz offset, standard for 2m band). Mobile transmits on input frequency, listens on output. Requires simultaneous Tx/Rx equipment, duplexer filter separating Tx/Rx lines (very high isolation &gt;80 dB required to prevent Tx energy destroying receiver).</p>
+<h3>Repeater Linking</h3>
+<p>Multiple repeaters linked via UHF microwave link or internet (VOIP gateway). Transmit on one repeater, receive on distant linked repeater. Enables regional/national communication networks. Internet linking allows worldwide communication using local repeater (DeStar, Echolink systems). Reduces need for long-distance HF propagation.</p>
+<h3>Community Repeater Setup (Survival Context)</h3>
+<p>Post-collapse community may establish local repeater from salvaged equipment (two transceiver units, duplexer, antenna system, power source). Location on high point (water tower, hill, tall building) critical—extends coverage to entire settlement. Requires backup power (solar panel, battery bank, or hand-cranked generator). Antenna system: separated transmit/receive antennas 10+ feet apart, or single antenna with high-isolation duplexer.</p>
+</section>
+<section id="telephone-networks">
+<h2>Telephone Network Architecture (Modern)</h2>
+<p>For building basic telegraph and telephone systems from scratch, see the <a href="#wired-communications">Wired Communication Systems</a> section above. This section covers larger-scale telephone network infrastructure.</p>
+<h3>POTS Network Architecture</h3>
+<p><strong>Subscriber line (loop):</strong> Copper pair from customer phone to local exchange. Distance limit ~5 km (signal attenuation). Carries: (1) DC current for dialing (10 pulses/second for rotary, 1200/2200 Hz DTMF tones for touch-tone). (2) AC audio (300-3400 Hz voice bandwidth). (3) Ringing signal (90V AC, 20 Hz).</p>
+<p><strong>Local exchange (CO):</strong> Switching center connecting subscriber loops. Switching fabric (mechanical crossbar or electronic) connects two incoming lines for duration of call. Modern digital switches: analog voice converted to 64 kbps PCM (8000 samples/sec × 8 bits), multiplexed on digital trunk.</p>
+<p><strong>Trunk lines:</strong> Interconnect exchanges. High capacity (24-672 voice channels typical). Multiplexed: multiple calls share single physical line using time-division multiplexing (TDM) or frequency-division multiplexing (FDM).</p>
+<h3>Subscriber Loop Limitations</h3>
+<p>Distance limit: attenuation increases with frequency and distance. Voice attenuation ~0.5 dB/km at 1 kHz. 5 km loop = 2.5 dB attenuation (acceptable). Beyond 5 km: repeaters (line drivers) amplify signal every 6 km or move to digital transmission (DSL) which handles 5+ km loops effectively (up to 8 km with low-power DSL).</p>
+<h3>Legacy vs Modern Networks</h3>
+<p><strong>Analog POTS:</strong> All copper pairs, continuous current loop signaling, analog voice. Reliable, simple, limited bandwidth (3.4 kHz), distance limited.</p>
+<p><strong>Digital networks (ISDN, VoIP):</strong> Fiber trunk lines, digital switching, packet-switched voice. Higher bandwidth, longer distance, lower cost infrastructure. VoIP over internet enables free/low-cost long-distance. Requires broadband internet (unreliable in remote areas, emergency call routing delayed).</p>
+<div class="warning">
+<p>POTS networks are powered by central office batteries—survive 8-24 hours during grid outage (depends on backup generator fuel). Cell networks require continuous power (cell towers have smaller batteries, 4-8 hour backup). After 24 hours, most long-distance communication systems fail. Radio (powered by local battery/solar) becomes only viable long-distance option.</p>
+</div>
+</section>
+<section id="setup-configuration">
+<h2>Setup &amp; Configuration</h2>
+<h3>Station Layout (Amateur Radio)</h3>
+<p>Optimal station arrangement:</p>
+<ol>
+<li><strong>Transceiver:</strong> Central position, microphone/key easily accessible</li>
+<li><strong>Antenna tuner:</strong> Between transceiver output and antenna</li>
+<li><strong>Power supply:</strong> Low-noise supply, heavy gauge wiring to radio</li>
+<li><strong>Antenna feedline:</strong> Coaxial cable, direct route without sharp bends (causes loss)</li>
+<li><strong>Grounding:</strong> All equipment bonded to common ground rod (8-foot copper rod, 6 feet minimum)</li>
+</ol>
+<p><strong>Cable runs:</strong> Keep RF cables away from power cables (prevents RF noise injection). If parallel runs unavoidable, cross at right angles. Shield microphone cable (prevents hum pickup from AC power lines).</p>
+<h3>Frequency Coordination</h3>
+<p>Know local repeater frequencies and offsets. Transmit on input frequency, listen on output frequency. Many regions have frequency coordinators who manage repeater allocations to prevent interference.</p>
+<p><strong>Simplex operation:</strong> Direct radio-to-radio without repeater. Choose clear frequency (listen first, wait 5 seconds before transmitting). Common simplex frequencies: 146.52 MHz (2m national calling frequency), 223.50 MHz (1.25m), 446.00 MHz (70cm).</p>
+<h3>Testing Before Full Power</h3>
+<p>Start with low power (1-5W). Listen for interference to other signals (scan band before transmitting). Adjust antenna if SWR high. Gradually increase power while monitoring SWR and signal reports from other stations.</p>
+</section>
+<section id="operating-procedures">
+<h2>Operating Procedures &amp; Protocols</h2>
+<h3>Call Format (Amateur Radio)</h3>
+<p><strong>Calling:</strong> &quot;CQ CQ CQ, this is [your call sign], calling CQ.&quot;
+<strong>Response:</strong> &quot;CQ, this is [responder's call sign], loud and clear.&quot;
+<strong>Connection:</strong> Exchange signal reports, QTH (location), equipment, name. Keep transmissions brief (reduce power consumption, allow others to use frequency).</p>
+<p><strong>Signal reports (RST system):</strong></p>
+<ul>
+<li><strong>R (readability):</strong> 1 = unreadable, 5 = perfectly readable</li>
+<li><strong>S (strength):</strong> 1 = barely audible, 9 = extremely strong</li>
+<li><strong>T (tone):</strong> 1 = very rough, 9 = perfectly clear (CW only)</li>
+</ul>
+<p>Example: &quot;You're 59&quot; (strong, perfectly readable, good tone).</p>
+<h3>Voice Procedure</h3>
+<p>Speak clearly, natural pace. Avoid slang. Use phonetic alphabet for callsigns in noisy conditions: &quot;Whiskey Four Xray Bravo&quot; for W4XB.</p>
+<h3>Simplex Etiquette</h3>
+<ul>
+<li>Listen before transmitting (5-10 seconds minimum)</li>
+<li>Keep transmissions under 2 minutes</li>
+<li>Pause briefly between exchanges (allow others to break in if urgent)</li>
+<li>Identify by callsign every 10 minutes (legal requirement)</li>
+<li>End with &quot;over&quot; to indicate waiting for response, &quot;out&quot; to end conversation</li>
+</ul>
+<h3>Emergency Procedures</h3>
+<p><strong>MAYDAY call:</strong> &quot;MAYDAY MAYDAY MAYDAY, this is [your call], I have emergency situation...&quot; Use on any channel if life/property at risk. All stations must cease transmission and monitor. MAYDAY is recognized worldwide, overrides all other traffic.</p>
+</section>
+<section id="range-performance">
+<h2>Range &amp; Performance Predictions</h2>
+<h3>Path Loss &amp; Distance</h3>
+<p>Free-space path loss (ideal line-of-sight): L(dB) = 20 log₁₀(4πd/λ) where d = distance (meters), λ = wavelength.</p>
+<p>Practical calculation:</p>
+<ul>
+<li>2m band (146 MHz): 10 km distance → path loss ~92 dB</li>
+<li>70cm band (450 MHz): 10 km distance → path loss ~104 dB (12 dB worse)</li>
+<li>Same power transmitter, 70cm receiver must be 4× more sensitive to equal range</li>
+</ul>
+<h3>Terrain Effects</h3>
+<p><strong>Fresnel zone:</strong> Radio path acts as line-of-sight even if obstructed by terrain. First Fresnel zone should be 60% clear (no major obstructions). Obstruction in Fresnel zone causes significant path loss.</p>
+<p>First Fresnel zone radius: r = √(λd₁d₂/d) where d₁ = distance from transmitter to obstruction, d₂ = distance from obstruction to receiver, d = total distance.</p>
+<p><strong>Example:</strong> 2m band (0.2m wavelength), 20 km path, obstruction 10 km from transmitter:
+r = √(0.2 × 10 × 10 / 20) = √10 ≈ 3.2 km</p>
+<p>A mountain 3.2 km tall at 10 km midpoint blocks path entirely. However, if peak is 1 km high, it penetrates first Fresnel zone causing 3-5 dB path loss (acceptable).</p>
+<h3>Real-World Range Table</h3>
+<table>
+<thead>
+<tr>
+<th>Band</th>
+<th>Power</th>
+<th>Antenna</th>
+<th>Terrain</th>
+<th>Range</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2m</td>
+<td>5W</td>
+<td>1/4-wave</td>
+<td>Flat</td>
+<td>5-10 km</td>
+<td>Portable, line-of-sight</td>
+</tr>
+<tr>
+<td>2m</td>
+<td>50W</td>
+<td>Dipole 30 ft</td>
+<td>Hilly</td>
+<td>40-80 km</td>
+<td>Fixed station, elevated antenna</td>
+</tr>
+<tr>
+<td>70cm</td>
+<td>5W</td>
+<td>1/4-wave</td>
+<td>Flat</td>
+<td>3-5 km</td>
+<td>Very terrain-dependent</td>
+</tr>
+<tr>
+<td>HF (40m)</td>
+<td>100W</td>
+<td>Dipole 50 ft</td>
+<td>Any</td>
+<td>500+ km</td>
+<td>Ionospheric skip, variable</td>
+</tr>
+<tr>
+<td>HF (160m)</td>
+<td>1000W</td>
+<td>Dipole 100 ft</td>
+<td>Any</td>
+<td>1000+ km</td>
+<td>Night propagation good</td>
+</tr>
+</tbody>
+</table>
+<h3>Effect of Antenna Height</h3>
+<p>Doubling antenna height (on same band) gains approximately 6 dB (4× power equivalent). Height advantage is most valuable improvement for fixed stations. Mobile/portable antennas benefit less (limited mounting height).</p>
+<p><strong>Low vs High Antenna:</strong></p>
+<ul>
+<li>Low antenna (5 ft): 5W with 2m antenna reaches 5 km</li>
+<li>High antenna (50 ft): Same 5W with 2m antenna reaches 15-20 km (3-4× improvement)</li>
+</ul>
+<div class="info-box">
+<p><strong>Survival Radio Power Budget:</strong></p>
+<p>100W transmitter at 50 feet antenna elevation:</p>
+<ul>
+<li>VHF line-of-sight: 80-100 km typical</li>
+<li>HF with skip: 500+ km (weather/season dependent)</li>
+<li>Battery capacity: 50Ah at 12V = 600 Wh, sustained 100W use = 6 hours</li>
+<li>Solar panel: 100W rated, 300-500 Wh daily (season/location dependent)</li>
+</ul>
+<p>Recommendation for survival comms: 20W radio (lower power, lighter), 20Ah battery (lower weight portable), small solar panel (100W) for base station recharging.</p>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting Common Problems</h2>
+<h3>No Signal Transmission</h3>
+<p><strong>Diagnosis:</strong></p>
+<ol>
+<li>Verify power (check battery voltage, wall power)</li>
+<li>Check microphone/key connection (disconnected cable common cause)</li>
+<li>Listen to frequency first (may be in use, causing TX inhibit)</li>
+<li>Test antenna connection (loose N-connector, corrosion)</li>
+<li>Verify antenna with handheld (test on known-good radio)</li>
+</ol>
+<p><strong>Solutions:</strong> Reconnect cables, clean connectors with isopropyl alcohol, test with alternate antenna, measure continuity with multimeter.</p>
+<h3>Weak Signal or No Reception</h3>
+<p><strong>Check in order:</strong></p>
+<ol>
+<li>Antenna connection (same as TX diagnosis)</li>
+<li>Antenna tuning (monopole resonance frequency drifts with temperature, humidity)</li>
+<li>Low signal = frequency propagation issue (skip may be poor, distant station weak)</li>
+<li>Receiver gain set too low (check AF/RF gain controls)</li>
+</ol>
+<p><strong>Verification:</strong> Switch to known strong station (local repeater) to confirm receiver works. If repeater loud and clear, distant signal weakness is propagation, not equipment failure.</p>
+<h3>Interference on Frequency</h3>
+<p><strong>Sources:</strong></p>
+<ol>
+<li>Adjacent channel interference (nearby transmitter on adjacent frequency)</li>
+<li>Harmonic interference (transmitter fundamental outside band, harmonic lands in receive band)</li>
+<li>Intermodulation (two strong signals mix, producing new frequency in your band)</li>
+</ol>
+<p><strong>Mitigation:</strong></p>
+<ul>
+<li>Improve antenna isolation (separate Tx/Rx antennas 10+ feet apart)</li>
+<li>Change frequency (if possible, switch to clear simplex channel)</li>
+<li>Reduce power (lower transmitter power reduces interference radiated)</li>
+<li>Add filter (notch filter rejects strong interfering frequency)</li>
+</ul>
+<h3>Distorted Audio</h3>
+<p><strong>Causes:</strong></p>
+<ol>
+<li>Microphone input too hot (audio clipping in modulation stage)</li>
+<li>Receiver overload (strong signal saturating receiver, causing intermod)</li>
+<li>Loose connector causing intermittent ground (crackling/popping sound)</li>
+<li>Failing amplifier (non-linear distortion, no recovery)</li>
+</ol>
+<p><strong>Fixes:</strong></p>
+<ul>
+<li>Reduce microphone gain or distance from mic</li>
+<li>Reduce RF gain if receiver is saturated</li>
+<li>Clean connectors, apply contact cleaner</li>
+<li>Test with battery meter, replace amplifier if failing</li>
+</ul>
+<h3>Equipment Failure in Field</h3>
+<p><strong>Portable radio stops transmitting:</strong></p>
+<ol>
+<li>Check battery (low battery inhibits TX on many radios—LED indicator dims)</li>
+<li>Power cycle (off 10 seconds, on)</li>
+<li>Reset to factory settings (may have accidental lockout enabled)</li>
+<li>Test with alternate battery (verify battery is failure, not radio)</li>
+</ol>
+<p><strong>Fallback options:</strong> Switch to CW (requires only oscillator + keyer, more robust than voice), reduce power if still receives (may reduce power generation if solar/cranked), establish scheduled contact times (reduces need for long monitoring periods).</p>
+<div class="tip">
+<p><strong>Preventive maintenance:</strong> Check connections monthly. Clean antenna connectors/feedpoint. Test antenna resonance (SWR). Replace batteries on schedule (don't wait for field failure).</p>
+</div>
+</section>
+<section id="maintenance">
+<h2>Maintenance &amp; Care</h2>
+<h3>Antenna Maintenance</h3>
+<p><strong>Dipole/Monopole:</strong></p>
+<ul>
+<li>Inspect for corrosion (white/green oxidation on copper)</li>
+<li>Clean contacts with fine brush + isopropyl alcohol</li>
+<li>Check solder joints for cold joints (dull finish—reheat to shiny)</li>
+<li>Verify tightness of all mechanical connections (wind/ice causes loosening)</li>
+<li>Apply dielectric grease to exposed connections (prevents water/corrosion)</li>
+</ul>
+<p><strong>Coaxial feedline:</strong></p>
+<ul>
+<li>Inspect outer jacket for cracks (water intrusion causes shorts)</li>
+<li>Check connector for corrosion (white deposits inside N-connector indicates oxidation)</li>
+<li>Measure DC resistance end-to-end (should be &lt;0.5 ohms for 50-100 feet cable)</li>
+<li>Replace if cable damaged (using corroded or damaged cable ruins SWR, causes signal loss)</li>
+</ul>
+<p><strong>Testing antenna resonance:</strong> Use antenna analyzer (portable, $100-300) or SWR meter. Measure SWR at design frequency—should be &lt;1.3:1. If drifted, slightly shorten antenna (1% trim ≈ 1% frequency increase) or use antenna tuner.</p>
+<h3>Transceiver Care</h3>
+<p><strong>Cooling:</strong> Ensure ventilation (don't cover vent holes). 100W radio dissipates 10-15W heat at normal use—requires air circulation. In field use, ensure adequate air gap behind radio.</p>
+<p><strong>Power supply:</strong> Use regulated supply (prevents voltage spikes). Verify correct polarity before connection (reverse polarity destroys radio). Install DC fuse/breaker (10A typical for 100W radio).</p>
+<p><strong>Connector maintenance:</strong> Every 6 months, disconnect power, remove battery, unplug microphone. Inspect all connectors for corrosion. Clean with isopropyl alcohol + fine brush. Reconnect firmly.</p>
+<h3>Battery Management</h3>
+<p><strong>Lead-acid batteries:</strong> Check water level monthly (if non-sealed). Charge every 3 months (prevents sulfation from deep discharge). Replace every 3-5 years (capacity degrades ~20% per year).</p>
+<p><strong>Lithium (LiFePO4):</strong> Much longer life (10 years typical). Avoid over-discharge &lt;10% state-of-charge (limits remaining capacity). Store charged 50-80% if not using for months (prevents internal discharge).</p>
+<p><strong>Battery sizing:</strong> A 20Ah 12V battery = 240 Wh. At 100W average consumption = 2.4 hours operating time. For 8-hour portable operation, need 100Ah (960 Wh) battery—impractical. Realistic portable comms: 10-20 hour battery (solar recharge daily), or 2-4 hour portable ops then recharge.</p>
+<h3>Grounding &amp; Lightning Protection</h3>
+<p><strong>Station grounding:</strong> Copper rod 8-10 feet deep, bonded with #4 copper wire to all equipment. Prevents RF ground loops (causes hum) and provides lightning protection path.</p>
+<p><strong>Antenna grounding:</strong> Separate ground rod for antenna (prevents large currents flowing through house). Connect antenna system ground to station ground via low-inductance strap (wide copper, short path).</p>
+<p><strong>Lightning considerations:</strong> Antenna systems are lightning attractors. During thunderstorms, disconnect antenna feedline from radio (at feedthrough panel outside building). This breaks RF path but prevents lightning transient entering radio. Critical in areas with frequent lightning.</p>
+<div class="warning">
+<p>Direct lightning strike on antenna can vaporize coaxial cable, destroy equipment, and potentially cause fire. Proper grounding and disconnect-during-storms procedure is essential. Many hams have lost equipment to lightning—professional station design includes lightning arrestor (gas tube surge protector) at feedline entrance.</p>
+</div>
+</section>
+<section id="community-pa">
+<h2>Community PA/Announcement Systems &amp; Warning Sirens</h2>
+<h3>Purpose &amp; Importance</h3>
+<p>In post-collapse contexts, centralized announcement systems enable rapid communication of critical information: emergency alerts, gathering notices, event schedules, weather warnings. A community PA system extends information reach beyond shouting distance (100-150 feet maximum) to entire settlement (0.5-2 miles depending on power and terrain). Warning sirens provide urgent alerts (fire, attack, evacuation) audible across entire region.</p>
+<h3>Acoustic PA Systems Without Electricity</h3>
+<p>Mechanical sound amplification requires no power—ideal for guaranteed function during outages.</p>
+<h4>Horn-Based Systems</h4>
+<ul>
+<li><strong>Metal horns (salvaged or hand-made):</strong> Driven by human voice or mechanical mechanism. A 4-6 foot metal or PVC horn amplifies sound 10-20 dB (10-100× amplitude increase). Achievable range: 0.5-1 mile in calm conditions. Handheld or mounted on pole. Construction: tapered cone of metal/PVC with mouthpiece. Test: speak into mouthpiece—sound travels much further than unaided voice.</li>
+<li><strong>Speaking tubes (whisper tubes):</strong> Copper or PVC piping running through settlement, large funnels at speaking points. Traditional design used in tall buildings pre-electricity. Acoustic advantage: directs sound into confined tube, prevents dissipation. Disadvantage: limited to predefined routes, bidirectional (anyone can speak/listen).</li>
+<li><strong>Megaphone (hand-cranked or built):</strong> Simple hand-held horn amplifier. 20-30 foot range, audible but exhausting to use continuously. Cheap to build or salvage.</li>
+</ul>
+<h4>Mechanical Resonators</h4>
+<ul>
+<li><strong>Large bells or gongs:</strong> Suspended, struck with hammer. Audible 1-2 miles depending on size and material. Different tones can signal different meanings: one tone = assembly, two tones = fire, three tones = all-clear. Requires person with strength to ring continuously. Does not convey detailed information, only alert signals.</li>
+<li><strong>Drums:</strong> Similar to bells but shorter range (0.5-1 mile). Benefit: rhythm patterns can encode messages. Disadvantage: labor-intensive.</li>
+</ul>
+<h3>Solar/Battery-Powered Electronic PA Systems</h3>
+<p>With renewable power (solar panels, wind turbine, or battery bank from previous civilization), electronic PA becomes viable.</p>
+<h4>Salvaged PA Equipment</h4>
+<ul>
+<li><strong>Microphone:</strong> Dynamic microphone (most durable): converts sound to electrical signal. Impedance: 50-600 ohms (check specification). Powered or passive (passive preferred if unpowered). Connector: XLR (3-pin) standard.</li>
+<li><strong>Amplifier:</strong> 50-200W audio amplifier (higher power = greater range). Salvaged from commercial PA systems, large audio systems, or motorcycles/cars (with boost converter, can repurpose car amplifier with 12V battery). Frequency response: 20 Hz-20 kHz (adequate for voice intelligibility down to 300 Hz).</li>
+<li><strong>Speaker:</strong> Weatherproof outdoor speaker, 30-100W power handling. Multiple speakers distributed around settlement cover wider area. Mounting: on poles, towers, or buildings facing outward. Impedance matching: amp output 8Ω, speakers should be 8Ω (check specifications, parallel/series connection adjusts impedance if needed).</li>
+</ul>
+<h4>Power Requirements</h4>
+<ul>
+<li><strong>Typical 100W PA system:</strong> 20-30W consumption at normal volume (amplifier not running at full power continuously). Daily use (2-4 hours announcements) = 40-120 Wh energy requirement. Solar panel (100W rated) generates 300-500Wh per day (varies with location and season). Battery bank (400-600 Wh) with solar panel provides reliable power with small safety margin.</li>
+<li><strong>Setup example:</strong> One 100W solar panel, charge controller (MPPT preferred for efficiency), 12V battery bank (LiFePO4 or lead-acid, 100-200 Ah capacity = 1200-2400 Wh at 12V), amplifier (car amplifier with step-up converter 12V to 24V if higher voltage preferred), speakers (2-4 distributed), microphone. Cost to salvage/assemble: $300-800.</li>
+</ul>
+<h3>Warning Siren Construction (Acoustic)</h3>
+<p>A warning siren produces piercing, attention-grabbing sound audible miles away—critical for emergency alerts.</p>
+<h4>Hand-Cranked Mechanical Siren</h4>
+<ul>
+<li><strong>Principle:</strong> Rotating disk with holes interacts with stationary port, interrupting air column at high frequency. Creates sound 100-110 dB (threshold of pain).</li>
+<li><strong>DIY Construction:</strong> Metal drum (5-gallon or larger), mount on spindle/axle to rotate. Cut holes in side at specific intervals (determines pitch—closer spacing = higher pitch). Mount stationary port (opening) aligned with holes. As drum rotates (hand-crank via gearing), air pulsates through port creating tone. Pitch determined by hole spacing and rotation speed. Louder than horn but labor-intensive.</li>
+<li><strong>Salvage option:</strong> Some vintage sirens can be found (fire dept., industrial sites). Operate by hand-crank or small motor (powered by hand bicycle generator if needed).</li>
+</ul>
+<h4>Compressed-Air Siren</h4>
+<ul>
+<li><strong>Principle:</strong> High-pressure air pulse through reed or orifice creates oscillation at siren frequency.</li>
+<li><strong>Construction:</strong> Compressor (manual foot pump, hand pump, or mechanical driven), air tank (propane tank, compressed air tank, or homemade drum), siren head (reed siren or whistle). Foot pump pressurizes tank; valve releases pressure through siren creating alarm tone. Achieves 110+ dB without mechanical rotation.</li>
+<li><strong>Advantage:</strong> Can run sustained sound (not limited by hand-crank fatigue). Once pressurized, release valve provides continuous alert.</li>
+</ul>
+<h3>Signal Coding for Emergency Communication</h3>
+<p>Without text-based communication, standardized tone patterns enable rapid understanding of threat/situation.</p>
+<h4>Siren Signal Protocol (Example)</h4>
+<ul>
+<li><strong>One long blast (10+ seconds):</strong> General assembly/gathering. All community members report to central point for announcement.</li>
+<li><strong>Two short blasts (2 sec each, 2 sec apart):</strong> Fire alert. Identify location, community directs response team.</li>
+<li><strong>Three short blasts (repeating):</strong> Evacuation/danger. Leave current location, proceed to evacuation rally point.</li>
+<li><strong>Steady tone (5-10 sec):</strong> All-clear signal. Threat has passed, resume normal activity.</li>
+<li><strong>Irregular/chaotic blast pattern:</strong> Total emergency (attack, disaster). Take shelter immediately.</li>
+</ul>
+<h4>Horn/Megaphone Signals</h4>
+<ul>
+<li><strong>Continuous horn (30+ sec):</strong> Attention signal—people stop, listen for detailed announcement.</li>
+<li><strong>Short blast-pause-short blast:</strong> Repeat for location announcement (&quot;Meet at south field&quot; via megaphone).</li>
+</ul>
+<h3>Broadcast Scheduling &amp; Protocols</h3>
+<p>Establish regular announcement times and locations to condition community to listen.</p>
+<h4>Daily Announcement Schedule</h4>
+<ul>
+<li><strong>Dawn broadcast (6 AM):</strong> Daily schedule, weather forecast, task assignments. 3-5 minutes, central location. Community gathers or pauses work to listen.</li>
+<li><strong>Midday update (12 PM):</strong> Brief status (short form if quiet day).</li>
+<li><strong>Dusk broadcast (6 PM):</strong> Next-day schedule, evening gathering info, any alerts/changes.</li>
+<li><strong>Emergency broadcast (anytime):</strong> Siren signals urgent attention.</li>
+</ul>
+<h4>Content &amp; Protocols</h4>
+<ul>
+<li><strong>Speak clearly, not too fast:</strong> Audio quality degrades over distance; deliberate speech ensures comprehension. Test range during setup (stand at farthest point, assess clarity).</li>
+<li><strong>Repeat critical information:</strong> &quot;Fire on south field, south field. All fire team respond to south field.&quot;</li>
+<li><strong>End with confirmation:</strong> &quot;End of broadcast. Next announcement at dusk.&quot; Signals completeness.</li>
+<li><strong>Scheduled maintenance windows:</strong> Announce planned downtime (&quot;PA system maintenance 2 PM, no broadcasts between 2-3 PM&quot;).</li>
+</ul>
+<h3>Maintenance &amp; Troubleshooting</h3>
+<h4>Acoustic Systems</h4>
+<ul>
+<li><strong>Horns:</strong> Check for dents/cracks (affect sound quality). Oil hinges/moving parts. Store in dry location to prevent corrosion.</li>
+<li><strong>Bells/gongs:</strong> Inspect for cracks (propagate over time, eventually fail). Clapper/striker should be secure. Lubricate pivot points.</li>
+<li><strong>Mechanical siren:</strong> Keep bearings/axles lubricated. Check rotating disk for damage. Test rotation smoothly without wobble.</li>
+</ul>
+<h4>Electronic Systems</h4>
+<ul>
+<li><strong>Solar panel:</strong> Keep clean (dust reduces efficiency 5-20%). Check wiring for corrosion/loose connections monthly.</li>
+<li><strong>Amplifier:</strong> Check all electrical connections. Listen for distortion (indicates failing amplifier or speaker). Test with microphone at low volume first (prevents speaker blow-out).</li>
+<li><strong>Speakers:</strong> Verify secure mounting (vibration causes loosening). Check for water damage (outdoor exposure). Test cone integrity (push gently—should move freely without crackle).</li>
+<li><strong>Microphone:</strong> Keep connector dry. Test regularly (feedback indicates proper function—if amplifier is on and mic near speaker, slight feedback is normal).</li>
+</ul>
+<h4>Backup Systems</h4>
+<ul>
+<li><strong>Redundant equipment:</strong> Keep second amplifier/speaker pair (or horn-based system) as failsafe if electronic system fails.</li>
+<li><strong>Manual protocols:</strong> Establish messenger system (runners) if PA fails entirely. Ensures critical messages still reach community.</li>
+</ul>
+</section>
+<section id="common-mistakes">
+<h2>Common Mistakes &amp; How to Avoid Them</h2>
+<h3>Impedance Mismatch</h3>
+<p><strong>Problem:</strong> Antenna impedance doesn't match transmission line (50Ω). Results in SWR &gt;2:1, power reflection, coaxial cable heating.</p>
+<p><strong>Cause:</strong> Using wrong antenna type, feeding at wrong point on antenna, or mismatched connector.</p>
+<p><strong>Solution:</strong> Use impedance matching transformer (1:4 balun for random-length dipoles), antenna tuner, or ensure antenna designed for 50Ω feedpoint. Test with SWR meter before high-power operation.</p>
+<h3>Poor Grounding</h3>
+<p><strong>Problem:</strong> RF noise in audio, weak signal reception, interference to nearby electronics.</p>
+<p><strong>Cause:</strong> Equipment floating ground, antenna ground loop, insufficient bonding between components.</p>
+<p><strong>Solution:</strong> Dedicated ground rod (8 ft copper), #4 copper wire bonding all equipment to ground rod, separate antenna ground with isolating strap to station ground via surge protector.</p>
+<h3>Undersized Power Supply</h3>
+<p><strong>Problem:</strong> Voltage sags under load (radio turns off, displays flicker). Battery drains rapidly.</p>
+<p><strong>Cause:</strong> Power supply rated for average consumption, not peak TX current (spikes 2-3× average when transmitting).</p>
+<p><strong>Solution:</strong> Calculate peak transmit current (e.g., 100W at 13.8V = 7.3A peak). Oversize power supply 50% (use 12A supply minimum). Use battery bank sized for sustained operation (20Ah minimum for 8 hours at 100W).</p>
+<h3>Antenna Resonance Drift</h3>
+<p><strong>Problem:</strong> Antenna was on-frequency when installed; now SWR high, no TX on frequency.</p>
+<p><strong>Cause:</strong> Temperature change (aluminum expands/contracts 0.002% per °C), moisture, or damage to antenna.</p>
+<p><strong>Solution:</strong> Measure SWR with analyzer at multiple frequencies (plot response curve). Shorten antenna slightly if resonance shifted high. Recheck after temperature stabilization. Use antenna tuner if drift unavoidable.</p>
+<h3>Transmitting Into Poor Antenna</h3>
+<p><strong>Problem:</strong> Report of weak signal despite high transmit power. SWR high, coaxial cable warm.</p>
+<p><strong>Cause:</strong> Antenna damaged, disconnected, or severely mismatched.</p>
+<p><strong>Solution:</strong> Verify antenna connection (tug on connector, should be firm). Measure SWR &lt;1.3:1. If high, troubleshoot antenna (measure continuity, check for water in feedline). Replace antenna if damaged beyond repair.</p>
+<h3>Ignoring RF Safety</h3>
+<p><strong>Problem:</strong> Operator complains of headaches, ringing ears, or skin burns.</p>
+<p><strong>Cause:</strong> Exposure to RF energy from transmitter antenna or feedline (especially HF where near-field effects strong).</p>
+<p><strong>Solution:</strong> Keep distance &gt;10 feet from horizontal antennas while transmitting. Vertical antennas have null directly above/below (safest areas). Never operate &gt;100W without proper RF hazard assessment. Display RF warning signs near antenna.</p>
+</section>
+<section id="security-encryption">
+<h2>Security &amp; Encryption</h2>
+<h3>Need for Privacy in Communications</h3>
+<p>In survival/post-collapse scenarios, sensitive communication (medical emergencies, security threats, resource allocation) requires protection from interception. Amateur radio is not private (all signals receivable by public scanners). Encryption considerations:</p>
+<ul>
+<li><strong>Open communication:</strong> All transmissions audible to anyone with receiver. Useful for emergency broadcasts (medical help, all-clear signals), community announcements.</li>
+<li><strong>Private communication:</strong> Encrypted or using obscure frequency/time reduces passive interception. Necessary for: tactical coordination, medical privacy, security information.</li>
+</ul>
+<h3>Encryption Methods</h3>
+<p><strong>Analog voice encryption (not reliable):</strong></p>
+<ul>
+<li>Scrambling: audio frequency inversion or other simple transforms. Easily broken with scanner (listen to inverted audio). Not recommended.</li>
+</ul>
+<p><strong>Digital encryption (strong):</strong></p>
+<ul>
+<li>Uses cryptographic algorithms (AES, DES). Encrypted digital data looks like random noise to unencrypted receiver. Requires shared encryption key between parties. Example: Digital voice systems like D-Star, DMR (Digital Mobile Radio), or P25 include encryption.</li>
+</ul>
+<p><strong>Practical approach:</strong> Most post-collapse radio comms will be analog (simpler, less dependent on infrastructure). Encryption in analog domain is difficult. Alternative: use frequency coordination (operate on known, agreed frequency, establish scheduled times), code words (pre-arranged meanings), or restrict sensitive comms to direct radio links (not repeaters).</p>
+<div class="tip">
+<p><strong>Code words for community:</strong> Establish simple code (e.g., &quot;Medical 10&quot; = someone injured, &quot;Security 20&quot; = suspicious activity). Train all operators. Code words allow information transfer without spelling out details on open frequency.</p>
+</div>
+<h3>Frequency Agility</h3>
+<p>Changing transmit/receive frequency unpredictably reduces chance of systematic monitoring. Modern radios support frequency banks (multiple channels). Community could establish random daily frequency selection from 5-10 approved channels (all operators pre-load all channels). Higher burden, but greater privacy from passive eavesdropping.</p>
+<h3>OPSEC (Operations Security)</h3>
+<p>Don't transmit: specific personnel names (use call signs), exact locations (use map grid references), sensitive resource locations, tactical plans. Assume all broadcasts are monitored—speak accordingly.</p>
+</section>
+<section id="safety">
+<h2>Safety Considerations</h2>
+<h3>RF Exposure</h3>
+<p>Transmitting antennas radiate electromagnetic energy. High frequencies (UHF, microwave) concentrate energy near antenna (near-field), causing tissue heating. Safety guidelines (FCC, ICNIRP):</p>
+<p><strong>Power density limits (general population):</strong></p>
+<ul>
+<li>2 MHz: 100 mW/cm² continuous exposure</li>
+<li>50 MHz: 1 mW/cm²</li>
+<li>300 MHz: 1 mW/cm²</li>
+<li>1500 MHz: 5 mW/cm²</li>
+</ul>
+<p>At 5 feet from 50W 2m antenna: power density ~50 mW/cm² (slightly above limit). At 20 feet: ~3 mW/cm² (below limit).</p>
+<p><strong>Practical safety:</strong> Keep distance from antenna during operation. Vertical monopoles have nulls (safe zones) directly above and below. Horizontal dipoles have nulls at ends (safe zone at antenna ends, but not broadside). For high-power operation, restrict antenna area (fencing) or limit access during operation.</p>
+<h3>Lightning Protection</h3>
+<p><strong>Risk:</strong> Lightning strike on antenna and feedline can vaporize cable, destroy radio, cause fire in building.</p>
+<p><strong>Mitigation:</strong></p>
+<ol>
+<li>Proper grounding (separate ground rod for antenna, low-inductance bonding to station ground)</li>
+<li>Lightning arrestor (gas-tube surge protector at feedline entrance to building)</li>
+<li>Disconnect feedline during thunderstorms (safest method, breaks RF path)</li>
+<li>Surge protector on power supply (protects from transient)</li>
+</ol>
+<p><strong>Frequency of strikes:</strong> In high-strike areas (Florida, Rocky Mountains), disconnect antenna seasonally or during storm season. In low-strike areas, permanent antenna with good grounding acceptable.</p>
+<h3>Battery Hazards</h3>
+<p><strong>Lead-acid battery:</strong></p>
+<ul>
+<li>Hydrogen gas release during charging (explosive concentration possible)</li>
+<li>Acid splash (wear eye protection when checking water level)</li>
+<li>Never use spark-producing tools near battery (ignition risk)</li>
+</ul>
+<p><strong>Lithium battery:</strong></p>
+<ul>
+<li>Extreme fire hazard if overcharged or short-circuited (thermal runaway)</li>
+<li>Use BMS (battery management system) to prevent overcharge</li>
+<li>Store away from flammables</li>
+<li>Never leave charging unattended</li>
+</ul>
+<p><strong>Safe practices:</strong> Charge batteries in ventilated area, never in occupied spaces. Use proper charger (prevents overcharge). Inspect regularly for swelling/damage. Keep fire extinguisher nearby (CO2 for lithium fires, not water).</p>
+<h3>Tower Climbing</h3>
+<p>If antenna mounted on tall structure requiring climbing for maintenance:</p>
+<ul>
+<li>Use safety harness and rope</li>
+<li>Never climb alone (spotters required)</li>
+<li>Climb during calm weather (no wind &gt;20 mph)</li>
+<li>Avoid climbing when tired or during darkness</li>
+<li>Never climb during thunderstorms</li>
+</ul>
+<p>Professional climbers recommended for &gt;40 feet height. DIY climbing on &lt;30 feet structures acceptable with proper safety gear.</p>
+<div class="warning">
+<p>RF burns and tower accidents are leading causes of radio operator injury/death. Professional safety practices (distance from antenna, proper grounding, fall protection) are not optional—they're essential. Many regulations exist for good reason.</p>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="cryptography-codes.html">Cryptography &amp; Codes</a>
+<a href="crystal-radio-receiver.html">Crystal Radio Receiver</a>
+<a href="electrical-wiring.html">Electrical Wiring</a>
+<a href="ham-radio.html">Ham Radio &amp; Communications</a>
+<a href="postal-service-establishment.html">Postal Service &amp; Communication Networks</a>
+<a href="power-distribution.html">Power Distribution &amp; Micro-Grids</a>
+<a href="sign-language-communication.html">Visual Communication &amp; Sign Language</a>
+<a href="signals-communication.html">Signals &amp; Communication</a>
+<a href="transistors.html">Transistors &amp; Semiconductors</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

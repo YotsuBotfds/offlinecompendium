@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Offline Knowledge Compendium</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #1a2e1a;
+            --surface: #2d2416;
+            --card: #2d2416;
+            --accent: #d4a574;
+            --accent2: #b8956a;
+            --text: #f5f0e8;
+            --muted: #999;
+            --border: #4a6d4a;
+        }
+
+        [data-theme="light"] {
+            --bg: #f5f0e8;
+            --surface: #fff;
+            --card: #f0ebe0;
+            --accent: #8b6f47;
+            --accent2: #4a6d4a;
+            --text: #1a2e1a;
+            --muted: #666;
+            --border: #d4c9b4;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-brand a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-brand a:hover {
+            color: var(--accent2);
+        }
+
+        .nav-brand span {
+            color: var(--muted);
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: Georgia, 'Times New Roman', serif;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background: var(--surface);
+            border-color: var(--accent);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .last-updated {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            text-align: justify;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent2);
+            text-decoration: underline;
+        }
+
+        .contact-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .contact-section p {
+            margin-bottom: 0.75rem;
+        }
+
+        .disclaimer-box {
+            background: var(--surface);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .header-controls {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="home-btn" aria-label="Home">🏠 Home</a>
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
+            </div>
+        </header>
+
+        <main>
+            <h1>Terms of Service</h1>
+            <p class="last-updated">Last Updated: February 2026</p>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using the Offline Knowledge Compendium, you agree to be bound by these Terms of Service. If you do not agree to these terms, you may not use the application. These terms apply to all visitors and users of the Offline Knowledge Compendium, whether accessed via web browser or as a progressive web app. We reserve the right to modify these terms at any time, and your continued use constitutes acceptance of any changes.</p>
+
+            <h2>2. Description of Service</h2>
+            <p>The Offline Knowledge Compendium is a progressive web application (PWA) that provides access to a comprehensive collection of over 291 offline survival and practical skills guides. The application operates without a backend database, caching content for offline access. The guides cover a wide range of topics including but not limited to wilderness survival, emergency first aid, agriculture, construction, metalworking, communications, and general knowledge. The service is provided on an "as-is" basis as an educational reference tool.</p>
+
+            <h2>3. Intellectual Property Rights</h2>
+            <p>All content, including text, images, diagrams, interactive widgets, and guides contained within the Offline Knowledge Compendium are protected by copyright. The content is owned by or licensed to the Offline Knowledge Compendium and may not be reproduced, distributed, transmitted, displayed, or otherwise used without prior written permission. You may access, download, and use the guides for personal, non-commercial reference purposes only. Any commercial use, reproduction, or distribution of the content without explicit authorization is prohibited.</p>
+
+            <h2>4. Disclaimer of Professional Advice</h2>
+            <p>The information provided in the Offline Knowledge Compendium is for educational and general reference purposes only. It is not a substitute for professional advice from qualified experts in the relevant fields. Specifically:</p>
+            <p><strong>Medical Information:</strong> Guides containing medical or health-related information are general educational materials and should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult a licensed healthcare provider for any health concerns or before taking any medical action.</p>
+            <p><strong>Legal Information:</strong> Any guides addressing legal topics are general reference materials only. Laws vary by jurisdiction, change frequently, and require professional interpretation. Do not rely on this app for legal advice. Consult a licensed attorney for any legal matters.</p>
+            <p><strong>Safety Information:</strong> All survival and safety-related guides are general reference materials. Actual execution of survival techniques involves inherent risks. Users must exercise sound judgment, follow all applicable laws and regulations, and take appropriate safety precautions. The authors assume no responsibility for injury, loss, or damage resulting from the use or misuse of information in this application.</p>
+
+            <h2>5. User Responsibility and Assumption of Risk</h2>
+            <p>You acknowledge that use of the information in the Offline Knowledge Compendium carries inherent risks. You assume all risks associated with the use of any information or guidance obtained from this application. The decision to act on any information is entirely yours, and you are responsible for evaluating the appropriateness and safety of that information for your circumstances. The authors, developers, and operators of the Offline Knowledge Compendium shall not be liable for any consequences resulting from your use or misuse of the guides or information.</p>
+
+            <h2>6. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law, the Offline Knowledge Compendium, its developers, and operators are not liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of data, loss of profits, loss of use, or any other loss arising from or relating to this application or its content. This limitation applies even if the authors have been advised of the possibility of such damages. In jurisdictions that do not allow the exclusion or limitation of liability, liability is limited to the greatest extent permitted by law.</p>
+
+            <h2>7. Modification of Terms and Service</h2>
+            <p>We reserve the right to modify or discontinue the Offline Knowledge Compendium or any portion thereof, with or without notice. We also reserve the right to update these Terms of Service at any time. Your continued use of the application after any such modifications constitutes your acceptance of the updated terms. We encourage you to review these terms periodically.</p>
+
+            <h2>8. Governing Law and Jurisdiction</h2>
+            <p>These Terms of Service are governed by and construed in accordance with the laws applicable in your jurisdiction. Any disputes arising from or relating to these terms shall be resolved according to the laws of your country or state. You agree to submit to the exclusive jurisdiction of the courts in your jurisdiction.</p>
+
+            <div class="disclaimer-box">
+                <strong>Important Notice:</strong> The Offline Knowledge Compendium provides educational reference material only. Users must independently verify all information, exercise sound judgment, and seek professional advice for medical, legal, or safety-critical matters. The authors and operators disclaim all liability for injury, loss, or damage resulting from the use of this application.
+            </div>
+
+            <div class="contact-section">
+                <h2 style="margin-top: 0;">9. Contact Us</h2>
+                <p>If you have questions about these Terms of Service, concerns about content, or wish to request permission for use beyond personal reference, please contact us:</p>
+                <p><strong>Email:</strong> <a href="mailto:tate.bronson@gmail.com">tate.bronson@gmail.com</a></p>
+                <p style="margin-bottom: 0;">We appreciate your understanding and commitment to using the Offline Knowledge Compendium responsibly.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Offline Knowledge Compendium v3.0 | <a href="index.html">Home</a> | <a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a></p>
+        </footer>
+    </div>
+
+    <script src="shared/theme-sync.js"></script>
+    <script>
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('compendium-theme', newTheme);
+            this.textContent = newTheme === 'dark' ? '🌙 Dark' : '☀️ Light';
+        });
+
+        // Initialize theme toggle button text
+        window.addEventListener('load', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            document.getElementById('themeToggle').textContent = currentTheme === 'dark' ? '🌙 Dark' : '☀️ Light';
+        });
+    </script>
+</body>
+</html>

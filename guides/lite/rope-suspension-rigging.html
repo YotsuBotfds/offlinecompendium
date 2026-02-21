@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/rope-suspension-rigging.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rope Suspension and Rigging</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Building &amp; Engineering</span> ›
+<span>Rope Suspension and Rigging</span>
+</div>
+
+
+<h1>Rope Suspension and Rigging</h1>
+<p class="subtitle">Rope bridge and suspension system design. Load calculations, anchor points and deadman anchors, tensioning systems (Spanish windlass, come-along), highline and zip line construction, rope inspection and retirement criteria, mechanical advantage knots for rigging.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~13 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview: Rope-Based Suspended Structures</a></li>
+<li><a href="#rope-types-and-properties">Rope Types and Properties</a></li>
+<li><a href="#rope-bridge-types">Rope Bridge Types</a></li>
+<li><a href="#load-calculations">Load Calculations and Safety Factors</a></li>
+<li><a href="#anchor-design">Anchor Points and Deadman Anchors</a></li>
+<li><a href="#tensioning-systems">Tensioning Systems</a></li>
+<li><a href="#highline-and-zipline">Highline and Zip Line Construction</a></li>
+<li><a href="#rope-inspection-maintenance">Rope Inspection and Maintenance</a></li>
+<li><a href="#rigging-knots">Essential Rigging Knots</a></li>
+<li><a href="#design-checklist">Rope Bridge Design Checklist</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview: Rope-Based Suspended Structures</h2>
+<p>Rope suspension systems span water, canyons, or gaps where traditional beam bridges are impractical or impossible. Unlike rigid beam bridges (which push outward on supports), suspension bridges transfer load via tension along rope cables—the fundamental structural principle is &quot;hang strong.&quot;</p>
+<p><svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" aria-label="Simple suspension bridge diagram with load calculations">
+  <defs>
+    <style>
+      text { font-family: Arial, sans-serif; fill: var(--text); }
+      .title { font-size: 18px; font-weight: bold; }
+      .label { font-size: 12px; }
+      .section-title { font-size: 14px; font-weight: bold; }
+      .rope { stroke: #d4a574; stroke-width: 3; fill: none; }
+      .cable { stroke: #a88968; stroke-width: 4; fill: none; }
+      .anchor { fill: var(--card); stroke: var(--text); stroke-width: 2; }
+      .grid { stroke: var(--card); stroke-width: 0.5; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="500" y="30" text-anchor="middle" class="title">Simple Suspension Bridge</text>
+
+  <!-- Background: landscape -->
+  <line x1="0" y1="400" x2="1000" y2="400" stroke="var(--card)" stroke-width="1" />
+  <text x="20" y="415" class="label">Ground level</text>
+
+  <!-- LEFT ANCHOR (rock) -->
+  <g id="left-anchor">
+    <circle cx="100" cy="400" r="40" class="anchor" />
+    <text x="100" y="445" text-anchor="middle" class="label">Rock anchor</text>
+    <text x="100" y="460" text-anchor="middle" class="label">(both cables)</text>
+  </g>
+
+  <!-- RIGHT ANCHOR (rock) -->
+  <g id="right-anchor">
+    <circle cx="900" cy="400" r="40" class="anchor" />
+    <text x="900" y="445" text-anchor="middle" class="label">Rock anchor</text>
+    <text x="900" y="460" text-anchor="middle" class="label">(both cables)</text>
+  </g>
+
+  <!-- CABLES: Two parallel main cables -->
+  <!-- Left cable sag calculation: 30m span, 1m sag -->
+  <path class="cable" d="M 140 400 Q 500 200 860 400" />
+  <path class="cable" d="M 140 420 Q 500 220 860 420" />
+
+  <!-- Sag dimension line -->
+  <line x1="500" y1="200" x2="500" y2="310" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3,3" />
+  <text x="520" y="260" class="label" fill="var(--accent)">Sag: 1m</text>
+
+  <!-- Span dimension -->
+  <line x1="140" y1="370" x2="860" y2="370" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3,3" />
+  <text x="500" y="360" text-anchor="middle" class="label" fill="var(--accent)">Span: 30m (roughly)</text>
+
+  <!-- SLINGS: Vertical cables suspending footway -->
+  <line x1="200" y1="410" x2="200" y2="470" stroke="#d4a574" stroke-width="2" />
+  <line x1="280" y1="408" x2="280" y2="468" stroke="#d4a574" stroke-width="2" />
+  <line x1="360" y1="408" x2="360" y2="468" stroke="#d4a574" stroke-width="2" />
+  <line x1="440" y1="407" x2="440" y2="467" stroke="#d4a574" stroke-width="2" />
+  <line x1="520" y1="407" x2="520" y2="467" stroke="#d4a574" stroke-width="2" />
+  <line x1="600" y1="407" x2="600" y2="467" stroke="#d4a574" stroke-width="2" />
+  <line x1="680" y1="408" x2="680" y2="468" stroke="#d4a574" stroke-width="2" />
+  <line x1="760" y1="410" x2="760" y2="470" stroke="#d4a574" stroke-width="2" />
+
+  <!-- HANDRAILS (upper cables) -->
+  <path class="rope" d="M 140 390 Q 500 190 860 390" />
+  <path class="rope" d="M 140 430 Q 500 230 860 430" />
+  <text x="50" y="410" class="label">Handrails</text>
+
+  <!-- FOOTWAY (wooden planks) -->
+  <rect x="185" y="468" width="600" height="20" fill="var(--surface)" stroke="var(--text)" stroke-width="1" />
+  <line x1="210" y1="468" x2="210" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="240" y1="468" x2="240" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="270" y1="468" x2="270" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="300" y1="468" x2="300" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="330" y1="468" x2="330" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="360" y1="468" x2="360" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="390" y1="468" x2="390" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="420" y1="468" x2="420" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="450" y1="468" x2="450" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="480" y1="468" x2="480" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="510" y1="468" x2="510" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="540" y1="468" x2="540" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="570" y1="468" x2="570" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="600" y1="468" x2="600" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="630" y1="468" x2="630" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="660" y1="468" x2="660" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="690" y1="468" x2="690" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="720" y1="468" x2="720" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="750" y1="468" x2="750" y2="488" stroke="var(--card)" stroke-width="0.5" />
+  <line x1="780" y1="468" x2="780" y2="488" stroke="var(--card)" stroke-width="0.5" />
+
+  <!-- Person on footway (for scale) -->
+  <circle cx="450" cy="445" r="8" fill="var(--accent)" stroke="var(--text)" stroke-width="1" />
+  <line x1="450" y1="453" x2="450" y2="468" stroke="var(--accent)" stroke-width="2" />
+  <text x="470" y="450" class="label">Person (75kg)</text>
+
+  <!-- RIGHT SIDE: Load and Tension Calculations -->
+  <g id="calculations">
+    <text x="50" y="550" class="section-title">Load Calculation Example</text>
+
+    <text x="50" y="580" class="label">Dead load (bridge structure):</text>
+    <text x="70" y="600" class="label">• Cables: ~390 kg each × 2 = 780 kg</text>
+    <text x="70" y="620" class="label">• Footway: ~150 kg</text>
+    <text x="70" y="640" class="label">• Handrails: ~400 kg</text>
+    <text x="70" y="660" class="label">• Total dead load: ~1,340 kg</text>
+
+    <text x="380" y="580" class="label">Live load (people):</text>
+    <text x="400" y="600" class="label">• 5 people × 75 kg = 375 kg</text>
+
+    <text x="380" y="640" class="label">Design load (with safety factor):</text>
+    <text x="400" y="660" class="label">• (1,340 + 375) × 1.3 = ~2,230 kg</text>
+
+    <text x="650" y="580" class="label">Cable tension (30m span, 1m sag):</text>
+    <text x="670" y="600" class="label">• θ ≈ 3.8°</text>
+    <text x="670" y="620" class="label">• T ≈ 1,100 / sin(3.8°)</text>
+    <text x="670" y="640" class="label">• T ≈ 16,500 kg per cable</text>
+
+    <text x="650" y="670" class="label" font-weight="bold" fill="var(--accent)">→ Requires ~35mm diameter manila rope</text>
+  </g>
+
+</svg>
+</p>
+<p><strong>Applications in off-grid environments:</strong></p>
+<ul>
+<li>Stream/river crossings (avoiding ford hazards)</li>
+<li>Canyon or ravine traversal</li>
+<li>Material transport (overhead cable systems)</li>
+<li>Emergency evacuation bridges</li>
+<li>Zip lines for goods transport</li>
+</ul>
+<p><strong>Key design principle:</strong> In rope suspension, strength comes from rope cross-sectional area and material properties. Load is distributed along the entire rope length, not concentrated at support points.</p>
+<p><strong>This guide covers:</strong></p>
+<ul>
+<li>Rope bridge types (simple suspension, V-bridge, Burma bridge)</li>
+<li>Load calculations and safety factors</li>
+<li>Anchor design and installation</li>
+<li>Tensioning methods (mechanical advantage)</li>
+<li>Rope inspection and maintenance</li>
+<li>Knots and fastening for high-load applications</li>
+</ul>
+<div class="danger">
+<p>Rope suspension systems must be designed with extreme care. Failure results in serious injury or death. Every design should include redundant load paths, conservative safety factors (minimum 5:1 for life-safety applications), and regular inspection protocols.</p>
+</div>
+</section>
+<section id="rope-types-and-properties">
+<h2>Rope Types and Properties</h2>
+<h3>Natural Fiber Ropes</h3>
+<p><strong>Manila rope (abaca fibers):</strong></p>
+<ul>
+<li>Tensile strength: 22–25 MPa (50–60 psi × 1000)</li>
+<li>Cost: $2–4 per kg</li>
+<li>Lifespan: 8–10 years (outdoor, maintained)</li>
+<li>Resistance: Good UV resistance; becomes brittle if wet then frozen</li>
+</ul>
+<p><strong>Sisal rope:</strong></p>
+<ul>
+<li>Tensile strength: 15–18 MPa</li>
+<li>Cost: $1–2 per kg</li>
+<li>Lifespan: 5–8 years</li>
+<li>Resistance: Less UV-resistant than manila; deteriorates faster</li>
+</ul>
+<p><strong>Hemp rope:</strong></p>
+<ul>
+<li>Tensile strength: 20–22 MPa</li>
+<li>Cost: $3–5 per kg</li>
+<li>Lifespan: 7–10 years</li>
+<li>Resistance: Good weather resistance with proper maintenance</li>
+</ul>
+<p><strong>Jute rope:</strong></p>
+<ul>
+<li>Tensile strength: 12–15 MPa</li>
+<li>Cost: $1–2 per kg</li>
+<li>Lifespan: 3–5 years</li>
+<li>Resistance: Poor; only for temporary applications</li>
+</ul>
+<h3>Rope Sizing and Load Capacity</h3>
+<p><strong>Rule of thumb for natural fiber rope:</strong></p>
+<pre><code>Safe working load (kg) = Diameter (mm)² × 50 (for manila/hemp)
+                       = Diameter (mm)² × 30 (for sisal)
+</code></pre>
+<p>This assumes 5:1 safety factor (rope breaking strength / safe working load = 5).</p>
+<p><strong>Example:</strong> 12mm manila rope:</p>
+<pre><code>Breaking strength ≈ (12²) × 50 × 5 = 36,000 kg
+Safe working load = 36,000 / 5 = 7,200 kg
+</code></pre>
+<p><strong>Verification (from tensile strength):</strong></p>
+<pre><code>Breaking strength = Cross-sectional area (mm²) × Tensile strength (MPa) / 1000
+</code></pre>
+<p>For 12mm manila rope (area ≈ 113 mm²):</p>
+<pre><code>Breaking strength = 113 × 22 / 1000 = 2.5 kN ≈ 250 kg (per bundle)
+Stranded rope (typically 6 bundles) = 1,500 kg breaking strength (close to rule of thumb)
+</code></pre>
+<h3>Synthetic Ropes (If Available)</h3>
+<p><strong>Polypropylene (PP):</strong></p>
+<ul>
+<li>Tensile strength: 30–40 MPa</li>
+<li>Cost: $1–2 per kg</li>
+<li>Lifespan: 10–15 years</li>
+<li>Advantage: Floats (useful for water crossings); lower cost</li>
+</ul>
+<p><strong>Polyethylene (PE):</strong></p>
+<ul>
+<li>Tensile strength: 35–45 MPa</li>
+<li>Cost: $2–3 per kg</li>
+<li>Lifespan: 12–15 years</li>
+<li>Advantage: Excellent UV resistance; does not absorb water</li>
+</ul>
+<p><strong>Nylon:</strong></p>
+<ul>
+<li>Tensile strength: 50–70 MPa</li>
+<li>Cost: $3–5 per kg</li>
+<li>Lifespan: 15+ years</li>
+<li>Advantage: High strength-to-weight; excellent dynamic load absorption (elasticity)</li>
+</ul>
+<div class="tip">
+<p><strong>For suspension bridges, nylon is superior</strong> due to elasticity (absorbs dynamic shock when people jump or move suddenly). Manila is acceptable if nylon unavailable but less forgiving.</p>
+</div>
+</section>
+<section id="rope-bridge-types">
+<h2>Rope Bridge Types</h2>
+<h3>Simple Suspension Bridge</h3>
+<p>Simplest rope bridge type: two parallel cables span across gap, with sling loops hanging down to support footway (boards or rope netting).</p>
+<p><strong>Design:</strong></p>
+<ol>
+<li><strong>Main cables:</strong> Two 20–50mm diameter ropes anchor at both sides, strung at slight catenary (natural hanging curve)</li>
+<li><strong>Handrails:</strong> Two additional cables at shoulder height for person balance</li>
+<li><strong>Slings:</strong> Rope loops (or cable clamps) spaced every 0.5–1.0m, suspending footway</li>
+<li><strong>Footway:</strong> Wooden slats (50mm × 100mm) or rope netting laid across slings</li>
+</ol>
+<p><strong>Load calculation:</strong></p>
+<p>For 1m footway section with 100kg person:</p>
+<ul>
+<li>Main cables carry vertical load: 100 kg per cable = 50 kg per cable</li>
+<li>Tension = Load / (2 × sin θ), where θ = cable angle from horizontal</li>
+</ul>
+<p>If cable sags 0.5m over 20m span:</p>
+<pre><code>θ = arctan(0.5 / 10) ≈ 2.9° (very shallow, cable nearly horizontal)
+Tension per cable = 50 / (2 × sin 2.9°) ≈ 50 / 0.1 ≈ 500 kg tension
+</code></pre>
+<p><strong>Sling rating:</strong> Each sling loop must support footway weight (~10 kg per 1m section) + person load (~100 kg). With 4 sling loops supporting 1m footway:</p>
+<pre><code>Load per sling = (10 + 100) / 4 ≈ 28 kg per sling
+</code></pre>
+<p>Use 8–10mm diameter rope for slings (safe working load ~3.2–5 kg per sling... <strong>this is too weak!</strong>). This calculation shows why sling spacing matters: use closer spacing (0.3m) to distribute load.</p>
+<div class="info-box">
+<p><strong>Mistake to avoid:</strong> Footway longer than 20m requires much thicker cables due to catenary sagging. Keep spans under 30m for manageable cable sizes and acceptable footway rigidity.</p>
+</div>
+<h3>V-Bridge (Suspension + Compression Hybrid)</h3>
+<p>V-bridge combines suspension cables with rigid compression elements (logs or poles), improving footway stability and reducing sag.</p>
+<p><strong>Design:</strong></p>
+<ol>
+<li><strong>Main suspension cables:</strong> Anchor at both abutments, pass through suspension tower at mid-span</li>
+<li><strong>Tower:</strong> Vertical or slightly angled rigid member (log pole) at center, supports cable sag point</li>
+<li><strong>Footway:</strong> Suspended from cables by slings, rigid cross-beams improve lateral stability</li>
+</ol>
+<p><strong>Advantages:</strong> Smaller cable sagging (cable angle increases, reducing tension per cable), better footway rigidity, easier construction if rigid materials (logs) available.</p>
+<h3>Burma Bridge (Bridge of Ropes and Logs)</h3>
+<p>Burma bridge uses parallel hand ropes and foot ropes, with log sections suspended from handropes. Resembles a ladder.</p>
+<p><strong>Design:</strong></p>
+<ol>
+<li><strong>Hand ropes:</strong> Two main ropes at shoulder height (20–30mm diameter)</li>
+<li><strong>Foot ropes:</strong> Two ropes at foot level, slightly sagging (15–20mm diameter)</li>
+<li><strong>Logs:</strong> Cross-pieces (100–150mm diameter, 1–2m long) suspended from handropes, resting on foot ropes to form steps</li>
+</ol>
+<p><strong>Assembly:</strong></p>
+<ul>
+<li>Lash logs to handropes using tight diagonal wrapping (4–6 wraps per log, spacing 0.3–0.5m)</li>
+<li>Foot ropes rest on tops of logs; tension holds them in place</li>
+<li>Handropes provide stability and fall protection</li>
+</ul>
+<p><strong>Advantage:</strong> Logs distribute load effectively; footway is rigid; relatively simple assembly.</p>
+<p><strong>Disadvantage:</strong> Heavy (requires significant material and muscle to install); not suitable for long spans (&gt;50m).</p>
+</section>
+<section id="load-calculations">
+<h2>Load Calculations and Safety Factors</h2>
+<h3>Working Load Calculation</h3>
+<p><strong>Components of total load:</strong></p>
+<ol>
+<li>
+<p><strong>Dead load (bridge structure):</strong> Weight of cables, footway, handrails. Estimate:</p>
+<ul>
+<li>Main cables: 20mm manila rope @ 0.65 kg/m × 30m span = 390 kg per cable</li>
+<li>Footway (boards): 50 boards × 3 kg = 150 kg</li>
+<li>Handrails: 2 × 200 kg = 400 kg</li>
+<li>Total dead load: ~1,340 kg</li>
+</ul>
+</li>
+<li>
+<p><strong>Live load (people + goods):</strong> Design for maximum occupancy. Typical standard: 5–10 people on bridge simultaneously, average 75 kg each = 375–750 kg.</p>
+</li>
+<li>
+<p><strong>Dynamic load factor:</strong> People walking, jumping, or swaying increases effective load by 20–50%. Use 1.3 multiplier (30% increase).</p>
+</li>
+</ol>
+<p><strong>Total design load = (Dead load + Live load) × Dynamic factor</strong></p>
+<pre><code>= (1,340 + 750) × 1.3 = 2,717 kg (use 3,000 kg for margin)
+</code></pre>
+<h3>Cable Tension and Sizing</h3>
+<p>For simple suspension bridge, main cables carry half total load (handrails carry minimal load):</p>
+<pre><code>Load per main cable = 3,000 / 2 = 1,500 kg
+</code></pre>
+<p>Cable sag creates angle. If cable sags 1m over 30m span:</p>
+<pre><code>θ = arctan(1 / 15) ≈ 3.8°
+Tension = Load / (2 × sin θ) = 1,500 / (2 × sin 3.8°) ≈ 1,500 / 0.13 ≈ 11,500 kg
+</code></pre>
+<p><strong>Required rope diameter:</strong> With 5:1 safety factor:</p>
+<pre><code>Required breaking strength = 11,500 × 5 = 57,500 kg
+From rule of thumb: Diameter² × 50 = 57,500
+Diameter ≈ 34 mm manila rope
+</code></pre>
+<div class="warning">
+<p>Cable tension is very high! A seemingly small bridge spanning 30m requires 30+ mm thick cables. Longer spans require exponentially thicker cables. <strong>Do not span more than 50m without engineering support.</strong></p>
+</div>
+<h3>Safety Factors</h3>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Safety Factor</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Permanent bridge (human transit)</td>
+<td>5:1</td>
+<td>Accounts for material degradation, dynamic loads, installation errors</td>
+</tr>
+<tr>
+<td>Temporary bridge (emergency only)</td>
+<td>4:1</td>
+<td>Acceptable for short-term use</td>
+</tr>
+<tr>
+<td>Materials handling (goods only, no humans)</td>
+<td>3:1</td>
+<td>Goods don't move dynamically; predictable loading</td>
+</tr>
+<tr>
+<td>Experimental/test loads</td>
+<td>2:1</td>
+<td>Only under controlled conditions with fall protection</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Calculation example:</strong> To support 3,000 kg design load with 5:1 safety factor:</p>
+<pre><code>Required cable breaking strength = 3,000 × 5 = 15,000 kg
+</code></pre>
+</section>
+<section id="anchor-design">
+<h2>Anchor Points and Deadman Anchors</h2>
+<h3>Rock Anchor Installation</h3>
+<p>On stable bedrock, install eyebolts or anchor plates directly into rock:</p>
+<ol>
+<li><strong>Drill hole:</strong> 25–30mm diameter, depth 150–200mm into solid rock</li>
+<li><strong>Clean hole:</strong> Remove dust and debris</li>
+<li><strong>Insert anchor:</strong> Expansion bolt or epoxy-grouted eyebolt</li>
+<li><strong>Load test:</strong> Apply proof load (50% of design tension) before placing live load</li>
+</ol>
+<p><strong>Strength:</strong> Rock anchors can support very high loads if properly installed. Typical granite/limestone: 50–100 kN per M20 bolt.</p>
+<h3>Deadman Anchor (Earth/Logs)</h3>
+<p>When rock is not available, bury a deadman (large timber or metal plate) to resist cable pull.</p>
+<p><strong>Design principle:</strong> Cable pull = tension at shallow angle (often 20–30° below horizontal). Deadman must be buried deep enough that soil friction + overburden weight resists pull.</p>
+<p><strong>Deadman calculation:</strong></p>
+<p>For 10,000 kg cable tension at 30° angle below horizontal:</p>
+<pre><code>Horizontal pull = 10,000 × cos(30°) ≈ 8,660 kg
+Vertical component = 10,000 × sin(30°) ≈ 5,000 kg
+</code></pre>
+<p>Soil must resist 8,660 kg horizontal. For sandy soil (friction coefficient ~0.3):</p>
+<pre><code>Required dead weight = 8,660 / 0.3 ≈ 28,900 kg
+</code></pre>
+<p>Use a large timber log (0.5m × 0.5m × 3m = ~3,000 kg) or concrete block, buried 1–2m deep with additional weight piled on top.</p>
+<p><strong>Anchor cable:</strong> Attach bridge cable to deadman via:</p>
+<ul>
+<li>Metal eye bolt through deadman, cable looped over it</li>
+<li>Strong metal bracket bolted to deadman</li>
+<li>Chains wrapped around deadman and bolted to cable clamp</li>
+</ul>
+<h3>Anchor Cable Splay</h3>
+<p>When anchoring to deadman, use cable splay (spreading cable into multiple branches) to distribute load:</p>
+<pre><code>|--cable to anchor 1 (angle 30° from main tension)
+Main cable--+-—cable to anchor 2 (angle 30° from main tension)
+|--cable to anchor 3 (optional, for very high loads)
+</code></pre>
+<p>Each splay branch carries lower tension (sharing the load), reducing required deadman size.</p>
+<div class="tip">
+<p><strong>Rule of thumb:</strong> Two splay anchors at 30° from main line reduce required anchor strength by ~25% compared to single direct anchor.</p>
+</div>
+</section>
+<section id="tensioning-systems">
+<h2>Tensioning Systems</h2>
+<h3>Spanish Windlass (Mechanical Advantage)</h3>
+<p>Spanish windlass is a simple rope-and-lever tensioning system requiring no powered equipment.</p>
+<p><strong>Components:</strong></p>
+<ol>
+<li>Two anchor points (fixed to deadmen or rock)</li>
+<li>Rope loop between anchors (diameter 20–30mm)</li>
+<li>Wooden poles (lever, typically 1–2m long) inserted through loop</li>
+</ol>
+<p><strong>Operation:</strong></p>
+<ol>
+<li>Insert lever pole through rope loop</li>
+<li>Rotate lever, twisting rope and shortening loop</li>
+<li>As rope shortens, tension increases proportionally</li>
+<li>When target tension reached, lock lever in place (wedge or additional rope)</li>
+</ol>
+<p><strong>Mechanical advantage:</strong> Roughly 2–3:1 per lever. Two levers can achieve ~6:1 mechanical advantage.</p>
+<p><strong>Tension control:</strong> Measure tension by deflection (pluck cable like guitar string, calculate frequency) or use tension gauge if available.</p>
+<h3>Come-Along (Ratchet Winch)</h3>
+<p>Come-along (also called lug puller) is a mechanical ratchet device providing 4:1 mechanical advantage per pull.</p>
+<p><strong>Operation:</strong></p>
+<ol>
+<li>Attach come-along between cable and deadman</li>
+<li>Pull handle down to ratchet (locks chain in place)</li>
+<li>Repeat pulls, incrementally tightening</li>
+<li>Lock mechanism holds tension when handle released</li>
+</ol>
+<p><strong>Advantage:</strong> Precise control, no special setup required. <strong>Disadvantage:</strong> Requires manufactured tool (not always available off-grid).</p>
+<h3>Turnbuckle Tensioning</h3>
+<p>Turnbuckle (threaded cylinder with left and right threaded holes) allows fine adjustment:</p>
+<ol>
+<li>Attach turnbuckle between cable and anchor point</li>
+<li>Thread cable ends into turnbuckle</li>
+<li>Rotate turnbuckle (both ends rotate, tightening cable)</li>
+<li>Lock with lock nuts when target tension reached</li>
+</ol>
+<p><strong>Mechanical advantage:</strong> 1:1 (no mechanical advantage, purely fine-tuning).</p>
+<div class="info-box">
+<p><strong>Tensioning procedure:</strong></p>
+<ol>
+<li>Install cable loosely between anchors (allow significant sag)</li>
+<li>Apply initial tension (10–20% target) to seat rope fibers</li>
+<li>Allow 24–48 hours for settling (rope stretches)</li>
+<li>Reapply full tension after settling</li>
+<li>Check tension weekly for first month, then monthly thereafter</li>
+</ol>
+</div>
+</section>
+<section id="highline-and-zipline">
+<h2>Highline and Zip Line Construction</h2>
+<h3>Highline Systems (Slackline for Cargo)</h3>
+<p>Highlines are tension cables strung across gaps for transporting goods via carrier pulley systems. Used in mountainous terrain where traditional roads are impractical.</p>
+<p><strong>Design similar to V-Bridge but optimized for cargo movement:</strong></p>
+<ol>
+<li><strong>Main cable:</strong> Larger diameter (30–50mm), anchored firmly at both abutments</li>
+<li><strong>Carrier pulley:</strong> Wheeled trolley sliding along main cable</li>
+<li><strong>Haul rope:</strong> Separate rope connected to carrier, pulled from one side to move cargo along main cable</li>
+</ol>
+<p><strong>Carrier design:</strong></p>
+<ul>
+<li>Wheel diameter: 75–100mm</li>
+<li>Axle through wheel center (12–16mm diameter steel pin)</li>
+<li>Frame bolted to wheel axle, supporting load basket or platform</li>
+</ul>
+<p><strong>Load calculation:</strong> Unlike bridges (distributed loads), highlines carry point loads (single cargo mass). Cable tension is:</p>
+<pre><code>T = (W / 2) / sin(θ)
+</code></pre>
+<p>Where W = cargo weight, θ = cable sag angle.</p>
+<p>For 200 kg cargo on 30m span with 1m sag:</p>
+<pre><code>θ ≈ 3.8°
+T ≈ 100 / sin(3.8°) ≈ 100 / 0.067 ≈ 1,500 kg tension
+</code></pre>
+<h3>Zip Line Construction</h3>
+<p>Zip line is an inclined cable allowing person to slide downslope propelled by gravity.</p>
+<p><strong>Design parameters:</strong></p>
+<ol>
+<li><strong>Cable:</strong> Main load-bearing rope, typically 16–20mm diameter, anchored at top and bottom</li>
+<li><strong>Slope:</strong> Ideally 15–25° below horizontal (steeper = faster, less control; shallower = slower but safer)</li>
+<li><strong>Pulley carriage:</strong> Rider harness connected to wheels rolling along cable</li>
+<li><strong>Braking system:</strong> Friction device or controlled descent mechanism to slow rider at end</li>
+</ol>
+<p><strong>Cable tension:</strong> Person at midpoint creates tension:</p>
+<pre><code>T = W / (2 × sin θ)
+</code></pre>
+<p>Where W = person + carriage weight (~100 kg), θ = cable slope angle.</p>
+<p>For 25° slope:</p>
+<pre><code>T = 100 / (2 × sin 25°) ≈ 100 / 0.85 ≈ 118 kg
+</code></pre>
+<p>Much lower tension than bridges; 16mm cable (safe working load ~5,000 kg) is adequate.</p>
+<p><strong>Braking:</strong> Mechanical friction (leather/rubber pads on pulley wheels), or water-filled dampers, slow zip line descent to safe speed (~2 m/s typical).</p>
+<div class="warning">
+<p>Zip lines are dangerous if misdesigned. Uncontrolled descent causes high-speed collision at end. Always include braking system and test extensively with sandbags before human use.</p>
+</div>
+</section>
+<section id="rope-inspection-maintenance">
+<h2>Rope Inspection and Maintenance</h2>
+<h3>Visual Inspection Protocol</h3>
+<p>Monthly inspection check:</p>
+<table>
+<thead>
+<tr>
+<th>Sign</th>
+<th>Assessment</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fraying ends</strong></td>
+<td>Normal wear</td>
+<td>Wrap ends tightly with thread/twine</td>
+</tr>
+<tr>
+<td><strong>Broken strands</strong></td>
+<td>Age-related degradation</td>
+<td>Count breaks; if &gt;5 per meter, retire rope</td>
+</tr>
+<tr>
+<td><strong>Discoloration</strong></td>
+<td>Water damage or UV</td>
+<td>Monitor; if soft spots present, retire</td>
+</tr>
+<tr>
+<td><strong>Soft spots</strong></td>
+<td>Internal rot (fiber decay)</td>
+<td>Retire immediately; cannot be repaired</td>
+</tr>
+<tr>
+<td><strong>Abrasion/flattening</strong></td>
+<td>Contact with sharp edges</td>
+<td>Wrap contact area with padding; consider repositioning</td>
+</tr>
+<tr>
+<td><strong>Splaying</strong></td>
+<td>Unraveling of outer strands</td>
+<td>Rewind twine around rope; seal with wax</td>
+</tr>
+</tbody>
+</table>
+<h3>Rope Retirement Criteria</h3>
+<p>Retire rope if any of the following are true:</p>
+<ol>
+<li><strong>Age exceeds service life.</strong> Natural fiber ropes: 8–10 years maximum outdoor; synthetic: 12–15 years.</li>
+<li><strong>Visible breaks:</strong> &gt;2% of strand count broken (e.g., 6-strand rope with &gt;12 broken strands)</li>
+<li><strong>Soft spots or rot:</strong> Any area that feels mushy or is discolored black (mold/decay)</li>
+<li><strong>&gt;25% diameter reduction:</strong> Measure with caliper; if rope is thinner than 75% of original diameter, retire</li>
+<li><strong>Load failure or near-failure:</strong> Any rope that has slipped, failed under test load, or shown permanent deformation</li>
+</ol>
+<p><strong>Disposal:</strong> Burn natural fiber ropes (controlled fire), or bury in compost (decomposes in 5–10 years). Never re-use retired rope for structural applications.</p>
+<h3>Maintenance Schedule</h3>
+<table>
+<thead>
+<tr>
+<th>Interval</th>
+<th>Task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Monthly</strong></td>
+<td>Visual inspection, check all connections and fasteners, test tension</td>
+</tr>
+<tr>
+<td><strong>Quarterly</strong></td>
+<td>Deep clean (wash rope gently with fresh water, allow to air dry)</td>
+</tr>
+<tr>
+<td><strong>Annually</strong></td>
+<td>Full inspection under load, measure diameter, check for soft spots</td>
+</tr>
+<tr>
+<td><strong>Every 3 years</strong></td>
+<td>Partial rope replacement (oldest sections) if showing wear</td>
+</tr>
+<tr>
+<td><strong>Every 10 years</strong></td>
+<td>Complete rope replacement (natural fiber maximum service life)</td>
+</tr>
+</tbody>
+</table>
+<h3>Weatherproofing</h3>
+<p>Apply protective coating to extend rope life:</p>
+<p><strong>Option 1: Linseed oil.</strong> Soak rope in linseed oil annually. Oil penetrates fibers, improving weather resistance and flexibility.</p>
+<p><strong>Option 2: Tar or pitch.</strong> Heat-melt tar or pine pitch, allow rope to soak. Creates water barrier but stiffens rope.</p>
+<p><strong>Option 3: Beeswax coating.</strong> Melt beeswax, dip rope in warm wax bath. Water-resistant but needs reapplication every 1–2 years.</p>
+</section>
+<section id="rigging-knots">
+<h2>Essential Rigging Knots</h2>
+<h3>Trucker's Hitch (Mechanical Advantage Knot)</h3>
+<p>Also called &quot;power cinch.&quot; Provides 2:1 mechanical advantage using knots alone (no hardware).</p>
+<p><strong>Tying steps:</strong></p>
+<ol>
+<li>Create loop in standing part of rope (use overhand knot or Alpine butterfly loop)</li>
+<li>Pass working end under fixed anchor point and back through loop</li>
+<li>Pull working end tight (creates 2:1 advantage; pulling 10kg effort moves load 20kg)</li>
+</ol>
+<p><strong>Uses:</strong> Tightening guys, securing loads, tensioning rigging.</p>
+<h3>Bowline (Fixed Loop)</h3>
+<p>Creates fixed loop at end of rope. Loop size does not slip or adjust.</p>
+<p><strong>Application:</strong> Attaching cable to fixed anchor point; will not tighten under load.</p>
+<h3>Sheet Bend (Joining Two Ropes)</h3>
+<p>Joins two ropes of different diameters (bend the large rope, pass small rope through the loop and back over both parts).</p>
+<p><strong>Strength:</strong> ~80% of single rope breaking strength.</p>
+<h3>Anchor Hitch</h3>
+<p>Wraps rope around anchor point and back to itself, creating secure grip that tightens under load.</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Wrap rope around anchor (2–3 full turns)</li>
+<li>Pass working end under and over standing part</li>
+<li>Pull tight (creates mechanical friction)</li>
+</ol>
+<p><strong>Holding power:</strong> ~3:1 mechanical advantage for smooth surfaces; higher on rough anchors.</p>
+</section>
+<section id="design-checklist">
+<h2>Rope Bridge Design Checklist</h2>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Task</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Planning</strong></td>
+<td>Determine span, load, and cable sag</td>
+<td>Conservative design: 1–2m sag per 30m span</td>
+</tr>
+<tr>
+<td><strong>Rope selection</strong></td>
+<td>Choose material and diameter</td>
+<td>Use tables above; verify breaking strength</td>
+</tr>
+<tr>
+<td><strong>Anchor design</strong></td>
+<td>Site rock anchors or design deadmen</td>
+<td>Test anchors with proof load before bridge construction</td>
+</tr>
+<tr>
+<td><strong>Cable layout</strong></td>
+<td>Plan cable routing, splay angles</td>
+<td>Document sag, tension, and geometry</td>
+</tr>
+<tr>
+<td><strong>Tensioning plan</strong></td>
+<td>Select tensioning method (windlass, come-along)</td>
+<td>Ensure mechanism capable of achieving target tension</td>
+</tr>
+<tr>
+<td><strong>Safety factors</strong></td>
+<td>Calculate safety factors (target ≥5:1)</td>
+<td>Document all assumptions</td>
+</tr>
+<tr>
+<td><strong>Inspection protocol</strong></td>
+<td>Establish monthly/annual schedule</td>
+<td>Record all findings</td>
+</tr>
+<tr>
+<td><strong>Load testing</strong></td>
+<td>Apply test loads (sandbags) before human use</td>
+<td>Inspect for damage after test</td>
+</tr>
+<tr>
+<td><strong>Signage</strong></td>
+<td>Post weight limits and inspection date</td>
+<td>Update inspection record visibly</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="knots-rigging.html">Knots, Rope &amp; Rigging</a>
+<a href="bridges-dams.html">Bridges, Dams &amp; Infrastructure</a>
+<a href="mechanical-advantage-construction.html">Mechanical Advantage in Construction</a>
+<a href="timber-framing-joinery.html">Timber Framing and Joinery</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

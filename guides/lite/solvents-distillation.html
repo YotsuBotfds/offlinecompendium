@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/solvents-distillation.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solvents &amp; Distillation</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Industrial Chemistry</span> ›
+<span>Solvents &amp; Distillation</span>
+</div>
+
+<div class="danger">
+<strong>⚠ SAFETY WARNING</strong><br>This guide covers activities with significant risk of injury or harm. Professional training may be required.
+</div>
+
+<h1>Solvents &amp; Distillation</h1>
+<p class="subtitle">Turpentine, ethanol, methanol, acetone production. Fractional distillation, safety, and solvent recovery for survival applications.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~12 min</span>
+<span>Updated: 2026-02-16</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">1. Overview</a></li>
+<li><a href="#theory">2. Chemical Theory of Distillation</a></li>
+<li><a href="#apparatus">3. Distillation Equipment Setup</a></li>
+<li><a href="#materials">4. Materials &amp; Reagents</a></li>
+<li><a href="#ethanol-procedure">5. Ethanol Production &amp; Distillation</a></li>
+<li><a href="#acetone">6. Acetone Production by Dry Distillation</a></li>
+<li><a href="#turpentine">7. Turpentine from Pine Resin</a></li>
+<li><a href="#common-mistakes">8. Common Mistakes &amp; Troubleshooting</a></li>
+<li><a href="#scale-up">9. Scale-Up Considerations</a></li>
+<li><a href="#waste-disposal">10. Waste Handling &amp; Disposal</a></li>
+<li><a href="#safety-hazards">11. Safety Hazards &amp; Control Measures</a></li>
+<li><a href="#purity-testing">12. Purity Testing &amp; Quality Assurance</a></li>
+<li><a href="#reference">13. Reference Data &amp; Quick Tables</a></li>
+<li><a href="#cross-references">14. Related Guides &amp; Cross-References</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>EXTREME HAZARD</strong>: Solvent distillation involves highly flammable and explosive materials. Improper procedures can cause fires, explosions, and toxic exposure resulting in death. This guide is for educational reference only. Never attempt without proper safety training, equipment, and ventilation.</p>
+</div>
+<div class="warning">
+<p><strong>Required Reading:</strong> Before attempting any procedures in this guide, read the <a href="chemical-safety">Chemical Safety Guide</a> in full.</p>
+</div>
+<div class="danger">
+<p><strong>Fire and Explosion Hazard:</strong> Organic solvents are highly flammable. Distillation of solvents must be performed outdoors or in well-ventilated areas away from all ignition sources. Solvent vapors are heavier than air and can travel to distant ignition sources. Use only explosion-proof equipment.</p>
+</div>
+<section id="overview">
+<h2>1. Overview</h2>
+<p>Distillation is the most practical solvent production method in survival chemistry, separating liquids by exploiting differences in boiling points. This guide covers production of ethanol (from fermentation), acetone (from calcium acetate), and turpentine (from pine resin)—three essential solvents for fuel, degreasing, and chemical synthesis. Each method requires only readily-available materials and modest heat sources. Proper distillation technique directly impacts safety, yield, and product purity; poor technique invites fire, toxic fumes, and equipment failure.</p>
+<p>The guide prioritizes hands-on methods achievable without advanced lab infrastructure. All procedures assume outdoor work or well-ventilated conditions—distillation vapors are explosive and toxic, and containment failure can be fatal.</p>
+</section>
+<section id="theory">
+<h2>2. Chemical Theory of Distillation</h2>
+<p>Distillation separates liquids by exploiting boiling point differences. When a mixture is heated, the component with lower boiling point vaporizes preferentially. The vapor rises, cools in the condenser, and recondenses to liquid form for collection. The fundamental principle: <strong>Raoult's Law</strong> states that the partial pressure of a component in the vapor phase is proportional to its mole fraction in the liquid, multiplied by its pure-component vapor pressure.</p>
+<h3>Formula: Raoult's Law</h3>
+<div class="reaction-formula">
+P_i = x_i × P_i°
+</div>
+<p>Where: P_i = partial pressure of component i, x_i = mole fraction of i in liquid, P_i° = vapor pressure of pure i</p>
+<p>This means volatile components preferentially enter the vapor phase, while less volatile components remain in liquid.</p>
+<h3>Separation Efficiency Factors</h3>
+<p><strong>Boiling point difference (ΔBP):</strong></p>
+<ul>
+<li>
+<blockquote>
+<p>30°C: Excellent separation (single distillation achieves 95%+ purity)</p>
+</blockquote>
+</li>
+<li>20–30°C: Good separation (may need 2-3 distillations)</li>
+<li>&lt;20°C: Difficult (requires tall column, slow heating, high reflux ratio)</li>
+<li>&lt;10°C: Azeotropic or near-azeotropic (simple distillation insufficient)</li>
+</ul>
+<p><strong>Column height &amp; packing:</strong> More surface area allows more vapor-liquid equilibrations. Each equilibration step (theoretical plate) improves separation. Packed columns achieve 1-2 theoretical plates per 10cm of height.</p>
+<p><strong>Heating rate:</strong> Slow heating (increase 2-3°C/hour) maximizes equilibration time; fast heating (5-10°C/min) reduces purity.</p>
+<p><strong>Reflux ratio:</strong> Allowing vapor to recondense and re-vaporize multiple times (reflux) improves purity at cost of longer distillation time.</p>
+<p><svg aria-label="Solvents and Distillation diagram 1" style="background:#2d2416;margin:20px 0;border-radius:8px;max-width:100%;height:auto" viewBox="0 0 600 500"><rect fill="#2d2416" height="500" width="600"></rect><text fill="#d4a574" font-size="18" font-weight="bold" text-anchor="middle" x="300" y="30">Fractional Distillation Apparatus</text><rect fill="none" height="80" stroke="#b8956a" stroke-width="2/" width="150" x="100" y="380"><text fill="#f5f0e8" font-size="11" text-anchor="middle" x="175" y="415">Boiling Flask</text><text fill="#f5f0e8" font-size="9" text-anchor="middle" x="175" y="430">(Mixture)</text><rect fill="none" height="80" stroke="#d4a574" stroke-width="2/" width="30" x="160" y="300"><text fill="#f5f0e8" font-size="9" x="195" y="335">Packing</text><text fill="#f5f0e8" font-size="8" x="195" y="350">(Glass)</text><path d="M 175 300 L 200 260 L 180 260 L 180 200 L 200 200" stroke="#b8956a" stroke-width="2/"><text fill="#f5f0e8" font-size="9" x="220" y="220">Vapor to</text><text fill="#f5f0e8" font-size="9" x="220" y="235">Condenser</text><circle cx="175" cy="150" fill="none" r="25" stroke="#b8956a" stroke-width="2/"><text fill="#f5f0e8" font-size="10" text-anchor="middle" x="175" y="155">Therm.</text><rect fill="none" height="80" stroke="#b8956a" stroke-width="2/" width="120" x="220" y="120"><text fill="#d4a574" font-size="11" text-anchor="middle" x="280" y="145">Condenser</text><text fill="#d4a574" font-size="10" text-anchor="middle" x="280" y="160">(Liebig)</text><text fill="#f5f0e8" font-size="8" text-anchor="middle" x="280" y="180">Cold water in →</text><circle cx="240" cy="70" fill="none" r="15" stroke="#b8956a" stroke-width="2/"><text fill="#f5f0e8" font-size="9" text-anchor="middle" x="240" y="75">Outlet</text><line stroke="#b8956a" stroke-width="2/" x1="240" x2="240" y1="85" y2="120"><line stroke="#b8956a" stroke-width="2/" x1="240" x2="280" y1="120" y2="120"><rect fill="none" height="60" stroke="#d4a574" stroke-width="2/" width="100" x="280" y="30"><text fill="#d4a574" font-size="11" text-anchor="middle" x="330" y="55">Collection Vessel</text><text fill="#f5f0e8" font-size="9" text-anchor="middle" x="330" y="70">(Product)</text><path d="M 110 380 L 90 380 L 85 390" fill="none" stroke="#b8956a" stroke-width="3"></path><text fill="#f5f0e8" font-size="9" x="50" y="375">Heat</text><text "="" fill="#f5f0e8" font-size="8" x="50" y="390">(Gas/Coal)</text><text fill="#d4a574" font-size="9" x="350" y="280">Reflux arm:</text><text fill="#f5f0e8" font-size="8" x="350" y="295">Vapor can rise to</text><text fill="#f5f0e8" font-size="8" x="350" y="310">condenser or reflux</text><text fill="#f5f0e8" font-size="8" x="350" y="325">back down column</text></rect></line></line></circle></rect></circle></path></rect></rect></svg></p>
+</section>
+<section id="apparatus">
+<h2>3. Distillation Equipment Setup</h2>
+<h3>Simple Pot Still (Entry-Level)</h3>
+<p><strong>Minimal components:</strong></p>
+<ol>
+<li>Boiling flask (round-bottom, 2-5L glass or metal vessel)</li>
+<li>Heat source (electric hot plate, oil bath, or steam heating—NO direct flame for solvent distillation)</li>
+<li>Thermometer (0-110°C or 0-250°C range; inserted through rubber stopper)</li>
+<li>Condenser (air-cooled or water-cooled tube)</li>
+<li>Collection flask (below condenser outlet)</li>
+<li>Stopper and gasket seals to prevent vapor leakage</li>
+</ol>
+<p><strong>Operation:</strong> Heat flask slowly; when vapor appears, adjust heat to maintain steady condensation. Thermometer bulb must be at side-arm outlet height (where vapor exits) to accurately measure vapor temperature, not flask interior.</p>
+<h3>Condenser Types</h3>
+<table>
+<thead>
+<tr>
+<th>Condenser Type</th>
+<th>Cooling Method</th>
+<th>Efficiency</th>
+<th>Suitability</th>
+<th>Setup Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Liebig (water-cooled)</td>
+<td>Running water or ice bath</td>
+<td>Excellent</td>
+<td>Best for volatile solvents (ethanol, acetone)</td>
+<td>High (requires water supply)</td>
+</tr>
+<tr>
+<td>Air-cooled coil</td>
+<td>Natural convection</td>
+<td>Good</td>
+<td>Moderate volatility solvents</td>
+<td>Low (simple setup)</td>
+</tr>
+<tr>
+<td>Graham double-wall</td>
+<td>Counter-current water</td>
+<td>Excellent</td>
+<td>Professional-grade</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Heligriff (compact)</td>
+<td>Ice bath or water</td>
+<td>Good</td>
+<td>High-volatility products</td>
+<td>Low</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Liebig condenser (water-cooled):</strong> Inner tube carries product vapor; outer jacket circulates cold water. Length 30-60cm. Most effective (cooling from 155°C to 30°C in seconds). Requires running water or frequent ice bath replacement.</p>
+<p><strong>Air-cooled coil:</strong> Copper or glass tubing coiled 5-10 turns, mounted vertically. Vapor cools as it travels through coils. Less efficient but functional without water supply. Suitable for turpentine (high BP) distillation.</p>
+<h3>Fractional Distillation Column</h3>
+<p>For separating components with boiling points within 20-30°C: insert packing above the boiling flask to increase surface area for vapor-liquid equilibration.</p>
+<p><strong>Packing materials comparison:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>Theoretical Plates/10cm</th>
+<th>Availability</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Copper wire gauze (packed)</td>
+<td>2-3</td>
+<td>Medium</td>
+<td>Excellent performance; requires access to copper sheet</td>
+</tr>
+<tr>
+<td>Glass marbles (3-5mm)</td>
+<td>1.5-2</td>
+<td>High</td>
+<td>Easy to source locally; may roll—use wire mesh to contain</td>
+</tr>
+<tr>
+<td>Ceramic pellets</td>
+<td>1.5-2</td>
+<td>Medium</td>
+<td>Purpose-built; small diameter (3mm) optimized</td>
+</tr>
+<tr>
+<td>Stainless steel wool</td>
+<td>1-1.5</td>
+<td>High</td>
+<td>Good; use non-soaped (&quot;bright&quot;) variety</td>
+</tr>
+<tr>
+<td>Wooden dowels (thin, cross-packed)</td>
+<td>0.8-1</td>
+<td>High</td>
+<td>Reduced efficiency; emergency backup only</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Column design specs:</strong></p>
+<ul>
+<li>Diameter: 3-8cm (larger = lower pressure drop, easier vapor flow)</li>
+<li>Height: 30-60cm packed section (50-100 theoretical plates total)</li>
+<li>Material: Glass tubing preferred for visibility; stainless steel acceptable</li>
+<li>Support: Wire mesh base 2-3cm above boiling flask outlet (prevents packing collapse)</li>
+</ul>
+<p><strong>Reflux head:</strong> Top of column connects to side-arm condenser at 15-20° angle (promotes dripping of recondensed liquid back through packing, improving separation).</p>
+<div class="tip">
+<p>For best results, wrap column insulation (mineral wool or cloth) around packing section to maintain warmth and reduce condenser backup during distillation.</p>
+</div>
+<!-- SVG-TODO: Labeled diagram of simple still vs. fractional distillation column showing reflux path -->
+</section>
+<section id="materials">
+<h2>4. Materials &amp; Reagents</h2>
+<h3>Essential Equipment</h3>
+<ul>
+<li>Heat source: Electric heating mantle (safest) or oil bath with electric hotplate. Oil bath temperature control: use thermometer inserted in bath, adjust power to hold steady temperature ±5°C</li>
+<li>Glassware: Round-bottom boiling flask (2-5L), side-arm round-bottom flasks for collection, condenser tubing</li>
+<li>Thermometer: One for boiling flask (0-110°C), one for condenser outlet (0-50°C)</li>
+<li>Rubber tubing: Silicone preferred (tolerates higher temperature than latex)</li>
+<li>Cooling source: Ice or running water; calculate: ~0.5L ice per 1L distillate produced</li>
+<li>Clamps and stands: Laboratory iron rings and clamps to hold apparatus stable</li>
+</ul>
+<h3>Safety Equipment (MANDATORY)</h3>
+<ul>
+<li>Fire extinguisher Class B (flammable liquids): mounted within 3 meters of distillation site</li>
+<li>Face shield or safety goggles (in case of condenser crack/hot vapor splash)</li>
+<li>Heat-resistant gloves (silicone or leather; NOT cotton if flammable vapor present)</li>
+<li>Fume hood or outdoor workspace with 2+ meters separation from ignition sources</li>
+<li>Ground strap: Attach to collection flask to prevent static buildup (conduct to earth)</li>
+<li>Spill containment: Sand, absorbent cloth, or plastic bin to catch accidental releases</li>
+</ul>
+<div class="danger">
+<p><span class="danger-header">CRITICAL SAFETY REQUIREMENT:</span> NEVER perform solvent distillation indoors without professional ventilation (fume hood with external exhaust). Solvent vapors are invisible, heavier than air, accumulate in low spots, and ignite at &gt;3% concentration in air. A single spark from static discharge, thermostat, or electrical switch ignites vapor cloud and causes building explosion. Always work outdoors or in certified hood with dedicated exhaust.</p>
+</div>
+</section>
+<section id="ethanol-procedure">
+<h2>5. Ethanol Production &amp; Distillation</h2>
+<p>Ethanol is produced via fermentation of sugars using yeast (Saccharomyces cerevisiae).</p>
+<h3>Fermentation: Glucose → Ethanol Reaction</h3>
+<div class="reaction-formula">
+C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂
+1 kg glucose → 0.51 kg ethanol + 0.49 kg CO₂
+</div>
+<p><strong>Feedstock options:</strong> Molasses, sugar cane juice, fruit juice, grains (malted to convert starch to sugar).</p>
+<h3>Fermentation Procedure</h3>
+<ol>
+<li><strong>Preparation:</strong> Mix 100 kg sugar (or equivalent molasses) with 400 L water to create ~20% solids solution (specific gravity ~1.08)</li>
+<li><strong>Sterilization:</strong> Heat to 70°C for 30 minutes, cool to room temperature. This kills wild bacteria while leaving added yeast viable</li>
+<li><strong>Inoculation:</strong> Add baker's yeast (500 g dry yeast) or starter culture from previous fermentation</li>
+<li><strong>Fermentation conditions:</strong> Maintain temperature 18-25°C (mesophilic yeast range), provide aeration first 24 hours (shaking or air bubbling), then seal with airlock (allows CO₂ escape, prevents O₂ entry)</li>
+<li><strong>Fermentation time:</strong> 1-3 weeks; monitor until CO₂ evolution slows to &lt;1 bubble per second</li>
+<li><strong>Product yield:</strong> ~10% ethanol by volume (100 L solution × 10% = 10 L pure ethanol, but mixed with water and solids)</li>
+</ol>
+<div class="warning">
+<p><strong>Fermentation contamination risk:</strong> Unwanted bacteria (especially acetic acid bacteria) can convert ethanol to acetic acid, ruining the batch. Prevention: Use clean equipment, heat sterilize before fermentation, add yeast immediately after cooling to outcompete contaminants, and maintain anaerobic conditions after 24 hours. If smell becomes vinegary or pH drops below 3.5, fermentation has been compromised—discard batch.</p>
+</div>
+<h3>Worked Example: Small-Scale Fermentation</h3>
+<p><strong>Starting materials:</strong> 5 kg sugar, 20 L water
+<strong>Target:</strong> Produce 70% ethanol suitable for fuel/solvent use</p>
+<ol>
+<li>Mix 5 kg sugar + 20 L water → 25 L total (20% sugar solution)</li>
+<li>Heat to 70°C for 30 min, cool to 20°C</li>
+<li>Add 25 g dry baker's yeast (0.5% by volume)</li>
+<li>Cover with cloth (prevents dust, allows CO₂ escape)</li>
+<li>Store at 18-22°C for 2 weeks</li>
+<li>Expected yield: 25 L × 10% ethanol = 2.5 L pure ethanol (currently in 25 L of 10% solution)</li>
+<li>After fermentation, proceed to distillation</li>
+</ol>
+<div class="danger">
+<p><strong>METHANOL WARNING — READ BEFORE PROCEEDING:</strong> Distillation of fermented liquids produces methanol (wood alcohol) in the first vapors (&quot;heads&quot;). Methanol is a lethal poison: as little as 10 mL causes permanent blindness; 30 mL can be fatal. Methanol is colorless, mixes completely with ethanol, and cannot be detected by taste or smell. You MUST discard the first 5-10% of all distillate (the &quot;heads&quot; fraction) — this contains concentrated methanol, acetaldehyde, and other toxic compounds. NEVER taste distillate to assess quality. NEVER consume any fraction without verified boiling-point testing (pure ethanol boils at 78.4 C; methanol at 64.7 C). If methanol ingestion is suspected, administer ethanol (drinking alcohol) immediately as an emergency antidote and seek medical care.</p>
+</div>
+<h3>Distillation of Fermented Liquid</h3>
+<p><strong>Challenge:</strong> Fermented liquid contains ~10% ethanol + water + yeast byproducts (aldehydes, higher alcohols). Distillation separates ethanol and undesirable compounds.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li><strong>Setup:</strong> Place fermented liquid in boiling flask (fill to 2/3 capacity, leaving headspace)</li>
+<li><strong>Initial heating:</strong> Heat slowly; at ~65°C, ethanol vapors first appear</li>
+<li><strong>Heads (first fraction):</strong> At 78-80°C, distillate emerging is &quot;heads&quot;—mostly methanol, acetaldehyde, ethyl acetate, and ethanol. <strong>DISCARD first 5-10% of distillate</strong> (in this example, ~0.25 L)</li>
+<li><strong>Hearts (main fraction):</strong> Distillate collected at 78-80°C (ethanol BP) for next 80% of distillation = &quot;hearts,&quot; ~50-70% pure ethanol</li>
+<li><strong>Tails (final fraction):</strong> Above 85°C, distillate slows and cools to water-dominant; collect separately (can be redistilled or discarded)</li>
+<li><strong>First distillation yield estimate:</strong> From 25 L of 10% fermented liquid → ~2.5 L theoretical ethanol; after removing heads (10%) → ~2.2 L of ~70% ethanol collected</li>
+<li><strong>Redisitllation:</strong> Collect only the 78-80°C fraction again (discard new heads and tails); yields ~90-95% ethanol</li>
+</ol>
+<div class="warning">
+<p><strong>Heads are TOXIC.</strong> Methanol (boiling point 64°C) appears in the first vapors and concentrates in heads. Consuming methanol causes blindness and death. NEVER taste distillate to assess quality. ALWAYS discard the first fraction and verify purity by boiling point test (see Section 9).</p>
+</div>
+<h3>Ethanol Proof &amp; Application Requirements</h3>
+<p>Proof = 2 × %ABV. Example: 70% ABV = 140 proof.</p>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>Target Proof</th>
+<th>Target %ABV</th>
+<th>Reasoning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tinctures &amp; herbal extracts</td>
+<td>80 proof (minimum)</td>
+<td>40%</td>
+<td>Extracts plant compounds; prevents spoilage</td>
+</tr>
+<tr>
+<td>High-potency tinctures</td>
+<td>140 proof</td>
+<td>70%</td>
+<td>Superior solvent; reduces water interference</td>
+</tr>
+<tr>
+<td>Disinfection &amp; sterilization</td>
+<td>140 proof</td>
+<td>70%</td>
+<td>Optimal for bacterial/viral kill (pure 190-proof less effective)</td>
+</tr>
+<tr>
+<td>Engine fuel (anhydrous required)</td>
+<td>160-190+ proof</td>
+<td>80-95%+</td>
+<td>Must be water-free for combustion; pure ethanol preferred</td>
+</tr>
+<tr>
+<td>Maximum achievable by simple distillation</td>
+<td>190 proof</td>
+<td>95%</td>
+<td>Azeotropic limit (ethanol-water mixture that cannot separate further)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The Ethanol-Water Azeotrope:</strong> At 95.6% ethanol and 4.4% water, the vapor composition equals the liquid composition—no further separation occurs by heating alone. This is why home distillation plateaus at ~190 proof (95% ABV). Overcoming the azeotrope requires molecular sieves, azeotropic distillation with a third solvent, or external drying agents.</p>
+<div class="info-box">
+<p><strong>Disinfection paradox:</strong> Pure 190-proof ethanol is less effective as a disinfectant than 70% ethanol. Explanation: pure alcohol denatures the outermost microbial proteins too quickly, creating a protective barrier that prevents penetration of remaining alcohol to inner structures. The 30% water in 70% ethanol allows slower denaturation and better cell penetration. For maximum kill, target 140 proof (70% ABV) for sterilization applications.</p>
+</div>
+<h3>Denaturant</h3>
+<p>If producing for fuel/solvents (not consumption), add denaturant to prevent accidental drinking and (historically) to avoid excise tax:</p>
+<ul>
+<li>5% methanol, OR</li>
+<li>2% gasoline, OR</li>
+<li>2% benzene (toxic—avoid if possible)</li>
+</ul>
+<p>Mix thoroughly after final distillation. Denaturant renders ethanol unpalatable and unsafe for consumption.</p>
+</section>
+<section id="acetone">
+<h2>6. Acetone Production by Dry Distillation</h2>
+<p>Acetone (CH₃COCH₃, boiling point 56°C) is a powerful solvent useful for degreasing, dissolving many polymers, and cleaning equipment. Two methods exist; dry distillation is simpler for survival scenarios.</p>
+<h3>Reaction: Calcium Acetate Decomposition</h3>
+<div class="reaction-formula">
+Ca(CH₃COO)₂ → CaCO₃ + CH₃COCH₃↑ + H₂O↑
+Calcium acetate (heat) → Calcium carbonate + Acetone + Water vapor
+</div>
+<p><strong>Calcium acetate preparation:</strong> React vinegar (acetic acid) with limestone:</p>
+<div class="reaction-formula">
+2CH₃COOH + CaCO₃ → Ca(CH₃COO)₂ + CO₂↑ + H₂O
+</div>
+<h3>Calcium Acetate Preparation</h3>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>Vinegar (5% acetic acid, ~50 g acid per 1000 mL)</li>
+<li>Limestone powder (CaCO₃, can be crushed seashells or chalk)</li>
+</ul>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Pour 1000 mL vinegar into container</li>
+<li>Slowly add 200 g limestone powder while stirring (vigorous bubbling as CO₂ releases)</li>
+<li>Continue adding limestone until bubbling stops (vinegar fully neutralized)</li>
+<li>Allow solid to settle; decant liquid (calcium acetate solution)</li>
+<li>Evaporate water over low heat (100°C, ~4-6 hours) until crystalline paste forms</li>
+<li>Spread paste on metal sheet, dry at 100°C oven or over hot coals until powder-dry</li>
+<li><strong>Theoretical yield:</strong> 100 g vinegar (5% acid = 5 g acetic acid) + appropriate limestone → ~28 g dry calcium acetate powder</li>
+</ol>
+<h3>Dry Distillation Procedure</h3>
+<p><strong>Setup:</strong> Metal tube (1.5-2 cm diameter, 20-30 cm length, closed at one end), packed vertically in furnace or hot coal bed, outlet tube directed to water-cooled condenser.</p>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>200 g calcium acetate powder</li>
+<li>50 g clean sand (as filler to improve heat transfer)</li>
+<li>Heat source capable of 450-500°C</li>
+</ul>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li><strong>Charge tube:</strong> Load 200 g calcium acetate + 50 g sand into metal tube, pack lightly (don't compress)</li>
+<li><strong>Heating:</strong> Heat tube to 450-500°C (bright red color). Calcium acetate begins decomposing; vapor emerges at outlet</li>
+<li><strong>Collection:</strong> Direct vapor through water-cooled condenser (Liebig preferred, immersed in ice bath). Acetone condenses at ~56°C</li>
+<li><strong>Duration:</strong> Maintain heat for 30-45 minutes; reaction slows as calcium acetate depletes</li>
+<li><strong>Product:</strong> Collect cloudy liquid (acetone + water)</li>
+<li><strong>Yield:</strong> ~80% of theoretical (200 g Ca acetate × 0.74 conversion factor = 148 g theoretical acetone; expect ~118 g in practice)</li>
+</ol>
+<h3>Worked Example: Acetone Production</h3>
+<p><strong>Starting:</strong> 200 g calcium acetate (from 1000 mL vinegar + limestone)
+<strong>Heating temperature:</strong> 475°C for 40 minutes
+<strong>Condenser:</strong> Liebig cooled to 0°C (ice bath)</p>
+<p><strong>Expected output:</strong></p>
+<ul>
+<li>Theoretical acetone: 200 g × 0.74 = 148 g</li>
+<li>Practical recovery: ~80% = 118 g liquid</li>
+<li>Composition: ~95% acetone, 5% water</li>
+<li>Volume: ~140 mL (acetone density = 0.784 g/mL)</li>
+</ul>
+<p><strong>Second distillation (optional, for higher purity):</strong></p>
+<ul>
+<li>Collect only 56°C fraction (pure acetone boiling point)</li>
+<li>Discard &lt;56°C (water) and &gt;56°C (polymeric byproducts)</li>
+<li>Yield: ~110 g at 98%+ purity</li>
+</ul>
+<div class="warning">
+<p><strong>Temperature management during calcium acetate heating is critical.</strong> Keep heating rate steady (increase 20-30°C every 5 minutes toward 450°C target). Do NOT allow temperature spikes. Sudden temperature jumps above 550°C trigger rapid exothermic decomposition that releases pressurized vapor, causing tube rupture or explosion. Use a heat gun or furnace with temperature gauge. If heating too slowly, reaction stalls; if too fast, runaway occurs.</p>
+</div>
+<div class="danger">
+<p><strong>Acetone is extremely flammable.</strong> Boiling point 56°C means vapor is present at room temperature. NO open flames during heating or collection. Use electric heating only. Condenser cooling CRITICAL—failure results in acetone vapor escape and ignition. Ice bath mandatory; allow 10-15 minutes for cooling water to stabilize before starting distillation.</p>
+</div>
+<h3>Purification &amp; Storage</h3>
+<p>Acetone produced by dry distillation contains 5% water (hygroscopic—absorbs moisture from air). For applications requiring anhydrous acetone:</p>
+<ul>
+<li>Pass through anhydrous calcium chloride (desiccant): acetone dissolves, water absorbed by CaCl₂</li>
+<li>Filter and recover acetone by gentle heating (not distillation—acetone vapor is flammable)</li>
+<li>Store in sealed glass bottles, keep cool and dark</li>
+</ul>
+</section>
+<section id="turpentine">
+<h2>7. Turpentine from Pine Resin</h2>
+<p>Turpentine is a mixture of monoterpenes (primarily α-pinene and β-pinene, both C₁₀H₁₆) extracted from pine tree resin. Boiling point 155-165°C. Applications: paint thinner, wood cleaner, solvent for organic compounds, insect repellent.</p>
+<h3>Resin Collection &amp; Processing</h3>
+<p><strong>Pine species:</strong> Blue pine, longleaf pine, slash pine are best; common pine acceptable.</p>
+<p><strong>Collection procedure:</strong></p>
+<ol>
+<li><strong>Scar preparation:</strong> Cut diagonal scar (15-20 cm long, 2-3 cm deep) into tree bark, angled downward</li>
+<li><strong>Cup placement:</strong> Place collection cup (metal, clay, or ceramic; NOT plastic) below scar</li>
+<li><strong>Resin flow:</strong> Resin flows into cup over 1-2 weeks. Repeat cuts every 2-4 weeks on same tree for multiple harvests</li>
+<li><strong>Yield:</strong> One tree produces 5-10 kg resin per year</li>
+<li><strong>Composition:</strong> Crude resin contains ~20% volatile terpenes (turpentine), 80% non-volatile resin acids (rosin)</li>
+</ol>
+<h3>Turpentine Distillation</h3>
+<p><strong>Setup:</strong> Simple pot still suitable (no fractional column needed—turpentine has high BP and single distillation achieves good separation from rosin).</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li><strong>Charge still:</strong> Place crude pine resin in boiling flask (~1-2 L capacity), do NOT exceed 2/3 full</li>
+<li><strong>Heating:</strong> Heat to 150-180°C (use oil bath or electric mantle, NOT direct flame—high temperature and oil exposure)</li>
+<li><strong>Vapor emergence:</strong> At ~155°C, turpentine vapors condense into liquid</li>
+<li><strong>Collection:</strong> Collect liquid condensate from 155-165°C (turpentine boiling range)</li>
+<li><strong>Residue:</strong> Rosin (non-volatile, higher BP) remains in flask as dark solid—useful for friction applications (violin bows, bowling pins)</li>
+<li><strong>Distillation time:</strong> ~1-2 hours for 1 kg resin batch</li>
+</ol>
+<h3>Yield &amp; Composition</h3>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Yield</th>
+<th>Composition</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100 kg crude resin</td>
+<td>20 kg turpentine</td>
+<td>α-pinene 60%, β-pinene 30%, limonene 5%, other 5%</td>
+<td>Paint thinner, solvent</td>
+</tr>
+<tr>
+<td>(same)</td>
+<td>80 kg rosin residue</td>
+<td>Abietic acid polymers</td>
+<td>Friction (bows, pins), sealant</td>
+</tr>
+</tbody>
+</table>
+<div class="warning">
+<p><strong>Turpentine is volatile and flammable,</strong> but higher boiling point (155°C) makes vapor less volatile at room temperature compared to ethanol/acetone. Still—NO open flames near distillation. Use electric heating, maintain 1-2 meter clearance from ignition sources. Skin contact causes irritation; some people sensitive to pine allergens (inhaled vapors). Ventilate well; use gloves.</p>
+</div>
+</section>
+<section id="common-mistakes">
+<h2>8. Common Mistakes &amp; Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vapor leaks from apparatus</strong></td>
+<td>Poor seal; cracked glassware</td>
+<td>Inspect all joints before starting; use new rubber stoppers; replace cracked flasks</td>
+</tr>
+<tr>
+<td><strong>Condenser backing up</strong> (liquid flows backward into flask)</td>
+<td>Cooling water too warm, outlet blocked</td>
+<td>Ensure cold water circulation, check outlet tube for obstruction, increase water flow</td>
+</tr>
+<tr>
+<td><strong>Distillate cloudy or separated into layers</strong></td>
+<td>Water-ethanol separation (azeotrope reached); or acetone + water</td>
+<td>For ethanol: accept &lt;95% purity or use desiccant; for acetone: second distillation with anhydrous CaCl₂</td>
+</tr>
+<tr>
+<td><strong>Distillation slow, low yield</strong></td>
+<td>Heating too fast (vapor escapes uncondensed); column blocked</td>
+<td>Reduce heat supply, check packing for clogs, ensure thermometer bulb is at outlet level</td>
+</tr>
+<tr>
+<td><strong>Product smells bad</strong> (aldehyde/sulfur odor)</td>
+<td>Fermentation contamination; methanol in ethanol distillate</td>
+<td>For ethanol: discard first 15% (heads), redisitll; for acetone: increase heating temperature to ensure complete decomposition</td>
+</tr>
+<tr>
+<td><strong>Equipment catches fire</strong></td>
+<td>Flammable vapor ignited</td>
+<td>Immediately shut down heat; let fire burn or extinguish with Class B extinguisher; water ineffective</td>
+</tr>
+<tr>
+<td><strong>Thermometer reading erratic</strong></td>
+<td>Bulb above or below vapor outlet; bulb cracked</td>
+<td>Reposition thermometer so bulb is at side-arm height; replace if cracked</td>
+</tr>
+</tbody>
+</table>
+<div class="danger">
+<p><span class="danger-header">EXOTHERMIC RUNAWAY RISK:</span> Acetone production via calcium acetate decomposition, if heating temperature exceeds 550°C or calcium acetate packed too densely, can cause rapid decomposition and vapor explosion. Temperature must stay below 500°C. Ensure tube is not sealed at outlet and heating is steady, not spiked. If apparatus suddenly glows bright red or hisses violently, shut off heat immediately and allow to cool.</p>
+</div>
+</section>
+<section id="scale-up">
+<h2>9. Scale-Up Considerations</h2>
+<p>Scaling from 1 L to 10 L or 100 L batch requires attention to heat transfer and vapor dynamics.</p>
+<h3>Heat Transfer Limitations</h3>
+<p><strong>Problem:</strong> Larger flask = more time for heat to penetrate center of liquid.</p>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>For flask &gt;5 L: use oil bath or steam heating (faster than direct electric coil)</li>
+<li>Stir fermented liquid before distillation to equalize temperature</li>
+<li>Increase heating time (proportional to volume increase; ~2-3 hours for 10 L vs. 1 hour for 2 L)</li>
+</ul>
+<h3>Column Pressure Drop</h3>
+<p><strong>Problem:</strong> Larger batch = higher vapor volume = higher pressure drop through packed column.</p>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Increase column diameter to 5-8 cm (from 3 cm for 2 L still)</li>
+<li>Use lower-resistance packing (glass marbles instead of copper gauze)</li>
+<li>Accept slightly lower theoretical plates (use 1.5 plates/10 cm instead of 2-3)</li>
+</ul>
+<h3>Condenser Cooling Demands</h3>
+<p><strong>Rule of thumb:</strong> 1 L ethanol evaporated requires ~400 L water flow (or 2 kg ice) for effective cooling.</p>
+<p><strong>Scaling example:</strong></p>
+<ul>
+<li>1 L batch: 2 kg ice, changes every 30-45 min</li>
+<li>10 L batch: 20 kg ice, continuous replacement needed OR running water circuit (pump + reservoir)</li>
+<li>100 L batch: dedicated cooling water circuit (recirculating pump + heat exchanger) essential</li>
+</ul>
+<h3>Collection Vessel Sizing</h3>
+<p>Distillate cools further after exiting condenser. Use collection flask 2× larger than expected yield (allows cooling space, prevents splashing).</p>
+</section>
+<section id="waste-disposal">
+<h2>10. Waste Handling &amp; Disposal</h2>
+<h3>Byproducts &amp; Hazardous Waste</h3>
+<table>
+<thead>
+<tr>
+<th>Waste Stream</th>
+<th>Composition</th>
+<th>Disposal Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Heads (first 5-10% of ethanol distillate)</strong></td>
+<td>Methanol, acetaldehyde, ethyl acetate</td>
+<td>DO NOT POUR DOWN DRAIN. Collect in sealed bottle. Bury in sealed container &gt;50 cm deep, 100 m from water source; or burn in controlled fire (evacuate area, monitor). Methanol is toxic to aquatic life.</td>
+</tr>
+<tr>
+<td><strong>Tails (final 10% of ethanol distillate)</strong></td>
+<td>Mostly water + yeast solids</td>
+<td>Compost (if yeast-only) or pour on non-edible plants (ethanol concentration low by this point).</td>
+</tr>
+<tr>
+<td><strong>Acetone wash water</strong></td>
+<td>Acetone + water</td>
+<td>Evaporate acetone in fume hood (high fire risk; use electric heating only), dispose of remaining water down drain (acetone volatile; verify fume hood fully evacuates before stopping work).</td>
+</tr>
+<tr>
+<td><strong>Rosin residue (from turpentine)</strong></td>
+<td>Non-toxic resin acids</td>
+<td>Cool, harden, repurpose for friction or sealant applications; or bury as non-hazardous waste.</td>
+</tr>
+<tr>
+<td><strong>Used oil bath</strong></td>
+<td>Used thermal oil + traces of solvent</td>
+<td>Allow to cool; filter out debris; reuse multiple times; finally dispose at hazardous waste facility (oil is persistent in environment).</td>
+</tr>
+</tbody>
+</table>
+<h3>Spill Response</h3>
+<p><strong>Small spill (&lt;100 mL):</strong></p>
+<ol>
+<li>Evacuate all ignition sources from area (no smoking, electrical devices off)</li>
+<li>Spread absorbent material (sand, sawdust, activated charcoal) over spill</li>
+<li>Sweep up into metal container</li>
+<li>Dispose per waste table above</li>
+</ol>
+<p><strong>Large spill (&gt;100 mL or uncontrolled vapor release):</strong></p>
+<ol>
+<li>Evacuate downwind 100+ meters</li>
+<li>Call emergency services (fire department)</li>
+<li>Do NOT attempt cleanup without professional hazmat equipment</li>
+</ol>
+<div class="warning">
+<p><strong>Spill cleanup for flammable solvents requires extreme care.</strong> Never use water on ethanol/acetone spills (spreads flammable liquid). Never ignite vapors intentionally to &quot;burn off&quot; spill (uncontrolled explosion risk). Always use dry absorbent and ventilation.</p>
+</div>
+</section>
+<section id="safety-hazards">
+<h2>11. Safety Hazards &amp; Control Measures</h2>
+<h3>Flammability Hazards</h3>
+<p><strong>Lower explosion limit (LEL):</strong> Minimum vapor concentration that ignites.</p>
+<table>
+<thead>
+<tr>
+<th>Solvent</th>
+<th>LEL</th>
+<th>Vapor Pressure at 20°C</th>
+<th>Risk at Room Temp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ethanol</strong></td>
+<td>3.3%</td>
+<td>5.9 kPa</td>
+<td>Moderate—vapor present above boiling liquid</td>
+</tr>
+<tr>
+<td><strong>Acetone</strong></td>
+<td>2.15%</td>
+<td>24 kPa</td>
+<td>HIGH—vapor present and accumulates at ground level</td>
+</tr>
+<tr>
+<td><strong>Turpentine</strong></td>
+<td>0.6%</td>
+<td>1.9 kPa</td>
+<td>Moderate—vapor primarily during active distillation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Control measures:</strong></p>
+<ul>
+<li>Never distill indoors without fume hood with dedicated exhaust</li>
+<li>No smoking, open flames, or hot electrical equipment within 5 meters of distillation area</li>
+<li>Keep Class B fire extinguisher (for flammable liquids) mounted visibly within 3 meters</li>
+<li>Use electric heating only; never gas flame or coal fire near stills</li>
+<li>Ground all equipment to prevent static discharge ignition</li>
+</ul>
+<h3>Toxic Vapor Hazards</h3>
+<p><strong>Methanol poisoning (ethanol distillation heads):</strong></p>
+<ul>
+<li>Mechanism: Metabolizes to formic acid, denatures optic nerve proteins</li>
+<li>Acute exposure (high concentration): headache, dizziness, nausea</li>
+<li>Chronic/high exposure: blindness, organ failure, death</li>
+<li>Control: Always discard heads; never taste distillate; ventilate well during distillation</li>
+</ul>
+<p><strong>Acetone:</strong> Volatile, causes dizziness and headache at high concentration; irritates eyes.</p>
+<ul>
+<li>Control: Use gloves, ventilate, avoid prolonged inhalation</li>
+</ul>
+<p><strong>Turpentine fumes:</strong> Can cause asthma-like symptoms in sensitive individuals; irritates respiratory tract.</p>
+<ul>
+<li>Control: Ventilation, respiratory protection if needed</li>
+</ul>
+<div class="danger">
+<p><span class="danger-header">TOXIC GAS HAZARD:</span> Acetone decomposition at high temperature (&gt;550°C) can release carbon monoxide (from incomplete combustion of byproducts). Carbon monoxide is colorless, odorless, and causes hypoxia (oxygen deprivation) → unconsciousness and death. NEVER heat acetone production apparatus above 500°C. Ensure outlet is not sealed. Work outdoors with good air circulation. Do NOT work alone.</p>
+</div>
+<h3>Corrosive Chemical Hazards</h3>
+<p><strong>Calcium acetate powder:</strong> Irritant to eyes/skin; wash immediately if contact occurs.
+<strong>Acetic acid (vinegar):</strong> Weak acid; causes burn at high concentration; splash protection (goggles) required.</p>
+<p><strong>Control:</strong></p>
+<ul>
+<li>Wear safety goggles when mixing calcium acetate + vinegar</li>
+<li>Use gloves when handling dry calcium acetate</li>
+<li>Rinse all skin contact with copious water</li>
+</ul>
+<h3>Apparatus Integrity Hazards</h3>
+<p><strong>Cracked condenser:</strong> Hot vapor leaks out, causing burns or ignition.</p>
+<ul>
+<li><strong>Prevention:</strong> Inspect glassware before every use; replace if cracks visible</li>
+</ul>
+<p><strong>Sealed still (pressure buildup):</strong> Vapor pressure exceeds container strength; explosion.</p>
+<ul>
+<li><strong>Prevention:</strong> Always use open-top collection flask; ensure outlet tube is unobstructed; never seal still completely</li>
+</ul>
+<p><strong>Thermometer breakage:</strong> Mercury exposure (older thermometers) or glass cuts.</p>
+<ul>
+<li><strong>Prevention:</strong> Use alcohol-filled or digital thermometers (no mercury); handle carefully; secure with loose-fitting sleeves, not tight wrapping</li>
+</ul>
+</section>
+<section id="purity-testing">
+<h2>12. Purity Testing &amp; Quality Assurance</h2>
+<h3>Boiling Point Test (Ethanol)</h3>
+<p>Pure ethanol boils at 78.4°C. Measure boiling point of your product:</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Fill test tube with ~20 mL of product</li>
+<li>Insert thermometer (bulb immersed in liquid)</li>
+<li>Heat slowly over flame or electric bath</li>
+<li>Record temperature when first vapor forms and first drops of condensate drip from thermometer bulb into flame</li>
+<li>This is the boiling point</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>78-79°C: Good purity (&gt;90% ethanol)</li>
+<li>75-78°C: Fair purity (~85-90% ethanol); water present</li>
+<li>&lt;75°C: Poor purity (&lt;85% ethanol); recommend redistillation</li>
+<li>78.4°C + stays constant: Approaching azeotrope (95%+ ethanol)</li>
+</ul>
+<h3>Density Test (Ethanol)</h3>
+<p>Pure ethanol has density 0.789 g/cm³ at 20°C.</p>
+<p><strong>Procedure (hydrometer method):</strong></p>
+<ol>
+<li>Fill graduated cylinder with ~100 mL product</li>
+<li>Float hydrometer in cylinder (must float freely)</li>
+<li>Read density at meniscus (liquid surface)</li>
+<li>Compare to standard</li>
+</ol>
+<p><strong>Procedure (calculation method):</strong></p>
+<ol>
+<li>Weigh 100 mL of product (e.g., on postal scale)</li>
+<li>Density = mass / 100 mL</li>
+<li>Calculate ethanol purity: %Ethanol ≈ 100 × (1 − (ρ_measured − 0.789) / 0.211)</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>0.789 g/cm³: Pure ethanol</li>
+<li>0.79 g/cm³: ~90% ethanol</li>
+<li>0.80 g/cm³: ~85% ethanol</li>
+<li>0.82 g/cm³: ~80% ethanol</li>
+<li>1.00 g/cm³: Pure water</li>
+</ul>
+<h3>Flame Test (Qualitative)</h3>
+<p>Pure ethanol burns with colorless or pale blue flame. Water-containing ethanol burns with yellow-orange flame (slower, cooler reaction).</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Pour ~5 mL into a small metal cup</li>
+<li>Ignite with match</li>
+<li>Observe flame color and heat intensity</li>
+<li>NOT quantitative but useful indicator</li>
+</ol>
+<h3>Acetone Purity Test</h3>
+<p>Acetone has distinctive odor (fruity, nail-polish-remover smell). Impure acetone smells of calcium carbonate (dusty) or aldehydes (sharp).</p>
+<p><strong>Visual test:</strong> Pure acetone is colorless and transparent. Cloudy liquid indicates water or residue; allow to stand overnight and check if it separates into layers (acetone on top, water below).</p>
+</section>
+<section id="reference">
+<h2>13. Reference Data &amp; Quick Tables</h2>
+<h3>Boiling Points &amp; Properties of Common Solvents</h3>
+<table>
+<thead>
+<tr>
+<th>Solvent</th>
+<th>Boiling Point</th>
+<th>Density</th>
+<th>Flammability</th>
+<th>Typical Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Methanol</strong></td>
+<td>64.7°C</td>
+<td>0.791 g/cm³</td>
+<td>Extremely flammable</td>
+<td>Antifreeze, solvent (TOXIC—avoid)</td>
+</tr>
+<tr>
+<td><strong>Ethanol (100%)</strong></td>
+<td>78.4°C</td>
+<td>0.789 g/cm³</td>
+<td>Flammable</td>
+<td>Fuel, disinfectant, solvent, tinctures</td>
+</tr>
+<tr>
+<td><strong>Acetone</strong></td>
+<td>56.3°C</td>
+<td>0.784 g/cm³</td>
+<td>Extremely flammable</td>
+<td>Degreaser, polymer solvent, polish remover</td>
+</tr>
+<tr>
+<td><strong>Water</strong></td>
+<td>100°C</td>
+<td>1.000 g/cm³</td>
+<td>Non-flammable</td>
+<td>Cooling, diluent, solvent</td>
+</tr>
+<tr>
+<td><strong>Turpentine</strong></td>
+<td>155–165°C</td>
+<td>0.86–0.87 g/cm³</td>
+<td>Flammable</td>
+<td>Paint thinner, wood cleaner, solvent</td>
+</tr>
+<tr>
+<td><strong>Toluene</strong></td>
+<td>110.6°C</td>
+<td>0.867 g/cm³</td>
+<td>Flammable</td>
+<td>Paint thinner, solvent (industrial)</td>
+</tr>
+</tbody>
+</table>
+<h3>Theoretical Plate Requirements for Separation</h3>
+<p>To achieve N purity (N% of component A, 100−N% of component B) from a mixture, theoretical plates required:</p>
+<div class="reaction-formula">
+Plates ≈ log((N/(100-N)) × (100-x)/(x)) / log(α)
+where α = separation factor = (BP_high − BP_low) / 20
+</div>
+<p><strong>Example:</strong> Separate 95% ethanol from ethanol-water mixture (ΔBP = 22°C, α ≈ 1.1)</p>
+<ul>
+<li>Plates needed ≈ log(19 × 0.05/0.95) / log(1.1) ≈ 35 plates</li>
+<li>Column height: 35 plates ÷ 2 plates/10cm ≈ 175 cm</li>
+</ul>
+<p>For practical survival distillation, use 50-100 cm column and accept 80-90% purity in first pass.</p>
+<h3>Emergency Response Reference</h3>
+<table>
+<thead>
+<tr>
+<th>Emergency</th>
+<th>Action</th>
+<th>Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vapor ignition (small fire &lt;1 m diameter)</strong></td>
+<td>Shut off heat; use Class B extinguisher (CO₂ or dry powder) on base of flame</td>
+<td>Immediately (within 10 sec)</td>
+</tr>
+<tr>
+<td><strong>Condenser leak (vapor escaping)</strong></td>
+<td>Shut off heat; move away; allow vapors to dissipate (do NOT reseal)</td>
+<td>Immediately</td>
+</tr>
+<tr>
+<td><strong>Skin contact with hot liquid</strong></td>
+<td>Remove from heat source; immerse in cold water for ≥15 min; seek medical care</td>
+<td>Immediately</td>
+</tr>
+<tr>
+<td><strong>Inhalation of vapors (dizziness/headache)</strong></td>
+<td>Move to fresh air; rest for 10-15 min; seek medical care if symptoms persist</td>
+<td>Within 1 min</td>
+</tr>
+<tr>
+<td><strong>Eye contact with liquid</strong></td>
+<td>Flush with clean water for ≥15 min; seek medical care</td>
+<td>Immediately</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cross-references">
+<h2>14. Related Guides &amp; Cross-References</h2>
+<ul>
+<li><strong>Fermentation (GD-XXX):</strong> Detailed yeast culturing, sugar sources, contamination prevention</li>
+<li><strong>Chemistry Basics (GD-XXX):</strong> Laboratory equipment care, glassware cleaning, chemical safety fundamentals</li>
+<li><strong>Chemical Safety (GD-XXX):</strong> PPE, ventilation standards, emergency response for chemical hazards</li>
+<li><strong>Acetone Alternative Synthesis (GD-XXX):</strong> Fermentative acetone-butanol-ethanol (ABE) production as alternative to calcium acetate dry distillation</li>
+<li><strong>Plant Extraction &amp; Tinctures (GD-XXX):</strong> Using solvents (ethanol, acetone) to extract plant compounds for medicinal and industrial use</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="alkali-production.html">Alkali &amp; Soda Production</a>
+<a href="ammonia-synthesis-simplified.html">Ammonia Synthesis (Simplified)</a>
+<a href="chemical-fuel-salvage.html">Chemical &amp; Fuel Salvage Safety</a>
+<a href="chemical-safety.html">Chemical Safety</a>
+<a href="chemistry-fundamentals.html">Chemistry from Scratch</a>
+<a href="electrolysis-chloralkali.html">Electrolysis &amp; Chloralkali Process</a>
+<a href="ether-chloroform-synthesis.html">Field Anesthesia &amp; Pain Management</a>
+<a href="fermentation-baking.html">Fermentation &amp; Baking</a>
+<a href="glass-ceramics.html">Glass, Optics &amp; Ceramics</a>
+<a href="glue-adhesives.html">Glue &amp; Adhesives</a>
+<a href="homestead-chemistry.html">Homestead Chemistry</a>
+<a href="petroleum-refining.html">Petroleum Refining</a>
+<a href="plastic-remolding-systems.html">Plastic Remolding &amp; Recycling</a>
+<a href="rubber-latex.html">Rubber &amp; Latex Processing</a>
+<a href="salt-production.html">Salt Production</a>
+<a href="wood-distillation.html">Wood Distillation &amp; Pyrolysis</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

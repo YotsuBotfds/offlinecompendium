@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/pharmaceutical-production.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pharmaceutical Production</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Medical &amp; Health</span> ›
+<span>Pharmaceutical Production</span>
+</div>
+
+<div class="danger">
+<strong>⚠ CRITICAL SAFETY WARNING</strong><br>This guide contains procedures that can cause serious injury or death. Professional training and licensing may be required.
+</div>
+
+<h1>Pharmaceutical Production</h1>
+<p class="subtitle">Aspirin from willow bark, penicillin cultivation, quinine extraction, atropine, digitalis — dosage and quality control. Pain management alternatives.</p>
+<div class="meta">
+<span>●●●● expert</span>
+<span>~21 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">1. Overview of Pharmaceutical Chemistry</a></li>
+<li><a href="#aspirin">2. Aspirin Synthesis from Salicylic Acid</a></li>
+<li><a href="#penicillin">3. Penicillin Cultivation &amp; Extraction</a></li>
+<li><a href="#willow-bark">3.5 Willow Bark Extraction &amp; Salicin Conversion to Aspirin</a></li>
+<li><a href="#activated-charcoal">3.6 Activated Charcoal Production</a></li>
+<li><a href="#oral-rehydration">3.7 Oral Rehydration Solution (ORS) Production</a></li>
+<li><a href="#ethanol-production">3.8 Ethanol Production for Medical Use</a></li>
+<li><a href="#quinine">4. Quinine from Cinchona Bark</a></li>
+<li><a href="#morphine">5. Pain Management Alternatives (Morphine Synthesis Excluded)</a></li>
+<li><a href="#atropine">6. Atropine from Belladonna (Deadly Nightshade)</a></li>
+<li><a href="#digitalis">7. Digitalis from Foxglove</a></li>
+<li><a href="#dosage">8. Dosage Calculations &amp; Formulations</a></li>
+<li><a href="#quality">9. Quality Control &amp; Testing</a></li>
+<li><a href="#storage">10. Storage, Stability &amp; Preservation</a></li>
+<li><a href="#quick-reference-amp-important-warnings">Quick Reference &amp; Important Warnings</a></li>
+<li><a href="#penicillin-fermentation-detailed-process">Penicillin Fermentation: Detailed Process</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>Medical Disclaimer:</strong> This guide is for educational reference in emergency situations where professional medical care is unavailable. These procedures carry risks of serious harm or death. Performing medical procedures without proper training and licensing may be illegal in your jurisdiction. Always seek professional medical care when available. The publisher assumes no liability for outcomes resulting from use of this information.</p>
+</div>
+<div class="danger">
+<p><strong>LEGAL WARNING:</strong> Manufacturing controlled substances is illegal in virtually all jurisdictions regardless of intent. This guide is provided as historical and educational reference only. Violation of controlled substance laws carries severe criminal penalties.</p>
+</div>
+<section id="overview">
+<h2>1. Overview of Pharmaceutical Chemistry</h2>
+<h3>Sources of Pharmaceuticals</h3>
+<div class="card">
+<p>Classification of Drug Origins</p>
+<table><thead><tr><th scope="col">Source</th><th scope="col">Examples</th><th scope="col">Advantages</th><th scope="col">Challenges</th></tr></thead><tbody><tr><td><strong>Plant Alkaloids</strong></td><td>Quinine (cinchona), morphine (opium poppy), atropine (belladonna), caffeine (coffee/tea)</td><td>Bioavailable, stable, historically proven</td><td>Variable potency, isolation complex, cultivation dependent</td></tr><tr><td><strong>Plant Glycosides</strong></td><td>Digitalis (foxglove), salicylates (willow bark)</td><td>Stable compounds, well-studied mechanisms</td><td>Narrow therapeutic index, standardization difficult</td></tr><tr><td><strong>Microbial Products</strong></td><td>Penicillin (fungal), antibiotics (bacterial)</td><td>Potent, novel compounds, renewable source</td><td>Requires culture, purification steps, sterilization</td></tr><tr><td><strong>Mineral/Inorganic</strong></td><td>Sulfur, mercury, arsenic compounds, iron salts</td><td>Stable, synthesizable, precise dosing</td><td>Toxicity risk, environmental contamination</td></tr><tr><td><strong>Organic Synthesis</strong></td><td>Aspirin (from salicylic acid), quinine (total synthesis possible)</td><td>Consistent quality, scalable, pure</td><td>Requires chemical equipment, precursors, expertise</td></tr></tbody></table>
+</div>
+<h3>Extraction vs. Synthesis vs. Fermentation</h3>
+<div class="card">
+<p>Extraction</p>
+<p><strong>Process:</strong> Dissolve active compound from plant/animal tissue using solvents (water, alcohol, oils)</p>
+<p><strong>Advantages:</strong> Simpler equipment, lower cost, faster</p>
+<p><strong>Disadvantages:</strong> Variable potency, co-extraction of inactive compounds, batch-dependent</p>
+<p><strong>Examples:</strong> Quinine, morphine, atropine, digitalis</p>
+</div>
+<div class="card">
+<p>Fermentation</p>
+<p><strong>Process:</strong> Grow microorganisms that naturally produce desired compound</p>
+<p><strong>Advantages:</strong> Renewable, organism does chemistry, large-scale capable</p>
+<p><strong>Disadvantages:</strong> Time-consuming, sterility critical, extraction still needed</p>
+<p><strong>Examples:</strong> Penicillin, other antibiotics, enzymes</p>
+</div>
+<h3>Purity &amp; Standardization</h3>
+<div class="info-box">
+<p><strong>Critical for Safety:</strong> Plant extracts contain multiple compounds; active component concentration varies. Standardization = ensuring consistent active ingredient per dose.</p>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><strong>Bioassay:</strong> Test on animals; dose until effect seen; compare to standard</li>
+<li><strong>Chemical Assay:</strong> Chromatography (if available) or chemical tests to quantify active compound</li>
+<li><strong>Historical Dosing:</strong> Use traditional doses (e.g., &quot;grains&quot; of quinine) as consistency reference</li>
+</ul>
+</div>
+</section>
+<section id="aspirin">
+<h2>2. Aspirin Synthesis from Salicylic Acid</h2>
+<h3>Historical Context &amp; Chemical Basis</h3>
+<div class="card">
+<p>Acetylsalicylic Acid (Aspirin)</p>
+<p><strong>Active Compound:</strong> Acetylsalicylic acid (C₉H₈O₄)</p>
+<p><strong>Origin:</strong> Willow bark contains salicin (a glycoside), which hydrolyzes to salicylic acid. Salicylic acid is then acetylated to form aspirin.</p>
+<p><strong>Properties:</strong> White crystalline powder; slightly bitter; melts ~140°C; stable in dry conditions; slowly degrades in moist/warm storage (turns into salicylic acid + acetic acid)</p>
+</div>
+<h3>Step-by-Step Synthesis</h3>
+<div class="card">
+<p>Simple Acetylation Reaction</p>
+<p><strong>Starting Material:</strong> Salicylic acid (available commercially or extractable from willow bark)</p>
+<p><strong>Reagents Needed:</strong></p>
+<ul>
+<li>Acetic anhydride (~2-3 mL per 1 gram salicylic acid)</li>
+<li>Concentrated sulfuric acid (~5-10 drops per gram as catalyst)</li>
+<li>Heat source (boiling water bath, 70-100°C preferred, not open flame)</li>
+</ul>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Weigh salicylic acid (e.g., 1 gram = ~7 mmol)</li>
+<li>Place in clean, dry glass vessel (flask or beaker)</li>
+<li>Add acetic anhydride (~3 mL)</li>
+<li>Add concentrated H₂SO₄ carefully (~5-10 drops); CAUTION: exothermic</li>
+<li>Gently heat in water bath (70-100°C) for 10-15 minutes; mixture turns homogeneous</li>
+<li>Allow to cool to room temperature</li>
+<li>Slowly add cold water (~50 mL) while stirring to quench unreacted anhydride (generates acetic acid vapor; do in ventilated area)</li>
+<li>White precipitate of aspirin forms immediately</li>
+<li>Filter precipitate through coffee filter or cloth; rinse with small amounts of cold water</li>
+<li>Air dry on filter paper at room temperature (24-48 hours)</li>
+<li>Theoretical yield: ~1.35 grams (100% = 1.35g; typical 80-90% yield = 1.1-1.2g)</li>
+</ol>
+</div>
+<h3>Willow Bark Extraction (Salicylic Acid Source)</h3>
+<div class="info-box">
+<p><strong>Method:</strong> Extract salicylic acid from willow (Salix species) inner bark</p>
+<p><strong>Steps:</strong></p>
+<ul>
+<li>Harvest willow bark (spring preferred, higher salicin content)</li>
+<li>Dry bark thoroughly; grind into powder</li>
+<li>Boil bark in water (1:5 ratio, bark:water) for 1-2 hours; cool and strain</li>
+<li>Acidify extract with dilute sulfuric acid or vinegar (~pH 2)</li>
+<li>Salicin undergoes acid hydrolysis to salicylic acid (slow process; may require prolonged heating or enzymatic action)</li>
+<li>Evaporate liquid under gentle heat to concentrate</li>
+<li>Crystallization: Chill concentrate; salicylic acid crystallizes; filter and wash</li>
+</ul>
+<p><strong>Yield:</strong> Willow bark ~0.5-1% salicin by weight; variable depending on species and freshness</p>
+</div>
+<h3>Dosage &amp; Therapeutic Use</h3>
+<div class="card">
+<p>Clinical Dosing of Aspirin</p>
+<table><thead><tr><th scope="col">Indication</th><th scope="col">Dose</th><th scope="col">Frequency</th><th scope="col">Mechanism</th></tr></thead><tbody><tr><td><strong>Analgesia (Pain)</strong></td><td>325-650 mg (5-10 grains)</td><td>Every 4-6 hours, max 3g/day</td><td>Inhibits prostaglandins in pain perception</td></tr><tr><td><strong>Anti-Fever</strong></td><td>325-650 mg</td><td>Every 4-6 hours, max 3g/day</td><td>Resets hypothalamic set point</td></tr><tr><td><strong>Anti-Inflammatory</strong></td><td>1-2 grams</td><td>3-4 times daily with food</td><td>Inhibits COX enzymes systemically</td></tr><tr><td><strong>Antiplatelet (Blood Thinner)</strong></td><td>75-100 mg</td><td>Daily (low-dose chronic)</td><td>Irreversible platelet COX inhibition</td></tr></tbody></table>
+</div>
+<h3>Aspirin Formulation &amp; Storage</h3>
+<div class="warning">
+<p><strong>Critical Stability Issue:</strong> Aspirin hydrolyzes in moist/warm environments, reverting to salicylic acid + acetic acid (vinegar smell). To maximize shelf life:</p>
+<ul>
+<li>Store in airtight container (glass vial with cork or screw cap)</li>
+<li>Keep in cool, dry location (ideally &lt;20°C, &lt;40% humidity)</li>
+<li>Do not expose to light</li>
+<li>If smell of vinegar develops, discard (degraded compound)</li>
+<li>Shelf life: 2-3 years if properly stored; up to 5 years in ideal conditions</li>
+</ul>
+</div>
+<h3>Aspirin Tablet Making (Simple Method)</h3>
+<div class="card">
+<p>Manual Tablet Production</p>
+<ul>
+<li><strong>Ingredients:</strong> Aspirin powder, small amount of starch or cellulose filler (1:9 ratio)</li>
+<li><strong>Mixing:</strong> Grind together in mortar and pestle until uniform</li>
+<li><strong>Pressing:</strong> Use pill press (hand or coin) to compress powder into disk; ~500-650 mg per tablet</li>
+<li><strong>Drying:</strong> Allow tablets to air dry 24 hours at room temperature</li>
+<li><strong>Storage:</strong> In airtight container as above</li>
+</ul>
+</div>
+<h3>SVG Diagram: Aspirin Synthesis Reaction</h3>
+<p><svg aria-label="Pharmaceutical Production &amp; Chemistry Compendium diagram 1" style="margin: 20px 0; border: 1px solid var(--border); border-radius: 8px;" viewBox="0 0 900 400"><text fill="var(--accent)" font-size="16" font-weight="bold" text-anchor="middle" x="450" y="30"> Aspirin Synthesis Reaction </text><g transform="translate(100, 100)"><rect fill="var(--card)" height="100" rx="8" stroke="var(--accent)" stroke-width="2" width="120" x="0" y="0"></rect><text fill="var(--text)" font-weight="bold" text-anchor="middle" x="60" y="30"> Salicylic Acid </text><text fill="var(--text)" font-size="11" text-anchor="middle" x="60" y="50"> C₇H₆O₃ </text><text fill="var(--text)" font-size="10" text-anchor="middle" x="60" y="70"> (1 g) </text></g><text fill="var(--accent2)" font-size="30" font-weight="bold" text-anchor="middle" x="250" y="155"> + </text><g transform="translate(300, 100)"><rect fill="var(--card)" height="100" rx="8" stroke="var(--accent)" stroke-width="2" width="120" x="0" y="0"></rect><text fill="var(--text)" font-weight="bold" text-anchor="middle" x="60" y="30"> Acetic Anhydride </text><text fill="var(--text)" font-size="11" text-anchor="middle" x="60" y="50"> (CH₃CO)₂O </text><text fill="var(--text)" font-size="10" text-anchor="middle" x="60" y="70"> (3 mL) </text></g><text fill="var(--accent2)" font-size="30" font-weight="bold" text-anchor="middle" x="480" y="155"> + </text><g transform="translate(530, 100)"><rect fill="var(--card)" height="100" rx="8" stroke="var(--accent2)" stroke-width="2" width="120" x="0" y="0"></rect><text fill="var(--text)" font-weight="bold" text-anchor="middle" x="60" y="30"> H₂SO₄ </text><text fill="var(--text)" font-size="11" text-anchor="middle" x="60" y="50"> Catalyst </text><text fill="var(--text)" font-size="10" text-anchor="middle" x="60" y="70"> (10 drops) </text></g><path d="M 300 250 L 500 250" marker-end="url(#arrowhead)" stroke="var(--accent)" stroke-width="3"></path><text fill="var(--accent2)" font-size="12" text-anchor="middle" x="400" y="240"> Heat 70-100°C </text><text fill="var(--accent2)" font-size="12" text-anchor="middle" x="400" y="265"> 10-15 minutes </text><g transform="translate(300, 300)"><rect fill="var(--surface)" height="80" rx="8" stroke="var(--accent)" stroke-width="2" width="200" x="0" y="0"></rect><text fill="var(--accent)" font-size="14" font-weight="bold" text-anchor="middle" x="100" y="25"> Aspirin (Acetylsalicylic Acid) </text><text fill="var(--text)" font-size="12" text-anchor="middle" x="100" y="45"> C₉H₈O₄ </text><text fill="var(--text)" font-size="11" text-anchor="middle" x="100" y="60"> Theoretical: 1.35 g (80-90% yield: 1.1-1.2 g) </text></g><defs><marker id="arrowhead" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="3"><polygon fill="var(--accent)" points="0 0, 10 3, 0 6"></polygon></marker></defs></svg></p>
+</section>
+<section id="penicillin">
+<h2>3. Penicillin Cultivation &amp; Extraction</h2>
+<h3>Penicillin: Natural Antibiotic from Mold</h3>
+<div class="card">
+<p>Discovery &amp; Biology</p>
+<p><strong>Discovery:</strong> Fleming (1928) noticed that a contaminating mold ( <em>Penicillium notatum</em> ) killed surrounding bacteria on culture plates. This mold naturally produces penicillin as an antibiotic.</p>
+<p><strong>Antibiotic Mechanism:</strong> Penicillin inhibits bacterial cell wall synthesis (peptidoglycan cross-linking); bactericidal to Gram-positive bacteria; many Gram-negative bacteria resistant.</p>
+<p><strong>Mold Species:</strong> <em>Penicillium notatum</em> (original, less efficient), <em>P. chrysogenum</em> (discovered later, higher-yielding strain commonly used industrially)</p>
+</div>
+<h3>Penicillin Cultivation</h3>
+<div class="card">
+<p>Growing Penicillin-Producing Mold</p>
+<p><strong>Culture Medium (Simple Recipe):</strong></p>
+<ul>
+<li>Glucose: 50 grams</li>
+<li>Peptone (or other nitrogen source): 10 grams</li>
+<li>Yeast extract: 5 grams</li>
+<li>Lactose: 30 grams (enhances penicillin production)</li>
+<li>Corn steep liquor (if available): 5 mL</li>
+<li>Potassium phosphate: 2 grams</li>
+<li>Magnesium sulfate: 0.5 grams</li>
+<li>Distilled water: 1 liter</li>
+</ul>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Dissolve all ingredients in water</li>
+<li>Adjust pH to 6-6.5 (neutral)</li>
+<li>Sterilize: Heat to boiling 15-20 minutes (kills contaminants); allow to cool</li>
+<li>Pour into sterilized containers (flasks); cool before inoculation</li>
+</ol>
+<p><strong>Mold Inoculation:</strong></p>
+<ol>
+<li>Obtain <em>Penicillium</em> spores (from contaminated fruit, or from spore cultures if available)</li>
+<li>Introduce spores into sterilized medium using sterilized inoculation loop or needle</li>
+<li>Incubate at 20-24°C (room temperature) for 7-10 days</li>
+<li>Mold grows as submerged culture (liquid) or surface culture (on agar or media)</li>
+<li>Submerged fermentation typically better for penicillin yield (~50-300 units/mL depending on conditions)</li>
+</ol>
+<p><strong>Fermentation Parameters:</strong> Aeration critical (aerobic metabolism); gentle stirring or air bubbling improves yield. Maintain temperature, pH, and sterility.</p>
+</div>
+<h3>Penicillin Extraction &amp; Concentration</h3>
+<div class="info-box">
+<p><strong>Extraction Process:</strong></p>
+<ul>
+<li><strong>Broth Harvest:</strong> Filter or centrifuge cultured broth to remove mold cells; collect clear supernatant containing dissolved penicillin</li>
+<li><strong>pH Adjustment:</strong> Acidify to pH 2 with hydrochloric acid; penicillin becomes protonated and less soluble</li>
+<li><strong>Solvent Extraction:</strong> Add ethyl acetate or ether; shake; penicillin partitions into organic solvent</li>
+<li><strong>Evaporation:</strong> Evaporate solvent at &lt;30°C under vacuum (if available) or gentle heat in ventilated area</li>
+<li><strong>Salt Precipitation:</strong> Neutralize to pH ~7 with potassium hydroxide; penicillin precipitates as potassium salt</li>
+<li><strong>Filtration &amp; Drying:</strong> Filter precipitate; air dry at room temperature</li>
+</ul>
+</div>
+<h3>Penicillin Potency &amp; Stability</h3>
+<div class="warning">
+<p><strong>Stability Challenges:</strong> Penicillin is relatively unstable, especially at warm temperatures, high pH, or high moisture.</p>
+<table style="margin-top: 15px;"><thead><tr><th scope="col">Storage Condition</th><th scope="col">Half-Life</th><th scope="col">Notes</th></tr></thead><tbody><tr><td>Room temp (25°C), dry</td><td>1-2 weeks</td><td>Degrades rapidly; not suitable</td></tr><tr><td>Refrigerated (4°C), dry</td><td>3-6 months</td><td>Much better; recommended minimum</td></tr><tr><td>Frozen (-20°C), dry</td><td>1-2 years</td><td>Optimal; best if available</td></tr><tr><td>In solution (neutral pH, cold)</td><td>Weeks (cold)</td><td>Must use promptly; days at room temp</td></tr></tbody></table>
+<p><strong>Storage Recommendations:</strong> Keep penicillin in airtight container with desiccant, refrigerated, protected from light.</p>
+</div>
+<h3>Penicillin Contamination &amp; Safety Warnings</h3>
+<div class="danger">
+<p><strong>EXTREME STERILITY REQUIREMENT:</strong> Home-produced penicillin is heavily contaminated with bacterial endotoxins and other pathogens. These contaminants cause:</p>
+<ul>
+<li><strong>Septic Shock:</strong> Fever, hypotension, organ failure</li>
+<li><strong>Anaphylaxis:</strong> Severe allergic reaction; swelling of throat/lips; difficulty breathing</li>
+<li><strong>Kidney &amp; Liver Damage:</strong> Endotoxins are nephrotoxic and hepatotoxic</li>
+<li><strong>Death:</strong> A patient treated with crude, unpurified penicillin may die from the contaminants, not from the infection</li>
+</ul>
+<p>Crude penicillin from field fermentation contains &lt;5% actual penicillin; the remainder is bacterial debris, salts, and toxins.</p>
+</div>
+<div class="danger">
+<p><strong>ALLERGIC REACTION RISK:</strong> 2-5% of people have penicillin allergies. Symptoms range from rash to anaphylaxis. First exposure often mild (rash); repeat exposure can be fatal anaphylaxis.</p>
+<p>Anyone with history of penicillin reaction MUST NOT receive penicillin under any circumstances. Cross-reactivity with cephalosporins possible (20-40% of penicillin-allergic patients also allergic to cephalosporins).</p>
+<p>If anaphylaxis suspected: Lay patient flat, elevate legs, monitor breathing, administer epinephrine if available (0.3-0.5 mg IM). If unconscious or not breathing, perform rescue breathing.</p>
+</div>
+<h3>Penicillin Dosage &amp; Administration (Laboratory-Grade Only)</h3>
+<div class="card">
+<p>Clinical Use — Laboratory-Grade Penicillin Only</p>
+<p><strong>Potency Units:</strong> Penicillin activity measured in International Units (IU) or mg; 1 mg = ~1,600 IU (crystalline penicillin G)</p>
+<p><strong>Typical Dosing (for pure penicillin only):</strong></p>
+<ul>
+<li><strong>Mild infection:</strong> 250,000-500,000 IU orally 3-4 times daily</li>
+<li><strong>Moderate infection:</strong> 500,000-1,000,000 IU IV/IM 4-6 times daily</li>
+<li><strong>Severe infection:</strong> 2,000,000+ IU IV every 4 hours</li>
+</ul>
+<p><strong>Route of Administration:</strong></p>
+<ul>
+<li>Oral: Penicillin V formulation (better acid stability); less potent than IV</li>
+<li>Intramuscular (IM): Penicillin G (aqueous) reaches bloodstream faster than oral</li>
+<li>Intravenous (IV): Immediate, high concentration; requires aseptic injection</li>
+</ul>
+<p><strong>WARNING:</strong> Field-produced penicillin should NOT be administered. Dosing crude material is impossible; potency unknown and contamination extreme.</p>
+</div>
+</section>
+<section id="willow-bark">
+<h2>3.5 Willow Bark Extraction &amp; Salicin Conversion to Aspirin</h2>
+<h3>Willow Bark as Natural Aspirin Source</h3>
+<p><strong>Traditional use:</strong> Willow bark (Salix species) has been used for pain and fever relief for millennia. Contains salicin glycoside (~0.5-1% by weight), which hydrolyzes to salicylic acid in the body—the active compound in aspirin.</p>
+<p><strong>Extraction Method:</strong></p>
+<ol>
+<li><strong>Harvest:</strong> Harvest willow bark in spring (higher salicin content). Peel thin inner bark; older thick bark has lower potency.</li>
+<li><strong>Dry:</strong> Spread bark in shade or dry location for 3-7 days until brittle. Grind to powder.</li>
+<li><strong>Extract:</strong> Boil 5-10 grams powdered bark in 500 mL water for 20-30 minutes. Strain through cloth.</li>
+<li><strong>Concentration:</strong> Boil decoction gently to reduce volume by 50% (concentrates active compounds).</li>
+<li><strong>Administration:</strong> Cool; administer 50-100 mL (3-6 tablespoons) 3-4 times daily for pain/fever.</li>
+</ol>
+<p><strong>Advantages:</strong> Simpler than synthesizing aspirin; requires only boiling water and cloth. Shelf life: fresh decoction ~24 hours; dried bark &gt;1 year if stored dry.</p>
+<p><strong>Disadvantages:</strong> Variable potency (salicin content varies by willow species and season); less potent than synthetic aspirin; larger volume required per dose.</p>
+<div class="info-box">
+<p><strong>Salicin Conversion to Salicylic Acid:</strong>
+Salicin (C₁₃H₁₈O₇) → Salicylic acid (C₇H₆O₃) via hydrolysis. Occurs naturally in GI tract with stomach acid and gut bacteria. No additional processing needed; body converts it automatically.</p>
+</div>
+</section>
+<section id="activated-charcoal">
+<h2>3.6 Activated Charcoal Production</h2>
+<h3>Therapeutic Use of Activated Charcoal</h3>
+<p>Activated charcoal is used to treat certain poisonings and overdoses by binding drugs/toxins in the stomach, preventing absorption:</p>
+<p><strong>Indications:</strong></p>
+<ul>
+<li>Oral drug overdose (acetaminophen, some antibiotics, some poisons)</li>
+<li>Mushroom/plant poisoning (some species; ineffective for others)</li>
+<li>Diarrhea (absorbs loose stool-forming compounds)</li>
+</ul>
+<p><strong>NOT effective for:</strong> Heavy metal poisoning, strong acids/bases, alcohol, iron poisoning</p>
+<h3>Simple Charcoal Activation</h3>
+<p><strong>Method 1: Heat Activation (Simplest)</strong></p>
+<ol>
+<li><strong>Source:</strong> Charcoal powder (from burning wood, or wood-based activated charcoal if available)</li>
+<li><strong>Heat:</strong> Place in steel pot or crucible. Heat to 400-500°C for 30-60 minutes (glowing red, but not burning). Can use bonfire; push into hot coals.</li>
+<li><strong>Cool:</strong> Remove from heat; cool completely (handles cool, powder is black but no longer hot).</li>
+<li><strong>Store:</strong> Place in sealed jar or container; protect from moisture.</li>
+</ol>
+<p><strong>Activated by:</strong> Heat creates porous structure; surface area for adsorption increases dramatically.</p>
+<p><strong>Method 2: Chemical Activation (Better Adsorption)</strong></p>
+<ol>
+<li>Charcoal powder from heat-treated source</li>
+<li>Soak in 10% hydrochloric acid (HCl) solution overnight; stir occasionally</li>
+<li>Drain acid; rinse repeatedly with water until neutral pH</li>
+<li>Heat in oven at 110°C until completely dry (4-6 hours)</li>
+<li>This produces higher surface area; more effective adsorption</li>
+</ol>
+<h3>Dosage &amp; Administration</h3>
+<p><strong>Activated charcoal dosing (for poisoning/overdose):</strong></p>
+<ul>
+<li>Adult: 25-100 grams (50 grams typical) as single dose, mixed with water to slurry</li>
+<li>Child: 25-50 grams depending on age</li>
+<li>Timing: Most effective within 1-2 hours of ingestion</li>
+<li>Administration: Mix powder with water to create thin paste; give by mouth or via nasogastric tube if patient unconscious</li>
+</ul>
+<p><strong>Gastrointestinal use (diarrhea):</strong></p>
+<ul>
+<li>1-2 grams 2-3 times daily between meals</li>
+<li>Less effective than prescription antidiarrheals</li>
+</ul>
+<div class="warning">
+<p><strong>Activated charcoal limitations:</strong></p>
+<ul>
+<li>Only effective for oral poisonings (not inhaled, injected, or absorbed through skin)</li>
+<li>Must be given quickly after ingestion (within 2 hours ideal)</li>
+<li>Adsorbs some beneficial medications too (take other drugs 2+ hours before/after charcoal)</li>
+<li>Does not prevent dehydration (diarrhea still occurs; fluid replacement essential)</li>
+<li>Some poisons (cyanide, strong acids) not well-adsorbed</li>
+</ul>
+</div>
+</section>
+<section id="oral-rehydration">
+<h2>3.7 Oral Rehydration Solution (ORS) Production</h2>
+<h3>Critical for Diarrheal Illness</h3>
+<p>Diarrhea causes rapid electrolyte and water loss. Untreated, severe diarrhea → shock → death, especially in children. ORS is the simplest, most effective treatment.</p>
+<h3>WHO Standard ORS Formula</h3>
+<p><strong>Per 1 Liter of Clean Water:</strong></p>
+<ul>
+<li>Sodium chloride (salt): 2.6 grams (1/2 teaspoon)</li>
+<li>Potassium chloride (salt substitute): 1.5 grams (1/4 teaspoon) [OPTIONAL—omit if unavailable]</li>
+<li>Glucose (sugar): 13.5 grams (2-3 tablespoons)</li>
+<li>OR brown sugar: 15 grams (1 tablespoon)</li>
+<li>OR molasses: 20 mL (helps with diarrhea)</li>
+</ul>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Boil water 5 minutes; cool to hand-warm temperature (~40°C)</li>
+<li>Add salt, sugar, and potassium chloride (if available)</li>
+<li>Stir until dissolved completely</li>
+<li>Taste: should taste salty and slightly sweet (like tears)</li>
+</ol>
+<p><strong>Administration:</strong></p>
+<ul>
+<li>Sip frequently (5-15 mL every 5-10 minutes) rather than large volumes at once</li>
+<li>Frequent small sips tolerated better, maximize absorption</li>
+<li>Continue until diarrhea stops and urine turns clear</li>
+<li>Can safely give unlimited quantity</li>
+</ul>
+<p><strong>Shelf life:</strong> 24 hours room temperature; 48 hours refrigerated. Beyond that, bacteria grow; make fresh batch.</p>
+<h3>Alternative ORS (If Standard Not Available)</h3>
+<p><strong>Method 1: Coconut Water Substitute</strong></p>
+<ul>
+<li>Fresh coconut water is rich in potassium and natural electrolytes</li>
+<li>Mix coconut water 1:1 with boiled water + 1 teaspoon sugar + pinch of salt per liter</li>
+<li>Effective and more palatable than plain ORS</li>
+</ul>
+<p><strong>Method 2: Fruit Juice ORS</strong></p>
+<ul>
+<li>Fresh fruit juice (orange, apple): 200 mL</li>
+<li>Clean water: 800 mL</li>
+<li>Salt: 1/2 teaspoon</li>
+<li>Sugar: 1 tablespoon</li>
+<li>Mix and use as ORS</li>
+</ul>
+<p><strong>Method 3: Rice Water (Traditional)</strong></p>
+<ul>
+<li>Boil rice in excess water (1 cup rice : 4 cups water) until water turns milky</li>
+<li>Strain; add salt and sugar (1/2 tsp salt, 1 tbsp sugar per liter)</li>
+<li>Rice starches are partially absorbed, reducing stool volume</li>
+<li>More effective than plain water for diarrhea</li>
+</ul>
+</section>
+<section id="ethanol-production">
+<h2>3.8 Ethanol Production for Medical Use</h2>
+<h3>Ethanol as Antiseptic &amp; Disinfectant</h3>
+<p>70% ethanol is an effective disinfectant for sterilizing instruments, wounds, and skin before injections. In survival scenarios where commercial alcohol unavailable, fermentation can produce it.</p>
+<h3>Ethanol Fermentation Process</h3>
+<p><strong>Fermentation reaction:</strong> Sugar (glucose) → Ethanol + Carbon dioxide (yeast metabolism)</p>
+<p><strong>Materials Needed:</strong></p>
+<ul>
+<li>Sugar source: Honey, molasses, fruit juice, or fermented grains</li>
+<li>Yeast: Saccharomyces cerevisiae (baker's yeast if available; or wild fermentation)</li>
+<li>Container: Glass jar, sealed with airlock (fermentation releases CO₂)</li>
+<li>Temperature control: 20-25°C (fermentation slows below 15°C, stops above 30°C)</li>
+</ul>
+<p><strong>Procedure (5-14 days):</strong></p>
+<ol>
+<li><strong>Prepare sugar solution:</strong> Mix sugar with water to create 15-25% solution (50 grams sugar in 250 mL water example)</li>
+<li><strong>Pasteurize:</strong> Heat to 80°C for 15 minutes to sterilize; cool to 25°C</li>
+<li><strong>Add yeast:</strong> Sprinkle 1-2 grams baker's yeast per liter; or use wild fermentation (leave uncovered 24 hours for wild yeasts to colonize)</li>
+<li><strong>Seal:</strong> Cover jar with cloth or airlock; allow fermentation</li>
+<li><strong>Monitor:</strong> Bubbling/foaming indicates active fermentation. Day 1-3: vigorous activity. Days 3-7: gradual slowdown.</li>
+<li><strong>End-point:</strong> Bubbling stops; solution clears; no more activity. Test with hydrometer: specific gravity &lt;1.000 indicates fermentation complete</li>
+<li><strong>Distillation (if high concentration needed):</strong>
+<ul>
+<li>Siphon or pour fermented &quot;mash&quot; into distillation apparatus</li>
+<li>Heat to 78°C (ethanol boiling point); collect vapors</li>
+<li>Cool vapors in condenser; liquid collected is 50-70% ethanol</li>
+<li>Repeat distillation to increase concentration to 90%+</li>
+</ul>
+</li>
+</ol>
+<p><strong>Typical yield:</strong> 15% sugar solution → ~7-8% ethanol by volume (fermented product)</p>
+<p><strong>Medical use concentration:</strong></p>
+<ul>
+<li>70% ethanol: Optimal disinfectant (kills bacteria, viruses, some spores)</li>
+<li>Preparation: Mix 95% ethanol with water (if distilled to high concentration) to 70%</li>
+<li>Application: Wipe instruments, skin prior to injection, wound cleaning</li>
+</ul>
+<div class="warning">
+<p><strong>Ethanol Production Safety:</strong></p>
+<ul>
+<li>Fermentation produces CO₂; seal jar loosely or use airlock to prevent pressure buildup</li>
+<li>Never use closed, rigid container (explosion risk)</li>
+<li>Distillation produces flammable vapors; do NOT use open flame as heat source</li>
+<li>Only use for medical/antiseptic purposes; not for consumption (impurities cause poisoning)</li>
+<li>Denatured/toxic alcohols (methanol) may be produced if wild fermentation; better to use baker's yeast</li>
+</ul>
+</div>
+</section>
+<section id="quinine">
+<h2>4. Quinine from Cinchona Bark</h2>
+<h3>Historical Background &amp; Mechanism</h3>
+<div class="card">
+<p>Quinine as Antimalarial</p>
+<p><strong>Source:</strong> Cinchona tree bark (native to Andes, cultivated in East Indies); contains alkaloids including quinine, quinidine, cinchonine, cinchonidine</p>
+<p><strong>Activity:</strong> Quinine is the most potent antimalarial alkaloid; kills <em>Plasmodium</em> parasites at various life stages (especially effective against adult parasites in red blood cells)</p>
+<p><strong>Bitter Taste:</strong> Intensely bitter; difficult to administer in pure form without masking</p>
+</div>
+<h3>Quinine Extraction from Cinchona Bark</h3>
+<div class="card">
+<p>Simple Extraction Method</p>
+<p><strong>Materials:</strong> Dried, ground cinchona bark, dilute acid (sulfuric acid or vinegar), water, alcohol, salt</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Weigh dried cinchona bark (~5-10 grams); grind to fine powder</li>
+<li>Extract with dilute acid: Mix bark powder with dilute H₂SO₄ (1:10 ratio, acid:bark weight) in water; heat gently to ~60-70°C for 1-2 hours (alkaloids dissolve as water-soluble salts)</li>
+<li>Cool and filter; collect acidic extract (brown liquid)</li>
+<li>Basify extract: Add sodium hydroxide or ammonia to pH ~10; quinine alkaloid precipitates from solution (turns insoluble)</li>
+<li>Filter precipitate; rinse with water</li>
+<li>Dissolve precipitate in dilute alcohol (50% ethanol); filter again</li>
+<li>Evaporate alcohol slowly at room temperature or under gentle heat; quinine crystallizes (yellow-white crystals)</li>
+<li>Dry crystals; store in cool, dark place in airtight container</li>
+</ol>
+<p><strong>Yield:</strong> Cinchona bark contains 5-15% alkaloids by weight (mostly quinine 5-10%); extraction typically recovers 30-50% of total alkaloids</p>
+</div>
+<h3>Quinine Dosage for Malaria</h3>
+<div class="card">
+<p>Clinical Dosing</p>
+<table><thead><tr><th scope="col">Purpose</th><th scope="col">Dose</th><th scope="col">Frequency/Duration</th><th scope="col">Notes</th></tr></thead><tbody><tr><td><strong>Acute Malaria Attack</strong></td><td>600-650 mg (10 grains)</td><td>Every 8 hours × 7-10 days</td><td>For fever/parasitemia; oldest treatment; now less common due to side effects</td></tr><tr><td><strong>Severe Malaria (IV)</strong></td><td>10 mg/kg over 4 hours, then 5 mg/kg over 2-8 hours</td><td>Every 8-24 hours until can take oral</td><td>For cerebral malaria, severe anemia; hospital setting</td></tr><tr><td><strong>Prophylaxis</strong></td><td>300-325 mg (5 grains)</td><td>Daily or every other day × 6 weeks before/after exposure</td><td>Prevention in endemic areas; weaker than for treatment</td></tr></tbody></table>
+</div>
+<h3>Cinchona Bark Preparation (Alternative)</h3>
+<div class="info-box">
+<p>If pure quinine extraction is too complex, <strong>whole bark decoction</strong> can be used:</p>
+<ul>
+<li>Boil 5-10 grams dried cinchona bark in 500 mL water for 20-30 minutes</li>
+<li>Strain; cool; sweeten with honey if desired to mask bitterness</li>
+<li>Dose: ~100 mL (2-3 tablespoons) 3-4 times daily</li>
+<li><strong>Caution:</strong> Whole bark extract has variable alkaloid concentration; less predictable dosing</li>
+</ul>
+</div>
+<h3>Quinine Safety &amp; Side Effects</h3>
+<div class="warning">
+<p><strong>Important:</strong> Quinine has narrow therapeutic index (small difference between effective and toxic dose)</p>
+<ul>
+<li><strong>Common Dose-Related Effects:</strong> Tinnitus (ringing ears), hearing loss, visual disturbance (blurred vision, photophobia), headache, nausea</li>
+<li><strong>Toxicity Signs (Cinchonism):</strong> High-frequency hearing loss, confusion, hypoglycemia, cardiac arrhythmias</li>
+<li><strong>Overdose:</strong> Severe toxicity; requires immediate medical attention</li>
+<li><strong>Contraindications:</strong> Pregnancy (may cause abortion), glucose-6-phosphate dehydrogenase (G6PD) deficiency (hemolysis risk), cardiac conduction abnormalities</li>
+</ul>
+</div>
+</section>
+<section id="morphine">
+<h2>5. Pain Management Alternatives (Morphine Synthesis Excluded)</h2>
+<div class="warning">
+<p><strong>Morphine Extraction &amp; Synthesis Intentionally Excluded</strong></p>
+<p>Opium poppy (<em>Papaver somniferum</em>) cultivation and morphine extraction are heavily regulated or illegal in most jurisdictions. This guide deliberately does not include detailed morphine synthesis procedures because:</p>
+<ol>
+<li><strong>Illegality:</strong> Manufacturing controlled opioids carries severe federal criminal penalties (10-20+ years imprisonment)</li>
+<li><strong>Danger:</strong> Extraction procedures involve toxic, corrosive chemicals and highly variable potency leading to overdose risk</li>
+<li><strong>Medical reality:</strong> Crude home-extracted morphine is impure, contaminated, and unpredictable in strength—often causing more harm than benefit</li>
+<li><strong>Legal liability:</strong> Detailed synthesis instructions create unacceptable legal and ethical risks</li>
+<li><strong>Better alternatives exist:</strong> Aspirin, willow bark tea, and other accessible analgesics serve pain management in survival scenarios without legal consequences</li>
+</ol>
+<p>The morphine extraction process is historically documented in medical literature but is omitted here due to extreme danger and legal restrictions in virtually all jurisdictions.</p>
+</div>
+<h3>Accessible Pain Management for Survival</h3>
+<p>For pain management in off-grid or survival scenarios, prioritize these proven, legal alternatives:</p>
+<p><strong>Aspirin</strong> (detailed above) — Effective for mild to moderate pain, fever, and inflammation. Synthesizable from salicylic acid or extractable from willow bark.</p>
+<p><strong>Willow Bark Decoction</strong> — Traditional pain relief containing salicin (converts to salicylic acid in the body). Simpler than synthesizing aspirin; requires only boiling water.</p>
+<p><strong>Acetaminophen (Paracetamol)</strong> — If available in stored supplies. Not synthesizable in field settings.</p>
+<p><strong>NSAIDs</strong> — Anti-inflammatory pain relievers (ibuprofen, naproxen). Can be stored long-term if available.</p>
+<p><strong>Palliative Care &amp; Comfort:</strong> For severe pain without access to medications, focus on:</p>
+<ul>
+<li><strong>Positioning:</strong> Proper support to minimize movement</li>
+<li><strong>Heat/Cold:</strong> Warm or cold compresses to numb and reduce inflammation</li>
+<li><strong>Rest &amp; Immobilization:</strong> Prevent worsening of injury</li>
+<li><strong>Distraction:</strong> Conversation, music, activities that shift focus from pain</li>
+<li><strong>Sleep Support:</strong> Herbal teas (chamomile, passionflower) to aid rest</li>
+</ul>
+<div class="info-box">
+<p><strong>Opioid Addiction in Collapse Scenarios</strong></p>
+<p>If patients are opioid-dependent and supply is interrupted:</p>
+<ul>
+<li>Withdrawal is extremely uncomfortable but not fatal</li>
+<li>Supportive care (hydration, electrolytes, comfort measures) manages acute symptoms</li>
+<li>Symptoms peak 24-72 hours; diminish over 7-10 days</li>
+<li>Never attempt home morphine production as &quot;solution&quot; — extreme legal and medical risk</li>
+</ul>
+<p>Focus on comfort and reassurance rather than attempting dangerous synthesis.</p>
+</div>
+</section>
+<section id="atropine">
+<h2>6. Atropine from Belladonna (Deadly Nightshade)</h2>
+<h3>Plant &amp; Alkaloid Overview</h3>
+<div class="card">
+<p>Deadly Nightshade (Atropa belladonna)</p>
+<p><strong>Plant Description:</strong> Perennial herb 60-100cm tall; dark green leaves; purple/brown flowers; black berries</p>
+<p><strong>All Parts Toxic:</strong> Root, leaves, seeds, berries contain tropane alkaloids; roots most concentrated (0.5-1% atropine + hyoscyamine)</p>
+<p><strong>Atropine (C₁₇H₂₃NO₃):</strong> Anticholinergic drug; blocks acetylcholine receptors; mydriatic (dilates pupils), tachycardic (increases heart rate), dries secretions</p>
+</div>
+<h3>Atropine Extraction</h3>
+<div class="card">
+<p>Simple Extraction Process</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Harvest and dry belladonna leaves or roots (dry thoroughly to prevent mold)</li>
+<li>Grind to fine powder</li>
+<li>Extract with dilute sulfuric acid (~1:10 ratio in water); soak 24-48 hours at room temperature</li>
+<li>Filter; acidic extract contains dissolved alkaloid salts</li>
+<li>Basify with ammonia or NaOH to pH ~10; atropine precipitates</li>
+<li>Filter precipitate; wash with water</li>
+<li>Dissolve in hot alcohol; filter to remove impurities</li>
+<li>Evaporate alcohol slowly; atropine crystallizes (white crystals, bitter taste)</li>
+<li>Recrystallize from hot alcohol for purity</li>
+</ol>
+<p><strong>Yield:</strong> Leaves ~0.3-0.6% atropine; roots ~0.5-1%</p>
+</div>
+<h3>Medical Uses of Atropine</h3>
+<table><thead><tr><th scope="col">Indication</th><th scope="col">Dose</th><th scope="col">Route</th><th scope="col">Mechanism</th></tr></thead><tbody><tr><td><strong>Eye Dilation (Examination)</strong></td><td>0.5-1% solution, 1-2 drops</td><td>Ophthalmic</td><td>Blocks parasympathetic; dilates pupil</td></tr><tr><td><strong>Bradycardia (Slow Heart)</strong></td><td>0.3-1 mg IV/IM</td><td>IV/IM injection</td><td>Blocks vagal slowing; increases HR</td></tr><tr><td><strong>Secretion Control</strong></td><td>0.3-0.6 mg</td><td>IV/IM or oral</td><td>Dries mucous; used pre-surgery</td></tr><tr><td><strong>Organophosphate Poisoning</strong></td><td>2-5 mg IV, repeat every 5-10 min</td><td>IV/IM</td><td>Antagonizes excessive acetylcholine</td></tr></tbody></table>
+<h3>Toxicity &amp; Poisoning</h3>
+<div class="warning">
+<p><strong>CRITICAL:</strong> Atropine has very narrow safety margin; therapeutic dose (0.5-1 mg) close to toxic dose (2-3+ mg)</p>
+<ul>
+<li><strong>Moderate Toxicity:</strong> Mydriasis (dilated pupils), tachycardia (&gt;120 bpm), dry mouth, confusion, agitation</li>
+<li><strong>Severe Toxicity (Anticholinergic Crisis):</strong> High fever, hallucinations, delirium, seizures, coma, cardiac arrhythmias, respiratory paralysis</li>
+<li><strong>Lethal Dose:</strong> ~100 mg oral (highly variable); children extremely sensitive (toxic dose ~0.1 mg/kg)</li>
+<li><strong>Treatment:</strong> Physostigmine (cholinesterase inhibitor; reverses anticholinergic effects) or supportive care; no specific antidote beyond symptom management</li>
+</ul>
+</div>
+<h3>Safe Handling &amp; Dosing</h3>
+<div class="info-box">
+<p><strong>Rules for Atropine Use:</strong></p>
+<ul>
+<li>Never use plant preparations without standardization (alkaloid content variable)</li>
+<li>Start with minimal doses (e.g., eye drops first before systemic use)</li>
+<li>Monitor vital signs closely (pulse rate, breathing)</li>
+<li>Keep in mind onset delayed 15-30 minutes orally; effects last 4-6 hours</li>
+<li>Overdose difficult to reverse; have supportive care ready (oxygen, monitoring)</li>
+</ul>
+</div>
+</section>
+<section id="digitalis">
+<h2>7. Digitalis from Foxglove</h2>
+<h3>Digitalis Glycosides: Cardiac Drugs</h3>
+<div class="card">
+<p>Foxglove (Digitalis purpurea) &amp; Related Species</p>
+<p><strong>Active Compounds:</strong> Cardiac glycosides (digoxin, digitoxin, gitoxin); found in leaves of Digitalis species</p>
+<p><strong>Mechanism:</strong> Glycosides inhibit Na⁺/K⁺-ATPase pump; increase intracellular calcium; increase cardiac contractility (positive inotropic effect); slow AV conduction</p>
+<p><strong>Clinical Use:</strong> Heart failure, atrial fibrillation, supraventricular tachycardia</p>
+<p><strong>Critical Property:</strong> Narrow therapeutic index (toxic dose ~2-3× therapeutic dose); cumulative toxicity (long half-life)</p>
+</div>
+<h3>Digitalis Leaf Preparation</h3>
+<div class="card">
+<p>Extraction &amp; Standardization</p>
+<p><strong>Harvest:</strong> Digitalis leaves harvested in 1st or 2nd year of growth (first year plants don't flower; 2nd year flowering stage optimal); picked after morning dew</p>
+<p><strong>Drying:</strong> Lay leaves flat or hang in bundles in warm, dry, dark location; proper drying crucial for potency preservation (0.1-0.3% glycosides in dried leaves)</p>
+<p><strong>Preparation Methods:</strong></p>
+<ul>
+<li><strong>Powdered Leaf:</strong> Grind dried leaves to fine powder; use directly (variable potency)</li>
+<li><strong>Infusion (Tea):</strong> Steep dried leaves in hot water 10 minutes; strain; dose by effect monitoring</li>
+<li><strong>Tincture:</strong> Soak powder in alcohol 1:10 ratio; strain after 2 weeks; concentrate active compounds</li>
+<li><strong>Standardized Extract:</strong> Solvent extraction to concentrate glycosides (if laboratory available)</li>
+</ul>
+</div>
+<h3>Dosage &amp; Monitoring</h3>
+<div class="warning">
+<p><strong>DANGEROUS:</strong> Digitalis has no wide margin; improper dosing causes serious toxicity</p>
+<p><strong>Historical Dosing (Highly Variable):</strong></p>
+<ul>
+<li>Digitalis leaf powder: 60-120 mg (1-2 grains) daily divided doses</li>
+<li>Digitalis tincture: 5-15 drops 3-4 times daily</li>
+</ul>
+<p><strong>Toxicity Signs (Digitalis Toxicity):</strong></p>
+<ul>
+<li><strong>GI:</strong> Nausea, vomiting, abdominal pain, diarrhea (often first sign of toxicity)</li>
+<li><strong>Cardiac:</strong> Premature ventricular contractions (PVCs), bigeminy, bradycardia, AV block</li>
+<li><strong>Visual:</strong> Color perception changes (yellow vision), photopsia (lights)</li>
+<li><strong>CNS:</strong> Headache, confusion, weakness</li>
+</ul>
+<p><strong>Monitoring:</strong> Must monitor pulse (should be 60-100 bpm; slowing indicates toxicity); check for cardiac arrhythmias if possible (ECG if available)</p>
+</div>
+<h3>Treatment of Digitalis Toxicity</h3>
+<div class="info-box">
+<p><strong>Management:</strong></p>
+<ul>
+<li>Immediately stop digitalis</li>
+<li>Monitor pulse and vital signs closely</li>
+<li>For bradycardia: Atropine (0.5-1 mg) may help (if available)</li>
+<li>For ventricular arrhythmias: Potassium supplementation if hypokalemic (low K⁺ increases toxicity); avoid if renal failure</li>
+<li>Supportive care: Monitor breathing, have oxygen available</li>
+<li>Specific treatment (Digoxin-specific Fab antibodies) not available in off-grid setting</li>
+</ul>
+</div>
+</section>
+<section id="dosage">
+<h2>8. Dosage Calculations &amp; Formulations</h2>
+<h3>Bioavailability &amp; Routes of Administration</h3>
+<div class="card">
+<p>How Drugs Reach the Bloodstream</p>
+<table><thead><tr><th scope="col">Route</th><th scope="col">Bioavailability (%)</th><th scope="col">Onset</th><th scope="col">Advantages</th><th scope="col">Disadvantages</th></tr></thead><tbody><tr><td><strong>Oral (PO)</strong></td><td>10-90% (drug dependent)</td><td>30 min - 2 hours</td><td>Simple, safe, patient-friendly</td><td>Slow, variable absorption, destroyed by gastric acid</td></tr><tr><td><strong>Sublingual (under tongue)</strong></td><td>Rapid, high</td><td>5-15 minutes</td><td>Faster than oral, bypasses gastric acid</td><td>Not suitable for all drugs</td></tr><tr><td><strong>Intramuscular (IM)</strong></td><td>70-100%</td><td>10-30 minutes</td><td>Reliable absorption, sustained levels</td><td>Injection required, pain, infection risk</td></tr><tr><td><strong>Intravenous (IV)</strong></td><td>100%</td><td>Immediate</td><td>Rapid onset, exact dosing</td><td>Requires aseptic technique, immediate toxicity if error, requires skill</td></tr><tr><td><strong>Topical (skin)</strong></td><td>5-10% (usually local)</td><td>30 min - hours</td><td>Local effects, minimal systemic absorption</td><td>Not suitable for systemic effects</td></tr><tr><td><strong>Inhalation/Vapors</strong></td><td>Rapid, variable</td><td>Seconds-minutes</td><td>Very fast onset</td><td>Difficult dosing, irritation risk</td></tr></tbody></table>
+</div>
+<h3>Dose Calculations</h3>
+<div class="card">
+<p>Basic Formulas</p>
+<p><strong>Body Weight-Based Dosing:</strong></p>
+<p>Dose (mg) = Dose/kg × Body Weight (kg)</p>
+<p><strong>Example:</strong> Quinine for malaria at 25 mg/kg for 60 kg person:</p>
+<p>Dose = 25 mg/kg × 60 kg = 1,500 mg (1.5 g) per dose</p>
+<p><strong>Concentration &amp; Dilution:</strong></p>
+<p>C₁V₁ = C₂V₂ (Concentration 1 × Volume 1 = Concentration 2 × Volume 2)</p>
+<p><strong>Example:</strong> Make 100 mL of 5% solution from 10% stock:</p>
+<p>10% × V₁ = 5% × 100 mL V₁ = 50 mL of 10% solution (+ 50 mL diluent)</p>
+<p><strong>Therapeutic Index (TI):</strong></p>
+<p>TI = TD₅₀ / ED₅₀ (Toxic Dose at 50% toxicity / Effective Dose at 50% response)</p>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>TI &gt; 10: Wide margin; relatively safe (aspirin ~15)</li>
+<li>TI = 1-10: Narrow margin; careful dosing required (quinine ~3, digitalis ~2)</li>
+<li>TI &lt; 1: Dangerous; toxic and therapeutic doses overlap (atropine ~2)</li>
+</ul>
+</div>
+<h3>Formulation Methods</h3>
+<div class="card">
+<p>Tablets &amp; Pills</p>
+<ul>
+<li><strong>Tablet Press:</strong> Manual or mechanical; compress powder into disk</li>
+<li><strong>Binders:</strong> Starch, gum arabic, cellulose; 5-10% by weight</li>
+<li><strong>Disintegrants:</strong> Croscarmellose, starch; promote breakup in GI tract</li>
+<li><strong>Coating:</strong> Optional; sugar or cellulose coating for taste masking</li>
+<li><strong>Size/Weight:</strong> Standard tablet ~500-650 mg (aspirin), smaller for potent drugs (2-5 mg quinine per tablet)</li>
+</ul>
+</div>
+<div class="card">
+<p>Liquids &amp; Tinctures</p>
+<ul>
+<li><strong>Solutions:</strong> Dissolve drug in water or alcohol (1-10% concentration typical)</li>
+<li><strong>Suspensions:</strong> Insoluble powder + liquid; shake before use</li>
+<li><strong>Tinctures:</strong> Plant material in alcohol (1:10 ratio); steep 2+ weeks, strain</li>
+<li><strong>Extracts:</strong> Concentrated form; evaporate solvent (higher potency per volume)</li>
+<li><strong>Dosing by Drops:</strong> Standard dropper = ~20 drops/mL (convenient for dilute solutions)</li>
+</ul>
+</div>
+<h3>Pediatric Adjustments</h3>
+<div class="info-box">
+<p><strong>Children Require Lower Doses:</strong> Metabolism and body composition differ from adults</p>
+<p><strong>Clark's Formula (Weight-Based):</strong></p>
+<p>Child Dose = Adult Dose × (Child Weight / 150)</p>
+<p><strong>Example:</strong> Aspirin 650 mg for adult; 30 kg child:</p>
+<p>Child Dose = 650 × (30/150) = 650 × 0.2 = 130 mg per dose</p>
+</div>
+</section>
+<section id="quality">
+<h2>9. Quality Control &amp; Testing</h2>
+<h3>Purity &amp; Identity Testing</h3>
+<div class="card">
+<p>Simple Chemical Tests</p>
+<table><thead><tr><th scope="col">Test</th><th scope="col">Method</th><th scope="col">Result (Positive)</th><th scope="col">Drug</th></tr></thead><tbody><tr><td><strong>Melting Point</strong></td><td>Heat slowly; record temperature at melt</td><td>Expected range indicates purity (pure substances have sharp melting point)</td><td>Aspirin: 138-140°C (pure)</td></tr><tr><td><strong>Solubility</strong></td><td>Dissolve in water, ethanol, ether; record solubility</td><td>Matches known solubility profile</td><td>Quinine: soluble in dilute acid, poorly in water</td></tr><tr><td><strong>Color Tests</strong></td><td>Add reagent (FeCl₃, Fehling's, etc.); observe color change</td><td>Specific color change indicates compound</td><td>Morphine: purple with FeCl₃</td></tr><tr><td><strong>Spot Test (TLC)</strong></td><td>Chromatography (if available); compare Rf values to standard</td><td>Single spot at expected Rf = pure substance</td><td>Requires chromatography equipment</td></tr></tbody></table>
+</div>
+<h3>Bioassays (Biological Testing)</h3>
+<div class="info-box">
+<p><strong>Testing Potency Using Living Systems:</strong></p>
+<ul>
+<li><strong>Insect/Animal Response:</strong> Inject/administer known doses to insects or small animals; observe effects (paralysis, death, sedation); compare to standard</li>
+<li><strong>Bacterial Inhibition (Antibiotic Testing):</strong> Plate bacteria on agar; place drug-soaked disk; measure inhibition zone diameter; larger zone = more potent</li>
+<li><strong>Cardiac Glycoside Testing:</strong> Frogs/cats given digitalis; monitor heart rate; toxic dose determined (when heart stops)</li>
+<li><strong>Crude but Effective:</strong> These methods lack precision but confirm potency/identity without laboratory equipment</li>
+</ul>
+</div>
+<h3>Storage Stability Testing</h3>
+<div class="card">
+<div class="card">
+<p>Monitoring Degradation</p>
+</div>
+</div>
+<p><strong>Simple Tests Over Time:</strong></p>
+<ul>
+<li><strong>Visual Inspection:</strong> Discoloration, crystal breakdown, or separation indicates degradation</li>
+<li><strong>Smell:</strong> Odor change (vinegar smell = aspirin hydrolysis; off-smell = contamination)</li>
+<li><strong>Solubility:</strong> Re-test solubility periodically; changed solubility suggests chemical change</li>
+<li><strong>Potency Testing:</strong> Repeat bioassay at regular intervals (e.g., quarterly) to quantify potency loss
+:::</li>
+</ul>
+<h3>Contamination Detection</h3>
+<div class="warning">
+<p><strong>Check for Common Contaminants:</strong></p>
+<ul>
+<li><strong>Microbial Growth:</strong> Mold, bacteria smell; white/green spots; indicates poor storage or preparation</li>
+<li><strong>Heavy Metals:</strong> No simple test without lab; maintain strict extraction/manufacturing hygiene</li>
+<li><strong>Plant Material Residue:</strong> Inspect visually; extract thoroughly to remove plant matter</li>
+<li><strong>Wrong Species:</strong> Botanical authentication: compare leaf structure, plant morphology to known specimens</li>
+</ul>
+</div>
+</section>
+<section id="storage">
+<h2>10. Storage, Stability &amp; Preservation</h2>
+<h3>Storage Container Selection</h3>
+<div class="card">
+<p>Container Types &amp; Their Properties</p>
+<table><thead><tr><th scope="col">Container</th><th scope="col">Best For</th><th scope="col">Advantages</th><th scope="col">Disadvantages</th></tr></thead><tbody><tr><td><strong>Glass (Amber/Dark)</strong></td><td>Light-sensitive drugs (morphine, digitalis, penicillin)</td><td>Impermeable, inert, visible contents, reusable</td><td>Fragile, heavy, expensive</td></tr><tr><td><strong>Glass (Clear)</strong></td><td>Stable compounds (aspirin, quinine), visual monitoring</td><td>Transparent, inert</td><td>Allows light penetration; use for light-stable drugs only</td></tr><tr><td><strong>Metal Tins/Containers</strong></td><td>Powders, tablets (light-sensitive)</td><td>Excellent light/moisture barrier, durable, portable</td><td>May react with corrosive compounds; less visible</td></tr><tr><td><strong>Plastic (HDPE)</strong></td><td>Aqueous solutions temporarily</td><td>Lightweight, durable, affordable</td><td>Permeable (allows water/gas exchange), may interact with solvents</td></tr><tr><td><strong>Paper Packets/Envelopes</strong></td><td>Tablets, powders (short-term, dry only)</td><td>Inexpensive, biodegradable</td><td>Poor moisture/air barrier; unsuitable for long-term storage</td></tr></tbody></table>
+</div>
+<h3>Temperature &amp; Humidity Control</h3>
+<div class="card">
+<p>Environmental Factors Affecting Stability</p>
+<table><thead><tr><th scope="col">Factor</th><th scope="col">Effect on Drugs</th><th scope="col">Optimal Condition</th></tr></thead><tbody><tr><td><strong>Temperature</strong></td><td>Increases reaction rate (degradation); +10°C ~doubles degradation rate</td><td>Room temp (20-25°C) acceptable; cool storage (4-15°C) better; frozen (&lt;-10°C) best for some</td></tr><tr><td><strong>Humidity</strong></td><td>Promotes hydrolysis, microbial growth, crystal changes</td><td>&lt;30% relative humidity for powders; &lt;50% for tablets</td></tr><tr><td><strong>Light</strong></td><td>Photolysis (light-induced degradation); affects sensitive alkaloids</td><td>Complete darkness preferred; amber/dark containers reduce exposure</td></tr><tr><td><strong>Oxygen</strong></td><td>Oxidative degradation; slower than temperature but significant long-term</td><td>Airtight containers; oxygen-free environment best</td></tr></tbody></table>
+</div>
+<h3>Shelf Life Estimation</h3>
+<div class="info-box">
+<p><strong>Typical Shelf Lives (Room Temperature, Sealed Container):</strong></p>
+<ul>
+<li><strong>Aspirin Tablets:</strong> 2-3 years (expires when vinegar smell develops)</li>
+<li><strong>Quinine Powder:</strong> 3-5 years if dry and sealed</li>
+<li><strong>Digitalis Dried Leaves:</strong> 1-2 years (potency degradation)</li>
+<li><strong>Penicillin Powder:</strong> 6-12 months (active ingredient unstable)</li>
+<li><strong>Morphine (powder):</strong> 2-3 years if sealed, cool, dark</li>
+<li><strong>Atropine:</strong> 3-5 years in sealed, amber container</li>
+</ul>
+<p><strong>Rule of Thumb:</strong> Cool storage (4-15°C) roughly doubles shelf life; freezing (-20°C) can triple it.</p>
+</div>
+<h3>Desiccants &amp; Oxygen Scavengers</h3>
+<div class="card">
+<p>Preservation Aids</p>
+<ul>
+<li><strong>Silica Gel:</strong> Reusable desiccant; absorbs moisture; place packets in sealed containers; refresh periodically by heating (~100°C, 30 min)</li>
+<li><strong>Calcium Chloride (Anhydrous):</strong> Hygroscopic powder; less common but effective; not reusable</li>
+<li><strong>Activated Charcoal:</strong> Absorbs some odors/impurities; useful for long-term powder storage</li>
+<li><strong>Oxygen Absorbers (Iron-Based):</strong> Remove oxygen from sealed container; reduce oxidative degradation; commercial packets available</li>
+<li><strong>Vacuum Sealing:</strong> Remove air from container; dramatic improvement in shelf life for sensitive compounds</li>
+</ul>
+</div>
+<h3>Emergency Shelf Life Extension</h3>
+<div class="info-box">
+<p><strong>If Storage Conditions Not Ideal:</strong></p>
+<ul>
+<li><strong>Freezing (if possible):</strong> Markedly extends life; freeze in moisture-proof bag; thaw without opening to avoid condensation</li>
+<li><strong>Underground/Cellar Storage:</strong> Naturally cool (10-15°C); stable year-round; excellent for sealed containers</li>
+<li><strong>Wrapping in Cloth/Paper + Sealed Box:</strong> Provides insulation and light protection (basic but helpful)</li>
+<li><strong>Rotate Stock:</strong> First-in, first-out; use oldest products first; monitor aging</li>
+</ul>
+</div>
+</section>
+<h2 id="quick-reference-amp-important-warnings">Quick Reference &amp; Important Warnings</h2>
+<div class="warning">
+<h3>Critical Safety Reminders</h3>
+<ul>
+<li><strong>Narrow Therapeutic Index Drugs</strong> (digitalis, atropine, quinine, morphine) require careful dosing; overdose is dangerous. Always start low; increase cautiously.</li>
+<li><strong>Never Mix Unknown Preparations:</strong> Without lab analysis, assume variable potency. Toxicity risk increases with multiple drugs.</li>
+<li><strong>Pregnancy:</strong> Many drugs cross placenta; avoid non-essential medications. Quinine, morphine, digitalis especially risky.</li>
+<li><strong>Allergies:</strong> Prior anaphylaxis to penicillin means all beta-lactam antibiotics contraindicated. Screen carefully.</li>
+<li><strong>Disposal:</strong> Never discard expired drugs in water supply. Burn (if safe) or bury in designated pit away from groundwater.</li>
+</ul>
+</div>
+<div class="card">
+<p>Summary Table: Common Off-Grid Medications</p>
+<table style="font-size: 0.9em;"><thead><tr><th scope="col">Drug</th><th scope="col">Source</th><th scope="col">Main Use</th><th scope="col">Typical Dose</th><th scope="col">Shelf Life</th><th scope="col">Caution</th></tr></thead><tbody><tr><td><strong>Aspirin</strong></td><td>Willow/synthesis</td><td>Pain, fever, inflammation</td><td>325-650 mg q4-6h</td><td>2-3 yrs</td><td>GI irritation; avoid in bleeding</td></tr><tr><td><strong>Quinine</strong></td><td>Cinchona bark</td><td>Malaria</td><td>600 mg q8h × 7 days</td><td>3-5 yrs</td><td>Narrow TI; tinnitus = toxicity</td></tr><tr><td><strong>Penicillin</strong></td><td>Mold fermentation</td><td>Bacterial infection</td><td>500 K-1 M IU q4-6h</td><td>6-12 mo</td><td>Allergic reactions; requires cold storage</td></tr><tr><td><strong>Digitalis</strong></td><td>Foxglove leaves</td><td>Heart failure, afib</td><td>60-120 mg daily</td><td>1-2 yrs</td><td>Very narrow TI; monitor pulse closely</td></tr><tr><td><strong>Atropine</strong></td><td>Belladonna</td><td>Eye dilation, bradycardia</td><td>0.5-1 mg IV/IM</td><td>3-5 yrs</td><td>Extremely toxic; small overdose fatal</td></tr></tbody></table>
+</div>
+<section id="dosage-calculator">
+<h3>🧮 Basic Medication Dosage Calculator</h3>
+<p>Calculate common medication doses based on body weight (for reference only)</p>
+<p>Body Weight:</p>
+<p>kglbs</p>
+<p>Medication:Aspirin (pain/fever/anti-inflammatory)Willow Bark Tea (natural aspirin)Activated Charcoal (poisoning)Oral Rehydration Solution (ORS)</p>
+<p>Patient Age Group:Adult (12+ years)Child (2-12 years)</p>
+<p>Calculate Dose</p>
+</section>
+<h2 id="penicillin-fermentation-detailed-process">Penicillin Fermentation: Detailed Process</h2>
+<p><strong>WARNING: CRITICAL SAFETY INFORMATION</strong><br>
+Unpurified penicillin contains bacterial contaminants and impurities that cause severe allergic reactions, organ damage, and death. This information is for educational reference. Do not produce or administer penicillin without proper laboratory facilities, sterile technique, and pharmaceutical-grade purification equipment.</p>
+<h3>Culture Selection</h3>
+<ul>
+<li><strong>Penicillium notatum:</strong> The original penicillin-producing mold. Found naturally on decaying cantaloupe/melon, moldy bread, and soil.</li>
+<li><strong>Isolation:</strong> Culture mold on potato-dextrose agar (PDA) or minimal medium until pure culture obtained (multiple subcultures necessary).</li>
+<li><strong>Identification:</strong> P. notatum produces white-to-gray growth with yellow-green coloration. Blue-green molds do not produce penicillin.</li>
+<li><strong>Maintenance:</strong> Keep pure culture in refrigerator on agar slants; transfer monthly to maintain viability.</li>
+</ul>
+<h3>Fermentation Media</h3>
+<p>Corn Steep Liquor Medium (Laboratory Standard):</p>
+<p>Corn steep liquor (corn processing byproduct): 50 mL/L<br>
+Glucose: 40 g/L<br>
+Lactose: 10 g/L<br>
+CaCO3 (calcium carbonate): 5 g/L<br>
+Phenol red (indicator, optional): 0.02 g/L<br>
+Water: To volume<br>
+pH: 6.0-6.5 (adjust with HCl or NaOH)</p>
+<h3>Fermentation Conditions</h3>
+<ul>
+<li><strong>Temperature:</strong> 20-25°C (68-77°F); strictly maintained. Below 20°C = slow fermentation. Above 25°C = reduced penicillin production.</li>
+<li><strong>pH:</strong> 5.0-5.5 optimal for penicillin production. Monitor with pH paper or meter; fermentation acidifies medium, requiring buffering with CaCO3.</li>
+<li><strong>Oxygen:</strong> P. notatum requires aerobic conditions. Continuous gentle aeration or stirring essential. Anaerobic conditions halt production.</li>
+<li><strong>Inoculum:</strong> Introduce 10% spore suspension from pure culture into fresh medium. Spore count minimum 10^6 spores/mL.</li>
+<li><strong>Duration:</strong> Fermentation proceeds 7-10 days. Peak penicillin production typically day 7-8. After day 10, penicillin degrades.</li>
+</ul>
+<h3>Monitoring Fermentation</h3>
+<ul>
+<li><strong>Growth observation:</strong> Mold grows as visible pellets or fuzzy growth. White-gray color indicates active growth.</li>
+<li><strong>pH change:</strong> Phenol red indicator (if used) changes color as pH drops, showing fermentation progress.</li>
+<li><strong>Cessation:</strong> Fermentation complete when growth plateaus and pH stabilizes (typically day 7-8).</li>
+</ul>
+<h3>Extraction Procedure (SIMPLIFIED - NOT SAFE FOR HUMAN USE)</h3>
+<ol>
+<li><strong>Filter fermentation broth:</strong> Remove mold mycelium by pouring through filter paper or cloth. Keep filtrate (clear liquid = penicillin-containing broth).</li>
+<li><strong>Acidify:</strong> Add dilute HCl to lower pH to 2.0. At low pH, penicillin precipitates or becomes extractable.</li>
+<li><strong>Solvent extraction:</strong> Add organic solvent (ethyl acetate or amyl acetate, 1:1 volume ratio). Shake vigorously for 5-10 minutes. Allow phases to separate. Penicillin partitions into organic layer.</li>
+<li><strong>Back-extract to aqueous:</strong> Separate organic layer, add cold water, adjust pH to 7.4 with dilute NaOH. Shake again. Penicillin transfers back to water layer at neutral pH.</li>
+<li><strong>Crude penicillin:</strong> Remove water layer (contains crude penicillin). This is NOT pure penicillin and contains bacterial contaminants.</li>
+<li><strong>Purification (requires equipment):</strong> Proper purification requires chromatography, crystallization, and potency testing—beyond scope of field production.</li>
+</ol>
+<h3>Yield and Potency</h3>
+<ul>
+<li><strong>Typical yield:</strong> 1-2 grams crude penicillin per liter of fermentation broth.</li>
+<li><strong>Potency:</strong> Crude extract contains 1-10% actual penicillin by weight; remainder is bacterial contaminants, salts, organic residues.</li>
+<li><strong>Standard unit:</strong> 1 IU (international unit) penicillin = 0.6 micrograms pure penicillin.</li>
+<li><strong>Laboratory production:</strong> Achieves 100+ IU/mL through optimization and purification. Field production rarely exceeds 1-10 IU/mL crude.</li>
+</ul>
+<h3>CRITICAL WARNING</h3>
+<p><strong>Unpurified penicillin is DANGEROUS:</strong></p>
+<ul>
+<li>Bacterial endotoxins in crude broth cause fever, shock, organ failure.</li>
+<li>Unknown contaminants may be more toxic than the infection being treated.</li>
+<li>Allergic reactions to crude material are severe and unpredictable.</li>
+<li>Dosing crude penicillin is impossible—concentration unknown, potency variable.</li>
+<li>A patient who survives crude penicillin injection may die from the complications, not from proper treatment.</li>
+</ul>
+<p><strong>This information is for historical and educational context only. Do not attempt to produce or administer penicillin without proper laboratory facilities, purification capability, and pharmaceutical licensing.</strong></p>
+<!-- Interactive widget: calculator for pharmaceutical-production -->
+<div class="calculator-widget" style="background: var(--surface); border: 2px solid var(--accent2); border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><h3 style="color: var(--accent2); margin-top: 0;"><span aria-hidden="true">🧮</span> Basic Medication Dosage Calculator</h3><p style="color: var(--muted); font-size: 0.9em; margin-bottom: 15px;">Calculate common medication doses based on body weight (for reference only)</p><div style="margin: 10px 0;"><label style="display: block; margin-bottom: 5px; color: var(--text); font-weight: 500;">Body Weight:</label><div style="display:flex;align-items:center;gap:8px;"></div>
+
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="blood-medicine.html">Blood Medicine &amp; Transfusion</a>
+<a href="burn-treatment.html">Burn Treatment &amp; Management</a>
+<a href="feminine-hygiene-production.html">Feminine Hygiene Manufacturing</a>
+<a href="first-aid.html">First Aid and Emergency Response</a>
+<a href="insulin-extraction.html">Insulin Extraction &amp; Purification</a>
+<a href="medications.html">Essential Medications</a>
+<a href="suture-material-production.html">Suture Material Production</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

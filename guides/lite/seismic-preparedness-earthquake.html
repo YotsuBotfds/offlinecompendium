@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/seismic-preparedness-earthquake.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seismic Preparedness &amp; Earthquake Response</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Immediate Survival</span> ›
+<span>Seismic Preparedness &amp; Earthquake Response</span>
+</div>
+
+
+<h1>Seismic Preparedness &amp; Earthquake Response</h1>
+<p class="subtitle">Earthquake science basics, building vulnerability assessment, earthquake-resistant construction, during and after-earthquake protocols, utility shutoff, search and rescue, fire prevention, tsunami awareness, and community mutual aid</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~19 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#section-earthquake-science-basics">Section: Earthquake Science Basics</a></li>
+<li><a href="#section-building-vulnerability-assessment">Section: Building Vulnerability Assessment</a></li>
+<li><a href="#section-earthquake-resistant-construction">Section: Earthquake-Resistant Construction</a></li>
+<li><a href="#section-during-an-earthquake">Section: During an Earthquake</a></li>
+<li><a href="#section-post-earthquake-assessment-and-utility-shutoff">Section: Post-Earthquake Assessment and Utility Shutoff</a></li>
+<li><a href="#section-search-and-rescue-in-collapsed-structures">Section: Search and Rescue in Collapsed Structures</a></li>
+<li><a href="#section-fire-prevention-after-earthquakes">Section: Fire Prevention After Earthquakes</a></li>
+<li><a href="#section-tsunami-awareness">Section: Tsunami Awareness</a></li>
+<li><a href="#section-community-recovery-and-mutual-aid">Section: Community Recovery and Mutual Aid</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<h2 id="introduction">Introduction</h2>
+<p>An earthquake is minutes of shaking that triggers cascading failures: buildings collapse, fires ignite from ruptured gas lines, bridges fail, and utility systems break. Unlike hurricanes or floods, earthquakes offer no warning. Preparation must happen beforehand — during the seconds of shaking, your survival depends on choices made months earlier.</p>
+<p>This guide provides the framework for assessing earthquake risk, preparing buildings and families, responding safely during an earthquake, and coordinating rescue and recovery after.</p>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Building vulnerability types showing unreinforced masonry vs wood frame vs reinforced concrete with typical damage patterns">
+  <defs>
+    <style>
+      .building-outline { stroke: var(--border); stroke-width: 2; }
+      .brick-pattern { fill: #8B4513; opacity: 0.7; }
+      .wood-pattern { fill: #D2B48C; opacity: 0.8; }
+      .concrete-pattern { fill: #A9A9A9; opacity: 0.8; }
+      .label-title { font-size: 14px; font-weight: bold; fill: var(--text); }
+      .label-detail { font-size: 12px; fill: var(--muted); }
+      .damage-crack { stroke: #cc4444; stroke-width: 2; fill: none; stroke-linecap: round; }
+      .stress-indicator { fill: #cc4444; opacity: 0.3; }
+      .safe-indicator { fill: #66cc66; opacity: 0.2; }
+      .foundation-line { stroke: var(--border); stroke-width: 3; }
+      .ground { fill: var(--surface); }
+      .roof-steel { stroke: var(--accent); stroke-width: 2; }
+      .window { fill: rgba(100, 150, 255, 0.3); stroke: var(--border); stroke-width: 1; }
+      .reinforcement { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 3,3; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="var(--surface)" />
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="label-title" style="font-size: 18px;">Building Types and Earthquake Vulnerability</text>
+
+  <!-- UNREINFORCED MASONRY (URM) — LEFT -->
+  <g>
+    <!-- Building -->
+    <rect x="50" y="140" width="160" height="200" class="building-outline brick-pattern" />
+
+    <!-- Brick pattern detail -->
+    <line x1="50" y1="170" x2="210" y2="170" stroke="var(--border)" stroke-width="1" opacity="0.5" />
+    <line x1="50" y1="200" x2="210" y2="200" stroke="var(--border)" stroke-width="1" opacity="0.5" />
+    <line x1="50" y1="230" x2="210" y2="230" stroke="var(--border)" stroke-width="1" opacity="0.5" />
+    <line x1="50" y1="260" x2="210" y2="260" stroke="var(--border)" stroke-width="1" opacity="0.5" />
+    <line x1="50" y1="290" x2="210" y2="290" stroke="var(--border)" stroke-width="1" opacity="0.5" />
+
+    <!-- Roof (simple, no tie-downs) -->
+    <polygon points="50,140 130,100 210,140" fill="var(--surface)" stroke="var(--border)" stroke-width="2" />
+
+    <!-- Cracks in wall (damage pattern) -->
+    <path d="M 90 150 L 95 180 L 90 210 L 100 240" class="damage-crack" />
+    <path d="M 150 160 L 160 200 L 155 260" class="damage-crack" />
+
+    <!-- Windows -->
+    <rect x="70" y="165" width="25" height="25" class="window" />
+    <rect x="175" y="200" width="25" height="25" class="window" />
+
+    <!-- Stress indicator (red zones where cracks spread) -->
+    <rect x="85" y="145" width="40" height="40" class="stress-indicator" />
+    <rect x="145" y="190" width="35" height="50" class="stress-indicator" />
+
+    <!-- Foundation -->
+    <rect x="50" y="340" width="160" height="40" class="foundation-line" />
+    <text x="130" y="365" text-anchor="middle" class="label-detail">Simple Foundation</text>
+
+    <!-- Label -->
+    <text x="130" y="395" text-anchor="middle" class="label-title">Unreinforced Masonry</text>
+    <text x="130" y="415" text-anchor="middle" class="label-detail" style="fill: #cc4444; font-weight: bold;">Very High Vulnerability</text>
+    <text x="130" y="432" text-anchor="middle" class="label-detail">★ No steel reinforcement</text>
+    <text x="130" y="447" text-anchor="middle" class="label-detail">★ Walls collapse outward</text>
+    <text x="130" y="462" text-anchor="middle" class="label-detail">★ Roof not anchored</text>
+  </g>
+
+  <!-- WOOD FRAME — CENTER -->
+  <g>
+    <!-- Building body -->
+    <rect x="320" y="140" width="160" height="200" class="building-outline wood-pattern" />
+
+    <!-- Wood-frame detail (vertical studs) -->
+    <line x1="345" y1="140" x2="345" y2="340" stroke="var(--border)" stroke-width="2" opacity="0.5" />
+    <line x1="375" y1="140" x2="375" y2="340" stroke="var(--border)" stroke-width="2" opacity="0.5" />
+    <line x1="405" y1="140" x2="405" y2="340" stroke="var(--border)" stroke-width="2" opacity="0.5" />
+    <line x1="435" y1="140" x2="435" y2="340" stroke="var(--border)" stroke-width="2" opacity="0.5" />
+
+    <!-- Horizontal bands (floor joists) -->
+    <line x1="320" y1="220" x2="480" y2="220" stroke="var(--border)" stroke-width="1.5" opacity="0.5" />
+
+    <!-- Roof (pitched, shows flexibility) -->
+    <polygon points="320,140 400,90 480,140" fill="var(--surface)" stroke="var(--border)" stroke-width="2" />
+
+    <!-- Roof tie-downs (shown as small circles at corners) -->
+    <circle cx="325" cy="140" r="4" fill="var(--accent)" />
+    <circle cx="475" cy="140" r="4" fill="var(--accent)" />
+
+    <!-- Light cracks, minimal damage -->
+    <path d="M 340 160 L 343 185" class="damage-crack" opacity="0.5" stroke-width="1.5" />
+
+    <!-- Windows (intact) -->
+    <rect x="330" y="160" width="30" height="30" class="window" />
+    <rect x="420" y="200" width="30" height="30" class="window" />
+
+    <!-- Safe zones (light green) -->
+    <rect x="340" y="150" width="30" height="100" class="safe-indicator" />
+    <rect x="410" y="180" width="30" height="80" class="safe-indicator" />
+
+    <!-- Foundation with tie-downs -->
+    <rect x="320" y="340" width="160" height="40" class="foundation-line" />
+    <!-- Bolts connecting to foundation -->
+    <circle cx="335" cy="345" r="3" fill="var(--accent)" />
+    <circle cx="380" cy="345" r="3" fill="var(--accent)" />
+    <circle cx="425" cy="345" r="3" fill="var(--accent)" />
+    <circle cx="465" cy="345" r="3" fill="var(--accent)" />
+    <text x="400" y="365" text-anchor="middle" class="label-detail">Anchored to Foundation (bolts)</text>
+
+    <!-- Label -->
+    <text x="400" y="395" text-anchor="middle" class="label-title">Wood Frame</text>
+    <text x="400" y="415" text-anchor="middle" class="label-detail" style="fill: #66cc66; font-weight: bold;">Low Vulnerability</text>
+    <text x="400" y="432" text-anchor="middle" class="label-detail">★ Light material (low inertia)</text>
+    <text x="400" y="447" text-anchor="middle" class="label-detail">★ Flexible connections</text>
+    <text x="400" y="462" text-anchor="middle" class="label-detail">★ Well-anchored if bolted</text>
+  </g>
+
+  <!-- REINFORCED CONCRETE — RIGHT -->
+  <g>
+    <!-- Building body -->
+    <rect x="590" y="140" width="160" height="200" class="building-outline concrete-pattern" />
+
+    <!-- Reinforcement grid shown (steel bars inside concrete) -->
+    <g class="reinforcement" opacity="0.6">
+      <line x1="605" y1="140" x2="605" y2="340" />
+      <line x1="640" y1="140" x2="640" y2="340" />
+      <line x1="675" y1="140" x2="675" y2="340" />
+      <line x1="590" y1="190" x2="750" y2="190" />
+      <line x1="590" y1="240" x2="750" y2="240" />
+      <line x1="590" y1="290" x2="750" y2="290" />
+    </g>
+
+    <!-- Visible reinforcement at corners (stronger) -->
+    <circle cx="595" cy="145" r="3" fill="var(--accent)" />
+    <circle cx="745" cy="145" r="3" fill="var(--accent)" />
+    <circle cx="595" cy="335" r="3" fill="var(--accent)" />
+    <circle cx="745" cy="335" r="3" fill="var(--accent)" />
+
+    <!-- Roof (solid, tied down) -->
+    <polygon points="590,140 670,90 750,140" fill="var(--surface)" stroke="var(--border)" stroke-width="2" />
+    <line x1="592" y1="138" x2="600" y2="130" class="roof-steel" />
+    <line x1="748" y1="138" x2="740" y2="130" class="roof-steel" />
+
+    <!-- Minimal/no visible damage (very strong) -->
+    <path d="M 620 250 L 625 255" class="damage-crack" opacity="0.2" stroke-width="1" />
+
+    <!-- Windows (well-integrated) -->
+    <rect x="610" y="170" width="30" height="35" class="window" />
+    <rect x="710" y="220" width="30" height="35" class="window" />
+
+    <!-- Safe zone (large green area) -->
+    <rect x="600" y="150" width="140" height="170" class="safe-indicator" />
+
+    <!-- Foundation (heavy concrete) -->
+    <rect x="590" y="340" width="160" height="40" class="foundation-line" stroke-width="4" />
+    <!-- Heavy footings implied -->
+    <text x="670" y="365" text-anchor="middle" class="label-detail">Heavy Concrete Foundation</text>
+
+    <!-- Label -->
+    <text x="670" y="395" text-anchor="middle" class="label-title">Reinforced Concrete</text>
+    <text x="670" y="415" text-anchor="middle" class="label-detail" style="fill: #66aa66; font-weight: bold;">Low-Medium Vulnerability</text>
+    <text x="670" y="432" text-anchor="middle" class="label-detail">★ Steel reinforcement</text>
+    <text x="670" y="447" text-anchor="middle" class="label-detail">★ Ductile, good if designed well</text>
+    <text x="670" y="462" text-anchor="middle" class="label-detail">★ Brittle if under-reinforced</text>
+  </g>
+
+  <!-- Bottom key principle -->
+  <rect x="40" y="490" width="720" height="20" fill="rgba(0,0,0,0.05)" />
+  <text x="400" y="506" text-anchor="middle" class="label-title" style="font-size: 11px;">Key: Building age (pre-1970 = typically non-seismic design) &amp; anchoring to foundation = critical factors in survival</text>
+
+</svg>
+</p>
+<h2 id="section-earthquake-science-basics">Section: Earthquake Science Basics</h2>
+<section id="earthquake-science">
+<p>Understanding how earthquakes work illuminates what makes buildings safe or vulnerable.</p>
+<h3>Tectonic Basics</h3>
+<p>The Earth's crust is divided into large plates that grind slowly past each other at rates of centimeters per year. Where plates collide or slide, stress accumulates. When stress exceeds the strength of rock, it ruptures suddenly — an earthquake.</p>
+<p><strong>Plate Boundaries:</strong></p>
+<ol>
+<li><strong>Convergent (collision):</strong> Two plates push together. One plate slides beneath the other (subduction). Produces large, deep earthquakes. Example: Pacific Ring of Fire.</li>
+<li><strong>Divergent (spreading):</strong> Plates pull apart, allowing magma to rise. Produces shallow, moderate-magnitude earthquakes. Example: Mid-ocean ridges.</li>
+<li><strong>Transform (sliding):</strong> Plates slide horizontally past each other. Produces shallow, very damaging earthquakes. Example: San Andreas Fault (California).</li>
+<li><strong>Intraplate:</strong> Earthquakes occurring in the interior of a plate (less common, unpredictable). Example: New Madrid Seismic Zone (central USA).</li>
+</ol>
+<h3>Seismic Waves</h3>
+<p>Energy from an earthquake radiates outward as seismic waves. Different wave types arrive at different speeds and cause different shaking patterns.</p>
+<p><strong>P-Waves (Primary / Pressure Waves)</strong></p>
+<ul>
+<li>Fastest: ~6 km/second</li>
+<li>Travel through solid rock and liquid</li>
+<li>Cause compression-and-release motion (like a spring)</li>
+<li>First wave to arrive; felt as a jolt or &quot;boom&quot;</li>
+<li>Lower amplitude (less damaging) than later waves</li>
+</ul>
+<p><strong>S-Waves (Secondary / Shear Waves)</strong></p>
+<ul>
+<li>Slower: ~3.5 km/second</li>
+<li>Travel only through solid rock (not liquid)</li>
+<li>Cause side-to-side shaking (shear)</li>
+<li>Arrive ~1 second after P-waves at a distance of 10 km</li>
+<li>Higher amplitude; more damaging to buildings</li>
+</ul>
+<p><strong>Surface Waves (Rayleigh and Love Waves)</strong></p>
+<ul>
+<li>Slowest: ~2–3 km/second</li>
+<li>Travel only along the Earth's surface</li>
+<li>Cause rolling or whip-like motion</li>
+<li>Arrive after P and S waves</li>
+<li>Greatest amplitude; most destructive to structures</li>
+</ul>
+<p><strong>Implication:</strong> The ~1 second gap between P and S wave arrival (at short distances) is too brief for early warning systems. Most earthquake alert systems use this gap to shut off gas and stop trains, but cannot save people in buildings.</p>
+<h3>Magnitude vs Intensity</h3>
+<p>These terms are often confused:</p>
+<p><strong>Magnitude</strong> is the energy released (singular, per earthquake):</p>
+<ul>
+<li>Measured by seismograph (instrumental)</li>
+<li>Logarithmic: each unit increase is 30× more energy (e.g., 7.0 is 30× larger than 6.0)</li>
+<li>Examples: 4.0 (minor), 5.0 (moderate), 6.0 (strong), 7.0 (major), 8.0+ (great)</li>
+</ul>
+<p><strong>Intensity</strong> is the shaking effect at a location (varies by distance and local geology):</p>
+<ul>
+<li>Measured observationally (damage surveys, eyewitness accounts)</li>
+<li>Modified Mercalli Intensity (MMI) scale: I (not felt) to XII (total destruction)</li>
+<li>Same earthquake can have high magnitude but variable intensity depending on distance and soil type</li>
+</ul>
+<p>A magnitude 7.0 earthquake 500 km away might cause intensity IV (light shaking, slight damage); the same magnitude 20 km away might cause intensity IX (severe, extensive damage).</p>
+<h3>Focal Depth Matters</h3>
+<p><strong>Shallow earthquakes</strong> (&lt; 70 km depth):</p>
+<ul>
+<li>Most damaging to surface structures</li>
+<li>Energy doesn't dissipate much before reaching buildings</li>
+</ul>
+<p><strong>Deep earthquakes</strong> (&gt; 300 km depth):</p>
+<ul>
+<li>Less damaging despite potentially high magnitude</li>
+<li>Energy dissipates significantly over the deep travel path</li>
+</ul>
+<p>A shallow 6.5 magnitude earthquake is typically more destructive than a deep 7.5.</p>
+</section>
+<h2 id="section-building-vulnerability-assessment">Section: Building Vulnerability Assessment</h2>
+<section id="building-vulnerability">
+<p>Not all buildings collapse in earthquakes. Vulnerability depends on structure type, materials, and construction quality.</p>
+<h3>Building Type Vulnerability</h3>
+<table>
+<thead>
+<tr>
+<th>Building Type</th>
+<th>Materials</th>
+<th>Earthquake Vulnerability</th>
+<th>Typical Failure Modes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unreinforced Masonry (URM)</td>
+<td>Brick/stone + weak mortar</td>
+<td><strong>Very High</strong></td>
+<td>Walls crack, collapse; roof/floors fall</td>
+</tr>
+<tr>
+<td>Wood Frame</td>
+<td>Wood + nails</td>
+<td><strong>Low</strong></td>
+<td>Racking (twisting); fixable if anchored</td>
+</tr>
+<tr>
+<td>Reinforced Concrete</td>
+<td>Concrete + steel rebar</td>
+<td><strong>Medium–Low</strong></td>
+<td>Brittle failure if under-reinforced; good if well-designed</td>
+</tr>
+<tr>
+<td>Steel Frame</td>
+<td>Steel beams + bolts</td>
+<td><strong>Low</strong></td>
+<td>Very flexible; fails only under extreme shaking</td>
+</tr>
+<tr>
+<td>Soft-Story (e.g., retail ground, offices above)</td>
+<td>Weak ground floor (open storefronts)</td>
+<td><strong>Very High</strong></td>
+<td>Ground floor collapses; upper stories pancake</td>
+</tr>
+</tbody>
+</table>
+<h3>Unreinforced Masonry (URM) — the Most Dangerous</h3>
+<p>Brick and stone buildings built before ~1970 in most regions have no steel reinforcement in their walls. The mortar (lime-based, weak) fails under shaking, and walls collapse outward.</p>
+<p><strong>Vulnerability Signs:</strong></p>
+<ul>
+<li>Brick or stone walls with no visible steel reinforcement</li>
+<li>Thick walls (8+ inches) held together with visible mortar joints</li>
+<li>Weak mortar (crumbles when scratched)</li>
+<li>Large, heavy roof or upper floors without support beams</li>
+<li>Cracks in walls (often pre-existing from prior small earthquakes or settling)</li>
+</ul>
+<p><strong>Retrofit Options (if possible):</strong></p>
+<ol>
+<li><strong>Add interior steel bracing</strong> (vertical columns and diagonal braces inside walls)</li>
+<li><strong>Anchor the roof</strong> (bolts connecting roof structure to walls to prevent separation)</li>
+<li><strong>Strengthen mortar</strong> (inject cement grout into joints; expensive)</li>
+<li>Abandon and relocate if retrofit is not feasible</li>
+</ol>
+<h3>Wood Frame Buildings — Inherently Safer</h3>
+<p>Residential wood-frame buildings (common in North America, Northern Europe) perform well in earthquakes because:</p>
+<ul>
+<li>Wood is light (less inertial force when shaking)</li>
+<li>Nailed connections allow flexibility (some motion without failure)</li>
+<li>Distributed load path (failure of one nail doesn't cascade)</li>
+</ul>
+<p><strong>However, they are still vulnerable if:</strong></p>
+<ol>
+<li><strong>House is not anchored to the foundation</strong> (can slide off during shaking)</li>
+<li><strong>Cripple walls</strong> (short walls between foundation and first floor) are not braced</li>
+<li><strong>Soft story</strong> (large open garage or storefront on ground floor with weak support)</li>
+<li><strong>Unreinforced basement</strong> (walls can collapse outward)</li>
+</ol>
+<h3>Seismic Risk Assessment Checklist</h3>
+<p>For any building you occupy regularly:</p>
+<ul>
+<li>[ ] What is the building type? (masonry, concrete, wood frame, steel?)</li>
+<li>[ ] Was it built before 1970? (likely non-seismic design)</li>
+<li>[ ] Are walls reinforced with steel? (visible steel bars or concrete with visible aggregate?)</li>
+<li>[ ] Is the roof anchored to the walls? (bolts or straps visible at wall-roof junction?)</li>
+<li>[ ] Is the building anchored to the foundation? (bolts visible at foundation-wall junction?)</li>
+<li>[ ] Are there soft stories? (open ground floor, large windows without bracing?)</li>
+<li>[ ] What is the local magnitude risk? (research seismic hazard map for your region)</li>
+<li>[ ] What is the soil type? (soft, clay, sand, or rock? Soft soil amplifies shaking)</li>
+</ul>
+<p><strong>Risk Assessment Tool:</strong> Many regions publish seismic hazard maps and building vulnerability databases. Contact your local government's planning department or geological survey.</p>
+</section>
+<h2 id="section-earthquake-resistant-construction">Section: Earthquake-Resistant Construction</h2>
+<section id="earthquake-resistant-construction">
+<p>Designing and building earthquake-resistant structures prevents collapse and saves lives.</p>
+<div class="warning">
+<p><strong>Retrofit vs New:</strong> Retrofitting an existing building is expensive (often 10–25% of building value). New construction incorporating earthquake-resistant design is cost-effective — typically only 1–3% additional cost.</p>
+</div>
+<h3>Fundamental Principles</h3>
+<p><strong>1. Keep the Structure Light</strong></p>
+<ul>
+<li>Lower mass → lower inertial force during shaking</li>
+<li>Replace heavy materials (thick masonry) with lighter ones (wood, steel)</li>
+<li>Avoid large overhangs and parapets that can fall</li>
+</ul>
+<p><strong>2. Maintain Symmetry</strong></p>
+<ul>
+<li>Distribute mass evenly (avoid heavily loaded one side)</li>
+<li>Asymmetric buildings twist during shaking, creating stress concentrations and failures</li>
+</ul>
+<p><strong>3. Provide Multiple Load Paths</strong></p>
+<ul>
+<li>Seismic forces must travel from the roof, through the walls, to the foundation</li>
+<li>Provide many paths so load is distributed (if one element fails, others carry the load)</li>
+<li>Avoid designs where one wall or column carries disproportionate load</li>
+</ul>
+<p><strong>4. Use Ductile Materials and Connections</strong></p>
+<ul>
+<li>Ductile materials (steel, reinforced concrete with proper detailing) deform without breaking</li>
+<li>Brittle materials (unreinforced masonry, under-reinforced concrete) fail suddenly</li>
+<li>Connections (bolts, welds, nails) must be strong enough to transfer force without separating</li>
+</ul>
+<p><strong>5. Tie the Building Together</strong></p>
+<ul>
+<li>Roof, walls, and foundation must be mechanically connected (bolts, straps, cables)</li>
+<li>Without ties, walls can separate from the roof and collapse outward</li>
+</ul>
+<h3>Design Details for Earthquake Resistance</h3>
+<p><strong>Tie-Downs (Foundation Anchoring)</strong></p>
+<p>Large bolts (1 inch or larger, spaced 4–6 feet apart) connect the structure to the foundation. During shaking, the foundation moves, but the bolts prevent the building from sliding off.</p>
+<ul>
+<li>Cost: moderate (retrofit: $2,000–5,000 for a house)</li>
+<li>Effectiveness: essential; without this, even light-frame buildings collapse</li>
+</ul>
+<p><strong>Shear Walls</strong></p>
+<p>A shear wall is a reinforced wall that resists lateral (sideways) forces. It must be:</p>
+<ol>
+<li>Well-braced (cross-bracing with diagonal members, or blocked framing)</li>
+<li>Continuous from roof to foundation</li>
+<li>Anchored at both ends</li>
+</ol>
+<p>Example: A basement wall with concrete or plywood sheathing, bolted at top and bottom.</p>
+<p><strong>Braced Frames</strong></p>
+<p>Diagonal bracing (steel cables, tubes, or wood members) in a frame structure resists lateral motion. The diagonal must be in tension or compression without buckling.</p>
+<p><strong>Moment-Resisting Frames</strong></p>
+<p>Rigid connections at beam-column joints allow the frame to flex and absorb energy without collapse. More expensive than braced frames but allows large open spaces (useful for commercial buildings).</p>
+<p><strong>Flexible Connections</strong></p>
+<p>Instead of rigid joints, some structures use dampers (friction, fluid, or spring-based) that absorb seismic energy without transmitting large forces.</p>
+<h3>Building Code Seismic Design Spectrum</h3>
+<p>Modern building codes require designs to resist shaking at a specified intensity based on local seismic hazard. The code specifies:</p>
+<ol>
+<li><strong>Design earthquake</strong> (probability: 2% chance in 50 years, or ~2,500-year return period)</li>
+<li><strong>Response spectrum</strong> (expected acceleration levels for different building periods)</li>
+<li><strong>Minimum design forces</strong> (lateral forces a building must resist)</li>
+</ol>
+<p>Design is performed by structural engineers using computerized analysis.</p>
+</section>
+<h2 id="section-during-an-earthquake">Section: During an Earthquake</h2>
+<section id="during-earthquake">
+<p>The earthquake itself lasts seconds to a minute. Your immediate response determines whether you survive.</p>
+<h3>The &quot;Drop, Cover, Hold On&quot; Protocol</h3>
+<p>This is the modern consensus for earthquake survival:</p>
+<ol>
+<li><strong>DROP immediately</strong> to hands and knees</li>
+<li><strong>COVER your head and neck</strong> with your hands and arms; crawl under a sturdy desk, table, or against an interior wall</li>
+<li><strong>HOLD ON</strong> to whatever structure you're under and protect your head until shaking stops</li>
+</ol>
+<p><strong>Why:</strong> Injuries and deaths are most commonly caused by falling objects (ceiling tiles, light fixtures, shelves, broken glass) and being crushed under furniture. Protecting your head and neck is the priority.</p>
+<p><strong>Why NOT the &quot;Doorway&quot;:</strong> An old myth says to shelter in a doorframe. Modern research shows:</p>
+<ul>
+<li>Doorframes are no stronger than surrounding walls</li>
+<li>If the building collapses, the doorframe offers no additional protection</li>
+<li>You're more likely to be hit by a closing door</li>
+<li>The best location is under a sturdy table or desk (creates an &quot;air pocket&quot; if the building does collapse)</li>
+</ul>
+<h3>Location-Specific Response</h3>
+<p><strong>Indoors (Most Common)</strong></p>
+<ol>
+<li>DROP immediately where you are</li>
+<li>COVER your head under a sturdy table, desk, or against an interior load-bearing wall</li>
+<li>If no table is near, crouch in a corner (interior corner, not near windows)</li>
+<li>Avoid windows (can shatter and spray glass)</li>
+<li>Stay put until shaking stops — do NOT run outside (flying debris is deadly)</li>
+<li>Once shaking stops, turn off gas immediately (see Utility Shutoff section)</li>
+</ol>
+<p><strong>Outdoors</strong></p>
+<ol>
+<li>Move away from buildings, power lines, and trees (can fall)</li>
+<li>Get into an open area (parking lot, field, park)</li>
+<li>Avoid bridges and overpasses (can collapse)</li>
+<li>If already in a car: do NOT stop or abandon the vehicle
+<ul>
+<li>Slow down and drive to a clear area</li>
+<li>Avoid bridges and underpasses</li>
+<li>Stop only when safe (open area)</li>
+<li>Remain in the vehicle (roof protects from falling debris)</li>
+</ul>
+</li>
+</ol>
+<p><strong>In a Car During Shaking</strong></p>
+<ol>
+<li>Do NOT slam on brakes (causes pile-ups)</li>
+<li>Slow down gradually</li>
+<li>Drive to an open area (parking lot, field)</li>
+<li>Stop only when shaking ends</li>
+<li>Avoid bridges, overpasses, and tunnels</li>
+<li>Wait for shaking to end; then check for damage before driving</li>
+</ol>
+<p><strong>In Bed at Night</strong></p>
+<ol>
+<li>Stay in bed and cover your head with the pillow (easier than stumbling to a table in the dark)</li>
+<li>Cling to the bed frame</li>
+<li>Once shaking stops, slowly get out of bed (there may be broken glass on the floor)</li>
+<li>Turn on a flashlight (NOT a light switch, which can spark if gas is leaking)</li>
+<li>Turn off gas immediately</li>
+</ol>
+<p><strong>In a Crowded Place (Shopping Mall, Subway)</strong></p>
+<ol>
+<li>Do NOT run for exits (crush injuries are common)</li>
+<li>Drop and cover where you are</li>
+<li>Cover your head and neck</li>
+<li>Wait until shaking stops, then exit calmly</li>
+<li>Be aware of aftershocks</li>
+</ol>
+<h3>What NOT to Do</h3>
+<div class="danger">
+<ul>
+<li>Do NOT run outside during shaking (flying debris and falling objects are deadly)</li>
+<li>Do NOT use elevators (can stop, trapping you inside; stairs may be blocked)</li>
+<li>Do NOT stand in doorways (ineffective; you might be struck by a closing door)</li>
+<li>Do NOT try to drive on damaged roads (bridges may be partially collapsed, roads may have cracks or sinkholes)</li>
+<li>Do NOT touch downed power lines (electrocution risk)</li>
+<li>Do NOT enter damaged buildings unless trained in search and rescue (collapse risk)</li>
+</ul>
+</div>
+<h3>Psychological Response</h3>
+<p>Earthquakes are terrifying. People often freeze or act irrationally. During training:</p>
+<ul>
+<li>Mentally rehearse your response to different scenarios (at home, at work, in a car)</li>
+<li>Practice &quot;drop, cover, hold on&quot; so it becomes automatic</li>
+<li>Teach children to respond (it takes repeated practice for young children)</li>
+<li>Discuss post-earthquake plans with family (where to meet, how to contact each other)</li>
+</ul>
+</section>
+<h2 id="section-post-earthquake-assessment-and-utility-shutoff">Section: Post-Earthquake Assessment and Utility Shutoff</h2>
+<section id="post-earthquake-assessment">
+<p>After shaking stops, your first actions are critical: assess personal safety, ensure utilities are safe, and establish communication.</p>
+<h3>Immediate Safety Checks (First 5 Minutes)</h3>
+<ol>
+<li>
+<p><strong>Check yourself and nearby people for injuries</strong></p>
+<ul>
+<li>Do not move anyone with suspected spinal injury</li>
+<li>Apply first aid for bleeding (see First-Aid guide)</li>
+<li>Stabilize fractures with improvised slings or splints</li>
+</ul>
+</li>
+<li>
+<p><strong>Assess the building's structural integrity</strong></p>
+<ul>
+<li>Look for major cracks in walls or ceiling</li>
+<li>Check if doors and windows still close (stuck door = building shifted)</li>
+<li>Listen for sounds of shifting, creaking, or breaking</li>
+<li>Smell for gas odor (rotten egg smell = natural gas leak)</li>
+<li>Look for water spraying from broken pipes</li>
+</ul>
+</li>
+<li>
+<p><strong>Decide: stay or evacuate</strong></p>
+<ul>
+<li><strong>Stay if:</strong> Minor damage, no strong smell of gas, building is not tilted, doors still open/close</li>
+<li><strong>Evacuate if:</strong> Major cracks, visible tilt, strong gas smell, water spraying, sounds of structural failure, aftershock fear</li>
+<li>If evacuating, do so quickly and carefully (watch for hazards: broken glass, debris, downed power lines)</li>
+</ul>
+</li>
+</ol>
+<h3>Gas Shutoff (Critical)</h3>
+<p>Ruptured gas lines are the leading cause of post-earthquake fires. If you smell gas, shut off the main valve immediately.</p>
+<p><strong>Locating the Meter and Main Shutoff:</strong></p>
+<ul>
+<li>Meter is usually outdoors, on the side or back of the house</li>
+<li>Main shutoff valve is on the supply line, close to the meter</li>
+<li>Valve is typically a round or oval knob</li>
+</ul>
+<p><strong>Shutoff Procedure:</strong></p>
+<ol>
+<li>Find the main valve</li>
+<li>Using a wrench, turn the valve 90° (a quarter turn) — it should point perpendicular to the pipe</li>
+<li>Do NOT force it; if it's stuck, call the gas company</li>
+<li>Once shut off, do NOT try to turn it back on yourself — call the gas company</li>
+<li>If you shut off the gas, you may not be able to relight the pilot lights and appliances without professional help</li>
+</ol>
+<p><strong>When to Shut Off Gas:</strong></p>
+<ul>
+<li>Smell of gas (rotten egg smell)</li>
+<li>Hissing sound at the meter or appliances</li>
+<li>Visible damage to the gas line</li>
+<li>To be safe, shut off gas after any significant earthquake (even without obvious damage)</li>
+</ul>
+<h3>Electric Shutoff</h3>
+<p>Electrical fires can ignite from damaged wiring. However, the main electrical panel should NOT be touched if it's wet or damaged.</p>
+<p><strong>When to Shut Off Electric:</strong></p>
+<ul>
+<li>Water pooling around the electrical panel</li>
+<li>Visible arcing or sparks</li>
+<li>Strong smell of burning insulation</li>
+<li>Downed power lines touching the house</li>
+</ul>
+<p><strong>If the Panel is Safe:</strong></p>
+<ol>
+<li>Locate the main circuit breaker (large switch at the top of the panel)</li>
+<li>Switch it to OFF</li>
+<li>Only qualified electricians should restore power</li>
+</ol>
+<p><strong>IMPORTANT:</strong> Do NOT touch downed power lines. They are lethal. Call the utility company.</p>
+<h3>Water Shutoff</h3>
+<p>Ruptured water lines cause water damage but not immediate danger. However, shut off the main if:</p>
+<ul>
+<li>Major water damage is visible</li>
+<li>You're evacuating the building</li>
+<li>The water is contaminated (sewage smell)</li>
+</ul>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Locate the main water shutoff valve (usually outdoors, near the meter)</li>
+<li>Using a wrench, turn 90° clockwise to shut off</li>
+<li>If stuck, call the water company</li>
+</ol>
+<h3>Building Tagging (Official Assessment)</h3>
+<p>After a large earthquake, officials post color-coded placards on buildings:</p>
+<ul>
+<li><strong>Green (&quot;Inspected - Safe&quot;):</strong> Building is safe to enter and use</li>
+<li><strong>Yellow (&quot;Caution - Restricted Use&quot;):</strong> Building is damaged but marginally safe; restrict to essential activities</li>
+<li><strong>Red (&quot;Dangerous - Do Not Enter&quot;):</strong> Building is unsafe; do not enter</li>
+</ul>
+<p>Do NOT ignore these tags. Red-tagged buildings can collapse with aftershocks.</p>
+</section>
+<h2 id="section-search-and-rescue-in-collapsed-structures">Section: Search and Rescue in Collapsed Structures</h2>
+<section id="search-rescue">
+<p>If buildings collapse and people are trapped, rescue depends on trained teams and community mutual aid.</p>
+<div class="tip">
+<p><strong>Untrained Rescuers Risk Themselves and Others.</strong> Never enter a collapsed building without training. You may cause additional collapse or be trapped yourself.</p>
+</div>
+<h3>Role of Trained Teams</h3>
+<p>Structural engineers, firefighters, and specialized rescue teams can:</p>
+<ol>
+<li><strong>Assess collapse risk</strong> (determine if further collapse is likely)</li>
+<li><strong>Locate survivors</strong> (listening, search dogs, listening devices)</li>
+<li><strong>Rescue safely</strong> (using tools, securing loads, preventing secondary collapse)</li>
+<li><strong>Provide first aid</strong> and evacuation</li>
+</ol>
+<h3>Community-Level Response (Before Professional Rescue Arrives)</h3>
+<p>In a major earthquake, professional rescue teams are overwhelmed. In the first hours, community members often locate survivors using:</p>
+<ol>
+<li><strong>Listening:</strong> Call out, wait for responses, follow sounds of distress</li>
+<li><strong>Light probing:</strong> Use long poles or pipes to probe collapsed debris for void spaces (signs of survivors)</li>
+<li><strong>Hand tools:</strong> Shovels, pry bars, and hacksaws to carefully remove debris</li>
+<li><strong>Entrapment release:</strong> Use car jacks, leverage, or coordinated lifting to free trapped limbs</li>
+</ol>
+<p><strong>Safety for Community Rescuers:</strong></p>
+<ul>
+<li>Do NOT enter collapsed buildings</li>
+<li>Clear debris from outside the collapse zone</li>
+<li>Avoid creating secondary collapse (don't pull large supporting beams)</li>
+<li>Provide water and first aid to the rescued</li>
+<li>Track survivors' locations and conditions for professional responders</li>
+</ul>
+<h3>Immediate Care for Trapped Survivors</h3>
+<ul>
+<li>Provide water (if the person is conscious and can swallow)</li>
+<li>Cover wounds with clean cloth</li>
+<li>Align any obviously broken bones (to improve blood flow)</li>
+<li>Keep the person warm and calm</li>
+<li>Do NOT move if spinal injury is suspected</li>
+</ul>
+<h2 id="section-fire-prevention-after-earthquakes">Section: Fire Prevention After Earthquakes</h2>
+<section id="fire-prevention">
+<p>Fires are the second-leading cause of deaths after earthquakes. They are driven by ruptured gas lines, broken electrical wiring, and disrupted water systems.</p>
+<h3>Preventing Fire</h3>
+<ol>
+<li><strong>Shut off gas immediately</strong> (even if no smell — gas may dissipate before creating an obvious odor)</li>
+<li><strong>Check for electrical damage</strong> (burned insulation smell, sparks) and shut off power if needed</li>
+<li><strong>Check for water main breaks</strong> (disrupted water systems prevent firefighting)</li>
+<li><strong>Extinguish small fires immediately</strong> (see below)</li>
+<li><strong>Avoid ignition sources</strong> (open flames, smoking, sparking tools)</li>
+</ol>
+<h3>Extinguishing Small Fires</h3>
+<p>Only fight a fire if it is small and you have a clear exit. Large fires must be left for the fire department.</p>
+<p><strong>Type of Fire and Extinguishing Agent:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Fire Type</th>
+<th>Cause</th>
+<th>Extinguishing Agent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gas leak flame</td>
+<td>Ruptured line, ignition</td>
+<td>Do NOT extinguish; evacuate and call fire dept</td>
+</tr>
+<tr>
+<td>Electrical fire</td>
+<td>Damaged wiring</td>
+<td>Water is dangerous; use dry powder if available; evacuate</td>
+</tr>
+<tr>
+<td>Wood/paper fire</td>
+<td>Fallen fireplace, stove</td>
+<td>Water (if available), sand, dirt</td>
+</tr>
+<tr>
+<td>Oil fire (kitchen)</td>
+<td>Spilled fuel, ignited</td>
+<td>Baking soda, salt, or lid (never water — spreads)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Best Practice:</strong> If in doubt, evacuate and call the fire department. Don't risk yourself.</p>
+<h3>Community Fire-Fighting During Power Outages</h3>
+<p>If the water system is compromised and fires spread, community members can:</p>
+<ol>
+<li><strong>Form bucket brigades</strong> (passing water hand-to-hand from a source to the fire)</li>
+<li><strong>Dig firebreaks</strong> (clear vegetation and debris to slow fire spread)</li>
+<li><strong>Create water reservoirs</strong> (pools, ponds, natural water sources used for firefighting)</li>
+<li><strong>Coordinate with neighbors</strong> to prioritize structures (hospitals, food stores, water systems)</li>
+</ol>
+</section>
+<h2 id="section-tsunami-awareness">Section: Tsunami Awareness</h2>
+<section id="tsunami-awareness">
+<p>For communities near oceans or large lakes, earthquakes underwater can cause tsunamis — fast-moving waves that arrive within minutes of the earthquake.</p>
+<h3>Tsunami Formation</h3>
+<p>A large underwater earthquake (typically magnitude 7.0+, shallow depth) suddenly displaces water. The resulting waves travel at 500–800 km/hour in deep ocean, slowing to 30–50 km/hour as they approach shore.</p>
+<ul>
+<li><strong>Retreat of water</strong> before the first wave (water &quot;disappears&quot; from the shore as it's drawn toward the wave)</li>
+<li><strong>Series of waves</strong> (typically 3–5 large waves, separated by 10–30 minutes)</li>
+<li><strong>Wave height</strong> at shore: 1–10+ meters (sometimes higher in bays and harbors)</li>
+</ul>
+<h3>Tsunami Safety</h3>
+<p><strong>If You Feel a Strong Earthquake:</strong></p>
+<p>If you live within a few kilometers of the ocean and feel a strong earthquake (magnitude 6.5+, shaking lasting &gt;20 seconds):</p>
+<ol>
+<li>Move to high ground immediately (at least 10 meters above sea level, ideally several kilometers inland)</li>
+<li>Do NOT wait for an official warning; the waves can arrive within 10–30 minutes</li>
+<li>Do NOT go to the beach to watch for waves (tsunami waves are unpredictable and deadly)</li>
+</ol>
+<p><strong>Warning Signs:</strong></p>
+<ul>
+<li>Strong prolonged shaking (earthquake &gt;20 seconds suggests offshore origin)</li>
+<li>Sudden recession of water (beach suddenly exposes rocks and sea floor)</li>
+<li>Distant roaring sound (like a freight train)</li>
+</ul>
+<p><strong>During a Tsunami:</strong></p>
+<ul>
+<li>If you are on the beach when water recedes: run to high ground immediately</li>
+<li>If you are inland but hear official tsunami warning: climb to high ground</li>
+<li>If waves reach you: try to grab onto floating debris and move with the wave; avoid being pulled back out to sea</li>
+</ul>
+<p><strong>After a Tsunami:</strong></p>
+<ul>
+<li>Waves can continue for hours; do not return to the beach until the all-clear is given by officials</li>
+<li>Check for injuries and contaminated water (salt water and sewage mixed)</li>
+</ul>
+</section>
+<h2 id="section-community-recovery-and-mutual-aid">Section: Community Recovery and Mutual Aid</h2>
+<section id="community-recovery">
+<p>Earthquake recovery is a long process. The first hours and days determine whether a community stabilizes or breaks down into disorder.</p>
+<h3>Establishing Community Order (First 24 Hours)</h3>
+<ol>
+<li><strong>Gather information:</strong> Walk the neighborhood; identify damaged buildings, injuries, gas leaks, fires</li>
+<li><strong>Establish a meeting point:</strong> Choose a central, safe location (park, open field) where neighbors can gather</li>
+<li><strong>Organize rescue teams:</strong> Assign groups to specific blocks; rotate rescue and rest</li>
+<li><strong>Manage injuries:</strong> Establish a first-aid station; identify anyone with medical training</li>
+<li><strong>Communicate:</strong> Use runners or ham radio to relay information (no cell service expected)</li>
+<li><strong>Distribute water and food:</strong> Identify available resources; ration fairly</li>
+<li><strong>Establish order:</strong> Prevent looting; organize watch patrols if needed</li>
+</ol>
+<h3>Supporting Vulnerable Populations</h3>
+<ul>
+<li><strong>Elderly and disabled:</strong> Check on them regularly; provide food and water; assist with medication</li>
+<li><strong>Unaccompanied children:</strong> Reunite with families or place in community care</li>
+<li><strong>People in shock:</strong> Provide psychological support; avoid forcing them to make decisions</li>
+<li><strong>Injured:</strong> Provide first aid and transport to functioning hospitals if possible</li>
+</ul>
+<h3>Long-Term Recovery (Weeks to Months)</h3>
+<ol>
+<li><strong>Reconstruction:</strong> Identify buildings that are structurally safe; begin clearing debris</li>
+<li><strong>Restore utilities:</strong> Work with utility companies to restore water, gas, electricity</li>
+<li><strong>Re-establish markets:</strong> Organize food distribution, medical supplies, and trading</li>
+<li><strong>Rebuild morale:</strong> Resume cultural and religious activities; celebrate achievements</li>
+<li><strong>Documentation:</strong> Record damage for insurance and disaster relief applications</li>
+</ol>
+</section>
+</section>
+<h2 id="conclusion">Conclusion</h2>
+<p>Earthquake preparedness is not about predicting earthquakes (impossible) but about reducing vulnerability through building safety, family planning, and community readiness. Communities that invest in earthquake-resistant construction, practice response drills, and build social cohesion survive and recover. Those caught unprepared face far greater losses in life and property.</p>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="family-emergency-plan.html">Family Emergency Plan</a>
+<a href="search-rescue.html">Search &amp; Rescue Operations</a>
+<a href="first-aid.html">First Aid and Emergency Response</a>
+<a href="natural-building.html">Natural Building Materials</a>
+<a href="foundations-footings.html">Foundations and Footings</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

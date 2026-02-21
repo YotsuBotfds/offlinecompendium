@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/sunlight-microclimate-assessment.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunlight Assessment &amp; Microclimate Mapping - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<meta name="description" content="Map sun angles through seasons, identify microclimates, assess aspect and slope, locate frost pockets, observe wind patterns, and estimate growing zones without internet access.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/sunlight-microclimate-assessment.html">
+<meta property="og:title" content="Sunlight Assessment &amp; Microclimate Mapping">
+<meta property="og:description" content="Map sun angles through seasons, identify microclimates, assess aspect and slope, locate frost pockets, observe wind patterns, and estimate growing zones without internet access.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Food &amp; Agriculture", "item": "https://zerotoherohero.com/#sec-agriculture"},
+    {"@type": "ListItem", "position": 3, "name": "Sunlight Assessment &amp; Microclimate Mapping", "item": "https://zerotoherohero.com/guides/sunlight-microclimate-assessment.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sunlight Assessment &amp; Microclimate Mapping",
+  "description": "Map sun angles through seasons, identify microclimates, assess aspect and slope, locate frost pockets, observe wind patterns, and estimate growing zones without internet access.",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-407">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-agriculture">Food &amp; Agriculture</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Sunlight Assessment &amp; Microclimate Mapping</span>
+</nav>
+<header>
+<h1>Sunlight Assessment &amp; Microclimate Mapping</h1>
+<p class="subtitle">Map sun angles through seasons, identify microclimates, assess aspect and slope, locate frost pockets, observe wind patterns, and estimate growing zones without internet access.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●○○○</span>
+<span class="read-time">📖 ~16 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#sun-path-through-seasons">Sun Path Through Seasons</a></li>
+<li><a href="#direct-sun-measurement">Direct Sun Measurement</a></li>
+<li><a href="#microclimate-identification">Microclimate Identification</a></li>
+<li><a href="#aspect-and-slope">Aspect and Slope Assessment</a></li>
+<li><a href="#phenological-indicators">Phenological Indicators (Plant/Animal Behavior)</a></li>
+<li><a href="#microclimate-creation">Creating or Modifying Microclimates</a></li>
+<li><a href="#growing-zone-estimation">Estimating Growing Zone Without Maps</a></li>
+<li><a href="#mapping-and-planning">Creating a Microclimate Map</a></li>
+<li><a href="#summary">Summary Checklist</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Sun exposure is the single largest variable determining where plants thrive. A site that receives 8 hours of sun in one location receives 2 hours 100 feet away due to shadows from trees, buildings, or terrain. Microclimates—small areas with distinct conditions—exist within a property. A north-facing slope is cooler and wetter than a south-facing slope 50 yards away. Understanding light availability and microclimate conditions is essential for garden placement and crop selection.</p>
+<p>This guide covers methods to map sun exposure through the growing season, identify microclimates (frost pockets, wind-exposed areas, heat sinks), assess slope and aspect, and estimate growing zones using phenological indicators (plant and animal behavior) rather than relying on maps or internet data.</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" aria-label="Sun path and microclimate assessment diagram">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .surface { fill: var(--surface, #2d2416); }
+      .text-main { fill: var(--text, #f5f0e8); font-size: 16px; font-family: sans-serif; }
+      .text-label { fill: var(--text, #f5f0e8); font-size: 14px; font-family: sans-serif; }
+      .accent { stroke: var(--accent, #d4a574); fill: none; stroke-width: 2; }
+      .accent-fill { fill: var(--accent, #d4a574); }
+      .accent2 { stroke: var(--accent2, #8dd6c4); fill: none; stroke-width: 2; }
+      .accent2-fill { fill: var(--accent2, #8dd6c4); }
+      .border { stroke: var(--border, #4a5c4a); stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="800" height="500"/>
+
+  <!-- Title -->
+  <text x="400" y="30" class="text-main" font-size="24" font-weight="bold" text-anchor="middle">Sun Path & Microclimate Assessment</text>
+
+  <!-- Left side: Sun path diagram -->
+  <g>
+    <text x="140" y="60" class="text-main" font-weight="bold" text-anchor="middle">Summer Sun Path</text>
+
+    <!-- Horizon line -->
+    <line x1="40" y1="200" x2="240" y2="200" class="accent" stroke-width="2" stroke-dasharray="5,5"/>
+
+    <!-- Sun positions -->
+    <!-- Summer sunrise -->
+    <circle cx="60" cy="180" r="6" fill="#f5a623"/>
+    <text x="60" y="225" class="text-label" text-anchor="middle" font-size="11">Summer Rise (NE)</text>
+
+    <!-- Summer noon -->
+    <circle cx="140" cy="100" r="8" fill="#f5a623"/>
+    <text x="140" y="250" class="text-label" text-anchor="middle" font-size="11">Summer Noon</text>
+
+    <!-- Summer sunset -->
+    <circle cx="220" cy="180" r="6" fill="#f5a623"/>
+    <text x="220" y="225" class="text-label" text-anchor="middle" font-size="11">Summer Set (NW)</text>
+
+    <!-- Winter path (lower) -->
+    <text x="140" y="310" class="text-main" font-weight="bold" text-anchor="middle">Winter Sun Path</text>
+
+    <!-- Horizon line -->
+    <line x1="40" y1="380" x2="240" y2="380" class="accent" stroke-width="2" stroke-dasharray="5,5"/>
+
+    <!-- Winter positions -->
+    <circle cx="70" cy="360" r="5" fill="#ffc107"/>
+    <text x="70" y="410" class="text-label" text-anchor="middle" font-size="11">Winter Rise (SE)</text>
+
+    <circle cx="140" cy="320" r="6" fill="#ffc107"/>
+    <text x="140" y="430" class="text-label" text-anchor="middle" font-size="11">Winter Noon</text>
+
+    <circle cx="210" cy="360" r="5" fill="#ffc107"/>
+    <text x="210" y="410" class="text-label" text-anchor="middle" font-size="11">Winter Set (SW)</text>
+  </g>
+
+  <!-- Middle: Slope and aspect diagram -->
+  <g>
+    <text x="400" y="60" class="text-main" font-weight="bold" text-anchor="middle">Slope Aspect Effects</text>
+
+    <!-- South-facing slope (warm) -->
+    <g>
+      <polygon points="300,200 340,140 380,200" fill="#f5a623" opacity="0.3" class="border"/>
+      <text x="340" y="215" class="text-label" text-anchor="middle" font-weight="bold">South</text>
+      <text x="340" y="235" class="text-label" text-anchor="middle" font-size="11">Warmest</text>
+      <text x="340" y="250" class="text-label" text-anchor="middle" font-size="11">Full sun</text>
+      <text x="340" y="265" class="text-label" text-anchor="middle" font-size="11">Long season</text>
+    </g>
+
+    <!-- North-facing slope (cool) -->
+    <g>
+      <polygon points="420,200 460,140 500,200" fill="#4a9fd8" opacity="0.3" class="border"/>
+      <text x="460" y="215" class="text-label" text-anchor="middle" font-weight="bold">North</text>
+      <text x="460" y="235" class="text-label" text-anchor="middle" font-size="11">Coolest</text>
+      <text x="460" y="250" class="text-label" text-anchor="middle" font-size="11">Shade</text>
+      <text x="460" y="265" class="text-label" text-anchor="middle" font-size="11">Short season</text>
+    </g>
+
+    <!-- Compass directions -->
+    <text x="320" y="295" class="text-label" text-anchor="middle" font-size="12">E →</text>
+    <text x="480" y="295" class="text-label" text-anchor="middle" font-size="12">← W</text>
+
+    <!-- Slope measurement example -->
+    <g>
+      <line x1="300" y1="350" x2="420" y2="350" class="accent2" stroke-width="2"/>
+      <text x="360" y="370" class="text-label" text-anchor="middle" font-size="11">Run = 120 ft</text>
+
+      <line x1="420" y1="350" x2="420" y2="300" class="accent2" stroke-width="2"/>
+      <text x="445" y="330" class="text-label" font-size="11">Rise</text>
+      <text x="445" y="345" class="text-label" font-size="11">= 30 ft</text>
+
+      <text x="360" y="390" class="text-label" text-anchor="middle" font-size="10">Slope = (30/120)×100 = 25%</text>
+      <text x="360" y="405" class="text-label" text-anchor="middle" font-size="10">Steep; erosion risk</text>
+    </g>
+  </g>
+
+  <!-- Right side: Microclimate features -->
+  <g>
+    <text x="650" y="60" class="text-main" font-weight="bold" text-anchor="middle">Microclimate Features</text>
+
+    <!-- Frost pocket -->
+    <rect x="580" y="90" width="140" height="90" class="surface" class="border"/>
+    <text x="650" y="110" class="text-label" font-weight="bold" text-anchor="middle">Frost Pocket</text>
+    <path d="M 650 130 L 630 150 L 670 150 Z" fill="#4a9fd8" opacity="0.4"/>
+    <text x="650" y="175" class="text-label" text-anchor="middle" font-size="10">Cold air sinks</text>
+    <text x="650" y="190" class="text-label" text-anchor="middle" font-size="10">5-10°F colder</text>
+
+    <!-- Wind-exposed -->
+    <rect x="580" y="210" width="140" height="90" class="surface" class="border"/>
+    <text x="650" y="230" class="text-label" font-weight="bold" text-anchor="middle">Wind-Exposed</text>
+    <text x="630" y="260" class="text-label" font-size="12">→ → →</text>
+    <text x="650" y="290" class="text-label" text-anchor="middle" font-size="10">Desiccation risk</text>
+    <text x="650" y="305" class="text-label" text-anchor="middle" font-size="10">Stunted growth</text>
+
+    <!-- Heat sink -->
+    <rect x="580" y="330" width="140" height="90" class="surface" class="border"/>
+    <text x="650" y="350" class="text-label" font-weight="bold" text-anchor="middle">Heat Sink</text>
+    <circle cx="650" cy="375" r="12" fill="#f5a623" opacity="0.4"/>
+    <text x="650" y="415" class="text-label" text-anchor="middle" font-size="10">Absorbs/radiates heat</text>
+    <text x="650" y="430" class="text-label" text-anchor="middle" font-size="10">Extends season</text>
+  </g>
+
+  <!-- Bottom: Sun exposure scale -->
+  <g>
+    <text x="140" y="475" class="text-label" font-size="12" text-anchor="middle">Full Sun: 8+ hrs</text>
+    <rect x="70" y="460" width="140" height="10" fill="#f5a623" opacity="0.6" class="border"/>
+
+    <text x="400" y="475" class="text-label" font-size="12" text-anchor="middle">Partial Sun: 4-8 hrs</text>
+    <rect x="330" y="460" width="140" height="10" fill="#c89050" opacity="0.6" class="border"/>
+
+    <text x="660" y="475" class="text-label" font-size="12" text-anchor="middle">Shade: <4 hrs</text>
+    <rect x="590" y="460" width="140" height="10" fill="#4a9fd8" opacity="0.6" class="border"/>
+  </g>
+</svg>
+</p>
+</section>
+<section id="sun-path-through-seasons">
+<h2>Sun Path Through Seasons</h2>
+<p>The sun's path across the sky changes throughout the year. In temperate zones, the sun traces a low arc in winter and a high arc in summer.</p>
+<h3>Understanding Sun Position</h3>
+<p><strong>Key angles and times:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Season</strong></th>
+<th><strong>Solar Noon Height</strong></th>
+<th><strong>Sunrise Direction</strong></th>
+<th><strong>Sunset Direction</strong></th>
+<th><strong>Day Length</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Summer solstice (Jun 21)</td>
+<td>Highest (~70° at 40°N)</td>
+<td>NE (~60°)</td>
+<td>NW (~300°)</td>
+<td>~15 hours</td>
+</tr>
+<tr>
+<td>Spring/Fall equinox (Mar/Sep 21)</td>
+<td>Medium (~50° at 40°N)</td>
+<td>E (90°)</td>
+<td>W (270°)</td>
+<td>~12 hours</td>
+</tr>
+<tr>
+<td>Winter solstice (Dec 21)</td>
+<td>Lowest (~25° at 40°N)</td>
+<td>SE (~120°)</td>
+<td>SW (~240°)</td>
+<td>~9 hours</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Implications:</strong></p>
+<ul>
+<li><strong>South-facing areas</strong> receive full sun year-round (best for cold-sensitive crops in temperate zones).</li>
+<li><strong>North-facing areas</strong> are shaded in winter by trees and buildings; marginal for most crops but cool in summer (good for shade-loving plants or lettuce in peak summer).</li>
+<li><strong>East-facing areas</strong> receive morning sun (good for frost protection; frost melts slowly).</li>
+<li><strong>West-facing areas</strong> receive afternoon sun (hottest; can scorch tender plants).</li>
+</ul>
+<h3>Determine Your Latitude</h3>
+<p>Without internet, estimate latitude by observing the sun's angle or using a map:</p>
+<p><strong>Shadow stick method</strong> (works any date):</p>
+<ol>
+<li>Place a vertical stick (1 meter tall) on level ground on a clear day.</li>
+<li>Measure the stick's shadow length at solar noon (when the sun is highest; watch for the shadow pointing due north in the Northern Hemisphere, due south in the Southern Hemisphere).</li>
+<li><strong>Calculation</strong>: Latitude ≈ 90° – arctan(shadow length / stick height)
+<ul>
+<li>Example: stick height 1 m, shadow 1 m → arctan(1) = 45°, so latitude = 90° – 45° = 45°N.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Rule of thumb (without calculation):</strong></p>
+<ul>
+<li>Shadow is much longer than stick height → you are far north (high latitude, ~50°N+).</li>
+<li>Shadow length equals stick height → latitude ~45°N.</li>
+<li>Shadow is much shorter than stick height → you are near the equator (low latitude, &lt;30°N).</li>
+</ul>
+<div class="info-box">
+<p>Once you know approximate latitude, use the sun path angles above to estimate where shadows will fall. In summer, shadows are short; in winter, shadows are long. South-facing slopes get sun year-round in temperate zones.</p>
+</div>
+</section>
+<section id="direct-sun-measurement">
+<h2>Direct Sun Measurement</h2>
+<p>Sun exposure varies by location on your property. Measure the number of hours each area receives direct sun.</p>
+<h3>Solar Path Finder (DIY Transparent Disk)</h3>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>Clear plastic sheet (or clear glass).</li>
+<li>Protractor or printed compass rose.</li>
+<li>Ruler.</li>
+</ul>
+<p><strong>Method:</strong></p>
+<ol>
+<li>Place the transparent disk on a tripod or holder in the location you want to assess.</li>
+<li>Mark the disk with cardinal directions (N, S, E, W) using a compass.</li>
+<li>At multiple times throughout the day (8 AM, 10 AM, 12 PM, 2 PM, 4 PM, 6 PM), trace the shadow of nearby trees/buildings onto the disk with a marker. Record the time and direction of each shadow.</li>
+<li>Over several days, build a map of shadow patterns.</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>Mark areas on the disk that have shadows throughout the day → heavily shaded (full shade).</li>
+<li>Mark areas that have shadows only in morning → afternoon sun (6+ hours).</li>
+<li>Mark areas with little shadow → full sun (8+ hours).</li>
+</ul>
+<h3>Simple Hourly Observation</h3>
+<p>Observe and record hourly:</p>
+<p><strong>Observation template</strong> (fill daily for 3 days across seasons—spring, summer, winter):</p>
+<table>
+<thead>
+<tr>
+<th><strong>Time</strong></th>
+<th><strong>Spring</strong></th>
+<th><strong>Summer</strong></th>
+<th><strong>Fall</strong></th>
+<th><strong>Winter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8 AM</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+</tr>
+<tr>
+<td>10 AM</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+</tr>
+<tr>
+<td>12 PM</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+</tr>
+<tr>
+<td>2 PM</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+</tr>
+<tr>
+<td>4 PM</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+</tr>
+<tr>
+<td>6 PM</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+<td>Sun/shade</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sum total hours of direct sun per season:</strong></p>
+<ul>
+<li>Add up the &quot;Sun&quot; entries for each season. This tells you seasonal variation.</li>
+<li>Example result: &quot;Spring: 10 hours, Summer: 14 hours, Winter: 4 hours&quot; → good for spring/summer crops; poor for winter production.</li>
+</ul>
+<h3>Smartphone App Alternative</h3>
+<p>If you have a smartphone with a solar angle app (downloaded while you have internet, then used offline), apps like &quot;Sun Surveyor&quot; or &quot;Sun Path&quot; show sun position and shadow projection for your location and date. Mark shadow outlines on your property map using the app's prediction.</p>
+</section>
+<section id="microclimate-identification">
+<h2>Microclimate Identification</h2>
+<p>Within a few acres, multiple distinct microclimates exist. Identifying them is critical for crop placement.</p>
+<h3>Frost Pocket Identification</h3>
+<p>Frost pockets are low-lying areas where cold air settles on clear nights, creating dangerous late-spring or early-fall frosts.</p>
+<p><strong>Visual identification:</strong></p>
+<ul>
+<li>Low-lying areas (valley bottoms, depressions).</li>
+<li>Areas downhill of higher terrain (cold air drains downhill like water).</li>
+<li>Near bodies of water in depressions (water at the bottom of the slope condenses moisture and radiates cold).</li>
+</ul>
+<p><strong>Field test</strong> (requires multiple frost-prone nights):</p>
+<ol>
+<li>On a clear night with ground frost expected, place a thermometer at ground level in a potential frost pocket.</li>
+<li>Place another thermometer at the same time on higher ground nearby.</li>
+<li>Compare morning readings.</li>
+<li>If the low area reads 5°F or more colder than the high area, it is a frost pocket.</li>
+</ol>
+<p><strong>Indicator plants:</strong></p>
+<ul>
+<li>Frost pockets have a shorter growing season and hardier species naturally.</li>
+<li>Look for native hardy shrubs, late-leafing deciduous trees, or evergreens in pockets.</li>
+<li>High areas have tender species and earlier leaf-out.</li>
+</ul>
+<div class="warning">
+<p>Avoid planting frost-sensitive crops (tomatoes, peppers, stone fruits) in frost pockets. Use pockets for hardy crops (potatoes, root vegetables, late-blooming apples) or for cold storage (natural cooler in summer).</p>
+</div>
+<h3>Heat Sink Areas</h3>
+<p>Heat sinks are areas that absorb and radiate heat, creating warmer microclimates.</p>
+<p><strong>Identification:</strong></p>
+<ul>
+<li>South-facing slopes (slope angle 20–40° south of horizontal).</li>
+<li>Areas next to dark surfaces (dark rock, dark mulch, pavement, dark buildings).</li>
+<li>Wind-protected areas (sun exposure without cooling wind).</li>
+</ul>
+<p><strong>Observation:</strong></p>
+<ul>
+<li>Snow melts earlier in spring in heat sinks.</li>
+<li>Vegetation leafs out earlier (2–3 weeks earlier than north-facing areas).</li>
+<li>Frost occurs later in fall.</li>
+</ul>
+<p><strong>Use:</strong> Ideal for early spring planting, tender crops (tomatoes, peppers), and cold-sensitive perennials.</p>
+<h3>Wind-Exposed Areas</h3>
+<p>Strong wind desiccates plants and reduces growth.</p>
+<p><strong>Identification:</strong></p>
+<ul>
+<li>Ridgetops and exposed slopes (wind funnels over them).</li>
+<li>Areas without tree or building shelter.</li>
+<li>Bent or stunted vegetation (weather-shaped trees).</li>
+</ul>
+<p><strong>Wind observation:</strong></p>
+<ul>
+<li>Watch trees, grass, and standing water on a breezy day.</li>
+<li>Identify the direction of strongest and most consistent wind.</li>
+<li>Note which plants bow or show one-sided growth (wind-pruned).</li>
+</ul>
+<p><strong>Management:</strong></p>
+<ul>
+<li>Avoid wind-exposed areas for delicate crops.</li>
+<li>Use wind-exposed areas for hardy crops and wind-break establishment.</li>
+<li>Plant shelter belts (trees/shrubs in rows) perpendicular to prevailing wind.</li>
+</ul>
+<h3>Wet/Waterlogged Areas</h3>
+<p>Low areas with poor drainage become waterlogged, unsuitable for most crops.</p>
+<p><strong>Identification:</strong></p>
+<ul>
+<li>Standing water after rain.</li>
+<li>Soggy soil that doesn't dry quickly (even weeks after rain).</li>
+<li>Species adapted to wet conditions (sedges, rushes, willows).</li>
+</ul>
+<p><strong>Test:</strong></p>
+<ol>
+<li>Dig a hole 12 inches deep.</li>
+<li>Fill with water.</li>
+<li>If water drains within a few hours, drainage is adequate.</li>
+<li>If water remains for days, area is too wet for most crops.</li>
+</ol>
+<p><strong>Use:</strong> Wet areas are ideal for water-loving crops (rice paddies, aquatic plants), wildlife habitat, or water catchment features (ponds).</p>
+<h3>Dry/Sandy Areas</h3>
+<p>Areas with coarse soil and low organic matter drain quickly and dry out rapidly.</p>
+<p><strong>Identification:</strong></p>
+<ul>
+<li>Light-colored, sandy soil.</li>
+<li>Sparse vegetation or stress (wilting plants in summer despite rain).</li>
+<li>Rapid drainage (water disappears within minutes of heavy rain).</li>
+</ul>
+<p><strong>Test:</strong></p>
+<ol>
+<li>Squeeze wet soil in your hand.</li>
+<li>Sandy soil falls apart immediately; clay-rich soil holds its shape.</li>
+</ol>
+<p><strong>Use:</strong> Dry areas suit drought-tolerant crops (potatoes, root vegetables, hardy herbs) once amended with compost/mulch. Without amendment, they are marginal.</p>
+</section>
+<section id="aspect-and-slope">
+<h2>Aspect and Slope Assessment</h2>
+<p><strong>Aspect</strong> is the compass direction a slope faces. <strong>Slope</strong> is the angle of the terrain.</p>
+<h3>Aspect Determination</h3>
+<p><strong>Compass method:</strong></p>
+<ol>
+<li>Use a compass to face downhill from the site in question.</li>
+<li>Read the compass bearing (direction).</li>
+<li>The aspect is that bearing.
+<ul>
+<li>0° = North, 90° = East, 180° = South, 270° = West.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Observation method</strong> (without compass):</p>
+<ul>
+<li>Identify where the sun rises (east) and sets (west).</li>
+<li>Face the sun at noon; the direction you face is south (Northern Hemisphere).</li>
+<li>If you are on a slope that faces the noonday sun, it is a south-facing slope.</li>
+</ul>
+<p><strong>Aspect effects</strong> (Northern Hemisphere; reverse for Southern Hemisphere):</p>
+<table>
+<thead>
+<tr>
+<th><strong>Aspect</strong></th>
+<th><strong>Sun Exposure</strong></th>
+<th><strong>Moisture</strong></th>
+<th><strong>Temperature</strong></th>
+<th><strong>Growing Season</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>South</td>
+<td>Full sun year-round</td>
+<td>Driest</td>
+<td>Warmest</td>
+<td>Longest</td>
+</tr>
+<tr>
+<td>Southwest</td>
+<td>Very high</td>
+<td>Dry</td>
+<td>Very hot</td>
+<td>Long (may be too hot)</td>
+</tr>
+<tr>
+<td>West</td>
+<td>High afternoon sun</td>
+<td>Moderate</td>
+<td>Hot</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>North</td>
+<td>Low (full shade)</td>
+<td>Wettest</td>
+<td>Coolest</td>
+<td>Shortest</td>
+</tr>
+<tr>
+<td>Northeast</td>
+<td>Morning sun only</td>
+<td>Wet</td>
+<td>Cool</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>East</td>
+<td>Morning sun</td>
+<td>Moderate</td>
+<td>Cool-warm</td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
+<div class="info-box">
+<p>South-facing slopes are the most versatile for crops in temperate zones. North-facing slopes are cool and slow to warm in spring, making them poor for most crops but excellent for shade-loving plants and summer heat-sensitive species.</p>
+</div>
+<h3>Slope Measurement</h3>
+<p><strong>Percentage slope:</strong></p>
+<ol>
+<li>Measure a horizontal distance D (e.g., 100 feet down the slope).</li>
+<li>Measure the vertical rise R (e.g., 10 feet of elevation change).</li>
+<li>Percentage slope = (R / D) × 100.
+<ul>
+<li>10 feet rise / 100 feet distance = 10% slope.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li><strong>0–5% slope</strong>: Flat to gentle; good for most crops; water may pond.</li>
+<li><strong>5–15% slope</strong>: Moderate; adequate for most crops; some runoff management needed.</li>
+<li><strong>15–30% slope</strong>: Steep; erosion risk; best for perennials (trees, shrubs) or terraced crops.</li>
+<li><strong>&gt;30% slope</strong>: Very steep; erosion risk is high; forests or terraces only.</li>
+</ul>
+<p><strong>Angle method</strong> (using a level and ruler):</p>
+<ol>
+<li>Lay a straightedge (ruler, board) horizontally across the slope.</li>
+<li>Measure vertical distance from the end of the ruler to the ground (rise).</li>
+<li>Measure horizontal distance of the ruler (run).</li>
+<li>Slope angle = arctan(rise / run).
+<ul>
+<li>Rise 1 foot, run 5 feet → angle = arctan(1/5) = ~11°.</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="phenological-indicators">
+<h2>Phenological Indicators (Plant/Animal Behavior)</h2>
+<p>Without temperature records or internet, observe when plants and animals respond to seasonal changes. These indicators suggest whether your site is early-spring, normal, or late-spring—helping you estimate your growing zone and frost risk.</p>
+<h3>Spring Indicators</h3>
+<p><strong>Early bloom:</strong></p>
+<ul>
+<li>First flowers to appear: Bloodroot, hepatica, wood anemone (late winter/early spring). If these bloom unusually early, spring is coming early; frost risk window is shifting earlier.</li>
+<li>Skunk cabbage emergence: Early March in temperate zones; later in colder areas.</li>
+</ul>
+<p><strong>Bud break:</strong></p>
+<ul>
+<li>Observe trees and shrubs: Forsythia, pussy willow, oak, maple.</li>
+<li>Record date of first bud swell and first leaves unfurled.</li>
+<li>In temperate zones: Early bud break (March) = warm, early spring. Late bud break (May) = cold, late spring.</li>
+</ul>
+<p><strong>Animal activity:</strong></p>
+<ul>
+<li>Frog/toad call start: Indicates soil warming; ~50°F soil temperature.</li>
+<li>Bird arrival: Migratory birds return when food (insects, buds) become available. Early arrival = early spring.</li>
+<li>Butterfly/insect emergence: Monarchs, mourning cloaks, and other overwintering butterflies emerge when daylength and temperature permit.</li>
+</ul>
+<h3>Summer Indicators</h3>
+<ul>
+<li>Maximum daylight hours (June 21 solstice): Length varies by latitude.</li>
+<li>Peak bloom of summer wildflowers (black-eyed Susans, daisies, coneflowers).</li>
+<li>Insect peak activity (dragonflies, bees, grasshoppers abundant).</li>
+</ul>
+<h3>Fall Indicators</h3>
+<ul>
+<li>First frost date: Observable as a light frost on grass and leaves. Record the date.</li>
+<li>Leaf color change: Tree species change color sequentially; record dates.</li>
+<li>Seed maturation: Observe when seeds on native plants mature and fall.</li>
+</ul>
+<p><strong>Example phenological record:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Event</strong></th>
+<th><strong>Date (Year 1)</strong></th>
+<th><strong>Date (Year 2)</strong></th>
+<th><strong>Difference</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bloodroot bloom</td>
+<td>March 18</td>
+<td>March 10</td>
+<td>8 days earlier</td>
+<td>Year 2 was warmer, earlier spring</td>
+</tr>
+<tr>
+<td>Oak bud break</td>
+<td>April 22</td>
+<td>May 2</td>
+<td>10 days later</td>
+<td>Year 2 was colder, later spring</td>
+</tr>
+<tr>
+<td>Frog calls</td>
+<td>April 5</td>
+<td>March 28</td>
+<td>8 days earlier</td>
+<td>Soil warmed earlier in Year 2</td>
+</tr>
+<tr>
+<td>First frost</td>
+<td>October 12</td>
+<td>October 5</td>
+<td>7 days earlier</td>
+<td>Year 2 had earlier fall</td>
+</tr>
+<tr>
+<td>Frost-free days</td>
+<td>~175</td>
+<td>~160</td>
+<td>—</td>
+<td>Year 2 was shorter season</td>
+</tr>
+</tbody>
+</table>
+<div class="info-box">
+<p>Track phenological events for 2–3 years to establish local patterns. This local knowledge is more useful than any USDA hardiness zone map because it captures your exact site conditions.</p>
+</div>
+</section>
+<section id="microclimate-creation">
+<h2>Creating or Modifying Microclimates</h2>
+<p>Once you identify microclimates, you can modify them to extend growing seasons and improve crop resilience.</p>
+<h3>Cold Frame / Row Cover Extension</h3>
+<p><strong>Early spring warmth:</strong></p>
+<ul>
+<li>Use transparent plastic covers (row covers, cloches, cold frames) over beds in early spring.</li>
+<li>Temperature under plastic rises 5–15°F compared to open air.</li>
+<li>Extend planting date by 2–4 weeks.</li>
+</ul>
+<p><strong>Construction:</strong></p>
+<ul>
+<li>Simple: Lay clear plastic over soil on a cold frame (wooden box with transparent top).</li>
+<li>Dynamic: Vent (open) the frame on warm days to prevent overheating; close at night to retain heat.</li>
+</ul>
+<h3>Mulch for Heat Retention</h3>
+<ul>
+<li>Apply dark mulch (compost, aged bark) to soil in spring.</li>
+<li>Dark mulch absorbs and radiates heat, raising soil temperature.</li>
+<li>Effect: Soil warms 5°F faster in spring; frost risk window shortens.</li>
+</ul>
+<h3>Windbreak Establishment</h3>
+<ul>
+<li>Windbreaks reduce wind speed 40–50% at distance 3× windbreak height.</li>
+<li>Plant trees/shrubs perpendicular to prevailing wind.</li>
+<li>Effect: Reduced water loss, warmer microclimate in lee, less plant damage.</li>
+</ul>
+<h3>Water Feature for Temperature Moderation</h3>
+<ul>
+<li>Ponds or large water containers moderate temperature: water cools slowly in fall, warms slowly in spring.</li>
+<li>Areas near water experience fewer extreme cold/heat events.</li>
+<li>Effect: Extends growing season by ~2 weeks near large water bodies.</li>
+</ul>
+<h3>Wall/Reflective Surface for Heat</h3>
+<ul>
+<li>South-facing walls absorb heat and radiate it to adjacent areas.</li>
+<li>Reflective surfaces (white plastic, aluminum) reflect sunlight onto tender plants.</li>
+<li>Effect: Tender perennials and late-season crops thrive against south-facing walls.</li>
+</ul>
+</section>
+<section id="growing-zone-estimation">
+<h2>Estimating Growing Zone Without Maps</h2>
+<p>Hardiness zones are standardized geographic regions based on average minimum winter temperature. Without internet access, estimate your zone locally.</p>
+<h3>Average Minimum Temperature Method</h3>
+<p><strong>Record minimum temperatures</strong> (using a thermometer placed outdoors):</p>
+<ol>
+<li>Place a min/max thermometer outside (shaded, in a shelter).</li>
+<li>Each morning, note the minimum temperature reached overnight.</li>
+<li>Repeat daily for all of winter (November–March in temperate zones).</li>
+<li>Calculate the average of the minimum temperatures recorded.</li>
+</ol>
+<p><strong>Conversion to hardiness zone</strong> (USDA Hardiness Zone):</p>
+<ul>
+<li><strong>Zone 1:</strong> avg min &lt;–50°F (–46°C)</li>
+<li><strong>Zone 2:</strong> –40 to –50°F (–40 to –46°C)</li>
+<li><strong>Zone 3:</strong> –30 to –40°F (–34 to –40°C)</li>
+<li><strong>Zone 4:</strong> –20 to –30°F (–29 to –34°C)</li>
+<li><strong>Zone 5:</strong> –10 to –20°F (–23 to –29°C)</li>
+<li><strong>Zone 6:</strong> 0 to –10°F (–18 to –23°C)</li>
+<li><strong>Zone 7:</strong> 10 to 0°F (–12 to –18°C)</li>
+<li><strong>Zone 8:</strong> 20 to 10°F (–7 to –12°C)</li>
+</ul>
+<p>Example: If your winter minimum averages –18°F, you are in Zone 5 (–10 to –20°F).</p>
+<h3>Plant-Based Zone Estimation</h3>
+<p>Observe which perennials survive winter without protection:</p>
+<table>
+<thead>
+<tr>
+<th><strong>If This Survives Winter Unprotected</strong></th>
+<th><strong>Likely Zone</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tropical plants (banana, hibiscus)</td>
+<td>9–11</td>
+</tr>
+<tr>
+<td>Evergreen ferns, tender perennials</td>
+<td>8–9</td>
+</tr>
+<tr>
+<td>Many ornamental grasses, butterfly bush</td>
+<td>7–8</td>
+</tr>
+<tr>
+<td>Coneflowers, black-eyed Susans, lavender</td>
+<td>5–7</td>
+</tr>
+<tr>
+<td>Native trees (oak, maple, birch), lilac</td>
+<td>4–5</td>
+</tr>
+<tr>
+<td>Only the hardiest shrubs and very hardy perennials</td>
+<td>3–4</td>
+</tr>
+</tbody>
+</table>
+<p>Plant your yard with species from your estimated zone; they will thrive without special winter protection.</p>
+</section>
+<section id="mapping-and-planning">
+<h2>Creating a Microclimate Map</h2>
+<p>Integrate sun exposure, frost pockets, wind, aspect, and slope into a single property map.</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Sketch your property (to scale, e.g., 1 inch = 10 feet).</li>
+<li>Mark north with an arrow.</li>
+<li>Shade areas receiving full sun in summer (8+ hours) in yellow.</li>
+<li>Shade areas receiving partial sun (4–8 hours) in orange.</li>
+<li>Shade areas receiving shade (2–4 hours) in light blue.</li>
+<li>Mark frost pockets with an &quot;F.&quot;</li>
+<li>Mark heat sinks with an &quot;H.&quot;</li>
+<li>Mark wind-exposed areas with arrow(s) showing wind direction.</li>
+<li>Mark slopes: write percentage or angle.</li>
+<li>Mark aspect: write compass direction (N, S, etc.).</li>
+<li>Mark wet areas with &quot;W.&quot;</li>
+<li>Mark dry areas with &quot;D.&quot;</li>
+</ol>
+<p><strong>Example map labels:</strong></p>
+<pre><code>┌─────────────────────┐
+│ PROPERTY MAP        │
+│ ↑ = North          │
+├─────────────────────┤
+│  F (Frost pocket)  │
+│ ┌─────────────────┐ │ FULL SUN (S-facing)
+│ │ 15% slope,     │ │ → Wind
+│ │ South-facing  │ │ PARTIAL SHADE
+│ │ H (Heat sink) │ │ (N-facing, tree shade)
+│ │ yellow shading│ │
+│ └─────────────────┘ │
+│  W                  │
+│ (Wet area,         │
+│  poor drainage)    │
+└─────────────────────┘
+</code></pre>
+<p><strong>Use the map for:</strong></p>
+<ul>
+<li>Placing sun-loving crops (tomatoes, peppers, squash) in full-sun areas.</li>
+<li>Placing shade-tolerant crops (lettuce, spinach, herbs) in partial-shade areas.</li>
+<li>Placing frost-hardy crops in frost pockets.</li>
+<li>Placing tender perennials and late-season crops near heat sinks or south-facing walls.</li>
+<li>Placing windbreaks perpendicular to prevailing wind direction.</li>
+</ul>
+</section>
+<section id="summary">
+<h2>Summary Checklist</h2>
+<ol>
+<li><strong>Map sun exposure</strong> using hourly observation or a solar path finder.</li>
+<li><strong>Identify frost pockets</strong> by observing low areas and comparing spring bloom dates.</li>
+<li><strong>Locate heat sinks</strong> on south-facing slopes and dark surfaces.</li>
+<li><strong>Mark wind-exposed areas</strong> by observing tree shape and wind direction.</li>
+<li><strong>Determine aspect</strong> using a compass or solar observation.</li>
+<li><strong>Measure slope</strong> using rise and run, or angle with a level.</li>
+<li><strong>Record phenological events</strong> (bud break, first frost) for 2+ years to establish local timing.</li>
+<li><strong>Estimate hardiness zone</strong> from winter minimum temperatures or surviving plant species.</li>
+<li><strong>Create a map</strong> integrating all observations.</li>
+<li><strong>Plan crop placement</strong> based on microclimate conditions.</li>
+</ol>
+<p>A simple property map with sun exposure, frost pockets, and wind patterns is one of the most valuable planning tools available, requiring no equipment beyond observation and a pencil.</p>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="agriculture.html">Agriculture &amp; Gardening</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

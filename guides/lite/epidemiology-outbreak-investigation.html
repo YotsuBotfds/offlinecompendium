@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/epidemiology-outbreak-investigation.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Epidemiology and Outbreak Investigation</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Medical &amp; Health</span> ›
+<span>Epidemiology and Outbreak Investigation</span>
+</div>
+
+
+<h1>Epidemiology and Outbreak Investigation</h1>
+<p class="subtitle">Case definition development, attack rate calculation, epidemic curve construction, contact tracing, isolation and quarantine criteria, outbreak reporting, surveillance for small communities.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~22 min</span>
+<span>Updated: 2026-02-18</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#case-definitions">Case Definition Development</a></li>
+<li><a href="#outbreak-detection">Outbreak Detection</a></li>
+<li><a href="#line-list">Line List and Case Investigation</a></li>
+<li><a href="#attack-rate">Attack Rate Calculation</a></li>
+<li><a href="#epidemic-curve">Epidemic Curve Construction</a></li>
+<li><a href="#contact-tracing">Contact Tracing and Quarantine/Isolation</a></li>
+<li><a href="#investigation-teams">Forming an Outbreak Investigation Team</a></li>
+<li><a href="#outbreak-report">Outbreak Investigation Report</a></li>
+<li><a href="#surveillance">Disease Surveillance in Small Communities</a></li>
+<li><a href="#summary">Summary</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>An outbreak is the occurrence of cases of disease in excess of normal expectancy in a defined population during a specific time period. Epidemiology is the science of tracking disease patterns and identifying causes. In austere or low-resource settings without formal public health infrastructure, basic epidemiologic methods can identify disease sources, predict spread, and guide control measures. This guide covers outbreak detection, investigation, and response in small communities.</p>
+<p><strong>Critical disclaimer:</strong> This guide is educational and intended for austere settings. Formal outbreak response involves public health authorities, laboratory confirmation, and coordination with regional health systems. When possible, notify local or regional health authorities early. These methods apply when formal systems are unavailable.</p>
+<p>The goal is to interrupt disease transmission and prevent further cases. For practical infection prevention protocols (hand hygiene, PPE, sterilization, wound care) that complement these investigation methods, see <a href="infection-control.html">Infection Control</a>. For establishing permanent community disease surveillance networks, quarantine facilities, and vaccination campaigns, see <a href="public-health-epidemiology.html">Public Health Systems &amp; Epidemiology</a>.</p>
+</section>
+<section id="case-definitions">
+<h2>Case Definition Development</h2>
+<p>A case definition is a standardized set of criteria used to identify people with a suspected disease. Standardization allows consistent reporting across investigators and time.</p>
+<h3>Components of a Case Definition</h3>
+<p><strong>Confirmed case:</strong> Meets clinical criteria AND has laboratory confirmation (positive culture, serology, PCR, antigen test).</p>
+<p><strong>Probable case:</strong> Meets clinical criteria AND epidemiologic criteria (exposure link to confirmed case or high-risk exposure) but no lab confirmation.</p>
+<p><strong>Suspected case:</strong> Meets clinical criteria only; awaiting lab confirmation or epidemiologic investigation.</p>
+<h3>Example: Acute Gastroenteritis (Food Poisoning) Outbreak</h3>
+<p><strong>Suspected case:</strong> Any person in the affected community who developed diarrhea (≥3 loose stools in 24 hours) or vomiting after [date of suspected food exposure] and before [cutoff date].</p>
+<p><strong>Probable case:</strong> Suspected case + confirmed exposure to the implicated food item OR confirmed exposure to a confirmed case within the incubation period.</p>
+<p><strong>Confirmed case:</strong> Probable case + laboratory confirmation (positive stool culture for Salmonella, pathogenic E. coli, Campylobacter, etc.) OR severe illness requiring hospitalization.</p>
+<h3>Another Example: Measles Outbreak</h3>
+<p><strong>Suspected case:</strong> Fever ≥38.3°C (101°F) for ≥3 days AND rash (maculopapular, non-vesicular), WITHOUT other explanation.</p>
+<p><strong>Probable case:</strong> Suspected case + epidemiologic link (attendance at same event as confirmed case, or unvaccinated) within incubation period (7–21 days).</p>
+<p><strong>Confirmed case:</strong> Probable case + laboratory confirmation (positive RT-PCR, IgM serology, or viral culture) OR clinically confirmed by public health authority.</p>
+<h3>Criteria Elements</h3>
+<p><strong>Time:</strong> Illness onset date; duration of symptoms; fever onset, rash onset, etc.</p>
+<p><strong>Place:</strong> Geographic area affected; venue (school, restaurant, workplace); high-risk locations.</p>
+<p><strong>Person:</strong> Age, occupation, vaccination status, comorbidities.</p>
+<p><strong>Clinical features:</strong> Symptoms (fever, rash, cough), severity, hospitalizations, deaths.</p>
+<p><strong>Laboratory findings:</strong> Culture, serology, antigen/molecular tests (if available).</p>
+<p><strong>Exposure:</strong> Contact with cases, attendance at common event, consumption of implicated food/water, occupation exposure.</p>
+<div class="tip">
+<p>Write the case definition before investigation begins. It ensures consistency and prevents investigator bias from affecting case counts.</p>
+</div>
+</section>
+<section id="outbreak-detection">
+<h2>Outbreak Detection</h2>
+<p>Outbreak detection relies on recognizing the increase above baseline.</p>
+<h3>Baseline Frequency</h3>
+<p><strong>Baseline</strong> is the expected number of cases in the community under normal conditions. Baselines vary by disease and population:</p>
+<ul>
+<li><strong>Influenza:</strong> Peak in winter; dozens to hundreds of cases per 100,000 population</li>
+<li><strong>Measles:</strong> Rare in vaccinated populations; baseline near zero</li>
+<li><strong>Diarrheal disease:</strong> Common in low-resource settings; baseline may be 10–20 cases per day in a population of 50,000</li>
+<li><strong>Malaria:</strong> Seasonal in endemic areas; baseline high in rainy season, low in dry season</li>
+</ul>
+<h3>Detection Triggers</h3>
+<p><strong>Unusual case:</strong> A case of disease not typically seen in the community (e.g., measles in a fully vaccinated area).</p>
+<p><strong>Cluster:</strong> Multiple cases of the same disease in a small area or timeframe. Example: 3 cases of severe pneumonia within 5 days in a village of 200 people.</p>
+<p><strong>Increase above baseline:</strong> Case count exceeds the normal weekly or monthly average. Example: Diarrheal cases are usually 5 per week; this week, 15 cases were reported.</p>
+<h3>Early Indicators</h3>
+<ul>
+<li>Healthcare provider reports unusual illness patterns</li>
+<li>School absences spike</li>
+<li>Increased funeral activity</li>
+<li>Local leaders report community illness</li>
+<li>Drug/supply shortages (medication for common symptoms)</li>
+</ul>
+<h3>Outbreak Announcement</h3>
+<p>Once an outbreak is suspected:</p>
+<ol>
+<li><strong>Alert public health authorities</strong> (local, regional, national) if possible.</li>
+<li><strong>Convene an outbreak response team:</strong> Healthcare workers, community leaders, sanitation personnel.</li>
+<li><strong>Establish communication:</strong> Regular updates to community to prevent misinformation.</li>
+<li><strong>Begin line list:</strong> Start documenting suspected cases (see Line List section below).</li>
+</ol>
+</section>
+<section id="line-list">
+<h2>Line List and Case Investigation</h2>
+<p>A line list is a table with one row per case and columns for key variables. It is the foundation of outbreak investigation.</p>
+<h3>Line List Minimum Elements</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Case ID</td>
+<td>Case 1, Case 2, …</td>
+</tr>
+<tr>
+<td>Date reported</td>
+<td>2026-02-15</td>
+</tr>
+<tr>
+<td>Name (or initials for privacy)</td>
+<td>JD</td>
+</tr>
+<tr>
+<td>Age (years)</td>
+<td>35</td>
+</tr>
+<tr>
+<td>Sex</td>
+<td>M/F</td>
+</tr>
+<tr>
+<td>Address/residence</td>
+<td>Village A, House 5</td>
+</tr>
+<tr>
+<td>Date of symptom onset</td>
+<td>2026-02-10</td>
+</tr>
+<tr>
+<td>Date of case report</td>
+<td>2026-02-15</td>
+</tr>
+<tr>
+<td>Symptoms</td>
+<td>Fever, cough, shortness of breath</td>
+</tr>
+<tr>
+<td>Symptom severity</td>
+<td>Mild/Moderate/Severe</td>
+</tr>
+<tr>
+<td>Hospitalized?</td>
+<td>Yes/No</td>
+</tr>
+<tr>
+<td>Outcome</td>
+<td>Recovered/Fatal/Unknown</td>
+</tr>
+<tr>
+<td>Exposure type</td>
+<td>Attended gathering / Contact with Case 2 / Food at restaurant</td>
+</tr>
+<tr>
+<td>Vaccination status (if relevant)</td>
+<td>Vaccinated/Unvaccinated</td>
+</tr>
+<tr>
+<td>Confirming information</td>
+<td>Lab confirmed / Clinical only / Probable</td>
+</tr>
+<tr>
+<td>Case status</td>
+<td>Suspected/Probable/Confirmed</td>
+</tr>
+</tbody>
+</table>
+<h3>Case Investigation Interview</h3>
+<p><strong>Setting:</strong> Private, comfortable location; privacy respected; interpreter if needed.</p>
+<p><strong>Essential questions:</strong></p>
+<ol>
+<li><strong>Symptom onset:</strong> Exact date and time of first symptoms</li>
+<li><strong>Symptoms:</strong> List all symptoms; when each began and resolved</li>
+<li><strong>Exposure history (tailored to disease):</strong>
+<ul>
+<li>Last 2–3 weeks before symptom onset: What did you do? Where did you go? Whom did you meet?</li>
+<li>For foodborne illness: What did you eat in the 12 hours to 7 days before symptom onset? At home? At a restaurant? At a gathering?</li>
+<li>For respiratory disease: Attended crowded events? Traveled? Contact with ill people?</li>
+</ul>
+</li>
+<li><strong>Secondary transmission:</strong> Have you been in contact with others since becoming ill? Family? Workplace? School?</li>
+<li><strong>Risk factors:</strong> Age, occupation, medical conditions, vaccinations.</li>
+</ol>
+<p><strong>Document responses verbatim</strong> (write down what the person says, not your interpretation).</p>
+<h3>Example: Gastroenteritis Case Interview</h3>
+<blockquote>
+<p>&quot;When did you first feel sick?&quot; — &quot;Tuesday evening, I had stomach cramps.&quot;</p>
+<p>&quot;What did you eat on Monday (the day before)?&quot; — &quot;Breakfast at home (eggs, bread). Lunch at a restaurant downtown (rice, chicken, green salad). Dinner at home (beans, rice).&quot;</p>
+<p>&quot;Which restaurant?&quot; — &quot;The big one on Main Street, the one with the green sign.&quot;</p>
+<p>&quot;Did you prepare the food yourself?&quot; — &quot;No, I ate there.&quot;</p>
+<p>&quot;Do you know if anyone else got sick from that restaurant?&quot; — &quot;My colleague was there too; he said he got sick Tuesday night.&quot;</p>
+</blockquote>
+<p>This interview identifies the restaurant and meal as the likely exposure, and identifies secondary case (colleague).</p>
+</section>
+<section id="attack-rate">
+<h2>Attack Rate Calculation</h2>
+<p>Attack rate quantifies the risk of illness in an exposed group.</p>
+<h3>Formula</h3>
+<p><strong>Attack Rate = (Number of cases / Number in exposed group) × 100%</strong></p>
+<h3>Example: Foodborne Illness at a Celebration</h3>
+<p><strong>Event:</strong> 100 people attended a celebration where contaminated potato salad was served.</p>
+<p><strong>Cases:</strong> 30 people developed diarrhea within 12–36 hours.</p>
+<p><strong>Attack rate:</strong> (30 / 100) × 100% = <strong>30%</strong></p>
+<p>This means 30% of attendees became ill; 30% is a high attack rate, typical of a strong common source outbreak.</p>
+<h3>Comparing Attack Rates (Exposure Analysis)</h3>
+<p>Compare attack rates between exposed and unexposed groups to identify the source.</p>
+<p><strong>Example: Identifying the Contaminated Food at a Buffet</strong></p>
+<table>
+<thead>
+<tr>
+<th>Food Item</th>
+<th># Ate</th>
+<th># Became Ill</th>
+<th>Attack Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chicken</strong></td>
+<td>60</td>
+<td>25</td>
+<td>(25/60) × 100% = <strong>42%</strong></td>
+</tr>
+<tr>
+<td><strong>Potato salad</strong></td>
+<td>50</td>
+<td>45</td>
+<td>(45/50) × 100% = <strong>90%</strong></td>
+</tr>
+<tr>
+<td><strong>Green salad</strong></td>
+<td>70</td>
+<td>22</td>
+<td>(22/70) × 100% = <strong>31%</strong></td>
+</tr>
+<tr>
+<td><strong>Bread</strong></td>
+<td>95</td>
+<td>35</td>
+<td>(35/95) × 100% = <strong>37%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusion:</strong> Potato salad has the highest attack rate (90%), suggesting it is the contaminated food item.</p>
+<h3>Secondary Attack Rate</h3>
+<p>Secondary attack rate is the attack rate among contacts of confirmed cases.</p>
+<p><strong>Formula:</strong> (Number of cases among contacts of cases / Number of contacts) × 100%</p>
+<p>A high secondary attack rate suggests person-to-person transmission.</p>
+</section>
+<section id="epidemic-curve">
+<h2>Epidemic Curve Construction</h2>
+<p>An epidemic curve (epi curve) graphs the number of cases over time. It reveals the outbreak's pattern and helps predict the course.</p>
+<h3>Steps to Construct</h3>
+<ol>
+<li>
+<p><strong>Determine time scale:</strong> Choose appropriate intervals (hours, days, weeks) based on the outbreak's duration.</p>
+<ul>
+<li>Acute outbreak (foodborne illness, chemical exposure): Use hours or days</li>
+<li>Slower outbreak (measles, TB): Use weeks</li>
+</ul>
+</li>
+<li>
+<p><strong>Create bins:</strong> Group cases by symptom onset date/time into equal intervals.</p>
+</li>
+<li>
+<p><strong>Count cases in each bin:</strong> Tally cases with onset in each interval.</p>
+</li>
+<li>
+<p><strong>Plot:</strong> X-axis = time (dates or weeks), Y-axis = number of cases. Bar chart preferred.</p>
+</li>
+</ol>
+<h3>Example: Foodborne Illness Epi Curve</h3>
+<p>Cases of gastroenteritis after a restaurant meal on Monday:</p>
+<table>
+<thead>
+<tr>
+<th>Time Period</th>
+<th>Number of Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monday 18:00–23:59</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Tuesday 00:00–05:59</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Tuesday 06:00–11:59</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Tuesday 12:00–17:59</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Tuesday 18:00–23:59</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Wednesday 00:00–05:59</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Epi curve pattern:</strong> Sharp increase from Monday evening through Tuesday afternoon, then sharp decline. This is a <strong>common source outbreak</strong> (single source, like contaminated food).</p>
+<!-- SVG: epidemiology-outbreak-investigation-1.svg: Sample epidemic curve showing common source, propagated, and mixed outbreak patterns -->
+<h3>Outbreak Patterns</h3>
+<p><strong>Common source:</strong> Sudden rise, sharp peak, then decline. Suggests exposure from a single source during a limited time. Typical of foodborne illness, chemical exposure, environmental event.</p>
+<p><strong>Propagated (person-to-person):</strong> Gradual rise with successive peaks (each peak reflects a new generation of cases from secondary transmission). Typical of communicable diseases (measles, influenza, TB).</p>
+<p><strong>Mixed:</strong> Combination of common source and propagated; early cases from a point source, then person-to-person spread.</p>
+<h3>Interpretation</h3>
+<ul>
+<li><strong>Steep rise = high transmission or large exposure</strong></li>
+<li><strong>Plateau = source still active or ongoing secondary transmission</strong></li>
+<li><strong>Decline = source removed OR control measures taking effect</strong></li>
+<li><strong>Secondary peaks = new generations of person-to-person transmission</strong></li>
+</ul>
+</section>
+<section id="contact-tracing">
+<h2>Contact Tracing and Quarantine/Isolation</h2>
+<h3>Contact Tracing Definition</h3>
+<p>Contact tracing identifies and monitors people exposed to a confirmed case to detect secondary cases early.</p>
+<h3>Types of Contacts</h3>
+<p><strong>Close contact (high-risk):</strong></p>
+<ul>
+<li>Spent ≥15 minutes within 2 meters (6 feet) of a confirmed case</li>
+<li>Shared the same indoor air</li>
+<li>Had direct physical contact</li>
+<li>Shared eating/drinking utensils</li>
+<li>Healthcare worker without appropriate PPE</li>
+</ul>
+<p><strong>Household contact:</strong></p>
+<ul>
+<li>Lives in the same home</li>
+<li>Shares bathroom</li>
+<li>Shares kitchen/eating spaces</li>
+</ul>
+<p><strong>Casual contact (low-risk):</strong></p>
+<ul>
+<li>Brief, fleeting contact</li>
+<li>Outdoor contact with distance maintained</li>
+<li>Contact through barriers (glass, plexiglass)</li>
+</ul>
+<h3>Contact Tracing Process</h3>
+<ol>
+<li>
+<p><strong>Identify contacts from case interview:</strong> Ask the case to list all people they were in close contact with during the infectious period.</p>
+</li>
+<li>
+<p><strong>Locate contacts:</strong> Obtain names, phone numbers, addresses.</p>
+</li>
+<li>
+<p><strong>Notify contacts:</strong> Inform them of exposure; explain symptoms to watch for; provide quarantine/isolation guidance.</p>
+</li>
+<li>
+<p><strong>Assess contacts:</strong> Check for symptoms; note if symptomatic (may be a case).</p>
+</li>
+<li>
+<p><strong>Monitor:</strong> Daily check-ins (phone, in-person visit) for 14 days (or disease-specific incubation period) or until symptom onset.</p>
+</li>
+<li>
+<p><strong>Test if available:</strong> Diagnostic testing (antigen, PCR) to detect early infection.</p>
+</li>
+<li>
+<p><strong>Isolate symptomatic contacts:</strong> Treat as confirmed or probable cases.</p>
+</li>
+</ol>
+<h3>Isolation vs Quarantine</h3>
+<p><strong>Isolation:</strong> Separation of people who are ill (confirmed or probable case) from the general population to prevent transmission. For practical isolation protocols (PPE donning/doffing, physical isolation setup, respiratory isolation), see <a href="infection-control.html#isolation">Infection Control — Isolation Precautions</a>. For quarantine facility design and staffing, see <a href="public-health-epidemiology.html#section-quarantine">Public Health Systems &amp; Epidemiology — Quarantine Systems</a>.</p>
+<p><strong>Quarantine:</strong> Separation of people who have been exposed (close contacts) but are NOT yet ill to monitor for symptom development and prevent them from spreading if they become ill.</p>
+<h3>Isolation Criteria (When to Release)</h3>
+<p>An ill person can end isolation when:</p>
+<ul>
+<li>At least 24 hours have passed since last fever (without fever-reducing medication) AND</li>
+<li>Respiratory symptoms improving, AND</li>
+<li>Takes appropriate precautions (mask, distance) if returning to public (some diseases require longer)</li>
+</ul>
+<p><strong>Or (if testing available):</strong></p>
+<ul>
+<li>Two negative tests, ≥24 hours apart</li>
+</ul>
+<h3>Quarantine Duration</h3>
+<p>Typically 14 days from last exposure (or disease-specific incubation period):</p>
+<ul>
+<li><strong>Influenza:</strong> 10 days from last exposure</li>
+<li><strong>Measles:</strong> 21 days from last exposure</li>
+<li><strong>COVID-19:</strong> 10–14 days (may be shorter with testing)</li>
+<li><strong>Smallpox:</strong> 17 days from exposure</li>
+</ul>
+<p>During quarantine: Monitor temperature twice daily; report symptoms to health officials immediately.</p>
+</section>
+<section id="investigation-teams">
+<h2>Forming an Outbreak Investigation Team</h2>
+<p>Effective outbreak response requires coordination.</p>
+<h3>Core Team Members</h3>
+<p><strong>Team leader:</strong> Public health official or experienced healthcare worker. Coordinates all activities, communicates with authorities.</p>
+<p><strong>Case investigators:</strong> Interview cases, collect data for line list.</p>
+<p><strong>Epidemiologist (or trained alternative):</strong> Analyzes data, constructs epi curve, calculates attack rates, identifies hypotheses.</p>
+<p><strong>Clinician:</strong> Manages patient care, advises on symptoms and severity, hospital liaison.</p>
+<p><strong>Environmental health specialist:</strong> Investigates water, food, sanitation; identifies exposures.</p>
+<p><strong>Laboratory person:</strong> Collects specimens, coordinates testing.</p>
+<p><strong>Community liaison:</strong> Communicates with public, manages concerns, encourages participation.</p>
+<h3>Typical Investigation Timeline</h3>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Day 1</strong></td>
+<td>Detect outbreak; form response team; establish line list</td>
+</tr>
+<tr>
+<td><strong>Days 2–3</strong></td>
+<td>Interview cases; identify hypothesized exposures (e.g., contaminated food)</td>
+</tr>
+<tr>
+<td><strong>Days 3–5</strong></td>
+<td>Analyze data; calculate attack rates; construct epi curve; test hypothesis</td>
+</tr>
+<tr>
+<td><strong>Days 5–7</strong></td>
+<td>Environmental investigation (if foodborne, visit restaurant; inspect food storage)</td>
+</tr>
+<tr>
+<td><strong>Days 7–10</strong></td>
+<td>Implement control measures (food closure, public alert, vaccination campaign)</td>
+</tr>
+<tr>
+<td><strong>Days 10+</strong></td>
+<td>Monitor for secondary cases; evaluate effectiveness of controls</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="outbreak-report">
+<h2>Outbreak Investigation Report</h2>
+<p>A formal report documents findings and recommendations.</p>
+<h3>Report Sections</h3>
+<p><strong>1. Summary/Abstract:</strong> One-paragraph overview of outbreak, cases affected, source identified, and control measures.</p>
+<p><strong>2. Introduction:</strong> Why is this outbreak noteworthy? What prompted the investigation?</p>
+<p><strong>3. Methods:</strong></p>
+<ul>
+<li>Case definition</li>
+<li>Case-finding methods</li>
+<li>Epidemiologic analysis methods</li>
+<li>Laboratory methods (if available)</li>
+</ul>
+<p><strong>4. Results:</strong></p>
+<ul>
+<li>Number of cases (suspected, probable, confirmed)</li>
+<li>Demographics (age, sex, occupation)</li>
+<li>Epi curve</li>
+<li>Attack rates</li>
+<li>Symptoms and outcomes</li>
+<li>Exposures identified</li>
+</ul>
+<p><strong>5. Discussion:</strong></p>
+<ul>
+<li>Hypothesis: What is the likely source?</li>
+<li>Supporting evidence (high attack rate for specific exposure, epi curve pattern, environmental findings)</li>
+<li>Discrepancies or unanswered questions</li>
+</ul>
+<p><strong>6. Conclusions:</strong></p>
+<ul>
+<li>Was outbreak source confirmed?</li>
+<li>What control measures are recommended?</li>
+<li>Any knowledge gaps?</li>
+</ul>
+<p><strong>7. Recommendations:</strong></p>
+<ul>
+<li>Immediate (urgent control measures)</li>
+<li>Short-term (within 2 weeks)</li>
+<li>Long-term (prevention of future outbreaks)</li>
+</ul>
+<h3>Example Recommendations</h3>
+<ul>
+<li><strong>Foodborne illness:</strong> Close or remediate the restaurant; implement food safety training; review food handling.</li>
+<li><strong>Measles:</strong> Emergency vaccination campaign in the community; identify gaps in vaccination coverage.</li>
+<li><strong>Water contamination:</strong> Boil water order; test water source; repair infrastructure.</li>
+</ul>
+</section>
+<section id="surveillance">
+<h2>Disease Surveillance in Small Communities</h2>
+<p>Ongoing surveillance allows early outbreak detection.</p>
+<h3>Passive Surveillance</h3>
+<p>Passive surveillance relies on routine reporting by healthcare workers.</p>
+<p><strong>Method:</strong> Healthcare providers report cases of notifiable diseases to health authorities. No active outreach.</p>
+<p><strong>Advantages:</strong> Minimal resources; routine.</p>
+<p><strong>Disadvantages:</strong> Misses cases not seeking healthcare; incomplete reporting.</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>Train healthcare workers on reportable diseases</li>
+<li>Provide clear reporting mechanisms (phone, form)</li>
+<li>Establish case definition for notifiable diseases in your region</li>
+<li>Regular feedback (summary reports) to healthcare providers</li>
+</ul>
+<h3>Active Surveillance</h3>
+<p>Active surveillance involves periodic outreach to identify cases.</p>
+<p><strong>Method:</strong> Health worker regularly contacts healthcare providers, schools, markets, or community members to ask about illness.</p>
+<p><strong>Advantages:</strong> Identifies cases that might be missed; early detection.</p>
+<p><strong>Disadvantages:</strong> Resource-intensive.</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>Weekly contact with all healthcare facilities in the community</li>
+<li>School health coordinators report illnesses</li>
+<li>Market vendors alert health workers of unusual illness patterns</li>
+<li>Community health worker visits 10% of households monthly</li>
+</ul>
+<h3>Syndromic Surveillance</h3>
+<p>Tracks syndromic groups (symptom clusters) rather than specific diseases.</p>
+<p><strong>Syndromes:</strong></p>
+<ul>
+<li><strong>Fever + respiratory symptoms</strong> (possible influenza, pneumonia, measles)</li>
+<li><strong>Acute diarrhea</strong> (possible cholera, typhoid, shigellosis)</li>
+<li><strong>Rash + fever</strong> (possible measles, meningococcemia, other exanthematous disease)</li>
+</ul>
+<p><strong>Advantage:</strong> Allows detection of unknown diseases before diagnosis is available.</p>
+<h3>Reporting Tools (Austere Settings)</h3>
+<p><strong>Simple paper log:</strong></p>
+<ul>
+<li>Date, patient name, age, symptoms, outcome</li>
+<li>Updated weekly</li>
+<li>Shared with regional health authority if communication available</li>
+</ul>
+<p><strong>Tally sheet:</strong></p>
+<ul>
+<li>Symptoms by day (fever, cough, diarrhea, rash)</li>
+<li>Updated daily</li>
+<li>If counts spike, trigger active investigation</li>
+</ul>
+<p><strong>SMS/Radio:</strong></p>
+<ul>
+<li>If phone/radio available, health workers report weekly case counts</li>
+<li>Centralizes information for analysis</li>
+</ul>
+</section>
+<section id="summary">
+<h2>Summary</h2>
+<p>Outbreak investigation is systematic: detect → define cases → interview → analyze → identify source → control. Case definitions ensure consistency. Attack rates quantify risk. Epidemic curves reveal transmission patterns. Contact tracing interrupts spread. In austere settings without laboratory confirmation, clinical findings and epidemiologic evidence guide conclusions. Early detection, rapid response, and community engagement are critical to limiting outbreak size. Ongoing surveillance allows early detection of future outbreaks.</p>
+<p>For implementing the infection control measures identified during outbreak investigation (hand hygiene, PPE, sterilization, environmental cleaning), see <a href="infection-control.html">Infection Control</a>. For building permanent disease surveillance systems and community public health infrastructure, see <a href="public-health-epidemiology.html">Public Health Systems &amp; Epidemiology</a>.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="public-health-epidemiology.html">Public Health Systems &amp; Epidemiology</a>
+<a href="infection-control.html">Infection Control</a>
+<a href="sanitation.html">Sanitation &amp; Public Health</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

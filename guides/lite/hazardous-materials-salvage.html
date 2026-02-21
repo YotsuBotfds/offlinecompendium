@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/hazardous-materials-salvage.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hazardous Materials Identification in Salvage</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Scavenging &amp; Salvage</span> ›
+<span>Hazardous Materials Identification in Salvage</span>
+</div>
+
+
+<h1>Hazardous Materials Identification in Salvage</h1>
+<p class="subtitle">Systematic identification of hazardous materials during salvage operations including NFPA diamond interpretation, hazmat symbols, asbestos and lead paint recognition, PCB identification, chemical container assessment, radioactive material awareness, PPE requirements, decontamination procedures, and safe disposal protocols.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~12 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview: Why Hazmat Identification Matters in Salvage</a></li>
+<li><a href="#hazmat-symbols">Hazmat Symbols &amp; Marking Systems</a></li>
+<li><a href="#asbestos">Asbestos Identification</a></li>
+<li><a href="#lead">Lead Paint &amp; Lead Materials</a></li>
+<li><a href="#pcbs">PCBs (Polychlorinated Biphenyls)</a></li>
+<li><a href="#chemical-containers">Chemical Container Assessment</a></li>
+<li><a href="#radioactive">Radioactive Materials</a></li>
+<li><a href="#ppe">PPE Requirements by Hazard Type</a></li>
+<li><a href="#decontamination">Decontamination Procedures</a></li>
+<li><a href="#disposal">Safe Disposal &amp; Containment</a></li>
+<li><a href="#emergency-response">Emergency Response to Accidental Exposure</a></li>
+<li><a href="#training">Training &amp; Team Protocols</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview: Why Hazmat Identification Matters in Salvage</h2>
+<p>Post-infrastructure salvage operations routinely expose teams to materials that were safely contained in the old world but have become unstable, leaking, or unrecognizable after years of neglect. Industrial facilities, hospitals, residential buildings, and vehicles all contain hazardous substances that can cause acute poisoning, chronic illness, burns, or long-term cancer risk if handled without proper identification and precautions.</p>
+<p><strong>The core problem:</strong> Modern manufacturing used thousands of hazardous chemicals, many hidden inside sealed systems, wall assemblies, electrical equipment, and storage containers. Without labels, Material Safety Data Sheets, or trained inspectors, salvage teams must rely on visual identification, physical properties, and systematic caution to avoid exposure.</p>
+<p><strong>Scope of this guide:</strong> This guide covers identification techniques for the most common hazardous materials encountered in building and facility salvage. For chemical fuel recovery specifically, see <a href="chemical-fuel-salvage.html">Chemical &amp; Fuel Salvage</a>. For NBC (nuclear, biological, chemical) threats, see <a href="nbc-defense.html">NBC Defense</a>.</p>
+<p><strong>Key principle:</strong> When in doubt, treat an unknown substance as hazardous. The cost of unnecessary caution is time; the cost of insufficient caution is injury or death.</p>
+</section>
+<section id="hazmat-symbols">
+<h2>Hazmat Symbols &amp; Marking Systems</h2>
+<h3>NFPA 704 Diamond (Fire Diamond)</h3>
+<p>The NFPA 704 diamond is a four-colored placard found on the exterior of buildings, storage tanks, and chemical containers throughout North America. Each quadrant conveys a specific hazard rating from 0 (minimal) to 4 (extreme):</p>
+<ul>
+<li><strong>Blue (left) — Health Hazard:</strong> 0 = normal material, 1 = slightly hazardous, 2 = hazardous (use respiratory protection), 3 = extreme danger (full protective suit), 4 = deadly (very short exposure can kill)</li>
+<li><strong>Red (top) — Flammability:</strong> 0 = will not burn, 1 = must be preheated to burn, 2 = ignites when moderately heated, 3 = ignites at normal temperatures, 4 = extremely flammable (flash point below 73F)</li>
+<li><strong>Yellow (right) — Instability/Reactivity:</strong> 0 = stable, 1 = unstable if heated, 2 = violent chemical change possible, 3 = may detonate with strong initiator, 4 = may detonate (evacuate area)</li>
+<li><strong>White (bottom) — Special Notices:</strong> W with line through it = water reactive, OX = oxidizer, SA = simple asphyxiant, COR = corrosive, radioactive trefoil = radioactive</li>
+</ul>
+<div class="warning">
+<p>A diamond showing 3 or 4 in ANY quadrant means extreme hazard. Do not enter the area without full protective equipment and a specific plan. A 4 in the yellow (instability) quadrant means the material may detonate — evacuate immediately and establish a wide perimeter.</p>
+</div>
+<h3>DOT Hazard Placards</h3>
+<p>Department of Transportation placards are diamond-shaped signs on trucks, rail cars, and shipping containers. They use a color and number system:</p>
+<ul>
+<li><strong>Class 1 (Orange):</strong> Explosives — divisions 1.1 (mass explosion) through 1.6 (extremely insensitive)</li>
+<li><strong>Class 2 (Red/Green/White):</strong> Gases — 2.1 flammable (red), 2.2 non-flammable (green), 2.3 toxic (white)</li>
+<li><strong>Class 3 (Red):</strong> Flammable liquids</li>
+<li><strong>Class 4 (Red-white stripes/Blue/Yellow):</strong> Flammable solids, spontaneously combustible, dangerous when wet</li>
+<li><strong>Class 5 (Yellow):</strong> Oxidizers and organic peroxides</li>
+<li><strong>Class 6 (White):</strong> Toxic and infectious substances</li>
+<li><strong>Class 7 (Yellow-white):</strong> Radioactive materials — trefoil symbol</li>
+<li><strong>Class 8 (Black-white):</strong> Corrosives</li>
+<li><strong>Class 9 (Black-white stripes):</strong> Miscellaneous hazardous materials</li>
+</ul>
+<h3>UN Numbers</h3>
+<p>Four-digit UN numbers appear on placards and containers identifying specific substances. While memorizing all numbers is impractical, several common ones are worth recognizing:</p>
+<ul>
+<li><strong>UN 1005:</strong> Anhydrous ammonia (toxic gas)</li>
+<li><strong>UN 1017:</strong> Chlorine (toxic gas)</li>
+<li><strong>UN 1075:</strong> Liquefied petroleum gas (LPG)</li>
+<li><strong>UN 1203:</strong> Gasoline</li>
+<li><strong>UN 1267:</strong> Crude petroleum</li>
+<li><strong>UN 1830:</strong> Sulfuric acid</li>
+<li><strong>UN 1951:</strong> Argon (asphyxiant)</li>
+<li><strong>UN 2794:</strong> Lead-acid batteries</li>
+</ul>
+<div class="tip">
+<p>Photograph or sketch any placards, diamonds, or UN numbers you encounter on salvage runs. Even if you cannot interpret them immediately, the information can be researched later. Maintain a community reference book of encountered hazmat markings and their known dangers.</p>
+</div>
+<h3>GHS Pictograms</h3>
+<p>The Globally Harmonized System uses nine pictograms on product labels worldwide:</p>
+<ul>
+<li><strong>Skull and crossbones:</strong> Acute toxicity (fatal or toxic)</li>
+<li><strong>Flame:</strong> Flammable materials</li>
+<li><strong>Flame over circle:</strong> Oxidizers</li>
+<li><strong>Exploding bomb:</strong> Explosives, self-reactive substances</li>
+<li><strong>Gas cylinder:</strong> Gases under pressure</li>
+<li><strong>Corrosion:</strong> Corrosive to metals, skin, or eyes</li>
+<li><strong>Health hazard (person silhouette):</strong> Carcinogen, mutagen, respiratory sensitizer</li>
+<li><strong>Exclamation mark:</strong> Irritant, narcotic, less severe health effects</li>
+<li><strong>Dead fish/tree:</strong> Environmental hazard (aquatic toxicity)</li>
+</ul>
+</section>
+<section id="asbestos">
+<h2>Asbestos Identification</h2>
+<h3>Where Asbestos Is Found</h3>
+<p>Asbestos was used extensively in construction from the 1920s through the 1980s. Any building constructed or renovated before 1990 may contain asbestos in:</p>
+<ul>
+<li><strong>Pipe insulation:</strong> White or gray fibrous wrapping on hot water and steam pipes — most common source</li>
+<li><strong>Floor tiles:</strong> 9-inch square vinyl floor tiles (the 9-inch size is a strong indicator; modern tiles are 12-inch)</li>
+<li><strong>Ceiling tiles:</strong> Acoustic ceiling tiles in drop ceilings, especially textured varieties</li>
+<li><strong>Roof shingles:</strong> Cement-fiber roof shingles (dense, heavy, gray)</li>
+<li><strong>Wall insulation:</strong> Vermiculite insulation (granular, brown-gold) — may contain asbestos from Libby, Montana mine</li>
+<li><strong>Joint compound:</strong> Drywall mud and texture coats pre-1980</li>
+<li><strong>Fireproofing spray:</strong> Sprayed-on insulation on structural steel beams (fluffy white or gray coating)</li>
+<li><strong>Brake pads and clutch plates:</strong> Automotive and industrial equipment</li>
+<li><strong>Cement board and transite panels:</strong> Hard gray fiber-cement boards used as siding, ductwork, partitions</li>
+</ul>
+<h3>Visual Identification</h3>
+<p>Asbestos-containing materials (ACMs) cannot be definitively identified by sight alone, but strong indicators include:</p>
+<ul>
+<li><strong>Fibrous texture:</strong> When disturbed, material releases fine, hair-like fibers rather than dust particles</li>
+<li><strong>Age of building:</strong> Pre-1980 construction dramatically increases probability</li>
+<li><strong>Layered appearance:</strong> Some ACMs show visible fiber layers when cross-sectioned</li>
+<li><strong>Heat-resistant location:</strong> Materials near heat sources (furnaces, pipes, ducts) in older buildings are suspect</li>
+<li><strong>Does not burn:</strong> Asbestos fibers are fireproof — if a suspected material chars or melts, it is likely NOT asbestos</li>
+</ul>
+<div class="danger">
+<p><strong>Never disturb suspected asbestos.</strong> Asbestos fibers become airborne when materials are cut, broken, drilled, or abraded. Inhaled fibers cause mesothelioma (fatal cancer) and asbestosis (progressive lung scarring). There is NO safe exposure level. A single significant exposure can cause disease decades later. If you identify possible asbestos, leave the material undisturbed and route salvage operations around it.</p>
+</div>
+<h3>Safe Handling When Avoidance Is Impossible</h3>
+<p>If asbestos-containing material must be moved to access critical salvage:</p>
+<ol>
+<li><strong>Wet the material thoroughly</strong> — saturate with water to suppress fiber release (use a spray bottle, never a pressure hose)</li>
+<li><strong>Wear respiratory protection</strong> — minimum P100/N100 half-face respirator; full-face respirator preferred</li>
+<li><strong>Wear disposable coveralls</strong> — Tyvek or equivalent; seal cuffs with tape</li>
+<li><strong>Do NOT break, cut, or sand the material</strong> — remove it intact in the largest pieces possible</li>
+<li><strong>Double-bag removed material</strong> in thick plastic (6 mil minimum) and label as asbestos</li>
+<li><strong>Decontaminate immediately</strong> — remove coveralls inside-out, wipe down respirator, wash exposed skin</li>
+<li><strong>Dispose of contaminated PPE</strong> — do not reuse disposable coveralls</li>
+</ol>
+</section>
+<section id="lead">
+<h2>Lead Paint &amp; Lead Materials</h2>
+<h3>Identification</h3>
+<p>Lead paint was standard in residential and commercial buildings before 1978. Key indicators:</p>
+<ul>
+<li><strong>Age:</strong> Buildings pre-1978 almost certainly contain lead paint somewhere</li>
+<li><strong>Alligatoring pattern:</strong> Old lead paint develops a distinctive cracked pattern resembling alligator skin</li>
+<li><strong>Chalking:</strong> Lead paint weathers to a fine chalky powder on exterior surfaces</li>
+<li><strong>Color:</strong> Historically common in white, red, and yellow paints, but lead was used in all colors</li>
+<li><strong>Hardness:</strong> Lead paint films are harder and more durable than modern latex paints</li>
+<li><strong>Weight:</strong> Lead is dense — old painted items feel heavier than expected</li>
+</ul>
+<p>Beyond paint, lead appears in:</p>
+<ul>
+<li><strong>Solder joints</strong> on copper plumbing installed before 1986</li>
+<li><strong>Lead flashing</strong> around roofs, chimneys, and windows</li>
+<li><strong>Lead-acid batteries</strong> (automotive, UPS systems, solar installations)</li>
+<li><strong>Ammunition</strong> — bullets, shot, and fishing weights</li>
+<li><strong>Stained glass windows</strong> — lead came between glass pieces</li>
+<li><strong>Radiation shielding</strong> — lead sheets in medical and dental facilities</li>
+</ul>
+<div class="warning">
+<p>Lead dust and fumes are cumulative poisons. Lead is not metabolized and accumulates in bones and organs over a lifetime. Children are especially vulnerable — lead exposure causes permanent neurological damage. Never sand, grind, or torch lead-painted surfaces without respiratory protection (P100 minimum) and full containment.</p>
+</div>
+<h3>Safe Salvage Practices</h3>
+<ul>
+<li><strong>Wet scraping only</strong> — never dry-sand or heat-strip lead paint</li>
+<li><strong>HEPA vacuum</strong> any lead dust (standard vacuums expel fine particles)</li>
+<li><strong>Wash hands and face</strong> before eating, drinking, or smoking after handling lead materials</li>
+<li><strong>Change clothes</strong> before entering living quarters</li>
+<li><strong>Segregate lead materials</strong> for controlled recycling — lead is valuable for battery production and ballistic applications but must be handled safely</li>
+</ul>
+</section>
+<section id="pcbs">
+<h2>PCBs (Polychlorinated Biphenyls)</h2>
+<h3>What PCBs Are</h3>
+<p>PCBs are synthetic chemicals that were widely used as insulating fluids in electrical equipment from the 1930s through 1979. They are persistent environmental pollutants — they do not break down naturally and accumulate in biological tissue.</p>
+<h3>Where to Find PCBs</h3>
+<ul>
+<li><strong>Electrical transformers</strong> — pole-mounted and pad-mounted transformers manufactured before 1979 likely contain PCB oil. Look for labels reading &quot;Askarel,&quot; &quot;Aroclor,&quot; &quot;Pyranol,&quot; &quot;Inerteen,&quot; or &quot;No PCBs&quot; (if the label says &quot;No PCBs,&quot; it was likely manufactured after the ban)</li>
+<li><strong>Capacitors</strong> — large industrial capacitors, especially in fluorescent light ballasts manufactured before 1979</li>
+<li><strong>Fluorescent light ballasts</strong> — the small black box inside fluorescent fixtures from before 1979; may contain a small PCB capacitor</li>
+<li><strong>Hydraulic fluids</strong> — some industrial hydraulic systems used PCB-based fluids</li>
+<li><strong>Caulking compounds</strong> — some building caulks from the 1950s-1970s contain PCBs</li>
+<li><strong>Carbonless copy paper</strong> — older NCR (no carbon required) paper</li>
+</ul>
+<h3>Identification Without Labels</h3>
+<ul>
+<li><strong>Age of equipment:</strong> Manufactured before 1979 = suspect</li>
+<li><strong>Oil color:</strong> PCB oil is typically clear to light yellow when fresh; degraded PCB oil may be dark brown</li>
+<li><strong>Oil consistency:</strong> Slightly more viscous than mineral oil</li>
+<li><strong>Smell:</strong> PCB oil has a mild, slightly sweet chemical odor distinct from petroleum</li>
+<li><strong>Leaking transformers:</strong> Yellow-brown stains beneath old transformers may be PCB oil</li>
+</ul>
+<div class="warning">
+<p>PCBs are classified as probable human carcinogens. They cause liver damage, immune system suppression, reproductive problems, and developmental effects. PCB exposure occurs through skin contact, inhalation of vapors, and ingestion. Never open a transformer or capacitor of unknown age without assuming PCB content. Wear nitrile gloves (not latex — PCBs penetrate latex) and avoid skin contact with any transformer oil.</p>
+</div>
+<h3>Handling PCB-Containing Equipment</h3>
+<p>For general salvage purposes, PCB-containing equipment should be <strong>left in place</strong> unless the equipment itself is critically needed. If removal is necessary:</p>
+<ol>
+<li>Do NOT puncture, drain, or open the equipment</li>
+<li>Wear nitrile gloves, safety glasses, and Tyvek coveralls</li>
+<li>Contain any leaks with absorbent material (kitty litter, sawdust)</li>
+<li>Move equipment upright to prevent leaking</li>
+<li>Store in a secure, lined containment area away from water sources</li>
+<li>Mark equipment clearly as &quot;PCB — DO NOT OPEN&quot;</li>
+</ol>
+<p>For electrical salvage priorities, see <a href="scrap-metal-identification.html">Scrap Metal Identification</a> for distinguishing valuable components from hazardous ones.</p>
+</section>
+<section id="chemical-containers">
+<h2>Chemical Container Assessment</h2>
+<h3>Container Condition Evaluation</h3>
+<p>Salvage teams frequently encounter unlabeled or damaged chemical containers. Systematic assessment prevents accidental exposure:</p>
+<p><strong>Step 1 — External Inspection (from 10+ feet):</strong></p>
+<ul>
+<li>Container integrity — bulging, rusting, leaking?</li>
+<li>Any visible labels, numbers, or color coding?</li>
+<li>Location context — where was it stored? (cleaning supply closet vs. industrial chemical storage)</li>
+<li>Container material — glass, plastic, metal? (indicates chemical compatibility)</li>
+</ul>
+<p><strong>Step 2 — Cautious Approach (from 5 feet, upwind):</strong></p>
+<ul>
+<li>Any odor? (approach from upwind, sniff cautiously — do NOT lean over container)</li>
+<li>Vapor visible above container?</li>
+<li>Discoloration on surrounding surfaces (indicates leaking or off-gassing)?</li>
+<li>Other containers nearby that provide context?</li>
+</ul>
+<p><strong>Step 3 — Assessment Decision:</strong></p>
+<ul>
+<li>If container is intact, labeled, and contents match a needed resource: recover with appropriate PPE</li>
+<li>If container is intact but unlabeled: mark as unknown, record location, assess later with more resources</li>
+<li>If container is compromised (leaking, bulging, corroding): do NOT handle — mark area and avoid</li>
+</ul>
+<div class="danger">
+<p><strong>Pressurized containers are bombs.</strong> Any container that is bulging, hissing, or warm to the touch may be building internal pressure from chemical decomposition. Compressed gas cylinders (acetylene, propane, chlorine) that have been damaged or exposed to fire can fail catastrophically. Maintain a 100-foot exclusion zone around any suspect pressurized container. See <a href="chemical-fuel-salvage.html">Chemical &amp; Fuel Salvage</a> for specific fuel container protocols.</p>
+</div>
+<h3>Common Salvage Chemicals by Location</h3>
+<p><strong>Residential:</strong></p>
+<ul>
+<li>Under sink: bleach (sodium hypochlorite), ammonia, drain cleaner (sulfuric acid or lye)</li>
+<li>Garage: gasoline, motor oil, antifreeze (ethylene glycol — sweet-tasting poison), paint thinner, pesticides</li>
+<li>Basement/utility: pool chemicals (chlorine compounds, muriatic acid), propane tanks</li>
+</ul>
+<p><strong>Commercial/Industrial:</strong></p>
+<ul>
+<li>Maintenance closets: industrial cleaners, solvents (MEK, toluene, acetone)</li>
+<li>Laboratories: concentrated acids, bases, oxidizers, biological samples</li>
+<li>Manufacturing: metalworking fluids, plating chemicals (cyanide compounds), paint booth solvents</li>
+<li>Agriculture: pesticides, herbicides, anhydrous ammonia, fertilizer (ammonium nitrate — explosive)</li>
+</ul>
+<p><strong>Medical Facilities:</strong></p>
+<ul>
+<li>Formaldehyde, glutaraldehyde (sterilization chemicals)</li>
+<li>Ethylene oxide (sterilization gas — carcinogenic)</li>
+<li>Mercury (thermometers, sphygmomanometers, dental amalgam)</li>
+<li>Chemotherapy drugs (cytotoxic — skin contact hazardous)</li>
+<li>Radioactive isotopes (nuclear medicine, radiotherapy)</li>
+</ul>
+<p>For detailed medical facility salvage, see <a href="medical-salvage-safety.html">Medical Device &amp; Pharmaceutical Salvage</a>.</p>
+</section>
+<section id="radioactive">
+<h2>Radioactive Materials</h2>
+<h3>Common Sources in Civilian Salvage</h3>
+<p>Radioactive materials in civilian settings are less common than chemical hazards but far more dangerous when mishandled:</p>
+<ul>
+<li><strong>Smoke detectors:</strong> Contain americium-241 (tiny amount, minimal risk if intact — do not disassemble)</li>
+<li><strong>Medical facilities:</strong> Cobalt-60, cesium-137, iridium-192 (radiotherapy sources — extremely dangerous)</li>
+<li><strong>Industrial sites:</strong> Radiographic testing sources, level gauges (cesium-137, cobalt-60)</li>
+<li><strong>University/research labs:</strong> Various isotopes depending on research field</li>
+<li><strong>Old luminous dials:</strong> Radium-226 in clock and instrument dials (pre-1970)</li>
+<li><strong>Depleted uranium:</strong> Military counterweights, some aircraft and shielding applications</li>
+</ul>
+<h3>Recognition</h3>
+<p>The universal radiation symbol is a yellow trefoil (three-bladed fan shape) on a magenta or black background. Newer facilities may also display the ISO supplementary symbol (red triangle with trefoil, running figure, and skull). Key indicators:</p>
+<ul>
+<li>Trefoil placards on doors, containers, or equipment</li>
+<li>&quot;CAUTION — RADIOACTIVE MATERIAL&quot; signage</li>
+<li>Lead-lined containers, rooms, or vaults</li>
+<li>Radiation detection equipment (dosimeters, survey meters) present</li>
+<li>Yellow-and-magenta tape or rope barriers</li>
+</ul>
+<div class="danger">
+<p><strong>Radioactive sources can kill without any sensory warning.</strong> You cannot see, smell, taste, or feel ionizing radiation. A single unshielded medical radiotherapy source (cobalt-60 or cesium-137) can deliver a lethal radiation dose in minutes at close range. NEVER open any container marked with the radiation trefoil. NEVER handle any shiny metal pellet, rod, or disk found in a lead-lined container. If you suspect radioactive contamination, evacuate the area immediately, remove and bag outer clothing, and wash thoroughly.</p>
+</div>
+<h3>Practical Rules for Salvage Teams</h3>
+<ol>
+<li><strong>Time:</strong> Minimize time near any suspected radioactive source</li>
+<li><strong>Distance:</strong> Radiation intensity decreases with the square of distance — doubling your distance quarters your exposure</li>
+<li><strong>Shielding:</strong> Place dense material (concrete, lead, steel, earth) between yourself and the source</li>
+<li><strong>Do NOT collect:</strong> Radioactive materials have no salvage value that justifies the risk to untrained handlers</li>
+<li><strong>Mark and map:</strong> Record the location of any radiation symbols for community hazard mapping</li>
+</ol>
+</section>
+<section id="ppe">
+<h2>PPE Requirements by Hazard Type</h2>
+<h3>Minimum PPE for General Salvage</h3>
+<p>Every salvage operation, regardless of expected hazards, should include:</p>
+<ul>
+<li><strong>Eye protection:</strong> Safety glasses or goggles (splash-proof for liquid hazards)</li>
+<li><strong>Hand protection:</strong> Heavy work gloves (leather or mechanics' gloves for physical hazards)</li>
+<li><strong>Foot protection:</strong> Steel-toed boots with puncture-resistant soles</li>
+<li><strong>Respiratory protection:</strong> N95 dust mask minimum (for particulate environments)</li>
+<li><strong>Skin coverage:</strong> Long sleeves, long pants, no exposed skin</li>
+</ul>
+<h3>Escalated PPE by Hazard</h3>
+<table border="1" cellpadding="10" cellspacing="0"><thead><tr style="background-color: #2d2416;">
+<th>Hazard Type</th>
+<th>Respiratory</th>
+<th>Skin Protection</th>
+<th>Eye Protection</th>
+<th>Additional</th>
+</tr></thead><tbody><tr>
+<td>Asbestos (confirmed/suspected)</td>
+<td>P100 half-face minimum</td>
+<td>Disposable Tyvek coveralls, taped seams</td>
+<td>Safety goggles (sealed)</td>
+<td>Boot covers, decon wash station</td>
+</tr><tr>
+<td>Lead paint/dust</td>
+<td>P100 half-face</td>
+<td>Disposable coveralls</td>
+<td>Safety glasses</td>
+<td>Hand washing before eating</td>
+</tr><tr>
+<td>PCB oil/equipment</td>
+<td>Organic vapor cartridge if heated</td>
+<td>Nitrile gloves (not latex), coveralls</td>
+<td>Splash goggles</td>
+<td>Absorbent spill materials</td>
+</tr><tr>
+<td>Unknown chemicals</td>
+<td>Full-face respirator with multi-gas cartridge</td>
+<td>Chemical-resistant suit, nitrile gloves</td>
+<td>Full-face respirator provides eye protection</td>
+<td>Buddy system, escape route planned</td>
+</tr><tr>
+<td>Corrosives (acids/bases)</td>
+<td>Acid gas cartridge</td>
+<td>Chemical-resistant apron and gloves</td>
+<td>Face shield over splash goggles</td>
+<td>Emergency water source for flushing</td>
+</tr><tr>
+<td>Radioactive (suspected)</td>
+<td>P100 minimum (prevents particle inhalation)</td>
+<td>Full coveralls, gloves, boot covers</td>
+<td>Safety goggles</td>
+<td>Dosimeter if available; minimize time</td>
+</tr></tbody></table>
+<div class="tip">
+<p><strong>PPE salvage priority:</strong> Respiratory protection equipment is among the highest-value salvage items. Prioritize recovery of P100 filters, HEPA filters, full-face respirators, and chemical cartridges from hardware stores, industrial supply warehouses, hospitals, and fire stations. N95 masks degrade over time but remain partially effective for years if stored dry. See <a href="salvage-time-decay-priorities.html">Time-Decay Priority Framework</a> for salvage timing guidance.</p>
+</div>
+</section>
+<section id="decontamination">
+<h2>Decontamination Procedures</h2>
+<h3>Field Decontamination (Immediate)</h3>
+<p>After any potential hazmat exposure, perform field decontamination before returning to camp or living areas:</p>
+<ol>
+<li><strong>Establish a decon line</strong> — a boundary between contaminated and clean zones</li>
+<li><strong>Remove outer layer</strong> — take off PPE from outside in (most contaminated items first)</li>
+<li><strong>Bag contaminated items</strong> — place in thick plastic bags, seal, and label</li>
+<li><strong>Gross wash</strong> — scrub hands, arms, face, neck with soap and water (or detergent solution)</li>
+<li><strong>Rinse thoroughly</strong> — use clean water, draining away from clean zone</li>
+<li><strong>Change clothing</strong> — put on clean clothes before crossing into the clean zone</li>
+<li><strong>Bag work clothes</strong> — launder separately or dispose if contamination was severe</li>
+</ol>
+<h3>Decontamination Solutions</h3>
+<ul>
+<li><strong>General purpose:</strong> Soap and water (effective for most contaminants)</li>
+<li><strong>Acid spills:</strong> Flush with large amounts of water, then apply baking soda solution (neutralizes acid)</li>
+<li><strong>Base/alkali spills:</strong> Flush with water, then apply dilute vinegar solution</li>
+<li><strong>Organic solvents on skin:</strong> Wash with soap and water — do NOT use more solvent to &quot;clean&quot; skin (drives chemicals deeper)</li>
+<li><strong>Radioactive particles:</strong> Wash with soap and water, scrubbing gently — do NOT abrade skin (opens pathways for absorption)</li>
+</ul>
+<div class="warning">
+<p><strong>Decontamination is not optional.</strong> Carrying contamination back to living quarters exposes children, pregnant women, and immunocompromised individuals. Establish decontamination as a non-negotiable standard operating procedure for all salvage teams. Even if you believe an area was clean, washing after every salvage run prevents cumulative exposures to substances you did not detect.</p>
+</div>
+</section>
+<section id="disposal">
+<h2>Safe Disposal &amp; Containment</h2>
+<h3>Disposal Hierarchy</h3>
+<p>In a post-infrastructure environment, formal hazardous waste disposal systems do not exist. Apply this hierarchy:</p>
+<ol>
+<li><strong>Leave in place</strong> — if the hazardous material is safely contained and not in your way, the best disposal is no disposal</li>
+<li><strong>Isolate and contain</strong> — move hazardous materials to a designated community hazmat storage area, away from water sources and living areas</li>
+<li><strong>Neutralize</strong> — some hazards can be safely neutralized (dilute acids with water and baking soda, for example)</li>
+<li><strong>Bury with barriers</strong> — as a last resort, contaminated materials can be buried in a lined pit with clay caps, well away from groundwater and downstream from community water sources</li>
+</ol>
+<h3>Community Hazmat Map</h3>
+<p>Every community conducting salvage operations should maintain a hazmat map documenting:</p>
+<ul>
+<li>Locations of known hazardous material deposits</li>
+<li>Types of hazards at each location (chemical, radiological, biological)</li>
+<li>Containment status (intact, leaking, removed)</li>
+<li>Recommended approach routes (upwind, uphill)</li>
+<li>PPE requirements for each site</li>
+</ul>
+<p>This map becomes a critical community safety resource. Update it after every salvage mission. Cross-reference with <a href="structural-safety-building-entry.html">Structural Safety for Building Entry</a> for combined structural and chemical hazard assessments.</p>
+</section>
+<section id="emergency-response">
+<h2>Emergency Response to Accidental Exposure</h2>
+<h3>Chemical Splash or Spill on Skin</h3>
+<ol>
+<li>Remove contaminated clothing immediately</li>
+<li>Flush affected area with large amounts of clean water for 15-20 minutes</li>
+<li>Do NOT apply neutralizing agents to skin (can cause additional chemical reactions)</li>
+<li>Cover with clean, loose bandage</li>
+<li>Monitor for delayed symptoms (some chemicals cause delayed burns)</li>
+</ol>
+<h3>Inhalation Exposure</h3>
+<ol>
+<li>Move to fresh air immediately</li>
+<li>If victim is not breathing, begin rescue breathing (use barrier device to protect rescuer)</li>
+<li>Keep victim warm and calm</li>
+<li>Monitor for delayed pulmonary edema (fluid in lungs) — can develop 24-72 hours after certain exposures</li>
+<li>Do NOT induce vomiting if chemicals were swallowed (risk of aspiration and re-exposure to esophagus)</li>
+</ol>
+<h3>Eye Exposure</h3>
+<ol>
+<li>Flush eyes with clean water for minimum 15 minutes</li>
+<li>Hold eyelids open during flushing</li>
+<li>Flush from nose-side outward (prevents contamination of unaffected eye)</li>
+<li>Cover with loose, clean bandage</li>
+<li>Seek medical evaluation — chemical eye injuries can worsen over days</li>
+</ol>
+<div class="tip">
+<p><strong>Pre-position emergency water.</strong> Every salvage team should carry at least 2 liters of clean water specifically designated for emergency decontamination — separate from drinking water. A squeeze bottle or irrigation syringe allows targeted flushing of eyes and wounds. This is non-negotiable PPE, as important as gloves or respirators.</p>
+</div>
+</section>
+<section id="training">
+<h2>Training &amp; Team Protocols</h2>
+<h3>Pre-Mission Briefing Checklist</h3>
+<p>Before every salvage operation:</p>
+<ol>
+<li><strong>Site history</strong> — what was the building/facility used for? (determines likely hazards)</li>
+<li><strong>Known hazards</strong> — consult community hazmat map</li>
+<li><strong>PPE verification</strong> — confirm all team members have minimum required PPE and it is in good condition</li>
+<li><strong>Buddy system</strong> — no one enters a potentially contaminated area alone</li>
+<li><strong>Communication plan</strong> — hand signals or voice codes for &quot;hazmat found,&quot; &quot;evacuate,&quot; &quot;medical emergency&quot;</li>
+<li><strong>Escape routes</strong> — identify at least two exit paths from every work area</li>
+<li><strong>Emergency supplies</strong> — verify decon water, first aid kit, and spare PPE are staged at the entry point</li>
+</ol>
+<h3>Ongoing Education</h3>
+<p>Hazmat identification is a perishable skill. Communities should:</p>
+<ul>
+<li>Conduct monthly review sessions on hazmat symbol recognition</li>
+<li>Practice PPE donning and doffing procedures</li>
+<li>Run decontamination drills quarterly</li>
+<li>Update the community hazmat reference book with new materials encountered</li>
+<li>Train all community members (not just salvage teams) on basic hazmat symbol recognition — anyone might encounter a hazard</li>
+</ul>
+<p>For broader salvage team organization and logistics, see <a href="building-materials-salvage.html">Building Materials Salvage</a> and <a href="waste-management-recycling.html">Waste Management &amp; Recycling Systems</a>.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="building-materials-salvage.html">Building Materials Salvage &amp; Recovery</a>
+<a href="chemical-fuel-salvage.html">Chemical &amp; Fuel Salvage Safety</a>
+<a href="medical-salvage-safety.html">Medical Device &amp; Pharmaceutical Salvage</a>
+<a href="nbc-defense.html">NBC Defense &amp; Fallout Protection</a>
+<a href="scrap-metal-identification.html">Scrap Metal Identification</a>
+<a href="structural-safety-building-entry.html">Structural Safety for Building Entry</a>
+<a href="tool-restoration-salvage.html">Tool Restoration from Salvage</a>
+<a href="waste-management-recycling.html">Waste Management &amp; Recycling Systems</a>
+<a href="salvage-time-decay-priorities.html">Time-Decay Priority Framework</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/foundry-defects-prevention.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundry Defect Analysis - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.defect-table th { background: var(--card); font-weight: 600; }
+.defect-specs td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+.remedy-box { margin: 1.5rem 0; padding: 1rem; background: var(--surface); border-radius: 4px; }
+
+</style>
+<meta name="description" content="Porosity (gas and shrinkage), cold shuts, misruns, hot tears, sand inclusions, metal penetration, surface defects, root cause analysis, prevention strategies, inspection methods, and repair.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/foundry-defects-prevention.html">
+<meta property="og:title" content="Foundry Defect Analysis">
+<meta property="og:description" content="Porosity (gas and shrinkage), cold shuts, misruns, hot tears, sand inclusions, metal penetration, surface defects, root cause analysis, prevention strategies, inspection methods, and repair.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Metalworking", "item": "https://zerotoherohero.com/#sec-metalworking"},
+    {"@type": "ListItem", "position": 3, "name": "Foundry Defect Analysis", "item": "https://zerotoherohero.com/guides/foundry-defects-prevention.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Foundry Defect Analysis",
+  "description": "Porosity (gas and shrinkage), cold shuts, misruns, hot tears, sand inclusions, metal penetration, surface defects, root cause analysis, prevention strategies, inspection methods, and repair.",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-462">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-metalworking">Metalworking</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Foundry Defect Analysis</span>
+</nav>
+<header>
+<h1>Foundry Defect Analysis</h1>
+<p class="subtitle">Porosity (gas and shrinkage), cold shuts, misruns, hot tears, sand inclusions, metal penetration, surface defects, root cause analysis, prevention strategies, inspection methods, and repair.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●●○</span>
+<span class="read-time">📖 ~15 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#defect-overview">Foundry Defects Overview</a></li>
+<li><a href="#porosity">Porosity Defects</a></li>
+<li><a href="#cold-shuts">Cold Shuts and Misruns</a></li>
+<li><a href="#surface-defects">Surface Defects</a></li>
+<li><a href="#inspection-detection">Inspection and Defect Detection</a></li>
+<li><a href="#defect-analysis">Root Cause Analysis Process</a></li>
+<li><a href="#repair">Repair of Castings</a></li>
+<li><a href="#prevention-summary">Prevention Summary (Best Practices)</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<p>Castings rarely come out of the mold perfect. Understanding common defects, their causes, and prevention methods is essential for producing quality castings. This guide covers identification, root cause analysis, and remedies.</p>
+<section id="defect-overview">
+<h2>Foundry Defects Overview</h2>
+<p>Defects fall into broad categories based on when they form: during casting, cooling, or from mold interaction.</p>
+<p><strong>Categories:</strong></p>
+<ol>
+<li><strong>Gas porosity:</strong> Trapped gas bubbles</li>
+<li><strong>Shrinkage porosity:</strong> Voids from metal contraction</li>
+<li><strong>Cold shuts:</strong> Incomplete fusion</li>
+<li><strong>Surface defects:</strong> Sand, metal penetration, cracks</li>
+<li><strong>Dimensional errors:</strong> Mold/core shift, metal loss</li>
+</ol>
+<p><strong>Impact:</strong></p>
+<ul>
+<li>Pressure-tight castings (valves, hydraulic parts): Any porosity unacceptable</li>
+<li>Structural castings: Some porosity tolerable if not critical path</li>
+<li>Decorative castings: Appearance paramount</li>
+</ul>
+</section>
+<section id="porosity">
+<h2>Porosity Defects</h2>
+<h3>Gas Porosity</h3>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Spherical (round) holes in casting</li>
+<li>Often in upper portion (gases rise)</li>
+<li>Range: Pinhole size to several inches diameter</li>
+<li>Fracture surface: Rough (torn metal around void)</li>
+</ul>
+<p><strong>Causes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Cause</th>
+<th>Mechanism</th>
+<th>Prevention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hydrogen in metal</td>
+<td>Dissolves in liquid; precipitates during cooling</td>
+<td>Degassing before pour; lower pouring temperature</td>
+</tr>
+<tr>
+<td>Mold gases</td>
+<td>CO, CO₂ from combustion of sand binders</td>
+<td>Mold permeability; slow cooling; good venting</td>
+</tr>
+<tr>
+<td>Moisture in sand</td>
+<td>Water vaporizes during contact with hot metal</td>
+<td>Dry sand/cores; bake mold if damp</td>
+</tr>
+<tr>
+<td>Turbulent pouring</td>
+<td>Air trapped when metal splashes/turbulates</td>
+<td>Pour smoothly; sprue designs minimize turbulence</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Prevention strategy:</strong></p>
+<ol>
+<li>Check sand moisture (too high = steam porosity)</li>
+<li>Ensure mold/core venting (drill vent holes)</li>
+<li>Degas metal (flux addition, mechanical stirring)</li>
+<li>Pour smoothly without splashing</li>
+<li>Hot metal (thin sections) cools slower, gases escape easier</li>
+</ol>
+<h3>Shrinkage Porosity</h3>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Irregular, branching voids (dendritic pattern)</li>
+<li>Located at thickest sections or in upper regions</li>
+<li>Fracture: Jagged, with loose particles</li>
+</ul>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Metal contracts as it cools (density of liquid &gt; solid)</li>
+<li>Feeding problem: Liquid metal can't reach solidifying metal to fill voids</li>
+<li>Common in thick sections, high points (molten metal away from feed)</li>
+</ul>
+<p><strong>Prevention strategy:</strong></p>
+<div class="remedy-box">
+<p><strong>Riser design (feeding system):</strong></p>
+<ul>
+<li>Riser: Excess metal reservoir above casting</li>
+<li>Liquid in riser feeds shrinking casting metal</li>
+<li>Riser size: 30–100% of casting volume (depends on geometry)</li>
+<li>Riser placement: Above thick sections, critical areas</li>
+<li>Riser should freeze last (hotter, insulated)</li>
+</ul>
+<p><strong>Cooling rate control:</strong></p>
+<ul>
+<li>Faster cooling = less time for shrinkage = less opportunity for voids</li>
+<li>But too fast = gas porosity; balance needed</li>
+<li>Use exothermic sleeves (promote directional solidification)</li>
+<li>Chill placement (iron/copper inserts) accelerate cooling in specific areas</li>
+</ul>
+<p><strong>Hot tops (insulating covers):</strong></p>
+<ul>
+<li>Place insulating material over riser</li>
+<li>Keeps top liquid longer; feeds shrinking casting</li>
+<li>Exothermic materials promote upward heat flow</li>
+</ul>
+</div>
+<p><strong>Root cause analysis for shrinkage:</strong></p>
+<ol>
+<li>Examine defect location (thick section? upper region? distance from sprue?)</li>
+<li>If at top: Riser too small or in wrong location</li>
+<li>If at bottom: Feeding issue; metal solidified before reaching</li>
+<li>If throughout: Casting too massive; may need multiple risers</li>
+</ol>
+</section>
+<section id="cold-shuts">
+<h2>Cold Shuts and Misruns</h2>
+<h3>Cold Shut</h3>
+<p><strong>Characteristic:</strong> Line/plane where two metal streams meet but don't fuse; visible seam or weakness</p>
+<p><strong>Cause:</strong></p>
+<ul>
+<li>Two streams of liquid metal meet after some cooling</li>
+<li>Surface oxidation prevents fusion (metal flows past oxide layer)</li>
+<li>Common at mold corners, parting line where streams converge</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Avoid split gates (multiple entry points)</li>
+<li>Use single sprue if possible</li>
+<li>Ensure metal temperature high enough for fusion</li>
+<li>Avoid sharp corners (design with radii)</li>
+<li>Run a practice casting to identify problem areas</li>
+</ul>
+<h3>Misrun</h3>
+<p><strong>Characteristic:</strong> Incomplete filling; thin sections unfilled or partially filled</p>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Metal temperature too cold (high viscosity)</li>
+<li>Pouring too slow</li>
+<li>Mold vents clogged (pressure buildup prevents flow)</li>
+<li>Gate/sprue too small (restricts flow)</li>
+<li>Thin sections cool fast; metal solidifies before reaching</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ol>
+<li>Use higher pouring temperature (not so hot as to cause excessive gas)</li>
+<li>Pour faster (fill before skin forms)</li>
+<li>Ensure vents clear (practice with water first)</li>
+<li>Design sprue/gates large enough (simulate flow with CAD if available)</li>
+<li>Avoid extremely thin sections (&lt; 1/4&quot; difficult to fill)</li>
+</ol>
+</section>
+<section id="surface-defects">
+<h2>Surface Defects</h2>
+<h3>Sand Inclusion</h3>
+<p><strong>Characteristic:</strong> Rough surface texture; sand grains exposed; may be shallow or deep</p>
+<p><strong>Causes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Cause</th>
+<th>Mechanism</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Poor rammed sand</td>
+<td>Sand grain movement during pour</td>
+<td>Ram harder; use finer sand</td>
+</tr>
+<tr>
+<td>Sand blow</td>
+<td>Gas pressure from sand lifts layer</td>
+<td>Better venting; higher strength sand</td>
+</tr>
+<tr>
+<td>Mold erosion</td>
+<td>Metal flow erodes sand surface</td>
+<td>Slower pour; protective facing</td>
+</tr>
+<tr>
+<td>Excess clay</td>
+<td>Sticky sand holds grains in mold</td>
+<td>Adjust clay % (3–6% typical)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Use quality sand blend (specify grain size 120–200 AFS typical for bronze/aluminum)</li>
+<li>Compact mold uniformly (not too loose, not crushed)</li>
+<li>Protective sand facing (finer sand layer): 1–3&quot; at surface</li>
+<li>Pour slowly if erosion observed in practice castings</li>
+<li>Check sand strength (lab test if available)</li>
+</ul>
+<h3>Metal Penetration</h3>
+<p><strong>Characteristic:</strong> Metal fills voids between sand grains; rough, scaly surface</p>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Hot metal (high temperature) melts sand slightly or flows into inter-grain spaces</li>
+<li>Occurs with iron/high-temp alloys more than aluminum</li>
+<li>Worse with fine sand (more surface area for penetration)</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ol>
+<li>Lower pouring temperature (minimum 50–100°F above freeze point)</li>
+<li>Thicker facing sand (finer grain; melts less easily)</li>
+<li>Dolomite or zircon sand additives (higher melting point than silica)</li>
+<li>Quick drying/curing of mold (prevents sand weakening)</li>
+<li>Ceramic shell (expensive; used for critical castings)</li>
+</ol>
+<h3>Cracks</h3>
+<p><strong>Characteristics:</strong> Surface and internal cracks; often star-shaped or following grain boundaries</p>
+<p><strong>Causes:</strong></p>
+<p><strong>Hot tears:</strong></p>
+<ul>
+<li>Metal contracts during cooling; differential cooling causes stress</li>
+<li>Weakest point (grain boundary) cracks</li>
+<li>Occurs as metal approaches solidification</li>
+</ul>
+<p><strong>Cold cracks:</strong></p>
+<ul>
+<li>After final solidification</li>
+<li>Residual stress from uneven cooling</li>
+<li>Heat treatment (if done without proper annealing first) can crack as-cast stress is relieved</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Design with gradual wall thickness transitions (avoid sharp corners)</li>
+<li>Avoid large unsupported areas</li>
+<li>Use risers to feed shrinking metal (reduces stress)</li>
+<li>Cool slowly (annealing in sand prevents cracking)</li>
+<li>Heat treat carefully (anneal fully stressed castings before stress relief)</li>
+</ul>
+<div class="warning">
+<p>Hot tears often look like cold shuts (thin seams); examine fracture carefully. Hot tear will show crystalline fracture; cold shut shows smooth oxide seam.</p>
+</div>
+</section>
+<section id="inspection-detection">
+<h2>Inspection and Defect Detection</h2>
+<h3>Visual Inspection</h3>
+<p><strong>Simple, free; detects surface defects:</strong></p>
+<ul>
+<li>Sand inclusion: Rough texture, exposed grains</li>
+<li>Cold shut: Line/seam on surface or at corners</li>
+<li>Misrun: Incomplete sections, thin wall areas thin/missing</li>
+<li>Cracks: Visible lines</li>
+<li>Dimensional: Measure against drawing</li>
+</ul>
+<p><strong>Limitations:</strong> Only detects surface; internal porosity invisible</p>
+<h3>Radiography (X-ray or Gamma)</h3>
+<p><strong>Best for:</strong> Internal porosity, shrinkage, large inclusions</p>
+<p><strong>Process:</strong></p>
+<ul>
+<li>X-ray or radioactive source on one side of casting</li>
+<li>Film on other side</li>
+<li>Void shows as lighter area (less attenuation)</li>
+</ul>
+<p><strong>Advantages:</strong> Very clear image of internal voids; can measure size
+<strong>Disadvantages:</strong> Expensive ($50–200+ per casting); requires facility; safety concerns</p>
+<h3>Sonic/Ultrasonic</h3>
+<p><strong>Best for:</strong> Detecting density changes (porosity, inclusions)</p>
+<p><strong>Process:</strong></p>
+<ul>
+<li>Send ultrasonic pulse through casting</li>
+<li>Porosity reflects/absorbs energy differently than solid</li>
+<li>Detect reflections with transducer</li>
+</ul>
+<p><strong>Advantages:</strong> Fast, safe, reusable equipment
+<strong>Disadvantages:</strong> More subjective than X-ray; training required; geometry sensitive</p>
+<h3>Pressure Testing (for Pressure-Tight Castings)</h3>
+<p><strong>Purpose:</strong> Check if casting holds pressure (leak-free)</p>
+<p><strong>Methods:</strong></p>
+<ul>
+<li>Water/oil immersion with applied pressure; look for bubbles</li>
+<li>Helium leak test (very sensitive; detects pinholes)</li>
+<li>Air pressure + soap solution</li>
+</ul>
+<p><strong>Use for:</strong> Hydraulic/pneumatic components, fluid piping</p>
+</section>
+<section id="defect-analysis">
+<h2>Root Cause Analysis Process</h2>
+<p>When defect is found:</p>
+<ol>
+<li>
+<p><strong>Identify defect type:</strong></p>
+<ul>
+<li>What does it look like? (porosity, crack, inclusion, etc.)</li>
+<li>Where is it? (location in casting; surface or internal)</li>
+<li>Size and quantity</li>
+</ul>
+</li>
+<li>
+<p><strong>Review process:</strong></p>
+<ul>
+<li>Sand moisture level (humidity, storage)</li>
+<li>Pouring temperature (thermometer reading)</li>
+<li>Pour speed (timing, smoothness)</li>
+<li>Mold venting (design and execution)</li>
+<li>Metal degassing (any applied?)</li>
+<li>Time since pouring (how old is casting?)</li>
+</ul>
+</li>
+<li>
+<p><strong>Compare to historical data:</strong></p>
+<ul>
+<li>Has this happened before? What was the fix?</li>
+<li>Do other castings in the batch show same defect?</li>
+<li>Different defect = different cause</li>
+</ul>
+</li>
+<li>
+<p><strong>Hypothesize and test:</strong></p>
+<ul>
+<li>If suspected sand moisture: Bake mold batch, try again</li>
+<li>If suspected metal temperature: Increase by 50°F, try again</li>
+<li>If suspected venting: Add vent hole, try again</li>
+<li>Change ONE variable at a time</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify fix:</strong></p>
+<ul>
+<li>Repeat casting with modification</li>
+<li>Inspect thoroughly; document results</li>
+<li>Don't assume; verify with multiple parts</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="repair">
+<h2>Repair of Castings</h2>
+<p>Small defects may be repairable; large defects should be scrapped.</p>
+<h3>Welding</h3>
+<p><strong>Suitable for:</strong> Small cracks, shallow porosity, incomplete sections</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Remove defective area if possible (grinding, machining)</li>
+<li>Clean thoroughly; preheat (prevents cracking)</li>
+<li>Weld with appropriate rod/process</li>
+<li>Cool slowly (annealing)</li>
+<li>Machine to final dimension</li>
+</ol>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Creates heat-affected zone (property changes)</li>
+<li>Weld ductility may be poor</li>
+<li>Not suitable for pressure vessels (radiography required to verify)</li>
+</ul>
+<h3>Metal Plugging</h3>
+<p><strong>For small porosity pinholes:</strong></p>
+<ol>
+<li>Drill defect area slightly oversize</li>
+<li>Install threaded brass plug (epoxy or mechanical fit)</li>
+<li>Grind smooth</li>
+</ol>
+<p><strong>Limitations:</strong> Temporary fix; not suitable for high-stress areas</p>
+<h3>Impregnation (Pressure Sealing)</h3>
+<p><strong>For small porosity in pressure-tight castings:</strong></p>
+<ol>
+<li>Vacuum soak casting in low-viscosity resin (epoxy or polyester)</li>
+<li>Vacuum draws resin into pores</li>
+<li>Resin polymerizes; seals pores</li>
+<li>Casting becomes leak-free</li>
+</ol>
+<p><strong>Advantages:</strong> Fixes porosity without removing material
+<strong>Limitations:</strong> Only seals surfaces; won't repair mechanical strength</p>
+</section>
+<section id="prevention-summary">
+<h2>Prevention Summary (Best Practices)</h2>
+<p><strong>Before pouring:</strong></p>
+<ul>
+<li>[ ] Sand moisture within spec (typically 2–5%)</li>
+<li>[ ] Mold vents clear and in correct locations</li>
+<li>[ ] Metal degas step (flux addition, mechanical stirring)</li>
+<li>[ ] Temperature verified with pyrometer (not estimated)</li>
+<li>[ ] Riser size and location optimized for casting</li>
+</ul>
+<p><strong>During pouring:</strong></p>
+<ul>
+<li>[ ] Pour smoothly without splashing</li>
+<li>[ ] Maintain consistent pour rate</li>
+<li>[ ] Don't pour too fast (air entrainment) or too slow (premature freezing)</li>
+<li>[ ] Keep metal level in crucible above sprue (pressure-fed)</li>
+</ul>
+<p><strong>After pouring:</strong></p>
+<ul>
+<li>[ ] Allow to cool undisturbed (no poking, moving mold)</li>
+<li>[ ] Cool slowly if possible (sand mold provides natural slow cool)</li>
+<li>[ ] Shake out only when fully cool (risk cracking if too hot)</li>
+</ul>
+<p><strong>Documentation:</strong></p>
+<ul>
+<li>Record metal temperature, pour time, sand moisture, any issues</li>
+<li>Note defects found (location, type, size)</li>
+<li>Track changes made and their effectiveness</li>
+</ul>
+</section>
+<section id="conclusion">
+<h2>Conclusion</h2>
+<p>Defects are normal in foundry work; the goal is to minimize them and understand their causes. Most defects are preventable with attention to fundamentals: proper sand, appropriate metal temperature, good venting, adequate risers. Keep records, analyze failures systematically, and iterate. Every defect is a learning opportunity; experienced foundry workers develop intuition from thousands of castings and the patterns they observe.</p>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="foundry-casting.html">Foundry &amp; Metal Casting</a>
+<a href="copper-bronze-alloys.html">Copper, Bronze &amp; Non-Ferrous Alloys</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/lathe-construction-from-salvage.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lathe Construction from Salvage</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Metalworking</span> ›
+<span>Lathe Construction from Salvage</span>
+</div>
+
+
+<h1>Lathe Construction from Salvage</h1>
+<p class="subtitle">Build spring-pole lathes, treadle lathes, and simple metal-turning lathes from salvage. Covers bed construction, headstock/tailstock, tool rest, drive mechanisms, and alignment.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~10 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#lathe-types-comparison">Lathe Types Comparison</a></li>
+<li><a href="#spring-pole-lathe">Spring-Pole Lathe</a></li>
+<li><a href="#treadle-lathe">Treadle Lathe</a></li>
+<li><a href="#simple-metal-turning-lathe">Simple Metal-Turning Lathe from Salvage</a></li>
+<li><a href="#bed-construction-details">Bed Construction Details</a></li>
+<li><a href="#headstock-and-tailstock">Headstock &amp; Tailstock Specifics</a></li>
+<li><a href="#tool-rest-and-tooling">Tool Rest / Tool Post</a></li>
+<li><a href="#drive-mechanisms">Drive Mechanisms</a></li>
+<li><a href="#chuck-and-faceplate">Chuck &amp; Faceplate Design</a></li>
+<li><a href="#sizing-and-alignment">Sizing &amp; Alignment</a></li>
+<li><a href="#first-turning-projects">First Turning Projects</a></li>
+<li><a href="#safety-and-troubleshooting">Safety &amp; Troubleshooting</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>The lathe is often called the &quot;mother of all machine tools&quot; because every other machine tool can be made on a lathe. Once you have a functional lathe, you can manufacture bearings, shafts, bushings, valve bodies, tool blanks, and countless other precision parts. A lathe is therefore worth whatever effort it takes to build.</p>
+<p>This guide covers three types:</p>
+<ol>
+<li><strong>Spring-pole lathe:</strong> Simplest, lowest-tech, suitable for wood turning and soft metals. Uses gravity/manual force and a spring pole overhead.</li>
+<li><strong>Treadle lathe:</strong> Improved version; the workpiece rotates continuously (not alternately) via a flywheel and crankshaft. More useful and faster production.</li>
+<li><strong>Metal-turning lathe from salvage:</strong> Built using industrial salvage (old car bearings, pipe, channel iron). Can produce precision metal parts up to ~6&quot; diameter.</li>
+</ol>
+<p>A home-built lathe costs $0–$100 in materials (if salvaged) and 50–200 hours of labor. Industrial lathes cost $10,000+.</p>
+<div class="info-box">
+<p><strong>The lathe's core function:</strong></p>
+<p>A lathe holds a workpiece (wood, plastic, or metal) on a horizontal axis and rotates it at 50–3000 rpm. A cutting tool (chisel, drill, boring bar) is held stationary against the rotating work. By moving the tool axially or radially, you can produce cylindrical shapes, threads, tapers, and various features. Precision depends entirely on:</p>
+<ul>
+<li>Bed rigidity and alignment</li>
+<li>Spindle bearing quality and runout</li>
+<li>Tool post stiffness</li>
+<li>Skill of the operator</li>
+</ul>
+</div>
+</section>
+<section id="lathe-types-comparison">
+<h2>Lathe Types Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Spring-Pole</th>
+<th>Treadle</th>
+<th>Metal-Turning</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Complexity</strong></td>
+<td>Very low</td>
+<td>Medium</td>
+<td>High</td>
+<td>Spring-pole is easiest to build</td>
+</tr>
+<tr>
+<td><strong>Materials cost</strong></td>
+<td>$0–20</td>
+<td>$20–50</td>
+<td>$50–150</td>
+<td>Mostly salvage</td>
+</tr>
+<tr>
+<td><strong>Labor hours</strong></td>
+<td>40–60</td>
+<td>80–120</td>
+<td>150–300</td>
+<td>Depends on precision and tool availability</td>
+</tr>
+<tr>
+<td><strong>Spindle speed</strong></td>
+<td>100–400 rpm</td>
+<td>100–600 rpm</td>
+<td>200–3000 rpm</td>
+<td>Metal needs higher speeds for finishes</td>
+</tr>
+<tr>
+<td><strong>Max workpiece diameter</strong></td>
+<td>6–12&quot;</td>
+<td>8–16&quot;</td>
+<td>6–12&quot;</td>
+<td>Limited by bed width/height</td>
+</tr>
+<tr>
+<td><strong>Workpiece types</strong></td>
+<td>Wood, soft plastics</td>
+<td>Wood, soft metals (aluminum), plastics</td>
+<td>Steel, iron, brass, bearing stock</td>
+<td>Metal requires rigid bed</td>
+</tr>
+<tr>
+<td><strong>Production rate</strong></td>
+<td>Slow (1–3 pcs/day)</td>
+<td>Medium (5–20 pcs/day)</td>
+<td>Medium-fast (10–50 pcs/day, depending on complexity)</td>
+<td>Treadle/metal lathes are practical for real work</td>
+</tr>
+<tr>
+<td><strong>Precision (runout)</strong></td>
+<td>±0.125&quot; typical</td>
+<td>±0.05&quot;–0.1&quot;</td>
+<td>±0.01&quot;–0.05&quot; (with care)</td>
+<td>Metal lathe is most accurate</td>
+</tr>
+<tr>
+<td><strong>Skill requirement</strong></td>
+<td>Low</td>
+<td>Medium</td>
+<td>High</td>
+<td>Metal turning is demanding</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="spring-pole-lathe">
+<h2>Spring-Pole Lathe</h2>
+<p>The spring-pole lathe is humanity's oldest machine tool design, still in use in many developing regions.</p>
+<p><strong>Basic principle:</strong></p>
+<p>A wooden pole (8–10 feet long, 2–3&quot; diameter) is mounted overhead horizontally. A rope hangs from it, attached to the workpiece. When you step on the rope (pushing down), the workpiece rotates. When you release, a spring force (or the pole's natural bend) pulls the rope back up, reversing the rotation. The workpiece oscillates back and forth at ~60–120 cycles per minute.</p>
+<p><strong>Construction (simple design):</strong></p>
+<p><strong>Overhead support:</strong></p>
+<ol>
+<li>Mount a horizontal wooden beam (4×4&quot; timber, 10–12' long) 8–10' above the work surface. Use heavy posts or a ceiling beam.</li>
+<li>The beam should be very rigid (deflection &lt;0.5&quot; under load).</li>
+</ol>
+<p><strong>Spring pole:</strong></p>
+<ol>
+<li>Use a flexible wooden pole (hardwood, hickory, ash; 2–3&quot; diameter, 8–10' long).</li>
+<li>Secure one end to the overhead beam with a hinge or pivot bolt, allowing the pole to bend upward.</li>
+<li>Attach a rope to the other end of the pole (use a small loop or eyehook).</li>
+</ol>
+<p><strong>Bed and centers:</strong></p>
+<ol>
+<li>Build a simple bed (two parallel wooden rails, 2×4&quot; timber, 8–12' long, separated by 18–24&quot;).</li>
+<li>At the headstock end (left), mount a fixed center (a pointed pin held in a block). This is the drive center.</li>
+<li>At the tailstock end (right), mount a sliding center (movable toward/away from headstock via a hand screw). This is the live center (or dead center if fixed).</li>
+</ol>
+<p><strong>Workpiece mounting:</strong></p>
+<ol>
+<li>The workpiece is mounted between the two centers (like an old-fashioned wood lathe).</li>
+<li>A short rope (3–4 feet) is wrapped around the workpiece (or a pulley attached to it) and attached to the overhead rope. When the rope is pulled down, it rotates the workpiece. When released, the spring-pole returns.</li>
+</ol>
+<p><strong>Drive mechanism:</strong></p>
+<p>For wood turning, the alternating rotation is acceptable. For continuous rotation (wood turning with better finish), add a flywheel:</p>
+<ol>
+<li>Attach a 12–18&quot; diameter wheel to the headstock spindle.</li>
+<li>The rope wraps around the wheel's edge.</li>
+<li>Pulling the rope spins the flywheel; as the rope recoils, the flywheel's inertia keeps the spindle spinning.</li>
+<li>The result is nearly continuous rotation with a slight speed variation.</li>
+</ol>
+<p><strong>Typical speeds:</strong></p>
+<p>50–150 rpm for rough turning; 200–300 rpm for finishing (if a flywheel is added).</p>
+<div class="tip">
+<p>Spring-pole lathes are excellent for training and wood turning, but they are slow for metal work. If you need speed or precision, invest in a treadle or powered lathe.</p>
+</div>
+</section>
+<section id="treadle-lathe">
+<h2>Treadle Lathe</h2>
+<p>A treadle lathe uses a flywheel and crankshaft (like a bicycle or spinning wheel mechanism) to convert the up-and-down motion of your foot into continuous spindle rotation.</p>
+<p><strong>Core mechanism:</strong></p>
+<ol>
+<li><strong>Flywheel:</strong> A large wheel (16–24&quot; diameter, ~100–200 lbs), mounted on a horizontal shaft, stores rotational inertia.</li>
+<li><strong>Crankshaft:</strong> A shaft offset from the flywheel's center, with a crank arm. As the crank turns, an attached rod pushes a treadle (foot pedal) up and down.</li>
+<li><strong>Connecting rod:</strong> Links the crank arm to the treadle.</li>
+<li><strong>Spindle:</strong> The headstock spindle is connected to the flywheel shaft via a belt or gear.</li>
+</ol>
+<p><strong>Construction:</strong></p>
+<p><strong>Flywheel and shaft:</strong></p>
+<ol>
+<li>Source a steel or iron wheel, 16–24&quot; diameter, at least 80 lbs (salvage from old machinery, industrial auctions, or forge one from wrought iron and wooden rim).</li>
+<li>Mount the wheel on a horizontal shaft (1&quot; steel rod, supported by pillow block bearings on each end).</li>
+<li>The shaft should be 36–48&quot; long to accommodate the wheel and belt pulleys.</li>
+</ol>
+<p><strong>Crankshaft assembly:</strong></p>
+<ol>
+<li>Weld or fit a crank arm (6–8&quot; radius) offset from the wheel's center.</li>
+<li>Attach a connecting rod (wood or steel rod, 18–24&quot; long) to the crank arm.</li>
+<li>The connecting rod connects to a treadle (a flat piece of wood, ~12&quot; × 6&quot;, hinged at one end).</li>
+</ol>
+<p><strong>Treadle mechanism:</strong></p>
+<ol>
+<li>Hinge the treadle on a pivot point 6–12&quot; forward of the flywheel shaft.</li>
+<li>Push down on the treadle; the connecting rod pulls the crank, turning the flywheel.</li>
+<li>As your foot rises, the flywheel's inertia continues spinning, and the crank comes around again, pushing the treadle back up.</li>
+<li>The result is nearly continuous rotation (with a brief speed dip at the bottom of the foot stroke).</li>
+</ol>
+<p><strong>Spindle connection:</strong></p>
+<ol>
+<li>Mount a pulley on the flywheel shaft.</li>
+<li>Mount a spindle (or spindle pulley) on the headstock.</li>
+<li>Connect via a leather or rubber belt. Belt drive allows speed variation (different pulley sizes give different gear ratios).</li>
+<li>Example: 20&quot; flywheel pulley to 4&quot; spindle pulley = 5:1 speed increase. If the flywheel turns 120 rpm, the spindle spins 600 rpm.</li>
+</ol>
+<p><strong>Typical speeds:</strong></p>
+<p>120–150 rpm flywheel motion (from treadle frequency) → spindle speeds of 400–2000 rpm (depending on pulley sizes).</p>
+<p><strong>Bed, headstock, tailstock:</strong></p>
+<p>Build the same as a spring-pole lathe (rigid bed, fixed and sliding centers, tool rest).</p>
+<div class="warning">
+<p><strong>Flywheel safety:</strong> The rotating flywheel is dangerous. Guard it with a wooden frame or cage so loose clothing, hair, or fingers cannot contact it. A 12&quot; spinning wheel at 150 rpm can cause severe injury.</p>
+</div>
+</section>
+<section id="simple-metal-turning-lathe">
+<h2>Simple Metal-Turning Lathe from Salvage</h2>
+<p>Building a lathe capable of cutting steel and producing precision metal parts requires:</p>
+<ol>
+<li>A rigid bed (no flex).</li>
+<li>Precise spindle bearings (low runout).</li>
+<li>A stiff tool post.</li>
+<li>Spindle speeds of 200–1500 rpm.</li>
+</ol>
+<p><strong>Bed construction:</strong></p>
+<p>The bed is the skeleton of the lathe. It must not deflect or twist under cutting forces.</p>
+<p><strong>Option 1: Steel channel/I-beam bed</strong></p>
+<ol>
+<li>Salvage a 6–12 foot length of steel channel (4&quot; or 6&quot; wide) or I-beam from demolition, railroad, or industrial yards.</li>
+<li>Machine or grind the top surface flat and parallel to within ±0.01&quot; over 12&quot;.</li>
+<li>Mount the channel horizontally on a sturdy frame (concrete blocks, bolted steel legs).</li>
+<li>Check for twist: place a level along the length; deflection should be &lt;0.05&quot; over 12 feet.</li>
+</ol>
+<p><strong>Option 2: Hardwood timber bed (emergency)</strong></p>
+<ol>
+<li>Use 4×6&quot; or 6×8&quot; hardwood timber (oak, maple).</li>
+<li>Dry for 6+ months to minimize shrinkage.</li>
+<li>Plane the top flat. This is less rigid than steel but usable for light wood/plastic turning.</li>
+</ol>
+<p><strong>Headstock design:</strong></p>
+<p>The headstock houses the main spindle and is the lathe's most critical component.</p>
+<p><strong>Spindle and bearings:</strong></p>
+<ol>
+<li>Source a steel spindle blank (1.5–2&quot; diameter, 10–15&quot; long) or salvage an old spindle from an industrial lathe.</li>
+<li>The spindle bore (where the tool holder or chuck mounts) is typically 1–2&quot; diameter.</li>
+<li>Bearings: Use ball bearings (angular contact or deep groove) rated for the spindle's speed. Standard sizes: 25 mm × 62 mm × 17 mm (for a ~1.5&quot; spindle), supporting up to 3000 rpm.</li>
+</ol>
+<p><strong>Headstock casting/body:</strong></p>
+<ol>
+<li>Machine or weld a rigid block to house the spindle and bearings.</li>
+<li>Bearing bores must be precisely machined (within ±0.001&quot;) for spindle runout &lt;0.005&quot;.</li>
+<li>The headstock is bolted to the left end of the bed.</li>
+</ol>
+<p><strong>Faceplate and chuck:</strong></p>
+<ol>
+<li><strong>Faceplate:</strong> A steel disc (8–12&quot; diameter, 1.5–2&quot; thick) screwed onto the spindle nose. Used for mounting irregular workpieces.</li>
+<li><strong>Chuck:</strong> A 3-jaw or 4-jaw chuck (salvaged from an old lathe or fabricated from steel) screws onto the spindle nose for holding round stock.</li>
+</ol>
+<p><strong>Tailstock design:</strong></p>
+<ol>
+<li>A sliding block that moves along the bed rails.</li>
+<li>Houses a quill (a tapered spindle, like a Morse taper) that advances toward the workpiece via a hand screw.</li>
+<li>The tailstock centers support the right end of the workpiece.</li>
+</ol>
+<p><strong>Tool rest and tool post:</strong></p>
+<ol>
+<li>A rigid post, bolted to the bed, holds cutting tools at the correct height and angle.</li>
+<li>A compound slide (X-Y adjustment) allows precise tool positioning.</li>
+<li>For a simple lathe, a fixed tool rest with a weld-on tool holder is sufficient.</li>
+</ol>
+<p><strong>Drive mechanism:</strong></p>
+<ol>
+<li>Mount a pulley on the spindle.</li>
+<li>Connect via a belt to a motor (electric, if available; water wheel or engine if not).</li>
+<li>Multiple pulley sizes allow variable spindle speeds (200–1500 rpm).</li>
+</ol>
+<p><strong>Spindle speeds:</strong></p>
+<ul>
+<li>Wood turning: 300–800 rpm</li>
+<li>Steel turning: 200–500 rpm (high speed steel) or 500–1500 rpm (carbide tools)</li>
+<li>Aluminum: 1000–3000 rpm</li>
+</ul>
+<div class="info-box">
+<p><strong>Runout check (critical):</strong></p>
+<p>Before using the lathe, measure spindle runout (how much the spindle tip moves off-center as it spins):</p>
+<ol>
+<li>Mount a dial indicator in the tool post, touching the spindle tip.</li>
+<li>Rotate the spindle by hand; observe the indicator reading.</li>
+<li>Runout should be &lt;0.005&quot; (ideally &lt;0.002&quot;) for metal turning.</li>
+</ol>
+<p>If runout is &gt;0.01&quot;, the spindle bearings are loose or misaligned. Re-machine bearing bores or adjust preload.</p>
+</div>
+</section>
+<section id="bed-construction-details">
+<h2>Bed Construction Details</h2>
+<p>The lathe bed is the foundation. All precision depends on it.</p>
+<p><strong>Requirements:</strong></p>
+<ol>
+<li><strong>Rigidity:</strong> Must resist deflection under cutting load (~500–2000 lbs for metal turning).</li>
+<li><strong>Straightness:</strong> Top surface must be straight to within ±0.05&quot; over 12 feet (for precision work, ±0.01&quot;).</li>
+<li><strong>Parallelism:</strong> The bed width must be consistent (rails parallel) so the tailstock slides smoothly.</li>
+</ol>
+<p><strong>Steel bed advantages:</strong></p>
+<ul>
+<li>Inherently rigid.</li>
+<li>Can be ground flat to high precision.</li>
+<li>Deflection is minimal even under heavy load.</li>
+<li>Drawback: Rusts if not protected; requires machining.</li>
+</ul>
+<p><strong>Hardwood bed advantages:</strong></p>
+<ul>
+<li>Easy to work with hand tools.</li>
+<li>Can be planed flat with a hand plane and straightedge.</li>
+<li>Drawback: Weaker; susceptible to warping if humidity changes.</li>
+</ul>
+<p><strong>Bed height:</strong></p>
+<p>Standard lathe bed height is such that the spindle centerline is 36–48&quot; above the floor, allowing comfortable standing at the controls. For a first lathe, 42&quot; is typical.</p>
+<p><strong>Mounting the bed:</strong></p>
+<ol>
+<li>Bolt the bed to a sturdy frame (steel or concrete).</li>
+<li>Use heavy concrete blocks or fabricate a steel base frame.</li>
+<li>Check that the bed does not sag; place shims under the frame to achieve perfect horizontal alignment.</li>
+</ol>
+<div class="tip">
+<p>If you cannot machine a new bed, salvage one from an old lathe (Craftsman, Atlas, South Bend lathes are common in scrapyards and are often affordable or free if non-functional). A used bed saves 50+ hours of fabrication.</p>
+</div>
+</section>
+<section id="headstock-and-tailstock">
+<h2>Headstock &amp; Tailstock Specifics</h2>
+<p><strong>Headstock alignment:</strong></p>
+<p>The headstock spindle must be perfectly parallel to the bed and at the correct height (spindle centerline aligned with the top surface).</p>
+<ol>
+<li>Measure from the spindle centerline to the bed top surface at the headstock end and the opposite end of the bed. The difference should be &lt;0.02&quot;.</li>
+<li>If misaligned, shim the headstock block or grind the bearing bores.</li>
+</ol>
+<p><strong>Tailstock construction:</strong></p>
+<p>A simple tailstock for a salvage lathe:</p>
+<ol>
+<li><strong>Casting/body:</strong> A steel block, 4&quot; × 6&quot; × 8&quot;, bored to accept the quill.</li>
+<li><strong>Quill:</strong> A tapered tool steel rod (Morse taper #2 or #3), 6&quot; long, housed in the tailstock bore.</li>
+<li><strong>Hand screw:</strong> A threaded rod with a large knob, connected to the quill via a rack or threaded hole. Turning the knob advances the quill toward the headstock.</li>
+<li><strong>Clamping:</strong> A hand lever or bolt clamps the quill in position after advancing.</li>
+<li><strong>Rails:</strong> The entire tailstock block slides on the bed rails via a dovetail or flat ways (grooves milled into the bed).</li>
+</ol>
+<p><strong>Tailstock centers:</strong></p>
+<ol>
+<li><strong>Live center:</strong> A bearing-supported center (point) that rotates as the workpiece spins. Less friction, better for sustained turning.</li>
+<li><strong>Dead center:</strong> A simple pointed pin (hardened steel). Grind to a 60° angle. Less expensive; requires periodic oiling to reduce friction.</li>
+</ol>
+<p><strong>Accuracy of tailstock:</strong></p>
+<p>The tailstock centerline must be coaxial with the headstock spindle. Test by:</p>
+<ol>
+<li>Mount a center in the spindle nose.</li>
+<li>Mount a center in the tailstock quill.</li>
+<li>Position the tailstock so the centers are 12&quot; apart.</li>
+<li>Loosen the centers and spin the spindle by hand. The centers should not bind or touch.</li>
+<li>If they do, the tailstock is misaligned; shim the base until true.</li>
+</ol>
+</section>
+<section id="tool-rest-and-tooling">
+<h2>Tool Rest / Tool Post</h2>
+<p><strong>Wood turning tool rest:</strong></p>
+<p>A simple, high tool rest for wood turning:</p>
+<ol>
+<li>A fixed block, bolted to the bed, 2–3&quot; to the right of the spinning workpiece.</li>
+<li>Height: spindle centerline + 0.5&quot; to 1&quot; (tools rest on top of the block).</li>
+<li>Length: 12–18&quot; (allows side-to-side tool movement).</li>
+<li>The rest must be absolutely rigid (no flex when you apply tool pressure).</li>
+</ol>
+<p><strong>Metal turning compound slide:</strong></p>
+<p>For metal work, a compound slide (X-Y adjustment) is invaluable:</p>
+<ol>
+<li><strong>Base:</strong> A saddle bolted to the bed.</li>
+<li><strong>Cross-slide:</strong> An X-axis slide (perpendicular to the spindle axis) with a lead screw and handwheel. Moves the tool in/out.</li>
+<li><strong>Compound slide:</strong> A Y-axis slide (parallel to spindle axis) atop the cross-slide. Moves the tool left/right.</li>
+<li><strong>Tool post:</strong> A 4-way turret or vertical post on the compound slide. Holds cutting tools at the correct angle.</li>
+<li><strong>Reading scale:</strong> Graduated collars on the lead screws allow reproducible positioning (e.g., &quot;feed 0.050&quot; per turn&quot;).</li>
+</ol>
+<p><strong>Tool geometry:</strong></p>
+<p>Cutting tools must be ground to specific rake and clearance angles for the material being cut:</p>
+<ul>
+<li><strong>High speed steel (HSS):</strong> Front rake: 15–20°, side relief: 10–15°, end relief: 8°. Used for steel, cast iron, brass.</li>
+<li><strong>Carbide:</strong> Front rake: 5–10° (less rake than HSS), relief: 8–12°. Holds edge longer but more brittle.</li>
+<li><strong>Roughing vs. finishing:</strong> Roughing tools have a larger nose radius (0.030–0.050&quot;) and coarser feed. Finishing tools have sharp, small nose radius (&lt;0.015&quot;) and fine feed.</li>
+</ul>
+</section>
+<section id="drive-mechanisms">
+<h2>Drive Mechanisms</h2>
+<p><strong>Belt drive (most common):</strong></p>
+<ol>
+<li>Pulley on spindle (4–6&quot; diameter for metal work; larger for wood).</li>
+<li>Pulley on motor/engine (variable sizes for speed control).</li>
+<li>Leather or rubber belt connecting them.</li>
+</ol>
+<p><strong>Advantages:</strong> Simple, absorbs shocks, quiet, variable speed via pulley changes.</p>
+<p><strong>Disadvantages:</strong> Belt slips if overloaded (a safety feature, but limits available torque).</p>
+<p><strong>Gear drive:</strong></p>
+<ol>
+<li>Spur gears or helical gears mounted on the spindle and drive shaft.</li>
+<li>More complex to build but no slipping.</li>
+</ol>
+<p><strong>Disadvantage:</strong> Noisier, requires precise gear cutting (a lathe to build a lathe).</p>
+<p><strong>Treadle or water-wheel input:</strong></p>
+<ol>
+<li>If you're off-grid, a treadle (human power) or water wheel can spin the spindle.</li>
+<li>Treadle: 120 rpm foot motion → 600–1500 rpm spindle (via pulley ratio).</li>
+<li>Water wheel: Depends on water flow/head; can reach 300–1000 rpm at the shaft.</li>
+</ol>
+<div class="tip">
+<p>For a beginner's lathe, a simple motor (electric, if available; or a salvaged engine) driving a pulley is the easiest. If power is unavailable, a treadle is the next best option. Spring-pole lathes work but are very slow.</p>
+</div>
+</section>
+<section id="chuck-and-faceplate">
+<h2>Chuck &amp; Faceplate Design</h2>
+<p><strong>3-jaw chuck:</strong></p>
+<p>A chuck with three jaws that close on a round workpiece. Ideal for turning shafts, boring holes, etc.</p>
+<p><strong>Salvaging an old chuck:</strong></p>
+<ol>
+<li>Industrial auctions, scrapyards, and antique tool dealers often have old chucks ($10–100).</li>
+<li>Measure the spindle nose taper (Morse taper or ISO taper); the chuck must match.</li>
+<li>Disassemble, clean, and oil before use.</li>
+</ol>
+<p><strong>Fabricating a simple chuck:</strong></p>
+<ol>
+<li>Machine a steel body (3–4&quot; diameter, 2–3&quot; thick) with threads matching the spindle nose.</li>
+<li>Cut three radial slots in the body (120° apart) for jaw movement.</li>
+<li>Machine three jaws (flat-faced, 2&quot; long) that slide in the slots.</li>
+<li>A threaded screw or cam linkage closes all three jaws simultaneously.</li>
+</ol>
+<p>This is labor-intensive but yields a functional chuck.</p>
+<p><strong>Faceplate:</strong></p>
+<p>A flat disc screwed onto the spindle nose, used for mounting irregular-shaped workpieces, lathe dogs, or workholding fixtures.</p>
+<ol>
+<li>Machine from steel (8–12&quot; diameter, 1.5–2&quot; thick).</li>
+<li>Drill and tap four holes around the face for bolts (to clamp the workpiece or fixtures).</li>
+<li>Screw onto the spindle nose.</li>
+</ol>
+</section>
+<section id="sizing-and-alignment">
+<h2>Sizing &amp; Alignment</h2>
+<p><strong>Lathe specifications:</strong></p>
+<p>A small salvage lathe should have:</p>
+<ul>
+<li><strong>Swing (max workpiece diameter):</strong> 6–12&quot; (16&quot; is ambitious for a home build).</li>
+<li><strong>Centers-to-centers distance (length of bed):</strong> 24–48&quot; (determines the longest workpiece that fits between centers).</li>
+<li><strong>Spindle speed:</strong> 200–2000 rpm (critical for material removal rate).</li>
+<li><strong>Spindle taper:</strong> Morse taper #2 or #3 (standard sizes; easy to find tooling).</li>
+</ul>
+<p><strong>Checking lathe bed twist:</strong></p>
+<p>A lathe bed that twists (not flat in a diagonal direction) will cause uneven cutting and poor finishes.</p>
+<ol>
+<li>Place a straightedge along the top of the bed lengthwise.</li>
+<li>Check at three points (headstock end, middle, tailstock end). No gap should be visible.</li>
+<li>Use a level as a straightedge if you don't have a machinist's straightedge.</li>
+</ol>
+<p>If twist is present, shim the bed frame until level.</p>
+<p><strong>Spindle runout:</strong></p>
+<p>As discussed earlier, runout is the radial movement of the spindle tip as it rotates.</p>
+<ol>
+<li>Use a dial indicator (if available) or improvise with a straightedge and feeler gauges.</li>
+<li>Runout &gt;0.005&quot; is unacceptable for metal work.</li>
+</ol>
+<p><strong>Tailstock alignment:</strong></p>
+<p>The tailstock centerline must be coaxial with the headstock spindle. Any offset causes the workpiece to taper.</p>
+<ol>
+<li>Mount centers in both spindle and tailstock.</li>
+<li>Bring the centers together by advancing the tailstock quill.</li>
+<li>Spin the spindle by hand; centers should not bind.</li>
+<li>If there's contact or offset, loosen the tailstock clamp bolts and shim the tailstock base until centered. Re-tighten and retest.</li>
+</ol>
+</section>
+<section id="first-turning-projects">
+<h2>First Turning Projects</h2>
+<p><strong>Project 1: Wooden handle (wood lathe)</strong></p>
+<p>A simple warm-up project.</p>
+<ol>
+<li>Mount a 1.5&quot; diameter, 12&quot; long piece of ash or hickory between centers.</li>
+<li>Rough to a cylinder with a roughing gouge.</li>
+<li>Turn a ~1&quot; diameter handle (leave thicker areas at the ends to cut a taper).</li>
+<li>Sand smooth and finish with oil.</li>
+<li>Total time: 2–3 hours.</li>
+</ol>
+<p><strong>Project 2: Simple bushing (metal lathe)</strong></p>
+<p>A bushing is a cylindrical sleeve, useful for bearings or tool adapters.</p>
+<ol>
+<li>Mount a 1.5&quot; diameter steel rod, 3&quot; long, in a chuck.</li>
+<li>Face the right end with a turning tool.</li>
+<li>Bore a 1&quot; hole through the center with a boring bar.</li>
+<li>Turn the outer diameter to 1.25&quot;.</li>
+<li>Cut a 0.1&quot; chamfer on both ends.</li>
+<li>Total time: 1–2 hours.</li>
+</ol>
+<p><strong>Project 3: Shaft with threads (metal lathe)</strong></p>
+<p>A 0.75&quot; diameter steel shaft with an M10×1.5 thread on one end.</p>
+<ol>
+<li>Turn the shaft body to 0.75&quot; diameter over 2&quot; length.</li>
+<li>Reduce the right 1&quot; to 0.65&quot; diameter (for threading).</li>
+<li>Cut threads with a threading tool (or die, if available) to M10×1.5.</li>
+<li>Total time: 3–4 hours.</li>
+</ol>
+<div class="tip">
+<p>Start with wood; it's forgiving. Move to soft metals (aluminum, brass) once you're comfortable. Steel turning requires sharper tools and more skill.</p>
+</div>
+</section>
+<section id="safety-and-troubleshooting">
+<h2>Safety &amp; Troubleshooting</h2>
+<p><strong>Safety rules:</strong></p>
+<div class="warning">
+<p><strong>Lathe safety is critical. A spinning lathe is lethal.</strong></p>
+<ul>
+<li><strong>Never lean over a spinning workpiece.</strong> Hair, clothing, and fingers are instantly caught and wound around the spindle.</li>
+<li><strong>Remove the chuck key immediately</strong> after adjusting the chuck. Forgot-key injuries cause severe hand trauma.</li>
+<li><strong>Tie back long hair and wear fitted clothing.</strong> Loose sleeves and unbuttoned shirts are death traps.</li>
+<li><strong>Never reach into a spinning lathe.</strong> Stop the spindle before adjusting or removing the workpiece.</li>
+<li><strong>Use the tool rest.</strong> It keeps the tool at the correct angle and prevents sudden catch.</li>
+<li><strong>Keep hands behind the tool post.</strong> If a tool catches, it will send chips and the tool in your direction.</li>
+<li><strong>Wear eye protection.</strong> Flying chips and broken tools are common.</li>
+<li><strong>Do not apply excessive pressure.</strong> Light, steady pressure produces better results and is safer. Heavy pressure risks tool breakage and workpiece ejection.</li>
+</ul>
+</div>
+<p><strong>Common problems:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Poor surface finish (chatter)</strong></td>
+<td>Dull tool, poor workholding, or bed deflection</td>
+<td>Sharpen tool, tighten chuck, increase tool support</td>
+</tr>
+<tr>
+<td><strong>Workpiece wobbles</strong></td>
+<td>Unbalanced workpiece or loose tailstock</td>
+<td>Balance workpiece or improve chuck/center grip</td>
+</tr>
+<tr>
+<td><strong>Tool chatters (vibrates)</strong></td>
+<td>Tool overhang too long or spindle imbalance</td>
+<td>Shorten tool overhang, check spindle bearings</td>
+</tr>
+<tr>
+<td><strong>Spindle binds</strong></td>
+<td>Bearing preload too tight or contamination</td>
+<td>Loosen bearing preload slightly; clean and oil</td>
+</tr>
+<tr>
+<td><strong>Tailstock cannot advance</strong></td>
+<td>Quill jammed or hand screw stripped</td>
+<td>Free quill with gentle tapping; lubricate screw</td>
+</tr>
+<tr>
+<td><strong>Workpiece slips in chuck</strong></td>
+<td>Chuck jaws worn or workpiece too smooth</td>
+<td>Replace jaws; use center support; increase clamp force</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="next-steps">
+<h2>Next Steps</h2>
+<p>Once you have a working lathe, you can:</p>
+<ol>
+<li><strong>Build a milling machine</strong> (using lathe to machine the components).</li>
+<li><strong>Make tooling:</strong> Drill chucks, boring bars, threading dies, center drills.</li>
+<li><strong>Manufacture parts:</strong> Bearings, shafts, valve bodies, fittings—anything cylindrical.</li>
+<li><strong>Build other machine tools:</strong> A simple shaper or planer lathe can be made using the lathe itself.</li>
+</ol>
+<p>A lathe is the gateway tool. Master it, and you have the foundation for a complete machine shop.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="machine-tools.html">Machine Tools &amp; Workshop</a>
+<a href="precision-measurement-tools.html">Precision Measurement Tools</a>
+<a href="bearing-manufacturing.html">Bearing Manufacturing</a>
+<a href="blacksmithing.html">Blacksmithing</a>
+<a href="woodcarving-furniture.html">Woodcarving &amp; Furniture</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

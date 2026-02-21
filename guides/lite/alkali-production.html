@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/alkali-production.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alkali &amp; Soda Production</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Industrial Chemistry</span> ›
+<span>Alkali &amp; Soda Production</span>
+</div>
+
+<div class="danger">
+<strong>⚠ SAFETY WARNING</strong><br>This guide covers activities with significant risk of injury or harm. Professional training may be required.
+</div>
+
+<h1>Alkali &amp; Soda Production</h1>
+<p class="subtitle">Potash, lime kilns, LeBlanc/Solvay processes, caustic soda, waterglass, and industrial applications.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~25 min</span>
+<span>Updated: 2026-02-16</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#importance">1. Overview: Why Alkalis Matter</a></li>
+<li><a href="#potash">2. Potash Production from Wood Ash</a></li>
+<li><a href="#lime">3. Lime Production</a></li>
+<li><a href="#lime-kiln">4. Lime Kiln Construction &amp; Operation</a></li>
+<li><a href="#leblanc">5. LeBlanc Process: Historical Soda Ash Production</a></li>
+<li><a href="#solvay">6. Solvay Process: Modern Soda Ash Production</a></li>
+<li><a href="#caustic-soda">7. Caustic Soda (NaOH) Production</a></li>
+<li><a href="#sodium-silicate">8. Sodium Silicate (Waterglass): Production and Uses</a></li>
+<li><a href="#testing">9. Quality Testing &amp; Analysis</a></li>
+<li><a href="#applications">10. Industrial Applications</a></li>
+<li><a href="#safety">11. Safety Considerations</a></li>
+<li><a href="#worked-example">12. Worked Example: Household Potash Production</a></li>
+<li><a href="#scaling">13. Scaling from Household to Industrial</a></li>
+<li><a href="#mistakes">14. Common Mistakes &amp; Troubleshooting</a></li>
+<li><a href="#reference-formulas">15. Reference: Key Chemical Reactions &amp; Formulas</a></li>
+<li><a href="#composition-reference">16. Reference: Typical Compositions &amp; Purity Standards</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="warning">
+<p><strong>Required Reading:</strong> Before attempting any procedures in this guide, read the <a href="chemical-safety.html">Chemical Safety Guide</a> in full. Failure to follow proper safety protocols can result in severe injury or death.</p>
+</div>
+<div class="danger">
+<p><strong>SEVERE CHEMICAL HAZARD:</strong> Caustic soda (sodium hydroxide/lye) and caustic potash (potassium hydroxide) cause liquefactive necrosis — they dissolve living tissue on contact, causing deep, progressive burns that are far more destructive than acid burns. Always wear chemical-resistant gloves, full face shield, and chemical-resistant apron. Source commercial products when available rather than attempting synthesis.</p>
+</div>
+<section id="importance">
+<h2>1. Overview: Why Alkalis Matter</h2>
+<p>Alkalis are among the most essential chemicals in post-industrial civilization rebuilding. These caustic, pH-basic compounds enable the production of glass, soap, paper, textiles, and serve critical roles in water treatment and food processing. Without alkalis, modern sanitation, manufacturing, and industrial chemistry grind to a halt.</p>
+<h3>Primary Uses of Alkalis</h3>
+<ul>
+<li><strong>Glass Manufacturing:</strong> Soda ash (Na₂CO₃) lowers the melting point of silica, enabling production of clear glass without requiring extreme temperatures.</li>
+<li><strong>Soap Production:</strong> Caustic soda (NaOH) or potash (K₂CO₃) saponifies fats and oils into soap—essential for hygiene.</li>
+<li><strong>Paper Pulping:</strong> Sodium hydroxide (NaOH) dissolves lignin, separating cellulose fibers from wood.</li>
+<li><strong>Textile Bleaching:</strong> Chlorine-based alkali solutions bleach and purify fabrics.</li>
+<li><strong>Water Treatment:</strong> Lime (Ca(OH)₂) removes hardness, alkalinity adjusts pH, and clarification requires alkali.</li>
+<li><strong>Food Processing:</strong> Alkalis nixtamalize corn, cure olives, and adjust pH in food preservation.</li>
+<li><strong>Chemical Synthesis:</strong> Alkalis are feedstocks for countless downstream chemicals (bleach, fertilizers, pharmaceuticals).</li>
+</ul>
+</section>
+<section id="potash">
+<h2>2. Potash Production from Wood Ash</h2>
+<p>Potash (potassium carbonate, K₂CO₃) is the simplest alkali to produce from available materials. Every hardwood fire produces ash containing water-soluble potassium salts. For millennia, this was the primary source of alkali for soap and glass manufacturing.</p>
+<h3>Process Overview: Leaching → Evaporation → Calcination</h3>
+<p><strong>Step 1: Collection &amp; Preparation</strong><br>
+Collect ash from hardwood fires (oak, maple, birch are ideal). Ash from softwoods contains less potassium. Screen out large charcoal pieces. Store dry, as potash is hygroscopic.
+<strong>Step 2: Leaching</strong><br>
+Pour hot water through ash in a wooden barrel with a spigot. Use 1 part ash to 2 parts water by volume. The water dissolves soluble potassium salts (K₂CO₃, KOH, K₂SO₄) forming a brown &quot;lye water.&quot; This can take 12-24 hours. Stronger lye results from multiple passes: collect the weak lye, pour it back over fresh ash.
+<strong>Step 3: Evaporation</strong><br>
+Boil the lye water in large iron pots or kettles over a hot fire. As water evaporates, concentration increases. The solution goes from clear/brown to increasingly dark. This is slow—a barrel of lye may require 12+ hours of continuous boiling to concentrate.
+<strong>Step 4: Calcination (Optional)</strong><br>
+If higher-purity K₂CO₃ is needed, heat the evaporated potash residue in a kiln or furnace to 600-800°C. This converts any KOH or K₂SO₄ to K₂CO₃. The result is &quot;pearlash,&quot; a white crystalline powder—premium grade for glass making.</p>
+<h3>Yield &amp; Economics</h3>
+<p>Expect 5-10 kg of potash per cubic meter of ash, depending on wood species and ash quality. Traditional potash works contain multiple leaching vats and evaporation vessels running continuously during the production season (autumn/winter when fires burn constantly).</p>
+<div class="tip">
+<p><strong>Tip:</strong> Save time by using a shallow iron pan instead of tall pots—wider surface area accelerates evaporation. A reflective metal shield can direct fire heat upward into the pan.</p>
+</div>
+<div class="warning">
+<p><strong>Warning:</strong> Potash lye is caustic. Avoid contact with skin and eyes. The dust from evaporated potash can irritate airways. Work in well-ventilated areas.</p>
+</div>
+</section>
+<section id="lime">
+<h2>3. Lime Production</h2>
+<p>Lime (calcium oxide, CaO) is produced by heating limestone (calcium carbonate, CaCO₃) in a kiln. It is essential for mortar, plaster, water treatment, and the alkali production processes described below. Slaking (adding water) converts CaO to calcium hydroxide (Ca(OH)₂), which is also called slaked lime or hydrated lime.</p>
+<h3>Chemistry of Lime Production</h3>
+<p>CaCO₃ (limestone) + heat → CaO (quicklime) + CO₂ (gas)</p>
+<p>CaO (quicklime) + H₂O → Ca(OH)₂ (slaked lime) + heat</p>
+<p>Quicklime (CaO) is highly reactive and exothermic—slaking produces significant heat (around 1150 kJ/kg). Slaked lime [Ca(OH)₂] is a white paste/powder, soluble enough for most applications, and less reactive than quicklime.</p>
+<h3>Process: Limestone → Quicklime → Slaked Lime</h3>
+<p><strong>Limestone Selection</strong><br>
+High-purity limestone (&gt;95% CaCO₃) is ideal. Screen out clay, shale, and sand. Limestone that is too pure (very dense) may not react fully in smaller kilns.
+<strong>Kiln Operation</strong><br>
+Heat limestone to 900-1000°C (above this, deadburning occurs—over-calcination reduces reactivity). The CO₂ gas escapes; the remaining CaO is removed from the bottom of the kiln as hot quicklime. See the section on lime kiln construction for detailed designs.
+<strong>Slaking</strong><br>
+Add water to quicklime in a controlled manner (DO NOT dump quicklime into water—violent steam generation). Use a ratio of roughly 0.3 kg water per 1 kg CaO, though excess water can be used if cooling is managed. Mix in a slaking pit or steel drum with a rake or shovel. The mixture heats and becomes creamy as it hydrates.
+<strong>Storage &amp; Aging</strong><br>
+Store slaked lime as a putty (mixed with sand) to prevent carbonation. Aged lime (6+ months) develops better properties for masonry. For water treatment or alkali processes, freshly slaked lime works well.</p>
+<h3>Yield &amp; Efficiency</h3>
+<p>1 kg of pure CaCO₃ produces ~0.56 kg of CaO (quicklime) by mass loss of CO₂. Real yields depend on kiln efficiency and limestone purity. Traditional small kilns achieve 70-80% conversion of limestone to usable quicklime.</p>
+<div class="warning">
+<p><strong>Warning:</strong> Quicklime is extremely reactive and caustic. Always add water to lime, never reverse. Wear eye protection and gloves. The steam from slaking can cause burns.</p>
+</div>
+</section>
+<section id="lime-kiln">
+<h2>4. Lime Kiln Construction &amp; Operation</h2>
+<p>Lime kilns are heated chambers where limestone is thermally decomposed. Three main kiln types are used industrially: updraft, downdraft, and continuous (rotary). For small to medium scale production, updraft or downdraft designs are feasible.</p>
+<h3>Updraft Kiln (Traditional)</h3>
+<p>An updraft kiln is simplest to construct. Hot gases rise through the limestone charge, decomposing it. The kiln is typically a vertical cylinder or truncated cone made of brick, stone, or steel.</p>
+<h4>Design &amp; Construction:</h4>
+<ul>
+<li>Shape: Truncated cone, ~3 m tall, ~1.5 m base diameter</li>
+<li>Lining: High-temperature brick (&gt;1200°C rated) or stone</li>
+<li>Hearth: Perforated grate or arch to support limestone and allow ash/fuel removal below</li>
+<li>Top: Open or with a hopper for charging limestone</li>
+<li>Draft: Natural draft from a chimney, or mechanical blower for forced draft</li>
+</ul>
+<h4>Operating Cycle:</h4>
+<ol>
+<li>Light a fuel fire in the hearth (coal, wood, or natural gas).</li>
+<li>Charge limestone into the top as fuel burns, creating a rising column of hot gas.</li>
+<li>Limestone particles descend, decompose as they heat, and accumulate as quicklime at the bottom.</li>
+<li>Periodically remove the bottom charge (quicklime) when cool enough.</li>
+<li>The process is semi-continuous: feed and withdrawal happen simultaneously.</li>
+</ol>
+<p><svg aria-label="Alkali Production diagram 1" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg"><defs><lineargradient id="fireGradient" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1"></stop><stop offset="100%" style="stop-color:#ff8a80;stop-opacity:0.5"></stop></lineargradient></defs><polygon fill="#8b4513" points="80,150 320,150 360,450 40,450" stroke="#ce93d8" stroke-width="2"></polygon><polygon fill="none" points="85,155 315,155 355,445 45,445" stroke="#6a1b9a" stroke-dasharray="5,5" stroke-width="1"></polygon><circle cx="150" cy="200" fill="#c0c0c0" r="20" stroke="#ce93d8" stroke-width="1"></circle><circle cx="190" cy="210" fill="#c0c0c0" r="18" stroke="#ce93d8" stroke-width="1"></circle><circle cx="220" cy="190" fill="#c0c0c0" r="22" stroke="#ce93d8" stroke-width="1"></circle><circle cx="160" cy="250" fill="#c0c0c0" r="20" stroke="#ce93d8" stroke-width="1"></circle><circle cx="210" cy="260" fill="#c0c0c0" r="19" stroke="#ce93d8" stroke-width="1"></circle><ellipse cx="200" cy="410" fill="#fffacd" rx="80" ry="25" stroke="#ce93d8" stroke-width="2"></ellipse><text fill="#1a1a1a" font-size="12" font-weight="bold" text-anchor="middle" x="200" y="415">Quicklime (CaO)</text><defs><marker id="arrowhead" markerheight="10" markerwidth="10" orient="auto" refx="5" refy="5"><polygon fill="#ff6b6b" points="0 0, 10 5, 0 10"></polygon></marker></defs><path d="M 100 350 Q 95 300 100 250" fill="none" marker-end="url(#arrowhead)" stroke="#ff6b6b" stroke-dasharray="5,3" stroke-width="2"></path><path d="M 200 380 Q 200 320 200 260" fill="none" marker-end="url(#arrowhead)" stroke="#ff6b6b" stroke-dasharray="5,3" stroke-width="2"></path><path d="M 300 350 Q 305 300 300 250" fill="none" marker-end="url(#arrowhead)" stroke="#ff6b6b" stroke-dasharray="5,3" stroke-width="2"></path><rect fill="none" height="50" stroke="#ce93d8" stroke-width="2" width="30" x="185" y="100"></rect><text fill="#ce93d8" font-size="12" text-anchor="middle" x="200" y="70">CO₂ + gases</text><rect fill="#333" height="20" stroke="#ce93d8" stroke-width="2" width="80" x="40" y="440"></rect><text fill="#ce93d8" font-size="11" text-anchor="middle" x="80" y="455">Fuel feed</text><text fill="#ce93d8" font-size="13" font-weight="bold" x="20" y="180">Updraft Lime Kiln Cross-Section</text><text fill="#ba68c8" font-size="11" x="330" y="200">Limestone</text><text fill="#ff6b6b" font-size="11" x="330" y="300">Hot gas</text></svg></p>
+<h3>Downdraft Kiln</h3>
+<p>In a downdraft kiln, fuel burns at the top and hot gases descend through the limestone, then exit at the bottom. This design can be more efficient because hot gases spend more time in contact with the stone, but it requires forced air.</p>
+<h3>Kiln Sizing &amp; Fuel Requirements</h3>
+<p>A small updraft kiln (1 m diameter × 3 m tall) can produce 500-1000 kg of quicklime per batch. Fuel requirement is roughly 0.5-0.7 kg of coal per 1 kg of quicklime produced. Modern continuous rotary kilns are far more efficient (~0.3 kg fuel per kg quicklime) but require more engineering.</p>
+<div class="tip">
+<p><strong>Tip:</strong> Insulate the kiln with a layer of sand or clay around the brick lining to reduce heat losses. Preheat incoming air using the kiln's exhaust gases for improved efficiency.</p>
+</div>
+</section>
+<section id="leblanc">
+<h2>5. LeBlanc Process: Historical Soda Ash Production</h2>
+<p>The LeBlanc Process (patented 1791) was the first economically viable method for producing synthetic soda ash (Na₂CO₃) from common salt (NaCl). Though largely superseded by the Solvay Process, understanding it illustrates chemical reasoning and is feasible at small scales.</p>
+<h3>Chemistry of the LeBlanc Process</h3>
+<p>2 NaCl + H₂SO₄ → Na₂SO₄ + 2 HCl</p>
+<p>Na₂SO₄ + 2 C + CaCO₃ → Na₂CO₃ + CaS + 2 CO₂</p>
+<h3>Process Steps</h3>
+<p><strong>Step 1: Salt Cake Production (Sulfuric Acid Stage)</strong><br>
+Heat salt (NaCl) and concentrated sulfuric acid (H₂SO₄) in a furnace to 500-600°C. The acid reacts with salt, displacing hydrochloric acid gas (HCl), which can be captured and converted to chlorine (Cl₂) for bleach. The residue is sodium sulfate (Na₂SO₄), called &quot;salt cake.&quot;
+<strong>Step 2: Reduction with Lime &amp; Coal</strong><br>
+Mix salt cake with limestone (CaCO₃) and coal/coke in a large furnace and heat to 1000-1200°C. Coal reduces sulfate to calcium sulfide (CaS), while limestone provides CO₂ that, combined with sodium, forms soda ash. The molten mixture is cooled and leached with water.
+<strong>Step 3: Crystallization &amp; Purification</strong><br>
+Filter the leached solution to remove insoluble CaS. The remaining solution contains Na₂CO₃, NaCl (unreacted salt), and other impurities. Evaporate and crystallize to obtain crude soda ash (~95% purity).</p>
+<h3>Why LeBlanc Was Replaced</h3>
+<p>The process produces large amounts of calcium sulfide waste (&quot;alkali waste&quot;), which is caustic, toxic, and environmentally problematic. Large LeBlanc plants were infamous for pollution. The Solvay Process, developed in the 1870s, produced far less waste and is now standard.</p>
+<div class="warning">
+<p><strong>Warning:</strong> LeBlanc process involves high-temperature furnaces, toxic HCl gas, and caustic sulfides. Not recommended for small-scale production without proper equipment and safety protocols. The Solvay Process is safer for amateur chemists.</p>
+</div>
+</section>
+<section id="solvay">
+<h2>6. Solvay Process: Modern Soda Ash Production</h2>
+<p>The Solvay Process (also called the ammonia-soda process, developed by Ernest Solvay in 1872) is the modern standard for soda ash production. It uses ammonia (NH₃) and carbon dioxide (CO₂) to precipitate sodium bicarbonate (NaHCO₃) from brine (NaCl solution), which is then heated to form soda ash (Na₂CO₃). The process is less toxic and wasteful than LeBlanc.</p>
+<h3>Overall Chemistry</h3>
+<p>NaCl + NH₃ + CO₂ + H₂O → NaHCO₃ + NH₄Cl</p>
+<p>2 NaHCO₃ → Na₂CO₃ + H₂O + CO₂ (via heating to 100°C)</p>
+<h3>Process Flow</h3>
+<p><svg aria-label="Alkali Production diagram 2" viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg"><rect fill="#4a90a4" height="80" stroke="#ce93d8" stroke-width="2" width="100" x="20" y="50"></rect><text fill="#1a1a1a" font-size="11" font-weight="bold" text-anchor="middle" x="70" y="100">Brine Tank</text><text fill="#1a1a1a" font-size="10" text-anchor="middle" x="70" y="115">(NaCl + H₂O)</text><rect fill="#ff9999" height="60" stroke="#ce93d8" stroke-width="2" width="50" x="20" y="150"></rect><text fill="#1a1a1a" font-size="10" font-weight="bold" text-anchor="middle" x="45" y="185">NH₃</text><rect fill="#99cc99" height="60" stroke="#ce93d8" stroke-width="2" width="50" x="70" y="150"></rect><text fill="#1a1a1a" font-size="10" font-weight="bold" text-anchor="middle" x="95" y="185">CO₂</text><rect fill="none" height="170" stroke="#ce93d8" stroke-width="2" width="120" x="150" y="40"></rect><rect fill="#2a2a2a" height="160" stroke="#ba68c8" stroke-width="1" width="110" x="155" y="45"></rect><text fill="#ce93d8" font-size="12" font-weight="bold" text-anchor="middle" x="210" y="135">Carbonation Tower</text><text fill="#ba68c8" font-size="10" text-anchor="middle" x="210" y="150">(Absorption)</text><circle cx="210" cy="100" fill="#42a5f5" r="8" stroke="#ce93d8"></circle><circle cx="210" cy="120" fill="#42a5f5" r="8" stroke="#ce93d8"></circle><circle cx="210" cy="140" fill="#42a5f5" r="8" stroke="#ce93d8"></circle><circle cx="210" cy="160" fill="#42a5f5" r="8" stroke="#ce93d8"></circle><path d="M 270 125 L 320 125" marker-end="url(#arrowhead)" stroke="#ce93d8" stroke-width="2"></path><rect fill="#d4a574" height="90" stroke="#ce93d8" stroke-width="2" width="100" x="320" y="80"></rect><text fill="#1a1a1a" font-size="11" font-weight="bold" text-anchor="middle" x="370" y="130">Crystallizer</text><path d="M 420 125 L 480 125" marker-end="url(#arrowhead)" stroke="#ce93d8" stroke-width="2"></path><rect fill="#ff9999" height="90" stroke="#ce93d8" stroke-width="2" width="100" x="480" y="80"></rect><text fill="#1a1a1a" font-size="11" font-weight="bold" text-anchor="middle" x="530" y="130">Calciner (Heat)</text><text fill="#1a1a1a" font-size="9" text-anchor="middle" x="530" y="145">~100°C</text><path d="M 580 125 L 640 125" marker-end="url(#arrowhead)" stroke="#ce93d8" stroke-width="2"></path><rect fill="#fffacd" height="30" stroke="#ce93d8" stroke-width="2" width="50" x="640" y="110"></rect><text fill="#1a1a1a" font-size="10" font-weight="bold" text-anchor="middle" x="665" y="130">Na₂CO₃</text><path d="M 370 170 L 370 210 L 480 210" marker-end="url(#arrowhead)" stroke="#ba68c8" stroke-width="2"></path><rect fill="#ffcccc" height="30" stroke="#ba68c8" stroke-width="2" width="80" x="480" y="195"></rect><text fill="#1a1a1a" font-size="9" text-anchor="middle" x="520" y="215">NH₄Cl + H₂O</text><path d="M 530 170 L 530 250 L 90 250 L 90 210" marker-end="url(#arrowhead)" stroke="#99cc99" stroke-dasharray="5,3" stroke-width="2"></path><text fill="#99cc99" font-size="10" text-anchor="middle" x="300" y="270">CO₂ recycle from calcination</text><defs><marker id="arrowhead" markerheight="10" markerwidth="10" orient="auto" refx="5" refy="5"><polygon fill="#ce93d8" points="0 0, 10 5, 0 10"></polygon></marker></defs><text fill="#ce93d8" font-size="14" font-weight="bold" text-anchor="middle" x="350" y="25">Solvay (Ammonia-Soda) Process Flow</text></svg></p>
+<h3>Process Details</h3>
+<p><strong>Step 1: Ammonia Absorption</strong><br>
+Dissolve NaCl brine and pump into a tall carbonation tower. Inject anhydrous ammonia (NH₃) at the base; it dissolves and increases pH, making the solution less acidic. This improves CO₂ absorption.
+<strong>Step 2: Carbonation</strong><br>
+Bubble CO₂ (from a limestone kiln's exhaust or from a separate source) into the ammonia-saturated brine. The reaction forms sodium bicarbonate (NaHCO₃), which has low solubility and precipitates out. The byproduct solution contains ammonium chloride (NH₄Cl).
+<strong>Step 3: Filtration &amp; Crystallization</strong><br>
+Filter out the NaHCO₃ crystals. Wash and dry to remove salts and mother liquor.
+<strong>Step 4: Calcination</strong><br>
+Heat NaHCO₃ to 100-200°C (does not require high heat). It decomposes to Na₂CO₃, H₂O, and CO₂. The CO₂ is recycled back into the carbonation tower.
+<strong>Step 5: Ammonia Recovery</strong><br>
+The NH₄Cl byproduct is mixed with lime [Ca(OH)₂] and heated, releasing NH₃ gas, which is absorbed and recycled into the process. This ammonia recovery is critical to the process's economics.</p>
+<h3>Advantages Over LeBlanc</h3>
+<ul>
+<li>Produces soda ash with &lt;5% waste (mainly NH₄Cl), compared to LeBlanc's 5+ tons of CaS per ton of soda ash</li>
+<li>Uses ammonia as a recyclable catalyst, not consumed</li>
+<li>Lower temperature requirements (less fuel)</li>
+<li>Higher purity soda ash (&gt;99% typical)</li>
+</ul>
+<div class="tip">
+<p><strong>Tip:</strong> The Solvay Process is scalable from small lab setups to massive industrial plants. With access to brine (seawater, salt deposits), limestone, and fuel for the kiln, it is the best choice for post-collapse alkali production.</p>
+</div>
+</section>
+<section id="caustic-soda">
+<h2>7. Caustic Soda (NaOH) Production</h2>
+<p>Caustic soda (sodium hydroxide, NaOH) is perhaps the most important alkali, used in soap making, paper pulping, and many chemical processes. There are two primary routes: conversion of soda ash using lime, and electrolysis of brine.</p>
+<h3>Route 1: Soda Ash + Lime (Lime-Soda Process)</h3>
+<p>Na₂CO₃ + Ca(OH)₂ → 2 NaOH + CaCO₃ ↓</p>
+<p>This method is simple and suitable for small-scale production. Heat soda ash (Na₂CO₃) and slaked lime [Ca(OH)₂] in water. The mixture reacts; calcium carbonate (CaCO₃) precipitates as an insoluble solid, leaving NaOH in solution.</p>
+<h4>Procedure:</h4>
+<ol>
+<li>Dissolve soda ash in hot water to form a solution.</li>
+<li>Add slaked lime in slight excess (to ensure complete reaction).</li>
+<li>Heat the mixture to 80-100°C for 1-2 hours, stirring occasionally.</li>
+<li>Filter to remove CaCO₃ precipitate.</li>
+<li>Evaporate the filtrate to concentrate NaOH. As temperature approaches 100°C, NaOH solutions become very concentrated (up to 50% by weight).</li>
+<li>Cool and crystallize NaOH if solid product is desired (careful—NaOH is extremely hygroscopic).</li>
+</ol>
+<h3>Route 2: Electrolysis of Brine (Chlor-Alkali Process)</h3>
+<p>2 NaCl + 2 H₂O → 2 NaOH + Cl₂↑ + H₂↑ (electrolysis)</p>
+<p>Electrolysis of saltwater produces NaOH, chlorine gas (Cl₂), and hydrogen gas (H₂). This is the industrial standard because it is energy-efficient once you have electricity and avoids the lime-soda process's CaCO₃ waste. However, it requires DC electrical power and special electrodes.</p>
+<h4>Electrolysis Setup:</h4>
+<ul>
+<li><strong>Anode:</strong> Graphite or titanium (inert to chlorine)</li>
+<li><strong>Cathode:</strong> Steel or iron</li>
+<li><strong>Electrolyte:</strong> Saturated NaCl solution (brine), ~250 g/L</li>
+<li><strong>Voltage:</strong> 3.5-4.5 V per cell</li>
+<li><strong>Current Density:</strong> 2000-5000 A/m² (depends on cell design)</li>
+</ul>
+<p>As current flows, chloride ions (Cl⁻) are oxidized at the anode to Cl₂ gas. Water is reduced at the cathode to produce OH⁻ ions and H₂ gas. Na⁺ ions migrate toward the cathode, forming NaOH in solution. A separator (diaphragm or membrane) prevents Cl₂ and OH⁻ from recombining.</p>
+<h4>Challenges for Small-Scale Electrolysis:</h4>
+<ul>
+<li>Requires DC power (100+ amps for meaningful production)</li>
+<li>Chlorine gas is toxic—must be captured and handled safely</li>
+<li>Electrode erosion is constant</li>
+<li>Energy cost is high (~4 kWh per kg NaOH at industrial scale)</li>
+</ul>
+<div class="tip">
+<p><strong>Tip:</strong> For post-collapse scenarios without reliable electricity, the lime-soda process is more practical. However, if hydropower or other renewable electricity is available, electrolysis becomes economically attractive and avoids the CaCO₃ waste.</p>
+</div>
+<h4>Worked Example: Lime-Soda Caustic Production</h4>
+<p>Suppose you have 1 kg of soda ash (Na₂CO₃, obtained from the Solvay process or purchased) and need 1.5 kg of slaked lime [Ca(OH)₂]. Goal: Produce caustic soda (NaOH) solution suitable for soap making.</p>
+<p><strong>Stoichiometry:</strong> The reaction is Na₂CO₃ + Ca(OH)₂ → 2 NaOH + CaCO₃↓</p>
+<p>1 mole of Na₂CO₃ (106 g) requires 1 mole of Ca(OH)₂ (74 g) to produce 2 moles of NaOH (80 g).</p>
+<p>For 1 kg (9.43 mol) Na₂CO₃, you need 9.43 mol × 74 g/mol = 697 g of pure Ca(OH)₂. Use 1.5 kg to ensure excess lime (ensures complete reaction).</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Dissolve 1 kg Na₂CO₃ in 5 L of hot water (80°C). It dissolves slowly; stir for 10 minutes until clear.</li>
+<li>Heat slaked lime suspension (1.5 kg in 2 L water) separately. Slaked lime is not fully soluble; the mixture will be cloudy.</li>
+<li>Combine both solutions and heat to 90-100°C. Stir occasionally for 1-2 hours.</li>
+<li>Let settle overnight. The white precipitate (CaCO₃) sinks to the bottom; the supernatant contains NaOH.</li>
+<li>Carefully siphon off the clear liquid, leaving the precipitate behind. Filter through cheesecloth if needed.</li>
+<li>Evaporate the filtrate to concentrate NaOH. At 100°C, concentration increases steadily. When the volume is reduced by 50% (from ~7 L to ~3.5 L), the solution is now ~10-15% NaOH—strong enough for soap making.</li>
+</ol>
+<p><strong>Yield &amp; Purity:</strong></p>
+<ul>
+<li>Theoretical NaOH from 1 kg Na₂CO₃ = 753 g (based on reaction stoichiometry).</li>
+<li>Practical yield = ~600-700 g (accounting for loss with precipitate, incomplete reaction).</li>
+<li>Purity: ~98% if excess lime is used and solution is evaporated under controlled heat.</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>Do not boil vigorously—loss of material and heat damage.</li>
+<li>The CaCO₃ precipitate can be recovered and heated to produce more lime for recycling.</li>
+<li>Total time: 1-2 days (mostly heating and settling).</li>
+</ul>
+</section>
+<section id="sodium-silicate">
+<h2>8. Sodium Silicate (Waterglass): Production and Uses</h2>
+<p>Sodium silicate (Na₂SiO₃), often called &quot;waterglass,&quot; is produced by melting soda ash (Na₂CO₃) with silica (SiO₂) sand at high temperature. It is a viscous liquid or glassy solid with remarkable adhesive, protective, and chemical properties.</p>
+<h3>Chemistry</h3>
+<p>Na₂CO₃ + SiO₂ → Na₂SiO₃ + CO₂ (at 1000-1400°C)</p>
+<p>The exact composition varies: Na₂SiO₃ is one possibility, but the product is often a mixture with varying silica:soda ratios. The melting temperature depends on composition; higher silica content requires higher temperatures.</p>
+<h3>Production Method</h3>
+<p><strong>Step 1: Raw Materials</strong><br>
+Mix soda ash (Na₂CO₃) and silica sand (SiO₂) in a ratio of roughly 1:2 by weight, depending on desired properties. Clean sand (remove clay and iron). If starting from potash (K₂CO₃), potassium silicate (K₂SiO₃) results, which has similar properties.
+<strong>Step 2: Fusion</strong><br>
+Heat the mixture in a furnace or kiln to 1100-1400°C until fully molten. A small crucible furnace (powered by coal or gas) works for lab/small-scale production. Stir occasionally to ensure mixing.
+<strong>Step 3: Cooling &amp; Extraction</strong><br>
+Let the molten mixture cool. It solidifies into a glassy mass. Pour into water while still hot (carefully—violent steam generation). The glass dissolves, forming a viscous alkaline solution: sodium silicate &quot;waterglass.&quot;</p>
+<h3>Properties &amp; Uses</h3>
+<ul>
+<li><strong>Adhesive:</strong> Binds sand for glass mold casting (lost-wax casting), bonds ceramics, and waterproofs masonry.</li>
+<li><strong>Preservation:</strong> Eggs can be stored in dilute waterglass solution; the silicate forms a protective coating preventing spoilage.</li>
+<li><strong>Refractory:</strong> Mixed with kaolin clay, it forms heat-resistant coatings for crucibles and furnace linings.</li>
+<li><strong>Detergent Builder:</strong> Used in laundry detergents to soften water and disperse dirt.</li>
+<li><strong>Chemical Synthesis:</strong> Starting material for silica gels, silicones, and other silica-based products.</li>
+</ul>
+<h3>Making Silica Gel from Waterglass</h3>
+<p>Bubble CO₂ or add a weak acid (like dilute HCl or vinegar) to waterglass solution. Silicic acid precipitates as a gelatinous solid. Dry this gel slowly (on a warm surface or in a low oven) to obtain silica gel desiccant or absorbent.</p>
+<p>Na₂SiO₃ + 2 HCl → H₂SiO₃↓ + 2 NaCl (or CO₂ instead of HCl)</p>
+<div class="tip">
+<p><strong>Tip:</strong> Waterglass can be stored indefinitely as a glass solid. To use, reheat slightly with water or dissolve in hot water. The solution remains stable for months if sealed.</p>
+</div>
+</section>
+<section id="testing">
+<h2>9. Quality Testing &amp; Analysis</h2>
+<p>Verifying the purity and concentration of alkali products is essential for consistent results in downstream processes (soap, glass, paper, etc.). Simple chemical tests can be performed without advanced equipment.</p>
+<h3>pH Measurement (Acidity/Basicity)</h3>
+<p>The simplest test uses pH indicator strips or solutions:</p>
+<ul>
+<li><strong>pH Paper:</strong> Dip into solution; color indicates pH on a scale of 0-14 (7 is neutral, &gt;7 is basic/alkaline).</li>
+<li><strong>Phenolphthalein:</strong> Add a drop to alkaline solution; it turns pink/red. Very simple and specific for pH &gt;8.2.</li>
+<li><strong>Expected pH:</strong>
+<ul>
+<li>Potash (K₂CO₃) solution: pH 11-12</li>
+<li>Soda ash (Na₂CO₃) solution: pH 11-12</li>
+<li>Slaked lime [Ca(OH)₂]: pH 12-13</li>
+<li>NaOH solution: pH 13-14</li>
+</ul>
+</li>
+</ul>
+<h3>Titration (Concentration Measurement)</h3>
+<p>Titration determines the precise amount of alkali in a solution by neutralizing it with a standard acid of known concentration (like dilute HCl or acetic acid from vinegar).</p>
+<h4>Standard Titration Procedure:</h4>
+<ol>
+<li>Measure a known volume of the alkali solution (e.g., 10 mL) into a flask.</li>
+<li>Add a few drops of phenolphthalein indicator (solution turns pink if pH &gt;8.2).</li>
+<li>Slowly add the acid from a burette (or pipette) until the pink color just disappears.</li>
+<li>Record the volume of acid used.</li>
+<li>Calculate: Alkali concentration (mol/L) = (acid concentration × acid volume) / (alkali volume × equivalents)</li>
+</ol>
+<p>For NaOH: If 10 mL of 1 M NaOH requires 10 mL of 1 M HCl, then the NaOH is 1 M (40 g/L).</p>
+<h3>Gravimetric Analysis (Purity by Weight)</h3>
+<p>Weigh a sample, dilute and acidify, and precipitate carbonates or other components; weigh the precipitate to determine purity.</p>
+<p><strong>Example for soda ash purity:</strong> Dissolve 1 g of soda ash in water. Add excess HCl or Ca(NO₃)₂ solution. CaCO₃ precipitates. Filter, dry, and weigh. The ratio (weight of precipitate / expected weight if 100% pure) × 100 = % purity.</p>
+<h3>Flame Test (Sodium/Potassium Detection)</h3>
+<p>Dip a clean wire loop into the solution and hold it in a clear flame:</p>
+<ul>
+<li><strong>Yellow flame:</strong> Sodium compounds (Na₂CO₃, NaCl, NaOH)</li>
+<li><strong>Lilac/violet flame:</strong> Potassium compounds (K₂CO₃, KOH)</li>
+</ul>
+<h3>Solubility &amp; Crystallinity</h3>
+<p>Dissolve a small sample in water. Pure soda ash, potash, and NaOH dissolve completely without residue. Any insoluble material indicates contamination (sand, clay, etc.).</p>
+<table><thead><tr><th scope="row">Product</th><th scope="row">Purity Target (%)</th><th scope="row">Quick Test</th><th scope="row">Preferred Titrant</th></tr></thead><tbody><tr><td>Potash (K₂CO₃)</td><td>&gt;95</td><td>pH, flame test (violet)</td><td>Standardized HCl</td></tr><tr><td>Soda Ash (Na₂CO₃)</td><td>&gt;99</td><td>pH, dissolve in water</td><td>Standardized HCl</td></tr><tr><td>Slaked Lime Ca(OH)₂</td><td>&gt;90</td><td>pH, white color</td><td>Standardized HCl</td></tr><tr><td>NaOH (liquid)</td><td>&gt;98</td><td>Phenolphthalein, pH</td><td>Standardized HCl</td></tr></tbody></table>
+</section>
+<section id="applications">
+<h2>10. Industrial Applications</h2>
+<h3>Glass Manufacturing</h3>
+<p>Soda ash (Na₂CO₃) is a primary ingredient in glass formulation. It acts as a flux, lowering the melting point of silica from ~1700°C to ~1000°C. Typical glass batch:</p>
+<p>Silica sand (SiO₂): 71%
+Soda ash (Na₂CO₃): 16%
+Limestone (CaCO₃): 10%
+Other (colorants): 3%</p>
+<p>The soda acts as a network modifier, creating disruptions in the silica glass structure that reduce viscosity and allow shaping at lower temperatures. Too much soda makes glass soluble in water; the limestone stabilizes it.</p>
+<h3>Soap Making</h3>
+<p>NaOH (caustic soda) saponifies fats and oils into soap. The reaction:</p>
+<p>Fat/Oil (triglyceride) + 3 NaOH → Soap (fatty acid salts) + Glycerin</p>
+<p>Potash (K₂CO₃) produces soft soap; NaOH produces hard soap. The reaction requires heating and strong agitation. See soap-candles.html for detailed instructions.</p>
+<h3>Paper Pulping (Kraft Process)</h3>
+<p>Kraft pulping uses NaOH and Na₂S dissolved in water to dissolve lignin (the glue binding cellulose fibers in wood). The wood chips are cooked in this &quot;white liquor&quot; at 150-170°C under pressure. Lignin dissolves; cellulose remains as pulp. Recovered chemicals are burned for energy recovery.</p>
+<h3>Textile Bleaching &amp; Dyeing</h3>
+<p>Alkali (NaOH, Na₂CO₃) swells fibers, opening them to dyes and bleaches. In chlorine bleaching:</p>
+<p>Cl₂ + 2 NaOH → NaCl + NaOCl (bleach) + H₂O</p>
+<p>Sodium hypochlorite (NaOCl) is the active bleaching agent. Alkali also helps remove sizing and impurities from raw fibers.</p>
+<h3>Water Treatment</h3>
+<p>Slaked lime [Ca(OH)₂] is used to soften hard water (remove Ca²⁺ and Mg²⁺), adjust pH, and flocculate particulates during clarification. Soda ash helps remove temporary hardness; lime removes permanent hardness.</p>
+<h3>Food Processing</h3>
+<p>Alkali processes are essential in traditional food production:</p>
+<ul>
+<li><strong>Nixtamalization:</strong> Treat corn with calcium hydroxide to improve nutritional value and digestibility.</li>
+<li><strong>Olive Curing:</strong> Immerse green olives in NaOH solution briefly, then rinse and ferment to remove bitterness.</li>
+<li><strong>Lye Washing:</strong> Some pretzels are dipped in dilute NaOH before baking to develop the characteristic brown crust.</li>
+</ul>
+</section>
+<section id="safety">
+<h2>11. Safety Considerations</h2>
+<div class="warning">
+<p><strong>Alkali Hazards:</strong> All alkalis are corrosive. NaOH and potash can cause severe chemical burns, blindness if splashed in the eye, and respiratory damage if inhaled as dust or vapor.</p>
+</div>
+<div class="danger">
+<p><strong>DANGER: Severe Caustic Burns</strong> — Sodium hydroxide (NaOH) and potassium compounds cause chemical burns that continue to damage tissue until completely rinsed away. Unlike acid burns, alkali burns penetrate deeply and may cause liquefactive necrosis (tissue turning to soap). A splash that seems minor can result in permanent scarring, nerve damage, or loss of limb function. Always assume any alkali spill on skin is a medical emergency. Work near an eyewash station and safety shower. Never work alone with alkalis. If contact occurs, flush immediately for 15+ minutes and call emergency services.</p>
+</div>
+<h3>Chemical Burn Treatment</h3>
+<ul>
+<li><strong>Skin Contact:</strong> Immediately flush with large amounts of water for at least 15 minutes. Remove contaminated clothing. Seek medical attention for severe burns. Do not attempt to neutralize with acid—the heat generated makes burns worse.</li>
+<li><strong>Eye Contact:</strong> Flush with water for at least 15 minutes. Seek immediate emergency medical care—alkali burns to the eye can cause permanent blindness, cataracts, or corneal scarring. Delay in treatment results in worse outcomes.</li>
+<li><strong>Inhalation:</strong> Move to fresh air immediately. If respiratory distress, coughing, or difficulty breathing occurs, seek medical attention. Inhaled dust can cause delayed pulmonary edema (fluid in lungs).</li>
+</ul>
+<h3>Heat of Dissolution &amp; Exothermic Reactions</h3>
+<p>Dissolving NaOH, KOH, or Ca(OH)₂ in water is highly exothermic—the solution heats rapidly, sometimes to boiling. This can cause:</p>
+<ul>
+<li>Violent boiling and spattering</li>
+<li>Steam burns</li>
+<li>Breakage of glass containers</li>
+</ul>
+<p><strong>Safe procedure:</strong> Always add alkali to water, never reverse. Pour slowly. Use glass containers rated for temperature shock. Wear gloves and goggles.</p>
+<h3>Quicklime (CaO) Hazards</h3>
+<p>Quicklime is reactive and can ignite at high temperatures. Moisture in air causes violent hydration. It is more hazardous than slaked lime.</p>
+<ul>
+<li>Store in dry conditions, sealed containers.</li>
+<li>Wear dust mask and gloves when handling.</li>
+<li>When slaking, add water to lime, not reverse.</li>
+<li>Keep away from organic materials—heat can ignite them.</li>
+</ul>
+<div class="danger">
+<p><strong>CRITICAL: Exothermic Dissolution of Alkalis</strong> — Dissolving sodium hydroxide (NaOH), potassium hydroxide (KOH), or calcium oxide (quicklime) in water releases enormous amounts of heat. Water can reach boiling point within seconds, causing violent spattering, steam burns, and potential glass container failure. Never pour water into alkali powder or quicklime. Always add alkali to water slowly, while stirring, wearing full protective equipment. In cold climates, pre-cool your water or perform the dissolution outdoors. Many severe chemical burns occur from ignoring this single rule.</p>
+</div>
+<h3>Chlorine Gas (Cl₂) Safety</h3>
+<p>If producing caustic soda via electrolysis or capturing Cl₂ from other sources, remember:</p>
+<ul>
+<li>Cl₂ is toxic; inhalation causes respiratory injury.</li>
+<li>It is denser than air and settles in low areas.</li>
+<li>Use in a well-ventilated area or capture in absorption towers (scrubbers with NaOH solution).</li>
+<li>Have an exit route and eye wash station available.</li>
+</ul>
+<div class="danger">
+<p><strong>DANGER: Carbon Dioxide &amp; Asphyxiation in Lime Kilns</strong> — Kilns, calcination furnaces, and Solvay carbonation towers produce large volumes of CO₂ gas. In enclosed or poorly ventilated spaces, CO₂ accumulates and displaces oxygen, causing unconsciousness and death without warning signs. CO₂ is odorless, colorless, and heavier than air—it pools in low areas. Never enter a closed kiln, furnace chamber, or tank without testing air composition and ensuring continuous ventilation. Use a canary or chemical oxygen monitor. Several workers per year die from suffocation in alkali production facilities. Treat all kiln/furnace atmospheres as potentially lethal.</p>
+</div>
+<h3>Personal Protective Equipment (PPE)</h3>
+<ul>
+<li><strong>Eyes:</strong> Chemical splash goggles or face shield</li>
+<li><strong>Hands:</strong> Chemical-resistant gloves (nitrile, rubber, or neoprene)</li>
+<li><strong>Body:</strong> Long sleeves, long pants, closed-toe shoes</li>
+<li><strong>Respiratory:</strong> Dust mask or respirator when handling powders or gases</li>
+<li><strong>Emergency:</strong> Eyewash station and safety shower within 10 seconds of work area</li>
+</ul>
+<h3>Storage of Alkalis</h3>
+<ul>
+<li><strong>NaOH Liquid:</strong> Store in sealed glass or plastic bottles, in a cool place. It is hygroscopic and will absorb water from air if exposed.</li>
+<li><strong>NaOH Solid:</strong> Store in sealed containers in a dry location. Can be stored indefinitely if kept dry.</li>
+<li><strong>Potash/Soda Ash:</strong> Store in sealed, dry containers. Protect from moisture.</li>
+<li><strong>Quicklime:</strong> Store dry, sealed, away from water and flammables.</li>
+<li><strong>All alkalis:</strong> Keep away from acids, Al, Zn, and other reactive metals. Label clearly.</li>
+</ul>
+</section>
+<section id="worked-example">
+<h2>12. Worked Example: Household Potash Production</h2>
+<p>This example walks through a realistic small-scale potash production using materials available to homesteaders or post-collapse communities.</p>
+<h3>Scenario Setup</h3>
+<ul>
+<li><strong>Available ash source:</strong> Hardwood fireplace, producing ~5 kg of ash per week (winter heating season)</li>
+<li><strong>Goal:</strong> Produce 2 kg of potash (K₂CO₃) for soap making</li>
+<li><strong>Equipment:</strong> Wooden barrel (50 L), iron pot, cheesecloth, fire pit</li>
+<li><strong>Timeline:</strong> 2 weeks of continuous work</li>
+</ul>
+<h3>Step 1: Ash Collection &amp; Screening</h3>
+<p>Collect ash over 2 weeks from the fireplace. Wood type: oak and maple (mixed hardwoods). Total ash collected: 10 kg.</p>
+<p>Screen the ash through a cloth to remove large charcoal chunks. Charcoal (~0.5 kg) is set aside for other uses. Ash remaining for leaching: 9.5 kg.</p>
+<h3>Step 2: Leaching Calculation</h3>
+<p><strong>Formula:</strong> Volume of water = 2 × Volume of ash</p>
+<p>Ash bulk density ~400 kg/m³, so 9.5 kg = 0.024 m³ = 24 L ash.
+Water needed = 2 × 24 = 48 L.</p>
+<p>Use 50 L of hot water (warmed to ~60°C before pouring). Mix ash and water in the barrel and let stand 24 hours, stirring occasionally.</p>
+<h3>Step 3: Lye Collection &amp; Strength Test</h3>
+<p>After 24 hours, drain lye water from the barrel tap into containers. Lye collected: ~40 L (some lost to ash absorption and settling).</p>
+<p><strong>Strength test:</strong> Float a clean hen egg in the lye. If the egg sinks, lye is too weak. If it floats or barely sinks, lye is adequate (approximately 8-10% K₂CO₃).</p>
+<p>In this scenario, the egg barely floats—adequate strength.</p>
+<h3>Step 4: Evaporation</h3>
+<p>Heat lye in an iron pot over a wood fire. Initial volume: 40 L. Target: reduce to ~2 L.</p>
+<p><strong>Heat and time calculation:</strong> With a hot fire and a 1 m² surface pan, expect ~0.5-1 L/hour evaporation rate. Total boiling time: 40-50 hours (conducted over 3-4 days with intermittent heating).</p>
+<p><strong>Observation:</strong> As water evaporates, color deepens from yellow-brown to dark brown. Near the end, a brown crust begins to form around the edges.</p>
+<h3>Step 5: Final Drying</h3>
+<p>When liquid volume is reduced to ~2 L, pour the hot concentrate into a shallow iron tray (or flat stone) and allow it to cool. The liquid solidifies into a hard, dark brown mass. This is crude potash (~70-80% K₂CO₃, remainder being KOH and inerts).</p>
+<p><strong>Yield:</strong> The hardened mass weighs ~1.5-2 kg. Assuming 75% K₂CO₃, actual K₂CO₃ = ~1.2-1.5 kg.</p>
+<h3>Step 6 (Optional): Calcination for Higher Purity</h3>
+<p>If the potash is needed for glass making or high-purity soap, heat the brown mass in a small furnace or kiln to 700°C for 1 hour. This converts residual KOH to K₂CO₃. The product is now &quot;pearlash&quot;—white or light gray crystalline powder, &gt;95% K₂CO₃.</p>
+<p>(Calcination setup is complex; most soap makers skip this step.)</p>
+<h3>Lessons Learned</h3>
+<ul>
+<li><strong>Labor:</strong> ~50-60 hours of labor (mostly waiting/stirring). One person can manage with a part-time schedule.</li>
+<li><strong>Fuel:</strong> ~20-30 kg of wood for evaporation fire (significant but available in a homestead setting).</li>
+<li><strong>Cost:</strong> Essentially free if using fireplace ash and available water and fuel.</li>
+<li><strong>Yield:</strong> 1-2 kg of usable potash per 10 kg ash—reasonable for household needs.</li>
+</ul>
+<p><strong>Note:</strong> This process scales linearly. A community producing 100 kg of ash per week could generate 10-20 kg of potash per week using larger barrels and more aggressive heating.</p>
+<table><thead><tr><th>Stage</th><th>Material</th><th>Quantity</th><th>Time Required</th></tr></thead><tbody><tr><td>Ash Collection</td><td>Hardwood ash</td><td>10 kg</td><td>2 weeks</td></tr><tr><td>Leaching</td><td>Hot water + ash</td><td>50 L water</td><td>24-48 hours (soaking)</td></tr><tr><td>Evaporation</td><td>Lye water</td><td>40 L → 2 L</td><td>40-50 hours (heat)</td></tr><tr><td>Solidification</td><td>Concentrate</td><td>~2 kg crude potash</td><td>24-48 hours (cooling)</td></tr></tbody></table>
+</section>
+<section id="scaling">
+<h2>13. Scaling from Household to Industrial</h2>
+<h3>Household Scale (0.1-1 kg/day)</h3>
+<p>For small-scale soap making or glass experiments:</p>
+<ul>
+<li><strong>Potash:</strong> Ash from a household fireplace, leached in a barrel, evaporated on a stove.</li>
+<li><strong>Lime:</strong> Purchased or made in a small kiln from collected limestone.</li>
+<li><strong>NaOH:</strong> Made from soda ash and lime in a home kitchen (careful with heat).</li>
+</ul>
+<h3>Small Production Scale (1-100 kg/day)</h3>
+<p>For a village or small industrial operation:</p>
+<ul>
+<li><strong>Potash Works:</strong> Multiple leaching barrels (10+ m³ total ash), evaporation in large iron pots heated over a dedicated fire.</li>
+<li><strong>Lime Kiln:</strong> Small updraft kiln (1-2 m diameter) producing 500-2000 kg/day of quicklime.</li>
+<li><strong>Solvay Plant:</strong> Single carbonation tower with brine supply, ammonia absorption, and calcination furnace.</li>
+</ul>
+<h3>Industrial Scale (1000+ kg/day)</h3>
+<p>Traditional industrial plants:</p>
+<ul>
+<li><strong>Potash:</strong> 20-50 barrel leaching works, industrial evaporating pans.</li>
+<li><strong>Lime:</strong> Multiple kilns or a large continuous kiln.</li>
+<li><strong>Solvay:</strong> Multiple absorption towers, continuous carbonation, efficient ammonia recovery.</li>
+<li><strong>Caustic Soda (Electrolysis):</strong> Large brine reservoirs, multiple electrolytic cells, Cl₂ absorption and recovery.</li>
+</ul>
+<h3>Key Scaling Factors</h3>
+<ul>
+<li><strong>Energy:</strong> As scale increases, unit energy cost decreases (better heat recovery, efficiency).</li>
+<li><strong>Labor:</strong> Automation reduces labor per unit at large scale; small scale is labor-intensive.</li>
+<li><strong>Capital:</strong> Large plants require massive investment but achieve low per-unit cost. Small operations have high per-unit cost but low upfront expense.</li>
+<li><strong>Waste:</strong> Large plants can afford pollution control and byproduct recovery; small operations often have higher environmental impact per unit.</li>
+</ul>
+<h3>Transition Strategy (Post-Collapse Scenario)</h3>
+<ol>
+<li>Start with household potash production (simple, low-cost, immediate return).</li>
+<li>Establish a small lime kiln using local limestone.</li>
+<li>Scale up potash works as ash supply allows.</li>
+<li>Develop a Solvay plant if access to brine (seawater, salt deposits) and coal is reliable.</li>
+<li>If hydropower becomes available, consider electrolytic caustic soda production.</li>
+</ol>
+</section>
+<section id="mistakes">
+<h2>14. Common Mistakes &amp; Troubleshooting</h2>
+<h3>Potash Production Problems</h3>
+<p><strong>Problem: Weak Lye (Low Potassium Content)</strong><br>
+<strong>Cause:</strong> Softwood ash, low ash quality, or insufficient leaching time.<br>
+<strong>Solution:</strong> Use hardwood ash. Make multiple passes through the ash. Perform longer leaching (24-48 hours). Test with a floating egg—if an egg floats in potash lye, concentration is adequate (~10% K₂CO₃).
+<strong>Problem: Evaporation Takes Forever</strong><br>
+<strong>Cause:</strong> Insufficient heat, small pan surface area, or very dilute lye.<br>
+<strong>Solution:</strong> Use a wider, shallower pan. Build a better fire underneath. Pre-concentrate lye by settling (some sediment drops, top layer is stronger). Use a reflective shield to focus heat.
+<strong>Problem: Potash Absorbs Moisture &amp; Clumps</strong><br>
+<strong>Cause:</strong> NaOH and K₂CO₃ are hygroscopic; exposure to humid air absorbs water.<br>
+<strong>Solution:</strong> Store in sealed containers in a dry location. Heat potash gently before use to remove absorbed moisture. Use desiccants (dry lime or silica gel) in storage.</p>
+<h3>Lime Production Problems</h3>
+<p><strong>Problem: Incomplete Decomposition of Limestone</strong><br>
+<strong>Cause:</strong> Temperature too low, kiln undersized, or limestone too pure/dense.<br>
+<strong>Solution:</strong> Increase firing temperature to 950-1000°C. Ensure good draft in the kiln. Crush limestone into smaller pieces (faster heat penetration). Leave the limestone in the kiln longer.
+<strong>Problem: Quicklime Clumps or Refuses to Slake</strong><br>
+<strong>Cause:</strong> Deadburned (overheated) limestone; excessive heat has created an inert CaO that reacts slowly.<br>
+<strong>Solution:</strong> Keep kiln temperature below 1100°C. Reject deeply hardened, crystalline quicklime. Test slakeability by adding water—good quicklime generates heat and becomes creamy within minutes.</p>
+<h3>Solvay Process Problems</h3>
+<p><strong>Problem: Low NaHCO₃ Yield (Incomplete Carbonation)</strong><br>
+<strong>Cause:</strong> Insufficient CO₂ flow, weak ammonia absorption, or too-high temperature.<br>
+<strong>Solution:</strong> Increase CO₂ flow rate or bubble time in the tower. Pre-saturate brine with ammonia. Reduce temperature; the reaction is faster at lower temperatures. Use a tall carbonation tower to maximize contact.
+<strong>Problem: Loss of Ammonia (NH₃) to Exhaust Gas</strong><br>
+<strong>Cause:</strong> Insufficient absorption in the carbonation tower.<br>
+<strong>Solution:</strong> Use a packed column (with rings or saddles) to increase liquid-gas contact. Recirculate weak ammonia solution. Add absorption stage before venting exhaust.</p>
+<h3>Caustic Soda (Lime-Soda Process) Problems</h3>
+<p><strong>Problem: Precipitate Won't Filter (Gummy/Colloidal CaCO₃)</strong><br>
+<strong>Cause:</strong> Overly fine particles, slow cooling, or improper mixing.<br>
+<strong>Solution:</strong> Heat mixture slowly and hold at 80-100°C for longer (promotes particle growth). Allow longer settling time before filtering. Use a coarser filter medium. Add a flocculent (alum, bentonite) to aid settling.
+<strong>Problem: NaOH Solution Contaminated with Na₂CO₃ (Weak Alkali)</strong><br>
+<strong>Cause:</strong> Unreacted soda ash, or CO₂ re-absorption from air.<br>
+<strong>Solution:</strong> Ensure lime is in slight excess. Seal the vessel to prevent CO₂ uptake during heating. After evaporation, avoid prolonged contact with air.</p>
+<h3>Testing &amp; Verification Problems</h3>
+<p><strong>Problem: Titration Results Are Erratic</strong>
+<strong>Cause:</strong> Acid or base standards are not accurately known; burette is dirty or leaking; sample is inhomogeneous.
+<strong>Solution:</strong> Prepare standards carefully and verify concentration independently. Clean and rinse burette with the solution it will contain. Stir samples thoroughly; solids may settle.
+<strong>Problem: pH Indicator Paper Doesn't Change Color</strong>
+<strong>Cause:</strong> Paper is expired or damaged; solution is too dilute; or wrong type of paper for the pH range.
+<strong>Solution:</strong> Check expiration date and store paper in a dry, cool place. Use concentrated alkali solutions for clear color. Use pH paper rated 0-14 (universal indicator) for broad range testing.</p>
+</section>
+<section id="reference-formulas">
+<h2>15. Reference: Key Chemical Reactions &amp; Formulas</h2>
+<p>The following table summarizes the major chemical reactions used in alkali production. Understanding these helps troubleshoot yields and predict byproducts.</p>
+<table><thead><tr><th>Process</th><th>Reaction</th><th>Purpose</th><th>Notes</th></tr></thead><tbody><tr><td>Lime production</td><td>CaCO₃ + heat → CaO + CO₂</td><td>Quicklime from limestone</td><td>Kiln temp: 900-1000°C</td></tr><tr><td>Slaking</td><td>CaO + H₂O → Ca(OH)₂ + heat</td><td>Quicklime to slaked lime</td><td>Exothermic; ~1150 kJ/kg released</td></tr><tr><td>Potash leaching</td><td>K₂CO₃ (in ash) + H₂O → K₂CO₃(aq)</td><td>Extract potash from ash</td><td>Multiple passes increase yield</td></tr><tr><td>LeBlanc salt cake</td><td>2 NaCl + H₂SO₄ → Na₂SO₄ + 2 HCl</td><td>Convert salt to sulfate</td><td>Furnace temp: 500-600°C</td></tr><tr><td>LeBlanc reduction</td><td>Na₂SO₄ + 2 C + CaCO₃ → Na₂CO₃ + CaS + 2 CO₂</td><td>Produce soda ash</td><td>Furnace temp: 1000-1200°C</td></tr><tr><td>Solvay carbonation</td><td>NaCl + NH₃ + CO₂ + H₂O → NaHCO₃ + NH₄Cl</td><td>Precipitate bicarbonate</td><td>Tower method; low temp</td></tr><tr><td>Solvay calcination</td><td>2 NaHCO₃ → Na₂CO₃ + H₂O + CO₂</td><td>Convert bicarbonate to soda ash</td><td>Heat to 100-200°C</td></tr><tr><td>Ammonia recovery</td><td>NH₄Cl + Ca(OH)₂ → NH₃ + CaCl₂ + H₂O</td><td>Recycle ammonia in Solvay</td><td>Heat to drive off NH₃ gas</td></tr><tr><td>Caustic (lime-soda)</td><td>Na₂CO₃ + Ca(OH)₂ → 2 NaOH + CaCO₃</td><td>Convert soda ash to NaOH</td><td>Heating required; filter CaCO₃</td></tr><tr><td>Caustic (electrolysis)</td><td>2 NaCl + 2 H₂O → 2 NaOH + Cl₂ + H₂</td><td>Chlor-alkali process</td><td>DC electricity required; gas hazard</td></tr><tr><td>Waterglass</td><td>Na₂CO₃ + SiO₂ → Na₂SiO₃ + CO₂</td><td>Sodium silicate production</td><td>Furnace temp: 1100-1400°C</td></tr><tr><td>Silica gel</td><td>Na₂SiO₃ + 2 HCl → H₂SiO₃↓ + 2 NaCl</td><td>Precipitate silicic acid gel</td><td>Use CO₂ or weak acid</td></tr></tbody></table>
+</section>
+<section id="composition-reference">
+<h2>16. Reference: Typical Compositions &amp; Purity Standards</h2>
+<p>This table indicates the composition of alkali products at various stages of refinement, useful for assessing product quality.</p>
+<table><thead><tr><th>Product</th><th>Main Component (%)</th><th>Common Impurities</th><th>Purity Grade</th><th>Typical Use</th></tr></thead><tbody><tr><td>Crude potash</td><td>K₂CO₃: 60-75%</td><td>KOH, insoluble ash, KCl</td><td>Crude (50-75%)</td><td>Soap, agricultural</td></tr><tr><td>Commercial potash</td><td>K₂CO₃: 90-95%</td><td>KOH, minor salts</td><td>Commercial (90-95%)</td><td>Soap, glass</td></tr><tr><td>Pearlash</td><td>K₂CO₃: >98%</td><td>Trace alkali, none</td><td>Premium (>98%)</td><td>Fine glass, laboratory</td></tr><tr><td>Solvay soda ash</td><td>Na₂CO₃: 99.5%</td><td>NaCl, water</td><td>Industrial (99%+)</td><td>Glass, chemicals</td></tr><tr><td>Slaked lime (fresh)</td><td>Ca(OH)₂: 90-95%</td><td>CaCO₃ (from air), inert</td><td>Fresh (90-95%)</td><td>Mortar, water treatment</td></tr><tr><td>Quicklime (kiln)</td><td>CaO: 85-95%</td><td>Unreacted CaCO₃, MgO</td><td>Kiln product (85-95%)</td><td>Slaking, refractories</td></tr><tr><td>Caustic soda solution</td><td>NaOH: 10-50%</td><td>Na₂CO₃ (if exposed to air)</td><td>Solution strength varies</td><td>Soap, paper, chemicals</td></tr><tr><td>Solid caustic</td><td>NaOH: >98%</td><td>Water, Na₂CO₃</td><td>Pellets/flakes (>98%)</td><td>Specialized synthesis</td></tr></tbody></table>
+<div class="info-box">
+<p><strong>Key:</strong> High purity (&gt;99%) is needed for glass and fine chemical synthesis. Soap making tolerates crude products (60-75% K₂CO₃). Industrial applications typically use 95%+ purity to minimize waste and side reactions.</p>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="ammonia-synthesis-simplified.html">Ammonia Synthesis (Simplified)</a>
+<a href="chemical-fuel-salvage.html">Chemical &amp; Fuel Salvage Safety</a>
+<a href="chemistry-fundamentals.html">Chemistry from Scratch</a>
+<a href="electrolysis-chloralkali.html">Electrolysis &amp; Chloralkali Process</a>
+<a href="ether-chloroform-synthesis.html">Field Anesthesia &amp; Pain Management</a>
+<a href="glass-ceramics.html">Glass, Optics &amp; Ceramics</a>
+<a href="glue-adhesives.html">Glue &amp; Adhesives</a>
+<a href="homestead-chemistry.html">Homestead Chemistry</a>
+<a href="petroleum-refining.html">Petroleum Refining</a>
+<a href="plastic-remolding-systems.html">Plastic Remolding &amp; Recycling</a>
+<a href="rubber-latex.html">Rubber &amp; Latex Processing</a>
+<a href="salt-production.html">Salt Production</a>
+<a href="soap-candles.html">Soap &amp; Candle Making</a>
+<a href="solvents-distillation.html">Solvents &amp; Distillation</a>
+<a href="wood-distillation.html">Wood Distillation &amp; Pyrolysis</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

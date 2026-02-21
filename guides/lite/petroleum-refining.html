@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/petroleum-refining.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petroleum Refining</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Industrial Chemistry</span> ›
+<span>Petroleum Refining</span>
+</div>
+
+<div class="danger">
+<strong>⚠ SAFETY WARNING</strong><br>This guide covers activities with significant risk of injury or harm. Professional training may be required.
+</div>
+
+<h1>Petroleum Refining</h1>
+<p class="subtitle">Fractional distillation, product fractions (gasoline, kerosene, diesel), cracking, lubricants, and biofuel alternatives. Fuel production for generators, vehicles, and lighting in survival situations.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~22 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">1. Overview: Why Refining Matters in Survival Contexts</a></li>
+<li><a href="#equipment-reality">Realistic Equipment Requirements</a></li>
+<li><a href="#crude-composition">2. Crude Oil Composition and Origin</a></li>
+<li><a href="#chemical-theory">3. Chemical Theory: Boiling Point Separation</a></li>
+<li><a href="#simple-distillation">4. Simple Distillation Apparatus Construction</a></li>
+<li><a href="#materials-reagents">5. Materials and Reagents for Small-Scale Refining</a></li>
+<li><a href="#equipment-setup">6. Equipment Setup and Reactor Design</a></li>
+<li><a href="#fractional-distillation">7. Fractional Distillation Column Design and Operation</a></li>
+<li><a href="#fractions">8. Product Fractions and Properties</a></li>
+<li><a href="#cracking">9. Cracking: Thermal and Catalytic</a></li>
+<li><a href="#yield-purity">10. Yield and Purity Assessment</a></li>
+<li><a href="#scale-up">11. Scale-Up Considerations</a></li>
+<li><a href="#common-failures">12. Why Improvised Refining Often Fails</a></li>
+<li><a href="#waste-disposal">12. Waste Handling and Disposal</a></li>
+<li><a href="#troubleshooting">13. Troubleshooting Refining Issues and Common Mistakes</a></li>
+<li><a href="#safety">14. Safety Protocols and Personal Protective Equipment</a></li>
+<li><a href="#lubricants">Lubricant Production and Grading</a></li>
+<li><a href="#15-fuel-storage-and-safety">15. Fuel Storage and Safety</a></li>
+<li><a href="#step-procedure">16. Step-by-Step Distillation Procedure (Complete Walkthrough)</a></li>
+<li><a href="#biofuels">17. Biofuel Alternatives</a></li>
+<li><a href="#biodiesel">18. Biodiesel Production: Transesterification</a></li>
+<li><a href="#reference">19. Reference Tables and Quick Charts</a></li>
+<li><a href="#related-guides">Related Guides</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>EXTREME HAZARD</strong>: Petroleum refining involves highly flammable and explosive materials at elevated temperatures. Improper procedures can cause fires, explosions, and toxic exposure resulting in death. This guide is for educational reference only. Never attempt without proper safety training, equipment, and ventilation.</p>
+</div>
+<div class="warning">
+<p><strong>Required Reading:</strong> Before attempting any procedures in this guide, read the <a href="chemical-safety">Chemical Safety Guide</a> in full.</p>
+</div>
+<section id="overview">
+<h2>1. Overview: Why Refining Matters in Survival Contexts</h2>
+<p>Petroleum refining converts raw crude oil into usable fuels—gasoline for vehicles and generators, diesel for heavy equipment, kerosene for lighting and heating, and heating oil for furnaces. In a survival scenario with limited supply chains, understanding refining allows you to process locally-available crude oil or reclaimed petroleum products into standardized fuels that power essential equipment.</p>
+<p>This guide covers:</p>
+<ul>
+<li><strong>Fractional distillation</strong> to separate crude into fuel fractions</li>
+<li><strong>Product properties</strong> for engine compatibility</li>
+<li><strong>Small-scale equipment</strong> that can be built from repurposed materials</li>
+<li><strong>Alternative fuels</strong> (biofuels, wood gas) when petroleum is unavailable</li>
+<li><strong>Critical safety measures</strong> because petroleum vapors are volatile and flammable</li>
+</ul>
+<div class="tip">
+<p>Most survival scenarios rely on portable distillation setups. A 2-liter laboratory distillation kit can produce 100-200 mL of refined gasoline per batch—enough to sustain small generators or vehicle use for days when scaled appropriately.</p>
+</div>
+</section>
+<section id="equipment-reality">
+<h2>Realistic Equipment Requirements</h2>
+<p>Petroleum refining romanticized in popular media often glosses over practical realities: what equipment can truly be improvised versus what requires industrial manufacturing. This section honestly assesses feasibility for small-scale, off-grid refining and identifies non-negotiable safety equipment.</p>
+<h3>What Can Be Improvised</h3>
+<p><strong>Distillation flasks and vessels:</strong></p>
+<ul>
+<li>Laboratory glassware can be partially sourced from scrap (old chemistry sets, laboratory equipment donations)</li>
+<li>Stainless steel or copper pots (minimum 2–5 liter capacity) can substitute for expensive borosilicate flasks</li>
+<li><strong>Reality:</strong> Borosilicate glassware is nearly impossible to manufacture without a glass furnace. However, stainless steel vessels (commonly available) work for basic distillation, though they obscure interior visibility</li>
+</ul>
+<p><strong>Condenser tubes:</strong></p>
+<ul>
+<li>Air-cooled condensers can be built from copper tubing (1/2&quot; diameter) coiled and mounted vertically</li>
+<li>Water-cooled condensers can be improvised using nested metal tubes (copper outer, copper inner with water flow)</li>
+<li><strong>Reality:</strong> Effective cooling requires adequate surface area. A 1–2 meter coil of copper tubing provides minimal cooling. For large batches, multiple coils in series or a commercial shell-and-tube condenser is more practical</li>
+</ul>
+<p><strong>Thermometers:</strong></p>
+<ul>
+<li>Mercury thermometers are dangerous (toxic vapor); use alcohol or digital alternatives</li>
+<li>Improvised: A straight glass tube filled with colored alcohol can be calibrated against boiling water (100°C) to create a crude thermometer</li>
+<li><strong>Reality:</strong> Precision matters. A thermometer reading error of ±10°C causes fraction contamination. Digital thermometers (~$10) are reliable and worth purchasing</li>
+</ul>
+<p><strong>Packing materials for fractionating columns:</strong></p>
+<ul>
+<li>Glass beads (sourced from old jewelry, broken beads) can be used, though irregular</li>
+<li>Copper turnings (from machining scrap) work well</li>
+<li>Stainless steel mesh or hardware cloth (coarse) can substitute for purpose-built packing</li>
+<li><strong>Reality:</strong> Random packing is less efficient than designed packing. You'll need more height and lower throughput to achieve good separation</li>
+</ul>
+<p><strong>Heating system:</strong></p>
+<ul>
+<li>Electric heating mantles can be purchased used or salvaged from laboratories</li>
+<li>Alternative: Oil bath (mineral oil or silicone oil in a pot) with electric immersion heater, thermostat-controlled</li>
+<li><strong>Reality:</strong> Direct flame is unacceptable (ignition risk). Controlled electric heat is mandatory. Sand baths (electric heat distributed through sand) are viable but hard to regulate precisely</li>
+</ul>
+<h3>What Cannot Be Improvised</h3>
+<p>These items require industrial manufacturing or specialized supplier sources.</p>
+<p><strong>Pressure relief valves and rupture disks:</strong></p>
+<ul>
+<li>Essential for preventing explosion if vapor pressure builds excessively</li>
+<li>Require precise calibration (setting to pop at exactly 1 atm above operating pressure)</li>
+<li><strong>Why improvisation fails:</strong> Mechanical precision cannot be achieved without machine tools. A &quot;homemade&quot; relief valve that pops at the wrong pressure either doesn't protect the system or nukes the apparatus mid-run</li>
+</ul>
+<p><strong>Temperature controllers (PID thermostats):</strong></p>
+<ul>
+<li>Maintain heating to ±5°C accuracy</li>
+<li>Electronic feedback loop adjusts power</li>
+<li><strong>Why improvisation fails:</strong> Thermal response is slow (~seconds delay); manual adjustment lags. Overshooting causes runaway (temperature jumps 50°C in 10 seconds), destroying the batch and risking explosion</li>
+</ul>
+<p><strong>Borosilicate glassware rated for distillation:</strong></p>
+<ul>
+<li>Ordinary glass shatters under thermal stress</li>
+<li>Borosilicate resists thermal shock and chemical corrosion</li>
+<li><strong>Why improvisation fails:</strong> Rapid heating of ordinary glass (20°C to 200°C in seconds) causes catastrophic failure. One broken flask at temperature = explosive hot oil everywhere</li>
+</ul>
+<p><strong>Proper condensing water circulation system:</strong></p>
+<ul>
+<li>Requires pump, water supply, return drain, temperature monitoring</li>
+<li>Flow rate must be 2–3 liters per minute; passive gravity flow is insufficient</li>
+<li><strong>Why improvisation fails:</strong> Without adequate cooling, vapors escape uncondensed. No product is collected; effort is wasted. Makeshift water cooling (ice bucket) exhausts ice rapidly and cannot sustain multi-hour runs</li>
+</ul>
+<p><strong>PTFE (Teflon) tubing and seals:</strong></p>
+<ul>
+<li>Must withstand 200°C+ petroleum vapors without degrading</li>
+<li>Rubber, vinyl, or silicone tubing degrades and releases toxic fumes</li>
+<li><strong>Why improvisation fails:</strong> Hot petroluem vapor causes rubber seals to swell, crack, and fail. System ruptures mid-run; hot oil sprays, fire risk. PTFE must be sourced; no acceptable substitute exists</li>
+</ul>
+<p><strong>Certified fire extinguishers rated for flammable liquids (Class B):</strong></p>
+<ul>
+<li>Water extinguishers (Class A) worsen petroleum fires</li>
+<li>CO₂ and dry powder extinguishers (Class B) are effective</li>
+<li><strong>Why improvisation fails:</strong> Attempting to fight a petroleum fire with water-based extinguisher spreads burning oil. Dry powder/CO₂ must be purchased; no viable DIY alternative exists</li>
+</ul>
+<p><strong>Properly ventilated workspace (fume hood or external ducting):</strong></p>
+<ul>
+<li>Removes petroleum vapors (benzene, toluene) from breathing zone</li>
+<li>Requires 50+ cubic feet per minute (CFM) exhaust (significant airflow)</li>
+<li><strong>Why improvisation fails:</strong> Opening windows provides minimal ventilation. Vapors accumulate in the room; occupant inhales toxic, carcinogenic hydrocarbons continuously. Permanent health damage can result from unventilated distillation</li>
+</ul>
+<hr>
+<h3>Equipment Checklist: Essential vs. Optional vs. Impossible</h3>
+<table>
+<thead>
+<tr>
+<th>Equipment</th>
+<th>Necessity</th>
+<th>Improvise?</th>
+<th>Realistic Cost</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stainless steel or glass vessel (2–10 L)</strong></td>
+<td>Essential</td>
+<td>Partially</td>
+<td>$20–100</td>
+<td>Can use used laboratory equipment or stainless steel pots</td>
+</tr>
+<tr>
+<td><strong>Heat source (electric mantle or oil bath)</strong></td>
+<td>Essential</td>
+<td>Partially</td>
+<td>$50–200</td>
+<td>Used mantles exist; oil bath with submersible heater works</td>
+</tr>
+<tr>
+<td><strong>Condenser (water or air-cooled)</strong></td>
+<td>Essential</td>
+<td>Difficult</td>
+<td>$50–300</td>
+<td>Copper tubing can be coiled; water cooling requires pump (~$50)</td>
+</tr>
+<tr>
+<td><strong>Thermometer (0–360°C range)</strong></td>
+<td>Essential</td>
+<td>No</td>
+<td>$10–50</td>
+<td>Digital thermometers are cheap; worth buying</td>
+</tr>
+<tr>
+<td><strong>Receiving flasks</strong></td>
+<td>Essential</td>
+<td>Partially</td>
+<td>$20–50</td>
+<td>Reuse lab glassware; stainless steel cups acceptable</td>
+</tr>
+<tr>
+<td><strong>Thermometer adapter/distillation head</strong></td>
+<td>Important</td>
+<td>No</td>
+<td>$20–50</td>
+<td>Borosilicate glass; cannot be improvised</td>
+</tr>
+<tr>
+<td><strong>Rubber/PTFE seals and tubing</strong></td>
+<td>Essential</td>
+<td>No</td>
+<td>$15–40</td>
+<td>Must be PTFE rated; rubber/vinyl fail</td>
+</tr>
+<tr>
+<td><strong>Temperature controller (thermostat)</strong></td>
+<td>Highly recommended</td>
+<td>No</td>
+<td>$30–100</td>
+<td>Simple on/off controller; basic electronics</td>
+</tr>
+<tr>
+<td><strong>Pressure relief valve</strong></td>
+<td>Critical for safety</td>
+<td>No</td>
+<td>$50–100</td>
+<td>Must be certified; improvised valves fail</td>
+</tr>
+<tr>
+<td><strong>Fume hood or ventilation ducting</strong></td>
+<td>Essential for health</td>
+<td>Difficult</td>
+<td>$100–500 (hood); $50 (duct kit)</td>
+<td>Can route ductwork externally; hood is better</td>
+</tr>
+<tr>
+<td><strong>Fire extinguisher (Class B)</strong></td>
+<td>Critical for safety</td>
+<td>No</td>
+<td>$50–100</td>
+<td>Multiple units recommended</td>
+</tr>
+<tr>
+<td><strong>Safety gear (gloves, face shield, apron)</strong></td>
+<td>Essential</td>
+<td>Partially</td>
+<td>$30–50</td>
+<td>Leather gloves, welding mask, heat-resistant apron</td>
+</tr>
+<tr>
+<td><strong>Cooling water supply (pump + hose)</strong></td>
+<td>Important</td>
+<td>No</td>
+<td>$30–80</td>
+<td>Small submersible pump; garden hose; drain</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3>Honest Assessment: Is DIY Refining Feasible?</h3>
+<p><strong>For emergency/survival use:</strong></p>
+<ul>
+<li><strong>Small scale (1–5 liters per batch):</strong> Feasible with purchased essentials (~$300–500 upfront)</li>
+<li><strong>Medium scale (10–50 liters per batch):</strong> Difficult but possible with proper equipment (~$1,000–2,000)</li>
+<li><strong>Large scale (100+ liters):</strong> Impractical without industrial equipment (~$10,000+)</li>
+</ul>
+<p><strong>Timeline expectations:</strong></p>
+<ul>
+<li>First run: 50% failure rate (thermometer error, inadequate cooling, thermal shock)</li>
+<li>Successful run average: 4–6 hours per batch, 60–80% fuel recovery</li>
+<li>Scaling up: Each increase in batch size adds significant complexity (pressure buildup, temperature control difficulty)</li>
+</ul>
+<p><strong>Safety trade-offs:</strong></p>
+<ul>
+<li>Improvisation on safety equipment (relief valve, cooling, ventilation) directly increases explosion and health risks</li>
+<li>Every shortcut compounds risk (no relief valve + inadequate cooling + poor ventilation = catastrophe)</li>
+<li>One critical failure costs lives</li>
+</ul>
+<div class="warning">
+<p><strong>Realistic truth:</strong> Petroleum refining is a high-risk activity. If commercial fuel is available, the risk-to-benefit ratio is unacceptable. Refining is justifiable only in true survival scenarios where fuel supply has completely failed and alternatives (biofuel, wood gas) are insufficient.</p>
+<p>If you must refine:</p>
+<ul>
+<li>Expect failed runs (wasted material, lost labor)</li>
+<li>Budget conservatively: ~30% of your crude input is lost to failures, waste, and incomplete separation</li>
+<li>Invest in safety-critical equipment (relief valve, proper condenser, fire extinguishers); do not improvise these</li>
+<li>Accept that the fuel produced may be lower quality than commercial fuel; engines may need maintenance more frequently</li>
+<li>Have a fallback plan if refining becomes impossible</li>
+</ul>
+</div>
+</section>
+<section id="crude-composition">
+<h2>2. Crude Oil Composition and Origin</h2>
+<p>Crude oil is a complex mixture of hydrocarbons—compounds containing only carbon (C) and hydrogen (H). It originated from marine organisms and plant material deposited in ancient seas millions of years ago. Over time, heat, pressure, and microbial action converted this organic matter into oil.</p>
+<h3>Hydrocarbon Types in Crude Oil</h3>
+<table><thead><tr><th scope="row">Hydrocarbon Type</th><th scope="row">Structure</th><th scope="row">Boiling Point Range</th><th scope="row">% in Typical Crude</th></tr></thead><tbody><tr><td>Alkanes (paraffins)</td><td>CₙH₂ₙ₊₂ straight or branched chains</td><td>-160 to +400°C (depending on C number)</td><td>60-80%</td></tr><tr><td>Cycloalkanes (naphthenes)</td><td>Ring structures with H atoms; C₅-C₈ typical</td><td>80-300°C</td><td>10-30%</td></tr><tr><td>Aromatics</td><td>Benzene rings (C₆H₄ repeating); CₙH₂ₙ₋₆</td><td>80-350°C</td><td>5-15%</td></tr><tr><td>Sulfur compounds</td><td>Thiols, sulfides, disulfides; elemental S</td><td>Variable</td><td>0.5-5%</td></tr><tr><td>Nitrogen/oxygen compounds</td><td>Amines, acids, esters (concentrated in heavy fractions)</td><td>High boiling point</td><td>0.1-1%</td></tr><tr><td>Trace metals</td><td>Nickel, vanadium, iron (as complex organics)</td><td>N/A</td><td>0.01-0.1%</td></tr></tbody></table>
+<h3>Crude Oil Classification</h3>
+<p>Crude oils vary significantly in composition and properties. Classification is based on API gravity and sulfur content:</p>
+<ul>
+<li><strong>API Gravity = (141.5 / specific gravity at 15.6°C) - 131.5</strong></li>
+<li>Light crude: &gt;31° API (lower density, more paraffinic, better yields of gasoline)</li>
+<li>Medium crude: 22-31° API (balanced composition)</li>
+<li>Heavy crude: &lt;22° API (high viscosity, more sulfur, requires additional processing)</li>
+</ul>
+<p><strong>Sulfur classification:</strong></p>
+<ul>
+<li>Sweet crude: &lt;0.5% sulfur (easier to refine, produces lower-sulfur products)</li>
+<li>Sour crude: &gt;0.5% sulfur (requires desulfurization; creates H₂S hazard)</li>
+</ul>
+<div class="info-box">
+<p><strong>API Gravity Formula:</strong> API = (141.5 / SG₁₅.₆°C) − 131.5</p>
+<p>For example, if crude oil has a specific gravity of 0.87 at 15.6°C, the API gravity is: (141.5 / 0.87) − 131.5 = <strong>31.2° API</strong> (light crude)</p>
+</div>
+</section>
+<section id="chemical-theory">
+<h2>3. Chemical Theory: Boiling Point Separation</h2>
+<p>Fractional distillation relies on the principle that hydrocarbons with different numbers of carbon atoms (different molecular weights) have different boiling points. When crude oil is heated and vaporized, lighter molecules (fewer carbons) boil off at lower temperatures, while heavier molecules require higher temperatures to vaporize.</p>
+<p><strong>Theoretical basis:</strong></p>
+<ul>
+<li><strong>Vapor pressure</strong> increases exponentially with temperature. At a given temperature, compounds below their boiling point exist as liquids; above it, they vaporize</li>
+<li><strong>Relative volatility</strong> (α) describes how easily one component vaporizes compared to another. Higher α means better separation:</li>
+</ul>
+<p><strong>α = (P₁/P₂)</strong> where P₁ and P₂ are vapor pressures of two compounds at a given temperature</p>
+<ul>
+<li><strong>Theoretical plates</strong> (or stages) in a fractionating column allow multiple equilibrium cycles. Each plate represents one &quot;separation step.&quot; More plates = sharper separation but higher energy cost</li>
+<li><strong>Reflux ratio</strong> (L/D, where L = liquid returned and D = product withdrawn) affects separation efficiency. Higher reflux improves purity but costs more heat energy</li>
+</ul>
+<div class="info-box">
+<p><strong>Worked Example: Separation Efficiency</strong></p>
+<p>A distillation column with 10 theoretical plates is separating a mixture of hexane (bp 69°C) and decane (bp 174°C) at 101 kPa.</p>
+<p>Given: Initial feed is 50% hexane, 50% decane. We want gasoline-range product (C₇–C₁₀).</p>
+<p>At 120°C (middle of the boiling range), hexane vapor pressure ≈ 200 kPa (highly volatile), decane vapor pressure ≈ 30 kPa (less volatile). Relative volatility α ≈ 200/30 = 6.7.</p>
+<p>With 10 plates and α = 6.7, we can achieve approximately 85–90% separation (hexane-rich overhead, decane-rich bottoms) using the Fenske equation:
+<strong>N_min = log[x_D/(1-x_D)] / log(α)</strong> where x_D is desired purity.</p>
+<p>This means 10 plates is sufficient for good separation of these components.</p>
+</div>
+</section>
+<section id="simple-distillation">
+<h2>4. Simple Distillation Apparatus Construction</h2>
+<p>Distillation separates crude oil components by boiling point. A simple distillation apparatus can be constructed from laboratory or repurposed materials for small-scale demonstration or pilot testing.</p>
+<h3>Basic Components</h3>
+<ol>
+<li><strong>Heat source:</strong> Furnace, heating mantle, or open flame (use open flame only with extreme caution—petroleum vapors are flammable)</li>
+<li><strong>Round-bottom or flat-bottom flask:</strong> Borosilicate glass, 500 mL to 2 L capacity</li>
+<li><strong>Thermometer:</strong> 0-360°C range to measure vapor temperature</li>
+<li><strong>Condenser:</strong> Water-cooled Liebig or Graham condenser, or air-cooled spiral coil</li>
+<li><strong>Receiving flasks:</strong> Multiple labeled receivers for fractions</li>
+<li><strong>Distillation head:</strong> Connects flask to condenser, with thermometer pocket for accurate vapor temperature reading</li>
+</ol>
+<h3>Assembly Procedure</h3>
+<ol>
+<li>Secure the round-bottom flask on a ring stand using a flask clamp</li>
+<li>Attach the distillation head to the flask opening using a rubber or PTFE adapter (no grease)</li>
+<li>Insert the thermometer into the thermometer pocket; the bulb should align with the side arm exit level</li>
+<li>Attach the condenser to the distillation head outlet; angle the condenser downward (~20°) for gravity-assisted flow</li>
+<li>Connect water cooling: inlet at the bottom, outlet at the top (countercurrent flow improves cooling)</li>
+<li>Position the receiving flask at the condenser outlet; a &quot;pig&quot; adapter allows switching receivers mid-distillation</li>
+<li>Test all connections for air tightness; seal with PTFE tape if needed (never use grease with petroleum)</li>
+</ol>
+<div class="danger">
+<p>Petroleum vapor at distillation temperatures (above 40°C) is EXTREMELY FLAMMABLE and can self-ignite at 200°C–400°C depending on the hydrocarbon chain length. NEVER use an open flame directly under the flask. Use an electric heating mantle, sand bath, or oil bath maintained at precise temperature. Ensure adequate ventilation (fume hood or external duct). No smoking, open flames, or hot surfaces (&gt;200°C) within 20 meters. Have a Class B fire extinguisher (rated for flammable liquids) within arm's reach.</p>
+</div>
+<!-- SVG-TODO: Simple distillation apparatus with labeled components (flask, thermometer, condenser, receiving flask) -->
+</section>
+<section id="materials-reagents">
+<h2>5. Materials and Reagents for Small-Scale Refining</h2>
+<p><strong>Essential equipment for basic distillation:</strong></p>
+<ul>
+<li><strong>Heat source:</strong> Heating mantle (500 W–1000 W, temperature-controlled), sand bath, or oil bath with thermostat</li>
+<li><strong>Glassware:</strong> Borosilicate glass 500 mL to 2 L round-bottom or flat-bottom flask, distillation head, condenser (Liebig or Graham type), thermometer adapter, receiving flask, connecting tubing</li>
+<li><strong>Thermometer:</strong> 0–360°C precision thermometer (NOT mercury in survival scenarios; alcohol or digital preferred)</li>
+<li><strong>Condenser cooling:</strong> Water at ≥2 L/min flow rate (or air cooling if water unavailable)</li>
+<li><strong>Tubing and seals:</strong> PTFE (Teflon) tubing for vapor/liquid lines, PTFE tape for connections (NO grease—reacts with hydrocarbons), glass wool for insulation</li>
+<li><strong>Safety:</strong> Heat-resistant gloves, face shield, fire extinguisher (Class B), chemical spill kit, waste container</li>
+<li><strong>Optional for improved efficiency:</strong> Bubble cap trays, stainless steel or copper packing materials, insulating jacket (fiberglass wool, ceramic fiber blanket)</li>
+</ul>
+<div class="warning">
+<p>Never use rubber or vinyl tubing with hot petroleum vapors—they will degrade and release toxic fumes. Always use PTFE, silicone, or copper tubing rated for temperatures above 200°C.</p>
+</div>
+</section>
+<section id="equipment-setup">
+<h2>6. Equipment Setup and Reactor Design</h2>
+<h3>Small-Scale Distillation Unit (Bench-Top, 1–2 Liter Capacity)</h3>
+<p><strong>Assembly checklist:</strong></p>
+<ol>
+<li><strong>Secure the heat source</strong> to a stable stand or ring clamp</li>
+<li><strong>Place flask on heat source</strong> with thermometer adapter inserted; thermometer bulb should align with the side arm outlet (not touching flask walls)</li>
+<li><strong>Attach condenser</strong> to distillation head with slight downward angle (15–20°) for gravity-assisted condensate flow</li>
+<li><strong>Connect water cooling lines:</strong> inlet at bottom, outlet at top (countercurrent), flow rate 2–3 L/min</li>
+<li><strong>Position receiving flask</strong> at condenser outlet; if collecting multiple fractions, use a &quot;pig&quot; (Y-adapter) to switch receivers during the run</li>
+<li><strong>Seal all junctions</strong> with PTFE tape; test for air-tightness by applying gentle positive pressure (bulb) and checking for leaks</li>
+<li><strong>Insulate column</strong> if using a fractionating packing with fiberglass wool or ceramic tape to minimize heat loss</li>
+</ol>
+<p><strong>Temperature monitoring:</strong></p>
+<ul>
+<li>Record thermometer reading every 2–3 minutes</li>
+<li>Note temperature at which each new fraction begins (e.g., gasoline starts at ~40°C, kerosene at ~150°C)</li>
+<li>When temperature plateaus, you are collecting a specific fraction</li>
+</ul>
+<div class="info-box">
+<p><strong>Thermal Efficiency Tip:</strong> Insulating the distillation column with 50 mm of fiberglass wool can reduce heat loss by 30–40%, improving yield and allowing lower heat input (saves fuel and improves safety).</p>
+</div>
+<h3>Fractionating Column (for better separation)</h3>
+<p>If constructing a fractionating column instead:</p>
+<ul>
+<li><strong>Column dimensions:</strong> 50–100 mm diameter tube, 1–2 m tall</li>
+<li><strong>Packing:</strong> Fill with 5–10 mm diameter glass beads, copper turnings, or stainless steel mesh (~5–8 kg for a 1.5 m column)</li>
+<li><strong>Supports:</strong> Place stainless steel screen at bottom to support packing; secure with PTFE washers (not wire—wire can corrode)</li>
+<li><strong>Pressure drop:</strong> Vapor velocity through packing should be 0.5–1.5 m/s; higher velocities cause flooding (liquid backs up)</li>
+<li><strong>Reboiler:</strong> Electric heating mantle at base, temperature set to 300–350°C</li>
+<li><strong>Reflux condenser:</strong> Air- or water-cooled at top; return ~70% of condensate to column, withdraw ~30% as product</li>
+</ul>
+<!-- SVG-TODO: Fractionating column schematic with packing, reboiler, condenser, and product withdrawal ports -->
+</section>
+<section id="fractional-distillation">
+<h2>7. Fractional Distillation Column Design and Operation</h2>
+<p>Industrial fractional distillation uses a tall column (fractionating tower) with internal trays or packing to create multiple theoretical plates. Each plate represents an equilibrium stage, allowing efficient separation.</p>
+<p><svg aria-label="Petroleum Refining diagram 1" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="550" stroke="currentColor" stroke-width="3" width="300" x="150" y="50"></rect><line stroke="currentColor" stroke-dasharray="2,2" stroke-width="1" x1="150" x2="450" y1="150" y2="150"></line><line stroke="currentColor" stroke-dasharray="2,2" stroke-width="1" x1="150" x2="450" y1="220" y2="220"></line><line stroke="currentColor" stroke-dasharray="2,2" stroke-width="1" x1="150" x2="450" y1="290" y2="290"></line><line stroke="currentColor" stroke-dasharray="2,2" stroke-width="1" x1="150" x2="450" y1="360" y2="360"></line><line stroke="currentColor" stroke-dasharray="2,2" stroke-width="1" x1="150" x2="450" y1="430" y2="430"></line><line stroke="currentColor" stroke-dasharray="2,2" stroke-width="1" x1="150" x2="450" y1="500" y2="500"></line><text fill="currentColor" font-size="12" font-weight="bold" x="500" y="80"> Gas </text><text fill="currentColor" font-size="11" x="500" y="120"> C1-C4 </text><text fill="currentColor" font-size="12" font-weight="bold" x="500" y="180"> Gasoline </text><text fill="currentColor" font-size="11" x="500" y="210"> 40-200°C </text><text fill="currentColor" font-size="12" font-weight="bold" x="500" y="260"> Naphtha </text><text fill="currentColor" font-size="11" x="500" y="290"> 150-240°C </text><text fill="currentColor" font-size="12" font-weight="bold" x="500" y="330"> Kerosene </text><text fill="currentColor" font-size="11" x="500" y="360"> 150-275°C </text><text fill="currentColor" font-size="12" font-weight="bold" x="500" y="400"> Diesel </text><text fill="currentColor" font-size="11" x="500" y="430"> 250-350°C </text><text fill="currentColor" font-size="12" font-weight="bold" x="500" y="470"> Fuel Oil </text><text fill="currentColor" font-size="11" x="500" y="500"> 300-450°C </text><text fill="currentColor" font-size="12" font-weight="bold" x="500" y="540"> Bitumen </text><text fill="currentColor" font-size="11" x="500" y="570"> &gt;500°C </text><line stroke="currentColor" stroke-width="2" x1="100" x2="150" y1="350" y2="350"></line><text fill="currentColor" font-size="12" x="50" y="355"> Heated crude </text><text fill="currentColor" font-size="12" font-weight="bold" x="300" y="630"> Reboiler (Heat Input) ~350°C </text><text fill="currentColor" font-size="11" x="70" y="80"> ~20°C </text><text fill="currentColor" font-size="11" x="70" y="350"> ~200°C </text><text fill="currentColor" font-size="11" x="70" y="580"> ~350°C </text></svg></p>
+<p>Fractional distillation tower: Products separate by boiling point; lighter fractions exit top, heavier fractions exit bottom</p>
+<h3>Tower Design Parameters</h3>
+<table><thead><tr><th scope="row">Component</th><th scope="row">Purpose</th><th scope="row">Design Consideration</th></tr></thead><tbody><tr><td>Column height</td><td>More plates = better separation; typically 30-60m in industrial units</td><td>Height ≈ (desired separation) × (height per theoretical plate); 0.5-1m per plate typical</td></tr><tr><td>Diameter</td><td>Accommodate vapor and liquid flow rates</td><td>Vapor velocity ≈ 1-2 m/s to prevent excessive pressure drop</td></tr><tr><td>Trays or packing</td><td>Increase surface contact between liquid and vapor</td><td>Bubble cap trays or structured metal packing (more efficient than random packing)</td></tr><tr><td>Reboiler</td><td>Supply heat; vaporize bottom product</td><td>Duty = (feed rate) × (latent heat); typically steam or fire-tube heated</td></tr><tr><td>Condenser (top)</td><td>Cool vapors; reflux liquid back to column</td><td>Duty ≈ 40-60% of reboiler duty; must handle vapor enthalpy</td></tr><tr><td>Reflux ratio</td><td>Ratio of liquid returned to column vs. product withdrawn</td><td>Higher reflux (3:1 to 10:1) improves separation but requires more energy</td></tr></tbody></table>
+<h3>Simple Retort Distillation Setup</h3>
+<p><svg aria-label="Petroleum Refining diagram 2" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg"><rect fill="#1a2e1a" height="500" width="600"></rect><g id="frame"><line stroke="#8B8680" stroke-width="3" x1="80" x2="80" y1="50" y2="350"></line><line stroke="#8B8680" stroke-width="3" x1="520" x2="520" y1="50" y2="350"></line><line stroke="#8B8680" stroke-width="3" x1="80" x2="520" y1="50" y2="50"></line><line stroke="#8B8680" stroke-width="3" x1="80" x2="520" y1="350" y2="350"></line></g><g id="flask"><ellipse cx="300" cy="280" fill="#2d2416" rx="60" ry="50" stroke="#b8956a" stroke-width="2"></ellipse><text fill="#f5f0e8" font-size="11" text-anchor="middle" x="300" y="280">Heated crude oil</text><text fill="#aaa" font-size="10" text-anchor="middle" x="300" y="295">200-350°C</text></g><g id="distillation-head"><line stroke="#b8956a" stroke-width="2" x1="300" x2="300" y1="230" y2="150"></line><polygon fill="#b8956a" points="300,150 295,165 305,165"></polygon><text fill="#f5f0e8" font-size="10" x="340" y="155">Distillation head</text></g><g id="thermometer"><line stroke="#d4a574" stroke-width="2" x1="320" x2="320" y1="135" y2="180"></line><circle cx="320" cy="185" fill="#e94560" r="3"></circle><text fill="#d4a574" font-size="10" x="335" y="160">Thermometer</text><text fill="#aaa" font-size="9" x="335" y="172">(measures vapor temp)</text></g><g id="condenser"><rect fill="none" height="80" stroke="#53d8a8" stroke-width="3" width="20" x="285" y="60"></rect><line stroke="#2a9cd6" stroke-width="1" x1="280" x2="310" y1="70" y2="70"></line><line stroke="#2a9cd6" stroke-width="1" x1="280" x2="310" y1="90" y2="90"></line><line stroke="#2a9cd6" stroke-width="1" x1="280" x2="310" y1="110" y2="110"></line><text fill="#53d8a8" font-size="10" x="330" y="100">Water-cooled</text><text fill="#53d8a8" font-size="10" x="330" y="115">condenser</text></g><g id="adapter"><path d="M 310 60 L 360 40 Q 370 35 380 45" fill="none" stroke="#b8956a" stroke-width="2"></path><text fill="#aaa" font-size="9" x="390" y="50">Adapter to receiver</text></g><g id="receivers"><g id="r1"><rect fill="#d4a574" height="40" opacity="0.2" stroke="#d4a574" stroke-width="2" width="35" x="395" y="30"></rect><text fill="#f5f0e8" font-size="10" font-weight="bold" text-anchor="middle" x="412" y="55">Light</text><text fill="#aaa" font-size="9" text-anchor="middle" x="412" y="68">40-200°C</text></g><g id="r2"><rect fill="#d4a574" height="40" opacity="0.4" stroke="#d4a574" stroke-width="2" width="35" x="435" y="30"></rect><text fill="#f5f0e8" font-size="10" font-weight="bold" text-anchor="middle" x="452" y="55">Heavy</text><text fill="#aaa" font-size="9" text-anchor="middle" x="452" y="68">200-300°C</text></g><g id="r3"><rect fill="#d4a574" height="40" opacity="0.6" stroke="#d4a574" stroke-width="2" width="35" x="475" y="30"></rect><text fill="#f5f0e8" font-size="10" font-weight="bold" text-anchor="middle" x="492" y="55">Residue</text><text fill="#aaa" font-size="9" text-anchor="middle" x="492" y="68">300+°C</text></g></g><g id="heating"><rect fill="#e94560" height="30" rx="3" stroke="#e94560" stroke-width="2" width="120" x="240" y="320"></rect><text fill="#fff" font-size="11" text-anchor="middle" x="300" y="340">Electric heating mantle</text></g><g id="notes"><text fill="#aaa" font-size="10" x="80" y="420">Products separate by boiling point temperature during distillation.</text><text fill="#aaa" font-size="10" x="80" y="440">Light fractions (gasoline, naphtha) condense first (top of column).</text><text fill="#aaa" font-size="10" x="80" y="460">Heavy fractions (fuel oil) condense later (lower sections).</text></g></svg></p>
+<h3>Simple Plate-Type Fractionation Column (Small-Scale)</h3>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>Glass tube or stainless steel tube, 50-100mm diameter, 1-2m tall</li>
+<li>Metal or glass bubble cap trays (5-8 per meter of height)</li>
+<li>Insulation (fiberglass wool or asbestos tape) to minimize heat loss</li>
+<li>Thermometers at multiple levels to monitor temperature profile</li>
+</ul>
+<p><strong>Construction:</strong></p>
+<ol>
+<li>Stack bubble cap trays inside the column at 200-300mm intervals</li>
+<li>Each tray allows vapor to bubble up through a layer of descending liquid</li>
+<li>Ensure each tray has downcomers for liquid to fall to the tray below</li>
+<li>Heat the bottom using a reboiler (electric or steam-heated); maintain temperature at 300-350°C</li>
+<li>Cool the top with a reflux condenser; return majority of condensate to the column</li>
+<li>Draw product from each tray level or use a side-stream product withdrawal</li>
+<li>Insulate the entire column to minimize heat loss</li>
+</ol>
+<p><strong>Operational procedure:</strong></p>
+<ol>
+<li>Fill the reboiler with crude oil (2–5 liters for small-scale)</li>
+<li>Preheat to 100°C before opening the overhead condenser valve</li>
+<li>Increase temperature gradually (10–15°C per 5 minutes) to avoid thermal shock</li>
+<li>Once stable vapors reach the condenser (mist visible), begin collecting overhead product</li>
+<li>Monitor column temperature profile: bottom should be hottest (300+°C), top coolest (60–120°C)</li>
+<li>Maintain reflux: for a 1:1 reflux ratio, return 50% of condensate, withdraw 50% as product</li>
+<li>Change receiving flasks when temperature changes (signals new fraction)</li>
+<li>Continue until temperature reaches 350°C (residue approaching bitumen)</li>
+<li>Cool system slowly (30–60 minutes) to prevent cracking of glassware</li>
+</ol>
+<div class="danger">
+<p>Do NOT increase temperature faster than 15°C per 5 minutes. Thermal shock or rapid vapor generation can cause the apparatus to pressurize, burst, and spray hot petroleum everywhere. Slow, controlled heating is critical for safety.</p>
+</div>
+</section>
+<section id="fractions">
+<h2>8. Product Fractions and Properties</h2>
+<p><svg aria-label="Petroleum Refining diagram 3" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg"><rect fill="rgba(233, 69, 96, 0.3)" height="30" stroke="currentColor" stroke-width="2" width="100" x="50" y="50"></rect><text fill="currentColor" font-size="12" font-weight="bold" text-anchor="middle" x="100" y="80"> Gases </text><text fill="currentColor" font-size="10" text-anchor="middle" x="100" y="95"> C1-C4 </text><rect fill="rgba(233, 69, 96, 0.4)" height="30" stroke="currentColor" stroke-width="2" width="100" x="160" y="50"></rect><text fill="currentColor" font-size="12" font-weight="bold" text-anchor="middle" x="210" y="80"> Gasoline </text><text fill="currentColor" font-size="10" text-anchor="middle" x="210" y="95"> 40-200°C </text><rect fill="rgba(233, 69, 96, 0.5)" height="30" stroke="currentColor" stroke-width="2" width="100" x="270" y="50"></rect><text fill="currentColor" font-size="12" font-weight="bold" text-anchor="middle" x="320" y="80"> Naphtha </text><text fill="currentColor" font-size="10" text-anchor="middle" x="320" y="95"> 150-240°C </text><rect fill="rgba(233, 69, 96, 0.6)" height="30" stroke="currentColor" stroke-width="2" width="100" x="380" y="50"></rect><text fill="currentColor" font-size="12" font-weight="bold" text-anchor="middle" x="430" y="80"> Kerosene </text><text fill="currentColor" font-size="10" text-anchor="middle" x="430" y="95"> 150-275°C </text><rect fill="rgba(233, 69, 96, 0.7)" height="30" stroke="currentColor" stroke-width="2" width="100" x="490" y="50"></rect><text fill="currentColor" font-size="12" font-weight="bold" text-anchor="middle" x="540" y="80"> Diesel </text><text fill="currentColor" font-size="10" text-anchor="middle" x="540" y="95"> 250-350°C </text><rect fill="rgba(233, 69, 96, 0.8)" height="30" stroke="currentColor" stroke-width="2" width="100" x="600" y="50"></rect><text fill="currentColor" font-size="12" font-weight="bold" text-anchor="middle" x="650" y="80"> Fuel Oil </text><text fill="currentColor" font-size="10" text-anchor="middle" x="650" y="95"> 300-450°C </text><rect fill="rgba(233, 69, 96, 0.9)" height="30" stroke="currentColor" stroke-width="2" width="40" x="710" y="50"></rect><text fill="currentColor" font-size="11" font-weight="bold" text-anchor="middle" x="730" y="80"> Bit. </text><text fill="currentColor" font-size="9" text-anchor="middle" x="730" y="95"> &gt;500°C </text><text fill="currentColor" font-size="10" text-anchor="middle" x="100" y="150"> Lightest </text><text fill="currentColor" font-size="10" text-anchor="middle" x="650" y="150"> Heaviest </text><text fill="currentColor" font-size="12" font-weight="bold" x="50" y="200"> Property </text><text fill="currentColor" font-size="12" font-weight="bold" x="200" y="200"> Gasoline </text><text fill="currentColor" font-size="12" font-weight="bold" x="380" y="200"> Diesel </text><text fill="currentColor" font-size="12" font-weight="bold" x="580" y="200"> Fuel Oil </text><text fill="currentColor" font-size="11" x="50" y="230"> Density (g/cm³) </text><text fill="currentColor" font-size="11" x="200" y="230"> 0.70-0.75 </text><text fill="currentColor" font-size="11" x="380" y="230"> 0.82-0.90 </text><text fill="currentColor" font-size="11" x="580" y="230"> 0.95-1.04 </text><text fill="currentColor" font-size="11" x="50" y="260"> Viscosity </text><text fill="currentColor" font-size="11" x="200" y="260"> 0.4-0.8 cSt </text><text fill="currentColor" font-size="11" x="380" y="260"> 2-8 cSt </text><text fill="currentColor" font-size="11" x="580" y="260"> 50-500+ cSt </text><text fill="currentColor" font-size="11" x="50" y="290"> Flash point </text><text fill="currentColor" font-size="11" x="200" y="290"> -40 to 0°C </text><text fill="currentColor" font-size="11" x="380" y="290"> 38-65°C </text><text fill="currentColor" font-size="11" x="580" y="290"> 150-300°C </text></svg></p>
+<p>Petroleum fractions ordered by boiling point, density, and viscosity (increasing left to right)</p>
+<h3>Detailed Fraction Properties</h3>
+<table><thead><tr><th scope="row">Fraction</th><th scope="row">Boiling Range</th><th scope="row">Primary Use</th><th scope="row">Key Property</th></tr></thead><tbody><tr><td>Gases (LPG)</td><td>&lt;40°C</td><td>Fuel for heating/cooking; chemical feedstock</td><td>Propane/butane; gaseous at room temp; liquefiable under pressure</td></tr><tr><td>Gasoline (Petrol)</td><td>40-200°C</td><td>Automobile fuel (spark-ignition engines)</td><td>Octane rating 80-98; high volatility; rapid combustion</td></tr><tr><td>Naphtha</td><td>150-240°C</td><td>Petrochemical feedstock; solvent; lighter fuel</td><td>Intermediate volatility; used in reforming units to make gasoline</td></tr><tr><td>Kerosene</td><td>150-275°C</td><td>Jet fuel; heating oil; lighting fuel</td><td>Moderate viscosity; flash point 35-65°C; burns cleanly for illumination</td></tr><tr><td>Diesel</td><td>250-350°C</td><td>Diesel engine fuel; heating oil</td><td>Cetane number 40-55; self-ignites under compression; high energy density</td></tr><tr><td>Fuel Oil</td><td>300-450°C</td><td>Marine fuel; power station fuel; heating oil</td><td>High sulfur content; very viscous; requires heating for handling</td></tr><tr><td>Bitumen</td><td>&gt;500°C</td><td>Road asphalt; waterproofing membranes</td><td>Extremely viscous; plastic at 60-80°C; binding agent for aggregate</td></tr></tbody></table>
+<div class="note">
+<p><strong>Collection strategy for survival:</strong> Prioritize gasoline (40–200°C) and diesel (250–350°C) as these fuels have the broadest engine compatibility. Kerosene (150–275°C) is excellent for lighting and heating. Heavier fractions can be refined further through cracking or blended as heating oil.</p>
+</div>
+<h3>Worked Example: Batch Distillation Yields</h3>
+<p><strong>Scenario:</strong> You are distilling 10 liters of Middle Eastern light crude (34° API, sweet).</p>
+<p>Expected fraction distribution (% by volume):</p>
+<table>
+<thead>
+<tr>
+<th>Fraction</th>
+<th>Boiling Range</th>
+<th>Expected Yield %</th>
+<th>Output (L)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LPG (gases)</td>
+<td>&lt;40°C</td>
+<td>2–3%</td>
+<td>0.2–0.3</td>
+</tr>
+<tr>
+<td>Gasoline</td>
+<td>40–200°C</td>
+<td>25–30%</td>
+<td>2.5–3.0</td>
+</tr>
+<tr>
+<td>Naphtha</td>
+<td>150–240°C</td>
+<td>8–10%</td>
+<td>0.8–1.0</td>
+</tr>
+<tr>
+<td>Kerosene</td>
+<td>150–275°C</td>
+<td>12–15%</td>
+<td>1.2–1.5</td>
+</tr>
+<tr>
+<td>Diesel</td>
+<td>250–350°C</td>
+<td>20–25%</td>
+<td>2.0–2.5</td>
+</tr>
+<tr>
+<td>Fuel oil</td>
+<td>300–450°C</td>
+<td>15–18%</td>
+<td>1.5–1.8</td>
+</tr>
+<tr>
+<td>Bitumen/residue</td>
+<td>&gt;500°C</td>
+<td>8–10%</td>
+<td>0.8–1.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total usable fuels (gasoline + kerosene + diesel):</strong> ~7 liters from 10 liters input = <strong>70% recovery</strong>.</p>
+<p><strong>Energy equivalents:</strong></p>
+<ul>
+<li>1 liter gasoline ≈ 32 MJ</li>
+<li>1 liter diesel ≈ 36 MJ</li>
+<li>7 liters mixed fuels ≈ 245 MJ total, sufficient to run a 5 kW generator for ~14 hours.</li>
+</ul>
+</section>
+<section id="cracking">
+<h2>9. Cracking: Thermal and Catalytic</h2>
+<p>Cracking breaks large hydrocarbon molecules into smaller, more valuable ones. This is critical for maximizing gasoline yield from crude oil.</p>
+<h3>Thermal Cracking</h3>
+<p>Heating heavy fractions (fuel oil, bitumen) to 350-500°C under pressure causes C-C bonds to break randomly, producing lighter hydrocarbons and gaseous products.</p>
+<p><strong>Reaction example:</strong> C₁₆H₃₄ → C₈H₁₈ + C₈H₁₆ (one chain breaks into two)</p>
+<p><strong>Operating conditions:</strong></p>
+<ul>
+<li>Temperature: 400-500°C (higher temperature increases cracking)</li>
+<li>Pressure: 10-100 atm (prevents vaporization of products)</li>
+<li>Residence time: 5-30 minutes (longer time = more cracking)</li>
+<li>Feed rate: Control to maintain temperature</li>
+</ul>
+<p><strong>Advantages:</strong> Simple equipment; no catalysts needed; can crack any heavy fraction</p>
+<p><strong>Disadvantages:</strong> Produces coke (carbon deposits on equipment); random cracking yields uncontrolled product distribution; product contains unwanted alkenes (olefins) that are less stable</p>
+<h3>Catalytic Cracking</h3>
+<p>Using a zeolite or silica-alumina catalyst at lower temperatures (350-450°C) enables controlled, selective cracking to produce more gasoline-range products with fewer undesirable byproducts.</p>
+<p><strong>Catalyst:</strong> Zeolite Y or silica-alumina (SiO₂/Al₂O₃) mixed bed</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Lower temperature reduces coke formation</li>
+<li>Selective cracking produces desired product distribution</li>
+<li>Catalyst can be regenerated by burning off coke in air</li>
+<li>Better gasoline yield</li>
+</ul>
+<p><strong>Simple catalytic cracking setup:</strong></p>
+<ol>
+<li>Pack a steel or ceramic tube (50mm diameter, 500mm long) with zeolite catalyst beads</li>
+<li>Heat the tube to 400-450°C using an electric furnace or heating coil</li>
+<li>Pass heavy oil vapor (preheated to 200-250°C) downward through the catalyst bed</li>
+<li>Collect vapors exiting the bottom of the tube; cool in a condenser</li>
+<li>Separate liquid (cracked gasoline/naphtha) from gases</li>
+<li>Periodically regenerate catalyst: pass air through the heated tube at 600°C for 1-2 hours to burn off coke</li>
+</ol>
+<h3>Hydrocracking</h3>
+<p>Adding hydrogen gas during cracking further improves product quality by saturating unwanted olefins and removing sulfur/nitrogen impurities.</p>
+<p><strong>Reaction with hydrogen:</strong> C₁₆H₃₄ + H₂ → lighter alkanes with improved stability</p>
+<p><strong>Catalyst:</strong> Nickel-molybdenum on alumina (NiMo/Al₂O₃), active for both cracking and hydrogenation</p>
+<p><strong>Conditions:</strong> 300-400°C, 100-250 atm, H₂:oil ratio 2-5:1</p>
+<div class="warning">
+<p>Hydrocracking requires pressurized hydrogen gas and high-temperature catalysts. Not recommended for small-scale survival distillation without proper safety infrastructure (pressure relief valves, H₂ supply systems, emergency shutdown).</p>
+</div>
+</section>
+<section id="yield-purity">
+<h2>10. Yield and Purity Assessment</h2>
+<h3>Measuring Distillation Efficiency</h3>
+<p><strong>Simple tests without a lab:</strong></p>
+<ol>
+<li><strong>Volume yield:</strong> Measure total liquid recovered vs. input. Target: 85–95% recovery (some loss as vapor)</li>
+<li><strong>Density test:</strong> Use a hydrometer or sink/float test. Gasoline floats in water; kerosene sinks slightly; diesel sinks more</li>
+<li><strong>Viscosity:</strong> Pour cold sample from container. Thin (low viscosity) = light fraction; thick (high viscosity) = heavy fraction</li>
+<li><strong>Flash point estimation:</strong> In ventilated area, bring a hot wire or match near (not in) a small sample. Gasoline ignites at ~-43°C; kerosene at 35–65°C; diesel at 210°C</li>
+<li><strong>Color:</strong> Light fractions are colorless to pale yellow; heavier fractions are brown/dark brown</li>
+</ol>
+<h3>Purity and Contaminant Removal</h3>
+<p><strong>Water removal:</strong> Petroleum products often contain dissolved water from crude. To remove:</p>
+<ul>
+<li>Allow settled product to stand for 24 hours; water sinks to bottom</li>
+<li>Carefully decant the top (dry) layer</li>
+<li>Or heat to 60–80°C for 1–2 hours to evaporate water (do this in ventilated area)</li>
+</ul>
+<p><strong>Particulate/sediment removal:</strong></p>
+<ul>
+<li>Filter through 100 micron mesh screen (cheesecloth, coffee filter)</li>
+<li>For finer filtration, pass through 5 micron or 1 micron filter (slow but improves engine performance)</li>
+</ul>
+<div class="info-box">
+<p><strong>Purity metric:</strong> If fuel is to be used in carbureted engines (older generators, small equipment), keep particulates &lt;50 microns. Modern fuel injectors require &lt;5 microns. Lab testing of sulfur content is ideal but not always feasible; high-sulfur fuels (sour crude) produce more corrosive combustion residues.</p>
+</div>
+</section>
+<section id="scale-up">
+<h2>11. Scale-Up Considerations</h2>
+<h3>Moving from Laboratory to Production Scale</h3>
+<p><strong>If you need to process larger volumes (50–200 liters):</strong></p>
+<p><strong>Equipment upgrades:</strong></p>
+<ul>
+<li><strong>Larger flask:</strong> 20–50 liter borosilicate carboy or stainless steel vessel (watch for pressure buildup; use pressure relief valve)</li>
+<li><strong>More efficient reboiler:</strong> Industrial immersion heater (3–5 kW) or steam jacket</li>
+<li><strong>Better condensation:</strong> Shell-and-tube condenser or multi-stage air cooler (if water unavailable)</li>
+<li><strong>Fractionating column:</strong> Upgrade to packed column (50 mm diameter, 2–3 m height) with ~20–30 kg of packing</li>
+<li><strong>Temperature control:</strong> PID controller (proportional-integral-derivative) for heating mantle to maintain ±5°C</li>
+</ul>
+<p><strong>Practical limitations:</strong></p>
+<ul>
+<li><strong>Energy input:</strong> Distilling 100 liters requires ~5–8 kWh of heat. Plan for adequate power source (generator, solar, etc.)</li>
+<li><strong>Cooling capacity:</strong> Condenser must handle vapor latent heat. Rule of thumb: 1 kW heating requires ~2–3 kW condenser capacity</li>
+<li><strong>Time:</strong> Batch distillation of 100 liters takes 6–10 hours per cycle</li>
+<li><strong>Safety margin:</strong> Larger volumes increase explosion risk if mishandled. Always maintain overpressure protection and proper ventilation</li>
+</ul>
+<div class="danger">
+<p>Scaling up distillation increases safety risks significantly. Larger volumes of flammable vapor, higher operating pressures, and longer run times mean more opportunities for catastrophic failure (explosion, fire). Only attempt scale-up if you have:</p>
+<ul>
+<li>Proper pressure relief (rupture disk or safety valve set to max 1 atm above operating pressure)</li>
+<li>Emergency shutdown procedure (kill switch for heater; cooling water dump valve)</li>
+<li>Fire suppression equipment (multiple Class B extinguishers, sand/dry powder nearby)</li>
+<li>Full PPE (face shield, heat-resistant suit, gloves)</li>
+</ul>
+</div>
+</section>
+<section id="common-failures">
+<h2>12. Why Improvised Refining Often Fails</h2>
+<p>Attempting petroleum refining without proper equipment and expertise frequently results in failure, wasted material, or dangerous situations. Understanding common pitfalls helps avoid catastrophe.</p>
+<h3>Thermometer Positioning Error</h3>
+<p><strong>Problem:</strong> Most common distillation failure. Thermometer bulb positioned incorrectly (too high in column or touching flask wall).</p>
+<p><strong>Result:</strong> Temperature reading is wrong. You think you're collecting gasoline (40-200°C) but you're actually collecting kerosene or diesel. Products are contaminated and unusable in gasoline engines. You may overheat the system without realizing it, increasing explosion risk.</p>
+<p><strong>Prevention:</strong> Thermometer bulb MUST be at the level of the side arm exit. Test: when vapor first appears, thermometer should read 40-60°C for gasoline fraction, NOT 150°C. If temperature is too high, reposition thermometer immediately and note correction.</p>
+<h3>Insufficient Cooling Capacity</h3>
+<p><strong>Problem:</strong> Condenser cannot cool vapors fast enough. Vapors exit condenser uncondensed as gas.</p>
+<p><strong>Result:</strong> No product collected. You're essentially burning off the lighter fractions as vapor, leaving only heavy residue. Massive waste of fuel.</p>
+<p><strong>Prevention:</strong> Test condenser before starting: run chilled water through it. Outlet water should be warm (at least 10-15°C warmer than inlet). If cooling inadequate, add more condenser tubes or use ice bath around condenser.</p>
+<h3>Excessive Heat or Thermal Runaway</h3>
+<p><strong>Problem:</strong> Heating mantle temperature set too high (&gt;350°C), or heating continues after vapor generation has stabilized.</p>
+<p><strong>Result:</strong> Apparatus pressure builds up rapidly. If pressure relief valve absent, glassware ruptures explosively. Oil spray everywhere = fire risk. Operator severe burns.</p>
+<p><strong>Prevention:</strong> Use temperature controller (±5°C accuracy). Set maximum temperature limit. Have pressure relief valve on system. Never exceed 350°C (residue temperature); at that point, stop heating and allow system to cool slowly.</p>
+<h3>Poor Fractionation Separation</h3>
+<p><strong>Problem:</strong> All fractions collected at once; no clean separation between gasoline, kerosene, diesel.</p>
+<p><strong>Result:</strong> Mixed fuel that doesn't burn properly in any engine. Gasoline engines won't ignite it; diesel engines knock. Fuel is unusable.</p>
+<p><strong>Prevention:</strong> Insulate column to minimize heat loss. Use proper reflux (return ~70% of condensate to column). Change receiving flasks when temperature increases by 20-30°C. Accept that separation is imperfect—you'll get 3-5 main fractions, each slightly mixed.</p>
+<h3>Water Contamination in Product</h3>
+<p><strong>Problem:</strong> Crude oil or distillation apparatus contains water. Water carries through distillation and contaminates final product.</p>
+<p><strong>Result:</strong> Fuel has water droplets suspended. Carburetors malfunction. Injectors clog. Engine misfires or won't start.</p>
+<p><strong>Prevention:</strong> Filter crude oil before distillation. Pre-dry crude oil if possible (heat to 80°C for 1 hour with stirring). After distillation, allow product to settle 24 hours. Carefully decant clear upper layer; discard bottom layer containing water and settled matter. If still cloudy, use desiccant (calcium chloride, molecular sieves) to remove final water.</p>
+<h3>Corrosive Vapor Damage</h3>
+<p><strong>Problem:</strong> Sour crude (high sulfur content) produces hydrogen sulfide vapor. H₂S corrodes copper, brass, and many metals.</p>
+<p><strong>Result:</strong> Copper condenser tubes develop pinhole leaks. System fails mid-run. Condenser unusable afterward.</p>
+<p><strong>Prevention:</strong> Test crude oil: if it smells like rotten eggs, it's sour crude. Use stainless steel or glass apparatus instead of copper. Alternatively, pre-treat crude to remove sulfur (requires activated carbon filters or chemical treatment—complex).</p>
+<h3>Loss of Volatile Components</h3>
+<p><strong>Problem:</strong> Gasoline fraction vapors escape uncondensed as vapor. Vapor concentration too low to condense.</p>
+<p><strong>Result:</strong> Gasoline yield is very low (&lt;5% instead of expected 25-30%). Economics don't work—huge effort for tiny fuel yield.</p>
+<p><strong>Prevention:</strong> Keep column insulation intact (minimize heat loss to surroundings). Use adequate condenser cooling. Ensure condenser outlet temperature is &lt;100°C.</p>
+<h3>Improper Reflux Ratio</h3>
+<p><strong>Problem:</strong> Too much product withdrawn too quickly (high reflux ratio loss). Column starves of liquid.</p>
+<p><strong>Result:</strong> Liquid/vapor contact is insufficient. Fractions don't separate well. Product is mixed, low quality.</p>
+<p><strong>Prevention:</strong> For first run, withdraw only 30% of overhead condensate as product; return 70% to column. This conservative approach ensures good separation. Once separated, you can increase withdrawal rate.</p>
+<h3>Coke Formation (Buildup)</h3>
+<p><strong>Problem:</strong> Oil heated to &gt;400°C without adequate vapor removal. Heavy molecules polymerize and deposit as carbon (coke).</p>
+<p><strong>Result:</strong> Black, tarry deposit accumulates inside apparatus. Reduces heat transfer. Can block condenser. System efficiency drops dramatically.</p>
+<p><strong>Prevention:</strong> Don't hold crude oil at elevated temperature for extended time. Keep vapor moving through system. Don't attempt to &quot;squeeze&quot; extra fuel by overheating residue.</p>
+<h3>Safety Culture Failure</h3>
+<p><strong>Problem:</strong> Operator becomes complacent. &quot;Just this once&quot; omits safety step. Ignores warning signs.</p>
+<p><strong>Result:</strong> Fire, explosion, severe burns, death. Most refineries that have accidents have multiple warning signs weeks/months before disaster.</p>
+<p><strong>Prevention:</strong> Safety checklist every run. Never skip PPE. Never ignore alarm bells (weird smell, pressure buildup, temperature jump, condenser blockage). If something seems wrong, STOP immediately.</p>
+<div class="danger">
+<h3>Why Improvised Refining Is High-Risk</h3>
+<ul>
+<li>Petroleum vapors are invisible and odorless (you can't tell if you're breathing toxic fumes)</li>
+<li>Flammability range is very wide (can ignite at concentrations from 1-8% in air)</li>
+<li>System pressure can build rapidly and rupture before you realize there's a problem</li>
+<li>Thermal energy is enormous; even small amount of fuel burns intensely</li>
+<li>Equipment malfunction during distillation is difficult to correct without shutting down (losing work in progress)</li>
+<li>Only ONE critical mistake needed to cause catastrophic failure</li>
+</ul>
+<p><strong>Bottom line:</strong> Petroleum refining is justifiable in true survival scenarios only. With access to commercial fuel, the risk-to-benefit ratio is unacceptable. If you must refine, expect multiple failed runs, accept losses, plan for safety equipment and emergency response.</p>
+</div>
+</section>
+<section id="waste-disposal">
+<h2>12. Waste Handling and Disposal</h2>
+<h3>Byproduct Management</h3>
+<p><strong>Heavy residue (bitumen, &gt;350°C fraction):</strong></p>
+<ul>
+<li>Small quantities: Cool completely, solidifies, can be used for waterproofing or road repair</li>
+<li>Large quantities: Transfer to sealed drums; mark clearly &quot;Bitumen Residue – Flammable.&quot; Store away from heat sources</li>
+<li>Disposal: In industrial contexts, sent to specialty recyclers; in survival situations, store safely long-term or use as-is</li>
+</ul>
+<p><strong>Spent catalyst (if using catalytic cracking):</strong></p>
+<ul>
+<li>After use, zeolite catalyst contains coke deposits and organic residues</li>
+<li>If regenerating: Heat to 600°C in air for 2 hours to burn off coke; do this in a proper furnace (NOT open fire)</li>
+<li>If disposing: Cool completely, seal in a drum, and store as hazardous waste (coke and oils are flammable)</li>
+</ul>
+<p><strong>Water removed from fuel:</strong></p>
+<ul>
+<li>Petroleum-contaminated water: DO NOT pour into drains or groundwater</li>
+<li>Store in sealed containers; cannot be reused</li>
+<li>Disposal: In modern settings, send to authorized hazardous waste facility; in survival, store indefinitely or burn in a hot fire (use caution—can be toxic)</li>
+</ul>
+<div class="warning">
+<p>Never pour petroleum products or petroleum-contaminated water into soil, rivers, or sewage systems. This contaminates groundwater, harms aquatic life, and is illegal in most jurisdictions. In a true survival scenario where proper disposal is impossible, store all waste products sealed and isolated until conditions improve.</p>
+</div>
+<p><strong>Methanol waste (from biodiesel production):</strong></p>
+<ul>
+<li>Methanol is toxic and volatile. Collect all wash water from biodiesel steps</li>
+<li>Allow methanol to evaporate in a well-ventilated area (does not persist in soil long-term, but highly flammable during evaporation)</li>
+<li>Or, incinerate in a controlled manner (burns cleanly at high temperature)</li>
+</ul>
+</section>
+<section id="troubleshooting">
+<h2>13. Troubleshooting Refining Issues and Common Mistakes</h2>
+<h3>Distillation Problems</h3>
+<h4>Problem: Little product; mostly heavy residue recovered</h4>
+<p><strong>Likely causes:</strong></p>
+<ol>
+<li>Thermometer positioned incorrectly (bulb too high in column)</li>
+<li>Reboiler temperature too low</li>
+<li>Incomplete vaporization due to insufficient heat</li>
+<li>Excessive reflux (returning too much liquid to column)</li>
+</ol>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Reposition thermometer so bulb aligns exactly with the side arm exit; this ensures you measure the temperature of the vapor leaving the flask</li>
+<li>Increase heat to 250–300°C; monitor for signs of overheating (excessive pressure, backflow)</li>
+<li>Check that heating mantle is properly sized (should heat flask to target temperature within 30–45 minutes)</li>
+<li>Reduce reflux: open the product withdrawal valve more, close reflux return valve slightly</li>
+</ul>
+<h4>Problem: Vapors condense in the column; liquid flows backward (backflow)</h4>
+<p><strong>Likely causes:</strong></p>
+<ol>
+<li>Condenser water flow rate too high (over-cooling)</li>
+<li>External ambient temperature too cold (&lt;5°C)</li>
+<li>Condenser inlet positioned higher than outlet (inverted flow)</li>
+<li>Insufficient insulation on column</li>
+</ol>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Reduce water flow to 2 L/min (too much flow reduces efficiency and wastes water)</li>
+<li>Run distillation during warmer hours or insulate the condenser with foam jacket</li>
+<li>Ensure inlet (bottom) and outlet (top) are in correct orientation</li>
+<li>Add 50 mm fiberglass wool insulation around column jacket</li>
+</ul>
+<h4>Problem: Gasoline fraction contains much heavy oil; fractions are not cleanly separated</h4>
+<p><strong>Likely causes:</strong></p>
+<ol>
+<li>Fractionating column packing is not wet/functional</li>
+<li>Reflux ratio is too low (not enough liquid contact)</li>
+<li>Crude oil feed rate too high (vapors rushing through without equilibrating)</li>
+</ol>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Prime the column: circulate hot (120°C) mineral oil through the column for 30 minutes to activate packing</li>
+<li>Increase reflux by closing the product valve slightly; aim for a 3:1 to 5:1 reflux ratio</li>
+<li>Reduce feed rate: with a 2 m column, process no more than 2–3 liters/hour</li>
+</ul>
+<h3>Biodiesel-Specific Issues</h3>
+<h4>Problem: Biodiesel remains cloudy/opaque after washing</h4>
+<p><strong>Likely causes:</strong></p>
+<ol>
+<li>Excess water remaining (&gt;0.5%)</li>
+<li>Unreacted methanol still dissolved</li>
+<li>Emulsified soap-like impurities from base-catalyzed reaction</li>
+<li>Original oil water content too high</li>
+</ol>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Dry at 60°C for 30 minutes under gentle stirring; if still cloudy, heat to 90°C for 1 hour</li>
+<li>Wash again with fresh warm distilled water (50°C) in 1:1 volume ratio; allow 12 hours settling</li>
+<li>Add a small amount (0.5–1%) of water-removal agent (calcium chloride) to fuel; settles and can be filtered</li>
+<li>Pre-dry input oil: heat to 110°C for 1 hour with gentle stirring before transesterification</li>
+</ul>
+<h4>Problem: Biodiesel freeze-thickens at room temperature</h4>
+<p><strong>Likely causes:</strong></p>
+<ol>
+<li>High saturated fatty acid content (palm, coconut, or animal fats)</li>
+<li>Crystallization of stearin (high-melting fatty acids)</li>
+<li>Incorrect feedstock selection</li>
+</ol>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Blend with petroleum diesel: B20 (20% biodiesel + 80% petroleum) eliminates freeze-up in most climates</li>
+<li>Source oil: canola, soybean, or used fryer oil (lower saturated content) instead of palm</li>
+<li>Add pour point depressant (commercial additive or blend with kerosene, 10%)</li>
+<li>Store in warmer location (&gt;10°C) if possible</li>
+</ul>
+<div class="info-box">
+<p><strong>Biodiesel cloud point:</strong> The temperature at which crystals first form. Canola biodiesel: ~-3°C. Palm biodiesel: ~13°C. To estimate, blend with petroleum diesel (higher cloud point lowers blend cloud point logarithmically).</p>
+</div>
+<h4>Problem: Engine detonation/pinging with biodiesel blends</h4>
+<p><strong>Likely causes:</strong></p>
+<ol>
+<li>Blend ratio too high (&gt;30% biodiesel) in engine not designed for it</li>
+<li>Water or suspended contaminants in fuel</li>
+<li>Biodiesel cetane number too low (poor ignition quality)</li>
+</ol>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Test with B20 first; increase to B30 only if engine runs smoothly</li>
+<li>Filter fuel through 5 micron paper filter; allow 24 hours settling to remove water</li>
+<li>Confirm biodiesel cetane number: should be 48–65; if lower, blend with higher-cetane petroleum diesel</li>
+<li>Check fuel system for rust/debris accumulation; biodiesel can dissolve varnish deposits, dislodging them and clogging injectors</li>
+</ul>
+</section>
+<section id="safety">
+<h2>14. Safety Protocols and Personal Protective Equipment</h2>
+<h3>Pre-Distillation Safety Checklist</h3>
+<p><strong>Before every distillation run:</strong></p>
+<ul>
+<li>[ ] Inspect all glassware for cracks, chips, or damage. Discard any compromised pieces</li>
+<li>[ ] Test all connections for air-tightness using gentle pressure</li>
+<li>[ ] Ensure thermometer is secure and not touching flask walls</li>
+<li>[ ] Verify heating mantle thermostat works by testing on low setting</li>
+<li>[ ] Confirm water cooling system flows correctly (check outlet temperature rise)</li>
+<li>[ ] Position fire extinguisher within 2 meters of apparatus</li>
+<li>[ ] Check that fume hood or exhaust duct is clear and functioning</li>
+<li>[ ] Have spill kit (absorbent, disposal bags, gloves) immediately available</li>
+<li>[ ] Ensure no smoking, open flames, or spark sources within 20 meters</li>
+<li>[ ] Notify others in area that you are running a flammable distillation</li>
+</ul>
+<h3>Personal Protective Equipment (PPE)</h3>
+<p><strong>Minimum required:</strong></p>
+<ul>
+<li><strong>Face shield</strong> (not just safety glasses—petroleum splashes and vapor)</li>
+<li><strong>Heat-resistant gloves</strong> (leather or Kevlar for handling hot apparatus)</li>
+<li><strong>Long-sleeved lab coat or coveralls</strong> (cotton or flame-resistant material)</li>
+<li><strong>Closed-toe shoes</strong> (or rubber boots for chemical spills)</li>
+<li><strong>Respirator</strong> (P100 or activated charcoal) if fume hood unavailable (petroleum vapors contain benzene and volatile aromatics—both carcinogenic and neurotoxic)</li>
+</ul>
+<p><strong>Optional but recommended:</strong></p>
+<ul>
+<li><strong>Body apron</strong> (rubber-coated for splash protection)</li>
+<li><strong>Hair restraint</strong> (tied back or under hood to prevent ignition)</li>
+<li><strong>Head covering</strong> (in high-temperature environments)</li>
+</ul>
+<div class="danger">
+<p>NEVER work alone when distilling petroleum. Always have another trained person present who can:</p>
+<ul>
+<li>Monitor for safety violations</li>
+<li>Operate the emergency shutdown (kill the heater, close water valve)</li>
+<li>Call for help if an accident occurs</li>
+<li>Perform basic first aid or CPR</li>
+</ul>
+<p>In the event of a fire: Stop the heating immediately. Evacuate the area. Use a Class B fire extinguisher on small fires only (if fire is large or spreading, evacuate and let it burn in a safe location).</p>
+</div>
+<h3>Health Hazards and Exposure Limits</h3>
+<p><strong>Petroleum vapors contain:</strong></p>
+<ul>
+<li><strong>Benzene, toluene, xylene (BTX):</strong> Volatile aromatic hydrocarbons; carcinogenic; neurotoxic at high exposure</li>
+<li><strong>Hydrogen sulfide (H₂S):</strong> Found in sour crude; poisonous at &gt;100 ppm; can be fatal at &gt;1000 ppm</li>
+<li><strong>Alkanes and alkenes:</strong> Generally less toxic but can cause asphyxiation in high concentrations</li>
+</ul>
+<p><strong>Exposure limits (OSHA, for reference):</strong></p>
+<ul>
+<li>Benzene: 1 ppm (8-hour TWA)</li>
+<li>Toluene: 200 ppm</li>
+<li>H₂S: 10 ppm (8-hour TWA)</li>
+</ul>
+<p><strong>Symptoms of overexposure:</strong></p>
+<ul>
+<li>Dizziness, headache, nausea</li>
+<li>Eye, throat, or respiratory irritation</li>
+<li>Unconsciousness (at high concentrations)</li>
+</ul>
+<p><strong>If exposed:</strong></p>
+<ol>
+<li>Leave the area immediately and breathe fresh air</li>
+<li>Remove contaminated clothing</li>
+<li>Rinse eyes with water for at least 15 minutes if affected</li>
+<li>Seek medical attention if symptoms persist</li>
+</ol>
+<h3>Thermal Burn Prevention</h3>
+<p><strong>Petroleum distillation involves very hot liquids and vapors:</strong></p>
+<ul>
+<li><strong>Liquid petroleum at 300°C</strong> can cause severe burns instantly</li>
+<li><strong>Steam from condenser</strong> is as dangerous as boiling water</li>
+<li><strong>Hot glassware</strong> continues radiating heat long after heating stops</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Never touch the distillation flask directly; use heat-resistant gloves and clamps</li>
+<li>Wait 5–10 minutes after stopping the heater before disassembling apparatus</li>
+<li>Use wooden or plastic-coated clamps (metal conducts heat)</li>
+<li>Have ice packs or a cool water bath nearby for minor burns</li>
+<li>For severe burns: immerse in cool (not cold) water for 10–20 minutes; cover with clean cloth; seek medical help</li>
+</ul>
+</section>
+<section id="lubricants">
+<h2>Lubricant Production and Grading</h2>
+<p>High-quality lubricating oils are refined from the fuel oil and bitumen fractions through additional processing to improve viscosity index and remove oxidation-prone components.</p>
+<h3>Lubricant Grades (ISO VG Classification)</h3>
+<table><thead><tr><th scope="row">ISO Grade</th><th scope="row">Nominal Viscosity (cSt @ 40°C)</th><th scope="row">Typical Applications</th></tr></thead><tbody><tr><td>ISO 10</td><td>10</td><td>Precision machinery, hydraulic systems (light duty)</td></tr><tr><td>ISO 32</td><td>32</td><td>Hydraulic systems, gearbox (light)</td></tr><tr><td>ISO 46</td><td>46</td><td>Most industrial gear systems, hydraulic pumps</td></tr><tr><td>ISO 68</td><td>68</td><td>Heavy-duty gears, slow-speed bearings</td></tr><tr><td>ISO 100</td><td>100</td><td>Very heavy equipment, slow-speed high-load bearings</td></tr><tr><td>ISO 220-1000</td><td>220-1000</td><td>Extremely heavy industrial equipment, gear oils</td></tr></tbody></table>
+<h3>Producing Mineral Oil Lubricants</h3>
+<p><strong>Step 1: Solvent Extraction</strong></p>
+<ul>
+<li>Mix fuel oil fraction with a solvent (phenol or naphthol) to selectively dissolve aromatic compounds and sulfur-containing compounds</li>
+<li>The paraffinic/naphthenic base oil remains insoluble and is recovered</li>
+<li>The solution is vacuum-distilled to recover the solvent and produce refined base oil</li>
+</ul>
+<p><strong>Step 2: Solvent Dewaxing</strong></p>
+<ul>
+<li>Mix the base oil with acetone or methyl ethyl ketone (MEK)</li>
+<li>Cool the mixture to -15 to 0°C; wax precipitates as crystals</li>
+<li>Filter to separate wax; recover solvent by distillation</li>
+<li>This reduces pour point (lowest temperature the oil flows)</li>
+</ul>
+<p><strong>Step 3: Hydrotreating</strong></p>
+<ul>
+<li>Pass the base oil with hydrogen gas over a Ni-Mo catalyst at 300-350°C, 50-100 atm</li>
+<li>Removes sulfur, nitrogen, and oxygen compounds; improves oxidation stability</li>
+<li>Produces very clear, stable, colorless base oil</li>
+</ul>
+<p><strong>Step 4: Additives (for finished oils)</strong></p>
+<ul>
+<li>Viscosity Index Improvers: Long-chain polymers that resist viscosity change with temperature</li>
+<li>Antioxidants: Phenolic or aminic compounds prevent gum formation</li>
+<li>Corrosion inhibitors: Protect ferrous metals from rust</li>
+<li>Dispersants: Keep sludge suspended (for used oil)</li>
+<li>Extreme Pressure (EP) Agents: Zinc dialkyldithiophosphates for gear oils under high load</li>
+</ul>
+<p><strong>Formulation example for ISO 46 hydraulic oil:</strong></p>
+<ul>
+<li>Base oil (paraffinic blend): 95%</li>
+<li>Viscosity index improver (PIB): 4%</li>
+<li>Antioxidant package: 0.5%</li>
+<li>Corrosion/foam inhibitor: 0.5%</li>
+</ul>
+</section>
+<h2 id="15-fuel-storage-and-safety">15. Fuel Storage and Safety</h2>
+<div class="danger">
+<p>All petroleum products are FLAMMABLE and present explosion hazards. Gasoline vapors ignite at -43°C (continuously hazardous at room temperature). Diesel ignites at 210°C (flash point). Any static electricity spark, open flame, or ignition source within 5 meters of stored fuel creates a catastrophic explosion risk. Proper storage with absolute fire prevention is non-negotiable.</p>
+</div>
+<h3>Storage Tank Design</h3>
+<table><thead><tr><th scope="row">Feature</th><th scope="row">Purpose</th><th scope="row">Specification</th></tr></thead><tbody><tr><td>Material</td><td>Contain corrosive/flammable liquid</td><td>Carbon steel (internally coated) or stainless steel (304/316L)</td></tr><tr><td>Ventilation (breathing)</td><td>Equalize pressure as liquid level changes</td><td>Air filter with desiccant; prevents moisture ingress and vacuum formation</td></tr><tr><td>Earthing/bonding</td><td>Dissipate static electricity</td><td>Continuous conductor connection to ground; &lt;1 ohm resistance</td></tr><tr><td>Overflow containment</td><td>Capture spills if tank is overfilled</td><td>Secondary containment = 110% of tank volume</td></tr><tr><td>Gauge glass/dip stick</td><td>Measure liquid level safely</td><td>For flammable liquids, use float-type gauge; avoid open gauges</td></tr><tr><td>Filler cap</td><td>Minimize vapor loss and contamination</td><td>Flame arrestor in cap prevents external flame entry</td></tr></tbody></table>
+<h3>Storage Conditions</h3>
+<ul>
+<li><strong>Temperature:</strong> Store at 5-25°C. High temperature promotes oxidation and vapor loss; below 5°C some products become too viscous</li>
+<li><strong>Light exposure:</strong> Store in opaque tanks or covered containers. Ultraviolet light promotes gum formation</li>
+<li><strong>Water contamination:</strong> Drain any water from the tank bottom monthly. Use desiccant breathers. Water promotes rust and fuel degradation</li>
+<li><strong>Metal contact:</strong> Minimize iron, copper, and brass contact. These metals catalyze oxidation. Use stainless steel or painted steel</li>
+<li><strong>Stirring:</strong> Gentle agitation prevents sediment settling and water accumulation at the bottom</li>
+</ul>
+<h3>Safe Handling Procedures</h3>
+<ul>
+<li>Ground all containers, pumps, and hoses before transfer (prevent static spark)</li>
+<li>Transfer at &lt;1.5 m/s flow rate to minimize splashing and static generation</li>
+<li>Use non-sparking tools (bronze or plastic, never steel-on-steel)</li>
+<li>Never allow smoking, open flames, or high-temperature surfaces (&gt;200°C) near storage areas</li>
+<li>Keep portable fire extinguishers rated for flammable liquid (Class B) within arm's reach and every 50 m</li>
+<li>Label all containers with product type, hazard warnings, and date received</li>
+<li>Post &quot;Flammable – No Smoking&quot; signs around storage perimeter</li>
+<li>Maintain 5+ meter exclusion zone around fuel storage during filling/withdrawal operations</li>
+</ul>
+<div class="warning">
+<p><strong>Static Electricity Ignition During Fuel Transfer:</strong> Flowing petroleum generates static charge buildup. A single spark from accumulated static can ignite fuel vapors catastrophically, causing explosion and fire. Always ground containers and equipment (bonding cables from container to earth spike). Transfer at &lt;1.5 m/s to minimize static generation. Wear conductive footwear. Never use synthetic clothing (insulates static). Transfer only in non-humid conditions if possible (humidity aids static dissipation). Vapor accumulation in enclosed spaces combines with static spark—always transfer in open air or ventilated areas. One moment of negligence costs lives.</p>
+</div>
+<div class="tip">
+<p><strong>Static prevention trick:</strong> During transfer, drag a bare copper wire from the fuel drum to a ground stake (metal rod driven into moist soil). This continuously bleeds static charge to earth. Change connection points every few hours if transferring large volumes.</p>
+</div>
+</section>
+<section id="step-procedure">
+<h2>16. Step-by-Step Distillation Procedure (Complete Walkthrough)</h2>
+<h3>Preparation Phase (1 hour before starting)</h3>
+<ol>
+<li><strong>Setup equipment:</strong> Arrange distillation apparatus in fume hood or ventilated area. Ensure stable, level placement</li>
+<li><strong>Conduct safety check:</strong> Use the checklist from Section 14. Verify all components and safety systems</li>
+<li><strong>Prepare receiving containers:</strong> Label each with expected fraction and temperature range (e.g., &quot;Gasoline 40–200°C&quot;)</li>
+<li><strong>Fill cooling water system:</strong> Connect cooling water supply; run at 2–3 L/min for 5 minutes to prime and verify flow</li>
+</ol>
+<h3>Charging Phase (30 minutes)</h3>
+<ol>
+<li><strong>Measure crude oil:</strong> Use a graduated cylinder to measure 1–2 liters of crude oil (start small for first run)</li>
+<li><strong>Filter crude:</strong> Pass through 100 micron filter to remove large particles and sediment</li>
+<li><strong>Pour into distillation flask:</strong> Use a funnel with a long stem to prevent splashing; leave 20% headspace</li>
+<li><strong>Insert thermometer:</strong> Secure in thermometer adapter; bulb should be level with side arm exit</li>
+<li><strong>Seal apparatus:</strong> Attach distillation head, condenser, and receiving flask. Test all connections for leaks with PTFE tape if needed</li>
+</ol>
+<h3>Heat-Up Phase (1–2 hours)</h3>
+<ol>
+<li><strong>Start water cooling:</strong> Turn on cooling water pump; verify outlet temperature rise (~5–10°C above inlet)</li>
+<li><strong>Begin gentle heating:</strong> Set heating mantle to 50°C; monitor for 10 minutes to ensure stable temperature</li>
+<li><strong>Increase slowly:</strong> Raise temperature by 15°C every 5 minutes (e.g., 50°C at 0 min, 65°C at 5 min, 80°C at 10 min, etc.)</li>
+<li><strong>Watch for vapors:</strong> Around 100°C, you will see heat-shimmer at the top of the column; do NOT increase temperature faster</li>
+<li><strong>Continue to 150°C:</strong> At this point, light petroleum vapors should begin reaching the condenser; the receiving flask should show liquid collecting</li>
+<li><strong>Note time and temperature:</strong> Record when first fraction begins collecting (typically 40–60°C inside flask, higher in column due to temperature gradient)</li>
+</ol>
+<h3>Distillation Phase (2–6 hours depending on scale)</h3>
+<ol>
+<li>
+<p><strong>Monitor continuously:</strong> Every 5 minutes, note thermometer reading and product color/clarity</p>
+</li>
+<li>
+<p><strong>Collect fractions by temperature ranges:</strong></p>
+<ul>
+<li><strong>40–100°C:</strong> LPG/light naphtha (fast boilers, often as gases)</li>
+<li><strong>100–200°C:</strong> Gasoline (light amber, very volatile)</li>
+<li><strong>150–200°C:</strong> Naphtha/light kerosene (pale yellow)</li>
+<li><strong>200–275°C:</strong> Kerosene (yellow to brown, viscous)</li>
+<li><strong>250–350°C:</strong> Diesel (dark brown, very viscous)</li>
+<li><strong>350–400°C+:</strong> Heavy fuel oil/bitumen (nearly black, tar-like)</li>
+</ul>
+</li>
+<li>
+<p><strong>Switch receivers:</strong> When temperature jumps to a new range, switch to a fresh labeled container. This creates cleaner fractions</p>
+</li>
+<li>
+<p><strong>Monitor reflux:</strong> If using a fractionating column, ensure liquid is returning to the column (dripping from condenser reflux line). If not, increase heating slightly or check for blockages</p>
+</li>
+<li>
+<p><strong>Watch for backflow:</strong> If liquid is flowing backward (up the reflux line instead of down), reduce heating immediately; increase condenser water flow</p>
+</li>
+<li>
+<p><strong>Check for foaming:</strong> If foam is visible in the condenser inlet, slow the heat ramp (temperature increase too fast)</p>
+</li>
+</ol>
+<h3>Cool-Down Phase (1 hour)</h3>
+<ol>
+<li><strong>Stop heating:</strong> Turn off heating mantle completely</li>
+<li><strong>Maintain water cooling:</strong> Continue cooling water flow for 5–10 minutes after heating stops</li>
+<li><strong>Wait for cooling:</strong> Allow apparatus to cool to &lt;100°C before touching (check thermometer)</li>
+<li><strong>Remove receiving flasks:</strong> Carefully uncouple each flask using heat-resistant gloves</li>
+<li><strong>Cap flasks immediately:</strong> Seal with breathable caps (not airtight—prevents pressure buildup from vapor)</li>
+<li><strong>Allow to settle:</strong> Set collected fractions on a bench for 24 hours; heavy oil and water settle to the bottom</li>
+<li><strong>Decant:</strong> Carefully pour off the top (lighter) oil layer into clean storage containers; discard settled water/sediment</li>
+</ol>
+<h3>Post-Run Cleanup (1 hour)</h3>
+<ol>
+<li><strong>Purge system:</strong> Once cool, remove the crude oil flask and rinse with hot solvent (mineral spirits or kerosene) to dissolve remaining oils</li>
+<li><strong>Flush condenser:</strong> Run cool water through the condenser for 10 minutes to remove condensed oils</li>
+<li><strong>Store components:</strong> Dry all glassware and store in a clean, dust-free location</li>
+<li><strong>Dispose of waste:</strong> Collect wash solvents in a sealed, labeled container for later distillation or incineration</li>
+</ol>
+<section id="biofuels">
+<h2>17. Biofuel Alternatives</h2>
+<h3>Wood Gas (Producer Gas) Production</h3>
+<p>Gasification of wood in a low-oxygen environment produces a combustible mixture of CO, H₂, CH₄, and N₂ that can fuel internal combustion engines or generate heat.</p>
+<p><strong>Simple wood gasifier construction:</strong></p>
+<ol>
+<li>Build a steel drum (200 L) filled with wood chips or charcoal</li>
+<li>Create a grate at the bottom to support the fuel</li>
+<li>Add a small air inlet near the bottom for controlled oxygen supply</li>
+<li>Ignite the wood; the burning zone moves upward as fuel is consumed</li>
+<li>Extract gas from the top of the drum before it cools (use insulation to maintain ~500-800°C reaction zone)</li>
+<li>Cool and filter the gas through a cyclone and water scrubber to remove tars and particulates</li>
+<li>Dry the gas using a desiccant bed before use</li>
+</ol>
+<p><strong>Product composition:</strong></p>
+<ul>
+<li>CO: 15-20% (primary energy source)</li>
+<li>H₂: 10-15% (energy source)</li>
+<li>CH₄: 2-5% (energy source)</li>
+<li>N₂: 45-55% (inert diluent)</li>
+<li>CO₂: 5-10% (inert)</li>
+</ul>
+<p><strong>Energy content:</strong> ~4-6 MJ/m³ (lower than natural gas at ~38 MJ/m³ due to N₂ diluent)</p>
+<h3>Ethanol Fermentation</h3>
+<p>Producing alcohol from carbohydrates using yeast fermentation can supplement petroleum as a fuel additive or standalone fuel.</p>
+<p><strong>Basic fermentation reaction:</strong> C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂</p>
+<p><strong>Feedstock options:</strong></p>
+<ul>
+<li>Sugar cane: Direct fermentation of juice; highest yield</li>
+<li>Corn: Must hydrolyze starch (enzymes or acids) to glucose first</li>
+<li>Grain (wheat, barley): Similar to corn; requires starch hydrolysis</li>
+<li>Cellulose (wood, straw): Requires acid hydrolysis to release glucose (less efficient)</li>
+</ul>
+<p><strong>Fermentation procedure:</strong></p>
+<ol>
+<li>Prepare sugar solution (15-25% glucose by weight)</li>
+<li>Pasteurize at 80°C for 15-20 minutes to sterilize</li>
+<li>Cool to 20-25°C</li>
+<li>Inoculate with yeast (Saccharomyces cerevisiae) at ~10⁶ cells/mL</li>
+<li>Ferment anaerobically (exclude air) for 5-14 days depending on yeast strain and temperature</li>
+<li>Monitor with a hydrometer: fermentation ends when specific gravity stabilizes (typically 1.00 or lower)</li>
+<li>Distill the fermented &quot;mash&quot; to concentrate alcohol: alcohol vaporizes at 78°C while water is at 100°C</li>
+<li>Collect vapors in a condenser to obtain 90-95% ethanol</li>
+</ol>
+</section>
+<section id="biodiesel">
+<h2>18. Biodiesel Production: Transesterification</h2>
+<p>Biodiesel is produced from vegetable oils or animal fats through transesterification with methanol or ethanol, producing fatty acid methyl esters (FAME) and glycerol as a byproduct.</p>
+<h3>Chemistry</h3>
+<p><strong>Transesterification reaction:</strong></p>
+<p>Triglyceride + 3 MeOH → 3 FAME + Glycerol (with KOH or NaOH catalyst)</p>
+<h3>Simple Biodiesel Production Procedure</h3>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>Used or virgin vegetable oil (canola, soybean, or waste fryer oil): 1 liter</li>
+<li>Methanol: 200 mL (20% by volume)</li>
+<li>Potassium hydroxide (KOH) or sodium hydroxide (NaOH): 3.5-5 g</li>
+<li>Distilled water</li>
+</ul>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>If using waste fryer oil, filter through cheesecloth to remove food particles</li>
+<li>If water content &gt;0.5%, dry the oil: heat to 110°C for 1 hour with gentle stirring (removes water); or use molecular sieves</li>
+<li>Warm the oil to 50-60°C in a suitable container</li>
+<li>Dissolve KOH in methanol (mix methanol with KOH; exothermic reaction—use caution)</li>
+<li>Add the KOH-methanol solution to the warm oil slowly, stirring continuously</li>
+<li>Continue stirring at 50-60°C for 1-2 hours; the mixture will darken and thicken</li>
+<li>Stop stirring and allow to settle for 12-24 hours; two layers will separate: biodiesel (top, less dense) and glycerol (bottom, dense)</li>
+<li>Drain the glycerol layer from the bottom</li>
+<li>Wash the biodiesel layer with warm distilled water (50°C) in a 1:1 volume ratio, stir gently, allow to separate</li>
+<li>Repeat washing 2-3 times until wash water is clear (removes unreacted methanol and KOH residue)</li>
+<li>Drain the final water layer; the remaining biodiesel is ready for use</li>
+<li>Optional: Heat to 60°C for 10-15 minutes to evaporate residual water</li>
+</ol>
+<h3>Biodiesel Properties and Storage</h3>
+<table><thead><tr><th scope="row">Property</th><th scope="row">Biodiesel</th><th scope="row">Petroleum Diesel</th></tr></thead><tbody><tr><td>Flash point</td><td>130-180°C</td><td>38-65°C</td></tr><tr><td>Viscosity</td><td>3.5-5.0 cSt @ 40°C</td><td>2-8 cSt @ 40°C</td></tr><tr><td>Cetane number</td><td>48-65</td><td>40-55</td></tr><tr><td>Sulfur content</td><td>&lt;0.01%</td><td>0.05-0.5% (depending on grade)</td></tr><tr><td>Oxidation stability</td><td>Lower than diesel (more oxidation-prone)</td><td>Good in fresh state</td></tr><tr><td>Lubricity</td><td>Excellent (good for fuel pumps)</td><td>Lower than biodiesel</td></tr></tbody></table>
+<p><strong>Storage:</strong> Biodiesel is more hygroscopic (absorbs water) than petroleum diesel. Store in sealed, opaque containers at &lt;20°C. Monitor water content; if &gt;0.05%, dry or replace. Without additives, shelf life is 6-12 months.</p>
+</section>
+<section id="reference">
+<h2>19. Reference Tables and Quick Charts</h2>
+<h3>Hydrocarbon Boiling Point Reference</h3>
+<table><thead><tr><th scope="row">Hydrocarbon</th><th scope="row">Formula</th><th scope="row">Boiling Point (°C)</th><th scope="row">Density (g/cm³)</th><th scope="row">Flash Point (°C)</th></tr></thead><tbody><tr><td>Methane</td><td>CH₄</td><td>-161</td><td>0.42 (liquid)</td><td>-188</td></tr><tr><td>Propane</td><td>C₃H₈</td><td>-42</td><td>0.58</td><td>-104</td></tr><tr><td>Butane</td><td>C₄H₁₀</td><td>-0.5</td><td>0.60</td><td>-60</td></tr><tr><td>Hexane</td><td>C₆H₁₄</td><td>69</td><td>0.66</td><td>-22</td></tr><tr><td>Octane</td><td>C₈H₁₈</td><td>126</td><td>0.70</td><td>13</td></tr><tr><td>Decane</td><td>C₁₀H₂₂</td><td>174</td><td>0.73</td><td>46</td></tr><tr><td>Dodecane</td><td>C₁₂H₂₆</td><td>216</td><td>0.75</td><td>74</td></tr><tr><td>Hexadecane</td><td>C₁₆H₃₄</td><td>287</td><td>0.77</td><td>135</td></tr></tbody></table>
+<h3>Quick Fraction Identification</h3>
+<table><thead><tr><th scope="row">Fraction</th><th scope="row">Color</th><th scope="row">Smell</th><th scope="row">Viscosity</th><th scope="row">Flash Point Range</th><th scope="row">Best For</th></tr></thead><tbody><tr><td>Gasoline</td><td>Clear to pale yellow</td><td>Sharp, pungent hydrocarbon</td><td>Very thin</td><td>-43 to -20°C</td><td>Spark-ignition engines (cars, motorcycles, small generators)</td></tr><tr><td>Kerosene</td><td>Light yellow to brown</td><td>Mild petroleum odor</td><td>Medium</td><td>35–65°C</td><td>Lighting, heating, some diesel engines</td></tr><tr><td>Diesel</td><td>Dark yellow to brown</td><td>Heavier petroleum smell</td><td>High</td><td>210°C (approximate)</td><td>Compression-ignition engines, stationary generators</td></tr><tr><td>Fuel Oil</td><td>Dark brown to black</td><td>Very strong petroleum smell</td><td>Very high, tar-like</td><td>210–260°C</td><td>Marine vessels, large furnaces, low-efficiency burners</td></tr></tbody></table>
+<h3>Temperature and Pressure Effects on Vapor Pressure</h3>
+<p><strong>Clausius-Clapeyron Approximation:</strong> As temperature increases, vapor pressure increases exponentially.</p>
+<p>For a hydrocarbon fraction at two different temperatures:</p>
+<p><strong>ln(P₂/P₁) = -(ΔHvap/R) × (1/T₂ − 1/T₁)</strong></p>
+<p>Where:</p>
+<ul>
+<li>P = vapor pressure (atm)</li>
+<li>ΔHvap = heat of vaporization (~35–45 kJ/mol for light hydrocarbons)</li>
+<li>R = 8.314 J/(mol·K)</li>
+<li>T = absolute temperature (K)</li>
+</ul>
+<p><strong>Example calculation:</strong>
+Gasoline has vapor pressure ≈ 0.5 atm at 20°C. What is it at 50°C?</p>
+<p>ln(P₂/0.5) = −(40,000/8.314) × (1/323 − 1/293) = −(4,808) × (−0.000319) = 1.53</p>
+<p>P₂ = 0.5 × e^1.53 ≈ 2.3 atm</p>
+<p>This shows that storing gasoline at 50°C increases vapor pressure ~4.5×, requiring stronger containment and more ventilation.</p>
+<h3>Fuel Energy Content and Generator Runtime</h3>
+<table><thead><tr><th scope="row">Fuel Type</th><th scope="row">Energy Density (MJ/L)</th><th scope="row">Typical Generator Fuel Consumption</th><th scope="row">Runtime per Liter</th></tr></thead><tbody><tr><td>Gasoline (regular)</td><td>32.0</td><td>5 kW generator: ~1.8 L/hour</td><td>33 minutes</td></tr><tr><td>Diesel</td><td>36.0</td><td>5 kW generator: ~1.2 L/hour</td><td>50 minutes</td></tr><tr><td>Kerosene</td><td>33.5</td><td>5 kW generator (less common): ~1.5 L/hour</td><td>40 minutes</td></tr><tr><td>Biodiesel (B100)</td><td>33.3</td><td>5 kW generator: ~1.3 L/hour (variable by engine)</td><td>46 minutes</td></tr><tr><td>Wood gas (dry)</td><td>4–6 MJ/m³</td><td>Requires larger volume; 3–5 L/min for 5 kW</td><td>200–300 min per m³</td></tr><tr><td>Ethanol (100%)</td><td>24.0</td><td>5 kW generator: ~2.4 L/hour (less efficient)</td><td>25 minutes</td></tr></tbody></table>
+<div class="info-box">
+<p><strong>Survival fuel planning:</strong> For a 5 kW generator running 8 hours/day:</p>
+<ul>
+<li>Gasoline: 8 × 1.8 = 14.4 L/day</li>
+<li>Diesel: 8 × 1.2 = 9.6 L/day</li>
+<li>Wood gas: 8 × 4.5 L/min = 2,160 L = 2.16 m³/day</li>
+</ul>
+<p>Diesel is ~33% more efficient. Wood gas requires much larger storage but is renewable if wood is available.</p>
+</div>
+<h3>Safety Critical Temperatures (No Ignition Sources)</h3>
+<table><thead><tr><th scope="row">Product</th><th scope="row">Vapor Flash Point</th><th scope="row">Auto-Ignition Temp</th><th scope="row">Safe Working Zone</th></tr></thead><tbody><tr><td>Gasoline</td><td>-43°C</td><td>300–350°C</td><td>&lt;0°C storage required for true safety</td></tr><tr><td>Diesel</td><td>210°C</td><td>300–350°C</td><td>Keep away from anything &gt;210°C (electric coils, hot surfaces)</td></tr><tr><td>Kerosene</td><td>35–65°C</td><td>210°C</td><td>Keep away from hot surfaces &gt;100°C</td></tr><tr><td>Crude oil (light)</td><td>-10 to 5°C</td><td>300°C</td><td>Avoid any ignition source; static grounding mandatory</td></tr></tbody></table>
+</section>
+</section>
+<h2 id="related-guides">Related Guides</h2>
+<div class="card">
+<p><a href="chemistry-fundamentals">Chemistry Fundamentals</a></p>
+<p>Understanding chemical reactions in refining</p>
+</div>
+<div class="card">
+<p><a href="home-management">Heat Transfer and Furnaces</a></p>
+<p>Designing efficient heating systems for distillation</p>
+</div>
+<div class="card">
+<p><a href="home-management">Storage and Containment</a></p>
+<p>Safe handling of flammable liquids</p>
+</div>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="advanced-materials.html">Advanced Materials &amp; Industrial Chemistry</a>
+<a href="alkali-production.html">Alkali &amp; Soda Production</a>
+<a href="bearing-manufacturing.html">Bearing Manufacturing</a>
+<a href="chemistry-fundamentals.html">Chemistry from Scratch</a>
+<a href="glue-adhesives.html">Glue &amp; Adhesives</a>
+<a href="soap-candles.html">Soap &amp; Candle Making</a>
+<a href="solvents-distillation.html">Solvents &amp; Distillation</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

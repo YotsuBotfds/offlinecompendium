@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>75 Combo Projects - Offline Knowledge Compendium</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background-color: #1a2e1a;
+            color: #f5f0e8;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2d2416 0%, #1a2e1a 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid #d4a574;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #d4a574;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .subtitle {
+            color: #b8956a;
+            font-size: 1.1em;
+            font-style: italic;
+        }
+        
+        .controls {
+            background: #2d2416;
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 2px solid #d4a574;
+        }
+        
+        .search-box {
+            width: 100%;
+            max-width: 600px;
+            padding: 12px;
+            margin-bottom: 20px;
+            background-color: #1a2e1a;
+            border: 2px solid #d4a574;
+            color: #f5f0e8;
+            font-size: 1em;
+            border-radius: 4px;
+        }
+        
+        .search-box::placeholder {
+            color: #8b7355;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background-color: #1a2e1a;
+            color: #d4a574;
+            border: 2px solid #d4a574;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .filter-btn:hover {
+            background-color: #d4a574;
+            color: #1a2e1a;
+        }
+        
+        .filter-btn.active {
+            background-color: #d4a574;
+            color: #1a2e1a;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 25px;
+        }
+        
+        .project-card {
+            background: #2d2416;
+            border: 2px solid #d4a574;
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card .details {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #5a4a3a;
+        }
+
+        .project-card .details.visible {
+            display: block;
+        }
+
+        .project-card h3 {
+            color: #d4a574;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+
+        .project-card .difficulty {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: capitalize;
+            margin-bottom: 6px;
+        }
+
+        .project-card .difficulty-beginner { background-color: #3a5a3a; color: #a8e6a8; }
+        .project-card .difficulty-intermediate { background-color: #5a4a3a; color: #e6d4a8; }
+        .project-card .difficulty-advanced { background-color: #5a3a3a; color: #e6a8a8; }
+        .project-card .difficulty-master { background-color: #4a3a5a; color: #d4a8e6; }
+
+        .project-card .category {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: #1a2e1a;
+            color: #d4a574;
+            border: 1px solid #d4a574;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-left: 8px;
+        }
+
+        .project-card .details strong { color: #d4a574; }
+        .project-card .details ol { padding-left: 20px; margin: 10px 0; }
+        .project-card .details li { padding: 4px 0; }
+        .project-card .details ul { list-style: none; padding: 0; }
+        .project-card .details ul li { padding: 3px 0; }
+        .project-card .details a { color: #d4a574; text-decoration: none; }
+        .project-card .details a:hover { text-decoration: underline; }
+        
+        .project-card:hover {
+            box-shadow: 0 8px 16px rgba(212, 165, 116, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .project-title {
+            font-size: 1.4em;
+            color: #d4a574;
+            margin-bottom: 5px;
+        }
+        
+        .difficulty-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .difficulty-beginner {
+            background-color: #3a5a3a;
+            color: #a8e6a8;
+        }
+        
+        .difficulty-intermediate {
+            background-color: #5a4a3a;
+            color: #e6d4a8;
+        }
+        
+        .difficulty-advanced {
+            background-color: #5a3a3a;
+            color: #e6a8a8;
+        }
+        
+        .difficulty-master {
+            background-color: #4a3a5a;
+            color: #d4a8e6;
+        }
+        
+        .category-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: #1a2e1a;
+            color: #d4a574;
+            border: 1px solid #d4a574;
+            border-radius: 4px;
+            font-size: 0.85em;
+            margin-top: 10px;
+        }
+        
+        .skills-section {
+            margin: 15px 0;
+            padding: 12px;
+            background-color: #1a2e1a;
+            border-left: 3px solid #d4a574;
+            border-radius: 4px;
+        }
+        
+        .skills-label {
+            color: #d4a574;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .skill-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-link {
+            padding: 5px 10px;
+            background-color: #2d2416;
+            color: #b8956a;
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid #5a4a3a;
+            font-size: 0.85em;
+            transition: all 0.2s ease;
+        }
+        
+        .skill-link:hover {
+            background-color: #d4a574;
+            color: #1a2e1a;
+            border-color: #d4a574;
+        }
+        
+        .project-details {
+            margin-top: 15px;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #5a4a3a;
+            font-size: 0.95em;
+        }
+        
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        
+        .detail-label {
+            color: #d4a574;
+            font-weight: bold;
+        }
+        
+        .detail-value {
+            color: #f5f0e8;
+            max-width: 60%;
+            text-align: right;
+        }
+        
+        .svg-diagram {
+            width: 100%;
+            background-color: #1a2e1a;
+            border: 1px solid #5a4a3a;
+            border-radius: 4px;
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .svg-diagram svg {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            display: block;
+        }
+        
+        .expandable-section {
+            margin-top: 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .expandable-section.visible {
+            max-height: 1500px;
+        }
+        
+        .expand-btn {
+            background-color: #1a2e1a;
+            color: #d4a574;
+            padding: 10px 15px;
+            border: 1px solid #d4a574;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 15px;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+        
+        .expand-btn:hover {
+            background-color: #d4a574;
+            color: #1a2e1a;
+        }
+        
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        
+        .steps-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            color: #f5f0e8;
+            position: relative;
+        }
+        
+        .steps-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #d4a574;
+        }
+        
+        .materials-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        
+        .materials-list li {
+            padding: 6px 0;
+            padding-left: 20px;
+            color: #f5f0e8;
+            position: relative;
+        }
+        
+        .materials-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #d4a574;
+        }
+        
+        .success-criteria {
+            background-color: #1a2e1a;
+            padding: 12px;
+            border-left: 3px solid #a8e6a8;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .success-criteria-label {
+            color: #a8e6a8;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .sidebar {
+            background: #2d2416;
+            border: 2px solid #d4a574;
+            border-radius: 8px;
+            padding: 20px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .sidebar-title {
+            color: #d4a574;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .skills-usage-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skills-usage-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #5a4a3a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .skills-usage-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .skill-name {
+            color: #d4a574;
+            font-size: 0.95em;
+        }
+        
+        .skill-count {
+            background-color: #1a2e1a;
+            color: #d4a574;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: #b8956a;
+            font-size: 1.1em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    
+        .top-bar {
+            background-color: #2d2416;
+            padding: 12px 20px;
+            border-bottom: 1px solid #5a4a3a;
+        }
+
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Material Filter Panel */
+        .material-filter-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: transparent;
+            color: #d4a574;
+            border: 2px solid #d4a574;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-bottom: 16px;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1em;
+        }
+        .material-filter-toggle.active {
+            background: #d4a574;
+            color: #1a2e1a;
+        }
+        .material-filter-badge {
+            background: #1a2e1a;
+            color: #d4a574;
+            border-radius: 10px;
+            padding: 1px 7px;
+            font-size: 0.8em;
+            display: none;
+        }
+        .material-filter-toggle.active .material-filter-badge {
+            display: inline;
+            background: #1a2e1a;
+        }
+
+        .mat-selector-panel {
+            display: none;
+            background: #2d2416;
+            border: 1px solid #d4a574;
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 20px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        .mat-selector-panel.open { display: block; }
+
+        .mat-selector-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .mat-selector-header h4 {
+            color: #d4a574;
+            margin: 0;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .mat-selector-actions button {
+            background: transparent;
+            border: 1px solid #8b6f47;
+            color: #d4a574;
+            padding: 4px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.8em;
+            margin-left: 6px;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+        .mat-selector-actions button:hover { background: #8b6f47; }
+
+        .mat-filter-info {
+            font-size: 0.82em;
+            color: #b8956a;
+            margin-top: 10px;
+        }
+
+        /* Category sections */
+        .material-section {
+            background: rgba(212, 165, 116, 0.1);
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            border-radius: 4px;
+            margin-bottom: 6px;
+        }
+        .material-header {
+            background: rgba(212, 165, 116, 0.2);
+            padding: 10px 12px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #f5f0e8;
+        }
+        .material-header:hover { background: rgba(212, 165, 116, 0.3); }
+        .material-header .toggle-icon {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            color: #d4a574;
+        }
+        .material-header.collapsed .toggle-icon { transform: rotate(-90deg); }
+        .material-count {
+            font-size: 11px;
+            color: #d4a574;
+            background: rgba(212, 165, 116, 0.15);
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-left: 6px;
+        }
+        .material-list {
+            padding: 8px 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .material-list.hidden { display: none; }
+        .material-list::-webkit-scrollbar { width: 8px; }
+        .material-list::-webkit-scrollbar-track { background: rgba(212, 165, 116, 0.05); }
+        .material-list::-webkit-scrollbar-thumb { background: rgba(212, 165, 116, 0.3); border-radius: 4px; }
+        .material-list::-webkit-scrollbar-thumb:hover { background: rgba(212, 165, 116, 0.5); }
+        .material-item {
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+        }
+        .material-item:last-child { border-bottom: none; }
+        .material-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            cursor: pointer;
+            accent-color: #d4a574;
+            flex-shrink: 0;
+        }
+        .material-item label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 13px;
+            color: #f5f0e8;
+        }
+
+        /* Feasibility badge on project cards */
+        .mat-feasibility {
+            display: inline-block;
+            font-size: 0.78em;
+            color: #d4a574;
+            margin-top: 6px;
+        }
+
+        /* Mobile FAB */
+        .mobile-mat-fab {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: #d4a574;
+            color: #1a2e1a;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .mobile-mat-fab .fab-count {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: #2d5a2d;
+            color: #f5f0e8;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: bold;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Mobile drawer */
+        .drawer-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1001;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .drawer-overlay.open { opacity: 1; }
+        .mobile-drawer {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-height: 85vh;
+            background: #2d2416;
+            border-radius: 16px 16px 0 0;
+            z-index: 1002;
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-direction: column;
+        }
+        .mobile-drawer.open { transform: translateY(0); }
+        .drawer-handle {
+            padding: 12px;
+            text-align: center;
+            cursor: grab;
+            flex-shrink: 0;
+        }
+        .drawer-handle::before {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 4px;
+            background: rgba(212, 165, 116, 0.4);
+            border-radius: 2px;
+        }
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px 12px;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+            flex-shrink: 0;
+        }
+        .drawer-header h3 {
+            color: #d4a574;
+            font-size: 1em;
+            margin: 0;
+        }
+        .drawer-header-btns {
+            display: flex;
+            gap: 8px;
+        }
+        .drawer-header-btns button {
+            background: none;
+            border: 1px solid #d4a574;
+            color: #d4a574;
+            padding: 4px 10px;
+            font-size: 11px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+        .drawer-body {
+            overflow-y: auto;
+            padding: 12px 16px;
+            flex: 1;
+        }
+        .drawer-footer {
+            padding: 12px 16px;
+            border-top: 1px solid rgba(212, 165, 116, 0.2);
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        .drawer-footer button {
+            flex: 1;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+        .drawer-apply-btn {
+            background-color: #2d5a2d;
+            color: #f5f0e8;
+            border: none;
+        }
+        .drawer-close-btn {
+            background-color: transparent;
+            color: #d4a574;
+            border: 1px solid #d4a574;
+            flex: 0.4 !important;
+        }
+
+        @media (max-width: 768px) {
+            .mat-filter-desktop { display: none !important; }
+            .mobile-mat-fab { display: flex; }
+            .drawer-overlay { display: block; pointer-events: none; }
+            .drawer-overlay.open { pointer-events: auto; }
+            .mobile-drawer { display: flex; }
+        }
+        @media (min-width: 769px) {
+            .mobile-mat-fab { display: none !important; }
+            .drawer-overlay { display: none !important; }
+            .mobile-drawer { display: none !important; }
+        }</style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="../index.html" class="home-btn" aria-label="Home">🏠 Home</a>
+    </div>
+    <header>
+        <h1>75 Combo Projects</h1>
+        <p class="subtitle">Master Zero-to-Hero Skills Through Integrated Construction Projects</p>
+    </header>
+
+    <div class="tool-disclaimer-banner" style="background: #2d1a1a; border: 1px solid #d4a574; border-radius: 8px; padding: 1rem 1.5rem; margin: 1.5rem auto; max-width: 1200px; font-size: 0.9rem; color: #f5f0e8; line-height: 1.5;">
+        ⚠️ <strong>Important:</strong> This tool is for educational reference only. Material availability does not imply safety, competency, or legality. Many projects involve hazardous materials, processes requiring professional training, and activities regulated by law. Always seek qualified professional guidance.
+        <a href="../disclaimer.html" style="color: #d4a574;">Full Disclaimer</a>
+    </div>
+
+    <div class="controls" role="toolbar">
+        <input type="text" class="search-box" id="searchBox" placeholder="Search projects by name or skill..." aria-label="Input">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="beginner">Beginner</button>
+            <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+            <button class="filter-btn" data-filter="advanced">Advanced</button>
+            <button class="filter-btn" data-filter="master">Master</button>
+        </div>
+    </div>
+
+    <div class="mat-filter-desktop" style="max-width: 1200px; margin: 0 auto; padding: 16px 20px 0;">
+        <button class="material-filter-toggle" id="matFilterToggle">
+            📦 Filter by Materials
+            <span class="material-filter-badge" id="matFilterBadge">0</span>
+        </button>
+
+        <div class="mat-selector-panel" id="matSelectorPanel">
+            <div class="mat-selector-header">
+                <h4>Select materials you have</h4>
+                <div class="mat-selector-actions">
+                    <button id="matSelectAll">Select All</button>
+                    <button id="matClearAll">Clear All</button>
+                </div>
+            </div>
+            <div id="matCategories"></div>
+            <p class="mat-filter-info" id="matFilterInfo">Select materials to filter projects</p>
+        </div>
+    </div>
+
+    <button class="mobile-mat-fab" id="mobileFab" aria-label="Filter by Materials">
+        📦
+        <span class="fab-count" id="fabCount">0</span>
+    </button>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-handle"></div>
+        <div class="drawer-header">
+            <h3>Select Materials <span id="drawerCount"></span></h3>
+            <div class="drawer-header-btns">
+                <button id="drawerSelectAll">All</button>
+                <button id="drawerClearAll">Clear</button>
+            </div>
+        </div>
+        <div class="drawer-body" id="drawerBody"></div>
+        <div class="drawer-footer">
+            <button class="drawer-close-btn" id="drawerClose">Close</button>
+            <button class="drawer-apply-btn" id="drawerApply">Apply Filter</button>
+        </div>
+    </div>
+
+    <div class="container" role="main">
+        <div class="projects-grid" id="projectsGrid"></div>
+        
+        <div class="sidebar">
+            <div class="sidebar-title">Skills Used</div>
+            <ul class="skills-usage-list" id="skillsList"></ul>
+        </div>
+    </div>
+    
+    <script>
+
+        let projects = [];
+        let currentFilter = 'all';
+        let searchTerm = '';
+        let selectedMaterials = new Set();
+        let materialFilterActive = false;
+        let allMaterials = [];
+
+        // Hazard level classification based on project content
+        function classifyHazardLevel(project) {
+            const projectName = (project.name || '').toLowerCase();
+            const projectDesc = (project.description || '').toLowerCase();
+            const materials = ((project.materials || []).join(' ')).toLowerCase();
+            const combined = projectName + ' ' + projectDesc + ' ' + materials;
+
+            // Critical hazards: medical, surgery, pharmaceutical
+            if (combined.includes('surgical') || combined.includes('surgery') || combined.includes('medical') || combined.includes('pharmaceutical')) {
+                return { level: 'critical', badge: '🔴 CRITICAL', color: '#e57373' };
+            }
+
+            // High risk: weapons, explosives, chemical hazards
+            if (combined.includes('weapon') || combined.includes('trebuchet') || combined.includes('siege') || combined.includes('explosive') || combined.includes('lye') || combined.includes('acid') || combined.includes('chemical burn')) {
+                return { level: 'high', badge: '🟠 HIGH RISK', color: '#ff9800' };
+            }
+
+            // Caution: fire, heat, food preservation
+            if (combined.includes('fire') || combined.includes('forge') || combined.includes('kiln') || combined.includes('food preservation') || combined.includes('ferment') || combined.includes('heat')) {
+                return { level: 'caution', badge: '🟡 CAUTION', color: '#ffc107' };
+            }
+
+            return { level: 'standard', badge: '', color: '' };
+        }
+
+        // Get specific safety warning for a project
+        function getSafetyWarning(project) {
+            const name = (project.name || '').toLowerCase();
+
+            if (name.includes('surgical')) {
+                return '⚠️ Surgery requires years of supervised training and medical licensure. This guide is reference material only.';
+            }
+            if (name.includes('trebuchet') || name.includes('siege')) {
+                return '⚠️ Siege weapon capable of lethal force. Verify legality in your jurisdiction.';
+            }
+            if (name.includes('lye') || name.includes('chemical')) {
+                return '⚠️ Causes severe chemical burns. Requires proper PPE and training.';
+            }
+
+            return null;
+        }
+
+        // Load projects data dynamically
+        async function loadProjects() {
+            try {
+                const response = await fetch('./data/combo-projects-data.json');
+                projects = await response.json();
+                renderProjects();
+                updateSkillsList();
+            } catch (error) {
+                console.error('Error loading projects:', error);
+                document.getElementById('projectsGrid').innerHTML =
+                    '<p style="color: #d4a574; padding: 20px;">Error loading projects data. Please refresh the page.</p>';
+            }
+        }
+
+        function renderProjects() {
+            const container = document.getElementById('projectsGrid');
+            let filtered = projects;
+
+            if (currentFilter !== 'all') {
+                filtered = projects.filter(p => p.difficulty === currentFilter);
+            }
+
+            // Material filter (OR logic: project must contain at least one selected material)
+            if (materialFilterActive && selectedMaterials.size > 0) {
+                filtered = filtered.filter(p =>
+                    (p.materials || []).some(m => selectedMaterials.has(m))
+                );
+            }
+
+            if (searchTerm) {
+                const tokens = searchTerm.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+                filtered = filtered.filter(p => {
+                    const haystack = [
+                        p.name, p.category, p.difficulty,
+                        (p.materials || []).join(' '),
+                        (p.skills || []).map(s => s.name).join(' '),
+                        (p.steps || []).join(' ')
+                    ].join(' ').toLowerCase();
+                    return tokens.every(tok => haystack.includes(tok));
+                });
+            }
+
+            // Show result count
+            const countHtml = `<p style="color:#a89968;font-size:0.9em;margin-bottom:12px;grid-column:1/-1;">Showing <strong style="color:#d4a574;">${filtered.length}</strong> of ${projects.length} projects</p>`;
+
+            if (filtered.length === 0) {
+                container.innerHTML = countHtml + '<p style="color: #d4a574; padding: 20px;">No projects found matching your filters.</p>';
+                return;
+            }
+
+            container.innerHTML = countHtml + filtered.map(project => {
+                const hazard = classifyHazardLevel(project);
+                const specificWarning = getSafetyWarning(project);
+                const hazardBadge = hazard.level !== 'standard' ? `<span style="display: inline-block; padding: 5px 10px; border-radius: 4px; font-size: 0.8em; font-weight: bold; margin-left: 8px; background-color: ${hazard.color}; color: #1a2e1a;">${hazard.badge}</span>` : '';
+
+                return `
+                <div class="project-card" onclick="toggleDetails(${project.id})">
+                    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
+                        <h3 style="margin: 0;">${project.name}</h3>
+                        ${hazardBadge}
+                    </div>
+                    <p class="difficulty difficulty-${project.difficulty.toLowerCase()}">${project.difficulty}</p>
+                    <p class="category">${project.category}</p>
+                    ${materialFilterActive && selectedMaterials.size > 0 ? (() => { const matched = (project.materials || []).filter(m => selectedMaterials.has(m)).length; const total = (project.materials || []).length; return `<p class="mat-feasibility">${matched}/${total} materials available</p>`; })() : ''}
+                    <div class="details" id="details-${project.id}">
+                        <div class="svg-container">${project.svg || ''}</div>
+                        ${specificWarning ? `<div style="color: #e57373; font-size: 0.85rem; margin-top: 0.5rem; padding: 0.5rem; background: rgba(229, 115, 115, 0.1); border-radius: 4px; border-left: 3px solid #e57373;">${specificWarning}</div>` : ''}
+                        <div style="color: #e57373; font-size: 0.85rem; margin-top: 0.5rem; padding: 0.5rem; background: rgba(229, 115, 115, 0.1); border-radius: 4px;">⚠️ This project is for educational reference only. Professional training may be required.</div>
+                        <p><strong>Time Estimate:</strong> ${project.time_estimate}</p>
+                        <p><strong>Materials:</strong> ${project.materials ? project.materials.join(', ') : 'N/A'}</p>
+                        <p><strong>Success Criteria:</strong> ${project.success}</p>
+                        <h4>Steps:</h4>
+                        <ol>${project.steps ? project.steps.map(s => `<li>${s}</li>`).join('') : ''}</ol>
+                        <h4>Skills Required:</h4>
+                        <ul>${project.skills ? project.skills.map(s => `<li><a href="${s.link}">${s.name}</a></li>`).join('') : ''}</ul>
+                    </div>
+                </div>
+            `;
+            }).join('');
+        }
+        
+        function updateSkillsList() {
+            const skillCounts = {};
+            projects.forEach(project => {
+                if (project.skills) {
+                    project.skills.forEach(skill => {
+                        skillCounts[skill.name] = (skillCounts[skill.name] || 0) + 1;
+                    });
+                }
+            });
+
+            const sidebar = document.getElementById('skillsList');
+            if (sidebar) {
+                sidebar.innerHTML = Object.entries(skillCounts)
+                    .sort((a, b) => b[1] - a[1])
+                    .map(([name, count]) =>
+                        `<li><span class="skill-name">${name}</span><span class="skill-count">${count}</span></li>`
+                    ).join('');
+            }
+        }
+        
+        document.getElementById('searchBox').addEventListener('input', (e) => {
+            searchTerm = e.target.value;
+            renderProjects();
+        });
+        
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                currentFilter = e.target.getAttribute('data-filter');
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                renderProjects();
+            });
+        });
+        
+        function toggleDetails(id) {
+            const details = document.getElementById(`details-${id}`);
+            details.classList.toggle('visible');
+        }
+        
+        // Material category classification
+        const CATEGORY_RULES = [
+            { name: 'Metals & Hardware', keywords: ['metal', 'iron', 'steel', 'copper', 'brass', 'tin', 'zinc', 'nail', 'bolt', 'screw', 'hinge', 'bracket', 'grate', 'axle', 'gear', 'bearing', 'spring', 'magnet', 'rivet', 'wire', 'solder', 'anvil', 'chain', 'hook', 'pin', 'hub'] },
+            { name: 'Wood & Plant Materials', keywords: ['wood', 'log', 'lumber', 'timber', 'plank', 'board', 'branch', 'bamboo', 'straw', 'reed', 'bark', 'sapling', 'dowel', 'oak', 'ash', 'hickory', 'yew', 'pine', 'hardwood', 'willow', 'pole', 'stake', 'peg', 'splint'] },
+            { name: 'Textiles & Fibers', keywords: ['rope', 'cord', 'thread', 'string', 'twine', 'cloth', 'canvas', 'fabric', 'linen', 'wool', 'cotton', 'hemp', 'fiber', 'sinew', 'netting', 'felt', 'batting', 'lacing', 'binding', 'strap', 'paracord', 'lash', 'heddle', 'shuttle', 'warp', 'weav'] },
+            { name: 'Earth & Stone', keywords: ['clay', 'stone', 'sand', 'gravel', 'rock', 'brick', 'slate', 'lime', 'chalk', 'mortar', 'dirt', 'soil', 'earth', 'kiln', 'mold', 'crucible', 'ceramic', 'pylon'] },
+            { name: 'Leather & Animal Products', keywords: ['leather', 'hide', 'rawhide', 'bone', 'sinew', 'feather', 'horn', 'tallow', 'beeswax', 'gut', 'hoof', 'animal fat', 'quill'] },
+            { name: 'Chemicals & Compounds', keywords: ['charcoal', 'salt', 'vinegar', 'lye', 'ash', 'resin', 'pitch', 'tar', 'oil', 'grease', 'wax', 'soap', 'mordant', 'dye', 'ink', 'gum arabic', 'sizing', 'tanning'] },
+            { name: 'Containers & Plumbing', keywords: ['pipe', 'pvc', 'bucket', 'barrel', 'container', 'pot', 'jar', 'jug', 'vessel', 'tank', 'drum', 'tube', 'tubing', 'valve', 'seal', 'funnel', 'basin', 'vat', 'crock'] },
+            { name: 'Tools & Equipment', keywords: ['hammer', 'saw', 'knife', 'axe', 'shovel', 'file', 'plier', 'wrench', 'drill', 'chisel', 'tong', 'clamp', 'level', 'vice', 'cutting tool', 'digging tool', 'marking tool', 'turning tool', 'compass', 'scale', 'thermometer', 'bellows'] },
+            { name: 'Fuel & Energy', keywords: ['firewood', 'coal', 'fuel', 'fire', 'heat', 'torch', 'generator', 'battery', 'solar', 'biogas', 'gas collection'] },
+            { name: 'Food & Agricultural', keywords: ['seed', 'grain', 'fruit', 'vegetable', 'herb', 'compost', 'manure', 'hay', 'honey', 'milk', 'sugar', 'starter', 'culture', 'garden', 'livestock', 'fish stock', 'fish tank', 'feed'] },
+            { name: 'Medical & Supplies', keywords: ['bandage', 'antiseptic', 'needle', 'suture', 'splint', 'medicinal', 'surgical', 'steriliz', 'syringe', 'salve', 'instrument'] },
+            { name: 'Glass & Optics', keywords: ['glass', 'lens', 'mirror', 'window'] },
+            { name: 'Salvaged & Mechanical', keywords: ['wheel', 'pulley', 'flywheel', 'piston', 'pump', 'motor', 'alternator', 'belt drive', 'gearing', 'treadle', 'pedal', 'winch', 'counterweight'] },
+        ];
+
+        let categorizedMaterials = {}; // { categoryName: [mat1, mat2, ...] }
+        let categoriesBuilt = false;
+        let drawerBuilt = false;
+
+        function classifyMaterial(mat) {
+            const lower = mat.toLowerCase();
+            for (const rule of CATEGORY_RULES) {
+                if (rule.keywords.some(kw => lower.includes(kw))) return rule.name;
+            }
+            return 'Other';
+        }
+
+        function buildCategorizedMaterials() {
+            if (categoriesBuilt) return;
+            const matSet = new Set();
+            projects.forEach(p => (p.materials || []).forEach(m => matSet.add(m)));
+            allMaterials = [...matSet].sort();
+
+            categorizedMaterials = {};
+            allMaterials.forEach(mat => {
+                const cat = classifyMaterial(mat);
+                if (!categorizedMaterials[cat]) categorizedMaterials[cat] = [];
+                categorizedMaterials[cat].push(mat);
+            });
+            // Sort categories: named ones first (in CATEGORY_RULES order), then Other
+            const orderedCats = CATEGORY_RULES.map(r => r.name).filter(c => categorizedMaterials[c]);
+            if (categorizedMaterials['Other']) orderedCats.push('Other');
+
+            const sortedCats = {};
+            orderedCats.forEach(c => { sortedCats[c] = categorizedMaterials[c].sort(); });
+            categorizedMaterials = sortedCats;
+            categoriesBuilt = true;
+        }
+
+        function renderCategorySection(catName, materials, idPrefix) {
+            const section = document.createElement('div');
+            section.className = 'material-section';
+
+            const header = document.createElement('div');
+            header.className = 'material-header collapsed';
+            header.innerHTML = `<span>${catName} <span class="material-count">${materials.length}</span></span><span class="toggle-icon">▼</span>`;
+
+            const list = document.createElement('div');
+            list.className = 'material-list hidden';
+
+            materials.forEach((mat, i) => {
+                const item = document.createElement('div');
+                item.className = 'material-item';
+                const cbId = idPrefix + '-' + catName.replace(/[^a-z0-9]/gi, '').toLowerCase() + '-' + i;
+                const cb = document.createElement('input');
+                cb.type = 'checkbox';
+                cb.id = cbId;
+                cb.value = mat;
+                cb.checked = selectedMaterials.has(mat);
+                cb.addEventListener('change', function() {
+                    if (this.checked) selectedMaterials.add(mat);
+                    else selectedMaterials.delete(mat);
+                    syncCheckboxes(mat, this.checked, idPrefix);
+                    updateMatBadge();
+                    if (idPrefix === 'mat') renderProjects();
+                });
+                const label = document.createElement('label');
+                label.htmlFor = cbId;
+                label.textContent = mat;
+                item.appendChild(cb);
+                item.appendChild(label);
+                list.appendChild(item);
+            });
+
+            header.addEventListener('click', () => {
+                header.classList.toggle('collapsed');
+                list.classList.toggle('hidden');
+            });
+
+            section.appendChild(header);
+            section.appendChild(list);
+            return section;
+        }
+
+        function syncCheckboxes(mat, checked, sourcePrefix) {
+            // Sync between desktop (mat-) and drawer (dmat-)
+            const otherPrefix = sourcePrefix === 'mat' ? 'dmat' : 'mat';
+            const allCbs = document.querySelectorAll(`input[type="checkbox"][value="${CSS.escape(mat)}"]`);
+            allCbs.forEach(cb => {
+                if (cb.id.startsWith(otherPrefix)) cb.checked = checked;
+            });
+        }
+
+        function buildDesktopCategories() {
+            buildCategorizedMaterials();
+            const container = document.getElementById('matCategories');
+            container.innerHTML = '';
+            Object.entries(categorizedMaterials).forEach(([catName, materials]) => {
+                container.appendChild(renderCategorySection(catName, materials, 'mat'));
+            });
+        }
+
+        function buildDrawerContent() {
+            if (drawerBuilt) return;
+            buildCategorizedMaterials();
+            const body = document.getElementById('drawerBody');
+            body.innerHTML = '';
+            Object.entries(categorizedMaterials).forEach(([catName, materials]) => {
+                body.appendChild(renderCategorySection(catName, materials, 'dmat'));
+            });
+            drawerBuilt = true;
+        }
+
+        function updateMatBadge() {
+            const n = selectedMaterials.size;
+            // Desktop badge
+            const badge = document.getElementById('matFilterBadge');
+            const info = document.getElementById('matFilterInfo');
+            if (badge) {
+                badge.textContent = n;
+                badge.style.display = n > 0 ? 'inline' : 'none';
+            }
+            if (info) {
+                info.textContent = n > 0
+                    ? `Showing projects that use any of your ${n} selected material(s)`
+                    : 'Select materials to filter projects';
+            }
+            // Mobile FAB badge
+            const fabCount = document.getElementById('fabCount');
+            if (fabCount) {
+                fabCount.textContent = n;
+                fabCount.style.display = n > 0 ? 'flex' : 'none';
+            }
+            // Drawer count
+            const drawerCount = document.getElementById('drawerCount');
+            if (drawerCount) {
+                drawerCount.textContent = n > 0 ? `(${n})` : '';
+            }
+        }
+
+        function selectAllMaterials() {
+            allMaterials.forEach(m => selectedMaterials.add(m));
+            document.querySelectorAll('.material-item input[type="checkbox"]').forEach(cb => cb.checked = true);
+            updateMatBadge();
+        }
+
+        function clearAllMaterials() {
+            selectedMaterials.clear();
+            document.querySelectorAll('.material-item input[type="checkbox"]').forEach(cb => cb.checked = false);
+            updateMatBadge();
+        }
+
+        // Desktop toggle
+        document.getElementById('matFilterToggle').addEventListener('click', () => {
+            materialFilterActive = !materialFilterActive;
+            const btn = document.getElementById('matFilterToggle');
+            const panel = document.getElementById('matSelectorPanel');
+            btn.classList.toggle('active', materialFilterActive);
+            panel.classList.toggle('open', materialFilterActive);
+
+            if (materialFilterActive && !categoriesBuilt) {
+                buildDesktopCategories();
+            }
+            if (!materialFilterActive) {
+                clearAllMaterials();
+            }
+            renderProjects();
+        });
+
+        document.getElementById('matSelectAll').addEventListener('click', (e) => {
+            e.stopPropagation();
+            selectAllMaterials();
+            renderProjects();
+        });
+
+        document.getElementById('matClearAll').addEventListener('click', (e) => {
+            e.stopPropagation();
+            clearAllMaterials();
+            renderProjects();
+        });
+
+        // Mobile drawer
+        function openDrawer() {
+            buildDrawerContent();
+            // Sync drawer checkboxes with current state
+            document.querySelectorAll('#drawerBody input[type="checkbox"]').forEach(cb => {
+                cb.checked = selectedMaterials.has(cb.value);
+            });
+            document.getElementById('drawerOverlay').classList.add('open');
+            document.getElementById('mobileDrawer').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            document.getElementById('drawerOverlay').classList.remove('open');
+            document.getElementById('mobileDrawer').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('mobileFab').addEventListener('click', () => {
+            materialFilterActive = true;
+            openDrawer();
+        });
+
+        document.getElementById('drawerOverlay').addEventListener('click', closeDrawer);
+        document.getElementById('drawerClose').addEventListener('click', closeDrawer);
+
+        document.getElementById('drawerApply').addEventListener('click', () => {
+            closeDrawer();
+            setTimeout(() => renderProjects(), 400);
+        });
+
+        document.getElementById('drawerSelectAll').addEventListener('click', () => {
+            buildCategorizedMaterials();
+            selectAllMaterials();
+        });
+
+        document.getElementById('drawerClearAll').addEventListener('click', () => {
+            clearAllMaterials();
+        });
+
+        // Load projects when page loads
+        loadProjects();
+    </script>
+
+    <div style="text-align: center; padding: 2rem 1rem; margin-top: 2rem; border-top: 1px solid rgba(212, 165, 116, 0.2); font-size: 0.85rem; color: #8b7355;">
+        <a href="../disclaimer.html" style="color: #d4a574; text-decoration: none;">Important Disclaimer</a> · <a href="../terms.html" style="color: #d4a574; text-decoration: none;">Terms of Use</a>
+    </div>
+<script src="disclaimer-dismiss.js"></script>
+</body>
+</html>

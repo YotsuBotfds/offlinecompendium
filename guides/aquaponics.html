@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/aquaponics.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aquaponics - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<meta name="description" content="Design and manage aquaponics systems using fish-plant mass ratios, understand the nitrogen cycle, and select appropriate media beds, fish species, and system configurations.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/aquaponics.html">
+<meta property="og:title" content="Aquaponics">
+<meta property="og:description" content="Design and manage aquaponics systems using fish-plant mass ratios, understand the nitrogen cycle, and select appropriate media beds, fish species, and system configurations.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Food &amp; Agriculture", "item": "https://zerotoherohero.com/#sec-agriculture"},
+    {"@type": "ListItem", "position": 3, "name": "Aquaponics", "item": "https://zerotoherohero.com/guides/aquaponics.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Aquaponics",
+  "description": "Design and manage aquaponics systems using fish-plant mass ratios, understand the nitrogen cycle, and select appropriate media beds, fish species, and system configurations.",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-310">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-agriculture">Food &amp; Agriculture</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Aquaponics</span>
+</nav>
+<header>
+<h1>Aquaponics</h1>
+<p class="subtitle">Design and manage aquaponics systems using fish-plant mass ratios, understand the nitrogen cycle, and select appropriate media beds, fish species, and system configurations.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~22 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#nitrogen-cycle">The Nitrogen Cycle in Aquaponics</a></li>
+<li><a href="#fish-plant-ratios">Fish-to-Plant Biomass Ratios</a></li>
+<li><a href="#fish-species-selection">Fish Species Selection</a></li>
+<li><a href="#plant-selection">Plant Selection by System Type and Climate</a></li>
+<li><a href="#fish-feeding">Fish Feeding Rates and Feed Types</a></li>
+<li><a href="#system-designs">System Designs: Media Bed, DWC, NFT</a></li>
+<li><a href="#pH-temperature-oxygen">pH Management, Temperature, and Dissolved Oxygen</a></li>
+<li><a href="#water-quality-testing">Water Quality Testing</a></li>
+<li><a href="#seasonal-management">Seasonal Management</a></li>
+<li><a href="#disease-recognition">Disease Recognition and Treatment</a></li>
+<li><a href="#troubleshooting">Troubleshooting Common Aquaponics Problems</a></li>
+<li><a href="#system-sizing-example">Sizing an Aquaponics System: Example (Home-Scale)</a></li>
+<li><a href="#diy-construction">DIY Construction Details</a></li>
+<li><a href="#getting-started">Getting Started: Simple First Aquaponics System</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Aquaponics combines fish farming (aquaculture) with hydroponics (soilless plant growth). Fish waste provides nitrogen fertilizer for plants; plants filter the water, which is returned clean to the fish. The system mimics a natural ecosystem and requires no external fertilizer or water changes (water is only lost to evaporation and plant transpiration).</p>
+<p>A productive aquaponics system demands understanding three elements: (1) fish-plant mass ratio (how many plants can be supported by a given number of fish); (2) the nitrogen cycle (ammonia → nitrite → nitrate, mediated by bacteria); (3) system design (media bed, deep-water culture (DWC), or nutrient film technique (NFT), each with tradeoffs). This guide covers all three, including pH management, fish species selection, and troubleshooting common failures.</p>
+</section>
+<section id="nitrogen-cycle">
+<h2>The Nitrogen Cycle in Aquaponics</h2>
+<p>Fish excrete ammonia (NH₃) through their gills and as urine. Ammonia is toxic to fish at high concentrations. Bacteria convert ammonia into less toxic forms:</p>
+<ol>
+<li><strong>Ammonia (NH₃, highly toxic)</strong>: Fish waste.</li>
+<li><strong>Nitrite (NO₂⁻, toxic)</strong>: Produced by Nitrosomonas bacteria (oxidizes ammonia).</li>
+<li><strong>Nitrate (NO₃⁻, non-toxic, plant-available)</strong>: Produced by Nitrobacter bacteria (oxidizes nitrite). Plants consume nitrate as primary nitrogen source.</li>
+</ol>
+<p><strong>Nitrogen cycle timeline:</strong></p>
+<ul>
+<li><strong>Days 0–3</strong>: Ammonia accumulates (no bacteria present yet).</li>
+<li><strong>Days 3–10</strong>: Nitrosomonas bacteria establish and begin converting ammonia to nitrite. Ammonia plateaus or declines slightly.</li>
+<li><strong>Days 10–20</strong>: Nitrobacter bacteria establish and convert nitrite to nitrate. Ammonia and nitrite both decline as nitrate increases.</li>
+<li><strong>Days 20–30</strong>: Cycle is complete (equilibrium). Ammonia and nitrite remain at low, safe levels. Nitrate accumulates until plants consume it or water is partially exchanged.</li>
+</ul>
+<p><strong>Complete cycle indicator tests:</strong></p>
+<ul>
+<li>Test ammonia: Should be &lt;1 ppm (ideally &lt;0.5 ppm).</li>
+<li>Test nitrite: Should be &lt;1 ppm (ideally &lt;0.5 ppm).</li>
+<li>Test nitrate: Should be 40–150 ppm (optimal for plant growth).</li>
+</ul>
+<p>Do not stock fish until the cycle is complete (30+ days from startup). If ammonia or nitrite spike after stocking, the cycle is incomplete; do frequent partial water changes (20–30% of tank volume every 2–3 days) until the cycle stabilizes.</p>
+<div class="warning">
+<p>The nitrogen cycle is temperature-dependent. At 75°F (24°C), it takes 30–40 days. At 70°F (21°C), it takes 35–50 days. At 65°F (18°C), it takes 40–60 days. This assumes water temperature above 70°F (21°C). Below 50°F (10°C), the nitrogen cycle establishment extends to 60–80 days. Between 50–70°F, expect 40–60 days. Maintain water temperature between 70–78°F for optimal bacterial activity and predictable system performance within 30–40 days.</p>
+</div>
+</section>
+<section id="fish-plant-ratios">
+<h2>Fish-to-Plant Biomass Ratios</h2>
+<p>The number of plants a system can support depends on the fish biomass (total weight of fish). A general rule is 1 pound of fish per 3–5 gallons of system water, with a plant-to-fish ratio of approximately 6–10 pounds of plants per 1 pound of fish.</p>
+<p><strong>Example calculation:</strong></p>
+<p>A 100-gallon system supports approximately 20–30 pounds of fish (100 gallons ÷ 3–5 gallons per pound). These fish produce enough nitrogen waste for 120–300 pounds of fresh plant material.</p>
+<p><strong>Typical systems:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Tank Volume</strong></th>
+<th><strong>Fish Biomass</strong></th>
+<th><strong>Plants Supported</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>50 gallons</td>
+<td>10–15 lbs</td>
+<td>60–150 lbs fresh (15–25 plants at mature size)</td>
+<td>Home-scale; tilapia or catfish</td>
+</tr>
+<tr>
+<td>100 gallons</td>
+<td>20–30 lbs</td>
+<td>120–300 lbs fresh (30–50 plants)</td>
+<td>Medium-scale; dual media/DWC beds</td>
+</tr>
+<tr>
+<td>200 gallons</td>
+<td>40–60 lbs</td>
+<td>240–600 lbs fresh (60–100 plants)</td>
+<td>Commercial-scale; multiple beds</td>
+</tr>
+<tr>
+<td>400+ gallons</td>
+<td>80–120+ lbs</td>
+<td>500–1000+ lbs fresh (large system)</td>
+<td>Commercial farm-scale</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Plant load balancing:</strong>
+Start with conservative stocking (low end of range) and increase gradually. A system under-loaded with plants accumulates excess nitrate (water quality issue); over-loaded systems have insufficient nitrogen for plant growth (stunted plants, excess ammonia/nitrite).</p>
+<p><strong>Adjusting stocking:</strong></p>
+<ul>
+<li><strong>Too much ammonia/nitrite</strong>? System is over-stocked with fish or under-loaded with plants. Add plants or reduce fish feeding rate (overfed fish produce excess waste).</li>
+<li><strong>Slow plant growth?</strong> System may be under-loaded with fish. Add more fish or reduce the number of plants.</li>
+</ul>
+</section>
+<section id="fish-species-selection">
+<h2>Fish Species Selection</h2>
+<p>The ideal aquaponics fish is hardy, tolerates density, grows at a reasonable rate, and is edible (allowing harvest for food). Conversely, ornamental fish (goldfish, koi) are hardy but grow slowly and are not a food source.</p>
+<p><strong>Best for aquaponics:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Species</strong></th>
+<th><strong>Hardiness</strong></th>
+<th><strong>Density Tolerance</strong></th>
+<th><strong>Growth Rate</strong></th>
+<th><strong>Climate</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tilapia (Nile)</td>
+<td>Excellent</td>
+<td>Excellent (high density)</td>
+<td>Fast (harvest in 6–9 months)</td>
+<td>Warm (75–82°F optimal)</td>
+<td>Omnivorous; hardy; best for beginners. Banned in some regions (invasive).</td>
+</tr>
+<tr>
+<td>Tilapia (Mozambique)</td>
+<td>Excellent</td>
+<td>Good</td>
+<td>Fast</td>
+<td>Warm (72–78°F)</td>
+<td>Hardier than Nile; slower growth. Also banned in some regions.</td>
+</tr>
+<tr>
+<td>Channel catfish</td>
+<td>Excellent</td>
+<td>Good</td>
+<td>Medium (harvest in 12–18 months)</td>
+<td>Temperate to warm (65–78°F)</td>
+<td>Hardy; bottom-feeder; survives power outages better. Slower growth than tilapia.</td>
+</tr>
+<tr>
+<td>Trout (rainbow)</td>
+<td>Good</td>
+<td>Moderate (requires high oxygen)</td>
+<td>Fast (harvest in 8–12 months)</td>
+<td>Cool (55–65°F optimal)</td>
+<td>Requires cooler water; high oxygen demand (needs good aeration). Saleable; premium price.</td>
+</tr>
+<tr>
+<td>Barramundi (Asian sea bass)</td>
+<td>Good</td>
+<td>Good</td>
+<td>Fast (harvest in 8–12 months)</td>
+<td>Warm (75–80°F)</td>
+<td>Brackish tolerance; hardy. Saleable in Asian markets.</td>
+</tr>
+<tr>
+<td>Carp (common)</td>
+<td>Excellent</td>
+<td>Good</td>
+<td>Medium (12–18 months)</td>
+<td>Temperate (65–75°F)</td>
+<td>Hardy; traditional; bottom-feeder. Slower growth; not as fast as tilapia.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Avoid:</strong></p>
+<ul>
+<li>Ornamental fish (slow growth, not edible, expensive to stock).</li>
+<li>Largemouth bass (cannibalistic; need isolation).</li>
+<li>High-maintenance species (require specific conditions; not forgiving).</li>
+</ul>
+<p><strong>Stocking density by species:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Species</strong></th>
+<th><strong>Stocking Density</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tilapia</td>
+<td>1 lb per 3–5 gallons</td>
+<td>Can tolerate 1 lb per 2 gallons at high-end management</td>
+</tr>
+<tr>
+<td>Channel catfish</td>
+<td>1 lb per 5–8 gallons</td>
+<td>More sensitive to density; 1 lb per 5 gallons is safe</td>
+</tr>
+<tr>
+<td>Trout</td>
+<td>1 lb per 10 gallons</td>
+<td>Requires excellent oxygenation; sensitive to crowding</td>
+</tr>
+<tr>
+<td>Carp</td>
+<td>1 lb per 6–10 gallons</td>
+<td>Conservative stocking recommended</td>
+</tr>
+</tbody>
+</table>
+<div class="info-box">
+<p>Tilapia is the most common aquaponics fish due to hardiness and fast growth. However, check local regulations; tilapia is banned in some regions due to invasive potential if it escapes. Catfish is a safer, alternative for regions with tilapia bans.</p>
+</div>
+</section>
+<section id="plant-selection">
+<h2>Plant Selection by System Type and Climate</h2>
+<p>Not every crop thrives in every aquaponics configuration. Media beds, DWC, and NFT each have distinct root environments that favor different plant families. Climate and fish species pairing also matter — warm-water fish like tilapia produce waste at rates that match fast-growing warm-season crops, while cool-water fish like trout pair better with cold-hardy greens.</p>
+<p><strong>Media Bed Systems</strong></p>
+<p>Media beds are the most versatile — the gravel or clay pellet substrate supports root vegetables, fruiting crops, and leafy greens alike. The flood-and-drain cycle delivers nutrients while providing the root zone aeration that fruiting crops demand.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Crop</strong></th>
+<th><strong>Climate</strong></th>
+<th><strong>Days to Harvest</strong></th>
+<th><strong>Nutrient Demand</strong></th>
+<th><strong>Best Fish Pairing</strong></th>
+<th><strong>Yield Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tomato</td>
+<td>Warm (70–85°F)</td>
+<td>60–85</td>
+<td>High (heavy feeder)</td>
+<td>Tilapia, barramundi</td>
+<td>Requires staking; prune suckers for better fruit size</td>
+</tr>
+<tr>
+<td>Pepper</td>
+<td>Warm (70–85°F)</td>
+<td>65–80</td>
+<td>Medium-high</td>
+<td>Tilapia, catfish</td>
+<td>Compact varieties work best in limited bed space</td>
+</tr>
+<tr>
+<td>Cucumber</td>
+<td>Warm (65–80°F)</td>
+<td>50–70</td>
+<td>High</td>
+<td>Tilapia</td>
+<td>Trellising essential; harvest frequently to sustain production</td>
+</tr>
+<tr>
+<td>Beets</td>
+<td>Cool to warm (55–75°F)</td>
+<td>55–70</td>
+<td>Medium</td>
+<td>Catfish, carp</td>
+<td>One of the few root crops that performs well in media beds</td>
+</tr>
+<tr>
+<td>Carrots</td>
+<td>Cool to warm (55–75°F)</td>
+<td>65–80</td>
+<td>Low-medium</td>
+<td>Catfish, trout</td>
+<td>Requires 12+ inch media depth; sandy media mix preferred</td>
+</tr>
+<tr>
+<td>Swiss chard</td>
+<td>Cool to warm (50–80°F)</td>
+<td>50–60</td>
+<td>Medium</td>
+<td>Any species</td>
+<td>Extremely tolerant of temperature swings; continuous harvest</td>
+</tr>
+<tr>
+<td>Beans (bush)</td>
+<td>Warm (60–80°F)</td>
+<td>50–60</td>
+<td>Low (fixes nitrogen)</td>
+<td>Tilapia, catfish</td>
+<td>Adds nitrogen rather than consuming it; balance with heavy feeders</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DWC (Deep Water Culture) Systems</strong></p>
+<p>DWC excels with fast-growing leafy crops that have shallow, fibrous root systems. The constant water contact delivers nutrients continuously, but the lack of physical support rules out heavy fruiting crops.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Crop</strong></th>
+<th><strong>Climate</strong></th>
+<th><strong>Days to Harvest</strong></th>
+<th><strong>Nutrient Demand</strong></th>
+<th><strong>Best Fish Pairing</strong></th>
+<th><strong>Yield Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lettuce (leaf)</td>
+<td>Cool to warm (55–75°F)</td>
+<td>30–45</td>
+<td>Low-medium</td>
+<td>Any species</td>
+<td>Fastest crop in aquaponics; stagger planting for continuous harvest</td>
+</tr>
+<tr>
+<td>Lettuce (head)</td>
+<td>Cool (55–70°F)</td>
+<td>45–60</td>
+<td>Medium</td>
+<td>Trout, catfish</td>
+<td>Bolts in heat; prioritize cool-season growing</td>
+</tr>
+<tr>
+<td>Basil</td>
+<td>Warm (70–85°F)</td>
+<td>25–35</td>
+<td>Medium</td>
+<td>Tilapia, barramundi</td>
+<td>Harvesting tops promotes bushy growth; high market value</td>
+</tr>
+<tr>
+<td>Kale</td>
+<td>Cool (45–75°F)</td>
+<td>55–65</td>
+<td>Medium</td>
+<td>Trout, catfish</td>
+<td>Cold-hardy; flavor improves after frost exposure</td>
+</tr>
+<tr>
+<td>Watercress</td>
+<td>Cool (50–65°F)</td>
+<td>30–40</td>
+<td>Low</td>
+<td>Trout</td>
+<td>Thrives in high-flow, cool water; excellent trout companion</td>
+</tr>
+<tr>
+<td>Pak choi</td>
+<td>Cool to warm (55–75°F)</td>
+<td>30–45</td>
+<td>Medium</td>
+<td>Any species</td>
+<td>Fast grower; harvest outer leaves or full head</td>
+</tr>
+<tr>
+<td>Mint</td>
+<td>Any (50–85°F)</td>
+<td>30–40</td>
+<td>Low</td>
+<td>Any species</td>
+<td>Spreads aggressively; confine to individual net pots</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NFT (Nutrient Film Technique) Systems</strong></p>
+<p>NFT channels limit root space and provide no physical support, restricting use to lightweight, fast-growing crops with compact root systems.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Crop</strong></th>
+<th><strong>Climate</strong></th>
+<th><strong>Days to Harvest</strong></th>
+<th><strong>Nutrient Demand</strong></th>
+<th><strong>Best Fish Pairing</strong></th>
+<th><strong>Yield Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lettuce (leaf)</td>
+<td>Cool to warm (55–75°F)</td>
+<td>30–45</td>
+<td>Low-medium</td>
+<td>Any species</td>
+<td>Ideal NFT crop; compact roots, lightweight heads</td>
+</tr>
+<tr>
+<td>Arugula</td>
+<td>Cool (50–70°F)</td>
+<td>25–35</td>
+<td>Low</td>
+<td>Trout, catfish</td>
+<td>Bolts quickly in heat; best as a cool-season crop</td>
+</tr>
+<tr>
+<td>Spinach</td>
+<td>Cool (45–70°F)</td>
+<td>35–45</td>
+<td>Medium</td>
+<td>Trout</td>
+<td>Sensitive to heat; pair with cool-water fish</td>
+</tr>
+<tr>
+<td>Herbs (cilantro, dill, parsley)</td>
+<td>Cool to warm (55–75°F)</td>
+<td>30–50</td>
+<td>Low-medium</td>
+<td>Any species</td>
+<td>Lightweight; harvest outer stems for continuous production</td>
+</tr>
+<tr>
+<td>Strawberry</td>
+<td>Warm (60–80°F)</td>
+<td>60–90</td>
+<td>Medium-high</td>
+<td>Tilapia</td>
+<td>Requires supplemental potassium; runners produce new plants</td>
+</tr>
+<tr>
+<td>Microgreens</td>
+<td>Any (55–80°F)</td>
+<td>7–14</td>
+<td>Very low</td>
+<td>Any species</td>
+<td>Fastest turnaround; grow in trays on rafts</td>
+</tr>
+</tbody>
+</table>
+<div class="tip">
+<p>For maximum year-round production, grow warm-season crops (tomato, basil, pepper) in summer with tilapia, and transition to cold-hardy crops (kale, lettuce, watercress) in winter with reduced feeding or a switch to trout. Stagger plantings so you harvest every week rather than all at once.</p>
+</div>
+</section>
+<section id="fish-feeding">
+<h2>Fish Feeding Rates and Feed Types</h2>
+<p>Fish feeding is the engine that drives the entire aquaponics system — feed goes in, waste comes out, and that waste becomes plant fertilizer. Getting the feed rate and type right directly controls water quality, fish growth, and plant productivity.</p>
+<p><strong>Feeding Rate Guidelines</strong></p>
+<p>The standard feeding rate is 1–3% of total fish body weight per day, divided into 2–3 feedings. Younger, growing fish eat at the higher end; mature fish eat less relative to body weight.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Fish Size</strong></th>
+<th><strong>Daily Feed Rate</strong></th>
+<th><strong>Feeding Frequency</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fingerlings (&lt;2 oz)</td>
+<td>3–5% body weight</td>
+<td>3–4 times daily</td>
+<td>Small stomachs; frequent small meals</td>
+</tr>
+<tr>
+<td>Juveniles (2–8 oz)</td>
+<td>2–3% body weight</td>
+<td>2–3 times daily</td>
+<td>Fastest growth phase; monitor ammonia closely</td>
+</tr>
+<tr>
+<td>Adults (8 oz–1 lb)</td>
+<td>1.5–2% body weight</td>
+<td>2 times daily</td>
+<td>Growth slowing; overfeeding wastes feed and fouls water</td>
+</tr>
+<tr>
+<td>Mature/harvest size (1+ lb)</td>
+<td>1–1.5% body weight</td>
+<td>1–2 times daily</td>
+<td>Maintenance feeding; reduce further in cool weather</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong>: A system with 10 lbs of juvenile tilapia requires 0.2–0.3 lbs (3–5 oz) of feed per day.</p>
+<div class="warning">
+<p>Overfeeding is the single most common cause of water quality crashes in aquaponics. Uneaten feed decomposes, producing ammonia directly without passing through the fish. If you see feed remaining after 5 minutes, you are feeding too much. Reduce the amount by 25% and reassess.</p>
+</div>
+<p><strong>Feed Types and Their Effects on Water Quality</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Feed Type</strong></th>
+<th><strong>Protein Content</strong></th>
+<th><strong>Cost</strong></th>
+<th><strong>Effect on Water</strong></th>
+<th><strong>Suitability</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commercial pellets (floating)</td>
+<td>30–40%</td>
+<td>Moderate-high</td>
+<td>Predictable waste output; consistent nutrient profile</td>
+<td>Best for system stability; recommended for beginners</td>
+</tr>
+<tr>
+<td>Commercial pellets (sinking)</td>
+<td>30–40%</td>
+<td>Moderate-high</td>
+<td>Same as floating; harder to monitor consumption</td>
+<td>Better for bottom-feeders (catfish, carp)</td>
+</tr>
+<tr>
+<td>Duckweed (homegrown)</td>
+<td>25–35%</td>
+<td>Free (grow on-site)</td>
+<td>Lower nitrogen output; may need supplemental feeding</td>
+<td>Excellent supplement; can grow in a separate tank using system water</td>
+</tr>
+<tr>
+<td>Black soldier fly larvae (BSFL)</td>
+<td>40–45%</td>
+<td>Low (home-cultivated)</td>
+<td>Higher fat content; slightly more ammonia per gram of feed</td>
+<td>Outstanding protein source; can be raised on kitchen scraps</td>
+</tr>
+<tr>
+<td>Kitchen scraps (vegetable waste)</td>
+<td>Variable (5–15%)</td>
+<td>Free</td>
+<td>Unpredictable nutrient profile; risk of water quality swings</td>
+<td>Emergency use only; supplement with commercial feed</td>
+</tr>
+<tr>
+<td>Worms (earthworms, red wigglers)</td>
+<td>55–65%</td>
+<td>Low</td>
+<td>High protein = higher ammonia output per feeding</td>
+<td>Excellent occasional supplement; do not use as sole feed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Homegrown Feed Strategy</strong></p>
+<p>For off-grid or low-supply scenarios, combine multiple homegrown feed sources: grow duckweed in a separate shallow tank (it doubles its biomass every 2–3 days in warm conditions), cultivate black soldier fly larvae in a compost bin, and supplement with earthworms from a vermicompost system. A 50/50 mix of duckweed and BSFL provides adequate protein for tilapia and catfish. See the <a href="../aquaculture.html">Aquaculture</a> guide for more detail on fish nutrition and stocking strategies.</p>
+<div class="tip">
+<p>Feed conversion ratio (FCR) measures how efficiently fish turn feed into body mass. Tilapia FCR is approximately 1.5:1 (1.5 lbs of feed produces 1 lb of fish). Catfish FCR is approximately 2:1. Lower FCR means less waste per pound of fish grown — important for keeping water quality stable in smaller systems.</p>
+</div>
+</section>
+<section id="system-designs">
+<h2>System Designs: Media Bed, DWC, NFT</h2>
+<p>Three primary designs suit different scales and crops.</p>
+<p><strong>Media Bed (Flood-and-Drain)</strong></p>
+<p><strong>Design</strong>: A large gravel or clay-pellet-filled bed (12–18 inches deep) is flooded with fish-tank water and then drained back via a timer. The flood-drain cycle oxygenates the media and allows bacterial colonization.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Simple construction (wooden frame + waterproof liner + gravel).</li>
+<li>Supports root vegetable crops (carrots, beets, potatoes) and larger plants (tomato, pepper).</li>
+<li>Excellent bacterial filtration (biofilm on media particles).</li>
+<li>Tolerates power outages short-term (media retains moisture; bacteria survive).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>High water volume (gravel holds significant water; requires larger fish tank).</li>
+<li>Labor-intensive harvesting (digging through gravel).</li>
+<li>Algae growth in media (requires periodic media cleaning).</li>
+</ul>
+<p><strong>Layout:</strong></p>
+<ul>
+<li>Gravel or expanded clay pellets (7–12 mm size), 12–18 inches deep.</li>
+<li>Plants spaced 12–24 inches apart (larger plants need more space).</li>
+<li>Flood/drain cycle: 15–30 minute flood every 30–60 minutes (controlled by timer on a siphon or submersible pump).</li>
+<li>Biofilter capacity: Gravel media is the primary filter; removes ~80% of particulates and hosts nitrogen-cycle bacteria.</li>
+</ul>
+<p><strong>Best crops</strong>: Lettuce, leafy greens, tomato, pepper, herbs, root vegetables, squash, beans.</p>
+<p><strong>Deep Water Culture (DWC)</strong></p>
+<p><strong>Design</strong>: Plants float on rafts in a tank of continuously flowing fish-tank water. Roots dangle into the water.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Simple to operate (passive—no moving parts, no flood/drain cycle).</li>
+<li>Excellent for leafy greens and herbs (fast-growing, high-density).</li>
+<li>Easy harvesting (pull out the raft).</li>
+<li>Lower fish tank volume than media bed (more water in grow bed reduces fish tank size).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>No mechanical filtration; particulates settle in the tank (requires frequent cleaning or a separate biofilter).</li>
+<li>Requires constant aeration (pump failure = low oxygen = fish death within hours).</li>
+<li>Unsuitable for root vegetables (roots float; cannot grow deep).</li>
+</ul>
+<p><strong>Layout:</strong></p>
+<ul>
+<li>12–24 inch deep tank; water level constant.</li>
+<li>Styrofoam or plastic rafts (4 inches thick) float on the water surface.</li>
+<li>Holes in rafts support net pots (3 inch pots for herbs/lettuce, 4–5 inch for larger greens).</li>
+<li>Plants spaced 6–12 inches apart (close spacing for continuous harvest).</li>
+<li>Aeration: Air stone or diffuser at the bottom, powered by air pump (absolutely critical; system dies without it).</li>
+<li>Biofilter: Optional separate biofilter (media bed or moving-bed reactor) necessary if a second biofilter is not present in the piping.</li>
+</ul>
+<p><strong>Best crops</strong>: Lettuce, leafy greens, herbs, microgreens, basil.</p>
+<p><strong>Nutrient Film Technique (NFT)</strong></p>
+<p><strong>Design</strong>: Water flows in a thin film over the roots of plants in a sloped gutter or channel. Roots are partially submerged in flowing water; the upper roots are exposed to moisture from the film and air.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Water efficient (minimal water volume; recirculates multiple times).</li>
+<li>Compact (vertical or stacked channels maximize yield per sq ft).</li>
+<li>Fast growth in leafy crops (continuous nutrient film exposure).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>No mechanical filtration; requires separate biofilter.</li>
+<li>Pump failure = roots dry within minutes → plant death. Less forgiving than media bed.</li>
+<li>Channels clog with algae/biofilm; require frequent cleaning.</li>
+<li>Unsuitable for large, heavy plants (tomato, pepper) or root vegetables.</li>
+</ul>
+<p><strong>Layout:</strong></p>
+<ul>
+<li>Sloped plastic gutters or channels (4–6 inches wide, 3–6 inches deep), tilted 1–2 inches per 10 feet.</li>
+<li>Plants spaced 8–12 inches apart in holes along the channel.</li>
+<li>Water flows from the fish tank, through a biofilter, down the channel (creating a film over roots), and back to the tank.</li>
+<li>Flow rate: 5–10 gallons per minute per channel (high enough to create continuous film, not stagnant).</li>
+<li>Biofilter: Separate media bed or drum-type biofilter (essential; NFT alone cannot filter particulates).</li>
+</ul>
+<p><strong>Best crops</strong>: Lettuce, leafy greens, herbs, microgreens.</p>
+<p><strong>System selection guide:</strong></p>
+<ul>
+<li><strong>Beginner, diverse crops (greens + tomatoes + herbs)</strong>: Media bed. Most forgiving; good filtration; tolerates neglect.</li>
+<li><strong>Beginner, high-yield greens only</strong>: DWC with separate biofilter. Simple operation; high yield per sq ft.</li>
+<li><strong>Advanced, commercial, space-limited</strong>: NFT or stacked media beds. Efficient but requires careful management.</li>
+</ul>
+</section>
+<section id="pH-temperature-oxygen">
+<h2>pH Management, Temperature, and Dissolved Oxygen</h2>
+<p><strong>pH (acidity/alkalinity):</strong></p>
+<p>The nitrogen cycle produces acid (as nitrite and nitrate form, they release H⁺ ions). Aquaponics systems naturally acidify (pH 6.5–7.0 is typical for established systems). Plants prefer pH 6.5–7.0; fish tolerate 6.8–7.8. Acid fish waste and the nitrogen cycle push pH downward.</p>
+<p><strong>Lowering pH</strong> (if water is too alkaline):</p>
+<ul>
+<li>Add a dilute acid (vinegar, citric acid, hydrochloric acid in extreme cases). 1 tablespoon vinegar per 100 gallons lowers pH by ~0.1–0.2.</li>
+<li>Perform partial water changes with lower-pH water (e.g., rainwater, which is slightly acidic).</li>
+</ul>
+<p><strong>Raising pH</strong> (if water is too acidic):</p>
+<ul>
+<li>Add alkalinity buffers: calcium carbonate (crushed eggshells, oyster shell), potassium bicarbonate, or sodium carbonate.</li>
+<li>Use 1 tablespoon calcium carbonate per 100 gallons; wait 24 hours, test again.</li>
+<li>Reduce feeding (lowers acid production from nitrogen cycle).</li>
+</ul>
+<p><strong>Temperature:</strong></p>
+<p>Fish growth rate doubles for every 8–10°F increase (up to optimum). Optimal temperatures:</p>
+<ul>
+<li>Tilapia: 75–82°F (maximum 88°F; above 88°F, fish stop eating and die from heat stress).</li>
+<li>Catfish: 70–78°F.</li>
+<li>Trout: 55–65°F (grows slowly in warm water; requires cool climate or chilling).</li>
+</ul>
+<p><strong>Winter management (temperate climates):</strong></p>
+<ul>
+<li>If temperature drops below 50°F, fish growth and the nitrogen cycle nearly stop.</li>
+<li>Options: Heat the system (expensive), cover/insulate the system (reduces temperature drop), or accept slow winter growth.</li>
+</ul>
+<p><strong>Dissolved oxygen (DO):</strong></p>
+<p>Fish and bacteria require oxygen. In a media bed, aeration occurs naturally during the flood/drain cycle. In DWC and NFT, an air pump provides oxygen via an air stone or diffuser.</p>
+<p><strong>Aeration:</strong></p>
+<ul>
+<li><strong>Media bed</strong>: Flood/drain cycle provides aeration; no additional aeration needed (though supplemental air can improve performance).</li>
+<li><strong>DWC</strong>: Air stone or diffuser essential; 3–5 watts air pump per 50 gallons minimum.</li>
+<li><strong>NFT</strong>: Pumped flow provides surface aeration (splashing), but supplemental air is recommended.</li>
+</ul>
+<p><strong>DO target</strong>: 5–8 ppm (parts per million). At &lt;4 ppm, fish stress; at &lt;2 ppm, fish die.</p>
+<p><strong>Monitoring</strong>: Test DO with a dissolved oxygen meter (not cheap, $50+) or visual cues (fish gasping at surface = low DO; emergency aeration needed).</p>
+</section>
+<section id="water-quality-testing">
+<h2>Water Quality Testing</h2>
+<p>Consistent water testing is the difference between a thriving aquaponics system and a dead one. Test results tell you what is happening inside the system before visible symptoms appear — by the time fish gasp at the surface or plants wilt, the underlying problem has been building for days.</p>
+<p><strong>What to Test and How Often</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Target Range</strong></th>
+<th><strong>Test Frequency</strong></th>
+<th><strong>Danger Zone</strong></th>
+<th><strong>What It Tells You</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ammonia (NH₃/NH₄⁺)</td>
+<td>0–0.5 ppm</td>
+<td>Daily during cycling; 2× weekly once established</td>
+<td>&gt;1.0 ppm</td>
+<td>Fish waste accumulation; bacterial colony health</td>
+</tr>
+<tr>
+<td>Nitrite (NO₂⁻)</td>
+<td>0–0.5 ppm</td>
+<td>Daily during cycling; 2× weekly once established</td>
+<td>&gt;1.0 ppm</td>
+<td>Mid-cycle bacteria performance (Nitrosomonas activity)</td>
+</tr>
+<tr>
+<td>Nitrate (NO₃⁻)</td>
+<td>40–150 ppm</td>
+<td>Weekly</td>
+<td>&gt;200 ppm (plant toxicity) or &lt;20 ppm (nitrogen deficiency)</td>
+<td>End-product of nitrogen cycle; plant nutrient availability</td>
+</tr>
+<tr>
+<td>pH</td>
+<td>6.5–7.2</td>
+<td>2× weekly</td>
+<td>&lt;6.0 (bacterial die-off) or &gt;8.0 (ammonia becomes more toxic)</td>
+<td>System acidity; affects nutrient availability and ammonia toxicity</td>
+</tr>
+<tr>
+<td>Dissolved oxygen (DO)</td>
+<td>5–8 ppm</td>
+<td>Weekly; daily in hot weather</td>
+<td>&lt;4 ppm (fish stress); &lt;2 ppm (fish death)</td>
+<td>Aeration adequacy; temperature effects on oxygen capacity</td>
+</tr>
+<tr>
+<td>Temperature</td>
+<td>Species-dependent (see fish selection table)</td>
+<td>Daily (thermometer)</td>
+<td>See species limits</td>
+<td>Fish metabolism; bacterial activity; oxygen capacity</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Testing Methods</strong></p>
+<p><strong>Liquid drop test kits</strong> (API Freshwater Master Test Kit or equivalent) are the standard for ammonia, nitrite, nitrate, and pH. They cost $25–35 and contain enough reagents for 500+ tests. Results require comparing a color change against a printed chart — perform tests in natural light for accurate color matching.</p>
+<p><strong>Test strips</strong> are cheaper and faster but less accurate. They are acceptable for routine monitoring once you are familiar with your system's patterns, but use liquid kits whenever readings seem abnormal or during the initial cycling period.</p>
+<p><strong>DIY and improvised testing:</strong></p>
+<ul>
+<li><strong>pH</strong>: Red cabbage juice indicator — boil red cabbage, strain the liquid. Add system water to the juice. Purple = neutral (pH 7), pink/red = acidic (pH &lt;6), blue/green = alkaline (pH &gt;8). This gives approximate pH within 1–2 units. For more detail on water chemistry methods, see the <a href="../water-purification.html">Water Purification</a> guide.</li>
+<li><strong>Ammonia</strong>: No reliable DIY test. Prioritize acquiring commercial test reagents.</li>
+<li><strong>Dissolved oxygen</strong>: Fish behavior is the most accessible indicator. Fish crowding near the surface or near aeration sources indicates low DO. Vigorous bubble streams from air stones indicate adequate aeration output, though this does not measure actual DO in the water.</li>
+<li><strong>Temperature</strong>: Any thermometer works. Attach an aquarium thermometer to the fish tank wall for continuous monitoring.</li>
+</ul>
+<p><strong>Interpreting Results and Taking Corrective Action</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Test Result</strong></th>
+<th><strong>Interpretation</strong></th>
+<th><strong>Corrective Action</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ammonia &gt;1 ppm</td>
+<td>Cycle incomplete, overfeeding, or biofilter failure</td>
+<td>Stop feeding for 24–48 hours. Perform 25–30% water change. Check biofilter flow.</td>
+</tr>
+<tr>
+<td>Nitrite &gt;1 ppm</td>
+<td>Nitrosomonas active but Nitrobacter lagging</td>
+<td>Reduce feeding by 50%. Perform 25% water change. Add salt (1 ppt) to reduce nitrite toxicity to fish.</td>
+</tr>
+<tr>
+<td>Nitrate &gt;200 ppm</td>
+<td>Plants not consuming enough nitrogen</td>
+<td>Add more plants. Perform 25% water change. Reduce feeding rate.</td>
+</tr>
+<tr>
+<td>Nitrate &lt;20 ppm</td>
+<td>Insufficient fish waste production</td>
+<td>Increase feeding rate slightly. Add more fish. Check that biofilter is converting ammonia fully (test ammonia too).</td>
+</tr>
+<tr>
+<td>pH &lt;6.0</td>
+<td>Over-acidified; bacteria begin dying below pH 6</td>
+<td>Add calcium carbonate (crushed eggshells or oyster shell) — 1 tbsp per 50 gallons. Reduce feeding to slow acid production.</td>
+</tr>
+<tr>
+<td>pH &gt;8.0</td>
+<td>Alkaline source water or insufficient nitrification</td>
+<td>At pH &gt;8, un-ionized ammonia (NH₃) increases dramatically, making even low ammonia readings dangerous. Perform water change with lower-pH water. Add vinegar (1 tbsp per 100 gallons).</td>
+</tr>
+<tr>
+<td>DO &lt;4 ppm</td>
+<td>Insufficient aeration or high water temperature</td>
+<td>Increase air pump output. Add additional air stones. Lower water temperature if possible. Reduce fish stocking density.</td>
+</tr>
+</tbody>
+</table>
+<div class="warning">
+<p>Ammonia toxicity is pH-dependent. At pH 7.0, ammonia at 1 ppm is mostly in the less-toxic ionized form (NH₄⁺). At pH 8.0, the same 1 ppm ammonia reading means 10× more of it is in the highly toxic un-ionized form (NH₃). Always interpret ammonia readings in conjunction with pH. A reading of 0.5 ppm ammonia at pH 8.5 is more dangerous than 2 ppm ammonia at pH 6.5.</p>
+</div>
+<div class="tip">
+<p>Keep a log book. Record test results with the date, time, and any actions taken (feeding amounts, water changes, fish added/removed, plants harvested). Patterns in the data reveal problems before they become emergencies. A slow upward drift in ammonia over two weeks, for example, signals that your biofilter is falling behind — easier to fix gradually than after a crash.</p>
+</div>
+</section>
+<section id="seasonal-management">
+<h2>Seasonal Management</h2>
+<p>Aquaponics systems respond to seasonal temperature changes even in controlled environments. Understanding these cycles and planning for them prevents the crashes that plague systems during spring and fall transitions.</p>
+<p><strong>Winter Management (Below 55°F / 13°C)</strong></p>
+<p>Cold temperatures slow the nitrogen cycle, reduce fish metabolism, and halt plant growth. Management priorities shift from production to system preservation.</p>
+<ul>
+<li><strong>Reduce feeding</strong>: Fish metabolism drops roughly 50% for every 10°F decrease below their optimal range. At 55°F, feed tilapia at 25–50% of summer rates. Below 50°F, stop feeding entirely — fish enter near-dormancy and undigested food becomes an ammonia source.</li>
+<li><strong>Greenhouse integration</strong>: Even an unheated greenhouse or high tunnel raises ambient temperature 10–20°F above outside air, which can keep a system functional in USDA zones 6–8. See the <a href="../greenhouse-coldframe.html">Greenhouse and Cold Frame</a> guide for construction details. A cold frame over the grow bed alone provides significant frost protection for plants.</li>
+<li><strong>Thermal mass</strong>: Water itself is excellent thermal mass. Larger water volumes resist temperature swings — a 400-gallon system drops temperature more slowly overnight than a 50-gallon system. Painting fish tanks black and placing them where they receive direct winter sunlight adds passive solar heating.</li>
+<li><strong>Insulation</strong>: Wrap fish tanks and plumbing with foam insulation board or straw bales. Cover DWC rafts with floating row cover to trap heat at the water surface.</li>
+<li><strong>Supplemental heating</strong>: Aquarium heaters (200–300 watts for 50–100 gallons) maintain fish tank temperature but consume significant electricity. In off-grid scenarios, a compost-heated water loop (running PEX pipe through an active compost pile) can provide 80–120°F water as a heat exchange source.</li>
+</ul>
+<p><strong>Summer Management (Above 85°F / 30°C)</strong></p>
+<p>High temperatures reduce dissolved oxygen capacity, stress fish, and promote algae blooms and pathogen growth.</p>
+<ul>
+<li><strong>Shade</strong>: Cover fish tanks and grow beds with shade cloth (50–70% shade factor). Exposed dark tanks can exceed 95°F in direct sun, which is lethal for most aquaponics species.</li>
+<li><strong>Aeration</strong>: Warm water holds less dissolved oxygen — at 85°F, water holds approximately 30% less oxygen than at 65°F. Increase air pump runtime to 24 hours. Add secondary air stones. Consider a venturi injector on the return line for additional oxygen.</li>
+<li><strong>Evaporation management</strong>: Summer evaporation can remove 1–3% of system volume daily. Top off with dechlorinated water. If using municipal water, let it sit 24 hours in an open container before adding it to the system (chlorine dissipates).</li>
+<li><strong>Feeding schedule</strong>: Feed in the early morning when water is coolest and DO is highest. Avoid afternoon feeding when temperatures peak.</li>
+</ul>
+<p><strong>Seasonal Transitions (Spring and Fall)</strong></p>
+<p>Transitions are the most dangerous periods. Bacterial populations adjust slowly to temperature changes, creating windows where ammonia or nitrite spike.</p>
+<ul>
+<li><strong>Spring</strong>: As water warms, fish appetite increases before the bacterial colony has expanded to match. Increase feeding gradually — no more than 10% per week — and test ammonia and nitrite every other day during the transition.</li>
+<li><strong>Fall</strong>: As water cools, reduce feeding ahead of fish metabolism changes. Remove summer crops before the first frost damages them and contaminates the water. Transition to cold-hardy crops (kale, lettuce, spinach) before warm-season plants decline.</li>
+</ul>
+<div class="tip">
+<p>Seasonal crop rotation mirrors the fish's metabolic cycle naturally. In spring and summer, fast-growing warm-season crops (tomato, basil, cucumber) match the high nitrogen output of actively feeding tilapia. In fall and winter, slow-growing cold-hardy crops (kale, lettuce, chard) match the reduced nitrogen output from cold-slowed fish.</p>
+</div>
+</section>
+<section id="disease-recognition">
+<h2>Disease Recognition and Treatment</h2>
+<p>Aquaponics systems create warm, nutrient-rich, high-density environments — ideal conditions for disease outbreaks in both fish and plants. The closed-loop nature of the system means that a disease in one component quickly affects everything else. Early recognition and treatment are critical.</p>
+<p><strong>Common Fish Diseases</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Disease</strong></th>
+<th><strong>Symptoms</strong></th>
+<th><strong>Cause</strong></th>
+<th><strong>Treatment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ich (white spot disease)</td>
+<td>White spots on fins, body, and gills; fish rubbing against surfaces (&quot;flashing&quot;); lethargy</td>
+<td>Protozoan parasite <em>Ichthyophthirius multifiliis</em>; triggered by temperature fluctuations or stress</td>
+<td>Raise water temperature to 82–86°F for 7–10 days (accelerates parasite lifecycle). Add aquarium salt (1 tsp per gallon) for 5–7 days. Do NOT use copper-based treatments — toxic to plants.</td>
+</tr>
+<tr>
+<td>Fin rot</td>
+<td>Frayed, discolored, or disintegrating fin edges; white or red margins on fins</td>
+<td>Bacterial infection (<em>Aeromonas</em>, <em>Pseudomonas</em>); triggered by poor water quality or physical injury</td>
+<td>Improve water quality (25% water change, reduce feeding). Add aquarium salt (1 tsp per gallon). Isolate severely affected fish. Trim necrotic fin tissue with sterile scissors in advanced cases.</td>
+</tr>
+<tr>
+<td>Bacterial septicemia</td>
+<td>Red streaks on body; swollen abdomen (dropsy); pop-eye; loss of appetite; sudden death</td>
+<td>Systemic bacterial infection; triggered by chronic stress, overcrowding, or water quality problems</td>
+<td>Isolate affected fish immediately. Salt bath (3 tbsp per gallon for 5–10 minutes, then return to main tank). Improve water quality aggressively. Severe cases are usually fatal; focus on preventing spread.</td>
+</tr>
+<tr>
+<td>Columnaris</td>
+<td>White or gray patches on head, fins, or gills; cottony growths; rapid gill movement</td>
+<td>Bacterial infection (<em>Flavobacterium columnare</em>); triggered by high temperatures and poor water quality</td>
+<td>Lower temperature if possible (below 75°F slows bacterial growth). Salt treatment (1–2 tsp per gallon). Potassium permanganate dip (10 mg/L for 30 minutes) for severely affected individuals.</td>
+</tr>
+<tr>
+<td>Oxygen deprivation</td>
+<td>Fish gulping at surface; crowding near air stone; lethargy; sudden mass mortality</td>
+<td>Low dissolved oxygen from equipment failure, high temperature, or overcrowding</td>
+<td>Emergency aeration — agitate water surface manually, add battery-powered air pump. Reduce feeding. Perform partial water change with cool, aerated water.</td>
+</tr>
+</tbody>
+</table>
+<div class="warning">
+<p>Never use standard aquarium medications containing copper, malachite green, or formalin in an aquaponics system. These chemicals kill the beneficial bacteria in your biofilter and are toxic to plants. Salt (non-iodized sodium chloride) and temperature manipulation are the primary safe treatments. If a disease requires stronger medication, remove the affected fish to a separate quarantine tank for treatment.</p>
+</div>
+<p><strong>Common Plant Diseases</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Disease</strong></th>
+<th><strong>Symptoms</strong></th>
+<th><strong>Cause</strong></th>
+<th><strong>Treatment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Root rot</td>
+<td>Brown, mushy, foul-smelling roots; wilting despite adequate water; stunted growth</td>
+<td><em>Pythium</em> or <em>Phytophthora</em> fungi; triggered by low dissolved oxygen, stagnant water, or high temperatures</td>
+<td>Remove affected plants immediately (they spread pathogens). Increase aeration and water flow. Hydrogen peroxide treatment (3% solution, 2 mL per gallon as a one-time dose). Ensure DO stays above 5 ppm.</td>
+</tr>
+<tr>
+<td>Powdery mildew</td>
+<td>White powdery coating on leaf surfaces; leaves curl and yellow; reduced yield</td>
+<td>Fungal spores (<em>Erysiphales</em>); triggered by high humidity, poor air circulation, and moderate temperatures</td>
+<td>Improve air circulation around plants (add fans). Remove and destroy heavily infected leaves. Spray with diluted potassium bicarbonate solution (1 tbsp per gallon of water). Neem oil spray (1 tsp per quart of water) as a preventive.</td>
+</tr>
+<tr>
+<td>Nutrient deficiency (mimics disease)</td>
+<td>Yellowing leaves (nitrogen), purple stems (phosphorus), brown leaf edges (potassium)</td>
+<td>Insufficient fish waste production; pH outside optimal range locking out nutrients; inadequate biofilter</td>
+<td>Test water — check nitrate levels and pH. Adjust pH to 6.5–7.0. Increase fish feeding if nitrate is low. Supplement with chelated iron (1 mL per 100 gallons weekly) for iron deficiency.</td>
+</tr>
+<tr>
+<td>Algae on roots/rafts</td>
+<td>Green slime coating on roots, rafts, and tank walls; reduced plant uptake</td>
+<td>Excess light reaching water surface; high nutrient levels</td>
+<td>Cover exposed water with opaque material. Reduce light on water surface to &lt;4 hours daily. Increase plant density to outcompete algae for nutrients.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Quarantine Procedures</strong></p>
+<p>Maintain a separate quarantine tank (10–20 gallons with its own air pump and heater) for new fish and sick individuals. All new fish should be quarantined for 14 days before introduction to the main system. During quarantine, observe for signs of disease and treat prophylactically with a mild salt bath (1 tsp per gallon for 3 days).</p>
+<p><strong>Prevention Principles</strong></p>
+<ul>
+<li>Maintain water quality — the single most effective disease prevention measure. Healthy water means healthy fish and plants.</li>
+<li>Avoid overcrowding — stress from high density is the primary trigger for disease outbreaks.</li>
+<li>Quarantine all new fish — never introduce untested animals directly into an established system.</li>
+<li>Remove dead fish and decaying plant material immediately — decomposition creates ammonia spikes and pathogen blooms.</li>
+<li>Wash hands before and after working in the system — you can transfer pathogens between tanks or from external sources.</li>
+</ul>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting Common Aquaponics Problems</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Problem</strong></th>
+<th><strong>Cause</strong></th>
+<th><strong>Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High ammonia/nitrite (&gt;1 ppm)</td>
+<td>Cycle incomplete; overstocking fish; over-feeding</td>
+<td>Perform 30% water change. Wait 1–2 weeks for cycle to complete. Reduce fish food by 50%. Add more plants.</td>
+</tr>
+<tr>
+<td>Fish gasping at surface (low DO)</td>
+<td>Aeration pump failed; insufficient aeration</td>
+<td>Check pump; replace if dead. Ensure air stone is not clogged (clean with brush). Increase pump wattage. In emergency, agitate water with hand or airlock.</td>
+</tr>
+<tr>
+<td>Algae blooms (green water)</td>
+<td>Excess light and nutrients (excess nitrate)</td>
+<td>Reduce light exposure (cover or shade tank 50%). Increase plant load (more plants consume nitrate). Perform 30% water change. Add phosphorus-inhibiting plants (duckweed).</td>
+</tr>
+<tr>
+<td>Plant stunted growth</td>
+<td>Low nitrogen; low light; high pH; root disease</td>
+<td>Increase fish stocking or feeding. Add more light (12–16 hours daily). Adjust pH to 6.5–7.0. Check for root rot (brown, mushy roots); if found, improve water circulation and aeration.</td>
+</tr>
+<tr>
+<td>Fish mortality</td>
+<td>Water quality (ammonia, nitrite, low DO); low temperature; disease</td>
+<td>Test water quality immediately. Perform 30–50% water change if ammonia or nitrite are high. Check temperature (maintain 65–78°F). Isolate sick fish if visible disease.</td>
+</tr>
+<tr>
+<td>Cloudy water (poor visibility)</td>
+<td>Excess particulates; algae; bacterial blooms</td>
+<td>Media bed systems: Check biofilter; if packed with sludge, backwash or clean. DWC systems: Install a separate biofilter (settling tank or drum filter). Perform 30% water change. Reduce light and over-feeding.</td>
+</tr>
+<tr>
+<td>Root rot in plants</td>
+<td>Poor water circulation; excess pathogens in biofilm</td>
+<td>Increase aeration and water flow. Improve biofilter cleaning schedule. Remove affected plants. Perform 30% water change and consider adding hydrogen peroxide (1–2 mL per gallon, one-time emergency treatment).</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="system-sizing-example">
+<h2>Sizing an Aquaponics System: Example (Home-Scale)</h2>
+<p><strong>Goal</strong>: Produce fresh lettuce and herbs year-round for a household of 4.</p>
+<p><strong>Requirement</strong>: ~4–6 pounds of fresh greens per week (harvest 8–10 lettuce heads + herbs).</p>
+<p><strong>Design choice</strong>: DWC system (lettuce focus) with separate media-bed biofilter.</p>
+<p><strong>Sizing:</strong></p>
+<ol>
+<li>
+<p><strong>Grow bed</strong>: 4 ft × 8 ft DWC rafts holding 32 lettuce plants (one per net pot, spaced 12 inches apart in a 2×16 grid).</p>
+<ul>
+<li>Grow bed volume: 8 ft × 4 ft × 1 ft = 32 gallons.</li>
+</ul>
+</li>
+<li>
+<p><strong>Plant load</strong>: 32 pounds of fresh lettuce at mature size (1 lb per plant).</p>
+<ul>
+<li>Required fish biomass: 32 lbs plants ÷ 8 (conservative ratio) = 4 lbs fish.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fish tank</strong>: 4 lbs fish ÷ (1 lb per 5 gallons) = 20 gallons minimum fish tank.</p>
+<ul>
+<li>Use 30–40 gallon tank (buffer for water quality fluctuations).</li>
+</ul>
+</li>
+<li>
+<p><strong>Biofilter</strong>: 20–30 gallons media bed (separate tank).</p>
+<ul>
+<li>Filled with expanded clay pellets or gravel.</li>
+</ul>
+</li>
+<li>
+<p><strong>Total system volume</strong>: 30 (fish tank) + 32 (grow bed) + 25 (biofilter) = 87 gallons.</p>
+</li>
+<li>
+<p><strong>Fish stocking</strong>: 4 lbs of tilapia (4–6 young tilapia, 1 lb each).</p>
+</li>
+<li>
+<p><strong>Aeration</strong>: Air pump (3 watts) with air stone in fish tank; secondary air stone in biofilter.</p>
+</li>
+<li>
+<p><strong>Harvest schedule</strong>:</p>
+<ul>
+<li>Week 1: Harvest 8 mature lettuce; replant 8 seedlings (continuous rotation).</li>
+<li>All 32 plants are replaced every 4–6 weeks (lettuce grow time).</li>
+<li>Herbs harvested continuously (basil, mint, parsley).</li>
+</ul>
+</li>
+</ol>
+<p><strong>Budget (rough estimate):</strong></p>
+<ul>
+<li>Fish tank (40 gal): $40</li>
+<li>DWC grow bed (stock tanks or custom): $100–200</li>
+<li>Biofilter tank + media: $50–100</li>
+<li>Pump and aeration: $50–100</li>
+<li>Plumbing (pipes, fittings, siphon): $30–50</li>
+<li>Net pots and grow medium: $20–30</li>
+<li>Fish (tilapia fingerlings): $15–30</li>
+<li>Total: $305–640</li>
+</ul>
+<p><strong>Maintenance (weekly):</strong></p>
+<ul>
+<li>Test water (ammonia, nitrite, nitrate, pH): 15 minutes</li>
+<li>Feed fish: 5 minutes</li>
+<li>Harvest greens: 15 minutes</li>
+<li>Clean screens/check flow: 10 minutes</li>
+<li>Total: ~45 minutes weekly</li>
+</ul>
+</section>
+<section id="diy-construction">
+<h2>DIY Construction Details</h2>
+<p>Building an aquaponics system from salvaged and locally available materials is entirely feasible. The critical components are the pump, plumbing, and water-level control mechanisms. Getting these right determines whether the system runs reliably or requires constant intervention.</p>
+<p><strong>Pump Selection and GPH Calculations</strong></p>
+<p>The water pump must circulate the entire system volume at least once per hour — ideally 1.5 to 2 times per hour for optimal nutrient delivery and filtration. This is measured in gallons per hour (GPH).</p>
+<p><strong>Formula</strong>: Required GPH = Total system water volume x 1.5 (turnover rate)</p>
+<table>
+<thead>
+<tr>
+<th><strong>System Volume</strong></th>
+<th><strong>Minimum GPH</strong></th>
+<th><strong>Recommended GPH</strong></th>
+<th><strong>Typical Pump Wattage</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>50 gallons</td>
+<td>75 GPH</td>
+<td>100 GPH</td>
+<td>5–10 watts</td>
+</tr>
+<tr>
+<td>100 gallons</td>
+<td>150 GPH</td>
+<td>200 GPH</td>
+<td>10–20 watts</td>
+</tr>
+<tr>
+<td>200 gallons</td>
+<td>300 GPH</td>
+<td>400 GPH</td>
+<td>20–35 watts</td>
+</tr>
+<tr>
+<td>400 gallons</td>
+<td>600 GPH</td>
+<td>800 GPH</td>
+<td>35–60 watts</td>
+</tr>
+</tbody>
+</table>
+<div class="warning">
+<p>Pump GPH ratings are measured at zero head height (pump level with the outlet). Every foot of vertical lift reduces actual flow by 10–20%. If your grow bed is 4 feet above the fish tank, a pump rated at 200 GPH may only deliver 120–140 GPH. Always oversize by at least 30% to account for head loss and friction in plumbing. Check the pump's head-height curve on the packaging or manufacturer documentation.</p>
+</div>
+<p><strong>Submersible pumps</strong> (placed inside the fish tank) are simplest for small systems. <strong>Inline/external pumps</strong> are more efficient for larger systems and easier to maintain but require priming. For off-grid systems, 12V DC submersible pumps run directly from a solar panel and battery — a 20-watt solar panel with a 12V marine battery provides 24-hour pump operation for systems up to 200 gallons.</p>
+<p><strong>Pipe Sizing</strong></p>
+<p>Undersized pipes restrict flow and cause pump strain; oversized pipes waste material. Match pipe diameter to pump output:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Pump Output (GPH)</strong></th>
+<th><strong>Supply Pipe (from pump to bed)</strong></th>
+<th><strong>Drain Pipe (bed to tank)</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>50–150 GPH</td>
+<td>1/2 inch PVC or vinyl tubing</td>
+<td>3/4 inch PVC</td>
+<td>Drain must be larger than supply to prevent overflow</td>
+</tr>
+<tr>
+<td>150–400 GPH</td>
+<td>3/4 inch PVC</td>
+<td>1 inch PVC</td>
+<td>Standard for home-scale systems</td>
+</tr>
+<tr>
+<td>400–1000 GPH</td>
+<td>1 inch PVC</td>
+<td>1.5 inch PVC</td>
+<td>Commercial scale; use schedule 40 PVC for durability</td>
+</tr>
+</tbody>
+</table>
+<p>Use PVC primer and cement for permanent joints. Use threaded fittings or barbed connectors with hose clamps at points where you need to disconnect for maintenance (pump connections, biofilter access). Avoid 90-degree elbows where possible — two 45-degree elbows create the same turn with less flow restriction.</p>
+<p><strong>Bell Siphon Construction (for Media Bed Flood-and-Drain)</strong></p>
+<p>The bell siphon is the heart of a media bed system — it automatically floods the bed to a set height, then drains it completely, creating the wet-dry cycle that oxygenates roots and media. It has no moving parts and requires no electricity.</p>
+<p><strong>Components:</strong></p>
+<ol>
+<li><strong>Standpipe</strong>: A vertical PVC pipe (3/4 or 1 inch diameter) set in the center of the grow bed, extending from the drain hole up to the desired flood height (typically 1–2 inches below the media surface). Water rises in the bed until it reaches the standpipe top, then overflows down the standpipe into the drain.</li>
+<li><strong>Bell</strong>: A larger PVC pipe (2–3 inch diameter) placed over the standpipe like an inverted cup. The bell must be taller than the standpipe by 2–3 inches and have notches cut at the bottom (1/4 inch wide, 1/2 inch tall) to allow water to enter. The bell creates an air-sealed chamber around the standpipe.</li>
+<li><strong>Media guard</strong>: A larger pipe or mesh cylinder (4–6 inch diameter) placed around the bell to prevent gravel from clogging the notches. Drill or cut 1/4-inch holes along the guard to allow water flow while blocking media.</li>
+</ol>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Water fills the grow bed. When it reaches the top of the standpipe, it begins flowing over.</li>
+<li>As water flows over the standpipe and down, it creates a vacuum inside the bell (the air-sealed chamber).</li>
+<li>The vacuum accelerates the flow, creating a siphon that drains the bed rapidly — much faster than the pump fills it.</li>
+<li>When the water level drops below the bell notches, air breaks into the bell, killing the siphon.</li>
+<li>The bed sits drained until the pump refills it, restarting the cycle.</li>
+</ul>
+<p><strong>Tuning the siphon:</strong></p>
+<ul>
+<li>If the siphon does not start: Standpipe is too short (water level does not reach bell seal), or bell notches are too large (air leaks prevent vacuum). Extend standpipe height or reduce notch size.</li>
+<li>If the siphon does not break: Pump flow rate is too high (keeps pace with drain). Reduce pump flow with a ball valve on the supply line, or increase drain pipe diameter.</li>
+<li><strong>Target cycle</strong>: 15-minute flood, 30-minute drain for most media beds. Adjust by changing pump flow rate.</li>
+</ul>
+<div class="tip">
+<p>Test the bell siphon with water before adding media. Fill the bed with just the standpipe, bell, and guard installed. Verify the siphon starts and breaks cleanly at least 5 times in a row before loading gravel. It is much easier to adjust components in an empty bed than one filled with 200 lbs of gravel.</p>
+</div>
+<p><strong>Biofilter Construction</strong></p>
+<p>For DWC and NFT systems that lack the natural filtration of a media bed, a separate biofilter is essential. The simplest effective biofilter is a moving-bed bioreactor (MBBR):</p>
+<ol>
+<li><strong>Container</strong>: A 5-gallon bucket or 20-gallon barrel with a lid.</li>
+<li><strong>Media</strong>: Fill 50–60% of the volume with K1 Kaldnes media (small plastic wheel-shaped pieces) or cut-up sections of plastic pot scrubbers as an improvised alternative. These provide surface area for bacterial colonization.</li>
+<li><strong>Aeration</strong>: An air stone at the bottom keeps the media tumbling, which prevents dead zones and distributes bacteria evenly.</li>
+<li><strong>Flow</strong>: Water enters from the fish tank at the top, flows through the tumbling media, and exits through a screened outlet (to prevent media escaping) at the bottom or side. The outlet feeds into the grow bed.</li>
+<li><strong>Sizing</strong>: 1 gallon of MBBR media per 10 gallons of system volume provides adequate biofiltration for a moderately stocked system.</li>
+</ol>
+<p>An alternative biofilter for low-tech builds is a simple gravel bed (a 10-gallon container filled with washed pea gravel) through which water trickles. This is essentially a small media bed dedicated to filtration rather than growing plants. It is less efficient than an MBBR but requires no aeration and no specialized media.</p>
+</section>
+<section id="getting-started">
+<h2>Getting Started: Simple First Aquaponics System</h2>
+<ol>
+<li><strong>Choose a design</strong>: Start with a media bed (most forgiving) or DWC (highest yield, simple operation).</li>
+<li><strong>Gather supplies</strong>:
+<ul>
+<li>Fish tank (30–50 gallons, used aquarium tanks work).</li>
+<li>Grow bed (stock tank, wooden frame with liner, or commercial aquaponics kit).</li>
+<li>Biofilter (media bed or drum filter for DWC/NFT systems).</li>
+<li>Air pump, air stone, tubing.</li>
+<li>Piping and siphon for water return.</li>
+<li>Expanded clay pellets or gravel media.</li>
+<li>Net pots and grow medium (hydroton or rockwool).</li>
+</ul>
+</li>
+<li><strong>Assemble system</strong>: Connect fish tank, biofilter, and grow bed with plumbing. Set up aeration.</li>
+<li><strong>Cycle the system</strong>: Run without fish for 3–5 days. Add ammonia source (fish food, or purchased ammonia testing solution) to establish bacterial colonies.</li>
+<li><strong>Introduce fish gradually</strong>: Once the cycle is established (ammonia and nitrite near zero), add 50% of your target fish biomass. Wait 1 week, then add the remaining fish.</li>
+<li><strong>Plant seedlings</strong>: Begin with fast-growing lettuce and herbs. Expand to other crops after 2–3 successful harvests.</li>
+<li><strong>Maintain weekly</strong>: Test water, feed fish, harvest, monitor for issues.</li>
+</ol>
+<p>A simple 50-gallon DWC system with 20–30 tilapia can produce 50+ lbs of lettuce per year—enough for a household—with just an hour of management per week.</p>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="agriculture.html">Agriculture &amp; Gardening</a>
+<a href="aquaculture.html">Aquaculture &amp; Fish Farming</a>
+<a href="water-purification.html">Water Purification</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/signals-communication.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signals &amp; Communication</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Communications</span> ›
+<span>Signals &amp; Communication</span>
+</div>
+
+
+<h1>Signals &amp; Communication</h1>
+<p class="subtitle">Signal systems, visual signaling, message transmission, telephone principles, and long-distance communication methods.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~18 min</span>
+<span>Updated: 2026-02-15</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#theory-of-operation-communication-principles">Theory of Operation — Communication Principles</a></li>
+<li><a href="#semaphore-arm-positions">Semaphore Arm Positions</a></li>
+<li><a href="#morse-code-with-mnemonics">Morse Code with Mnemonics</a></li>
+<li><a href="#mirror-flash-morse-code-signaling-heliograph">Mirror Flash Morse Code Signaling (Heliograph)</a></li>
+<li><a href="#whistle-code-patterns">Whistle Code Patterns</a></li>
+<li><a href="#smoke-signal-communication">Smoke Signal Communication</a></li>
+<li><a href="#signal-fire-fuel-selection">Signal Fire Fuel Selection</a></li>
+<li><a href="#equipment-amp-components-building-improvised-signaling-gear">Equipment &amp; Components — Building Improvised Signaling Gear</a></li>
+<li><a href="#operating-procedures-effective-signaling-protocol">Operating Procedures — Effective Signaling Protocol</a></li>
+<li><a href="#range-amp-performance-realistic-communication-distances">Range &amp; Performance — Realistic Communication Distances</a></li>
+<li><a href="#troubleshooting-diagnosing-communication-failures">Troubleshooting — Diagnosing Communication Failures</a></li>
+<li><a href="#maintenance-equipment-care-amp-longevity">Maintenance — Equipment Care &amp; Longevity</a></li>
+<li><a href="#security-amp-encryption-protecting-transmitted-messages">Security &amp; Encryption — Protecting Transmitted Messages</a></li>
+<li><a href="#common-mistakes-error-patterns-amp-prevention">Common Mistakes — Error Patterns &amp; Prevention</a></li>
+<li><a href="#safety-hazards-and-precautions">Safety — Hazards and Precautions</a></li>
+<li><a href="#reference-tables-amp-quick-lookup">Reference Tables &amp; Quick Lookup</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="warning">
+<p><strong>Safety Notice:</strong> Signal fires, heliograph systems, and other visible signaling methods may attract unwanted attention in insecure areas. Evaluate your security situation before transmitting. High-intensity signals visible from distance may draw hostile forces. Always establish protocols with intended recipients before signaling to distinguish legitimate messages from hostile reconnaissance.</p>
+</div>
+<h2 id="overview">Overview</h2>
+<p>Long-distance communication without electronics is essential in survival, emergency response, and remote operations. This guide covers six primary methods: semaphore flagging, Morse code, heliograph mirror signaling, whistle codes, smoke signals, and signal fires. Each method operates on different principles and excels in specific conditions.</p>
+<p><strong>Key Selection Factors:</strong></p>
+<ul>
+<li><strong>Daylight availability</strong> — heliograph requires sun; smoke signals need daylight for visibility</li>
+<li><strong>Noise constraints</strong> — semaphore is silent; whistles carry for miles but announce position</li>
+<li><strong>Distance requirements</strong> — heliograph reaches 10+ miles; whistles under 1 mile in quiet</li>
+<li><strong>Equipment cost</strong> — semaphore flags are easily improvised; heliograph requires polished mirror</li>
+<li><strong>Speed vs. range</strong> — Morse code is slower but more reliable over distance</li>
+</ul>
+<div class="tip">
+<p>Combine methods for robustness. Use semaphore as primary backup for Morse; use smoke signals during day, fires at night for distress situations.</p>
+</div>
+<h2 id="theory-of-operation-communication-principles">Theory of Operation — Communication Principles</h2>
+<p>All signaling systems encode information into patterns that can be detected and decoded by a receiver. Three mechanisms dominate survival communication:</p>
+<h3>Visual Line-of-Sight Signaling</h3>
+<p>Semaphore, heliograph, and fire all require direct sight line between transmitter and receiver. Obstructions (terrain, trees, weather) block messages completely. Range depends on:</p>
+<ul>
+<li><strong>Atmospheric clarity</strong> — fog, rain, dust reduce distance by 50-80%</li>
+<li><strong>Receiver attention</strong> — unfocused observers miss dim or fast signals</li>
+<li><strong>Contrast</strong> — bright signals against dark backgrounds penetrate farther</li>
+<li><strong>Signal persistence</strong> — longer-duration signals are easier to detect than brief flashes</li>
+</ul>
+<h3>Acoustic Signaling</h3>
+<p>Whistle codes travel as sound waves through air, bending around obstacles. Range extends beyond line-of-sight in favorable conditions, but:</p>
+<ul>
+<li><strong>Wind</strong> — carries sound away from intended direction</li>
+<li><strong>Terrain</strong> — valleys and enclosed spaces amplify; open areas can carry 1+ miles</li>
+<li><strong>Ambient noise</strong> — competing sounds mask subtle signals (use rapid patterns)</li>
+</ul>
+<h3>Encoding Standards</h3>
+<p>Morse code (dots and dashes) became universal because it's unambiguous, redundant (each letter can be recognized partially), and works across multiple mediums (radio, light, sound, vibration).</p>
+<h2 id="semaphore-arm-positions">Semaphore Arm Positions</h2>
+<p>Semaphore uses two flags held in specific arm positions to represent letters. Each position is described as clock positions when viewed from front.</p>
+<h3>Letter Positions (Clock Reference)</h3>
+<ul>
+<li><strong>A:</strong> Left arm up (12), right arm down (6) = right angle position</li>
+<li><strong>B:</strong> Both arms up (10-2 position)</li>
+<li><strong>C:</strong> Both arms horizontal level (9-3 position)</li>
+<li><strong>D:</strong> Right arm up, left arm out (1-3 position)</li>
+<li><strong>E:</strong> Both arms down and spread (4-8 position)</li>
+<li><strong>F:</strong> Left arm up-left (11), right arm down-right (4)</li>
+<li><strong>G:</strong> Left arm horizontal (9), right arm down (6)</li>
+<li><strong>H:</strong> Left arm up (12), right arm left horizontal (9)</li>
+<li><strong>I:</strong> Both arms diagonal (8-2 position)</li>
+<li><strong>J:</strong> Right arm up, left arm diagonal down-left (12-7 position)</li>
+<li><strong>K:</strong> Left arm up (12), right arm diagonal (2-8 position)</li>
+<li><strong>L:</strong> Both arms diagonal up (10-2, spread wide)</li>
+</ul>
+<h3>Communication Sequence</h3>
+<ol>
+<li><strong>Attention:</strong> Wave flags side-to-side to signal ready to receive</li>
+<li><strong>Each letter:</strong> Move to letter position, hold briefly (1-2 seconds)</li>
+<li><strong>Space:</strong> Flags down to sides briefly, then next letter</li>
+<li><strong>End of message:</strong> Return arms to rest, wave flags downward</li>
+<li><strong>Reception confirmation:</strong> Single flag wave = understood</li>
+</ol>
+<h3>Advantages &amp; Limitations</h3>
+<p><strong>Strengths:</strong></p>
+<ul>
+<li>Works in absolute silence (no radio needed)</li>
+<li>Visible up to 1 mile in clear conditions</li>
+<li>Simple to learn (26 positions)</li>
+<li>No technology required (flags on sticks)</li>
+<li>Flags can be improvised from cloth and branches</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Requires both arms free; operator cannot carry load</li>
+<li>Weather limits visibility (rain, fog reduce range to 200-400 yards)</li>
+<li>Sender must face receiver directly; cannot transmit to multiple simultaneous receivers</li>
+<li>Speed limited to 10-20 words per minute</li>
+</ul>
+<div class="tip">
+<p>Practice semaphore sequences on calm days with a partner at 200+ yards. Flag clarity improves with bright colors (red, yellow, white) against dark clothing.</p>
+</div>
+<h2 id="morse-code-with-mnemonics">Morse Code with Mnemonics</h2>
+<p>Morse code translates letters and numbers to patterns of short (dots) and long (dashes) signals. Universal standardization means Morse code can be transmitted via light, sound, vibration, or radio with 100% compatibility.</p>
+<h3>Common Letters with Mnemonics</h3>
+<table>
+<thead>
+<tr>
+<th>Letter</th>
+<th>Code</th>
+<th>Mnemonic</th>
+<th>Letter</th>
+<th>Code</th>
+<th>Mnemonic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>.-</td>
+<td>ah</td>
+<td>N</td>
+<td>-.</td>
+<td>no</td>
+</tr>
+<tr>
+<td>B</td>
+<td>-...</td>
+<td>bat</td>
+<td>O</td>
+<td>---</td>
+<td>oh</td>
+</tr>
+<tr>
+<td>C</td>
+<td>-.-.</td>
+<td>cat</td>
+<td>P</td>
+<td>.--.</td>
+<td>pot</td>
+</tr>
+<tr>
+<td>D</td>
+<td>-..</td>
+<td>dog</td>
+<td>Q</td>
+<td>--.-</td>
+<td>queen</td>
+</tr>
+<tr>
+<td>E</td>
+<td>.</td>
+<td>eh</td>
+<td>R</td>
+<td>.-.</td>
+<td>rat</td>
+</tr>
+<tr>
+<td>F</td>
+<td>..-.</td>
+<td>fig</td>
+<td>S</td>
+<td>...</td>
+<td>sat</td>
+</tr>
+<tr>
+<td>G</td>
+<td>--.</td>
+<td>got</td>
+<td>T</td>
+<td>-</td>
+<td>tea</td>
+</tr>
+<tr>
+<td>H</td>
+<td>....</td>
+<td>hat</td>
+<td>U</td>
+<td>..-</td>
+<td>urn</td>
+</tr>
+<tr>
+<td>I</td>
+<td>..</td>
+<td>it</td>
+<td>V</td>
+<td>...-</td>
+<td>van</td>
+</tr>
+<tr>
+<td>J</td>
+<td>.---</td>
+<td>jay</td>
+<td>W</td>
+<td>.--</td>
+<td>way</td>
+</tr>
+<tr>
+<td>K</td>
+<td>-.-</td>
+<td>key</td>
+<td>X</td>
+<td>-..-</td>
+<td>xray</td>
+</tr>
+<tr>
+<td>L</td>
+<td>.-..</td>
+<td>lot</td>
+<td>Y</td>
+<td>-.--</td>
+<td>yak</td>
+</tr>
+<tr>
+<td>M</td>
+<td>--</td>
+<td>me</td>
+<td>Z</td>
+<td>--..</td>
+<td>zoo</td>
+</tr>
+</tbody>
+</table>
+<h3>Timing Standards</h3>
+<div class="info-box">
+<p><strong>Morse Code Timing (for consistent transmission):</strong></p>
+<ul>
+<li><strong>Dot duration:</strong> 1 unit (100 milliseconds typical)</li>
+<li><strong>Dash duration:</strong> 3 units (300 ms)</li>
+<li><strong>Space between dots/dashes within letter:</strong> 1 unit</li>
+<li><strong>Space between letters:</strong> 3 units</li>
+<li><strong>Space between words:</strong> 7 units</li>
+</ul>
+<p>Use a metronome or tap steadily to maintain rhythm.</p>
+</div>
+<h3>SOS Distress Signal</h3>
+<p><strong>SOS = ... --- ...</strong> (no spaces between)</p>
+<p>S: three short signals (dot-dot-dot = 0.3 sec)
+O: three long signals (dah-dah-dah = 0.9 sec)
+S: three short signals (dot-dot-dot = 0.3 sec)</p>
+<p>Recognition: The distinctive pattern is easily recognized internationally. SOS became standard because it's unambiguous in Morse; transmitted continuously (with 2-3 second pauses) until response received.</p>
+<div class="warning">
+<p>SOS is a distress-only signal. Transmit only in life-threatening emergency. Improper use damages credibility with rescue services.</p>
+</div>
+<h3>Morse Code Numbers</h3>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>-----</th>
+<th>5</th>
+<th>.....</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>.----</td>
+<td>6</td>
+<td>-....</td>
+</tr>
+<tr>
+<td>2</td>
+<td>..---</td>
+<td>7</td>
+<td>--...</td>
+</tr>
+<tr>
+<td>3</td>
+<td>...--</td>
+<td>8</td>
+<td>---..</td>
+</tr>
+<tr>
+<td>4</td>
+<td>....-</td>
+<td>9</td>
+<td>----.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mirror-flash-morse-code-signaling-heliograph">Mirror Flash Morse Code Signaling (Heliograph)</h2>
+<p>Uses reflected sunlight to transmit Morse code over long distances (10+ miles in clear conditions). Heliographs were extensively used by military units for line-of-sight relay communication before radio. This method requires no batteries, chemicals, or specialized equipment beyond a mirror.</p>
+<h3>Aiming and Alignment</h3>
+<ul>
+<li><strong>Verify target direction:</strong> Note sun position relative to target. Mirror must be angled to reflect sunlight toward target.</li>
+<li><strong>Finger alignment:</strong> Hold hand in front of mirror, fingers pointing toward target. Adjust mirror angle until sun reflects onto finger (alignment check).</li>
+<li><strong>Verification:</strong> Observer at target location should see bright flash. If not, move mirror angle slightly until flash is visible.</li>
+<li><strong>Sighting hole method:</strong> If mirror has sighting hole, position eye behind hole; see sun reflection through hole aligned with target.</li>
+</ul>
+<h3>Transmission</h3>
+<ul>
+<li><strong>Shutter mechanism:</strong> Metal flaps or hand blocks sunlight to create dots (brief flash) and dashes (longer flash).</li>
+<li><strong>Dot timing:</strong> 0.1-0.2 second flash</li>
+<li><strong>Dash timing:</strong> 0.3-0.5 second flash</li>
+<li><strong>Letter spacing:</strong> 0.3-0.5 second pause between letters</li>
+<li><strong>Transmission speed:</strong> 15-25 words per minute (slower than semaphore due to positioning)</li>
+</ul>
+<h3>Mirror Construction</h3>
+<ul>
+<li><strong>Material:</strong> Polished metal (aluminum, copper) or glass with reflective backing. 3-6 inches square minimum for 1-2 mile range; 8-12 inches for 5+ miles.</li>
+<li><strong>Sighting hole:</strong> Small hole drilled through mirror (for finger/eye alignment). Hole should not impede reflection.</li>
+<li><strong>Mount:</strong> Tripod or hand-held; must remain stable during transmission. Slight hand tremor creates readable flicker.</li>
+<li><strong>Reflective surface:</strong> Aluminum foil glued to plywood works in emergency. Polish regularly; tarnish reduces range by 30-50%.</li>
+</ul>
+<h3>Range Performance by Conditions</h3>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Mirror Size</th>
+<th>Visibility Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clear day, sea level</td>
+<td>3×3 inches</td>
+<td>2-3 miles</td>
+</tr>
+<tr>
+<td>Clear day, mountain terrain</td>
+<td>6×6 inches</td>
+<td>5-8 miles</td>
+</tr>
+<tr>
+<td>Clear day, elevated position</td>
+<td>12×12 inches</td>
+<td>10-15 miles</td>
+</tr>
+<tr>
+<td>Haze / light fog</td>
+<td>6×6 inches</td>
+<td>2-3 miles</td>
+</tr>
+<tr>
+<td>Humid / dust</td>
+<td>12×12 inches</td>
+<td>3-5 miles</td>
+</tr>
+</tbody>
+</table>
+<div class="tip">
+<p>Practice heliograph aiming in daylight with a partner. Start at 1 mile distance; synchronize watches to confirm message reception timing. Mirror angles shift with sun position — compensate continuously during extended transmissions.</p>
+</div>
+<div class="warning">
+<p>Never shine heliograph beam into aircraft or helicopters — can blind pilots and trigger emergency response. Confirm target position before signaling.</p>
+</div>
+<h2 id="whistle-code-patterns">Whistle Code Patterns</h2>
+<p>Simple whistle signals communicate basic information without equipment. Whistles are highly portable, require no fuel, and can project sound 1-2 miles in favorable conditions.</p>
+<h3>Standard Whistle Code</h3>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Pattern</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 long blast</td>
+<td>2-3 seconds</td>
+<td>Attention / Listen up</td>
+</tr>
+<tr>
+<td>2 short blasts</td>
+<td>1 second each</td>
+<td>Affirmative / Yes / Understood</td>
+</tr>
+<tr>
+<td>3 short blasts</td>
+<td>1 second each</td>
+<td>Distress / SOS / Help needed</td>
+</tr>
+<tr>
+<td>Rapid repeating</td>
+<td>0.5 second intervals</td>
+<td>Danger / Retreat / Evacuate</td>
+</tr>
+<tr>
+<td>Single short</td>
+<td>0.3 second</td>
+<td>Question / Are you there?</td>
+</tr>
+<tr>
+<td>2 long, 1 short</td>
+<td>2 sec, 2 sec, 1 sec</td>
+<td>&quot;Lost&quot; / Need assistance finding location</td>
+</tr>
+<tr>
+<td>1 long, 2 short</td>
+<td>2 sec, 1 sec, 1 sec</td>
+<td>&quot;Stay put&quot; / Do not move</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Range:</strong> Up to 1 mile in quiet conditions; 200-400 yards in moderate wind; 50-100 yards in forest</p>
+<h3>Whistle Types &amp; Carry Characteristics</h3>
+<p><strong>Pea whistle (survival):</strong> 90-110 dB, 2-4 kHz frequency. Loudest. Standard issue in lifeboats and emergency kits.</p>
+<p><strong>Fox whistle (silent):</strong> High frequency (20+ kHz), inaudible to human ears at distance but travels efficiently. Useful for group coordination where noise silence is critical.</p>
+<p><strong>Pipe whistle:</strong> 80-90 dB, 1-3 kHz. Quieter than pea; requires practice for consistent output.</p>
+<div class="tip">
+<p>Carry a whistle on keychain or cord. Test function monthly. Store in ziplock to prevent water/sand from clogging. Three blasts is universal distress signal.</p>
+</div>
+<h2 id="smoke-signal-communication">Smoke Signal Communication</h2>
+<p>Day-time signaling using smoke puffs from controlled fire. More controllable than continuous smoke, and less fuel-intensive. Visibility extends to 5-10 miles on clear days.</p>
+<h3>Smoke Signal Patterns</h3>
+<ul>
+<li><strong>1 puff:</strong> &quot;Attention&quot; / &quot;I am here&quot; / &quot;Message follows&quot;</li>
+<li><strong>2 puffs:</strong> &quot;All well&quot; / &quot;Message received&quot; / &quot;Affirmative&quot;</li>
+<li><strong>3 puffs:</strong> &quot;Danger&quot; / &quot;Help needed&quot; / &quot;Emergency&quot; (may be repeated)</li>
+<li><strong>4+ puffs:</strong> Specific coded message (pre-arranged with receiver)</li>
+<li><strong>Rapid puffs:</strong> Alarm / immediate threat / urgent action</li>
+<li><strong>Continuous smoke:</strong> Smoke screen / concealment / &quot;stand by&quot;</li>
+</ul>
+<h3>Timing</h3>
+<ul>
+<li><strong>Puff duration:</strong> 0.5-1 second each</li>
+<li><strong>Pause between puffs:</strong> 1-2 seconds (allows puffs to separate visually)</li>
+<li><strong>Pause between message sequences:</strong> 5-10 seconds</li>
+<li><strong>Total transmission:</strong> Repeat pattern 3-5 times to ensure detection</li>
+</ul>
+<h3>Fire Fuel Selection for Maximum Smoke</h3>
+<ul>
+<li><strong>Day-time smoke:</strong> Green branches (elm, birch), fresh leaves, wet straw create thick white smoke (visible in daylight)</li>
+<li><strong>Best cover smoke:</strong> Wet pine needles, damp grass, fresh pine boughs produce maximum volume and white color</li>
+<li><strong>Blanket control:</strong> Place blanket or canvas over fire briefly, remove to create puff (dampens draft, then released air forces smoke upward)</li>
+<li><strong>Fuel ratio:</strong> 1/3 dry (for sustained flame), 2/3 green/wet (for smoke volume)</li>
+</ul>
+<div class="info-box">
+<p><strong>Smoke contrast:</strong> Smoke visibility depends on sky color. White smoke shows best against blue sky. On overcast days, slightly darker smoke (from less wet fuel) may be more visible.</p>
+</div>
+<h3>Smoke Signal Deployment</h3>
+<p>Build base fire on highest visible ground, in open area away from tree cover. Keep green fuel nearby for rapid puff generation. Station observer to watch for receiver acknowledgment. Continue until confirmed received or assume message unsuccessful.</p>
+<h2 id="signal-fire-fuel-selection">Signal Fire Fuel Selection</h2>
+<p>Signal fires operate on different principles by day and night.</p>
+<h3>Day-Time Visibility (Smoke-Based)</h3>
+<ul>
+<li><strong>Target:</strong> Maximum white smoke that contrasts daylight sky</li>
+<li><strong>Green vegetation:</strong> Newly cut branches (willow, aspen), leaves, wet grass</li>
+<li><strong>Technique:</strong> Build base fire with dry wood; add green material on top to create smoke without smothering flame</li>
+<li><strong>Fuel ratio:</strong> 1/3 dry (for flame), 2/3 green (for smoke)</li>
+<li><strong>Optimal dimensions:</strong> 6-8 foot diameter base, stacked 2-3 feet high before lighting</li>
+<li><strong>Visibility range:</strong> 10-15 miles on clear day with large fire</li>
+</ul>
+<h3>Night-Time Visibility (Flame-Based)</h3>
+<ul>
+<li><strong>Target:</strong> Bright visible flame; smoke is invisible at night</li>
+<li><strong>Dry wood:</strong> Seasoned hardwood (oak, hickory, birch) burns bright and steady</li>
+<li><strong>Height:</strong> Stack fuel 6-10 feet high; flame visible from greater distance than 3-foot fire</li>
+<li><strong>Fuel ratio:</strong> 100% dry wood; no smoke (minimizes light loss)</li>
+<li><strong>Visibility range:</strong> 5-20 miles depending on height and fuel quality</li>
+</ul>
+<h3>Best Practices</h3>
+<ul>
+<li><strong>Placement:</strong> Build fires on high ground, exposed location (hilltop, clearing, ridge). Not hidden in forest.</li>
+<li><strong>Size reference:</strong> Three fires in triangle pattern (standard international distress signal) more recognizable than single fire. Space 100+ yards apart.</li>
+<li><strong>Tending:</strong> Maintain fire continuously; disappearance suggests abandonment or loss of need. Change shift every 2-4 hours.</li>
+<li><strong>Fuel stockpiling:</strong> Gather 2-3 days fuel before lighting. Running out mid-rescue attempt damages credibility.</li>
+<li><strong>Wind positioning:</strong> Position fire so smoke blows toward populated areas (downwind of search routes).</li>
+</ul>
+<h2 id="equipment-amp-components-building-improvised-signaling-gear">Equipment &amp; Components — Building Improvised Signaling Gear</h2>
+<h3>Semaphore Flags (DIY)</h3>
+<p><strong>Material:</strong> Bright cloth (red, yellow, or white) — 18×24 inch minimum. Cotton canvas works; silk is lighter.</p>
+<p><strong>Frame:</strong> Wooden dowels or branches, 4-5 feet long. Attach flags to frame with cordage or nails.</p>
+<p><strong>Assembly:</strong> Fold cloth square in half on one long edge; sew around three sides. Slip dowel through open end; sew closed. Reinforce corners with stitching.</p>
+<p><strong>Total weight:</strong> 4-6 ounces per flag. Pair of flags (0.5 lb) is negligible pack weight.</p>
+<h3>Heliograph Mirror</h3>
+<p><strong>Polished metal option:</strong> Aluminum sheet (24×24 inch) from hardware store, backed by plywood. Polish with fine steel wool until reflective.</p>
+<p><strong>Glass option:</strong> Removable mirror backing from picture frame. Glue 4-6 inch square to wooden block with clear epoxy.</p>
+<p><strong>Sighting hole:</strong> Drill 3/8-inch hole through center or off-center (if mirror will be held at angle).</p>
+<p><strong>Improvised base:</strong> Three sticks or tripod mount (camera tripod works). Must allow fine angle adjustment.</p>
+<p><strong>Cost (scrap materials):</strong> Under $5. Cost (new): $15-30.</p>
+<h3>Whistle Selection</h3>
+<p><strong>Ideal survival whistle:</strong> High-output pea whistle (Storm or Acme brand). 90+ dB output, compact, waterproof.</p>
+<p><strong>Emergency alternative:</strong> Bone or wood whistle (carved or salvaged). Less reliable but functional.</p>
+<p><strong>Multi-use:</strong> Combination whistle + compass + thermometer in survival kits.</p>
+<p><strong>Maintenance:</strong> Test monthly. Clean if water-logged (soak in hot water, blow dry).</p>
+<h3>Fire Fuel Preparation</h3>
+<p><strong>Dry tinder bundle:</strong> Pine bark, dry grass, cattail down. Stored in waterproof container.</p>
+<p><strong>Kindling:</strong> Pencil-sized dry branches, sorted by size.</p>
+<p><strong>Green fuel cache:</strong> Gathered on-site (fresh branches, wet leaves). Keep pile nearby before signaling.</p>
+<h2 id="operating-procedures-effective-signaling-protocol">Operating Procedures — Effective Signaling Protocol</h2>
+<h3>Semaphore Transmission Protocol</h3>
+<ol>
+<li><strong>Establish attention:</strong> Wave both flags side-to-side 3-5 times.</li>
+<li><strong>Wait for acknowledgment:</strong> Receiver responds with single flag wave or return wave.</li>
+<li><strong>Send message letter-by-letter:</strong> Move to position for each letter, hold 1-2 seconds.</li>
+<li><strong>Indicate space:</strong> Drop flags to sides briefly.</li>
+<li><strong>Confirm reception:</strong> Receiver performs letter confirmation (single position).</li>
+<li><strong>Repeat if unclear:</strong> Re-transmit any confused letters at 25% normal speed.</li>
+</ol>
+<p><strong>Typical speed:</strong> 10-15 words per minute (slower for clarity over distance).</p>
+<h3>Morse Code Transmission Rules</h3>
+<ol>
+<li><strong>Identify sender (callsign):</strong> Transmit 2-letter identifier three times (e.g., AB AB AB).</li>
+<li><strong>Send message:</strong> Letter by letter, with word spaces.</li>
+<li><strong>Signal end:</strong> Send &quot;END&quot; (. -. -..) or solid line (————).</li>
+<li><strong>Wait for acknowledgment:</strong> Receiver responds with &quot;K&quot; (-.-, &quot;go ahead&quot;) or &quot;R&quot; (. -., &quot;received&quot;).</li>
+<li><strong>Repeat if error:</strong> If receiver signals &quot;?&quot; (error), re-send word group.</li>
+</ol>
+<p><strong>Pro tip:</strong> Morse is easier sent slowly (15-20 wpm) and reliably received than fast (25+ wpm).</p>
+<h3>Heliograph Aiming &amp; Transmission</h3>
+<ol>
+<li><strong>Determine target bearing:</strong> Use compass or sun position to locate receiver direction.</li>
+<li><strong>Angle mirror:</strong> Bring sunlight reflection toward target. Hand-held alignment: hold arm with fingers toward target, angle mirror until sunlight reflects on finger.</li>
+<li><strong>Test flash:</strong> Single test flash to target. Pause 5 seconds for acknowledgment.</li>
+<li><strong>Begin transmission:</strong> Send &quot;DE&quot; (from) + callsign, then message.</li>
+<li><strong>Maintain alignment:</strong> Sun moves ~15 degrees per hour. Continuously adjust mirror angle throughout transmission.</li>
+<li><strong>Confirm receipt:</strong> Receiver should respond with mirror flashes (if equipped) or prearranged signal.</li>
+</ol>
+<h3>Whistle Protocol</h3>
+<ol>
+<li><strong>Establish attention:</strong> 1 long blast (2-3 sec).</li>
+<li><strong>Await response:</strong> Listen 10 seconds for return signal.</li>
+<li><strong>Send message:</strong> Use code patterns. Repeat 2-3 times if no immediate response.</li>
+<li><strong>Confirm understanding:</strong> 2 short blasts from receiver = understood.</li>
+</ol>
+<p><strong>Safety note:</strong> Three blasts indicates distress. Do not use casually.</p>
+<h2 id="range-amp-performance-realistic-communication-distances">Range &amp; Performance — Realistic Communication Distances</h2>
+<p>Actual range varies widely by conditions. These are realistic field ranges (not ideal lab conditions):</p>
+<table style="width:100%; border-collapse:collapse; margin:20px 0;"><thead><tr style="background-color:#2d2416; border-bottom:2px solid #d4a574;">
+<th style="padding:10px; text-align:left; border:1px solid #3a3a3a;">Method</th>
+<th style="padding:10px; text-align:left; border:1px solid #3a3a3a;">Range (Ideal)</th>
+<th style="padding:10px; text-align:left; border:1px solid #3a3a3a;">Range (Typical)</th>
+<th style="padding:10px; text-align:left; border:1px solid #3a3a3a;">Range (Poor Conditions)</th>
+</tr></thead><tbody><tr>
+<td style="padding:10px; border:1px solid #3a3a3a;">Semaphore (2 flags)</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">1-2 miles</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">0.5 miles</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">200-300 yards</td>
+</tr><tr>
+<td style="padding:10px; border:1px solid #3a3a3a;">Morse Code (sound)</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">5+ miles</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">1-3 miles</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">100-500 yards</td>
+</tr><tr>
+<td style="padding:10px; border:1px solid #3a3a3a;">Heliograph (mirror)</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">15-20 miles</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">5-10 miles</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">1-2 miles</td>
+</tr><tr>
+<td style="padding:10px; border:1px solid #3a3a3a;">Whistle (high-output)</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">2-3 miles</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">0.5-1 mile</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">50-200 yards</td>
+</tr><tr>
+<td style="padding:10px; border:1px solid #3a3a3a;">Smoke puffs (day)</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">10-15 miles</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">3-8 miles</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">0.5-2 miles</td>
+</tr><tr>
+<td style="padding:10px; border:1px solid #3a3a3a;">Signal fire (night)</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">20+ miles</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">5-15 miles</td>
+<td style="padding:10px; border:1px solid #3a3a3a;">1-5 miles</td>
+</tr></tbody></table>
+<h3>Factors That Reduce Range</h3>
+<ul>
+<li><strong>Fog/humidity:</strong> Reduces visual signals by 50-80%; does not affect sound</li>
+<li><strong>Rain:</strong> Reduces all visual signals significantly; enhances sound travel slightly</li>
+<li><strong>Dense forest:</strong> Line-of-sight methods nearly impossible; whistles better</li>
+<li><strong>Wind:</strong> Affects whistle clarity; no effect on visual signals</li>
+<li><strong>Time of day:</strong> Haze/heat shimmer reduce heliograph range in afternoon; best in morning</li>
+<li><strong>Receiver attention:</strong> Distracted observer may miss visual signal despite adequate range</li>
+<li><strong>Sender fatigue:</strong> Unclear transmissions increase error rates; frequent repeats reduce effective range</li>
+</ul>
+<h2 id="troubleshooting-diagnosing-communication-failures">Troubleshooting — Diagnosing Communication Failures</h2>
+<h3>No Signal Received — Semaphore or Heliograph</h3>
+<p><strong>Problem:</strong> Receiver does not acknowledge transmission.</p>
+<p><strong>Diagnosis &amp; fixes:</strong></p>
+<ul>
+<li><strong>Receiver not watching:</strong> Establish attention signal (larger flag waves or mirror flashes); increase volume before actual message</li>
+<li><strong>Receiver out of range:</strong> Attempt from higher ground; move 25-50% closer</li>
+<li><strong>Obstruction:</strong> Check line-of-sight for trees, terrain, buildings. Reposition to clear line.</li>
+<li><strong>Weather deteriorating:</strong> Fog, rain, or haze reduces visibility. Attempt during clearer window (morning often better than afternoon)</li>
+<li><strong>Flags/mirror dirty:</strong> Clean flag fabric or polish mirror. Tarnish or dust reduces range 30-50%.</li>
+<li><strong>Angle incorrect (heliograph):</strong> Sun position shifts ~1 degree every 4 minutes. Re-verify alignment if transmission takes 10+ minutes.</li>
+</ul>
+<h3>Weak or Intermittent Signal — Whistle</h3>
+<p><strong>Problem:</strong> Receiver hears signal but faintly or inconsistently.</p>
+<p><strong>Diagnosis &amp; fixes:</strong></p>
+<ul>
+<li><strong>Whistle clogged:</strong> Water or debris blocks sound. Soak in hot water; blow sharply to clear.</li>
+<li><strong>Sender technique:</strong> Whistle requires sharp breath, not gentle blowing. Place hole against lower lip; deliver quick breath pulse.</li>
+<li><strong>Wind direction:</strong> Wind carries sound away. Reposition upwind of receiver or angle transmission 45 degrees across wind.</li>
+<li><strong>Ambient noise:</strong> Heavy rain, machinery, crowds mask whistle. Move away from noise source or use faster signal pattern (rapid blasts cut through)</li>
+<li><strong>Receiver fatigue:</strong> Ears adjust to constant sound. Use pattern breaks (3 sec silence) between messages.</li>
+</ul>
+<h3>Morse Code Misunderstandings</h3>
+<p><strong>Problem:</strong> Receiver confirms reception but decodes message incorrectly.</p>
+<p><strong>Diagnosis &amp; fixes:</strong></p>
+<ul>
+<li><strong>Timing errors:</strong> Dots and dashes too similar length. Use metronome or tap rhythm check. Dashes should be 3× dot length.</li>
+<li><strong>Spacing unclear:</strong> Insufficient pause between letters. Increase letter spacing from 1 unit to 2-3 units.</li>
+<li><strong>Transmission speed too high:</strong> Reduce from 20 wpm to 12-15 wpm. Receiver will signal errors (&quot;?&quot;); repeat at slower speed.</li>
+<li><strong>Signal strength uneven:</strong> Some letters/dashes louder than others. Maintain even amplitude throughout transmission.</li>
+<li><strong>Acoustic interference:</strong> Echo, reverberation, or background noise. Move to more open area or shift frequency if using sound-based method.</li>
+</ul>
+<h2 id="maintenance-equipment-care-amp-longevity">Maintenance — Equipment Care &amp; Longevity</h2>
+<h3>Semaphore Flags</h3>
+<p><strong>Inspection:</strong> Check flags monthly for tears, rips. Clean after beach/salt use.</p>
+<p><strong>Repairs:</strong> Sew torn cloth; replace if rotted. Repaint faded flags with bright enamel.</p>
+<p><strong>Storage:</strong> Keep in dry location. Mildew develops on damp cloth. Store in cotton bag (breathable).</p>
+<p><strong>Lifespan:</strong> Flags last 3-5 years with normal use. Replace when color fades &gt;50%.</p>
+<h3>Heliograph Mirror</h3>
+<p><strong>Polishing:</strong> Polish aluminum mirror quarterly with fine steel wool (#0000 grade). Tarnish reduces reflectivity 30-50% over 12 months.</p>
+<p><strong>Optical glass:</strong> Protect reflective backing from moisture. Prevent separating by storing in sealed container with silica desiccant.</p>
+<p><strong>Sighting hole:</strong> Keep clean. Use small brush or pipe cleaner to clear dust.</p>
+<p><strong>Mount inspection:</strong> Check tripod or wooden base for cracks, looseness. Tighten all joints before use.</p>
+<p><strong>Lifespan:</strong> Aluminum mirrors last 5-10 years; glass mirrors 10+ years with minimal maintenance.</p>
+<h3>Whistles</h3>
+<p><strong>Functional check:</strong> Test monthly. Pea should rattle freely; whistle should produce clear tone.</p>
+<p><strong>Water cleaning:</strong> Submerge in hot water (not boiling) for 2 minutes if waterlogged. Shake out water; blow sharply 5-10 times to clear pea.</p>
+<p><strong>Storage:</strong> Keep in dry location. Salt water corrodes metal; rinse immediately after salt-water use.</p>
+<p><strong>Lifespan:</strong> High-quality whistles last 10+ years; pea may wear and become less responsive after 5+ years of heavy use.</p>
+<h2 id="security-amp-encryption-protecting-transmitted-messages">Security &amp; Encryption — Protecting Transmitted Messages</h2>
+<p>In survival situations, transmitted signals may be intercepted by hostile parties, competitors, or thieves. Basic security practices are essential:</p>
+<h3>Visual Signal Security</h3>
+<p><strong>Semaphore &amp; Heliograph:</strong> Both are visible to anyone in sight line. Distance provides security (observer must be 0.5+ miles away to clearly read flags).</p>
+<p><strong>Countermeasure — encoding:</strong> Use prearranged code words. Example: &quot;John&quot; = &quot;all well&quot;; &quot;George&quot; = &quot;in danger.&quot; Receiver must know codebook.</p>
+<p><strong>Countermeasure — short bursts:</strong> Transmit only essential information. Longer messages increase chance of interception/decoding.</p>
+<h3>Acoustic Security</h3>
+<p><strong>Whistle &amp; Morse code (sound):</strong> Detectable by anyone within earshot. Whistle patterns are pre-set standard codes (difficult to customize).</p>
+<p><strong>Countermeasure — non-standard patterns:</strong> Use custom whistle sequences not in public codebooks. Transmit to specific receiver only at prearranged time/frequency.</p>
+<p><strong>Countermeasure — coded callsigns:</strong> Use identifier only receiver recognizes (personal nickname, non-standard abbreviation).</p>
+<h3>Smoke Signals</h3>
+<p><strong>Inherently public:</strong> Smoke plumes visible to all observers. Cannot be encrypted effectively.</p>
+<p><strong>Use case:</strong> Reserve for life-safety distress signals (SAR operations) where interception risk is low.</p>
+<h3>Best Practices for Secure Communication</h3>
+<ol>
+<li><strong>Prearrange code:</strong> Agree on codebook/cipher with receiver before separation. Example: Shift each letter by 3 (A→D, B→E, etc.)</li>
+<li><strong>Use brevity codes:</strong> Standardized short messages: QRZ = &quot;Who is calling?&quot;, QRX = &quot;Stand by&quot;, QSL = &quot;Acknowledged&quot;</li>
+<li><strong>Authenticate identity:</strong> Always transmit personal identifier receiver can verify. Prevents impersonation.</li>
+<li><strong>Limit frequency:</strong> Transmit on schedule (e.g., 0600 UTC daily only) rather than on-demand. Reduces detection window.</li>
+<li><strong>Change methods:</strong> Alternate between semaphore, Morse sound, and other methods. Pattern recognition attacks fail if method changes.</li>
+</ol>
+<div class="tip">
+<p>If transmitting distress with non-standard equipment, include clear identifier: &quot;This is civilian emergency signal, not military communication.&quot; Prevents accidental confusion with hostile forces.</p>
+</div>
+<h2 id="common-mistakes-error-patterns-amp-prevention">Common Mistakes — Error Patterns &amp; Prevention</h2>
+<p><strong>Mistake 1: Assuming sender always transmits faster = clearer</strong>
+Morse code at 25 wpm with unclear timing causes more errors than 12 wpm with perfect rhythm. Slow down if receiver reports errors.</p>
+<p><strong>Mistake 2: Forgetting that weather changes transmission range</strong>
+Range deteriorates rapidly in afternoon haze or with approaching rain. Morning transmission succeeds where afternoon fails with identical equipment.</p>
+<p><strong>Mistake 3: Positioning signal fires in low areas</strong>
+Receiver on higher ground may miss fire completely if fire is placed in depression or surrounded by trees. Always choose highest visible ground.</p>
+<p><strong>Mistake 4: Overestimating visibility of single signal fire at night</strong>
+One campfire-size fire visible 3-5 miles; must stack 6-8 feet high for 10+ mile visibility. Receiver may assume it's natural fire, not distress signal.</p>
+<p><strong>Mistake 5: Using semaphore with receiver side-on or facing away</strong>
+Flag positions are meaningless if receiver faces perpendicular. Ensure receiver faces you directly. Test with receiver 100 yards away before attempting distance transmissions.</p>
+<p><strong>Mistake 6: Failing to account for observer attention</strong>
+Receiver who isn't actively watching will miss signal completely. Establish attention signal first (large wave, long whistle), wait for acknowledgment before sending message.</p>
+<p><strong>Mistake 7: Transmitting continuously without pause</strong>
+Receiver needs time to understand letters, write down message. Transmit slowly with 1-2 second pauses between letters.</p>
+<p><strong>Mistake 8: Carrying whistle without testing it monthly</strong>
+After months in pack, moisture or salt corrosion may render whistle silent. Test on purchase and monthly thereafter.</p>
+<div class="warning">
+<p>Do not use distress signals (three blasts, SOS, three fires) in non-emergency situations. Emergency services take all distress signals seriously, resulting in costly search operations and damaged credibility.</p>
+</div>
+<h2 id="safety-hazards-and-precautions">Safety — Hazards and Precautions</h2>
+<h3>Fire-Related Hazards</h3>
+<p><strong>Signal fires:</strong> Unattended fires spread rapidly in dry conditions. Never light signal fire without:</p>
+<ul>
+<li>Clear space 15+ feet around fire</li>
+<li>Nearby water source or extinguishing method</li>
+<li>Constant attendance while burning</li>
+<li>Plan to extinguish (water, dirt, sand available)</li>
+</ul>
+<p><strong>Smoke inhalation:</strong> Tend signal fire only from upwind direction. Smoke inhalation in enclosed areas (caves, shelters) causes rapid oxygen depletion.</p>
+<h3>Mirror Flash Hazards</h3>
+<p><strong>Eye injury:</strong> Concentrated sunlight can cause permanent eye damage if flash directed into eyes. Never signal aircraft or people directly below (reflected flash can blind).</p>
+<p><strong>Unintended signals:</strong> Heliograph beams visible 10+ miles may be misinterpreted as threat or trigger military response. Use only in SAR contexts with pre-announcement.</p>
+<h3>Acoustic Hazards</h3>
+<p><strong>Hearing damage:</strong> Prolonged exposure to high-decibel whistles (100+ dB) can cause temporary or permanent hearing loss. Limit continuous whistle use to &lt;5 minutes; use earplugs if sustained signaling required.</p>
+<p><strong>Repetitive stress:</strong> Semaphore arm motions repeated for hours cause shoulder/arm fatigue and potential injury. Take 15-minute rest breaks every hour.</p>
+<h3>Environmental Hazards</h3>
+<p><strong>Altitude effects:</strong> At elevations &gt;8000 feet, exertion (flag waving) increases fatigue and reduces transmission quality. Acclimatize before heavy signaling.</p>
+<p><strong>Cold weather:</strong> Fingers numb rapidly in sub-freezing conditions, reducing grip strength and precision. Wear gloves with mittens over (remove mittens briefly for transmission only).</p>
+<p><strong>Heat stress:</strong> Desert sun intensifies dehydration. Maintain water supply and electrolytes during extended signaling in &gt;85F conditions.</p>
+<hr>
+<h2 id="reference-tables-amp-quick-lookup">Reference Tables &amp; Quick Lookup</h2>
+<h3>Morse Code Complete Alphabet &amp; Numbers</h3>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>.-</th>
+<th>B</th>
+<th>-...</th>
+<th>C</th>
+<th>-.-.</th>
+<th>D</th>
+<th>-..</th>
+<th>E</th>
+<th>.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F</td>
+<td>..-.</td>
+<td>G</td>
+<td>--.</td>
+<td>H</td>
+<td>....</td>
+<td>I</td>
+<td>..</td>
+<td>J</td>
+<td>.---</td>
+</tr>
+<tr>
+<td>K</td>
+<td>-.-</td>
+<td>L</td>
+<td>.-..</td>
+<td>M</td>
+<td>--</td>
+<td>N</td>
+<td>-.</td>
+<td>O</td>
+<td>---</td>
+</tr>
+<tr>
+<td>P</td>
+<td>.--.</td>
+<td>Q</td>
+<td>--.-</td>
+<td>R</td>
+<td>.-.</td>
+<td>S</td>
+<td>...</td>
+<td>T</td>
+<td>-</td>
+</tr>
+<tr>
+<td>U</td>
+<td>..-</td>
+<td>V</td>
+<td>...-</td>
+<td>W</td>
+<td>.--</td>
+<td>X</td>
+<td>-..-</td>
+<td>Y</td>
+<td>-.--</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>--..</td>
+<td>0</td>
+<td>-----</td>
+<td>1</td>
+<td>.----</td>
+<td>2</td>
+<td>..---</td>
+<td>3</td>
+<td>...--</td>
+</tr>
+<tr>
+<td>4</td>
+<td>....-</td>
+<td>5</td>
+<td>.....</td>
+<td>6</td>
+<td>-....</td>
+<td>7</td>
+<td>--...</td>
+<td>8</td>
+<td>---..</td>
+</tr>
+<tr>
+<td>9</td>
+<td>----.</td>
+<td>. (period)</td>
+<td>.-.-.-</td>
+<td>, (comma)</td>
+<td>--..--</td>
+<td>?</td>
+<td>..--..</td>
+<td>/</td>
+<td>-..-.</td>
+</tr>
+</tbody>
+</table>
+<h3>Signal Fire Fuel Table</h3>
+<table>
+<thead>
+<tr>
+<th>Fuel Type</th>
+<th>Best Use</th>
+<th>Smoke Color</th>
+<th>Duration</th>
+<th>Availability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dry hardwood (oak, hickory)</td>
+<td>Night flame</td>
+<td>N/A (flame)</td>
+<td>2-4 hours per cord</td>
+<td>Forests, deadfall</td>
+</tr>
+<tr>
+<td>Green branches (fresh cut)</td>
+<td>Day smoke</td>
+<td>White</td>
+<td>30 min per armful</td>
+<td>Year-round</td>
+</tr>
+<tr>
+<td>Pine/fir boughs</td>
+<td>Day smoke</td>
+<td>White w/ haze</td>
+<td>20 min per armful</td>
+<td>Coniferous forests</td>
+</tr>
+<tr>
+<td>Wet leaves/grass</td>
+<td>Day smoke dense</td>
+<td>Gray-white</td>
+<td>15 min per bucket</td>
+<td>Wetlands, meadows</td>
+</tr>
+<tr>
+<td>Bark sheets (birch)</td>
+<td>Emergency fast</td>
+<td>Tan/brown</td>
+<td>10 min</td>
+<td>Limited (endangered species)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<!-- SVG-TODO: Semaphore flag positions A through L diagram -->
+<!-- SVG-TODO: Heliograph mirror angle diagram showing sun alignment and target -->
+<!-- SVG-TODO: Morse code timing diagram showing dot/dash/space proportions -->
+<!-- SVG-TODO: Whistle frequency response chart -->
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="cryptography-codes.html">Cryptography &amp; Codes</a>
+<a href="flight-balloons.html">Flight, Balloons &amp; Kites</a>
+<a href="ham-radio.html">Ham Radio &amp; Communications</a>
+<a href="pigeon-keeping-messenger.html">Pigeon Keeping &amp; Messenger Birds</a>
+<a href="postal-service-establishment.html">Postal Service &amp; Communication Networks</a>
+<a href="quick-reference.html">Quick Reference Cards</a>
+<a href="sign-language-communication.html">Visual Communication &amp; Sign Language</a>
+<a href="telecommunications.html">Telecommunications</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

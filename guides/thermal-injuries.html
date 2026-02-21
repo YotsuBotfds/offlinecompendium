@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/thermal-injuries.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thermal Injuries: Hypothermia &amp; Heat Stroke - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.temp-table th { background: var(--card); }
+.protocol-steps { counter-reset: step; list-style: none; padding-left: 0; }
+.protocol-steps li { counter-increment: step; margin-bottom: 0.5rem; }
+.protocol-steps li::before { content: "Step " counter(step) ": "; font-weight: bold; color: var(--accent); }
+
+</style>
+<meta name="description" content="Recognition, staging, field treatment, and prevention of hypothermia and heat stroke. Covers heat exhaustion progression, core temperature thresholds, rewarming protocols, cooling techniques, and fluid/electrolyte replacement in austere environments.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/thermal-injuries.html">
+<meta property="og:title" content="Thermal Injuries: Hypothermia &amp; Heat Stroke">
+<meta property="og:description" content="Recognition, staging, field treatment, and prevention of hypothermia and heat stroke. Covers heat exhaustion progression, core temperature thresholds, rewarming protocols, cooling techniques, and fluid/electrolyte replacement in austere environments.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Medical &amp; Health", "item": "https://zerotoherohero.com/#sec-medical"},
+    {"@type": "ListItem", "position": 3, "name": "Thermal Injuries: Hypothermia &amp; Heat Stroke", "item": "https://zerotoherohero.com/guides/thermal-injuries.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Thermal Injuries: Hypothermia &amp; Heat Stroke",
+  "description": "Recognition, staging, field treatment, and prevention of hypothermia and heat stroke. Covers heat exhaustion progression, core temperature thresholds, rewarming protocols, cooling techniques, and fluid/electrolyte replacement in austere environments.",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-526">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-medical">Medical &amp; Health</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Thermal Injuries: Hypothermia &amp; Heat Stroke</span>
+</nav>
+<header>
+<h1>Thermal Injuries: Hypothermia &amp; Heat Stroke</h1>
+<p class="subtitle">Recognition, staging, field treatment, and prevention of hypothermia and heat stroke. Covers heat exhaustion progression, core temperature thresholds, rewarming protocols, cooling techniques, and fluid/electrolyte replacement in austere environments.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~12 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">1. Overview: Why Thermal Injuries Kill</a></li>
+<li><a href="#heat-exhaustion">2. Heat Exhaustion: Recognition &amp; Treatment</a></li>
+<li><a href="#heat-stroke">3. Heat Stroke: Life-Threatening Emergency</a></li>
+<li><a href="#heat-prevention">4. Heat Injury Prevention</a></li>
+<li><a href="#hypothermia-overview">5. Hypothermia: Recognition &amp; Stages</a></li>
+<li><a href="#hypothermia-treatment">6. Hypothermia Field Treatment</a></li>
+<li><a href="#hypothermia-prevention">7. Hypothermia Prevention</a></li>
+<li><a href="#special-populations">8. Special Populations &amp; Considerations</a></li>
+<li><a href="#field-assessment">9. Field Assessment Without Equipment</a></li>
+<li><a href="#reference">10. Emergency Quick Reference</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<div class="warning">
+<p><strong>Life-Threatening Conditions:</strong> Both heat stroke and severe hypothermia are medical emergencies that kill within minutes to hours if untreated. Learn the recognition signs now — you will not have time to read this guide when someone is dying. Practice these protocols before you need them.</p>
+</div>
+<div class="info-box">
+<p>This guide covers the emergency medical aspects of temperature-related injuries. For environmental control, passive heating/cooling systems, insulation, and shelter thermal design, see <a href="../heat-management.html">Heat Management</a>. For general trauma response and first aid procedures, see <a href="../first-aid.html">First Aid</a>.</p>
+</div>
+<section id="overview">
+<h2>1. Overview: Why Thermal Injuries Kill</h2>
+<p>The human body operates within an extremely narrow core temperature range — approximately 97.0-99.5°F (36.1-37.5°C). Deviation of just a few degrees in either direction triggers cascading physiological failure. Thermal injuries account for more wilderness deaths than animal attacks, falls, and drowning combined.</p>
+<p><strong>Two categories of thermal injury:</strong></p>
+<ol>
+<li><strong>Hyperthermia (overheating):</strong> Heat exhaustion progressing to heat stroke — the body's cooling system overwhelmed or failing</li>
+<li><strong>Hypothermia (overcooling):</strong> Progressive loss of core temperature — the body's heat generation unable to match heat loss</li>
+</ol>
+<p>Both conditions share a dangerous characteristic: <strong>cognitive impairment is an early symptom</strong>. Victims often cannot recognize their own deterioration, making bystander recognition critical.</p>
+<h3>The Thermoregulatory System</h3>
+<p>The body manages temperature through four mechanisms:</p>
+<ul>
+<li><strong>Radiation:</strong> Infrared heat emission from skin (accounts for ~40% of heat loss at rest)</li>
+<li><strong>Conduction:</strong> Direct heat transfer through contact with surfaces (significant when lying on cold ground)</li>
+<li><strong>Convection:</strong> Heat carried away by moving air or water (wind chill, immersion)</li>
+<li><strong>Evaporation:</strong> Sweating and respiratory moisture (primary cooling mechanism in heat)</li>
+</ul>
+<p>Understanding these mechanisms is essential because treatment for thermal injuries targets specific pathways. Cooling a heat stroke victim uses conduction (ice packs) and evaporation (misting). Treating hypothermia blocks convective and conductive loss (shelter from wind, insulation from ground).</p>
+</section>
+<section id="heat-exhaustion">
+<h2>2. Heat Exhaustion: Recognition &amp; Treatment</h2>
+<p>Heat exhaustion is the body's warning that its cooling system is overwhelmed. It is reversible with prompt treatment but progresses to heat stroke if ignored.</p>
+<h3>Causes</h3>
+<ul>
+<li>Prolonged exertion in hot environments (&gt;85°F / 29°C)</li>
+<li>Inadequate fluid intake — dehydration reduces sweat production</li>
+<li>High humidity — prevents sweat evaporation, blocking the primary cooling pathway</li>
+<li>Lack of acclimatization — unacclimatized individuals lose 2-3x more sodium in sweat</li>
+<li>Medications that impair sweating (anticholinergics, antihistamines, beta-blockers)</li>
+</ul>
+<h3>Symptoms</h3>
+<ul>
+<li>Heavy sweating with weakness</li>
+<li>Dizziness, nausea, headache</li>
+<li>Cool, clammy skin</li>
+<li>Rapid weak pulse (100+ bpm)</li>
+<li>Normal to slightly elevated core temperature (up to 103°F / 39.4°C)</li>
+<li>Muscle cramps (from sodium depletion)</li>
+<li>Dark concentrated urine (dehydration marker)</li>
+</ul>
+<div class="tip">
+<p><strong>The sweating test:</strong> In heat exhaustion, the patient is still sweating — their cooling system is working but overwhelmed. When sweating stops, the condition has likely progressed to heat stroke.</p>
+</div>
+<h3>First Aid</h3>
+<ol>
+<li><strong>Move to cool location:</strong> Shade or any cooler area — even 5°F reduction helps</li>
+<li><strong>Drink fluids:</strong> Cool water or oral rehydration solution (salt + sugar in water)</li>
+<li><strong>Cool body:</strong> Remove excess clothing, apply cool wet cloths to skin, fan the patient</li>
+<li><strong>Rest:</strong> Lie down with legs elevated 8-12 inches (improves venous return)</li>
+<li><strong>Recovery:</strong> Usually responds to rest and fluids within 30-60 minutes</li>
+</ol>
+<h3>When Heat Exhaustion Becomes Dangerous</h3>
+<p>Seek emergency care if:</p>
+<ul>
+<li>Symptoms do not improve within 30 minutes of treatment</li>
+<li>Patient cannot keep fluids down (vomiting)</li>
+<li>Mental status changes (confusion, irritability, combativeness)</li>
+<li>Core temperature exceeds 103°F (39.4°C)</li>
+<li>Patient has pre-existing heart or kidney conditions</li>
+</ul>
+</section>
+<section id="heat-stroke">
+<h2>3. Heat Stroke: Life-Threatening Emergency</h2>
+<p>Heat stroke represents complete failure of the thermoregulatory system. Core temperature rises uncontrollably, causing organ damage and death if not reversed within 30-60 minutes. Mortality ranges from 10-80% depending on treatment delay.</p>
+<h3>Two Types</h3>
+<p><strong>Exertional heat stroke:</strong> Occurs in physically active individuals (laborers, hikers, soldiers) — typically younger, healthy people pushed beyond their cooling capacity.</p>
+<p><strong>Classic (non-exertional) heat stroke:</strong> Occurs during prolonged heat exposure without adequate cooling — typically affects elderly, chronically ill, or those without access to shade/water.</p>
+<h3>Symptoms</h3>
+<ul>
+<li>High core temperature (104°F+ / 40°C+), person feels very hot to touch</li>
+<li>Altered mental state (confusion, aggression, hallucinations, seizures)</li>
+<li>Little or no sweating (paradoxical — cooling failure), though exertional heat stroke patients may still be sweating</li>
+<li>Strong, fast pulse (120+ bpm)</li>
+<li>Red, hot, dry skin (classic type) or red, hot, moist skin (exertional type)</li>
+<li>Possible unconsciousness or seizures</li>
+<li>Rapid, shallow breathing</li>
+</ul>
+<div class="danger">
+<p><strong>Time is critical.</strong> Every minute above 104°F causes cumulative organ damage. Brain, kidneys, and liver are most vulnerable. Begin cooling immediately — do not wait for emergency services to arrive.</p>
+</div>
+<h3>Emergency Response Protocol</h3>
+<ol>
+<li>
+<p><strong>Cool rapidly — this is the single most important intervention</strong></p>
+<ul>
+<li><strong>Cold water immersion</strong> is the gold standard: submerge in any available cold water (stream, pond, tub, barrel)</li>
+<li>If immersion unavailable: pour cold water over entire body continuously</li>
+<li>Apply ice or cold packs to neck, armpits, and groin (major blood vessels closest to skin)</li>
+<li>Fan vigorously while misting with water (evaporative cooling)</li>
+</ul>
+</li>
+<li>
+<p><strong>Remove from heat source:</strong> Move to shade, remove clothing to maximize skin exposure</p>
+</li>
+<li>
+<p><strong>Position:</strong> Lay on side (recovery position) if unconscious — protects airway if vomiting occurs</p>
+</li>
+<li>
+<p><strong>Monitor temperature:</strong> Continue aggressive cooling until core temperature drops below 102°F (38.9°C), then stop to prevent overcorrection</p>
+</li>
+<li>
+<p><strong>Fluid management:</strong></p>
+<ul>
+<li>If conscious and alert: small sips of cool water only</li>
+<li><strong>Do NOT force fluids</strong> on a confused or unconscious person — aspiration risk</li>
+<li>IV fluids are ideal but require medical training and supplies</li>
+</ul>
+</li>
+<li>
+<p><strong>Seek definitive care:</strong> Heat stroke causes rhabdomyolysis (muscle breakdown), kidney failure, liver damage, and coagulopathy that require hospital treatment even after successful field cooling</p>
+</li>
+</ol>
+<h3>Cooling Rate Targets</h3>
+<ul>
+<li><strong>Goal:</strong> Reduce core temperature by 0.1-0.2°C (0.2-0.35°F) per minute</li>
+<li><strong>Cold water immersion</strong> achieves 0.2°C/min (fastest)</li>
+<li><strong>Ice packs to major vessels</strong> achieves 0.05-0.1°C/min</li>
+<li><strong>Evaporative cooling</strong> (fan + misting) achieves 0.05°C/min</li>
+<li>Faster is better — every minute matters</li>
+</ul>
+</section>
+<section id="heat-prevention">
+<h2>4. Heat Injury Prevention</h2>
+<p>Prevention is vastly more effective than treatment. Heat acclimatization, hydration planning, and work-rest cycling prevent nearly all heat casualties.</p>
+<h3>Hydration Strategy</h3>
+<p><strong>Rate of sweat loss:</strong> 0.5-2.0 liters per hour depending on conditions and exertion level</p>
+<div class="info-box">
+<p><strong>Fluid Replacement Formula:</strong> Required Fluid = Sweat Loss (liters/hour) x Activity Duration (hours) + 10-20% margin</p>
+<p>Practical guideline: Drink 5-10 ounces water every 15-20 minutes during exertion in heat. Sip — do not gulp.</p>
+</div>
+<p><strong>Example:</strong> Hiking in 95°F desert for 6 hours:</p>
+<pre><code>Sweat loss: 1.5 liters/hour x 6 hours = 9 liters
+Replacement: 9 liters + 2 liters buffer = 11 liters total needed
+Drinking schedule: ~500 mL every 15 minutes
+</code></pre>
+<h3>Electrolyte Replacement</h3>
+<p><strong>Electrolyte replacement formula:</strong></p>
+<pre><code>Salt needed (grams) = Sweat Loss (liters) x 0.5-1.0 g/liter
+For 9 liters: 4.5-9 grams salt (~1-2 teaspoons)
+</code></pre>
+<p>Dissolve salt + 4-6 teaspoons sugar per liter water (sugar aids intestinal absorption via sodium-glucose co-transport).</p>
+<div class="warning">
+<p><strong>Hyponatremia danger:</strong> Without electrolyte replacement, excessive water intake causes dangerously low blood sodium. Symptoms: weakness, confusion, seizures — mimics heat exhaustion but worsens with plain water. <strong>Always add salt to replacement fluids</strong> during prolonged heat exposure.</p>
+</div>
+<h3>Acclimatization</h3>
+<p>Full heat acclimatization requires 10-14 days of graduated exposure:</p>
+<ul>
+<li><strong>Days 1-3:</strong> 50% of normal workload in heat</li>
+<li><strong>Days 4-7:</strong> 75% of normal workload</li>
+<li><strong>Days 8-14:</strong> Full workload with monitoring</li>
+<li><strong>Result:</strong> Sweat rate increases 50-100%, sodium losses decrease, cardiovascular efficiency improves</li>
+<li><strong>Loss:</strong> Acclimatization decays within 1-2 weeks without continued exposure</li>
+</ul>
+<h3>Work-Rest Cycles</h3>
+<table><thead><tr><th scope="row">Temperature (°F)</th><th scope="row">Work Period</th><th scope="row">Rest Period (shade)</th><th scope="row">Water Intake</th></tr></thead><tbody><tr><td>80-85</td><td>50 min</td><td>10 min</td><td>0.5 L/hr</td></tr><tr><td>85-90</td><td>40 min</td><td>20 min</td><td>0.75 L/hr</td></tr><tr><td>90-95</td><td>30 min</td><td>30 min</td><td>1.0 L/hr</td></tr><tr><td>95-100</td><td>20 min</td><td>40 min</td><td>1.5 L/hr</td></tr><tr><td>100+</td><td>10 min</td><td>50 min</td><td>1.5-2.0 L/hr</td></tr></tbody></table>
+<h3>Additional Prevention Measures</h3>
+<ul>
+<li><strong>Light, loose clothing:</strong> Allows sweat evaporation — the primary cooling mechanism</li>
+<li><strong>Head covering:</strong> Wide-brimmed hat reduces direct solar radiation to head and neck</li>
+<li><strong>Shade:</strong> Reduce direct sun exposure during peak hours (10 AM - 4 PM)</li>
+<li><strong>Buddy system:</strong> Partners monitor each other for early signs of heat illness</li>
+<li><strong>Pre-hydrate:</strong> Drink 500 mL water 30 minutes before exertion in heat</li>
+<li><strong>Total daily need:</strong> 15-20 liters water possible in extreme heat — plan accordingly</li>
+</ul>
+</section>
+<section id="hypothermia-overview">
+<h2>5. Hypothermia: Recognition &amp; Stages</h2>
+<p>Core body temperature dropping below 95°F (35°C) causes hypothermia. It is most dangerous in cold, wet, windy conditions, but occurs even at moderate temperatures (40-50°F) when wet or exhausted. Many victims are unaware of the danger until confusion sets in — the brain is one of the first organs affected.</p>
+<div class="warning">
+<p><strong>Paradoxical undressing:</strong> In late stages of hypothermia, victims may remove clothing believing they are overheating. This is a sign of severe hypothermia requiring immediate emergency care. The phenomenon occurs because blood vessels near the skin surface suddenly dilate, creating a temporary sensation of warmth.</p>
+</div>
+<h3>Hypothermia Stages &amp; Core Temperature Progression</h3>
+<table class="temp-table"><thead><tr><th scope="row">Core Temp</th><th scope="row">Stage</th><th scope="row">Symptoms</th><th scope="row">Prognosis</th></tr></thead><tbody><tr><td>90-95°F (32-35°C)</td><td>Mild</td><td>Shivering, confusion, slurred speech, poor coordination, apathy</td><td>Good with rewarming</td></tr><tr><td>82-90°F (28-32°C)</td><td>Moderate</td><td>Shivering ceases, muscle rigidity, drowsiness, paradoxical undressing, slowed heart rate</td><td>Good with careful rewarming</td></tr><tr><td>68-82°F (20-28°C)</td><td>Severe</td><td>Unconscious, minimal vital signs, dilated pupils, very slow or irregular heartbeat</td><td>Requires hospital care — possible recovery with ECMO</td></tr><tr><td>Below 68°F (20°C)</td><td>Profound</td><td>No detectable vital signs, cardiac arrhythmias, appears dead</td><td>Usually fatal unless extracorporeal rewarming available</td></tr></tbody></table>
+<div class="info-box">
+<p><strong>Critical rule:</strong> &quot;No one is dead until they are warm and dead.&quot; Hypothermic patients have survived without heartbeat for extended periods. Do not stop resuscitation until core temperature has been raised to at least 90°F (32°C) or until definitive medical care pronounces death.</p>
+</div>
+<h3>How Hypothermia Progresses</h3>
+<ol>
+<li>
+<p><strong>Early (95-97°F):</strong> Shivering begins. Judgment impaired — victim may deny being cold. Fine motor control degraded (cannot strike a match, zip a zipper).</p>
+</li>
+<li>
+<p><strong>Mild (90-95°F):</strong> Violent shivering. Confusion worsens. Speech becomes slurred. Victim stumbles, drops items. May become withdrawn or combative.</p>
+</li>
+<li>
+<p><strong>Moderate (82-90°F):</strong> Shivering stops — this is an ominous sign meaning the body has lost the ability to generate heat through muscle contraction. Muscles become rigid. Drowsiness sets in. Heart rate and breathing slow.</p>
+</li>
+<li>
+<p><strong>Severe (&lt;82°F):</strong> Unconsciousness. Pulse may be undetectable. Pupils dilate. Cardiac arrhythmias develop. The heart becomes extremely irritable — any rough handling can trigger ventricular fibrillation.</p>
+</li>
+</ol>
+</section>
+<section id="hypothermia-treatment">
+<h2>6. Hypothermia Field Treatment</h2>
+<p>Treatment varies dramatically by severity. Aggressive rewarming that is appropriate for mild hypothermia can be fatal in moderate-to-severe cases.</p>
+<h3>Mild Hypothermia (Conscious, Shivering)</h3>
+<ol>
+<li>Move to shelter — get out of wind, rain, and cold ground contact</li>
+<li>Remove wet clothing — replace with dry layers</li>
+<li>Wrap in warm blankets, sleeping bag, or any available insulation</li>
+<li>Insulate from ground (foam pad, branches, dry leaves — anything between victim and cold earth)</li>
+<li>Provide warm sweet drinks (NOT alcohol — alcohol dilates blood vessels and increases heat loss)</li>
+<li>Apply gentle heat sources: warm water bottles wrapped in cloth placed against trunk (not extremities)</li>
+<li>Encourage gentle movement if patient is able (generates metabolic heat)</li>
+<li>Monitor for deterioration — if shivering stops without warming, condition is worsening</li>
+</ol>
+<h3>Moderate/Severe Hypothermia (Unconscious or Not Shivering)</h3>
+<div class="danger">
+<p><strong>Handle with extreme gentleness.</strong> The hypothermic heart is electrically unstable. Rough movement, jostling, or even rolling the patient too quickly can trigger ventricular fibrillation — a fatal heart rhythm. Move the patient horizontally, not vertically. Avoid unnecessary physical manipulation.</p>
+</div>
+<ol>
+<li><strong>Handle gently:</strong> Rough movement triggers fatal cardiac arrhythmias</li>
+<li><strong>Call for emergency evacuation:</strong> Requires hospital rewarming (extracorporeal rewarming in severe cases)</li>
+<li><strong>Prevent further heat loss:</strong> Insulate from ground, shelter from wind, cover with every available layer</li>
+<li><strong>Begin CPR if no pulse detected</strong> after checking for 60 seconds (hypothermia slows pulse dramatically — do not assume death)</li>
+<li><strong>Do NOT attempt rapid rewarming:</strong> Dangerous &quot;afterdrop&quot; occurs when cold blood from extremities returns to core, further dropping core temperature</li>
+<li><strong>Passive rewarming only:</strong> Blankets, move to warm environment, warm humidified air if available</li>
+<li><strong>Warm IV fluids</strong> if medical supplies available (104°F / 40°C normal saline)</li>
+<li><strong>Do NOT give hot drinks</strong> to unconscious patients (aspiration risk)</li>
+</ol>
+<h3>The Afterdrop Phenomenon</h3>
+<p>When a hypothermic patient begins to rewarm, blood vessels in cold extremities dilate, sending cold peripheral blood back to the core. This can cause core temperature to drop an additional 2-5°F after rewarming begins. This is why:</p>
+<ul>
+<li><strong>Rewarm the core first</strong> (trunk, armpits, groin) — not the extremities</li>
+<li><strong>Do not immerse in hot water</strong> (causes massive peripheral vasodilation)</li>
+<li><strong>Do not rub or massage extremities</strong> (drives cold blood toward core)</li>
+<li><strong>Monitor closely</strong> for 30-60 minutes after initiating rewarming</li>
+</ul>
+<h3>Heat Loss Mechanisms &amp; Prevention</h3>
+<table><thead><tr><th scope="row">Mechanism</th><th scope="row">% Heat Loss</th><th scope="row">Prevention Strategy</th></tr></thead><tbody><tr><td>Radiation (infrared emission from skin)</td><td>40%</td><td>Cover exposed skin, shelter, reflective emergency blankets</td></tr><tr><td>Convection (wind, moving water)</td><td>30%</td><td>Wind protection, stay out of water, shelter behind barriers</td></tr><tr><td>Conduction (direct surface contact)</td><td>20%</td><td>Insulation from ground, never lie directly on cold surfaces</td></tr><tr><td>Evaporation (sweat, wet clothing)</td><td>10%</td><td>Stay dry, change wet clothing immediately, control exertion</td></tr></tbody></table>
+</section>
+<section id="hypothermia-prevention">
+<h2>7. Hypothermia Prevention</h2>
+<p>Prevention is far more effective than treatment. Once hypothermia progresses beyond the mild stage, field treatment has limited effectiveness without medical facilities.</p>
+<h3>The COLD Principle</h3>
+<ul>
+<li><strong>C — Cover:</strong> Keep covered. Wear a hat (head accounts for significant heat loss due to high blood flow)</li>
+<li><strong>O — Overexertion avoid:</strong> Sweating wets clothing, which then cools you. Regulate pace to minimize sweating</li>
+<li><strong>L — Layers:</strong> Multiple thin layers trap insulating air and allow adjustment. Wool and synthetics retain insulation when wet; cotton does not (&quot;cotton kills&quot;)</li>
+<li><strong>D — Dry:</strong> Stay dry. Wet clothing loses up to 90% of its insulating value. Change wet socks and inner layers immediately.</li>
+</ul>
+<h3>Layer System</h3>
+<ol>
+<li><strong>Base layer:</strong> Wicking material (wool, synthetic) pulls moisture from skin</li>
+<li><strong>Insulating layer(s):</strong> Fleece, wool, down — traps warm air</li>
+<li><strong>Shell layer:</strong> Windproof and waterproof outer layer — blocks convective and evaporative loss</li>
+<li><strong>Vapor barrier (extreme cold):</strong> In sub-zero conditions, a vapor barrier liner between base and insulating layers prevents moisture from reaching insulation</li>
+</ol>
+<h3>High-Risk Situations</h3>
+<ul>
+<li><strong>Wet + windy conditions at moderate temperatures (40-55°F):</strong> This combination kills more people than extreme cold because victims underestimate the danger</li>
+<li><strong>Immersion in cold water:</strong> Water conducts heat 25x faster than air. Survival time in 50°F water: 1-3 hours. In 32°F water: 15-45 minutes</li>
+<li><strong>Exhaustion:</strong> Depleted glycogen stores eliminate the ability to shiver — the body's primary heat-generation response</li>
+<li><strong>Alcohol consumption:</strong> Dilates blood vessels (increases heat loss), impairs judgment, and masks symptoms</li>
+<li><strong>Elderly and very young:</strong> Reduced thermoregulation capacity — onset faster, recognition harder</li>
+<li><strong>Trauma and blood loss:</strong> Shock impairs thermoregulation — all trauma patients should be assumed hypothermic</li>
+</ul>
+<h3>Nutrition for Cold Environments</h3>
+<ul>
+<li><strong>Increase caloric intake</strong> by 25-50% in cold conditions — the body burns significantly more calories maintaining temperature</li>
+<li><strong>Carbohydrates</strong> fuel immediate shivering response (quick energy)</li>
+<li><strong>Fats</strong> provide sustained metabolic heat (long-duration cold exposure)</li>
+<li><strong>Hot meals and drinks</strong> provide direct thermal energy plus morale benefit</li>
+<li><strong>Eat before sleeping</strong> — metabolic heat from digestion helps maintain temperature through the night</li>
+</ul>
+<h3>Shelter Considerations</h3>
+<p>For detailed shelter design for cold environments, including thermal mass, insulation R-values, and passive heating systems, see <a href="../heat-management.html">Heat Management</a>. For emergency and primitive shelter construction techniques, see <a href="../primitive-shelter-construction.html">Primitive Shelter Construction</a>. For winter-specific survival systems including snow shelters, see <a href="../winter-survival-systems.html">Winter Survival Systems</a>.</p>
+</section>
+<section id="special-populations">
+<h2>8. Special Populations &amp; Considerations</h2>
+<h3>Children</h3>
+<ul>
+<li>Higher surface-area-to-mass ratio means faster heat loss AND faster overheating</li>
+<li>Less effective thermoregulation — sweating response less developed in young children</li>
+<li>Cannot reliably report symptoms — rely on behavioral observation (irritability, lethargy, flushed skin)</li>
+<li>Treat at lower thresholds — do not wait for classic symptoms</li>
+</ul>
+<h3>Elderly</h3>
+<ul>
+<li>Reduced sweating capacity and diminished thirst sensation increase heat illness risk</li>
+<li>Medications (diuretics, beta-blockers, anticholinergics) impair thermoregulation</li>
+<li>Chronic conditions (heart disease, diabetes) reduce tolerance for temperature extremes</li>
+<li>May develop hypothermia indoors at temperatures that seem moderate (65-68°F)</li>
+</ul>
+<h3>Chronic Medical Conditions</h3>
+<ul>
+<li><strong>Diabetes:</strong> Impaired peripheral circulation increases hypothermia risk; neuropathy masks cold injury</li>
+<li><strong>Cardiovascular disease:</strong> Reduced cardiac output limits both heat generation and heat dissipation</li>
+<li><strong>Thyroid disorders:</strong> Hypothyroidism dramatically increases cold sensitivity; hyperthyroidism increases heat intolerance</li>
+<li><strong>Prior thermal injury:</strong> Previous heat stroke or frostbite permanently impairs thermoregulation in affected areas</li>
+</ul>
+</section>
+<section id="field-assessment">
+<h2>9. Field Assessment Without Equipment</h2>
+<p>In survival situations, thermometers and medical equipment may not be available. Use these field assessment techniques:</p>
+<h3>Estimating Core Temperature</h3>
+<ul>
+<li><strong>Shivering present:</strong> Core temp likely 90-95°F (mild hypothermia) — treatable in field</li>
+<li><strong>Shivering absent + conscious:</strong> Core temp likely 82-90°F (moderate) — needs medical evacuation</li>
+<li><strong>Unconscious:</strong> Core temp likely below 82°F (severe) — critical emergency</li>
+</ul>
+<h3>Heat Illness Assessment</h3>
+<ul>
+<li><strong>Sweating + coherent speech:</strong> Likely heat exhaustion — field treatable</li>
+<li><strong>No sweating + confusion/combativeness:</strong> Likely heat stroke — extreme emergency</li>
+<li><strong>Skin feel:</strong> Hot, dry skin = heat stroke. Cool, clammy skin = heat exhaustion. Hot, moist skin = possible exertional heat stroke.</li>
+</ul>
+<h3>The &quot;Umbles&quot; Test for Hypothermia</h3>
+<p>Watch for the progressive &quot;umbles&quot; — signs of deteriorating coordination and cognition:</p>
+<ol>
+<li><strong>Fumbles</strong> — dropping objects, can't manipulate zippers or buttons</li>
+<li><strong>Stumbles</strong> — unsteady gait, tripping</li>
+<li><strong>Mumbles</strong> — slurred or incoherent speech</li>
+<li><strong>Grumbles</strong> — irrational complaints, combativeness, refusal of help</li>
+<li><strong>Tumbles</strong> — falls, inability to stand</li>
+</ol>
+<p>If a person shows two or more &quot;umbles,&quot; treat for hypothermia immediately — do not wait for confirmation.</p>
+</section>
+<section id="reference">
+<h2>10. Emergency Quick Reference</h2>
+<div class="info-box">
+<p><strong>Heat Exhaustion First Aid:</strong> Cool + Fluids + Rest = recovery in 30-60 minutes</p>
+<p><strong>Heat Stroke Emergency:</strong> Cool immediately and aggressively (cold water immersion best). Ice to neck/armpits/groin. Core temp &gt;104°F is organ-damage territory. Every minute counts.</p>
+<p><strong>Hypothermia — Gentle Handling:</strong> Handle gently — rough movement triggers fatal arrhythmias. Insulate, shelter, passive rewarm. CPR if no pulse after 60-second check. &quot;Not dead until warm and dead.&quot;</p>
+</div>
+<h3>Oral Rehydration Solution (ORS) Recipe</h3>
+<p>For heat illness fluid replacement:</p>
+<pre><code>1 liter clean water
+6 level teaspoons sugar (30g)
+½ level teaspoon salt (2.5g)
+</code></pre>
+<p>Sip slowly — 200-400 mL per hour. Adjust salt upward in heavy sweating conditions.</p>
+<h3>Emergency Warming Methods (Field Expedient)</h3>
+<p>When no medical supplies are available:</p>
+<ol>
+<li><strong>Body-to-body warming:</strong> Skin-to-skin contact in sleeping bag — most effective field method for mild-to-moderate hypothermia</li>
+<li><strong>Heated rocks:</strong> Warm (NOT hot) rocks placed in cloth, positioned against trunk</li>
+<li><strong>Hot water bottles:</strong> Any sealed container filled with warm water, wrapped in cloth</li>
+<li><strong>Warm sweet liquids:</strong> For conscious patients only — provides both thermal and caloric energy</li>
+<li><strong>Fire + reflector:</strong> Position patient between fire and reflective surface (rock wall, emergency blanket) to maximize radiant heat capture</li>
+</ol>
+<h3>Common Mistakes That Kill</h3>
+<ul>
+<li><strong>Overheating individuals:</strong> Aggressive rewarming in moderate hypothermia (core temp 82-90°F) triggers fatal cardiac arrhythmias. Rewarm slowly and gently.</li>
+<li><strong>Ignoring early heat stroke signs:</strong> Confusion and aggression mistaken for other causes — delayed treatment dramatically reduces survival. Cool aggressively at first sign.</li>
+<li><strong>Inadequate hydration planning:</strong> Dehydration and electrolyte loss compound heat stress. Drink consistently (every 15-20 minutes) with salt replacement.</li>
+<li><strong>Inattention to acclimatization:</strong> Cold adaptation takes 10-14 days; premature intense activity in cold causes hypothermia. Start gently.</li>
+<li><strong>Giving alcohol to hypothermic patients:</strong> Alcohol causes vasodilation, increasing heat loss. The warming sensation is an illusion as core temperature drops faster.</li>
+<li><strong>Rubbing frostbitten skin:</strong> Causes tissue damage. Rewarm gently in warm (not hot) water only if refreezing can be prevented.</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="heat-management.html">Heat Management</a>
+<a href="first-aid.html">First Aid and Emergency Response</a>
+<a href="winter-survival-systems.html">Winter Survival Systems</a>
+<a href="primitive-shelter-construction.html">Primitive Shelter Construction Techniques</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

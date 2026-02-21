@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/community-microgrid-economics.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Microgrid Economics</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Power Generation</span> ›
+<span>Community Microgrid Economics</span>
+</div>
+
+
+<h1>Community Microgrid Economics</h1>
+<p class="subtitle">Planning and managing community-scale power distribution, load balancing, priority allocation during shortages, billing and exchange systems for shared power, maintenance funding, and expansion planning.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~14 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction to Microgrid Economics</a></li>
+<li><a href="#demand-assessment">Demand Assessment and Capacity Planning</a></li>
+<li><a href="#load-balancing">Load Balancing and Priority Allocation</a></li>
+<li><a href="#billing-exchange">Billing and Exchange Systems</a></li>
+<li><a href="#maintenance-funding">Maintenance Funding and Reserves</a></li>
+<li><a href="#governance-structure">Grid Governance Structure</a></li>
+<li><a href="#expansion-planning">Expansion Planning</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>Electrical Hazards:</strong> Community power distribution involves voltages and currents that can kill instantly. Even low-voltage DC systems (12-48V) can deliver lethal current through wet skin or internal contact. All grid work must be performed by trained individuals using proper lockout/tagout procedures. Energized lines and equipment must be clearly marked. Unauthorized connections to the grid risk electrocution, fire, and damage to shared equipment. Establish and enforce strict electrical safety protocols before energizing any community distribution system.</p>
+</div>
+<section id="introduction">
+<h2>Introduction to Microgrid Economics</h2>
+<p>A community microgrid is more than an engineering project — it is a social contract. When multiple households and facilities share a power generation and distribution system, every technical decision has economic and political consequences. Who pays for maintenance? Who gets power when there is not enough for everyone? How do you prevent free-riders from consuming more than their share? How do you fund expansion as the community grows?</p>
+<p>This guide addresses the economic, governance, and management aspects of community-scale power systems. For the technical engineering of microgrid design — generation sources, wiring, inverters, and distribution hardware — see <a href="microgrid-design-distribution.html">Microgrid Design &amp; Distribution</a>. For individual generation technologies, see <a href="solar-technology.html">Solar Technology</a>, <a href="hydroelectric.html">Hydroelectric</a>, and <a href="electrical-generation.html">Electrical Generation</a>.</p>
+<div class="info-box">
+<p><strong>Why Economics Matters for Power:</strong> The most technically perfect microgrid will fail if the economic model is unsustainable. Generation equipment wears out and must be replaced. Fuel (if any) must be sourced. Skilled operators must be compensated for their time. Without a fair, transparent system for sharing costs and benefits, communities fracture — those who feel exploited disconnect, those who feel entitled overconsume, and the grid collapses from social failure, not technical failure.</p>
+</div>
+<p>The economic models in this guide are designed for communities of 20-500 people operating without fiat currency, formal banking, or external supply chains. They can be adapted to any community power system, from a single shared solar array to a multi-source grid with hundreds of connections.</p>
+</section>
+<section id="demand-assessment">
+<h2>Demand Assessment and Capacity Planning</h2>
+<h3>Mapping Community Power Needs</h3>
+<p>Before designing an economic model, you must understand what the grid needs to deliver. Conduct a comprehensive power demand survey:</p>
+<p><strong>For each connected household/facility, document:</strong></p>
+<ul>
+<li>Essential loads (lighting, communication, medical equipment, refrigeration for medicine/food)</li>
+<li>Productive loads (workshops, mills, water pumps, charging stations)</li>
+<li>Comfort loads (fans, heating elements, entertainment)</li>
+<li>Peak demand timing (morning, midday, evening)</li>
+<li>Minimum viable power level (what they absolutely cannot function without)</li>
+</ul>
+<table class="load-table"><thead><tr><th scope="col">Load Category</th><th scope="col">Typical Demand</th><th scope="col">Priority Level</th><th scope="col">Timing</th><th scope="col">Flexibility</th></tr></thead>
+<tbody>
+<tr><td><strong>Medical equipment</strong></td><td>100-2000W continuous</td><td>Critical</td><td>24/7</td><td>None — must always be supplied</td></tr>
+<tr><td><strong>Water pumping</strong></td><td>500-3000W intermittent</td><td>Critical</td><td>Daytime preferred</td><td>Moderate — can shift hours</td></tr>
+<tr><td><strong>Food refrigeration</strong></td><td>100-400W cycling</td><td>High</td><td>24/7</td><td>Low — thermal mass provides buffer</td></tr>
+<tr><td><strong>Communications</strong></td><td>50-200W</td><td>High</td><td>Scheduled windows</td><td>High — can batch</td></tr>
+<tr><td><strong>Lighting</strong></td><td>20-100W per household</td><td>Medium</td><td>Evening/night</td><td>Moderate — can limit hours</td></tr>
+<tr><td><strong>Workshops/tools</strong></td><td>500-5000W intermittent</td><td>Medium</td><td>Working hours</td><td>High — can schedule</td></tr>
+<tr><td><strong>Comfort (fans, heat)</strong></td><td>50-1500W</td><td>Low</td><td>Variable</td><td>High — first to shed</td></tr>
+</tbody></table>
+<h3>Capacity vs. Demand Gap Analysis</h3>
+<p>Total your community's peak demand and compare it to your generation capacity. In most post-infrastructure communities, demand will far exceed capacity. This gap is the central economic problem: how to allocate scarce power fairly.</p>
+<div class="tip">
+<p><strong>Design for 60% of Peak:</strong> Even a well-managed grid should plan for only 60% of theoretical peak demand being available at any time, accounting for maintenance downtime, weather variability (solar/wind), equipment degradation, and reserve margin. If your total generation capacity is 10 kW, plan your allocation system around 6 kW of reliable continuous supply.</p>
+</div>
+<h3>Growth Projections</h3>
+<p>Plan for demand growth. As the community stabilizes and develops, power needs increase:</p>
+<ul>
+<li>New workshops and productive enterprises start up</li>
+<li>Population grows through births and immigration</li>
+<li>People find new uses for electricity as it becomes reliable</li>
+<li>Seasonal variations (heating in winter, cooling in summer, harvest season processing)</li>
+</ul>
+<p>Build expansion costs into your economic model from day one. A system that consumes all revenue on current operations cannot grow.</p>
+</section>
+<section id="load-balancing">
+<h2>Load Balancing and Priority Allocation</h2>
+<h3>The Priority Tier System</h3>
+<p>When generation capacity cannot meet total demand (which will be most of the time), you need a clear, pre-agreed system for deciding who gets power and who does not. Ambiguity in this area destroys community trust faster than almost anything else.</p>
+<p><strong>Tier 1 — Life Safety (never shed):</strong>
+Medical equipment, emergency communications, security lighting at critical facilities. These loads are always supplied, period. If the grid cannot support Tier 1 loads, the grid has failed and needs immediate repair or supplemental generation.</p>
+<p><strong>Tier 2 — Community Infrastructure (shed last):</strong>
+Water pumping and treatment, community food storage (refrigeration/cold rooms), central communications station, community kitchen. These loads support everyone and are shed only during severe generation shortfalls.</p>
+<p><strong>Tier 3 — Productive Capacity (scheduled):</strong>
+Workshops, mills, forges, charging stations, agricultural processing. These loads are scheduled during peak generation hours (solar noon for solar-heavy grids) and shed during low-generation periods.</p>
+<p><strong>Tier 4 — Household Basic (rationed):</strong>
+Individual household lighting, device charging, small appliances. Each household receives a daily allocation (e.g., 500 Wh per household per day) that they can use at their discretion within allowed hours.</p>
+<p><strong>Tier 5 — Discretionary (available only during surplus):</strong>
+Comfort loads, entertainment, non-essential equipment. Available only when generation exceeds Tier 1-4 demand.</p>
+<div class="warning">
+<p><strong>Priority Disputes Will Happen:</strong> No priority system is self-enforcing. Someone will argue that their workshop is more important than their neighbor's refrigerator. Someone will connect unauthorized loads. Someone will claim medical necessity for a comfort device. Establish a clear governance process for adjudicating disputes before they arise. The priority tiers must be agreed upon by the community through whatever <a href="governance.html">governance structure</a> you use — they cannot be imposed unilaterally by the grid operator.</p>
+</div>
+<h3>Load Shedding Procedures</h3>
+<p>When demand exceeds supply, loads must be disconnected in reverse priority order (Tier 5 first, then Tier 4, etc.). This can be implemented through:</p>
+<ul>
+<li><strong>Manual switching:</strong> Grid operator physically disconnects circuits. Simple but labor-intensive and slow.</li>
+<li><strong>Circuit breaker panels:</strong> Each tier on a separate circuit. The operator trips breakers in order. Faster and more reliable.</li>
+<li><strong>Scheduled blackouts:</strong> Pre-announced periods when certain tiers are disconnected. Predictable — allows households to plan. Example: Tier 4-5 power available only 6:00-9:00 AM and 5:00-10:00 PM.</li>
+<li><strong>Rotating allocation:</strong> Different neighborhoods receive power at different times. Ensures equal access over time even if not simultaneous.</li>
+</ul>
+<div class="tip">
+<p><strong>Transparency Prevents Resentment:</strong> Post the daily generation and allocation schedule publicly. When people can see that power is being distributed fairly based on agreed rules, they accept limitations far more readily than when they suspect favoritism. A simple chalkboard at the community center showing today's generation capacity, tier allocations, and scheduled availability goes a long way.</p>
+</div>
+</section>
+<section id="billing-exchange">
+<h2>Billing and Exchange Systems</h2>
+<h3>Pricing Power Without Currency</h3>
+<p>In a post-infrastructure economy, you likely do not have stable fiat currency. Power must be priced in terms your community actually uses for exchange. Common approaches:</p>
+<p><strong>Labor-hour credits:</strong> One hour of community labor (farming, construction, patrol duty) earns a set number of watt-hours. Example: 1 labor-hour = 200 Wh credit. This directly ties power consumption to community contribution.</p>
+<p><strong>Commodity-backed pricing:</strong> Power is priced in a staple commodity. Example: 1 kWh = 0.5 kg grain, or 1 kWh = 1 liter clean water. This works well when the community has a stable, measurable commodity economy.</p>
+<p><strong>Flat community tax:</strong> All community members contribute equally (in labor, goods, or both) to grid maintenance, and all receive equal base allocation. Additional power above the base allocation is available on a bid/barter basis.</p>
+<p><strong>Tiered contribution model:</strong> Households that consume more power contribute more to grid maintenance and expansion. Contribution is proportional to allocation tier — someone connected at Tier 3 (workshop power) pays more than someone at Tier 4 (household basic) only.</p>
+<div class="info-box">
+<p><strong>The Free-Rider Problem:</strong> Any shared resource attracts free-riders — people who consume without contributing fairly. Technical solutions (meters, circuit limiters) help, but social solutions matter more. A community where power contribution is visible and celebrated, where free-riding is socially costly, and where the connection between contribution and access is clear and fair will have fewer problems than one relying solely on technical enforcement.</p>
+</div>
+<h3>Metering and Measurement</h3>
+<p>You cannot bill what you cannot measure. Metering options, from simplest to most sophisticated:</p>
+<ul>
+<li><strong>No metering (flat allocation):</strong> Everyone gets the same allocation regardless of actual use. Simplest but encourages waste and penalizes conservation. Only works in very small, tight-knit groups.</li>
+<li><strong>Time-based metering:</strong> Power is available during set hours. No measurement of actual consumption. A household that runs one light bulb pays the same as one running five. Better than nothing.</li>
+<li><strong>Simple watt-hour meters:</strong> Salvaged or improvised meters on each connection. Read monthly. Enables proportional billing. This is the minimum for any system larger than a dozen households.</li>
+<li><strong>Current limiters:</strong> Each connection has a fuse or breaker sized to its allocation. Prevents overconsumption but does not measure actual use. Can be combined with time-based access.</li>
+</ul>
+<p>For accounting methods to track credits and debits, see <a href="double-entry-bookkeeping.html">Double-Entry Bookkeeping</a>. For broader economic exchange frameworks, see <a href="currency-systems-barter.html">Currency Systems &amp; Barter</a>.</p>
+</section>
+<section id="maintenance-funding">
+<h2>Maintenance Funding and Reserves</h2>
+<h3>The True Cost of Power</h3>
+<p>Generating and distributing power involves ongoing costs that must be covered by the economic model:</p>
+<p><strong>Consumable costs:</strong></p>
+<ul>
+<li>Fuel (diesel, biodiesel, wood gas, ethanol) for generator-based systems</li>
+<li>Lubricants and filters for generators and engines</li>
+<li>Battery replacement (lead-acid batteries last 3-7 years, lithium 7-15 years)</li>
+<li>Wire, connectors, fuses, and other electrical consumables</li>
+</ul>
+<p><strong>Labor costs:</strong></p>
+<ul>
+<li>Daily grid operation and monitoring (2-4 hours per day for a community-scale system)</li>
+<li>Routine maintenance (weekly inspections, monthly service)</li>
+<li>Emergency repairs (unpredictable but inevitable)</li>
+<li>Meter reading and billing administration</li>
+</ul>
+<p><strong>Capital replacement reserves:</strong></p>
+<ul>
+<li>Solar panels degrade approximately 0.5-1% per year and need replacement after 20-30 years</li>
+<li>Inverters typically last 10-15 years</li>
+<li>Generators require major overhaul every 5,000-15,000 hours</li>
+<li>Distribution hardware (poles, wires, transformers) degrades over time</li>
+</ul>
+<div class="warning">
+<p><strong>Under-Funding Maintenance Is the Most Common Grid Failure Mode:</strong> Communities consistently underestimate maintenance costs because the grid works fine initially. Then a generator needs rebuilding, batteries need replacement, or a storm damages distribution lines, and there are no reserves to pay for repairs. The grid goes down and may never come back up. Budget maintenance reserves from day one — a minimum of 20% of total revenue should go into a capital replacement fund.</p>
+</div>
+<h3>Reserve Fund Management</h3>
+<p>Establish a dedicated maintenance and replacement reserve:</p>
+<ul>
+<li>Collect contributions (labor, goods, or credits) above current operating costs</li>
+<li>Store reserves in durable, useful forms: spare parts, raw materials (copper wire, batteries, fuel), and labor credits</li>
+<li>Maintain a replacement schedule showing when major components will need replacement and estimated cost</li>
+<li>Review the reserve fund quarterly and adjust contribution rates as needed</li>
+</ul>
+<div class="tip">
+<p><strong>Physical Reserves Over Paper Credits:</strong> In an unstable economy, physical reserves (actual spare batteries, wire, panels, generator parts on the shelf) are more reliable than paper credit balances. A community that has three spare batteries in storage is in a far better position than one that has &quot;enough credits to buy three batteries&quot; when no one is selling batteries.</p>
+</div>
+</section>
+<section id="governance-structure">
+<h2>Grid Governance Structure</h2>
+<h3>Roles and Responsibilities</h3>
+<p>A functional community grid requires clear roles:</p>
+<p><strong>Grid Manager/Operator:</strong> Day-to-day responsibility for grid operation, monitoring, load management, and emergency response. This is a skilled position requiring electrical knowledge and should be compensated accordingly. Ideally, train at least two people for this role.</p>
+<p><strong>Grid Council/Committee:</strong> A small group (3-7 people) representing different community stakeholders (households, workshops, medical, agricultural) that sets policy: priority tiers, allocation rules, pricing, and expansion plans. Should meet regularly (monthly minimum).</p>
+<p><strong>Billing Administrator:</strong> Reads meters, calculates bills, collects contributions, manages the reserve fund. Can be the same person as the grid manager in small communities but should be separate in larger ones (separation of duties prevents corruption).</p>
+<p><strong>Technical Maintenance Team:</strong> People trained in electrical work who perform routine maintenance and repairs. At least 2-3 people with intermediate electrical skills. See <a href="electrical-wiring.html">Electrical Wiring</a> for training foundations.</p>
+<h3>Decision-Making Process</h3>
+<p>Grid decisions fall into two categories:</p>
+<p><strong>Operational decisions</strong> (made by grid manager): Load shedding during shortfalls, emergency disconnections, scheduling routine maintenance. These must be made quickly and should follow pre-approved protocols.</p>
+<p><strong>Policy decisions</strong> (made by grid council with community input): Changing priority tiers, adjusting pricing, approving new connections, authorizing expansion projects, setting contribution rates. These require deliberation and transparency. Major changes should be announced in advance and open for community comment before implementation.</p>
+<p>For detailed governance frameworks, see <a href="governance-democratic-systems-frameworks.html">Democratic Governance Systems</a> and <a href="conflict-resolution-diplomacy.html">Conflict Resolution &amp; Diplomacy</a>.</p>
+</section>
+<section id="expansion-planning">
+<h2>Expansion Planning</h2>
+<h3>When and How to Expand</h3>
+<p>Grid expansion should be driven by documented need, not speculation:</p>
+<ul>
+<li><strong>Demand consistently exceeds capacity:</strong> If Tier 4 households are regularly receiving less than 50% of their base allocation, expansion is needed.</li>
+<li><strong>New productive capacity needs power:</strong> A new workshop, mill, or agricultural processing facility that will benefit the whole community justifies expansion.</li>
+<li><strong>Population growth:</strong> New households joining the community need connections.</li>
+<li><strong>Reliability improvement:</strong> Adding a second generation source or upgrading distribution reduces single-point-of-failure risk.</li>
+</ul>
+<h3>Funding Expansion</h3>
+<p>Expansion is a capital investment. Funding options:</p>
+<p><strong>Community levy:</strong> A special contribution from all connected members, proportional to their current allocation level. Fair because everyone benefits from a more robust grid.</p>
+<p><strong>Beneficiary pays:</strong> The new connection or the party requesting additional capacity funds the expansion. Fair for individual connections but can create inequality — wealthy households get more power.</p>
+<p><strong>Reserve fund draw:</strong> Use accumulated reserves. Only appropriate if reserves are healthy and the expansion is genuinely needed.</p>
+<p><strong>Inter-community trade:</strong> If your grid produces surplus power at times, trading power (or power-intensive services like grain milling, water pumping, or battery charging) to neighboring communities can fund expansion.</p>
+<div class="tip">
+<p><strong>Modular Expansion Strategy:</strong> Plan expansion in small, affordable increments rather than one large project. Add one more solar panel array, one more battery bank, one more distribution circuit at a time. Each increment can be funded from current reserves and begins generating return immediately. This is less efficient than large-scale builds but far more achievable with limited resources and reduces the risk of a failed large project.</p>
+</div>
+<h3>Integration with Community Planning</h3>
+<p>Grid expansion must coordinate with broader community planning:</p>
+<ul>
+<li>New construction areas need power distribution planned in advance — it is far cheaper to run wires during construction than to retrofit</li>
+<li>Agricultural expansion (irrigation pumps, processing equipment) increases demand predictably with the seasons</li>
+<li>Industrial development (workshops, forges, kilns) creates concentrated loads that may require dedicated circuits</li>
+<li>Population projections from <a href="census-vital-records.html">census and vital records</a> inform long-term demand forecasting</li>
+</ul>
+<p>The microgrid is not just infrastructure — it is the backbone of economic development. Communities with reliable power attract skilled workers, enable more productive enterprises, and can trade power-intensive services with neighbors. Investing in grid capacity is investing in the community's future.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="microgrid-design-distribution.html">Micro-Grid Design &amp; Distribution</a>
+<a href="solar-technology.html">Solar Technology</a>
+<a href="electrical-generation.html">Power Generation</a>
+<a href="energy-systems.html">Energy Systems</a>
+<a href="power-distribution.html">Power Distribution &amp; Micro-Grids</a>
+<a href="electrical-wiring.html">Electrical Wiring</a>
+<a href="batteries.html">Battery Construction</a>
+<a href="hydroelectric.html">Hydroelectric Power</a>
+<a href="wind-power.html">wind-power</a>
+<a href="biodiesel-production.html">Biodiesel Production from Waste Oils</a>
+<a href="community-organizing.html">Community Organizing &amp; Leadership</a>
+<a href="governance.html">Governance &amp; Community</a>
+<a href="taxation-revenue-systems.html">Taxation &amp; Public Revenue Systems</a>
+<a href="double-entry-bookkeeping.html">Double-Entry Bookkeeping</a>
+<a href="currency-systems-barter.html">Currency Systems &amp; Barter Economics</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/cra-01-forging-metalwork.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forging &amp; Metalwork</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Metalworking</span> ›
+<span>Forging &amp; Metalwork</span>
+</div>
+
+<div class="warning">
+<strong>Safety Notice:</strong> This guide covers activities that carry some risk. Follow all safety precautions carefully.
+</div>
+
+<h1>Forging &amp; Metalwork</h1>
+<p class="subtitle">Master fundamental blacksmithing: forge construction, basic smithing techniques, tool making, hardware production, decorative ironwork, heat treatment, and production scaling for survival self-sufficiency.</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~12 min</span>
+<span>Updated: 2026-02-16</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#forge-construction">Forge Construction</a></li>
+<li><a href="#tools-equipment">Essential Tools &amp; Equipment</a></li>
+<li><a href="#metal-selection">Metal Selection &amp; Properties</a></li>
+<li><a href="#heating-techniques">Heating &amp; Temperature Control</a></li>
+<li><a href="#basic-techniques">Basic Smithing Techniques</a></li>
+<li><a href="#tool-making">Tool Making</a></li>
+<li><a href="#hardware">Hardware Production</a></li>
+<li><a href="#decorative">Decorative Ironwork</a></li>
+<li><a href="#common-mistakes">Common Mistakes &amp; Solutions</a></li>
+<li><a href="#hardening-tempering">Hardening &amp; Tempering Processes</a></li>
+<li><a href="#advanced-techniques">Advanced Smithing Operations</a></li>
+<li><a href="#repair-maintenance">Tool Repair &amp; Maintenance</a></li>
+<li><a href="#forge-scaling">Forge Scaling &amp; Production</a></li>
+<li><a href="#fire-management">Advanced Fire &amp; Fuel Management</a></li>
+<li><a href="#material-sourcing">Material Sourcing &amp; Salvage</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="warning">
+<p><strong>Burn and Impact Hazards:</strong> Metalworking involves extreme temperatures (forge temperatures exceed 1,000°C), flying sparks and scale, and heavy impact forces. Quenching hot metal in water can cause violent steam explosions if the metal is too large or the quench tank too small. Wear face shield, leather apron, and heat-resistant gloves. Keep a clear, dry work area. Never quench in a container that could crack from thermal shock.</p>
+</div>
+<section id="forge-construction">
+<h2>Forge Construction</h2>
+<p>A functional forge is essential for all metalworking. Simple designs can be constructed from clay, stone, and scrap materials with minimal cost.</p>
+<h3>Ground-Level Forge (Simplest Design):</h3>
+<h4>Components:</h4>
+<ol>
+<li><strong>Firebox:</strong> Circular clay or stone basin 30cm diameter, 20cm deep</li>
+<li><strong>Grate:</strong> Iron bars across bottom for air flow; space 1cm apart</li>
+<li><strong>Air source:</strong> Bellows connected via tuyere (pipe) underneath grate</li>
+<li><strong>Workbench:</strong> Anvil positioned 30cm in front of forge, at chest height (approximately 1m above ground)</li>
+<li><strong>Ventilation:</strong> Updraft hood above forge directs smoke away from worker</li>
+</ol>
+<h4>Construction:</h4>
+<p>Dig shallow pit 30cm diameter, 20cm deep. Line bottom and sides with fire clay (clay-sand mixture). Build clay walls to contain fire. Install iron grate to rest on foundation (supports coal). Position bellows outlet (tuyere) 5-10cm above grate floor (allows air distribution). Install hinged hood above pit to direct smoke upward.</p>
+<h3>Coal Fuel Preparation:</h3>
+<p>Quality coal is critical. Use hard coal (bituminous or anthracite), not soft coal or charcoal. Crush coal to 1-2cm chunks. Pre-heat coal in fire before placing steel in forge (coal burns hotter when pre-heated). Cost: 2-5kg coal per hour smithing (expensive but essential for hot working).</p>
+<h3>Temperature Management:</h3>
+<p>Monitor fire temperature by steel color when inserted: black heat (dark red) = 400°C, dark cherry red = 600°C, bright cherry red = 750°C, orange = 900°C, yellow = 1100°C, white = 1200°C+. Working temperature range: cherry red to orange for most smithing.</p>
+<div class="warning">
+<p><strong>Safety Warning:</strong> Hot metal looks identical to cold metal from distance. Never touch metal with bare hands; always use tongs or tools. Metal at 600°C causes severe burns in milliseconds.</p>
+</div>
+</section>
+<section id="tools-equipment">
+<h2>Essential Tools &amp; Equipment</h2>
+<h3>Primary Smithing Tools:</h3>
+<ul>
+<li><strong>Hammer:</strong> 2-4kg head, wooden handle (absorbs shock). Different faces for specific tasks: flat (general work), cross-peen (drawing), ball-peen (shaping).</li>
+<li><strong>Anvil:</strong> 40-100kg weight ideal. Steel face on iron body. Flat working surface with rounded horn for shaping. Cost prohibitive to fabricate; scavenge from salvage yards.</li>
+<li><strong>Tongs:</strong> Custom-made for specific tasks. Jaw width matches work piece; insulated handles 40cm+ long prevent hand burns.</li>
+<li><strong>Chisels &amp; Punches:</strong> Hardened steel tools for cutting and shaping. Handles secured with wrapping (not set screws).</li>
+<li><strong>Fullers &amp; Swages:</strong> Shaped dies for specific forming operations. Fuller narrows stock; swage rounds/shapes.</li>
+</ul>
+<h3>Bellows Construction:</h3>
+<p>Simple box bellows: two wooden boards (30cm x 40cm) with leather hinges and connecting wood frame. Seal joints with leather gasket. Air output: 50-200 liters per minute depending on pumping rate. Critical for sufficient air flow to achieve working temperatures.</p>
+<p><strong>Detailed Bellows Design:</strong></p>
+<ol>
+<li><strong>Base structure:</strong> Two wooden frames (30cm x 40cm x 5cm deep) connected by leather hinges (hide stitched to sides)</li>
+<li><strong>Leather facing:</strong> Glue leather (cow/goat hide) to one side of each frame; staple or nail edges securely</li>
+<li><strong>Valve system:</strong> One-way flap valve at air intake (prevents backflow). Made from leather flap with weighted stick keeping it closed; air pressure forces it open during pumping</li>
+<li><strong>Tuyere connection:</strong> Wooden or clay pipe (2-3cm diameter) extending from outlet; position 5-10cm above grate</li>
+<li><strong>Handle system:</strong> Wooden handles attached to movable frame; hinges allow full compression</li>
+<li><strong>Maintenance:</strong> Check leather for cracks (repair with leather patches stitched on). Replace leather every 2-3 years depending on use.</li>
+</ol>
+<p><strong>Optimal pumping technique:</strong> Smooth, steady rhythm produces consistent heat. Avoid sudden bursts (overheats forge; wastes coal). Experienced smiths synchronize bellows with work rhythm—pump during reheating, rest during work.</p>
+</section>
+<section id="metal-selection">
+<h2>Metal Selection &amp; Properties</h2>
+<h3>Iron vs. Steel:</h3>
+<p><strong>Iron:</strong> Pure iron (less than 0.3% carbon). Forges easily, welds simply, but lacks hardness. Suitable for large structural work, hardware. Melting point: 1530°C.</p>
+<p><strong>Steel:</strong> Iron with 0.3-2% carbon. Harder than iron, better for tools. Carbon content increases hardness but reduces malleability. Melting point: 1370-1540°C (varies with carbon content).</p>
+<h3>Steel Classification by Carbon Content:</h3>
+<table><thead><tr><th scope="row">Carbon %</th><th scope="row">Type</th><th scope="row">Characteristics</th><th scope="row">Best Uses</th></tr></thead><tbody><tr><td>0.3-0.5%</td><td>Low-carbon</td><td>Soft, forges easily, welds well</td><td>General structure, rivets</td></tr><tr><td>0.5-1.0%</td><td>Medium</td><td>Harder than low-carbon, less forgeable</td><td>Tools, weapons, springs</td></tr><tr><td>1.0-1.5%</td><td>High-carbon</td><td>Hard, brittle, difficult to forge</td><td>Cutting tools, dies</td></tr></tbody></table>
+<h3>Metal Sources:</h3>
+<ul>
+<li><strong>Salvage:</strong> Old machinery, vehicle parts, structural steel (most accessible)</li>
+<li><strong>Smelted ore:</strong> Requires furnace and fuel (advanced; not practical for survival)</li>
+<li><strong>Trade/purchase:</strong> From suppliers (requires currency/barter goods)</li>
+</ul>
+</section>
+<section id="heating-techniques">
+<h2>Heating &amp; Temperature Control</h2>
+<h3>Heating Sequence:</h3>
+<ol>
+<li><strong>Pre-heat:</strong> Push metal to edge of coals for 5-10 minutes (allows internal heating)</li>
+<li><strong>Active heat:</strong> Move metal into hottest part of fire; increase bellows speed</li>
+<li><strong>Temperature observation:</strong> Watch color change; remove when bright cherry red (working temperature)</li>
+<li><strong>Work quickly:</strong> Metal cools rapidly (drops 100°C per minute outside fire); complete operation before cooling to dark red</li>
+<li><strong>Reheating:</strong> Return to fire when metal color indicates too-cool condition (dark red or below)</li>
+</ol>
+<h3>Avoiding Overheating:</h3>
+<p>Excessive temperature (white heat) causes grain growth and brittleness. Also increases oxidation loss. Ideal: maintain bright cherry red color during working. If metal turns orange, remove from fire immediately.</p>
+<h3>Coal Efficiency:</h3>
+<p>Minimize air flow (reduce bellows pumping) when metal is removed from fire. Excess air wastes fuel and overheats forge. Optimize bellows speed to maintain working temperature without excessive heat generation.</p>
+</section>
+<section id="basic-techniques">
+<h2>Basic Smithing Techniques</h2>
+<h3>Drawing Out (Tapering):</h3>
+<p><strong>Objective:</strong> Lengthen metal by reducing cross-section. Strike metal perpendicular to length with flat hammer face. Work progresses: heat, strike 5-10 times, rotate 90°, repeat. Each sequence increases length 5-15%. Maintain consistent hammer tempo.</p>
+<h3>Upsetting (Thickening):</h3>
+<p><strong>Objective:</strong> Shorten and thicken metal. Strike end of rod held vertically on anvil. Heat must be sufficient (bright orange) or metal cracks. Typical application: creating tool heads, reinforcing joints.</p>
+<h3>Bending:</h3>
+<p><strong>Objective:</strong> Change metal direction without reducing cross-section. Heat in fire, place on anvil horn, strike against horn while supporting opposite side. Angle increases with each heat cycle. 90-degree bends typically require 2-3 heats.</p>
+<h3>Twisting:</h3>
+<p><strong>Objective:</strong> Create spiral patterns or increase surface area. Clamp one end in vise, heat long section, grip other end with tongs, rotate tongs slowly while striking metal. Creates visual interest and structural benefit (increased surface area improves adhesion for decorative purposes).</p>
+<h3>Welding:</h3>
+<p><strong>Objective:</strong> Join two pieces of metal into one solid mass. Heat both pieces to white heat (1200°C+). Place end-to-end on anvil; strike forcefully and repeatedly. Metal must be extremely hot to weld (difference of 50°C between too-cool and too-hot is small). Success requires skill; expect 50% success rate initially.</p>
+<div class="tip">
+<p><strong>Tip:</strong> Practice welding with scrap iron before attempting critical work. Each failure teaches technique. Joint strength equals parent metal when properly executed.</p>
+</div>
+</section>
+<section id="tool-making">
+<h2>Tool Making</h2>
+<h3>Making a Hammer Head:</h3>
+<ol>
+<li>Start with 2-3kg scrap steel bar (5cm x 5cm x 10cm)</li>
+<li>Heat to bright orange (working temperature)</li>
+<li>Use cross-peen hammer to create poll (striking face) on one end: strike perpendicular to length, rotate, strike opposite side, repeat until face is 5cm diameter</li>
+<li>Create eye (hole for handle insertion) by drifting (using tapered punch to stretch hole through metal)</li>
+<li>Shape face to slight dome (improves striking efficiency)</li>
+<li>Grind or sharpen edges if desired</li>
+<li>Attach wooden handle using epoxy or metal wedges</li>
+<li>Test by striking scrap metal; listen for clear ring (indicates good metal)</li>
+</ol>
+<h3>Making a Chisel:</h3>
+<ol>
+<li>Select high-carbon steel rod (1cm diameter, 15-20cm length)</li>
+<li>Heat one end to bright orange</li>
+<li>Draw out to form blade (taper from thick end to thin blade end)</li>
+<li>Create blade edge by flattening and sharpening (30-degree angle)</li>
+<li>Leave thick section for handle attachment</li>
+<li>Harden by heating to orange and quenching in water (makes blade very hard but brittle)</li>
+<li>Temper by reheating to light purple color and cooling slowly (reduces brittleness)</li>
+<li>Attach handle (bone or hardwood) using wrapped fiber or metal wedges</li>
+</ol>
+<h3>Making Nails:</h3>
+<p>Cut length of wire/rod to desired nail length. Forge one end to create point (draw out, sharpen). Upset opposite end to create head. Efficiency: approximately 5 minutes per nail; produces 12 nails per hour. Quality: properly forged nails grip better than cut nails.</p>
+</section>
+<section id="hardware">
+<h2>Hardware Production</h2>
+<h3>Hinges:</h3>
+<p>Create pintles (pins) and eyes (loops) for doors/cabinets. Simple strap hinge: flatten iron bar, drill holes, shape flaps. For permanent joints, forge eyes around pintles (welding). Strength: properly made iron hinge supports 200+ kg doors.</p>
+<p><strong>Hinge-Making Process:</strong></p>
+<ol>
+<li>Start with 8-10mm diameter iron rod (length depends on hinge size)</li>
+<li>Heat one end; create eye (loop) by wrapping rod around mandrel and forging joint</li>
+<li>Repeat on other end if butterfly hinge desired (loop on both ends)</li>
+<li>Cut to final length; create tapered point for pintle (straight or slightly bent)</li>
+<li>Shape strap section by flattening and bending to desired angle (typically 90 degrees)</li>
+<li>Drill or punch mounting holes while metal warm (easier than cold drilling)</li>
+<li>Test fit: eye should rotate smoothly on pintle without binding</li>
+</ol>
+<p><strong>Durability enhancement:</strong> After final shaping, normalize steel (reheat to orange, cool slowly) to reduce brittleness and increase toughness for hinges that experience shock loads.</p>
+<h3>Handles &amp; Brackets:</h3>
+<p>Bend iron rod or bar into required shape. Handle typical dimensions: 15-20cm long, U-shaped or ring-shaped. Bracket shapes vary by application (L-shaped, T-shaped, etc.). Forge mounting holes by drifting (punching).</p>
+<p><strong>Bracket Fabrication Technique:</strong></p>
+<ol>
+<li><strong>Angle brackets:</strong> Heat bar at center; bend 90 degrees using anvil horn. Length ratio: long arm 1.5x short arm typical</li>
+<li><strong>L-brackets:</strong> Flatten one end to create mounting flange; drill holes while warm</li>
+<li><strong>T-brackets:</strong> Start with bar; forge horizontal extension at center point (upset + draw technique)</li>
+<li><strong>Load calculation:</strong> Iron can support approximately 500kg per cm² of contact area; design accordingly</li>
+<li><strong>Joint strengthening:</strong> Reinforce bracket corners by adding reinforcement plate (forge and weld), creating gusset effect</li>
+</ol>
+<h3>Rivets:</h3>
+<p>Create short studs with enlarged head on one end (upset to form head). Insert through overlapping metal sheets, then peen (spread) opposite end to secure joint. Strength: riveted joints are permanent and strong (stronger than bolted unless bolts are very tight).</p>
+<p><strong>Riveting Process Details:</strong></p>
+<ol>
+<li><strong>Rivet formation:</strong> Heat rod end to bright orange; strike with cross-peen to create head (tapered form creates controlled head growth)</li>
+<li><strong>Head sizing:</strong> Head diameter should be 2.5-3x rod diameter; test by striking sample rod</li>
+<li><strong>Installation:</strong> Drive rivet through overlapping sheets; support rivet on bucking bar (backing iron). Strike opposite end with ball-peen hammer using controlled rhythm.</li>
+<li><strong>Peening technique:</strong> Multiple strikes (8-12) with medium force creates better joint than few heavy blows. Listen for change in ring tone indicating tight joint.</li>
+<li><strong>Inspection:</strong> Properly riveted joint shows no gap between sheets; rivet head fully formed; no rotation or wobbling</li>
+</ol>
+<div class="tip">
+<p><strong>Riveting tip:</strong> Pre-drill holes slightly smaller than rivet diameter. As rivet heats during installation, expansion fills holes perfectly. This creates nearly seamless joints.</p>
+</div>
+</section>
+<section id="decorative">
+<h2>Decorative Ironwork</h2>
+<h3>Scrollwork:</h3>
+<p>Create curves by heating iron rod and bending around scrolling form (shaped tool). Typical application: ornamental fence sections, door grilles. Technique: bend slightly, cool to set, repeat with deeper curves until desired spiral achieved.</p>
+<p><strong>Advanced Scrollwork Technique:</strong></p>
+<ol>
+<li><strong>Mandrel preparation:</strong> Create scrolling form from steel bar (hardened to prevent deformation). Form should have smooth, continuous curve.</li>
+<li><strong>Heat carefully:</strong> Even heating crucial—uneven heat causes uncontrolled bending. Rotate rod in fire for uniform temperature.</li>
+<li><strong>Binding techniques:</strong> Use rope or wire to bind rod to mandrel while bending (maintains shape, prevents unbending during removal).</li>
+<li><strong>Graduated curves:</strong> Professional scroll varies curve radius (tighter at start, looser at end). Creates visual motion.</li>
+<li><strong>Surface quality:</strong> Finishing scrollwork requires filing/polishing (visible surface should be smooth—rough scale looks amateurish).</li>
+</ol>
+<h3>Twisting &amp; Spirals:</h3>
+<p>Heat and rotate rod while holding one end fixed. Creates attractive visual pattern and increases surface area. Practical application: decorative gate elements, handles with visual appeal.</p>
+<p><strong>Controlled Twisting Method:</strong></p>
+<ol>
+<li><strong>Setup:</strong> Secure one end in vise (wrapping leather protects rod from vice marks). Leave long section for heating.</li>
+<li><strong>Heating zone:</strong> Heat approximately 20-30cm length to bright orange (white heat makes metal too soft, loses shape).</li>
+<li><strong>Rotation technique:</strong> Grip free end with tongs or wrench. Rotate steadily while striking rod lightly with flat hammer (promotes tighter twist).</li>
+<li><strong>Counting rotations:</strong> Professional twists count rotation turns (typical 4-8 full rotations per 20cm length creates attractive pattern).</li>
+<li><strong>Cooling control:</strong> Remove from heat when desired rotation achieved. Cool slowly (don't quench) to prevent stress cracks.</li>
+</ol>
+<p><strong>Twist variation:</strong> Double-twist (twist, cool, twist opposite direction) creates interlocked pattern of extreme strength and visual complexity.</p>
+<h3>Punched Designs:</h3>
+<p>Create patterns by punching holes or striking shaped dies into hot metal. Tool marks are characteristic of handmade ironwork. Designs range from simple geometric (circles, squares) to complex (animal shapes, plant motifs).</p>
+<p><strong>Punching Technique:</strong></p>
+<ol>
+<li><strong>Tool creation:</strong> Shape punches from hardened steel rod. Punch tip should be 1-2cm diameter for typical ornament. Create multiple punch shapes (circles, squares, diamonds, etc.).</li>
+<li><strong>Layout planning:</strong> Mark punch locations lightly with scratch marks (scratch easily disappears during heating).</li>
+<li><strong>Heating sequence:</strong> Heat work section to bright cherry red. Punch immediately before cooling.</li>
+<li><strong>Proper striking:</strong> Strike punch firmly with hammer (single well-aimed blow better than multiple lighter strikes). Punch should set deeply—3-5mm depth typical.</li>
+<li><strong>Punch spacing:</strong> Uniform spacing creates professional appearance. Typical spacing 2-3cm for large ornaments.</li>
+</ol>
+<p><strong>Design ideas:</strong> Geometric grids (repeating circles or squares), scattered stars, chevron patterns, radiating designs from central point. Practice on scrap iron before attempting final work.</p>
+<h3>Surface Finish:</h3>
+<ul>
+<li><strong>Polishing:</strong> Grind with fine stone or sand to remove oxidation and create smooth finish. Work progressively from coarse (removes rust) to fine (creates shine).</li>
+<li><strong>Blackening:</strong> Keep iron in coal fire without active bellows; carbon coating prevents rust. Requires controlled heat (too hot causes excessive oxidation). Results in protective black patina.</li>
+<li><strong>Painting:</strong> Oil-based paint protects from rust and adds color. Preparation critical—surface must be clean, dry, free of scale. Light primer coat followed by finish coat ensures adhesion.</li>
+</ul>
+<div class="warning">
+<p><strong>Finish durability:</strong> Polished finish requires periodic maintenance (oil coating prevents rust). Blackened finish more durable outdoors. Painted finish requires touch-ups annually (UV exposure degrades paint).</p>
+</div>
+</section>
+<section id="common-mistakes">
+<h2>Common Mistakes &amp; Solutions</h2>
+<h3>Mistake 1: Insufficient Heating</h3>
+<p><strong>Error:</strong> Attempting to forge at too-low temperature (dark red or below). Metal cracks, shatters, or resists forming. Results in wasted material and dangerous flying pieces.</p>
+<p><strong>Solution:</strong> Wait until bright cherry red or orange before striking heavily. Brief test strike before committing to full power strokes confirms temperature adequacy.</p>
+<h3>Mistake 2: Working Too Slowly</h3>
+<p><strong>Error:</strong> Removing metal from heat, working briefly, reheating frequently. Excessive heating cycles cause oxidation loss (steel dissolves into scale) and grain growth. Wastes fuel and creates brittle metal.</p>
+<p><strong>Solution:</strong> Plan sequence before heating. Work rapidly once metal reaches temperature. Limit heating cycles to 3-4 per operation.</p>
+<h3>Mistake 3: Overstrike (Poor Hammer Control)</h3>
+<p><strong>Error:</strong> Continuing to strike after metal has cooled below working temperature. Cold metal does not deform; instead it work-hardens and cracks. Causes tool breakage and wasted material.</p>
+<p><strong>Solution:</strong> Reheat metal when color indicates cooling. Better to reheat frequently than to overstrike. Develop sense for metal cooling rate through experience.</p>
+<h3>Mistake 4: Inadequate Quenching</h3>
+<p><strong>Error:</strong> Quenching hardened steel too slowly (cooling in air rather than water). Final hardness is insufficient. Tool edge dulls rapidly or chips during use.</p>
+<p><strong>Solution:</strong> Quench in water immediately after heating for hardness. Follow with slow cooling (tempering) to reduce brittleness. Temperature control during these steps is critical.</p>
+</section>
+<section id="hardening-tempering">
+<h2>Hardening &amp; Tempering Processes</h2>
+<p>Heat treatment transforms steel properties. Raw forged steel is soft; hardening makes it brittle; tempering balances hardness and toughness.</p>
+<h3>Hardening Process (Quenching):</h3>
+<ol>
+<li>Heat steel to critical temperature (bright red to orange, 750-900°C)</li>
+<li>Immerse immediately in water (fastest cooling). Alternative: oil quench (slower, less stress)</li>
+<li>Complete immersion required (partial quenching creates weak spots)</li>
+<li>Cool completely (minimum 5 minutes)</li>
+<li>Steel becomes very hard but brittle (will shatter if struck)</li>
+</ol>
+<div class="warning">
+<p><strong>Critical Risk:</strong> Quenched steel is extremely brittle. Striking hardened steel on hardened anvil can cause pieces to fly. Wear eye protection during quenching and early tempering.</p>
+</div>
+<h3>Tempering (Reducing Brittleness):</h3>
+<p>After hardening, steel must be tempered to prevent cracking during use. Tempering reheats steel to lower temperature, reducing hardness slightly while adding toughness.</p>
+<p><strong>Temperature control by color observation:</strong></p>
+<ul>
+<li>Pale yellow (200°C): Maximum hardness; used for sharp edges (chisels, plane blades)</li>
+<li>Straw yellow (220°C): High hardness with slight toughness; tools that take impact</li>
+<li>Brown (260°C): Good balance; general-purpose tools</li>
+<li>Light purple (280°C): Tough, flexible; springs and tool handles</li>
+<li>Dark purple (300°C): Maximum toughness; shock-resistant applications</li>
+</ul>
+<p><strong>Tempering technique:</strong></p>
+<ol>
+<li>Heat hardened steel slowly (use charcoal fire, not direct flame—uneven heating causes cracking)</li>
+<li>Watch color change appear (oxide layer forms on surface)</li>
+<li>Remove from heat at desired color</li>
+<li>Cool quickly in water (stops tempering process at exact point)</li>
+<li>Result: steel maintains hardness with added toughness</li>
+</ol>
+<h3>Hardness Testing (Field Method):</h3>
+<p>Use file: proper hardness resists file (file slides without biting). Under-hardened steel: file cuts easily. Over-hardened steel: file skids without cutting.</p>
+</section>
+<section id="advanced-techniques">
+<h2>Advanced Smithing Operations</h2>
+<h3>Hardie Hole Tooling:</h3>
+<p>Anvils have square hole (hardie hole) accepting specialized tools for precise operations:</p>
+<ul>
+<li><strong>Hardy bending forks:</strong> Shape rods into curves and angles</li>
+<li><strong>Hardy forming dies:</strong> Create specific shapes in metal</li>
+<li><strong>Punch/drift assembly:</strong> Drift pushes holes through metal; punch shapes holes</li>
+<li><strong>Swages:</strong> Match-pair tools shaping metal into specific profiles</li>
+</ul>
+<p>Each tool requires practice; investment in proper tools improves precision dramatically.</p>
+<h3>Drawing vs. Upsetting Distinction:</h3>
+<ul>
+<li><strong>Drawing:</strong> Lengthens metal by reducing cross-section (use flat-faced hammer)</li>
+<li><strong>Upsetting:</strong> Shortens metal by thickening (strike end held vertically; heat from tip down)</li>
+<li><strong>Combination:</strong> Many projects require both operations sequentially</li>
+</ul>
+<h3>Spread/Flare Technique:</h3>
+<p>Widen metal at specific point (create head on rivet, widen tang). Position workpiece over hardie hole; strike downward—metal spreads into hole. Control spread by rotating 90° between strikes.</p>
+<h3>Bending with Heat:</h3>
+<p>Simple bends achievable with hand manipulation. Complex bends (spirals, multiple angles) require jigs or mandrels positioned under hot metal to guide deformation.</p>
+<div class="info-box">
+<p><strong>Tool Material Hierarchy:</strong> Carbon tool steel &gt; alloy steel &gt; mild steel. Carbon steel (high carbon) hardness far exceeds mild steel. Quality salvaged tools often outperform newly forged ones using inferior materials.</p>
+</div>
+</section>
+<section id="repair-maintenance">
+<h2>Tool Repair &amp; Maintenance</h2>
+<h3>Damaged Anvil Face Repair:</h3>
+<p>Anvil face damage (dents, gouges) affects work quality. Deep damage requires:</p>
+<ol>
+<li>Grind/dress surface smooth (removes worst damage)</li>
+<li>Reface using hard steel plate (weld hard steel face to damaged anvil—requires expertise)</li>
+<li>Practical solution: use undamaged surface area, work around damage</li>
+</ol>
+<h3>Handle Replacement (Tools):</h3>
+<p>Wooden tool handles crack with use. Replace by:</p>
+<ol>
+<li>Remove old handle (soak in water, strike to loosen)</li>
+<li>Clean eye (hole where handle attaches) of splinters</li>
+<li>Fit new handle (wood should fit snugly)</li>
+<li>Secure with wedge (hardwood wedge driven through handle into eye)</li>
+<li>Trim excess handle wood</li>
+</ol>
+<h3>Spring Temper vs. Hard Temper:</h3>
+<p>Tools used repeatedly (hammers, tongs) need spring temper (flexible, resilient). Tools requiring hardness (chisels, punches) need hard temper (brittle but maintains edge). Design tool tempering to application.</p>
+<h3>Surface Rust Prevention:</h3>
+<p>Iron oxidizes rapidly when wet. Prevention methods:</p>
+<ul>
+<li>Oil storage: coat tools with thin oil layer, store dry</li>
+<li>Charcoal burial: store in charcoal (absorbs moisture)</li>
+<li>Paint/lacquer: protects from moisture</li>
+<li>Frequent use: active tools develop protective patina</li>
+</ul>
+</section>
+<section id="forge-scaling">
+<h2>Forge Scaling &amp; Production</h2>
+<h3>Small Batch Production (1-10 items):</h3>
+<p>Feasible in basic forge. Items: nails, small hardware, simple tools. Time per item: 30-60 minutes. Labor: one smith adequate.</p>
+<h3>Medium Production (20-100 items):</h3>
+<p>Requires specialization: one smith heats steel, second smith forms. Alternating work maintains steady production. Time per item: 15-20 minutes. Output: 3-6 items per hour team.</p>
+<h3>Large Production (500+ items annually):</h3>
+<p>Requires dedicated smithy with multiple forges, specialized tool sets, water/quench station, and 2-3 skilled smiths. Examples: nail production, horseshoe production for trading.</p>
+<h3>Cost Economics:</h3>
+<p>Raw material (coal, iron salvage): 20-30% of labor cost
+Equipment wear/replacement: 10-15% of labor
+Labor: 60-70% of production cost</p>
+<p>Pricing strategy: charge 3-5x raw material cost for simple items, 10-20x for complex items.</p>
+</section>
+<section id="fire-management">
+<h2>Advanced Fire &amp; Fuel Management</h2>
+<h3>Coal Bed Management:</h3>
+<p>Proper coal arrangement maintains working temperature:</p>
+<ol>
+<li>Build coal bed 6-8 inches thick around workpiece</li>
+<li>Tuyere (air pipe) should direct air horizontally into bed (not upward)</li>
+<li>Maintain slight indentation in coal bed containing hot coals around work</li>
+<li>Push cooler outer coal inward periodically (maintains temperature)</li>
+<li>Remove ash periodically (accumulation reduces air flow)</li>
+</ol>
+<h3>Temperature Zones:</h3>
+<p>Working coal bed has distinct zones:</p>
+<ul>
+<li><strong>Hot zone (above tuyere):</strong> White heat (hottest)</li>
+<li><strong>Working zone (upper coals):</strong> Yellow-orange (ideal for smithing)</li>
+<li><strong>Cool zone (edges):</strong> Dark red (suitable for preheating)</li>
+</ul>
+<p>Position work strategically to achieve desired temperature.</p>
+<h3>Fuel Efficiency:</h3>
+<p>Minimize bellows operation when work removed from fire (high cost of coal). Optimal workflow: heat steel while previous piece cools, work rapidly when steel reaches temperature, reheat only when absolutely necessary.</p>
+<div class="tip">
+<p><strong>Professional Tip:</strong> Listen to coal fire—experienced smiths hear fuel inefficiency (excessive roaring indicates over-inflation). Steady, gentle bellows rhythm produces even heat and saves fuel.</p>
+</div>
+</section>
+<section id="material-sourcing">
+<h2>Material Sourcing &amp; Salvage</h2>
+<h3>Iron Salvage Identification:</h3>
+<ul>
+<li><strong>Wrought iron (older):</strong> Fibrous structure visible when broken; welds easily; deforms before breaking</li>
+<li><strong>Cast iron (newer machinery):</strong> Brittle; shatters when struck; poor weld characteristics</li>
+<li><strong>Steel:</strong> Varies widely; salvaged machinery often high-quality steel</li>
+</ul>
+<h3>Reclaimed Steel Quality Assessment:</h3>
+<p>Test material by: attempting to file (hard steel resists; soft steel files easily), striking (listen for clear ring indicating good metal), breaking sample (examine grain structure).</p>
+<h3>Processing Salvage:</h3>
+<p>Remove rust, paint, other debris before forging. Grinding wheel ideal (if available). Manual alternatives: wire brush, hand hammer on hardened surface, prolonged heating to oxidize loose rust.</p>
+<h3>Supply Sourcing Hierarchy:</h3>
+<ol>
+<li>Local salvage (cheapest, minimal transport)</li>
+<li>Regional recyclers (reasonable cost; variable quality)</li>
+<li>Trade/barter with neighboring smiths</li>
+<li>Smelting ore (advanced; not practical for small operations)</li>
+</ol>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="bone-tools.html">Bone Tools</a>
+<a href="construction.html">Construction &amp; Carpentry</a>
+<a href="cra-03-cordage-textiles.html">Cordage Making</a>
+<a href="scrap-metal-identification.html">Scrap Metal Identification</a>
+<a href="stone-tools.html">Stone Tool Making</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

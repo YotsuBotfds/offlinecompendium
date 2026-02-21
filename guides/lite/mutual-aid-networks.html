@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/mutual-aid-networks.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mutual Aid Networks and Resource Pooling</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Society &amp; Culture</span> ›
+<span>Mutual Aid Networks and Resource Pooling</span>
+</div>
+
+
+<h1>Mutual Aid Networks and Resource Pooling</h1>
+<p class="subtitle">Design and operation of mutual aid networks including resource pooling structures, skill exchange ledgers, time-banking systems, tool libraries, inter-community trade protocols, and organizational templates for decentralized support systems.</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~13 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#network-structures">Network Structures and Organizational Models</a></li>
+<li><a href="#resource-pooling">Resource Pooling Mechanisms</a></li>
+<li><a href="#skill-exchange">Skill Exchange and Time-Banking Systems</a></li>
+<li><a href="#inter-community">Inter-Community Trade and Exchange Protocols</a></li>
+<li><a href="#conflict-resolution">Conflict Resolution Within Networks</a></li>
+<li><a href="#reputation-trust">Reputation and Trust Systems</a></li>
+<li><a href="#templates">Organizational Templates and Launch Checklist</a></li>
+<li><a href="#examples">Case Studies: Mutual Aid in Practice</a></li>
+<li><a href="#challenges">Common Challenges and Mitigation Strategies</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Mutual aid networks are formal or informal systems in which community members exchange resources, labor, and skills based on reciprocal commitment rather than monetary transaction. Unlike charity (one-directional giving) or traditional commerce (direct payment), mutual aid operates on the principle that everyone contributes what they can and receives what they need. This guide covers network structures (core-periphery and distributed), resource pooling mechanisms, skill and time-based exchange systems, tool and equipment libraries, inter-community protocols, conflict resolution, and practical templates for launching a network.</p>
+<p>Mutual aid networks thrive in contexts where monetary exchange is limited or unavailable—during economic downturns, wars, natural disasters, or in communities with low cash income and high social cohesion. Even in well-functioning economies, mutual aid reduces transaction costs, builds social bonds, and improves community resilience.</p>
+</section>
+<section id="network-structures">
+<h2>Network Structures and Organizational Models</h2>
+<h3>Core-and-Periphery Model</h3>
+<p>The most common structure for mutual aid has a small core of committed organizers and a broader periphery of participants.</p>
+<p><strong>Core (5–15 people):</strong></p>
+<ul>
+<li>Coordinates requests and offers (maintains the ledger)</li>
+<li>Resolves disputes</li>
+<li>Organizes group projects (food processing, repairs, childcare swaps)</li>
+<li>Meets weekly or bi-weekly to review operations</li>
+<li>Typically unpaid; members benefit equally from the network alongside their coordination role</li>
+</ul>
+<p><strong>Periphery (20–200+ people):</strong></p>
+<ul>
+<li>Participate as their circumstances allow</li>
+<li>Some are net contributors (give more than they take), others are net receivers (take more than they give)</li>
+<li>No expectation of equal participation; the network accommodates variation</li>
+<li>Low barrier to entry; minimal commitment required to participate</li>
+</ul>
+<p><strong>Governance:</strong> The core operates by consensus or simple majority vote. Major decisions (accepting new members, changing rules, expelling someone) involve wider input from committed members. Decision-making must be transparent to maintain trust.</p>
+<h3>Distributed Horizontal Model</h3>
+<p>In a fully decentralized network, there is no core; all members are equal. This works best for small networks (&lt;50 people) or in cultures with strong egalitarian traditions.</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>No elected leaders or decision-making body</li>
+<li>All members have authority to initiate exchanges</li>
+<li>Conflicts resolved through peer mediation, not authority</li>
+<li>Decisions made by consensus in full-group meetings</li>
+<li>Scaling is difficult; networks &gt;100 people tend to fracture or adopt a core</li>
+</ul>
+<p><strong>Advantage:</strong> Maximum autonomy and democratic participation
+<strong>Disadvantage:</strong> Time-intensive decision-making; slow dispute resolution</p>
+<h3>Hub-and-Spoke Model</h3>
+<p>Several small mutual aid groups, each with its own core, are connected by designated liaison members who participate in both their home group and the regional network.</p>
+<p><strong>Use case:</strong> Regional mutual aid spanning multiple towns or neighborhoods</p>
+<p><strong>Example:</strong> Three neighborhood networks in a city each have 40 members and a 3-person core. Each core sends one representative to a monthly regional coordination meeting. This allows resource sharing between neighborhoods while preserving local autonomy.</p>
+</section>
+<section id="resource-pooling">
+<h2>Resource Pooling Mechanisms</h2>
+<h3>Food and Garden Produce Pooling</h3>
+<p>Members grow food and contribute surplus to a common pool. Distribution is based on need or by drawing lots.</p>
+<p><strong>Management:</strong></p>
+<ul>
+<li>Establish a collection point (someone's garden, community center, or rotating homes)</li>
+<li>Schedule collection days (weekly or bi-weekly)</li>
+<li>Members bring whatever surplus they have; no minimum required</li>
+<li>Distribute pooled food equally or by lottery to ensure fairness</li>
+<li>Record contributions (not for payment but for understanding patterns and ensuring no one person is doing all the work)</li>
+</ul>
+<p><strong>Advantage:</strong> Reduces food insecurity; uses waste-free approach
+<strong>Variant:</strong> CSA-style (Community Supported Agriculture) model where members commit to a fixed weekly share of whatever the network harvests</p>
+<h3>Tool, Equipment, and Seed Libraries</h3>
+<p>Common resources (tools, equipment, seeds) are owned by the network and borrowed by members on a sign-out/sign-in basis.</p>
+<p><strong>Implementation:</strong></p>
+<ul>
+<li>Designate a librarian (1–2 people) responsible for inventory and condition checks</li>
+<li>Create a physical inventory list (spreadsheet) with columns: item, quantity, condition, last borrower, return date</li>
+<li>Use an index card or digital log for sign-out/sign-in (borrower name, date out, expected return date)</li>
+<li>Establish rules: maximum borrow time (e.g., 2 weeks), liability (who pays for damage), late fees (if any)</li>
+<li>Collect small fees ($0.50–2 per borrow) to fund replacement and maintenance</li>
+<li>Store items in a dedicated shed or rotating member's garage</li>
+</ul>
+<p><strong>Example inventory for a 30-person network:</strong></p>
+<ul>
+<li>Hand tools: 3 shovels, 3 hoes, 3 rakes, 3 axes, 10 hammers, screwdrivers, wrenches</li>
+<li>Power tools: 1 circular saw, 1 reciprocating saw, 1 drill</li>
+<li>Garden equipment: 2 wheelbarrows, 1 spreader, row covers</li>
+<li>Seeds: 50+ varieties (updated annually)</li>
+<li>Canning supplies: 5 canning pots, thermometer, jar lifter, funnels</li>
+</ul>
+<div class="tip">
+<p>Keep library items simple and durable. Complex electronics (computers, specialized equipment) are hard to maintain and often return in poor condition. Stick to mechanical tools and simple equipment.</p>
+</div>
+<h3>Bulk Food Purchasing</h3>
+<p>Members pool money to buy food directly from farms or suppliers in bulk, then divide the purchase.</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Core organizer surveys members monthly for food needs (rice, beans, oil, etc.)</li>
+<li>Solicits offers from farmers or suppliers for the quantities needed</li>
+<li>Collects cash from members (in advance to avoid shortfalls)</li>
+<li>Makes the purchase</li>
+<li>Divides and distributes within a week</li>
+<li>Records the total cost per person to ensure future pricing is fair</li>
+</ol>
+<p><strong>Scale:</strong> Works best for groups of 20–100 people. Smaller groups lack bulk discounts; larger groups struggle with logistics.</p>
+<p><strong>Benefit:</strong> 20–40% savings compared to retail prices</p>
+</section>
+<section id="skill-exchange">
+<h2>Skill Exchange and Time-Banking Systems</h2>
+<h3>Skills Ledger (Non-Monetary)</h3>
+<p>Members record skills they offer and skills they need. Exchanges are tracked in a ledger but not directly paid; instead, members accumulate &quot;credits&quot; that they can redeem later.</p>
+<p><strong>Implementation:</strong></p>
+<ol>
+<li>
+<p>Create a skills inventory (spreadsheet or poster):</p>
+<ul>
+<li>Column A: Skill (e.g., carpentry, medical first aid, tutoring, cooking)</li>
+<li>Column B: Provider name(s)</li>
+<li>Column C: Availability and constraints (e.g., evenings only, weekends only)</li>
+</ul>
+</li>
+<li>
+<p>When an exchange occurs:</p>
+<ul>
+<li>Record: Date, provider, skill, recipient, time or item value</li>
+<li>Assign a standard rate (e.g., 1 hour = 1 credit, or $20 value = 1 credit)</li>
+</ul>
+</li>
+<li>
+<p>Maintain a ledger (spreadsheet with ongoing columns for each member):</p>
+<ul>
+<li>Track cumulative credits earned and spent</li>
+<li>Share ledger with core team and periodically with all members (transparency builds trust)</li>
+</ul>
+</li>
+</ol>
+<p><strong>Example ledger entry:</strong></p>
+<ul>
+<li>Jan 15: Alice teaches Bob cooking for 2 hours → Bob owes network 2 credits</li>
+<li>Jan 20: Bob repairs network's fence (3 hours) → Bob repays 3 credits, leaving him with 1 credit</li>
+<li>Feb 5: Bob redeems 1 credit for a ride to the doctor (1 hour driver time)</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>Expect significant imbalance (some people chronically in debt, others accumulating large credits)</li>
+<li>Set a policy: Should unpaid debt carry over indefinitely? Forgive after 1 year? Allow trading of credits between members?</li>
+<li>Prevent one person from becoming over-indebted (negotiate repayment plans or forgive debt in extreme hardship)</li>
+</ul>
+<h3>Time Bank (Standardized Hours)</h3>
+<p>A time bank treats all labor as equal: one hour of doctor's work = one hour of gardening work. This is egalitarian but can feel unfair to highly skilled workers.</p>
+<p><strong>Setup:</strong></p>
+<ul>
+<li>Define the unit: 1 time credit = 1 hour of work (any type)</li>
+<li>Members offer services and earn credits (1 credit per hour)</li>
+<li>Members request services and pay credits (1 credit per hour)</li>
+<li>A coordinator (time banker) maintains the ledger</li>
+</ul>
+<p><strong>Pros:</strong> Simple bookkeeping; egalitarian (appeals to strong levelers)
+<strong>Cons:</strong> Highly skilled workers (doctors, electricians) often resent the rate; they may not participate</p>
+<p><strong>Variant:</strong> Service-weighted time banking</p>
+<ul>
+<li>Standard labor: 1 hour = 1 credit (gardening, childcare, cooking)</li>
+<li>Skilled labor: 1 hour = 2–3 credits (medical advice, electrical work, legal consultation)</li>
+<li>Rates set by core team based on training and risk</li>
+</ul>
+</section>
+<section id="inter-community">
+<h2>Inter-Community Trade and Exchange Protocols</h2>
+<p>As networks grow or connect, they need protocols for trading between groups.</p>
+<h3>Barter Agreements</h3>
+<p>Two networks agree to exchange goods or services without monetary payment.</p>
+<p><strong>Example agreement:</strong></p>
+<ul>
+<li>Network A (urban) exchanges processed seeds and canning supplies for</li>
+<li>Network B (rural) exchanges fresh produce and hay</li>
+</ul>
+<p><strong>Structure:</strong></p>
+<ul>
+<li>Negotiate annual or seasonal quotas</li>
+<li>Designate traders (1–2 people per network) authorized to negotiate and execute trades</li>
+<li>Document each trade (date, items, quantities, conditions)</li>
+<li>Resolve imbalances annually (if one network owes more than expected, adjust next round)</li>
+</ul>
+<h3>Regional Cooperative (Multi-Network Hub)</h3>
+<p>Multiple mutual aid networks join a larger organization that coordinates inter-network exchange and provides economies of scale.</p>
+<p><strong>Functions of the cooperative:</strong></p>
+<ul>
+<li>Bulk purchasing (buy seeds, tools, food in large quantities, distribute to member networks)</li>
+<li>Training and skill-sharing (organize workshops where experts from one network teach others)</li>
+<li>Conflict mediation (helps resolve disputes between networks)</li>
+<li>Standard-setting (agree on quality standards for traded goods)</li>
+</ul>
+<p><strong>Governance:</strong></p>
+<ul>
+<li>Each member network sends 1–2 representatives to a quarterly assembly</li>
+<li>Major decisions (budgets, admission of new networks) made by consensus or majority vote</li>
+<li>Day-to-day operations handled by a small coordination team (elected or rotating)</li>
+</ul>
+<h3>Currency Systems (Optional)</h3>
+<p>Some networks use a local currency (community scrip) to facilitate exchange while still operating outside the monetary economy.</p>
+<p><strong>Example:</strong> &quot;Hour notes&quot; or &quot;work points&quot; printed by the network, each worth 1 labor hour or a fixed basket of goods.</p>
+<p><strong>Pros:</strong> More flexible than barter; allows savings of value
+<strong>Cons:</strong> Requires legal review (some jurisdictions restrict local currencies); can undermine the non-monetary ethos if people start hoarding or reselling notes</p>
+<p>For most mutual aid networks, a simple digital ledger (spreadsheet) is sufficient and avoids legal complications.</p>
+</section>
+<section id="conflict-resolution">
+<h2>Conflict Resolution Within Networks</h2>
+<p>Conflicts arise over:</p>
+<ul>
+<li>Unequal participation (some members never give, only receive)</li>
+<li>Quality concerns (tool returned broken, food spoiled)</li>
+<li>Misunderstandings about terms (how long can you borrow a tool?)</li>
+<li>Personality clashes</li>
+</ul>
+<h3>Informal Resolution (First Step)</h3>
+<p>Most conflicts resolve through conversation:</p>
+<ol>
+<li>A concerned member brings the issue to the other person</li>
+<li>They discuss and reach agreement</li>
+<li>Core team documents the issue and resolution for future reference</li>
+</ol>
+<p>If this fails, escalate.</p>
+<h3>Mediation by Core Team</h3>
+<ol>
+<li>Both parties meet with 1–2 mediators (neutral core team members)</li>
+<li>Mediators listen to both sides without judgment</li>
+<li>Mediators help identify common ground and propose solutions</li>
+<li>Agreement is written down and signed by both parties</li>
+<li>Core team follows up in 1 month to ensure compliance</li>
+</ol>
+<p><strong>Example agreement:</strong> &quot;Alice returned Bob's chainsaw with a broken chain (estimated repair cost $30). Alice agrees to pay $15 and Bob agrees to absorb the remaining $15 as wear-and-tear. Both agree that tools should be inspected before returning and damage reported within 3 days.&quot;</p>
+<h3>Expulsion (Last Resort)</h3>
+<p>If a member repeatedly violates agreements or behaves abusively, the core team can vote to expel them (with input from committed members). This is rare but necessary to protect network integrity.</p>
+<p><strong>Policy for expulsion:</strong></p>
+<ul>
+<li>Three documented violations or warnings in 12 months, OR</li>
+<li>One incident of physical violence, theft, or sexual harassment</li>
+<li>Expulsion requires a vote (2/3 majority in core team and support from broader membership)</li>
+<li>Expelled members can appeal after 6 months</li>
+</ul>
+<div class="warning">
+<p>Expulsion must be handled carefully to avoid legal liability (wrongful termination claims). Document incidents thoroughly and provide clear notice of violations.</p>
+</div>
+</section>
+<section id="reputation-trust">
+<h2>Reputation and Trust Systems</h2>
+<p>Mutual aid networks depend on trust: members must believe that others will reciprocate, that records are accurate, and that the system is fair. As networks grow from small (10–20 people) to larger (100+ people), informal reputation (everyone knows each other) breaks down. Formal reputation systems prevent free-riding and maintain cooperation.</p>
+<h3>Simple Point-Based Contribution Tracking</h3>
+<p>The simplest reputation system assigns points for contributions and tracks cumulative balance per member.</p>
+<p><strong>Implementation:</strong></p>
+<ol>
+<li>
+<p>Define contribution categories with point values:</p>
+<ul>
+<li>Giving food/resources: 1–5 points per item (based on value)</li>
+<li>Labor (unskilled): 1 point per hour</li>
+<li>Labor (skilled): 2–3 points per hour</li>
+<li>Organizing/coordination: 2 points per hour</li>
+<li>Taking resources/services: subtract equal points</li>
+</ul>
+</li>
+<li>
+<p>Maintain a public ledger (spreadsheet visible to all members):</p>
+<ul>
+<li>Column A: Member name</li>
+<li>Column B: Cumulative points (running total)</li>
+<li>Column C: Last update date</li>
+</ul>
+</li>
+<li>
+<p>Goal: Keep all members within ±10 points of zero (balanced contribution/consumption)</p>
+<ul>
+<li>Members with negative points (takers) are gently reminded to contribute</li>
+<li>Members with positive points (givers) can claim services/food as rewards</li>
+</ul>
+</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Simple to track</li>
+<li>Publicly visible (prevents disputes)</li>
+<li>Motivates both giving (points accumulate) and receiving (points are consumed)</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Ignores quality of contribution (1 hour of good work = 1 hour of mediocre work)</li>
+<li>Doesn't scale well above 50 people (managing points becomes tedious)</li>
+</ul>
+<hr>
+<h3>Labor Hour Banking</h3>
+<p>In this system, all labor is valued equally: 1 hour of work = 1 credit, regardless of skill or type.</p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li>Every member can offer labor in exchange for credits</li>
+<li>Every member can request labor and pay credits</li>
+<li>Maintain a ledger (as above) showing credits earned and spent</li>
+<li>Exchange rate is fixed: 1 hour labor = 1 credit (no negotiation)</li>
+</ol>
+<p><strong>Example ledger entry:</strong></p>
+<ul>
+<li>Jan 10: Alice offers 3 hours carpentry → Alice earns 3 credits</li>
+<li>Jan 12: Bob requests 2 hours carpentry help from Alice → Bob pays 2 credits; Alice receives payment</li>
+<li>Jan 15: Alice pays 1 credit for 1 hour of cooking help from Carol</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Egalitarian (appeals to members with strong leveling values)</li>
+<li>Simple; everyone understands the rate</li>
+<li>Encourages participation from lower-status individuals (doctor's hour = farmer's hour)</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Skilled workers may resent the rate (resent giving professional-quality work for general wage)</li>
+<li>May discourage skilled contributions (doctors, electricians may decline to participate)</li>
+<li>Doesn't scale: networks &gt;30 people see declining specialist participation</li>
+</ul>
+<p><strong>Variant: Tiered Hour Banking</strong></p>
+<p>Allow different rates for different labor types while maintaining simplicity:</p>
+<ul>
+<li>Standard labor (cooking, gardening, childcare): 1 hour = 1 credit</li>
+<li>Skilled labor (medical advice, electrical repair, carpentry): 1 hour = 2 credits</li>
+<li>Specialized professional (dentistry, legal advice): 1 hour = 3 credits</li>
+</ul>
+<p>This retains egalitarian spirit while acknowledging skill. Rates set by core team; all members agree at start.</p>
+<hr>
+<h3>Skill-Sharing Credit Systems</h3>
+<p>This system tracks skill-sharing separate from labor exchange. Members exchange knowledge and expertise, each building their skill portfolio over time.</p>
+<p><strong>Implementation:</strong></p>
+<ol>
+<li>
+<p>Core team creates a &quot;skill passport&quot; for each member (simple spreadsheet or card):</p>
+<ul>
+<li>Skills possessed (list)</li>
+<li>Skills learned (list with date)</li>
+<li>Skills in progress (list)</li>
+</ul>
+</li>
+<li>
+<p>When a member teaches a skill to another:</p>
+<ul>
+<li>Teacher records: date, skill, learner name, time spent</li>
+<li>Learner records: skill learned, date, teacher name</li>
+<li>Both members update their skill passport</li>
+</ul>
+</li>
+<li>
+<p>Optional credit system: 1 hour of teaching = 2 credits (incentivizes teachers)</p>
+</li>
+</ol>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Alice (experienced gardener) teaches Bob composting over 3 hours</li>
+<li>Alice's passport: &quot;Taught composting to Bob, 3 hours, Jan 15–17&quot;</li>
+<li>Bob's passport: &quot;Learned composting from Alice, 3 hours, Jan 15–17&quot;</li>
+<li>Alice earns 6 credits (2 per hour teaching)</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Tracks knowledge transfer explicitly</li>
+<li>Incentivizes skill-sharing (teaching is &quot;paid&quot; in credits)</li>
+<li>Builds community learning culture</li>
+<li>Reduces professional gatekeeping (knowledge is shared freely)</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Requires tracking beyond simple ledger (skill passports add complexity)</li>
+<li>Hard to verify that skill was truly &quot;learned&quot; (subjective assessment)</li>
+</ul>
+<hr>
+<h3>Preventing Free-Rider Problems</h3>
+<p>As networks grow, some members inevitably try to consume without contributing. Reputation systems must actively discourage this.</p>
+<p><strong>Methods:</strong></p>
+<ol>
+<li>
+<p><strong>Visibility and accountability:</strong></p>
+<ul>
+<li>Post ledgers publicly (member names, cumulative balance)</li>
+<li>Publish &quot;Top Givers&quot; and &quot;Top Receivers&quot; monthly</li>
+<li>Light social pressure: &quot;Bob has a negative balance; Bob, we need your help&quot;</li>
+</ul>
+</li>
+<li>
+<p><strong>Explicit conversation:</strong></p>
+<ul>
+<li>When member hits -5 credits (or equivalent), a core team member privately discusses with them</li>
+<li>Non-accusatory: &quot;We've noticed you've received more than given recently; how can we help you contribute?&quot;</li>
+<li>Many people don't realize they're being seen as free-riders; explicit conversation solves it</li>
+</ul>
+</li>
+<li>
+<p><strong>Contribution expectations:</strong></p>
+<ul>
+<li>Establish minimum expectation: &quot;Members should contribute at least 4 hours per month&quot;</li>
+<li>If member falls short for 3 months straight, they're asked to leave</li>
+</ul>
+</li>
+<li>
+<p><strong>Graduated enforcement:</strong></p>
+<ul>
+<li>First warning: verbal conversation (private)</li>
+<li>Second warning: documented in writing; shared with core team</li>
+<li>Third warning: member is asked to leave network</li>
+</ul>
+</li>
+</ol>
+<p><strong>Example policy:</strong>
+&quot;Members who maintain a balance below -10 points for more than 1 month are in violation. If balance is not improved to above -5 within 2 weeks, the member may be asked to leave. Appeals are heard by the core team.&quot;</p>
+<hr>
+<h3>Scaling Trust from Small (10–20) to Large (100+) Networks</h3>
+<p><strong>Small networks (10–20 people):</strong></p>
+<ul>
+<li>Everyone knows everyone; reputation is informal and personal</li>
+<li>Simple ledger (spreadsheet) for basic tracking</li>
+<li>Disputes are rare; resolved by group conversation</li>
+<li>No formal rules needed; norms are enforced socially</li>
+</ul>
+<p><strong>Transition zone (20–50 people):</strong></p>
+<ul>
+<li>Informal reputation breaks down; strangers join</li>
+<li>Introduce formal point-based ledger</li>
+<li>Document basic policies (contribution expectations, dispute resolution)</li>
+<li>Form a 3–5 person core team to manage logistics</li>
+</ul>
+<p><strong>Large networks (50–100+ people):</strong></p>
+<ul>
+<li>Split into sub-groups (10–20 each) with local leaders</li>
+<li>Each sub-group maintains its own ledger; coordinates with hub on bulk purchases</li>
+<li>Formal written policies required (bylaws, dispute resolution, expulsion)</li>
+<li>Track reputation more carefully (higher stakes when strangers are involved)</li>
+<li>Consider reputation scores or badges: &quot;Alice is a Level-3 member (high trust)&quot; signals reliability</li>
+</ul>
+<p><strong>Trust scoring (optional, for large networks):</strong></p>
+<p>Assign trust levels based on track record:</p>
+<ul>
+<li><strong>Level 1 (New):</strong> Just joined; 0–30 days</li>
+<li><strong>Level 2 (Provisional):</strong> 30–90 days; positive balance; no violations</li>
+<li><strong>Level 3 (Full):</strong> 90+ days; positive balance; 5+ contributions; zero violations</li>
+<li><strong>Level 4 (Trusted):</strong> 1+ year; net-positive balance; 10+ contributions; zero violations (eligible for core team)</li>
+</ul>
+<p>Benefits of higher levels:</p>
+<ul>
+<li>Access to rare resources (first pick of bulk food, borrowing expensive tools)</li>
+<li>Authority in decision-making (higher-level members vote on expulsions)</li>
+<li>Recognition (public acknowledgment at meetings)</li>
+</ul>
+<hr>
+<h3>Conflict Resolution Around Reputation Disputes</h3>
+<p>When a member claims their balance is wrong, or disputes a point deduction, follow this process:</p>
+<ol>
+<li><strong>Review documentation:</strong> Examine the ledger and supporting records (dates, descriptions)</li>
+<li><strong>Interview both parties:</strong> Hear the member's account and the core team's account</li>
+<li><strong>Determine facts:</strong> Did the contribution/consumption actually happen? On what date? How much?</li>
+<li><strong>Adjust if needed:</strong> Correct the ledger if an error is found; explain the correction to the member</li>
+<li><strong>Document the dispute:</strong> Add a note to the ledger explaining the correction</li>
+</ol>
+<p>Example: &quot;Jan 20 dispute: Alice claims she taught Bob gardening on Jan 10 (2 hours), but ledger shows only 1 hour. Reviewed Alice's notes; 2 hours confirmed. Ledger corrected from 1 to 2 hours. Explanation: Record keeper made a data entry error.&quot;</p>
+<hr>
+</section>
+<section id="templates">
+<h2>Organizational Templates and Launch Checklist</h2>
+<h3>Founding Documents Template</h3>
+<p><strong>Mutual Aid Network Agreement</strong></p>
+<ol>
+<li>
+<p><strong>Purpose:</strong> State the network's goals (food security, resource sharing, skill exchange, community resilience, etc.)</p>
+</li>
+<li>
+<p><strong>Membership:</strong> Who can join? Any restrictions? (Usually open to all community members)</p>
+</li>
+<li>
+<p><strong>Core team structure:</strong> How many people, how often do they meet, how are they chosen?</p>
+</li>
+<li>
+<p><strong>Decision-making:</strong> Consensus, majority vote, or core-only?</p>
+</li>
+<li>
+<p><strong>Finances:</strong> How are costs covered (membership fees, donations, fundraising)?</p>
+</li>
+<li>
+<p><strong>Resource sharing rules:</strong></p>
+<ul>
+<li>Tool library: borrow limits, liability, maintenance fees?</li>
+<li>Food pooling: contribution minimums, distribution method?</li>
+<li>Skill exchange: ledger or time bank? How are rates determined?</li>
+</ul>
+</li>
+<li>
+<p><strong>Conflict resolution:</strong> Steps for addressing disputes</p>
+</li>
+<li>
+<p><strong>Confidentiality and privacy:</strong> What information is shared publicly vs. kept private?</p>
+</li>
+<li>
+<p><strong>Amendments:</strong> How can these rules be changed?</p>
+</li>
+</ol>
+<h3>Launch Checklist</h3>
+<p><strong>Weeks 1–2: Core Team Formation</strong></p>
+<ul>
+<li>[ ] 3–5 founding members meet and discuss vision</li>
+<li>[ ] Draft agreement document</li>
+<li>[ ] Identify community partners (churches, nonprofits, community centers for meeting space)</li>
+</ul>
+<p><strong>Weeks 3–4: Community Outreach</strong></p>
+<ul>
+<li>[ ] Design flyer or social media post</li>
+<li>[ ] Post at community centers, local businesses, online groups</li>
+<li>[ ] Host a founding meeting (30–60 minutes, explain concept and listen to feedback)</li>
+</ul>
+<p><strong>Weeks 5–8: Onboarding and Skills Inventory</strong></p>
+<ul>
+<li>[ ] Enroll founding members (collect names, contact info, skills, needs)</li>
+<li>[ ] Create skills inventory and resource list</li>
+<li>[ ] Choose a meeting schedule (weekly, bi-weekly, or monthly)</li>
+<li>[ ] Set up a simple ledger (spreadsheet, Google Sheets, or free tool like Airtable)</li>
+</ul>
+<p><strong>Weeks 9–12: Launch</strong></p>
+<ul>
+<li>[ ] First resource exchange (small, to build momentum)</li>
+<li>[ ] First conflict or challenge resolved successfully (builds credibility)</li>
+<li>[ ] Second recruitment round (word-of-mouth grows the network)</li>
+</ul>
+<p><strong>Month 4+: Stabilization</strong></p>
+<ul>
+<li>[ ] Evaluate what's working and what isn't</li>
+<li>[ ] Refine rules and processes</li>
+<li>[ ] Plan special projects (bulk purchase, tool library establishment)</li>
+<li>[ ] Expand if there's demand and core team capacity</li>
+</ul>
+</section>
+<section id="examples">
+<h2>Case Studies: Mutual Aid in Practice</h2>
+<h3>Example 1: Urban Neighborhood Food Network</h3>
+<p><strong>Context:</strong> 45 households in a dense urban neighborhood (apartments and small homes). Limited space for gardening; most households spend 30–50% of income on food.</p>
+<p><strong>Structure:</strong></p>
+<ul>
+<li>Weekly food pooling: Members contribute whatever produce they've grown or preserved (typically $10–30 value per week)</li>
+<li>Monthly bulk purchasing: Core team buys rice, beans, oil, flour in 25 kg bags from a farmers' co-op, divides into portions</li>
+<li>Skill exchange: Cooking, food preservation, meal prep teaching</li>
+</ul>
+<p><strong>Typical week:</strong></p>
+<ul>
+<li>Monday: Collection point open (neighbor's porch), people drop off produce</li>
+<li>Wednesday: Core team buys bulk items, divides produce, organizes collection</li>
+<li>Thursday/Friday: Members pick up their share</li>
+<li>Monthly: Canning class hosted by a member (exchange: teacher gets 3 credits for 2 hours of work)</li>
+</ul>
+<p><strong>Result:</strong> Members report 20–30% reduction in food spending; increased social connection; reliable food supply even when personal harvest is low.</p>
+<h3>Example 2: Rural Multi-Network Hub</h3>
+<p><strong>Context:</strong> Three small rural towns (populations 2000–3000 each) share a cooperative. Limited job opportunities; strong farming tradition.</p>
+<p><strong>Structure:</strong></p>
+<ul>
+<li>Each town has its own 25–35 member network with a local core team</li>
+<li>Regional hub meets quarterly (6 people total: 2 from each town)</li>
+<li>Hub coordinates bulk tool purchasing, seed sharing across towns, and training</li>
+</ul>
+<p><strong>Inter-community exchanges:</strong></p>
+<ul>
+<li>Town A (grain growers) provides bulk grain to Town B (market gardeners), who provide fresh produce to Town A</li>
+<li>Town C (livestock) provides manure and meat to A and B; receives grain and vegetables</li>
+<li>Tool library: expensive equipment (combine harvester, baler) stored in central location and shared</li>
+</ul>
+<p><strong>Skill exchange:</strong></p>
+<ul>
+<li>Veterinary advice from Town C shared with A and B</li>
+<li>Carpentry expertise from Town A serves all three towns</li>
+<li>Food preservation expertise from Town B taught to others</li>
+</ul>
+<p><strong>Result:</strong> Three networks working independently would struggle with economies of scale; the hub allows them to reduce costs and achieve better resource matching.</p>
+</section>
+<section id="challenges">
+<h2>Common Challenges and Mitigation Strategies</h2>
+<p><strong>Challenge: Free riders (people who receive without contributing)</strong></p>
+<ul>
+<li>Mitigation: Set clear participation expectations; allow some &quot;deficit&quot; but not unlimited; core team addresses chronic non-contributors through mediation or expulsion</li>
+</ul>
+<p><strong>Challenge: Founder burnout (core team exhausted)</strong></p>
+<ul>
+<li>Mitigation: Rotate leadership roles; cap meetings to 2 hours; explicitly value the coordinators' work (e.g., they get &quot;bonus credits&quot; or other recognition)</li>
+</ul>
+<p><strong>Challenge: Scaling (as network grows from 30 to 100+ people)</strong></p>
+<ul>
+<li>Mitigation: Move to a hub-and-spoke model (subdivide into multiple networks); consider a part-time paid coordinator if the network has fundraised resources</li>
+</ul>
+<p><strong>Challenge: Trust issues (people fear theft, damage, freeloading)</strong></p>
+<ul>
+<li>Mitigation: Start small with committed founding members; grow organically; transparency in the ledger; clear rules and fair conflict resolution</li>
+</ul>
+</section>
+<section id="conclusion">
+<h2>Conclusion</h2>
+<p>Mutual aid networks are engines of community resilience and solidarity. They thrive on reciprocity, transparency, and clear rules, not altruism or charity. A well-designed network becomes self-sustaining, generating value for all participants while reducing dependence on cash and commercial systems. Starting small with a committed core team, clear documents, and manageable initial projects is the key to success.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="community-organizing.html">Community Organizing &amp; Leadership</a>
+<a href="economics-trade.html">Economics &amp; Trade</a>
+<a href="governance.html">Governance &amp; Community</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

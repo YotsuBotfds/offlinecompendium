@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/welding-metallurgy.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welding Metallurgy &amp; Joint Integrity</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Metalworking</span> ›
+<span>Welding Metallurgy &amp; Joint Integrity</span>
+</div>
+
+
+<h1>Welding Metallurgy &amp; Joint Integrity</h1>
+<p class="subtitle">Forge welding, brazing, soldering, arc welding principles, weld defects, and testing methods</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~18 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#metallurgy-of-welding">The Metallurgy of Welding</a></li>
+<li><a href="#forge-welding">Forge Welding (Fire Welding)</a></li>
+<li><a href="#brazing-soldering">Brazing and Soldering</a></li>
+<li><a href="#oxy-fuel-welding">Oxy-Fuel Welding Basics</a></li>
+<li><a href="#arc-welding-principles">Arc Welding Principles</a></li>
+<li><a href="#weld-joint-types">Weld Joint Types</a></li>
+<li><a href="#heat-affected-zone">The Heat-Affected Zone (HAZ)</a></li>
+<li><a href="#weld-defects">Common Weld Defects and Causes</a></li>
+<li><a href="#testing-welds">Testing Weld Integrity</a></li>
+<li><a href="#post-weld-treatment">Post-Weld Heat Treatment</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<p>Joining two pieces of metal requires understanding heat, pressure, and metallurgical compatibility. This guide covers the science of fusion welding, brazing, soldering, and the testing methods used to ensure joint integrity in survival and industrial applications.</p>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Weld Joint Types and Heat-Affected Zone">
+  <defs>
+    <style>
+      .weld-label { font-family: Arial, sans-serif; font-size: 12px; fill: var(--text); }
+      .weld-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: var(--text); }
+      .haz-zone { stroke-dasharray: 3,3; stroke: var(--accent2); stroke-width: 1.5; }
+      .metal-line { stroke: var(--text); stroke-width: 2; }
+      .weld-area { stroke: var(--accent); stroke-width: 2.5; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="var(--bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="30" class="weld-title" text-anchor="middle">Weld Joint Types &amp; Heat-Affected Zone</text>
+
+  <!-- Joint Types Section -->
+  <text x="50" y="60" class="weld-title">Joint Types (Cross-Section View):</text>
+
+  <!-- Butt Joint -->
+  <g>
+    <text x="60" y="95" class="weld-label" style="font-weight: bold;">Butt Joint</text>
+    <line x1="50" y1="110" x2="120" y2="110" class="metal-line"/>
+    <line x1="130" y1="110" x2="200" y2="110" class="metal-line"/>
+    <!-- Weld fill -->
+    <polygon points="120,105 130,105 130,115 120,115" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
+    <text x="60" y="140" class="weld-label">End-to-end</text>
+  </g>
+
+  <!-- Lap Joint -->
+  <g>
+    <text x="240" y="95" class="weld-label" style="font-weight: bold;">Lap Joint</text>
+    <line x1="230" y1="105" x2="320" y2="105" class="metal-line"/>
+    <line x1="230" y1="115" x2="320" y2="115" class="metal-line"/>
+    <!-- Weld -->
+    <polygon points="310,105 320,105 320,115 310,115" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
+    <text x="240" y="140" class="weld-label">Overlapping</text>
+  </g>
+
+  <!-- T-Joint -->
+  <g>
+    <text x="420" y="95" class="weld-label" style="font-weight: bold;">T-Joint</text>
+    <line x1="410" y1="110" x2="490" y2="110" class="metal-line"/>
+    <line x1="450" y1="95" x2="450" y2="125" class="metal-line"/>
+    <!-- Weld fillet -->
+    <polygon points="445,110 455,110 450,125" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
+    <text x="420" y="140" class="weld-label">Perpendicular</text>
+  </g>
+
+  <!-- Corner Joint -->
+  <g>
+    <text x="600" y="95" class="weld-label" style="font-weight: bold;">Corner Joint</text>
+    <line x1="590" y1="110" x2="660" y2="110" class="metal-line"/>
+    <line x1="660" y1="95" x2="660" y2="165" class="metal-line"/>
+    <!-- Weld -->
+    <polygon points="655,105 665,105 665,115 655,115" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
+    <text x="600" y="140" class="weld-label">Right angle</text>
+  </g>
+
+  <!-- Heat-Affected Zone Diagram -->
+  <text x="50" y="190" class="weld-title">Heat-Affected Zone (HAZ) in Cross-Section</text>
+
+  <!-- Base metal left -->
+  <rect x="80" y="220" width="80" height="80" fill="var(--surface)" stroke="var(--text)" stroke-width="2"/>
+  <text x="100" y="265" class="weld-label" text-anchor="middle">Base Metal</text>
+  <text x="100" y="280" class="weld-label" text-anchor="middle">(Unaffected)</text>
+
+  <!-- HAZ zone -->
+  <ellipse cx="200" cy="260" rx="40" ry="50" fill="var(--card)" stroke="var(--accent2)" stroke-width="2" class="haz-zone"/>
+  <text x="200" y="265" class="weld-label" text-anchor="middle">HAZ</text>
+  <text x="200" y="280" class="weld-label" text-anchor="middle">(Coarse grain)</text>
+
+  <!-- Fusion zone (weld metal) -->
+  <rect x="240" y="220" width="100" height="80" fill="var(--accent)" stroke="var(--text)" stroke-width="2"/>
+  <text x="290" y="260" class="weld-label" text-anchor="middle">Fusion Zone</text>
+  <text x="290" y="275" class="weld-label" text-anchor="middle">(Weld Metal)</text>
+
+  <!-- HAZ zone right -->
+  <ellipse cx="380" cy="260" rx="40" ry="50" fill="var(--card)" stroke="var(--accent2)" stroke-width="2" class="haz-zone"/>
+  <text x="380" y="265" class="weld-label" text-anchor="middle">HAZ</text>
+  <text x="380" y="280" class="weld-label" text-anchor="middle">(Coarse grain)</text>
+
+  <!-- Base metal right -->
+  <rect x="420" y="220" width="80" height="80" fill="var(--surface)" stroke="var(--text)" stroke-width="2"/>
+  <text x="440" y="265" class="weld-label" text-anchor="middle">Base Metal</text>
+  <text x="440" y="280" class="weld-label" text-anchor="middle">(Unaffected)</text>
+
+  <!-- Temperature zones below -->
+  <text x="100" y="330" class="weld-label" text-anchor="middle" style="font-size: 10px;">~400°C</text>
+  <text x="200" y="330" class="weld-label" text-anchor="middle" style="font-size: 10px;">600–1200°C</text>
+  <text x="290" y="330" class="weld-label" text-anchor="middle" style="font-size: 10px;">Melted</text>
+  <text x="380" y="330" class="weld-label" text-anchor="middle" style="font-size: 10px;">600–1200°C</text>
+  <text x="440" y="330" class="weld-label" text-anchor="middle" style="font-size: 10px;">~400°C</text>
+
+  <!-- Cooling curves legend -->
+  <text x="50" y="370" class="weld-title">Key Points:</text>
+  <g>
+    <rect x="50" y="385" width="10" height="10" fill="var(--surface)" stroke="var(--text)" stroke-width="1"/>
+    <text x="70" y="394" class="weld-label">Base metal: unchanged properties</text>
+  </g>
+
+  <g>
+    <ellipse cx="55" cy="415" rx="5" ry="5" fill="var(--card)" stroke="var(--accent2)" stroke-width="1.5"/>
+    <text x="70" y="420" class="weld-label">HAZ: grain coarsening, hardness variation</text>
+  </g>
+
+  <g>
+    <rect x="50" y="435" width="10" height="10" fill="var(--accent)" stroke="var(--text)" stroke-width="1"/>
+    <text x="70" y="444" class="weld-label">Fusion zone: rapid solidification, internal stress</text>
+  </g>
+
+  <!-- Post-weld treatment info -->
+  <text x="500" y="190" class="weld-title">Post-Weld Treatment</text>
+
+  <g>
+    <rect x="480" y="210" width="290" height="140" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="500" y="235" class="weld-label" style="font-weight: bold;">Stress Relief (550–700°C):</text>
+    <text x="500" y="255" class="weld-label">• Heat entire joint 1–2 hours</text>
+    <text x="500" y="270" class="weld-label">• Cool slowly in insulated space</text>
+    <text x="500" y="285" class="weld-label">• Reduces residual stress</text>
+
+    <text x="500" y="310" class="weld-label" style="font-weight: bold;">Annealing (800–900°C):</text>
+    <text x="500" y="330" class="weld-label">• Softens HAZ, improves ductility</text>
+  </g>
+
+</svg>
+</p>
+<section id="metallurgy-of-welding">
+<h2>The Metallurgy of Welding</h2>
+<p>When two pieces of steel are brought to melting point and allowed to solidify together, the weld joint can be as strong as the base metal—or far weaker, depending on technique.</p>
+<p><strong>The challenge:</strong> The weld pool and its surroundings cool at extreme rates, creating three distinct zones:</p>
+<ol>
+<li><strong>Fusion zone:</strong> Metal that melted and resolidified; often very hard and brittle.</li>
+<li><strong>Heat-affected zone (HAZ):</strong> Metal heated near the melting point but not melted; grain structure coarsened, hardness altered.</li>
+<li><strong>Base metal:</strong> Unaffected by heat; original properties intact.</li>
+</ol>
+<p>Each zone has different hardness, toughness, and corrosion resistance. Cracks often propagate through the hardest (and thus most brittle) zone.</p>
+<p><strong>Why steel composition matters:</strong> Low-carbon steel (&lt;0.3% C) welds easily because it doesn't form brittle martensite on rapid cooling. Medium-carbon steel (0.3–0.6% C) requires slower cooling or preheating to avoid cracks. High-carbon steel (&gt;0.6% C) is very prone to cracking and demands careful temperature management.</p>
+<div class="tip">
+<p>When welding dissimilar metals or high-carbon steel, the goal is to slow the cooling rate after the weld is complete. Covering with hot ash, wrapping in cloth, or burying in sand all reduce cooling speed and improve ductility.</p>
+</div>
+</section>
+<section id="forge-welding">
+<h2>Forge Welding (Fire Welding)</h2>
+<p>The oldest and most accessible welding method: heat two pieces of metal to plastic state, overlap them, and hammer them together.</p>
+<p><strong>Temperature requirements:</strong> Steel must reach a temperature called the &quot;welding heat&quot;—below melting but hot enough that the pieces deform plastically under hammer blows. For most steels:</p>
+<ul>
+<li><strong>Lower bound:</strong> 1100°C (2012°F) — pieces barely stick.</li>
+<li><strong>Ideal range:</strong> 1200–1300°C (2192–2372°F) — pieces flow together easily.</li>
+<li><strong>Upper bound:</strong> 1400°C (2552°F) — risk of burning the steel (oxidation damage that weakens the weld).</li>
+</ul>
+<p><strong>Visual indicators:</strong></p>
+<ul>
+<li><strong>Bright cherry:</strong> 750–800°C, too cool.</li>
+<li><strong>Dark cherry:</strong> 850–900°C, still too cool for welding.</li>
+<li><strong>Bright orange:</strong> 1000–1100°C, just barely weldable.</li>
+<li><strong>Light orange:</strong> 1150–1250°C, ideal welding heat.</li>
+<li><strong>Yellow-white:</strong> 1300°C+, risk of burn.</li>
+</ul>
+<p><strong>Flux use:</strong> A flux (borax, salt, sand mixed with charcoal) is essential:</p>
+<ul>
+<li><strong>Cleans the surface:</strong> Dissolves oxide layer that blocks adhesion.</li>
+<li><strong>Lowers melting point:</strong> Borax flux melts at ~600°C, protecting the steel and speeding diffusion.</li>
+<li><strong>Acts as lubricant:</strong> Allows pieces to flow together without tearing.</li>
+</ul>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Heat both pieces to light orange color (1150–1200°C).</li>
+<li>Dip or sprinkle flux onto the hot pieces.</li>
+<li>Return to the fire and reheat until the pieces glow light yellow and flux turns liquid/glassy.</li>
+<li>Remove from fire and place on the anvil, overlapping by ~1–2 × the thickness of the stock.</li>
+<li>Hammer firmly with rapid, controlled blows. The pieces will bond and flow together.</li>
+<li>Continue hammering as the pieces cool, refining the joint.</li>
+<li>Finish with lighter hammer blows to shape and reduce marks.</li>
+</ol>
+<p><strong>When welding fails:</strong></p>
+<ul>
+<li><strong>Cold weld:</strong> Pieces don't bond at all. Reheat to higher temperature and try again.</li>
+<li><strong>Weak weld:</strong> Joint breaks under stress. Likely under-heated or flux contaminated. Reheat, re-flux, re-weld.</li>
+<li><strong>Burned steel:</strong> Joint is brittle and crumbly. Overheating damage; cannot be fixed. Start with fresh stock.</li>
+</ul>
+<div class="warning">
+<p>Do not attempt to hammer pieces together below welding heat. The resulting &quot;cold weld&quot; has no strength and will separate under load. The pieces must flow and bond, not just press together.</p>
+</div>
+</section>
+<section id="brazing-soldering">
+<h2>Brazing and Soldering</h2>
+<p>When fusion welding is impractical, brazing or soldering—melting a filler metal (not the base metal) to join pieces—offers an alternative.</p>
+<h3>Brazing</h3>
+<p>Brazing uses a filler metal with a melting point between 450°C and below that of the base metal. The two pieces are heated until the brazing rod melts and flows between them.</p>
+<p><strong>Common braze rods:</strong></p>
+<ul>
+<li><strong>Brass (Cu + Zn):</strong> 880–900°C melting point; creates strong joints in steel.</li>
+<li><strong>Silver solder (Ag + Cu + Zn):</strong> 650–750°C melting point; stronger than brass, more expensive.</li>
+<li><strong>Copper:</strong> 1083°C melting point; used for high-strength joints.</li>
+</ul>
+<p><strong>Flux for brazing:</strong> Borax, borax-based compounds, or specialized brazing fluxes. The flux melts, cleans the base metal, and allows capillary action to draw the molten filler into the joint.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Fit the pieces with a small gap (0.5–1.5mm) between them.</li>
+<li>Clean the joint area with a file or wire brush to remove scale.</li>
+<li>Apply flux paste to the joint.</li>
+<li>Heat both pieces until the flux liquefies and turns glassy.</li>
+<li>Apply the brazing rod to the joint. If the temperature is correct, the rod will melt and flow into the gap.</li>
+<li>Allow the joint to cool without disturbance. Do not quench.</li>
+</ol>
+<p><strong>Advantages:</strong> Lower temperature than fusion welding; less distortion; easier to join dissimilar metals.</p>
+<p><strong>Disadvantages:</strong> Weaker than fusion welds; filler metal can creep under sustained heat.</p>
+<h3>Soldering</h3>
+<p>Soldering uses an even lower-temperature filler (lead-tin, silver-tin, or other alloys). In survival contexts, soldering is most useful for thin sheet metal and small assemblies.</p>
+<p><strong>Common solder melting points:</strong></p>
+<ul>
+<li><strong>Lead-tin 50/50:</strong> 216°C (420°F).</li>
+<li><strong>Lead-tin 60/40:</strong> 190°C (374°F).</li>
+<li><strong>Silver-tin:</strong> 230°C (446°F).</li>
+</ul>
+<p><strong>Flux for soldering:</strong> Rosin core (for electrical work) or acid flux (for general metalwork). The flux cleans and allows the solder to wet and flow.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Clean the joint with steel wool or a fine file.</li>
+<li>Apply flux.</li>
+<li>Heat both pieces using a soldering iron, torch, or hot tool.</li>
+<li>Apply solder to the joint. The solder should flow freely if the temperature is correct.</li>
+<li>Remove heat and allow to cool. Solder sets rapidly (seconds to minutes).</li>
+</ol>
+<div class="tip">
+<p>For thin sheet metal, soldering is faster than forge welding and requires less heat. A simple charcoal forge can provide enough heat to solder small joints.</p>
+</div>
+</section>
+<section id="oxy-fuel-welding">
+<h2>Oxy-Fuel Welding Basics</h2>
+<p>Oxy-fuel torches burn acetylene (or other fuel gas) in pure oxygen, reaching temperatures of 3000°C (5472°F)—hot enough to melt steel.</p>
+<p><strong>The equipment:</strong> Oxygen and fuel gas cylinders, regulators, blowpipe/torch with interchangeable tips, welding rod.</p>
+<p><strong>Flame types:</strong></p>
+<ul>
+<li><strong>Neutral flame:</strong> Equal volumes of oxygen and fuel; ideal for most work. Three zones: outer (acetylene feather), middle (bright blue), inner (dark blue).</li>
+<li><strong>Oxidizing flame:</strong> Excess oxygen; best for brass, worst for steel (causes brittleness).</li>
+<li><strong>Carburizing flame:</strong> Excess acetylene; useful for high-carbon steel to prevent hardening.</li>
+</ul>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Set oxygen and acetylene pressures (typically 10–15 psi each for mild steel).</li>
+<li>Light the torch and adjust to a neutral flame.</li>
+<li>Heat the base metal to bright orange (1200°C+).</li>
+<li>Move the torch in a circular motion to melt the joint area.</li>
+<li>Feed welding rod into the molten pool. The rod melts and fills the joint.</li>
+<li>Continue along the joint, keeping the flame pointed at the leading edge of the weld pool.</li>
+<li>Finish by allowing the pool to cool without quenching.</li>
+</ol>
+<p><strong>Advantages:</strong> Very portable; can weld thick sections; good for stainless steel and non-ferrous metals.</p>
+<p><strong>Disadvantages:</strong> Requires gas cylinders (not always available); slower than arc welding; leaves more residual stress.</p>
+</section>
+<section id="arc-welding-principles">
+<h2>Arc Welding Principles</h2>
+<p>Arc welding uses an electric arc (5000+ K temperature) to melt the joint and a consumable or non-consumable electrode to provide filler metal.</p>
+<p><strong>Types:</strong></p>
+<ul>
+<li><strong>Stick (SMAW):</strong> Coated electrode that melts; slag must be chipped off after.</li>
+<li><strong>MIG/GMAW:</strong> Wire electrode fed continuously; inert gas shields the pool.</li>
+<li><strong>TIG/GTAW:</strong> Non-consumable tungsten electrode; filler rod fed separately; argon gas shield.</li>
+</ul>
+<p><strong>Basic principle:</strong> Current jumps from electrode to work, creating an arc. The arc melts both the electrode and base metal. The electrode coating (in stick welding) or shielding gas (in MIG/TIG) protects the pool from atmospheric oxygen, which would cause brittleness.</p>
+<p><strong>In austere conditions:</strong> Arc welding requires a power source (generator, battery, or primitive power supply). The most accessible option is a small DC welder powered by a hand-crank generator or solar panel setup.</p>
+<div class="warning">
+<p>Arc welding produces extremely bright UV radiation. Never look at the arc without a proper welding helmet (shade 10–12 minimum). Repeated exposure causes &quot;arc eye&quot; (temporary but painful UV burn of the cornea).</p>
+</div>
+</section>
+<section id="weld-joint-types">
+<h2>Weld Joint Types</h2>
+<p>Different applications demand different joint designs:</p>
+<table class="joint-types">
+<thead>
+<tr>
+  <th>Joint Type</th>
+  <th>Description</th>
+  <th>Best For</th>
+  <th>Strength</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Butt joint</strong></td>
+  <td>Pieces end-to-end, weld fills the gap</td>
+  <td>Pipes, rods, tension members</td>
+  <td>Excellent if properly made</td>
+</tr>
+<tr>
+  <td><strong>Lap joint</strong></td>
+  <td>Pieces overlap; weld on one or both sides</td>
+  <td>Sheet metal, high-stress areas</td>
+  <td>Very good; large surface area</td>
+</tr>
+<tr>
+  <td><strong>T-joint</strong></td>
+  <td>One piece perpendicular to another; fillet weld</td>
+  <td>Frames, structural work</td>
+  <td>Good if fillet is properly sized</td>
+</tr>
+<tr>
+  <td><strong>Corner joint</strong></td>
+  <td>Pieces form a right angle; weld on inside and/or outside</td>
+  <td>Boxes, containers</td>
+  <td>Moderate; depends on fillet size</td>
+</tr>
+<tr>
+  <td><strong>Edge joint</strong></td>
+  <td>Pieces placed edge-to-edge; weld along the edge</td>
+  <td>Thin sheet metal, patch work</td>
+  <td>Moderate; stress concentration at edges</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="heat-affected-zone">
+<h2>The Heat-Affected Zone (HAZ)</h2>
+<p>The HAZ is the region around the weld that was heated but not melted. Depending on temperature, the crystal structure changes:</p>
+<ul>
+<li><strong>Below 723°C:</strong> Minimal change; soft.</li>
+<li><strong>723–900°C:</strong> Austenite forms; on cooling, transforms to a mix of phases depending on cooling rate.</li>
+<li><strong>Above 900°C:</strong> Grain growth occurs; the steel coarsens and becomes brittle.</li>
+</ul>
+<p><strong>In practice:</strong> The HAZ of a high-carbon steel can be much harder and more brittle than the base metal, making it the failure point under stress.</p>
+<p><strong>Mitigation:</strong></p>
+<ul>
+<li><strong>Slow cooling:</strong> Bury the weld in sand or ash; wrap with cloth.</li>
+<li><strong>Preheat:</strong> Heat the entire workpiece before welding to reduce thermal shock.</li>
+<li><strong>Post-weld annealing:</strong> After cooling, reheat to 600–800°C and cool slowly to relieve stress and soften the HAZ.</li>
+</ul>
+</section>
+<section id="weld-defects">
+<h2>Common Weld Defects and Causes</h2>
+<table class="weld-defects">
+<thead>
+<tr>
+  <th>Defect</th>
+  <th>Appearance</th>
+  <th>Cause</th>
+  <th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Porosity</strong></td>
+  <td>Small holes/bubbles in the weld</td>
+  <td>Gas trapped in cooling pool; inadequate deoxidizers</td>
+  <td>Reduce speed; improve flux; remove slag more thoroughly</td>
+</tr>
+<tr>
+  <td><strong>Cold weld</strong></td>
+  <td>Pieces not fused; visible gap in cross-section</td>
+  <td>Temperature too low; insufficient pressure during welding</td>
+  <td>Increase heat; hammer harder during forge welding</td>
+</tr>
+<tr>
+  <td><strong>Undercut</strong></td>
+  <td>Base metal melted away next to the weld; groove visible</td>
+  <td>Too much arc current; travel speed too slow</td>
+  <td>Reduce current; increase travel speed; use smaller electrode</td>
+</tr>
+<tr>
+  <td><strong>Cracking</strong></td>
+  <td>Visible crack in weld or HAZ</td>
+  <td>Rapid cooling; high carbon content; thermal stress</td>
+  <td>Preheat; slow cooling; consider post-weld stress relief</td>
+</tr>
+<tr>
+  <td><strong>Spatter</strong></td>
+  <td>Balls of metal around the weld</td>
+  <td>Excessive current; poor shielding</td>
+  <td>Reduce current; improve gas flow; use correct electrode angle</td>
+</tr>
+<tr>
+  <td><strong>Lack of fusion</strong></td>
+  <td>Weld metal doesn't fuse with base metal edge</td>
+  <td>Temperature too low; contamination on surface</td>
+  <td>Increase heat; clean surface thoroughly before welding</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="testing-welds">
+<h2>Testing Weld Integrity</h2>
+<p>Without lab equipment, use simple field tests to verify weld strength.</p>
+<h3>Visual Inspection</h3>
+<ul>
+<li><strong>Appearance:</strong> The weld should be smooth, with no cracks, holes, or large irregularities.</li>
+<li><strong>Color:</strong> Straw to dark blue (for forge welds) or uniform gray/silver (for arc welds). Discoloration indicates oxidation or contamination.</li>
+<li><strong>Bead consistency:</strong> The bead should be uniform in height and width along the entire length.</li>
+</ul>
+<h3>Bend Test</h3>
+<p>Clamp the welded piece in a vise so the weld is at the edge. Strike the unsupported end with a hammer. A good weld will bend without cracking. A poor weld will break cleanly or show cracks propagating from the weld.</p>
+<h3>Hardness File Test</h3>
+<p>Drag a hardened file across the weld. A good weld should offer moderate resistance. A very soft weld indicates incomplete fusion; a very hard, brittle weld suggests cooling was too rapid.</p>
+<h3>Tensile Test (Crude Field Version)</h3>
+<p>For small samples (rods, small bars), clamp both ends in a vise and gradually apply load by hanging weights or using a lever. Record the load at which the sample breaks. The break should occur in the base metal, not the weld, indicating the weld is stronger than the base metal.</p>
+</section>
+<section id="post-weld-treatment">
+<h2>Post-Weld Heat Treatment</h2>
+<p>After a weld cools completely, heating and slow cooling can improve ductility and reduce residual stress.</p>
+<p><strong>Stress relief:</strong> Heat the entire joint to 550–700°C (depending on steel composition) for 1–2 hours, then cool very slowly in an insulated furnace or by burying in ash.</p>
+<p><strong>Annealing:</strong> For heavily cold-worked welds, heat to 800–900°C and cool slowly. This softens the HAZ but may reduce overall hardness.</p>
+<p><strong>Hardening and tempering:</strong> If the weld needs to match the hardness of hardened base metal, quench from 850–900°C and temper to the desired color (same as tool hardening; see Guide GD-420).</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="blacksmithing.html">Blacksmithing</a>
+<a href="engineering-repair.html">Engineering &amp; Repair</a>
+<a href="metallurgy-basics.html">Metallurgy Fundamentals</a>
+<a href="non-ferrous-metalworking.html">Non-Ferrous Metalworking</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

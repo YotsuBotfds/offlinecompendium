@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/earth-sheltering.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earth-Sheltering Construction</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Building &amp; Engineering</span> ›
+<span>Earth-Sheltering Construction</span>
+</div>
+
+
+<h1>Earth-Sheltering Construction</h1>
+<p class="subtitle">Berm slope calculations, waterproofing layers, structural load calculations, ventilation design, earth tube cooling, entrance design, drainage, roof vegetation.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~8 min</span>
+<span>Updated: 2026-02-18</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#types-and-configurations">Types and Configurations</a></li>
+<li><a href="#berm-slope-calculations">Berm Slope and Stability</a></li>
+<li><a href="#waterproofing">Waterproofing and Moisture Control</a></li>
+<li><a href="#structural-loads">Structural Load Calculations</a></li>
+<li><a href="#ventilation-and-condensation">Ventilation Design and Condensation Prevention</a></li>
+<li><a href="#earth-tube-cooling">Earth Tube Cooling</a></li>
+<li><a href="#entrance-design">Entrance Design and Access</a></li>
+<li><a href="#roof-vegetation">Roof Vegetation and Root Protection</a></li>
+<li><a href="#construction-sequence">Construction Sequence</a></li>
+<li><a href="#maintenance-notes">Long-Term Maintenance</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Earth-sheltering buries a building partially or fully underground, using the surrounding soil as insulation and thermal mass. Below the frost line, soil temperature is nearly constant year-round (8–13°C in temperate climates), reducing heating and cooling loads by 50–75% compared to conventional above-grade structures.</p>
+<p>This guide covers the engineering, construction sequencing, and waterproofing strategies needed to create a durable, non-moldy, climate-controlled earth-sheltered structure. Success requires careful attention to drainage, ventilation, and structural design.</p>
+</section>
+<section id="types-and-configurations">
+<h2>Types and Configurations</h2>
+<p><strong>Berm design</strong> (most common): One or more walls are fully buried; roof is partially or fully covered with earth; one side (usually south-facing) remains open above grade.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Easier retrofit to existing foundations</li>
+<li>One exposure for light and ventilation</li>
+<li>Moderate structural loads</li>
+</ul>
+<p><strong>Atrium design:</strong> A central courtyard is excavated, and the building surrounds it. Brings light to interior spaces without full burial.</p>
+<p><strong>Underground design:</strong> Fully subterranean structure with entrance in an access tunnel or steep ramp. Maximum energy efficiency; higher construction cost and psychological barrier.</p>
+<p><strong>Bermed elevation example:</strong></p>
+<ul>
+<li>North, west, east walls buried 2.5 m deep</li>
+<li>South wall fully above grade with glazing (passive solar design)</li>
+<li>Roof covered with 0.3–0.6 m of earth and vegetation</li>
+<li>Floor slab 3 m below surface</li>
+</ul>
+<p>This design combines passive solar gain (south), insulation (buried walls), and minimal site disturbance (relatively small footprint).</p>
+</section>
+<section id="berm-slope-calculations">
+<h2>Berm Slope and Stability</h2>
+<p>The slope of a berm (earth face) is critical for both stability and drainage. Steep slopes are prone to slumping; shallow slopes require more land area.</p>
+<p><strong>Slope angle (angle of repose):</strong></p>
+<ul>
+<li>Compacted clay: 1:1.5 to 1:2 (33° to 27°)</li>
+<li>Sandy soil: 1:2 to 1:3 (27° to 18°)</li>
+<li>Vegetated soil (rooted): 1:1 to 1:2.5 (45° to 22°)</li>
+</ul>
+<p>For a 2.5 m vertical height with clay soil at 1:1.5 slope:</p>
+<ul>
+<li>Horizontal distance = 2.5 × 1.5 = 3.75 m</li>
+</ul>
+<p>If land is limited, use terracing or retaining walls to steepen the slope (see <em>Drainage</em> section).</p>
+<p><strong>Soil bearing capacity:</strong> At the building foundation level, soil must safely support the combined weight of the structure, equipment, roof, and overburden. Use a geotechnical survey to determine soil bearing capacity (typically 50–100 kPa for sandy soil; 75–150 kPa for clay; 150–200+ kPa for rock).</p>
+<p><strong>Overburden pressure on the roof slab:</strong></p>
+<pre><code>Pressure = Depth × Density of moist soil
+         = 0.5 m × 1800 kg/m³ × 9.81 m/s²
+         = ~8.8 kPa (light loading)
+
+For 0.5 m of earth with vegetation (1900 kg/m³):
+         = ~9.3 kPa
+
+Design floor slabs and roof structures for 10–15 kPa distributed load,
+plus concentrated loads from interior posts or structural elements.
+</code></pre>
+<div class="warning">
+<p>Never assume uniform earth loading. Slumping, settling, and water infiltration concentrate loads unevenly. Design for 1.5× calculated overburden pressure.</p>
+</div>
+</section>
+<section id="waterproofing">
+<h2>Waterproofing and Moisture Control</h2>
+<p>Water is the primary enemy of earth-sheltered structures. A single breach allows moisture to seep into the building, fostering mold and rot. A multi-layer waterproofing strategy is mandatory.</p>
+<p><strong>Layer 1: Drainage layer (outermost)</strong></p>
+<ul>
+<li>Purpose: Move water away from the building before it contacts waterproofing</li>
+<li>Material: Perforated plastic drainage board (geofoam, dimple board, or composite)</li>
+<li>Installation: Attach to the exterior wall with adhesive or mechanical fasteners, overlapping joints by 150 mm</li>
+<li>Details: Direct water downward and laterally toward perimeter drains</li>
+</ul>
+<p><strong>Layer 2: Primary waterproofing</strong></p>
+<ul>
+<li>Purpose: Seal the structural envelope</li>
+<li>Material options:
+<ul>
+<li><strong>Bituminous membrane:</strong> Two-ply hot-mop, or torch-applied rolled bitumen (15–20 mm total). Cost-effective; prone to cracking if soil shifts. Lifespan 20–30 years.</li>
+<li><strong>EPDM rubber:</strong> 0.76–1.5 mm sheets, seamed with rubber adhesive. Flexible, accommodates movement; more expensive. Lifespan 30–50 years.</li>
+<li><strong>Bentonite panels:</strong> Swellable clay in cardboard, 5–10 mm thick. Self-healing if punctured; works well in moist soil. Loses effectiveness if over-dried. Lifespan 20+ years.</li>
+<li><strong>Combination:</strong> Bentonite layer + bituminous layer (best protection, highest cost)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Installation sequence for a typical wall:</strong></p>
+<ol>
+<li>Build concrete wall to finish grade</li>
+<li>Allow concrete to cure 28 days and dry (moisture content &lt; 8%)</li>
+<li>Apply bituminous primer (if using bitumen system)</li>
+<li>Install primary waterproofing layer (bitumen, EPDM, or bentonite)</li>
+<li>Seam overlaps: 150 mm minimum; seal seams with compatible sealant</li>
+<li>Mechanically fasten or glue drainage layer over waterproofing</li>
+<li>Overlap drainage layer joints 150–200 mm</li>
+<li>Install perforated drain pipe at base of wall within the drainage layer</li>
+</ol>
+<p><strong>Critical details:</strong></p>
+<ul>
+<li><strong>Top of wall (at soil line):</strong> Transition waterproofing to above-grade material (paint or foam board). Prevent water from running behind the waterproofing.</li>
+<li><strong>Roof penetrations:</strong> Use metal or plastic sleeves with flashing and sealant. Keep penetration count to a minimum.</li>
+<li><strong>Concrete cracks:</strong> Concrete shrinks as it cures, causing hairline cracks. Fill cracks with flexible sealant before applying waterproofing.</li>
+<li><strong>Seams and joints:</strong> All transitions (wall-to-floor, wall-to-roof) must overlap waterproofing by 200 mm and be sealed with compatible sealant.</li>
+</ul>
+<!-- SVG: earth-sheltering-waterproof-1.svg: Cross-section of wall waterproofing showing layers from inside to outside: concrete, primer, bitumen or EPDM, drainage board, and soil. -->
+<div class="tip">
+<p>Bentonite waterproofing is excellent for areas with high groundwater. It self-heals small punctures and is forgiving during installation. Use it where soil is consistently moist but not continuously saturated.</p>
+</div>
+</section>
+<section id="structural-loads">
+<h2>Structural Load Calculations</h2>
+<p>The roof slab and walls must support the weight of the overburden plus lateral pressure from the surrounding soil.</p>
+<p><strong>Vertical loads:</strong></p>
+<pre><code>Dead load (self-weight): Concrete slab + insulation + waterproofing
+                        ≈ 0.4 m slab × 2400 kg/m³ = 960 kg/m²
+                        + 0.1 m insulation × 50 kg/m³ = 5 kg/m²
+                        Subtotal: ~965 kg/m²
+
+Live load (overburden):  0.5 m earth × 1800 kg/m³ = 900 kg/m²
+
+Total: ~1865 kg/m² ≈ 18.3 kPa
+
+Design slab for 25–30 kPa (includes safety factors).
+</code></pre>
+<p><strong>For a 5 m span slab at 25 kPa:</strong></p>
+<pre><code>Bending moment M = wL²/8 = (25 kPa × 5 m × 5 m) / 8 = 78 kPa·m² = 78 kN·m per meter width
+
+Required steel reinforcement (using fs = 300 MPa, fc' = 25 MPa):
+As = M / (fs × j × d)
+
+For a 0.4 m slab with d = 0.35 m (effective depth):
+As ≈ 78,000 N·m / (300 MPa × 0.9 × 0.35 m) ≈ 830 mm²/m
+
+Use 12 mm dia. rebar at 150 mm spacing (one way): (π × 12²/4) / 0.15 = 753 mm²/m
+or 16 mm at 200 mm spacing: 1000 mm²/m (adequate)
+</code></pre>
+<p>Use two layers of reinforcement (top and bottom) for bending in both directions. Add mesh or bar for shrinkage cracking (minimum 0.2% steel ratio).</p>
+<p><strong>Lateral earth pressure:</strong></p>
+<p>Soil exerts horizontal pressure on buried walls. The pressure increases with depth and soil density.</p>
+<pre><code>Pressure at depth h: P = γ × h × Ka
+where γ = soil density ≈ 1800 kg/m³ = 18 kN/m³
+      h = depth below surface (m)
+      Ka = coefficient of active earth pressure (for clay ≈ 0.3; for sand ≈ 0.4)
+
+At h = 2.5 m (bottom of wall):
+P = 18 × 2.5 × 0.35 ≈ 16 kPa (average pressure triangle)
+
+Total lateral force per meter width: F = ½ × 16 × 2.5 = 20 kN/m
+Moment at base: M = F × (h/3) = 20 × (2.5/3) = 16.7 kN·m/m
+</code></pre>
+<p>Design walls (via reinforced concrete or post-and-beam) to resist this bending moment. Typical walls 300–400 mm thick with proper reinforcement are adequate for 2.5–3 m burial.</p>
+<div class="warning">
+<p>Lateral pressure increases exponentially with depth. A 4 m tall wall experiences 2.5× the lateral force of a 2.5 m wall. Very deep structures (&gt; 4 m) require walls 500+ mm thick or steel reinforcement, increasing cost significantly.</p>
+</div>
+</section>
+<section id="ventilation-and-condensation">
+<h2>Ventilation Design and Condensation Prevention</h2>
+<p>The air below the surface is cool and humid. Without proper ventilation, condensation fosters mold and deterioration of materials.</p>
+<p><strong>Causes of condensation:</strong></p>
+<ul>
+<li>Warm interior air (20°C, ~50% RH) contacts cool surfaces (8–12°C)</li>
+<li>Saturation point drops; moisture condenses</li>
+</ul>
+<p><strong>Prevention strategies:</strong></p>
+<ol>
+<li>
+<p><strong>Continuous mechanical ventilation:</strong> Run a heat recovery ventilator (HRV) or energy recovery ventilator (ERV) year-round to exchange indoor air with outside air while capturing sensible heat (up to 85% recovery).</p>
+<ul>
+<li><strong>Ventilation rate:</strong> 0.5–0.7 air changes per hour (ACH)</li>
+<li>For a 100 m² space, 3 m ceiling: Volume = 300 m³; airflow = 150–210 m³/h</li>
+<li>Use a 200 CFM (100 L/s) HRV</li>
+</ul>
+</li>
+<li>
+<p><strong>Passive ventilation stack effect (for partially buried structures):</strong> Open clerestory or upper windows on the south side; install exhaust vents on the roof or north wall. Warm interior air rises and exits, drawing fresh (slightly drier) air in from the south. This provides 0.1–0.3 ACH without electricity (insufficient alone; supplement with mechanical).</p>
+</li>
+<li>
+<p><strong>Dehumidification:</strong> Install a small desiccant or refrigerant dehumidifier if RH exceeds 60%. Target 40–50% RH.</p>
+</li>
+<li>
+<p><strong>Drying by design:</strong></p>
+<ul>
+<li>Use permeable interior finishes (wood, natural plaster) that absorb and release moisture</li>
+<li>Avoid vinyl or closed-cell foam that traps moisture</li>
+<li>Leave a small gap (50–100 mm) between insulation and soil-side wall for convective drying</li>
+</ul>
+</li>
+</ol>
+<p><strong>Condensation risk zones:</strong></p>
+<ul>
+<li>North and west walls (coolest; highest condensation risk)</li>
+<li>Floor perimeter, where soil temperature is lowest</li>
+<li>Roof-wall junction, where warm interior air meets the coolest surfaces</li>
+</ul>
+<p>Address these with enhanced insulation (R-20+ in walls; R-40+ in roof) and continuous ventilation.</p>
+<!-- SVG: earth-sheltering-ventilation-1.svg: Plan view showing mechanical ventilation supply ducts from south side and exhaust ducts to north side, with indication of airflow direction. -->
+</section>
+<section id="earth-tube-cooling">
+<h2>Earth Tube Cooling</h2>
+<p>An earth tube (or ground-coupled heat exchanger) is a buried ductwork that cools ventilation air in summer by exchanging heat with the surrounding soil.</p>
+<p><strong>Design:</strong></p>
+<ul>
+<li><strong>Tube diameter:</strong> 150–200 mm PVC or HDPE</li>
+<li><strong>Length:</strong> 30–50 m for effective heat transfer</li>
+<li><strong>Burial depth:</strong> 1.5–3 m (deeper = cooler, but harder to install)</li>
+<li><strong>Slope:</strong> 0.5–1% toward a drain (to remove condensation)</li>
+<li><strong>Intake height:</strong> 2–3 m above ground to avoid dust and debris</li>
+</ul>
+<p><strong>Performance:</strong></p>
+<ul>
+<li>Reduces incoming air from 25°C (summer) to 18–20°C with 50 m tube in moist soil</li>
+<li>Savings: 2–5 kW cooling energy per day in a 100 m² space</li>
+</ul>
+<p><strong>Installation:</strong></p>
+<ol>
+<li>Dig a trench 1.5–3 m deep along the length</li>
+<li>Lay pipe on a 50 mm sand bed; slope toward drain</li>
+<li>Install a sump or gravel pit at the drain end to collect condensation</li>
+<li>Install a condensate drain (small sloped tube) within or alongside the main tube</li>
+<li>Cover trench and restore surface (lawn, pathway, gravel)</li>
+</ol>
+<p><strong>Maintenance:</strong></p>
+<ul>
+<li>Clear condensate drain quarterly to prevent blockage</li>
+<li>Flush the tube annually with low-pressure water to remove dust and biofilm</li>
+<li>Check for mold/algae at intake and exhaust; treat with UV light if present</li>
+</ul>
+<div class="tip">
+<p>Earth tubes work best in humid climates with high seasonal temperature swings. In very hot, very dry climates, evaporative cooling (swamp cooler) or conventional cooling is more effective.</p>
+</div>
+</section>
+<section id="entrance-design">
+<h2>Entrance Design and Access</h2>
+<p>The entrance is a thermal weak point and a risk for water infiltration. Careful design minimizes heat loss and moisture intrusion.</p>
+<p><strong>Options:</strong></p>
+<ol>
+<li>
+<p><strong>Ramp entrance:</strong> Shallow slope (1:12) allows wheelchair/equipment access. Requires 12 m horizontal run for 1 m elevation change. Best for partial earth-sheltering.</p>
+</li>
+<li>
+<p><strong>Stair entrance:</strong> Steeper access (1:3 or 1:4 slope); stairs descend into a small sunken courtyard or vestibule. Compact; requires excavation of an additional 2–3 m × 3–5 m pit.</p>
+</li>
+<li>
+<p><strong>Tunnel entrance:</strong> A shallow (1–1.5 m) tunnel connects the above-grade level to the underground structure. Creates a thermal buffer (reduces direct cold-air exchange).</p>
+</li>
+</ol>
+<p><strong>Vestibule design (for ramp or tunnel):</strong></p>
+<ul>
+<li>Create a 2 m × 3 m double-door system: first door opens to outside; second door opens to interior</li>
+<li>Minimize air exchange by ensuring doors don't open simultaneously</li>
+<li>Add a grate or gravel pad outside the first door to shake off dirt</li>
+<li>Slope floor toward drain in vestibule</li>
+</ul>
+<p><strong>Waterproofing at entrance:</strong></p>
+<ul>
+<li>The entrance is the highest point of infiltration risk (water runs downslope toward the opening)</li>
+<li>Slope site <em>away</em> from entrance by 3–5%</li>
+<li>Install a swale or drain trench upslope to intercept water before it reaches the entrance zone</li>
+<li>Raise the entrance threshold 300–500 mm above surrounding grade</li>
+<li>Install a weather seal (garage-style rubber strip) at the inner door</li>
+</ul>
+<!-- SVG: earth-sheltering-entrance-1.svg: Cross-section of stair entrance showing above-grade level, sunken vestibule with double doors, and transition to below-grade main space. -->
+</section>
+<section id="roof-vegetation">
+<h2>Roof Vegetation and Root Protection</h2>
+<p>Living roofs (green roofs) provide additional insulation, absorb rainwater, and improve aesthetics. However, roots can penetrate waterproofing if not carefully managed.</p>
+<p><strong>Root barrier:</strong> Install a 1.5–2 mm HDPE or rubber sheet above the waterproofing. This prevents aggressive root penetration. Holes for drainage should be 5–10 mm diameter (roots cannot pass; water easily drains).</p>
+<p><strong>Growing medium depth:</strong></p>
+<ul>
+<li>Shallow: 100–150 mm (low-maintenance, sedums and grasses)</li>
+<li>Medium: 200–300 mm (shrubs, perennials)</li>
+<li>Deep: 400–600 mm (small trees)</li>
+</ul>
+<p>For an earth-sheltered roof bearing 25 kPa, shallow-to-medium depth is practical. Deep roofs require structural reinforcement.</p>
+<p><strong>Vegetation selection:</strong></p>
+<ul>
+<li>Use hardy, shallow-rooted species suited to your climate (sedums in cold/dry; ferns/hostas in cool/moist)</li>
+<li>Avoid deep-rooted trees and shrubs</li>
+<li>Local native plants reduce maintenance and support insects/wildlife</li>
+</ul>
+<p><strong>Drainage and waterproofing integration:</strong></p>
+<ul>
+<li>Extensive green roof (shallow + low maintenance): slopes can be very shallow (1–2%)</li>
+<li>Intensive green roof (deeper, more plants): needs 2–5% slope for water movement and root health</li>
+<li>Collect runoff from the roof edge via gutters and direct to storm drains or rain gardens</li>
+</ul>
+<p><strong>Maintenance:</strong></p>
+<ul>
+<li>Weed quarterly; remove encroaching trees</li>
+<li>Inspect root barrier annually for breaches</li>
+<li>Monitor for ponding water (causes rot in structural elements below)</li>
+</ul>
+</section>
+<section id="construction-sequence">
+<h2>Construction Sequence</h2>
+<ol>
+<li>
+<p><strong>Site prep:</strong> Survey and establish grade stakes. Excavate to 0.5 m below final foundation level. Check soil bearing capacity via hand auger or geotechnical report.</p>
+</li>
+<li>
+<p><strong>Drainage placement:</strong> Install perimeter French drain (perforated pipe in gravel) at the footing level, sloped toward exit point. Backfill with gravel to 1 m above pipe.</p>
+</li>
+<li>
+<p><strong>Foundation &amp; structural frame:</strong> Construct concrete foundation, footing, and walls. Allow 28 days cure. Check moisture content (&lt; 10%) before waterproofing.</p>
+</li>
+<li>
+<p><strong>Waterproofing:</strong> Apply all waterproofing layers (primer, primary membrane, drainage board) from bottom to top. Seal all seams and penetrations.</p>
+</li>
+<li>
+<p><strong>Roof structure:</strong> Install beams, deck, and temporary bracing. Cast roof slab, reinforced for overburden loads.</p>
+</li>
+<li>
+<p><strong>Insulation:</strong> Install rigid foam on roof exterior (above waterproofing if using cold-roof approach, or below if using warm-roof). R-40 minimum.</p>
+</li>
+<li>
+<p><strong>Interior finishes &amp; MEP:</strong> Rough-in mechanical, electrical, plumbing. Install vapor barrier or smart membrane on soil-side walls.</p>
+</li>
+<li>
+<p><strong>Backfilling:</strong> Carefully fill over the roof and against the walls with compacted soil, in 300 mm lifts. Compact each lift to 95% Proctor density to avoid settling. Take 3–6 months to avoid overloading.</p>
+</li>
+<li>
+<p><strong>Roof vegetation:</strong> Install root barrier, drainage layer, growing medium, and plants after backfill is complete and settled.</p>
+</li>
+<li>
+<p><strong>Testing &amp; commissioning:</strong> Run HRV system, test ventilation rate, check for condensation after 2–4 weeks of occupancy.</p>
+</li>
+</ol>
+<div class="warning">
+<p>Do not backfill rapidly. Uncompacted soil settles 5–15%, overloading the roof. Use a licensed contractor with experience in earth-sheltering to oversee backfill operations.</p>
+</div>
+</section>
+<section id="maintenance-notes">
+<h2>Long-Term Maintenance</h2>
+<ul>
+<li><strong>Year 1–2:</strong> Monitor condensation and RH. Adjust ventilation rate if needed.</li>
+<li><strong>Every 2 years:</strong> Inspect roof drains and interior for water stains.</li>
+<li><strong>Every 5 years:</strong> Inspect waterproofing at access points (roof penetrations, ventilation sleeves).</li>
+<li><strong>Every 10 years:</strong> Professional inspection of structural integrity and waterproofing seals (via borescope or ultrasound).</li>
+</ul>
+<p>A well-designed earth-sheltered building can last 50+ years with minimal maintenance if waterproofing and drainage systems are installed correctly.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="passive-solar-design.html">Passive Solar Design</a>
+<a href="natural-building.html">Natural Building Materials</a>
+<a href="drainage-earthworks.html">Drainage and Earthworks</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

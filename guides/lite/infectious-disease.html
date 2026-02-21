@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/infectious-disease.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infectious Disease Management</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Medical &amp; Health</span> ›
+<span>Infectious Disease Management</span>
+</div>
+
+<div class="danger">
+<strong>⚠ SAFETY WARNING</strong><br>This guide covers activities with significant risk of injury or harm. Professional training may be required.
+</div>
+
+<h1>Infectious Disease Management</h1>
+<p class="subtitle">Isolation protocols, epidemic response, contact tracing, quarantine, vector control, and antibiotic stewardship.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~34 min</span>
+<span>Updated: 2026-02-16</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#history">Historical Context</a></li>
+<li><a href="#pathogens">Pathogen Types</a></li>
+<li><a href="#chain">Chain of Infection</a></li>
+<li><a href="#bacterial">Bacterial Infections</a></li>
+<li><a href="#viral">Viral Infections</a></li>
+<li><a href="#fungal">Fungal Infections</a></li>
+<li><a href="#parasitic">Parasitic Infections</a></li>
+<li><a href="#clinical">Clinical Assessment</a></li>
+<li><a href="#materials">Treatment Materials</a></li>
+<li><a href="#quarantine">Quarantine/Isolation Protocols</a></li>
+<li><a href="#respiratory">Respiratory Illness</a></li>
+<li><a href="#gastrointestinal">GI Infections</a></li>
+<li><a href="#waterborne">Waterborne Prevention</a></li>
+<li><a href="#diagnostics">Improvised Diagnostics</a></li>
+<li><a href="#stewardship">Antibiotic Stewardship</a></li>
+<li><a href="#treatment-reference">Treatment Reference Table</a></li>
+<li><a href="#outbreak">Outbreak Management</a></li>
+<li><a href="#pandemic">Pandemic Response</a></li>
+<li><a href="#complications-escalation">Complications &amp; When to Stop/Escalate</a></li>
+<li><a href="#field-adaptations">Field Adaptations</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#common-mistakes">Common Mistakes</a></li>
+<li><a href="#recovery">Recovery &amp; Aftercare</a></li>
+<li><a href="#prevention">Prevention &amp; Control</a></li>
+<li><a href="#community">Community Response</a></li>
+<li><a href="#scaling">Scaling Response</a></li>
+<li><a href="#seasonal">Seasonal Patterns</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>Medical Disclaimer:</strong> This guide is for educational reference in emergency situations where professional medical care is unavailable. These procedures carry risks of serious harm or death. Performing medical procedures without proper training and licensing may be illegal in your jurisdiction. Always seek professional medical care when available.</p>
+</div>
+<div class="warning">
+<p><strong>IMPORTANT:</strong> Antibiotic selection should be determined by healthcare professionals based on clinical assessment and, when possible, culture and sensitivity results. Incorrect antibiotic use promotes resistant organisms, can mask serious conditions, and may cause severe adverse reactions including anaphylaxis. Dosing information in this guide is for emergency reference only.</p>
+</div>
+<section id="overview">
+<h2>Overview</h2>
+<p>Infectious diseases are caused by pathogenic microorganisms (bacteria, viruses, fungi, parasites, prions) and kill millions globally each year. In post-collapse scenarios where antibiotics are limited, vaccination programs unavailable, and hygiene compromised, infectious disease becomes leading cause of mortality. This guide provides identification, assessment, isolation protocols, treatment approaches, and prevention strategies for survivor communities managing endemic and epidemic threats without modern laboratory diagnostics or pharmaceutical supply chains.</p>
+<div class="info-box">
+<p><strong>Post-Collapse Infection Reality:</strong> Pre-antibiotic era mortality from infection was 10-50% depending on pathogen. Modern survival depends on understanding transmission routes, recognizing complications early, sterilizing instruments, maintaining hygiene protocols, and preserving limited antibiotic stockpiles through evidence-based stewardship.</p>
+</div>
+<h3>Key Principles</h3>
+<ol>
+<li><strong>Prevention first:</strong> Hygiene, vaccination, water safety, sanitation prevent 80% of infections</li>
+<li><strong>Early recognition:</strong> Identify serious infections before organ failure/sepsis develops</li>
+<li><strong>Isolation critical:</strong> Breaking transmission chain stops outbreaks faster than treatment</li>
+<li><strong>Supportive care:</strong> Fluids, nutrition, rest resolve many infections without antibiotics</li>
+<li><strong>Antibiotic stewardship:</strong> Complete courses, narrow-spectrum, no prophylaxis for healthy—preserves effectiveness</li>
+<li><strong>Recognize limits:</strong> Know when complications require escalation (even if transfer impossible, palliative care differs from curative)</li>
+</ol>
+</section>
+<section id="history">
+<h2>Historical Context</h2>
+<h3>Pre-Antibiotic Era (1900-1940)</h3>
+<p>Before penicillin (discovered 1928), infections killed &gt;50%. Pneumonia caused 1 in 3 deaths. Post-collapse scenarios revert to pre-antibiotic mortality: aggressive prevention critical.</p>
+<h3>Hygiene Revolution (1860s-1920s)</h3>
+<p>Semmelweis implemented handwashing, reduced maternity ward mortality from 30% to &lt;2%. Simple hygiene most critical prevention measure. Hand hygiene more important than antibiotics post-collapse.</p>
+<h3>Antibiotic Era (1941-1980s)</h3>
+<p>Penicillin revolutionized treatment. Bacterial infection mortality dropped 80-90%.</p>
+<h3>Antibiotic Resistance (1990s-Present)</h3>
+<p>Overuse selected resistant strains (MRSA, VRE, resistant TB). Post-collapse: stockpiles deplete in 2-5 years. Stewardship critical to preserve effectiveness.</p>
+<div class="danger">
+<p><strong>Antibiotic Depletion Scenario:</strong> Without stewardship, all antibiotics in a 100-person community stockpile (typically 5-year supply) may be consumed within 2 years if used indiscriminately. Once depleted, mortality from previously-treatable infections (pneumonia, UTI, infected wounds) reverts to pre-1940 rates (10-50%).</p>
+</div>
+</section>
+<section id="pathogens">
+<h2>Pathogen Types</h2>
+<h3>Bacteria</h3>
+<p>Single-celled prokaryotes, 0.5-5 micrometers. Gram-positive (purple-staining: Streptococcus, Staphylococcus) vs gram-negative (pink-staining: E. coli, Pseudomonas). Reproduce by binary fission. Develop resistance rapidly.</p>
+<h3>Viruses</h3>
+<p>Obligate intracellular parasites, 0.02-0.3 micrometers (10-100x smaller). DNA or RNA surrounded by protein coat. Antibiotics ineffective. Human immune system primary defense. High mutation rate allows evasion of immunity.</p>
+<h3>Fungi</h3>
+<p>Eukaryotic organisms, 2-10 micrometers. Reproduce by spores. Slow growth (weeks-months). Resistant to harsh conditions. Difficult to eradicate. Examples: Candida, Aspergillus, Histoplasma.</p>
+<h3>Parasites</h3>
+<p>Multicellular or single-celled, highly variable size. Complex life cycles often involving multiple hosts. Can live inside hosts for years. Examples: Plasmodium (malaria), Giardia, hookworms.</p>
+<h3>Prions</h3>
+<p>Infectious proteins (no DNA/RNA). Cause fatal neurological diseases (CJD, BSE). Resistant to sterilization. No treatment, always fatal. Rare in survival scenarios.</p>
+</section>
+<section id="chain">
+<h2>Chain of Infection</h2>
+<h3>Six Links of Transmission</h3>
+<p><strong>1. Pathogen:</strong> Infectious organism. <strong>2. Reservoir:</strong> Source (humans, animals, environment). <strong>3. Portal of exit:</strong> Route leaving reservoir (respiratory, feces, blood). <strong>4. Transmission:</strong> Movement between people. <strong>5. Portal of entry:</strong> Route into new host (respiratory, skin breaks, GI). <strong>6. Susceptible host:</strong> Individual capable of disease.</p>
+<p><svg aria-label="Chain of infection diagram showing six links and intervention points" style="background:#1a2e1a;margin:20px 0;border-radius:8px;max-width:100%;height:auto" viewBox="0 0 600 400"><rect fill="#1a2e1a" height="400" width="600"></rect><g stroke="#b8956a" stroke-width="2"><circle cx="50" cy="100" fill="none" r="30" stroke="#d4a574" stroke-width="2"></circle><text fill="#d4a574" font-size="9" font-weight="bold" text-anchor="middle" x="50" y="105">Pathogen</text><path d="M 80 100 L 110 100" marker-end="url(#arrowhead)" stroke="#d4a574" stroke-width="2"></path><circle cx="140" cy="100" fill="none" r="30" stroke="#d4a574" stroke-width="2"></circle><text fill="#d4a574" font-size="9" font-weight="bold" text-anchor="middle" x="140" y="105">Reservoir</text><path d="M 170 100 L 200 100" marker-end="url(#arrowhead)" stroke="#d4a574" stroke-width="2"></path><circle cx="230" cy="100" fill="none" r="30" stroke="#d4a574" stroke-width="2"></circle><text fill="#d4a574" font-size="9" font-weight="bold" text-anchor="middle" x="230" y="105">Exit</text><path d="M 260 100 L 290 100" marker-end="url(#arrowhead)" stroke="#d4a574" stroke-width="2"></path><circle cx="320" cy="100" fill="none" r="30" stroke="#d4a574" stroke-width="2"></circle><text fill="#d4a574" font-size="9" font-weight="bold" text-anchor="middle" x="320" y="105">Transmit</text><path d="M 350 100 L 380 100" marker-end="url(#arrowhead)" stroke="#d4a574" stroke-width="2"></path><circle cx="410" cy="100" fill="none" r="30" stroke="#d4a574" stroke-width="2"></circle><text fill="#d4a574" font-size="9" font-weight="bold" text-anchor="middle" x="410" y="105">Entry</text><path d="M 440 100 L 470 100" marker-end="url(#arrowhead)" stroke="#d4a574" stroke-width="2"></path><circle cx="500" cy="100" fill="none" r="30" stroke="#d4a574" stroke-width="2"></circle><text fill="#d4a574" font-size="9" font-weight="bold" text-anchor="middle" x="500" y="105">Host</text><rect fill="none" height="160" rx="5" stroke="#b8956a" stroke-dasharray="3,3" stroke-width="1" width="560" x="20" y="180"></rect><text fill="#d4a574" font-size="11" font-weight="bold" text-anchor="middle" x="300" y="200">INTERVENTION POINTS</text><g fill="#b8956a" font-size="8"><text x="50" y="225">Quarantine/treat</text><text x="140" y="225">Isolate source</text><text x="230" y="225">Mask/cover</text><text x="320" y="225">Isolate/disinfect</text><text x="410" y="225">Prevent entry</text><text x="500" y="225">Vaccinate</text><text x="50" y="305">Respiratory transmission: droplets travel &lt;2m (&gt;5μm) or airborne (&lt;5μm).</text><text x="50" y="320">Breaking: N95 masks, hygiene, isolation, ventilation, sanitization.</text></g><defs><marker id="arrowhead" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="3"><polygon fill="#d4a574" points="0 0, 10 3, 0 6"></polygon></marker></defs></g></svg></p>
+<p><svg aria-label="Chain of infection showing pathogen to reservoir to exit to transmission to entry to host with intervention points" style="background:#1a2e1a;margin:20px 0;border-radius:8px;max-width:100%;height:auto" viewBox="0 0 600 400"><rect fill="#1a2e1a" height="400" width="600"></rect><g stroke="#b8956a" stroke-width="2"><text fill="#d4a574" font-size="13" font-weight="bold" text-anchor="middle" x="300" y="25">CHAIN OF INFECTION</text><g fill="#d4a574"><circle cx="50" cy="80" fill="none" r="28" stroke="#d4a574" stroke-width="2"></circle><text fill="#d4a574" font-size="10" font-weight="bold" text-anchor="middle" x="50" y="85">Pathogen</text></g><path d="M 78 80 L 102 80" marker-end="url(#arrow1)" stroke="#d4a574" stroke-width="2"></path><g fill="#d4a574"><circle cx="130" cy="80" fill="none" r="28" stroke="#d4a574" stroke-width="2"></circle><text fill="#d4a574" font-size="10" font-weight="bold" text-anchor="middle" x="130" y="85">Reservoir</text></g><path d="M 158 80 L 182 80" marker-end="url(#arrow1)" stroke="#d4a574" stroke-width="2"></path><g fill="#d4a574"><circle cx="210" cy="80" fill="none" r="28" stroke="#d4a574" stroke-width="2"></circle><text fill="#d4a574" font-size="10" font-weight="bold" text-anchor="middle" x="210" y="85">Portal</text><text fill="#d4a574" font-size="8" text-anchor="middle" x="210" y="97">of Exit</text></g><path d="M 238 80 L 262 80" marker-end="url(#arrow1)" stroke="#d4a574" stroke-width="2"></path><g fill="#d4a574"><circle cx="290" cy="80" fill="none" r="28" stroke="#d4a574" stroke-width="2"></circle><text fill="#d4a574" font-size="10" font-weight="bold" text-anchor="middle" x="290" y="85">Transmit</text></g><path d="M 318 80 L 342 80" marker-end="url(#arrow1)" stroke="#d4a574" stroke-width="2"></path><g fill="#d4a574"><circle cx="370" cy="80" fill="none" r="28" stroke="#d4a574" stroke-width="2"></circle><text fill="#d4a574" font-size="10" font-weight="bold" text-anchor="middle" x="370" y="85">Portal</text><text fill="#d4a574" font-size="8" text-anchor="middle" x="370" y="97">of Entry</text></g><path d="M 398 80 L 422 80" marker-end="url(#arrow1)" stroke="#d4a574" stroke-width="2"></path><g fill="#d4a574"><circle cx="450" cy="80" fill="none" r="28" stroke="#d4a574" stroke-width="2"></circle><text fill="#d4a574" font-size="10" font-weight="bold" text-anchor="middle" x="450" y="85">Suscept.</text><text fill="#d4a574" font-size="8" text-anchor="middle" x="450" y="97">Host</text></g><g fill="#b8956a" font-size="9"><text font-weight="bold" text-anchor="middle" x="50" y="125">Identify &amp;</text><text text-anchor="middle" x="50" y="137">treat/isolate</text><text font-weight="bold" text-anchor="middle" x="130" y="125">Remove/</text><text text-anchor="middle" x="130" y="137">isolate</text><text font-weight="bold" text-anchor="middle" x="210" y="125">Mask/cover</text><text text-anchor="middle" x="210" y="137">cough</text><text font-weight="bold" text-anchor="middle" x="290" y="125">Distance/</text><text text-anchor="middle" x="290" y="137">disinfect</text><text font-weight="bold" text-anchor="middle" x="370" y="125">Hand hygiene/</text><text text-anchor="middle" x="370" y="137">barriers</text><text font-weight="bold" text-anchor="middle" x="450" y="125">Vaccinate/</text><text text-anchor="middle" x="450" y="137">hygiene</text></g><rect fill="none" height="200" rx="4" stroke="#b8956a" stroke-dasharray="4,2" stroke-width="1" width="560" x="20" y="170"></rect><text fill="#d4a574" font-size="11" font-weight="bold" text-anchor="middle" x="300" y="190">TRANSMISSION ROUTES &amp; INTERVENTIONS</text><g fill="#b8956a" font-size="8"><text x="30" y="210"><tspan font-weight="bold">Respiratory:</tspan> Droplets &lt;2m or airborne &lt;5μm. Break: N95, hand hygiene, isolation, ventilation.</text><text x="30" y="225"><tspan font-weight="bold">Contact:</tspan> Direct touch/surfaces. Break: hand hygiene, gloves, disinfection.</text><text x="30" y="240"><tspan font-weight="bold">Foodborne:</tspan> Contaminated food/water. Break: cook thoroughly, clean water, handwashing.</text><text x="30" y="255"><tspan font-weight="bold">Vector:</tspan> Mosquitoes/ticks. Break: repellent (DEET), protective clothing, vector elimination.</text><text x="30" y="270"><tspan font-weight="bold">Parenteral:</tspan> Blood/needles. Break: avoid contaminated blood, safe injection.</text><text x="30" y="285"><tspan font-weight="bold">Fecal-oral:</tspan> Sewage contamination. Break: sanitation, food safety, handwashing.</text></g><defs><marker id="arrow1" markerheight="10" markerwidth="10" orient="auto" refx="9" refy="3"><polygon fill="#d4a574" points="0 0, 10 3, 0 6"></polygon></marker></defs></g></svg></p>
+<h3>Transmission Routes</h3>
+<p><strong>Respiratory (droplet/airborne):</strong> Coughs/sneezes travel 3-6 feet (droplet), &lt;0.1 miles in stagnant air (airborne). Breaking: N95 masks (95% filtration), hand hygiene (wash after touching face), isolation (separate room, closed door), ventilation (air exchange 6-12x/hour). <strong>Contact:</strong> Direct skin-to-skin or contaminated surfaces (inanimate objects transmit for minutes to hours depending on pathogen). Breaking: hand hygiene (wash 20+ seconds), gloves (change between tasks), disinfection (bleach 0.5%, 70% alcohol, 10-minute contact). <strong>Foodborne:</strong> Contaminated food/water (bacteria multiply 2x every 20-40 minutes at 40-140°F). Breaking: food safety (cook to 165°F internal), water purification (boil 1+ minute, filter &lt;1μm, chlorinate), handwashing. <strong>Vector:</strong> Mosquitoes (transmit within 100-200 meters of breeding site), ticks (attach 24-48 hours before transmission). Breaking: repellent (DEET 20-30%), protective clothing (long sleeves/pants), vector elimination (remove standing water, pesticide spraying), habitat reduction. <strong>Parenteral:</strong> Blood/needles/body fluids (1mL blood sufficient transmission). Breaking: avoid contact with blood, sterile needle reuse, bleach-soak needles 10 minutes minimum, glove changes.</p>
+<div class="warning">
+<p><strong>Aerosol Transmission Risk:</strong> Measles and chickenpox are highly contagious via airborne particles (R0 &gt;12). In enclosed spaces, a single infected person can infect 90% of susceptible occupants in hours. Ventilation is as critical as isolation.</p>
+</div>
+</section>
+<section id="bacterial">
+<h2>Bacterial Infections</h2>
+<h3>Streptococcal Pharyngitis (Group A)</h3>
+<p>Sore throat, fever, swollen tonsils, exudate. Treatment: penicillin V 500mg 4x daily x 10 days or cephalexin 500mg 4x daily. Complications: acute rheumatic fever (permanent heart damage) in 5-10% untreated.</p>
+<h3>Staphylococcal Skin Infections</h3>
+<p>Boils, cellulitis, abscesses. S. aureus produces toxins, spreads rapidly. Treatment: cephalexin 500mg QID or amoxicillin-clavulanate 875mg BID. Abscess drainage is primary treatment (antibiotics alone often fail). MRSA increasingly common; treatment: vancomycin if resistant.</p>
+<h3>Pneumonia</h3>
+<p>Fever (39-40°C), productive cough (rusty sputum, greenish, or blood-tinged), pleuritic chest pain (worse with breathing), dyspnea. Streptococcus pneumoniae (30%) most common; also H. influenzae, Staphylococcus, atypicals (Mycoplasma, Chlamydia). Treatment: amoxicillin 875mg BID x 7-10 days (beta-lactam sensitive) OR azithromycin 500mg day 1, then 250mg daily x 4 days (covers atypicals); severe: ceftriaxone 1-2g IV daily x 7-10 days. Supportive care critical: oxygen (maintain SpO2 &gt;90%, critical if &lt;85%), IV/oral fluids (dehydration common), rest (conserve energy for immune response), acetaminophen 500-1000mg every 4-6 hours for fever (avoid NSAIDs—increase mortality). Monitor respiratory rate (&gt;30 = critical). Complications: sepsis (fever + confusion + shock), empyema (pus between lung/chest wall—requires drainage), lung abscess (necrotic cavity—requires drainage ± antibiotics). Mortality untreated: 10-20% immunocompetent, 50%+ elderly/chronic disease.</p>
+<div class="danger">
+<p><strong>Respiratory Distress Crisis:</strong> RR &gt;30, SpO2 &lt;85%, confusion, inability to speak full sentences, cyanosis (blue lips/nails). Escalate immediately. Without oxygen, prognosis deteriorates rapidly.</p>
+</div>
+<h3>Urinary Tract Infections</h3>
+<p>Dysuria, frequency, urgency, hematuria. E. coli (80%). Treatment: TMP-SMX 160/800mg BID x 3 days, nitrofurantoin 100mg QID x 5-7 days, or fluoroquinolone. Pyelonephritis (kidney infection): fever, flank pain, requires 10-14 days antibiotics ± hospitalization.</p>
+<h3>Gastrointestinal Infections</h3>
+<p>Bacterial diarrhea (Salmonella, Shigella, Campylobacter, Vibrio): usually self-limited (3-7 days). Management: oral rehydration solution (ORS) critical—prevents dehydration, electrolyte loss (most common cause of mortality in severe diarrhea). Antibiotics not routinely recommended (may prolong carrier state, select resistance); use for severe (&gt;10 stools/day, fever &gt;39°C, bloody diarrhea, immunocompromised) or invasive pathogen. ORS formula: 1L water + 6 teaspoons sugar + 1/2 teaspoon salt + 1/2 teaspoon baking soda (alternative: rice water + salt). Administered 50-100mL every 15-30 minutes. Assess dehydration: normal (no signs) → mild (dry mouth, slightly decreased urine) → moderate (dry mucosa, decreased skin turgor) → severe (lethargy, weak pulse, shock). Antimotility agents (loperamide, diphenoxylate) contraindicated in bloody diarrhea/Shigella/Campylobacter (risk of toxic megacolon—dilated, perforated colon).</p>
+<div class="tip">
+<p><strong>Homemade ORS Without Exact Measuring:</strong> Rice water (from cooking rice) with a pinch of salt/sugar is effective backup. Test: ORS should taste slightly salty/sweet (less salty than tears). Too much salt = osmotic effect worsens diarrhea.</p>
+</div>
+</section>
+<section id="viral">
+<h2>Viral Infections</h2>
+<h3>Influenza</h3>
+<p>Fever (39-40°C), myalgia, cough, abrupt onset. Highly contagious (R0 1.3). Treatment: supportive (hydration, rest). Antivirals (oseltamivir 75mg BID x 5 days) within 48 hours reduce duration 1 day, complications. Complications: secondary pneumonia. Vaccine 70-80% effective. Mortality: 0.1% healthy, &gt;5% elderly/high-risk.</p>
+<h3>Common Cold</h3>
+<p>Mild: runny nose, sore throat, cough, low/no fever. Self-limited (3-7 days). &gt;200 viral species; no specific antiviral. Management: supportive care. Vitamin C minimally effective.</p>
+<h3>Measles</h3>
+<p><strong>Highly contagious (R0 ~12-18); one infected person infects 12-18 unvaccinated contacts.</strong> Incubation: 10-14 days. Prodrome (4 days): 3Cs + high fever (40-41°C): Cough (harsh), Coryza (nasal discharge), Conjunctivitis (red eyes, photophobia) + Koplik spots (white sand-on-red mucosa inside cheeks, pathognomonic). Rash: begins face/hairline, spreads downward over 3-4 days (maculopapular, blanching initially, non-blanching day 3+). Treatment: supportive only (no antiviral). Vitamin A supplementation critical: 200,000 IU (oral) daily x 2 days (or 50,000 IU/day if age &lt;1 year): reduces mortality 50%, pneumonia/diarrhea risk. Acetaminophen for fever. Fluids critical (cough + fever = dehydration). Complications: otitis media (15-20%), pneumonia (1-7%, mortality 10%), croup, encephalitis (0.1%, mortality 15%, permanent neurological damage). Isolation: 4 days after rash onset (highly contagious 4 days before to 4 days after rash). Mortality: 1-2/1000 well-nourished vaccinated populations, 10%+ malnourished/unvaccinated, 100-400/1000 with compromised immunity.</p>
+<div class="warning">
+<p><strong>Measles in Immunocompromised:</strong> Mortality &gt;50%. If immunosuppressed patient infected, contact isolation mandatory. Vaccine ineffective once exposed (immune globulin 0.25mL/kg IM within 6 days reduces severity).</p>
+</div>
+<h3>Chickenpox</h3>
+<p>Fever, then vesicular rash (clear blisters in all stages—crops of vesicles + macules + crusts). Self-limited (7-10 days). Antivirals (acyclovir 20mg/kg QID x 5 days within 24 hours) lessen severity. Complications: secondary bacterial infection (scarring, abscess, sepsis), pneumonia, encephalitis. High-risk: adults, immunocompromised, pregnant, neonates. Isolation: until all lesions crusted. Mortality: &lt;1% healthy, 10-30% immunocompromised.</p>
+<h3>COVID-19</h3>
+<p>Asymptomatic to severe ARDS. Incubation 2-14 days. Fever, dry cough, dyspnea, anosmia (loss of taste/smell). Risk factors: age &gt;65, chronic disease, male, immunocompromised. Treatment: supportive (oxygen if hypoxic, fluids). Antivirals (remdesivir, paxlovid) if started early reduce hospitalization 90% high-risk. Corticosteroids reduce mortality hospitalized on oxygen. Prevention: vaccination (&gt;90% hospitalization reduction with original strain), masking (N95), isolation, ventilation.</p>
+</section>
+<section id="fungal">
+<h2>Fungal Infections</h2>
+<h3>Oral Thrush</h3>
+<p>White plaques on tongue/palate/mucosa. Risk factors: immunocompromised, diabetes, prolonged antibiotics. Treatment: nystatin 100,000 units/mL swish &amp; swallow TID x 7-14 days or fluconazole 100mg daily x 7-14 days.</p>
+<h3>Tinea (Fungal Skin)</h3>
+<p>Ringworm: red circles with raised borders. Athlete's foot: scaling between toes. Nail: discoloration, thickening. Treatment: topical (terbinafine, miconazole) BID x 2-4 weeks or oral terbinafine 250mg daily x 4-6 weeks. Prevention: keep dry, separate towels/clippers.</p>
+<h3>Histoplasmosis</h3>
+<p>Inhalation of spores from soil/bird droppings (endemic Ohio/Mississippi valleys, Central/South America). Acute: fever, cough, chest pain. Chronic progressive: infiltrates, cavitation, dyspnea. Treatment: itraconazole 200mg daily x 3 months or amphotericin B IV (severe). Prevention: avoid contaminated soil/droppings.</p>
+</section>
+<section id="parasitic">
+<h2>Parasitic Infections</h2>
+<h3>Malaria</h3>
+<p><strong>Plasmodium transmitted by female Anopheles (dusk-dawn feeding).</strong> Incubation 1-4 weeks (range 7-30 days). Fever cyclical (48-72 hours depending on species): 39-41°C spike + drenching sweats (lasting 2-3 hours), followed by normal temperature. Chills, severe myalgia, headache, nausea, anemia (hemolysis). Diagnosis: thick/thin blood smear microscopy (gold standard—requires training), rapid antigen test (RDT, 15-30 min), PCR if available. Treatment: artemisinin-based combination therapy (Coartem = artemether 20mg + lumefantrine 120mg BID x 3 days) preferred; chloroquine 600mg base then 300mg at 6/24/48 hours if Plasmodium malariae/ovale only; quinine 600mg TID x 7 days + clindamycin if severe/pregnant/P. falciparum. Complications: cerebral malaria (confusion, seizures, coma—15-20% mortality, permanent neurological damage), acute kidney injury (oliguria, creatinine &gt;3), severe anemia (hemoglobin &lt;7). Prevention: DEET 20-30% repellent on skin/clothing, bed nets (preferably insecticide-treated lasting 2-3 years), long sleeves/pants during dusk-dawn. Chemoprophylaxis: mefloquine 250mg weekly (start 1-2 weeks before, continue 4 weeks after) OR atovaquone-proguanil 250/100mg daily (start 1-2 days before, continue 7 days after) OR doxycycline 100mg daily. Mortality untreated: 10-20% endemic (partial immunity), &gt;50% non-immune travelers.</p>
+<div class="warning">
+<p><strong>Cerebral Malaria Crisis:</strong> Fever + altered consciousness/seizures + malaria = immediate IV quinine/artemether. Mortality 15-50% even treated. Prognosis worsens with delay.</p>
+</div>
+<h3>Hookworms</h3>
+<p>Larval penetration through skin from contaminated soil. Symptoms: itching at site, abdominal pain, diarrhea, anemia (each worm causes 10-20mL blood loss daily). Diagnosis: stool examination (eggs 4-6 weeks post-infection). Treatment: albendazole 400mg single dose or mebendazole 100mg BID x 3 days. Iron supplementation needed. Prevention: footwear (most critical), sanitation.</p>
+<h3>Giardiasis</h3>
+<p>Waterborne Giardia lamblia (survives as cyst in water, resistant to chlorine). Incubation 7-14 days (range 5-25 days). Diarrhea (watery, greasy, explosive, foul-smelling), abdominal cramps, bloating, flatulence, malabsorption (steatorrhea = fatty stool), weight loss, nausea. Diagnosis: fresh stool exam (need 3+ samples over days, trophozoites motile &lt;30 min) or antigen detection (ELISA, more sensitive). Treatment: tinidazole 2g single oral dose (preferred—single dose better compliance) OR metronidazole 500mg TID x 5-7 days (more side effects: metallic taste, nausea). Treat contacts. Prevention: safe water (boiling 1+ minute kills cysts, &lt;1μm filter effective, chlorine/iodine alone insufficient), sanitation, handwashing (cysts survive 5-10 minutes on hands).</p>
+<div class="info-box">
+<p><strong>Giardia Cyst Survival:</strong> Survives 3 months in cold water, 1 month in warm water. Boiling 1+ minute or heating to 68°C (154°F) kills within 5 minutes. Chlorine alone unreliable; combine with filtration.</p>
+</div>
+<h3>Schistosomiasis</h3>
+<p>Waterborne cercariae penetrate skin in fresh water. Acute: fever, rash, malaise. Chronic (months-years): S. mansoni/S. japonicum = intestinal (diarrhea, hepatosplenomegaly); S. haematobium = urinary (hematuria, obstruction). Treatment: praziquantel 40 mg/kg single dose. Prevention: avoid contaminated water, treat sewage.</p>
+</section>
+<section id="clinical">
+<h2>Clinical Assessment</h2>
+<h3>History (OPQRST)</h3>
+<p><strong>O:</strong> Onset timing. <strong>P:</strong> Provocation (better/worse). <strong>Q:</strong> Quality (sharp/dull/burning). <strong>R:</strong> Radiation (spread). <strong>S:</strong> Severity (1-10). <strong>T:</strong> Timing (duration, continuous vs intermittent). Fever patterns: continuous (bacterial pneumonia), intermittent (malaria). Exposures: sick contacts, travel, food, water, vaccination status.</p>
+<h3>Physical Examination</h3>
+<p><strong>Temperature:</strong> Normal &lt;37°C. Fever &gt;38.5°C = significant. <strong>Respiratory:</strong> Auscultate (breath sounds normal/absent/wheezing), percussion (resonant/dull), palpation (tenderness). <strong>Cardiovascular:</strong> HR &gt;100 bpm (tachycardia). <strong>Abdomen:</strong> Inspect, auscultate, percussion, palpation (rebound tenderness = peritonitis). <strong>Neuro:</strong> Altered consciousness (sepsis), neck stiffness (meningitis), rash (meningococcal = petechial). <strong>Skin:</strong> Rash characteristics (maculopapular = viral, vesicular = varicella, petechial = meningococcemia), drainage (abscess).</p>
+<h3>Vital Signs</h3>
+<p><strong>Fever &gt;38°C:</strong> Usually infection. &gt;40°C = serious (malaria, measles, meningitis). <strong>HR &gt;100 bpm:</strong> Normal with fever; disproportionately high = sepsis. <strong>RR &gt;20:</strong> Tachypnea (respiratory distress/pneumonia). <strong>BP &lt;90 systolic:</strong> Shock (septic shock). <strong>SpO2 &lt;90%:</strong> Hypoxia (pneumonia). <strong>Capillary refill &gt;2 sec:</strong> Poor perfusion (shock).</p>
+<h3>Red Flags (Medical Emergency)</h3>
+<p>Altered mental status (confusion, hallucinations, lethargy—possible sepsis/meningitis), severe respiratory distress (SpO2 &lt;85%, RR &gt;30, stridor, inability to speak), hypotension (&lt;90 systolic—septic shock), poor perfusion (capillary refill &gt;2 sec, cool extremities, mottled skin), nuchal rigidity (cannot touch chin to chest—meningitis), non-blanching petechial rash that doesn't blanch with pressure (meningococcemia—medical emergency), uncontrolled bleeding from any site, severe dehydration (dry mucous membranes, sunken eyes, confusion, lack of urine output &gt;8 hours), seizures, severe abdominal pain with rebound tenderness.</p>
+<div class="danger">
+<p><strong>Meningococcal Meningitis:</strong> Non-blanching petechial rash + fever + nuchal rigidity = medical emergency. Start empiric antibiotics immediately (ceftriaxone 2g IV BID) even before confirmation. Delay &gt;30 minutes increases mortality 10%/hour. Administer dexamethasone 10mg IV 15-20 minutes before/with first antibiotic dose.</p>
+</div>
+<div class="warning">
+<p><strong>Dexamethasone Prescription Warning:</strong> Dexamethasone is a potent corticosteroid with serious systemic effects. In the meningitis context above, it is used as a short-term adjunct specifically to reduce inflammation-mediated hearing loss and neurological damage — it must always be given WITH concurrent antibiotics, never alone. Contraindicated in patients with active untreated infections without concurrent antimicrobial therapy, as corticosteroids suppress immune function and can cause fulminant infection. Do not use dexamethasone prophylactically or as a general anti-inflammatory. Even short courses (&gt;48 hours) can cause hyperglycemia, adrenal suppression, immunosuppression, and GI bleeding risk. Taper gradually if used for more than 2-3 days.</p>
+</div>
+</section>
+<section id="materials">
+<h2>Treatment Materials</h2>
+<h3>Natural Antimicrobial Remedies</h3>
+<p><strong>Honey:</strong> Antimicrobial (hydrogen peroxide production, osmotic effect, lysozyme), promotes healing, reduces pain, kills biofilms. Apply 1-2cm thick to clean wound, cover, change daily. Evidence: comparable to topical antibiotics (mupirocin) for minor wounds, 15-20% faster healing. Botulism risk in infants &lt;12 months (don't use). Manuka honey (UMF 10+) more potent but limited post-collapse. Standard honey salvageable indefinitely. <strong>Garlic:</strong> Allicin (antimicrobial, antifungal) activated when crushed, unstable (degrades 15 minutes). Effectiveness minimal if heated. Use fresh, crushed, within minutes. Supportive role only—not primary treatment. <strong>Ginger:</strong> Anti-inflammatory (gingerol, shogaol), aids digestion, nausea/cough relief. Typical dose: 1-2g dried powder or fresh sliced in hot water. <strong>Willow bark:</strong> Salicin (aspirin precursor), fever/pain reduction. Prepare: 1-2 tsp dried bark in 8oz hot water, steep 10 minutes, drink 3x daily. Contains tannins (digestive upset possible). <strong>Turmeric:</strong> Curcumin (anti-inflammatory, antioxidant, antimicrobial). Absorption poor; add black pepper (piperine enhances 2000x) or fat (dissolve in coconut oil). Typical: 500-1000mg TID. Not rapid-acting.</p>
+<div class="info-box">
+<p><strong>Honey Shelf Life:</strong> Pure honey crystallizes but remains viable indefinitely. Crystallized honey: warm gently in water bath (never boil). If fermentation evident (bubbles, sour smell), discard. Pasteurized commercial honey safer than raw in post-collapse.</p>
+</div>
+<h3>Improvised Disinfectants</h3>
+<p><strong>Boiling:</strong> Most effective, no consumables needed. 10+ minutes at rolling boil kills bacteria, viruses, parasites, most spores (not heat-resistant spores like anthrax/tetanus, not prions). Rolling boil 1 minute sufficient for water disinfection (above sea level). Equipment: any heat source, pot, thermometer unnecessary if boiling achieved. <strong>Alcohol fermentation:</strong> &gt;70% alcohol effective topical disinfectant (kills on contact 30-60 seconds). 60-70% acceptable. &lt;50% unreliable. Can produce via fermentation (sugar + yeast, 5-10% ABV), distilled via simple still (20% ABV possible). Application: wipe/spray surfaces, skin prep before injection, equipment. <strong>Bleach:</strong> 1:10 dilution (0.5% sodium hypochlorite) for surfaces, 10-minute contact time. More dilute (1:100 = 0.05%) for water treatment (if no other option—can cause GI upset). Toxic inhalation hazard (never mix with ammonia = chlorine gas). Skin irritant (gloves recommended). Shelf life: degrades 5-10% per month (store cool/dark). Test: smell should be chemical pungent. <strong>Salt/saline:</strong> 0.9% (1 tsp table salt per 500mL water) for wound irrigation, osmotic effect promotes drainage. Not antimicrobial but mechanical cleaning effective. <strong>Vinegar:</strong> Weak antimicrobial (5% acetic acid kills some bacteria, ineffective against viruses/spores). Marginal value in post-collapse. <strong>Smoke:</strong> Inhibits bacterial growth (not kills), traditional wound/food preservation. Useful for smoke-curing meat/fish, smoke-treating infected wounds (last resort).</p>
+<div class="tip">
+<p><strong>Bleach Preparation from Basics:</strong> Without commercial bleach, boiling + salt + vinegar + time are primary disinfection. Alcohol fermentation (if possible) most effective alternative. Prioritize boiling for all water/instruments.</p>
+</div>
+</section>
+<section id="quarantine">
+<h2>Quarantine/Isolation Protocols</h2>
+<h3>Definitions</h3>
+<p><strong>Quarantine:</strong> Separate exposed but asymptomatic persons during incubation (5-21 days depending on disease). <strong>Isolation:</strong> Separate symptomatic/confirmed infected from susceptible (duration varies, typically until no longer shedding).</p>
+<h3>Common Durations</h3>
+<p><strong>COVID-19:</strong> Quarantine 5d exposure; isolate 5d symptom onset. <strong>Measles:</strong> Quarantine 21d; isolate 4d after rash. <strong>Chickenpox:</strong> Quarantine 21d; isolate until all crusted (7-10d). <strong>TB:</strong> Isolate 2+ weeks on treatment. <strong>Influenza:</strong> Quarantine 7d or 24h symptom onset; isolate 5d symptom onset or 24h fever-free. <strong>Meningitis (meningococcal):</strong> Isolate 24h after antibiotic.</p>
+<h3>Logistics</h3>
+<p>Separate shelter 6-25+ feet away. Provide food, water, sanitation without direct contact. Dedicated caregiver (recovered/immune if possible). Daily symptom monitoring (temperature, new symptoms, severity). Supply drop-off outside zone. Hand hygiene, PPE before entry, avoid touching items. Waste: separate bags, buried/burned. Laundry: boiled separate. Morale: communication (written messages), entertainment, adequate food. Document contacts made during exposure for secondary quarantine.</p>
+</section>
+<section id="respiratory">
+<h2>Respiratory Illness</h2>
+<h3>Management</h3>
+<p>Position upright (aids breathing), rest, hydration critical. Cough: honey, steam inhalation (burn risk). Acetaminophen for fever if &gt;40°C (not NSAIDs—increase pneumonia mortality). Oxygen is limited resource—reserve for critical (RR &gt;30, SpO2 &lt;85%).</p>
+<h3>Isolation</h3>
+<p>Patient in separate room/tent (closed door). Caregiver wears N95 (wearer protection). Patient wears surgical mask (source control). Avoid aerosol procedures. Hand hygiene: patient covers mouth; caregivers wash hands. High-touch surfaces cleaned frequently.</p>
+</section>
+<section id="gastrointestinal">
+<h2>GI Infections</h2>
+<h3>Acute Gastroenteritis</h3>
+<p>Diarrhea, cramps, nausea/vomiting. Bacterial (Salmonella, Shigella, Campylobacter, Vibrio), viral, parasitic. Treatment: ORS critical (prevents dehydration, electrolyte loss—most common mortality cause). ORS: 1L water + 6 tsp sugar + 1/2 tsp salt. Bland diet (rice, crackers, broth). Antimotility agents contraindicated in bloody diarrhea/Shigella (toxic megacolon risk). Antibiotics not routine (prolong carrier state); indicated for severe (&gt;10 stools/day, bloody, fever &gt;39°C, immunocompromised) or invasive pathogen (Shigella, Salmonella bacteremia). Duration: 3-5 days self-limited. Prevention: food safety (160-165°F meat), water safety (boil, filter), handwashing.</p>
+</section>
+<section id="waterborne">
+<h2>Waterborne Prevention</h2>
+<h3>Purification Methods</h3>
+<p><strong>Boiling:</strong> Rolling boil 1 minute kills all pathogens. Most reliable, safe, no residual toxicity. Fuel-intensive. <strong>Filtration:</strong> Ceramic (0.2-2μm) removes bacteria, protozoa (not viruses). Requires cleaning. <strong>Chlorination:</strong> Effective bacteria/viruses; resistant to Giardia/Cryptosporidium cysts. Requires proper dosing. Cloudy water reduces effectiveness. <strong>Sedimentation:</strong> Gravity settling reduces turbidity. <strong>Combined:</strong> Sedimentation + filtration + boiling most reliable. Post-collapse: likely boiling only (safest with no consumables).</p>
+<h3>Waterborne Diseases</h3>
+<p><strong>Cholera:</strong> Severe watery diarrhea (&quot;rice water&quot;), shock. Treatment: aggressive ORS, antibiotics (tetracycline, doxycycline). Mortality: 50% untreated, &lt;1% with rehydration. <strong>Typhoid:</strong> Fever, abdominal pain, rose-spot rash, hepatosplenomegaly. Treatment: ceftriaxone or fluoroquinolone x 2 weeks. <strong>Hepatitis A:</strong> Fever, jaundice, malaise. Self-limited, no chronic disease. <strong>Hepatitis E:</strong> Similar to A, worse in pregnant (high mortality).</p>
+</section>
+<section id="diagnostics">
+<h2>Improvised Diagnostics</h2>
+<h3>Visual Diagnostics</h3>
+<p><strong>Rash:</strong> Maculopapular (measles/viral), vesicular (varicella), petechial (meningococcemia), scarlatiniform (streptococcal). Blanching (pressure disappears) = vasodilation. Non-blanching = bleeding. Distribution: face/neck→down (measles), truncal (varicella), extremities (meningococcemia). <strong>Conjunctivitis:</strong> Redness, exudate (clear = viral, purulent = bacterial). Photophobia (light-sensitive) = meningitis. <strong>Oral:</strong> Koplik spots = pathognomonic measles. White exudate = streptococcal/mono. Yellow = diphtheria. Thrush (white plaques) = Candida. Petechiae = meningococcemia. <strong>Tongue:</strong> Strawberry tongue = scarlet fever/Kawasaki.</p>
+<h3>Microscopy (if available)</h3>
+<p><strong>Wet mount:</strong> Fresh stool + saline. Trophozoites motile if &lt;30 min (Giardia, Entamoeba, Cryptosporidium). <strong>Gram stain:</strong> Gram-positive (purple), gram-negative (pink). <strong>KOH prep:</strong> Nail/skin/sputum + KOH dissolves cells. Fungi visible as pseudohyphae/yeast. <strong>Blood smear:</strong> Giemsa stain. Parasites (Plasmodium), RBC abnormalities visible.</p>
+<h3>Clinical Criteria</h3>
+<p><strong>Meningitis:</strong> Fever + neck stiffness + altered consciousness = assume meningitis (treat immediately). Kernig sign positive. Non-blanching petechial rash = meningococcal (highest priority). <strong>Sepsis:</strong> Fever + 2 of: altered mental status, HR &gt;90, RR &gt;20, temp &gt;38.5 or &lt;36. Elevated lactate (if measurable). Escalate immediately. <strong>Pneumonia:</strong> Fever + productive cough + dyspnea. Dullness to percussion, increased fremitus, crackles. Treat empirically. <strong>Malaria:</strong> Fever + endemic area exposure + cyclical pattern. Start treatment empirically.</p>
+</section>
+<section id="stewardship">
+<h2>Antibiotic Stewardship</h2>
+<h3>Appropriate Use</h3>
+<p><strong>Bacterial only:</strong> Ineffective against viral (cold, flu, COVID, measles, varicella). Distinguish: viral (mild, self-limited, no purulent discharge) vs bacterial (high fever 39-40°C+, purulent discharge, systemic toxicity—tachycardia, altered mental status). <strong>Narrow-spectrum:</strong> Effective against likely pathogen identified by culture/clinical presentation. Broad-spectrum promotes resistance faster. Example: strep throat = penicillin V (narrow); fever + unknown source = fluoroquinolone (broad). <strong>Complete course:</strong> 10-14 days typical for most bacterial infections. Incomplete = treatment failure (20-30% relapse rate) + resistance selection. Mark calendar, set reminders. <strong>Proper dosing:</strong> Adequate dose critical for efficacy. Underdose (e.g., 250mg instead of 500mg) = treatment failure (50% failure rate) + resistance. Tailor to patient (weight-based pediatric, kidney/liver function—reduce dose if renal failure). Typical adult amoxicillin: 500mg TID (1500mg/day). <strong>Avoid prophylaxis in healthy:</strong> Prophylaxis for high-risk only (immunocompromised TB contact needs 6-9 months INH, post-op patients need surgical prophylaxis), not healthy individuals with viral cough (unnecessary, promotes resistance).</p>
+<div class="warning">
+<p><strong>Incomplete Antibiotic Courses:</strong> Patient stops after 3 days (fever resolved, feel better). Resistant bacteria survive, multiply, relapse with worse infection. Worst-case: MRSA develops from incomplete beta-lactam course. Enforce completion regardless of symptom improvement.</p>
+</div>
+<h3>Resistance Development</h3>
+<p>Mechanism: selective pressure kills susceptible bacteria; resistant survivors flourish. Resistance from genetic mutations or horizontal gene transfer. Post-collapse: finite antibiotic stockpiles (2-5 years). Once depleted or resistance universal = pre-antibiotic mortality. Critical: preserve effectiveness through stewardship. Use sparingly, complete courses, avoid unnecessary prophylaxis.</p>
+<h3>Alternatives</h3>
+<p>Supportive care: hydration, rest, nutrition, symptomatic management. Self-limited infections recover with support. Vaccination: most effective prevention. Natural remedies: honey, garlic, herbs (supportive, not curative). Surgery: abscess drainage (primary), debridement. Isolation: stops transmission. Environmental control: disinfection, vector control, water safety.</p>
+</section>
+<section id="treatment-reference">
+<h2>Treatment Reference Table</h2>
+<table><thead><tr><th scope="col">Infection</th><th scope="col">Pathogen</th><th scope="col">Primary Treatment</th><th scope="col">Dose (Adult)</th><th scope="col">Duration</th><th scope="col">Key Complications</th></tr></thead><tbody><tr><td>Streptococcal pharyngitis</td><td>Group A Streptococcus</td><td>Penicillin V or cephalexin</td><td>500mg QID or 500mg QID</td><td>10 days</td><td>Rheumatic fever (5-10%), abscess</td></tr><tr><td>Pneumonia</td><td>Streptococcus pneumoniae (common)</td><td>Amoxicillin or azithromycin</td><td>875mg BID or 500mg daily</td><td>7-10 days</td><td>Sepsis, empyema, respiratory failure</td></tr><tr><td>Urinary tract infection</td><td>E. coli (80%)</td><td>TMP-SMX or nitrofurantoin</td><td>160/800mg BID or 100mg QID</td><td>3-5 days</td><td>Pyelonephritis (fever + flank pain)</td></tr><tr><td>Skin/soft tissue (MSSA)</td><td>Staphylococcus aureus</td><td>Cephalexin or amoxicillin-clavulanate</td><td>500mg QID or 875mg BID</td><td>10-14 days</td><td>Abscess (drainage required), cellulitis spread</td></tr><tr><td>Meningitis (bacterial)</td><td>Neisseria meningitidis</td><td>Ceftriaxone (+ vancomycin if MRSA)</td><td>2g IV BID</td><td>7-14 days</td><td>Sepsis, deafness, neurological damage, death (15-20%)</td></tr><tr><td>Malaria</td><td>Plasmodium (multiple species)</td><td>Artemisinin combination or chloroquine</td><td>Coartem BID x3 days</td><td>3 days to weeks</td><td>Cerebral malaria, renal failure, death >50% untreated</td></tr><tr><td>Giardiasis</td><td>Giardia lamblia</td><td>Tinidazole or metronidazole</td><td>2g single or 500mg TID</td><td>Single or 5-7 days</td><td>Chronic malabsorption, weight loss</td></tr><tr><td>Hookworm</td><td>Necator americanus</td><td>Albendazole or mebendazole</td><td>400mg single or 100mg BID</td><td>Single or 3 days</td><td>Anemia (chronic), malnutrition</td></tr></tbody></table>
+<div class="tip">
+<p><strong>Post-Collapse Medication Salvage:</strong> Many antibiotics remain stable 1-5 years past expiration if stored cool/dry. Amoxicillin, penicillin, tetracycline degrade slower. Liquid formulations unstable (6 months). Pills/capsules most stable—verify appearance (discoloration = degrade).</p>
+</div>
+</section>
+<section id="outbreak">
+<h2>Outbreak Management</h2>
+<h3>Recognition &amp; Investigation</h3>
+<p>Cases above baseline for time/place/population. Identify common features: location, timing, exposure, symptoms, severity. Investigate: interview cases, identify source, assess transmission. Attack rate: cases/exposed population %. Line listing: all cases with name, age, onset, symptoms, severity, exposures. Epidemic curve: cases over time (rising, plateau, declining).</p>
+<h3>Case Investigation</h3>
+<p>Confirm diagnosis. Identify contacts during communicable period. Document: symptom onset, duration, severity, complications, risk factors. Determine potential source: recent travel, sick contacts, food/water, occupational. Communicability duration determines quarantine period.</p>
+<h3>Contact Tracing</h3>
+<p>Identify all exposed during communicable period. Provide: disease facts, quarantine/isolation protocols, symptom monitoring. Communication: phone, text, email, in-person. Daily check-ins if possible. Testing (if available) identifies secondary cases earlier. Challenges post-collapse: limited communication, unknown contacts, overwhelmed capacity. Alternative: public announcements, self-identification. Compliance issues: isolation fatigue, economic hardship, misinformation.</p>
+<h3>Source Control</h3>
+<p>Determine outbreak source, prevent continued transmission. Foodborne: investigate handling, storage, cross-contamination. Discard contaminated food. Waterborne: identify source, implement treatment (boiling, filtering). Environmental/occupational: assess workplace for contamination (air filtration, overcrowding). Vector-borne: identify vector, implement control (pesticides, remove habitat). Isolation of initial cases essential.</p>
+<p><svg aria-label="Epidemic curve showing point source outbreak pattern with control measures timing" style="background:#1a2e1a;margin:20px 0;border-radius:8px;max-width:100%;height:auto" viewBox="0 0 600 400"><rect fill="#1a2e1a" height="400" width="600"></rect><g stroke="#b8956a" stroke-width="2"><text fill="#d4a574" font-size="12" font-weight="bold" text-anchor="middle" x="300" y="25">Point Source Outbreak</text><polyline fill="none" points="40,350 70,330 100,280 130,220 160,160 190,100 220,80 250,100 280,140 310,160 340,170 370,160 400,130 430,90 460,60 490,50 520,60" stroke="#d4a574" stroke-width="3"></polyline><line stroke="#d4a574" stroke-dasharray="3,3" stroke-width="1" x1="160" x2="160" y1="160" y2="360"></line><text fill="#b8956a" font-size="8" text-anchor="middle" x="160" y="375">Source</text><line stroke="#b8956a" stroke-dasharray="3,3" stroke-width="1" x1="220" x2="220" y1="80" y2="360"></line><text fill="#b8956a" font-size="8" text-anchor="middle" x="220" y="375">Control</text><rect fill="none" height="55" rx="4" stroke="#b8956a" stroke-width="1" width="110" x="270" y="50"></rect><text fill="#d4a574" font-size="8" font-weight="bold" text-anchor="middle" x="325" y="62">Point Source:</text><text fill="#b8956a" font-size="7" x="280" y="74">Single event exposure</text><text fill="#b8956a" font-size="7" x="280" y="84">Sharp peak then decline</text><text fill="#b8956a" font-size="7" x="280" y="94">(e.g., food exposure)</text></g></svg></p>
+</section>
+<section id="pandemic">
+<h2>Pandemic Response</h2>
+<h3>Phases</h3>
+<p><strong>Surveillance:</strong> Monitor distant cases; prepare stockpiles, plans, training. <strong>Containment:</strong> Local cases identified; aggressive isolation, quarantine, testing, contact tracing. <strong>Community spread:</strong> Cannot trace source; shift to mitigation (masking, distancing, isolation). <strong>Peak:</strong> Highest rates; healthcare overwhelmed. Difficult triage. <strong>Decline:</strong> Cases decreasing; maintain precautions. <strong>Recovery:</strong> Minimal cases; resume normal operations while maintaining surveillance.</p>
+<h3>Preparedness Elements</h3>
+<p><strong>Stockpiles:</strong> N95 masks (6+ months, prioritize healthcare workers), surgical masks, gloves, gowns, hand sanitizer, disinfectants, antibiotics, antivirals, oxygen equipment, ventilators, vaccines, medical supplies. Storage: cool/dry, rotate, track expiration. <strong>Planning:</strong> Communication protocols, resource allocation, high-priority groups (healthcare workers, elderly, vulnerable), quarantine/isolation locations, supply distribution, cross-train personnel. <strong>Education:</strong> Accurate information early (prevent panic, misinformation), teach hygiene, promote vaccination, counter misinformation.</p>
+<h3>Healthcare System Overwhelm</h3>
+<p>Peak: hospitals full, staff exhausted/infected, supplies depleted, demand exceeds capacity. Triage: likelihood of benefit, expected outcome (length of life saved). Surge capacity: alternative facilities (schools, gyms, hotels), expanded beds, modified staffing (cross-train, retired clinicians). Difficult: withhold ventilation if unlikely benefit, DNR orders. Psychological support for workers: counseling, rest, recognition.</p>
+<h3>Vulnerable Populations</h3>
+<p>High-risk: elderly (&gt;65), chronic disease (diabetes, heart, lung, immune), pregnant, obesity. Protections: shelter-in-place, isolation from general population, dedicated healthcare workers, testing priority, treatment priority, vaccination priority. Emotional support: isolation-related depression/anxiety. Solutions: video/phone contact with family, entertainment, meaningful activities, welfare checks.</p>
+</section>
+<section id="complications-escalation">
+<h2>Complications &amp; When to Stop/Escalate</h2>
+<h3>Sepsis Recognition</h3>
+<p>Infection spreads systemically (bloodstream), causing organ dysfunction. Clinical criteria: fever + 2+ of the following: altered mental status (confusion, lethargy), heart rate &gt;90, respiratory rate &gt;20, temperature &gt;38.5°C or &lt;36°C, elevated lactate (if measurable &gt;2 mmol/L). Progression: sepsis → septic shock (hypotension &lt;90 systolic despite fluids, lactate &gt;4). Mortality: 30-40% sepsis, 50%+ septic shock.</p>
+<p>Management: Antibiotics within 1 hour (IV preferred if available). IV fluids aggressive: 30mL/kg crystalloid (30kg person = 900mL over 3 hours). Vasopressors if hypotensive (norepinephrine preferred, not available post-collapse = supportive care + fluids only). Source control: drain abscess, remove infected catheter. Monitor lactate, urine output, mental status.</p>
+<div class="danger">
+<p><strong>Septic Shock:</strong> Hypotension + lactate &gt;4 + altered consciousness = mortality 50%+ even with treatment. Without intensive care/vasopressors, prognosis grave. Escalate immediately.</p>
+</div>
+<h3>Treatment Failure Recognition</h3>
+<p>No improvement after 48-72 hours adequate therapy: continued fever &gt;38.5°C, worsening symptoms, new complications. Causes: wrong diagnosis (viral not bacterial, fungal, parasitic), wrong antibiotic (resistant organism), inadequate dose/absorption, source not controlled (undrained abscess, infected foreign body, complicated infection). Response: reassess diagnosis (obtain culture if possible, reconsider viral), switch antibiotic (wider spectrum if immunocompromised, fever despite therapy), check compliance (patient taking meds?), surgical evaluation if surgical source.</p>
+<h3>Medication Complications</h3>
+<p><strong>Antibiotic reactions:</strong> Allergic (rash, angioedema, anaphylaxis—stop immediately), GI (diarrhea—C. difficile if severe—bloody + fever after antibiotics—stop, supportive care), photosensitivity (tetracycline—sun exposure → severe burn), hepatotoxicity (INH—jaundice, elevated LFTs), nephrotoxicity (aminoglycosides—monitor renal function if available). Stop if severe; switch class.</p>
+<p><strong>Antidiarrheal misuse:</strong> Loperamide/diphenoxylate contraindicated in bloody diarrhea (toxic megacolon risk—fulminant colitis with perforation, mortality 25-50%). Use supportive care (ORS, bland diet) instead.</p>
+<p><strong>Fever management:</strong> Acetaminophen acceptable (max 4g/day, avoid if hepatic disease). NSAIDs (ibuprofen, naproxen) associated with pneumonia mortality increase, avoid in respiratory infections. Aspirin (not in children &lt;18 years—Reye syndrome risk).</p>
+</section>
+<section id="field-adaptations">
+<h2>Field Adaptations</h2>
+<h3>Limited-Resource Scenarios</h3>
+<p><strong>No antibiotics:</strong> Supportive care (hydration, rest, nutrition, acetaminophen) can resolve many self-limited infections. Focus: prevent dehydration (most lethal complication in GI/respiratory illness). Critical infections (pneumonia, meningitis, abscess) still high mortality without antibiotics (10-50%). Surgical drainage/debridement critical if infected wound.</p>
+<p><strong>No IV access:</strong> Oral antibiotics if patient can swallow (absorption reasonable for most). If vomiting: wait for gastric settles, retry PO. If unable (unconscious, vomiting &gt;30min): supportive care + manual dehydration management. IM antibiotics possible (penicillin/ceftriaxone IM less available post-collapse). Subcutaneous hydration (hypodermoclysis—500-1000mL normal saline SC in upper arm/thigh, rates 30-50mL/hour) alternative to IV if patient conscious.</p>
+<p><strong>No refrigeration for ORS packets:</strong> Mix fresh: 1L boiled/safe water + 6 tsp sugar + 1/2 tsp salt. Discard if &gt;12 hours room temperature (bacterial growth). Remake as needed.</p>
+<p><strong>Limited PPE:</strong> Prioritize N95 for respiratory illness caregivers (6x more effective than surgical mask). Surgical mask for symptomatic patients (source control). Cloth masks last resort (15-30% filtration, better than nothing). Reuse: store in paper bag between uses (plastic traps moisture, promotes degradation). Disinfect N95: UV light (if available) or hang to air dry (avoid moisture, sunlight degrades rubber).</p>
+<p><strong>No thermometer:</strong> Clinical assessment: forehead/neck hotness, shivering (fever likely), elevated HR. Tachycardia &gt;110 bpm in resting patient = significant fever likely. Absence of sweating despite heat = fever likely (sweating returns as fever breaks).</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting</h2>
+<p><strong>Patient fever not responding to acetaminophen:</strong> Normal—acetaminophen controls fever perception, doesn't &quot;cure&quot; infection. Persistent high fever (39-41°C) may indicate serious infection (meningitis, malaria, pneumonia, abscess). Assess for red flags: altered mental status, respiratory distress, rash, severe headache. Increase antipyretic frequency (every 4-6 hours) but do NOT exceed 4g/day. Consider infection type, treat underlying cause.</p>
+<p><strong>Rash after starting antibiotic:</strong> Viral exanthem (viral illness + coincidental rash) OR drug reaction. If mild (erythematous, non-pruritic, non-blanching): may continue antibiotic. If severe (blistering, mouth sores, facial swelling = Steven-Johnson Syndrome): stop immediately. Assess other symptoms: fever, oral ulcers, mucosal involvement = SJS = discontinue + supportive care.</p>
+<p><strong>Diarrhea after antibiotics:</strong> C. difficile infection (antibiotic-associated diarrhea). Bloody diarrhea, cramping, fever after antibiotics = stop antibiotic, support with ORS. Metronidazole/vancomycin specific treatment (if available). Antimotility agents contraindicated (toxic megacolon risk). 80% self-resolve with supportive care in 1 week.</p>
+<p><strong>Severe allergic reaction during antibiotics:</strong> Anaphylaxis = rash, angioedema (lip/tongue swelling), stridor, hypotension, loss of consciousness. Stop antibiotic immediately. Lay flat, elevate legs. Epinephrine IM (0.3-0.5mL of 1:1000, repeat q15min if needed) = preferred treatment (if available). Fluids IV, airway management. Avoid future doses—permanent cross-sensitivity.</p>
+<p><strong>Abscess not responding to antibiotics:</strong> Antibiotics penetrate abscess poorly (limited blood supply, pus environment). Drainage required: needle aspiration/surgical incision. Warm compresses 15-20 min TID before drainage (promotes localization, easier drainage). Drainage definitive—antibiotics supportive role only.</p>
+<p><strong>Vector exposure but no access to preventive meds:</strong> Passive prevention (protective clothing: long sleeves/pants/hat, mosquito netting over sleeping area), active surveillance (fever check daily for 30 days post-exposure), treatment immediately if fever develops (don't wait for diagnosis confirmation—start malaria treatment empirically if fever + exposure).</p>
+</section>
+<section id="common-mistakes">
+<h2>Common Mistakes</h2>
+<h3>Antibiotic Misuse Errors</h3>
+<p><strong>Mistake 1: Treating viral infections with antibiotics.</strong> Cold, flu, COVID-19, measles, chickenpox are viral—antibiotics don't work, waste supply, select resistance. Recognition: mild symptoms, self-limited course (3-7 days), absence of purulent discharge. Result: patient recovers same timeline with or without antibiotics.</p>
+<p><strong>Mistake 2: Inadequate dosing.</strong> &quot;I'll use less to make it last longer.&quot; Subtherapeutic dosing (e.g., 250mg amoxicillin instead of 500mg) = 50% treatment failure, resistance selection, relapse with worse infection. Result: patient deteriorates after apparent improvement, infection becomes resistant to that antibiotic class.</p>
+<p><strong>Mistake 3: Stopping antibiotic early.</strong> Patient feels better on day 3, stops penicillin. Resistant survivors multiply, relapse with worse symptoms. Same antibiotic may become permanently ineffective. Result: same infection returns 3-5 days later, requires different (often broader-spectrum) antibiotic.</p>
+<p><strong>Mistake 4: Prophylaxis in healthy people.</strong> Healthy person with minor wound or exposure takes antibiotic &quot;just in case.&quot; Unnecessary, kills beneficial bacteria (gut flora disruption), promotes resistance. Result: C. difficile infection, prolonged gut imbalance, wasted supply. Prophylaxis appropriate only: post-op patients, TB contact (6-9 months INH), immunocompromised after significant exposure.</p>
+<div class="danger">
+<p><strong>Resistance Cascade:</strong> Incomplete course → MRSA emerges → requires vancomycin/linezolid. Next incomplete vancomycin course → resistant enterococci. Antibiotic supply depletes faster, effectiveness lost, mortality rises to pre-1940 levels.</p>
+</div>
+<h3>Fever Management Errors</h3>
+<p><strong>Mistake 5: NSAIDs for respiratory infection fever.</strong> Ibuprofen/naproxen associated with worse outcomes in pneumonia (increase mortality, abscess risk). Use acetaminophen instead. Max 4g/day. Never aspirin in children &lt;18 (Reye syndrome—fulminant hepatic failure).</p>
+<p><strong>Mistake 6: Aggressive fever suppression.</strong> Fever is immune response (beneficial up to 40°C). Over-suppressing fever (acetaminophen every 2 hours) prolongs infection, increases complications. Appropriate: acetaminophen every 4-6 hours only if fever &gt;40°C or patient uncomfortable.</p>
+<h3>Isolation Failures</h3>
+<p><strong>Mistake 7: Half-measures in isolation.</strong> &quot;Just stay in the same house, different room.&quot; Respiratory viruses penetrate thin walls via air circulation. Same kitchen = contact transmission. Sharing bathroom = fomite transmission. Result: secondary infections in household. True isolation: separate structure 6-25+ feet away, own water/sanitation, no shared air circulation, food left outside zone.</p>
+<p><strong>Mistake 8: Ending isolation too early.</strong> Symptoms resolved day 5, patient returns to group. Shedding continues for days (some viruses shed 2+ weeks). Second wave of transmission. Duration: follow guideline (e.g., measles 4 days after rash onset, not when symptom-free).</p>
+<h3>Rehydration Errors</h3>
+<p><strong>Mistake 9: Using plain water for severe diarrhea.</strong> Water without electrolytes = hypotonic solution worsens diarrhea (osmotic effect). Patient becomes more dehydrated despite drinking. ORS critical: 1L water + 6 tsp sugar + 0.5 tsp salt. Osmotically balanced, replaces losses, prevents shock.</p>
+<p><strong>Mistake 10: Antimotility drugs in bloody diarrhea.</strong> Loperamide &quot;stops diarrhea&quot; but in invasive pathogens (Shigella, Campylobacter) → toxic megacolon (dilated, perforated colon, septic shock, mortality 25-50%). Use only in non-bloody diarrhea.</p>
+<h3>Diagnostic &amp; Assessment Errors</h3>
+<p><strong>Mistake 11: Attributing fever to non-infectious cause.</strong> &quot;It's just stress&quot; or &quot;teething.&quot; Missed meningitis, malaria, abscess, pneumonia. Fever requires investigation: assess for red flags (altered mental status, respiratory distress, rash, severe headache). When in doubt, treat as infection until proven otherwise.</p>
+<p><strong>Mistake 12: Relying on absence of fever.</strong> Some serious infections present with low/no fever (malaria can be afebrile initially, immunocompromised don't mount fever response). Assess symptoms holistically, not fever alone.</p>
+<h3>Supply &amp; Storage Errors</h3>
+<p><strong>Mistake 13: Improper antibiotic storage.</strong> Left in bathroom cabinet (humidity), car (heat), direct sunlight. Antibiotics degrade faster. Pills/capsules: store cool/dry/dark (5+ years possible). Liquids: 6 months only, typically undrinkable by year 2. Check appearance (discoloration = degradation).</p>
+<p><strong>Mistake 14: Hoarding expired antibiotics.</strong> &quot;I'll stockpile everything.&quot; Ineffective antibiotics waste resources. Many remain stable 1-5 years past expiration if stored properly, but verify appearance. Expired liquid antibiotics unreliable.</p>
+</section>
+<section id="recovery">
+<h2>Recovery &amp; Aftercare</h2>
+<h3>Post-Infection Recovery Phases</h3>
+<p><strong>Acute phase (0-3 days):</strong> Fever, acute symptoms. Management: rest, hydration, symptom management, antibiotics if bacterial. Goals: prevent dehydration, monitor for complications, identify when to escalate.</p>
+<p><strong>Convalescent phase (3-14 days depending on infection):</strong> Fever resolves, symptoms decrease. Patient still weak, vulnerable to secondary infection, risk of relapse if activity increases too fast. Management: gradual activity increase, continued rest, nutrition focus. Avoid strenuous activity, reinfection exposure, other illnesses. Duration: 1-4 weeks depending on severity.</p>
+<p><strong>Recovery plateau (weeks 2+):</strong> Gradual strength return. Most symptoms resolved but fatigue persists. Return to normal function: work, strenuous activity should be gradual (not return to full capacity immediately).</p>
+<h3>Nutrition During &amp; After Infection</h3>
+<p><strong>During acute phase:</strong> Loss of appetite normal. Offer: broths, soft foods, calories, electrolytes (ORS covers some). Small frequent meals. Hydration is priority. Appetite typically returns day 4-7.</p>
+<p><strong>Convalescent phase:</strong> Increased caloric needs (infection +200-400 kcal/day). Protein critical for tissue repair (infected wounds, pneumonia lung damage, weight loss recovery). Micronutrients: vitamin A (supports immune recovery), vitamin C (collagen formation for wound healing), iron (if anemia from bleeding/malaria). Target: high-protein, calorie-dense foods (eggs, legumes, nuts, meat if available). Gradual return to normal diet.</p>
+<p><strong>Post-infection anemia:</strong> Common after malaria (hemolysis), hookworm (blood loss), prolonged illness (bone marrow suppression). Fatigue, pale mucosa, shortness of breath with exertion. Management: iron supplementation (ferrous sulfate 325mg daily with vitamin C enhances absorption) x 3 months. Dietary iron (red meat, beans, leafy greens). Recheck if anemia persists beyond 3 months (test: pale conjunctiva, pallor).</p>
+<div class="tip">
+<p><strong>Caloric Needs Post-Infection:</strong> Recovering patient needs 20-30% more calories than healthy baseline for 2-4 weeks. Severe infection (pneumonia, sepsis survivor): 30-40% more x 4-8 weeks. Priority: quality over quantity—dense foods better than watered-down broths.</p>
+</div>
+<h3>Activity Resumption</h3>
+<p><strong>Days 1-7 (acute):</strong> Bed rest. Bathroom only if tolerable. Prevent falls (weakness, dehydration, altered mentation). Assistance for ADL.</p>
+<p><strong>Days 7-14 (convalescent):</strong> Short walks (10-15 minutes), light activities (sitting crafts). No strenuous work. Fatigue will spike if activity increases too fast—patient will feel worse after overexertion.</p>
+<p><strong>Weeks 2-4:</strong> Gradual increase. Return to normal duties gradually (not full capacity week 2). Avoid reinfection (stay away from sick people, maintain hygiene). Sleep remains important (sleep aids immune recovery).</p>
+<p><strong>Return to strenuous activity:</strong> Typically 3-4 weeks post-resolution. Exercise too early = relapse (common, can be worse than first infection). If fatigue persists beyond 4 weeks (post-viral fatigue), continue conservative approach.</p>
+<h3>Monitoring for Complications</h3>
+<p><strong>Relapse indicators:</strong> Fever returns after 3+ days fever-free, new symptoms appear, fatigue worsens despite rest. Assess: inadequate antibiotic (stop too early, inadequate dose), resistant organism, new infection, secondary infection (e.g., bacterial pneumonia after viral). Response: restart/escalate antibiotics if bacterial relapse, assess for new site of infection (abscess, meningitis).</p>
+<p><strong>Delayed complications:</strong> Can appear 1-4 weeks post-infection. Acute rheumatic fever (strep pharyngitis, heart damage, appears 2-4 weeks post). Post-infectious glomerulonephritis (kidney inflammation, hematuria, swelling, 1-3 weeks post-strep/viral). Monitoring: persistent hematuria, edema, hypertension post-strep infection warrants assessment (if available, urine dipstick).</p>
+<p><strong>Chronic sequelae:</strong> Permanent damage from severe infection. Post-measles encephalitis (neurological damage), post-meningitis deafness (permanent hearing loss), post-cerebral malaria cognitive impairment, post-pneumonia pulmonary fibrosis (chronic cough, dyspnea on exertion). No cure once established—supportive care, adaptive measures (hearing aid if resources available, cognitive rehabilitation).</p>
+<h3>Psychological Recovery</h3>
+<p>Infection causes anxiety, depression (isolation fatigue, fear of complications, loss of control). Recovery: psychological support (counseling if available, peer support groups, family reassurance). Validate feelings: &quot;This was serious, your fear is normal.&quot; Normalize recovery timeline: &quot;Fatigue for weeks is expected.&quot; Provide hope: &quot;Most recover fully given time.&quot;</p>
+</section>
+<section id="prevention">
+<h2>Prevention &amp; Control</h2>
+<h3>Hand Hygiene</h3>
+<p>Historically most critical prevention (Semmelweis: 30%→&lt;2% mortality with handwashing). Soap + water mechanical removal: friction dislodges microbes, surfactant aids removal, water rinses. Minimum 20 seconds: palms, backs, between fingers, under nails, wrists. Key moments: before food prep/eating, after toilet, sick contact, contaminated surface, coughing/sneezing. Effectiveness: removes 99%. Alcohol sanitizer (&gt;60%) acceptable when soap unavailable (removes 95%), less effective than handwashing, doesn't work on visibly soiled. Post-collapse: soap production critical (fat + alkali).</p>
+<h3>Environmental Disinfection</h3>
+<p>High-touch surfaces (doorknobs, railings, switches, tables): 3-4x daily during outbreak. Effective: 1:10 bleach (0.5% hypochlorite), 70% alcohol (30 sec), 3% hydrogen peroxide. Bleach contact: 10 min. Floors: not high transmission risk; disinfect if blood/body fluid contact. Linens: hot water wash (&gt;60°C + detergent) adequate, separate contaminated.</p>
+<h3>Vector Control</h3>
+<p><strong>Mosquitoes (dengue, malaria, Zika):</strong> Remove standing water (breeding habitat). DEET 20-30% repellent, long sleeves/pants, especially dusk-dawn. Mosquito nets (ideally insecticide-treated). Screens on windows/doors. Community: pesticide spraying (pyrethroid), larval control (Bti—Bacillus thuringiensis israelensis). <strong>Ticks (Lyme, Rocky Mountain spotted fever):</strong> Check after outdoor exposure. Removal: tweezers grasp at skin surface (not body—avoid regurgitation), pull steady. Dispose: crush, burn, soak alcohol. Long sleeves/pants, repellent. Avoid brushy/wooded areas peak season (spring/summer).</p>
+</section>
+<section id="community">
+<h2>Community Response</h2>
+<h3>Team Composition</h3>
+<p><strong>Leader:</strong> Coordinates, liaison, information. <strong>Medical officer:</strong> Clinical expertise, protocols, triage. <strong>Epidemiologist:</strong> Investigation, contact tracing, analysis. <strong>Logistician:</strong> Supplies, resources, facilities. <strong>Communications:</strong> Public info, accurate messaging. <strong>Healthcare workers:</strong> Patient care, vaccination. <strong>Environmental health:</strong> Water, sanitation, vector control, disinfection. <strong>Community liaisons:</strong> Trust-building, engagement.</p>
+<h3>Activation &amp; Operations</h3>
+<p>Triggers: single serious case (measles, meningitis, plague), unusual cluster, cases outside expected range, new disease to area. Assembly: immediate, command center, surveillance, investigation. Frequency: daily meetings during response (review cases, tracing status, supply, communication). Community engagement: explain measures (builds compliance), address concerns, provide support. Deactivation: no new cases x 2+ incubation periods.</p>
+</section>
+<section id="scaling">
+<h2>Scaling Response</h2>
+<h3>Individual</h3>
+<p>Personal prevention: hand hygiene (most critical), respiratory etiquette (cough into elbow), immunity (nutrition, rest, vaccination). Early symptom recognition (fever, cough): seek care immediately. Isolation if infected: separate, mask if necessary contact. Vaccination: primary prevention. Self-quarantine if exposed: comply for duration.</p>
+<h3>Household</h3>
+<p>Sick room if possible (separate from well). Dedicated caregiver (immune/recovered if available): reduces contact. Hand hygiene: caregiver washes after contact. Disinfection: high-touch surfaces frequently. Food/water: caregiver handles (prevent contamination). Waste: contaminated items bagged separately. Emotional support: isolation anxiety/depression common. Care: hydration (offer frequently), nutrition (soft if swallowing difficult), symptom management (acetaminophen fever, throat lozenges). Monitoring: daily assessment for deterioration. Hospital referral: respiratory distress (RR &gt;30, SpO2 &lt;85%), altered consciousness, shock (hypotension, poor perfusion), severe dehydration, uncontrollable vomiting.</p>
+<h3>Community Level</h3>
+<p>Coordinated testing/diagnosis (establish sites, distribute rapid tests). Quarantine facilities (designated locations for exposed). Isolation facilities (medical for symptomatic/confirmed). Contact tracing (dedicated team). Supply distribution (food, water, medicines to isolated—prevent supply depletion). Public communication (accurate, daily minimum). Resource allocation (healthcare workers vaccination/treatment priority, equipment triage). Sentinel surveillance (ongoing monitoring for new cases).</p>
+</section>
+<section id="seasonal">
+<h2>Seasonal Patterns</h2>
+<h3>Winter (Respiratory)</h3>
+<p>Influenza, RSV, colds, streptococcal pharyngitis peak (November-March Northern Hemisphere; May-September Southern). Mechanism: cold/dry air impairs mucosal immunity, crowded indoor. Preparation (by October): antivirals, N95 masks (millions), rapid tests, vaccination. Peak: January-March. Management: aggressive isolation, vaccination, respiratory precautions, water adequate. High-risk: elderly, chronic disease (prioritize vaccination, early treatment). Planning: isolation facilities, healthcare staffing, oxygen supplies.</p>
+<h3>Summer (GI &amp; Vector)</h3>
+<p>Foodborne (Salmonella, Shigella, Campylobacter), waterborne (giardiasis, cholera), vector-borne (dengue, malaria, Lyme) peak. Mechanism: warm temperatures favor bacterial/parasite growth, careless food handling, vector breeding season. Preparation (by May): water systems operational, vector control supplies, food safety education. Peak: June-September. Management: water safety critical (boiling, filtering), vector control (water removal, repellent, protective clothing), food safety (cook thoroughly, avoid cross-contamination).</p>
+<h3>Seasonal Summary</h3>
+<table><thead><tr><th scope="row">Season</th><th scope="row">Primary Diseases</th><th scope="row">Prep</th><th scope="row">Management</th></tr></thead><tbody><tr><td>Winter</td><td>Influenza, RSV, strep, cold</td><td>Antivirals, masks, tests, vaccination</td><td>Isolation, vaccination, hygiene, handwashing</td></tr><tr><td>Spring</td><td>Early vector emergence</td><td>Vector supplies, allergen education</td><td>Avoid unnecessary antibiotics; vector control</td></tr><tr><td>Summer</td><td>Foodborne, waterborne, vector</td><td>Water systems, food training, repellent</td><td>Water safety, food handling, vector protection</td></tr><tr><td>Fall</td><td>Transition, influenza emergence</td><td>Vaccine, antivirals, preparation</td><td>Vaccination, surveillance</td></tr></tbody></table>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="infection-control.html">Infection Control</a>
+<a href="medical-reference.html">Medical &amp; Survival Medicine</a>
+<a href="medications.html">Essential Medications</a>
+<a href="sanitation.html">Sanitation &amp; Public Health</a>
+<a href="toxicology.html">Toxicology &amp; Poison Management</a>
+<a href="zoonotic-disease.html">Zoonotic Disease Control</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

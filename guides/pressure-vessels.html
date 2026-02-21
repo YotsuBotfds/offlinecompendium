@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/pressure-vessels.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pressure Vessels - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.stress-table th { background: var(--accent); color: var(--bg); }
+.formula-box { background: var(--surface); padding: 1em; font-family: monospace; margin: 1em 0; border-radius: 4px; }
+
+</style>
+<meta name="description" content="Design and construct safe pressure vessels - steam boilers, gas accumulators, autoclaves - with proper materials, safety factors, and valve systems. Covers stress analysis, material selection, construction methods, testing, and maintenance.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/pressure-vessels.html">
+<meta property="og:title" content="Pressure Vessels">
+<meta property="og:description" content="Design and construct safe pressure vessels - steam boilers, gas accumulators, autoclaves - with proper materials, safety factors, and valve systems. Covers stress analysis, material selection, construction methods, testing, and maintenance.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Industrial Chemistry", "item": "https://zerotoherohero.com/#sec-chemistry"},
+    {"@type": "ListItem", "position": 3, "name": "Pressure Vessels", "item": "https://zerotoherohero.com/guides/pressure-vessels.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Pressure Vessels",
+  "description": "Design and construct safe pressure vessels - steam boilers, gas accumulators, autoclaves - with proper materials, safety factors, and valve systems. Covers stress analysis, material selection, construction methods, testing, and maintenance.",
+  "dateModified": "2026-02-16",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-246">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-chemistry">Industrial Chemistry</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Pressure Vessels</span>
+</nav>
+<div class="warning">
+<strong>Safety Notice:</strong> This guide covers activities that carry some risk. Follow all safety precautions carefully. See our <a href="../disclaimer.html">liability disclaimer</a>.
+</div>
+<header>
+<h1>Pressure Vessels</h1>
+<p class="subtitle">Design and construct safe pressure vessels - steam boilers, gas accumulators, autoclaves - with proper materials, safety factors, and valve systems. Covers stress analysis, material selection, construction methods, testing, and maintenance.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●●○</span>
+<span class="read-time">📖 ~28 min read</span>
+<span class="last-updated">· Updated: 2026-02-16</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">1. Overview and Applications</a></li>
+<li><a href="#fundamentals">2. Design Fundamentals and Stress Analysis</a></li>
+<li><a href="#materials">3. Materials and Reagents</a></li>
+<li><a href="#equipment">4. Equipment and Setup</a></li>
+<li><a href="#safety-factors">5. Safety Factors and Design Criteria</a></li>
+<li><a href="#construction">6. Construction Methods and Fabrication</a></li>
+<li><a href="#procedure">7. Step-by-Step Fabrication Procedure</a></li>
+<li><a href="#testing">8. Pressure Testing and Validation</a></li>
+<li><a href="#boiler">9. Steam Boiler Design and Operation</a></li>
+<li><a href="#valves">10. Valve Design and Safety Relief Systems</a></li>
+<li><a href="#emergency-procedures">Emergency Procedures</a></li>
+<li><a href="#inspection">11. Inspection and Maintenance</a></li>
+<li><a href="#scale-up">12. Scale-Up Considerations for Larger Vessels</a></li>
+<li><a href="#waste-handling">13. Waste Handling and Disposal</a></li>
+<li><a href="#troubleshooting">14. Troubleshooting Failures and Anomalies</a></li>
+<li><a href="#safety">15. Comprehensive Safety Protocol</a></li>
+<li><a href="#reference-tables">16. Reference Tables and Formula Summary</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<div class="warning">
+<p><strong>Required Reading:</strong> Before attempting any procedures in this guide, read the <a href="chemical-safety.html">Chemical Safety Guide</a> in full.</p>
+</div>
+<div class="danger">
+<p><strong>Explosion Hazard:</strong> Pressure vessel failure releases stored energy catastrophically. All pressure vessels must be designed with appropriate safety factors (minimum 4:1 for general service). Hydrostatic test to 1.5× maximum operating pressure before use. Never exceed rated pressure. Include pressure relief devices on all vessels.</p>
+</div>
+<p><svg aria-label="Pressure Vessels diagram 1" style="background:#2d2416;margin:20px 0;border-radius:8px;max-width:100%;height:auto" viewBox="0 0 650 450"><rect fill="#2d2416" height="450" width="650"></rect><text fill="#d4a574" font-size="18" font-weight="bold" text-anchor="middle" x="325" y="30">Pressure Vessel Stress Distribution</text><ellipse cx="325" cy="200" fill="none" rx="120" ry="100" stroke="#b8956a" stroke-width="3/"><text fill="#d4a574" font-size="12" font-weight="bold" text-anchor="middle" x="325" y="200">Hoop Stress</text><text fill="#d4a574" font-size="10" text-anchor="middle" x="325" y="220">(Circumferential)</text><arrow stroke="#d4a574" stroke-width="2/" x1="200" x2="140" y1="180" y2="180"><arrow stroke="#d4a574" stroke-width="2/" x1="450" x2="510" y1="180" y2="180"><text fill="#f5f0e8" font-size="9" x="100" y="175">Tension</text><text fill="#f5f0e8" font-size="9" x="520" y="175">Tension</text><path d="M 325 80 L 325 30 M 325 370 L 325 420" stroke="#b8956a" stroke-width="2/"><text fill="#d4a574" font-size="10" x="375" y="60">Longitudinal</text><text fill="#d4a574" font-size="10" x="375" y="75">Stress</text><text fill="#d4a574" font-size="10" x="375" y="390">(Lower)</text><rect fill="none" height="100" stroke="#b8956a" stroke-dasharray="3,3" stroke-width="2" width="150" x="50" y="310"></rect><text fill="#d4a574" font-size="11" text-anchor="middle" x="125" y="335">Formula:</text><text fill="#f5f0e8" font-size="10" text-anchor="middle" x="125" y="355">Hoop = PD/2t</text><text fill="#f5f0e8" font-size="9" text-anchor="middle" x="125" y="370">P = pressure</text><text fill="#f5f0e8" font-size="9" text-anchor="middle" x="125" y="385">D = diameter</text><circle cx="450" cy="350" fill="none" r="80" stroke="#d4a574" stroke-width="3/"><text fill="#d4a574" font-size="11" font-weight="bold" text-anchor="middle" x="450" y="350">Sphere:</text><text fill="#d4a574" font-size="10" text-anchor="middle" x="450" y="370">Best</text><text fill="#f5f0e8" font-size="9" text-anchor="middle" x="450" y="385">Equal stress</text><text fill="#f5f0e8" font-size="9" text-anchor="middle" x="450" y="400">all directions</text></circle></path></arrow></arrow></ellipse></svg></p>
+<section id="overview">
+<h2>1. Overview and Applications</h2>
+<p>Pressure vessels are containers designed to hold fluids (liquid, gas, or steam) at pressures significantly above atmospheric pressure. They are critical infrastructure in post-collapse scenarios for water pumping, food sterilization, steam-powered machinery, and chemical processing.</p>
+<p><strong>Common survival applications:</strong></p>
+<ul>
+<li>Steam boilers for heat generation and mechanical power</li>
+<li>Water pressure accumulators for pump systems</li>
+<li>Autoclaves for food/medical sterilization</li>
+<li>Gas storage cylinders for fuel preservation</li>
+<li>Thermal accumulators (hot water storage under pressure)</li>
+</ul>
+<p>The fundamental challenge: containing high internal pressure safely without rupture, leaks, or sudden catastrophic failure. Success requires understanding material behavior, stress distribution, design formulas, and rigorous testing.</p>
+<div class="info-box">
+<p><strong>Key Terminology:</strong></p>
+<ul>
+<li><strong>Hoop stress:</strong> circumferential tensile stress around vessel walls (strongest loading direction)</li>
+<li><strong>Longitudinal stress:</strong> axial stress along vessel length</li>
+<li><strong>Hydrostatic pressure:</strong> pressure exerted by fluid at rest</li>
+<li><strong>Relief valve:</strong> safety device that vents pressure if exceeded</li>
+<li><strong>Safety factor:</strong> ratio of material yield strength to maximum design stress</li>
+</ul>
+</div>
+<p>Note: The pressure vessel cross-section diagram above also illustrates hoop and longitudinal stress vectors.</p>
+</section>
+<section id="fundamentals">
+<h2>2. Design Fundamentals and Stress Analysis</h2>
+<p>Pressure vessels contain fluids (gas, liquid, steam) above atmospheric pressure. Internal pressure creates two primary stresses: hoop stress (around circumference) and longitudinal stress (along length). Cylindrical vessels are strongest geometrically - spherical vessels are even better (equal stress in all directions) but harder to construct. The key to safe design is calculating maximum stress and ensuring material strength exceeds it by a safety margin.</p>
+<h3>Thin-Walled Vessel Formulas</h3>
+<p>Valid when wall thickness (t) ÷ radius (r) &lt; 0.1:</p>
+<p><strong>Hoop stress formula:</strong>
+σ_h = PR/t = PD/(2t)</p>
+<p>Where: P = internal pressure (psig), D = inside diameter (inches), t = wall thickness (inches)</p>
+<p><strong>Longitudinal stress formula:</strong>
+σ_l = PR/(2t) = PD/(4t)</p>
+<p><strong>Key insight:</strong> Hoop stress is twice longitudinal stress. The vessel fails when hoop stress reaches material yield strength. Longitudinal stress is secondary.</p>
+<div class="tip">
+<p><strong>Design Strategy:</strong> Hoop stress dominates all calculations. Always size vessel wall thickness based on hoop stress, then verify longitudinal stress is adequate (it usually is if hoop is satisfied).</p>
+</div>
+<h3>Worked Example 1: Small Water Accumulator</h3>
+<p>Scenario: Design a 4-inch diameter mild steel accumulator for 50 psi water pressure. Mild steel yield strength = 30,000 psi. Desired safety factor = 5.</p>
+<p><strong>Step 1:</strong> Calculate allowable stress</p>
+<ul>
+<li>Allowable stress = 30,000 psi ÷ 5 = 6,000 psi</li>
+</ul>
+<p><strong>Step 2:</strong> Rearrange hoop stress formula to solve for wall thickness</p>
+<ul>
+<li>σ_h = PD/(2t) → t = PD/(2 × σ_h)</li>
+<li>t = (50 × 4) / (2 × 6,000) = 200 / 12,000 = 0.0167 inches</li>
+</ul>
+<p><strong>Step 3:</strong> Round up to practical size</p>
+<ul>
+<li>0.0167 inches is impractically thin (less than 1/60 inch). Minimum practical thickness: 1/16 inch (0.0625 in) for structural integrity and manufacturability.</li>
+</ul>
+<p><strong>Verification:</strong></p>
+<ul>
+<li>Actual hoop stress = 50 × 4 / (2 × 0.0625) = 1,600 psi ✓ (well below 6,000 psi allowable)</li>
+<li>Safety factor = 30,000 / 1,600 = 18.75 (very conservative, but acceptable for water vessel)</li>
+</ul>
+<h3>Thick-Walled Vessel Formulas</h3>
+<p>When t/r ≥ 0.1 (wall thickness more than 10% of radius), thin-wall assumption breaks down. This occurs with small-diameter high-pressure vessels. Maximum stress occurs at inner wall surface:</p>
+<p>σ_max = P[(r_o/r_i)² + 1] / [(r_o/r_i)² - 1]</p>
+<p>Where: r_o = outer radius, r_i = inner radius</p>
+<p>This formula is more complex but necessary for accuracy. Example: 2-inch diameter vessel at 500 psi requires thick-wall analysis.</p>
+<h3>Worked Example 2: High-Pressure Gas Cylinder</h3>
+<p>Scenario: 2-inch outer diameter steel pressure bottle for 200 psi gas storage. High-carbon steel yield = 60,000 psi. Safety factor = 4.</p>
+<p><strong>Step 1:</strong> Set allowable stress</p>
+<ul>
+<li>Allowable = 60,000 / 4 = 15,000 psi</li>
+</ul>
+<p><strong>Step 2:</strong> Assume wall thickness (trial: 1/4 inch = 0.25 in)</p>
+<ul>
+<li>Outer radius r_o = 1.0 in</li>
+<li>Inner radius r_i = 1.0 - 0.25 = 0.75 in</li>
+<li>Ratio = r_o/r_i = 1.0/0.75 = 1.333</li>
+</ul>
+<p><strong>Step 3:</strong> Calculate maximum stress</p>
+<ul>
+<li>σ_max = 200 × [(1.333)² + 1] / [(1.333)² - 1]</li>
+<li>σ_max = 200 × [1.778 + 1] / [1.778 - 1]</li>
+<li>σ_max = 200 × 2.778 / 0.778 = 200 × 3.57 = 714 psi ✓</li>
+</ul>
+<p>This is well below 15,000 psi allowable. Wall thickness of 1/4 inch is adequate.</p>
+</section>
+<section id="materials">
+<h2>3. Materials and Reagents</h2>
+<p>Pressure vessel material must withstand sustained high stress without permanent deformation or fracture. The choice of material determines allowable wall thickness, operating temperature, corrosion resistance, and vessel lifespan. Yield strength at operating temperature is critical.</p>
+<h3>Material Properties Table</h3>
+<table>
+<thead>
+<tr><th>Material</th><th>Yield Strength</th><th>Max Temp</th><th>Corrosion</th><th>Workability</th><th>Cost</th></tr>
+</thead>
+<tbody>
+<tr><td>Mild Steel (low C)</td><td>30,000 psi</td><td>400°C</td><td>Poor</td><td>Excellent</td><td>Very Low</td></tr>
+<tr><td>Carbon Steel (med C)</td><td>35,000 psi</td><td>500°C</td><td>Poor</td><td>Good</td><td>Low</td></tr>
+<tr><td>High-Carbon Steel</td><td>60,000+ psi</td><td>450°C</td><td>Poor</td><td>Fair</td><td>Medium</td></tr>
+<tr><td>Stainless Steel 304</td><td>30,000 psi @ 500°C</td><td>750°C</td><td>Excellent</td><td>Fair</td><td>High</td></tr>
+<tr><td>Stainless Steel 316</td><td>25,000 psi @ 500°C</td><td>800°C</td><td>Excellent</td><td>Fair</td><td>Very High</td></tr>
+<tr><td>Cast Iron (ductile)</td><td>40,000 psi</td><td>400°C</td><td>Fair</td><td>Poor (casting)</td><td>Low</td></tr>
+<tr><td>Copper/Brass</td><td>15,000 psi</td><td>200°C</td><td>Excellent</td><td>Excellent</td><td>Medium</td></tr>
+<tr><td>Aluminum Alloy 6061</td><td>40,000 psi</td><td>250°C</td><td>Good</td><td>Excellent</td><td>Low-Medium</td></tr>
+</tbody>
+</table>
+<p><strong>Selection criteria for survival applications:</strong></p>
+<ul>
+<li>
+<p><strong>Steam boilers:</strong> Mild steel (ASTM A36) is the traditional, proven choice — inexpensive, adequate strength with proper thickness, easy to weld. Carbon steel (ASTM A283) is slightly stronger (saves wall thickness) but requires higher skill to work. Stainless preferred for longevity (no rust), but cost-prohibitive in collapse scenario.</p>
+</li>
+<li>
+<p><strong>Water pressure accumulators:</strong> Mild steel sufficient for pressures below 100 psi. Higher pressures (200+ psi) benefit from carbon or high-carbon steel to reduce wall thickness.</p>
+</li>
+<li>
+<p><strong>Temperature effects:</strong> Material yield strength decreases at elevated temperature. Typical loss: carbon steel loses ~8-10% strength per 50°C above 200°C. Account for operating temperature when calculating allowable stress.</p>
+</li>
+</ul>
+<div class="warning">
+<p><strong>Temperature Derating Example:</strong> Carbon steel at 300°C operates at ~80% of room-temperature strength. If nominal yield = 35,000 psi, effective yield at 300°C = 28,000 psi. This must be used in safety factor calculations.</p>
+</div>
+<h3>Corrosion Considerations</h3>
+<p><strong>Interior corrosion</strong> (water-side): Hard water with high mineral content promotes scale buildup and pitting. Mild steel in untreated water exhibits uniform rust (acceptable) but not pitting (hole formation). Chemical water treatment (softening, oxygen removal) extends boiler life significantly.</p>
+<p><strong>Exterior corrosion:</strong> Less critical but accelerates wall thinning. Paint, enamel, or oil coating prevents oxidation. Stainless avoids this entirely but at high cost.</p>
+<div class="note">
+<p><strong>Material Substitution:</strong> In true survival collapse, material availability may force compromises. Thick-walled mild steel (lower strength, thicker walls) may be more accessible than high-strength alloys. Design conservatively — extra wall thickness is safer than relying on precise material properties that may vary.</p>
+</div>
+</section>
+<section id="equipment">
+<h2>4. Equipment and Setup</h2>
+<p>Constructing a pressure vessel requires carefully selected tools and workspace. Safety equipment is non-negotiable — pressure vessel failures produce violent, potentially lethal explosions.</p>
+<h3>Essential Tools</h3>
+<table>
+<thead>
+<tr><th>Tool/Equipment</th><th>Purpose</th><th>Survival Availability</th></tr>
+</thead>
+<tbody>
+<tr><td>Welding equipment (MMA or TIG)</td><td>Joining vessel body and ends; stress-relief heating</td><td>Moderate (salvageable from industry sites)</td></tr>
+<tr><td>Sheet metal shears or plasma cutter</td><td>Cutting cylindrical sections and end caps</td><td>Moderate</td></tr>
+<tr><td>Metal roller</td><td>Rolling flat plate into cylinder (hydraulic or mechanical)</td><td>Low (challenging to improvise; hand-bending possible)</td></tr>
+<tr><td>Pressure gauge (0-300 psi range)</td><td>Monitoring vessel pressure during testing</td><td>Low (salvage from old equipment)</td></tr>
+<tr><td>Hand pump (hydraulic or piston)</td><td>Pressurizing vessel for hydrostatic test</td><td>Moderate (agricultural/industrial salvage)</td></tr>
+<tr><td>Spring steel rod or coil</td><td>Fabricating relief valve spring</td><td>Moderate (salvage from vehicles, machinery)</td></tr>
+<tr><td>Calipers or micrometer</td><td>Measuring wall thickness accurately</td><td>Low (precision instruments, often salvageable)</td></tr>
+<tr><td>Angle grinder</td><td>Cutting, grinding welds, finishing</td><td>Moderate</td></tr>
+</tbody>
+</table>
+<h3>Workspace Requirements</h3>
+<ul>
+<li><strong>Ventilation:</strong> Welding produces toxic fumes (zinc, chromium if stainless). Outdoor or well-ventilated space essential.</li>
+<li><strong>Workbench stability:</strong> Vessel must be secured during construction. Axle stands, jack stands, or sturdy framework.</li>
+<li><strong>Safety barriers:</strong> Testing area must be isolated (chance of violent rupture). Clear 10+ foot radius around test area.</li>
+<li><strong>Testing chamber:</strong> Optional but safer — steel box or berm containing rupture debris if vessel fails during test.</li>
+</ul>
+<div class="danger">
+<p><strong>Rupture Hazard:</strong> A 4-inch diameter vessel at 100 psi contains ~1,500 foot-pounds of energy. Failure releases this instantaneously as shrapnel at extreme velocity. Historical boiler explosions killed bystanders 200+ feet away. Treat testing with extreme seriousness — evacuate area, use remote pump, shield operators.</p>
+</div>
+</section>
+<section id="safety-factors">
+<h2>5. Safety Factors and Design Criteria</h2>
+<p>Pressure vessels fail catastrophically (not gradually) when maximum stress reaches yield strength. This is fundamentally different from static structures. Safe design requires high safety factors that account for uncertainty, defects, fatigue, and temperature effects.</p>
+<h3>Fundamental Safety Factor Concept</h3>
+<p>Safety factor (SF) = Material yield strength / Maximum design stress</p>
+<p>A safety factor of 5 means the vessel can theoretically withstand 5 times the design pressure before plastic deformation. In practice, the first yield is not failure — a small amount of yielding is acceptable. True rupture occurs at ultimate tensile strength (typically 50-100% higher than yield). However, in design, yield point is the accepted failure threshold because:</p>
+<ol>
+<li>Permanent deformation indicates loss of safe operation</li>
+<li>Once yielding starts, continued pressure causes rapid thinning and rupture</li>
+<li>Fatigue life drops dramatically beyond yield point</li>
+</ol>
+<h3>Recommended Safety Factors by Application</h3>
+<table>
+<thead>
+<tr><th>Application</th><th>Min SF</th><th>Typical SF</th><th>Reason</th></tr>
+</thead>
+<tbody>
+<tr><td>Water/air storage (&lt;50 psi)</td><td>3</td><td>4-5</td><td>Low risk, simple operation</td></tr>
+<tr><td>Medium pressure (50-200 psi)</td><td>4</td><td>5-6</td><td>Moderate risk, temperature variation</td></tr>
+<tr><td>High pressure (200-500 psi)</td><td>5</td><td>6-8</td><td>High risk, defects more likely at high stress</td></tr>
+<tr><td>Steam boilers</td><td>5</td><td>6-8</td><td>Temperature, cycling, corrosion, scale</td></tr>
+<tr><td>Transportable (gas cylinders)</td><td>8</td><td>10-12</td><td>External shock, impact hazard</td></tr>
+</tbody>
+</table>
+<h3>Derivation of Safety Margins</h3>
+<p>Safety factor accounts for:</p>
+<ol>
+<li><strong>Material variation:</strong> Actual strength ±10-20% from nominal values (batch-to-batch variation, temperature sensitivity)</li>
+<li><strong>Manufacturing defects:</strong> Welding porosity, incomplete penetration, slag inclusions that concentrate stress locally</li>
+<li><strong>Fatigue:</strong> Pressure cycling (heating/cooling, on/off cycles) reduces strength over repeated cycles</li>
+<li><strong>Temperature effects:</strong> Elevated temperature reduces yield strength; corrosion pits reduce effective thickness</li>
+<li><strong>Uncertainty in loads:</strong> Occasional pressure spikes above nominal may occur; safety factor provides margin</li>
+<li><strong>Ductility assumption:</strong> Formulas assume ductile failure (plastic deformation before rupture); brittle materials need higher factors</li>
+</ol>
+<p><strong>Conservative approach for survival scenario:</strong> Always use SF ≥ 4 minimum. Higher is better — 6-8 provides substantial safety margin for home-built vessels of uncertain material properties.</p>
+<div class="tip">
+<p><strong>Design Philosophy:</strong> In modern industrial settings with quality control, SF = 3 is acceptable. In survival/post-collapse scenario with unknown material provenance, improvised construction, and no NDT testing, use SF ≥ 5 as minimum. The extra wall thickness (cost of material) is far cheaper than potential casualty.</p>
+</div>
+</section>
+<section id="construction">
+<h2>6. Construction Methods and Fabrication</h2>
+<p>Multiple construction methods exist, ranging from simple (riveting, forge welding) to complex (modern welding, spinning). The choice depends on available tools, material, and desired reliability. Each method produces vessels of different strength, durability, and maintainability.</p>
+<h3>Rolled Cylinder with Welded or Brazed Seam</h3>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Obtain flat steel plate (width = vessel circumference, length = cylinder height). Example: 4-inch diameter, 12-inch long vessel requires plate ~12.6 inches wide × 12 inches long.</li>
+<li>Roll flat plate into cylindrical shape (overlap edges by 1-2 inches on one side).</li>
+<li>Join seam by:
+<ul>
+<li><strong>Electric arc welding</strong> (MMA or TIG): Single or double-pass full-penetration weld; modern, reliable, strongest joint</li>
+<li><strong>Forge welding</strong> (low-tech): Heat overlap to cherry-red, hammer together; requires skill but no electricity</li>
+<li><strong>Brazing</strong> (copper-based solder): Lower temperature joint; weaker than welding but possible without arc equipment</li>
+<li><strong>Riveting</strong> (traditional): Historical method; multiple overlapped rivets; slower but acceptable</li>
+</ul>
+</li>
+</ol>
+<p><strong>Weld quality critical:</strong> Good weld = material strength (45,000+ psi tensile). Poor weld (incomplete penetration, porosity, undercut, cracks) = weak point where vessel fails first. Rules:</p>
+<ul>
+<li>Full penetration required (weld metal should flow through entire thickness)</li>
+<li>No porosity or slag inclusions</li>
+<li>Post-weld stress relief recommended (heat to 600-700°C, slow cool) to reduce internal residual stress</li>
+</ul>
+<div class="warning">
+<p><strong>Weld Inspection:</strong> Visual inspection catches surface defects (cracks, undercut, spatter) but not internal flaws (porosity, lack of fusion). If possible, perform hydrostatic test after construction to validate weld integrity. Leak at weld indicates defect.</p>
+</div>
+<h3>Hemispherical or Domed Ends</h3>
+<p>Flat ends experience high longitudinal stress — require thicker material than cylindrical body. Curved ends (hemispherical or elliptical) distribute stress more evenly, allowing thinner material.</p>
+<p><strong>Calculation:</strong> Stress concentration factor for flat end ≈ 2.0 (stress is 2× hoop stress). Hemispherical end ≈ 1.0 (stress equals hoop stress). This means flat-end vessel requires ~2× wall thickness for same pressure, or curved ends allow 50% wall reduction.</p>
+<p><strong>Construction methods for curved ends:</strong></p>
+<ol>
+<li><strong>Spinning</strong> (hydraulic or mechanical press): Roll/press flat cap into dome shape; requires specialized equipment</li>
+<li><strong>Deep drawing:</strong> Pressing flat sheet into concave die; requires press and die fabrication</li>
+<li><strong>Welding two shallow domes:</strong> Fabricate two shallow ~120° sections (easier than full hemisphere), weld together</li>
+<li><strong>Casting:</strong> Pour molten steel into mold; complex but produces true hemisphere; not practical for home fabrication</li>
+</ol>
+<p><strong>Practical approach:</strong> Accept flat ends with thicker material, or construct shallow domes by welding/brazing curved plates.</p>
+<h3>Riveted Construction (Historical but Serviceable)</h3>
+<p><strong>Process:</strong> Overlap two or three layers of steel plate, drill holes, install rivets (steel or copper), hammer rivet over to secure. Rivet spacing ~2-3 inches, offset rows for strength.</p>
+<p><strong>Advantages:</strong> No electricity required, no welding skill needed, &quot;graceful degradation&quot; (if one rivet fails, others hold).</p>
+<p><strong>Disadvantages:</strong> Labor-intensive, slower than welding, slightly lower strength than welded joints (rivet is ~80% of plate strength due to stress concentration at hole).</p>
+<p><strong>When to use:</strong> Post-collapse scenario with no welding equipment; suitable for low-pressure vessels (&lt; 50 psi) where joint efficiency not critical.</p>
+<div class="note">
+<p><strong>Historical Context:</strong> Riveted construction dominated before ~1920s when arc welding became practical. Thousands of riveted boilers operate safely today, proving method's reliability if well-designed and maintained.</p>
+</div>
+</section>
+<section id="procedure">
+<h2>7. Step-by-Step Fabrication Procedure</h2>
+<p>This procedure outlines construction of a simple 12-inch diameter, 24-inch long mild steel boiler shell (target: 25 psi operating pressure).</p>
+<h3>Phase 1: Planning and Material Preparation</h3>
+<p><strong>Step 1:</strong> Calculate required wall thickness</p>
+<ul>
+<li>Operating pressure: 25 psi</li>
+<li>Material: Mild steel (yield 30,000 psi)</li>
+<li>Safety factor: 5 (allowable stress = 6,000 psi)</li>
+<li>Hoop stress formula: σ_h = PD / (2t) → 6,000 = (25 × 12) / (2t)</li>
+<li>Solve: t = (25 × 12) / (2 × 6,000) = 0.025 inches</li>
+</ul>
+<p>This is impractically thin. Practical minimum 1/8 inch (0.125 in) provides safety margin and structural integrity. Actual hoop stress = (25 × 12) / (2 × 0.125) = 1,200 psi (SF = 25, very conservative).</p>
+<p><strong>Step 2:</strong> Obtain materials</p>
+<ul>
+<li>Mild steel plate: 0.125 inch thick, dimensions 13 inches × 26 inches (allow extra for trimming)</li>
+<li>Mild steel flat bar stock for hemispherical end caps (or purchase pre-formed domed ends)</li>
+<li>Mild steel reinforcement ring (1 × 2 inch flat bar, 12.6 inches circumference)</li>
+<li>Filler rod for welding (mild steel ER70S or equivalent)</li>
+</ul>
+<p><strong>Step 3:</strong> Clean and inspect plate</p>
+<ul>
+<li>Remove mill scale and rust with wire brush or sandblasting</li>
+<li>Inspect for surface defects (dents, gouges &gt; 1/8 inch are concerning)</li>
+<li>Check straightness — slight warping acceptable, severe warping indicates material stress</li>
+</ul>
+<h3>Phase 2: Rolling and Forming Cylinder</h3>
+<p><strong>Step 4:</strong> Roll plate into cylinder</p>
+<ul>
+<li>Feed flat plate (13 × 26 in) through metal roller 3-4 times, gradually increasing pressure</li>
+<li>Target: Diameter 12 inches outer (accounting for ~0.125 in wall thickness = 11.75 in inner nominal)</li>
+<li>Overlap edges by ~1.5 inches for welding</li>
+</ul>
+<p><strong>Step 5:</strong> Tack weld seam</p>
+<ul>
+<li>Position cylinder on workbench, support inside to prevent distortion</li>
+<li>Strike tack welds (short ~1 inch beads) every 4-6 inches along seam length</li>
+<li>Check alignment — should be straight, uniform diameter, no bulging</li>
+</ul>
+<div class="danger">
+<p><strong>Distortion Risk:</strong> Heating from welding can warp thin vessels. Minimize distortion by: tack welding (low heat input), symmetric heating (weld both sides alternately), or clamping to fixture. Severe distortion may require stress relief or scrap.</p>
+</div>
+<h3>Phase 3: Full Welding and Stress Relief</h3>
+<p><strong>Step 6:</strong> Complete weld seam</p>
+<ul>
+<li>Single-pass weld (0.125 in thickness requires ~1/8 in bead) or multi-pass if available equipment</li>
+<li>Full penetration required — check underside after each pass</li>
+<li>Allow cooling between passes (air cool, ~10-15 min between passes)</li>
+</ul>
+<p><strong>Step 7:</strong> Stress relief heat treatment</p>
+<ul>
+<li>Heat vessel to 650°C (cherry-red color) using forge or oven</li>
+<li>Hold 30-60 minutes</li>
+<li>Cool slowly (wrap in blanket, let cool overnight)</li>
+<li>This reduces residual welding stress, improving fatigue life</li>
+</ul>
+<h3>Phase 4: End Cap Installation</h3>
+<p><strong>Step 8:</strong> Fabricate or source end caps</p>
+<ul>
+<li>Flat caps: 12-inch diameter × 0.25 inch thick mild steel plate (thicker than body wall due to flat geometry)</li>
+<li>Hemispherical caps: 12-inch diameter domed shape (0.125 inch thick acceptable due to stress distribution)</li>
+</ul>
+<p><strong>Step 9:</strong> Prepare ends for cap installation</p>
+<ul>
+<li>Bevel cylinder edge 30-45° to receive cap (improves weld penetration)</li>
+<li>Tack-weld cap to cylinder (symmetrical tacks every ~90°)</li>
+<li>Check perpendicularity and alignment</li>
+</ul>
+<p><strong>Step 10:</strong> Full weld cap installation</p>
+<ul>
+<li>Single or multi-pass depending on cap thickness</li>
+<li>Alternate sides (weld top then bottom) to minimize distortion</li>
+<li>Stress relief after completing caps</li>
+</ul>
+<h3>Phase 5: Valve and Fitting Installation</h3>
+<p><strong>Step 11:</strong> Drill and tap holes for fittings</p>
+<ul>
+<li>Safety relief valve location: typically top of vessel</li>
+<li>Blowdown drain: bottom of vessel</li>
+<li>Feedwater inlet: side, lower portion</li>
+<li>Steam outlet: top of vessel</li>
+<li>Gauge glass: opposite side, middle height (allows viewing water level)</li>
+</ul>
+<p>Hole sizes for NPT (tapered) fittings: 3/8 inch NPT = 9/16 inch hole, tap to #27 thread</p>
+<p><strong>Step 12:</strong> Install valve fittings</p>
+<ul>
+<li>Weld bosses (reinforcement pad) around each hole to increase local strength</li>
+<li>Thread holes for NPT fittings, install valves with Teflon tape or pipe dope sealant</li>
+<li>Hand-tight plus 1/2 turn wrench (avoid over-tightening which cracks castings)</li>
+</ul>
+</section>
+<section id="testing">
+<h2>8. Pressure Testing and Validation</h2>
+<p>A completed vessel must be tested before use to verify structural integrity, validate design calculations, and identify defects (weld flaws, material defects, incorrect wall thickness). Testing is non-negotiable for safety — a faulty vessel is a time-bomb.</p>
+<h3>Hydrostatic Test Procedure</h3>
+<p><strong>Theory:</strong> Water is incompressible. If vessel ruptures during hydrostatic test, water flows out (low danger). In contrast, gas rupture causes explosive release. Water testing is therefore safe for verifying vessel integrity.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li><strong>Fill vessel completely</strong> with water (no air pockets — air compresses and releases energy if rupture occurs)</li>
+<li><strong>Close all outlets</strong> except test pump inlet and one top vent hole</li>
+<li><strong>Pressurize slowly</strong> using hand pump (manual or foot pump), watching gauge</li>
+<li><strong>Pressurize to 1.5× design pressure</strong> (example: 25 psi design pressure → 37.5 psi test pressure; round to 40 psi for practical measurement)</li>
+<li><strong>Hold pressure 10 minutes</strong> while inspecting for leaks</li>
+<li><strong>Inspect for weeping</strong> (slow drips at joints) or spraying (fast leaks)</li>
+<li><strong>Release pressure slowly</strong> — open vent valve, allow water to drain</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>No leaks → Pass (vessel is structurally sound)</li>
+<li>Weeping at weld → Probable incomplete penetration; vessel requires repair or scrap</li>
+<li>Weeping at thread → Loose fitting; re-tighten</li>
+<li>Sudden rupture → Catastrophic failure; indicates design, material, or manufacturing defect</li>
+<li>Plastic deformation (bulging) → Indicates overstress; vessel weakened, safety factor inadequate</li>
+</ul>
+<div class="warning">
+<p><strong>Test Safety:</strong> Rupture during hydrostatic test releases stored energy violently. Evacuate test area to 15+ feet away. Operator should observe from behind barrier. Never lean over pressurized vessel. Use remote valve and pump handles. Water volume stores significant pressure energy (1 gallon at 50 psi = 417 foot-pounds of energy).</p>
+</div>
+<h3>Worked Example 3: Hydrostatic Test Scenario</h3>
+<p>Design pressure: 25 psi, vessel diameter 12 inches, wall thickness 0.125 inches, mild steel.</p>
+<p><strong>Step 1:</strong> Determine test pressure</p>
+<ul>
+<li>Standard: 1.5 × design pressure = 1.5 × 25 = 37.5 psi (round to 40 psi)</li>
+</ul>
+<p><strong>Step 2:</strong> Confirm theoretical stress at test pressure</p>
+<ul>
+<li>Hoop stress at 40 psi = (40 × 12) / (2 × 0.125) = 1,920 psi</li>
+<li>Material yield = 30,000 psi</li>
+<li>Safety factor at test = 30,000 / 1,920 = 15.6 (ample margin)</li>
+</ul>
+<p><strong>Step 3:</strong> Execute test</p>
+<ul>
+<li>Fill with water, close outlets</li>
+<li>Pressurize using pump — monitor gauge continuously</li>
+<li>Hold at 40 psi for 10 minutes</li>
+<li>Inspect weld, threads, body surface for leaks</li>
+<li>Expected result: No leaks (vessel passes)</li>
+</ul>
+<p>If weeping occurs: Identify location (usually weld), depressurize, drain, identify defect, repair or scrap.</p>
+<h3>Visual Inspection Post-Test</h3>
+<p>After successful hydrostatic test, conduct thorough visual inspection:</p>
+<p><strong>Interior:</strong> (if accessible through manhole)</p>
+<ul>
+<li>Color: Dark gray/brown rust = normal slow oxidation; acceptable</li>
+<li>Pitting: Small shallow pits (&lt; 1/32 inch deep) acceptable; deep pits (&gt; 1/8 inch) indicate accelerated corrosion, shorten service life</li>
+<li>Deposits: White/tan crust = scale (mineral deposits) from hard water; remove by chemical treatment or wire brush</li>
+</ul>
+<p><strong>Exterior:</strong></p>
+<ul>
+<li>Surface cracks: Any visible crack indicates defect; consider vessel unsafe</li>
+<li>Corrosion: Surface rust acceptable; deep pitting (visible holes) unacceptable</li>
+<li>Deformation: Any bulging, denting, or warping indicates stress damage</li>
+<li>Joint integrity: Welds should be smooth, no visible gaps or undercut</li>
+</ul>
+<p><strong>Documentation:</strong> Record test pressure, date, inspector name, any defects found. This creates maintenance history.</p>
+<div class="note">
+<p><strong>Non-Destructive Testing (NDT):</strong> In industrial settings, ultrasonic inspection detects internal weld flaws, and radiography reveals voids. These are not practical in survival scenario. Basic hydrostatic test combined with visual inspection is adequate for home-built vessels.</p>
+</div>
+</section>
+<section id="boiler">
+<h2>9. Steam Boiler Design and Operation</h2>
+<p>Steam boilers are pressure vessels heated from below to generate steam for mechanical power, heating, or cooking. They operate at elevated temperatures (100-150°C typical for low-pressure boilers), which introduces additional stress and corrosion compared to cold-water accumulators.</p>
+<h3>Boiler Design Types and Comparison</h3>
+<table>
+<thead>
+<tr><th>Type</th><th>Design Concept</th><th>Advantages</th><th>Disadvantages</th><th>Best For</th></tr>
+</thead>
+<tbody>
+<tr><td>Fire-Tube</td><td>Hot gases pass through tubes inside water chamber</td><td>Simple, compact, cheap to build</td><td>Large water mass means slow response; tubes prone to scale buildup</td><td>Stationary applications (heating, small power)</td></tr>
+<tr><td>Water-Tube</td><td>Water circulates through small-diameter tubes; hot gases surround</td><td>Small tubes can withstand higher pressure; faster response; easier to clean</td><td>Complex, more tubes = more joints; requires skilled construction</td><td>High-pressure applications; mobile (ship, locomotive)</td></tr>
+<tr><td>Cochran/Scotch</td><td>Horizontal cylindrical shell, furnace integrated below</td><td>Compact, efficient heat transfer, robust</td><td>Large internal volume; difficult to inspect</td><td>Practical for survival-scale small boilers</td></tr>
+<tr><td>Vertical Tubular</td><td>Single or double vertical tubes inside furnace chamber</td><td>Easy to fabricate, responsive, high efficiency</td><td>Limited steam output; narrow margin for overpressure</td><td>Emergency or backup small-scale boilers</td></tr>
+</tbody>
+</table>
+<h3>Worked Example 4: Small Survival Boiler Sizing</h3>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>Operating pressure: 20 psi (sufficient for space heating, water pumping, limited steam power)</li>
+<li>Furnace capacity: 2-3 hour burn time on wood</li>
+<li>Material: Mild steel (30,000 psi yield)</li>
+<li>Safety factor: 5 (conservative for survival scenario)</li>
+</ul>
+<p><strong>Design:</strong></p>
+<ul>
+<li>Shell dimensions: 18 inches outside diameter, 36 inches long</li>
+<li>Wall thickness calculation: σ_allowable = 30,000 / 5 = 6,000 psi
+<ul>
+<li>Using hoop stress: t = PD/(2σ) = (20 × 18) / (2 × 6,000) = 0.03 inches</li>
+<li>Practical minimum: 1/8 inch (0.125 in) wall thickness</li>
+</ul>
+</li>
+<li>Fire tube diameter: 2 inches, two tubes running full length (36 inches)</li>
+<li>Steel volume: Shell ≈ 85 pounds; Tubes ≈ 20 pounds; Total ≈ 105 pounds</li>
+</ul>
+<h3>Boiler Operation Sequence</h3>
+<p><strong>Cold start:</strong></p>
+<ol>
+<li>Load furnace with kindling, light fire</li>
+<li>Water level rises as furnace heats surrounding shell (thermal circulation)</li>
+<li>Temperature climbs; steam pressure increases slowly</li>
+<li>When pressure reaches 5-10 psi, open steam valve momentarily to vent non-condensible gases</li>
+<li>Close steam valve; allow pressure to rise to working pressure (20 psi typical)</li>
+</ol>
+<p><strong>Steady operation:</strong></p>
+<ol>
+<li>Monitor water level continuously (must stay between min/max marks on gauge glass)</li>
+<li>If low, add feedwater slowly (rapid addition of cold water into hot boiler can crack metal)</li>
+<li>If pressure rises above setpoint, relief valve opens automatically</li>
+<li>Fire must be controlled to match steam demand</li>
+</ol>
+<p><strong>Shutdown:</strong></p>
+<ol>
+<li>Reduce fire intensity, allow pressure to drop naturally</li>
+<li>Once pressure near zero, open drain valve and drain all water</li>
+<li>Allow boiler to cool for 1+ hour before inspection</li>
+<li>Check interior for deposits/corrosion if accessible</li>
+</ol>
+<div class="danger">
+<p><strong>Boiler Explosions — Historical Context:</strong> Unattended boilers, low water level, failed relief valve, or overpressure from scale blockage have caused catastrophic failures. A small boiler at 100 psi releases equivalent of several pounds of dynamite. Never operate without functioning safety valve. Never operate unattended.</p>
+</div>
+</section>
+<section id="valves">
+<h2>10. Valve Design and Safety Relief Systems</h2>
+<p>Pressure relief is the primary safety system preventing catastrophic rupture. A failed relief valve is the single most common cause of pressure vessel failures.</p>
+<h3>Spring-Loaded Relief Valve Design</h3>
+<p><strong>Principle:</strong> Valve disk rests on conical seat, spring applies downward force maintaining closure. When internal pressure exceeds spring force, upward force overcomes spring, disk lifts, pressure vents until internal pressure falls below setpoint, spring closes disk.</p>
+<p><strong>Calculation of setpoint:</strong>
+Relief pressure = Spring force / Effective disk area</p>
+<p>If relief disk diameter = 1.5 inches:</p>
+<ul>
+<li>Effective area = π × (0.75)² ≈ 1.77 square inches</li>
+<li>Desired relief pressure = 25 psi</li>
+<li>Required spring force = 25 psi × 1.77 in² = 44.3 pounds</li>
+</ul>
+<p>A spring compressed to 0.5 inches providing 44 pounds force (spring constant k ≈ 88 pounds/inch) would open at 25 psi.</p>
+<p><strong>Testing relief valve:</strong></p>
+<ol>
+<li>Build test rig (small boiler or pressure chamber with pump)</li>
+<li>Install relief valve</li>
+<li>Pressurize slowly while monitoring with gauge</li>
+<li>Note pressure at which valve first cracks open (slightly vents)</li>
+<li>Continue pressurize; note pressure where valve fully opens (flows freely)</li>
+</ol>
+<div class="tip">
+<p><strong>Valve Adjustment:</strong> Tight spring = higher relief pressure; loose spring = lower pressure. Calibrate by adjusting spring tension. First-time adjustment may require several iterations — tighten 1/8 turn at a time, re-test.</p>
+</div>
+<h3>Multiple Relief Valve Configuration (Redundancy)</h3>
+<p>For vessels larger than ~20 gallons, install two relief valves for safety:</p>
+<ul>
+<li><strong>Primary valve:</strong> Set to normal relief pressure (e.g., 25 psi)</li>
+<li><strong>Secondary valve:</strong> Set 5-10% higher (e.g., 28 psi)</li>
+</ul>
+<p>This provides redundancy if primary valve sticks closed.</p>
+<h3>Blowdown and Drain Valve</h3>
+<p><strong>Purpose:</strong> Remove sediment, scale, and corrosion products accumulating at vessel bottom.</p>
+<p><strong>Operation:</strong></p>
+<ol>
+<li>Weekly (active use) or monthly (light use): Open blowdown valve at bottom</li>
+<li>Allow water to flow 30-60 seconds (removes most sediment)</li>
+<li>Close when flow becomes clear</li>
+<li>Do not completely empty boiler during normal operation</li>
+</ol>
+<div class="warning">
+<p><strong>Blowdown Hazard:</strong> Opening blowdown valve under pressure releases hot water/steam. Operator must wear protective clothing (apron, gloves). Hot water causes severe burns.</p>
+</div>
+<h3>Gauge Glass (Water Level Indicator)</h3>
+<p><strong>Critical component</strong> — operator MUST see water level to prevent dry-out (overheating, failure) and overflow (water carry-over to steam line).</p>
+<p><strong>Design:</strong></p>
+<ul>
+<li>Clear borosilicate glass tube, ~1/2 inch diameter</li>
+<li>Installed vertically on boiler shell, middle of furnace height</li>
+<li>Two isolation ball valves (top and bottom) allowing replacement if tube cracks</li>
+<li>Air vent (small needle valve) at top to allow air escape during filling</li>
+</ul>
+<p><strong>If gauge glass breaks:</strong></p>
+<ol>
+<li>Close top and bottom isolation valves</li>
+<li>Drain water by opening bottom drain</li>
+<li>Install new borosilicate tube</li>
+<li>Refill, open isolation valves</li>
+<li>Bleed air at top vent</li>
+</ol>
+<div class="danger">
+<p><strong>Dry-Out Scenario:</strong> If water level falls below minimum (furnace exposed): furnace shell temperature climbs rapidly (can reach 1,200°C+). Metal begins yielding, losing strength. If operator adds cold water suddenly, thermal shock cracks boiler. Prevention: Monitor gauge glass constantly, add water before reaching minimum.</p>
+</div>
+</section>
+<h2 id="emergency-procedures">Emergency Procedures</h2>
+<div class="danger">
+<p><strong>PRESSURE RELIEF FAILURE</strong>: If the relief valve fails to activate at set pressure, or if you observe bulging, leaking, unusual sounds (creaking, hissing), or rapid pressure rise:</p>
+<ol>
+<li><strong>Immediately</strong> extinguish or remove ALL heat sources</li>
+<li><strong>Evacuate</strong> all personnel to minimum 100 meters (330 feet)</li>
+<li><strong>Do NOT</strong> attempt to manually open stuck relief valves while under pressure</li>
+<li><strong>Do NOT</strong> add cold water to an overheated vessel (thermal shock can cause rupture)</li>
+<li>Allow the vessel to cool naturally — this may take hours</li>
+<li>Do not approach until pressure has returned to zero and vessel is at ambient temperature</li>
+</ol>
+</div>
+<h3>Inspection Schedule</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Frequency</th>
+<th>What to Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relief valve</td>
+<td>Before every use</td>
+<td>Lifts freely, reseats cleanly, no corrosion</td>
+</tr>
+<tr>
+<td>Pressure gauge</td>
+<td>Weekly (if in regular use)</td>
+<td>Reads zero when depressurized, needle moves smoothly</td>
+</tr>
+<tr>
+<td>Vessel body</td>
+<td>Before every use</td>
+<td>Cracks, bulges, corrosion, weld defects</td>
+</tr>
+<tr>
+<td>Seals and gaskets</td>
+<td>Before every use</td>
+<td>Elasticity, cracking, proper seating</td>
+</tr>
+<tr>
+<td>Fittings and connections</td>
+<td>Before every use</td>
+<td>Tight, no seepage, thread condition</td>
+</tr>
+<tr>
+<td>Full hydrostatic test</td>
+<td>Every 6 months or after repair</td>
+<td>Test to 1.5× working pressure with WATER (never air)</td>
+</tr>
+</tbody>
+</table>
+<div class="warning">
+<p><strong>HYDROSTATIC TESTING</strong>: Always test pressure vessels with water, never compressed air or gas. Water is nearly incompressible — if a vessel fails during hydrostatic testing, it splits open. If it fails under gas pressure, it EXPLODES with lethal force. The energy stored in compressed gas is orders of magnitude greater than in pressurized liquid.</p>
+</div>
+<section id="inspection">
+<h2>11. Inspection and Maintenance</h2>
+<p>Regular inspection prevents silent degradation (corrosion pitting, scale buildup) that weakens vessels and increases failure risk.</p>
+<h3>Routine Inspection Schedule</h3>
+<p><strong>Weekly (active use):</strong></p>
+<ul>
+<li>Check for leaks (water seeping indicates wall perforation or thread failure)</li>
+<li>Listen for unusual sounds (hissing = leak, rumbling = scale/deposit, squealing = stuck valve)</li>
+<li>Operate safety valve (pump pressure until relief opens — ensures valve functional)</li>
+<li>Monitor water level/fill if low (indicates leak or steam loss)</li>
+</ul>
+<p><strong>Monthly:</strong></p>
+<ul>
+<li>Drain sediment from blowdown valve (let dirty water flow 30 seconds)</li>
+<li>Inspect exterior for corrosion (white powdery deposits indicate corrosion, deep pitting indicates wall thickness loss)</li>
+<li>Check gauge glass (is water level visible? test water level response)</li>
+<li>Feel exterior temperature distribution (cold spots indicate scale/scale blockage)</li>
+</ul>
+<p><strong>Quarterly:</strong></p>
+<ul>
+<li>Internal inspection if accessible (remove manhole cover, inspect interior for pitting/deposits — requires shutting down, cooling, draining)</li>
+<li>Water chemistry testing if possible (hardness, pH, dissolved oxygen — high oxygen causes corrosion)</li>
+<li>Test all drain/blowdown valves (verify they open and close properly)</li>
+</ul>
+<p><strong>Annually:</strong></p>
+<ul>
+<li>Complete internal visual inspection (pitting depth assessment)</li>
+<li>Exterior sandblasting and repainting (if needed)</li>
+<li>Replace worn gaskets and valve seals</li>
+<li>Hydrostatic retest at 1.5× operating pressure (if planning long-term storage or storage &gt;1 year)</li>
+</ul>
+<h3>Corrosion Inspection Protocol</h3>
+<p><strong>Interior corrosion:</strong> Uniform brown rust = slow corrosion (acceptable if thickness still adequate). Deep pitting (holes &gt; 1/8 inch deep) indicates accelerated corrosion — vessel should be retired or extensively repaired.</p>
+<p><strong>Exterior corrosion:</strong> Less critical but leads to wall thinning eventually. Paint/coat exterior to prevent — apply epoxy or oil-based enamel.</p>
+<p><strong>Scale assessment:</strong> Hard water deposits appear as white/tan crust inside. Heavy scale reduces heat transfer (slows heating) and promotes corrosion. Remove by chemical treatment (vinegar solution, citric acid) or wire brushing.</p>
+<h3>Documentation</h3>
+<p>Maintain inspection log:</p>
+<ul>
+<li>Date, inspector name, pressure, temperature (if operating)</li>
+<li>Observations (leaks, deposits, corrosion, deformation)</li>
+<li>Actions taken (repairs, valve adjustments, blowdown)</li>
+<li>Any anomalies (unusual sounds, performance changes)</li>
+</ul>
+<p>This history reveals trends (slowly worsening corrosion, increasing leak frequency) that indicate maintenance need or retirement.</p>
+<div class="warning">
+<p><strong>Neglect Cost:</strong> Ignoring maintenance accelerates failure. A small leak develops into weld crack, which becomes rupture. A vessel showing early corrosion that is not painted worsens exponentially. The small effort of monthly inspection prevents catastrophic failure.</p>
+</div>
+</section>
+<section id="scale-up">
+<h2>12. Scale-Up Considerations for Larger Vessels</h2>
+<p>Designing for larger volumes introduces new challenges: increased hoop stress (scales with diameter), higher water/steam mass (slower response to fire changes), more complex construction logistics.</p>
+<h3>Scaling Laws</h3>
+<p><strong>Hoop stress scales with diameter:</strong> Doubling vessel diameter at same pressure doubles hoop stress (σ = PD/(2t)). This requires either:</p>
+<ol>
+<li>Doubling wall thickness (proportional increase in material weight)</li>
+<li>Using higher-strength material</li>
+<li>Reducing operating pressure</li>
+</ol>
+<p><strong>Volume scales with diameter squared:</strong> A vessel of twice the diameter has 4× the volume. Heat transfer efficiency decreases (larger surface-to-volume ratio) — larger vessels take longer to build pressure, have higher thermal inertia.</p>
+<p><strong>Mass scales with diameter cubed (for constant relative wall thickness):</strong> A vessel of twice the diameter uses 8× the steel (approximately). Practical consideration: handling and moving becomes challenging beyond ~200 gallons.</p>
+<h3>Design Example: 100-Gallon Boiler</h3>
+<p><strong>Scaling from 20-gallon prototype (18&quot; dia, 36&quot; long):</strong></p>
+<ul>
+<li>100-gallon vessel requires ~5.6× volume</li>
+<li>Approximate dimensions: 28 inches outer diameter, 50 inches long</li>
+</ul>
+<p><strong>Wall thickness calculation:</strong></p>
+<ul>
+<li>Same pressure (25 psi), same material (mild steel, 30,000 psi yield), same SF (5)</li>
+<li>Allowable stress = 6,000 psi</li>
+<li>t = (25 × 28) / (2 × 6,000) = 0.058 inches (practical: 3/16 inch = 0.1875 in)</li>
+</ul>
+<p><strong>Steel weight:</strong> 2π × r × t × L = 2π × 14 × 0.1875 × 50 ≈ 827 cubic inches ≈ 350 pounds of steel</p>
+<h3>Practical Challenges at Large Scale</h3>
+<ul>
+<li><strong>Welding time:</strong> Long seams require multiple passes, multiple heating cycles (increased distortion risk)</li>
+<li><strong>Handling:</strong> 350-pound vessel difficult to move during construction; requires lifting equipment</li>
+<li><strong>Pressure testing:</strong> Large volume pumps pressure slowly (safety advantage); requires large pump capacity (time-consuming)</li>
+<li><strong>Transportation:</strong> Large vessels difficult to move post-construction; design for in-situ use</li>
+<li><strong>Thermal response:</strong> Large water mass means slow pressure buildup (requires more fuel, less responsive to load changes)</li>
+</ul>
+<p><strong>Recommendation:</strong> For survival applications, 30-50 gallon capacity is optimal balance — large enough for useful duty, small enough for hand-fabrication and testing.</p>
+<div class="note">
+<p><strong>Efficiency Trade-Off:</strong> Larger vessels have better volume efficiency (lower surface-area-to-volume ratio) but require more complex construction and have worse pressure response. Small modular boilers (multiple 20-gallon units operating together) may be more practical than single large boiler.</p>
+</div>
+</section>
+<section id="waste-handling">
+<h2>13. Waste Handling and Disposal</h2>
+<h3>Boiler Maintenance Byproducts</h3>
+<p><strong>Blowdown water:</strong> Contains dissolved minerals, sediment, corrosion products, occasional oil/grease from lubrication. Periodic discharge necessary but waste.</p>
+<p><strong>Disposal:</strong></p>
+<ul>
+<li>Small volumes: Allow to settle, skim off any oil, pour sediment-free water to ground (safe — mineral content minimal in small systems)</li>
+<li>Large volumes: Collect in settling tanks, allow mineral sediment to precipitate, decant clear water for reuse or disposal</li>
+</ul>
+<p><strong>Scale/deposit residue:</strong> If boiler is drained for inspection, interior scale can be scraped or chemically dissolved (vinegar/citric acid).</p>
+<p><strong>Disposal:</strong></p>
+<ul>
+<li>Small amounts: Bury or discard (scale is rock-hard mineral, non-toxic)</li>
+<li>Corrosion products: Iron oxides (rust) are non-toxic; dispose as regular waste</li>
+</ul>
+<h3>Welding Consumables</h3>
+<p><strong>Flux residue:</strong> Burned coating from electrodes leaves brittle slag (should be removed from welds anyway via brushing).</p>
+<p><strong>Disposal:</strong> Collect slag fragments, discard as metal scrap or regular waste.</p>
+<p><strong>Grease/cutting fluid:</strong> From machine work during vessel construction may accumulate on parts.</p>
+<p><strong>Disposal:</strong> Rinse or degrease with solvent before assembly (optional, but cleaner product). Store solvent waste for recovery or burn in hot fire (if safe to do so).</p>
+<h3>Old Vessels Reaching End-of-Life</h3>
+<p>Retired pressure vessels (severe corrosion, failed test) can be:</p>
+<ol>
+<li><strong>Scrapped for steel:</strong> Cut into sections (risky due to potential trapped pressure or weakened walls), sell scrap to metal recycler</li>
+<li><strong>Repurposed:</strong> Remove internals, use as water tank (no pressure operation, much safer)</li>
+<li><strong>Buried:</strong> In remote location far from human activity (not ideal long-term; recommend metal recovery if possible)</li>
+</ol>
+<div class="danger">
+<p><strong>Never attempt to repurpose a failed pressure vessel for pressurized service</strong> — the defect (weld crack, corrosion pit) that caused failure is permanent. The vessel will fail again, likely with less warning.</p>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>14. Troubleshooting Failures and Anomalies</h2>
+<h3>Problem: Vessel Fails Hydrostatic Test (Leak Appears)</h3>
+<p><strong>Location: Weld seam</strong></p>
+<ul>
+<li>Cause: Incomplete penetration, porosity, or internal crack</li>
+<li>Solution: If leak is slow weeping, attempt to repair by re-welding (risky; may worsen). Better: scrap vessel or accept reduced pressure rating</li>
+<li>Prevention: Verify proper welding technique before building critical vessel</li>
+</ul>
+<p><strong>Location: Thread fitting (valve hole)</strong></p>
+<ul>
+<li>Cause: Thread stripping, over-tightened fitting, damaged NPT thread</li>
+<li>Solution: Remove fitting, re-tap to larger thread size, install larger fitting; or weld patch over hole, re-tap</li>
+<li>Prevention: Use correct thread size, don't over-tighten</li>
+</ul>
+<p><strong>Location: Curved end cap weld</strong></p>
+<ul>
+<li>Cause: Stress concentration where flat section meets curve (poor design) or weld defect</li>
+<li>Solution: Assess severity (slow weeping vs. spraying). If slow, may be acceptable with frequent monitoring. If fast, repair by re-welding or replace end cap.</li>
+</ul>
+<h3>Problem: Safety Valve Doesn't Open (Stuck or Corroded)</h3>
+<p><strong>Diagnosis:</strong> Pressurize test rig, relief valve doesn't crack at setpoint (pressure continues rising past setting).</p>
+<p><strong>Cause:</strong> Scale/corrosion buildup on valve disk preventing seat seal breakage.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Disassemble valve (if threaded connection allows)</li>
+<li>Clean valve disk and seat (vinegar soak + wire brush)</li>
+<li>Reassemble, test again</li>
+<li>If still stuck, replace valve with new one</li>
+</ol>
+<p><strong>Prevention:</strong> Operate relief valve monthly (build pressure, let it open) to prevent sticking.</p>
+<div class="warning">
+<p><strong>Never operate vessel without functioning relief valve</strong> — if stuck closed, no pressure release mechanism. Overpressure will rupture vessel.</p>
+</div>
+<h3>Problem: Vessel Loses Pressure While Sitting Idle</h3>
+<p><strong>Diagnosis:</strong> Pressurize vessel, isolate pump, monitor pressure gauge over days. Pressure drops.</p>
+<p><strong>Cause:</strong> Small leak in valve, thread, or weld (not visible, slow rate). Thermal contraction can also reduce pressure slightly (water cools, contracts, pressure drops).</p>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>If pressure drop &gt;10% per week: Leak is significant. Find source (soap bubble test on external surface, listen for hissing)</li>
+<li>If pressure drop &lt;5% per month: Likely thermal. Acceptable</li>
+</ul>
+<p><strong>Prevention:</strong> Install pressure gauge with manual valve to isolate gauge (prevents gauge leakage from draining vessel).</p>
+<h3>Problem: Boiler Doesn't Reach Design Pressure</h3>
+<p><strong>Diagnosis:</strong> Fire furnace, water heats, but pressure plateaus below design.</p>
+<p><strong>Causes:</strong></p>
+<ol>
+<li><strong>Relief valve stuck open</strong> — venting pressure as fast as it builds
+<ul>
+<li>Solution: Check relief valve operation; if stuck open, repair (see Problem 2)</li>
+</ul>
+</li>
+<li><strong>Scale blockage in fire tubes</strong> — reduces heat transfer
+<ul>
+<li>Solution: Stop operation, allow cooling, remove scale (chemical or mechanical)</li>
+</ul>
+</li>
+<li><strong>Large leak slowly draining pressure</strong> — not obvious at first
+<ul>
+<li>Solution: Pressurise, inspect for seeping</li>
+</ul>
+</li>
+</ol>
+<p><strong>Prevention:</strong> Regular blowdown (removes sediment) prevents scale buildup.</p>
+<h3>Problem: Vessel Deforms or Bulges During Pressurization</h3>
+<p><strong>Diagnosis:</strong> Visible bulging in vessel wall or end cap during pressure test.</p>
+<p><strong>Cause:</strong> Wall thickness inadequate or material weaker than assumed. Hoop stress exceeds yield strength, causing plastic deformation.</p>
+<p><strong>Consequence:</strong> Vessel permanently weakened; safety factor is now zero or negative.</p>
+<p><strong>Solution:</strong> Stop pressurization immediately (avoid rupture). Retire vessel. Redesign with thicker walls or stronger material.</p>
+<p><strong>Prevention:</strong> Perform finite-element stress analysis (if tools available) or use conservative design (SF ≥ 6 for untested materials).</p>
+<div class="danger">
+<p><strong>Any permanent deformation = vessel is unsafe.</strong> Do not operate a deformed pressure vessel — failure is likely in near future.</p>
+</div>
+</section>
+<section id="safety">
+<h2>15. Comprehensive Safety Protocol</h2>
+<p>Pressure vessels are inherently dangerous. A single failure can be lethal. This section summarizes critical safety practices.</p>
+<h3>Pre-Operation Checklist</h3>
+<p>Before pressurizing any vessel:</p>
+<ul>
+<li>[ ] Relief valve installed, tested, and functional (pressure confirmed)</li>
+<li>[ ] Gauge glass visible and showing water level (if boiler)</li>
+<li>[ ] All isolation valves in correct position (steam outlet closed if not in use, blowdown closed)</li>
+<li>[ ] No persons within 15 feet of vessel (chance of rupture)</li>
+<li>[ ] Fire/furnace operating normally (no signs of blockage or instability)</li>
+<li>[ ] Pressure gauge functional and visible (check needle movement)</li>
+<li>[ ] Pump or heat source controllable (can stop adding pressure/heat if needed)</li>
+</ul>
+<h3>Pressure Limits</h3>
+<ul>
+<li>Never exceed design pressure by more than 10% (occasional spikes tolerated)</li>
+<li>If pressure creeps above relief setpoint, stop heating immediately and investigate</li>
+<li>Never bypass or disable relief valve for any reason</li>
+</ul>
+<h3>Temperature Limits</h3>
+<ul>
+<li>Monitor boiler temperature if possible (infrared thermometer on shell surface)</li>
+<li>If furnace temperature exceeds design, reduce fuel rate</li>
+<li>Don't allow furnace to reach red-glow temperatures (indicates &gt;1,000°C, excessive stress)</li>
+</ul>
+<h3>Manual Operation Rules</h3>
+<ul>
+<li><strong>Never leave boiler unattended while under pressure</strong></li>
+<li><strong>Check water level minimum every 30 minutes</strong> (boiler operation)</li>
+<li><strong>Respond immediately to pressure rise above setpoint</strong></li>
+<li><strong>Listen for unusual sounds</strong> (hissing = leak, banging = water hammer, rumbling = scale)</li>
+<li><strong>Never rapidly cool hot boiler</strong> (can cause thermal shock, cracks)</li>
+</ul>
+<h3>After-Operation Cooling</h3>
+<ol>
+<li>Stop adding heat</li>
+<li>Allow pressure to drop naturally (vent steam slowly via outlet valve if needed)</li>
+<li>Once pressure near zero (~5 psi), open drain valve and empty boiler</li>
+<li>Allow vessel to cool for 1+ hour before inspection or disassembly</li>
+<li>Do not pour cold water into hot empty boiler — thermal shock damages metal</li>
+</ol>
+<h3>Emergency Response</h3>
+<p><strong>If rupture occurs (violent opening, hot water/steam spraying):</strong></p>
+<ol>
+<li>Evacuate area immediately</li>
+<li>Do not attempt to approach vessel</li>
+<li>Allow vessel to depressurize/cool</li>
+<li>After safe time (1+ hour), inspect damage</li>
+<li>Retirement or major repair required (not safe to use)</li>
+</ol>
+<p><strong>If fire spreads from furnace:</strong></p>
+<ol>
+<li>Extinguish furnace fire (close air vents, bury in sand/soil if possible; don't use water on boiler itself — thermal shock risk)</li>
+<li>Allow boiler to cool naturally</li>
+<li>Release pressure if needed (open relief or drain valve)</li>
+</ol>
+<div class="danger">
+<p><strong>No second chances with pressure vessels.</strong> One catastrophic failure can kill everyone in vicinity. Design conservatively, maintain diligently, operate cautiously. If you have any doubt about safety, do not pressurize the vessel.</p>
+</div>
+</section>
+<section id="reference-tables">
+<h2>16. Reference Tables and Formula Summary</h2>
+<h3>Quick Hoop Stress Calculator</h3>
+<table>
+<thead>
+<tr><th>Pressure (psi)</th><th>Diameter (in)</th><th>Hoop Stress (wall = 1/8")</th><th>Hoop Stress (wall = 3/16")</th><th>Hoop Stress (wall = 1/4")</th></tr>
+</thead>
+<tbody>
+<tr><td>10</td><td>6</td><td>240 psi</td><td>160 psi</td><td>120 psi</td></tr>
+<tr><td>10</td><td>12</td><td>480 psi</td><td>320 psi</td><td>240 psi</td></tr>
+<tr><td>25</td><td>6</td><td>600 psi</td><td>400 psi</td><td>300 psi</td></tr>
+<tr><td>25</td><td>12</td><td>1,200 psi</td><td>800 psi</td><td>600 psi</td></tr>
+<tr><td>50</td><td>6</td><td>1,200 psi</td><td>800 psi</td><td>600 psi</td></tr>
+<tr><td>50</td><td>12</td><td>2,400 psi</td><td>1,600 psi</td><td>1,200 psi</td></tr>
+</tbody>
+</table>
+<h3>Material Strength at Temperature</h3>
+<table>
+<thead>
+<tr><th>Material</th><th>Room Temp (psi)</th><th>100°C</th><th>200°C</th><th>300°C</th><th>400°C</th></tr>
+</thead>
+<tbody>
+<tr><td>Mild Steel</td><td>30,000</td><td>29,700</td><td>29,100</td><td>27,300</td><td>24,600</td></tr>
+<tr><td>Carbon Steel</td><td>35,000</td><td>34,650</td><td>34,300</td><td>28,000</td><td>21,000</td></tr>
+<tr><td>Stainless 304</td><td>30,000</td><td>29,700</td><td>29,100</td><td>27,300</td><td>25,500</td></tr>
+</tbody>
+</table>
+<h3>Common Vessel Dimensions for Survival Scale</h3>
+<table>
+<thead>
+<tr>
+<th>Volume</th>
+<th>OD (inches)</th>
+<th>Length (inches)</th>
+<th>Wall (1/8&quot;) Hoop at 25 psi</th>
+<th>Est. Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 gal (~34 L)</td>
+<td>8</td>
+<td>18</td>
+<td>360 psi</td>
+<td>15 lbs</td>
+</tr>
+<tr>
+<td>10 gal (~38 L)</td>
+<td>10</td>
+<td>20</td>
+<td>450 psi</td>
+<td>25 lbs</td>
+</tr>
+<tr>
+<td>20 gal (~76 L)</td>
+<td>12</td>
+<td>24</td>
+<td>540 psi</td>
+<td>40 lbs</td>
+</tr>
+<tr>
+<td>50 gal (~189 L)</td>
+<td>16</td>
+<td>40</td>
+<td>720 psi</td>
+<td>90 lbs</td>
+</tr>
+<tr>
+<td>100 gal (~379 L)</td>
+<td>24</td>
+<td>50</td>
+<td>1,080 psi</td>
+<td>250 lbs</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="bridges-dams.html">Bridges, Dams &amp; Infrastructure</a>
+<a href="construction.html">Construction &amp; Carpentry</a>
+<a href="foundry-casting.html">Foundry &amp; Metal Casting</a>
+<a href="metallurgy-basics.html">Metallurgy Fundamentals</a>
+<a href="natural-building.html">Natural Building Materials</a>
+<a href="nitrogen-fixation.html">Nitrogen Fixation &amp; Fertilizer</a>
+<a href="plumbing-pipes.html">Plumbing &amp; Water Systems</a>
+<a href="road-building.html">Road Building &amp; Paving</a>
+<a href="seals-gaskets.html">Seal &amp; Gasket Manufacturing</a>
+<a href="shipbuilding-boats.html">Boat Building &amp; Watercraft</a>
+<a href="steam-engines.html">Steam Engines &amp; Power Generation</a>
+<a href="structural-safety-building-entry.html">Structural Safety for Building Entry</a>
+<a href="sulfuric-acid.html">Sulfuric Acid Production</a>
+<a href="thatching-roofing.html">Thatching &amp; Roofing</a>
+<a href="well-drilling.html">Well Drilling &amp; Water Access</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

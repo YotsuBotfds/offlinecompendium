@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/coastal-island-survival.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coastal &amp; Island Survival Systems</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Immediate Survival</span> ›
+<span>Coastal &amp; Island Survival Systems</span>
+</div>
+
+
+<h1>Coastal &amp; Island Survival Systems</h1>
+<p class="subtitle">Master tidal patterns, shellfish harvesting, seaweed nutrition, salt production, coastal navigation, riptide survival, signal fires for rescue, fresh water from beach wells, and coconut utilization for food and fiber.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~14 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#tidal-patterns">Tidal Patterns and Exploitation</a></li>
+<li><a href="#shellfish-harvesting">Shellfish Harvesting</a></li>
+<li><a href="#seaweed-nutrition">Seaweed Harvesting and Nutrition</a></li>
+<li><a href="#salt-production">Salt Production from Seawater</a></li>
+<li><a href="#coastal-navigation">Coastal Navigation and Rescue Signaling</a></li>
+<li><a href="#fresh-water-beach-wells">Fresh Water from Beach Wells</a></li>
+<li><a href="#coconut-utilization">Coconut Utilization (Tropical Coasts)</a></li>
+<li><a href="#riptide-survival">Riptide and Ocean Current Survival</a></li>
+<li><a href="#integration-example">Integration Example: Island Survival Scenario</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Coasts and islands present unique survival challenges: abundance of water but none drinkable, rich protein sources (shellfish, fish) requiring specialized knowledge, navigation difficulty without landmarks, and isolation from help. This guide covers using coastal resources (tides, shells, weeds, salt), finding/producing fresh water, and self-rescue techniques.</p>
+<p>Coastal survival favors those who understand tides, local marine life, and basic sea signaling. Panic, drinking saltwater, or poor resource selection causes failure.</p>
+</section>
+<section id="tidal-patterns">
+<h2>Tidal Patterns and Exploitation</h2>
+<p>Tides create temporal windows for harvesting and safety. Understanding tides prevents being trapped and maximizes productive times.</p>
+<h3>Tidal Cycle</h3>
+<p><strong>Spring tide</strong> (new/full moon): Largest tidal range (difference between high and low tide). Occurs every 14 days.</p>
+<p><strong>Neap tide</strong> (quarter moons): Smallest tidal range. Occurs between spring tides.</p>
+<p><strong>Example (temperate coast):</strong></p>
+<pre><code>Spring tide: High = 10 feet above mean sea level; Low = 2 feet below mean
+Tidal range = 12 feet
+Occurs: 6 days before/after new moon and full moon
+
+Neap tide: High = 6 feet above mean; Low = 4 feet below mean
+Tidal range = 2 feet
+Occurs: Between spring tides
+
+Tidal period: 12 hours 25 minutes between high tides (2 highs, 2 lows per 24 hours)
+</code></pre>
+<h3>Tidal Prediction Without Instruments</h3>
+<p><strong>Traditional method:</strong></p>
+<p>If moon is visible, estimate tide height based on moon phase:</p>
+<pre><code>Full moon visible at night: Tomorrow morning's high tide will be highest of month (spring tide)
+New moon (moon absent from night sky): Highest tide occurs at new moon day (tonight or next morning)
+Quarter moon (half visible): Mid-range tide (neap tide approaching)
+</code></pre>
+<p><strong>Observation method:</strong></p>
+<p>Track high tide mark with stick or stone. Mark depth daily. Pattern emerges: Rising tide for ~6 hours, falling for ~6 hours.</p>
+<h3>Harvesting by Tide</h3>
+<p><strong>Low tide (best for harvesting):</strong></p>
+<ul>
+<li>Shellfish beds are exposed (mussels, clams, sea urchins).</li>
+<li>Tide pools form (stranded fish, crustaceans).</li>
+<li>Seaweed forests become accessible for cutting.</li>
+</ul>
+<p><strong>High tide (best for fishing, gathering):</strong></p>
+<ul>
+<li>Fish move into shallow water to feed.</li>
+<li>Some seaweeds more accessible.</li>
+<li>Danger: Current strong; potential to be swept offshore.</li>
+</ul>
+<p><strong>Example schedule (temperate 12.5-hour tidal period):</strong></p>
+<pre><code>0000 (midnight): High tide
+0600: Low tide (expose beds)
+1200: High tide (fishing opportunity)
+1800: Low tide (gather again)
+</code></pre>
+</section>
+<section id="shellfish-harvesting">
+<h2>Shellfish Harvesting</h2>
+<p>Mollusks are protein-rich and accessible. Many species are available year-round; some are toxic seasonally.</p>
+<h3>Common Species and Harvesting</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Species</strong></th>
+<th><strong>Habitat</strong></th>
+<th><strong>Season</strong></th>
+<th><strong>Toxicity Risk</strong></th>
+<th><strong>Yield</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mussels</td>
+<td>Rocks, pilings</td>
+<td>Year-round (avoid May–Aug in some regions)</td>
+<td>Red tide paralytic toxin</td>
+<td>1–3 per cluster</td>
+</tr>
+<tr>
+<td>Clams</td>
+<td>Sandy/muddy bottom</td>
+<td>Year-round (best fall/winter)</td>
+<td>Red tide toxin</td>
+<td>1–5 per location</td>
+</tr>
+<tr>
+<td>Oysters</td>
+<td>Rocks, reefs</td>
+<td>Fall–winter</td>
+<td>Red tide toxin</td>
+<td>1 per bed</td>
+</tr>
+<tr>
+<td>Sea urchins</td>
+<td>Rocky reefs</td>
+<td>Fall–winter</td>
+<td>Generally safe</td>
+<td>Roe only (gonads) edible</td>
+</tr>
+<tr>
+<td>Scallops</td>
+<td>Sandy bottom, seagrass</td>
+<td>Fall–winter</td>
+<td>Less toxic than bivalves</td>
+<td>Large meaty foot</td>
+</tr>
+<tr>
+<td>Periwinkles (snails)</td>
+<td>Rocks, seagrass</td>
+<td>Year-round</td>
+<td>Safe</td>
+<td>1 small meat per snail</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Toxicity:</strong> Some shellfish accumulate &quot;red tide&quot; toxins (algal blooms containing saxitoxin or domoic acid). Toxins resist heat; cooking does not eliminate them. Prevention:</p>
+<ul>
+<li>Avoid harvesting during known harmful algal blooms (local notice, water discoloration).</li>
+<li>If unsure: Cook; if numb/tingling mouth after eating, suspect toxin (seek fresh water, spit out, do not swallow more).</li>
+</ul>
+<h3>Harvesting Technique</h3>
+<p><strong>Mussels:</strong></p>
+<ol>
+<li><strong>Locate clusters:</strong> Rocky areas with attached shells.</li>
+<li><strong>Detach:</strong> Pull straight back; clusters separate.</li>
+<li><strong>Rinse:</strong> Shake off sand/debris.</li>
+<li><strong>Beard removal:</strong> Long fibers (byssus) can be eaten but are tough; pull and discard.</li>
+<li><strong>Cook immediately:</strong> Steam 3–5 minutes until shells open; discard any that don't open.</li>
+</ol>
+<p><strong>Clams:</strong></p>
+<ol>
+<li><strong>Locate:</strong> Dig in sand/mud (watch for round holes or slight depressions).</li>
+<li><strong>Dig:</strong> Shovel or hands; dig down 8–12 inches.</li>
+<li><strong>Rinse:</strong> Soak in saltwater 2 hours (allows clam to expel sand).</li>
+<li><strong>Cook:</strong> Boil or steam 10 minutes.</li>
+</ol>
+<p><strong>Sea urchins:</strong></p>
+<ol>
+<li><strong>Locate:</strong> Rocky reefs, low tide.</li>
+<li><strong>Collect:</strong> Use stick to push into crack; urchin falls out.</li>
+<li><strong>Extract roe:</strong> Cut open (sharp edges); scoop orange/yellow roe (gonads).</li>
+<li><strong>Eat raw:</strong> Roe is edible raw (creamy, salty flavor) or cooked briefly.</li>
+</ol>
+<p><strong>Daily yield:</strong></p>
+<pre><code>Expert harvester: 20–40 lbs shellfish per low tide
+Average person: 5–10 lbs (requires knowledge of locations, handling)
+Time: 2–4 hours per low tide
+
+Calories: 2–3 calories per gram
+10 lbs shellfish (48 oz) = ~1,500 calories
+Vitamin/mineral dense; excellent for supplementing plant foods
+</code></pre>
+</section>
+<section id="seaweed-nutrition">
+<h2>Seaweed Harvesting and Nutrition</h2>
+<p>Seaweeds are edible, nutritious, and abundant. Some are toxic; knowledge is essential.</p>
+<h3>Edible Species</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Species</strong></th>
+<th><strong>Appearance</strong></th>
+<th><strong>Nutrition</strong></th>
+<th><strong>Preparation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kelp (brown)</td>
+<td>Long flat fronds, olive-green</td>
+<td>Iodine, minerals, fiber</td>
+<td>Dry for storage; rehydrate for soup</td>
+</tr>
+<tr>
+<td>Nori (red)</td>
+<td>Thin red sheets, purple</td>
+<td>Protein, vitamin B12</td>
+<td>Dry; eat as-is or wrap food</td>
+</tr>
+<tr>
+<td>Dulse (red)</td>
+<td>Feathery red fronds</td>
+<td>Iron, protein, fiber</td>
+<td>Dry; crush into powder or boil</td>
+</tr>
+<tr>
+<td>Sea lettuce (green)</td>
+<td>Thin, translucent green sheets</td>
+<td>Vitamins, minerals</td>
+<td>Eat fresh; salad or soup</td>
+</tr>
+<tr>
+<td>Wakame (brown)</td>
+<td>Feathery midrib, olive-brown</td>
+<td>Calcium, iodine</td>
+<td>Dry; rehydrate in soup</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Toxicity risk:</strong> Seaweeds are safe if not exposed to harmful algal blooms (red tide). Avoid discolored/slimy seaweed (indicates decomposition or toxic bloom).</p>
+<h3>Harvesting and Storage</h3>
+<p><strong>Harvesting (sustainable):</strong></p>
+<ul>
+<li>Cut seaweed 1–2 inches above holdfast (roots); allows regrowth.</li>
+<li>Avoid harvestingonce plants to prevent over-exploitation.</li>
+<li>Best during low tide (fully exposed).</li>
+</ul>
+<p><strong>Drying (for storage):</strong></p>
+<ol>
+<li><strong>Rinse:</strong> Fresh water removes salt and debris.</li>
+<li><strong>Spread on rocks/cloth:</strong> Single layer; sun-dry.</li>
+<li><strong>Time:</strong> 3–7 days until completely dry (brittle, dark).</li>
+<li><strong>Storage:</strong> Dry container; lasts 6–12 months.</li>
+</ol>
+<p><strong>Rehydration:</strong> Soak in fresh water 15–30 minutes before cooking.</p>
+<p><strong>Nutritional value:</strong></p>
+<pre><code>Dried seaweed, 100g:
+- Calories: 35–80
+- Protein: 5–10g
+- Iodine: 2,000–5,000 mcg (exceeds recommended daily intake; ok in small amounts)
+- Iron: 2–5 mg
+- Calcium: 200–500 mg
+
+1 tablespoon dried seaweed (~5g) provides ~50% daily iodine and 10% calcium.
+Seaweeds are extremely nutrient-dense; small amounts supplement diet effectively.
+</code></pre>
+<div class="warning">
+<p>Excessive seaweed consumption can cause thyroid problems (iodine overdose). Limit to 1–2 tablespoons per day. If available, vary with other iodine sources (shellfish, fish).</p>
+</div>
+</section>
+<section id="salt-production">
+<h2>Salt Production from Seawater</h2>
+<p>Salt is a preservative and seasoning. Coastal areas allow salt production if fresh water is insufficient for desalination.</p>
+<h3>Solar Evaporation Method</h3>
+<p><strong>Principle:</strong> Seawater left in sun evaporates; salt remains.</p>
+<p><strong>Setup:</strong></p>
+<ol>
+<li><strong>Basin:</strong> Shallow tray (12–18 inches deep), lined with clay or plastic.</li>
+<li><strong>Size:</strong> 4×4 feet produces ~1 lb salt per week in sunny climate.</li>
+<li><strong>Location:</strong> Direct sun, away from freshwater contamination.</li>
+</ol>
+<p><strong>Process:</strong></p>
+<ol>
+<li><strong>Fill basin:</strong> Seawater, ~6 inches deep.</li>
+<li><strong>Wait:</strong> Allow sun to evaporate water (3–4 weeks, depending on climate).</li>
+<li><strong>Crystals form:</strong> Salt crystallizes on bottom and edges.</li>
+<li><strong>Harvest:</strong> Scrape crystals; rinse once with seawater (removes bitterness), then dry.</li>
+</ol>
+<p><strong>Yield:</strong></p>
+<pre><code>Seawater density: ~3.5% salt by weight
+1 liter seawater = 35g salt (theoretical)
+Practical yield (with losses): 25–30g salt per liter
+
+Basin (50 liters capacity) over 4 weeks:
+Evaporated water: 50 liters
+Salt produced: 1.25–1.5 lbs
+
+Time investment: 5 minutes per week (monitor, harvest)
+</code></pre>
+<p><strong>Quality:</strong> Salt is pure (NaCl); good for preservation and seasoning. Bitterness (magnesium contamination) is removed by rinsing.</p>
+<h3>Boiling Method (if fuel available)</h3>
+<p>Seawater is boiled until evaporated. Much faster (~4 hours) but fuel-intensive.</p>
+<pre><code>1. Heat seawater to boil.
+2. Maintain boiling until liquid is reduced to 1/10 original volume.
+3. Salt crystallizes on pot bottom.
+4. Cool; scrape salt; rinse and dry.
+
+Fuel cost: 1 liter wood ≈ 1 liter saltwater boiled to salt
+Risk: Salt crystallizes on pot; difficult to clean
+</code></pre>
+</section>
+<section id="coastal-navigation">
+<h2>Coastal Navigation and Rescue Signaling</h2>
+<p><strong>Navigation:</strong> Using shoreline features and sun position to maintain direction.</p>
+<p><strong>Signaling:</strong> Creating visible/audible signals for rescue.</p>
+<h3>Navigation Without Instruments</h3>
+<p><strong>Sun position:</strong></p>
+<pre><code>Morning: Sun rises in east
+Midday: Sun reaches highest point (south in Northern Hemisphere)
+Evening: Sun sets in west
+
+Use shadows: Stick shadow points away from sun; shortens at solar noon (south).
+</code></pre>
+<p><strong>Landmarks:</strong> Distinctive features (rock formations, headlands, river mouths) mark location. Memorize your coast; landmarks allow dead reckoning (knowing position by traveling distance from known point).</p>
+<p><strong>Tidal current:</strong> Observe water flow; ebbing tide (low water) flows offshore; flooding tide (rising water) flows inshore. Use tidal current for navigation guidance.</p>
+<h3>Signal Fires and Rescue</h3>
+<p><strong>Signal fire setup (for rescue by passing ships/aircraft):</strong></p>
+<ol>
+<li><strong>Location:</strong> High ground, visible for miles (hilltop, tall tree, beach).</li>
+<li><strong>Material:</strong> Gather 3 large piles of fuel (green wood produces smoke; dry wood produces flame).</li>
+<li><strong>Structure:</strong></li>
+</ol>
+<pre><code>Tinder (dry grass, bark)
+    ↓
+Kindling (small dry sticks)
+    ↓
+Fuel wood (large logs, green branches for smoke)
+
+Arrange in pyramid; cover with green branches (smoke, not just flame).
+</code></pre>
+<ol start="4">
+<li><strong>Fire-keeping:</strong> During day, signal = 3 evenly-spaced fires (rule of 3 = distress signal) or continuous smoke. At night, bright flames. Keep fuel dry; replenish before fire reduces.</li>
+</ol>
+<p><strong>Mirror/reflective signaling:</strong></p>
+<pre><code>Improvise mirror: Polished metal, water surface, glass
+Angle: Reflect sunlight toward aircraft/ship
+Visibility: Mirror signal visible up to 10 miles in direct sunlight
+Timing: Flash &quot;SOS&quot; (3 short, 3 long, 3 short)
+</code></pre>
+<p><strong>International distress signals:</strong></p>
+<ul>
+<li><strong>Visual:</strong> 3 evenly-spaced fires (smoke by day, flame by night).</li>
+<li><strong>Sound:</strong> 3 whistle blasts or horn blasts, repeated.</li>
+<li><strong>Radio (if available):</strong> &quot;Mayday, Mayday, Mayday&quot; on emergency frequency.</li>
+</ul>
+</section>
+<section id="fresh-water-beach-wells">
+<h2>Fresh Water from Beach Wells</h2>
+<p>Many beaches have a lens of fresh water floating atop denser saltwater. Careful digging accesses it.</p>
+<h3>Beach Well Technique</h3>
+<p><strong>Setup:</strong></p>
+<ol>
+<li><strong>Location:</strong> Beach, ~30–50 meters inland from waterline (reduces salt spray contamination).</li>
+<li><strong>Dig:</strong> Shovel or hands; excavate circular hole 2–3 feet diameter, 3–4 feet deep.</li>
+<li><strong>Wait:</strong> Over hours, groundwater seeps into hole.</li>
+<li><strong>Water layers:</strong> Saltier water sinks; fresher water floats atop.</li>
+</ol>
+<p><strong>Extraction:</strong></p>
+<pre><code>When water appears (6–12 hours):
+- Surface water (top 6–12 inches) is fresher (may be slightly brackish).
+- Deeper water is saltier (denser).
+- Use hand pump or siphon to extract surface water only.
+
+If no pump: Use cloth to absorb surface water; wring into container.
+</code></pre>
+<p><strong>Freshness test:</strong></p>
+<p>Taste small amount (spit out, don't swallow). If salty, deeper digging or filtering may help. If too salty, abandon well and move location.</p>
+<p><strong>Success rate:</strong></p>
+<ul>
+<li>Sandy beaches with low tide: 50–70% chance of adequate fresh water.</li>
+<li>Rocky/cliff beaches: Less reliable (groundwater depleted).</li>
+<li>High tide: Water is saltier (saltwater permeates deeper).</li>
+</ul>
+<p><strong>Daily yield:</strong> 1–5 gallons per well, depending on climate and aquifer.</p>
+</section>
+<section id="coconut-utilization">
+<h2>Coconut Utilization (Tropical Coasts)</h2>
+<p>Coconuts provide food, liquid, and fiber. All parts are useful.</p>
+<h3>Coconut Parts and Uses</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Part</strong></th>
+<th><strong>Stage</strong></th>
+<th><strong>Use</strong></th>
+<th><strong>Yield</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Liquid endosperm</td>
+<td>Young (green)</td>
+<td>Drinking water (sterile, electrolyte-rich)</td>
+<td>0.5–1 liter per nut</td>
+</tr>
+<tr>
+<td>Solid flesh</td>
+<td>Mature (brown)</td>
+<td>Eat fresh; high fat; cook with; make oil</td>
+<td>1–2 cups flesh per nut</td>
+</tr>
+<tr>
+<td>Husk</td>
+<td>Mature</td>
+<td>Rope fiber (coir); fuel for fire</td>
+<td>Fibers from 1 nut = ~100g rope</td>
+</tr>
+<tr>
+<td>Shell</td>
+<td>Mature</td>
+<td>Container, cooking surface, tool</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Sprout</td>
+<td>Germinated nut</td>
+<td>Soft, edible &quot;coconut apple&quot;</td>
+<td>1 sprout per nut</td>
+</tr>
+</tbody>
+</table>
+<h3>Extraction and Use</h3>
+<p><strong>Young coconut (green):</strong></p>
+<ol>
+<li><strong>Cut outer husk:</strong> Machete strokes to remove green fiber.</li>
+<li><strong>Puncture shell:</strong> Crack small hole (eye of coconut).</li>
+<li><strong>Drink liquid:</strong> Pour into mouth/container. Liquid is sterile (inside shell was sealed); safe to drink even if contaminated outside.</li>
+</ol>
+<p><strong>Yield:</strong> 0.5–1 liter liquid, refreshing and hydrating. Superior to saltwater; contains natural electrolytes (potassium, sodium).</p>
+<p><strong>Mature coconut (brown):</strong></p>
+<ol>
+<li><strong>Crack open:</strong> Strike sharp blow with machete/rock; split into halves.</li>
+<li><strong>Scoop flesh:</strong> Use sharp shell edge or knife; remove white meat.</li>
+<li><strong>Dry flesh:</strong> Dry in sun 2–3 weeks; becomes copra (traditional storage form).</li>
+<li><strong>Oil extraction:</strong> Grate copra; boil in water or press. Oil separates and rises.</li>
+</ol>
+<p><strong>Rope from husk fiber:</strong></p>
+<ol>
+<li><strong>Soak husk:</strong> Saltwater or fresh water, 2–4 weeks (softens fiber).</li>
+<li><strong>Pound:</strong> Separate fibers by striking husk on rock.</li>
+<li><strong>Twist:</strong> Roll fibers together to create rope.</li>
+</ol>
+<p><strong>Coconut husk fiber rope:</strong></p>
+<pre><code>Tensile strength: 80–150 psi (adequate for binding, pulling light loads)
+Durability: Rots in 2–3 years if wet; longer if dry
+Uses: Lashing, fishing line, cordage for raft-building
+Labor: 2–4 hours per nut to extract usable rope
+</code></pre>
+</section>
+<section id="riptide-survival">
+<h2>Riptide and Ocean Current Survival</h2>
+<p>Riptides (strong narrow currents flowing seaward) are dangerous. Panic causes drowning.</p>
+<h3>Riptide Identification and Escape</h3>
+<p><strong>Identify riptide:</strong></p>
+<ul>
+<li><strong>Visual:</strong> Discolored water, churning surface, gap in wave pattern.</li>
+<li><strong>Feel:</strong> Sudden pull seaward; forward progress halted despite effort.</li>
+</ul>
+<p><strong>Escape (critical—don't fight the current):</strong></p>
+<ol>
+<li><strong>Don't panic:</strong> Stay afloat; riptide won't pull under (it's horizontal current).</li>
+<li><strong>Swim parallel to shore:</strong> Swim left or right along the riptide's edge (exit the current).</li>
+<li><strong>Once out, swim to shore:</strong> Natural waves carry you.</li>
+</ol>
+<p><strong>DO NOT</strong> swim directly toward shore against the riptide (exhausts energy; likely to fail).</p>
+<p><strong>If caught unprepared:</strong></p>
+<ul>
+<li>Tread water; stay calm; riptide eventually weakens.</li>
+<li>Signal for help (wave, yell).</li>
+<li>If floating device available, cling to it and let current carry you.</li>
+</ul>
+<p><strong>Survival time:</strong> Treading water, 6–12 hours in moderate temperature; longer if waves allow rest on floating object.</p>
+</section>
+<section id="integration-example">
+<h2>Integration Example: Island Survival Scenario</h2>
+<p><strong>Scenario:</strong> Ship wrecks; survivor washes ashore on tropical island; alone; no supplies.</p>
+<p><strong>Day 1:</strong></p>
+<ul>
+<li><strong>Assessment:</strong> Uninjured; island has vegetation, rocks, water sound (stream inland).</li>
+<li><strong>Immediate priorities:</strong> Signal fire location, fresh water source, shelter.</li>
+<li><strong>Action:</strong> Find high point; scout island; locate stream and gather materials.</li>
+</ul>
+<p><strong>Days 2–3:</strong></p>
+<ul>
+<li><strong>Setup:</strong> Build shelter (palm fronds, driftwood). Signal fire (3 large wood piles on hilltop).</li>
+<li><strong>Water:</strong> Drink from stream (run through cloth filter to remove particles).</li>
+<li><strong>Food:</strong> Low tide reveals mussels and clams; gather ~10 lbs shellfish per tide.</li>
+</ul>
+<p><strong>Days 4–7:</strong></p>
+<ul>
+<li><strong>Routine:</strong> Low tide = shellfish harvest (2 hours). Collect seaweed (dry for storage). Maintain signal fire (1 hour). Gather fresh water (1 hour).</li>
+<li><strong>Nutrition:</strong> Shellfish (2,000 cal) + seaweed (400 cal) + coconuts (600 cal) = 3,000 cal/day.</li>
+<li><strong>Routine labor:</strong> ~5 hours per day; remaining time for rest, repair, improvement.</li>
+</ul>
+<p><strong>Week 2+:</strong></p>
+<ul>
+<li><strong>Expansion:</strong> If no rescue, expand activities (fishing with spear, building larger shelter, salt production for storage).</li>
+<li><strong>Stability:</strong> Island provides food, water, shelter indefinitely (sustainable survival).</li>
+</ul>
+<p><strong>Rescue:</strong> Passing ship observes signal fire; investigates; rescues survivor.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="desalination-systems.html">Desalination Systems</a>
+<a href="foraging-hunting.html">Foraging, Hunting &amp; Fishing</a>
+<a href="watercraft-propulsion.html">Watercraft Propulsion Systems</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

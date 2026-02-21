@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/cattle-care-beef-production.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cattle Care &amp; Beef Production</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Food &amp; Agriculture</span> ›
+<span>Cattle Care &amp; Beef Production</span>
+</div>
+
+
+<h1>Cattle Care &amp; Beef Production</h1>
+<p class="subtitle">Select beef and dual-purpose cattle breeds, manage pasture, calculate feeding requirements, diagnose common diseases, assist with calving, and integrate butchering into livestock systems.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~18 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#breed-selection">Breed Selection: Beef vs. Dairy vs. Dual-Purpose</a></li>
+<li><a href="#housing-fencing">Housing and Fencing</a></li>
+<li><a href="#pasture-management">Pasture Management and Rotational Grazing</a></li>
+<li><a href="#feeding-calculations">Feeding Requirements and Calculations</a></li>
+<li><a href="#common-diseases">Common Diseases and Health Monitoring</a></li>
+<li><a href="#calving-assistance">Calving and Assistance</a></li>
+<li><a href="#working-facilities">Working Facilities for Handling and Butchering</a></li>
+<li><a href="#integration-with-land">Integration with Land and Soil Building</a></li>
+<li><a href="#summary">Summary: Beef Cattle Production</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Cattle convert grass into high-quality protein and manure for soil building. Beef cattle require minimal management—primarily pasture rotation, supplemental hay in winter, water, and disease monitoring. A single cow-calf pair can sustain itself on 1–2 acres of good pasture and produce 500–800 lbs of meat at butchering (18–24 months of age). This guide covers breed selection, pasture management, feed calculations, common disease recognition, calving assistance, and integration with butchering systems.</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" aria-label="Cattle management and rotational grazing diagram">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .surface { fill: var(--surface, #2d2416); }
+      .text-main { fill: var(--text, #f5f0e8); font-size: 16px; font-family: sans-serif; }
+      .text-label { fill: var(--text, #f5f0e8); font-size: 14px; font-family: sans-serif; }
+      .accent { stroke: var(--accent, #d4a574); fill: none; stroke-width: 2; }
+      .accent-fill { fill: var(--accent, #d4a574); }
+      .accent2 { stroke: var(--accent2, #8dd6c4); fill: none; stroke-width: 2; }
+      .accent2-fill { fill: var(--accent2, #8dd6c4); }
+      .border { stroke: var(--border, #4a5c4a); stroke-width: 1; }
+      .animal { fill: #4a3a2a; }
+      .pasture { fill: #5a8c42; opacity: 0.4; }
+      .rest { fill: #3a6a22; opacity: 0.3; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="800" height="500"/>
+
+  <!-- Title -->
+  <text x="400" y="30" class="text-main" font-size="24" font-weight="bold" text-anchor="middle">Cattle Management & Rotational Grazing</text>
+
+  <!-- Left: Cattle breeds comparison -->
+  <g>
+    <text x="130" y="65" class="text-main" font-weight="bold" text-anchor="middle">Beef Breeds</text>
+
+    <!-- Angus -->
+    <rect x="30" y="85" width="100" height="50" class="surface" class="border"/>
+    <text x="80" y="105" class="text-label" font-weight="bold" text-anchor="middle">Angus</text>
+    <text x="80" y="120" class="text-label" text-anchor="middle" font-size="10">1200-1800 lbs</text>
+    <text x="80" y="132" class="text-label" text-anchor="middle" font-size="9">Fast growth</text>
+
+    <!-- Hereford -->
+    <rect x="40" y="150" width="100" height="50" class="surface" class="border"/>
+    <text x="90" y="170" class="text-label" font-weight="bold" text-anchor="middle">Hereford</text>
+    <text x="90" y="185" class="text-label" text-anchor="middle" font-size="10">1400-2000 lbs</text>
+    <text x="90" y="197" class="text-label" text-anchor="middle" font-size="9">Hardy</text>
+
+    <!-- Charolais -->
+    <rect x="30" y="215" width="100" height="50" class="surface" class="border"/>
+    <text x="80" y="235" class="text-label" font-weight="bold" text-anchor="middle">Charolais</text>
+    <text x="80" y="250" class="text-label" text-anchor="middle" font-size="10">1500-2200 lbs</text>
+    <text x="80" y="262" class="text-label" text-anchor="middle" font-size="9">Very fast</text>
+
+    <!-- Dual-purpose -->
+    <text x="130" y="310" class="text-main" font-weight="bold" text-anchor="middle">Dual-Purpose</text>
+
+    <rect x="45" y="330" width="90" height="45" class="surface" class="border"/>
+    <text x="90" y="348" class="text-label" font-weight="bold" text-anchor="middle">Shorthorn</text>
+    <text x="90" y="365" class="text-label" text-anchor="middle" font-size="9">Milk + Meat</text>
+
+    <!-- Water & space -->
+    <text x="130" y="420" class="text-label" font-weight="bold" text-anchor="middle">Daily Needs:</text>
+    <text x="130" y="438" class="text-label" text-anchor="middle" font-size="11">Water: 8-12 gal/day</text>
+    <text x="130" y="455" class="text-label" text-anchor="middle" font-size="11">Feed: 2-3% body wt</text>
+    <text x="130" y="472" class="text-label" text-anchor="middle" font-size="11">Space: 0.5-1 acre/head</text>
+  </g>
+
+  <!-- Center: Rotational grazing system -->
+  <g>
+    <text x="400" y="65" class="text-main" font-weight="bold" text-anchor="middle">4-Paddock Rotational System</text>
+
+    <!-- Week 1 -->
+    <g>
+      <rect x="280" y="90" width="120" height="90" class="pasture" class="border"/>
+      <text x="340" y="110" class="text-label" font-weight="bold" text-anchor="middle">Week 1</text>
+      <text x="340" y="127" class="text-label" text-anchor="middle" font-size="10">Paddock A</text>
+      <text x="340" y="142" class="text-label" text-anchor="middle" font-size="10">🐄 Cattle grazing</text>
+      <text x="340" y="157" class="text-label" text-anchor="middle" font-size="10">B,C,D resting</text>
+      <text x="340" y="172" class="text-label" text-anchor="middle" font-size="9">↓ 7-14 days</text>
+    </g>
+
+    <!-- Week 2 -->
+    <g>
+      <rect x="420" y="90" width="120" height="90" class="pasture" class="border"/>
+      <text x="480" y="110" class="text-label" font-weight="bold" text-anchor="middle">Week 2</text>
+      <text x="480" y="127" class="text-label" text-anchor="middle" font-size="10">Paddock B</text>
+      <text x="480" y="142" class="text-label" text-anchor="middle" font-size="10">🐄 Cattle grazing</text>
+      <text x="480" y="157" class="text-label" text-anchor="middle" font-size="10">A,C,D resting</text>
+      <text x="480" y="172" class="text-label" text-anchor="middle" font-size="9">↓ 7-14 days</text>
+    </g>
+
+    <!-- Week 3 -->
+    <g>
+      <rect x="280" y="210" width="120" height="90" class="pasture" class="border"/>
+      <text x="340" y="230" class="text-label" font-weight="bold" text-anchor="middle">Week 3</text>
+      <text x="340" y="247" class="text-label" text-anchor="middle" font-size="10">Paddock C</text>
+      <text x="340" y="262" class="text-label" text-anchor="middle" font-size="10">🐄 Cattle grazing</text>
+      <text x="340" y="277" class="text-label" text-anchor="middle" font-size="10">A,B,D resting</text>
+      <text x="340" y="292" class="text-label" text-anchor="middle" font-size="9">↓ 7-14 days</text>
+    </g>
+
+    <!-- Week 4 -->
+    <g>
+      <rect x="420" y="210" width="120" height="90" class="pasture" class="border"/>
+      <text x="480" y="230" class="text-label" font-weight="bold" text-anchor="middle">Week 4</text>
+      <text x="480" y="247" class="text-label" text-anchor="middle" font-size="10">Paddock D</text>
+      <text x="480" y="262" class="text-label" text-anchor="middle" font-size="10">🐄 Cattle grazing</text>
+      <text x="480" y="277" class="text-label" text-anchor="middle" font-size="10">A,B,C resting</text>
+      <text x="480" y="292" class="text-label" text-anchor="middle" font-size="9">↓ 7-14 days</text>
+    </g>
+
+    <!-- Return arrow -->
+    <path d="M 480 310 Q 400 350 340 310" class="accent2" stroke-width="2" marker-end="url(#arrowAccent2)"/>
+    <text x="400" y="370" class="text-label" text-anchor="middle" font-size="10">Week 5: Return to Paddock A (3-4 week recovery)</text>
+
+    <!-- Benefits box -->
+    <rect x="280" y="400" width="260" height="80" class="surface" class="border"/>
+    <text x="410" y="420" class="text-label" font-weight="bold" text-anchor="middle">Benefits of Rotation:</text>
+    <text x="290" y="438" class="text-label" font-size="10">✓ Parasite control (move before reinfection)</text>
+    <text x="290" y="453" class="text-label" font-size="10">✓ Uniform manure distribution; improved soil</text>
+    <text x="290" y="468" class="text-label" font-size="10">✓ 80-90% forage utilization vs 40-50%</text>
+  </g>
+
+  <!-- Right: Hay & grain requirements -->
+  <g>
+    <text x="670" y="65" class="text-main" font-weight="bold" text-anchor="middle">Winter Feeding</text>
+
+    <!-- Hay -->
+    <rect x="600" y="90" width="140" height="90" class="surface" class="border"/>
+    <text x="670" y="110" class="text-label" font-weight="bold" text-anchor="middle">Hay Requirement</text>
+    <text x="670" y="130" class="text-label" text-anchor="middle" font-size="11">2-3% body weight/day</text>
+    <text x="670" y="148" class="text-label" text-anchor="middle" font-size="11">1000 lb cow:</text>
+    <text x="670" y="163" class="text-label" text-anchor="middle" font-size="11">20-30 lbs/day</text>
+    <text x="670" y="178" class="text-label" text-anchor="middle" font-size="11">= 3 tons/year</text>
+
+    <!-- Grain -->
+    <rect x="600" y="210" width="140" height="90" class="surface" class="border"/>
+    <text x="670" y="230" class="text-label" font-weight="bold" text-anchor="middle">Grain Supplement</text>
+    <text x="670" y="250" class="text-label" text-anchor="middle" font-size="11">If hay is poor quality:</text>
+    <text x="670" y="268" class="text-label" text-anchor="middle" font-size="11">5-15 lbs/day per head</text>
+    <text x="670" y="283" class="text-label" text-anchor="middle" font-size="10">Introduce gradually!</text>
+
+    <!-- Growth timeline -->
+    <text x="670" y="350" class="text-main" font-weight="bold" text-anchor="middle">Growth Timeline</text>
+
+    <rect x="600" y="370" width="140" height="100" class="surface" class="border"/>
+    <text x="670" y="388" class="text-label" text-anchor="middle" font-size="11">Feeder calf:</text>
+    <text x="670" y="402" class="text-label" text-anchor="middle" font-size="10">6 mo, 250-300 lbs</text>
+    <text x="670" y="416" class="text-label" text-anchor="middle" font-size="10">↓ 18-20 months</text>
+    <text x="670" y="430" class="text-label" text-anchor="middle" font-size="10">Butchering weight:</text>
+    <text x="670" y="444" class="text-label" text-anchor="middle" font-size="11">1000-1200 lbs</text>
+    <text x="670" y="458" class="text-label" text-anchor="middle" font-size="10">Yield: 500-600 lbs meat</text>
+  </g>
+
+  <defs>
+    <marker id="arrowAccent2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="var(--accent2, #8dd6c4)"/>
+    </marker>
+  </defs>
+</svg>
+</p>
+</section>
+<section id="breed-selection">
+<h2>Breed Selection: Beef vs. Dairy vs. Dual-Purpose</h2>
+<p>Cattle breeds are specialized for beef, dairy (milk), or dual-purpose (meat and milk). For meat production, beef breeds are most efficient.</p>
+<h3>Beef Breeds</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Breed</strong></th>
+<th><strong>Frame Size</strong></th>
+<th><strong>Growth Rate</strong></th>
+<th><strong>Feed Efficiency</strong></th>
+<th><strong>Temperament</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Angus</strong></td>
+<td>Medium (1200–1800 lbs)</td>
+<td>Fast (2–2.5 lbs/day)</td>
+<td>Excellent</td>
+<td>Calm, docile</td>
+<td>Most popular in US; black color; polled (no horns)</td>
+</tr>
+<tr>
+<td><strong>Hereford</strong></td>
+<td>Medium-large (1400–2000 lbs)</td>
+<td>Fast</td>
+<td>Excellent</td>
+<td>Calm</td>
+<td>Red body, white face; polled/horned varieties; hardy</td>
+</tr>
+<tr>
+<td><strong>Charolais</strong></td>
+<td>Large (1500–2200 lbs)</td>
+<td>Very fast</td>
+<td>Excellent</td>
+<td>Calm, gentle</td>
+<td>Cream-colored; fast growth; feed-efficient</td>
+</tr>
+<tr>
+<td><strong>Simmental</strong></td>
+<td>Large (1600–2400 lbs)</td>
+<td>Very fast</td>
+<td>Good</td>
+<td>Calm</td>
+<td>Dual-colored or solid; good feed conversion; large frame</td>
+</tr>
+<tr>
+<td><strong>Brahman</strong></td>
+<td>Large (1600–2400 lbs)</td>
+<td>Moderate</td>
+<td>Fair</td>
+<td>Can be flighty</td>
+<td>Heat/parasite tolerance; useful for hot climates</td>
+</tr>
+<tr>
+<td><strong>Red Angus</strong></td>
+<td>Medium (1100–1600 lbs)</td>
+<td>Moderate</td>
+<td>Good</td>
+<td>Docile</td>
+<td>Similar to Black Angus; red color; polled</td>
+</tr>
+</tbody>
+</table>
+<h3>Dual-Purpose Breeds (Meat + Milk)</h3>
+<p>Dual-purpose breeds produce both milk (for family use or sale) and meat.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Breed</strong></th>
+<th><strong>Milk/Year</strong></th>
+<th><strong>Meat Potential</strong></th>
+<th><strong>Temperament</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shorthorn</strong></td>
+<td>3000–5000 lbs</td>
+<td>Moderate</td>
+<td>Docile</td>
+<td>Rare; heritage breed; good family milk and meat</td>
+</tr>
+<tr>
+<td><strong>Dexter</strong></td>
+<td>2000–4000 lbs (small cow)</td>
+<td>Moderate (small)</td>
+<td>Calm, manageable</td>
+<td>Very small (600–900 lbs); ideal for small farms</td>
+</tr>
+<tr>
+<td><strong>Belted Galloway</strong></td>
+<td>2000–3000 lbs</td>
+<td>Moderate</td>
+<td>Calm</td>
+<td>Distinctive black with white stripe; cold-hardy</td>
+</tr>
+</tbody>
+</table>
+<h3>Calf Source</h3>
+<ul>
+<li><strong>Feeder cattle</strong> (3–6 months old, 150–300 lbs): Buy at livestock auctions; raise from calf stage to butchering weight (18–24 months, 1000–1200 lbs). Cheapest option; requires bottle-feeding early calves.</li>
+<li><strong>Cow-calf pair</strong> (bred cow + nursing calf): Bred cows produce 1 calf per year; calf nursing reduces dairy stress. More expensive initially but self-sustaining.</li>
+<li><strong>Beef herd</strong> (multiple cows + one bull): Pasture-based breeding system; bulls can be rented.</li>
+</ul>
+<div class="info-box">
+<p>For a family beef operation, purchase 2–4 feeder calves (6 months old, 250–350 lbs each) in spring; raise on pasture + supplemental hay; butcher the following fall/winter at 18–20 months old. Total cost: ~$400–800 per calf; total meat: ~500–600 lbs per calf.</p>
+</div>
+</section>
+<section id="housing-fencing">
+<h2>Housing and Fencing</h2>
+<p>Cattle are hardy and thrive outdoors in most climates with minimal shelter. Primary needs: shade in summer, windbreak in winter, water, and secure fencing.</p>
+<h3>Shelter</h3>
+<p><strong>Pasture shelter</strong> (minimal):</p>
+<ul>
+<li><strong>Run-in shed</strong>: 3-sided structure, open south-facing, ~200 sq ft for 4 cattle. Provides shade and wind protection.</li>
+<li><strong>Windbreak</strong>: Trees or hedgerow on north side of pasture.</li>
+<li><strong>Water access</strong>: Year-round; in winter, provide unfrozen water via heated trough or frequent refill.</li>
+</ul>
+<p><strong>Winter housing</strong> (only in extreme cold):</p>
+<ul>
+<li><strong>Space</strong>: 40–50 square feet per cow.</li>
+<li><strong>Floor</strong>: Well-bedded (straw, sawdust); provide drainage.</li>
+<li><strong>Ventilation</strong>: Prevent ammonia buildup; open roof vents.</li>
+</ul>
+<h3>Fencing</h3>
+<p>Cattle require 4-foot minimum fencing; 5 feet is better for larger breeds.</p>
+<p><strong>Fence types:</strong></p>
+<ul>
+<li><strong>Woven wire (field fence)</strong>: 4–5 feet, 2–4 inch spacing. Durable; ~$1–2/ft installed.</li>
+<li><strong>Welded cattle panels</strong>: 5 feet, 2-inch spacing. Easy to move; portable; ~$2–3/ft.</li>
+<li><strong>Electric fence</strong>: Single or double strand; portable. Good for rotational grazing. Requires power source.</li>
+<li><strong>Avoid</strong>: Barbed wire alone (snagging injury); narrow spacing can trap heads.</li>
+</ul>
+<p><strong>Perimeter check</strong>: Walk fence weekly for gaps, rust, or damage. Repair immediately.</p>
+<p><strong>Gates</strong>: 4 feet wide minimum; heavy-duty hinges and latches.</p>
+</section>
+<section id="pasture-management">
+<h2>Pasture Management and Rotational Grazing</h2>
+<p>Cattle gain weight faster on good pasture than grain alone. Rotational grazing prevents overgrazing, improves soil, and manages parasites.</p>
+<h3>Pasture Quality</h3>
+<p><strong>Good pasture composition:</strong></p>
+<ul>
+<li>60–70% grasses (timothy, orchard grass, tall fescue, bluegrass).</li>
+<li>20–30% legumes (clover, alfalfa, sainfoin) for nitrogen fixation and protein.</li>
+<li>&lt;5% weeds.</li>
+</ul>
+<p><strong>Quality assessment:</strong></p>
+<ul>
+<li>Lush, green growth = abundant nutrition.</li>
+<li>Brown, sparse, short grass = overgrazed or poor soil.</li>
+<li>Bare patches = overgrazing; remove cattle, allow 4+ weeks recovery.</li>
+</ul>
+<h3>Rotational Grazing System (4-Paddock Example)</h3>
+<p>Divide pasture into 4 sections. Move cattle every 7–14 days.</p>
+<p><strong>Example: 40 acres, 4 paddocks (10 acres each), 20 cattle:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Week</strong></th>
+<th><strong>Cattle Location</strong></th>
+<th><strong>Other Paddocks</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Paddock A (grazing)</td>
+<td>B, C, D resting</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Paddock B (grazing)</td>
+<td>A, C, D resting</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Paddock C (grazing)</td>
+<td>A, B, D resting</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Paddock D (grazing)</td>
+<td>A, B, C resting</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Return to Paddock A</td>
+<td>(4 weeks recovery)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Pasture recovers between grazings; longer growing season.</li>
+<li>Uniform manure distribution; improved soil structure.</li>
+<li>Parasite control; eggs drop on dung; cattle move away before reinfection occurs.</li>
+<li>Higher productivity: 80–90% utilization vs. 40–50% continuous grazing.</li>
+</ul>
+<h3>Stocking Rate</h3>
+<p><strong>Pasture-based cattle production:</strong></p>
+<ul>
+<li><strong>Excellent pasture</strong> (rich, well-watered): 1–2 cattle per acre.</li>
+<li><strong>Good pasture</strong> (typical managed): 0.5–1 cattle per acre.</li>
+<li><strong>Marginal pasture</strong> (dry, sparse): 0.25–0.5 cattle per acre.</li>
+</ul>
+<p>Rotate to allow adequate recovery (3–4 week rest period between grazings). Monitor pasture height; if grass falls below 4 inches, stop grazing to allow recovery.</p>
+</section>
+<section id="feeding-calculations">
+<h2>Feeding Requirements and Calculations</h2>
+<p>Cattle eat 2–3% of body weight daily in forage (grass, hay).</p>
+<h3>Pasture Season (Spring–Fall)</h3>
+<p><strong>Typical:</strong></p>
+<ul>
+<li>1000 lb steer grazes 2–3% body weight = 20–30 lbs fresh grass daily.</li>
+<li>Pasture provides adequate nutrition if quality is good.</li>
+</ul>
+<p><strong>Supplementation:</strong></p>
+<ul>
+<li>If pasture is sparse or poor quality, add grain or hay.</li>
+<li>Grain supplementation: 0.5–1 lb per 100 lbs body weight per day (optional; increases growth rate).</li>
+</ul>
+<h3>Hay Season (Winter, ~120–180 Days)</h3>
+<p><strong>Daily hay requirement:</strong></p>
+<ul>
+<li><strong>1000 lb cattle</strong>: 2–3% body weight = 20–30 lbs hay per day.</li>
+<li><strong>Annual requirement</strong> (180 days): 30 lbs/day × 180 days = 5400 lbs = ~3 tons per cow.</li>
+</ul>
+<p><strong>Hay quality matters:</strong></p>
+<ul>
+<li><strong>Good hay</strong> (legume-rich, leafy): 12–15% crude protein; 60–70% digestible energy. Cattle maintain/gain weight.</li>
+<li><strong>Poor hay</strong> (mature grass, weathered): 6–8% protein; &lt;50% digestible energy. Cattle lose weight; supplement with grain.</li>
+</ul>
+<p><strong>Hay storage:</strong></p>
+<ul>
+<li>1 large round bale (1200–1500 lbs) covers ~2 weeks for one cow.</li>
+<li>3 tons per year = ~2 large bales per month, or ~20–24 bales per year per cow.</li>
+<li>Store under cover; rotate old hay first.</li>
+</ul>
+<h3>Grain Supplementation (Winter)</h3>
+<p><strong>If hay is of poor quality</strong>, add grain:</p>
+<ul>
+<li><strong>1000 lb cattle</strong>: 0.5–1.5 lbs grain per 100 lbs body weight = 5–15 lbs grain per day.</li>
+<li><strong>Cost</strong>: Grain costs more than hay but adds weight faster.</li>
+</ul>
+<p><strong>Grain types:</strong></p>
+<ul>
+<li><strong>Oats</strong>: 11% protein; safe; palatable.</li>
+<li><strong>Barley</strong>: 11% protein; good energy.</li>
+<li><strong>Corn</strong>: High energy but low protein; mix with legumes or other grains.</li>
+<li><strong>Commercial cattle mix</strong>: 14–16% protein; balanced for beef cattle.</li>
+</ul>
+<div class="warning">
+<p>Sudden grain changes cause bloat and acidosis (rumen disorder). Introduce grain gradually over 10–14 days, starting with 2–3 lbs/day and increasing slowly.</p>
+</div>
+<h3>Water Requirement</h3>
+<p><strong>Daily water intake:</strong></p>
+<ul>
+<li><strong>Pasture (summer)</strong>: 8–12 gallons per day per animal.</li>
+<li><strong>Winter (on dry hay)</strong>: 10–15 gallons per day per animal.</li>
+</ul>
+<p>Provide fresh water at all times. Winter: Prevent freezing with heated trough or frequent refill. In pasture, locate water to encourage even grazing distribution.</p>
+</section>
+<section id="common-diseases">
+<h2>Common Diseases and Health Monitoring</h2>
+<h3>Blackleg</h3>
+<p>Bacterial infection (Clostridium) causing sudden death. Vaccinate calves at 4–6 months; booster at 1 year.</p>
+<p><strong>Signs:</strong> Lameness, fever, death (often sudden with no other signs). Rare in vaccinated cattle.</p>
+<h3>Bovine Respiratory Disease (BRD)</h3>
+<p>Viral/bacterial pneumonia affecting young cattle after stress (shipping, weaning, cold weather).</p>
+<p><strong>Signs:</strong> Nasal discharge, cough, fever, depression, reduced feed intake.</p>
+<p><strong>Prevention:</strong> Minimize stress; provide good ventilation; adequate nutrition; vaccination.</p>
+<p><strong>Treatment:</strong> Antibiotic (consult veterinarian); provide shelter and extra feed.</p>
+<h3>Pinkeye</h3>
+<p>Infectious keratoconjunctivitis (bacterial eye infection) causing eye redness, tearing, and temporary blindness.</p>
+<p><strong>Signs:</strong> Pink/red eye; discharge; squinting; photophobia (light sensitivity).</p>
+<p><strong>Prevention:</strong> Fly control (irritate eyes, spreading infection); adequate ventilation.</p>
+<p><strong>Treatment:</strong> Antibiotic eye ointment; shade/shelter (light sensitivity); recovery usually within 2 weeks.</p>
+<h3>Lice and Parasites</h3>
+<p>External (lice, mange mites) and internal (worms, flukes) parasites reduce growth and health.</p>
+<p><strong>Signs:</strong> Poor growth, rough hair coat, anemia (pale mucous membranes), diarrhea, scratching.</p>
+<p><strong>Prevention:</strong> Rotational grazing (parasite control); regular deworming (1–4 times/year depending on climate and grazing system).</p>
+<p><strong>Treatment:</strong> Antiparasitic (pour-on, injectable, or feed additive; consult veterinarian for recommendations).</p>
+<h3>Bloat</h3>
+<p>Gas accumulation in rumen from rapid legume consumption.</p>
+<p><strong>Signs:</strong> Left-side abdominal distension, difficulty breathing, drooling, distress.</p>
+<p><strong>Prevention:</strong> Introduce legume pasture gradually; don't graze fresh legumes when damp (frost or dew increases foaming).</p>
+<p><strong>Emergency treatment:</strong> Pass a tube into the rumen (dowel rod or stomach tube) to release gas; position animal downslope.</p>
+<div class="danger">
+<p>Severe bloat is fatal within hours. Treat as emergency.</p>
+</div>
+<h3>Foot Rot</h3>
+<p>Bacterial infection of hooves causing lameness.</p>
+<p><strong>Signs:</strong> Lameness, swelling above hoof, discharge between claws, odor.</p>
+<p><strong>Prevention:</strong> Maintain dry bedding; avoid muddy pastures; trim hooves regularly.</p>
+<p><strong>Treatment:</strong> Isolate affected animal; trim away diseased tissue; soak hoof in copper sulfate or iodine solution; antibiotic if systemic infection.</p>
+</section>
+<section id="calving-assistance">
+<h2>Calving and Assistance</h2>
+<p>Calving (birth) is typically straightforward but occasionally requires assistance.</p>
+<h3>Signs of Imminent Calving</h3>
+<ul>
+<li>Udder swelling and filling (&quot;bagging up&quot;).</li>
+<li>Relaxation of ligaments around tailhead (palpate, they feel soft).</li>
+<li>Mucus discharge (vaginal plug).</li>
+<li>Restlessness; isolating behavior.</li>
+<li>Visible straining.</li>
+</ul>
+<h3>Normal Calving</h3>
+<ol>
+<li><strong>Early labor</strong>: Pacing, restlessness, tail raised. Lasts 2–12 hours.</li>
+<li><strong>Active labor</strong>: Visible straining. First calf appears within 30 minutes of strong pushing.</li>
+<li><strong>Expulsion</strong>: Front legs and nose appear first; calf slides out within 15–30 minutes.</li>
+<li><strong>Recovery</strong>: Cow rests; calf stands and nurses within 1 hour.</li>
+</ol>
+<h3>Assisted Calving (Dystocia)</h3>
+<p><strong>When to assist:</strong></p>
+<ul>
+<li>Straining &gt;30 minutes with no progress.</li>
+<li>Visible malpresentation (only back legs, no front legs; sideways; buttocks first).</li>
+</ul>
+<p><strong>Assistance steps:</strong></p>
+<ol>
+<li>Wash hands and forearms; use lubricant.</li>
+<li>Reach into vagina; feel for calf's position.</li>
+<li><strong>Normal presentation</strong>: Two front hooves and nose visible. Pull gently on hooves during contractions.</li>
+<li><strong>Malpresentation</strong>: Requires repositioning (requires skill) or veterinary help.</li>
+<li>Stop if excessive force is needed (risk of uterine rupture or calf death).</li>
+</ol>
+<p><strong>Call veterinarian if:</strong></p>
+<ul>
+<li>Straining &gt;1 hour with no progress.</li>
+<li>Excessive bleeding or fluid loss.</li>
+<li>Calf is very large relative to cow (genetic issue; may need cesarean section).</li>
+</ul>
+<div class="warning">
+<p>Difficult calving (dystocia) can kill both cow and calf if not managed properly. Do not attempt aggressive pulling. Call for professional help if progress is slow or situation is unclear.</p>
+</div>
+<h3>After Calving</h3>
+<ol>
+<li>Allow cow to lick and dry calf (bonding).</li>
+<li>Ensure calf nurses within 2 hours; colostrum (first milk) is critical for immunity.</li>
+<li>Check for placenta passage (should occur within 8 hours). Retained placenta requires veterinary treatment.</li>
+<li>Monitor for milk fever (calcium deficiency, rare but serious): signs are weakness, paralysis, lethargy.</li>
+</ol>
+</section>
+<section id="working-facilities">
+<h2>Working Facilities for Handling and Butchering</h2>
+<h3>Handling Facilities</h3>
+<p><strong>Essential for:</strong></p>
+<ul>
+<li>Vaccination and health checks.</li>
+<li>Loading for transport/sale.</li>
+<li>Butchering on-farm.</li>
+</ul>
+<p><strong>Components:</strong></p>
+<ul>
+<li><strong>Chute</strong>: 24–30 inches wide, 4–5 feet tall. Narrows cattle into single file for restraint.</li>
+<li><strong>Headgate</strong>: Manual or hydraulic device clamping the head (allows vaccination, dehorning, etc.).</li>
+<li><strong>Loading ramp</strong>: Angled 25–30°; cattle walk up onto truck.</li>
+<li><strong>Working area</strong>: Holding pen (~100 sq ft per cattle) to sort/separate animals.</li>
+</ul>
+<p><strong>Cost</strong>: Basic system $1500–5000; larger systems more.</p>
+<p><strong>Alternative</strong>: Use portable panels to funnel cattle into small pen; process individually using halters/ropes.</p>
+<h3>Slaughter Facilities</h3>
+<p>Small-scale/on-farm slaughter is legal in most jurisdictions but regulated. Check local laws.</p>
+<p><strong>Requirement</strong>: Usually must use USDA-inspected facility OR obtain exemption for direct-to-consumer sales (varies by state).</p>
+<p><strong>Home slaughter process</strong> (if legal):</p>
+<ol>
+<li>Cattle is sedated or stunned (captive bolt or rifle; must be instant and humane).</li>
+<li>Exsanguination (bleeding out).</li>
+<li>Hide removal.</li>
+<li>Evisceration (removal of organs).</li>
+<li>Chilling (within 2 hours to &lt;45°F).</li>
+<li>Butchering and freezing.</li>
+</ol>
+<p><strong>Processing time</strong>: ~2 hours per animal (experienced person).</p>
+<p><strong>Meat yield</strong>: 1000 lb live cow produces ~600 lbs carcass, ~450–500 lbs retail cuts (75–85% of carcass weight).</p>
+<p><strong>Offal (organs) disposal</strong>: Most organs (liver, kidney, heart) are edible; others require burial or composting.</p>
+</section>
+<section id="integration-with-land">
+<h2>Integration with Land and Soil Building</h2>
+<h3>Manure Management</h3>
+<p>Cattle produce ~50 lbs manure per day per animal. This is valuable for soil building.</p>
+<p><strong>Pasture-based system:</strong></p>
+<ul>
+<li>Cattle deposit manure directly on pasture (distributed during rotational grazing).</li>
+<li>Manure N-P-K: ~2–1–1 (lower than fresh manure due to leaching losses).</li>
+<li>Soil improves over years as organic matter accumulates.</li>
+</ul>
+<p><strong>Winter confinement manure:</strong></p>
+<ul>
+<li>Collect and compost (if confined indoors).</li>
+<li>Or apply fresh to non-grazed fields (use for hay fields, then graze/cut hay next season).</li>
+<li>1 ton fresh manure = ~50 lbs nitrogen (as organic matter; slow-release).</li>
+</ul>
+<h3>Feed Crop Integration</h3>
+<p><strong>On-farm feed production reduces costs:</strong></p>
+<ul>
+<li>Hay fields: Grow legume-grass hay; feed to cattle; repeat annually.</li>
+<li>Crop residue: Grain straw, corn stalks (low nutritional value but supplements hay).</li>
+<li>Pasture legumes: Self-renewing nitrogen through grazing.</li>
+</ul>
+<h3>Grazing Impact on Soil</h3>
+<p>Well-managed rotational grazing:</p>
+<ul>
+<li>Increases soil organic matter.</li>
+<li>Improves infiltration and water retention.</li>
+<li>Reduces erosion (plant coverage maintained).</li>
+<li>Improves soil structure (manure + root systems).</li>
+</ul>
+<p><strong>Over 5–10 years</strong>: Degraded pasture improves dramatically with proper management.</p>
+</section>
+<section id="summary">
+<h2>Summary: Beef Cattle Production</h2>
+<ul>
+<li><strong>Breed selection</strong>: Angus, Hereford, Charolais for beef; Shorthorn/Dexter for dual-purpose.</li>
+<li><strong>Housing</strong>: Minimal; run-in shed + windbreak + water sufficient for most climates.</li>
+<li><strong>Fencing</strong>: 4–5 feet tall; woven wire or welded panels.</li>
+<li><strong>Pasture management</strong>: Rotational grazing in 4+ paddocks; 0.5–1 cattle per acre on good pasture.</li>
+<li><strong>Feeding</strong>: Pasture spring–fall; 3 tons hay per cow per winter; optional grain supplementation.</li>
+<li><strong>Water</strong>: 8–12 gallons per day; unfrozen year-round.</li>
+<li><strong>Health monitoring</strong>: Disease recognition; vaccination for blackleg; parasite management.</li>
+<li><strong>Calving</strong>: Usually automatic; assist only if dystocia suspected; veterinary help if needed.</li>
+<li><strong>Butchering</strong>: Legal requirements vary; ~500–600 lbs meat per 1000 lb steer.</li>
+</ul>
+<p>A small beef herd (4–6 head) requires ~5–10 acres of good pasture, minimal housing, and 5–10 hours/week management. Returns: ~2000–3000 lbs meat annually, plus manure for soil building.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="draft-animals.html">Draft Animals &amp; Working Livestock</a>
+<a href="butchering.html">Butchering &amp; Meat Processing</a>
+<a href="food-preservation.html">Food Preservation</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

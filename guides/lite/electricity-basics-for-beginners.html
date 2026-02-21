@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/electricity-basics-for-beginners.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electricity Basics for Beginners</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Power Generation</span> ›
+<span>Electricity Basics for Beginners</span>
+</div>
+
+
+<h1>Electricity Basics for Beginners</h1>
+<p class="subtitle">Foundational electrical concepts: voltage, current, resistance, Ohm&#x27;s law, series and parallel circuits, power calculations, basic safety, wire sizing, and hands-on circuit building for absolute beginners.</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~14 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview: Electricity as Water</a></li>
+<li><a href="#what-is-electricity">What Is Electricity?</a></li>
+<li><a href="#voltage-current-resistance">Voltage, Current, and Resistance: The Big Three</a></li>
+<li><a href="#ohms-law">Ohm's Law: V = I × R</a></li>
+<li><a href="#power-and-energy">Power and Energy: Watts and Watt-Hours</a></li>
+<li><a href="#series-parallel">Series vs. Parallel Circuits</a></li>
+<li><a href="#basic-safety">Basic Electrical Safety</a></li>
+<li><a href="#wire-sizing">Wire Sizing and Selection</a></li>
+<li><a href="#simple-circuits">Building Simple Circuits</a></li>
+<li><a href="#multimeters">Testing with Multimeters</a></li>
+<li><a href="#components">Common Electrical Components</a></li>
+<li><a href="#dc-vs-ac">DC vs. AC: Direct and Alternating Current</a></li>
+<li><a href="#practical-applications">Practical Applications: Lighting, Charging, Motors</a></li>
+<li><a href="#troubleshooting">Basic Troubleshooting</a></li>
+<li><a href="#next-steps">Next Steps: Building Your Electrical Knowledge</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview: Electricity as Water</h2>
+<p>The easiest way to understand electricity is to think of it like water flowing through pipes. Imagine water moving through your home's plumbing system—that's essentially what electricity is doing through wires.</p>
+<p>In the water analogy:</p>
+<ul>
+<li><strong>Voltage</strong> (V) = Water pressure pushing the flow</li>
+<li><strong>Current</strong> (I) = The amount of water flowing (volume per second)</li>
+<li><strong>Resistance</strong> (R) = Friction in the pipes restricting flow</li>
+<li><strong>Power</strong> (P) = How much work the water can do (spin a wheel, fill a tank)</li>
+</ul>
+<p>Just like you need pressure to move water, you need voltage to move electrons. Just like a thin pipe restricts water flow, a thin wire restricts electron flow. This analogy carries us through almost every electrical concept you'll encounter.</p>
+<p>In a post-collapse scenario, understanding electricity means you can:</p>
+<ul>
+<li>Build or repair basic power systems using salvaged materials</li>
+<li>Safely connect solar panels, batteries, and generators</li>
+<li>Size wires and components correctly to avoid fires</li>
+<li>Troubleshoot dead devices and systems</li>
+<li>Know when something is dangerous before it kills you</li>
+</ul>
+<p>This guide assumes zero prior knowledge and builds systematically from fundamental concepts to practical applications.</p>
+</section>
+<section id="what-is-electricity">
+<h2>What Is Electricity?</h2>
+<p>Electricity is the flow of electrons—tiny particles that orbit the nuclei of atoms. Electrons naturally want to be in a balanced state, but if you force them to move from one place to another, they create electrical current.</p>
+<p>Everything is made of atoms, and most atoms have electrons that could move. Metals like copper and aluminum are excellent conductors because their outer electrons move freely. Rubber, plastic, and glass are insulators because their electrons are tightly bound and don't move easily.</p>
+<p><strong>How electricity happens:</strong></p>
+<ol>
+<li>A force (voltage) pushes on electrons</li>
+<li>Electrons move through a conductor (like a copper wire)</li>
+<li>As they move, they can deliver energy—lighting a bulb, heating a resistor, spinning a motor</li>
+<li>Electrons want to complete a circuit and return to their source</li>
+</ol>
+<p>Electricity always flows in a complete circuit. A single wire alone won't work—you need a path from the source, through the load (the thing using the electricity), and back to the source. Break that circuit anywhere, and nothing happens.</p>
+<div class="tip">
+<p>Try this visualization: Imagine a ring of marbles in a tube. If you push one marble, it pushes the next, which pushes the next. All marbles move together almost instantly—even though each marble only moves a tiny distance. That's how electrons work in a wire. The &quot;push&quot; (voltage) travels nearly instantly, even though individual electrons move slowly.</p>
+</div>
+</section>
+<section id="voltage-current-resistance">
+<h2>Voltage, Current, and Resistance: The Big Three</h2>
+<p>These three quantities define almost everything electrical. Master them, and you understand electricity.</p>
+<p><strong>Voltage (V)</strong> is the electrical pressure or potential difference. It's measured in volts (V). A battery provides voltage—a AA battery provides about 1.5 volts, a car battery provides 12 volts, household mains provide 110–240 volts depending on your location.</p>
+<p>Think of voltage as the &quot;push&quot; behind the electrons. Higher voltage = stronger push = more ability to drive current through resistance or over distance.</p>
+<p><strong>Current (I)</strong> is the amount of charge flowing past a point per second. It's measured in amperes or amps (A). A small LED might draw 0.02 amps. A toaster might draw 10 amps. A large water pump might draw 50 amps.</p>
+<p>Current is the &quot;quantity&quot; of electron flow. Higher current = more electrons moving = more power delivered (but also more heating and danger).</p>
+<p><strong>Resistance (R)</strong> is the opposition to current flow. It's measured in ohms (Ω). A copper wire has very low resistance. A light bulb filament has moderate resistance. An insulator has extremely high resistance (essentially infinite).</p>
+<p>When electrons move through resistance, they lose energy as heat. This is how light bulbs, heaters, and toasters work—they have intentional resistance that converts electrical energy to heat and light.</p>
+<div class="info-box">
+<p><strong>The Core Relationship:</strong></p>
+<p>These three are mathematically linked. You cannot change one without affecting the others in a predictable way. Understanding this relationship is the foundation of all electrical work.</p>
+</div>
+</section>
+<section id="ohms-law">
+<h2>Ohm's Law: V = I × R</h2>
+<p>This is the most important equation in electricity. It describes the relationship between voltage, current, and resistance:</p>
+<p><strong>V = I × R</strong></p>
+<p>Where:</p>
+<ul>
+<li>V = Voltage (volts)</li>
+<li>I = Current (amperes)</li>
+<li>R = Resistance (ohms)</li>
+</ul>
+<p><strong>What it means:</strong> Voltage equals current multiplied by resistance. Double the resistance and the current drops in half (for the same voltage). Double the voltage and the current doubles (for the same resistance).</p>
+<p><strong>Practical examples:</strong></p>
+<p><em>Example 1: LED with a resistor</em>
+You want to power a red LED (which needs 2V to light up safely) with a 12V battery. The LED can only handle 0.02A (20 milliamps). You need a resistor to drop the extra voltage and limit the current.</p>
+<ul>
+<li>Voltage drop across resistor = 12V - 2V = 10V</li>
+<li>Current needed = 0.02A</li>
+<li>Required resistance: R = V ÷ I = 10V ÷ 0.02A = 500 ohms</li>
+</ul>
+<p>You'd use a 470Ω or 560Ω resistor (standard sizes close to 500Ω).</p>
+<p><em>Example 2: Wiring a cabin</em>
+You're running 20 amps of current through 100 feet of copper wire to power a solar inverter 100 feet away from your battery bank. The wire itself has some resistance (about 0.1 ohms per 100 feet for adequate gauge).</p>
+<ul>
+<li>Current (I) = 20A</li>
+<li>Wire resistance (R) = 0.1Ω</li>
+<li>Voltage drop = V = I × R = 20A × 0.1Ω = 2V</li>
+</ul>
+<p>So your inverter receives 2 volts less than your battery provides. This loss is acceptable (you'd size wire to keep drops under 3%). With thinner wire, the drop would be worse.</p>
+<div class="info-box">
+<p><strong>Rearranged forms of Ohm's Law:</strong></p>
+<p>You can rearrange V = I × R to solve for any variable:</p>
+<ul>
+<li>I = V ÷ R (current = voltage divided by resistance)</li>
+<li>R = V ÷ I (resistance = voltage divided by current)</li>
+</ul>
+<p>These rearrangements let you solve any problem where you know two quantities and need the third.</p>
+</div>
+<p><strong>Why this matters for survival:</strong> If you understand Ohm's Law, you can:</p>
+<ul>
+<li>Design safe circuits without burning out components</li>
+<li>Size wires to avoid voltage drop and overheating</li>
+<li>Choose correct fuses to protect equipment</li>
+<li>Troubleshoot why something isn't working</li>
+<li>Calculate how long a battery will last powering something</li>
+</ul>
+</section>
+<section id="power-and-energy">
+<h2>Power and Energy: Watts and Watt-Hours</h2>
+<p>Two related but different concepts that every survivor needs to understand.</p>
+<p><strong>Power (P)</strong> is the rate at which energy is being used or delivered. It's measured in watts (W). A 100W light bulb uses 100 watts of power. A solar panel produces power in watts. Your muscles deliver power in watts (a fit human can sustain about 100W for hours).</p>
+<p>Power is calculated as:</p>
+<p><strong>P = V × I</strong></p>
+<p>(Voltage multiplied by current)</p>
+<p>So a device running on 12V and drawing 5A uses: P = 12V × 5A = 60W of power.</p>
+<p>You can also calculate power using Ohm's Law:</p>
+<ul>
+<li>P = I² × R (current squared times resistance)</li>
+<li>P = V² ÷ R (voltage squared divided by resistance)</li>
+</ul>
+<p><strong>Energy (E)</strong> is the total amount of power used over time. It's measured in watt-hours (Wh) or kilowatt-hours (kWh). This is what your electric meter measures.</p>
+<p>A 100W light bulb running for 10 hours uses: E = 100W × 10 hours = 1,000 watt-hours (1 kWh).</p>
+<p>A 20W LED running for 50 hours uses: E = 20W × 50 hours = 1,000 watt-hours (same energy, lower power).</p>
+<div class="warning">
+<p><strong>The difference is critical for survival planning:</strong> A 3,000W inverter can power devices that need 3,000W of instantaneous power (like starting a motor), but it draws down your battery energy fast. A 20W LED uses very little energy and runs much longer. When designing off-grid systems, you need to plan for both peak power (to avoid overloads) and total energy (to avoid running out before recharging).</p>
+</div>
+<p><strong>Practical survival example:</strong></p>
+<p>Your battery bank stores 10,000 watt-hours (10 kWh). You want to run:</p>
+<ul>
+<li>A 12V pump at 5A: Power = 12V × 5A = 60W</li>
+<li>A cabin heater at 2,000W</li>
+<li>An LED light at 20W</li>
+</ul>
+<p>Total instantaneous power needed = 60W + 2,000W + 20W = 2,080W. Your inverter must handle at least 2,080W.</p>
+<p>If you run everything for 4 hours:</p>
+<ul>
+<li>Pump: 60W × 4h = 240 Wh</li>
+<li>Heater: 2,000W × 4h = 8,000 Wh</li>
+<li>Light: 20W × 4h = 80 Wh</li>
+<li>Total: 8,320 Wh</li>
+</ul>
+<p>This leaves only 1,680 Wh for tomorrow. You'd need to either recharge faster, use less power, or expand battery capacity.</p>
+<div class="info-box">
+<p><strong>Quick power reference:</strong></p>
+<ul>
+<li>1,000W = 1 kilowatt (kW)</li>
+<li>1,000 Wh = 1 kilowatt-hour (kWh)</li>
+<li>Small LED: 0.1–1W</li>
+<li>Phone charger: 5–20W</li>
+<li>Laptop charger: 50–100W</li>
+<li>Microwave: 600–1,200W</li>
+<li>Water heater: 2,000–5,000W</li>
+<li>Small solar panel: 100–400W</li>
+<li>Car engine (peak): ~200,000W (200 kW)</li>
+</ul>
+</div>
+</section>
+<section id="series-parallel">
+<h2>Series vs. Parallel Circuits</h2>
+<p>Almost everything you build will use either series or parallel connections—or a mixture of both. Understanding the difference is essential.</p>
+<p><strong>Series circuits:</strong> Components are connected in a line, one after another. The same current flows through all of them.</p>
+<p>In series:</p>
+<ul>
+<li>Voltages add up: Total voltage = V₁ + V₂ + V₃ + ...</li>
+<li>Current is the same everywhere: I_total = I₁ = I₂ = I₃ = ...</li>
+<li>Resistances add up: R_total = R₁ + R₂ + R₃ + ...</li>
+</ul>
+<p>Example: Three AA batteries in a flashlight. Each battery is 1.5V. In series: 1.5V + 1.5V + 1.5V = 4.5V total. The same current flows through all three.</p>
+<p><strong>Parallel circuits:</strong> Components are connected with separate branches. The voltage is the same across all of them, but current divides among the branches.</p>
+<p>In parallel:</p>
+<ul>
+<li>Voltage is the same: V_total = V₁ = V₂ = V₃ = ...</li>
+<li>Currents add up: I_total = I₁ + I₂ + I₃ + ...</li>
+<li>Resistances decrease: 1/R_total = 1/R₁ + 1/R₂ + 1/R₃ + ...</li>
+</ul>
+<p>Example: Room lights in a house. All lights connect to the same voltage (110V or 220V). You can turn one on without affecting others. When you turn on more lights, total current increases.</p>
+<p><strong>Why it matters:</strong></p>
+<p><em>Series advantages:</em></p>
+<ul>
+<li>Voltages stack (combine weak sources into one strong source)</li>
+<li>Uses less wiring (one path for all current)</li>
+<li>Disadvantage: If one component fails (burns out), the whole circuit dies</li>
+</ul>
+<p><em>Parallel advantages:</em></p>
+<ul>
+<li>If one component fails, others keep working</li>
+<li>Each branch can be switched independently</li>
+<li>Lower total resistance (more current flows)</li>
+<li>Disadvantage: Each branch must handle its share of current safely</li>
+</ul>
+<div class="tip">
+<p><strong>Practical experiment:</strong> Take a flashlight and remove one battery. Does the flashlight turn off? That's series—batteries are stacked. Now imagine a room where you flip one light switch and all lights turn off. That's also series (though uncommon in real homes). In reality, home circuits are parallel—each light is on its own branch and can be controlled separately.</p>
+</div>
+<p><strong>Mixed series-parallel example:</strong></p>
+<p>Solar panel systems commonly use mixed configurations. You might have:</p>
+<ul>
+<li>3 solar panels in series (to get higher voltage for charging)</li>
+<li>2 strings of 3 panels in parallel (to get higher current)</li>
+<li>Total: 6 panels arranged as 2 parallel strings, each string having 3 panels in series</li>
+</ul>
+<p>This gives you both higher voltage (from series) and higher current (from parallel).</p>
+</section>
+<section id="basic-safety">
+<h2>Basic Electrical Safety</h2>
+<p>Electricity is invisible, fast, and can kill you instantly. Respect it absolutely.</p>
+<p><strong>Lethal thresholds:</strong></p>
+<ul>
+<li><strong>1 mA (0.001A):</strong> Barely noticeable</li>
+<li><strong>5 mA:</strong> Painful</li>
+<li><strong>10 mA:</strong> Muscular paralysis (you cannot let go)</li>
+<li><strong>50 mA:</strong> Ventricular fibrillation (heart stops)</li>
+<li><strong>100 mA+:</strong> Severe burns and death</li>
+</ul>
+<p>The voltage isn't what kills you—the current does. A car's 12V system won't usually electrocute you. But 120V household current will, because it can push enough current through your body to cause fibrillation.</p>
+<p><strong>Danger factors:</strong></p>
+<ol>
+<li>
+<p><strong>Moisture:</strong> Wet skin has low resistance (~1,000 ohms). Dry skin has high resistance (~100,000 ohms). A 120V shock through wet skin = 120V ÷ 1,000Ω = 0.12A = 120mA → certain death. Through dry skin = 120V ÷ 100,000Ω = 0.0012A = 1.2mA → uncomfortable but survivable.</p>
+</li>
+<li>
+<p><strong>Path through body:</strong> Current from hand to hand (across the chest) is most dangerous. Hand to foot is less so. Arm to arm might avoid the heart entirely.</p>
+</li>
+<li>
+<p><strong>Duration:</strong> Even 10mA for several seconds can cause ventricular fibrillation. Quick shocks are more survivable.</p>
+</li>
+</ol>
+<p><strong>Safety rules (never break these):</strong></p>
+<div class="warning">
+<p><strong>Absolute Rules:</strong></p>
+<ol>
+<li>
+<p><strong>Always assume wires are live.</strong> Treat every wire like it's powered until you've confirmed it's not with a multimeter or tester.</p>
+</li>
+<li>
+<p><strong>De-energize before working.</strong> Turn off breakers. Lock out/tag out. Wait for capacitors to discharge (big power supplies store energy).</p>
+</li>
+<li>
+<p><strong>Wear safety gear.</strong> Insulated gloves, safety glasses. For high-voltage work (over 48V), use a grounding strap to prevent static discharge.</p>
+</li>
+<li>
+<p><strong>Never work alone on high-voltage systems.</strong> If you get shocked, someone needs to call for help or perform CPR.</p>
+</li>
+<li>
+<p><strong>Keep one hand free.</strong> When testing circuits, keep one hand in your pocket or behind your back so current doesn't cross your chest.</p>
+</li>
+<li>
+<p><strong>Ground yourself properly.</strong> Before touching sensitive electronics, ground yourself to discharge static (which can destroy delicate components). Touch a grounded metal part or wear an ESD strap.</p>
+</li>
+<li>
+<p><strong>Never touch someone being electrocuted.</strong> You'll become the second victim. Turn off power at the breaker first, or use a non-conductive item (wooden stick, rubber-handled tool) to push them away.</p>
+</li>
+<li>
+<p><strong>Know CPR and first aid.</strong> Electrical injuries need immediate medical attention. In a survival situation, knowing CPR could save a life.</p>
+</li>
+</ol>
+</div>
+<p><strong>Grounding:</strong></p>
+<p>Grounding is a dedicated path for current to return safely to the source (earth or the power supply's negative terminal). A grounded outlet has a third hole (the round pin) connected to earth or the neutral line. Grounding protects you by providing a low-resistance path that triggers breakers before dangerous current reaches you.</p>
+<p><strong>Insulation and shielding:</strong></p>
+<ul>
+<li>Use proper insulated wires rated for your voltage</li>
+<li>Double-insulated tools (with rubber handles) are safer than single-insulated</li>
+<li>Twist bare wires together tightly; don't leave strands loose</li>
+<li>Use wire nuts or solder joints—never just twist wires together</li>
+<li>For outdoor or wet locations, use GFCI (Ground Fault Circuit Interrupter) protection—it detects current leaks and cuts power in milliseconds</li>
+</ul>
+</section>
+<section id="wire-sizing">
+<h2>Wire Sizing and Selection</h2>
+<p>Using the wrong wire gauge is a common cause of fires, equipment damage, and electrocution.</p>
+<p><strong>Why wire size matters:</strong></p>
+<p>Thicker wires have less resistance. Thinner wires have more resistance. When current flows through resistance, energy is lost as heat (Joule heating). If the wire is too thin for the current, it heats up dangerously and can melt the insulation, causing fires or creating short circuits.</p>
+<p><strong>Wire gauge (AWG):</strong></p>
+<p>In North America, wire is sized by American Wire Gauge (AWG). Lower numbers are thicker:</p>
+<ul>
+<li>18 AWG: Very thin, 0–5A, short runs under 30 feet</li>
+<li>14 AWG: 15A maximum, household circuits</li>
+<li>12 AWG: 20A maximum, kitchen circuits</li>
+<li>10 AWG: 30A maximum, heavy equipment</li>
+<li>8 AWG: 40–50A, main service runs</li>
+<li>4 AWG: 60–85A, very heavy equipment</li>
+</ul>
+<p>Each gauge doubles the cross-sectional area approximately every 3 steps.</p>
+<p><strong>Choosing wire size:</strong></p>
+<p>Use this simple rule: <strong>For every amp of current and every 50 feet of distance, go one gauge thicker.</strong></p>
+<p>Example:</p>
+<ul>
+<li>20A current, 50 feet away → Use 12 AWG</li>
+<li>20A current, 100 feet away → Use 10 AWG</li>
+<li>40A current, 50 feet away → Use 8 AWG</li>
+<li>5A current, 25 feet away → Use 16 AWG</li>
+</ul>
+<p>This rule keeps voltage drop under 3% and prevents overheating.</p>
+<p><strong>Real-world example:</strong></p>
+<p>You're connecting a 400W solar panel (about 33A at 12V) to a battery bank 80 feet away. Following the rule:</p>
+<ul>
+<li>33A × 80 feet = extreme distance</li>
+<li>Start with 8 AWG for 33A at 50 feet</li>
+<li>Add one more step for the extra 30 feet → 6 AWG</li>
+</ul>
+<p>This prevents voltage drop and fire risk.</p>
+<div class="tip">
+<p>When in doubt, go thicker. Thicker wire is safer and wastes less power. The cost difference between 12 AWG and 10 AWG is small compared to the danger of using undersized wire.</p>
+</div>
+<p><strong>Insulation rating:</strong></p>
+<p>Wires are rated for maximum temperature and environment:</p>
+<ul>
+<li><strong>NM (Romex):</strong> Dry indoor use only</li>
+<li><strong>NMC:</strong> Better protection, can touch concrete</li>
+<li><strong>UF:</strong> Underground or wet locations</li>
+<li><strong>THHN:</strong> Hot, dry use</li>
+<li><strong>XHHW:</strong> Wet and dry, high temperature</li>
+</ul>
+<p>For off-grid systems and survival scenarios, use proper outdoor/wet-rated wire. Cheap indoor-only wire degrades in sun and moisture.</p>
+</section>
+<section id="simple-circuits">
+<h2>Building Simple Circuits</h2>
+<p>Now that you understand voltage, current, resistance, and safety, let's build some real circuits.</p>
+<p><strong>Basic circuit anatomy:</strong></p>
+<ol>
+<li><strong>Power source:</strong> Battery, solar panel, or generator providing voltage</li>
+<li><strong>Load:</strong> The thing using power (light, motor, heater)</li>
+<li><strong>Control:</strong> Switches to turn it on/off</li>
+<li><strong>Protection:</strong> Fuses or breakers to prevent damage</li>
+<li><strong>Conductors:</strong> Wires connecting everything</li>
+</ol>
+<p><strong>Simple LED circuit:</strong></p>
+<p>You have a 12V battery and a red LED that needs 2V at 20mA.</p>
+<p>Circuit: Battery (+) → 470Ω resistor → LED anode (long leg) → LED cathode (short leg) → Battery (-)</p>
+<p>The resistor drops (12V - 2V) = 10V at 20mA = 500Ω (use 470Ω, a standard value).</p>
+<p>The LED lights up safely, and the resistor gets warm but not dangerously hot.</p>
+<p><strong>Circuit with a switch:</strong></p>
+<p>Add a switch between the battery's positive terminal and the resistor. Closing the switch completes the circuit; opening it breaks the circuit and the LED turns off. The switch carries full current, so make sure it's rated for at least 20mA (most switches easily handle this).</p>
+<p><strong>Circuit with a fuse:</strong></p>
+<p>For anything drawing more than 5A, add a fuse between the power source and the rest of the circuit. If a short circuit occurs, the fuse burns out (one time use) or the breaker trips (resettable). This protects the wiring from overheating.</p>
+<p>For 20A current, use a 20A fuse. For 5A, use a 5A fuse. The fuse is a sacrificial component that protects the rest of the circuit.</p>
+<div class="info-box">
+<p><strong>Fuse vs. Breaker:</strong></p>
+<ul>
+<li><strong>Fuses:</strong> One-time use. When current gets too high, the metal filament melts and the circuit opens. You must replace it.</li>
+<li><strong>Breakers:</strong> Resettable. A bimetallic strip bends with heat and mechanically opens contacts. Turn off the breaker, fix the problem, and flip it back on.</li>
+</ul>
+<p>Both work, but breakers are more convenient for frequent use.</p>
+</div>
+<p><strong>Multi-component circuit:</strong></p>
+<p>Imagine a small off-grid cabin with:</p>
+<ul>
+<li>48V battery bank</li>
+<li>5A solar charge controller</li>
+<li>2,000W inverter</li>
+<li>100W LED lights (five 20W bulbs)</li>
+<li>1,000W water heater</li>
+<li>Fuses and breakers for protection</li>
+</ul>
+<p>The solar panels charge the battery through a controller (which regulates voltage). The battery feeds an inverter, which converts 48V DC to 120V AC for appliances. Everything has breakers: main breaker from battery, individual breakers for the inverter output, lights, heater, etc.</p>
+<p>This is a simplified home electrical system. Understanding it means you can design, install, and troubleshoot real off-grid power.</p>
+</section>
+<section id="multimeters">
+<h2>Testing with Multimeters</h2>
+<p>A multimeter is your most important electrical diagnostic tool. It measures voltage, current, and resistance—everything in the V-I-R triangle.</p>
+<p><strong>Voltage measurement:</strong></p>
+<p>Set the multimeter to DC Voltage (usually marked &quot;V&quot; with a line). Touch the red probe to the positive side and the black probe to the negative side (or ground). The display shows voltage.</p>
+<ul>
+<li>12V battery shows ~12V</li>
+<li>Dead battery shows ~0V</li>
+<li>Partially charged battery might show 10.5V</li>
+</ul>
+<p><strong>Testing a circuit:</strong>
+Measure voltage at different points to see where energy is being lost. If your LED circuit should have 2V across the LED but only shows 0.8V, the resistor is wrong or the LED is failing.</p>
+<p><strong>Current measurement:</strong></p>
+<p>This is trickier. The multimeter must be in series with the circuit to measure current. Break the circuit, put the multimeter's probes in the break (red on the positive side), and turn on the circuit.</p>
+<p><strong>Warning:</strong> If you put a multimeter set to current mode across a voltage source (like a battery), you create a short circuit and the multimeter might explode. Always set voltage FIRST to ensure safety, then measure current carefully.</p>
+<p><strong>Resistance measurement:</strong></p>
+<p>Set to &quot;Ω&quot; (ohms). Do not measure resistance while the circuit is powered. Disconnect power, disconnect the component, and measure across its terminals.</p>
+<ul>
+<li>Resistor: Shows its rated value (470Ω shows ~470)</li>
+<li>LED: Shows variable resistance depending on polarity (forward-biased shows low, reverse-biased shows very high)</li>
+<li>Wire: Should show nearly 0Ω (short pieces of good copper are essentially zero resistance)</li>
+<li>Insulator (plastic, rubber): Shows &quot;OL&quot; (over limit) or very high value (typically over 1MΩ)</li>
+</ul>
+<div class="tip">
+<p>Use resistance measurement to find broken wires. Disconnect one end of a long wire run and measure from end to end. Good wire shows nearly 0Ω. A break shows OL (infinite resistance).</p>
+</div>
+<p><strong>Continuity testing:</strong></p>
+<p>Many multimeters have a &quot;continuity&quot; mode (marked with a speaker symbol). Set to continuity, and beep means the circuit is complete (resistance is low). No beep means it's broken. This is faster than reading resistance values.</p>
+</section>
+<section id="components">
+<h2>Common Electrical Components</h2>
+<p>You'll encounter these parts constantly in survival electrical work.</p>
+<p><strong>Switches:</strong></p>
+<p>A mechanical device that opens or closes a circuit. Types include:</p>
+<ul>
+<li><strong>Toggle:</strong> On/off, cheap and common</li>
+<li><strong>Push button:</strong> Momentary (only on while held)</li>
+<li><strong>Relay:</strong> Electromagnet that triggers mechanical contacts (allows a small current to switch a large one)</li>
+<li><strong>SPST:</strong> Single-Pole Single-Throw (simple on/off)</li>
+<li><strong>SPDT:</strong> Single-Pole Double-Throw (on/off/intermediate)</li>
+</ul>
+<p>For low currents (under 1A), almost any switch works. For high currents, use heavier-duty switches rated for your current.</p>
+<p><strong>Resistors:</strong></p>
+<p>Fixed or variable (potentiometer). Color bands indicate value. A 470Ω resistor is brown-violet-brown. Resistor values are standardized (10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82, and multiples of these by powers of 10).</p>
+<p>Use resistors to:</p>
+<ul>
+<li>Limit current (protecting LEDs)</li>
+<li>Divide voltage (creating reference points)</li>
+<li>Create load (dissipate power as heat)</li>
+</ul>
+<p><strong>Capacitors:</strong></p>
+<p>Store electrical charge temporarily. Measured in farads (F), but usually microfarads (µF) or nanofarads (nF). Types include:</p>
+<ul>
+<li><strong>Electrolytic:</strong> High capacity, polarized (must connect + to +)</li>
+<li><strong>Ceramic:</strong> Low capacity, non-polarized</li>
+<li><strong>Film:</strong> Medium capacity, very stable</li>
+</ul>
+<p>In survival work, capacitors are less common but useful for:</p>
+<ul>
+<li>Smoothing power supply ripple</li>
+<li>Filtering noise from signals</li>
+<li>Energy storage (tiny amounts compared to batteries)</li>
+</ul>
+<div class="warning">
+<p><strong>Capacitors store charge.</strong> A power supply capacitor can hold dangerous voltage even after turning off. Always discharge capacitors with a resistor or by bridging terminals with an insulated screwdriver before touching them.</p>
+</div>
+<p><strong>Diodes:</strong></p>
+<p>Allow current in one direction only. A LED is a special diode that emits light. Regular diodes are used to:</p>
+<ul>
+<li>Prevent reverse polarity (protect against batteries installed backward)</li>
+<li>Rectify AC to DC (convert alternating to direct current)</li>
+<li>Protect circuits from voltage spikes</li>
+</ul>
+<p>A diode has a stripe on one end marking the negative terminal (cathode).</p>
+<p><strong>Inductors:</strong></p>
+<p>Store energy in a magnetic field. Common in:</p>
+<ul>
+<li>Power supplies</li>
+<li>Filters</li>
+<li>Transformers (which are two inductors coupled together)</li>
+</ul>
+<p>In survival scenarios, inductors are rarely needed, but you'll encounter them in any salvaged electronics.</p>
+<p><strong>Fuses and breakers:</strong></p>
+<p>Already covered, but worth repeating: these are sacrificial or resettable components that protect circuits from overcurrent.</p>
+</section>
+<section id="dc-vs-ac">
+<h2>DC vs. AC: Direct and Alternating Current</h2>
+<p>All the circuits we've discussed so far used DC (Direct Current)—electrons flow in one direction. But the real world has AC (Alternating Current), and understanding the difference is essential.</p>
+<p><strong>Direct Current (DC):</strong></p>
+<p>Electrons flow in one direction, from positive to negative. Batteries provide DC. Solar panels produce DC. Motors designed for DC expect constant voltage in one direction.</p>
+<p>DC characteristics:</p>
+<ul>
+<li>Voltage is constant (12V is always 12V)</li>
+<li>Current flows one way</li>
+<li>Easier to understand and safer at low voltages</li>
+<li>More efficient for small systems and long-distance transmission to one location</li>
+<li>Batteries and most renewable sources produce DC</li>
+</ul>
+<p><strong>Alternating Current (AC):</strong></p>
+<p>Electrons move back and forth, reversing direction many times per second. Household mains AC alternates 50 or 60 times per second (50 Hz or 60 Hz depending on region).</p>
+<p>AC characteristics:</p>
+<ul>
+<li>Voltage fluctuates sinusoidally (up, down, up, down)</li>
+<li>Current reverses direction constantly</li>
+<li>More complex to understand</li>
+<li>Very efficient for long-distance transmission (step-up transformers reduce current, reducing losses)</li>
+<li>Power plants generate AC</li>
+<li>Household outlets provide AC</li>
+</ul>
+<p><strong>Why AC won for the grid:</strong></p>
+<p>In the late 1800s, Edison (DC) and Tesla (AC) competed for dominance. AC won because:</p>
+<ol>
+<li>Transformers can easily step voltage up or down (reducing transmission losses)</li>
+<li>DC had no easy way to change voltage</li>
+<li>AC is slightly more efficient over long distances</li>
+</ol>
+<p><strong>Converting between them:</strong></p>
+<ul>
+<li><strong>AC to DC:</strong> Rectifier (diode) converts AC to pulsing DC, then a smoothing capacitor cleans it up</li>
+<li><strong>DC to AC:</strong> Inverter (electronic device) oscillates DC voltage to mimic AC. Modern inverters create very clean AC.</li>
+</ul>
+<p>In survival scenarios, you'll have:</p>
+<ul>
+<li>Solar panels and batteries (DC sources)</li>
+<li>An inverter to power AC appliances</li>
+<li>A charge controller to regulate DC from panels to batteries</li>
+<li>Fuses and breakers for protection</li>
+</ul>
+<p>The inverter is the bridge between your DC renewable sources and AC appliances.</p>
+<div class="tip">
+<p><strong>Pure sine-wave vs. modified sine-wave inverters:</strong> Sine-wave inverters produce clean AC that powers any appliance safely. Modified sine-wave (cheaper) produces stepped approximations that can damage sensitive electronics. For long-term survival, invest in sine-wave inverters.</p>
+</div>
+</section>
+<section id="practical-applications">
+<h2>Practical Applications: Lighting, Charging, Motors</h2>
+<p>Now let's apply everything to real survival scenarios.</p>
+<p><strong>Off-grid lighting:</strong></p>
+<p>Traditional incandescent bulbs are wasteful (90% becomes heat). LED bulbs use 80% less power:</p>
+<ul>
+<li>Incandescent: 60W = 60 lumens per watt ≈ 800 lumens</li>
+<li>LED: 8W = 100 lumens per watt ≈ 800 lumens</li>
+</ul>
+<p>For a cabin running on a small battery bank, LED lights are essential. A single 20W LED produces excellent light and can run 50+ hours on a 1,000 Wh battery.</p>
+<p>Wiring: 12V DC → Switch → 20W LED light → Back to battery negative. Install a fuse (rated for the LED's current, typically 2A) between the battery and switch.</p>
+<p><strong>Charging devices:</strong></p>
+<p>Solar panels produce DC directly. A controller regulates charging, and a battery stores energy. Devices connect through the battery.</p>
+<p>Circuit: Solar panel → Charge controller → Battery → Inverter → AC outlets</p>
+<p>A 100W solar panel produces roughly 8A at 12V on a sunny day. The charge controller limits this to the battery's maximum charge rate (maybe 30A for a large system). The battery accumulates energy. An inverter converts 12V DC to 120V AC for phones, laptops, lights, etc.</p>
+<p>Your phone charger is actually a small converter—it takes whatever voltage/current is available and outputs 5V at the amperage your phone needs.</p>
+<p><strong>Water pumping:</strong></p>
+<p>A 12V DC pump might draw 5A (60W) when running. If you want to pump 100 gallons to a cistern 100 feet away, you need:</p>
+<ul>
+<li>Pump runtime: Depends on flow rate. A 5-gallon-per-minute pump needs 20 minutes.</li>
+<li>Energy needed: 60W × 20 minutes = 20 Wh (very small)</li>
+<li>Battery depletion: Negligible from a 10 kWh system</li>
+</ul>
+<p>But peak power matters: The pump draws 60W instantaneously, so your inverter must handle at least 100W (to be safe). This is why understanding both power (watts) and energy (watt-hours) is essential.</p>
+<p><strong>Motor operation:</strong></p>
+<p>Motors are more efficient than resistive loads. A 1,000W motor consumes 1,000W of power, but most goes into mechanical work (rotation), not heat. Starting a motor requires a brief current surge (inrush current) much higher than running current.</p>
+<p>A 1,000W motor might draw 15A running (at 120V AC), but 30–50A for the first second when starting. Your inverter and wiring must handle the peak, not just the average.</p>
+</section>
+<section id="troubleshooting">
+<h2>Basic Troubleshooting</h2>
+<p>When something electrical fails, follow this systematic approach:</p>
+<p><strong>Is it a power problem?</strong></p>
+<ol>
+<li>Check the source. Is the battery charged? Multimeter across battery terminals should show rated voltage.</li>
+<li>Check the fuse/breaker. Is it tripped or blown? Continuity test should show no break.</li>
+<li>Check the wire. Visually inspect for breaks, burns, or melted insulation. Multimeter continuity should show complete circuit.</li>
+</ol>
+<p><strong>Is it a load problem?</strong></p>
+<ol>
+<li>Disconnect the load (the device using power)</li>
+<li>Test voltage at where the load was connected. Should be close to source voltage.</li>
+<li>If voltage is low, the problem is upstream (battery, fuse, or wire)</li>
+<li>If voltage is correct, the load is faulty</li>
+</ol>
+<p><strong>Is it a control problem?</strong></p>
+<ol>
+<li>Check the switch. Continuity in both positions (should show connection in &quot;on&quot;, no connection in &quot;off&quot;)</li>
+<li>If switch seems broken, bypass it temporarily with a wire. If device turns on, replace the switch.</li>
+</ol>
+<p><strong>High current but nothing works:</strong></p>
+<p>This usually means a short circuit. Stop immediately. Turn off power. Find and fix the short before resuming.</p>
+<p>Common short causes:</p>
+<ul>
+<li>Wires touching when they shouldn't</li>
+<li>Insulation worn through</li>
+<li>Water contact (moisture is conductive)</li>
+<li>Reversed polarity (+ and - swapped)</li>
+</ul>
+<div class="warning">
+<p>Never operate a circuit with a short. It will overheat, damage components, and start fires. Use a multimeter to check resistance at different points. Very low or zero resistance where there should be high resistance indicates a short.</p>
+</div>
+</section>
+<section id="next-steps">
+<h2>Next Steps: Building Your Electrical Knowledge</h2>
+<p>This guide covers the foundation. To build complete off-grid systems, explore these related guides:</p>
+<p><strong>For renewable generation:</strong></p>
+<ul>
+<li><a href="solar-power.html">Solar Power</a> — Panels, controllers, optimization</li>
+<li><a href="wind-power.html">Wind Power</a> — Small turbines and installation</li>
+<li><a href="hydroelectric.html">Hydroelectric</a> — Micro-hydro for flowing water</li>
+<li><a href="generator-maintenance.html">Generator Maintenance</a> — Fuel-based backup power</li>
+</ul>
+<p><strong>For energy storage:</strong></p>
+<ul>
+<li><a href="battery-systems.html">Battery Systems</a> — Lead-acid, lithium, and alternatives</li>
+<li><a href="energy-storage.html">Energy Storage</a> — Advanced batteries and alternatives</li>
+</ul>
+<p><strong>For wiring and installation:</strong></p>
+<ul>
+<li><a href="wiring-installation.html">Wiring Installation</a> — Professional practices for safety</li>
+<li><a href="electrical-systems.html">Electrical Systems</a> — Building complete home systems</li>
+</ul>
+<p><strong>For advanced topics:</strong></p>
+<ul>
+<li><a href="electronics-basics.html">Electronics Basics</a> — Transistors, digital circuits</li>
+<li><a href="water-management.html">Water Management</a> — Pumping and storage</li>
+</ul>
+<p><strong>Practical experiments:</strong></p>
+<ol>
+<li>
+<p><strong>Simple LED circuit:</strong> Gather a 9V battery, 470Ω resistor, red LED, switch, and wires. Build the circuit described in &quot;Building Simple Circuits&quot;. Measure voltage across the LED (should be ~2V).</p>
+</li>
+<li>
+<p><strong>Multimeter practice:</strong> Test various household items. Measure DC voltage on batteries. Measure AC voltage at wall outlets (be careful—AC mains are dangerous). Measure resistance of resistors, wires, and insulators.</p>
+</li>
+<li>
+<p><strong>Power calculation:</strong> Pick a household appliance. Look at its power rating (usually on a sticker). Calculate energy use: If it's 500W and runs for 2 hours, that's 1 kWh. Estimate your daily consumption.</p>
+</li>
+<li>
+<p><strong>Battery runtime:</strong> Take a 12V battery with a known capacity (say, 100 Ah = 1,200 Wh). Connect a 50W load. Theoretically, it should run for 24 hours. Test with smaller loads first to validate the math.</p>
+</li>
+</ol>
+<p>Every experiment teaches something about how electricity really works—not just in theory, but in practice. Start small, stay safe, and build from there.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="solar-power.html">solar-power</a>
+<a href="battery-systems.html">battery-systems</a>
+<a href="wind-power.html">wind-power</a>
+<a href="hydroelectric.html">Hydroelectric Power</a>
+<a href="electrical-systems.html">electrical-systems</a>
+<a href="generator-maintenance.html">generator-maintenance</a>
+<a href="wiring-installation.html">wiring-installation</a>
+<a href="electronics-basics.html">electronics-basics</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/{{slug}}.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{title}} - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+{{#if customCss}}
+<style>
+{{{customCss}}}
+</style>
+{{/if}}
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="https://zerotoherohero.com/guides/{{slug}}.html">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "{{categoryName}}", "item": "https://zerotoherohero.com/#sec-{{category}}"},
+    {"@type": "ListItem", "position": 3, "name": "{{title}}", "item": "https://zerotoherohero.com/guides/{{slug}}.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{title}}",
+  "description": "{{description}}",
+  "dateModified": "{{lastUpdated}}",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="{{id}}">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-{{category}}">{{categoryName}}</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">{{title}}</span>
+</nav>
+{{#if liabilityBanner}}
+<div class="{{liabilityBannerClass}}">
+{{{liabilityBanner}}}
+</div>
+{{/if}}
+<header>
+<h1>{{title}}</h1>
+<p class="subtitle">{{description}}</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: {{difficultyDots}}</span>
+<span class="read-time">📖 ~{{readTime}} min read</span>
+{{#if lastUpdated}}<span class="last-updated">· Updated: {{lastUpdated}}</span>{{/if}}
+</div>
+</header>
+
+{{#if toc}}
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+{{#each toc}}
+<li><a href="#{{this.id}}">{{{this.text}}}</a></li>
+{{/each}}
+</ol>
+</nav>
+{{/if}}
+
+<div id="main-content">
+{{{body}}}
+</div>
+
+{{#if related}}
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+{{#each related}}
+<a href="{{this.slug}}.html">{{this.title}}</a>
+{{/each}}
+</div>
+{{/if}}
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

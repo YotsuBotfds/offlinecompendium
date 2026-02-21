@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/food-rationing.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Rationing &amp; Nutrition</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Medical &amp; Health</span> ›
+<span>Food Rationing &amp; Nutrition</span>
+</div>
+
+
+<h1>Food Rationing &amp; Nutrition</h1>
+<p class="subtitle">Calorie budgeting, nutrient optimization, rationing systems, deficiency disease prevention, and supply duration.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~19 min</span>
+<span>Updated: 2026-02-16</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#caloric">Caloric Needs Assessment</a></li>
+<li><a href="#nutrients">Essential Nutrients in Rationing</a></li>
+<li><a href="#systems">Rationing Systems</a></li>
+<li><a href="#inventory">Food Inventory Management</a></li>
+<li><a href="#extended">Extended Rationing (3+ Months)</a></li>
+<li><a href="#children">Special Dietary Needs in Rationing</a></li>
+<li><a href="#starvation">Starvation Adaptation &amp; Limits</a></li>
+<li><a href="#morale">Morale &amp; Food Psychology</a></li>
+<li><a href="#mistakes">Common Rationing Mistakes</a></li>
+<li><a href="#practical">Practical Implementation Guide</a></li>
+<li><a href="#troubleshooting">Troubleshooting Common Rationing Problems</a></li>
+<li><a href="#references">Quick Reference Table: Ration Planning</a></li>
+<li><a href="#communal-kitchen">Communal Kitchen Setup &amp; Management</a></li>
+<li><a href="#fair-distribution">Fair Distribution Systems</a></li>
+<li><a href="#food-safety-scale">Food Safety at Community Scale</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="caloric">
+<h2>Caloric Needs Assessment</h2>
+<p>Daily caloric requirements vary based on age, sex, activity level, and environmental conditions. Accurate assessment prevents over- or under-rationing.</p>
+<h3>Base Daily Caloric Requirements</h3>
+<table><thead><tr><th scope="row">Category</th><th scope="row">Daily Calories</th><th scope="row">Conditions Increasing Need</th></tr></thead><tbody><tr><td>Sedentary adult (office work, minimal activity)</td><td>2,000-2,200</td><td>Cold climate, stress increase by 10-20%</td></tr><tr><td>Moderately active adult (exercise 3-4x/week)</td><td>2,500-2,700</td><td>Hard labor, extreme temperatures add 500-1,000</td></tr><tr><td>Very active adult (heavy labor, sports)</td><td>3,000-3,500</td><td>Extreme conditions may require 4,500+</td></tr><tr><td>Children 4-8 years</td><td>1,400-1,600</td><td>Growth periods require additional calories</td></tr><tr><td>Children 9-13 years</td><td>1,800-2,200</td><td>Adolescent growth spurts demand peak nutrition</td></tr><tr><td>Teens 14-18 years</td><td>2,200-3,200</td><td>Boys require upper range; heavy work increases further</td></tr><tr><td>Elderly (65+ years)</td><td>1,600-2,400</td><td>Lower activity but medical conditions may increase needs</td></tr><tr><td>Pregnant women</td><td>2,400-2,800</td><td>Add 300-500 calories during pregnancy</td></tr><tr><td>Nursing mothers</td><td>2,700-2,900</td><td>Add 300-500 calories per nursing child</td></tr></tbody></table>
+<h3>Cold Climate Adjustment</h3>
+<p>Extreme cold can increase caloric requirements by 25-50% as body burns energy maintaining temperature.</p>
+<ul>
+<li>Moderate cold (40-50°F): +10-15% baseline</li>
+<li>Cold (20-40°F): +15-25% baseline</li>
+<li>Extreme cold (below 0°F): +25-50% baseline</li>
+<li>Wind and wet conditions amplify cold stress</li>
+</ul>
+<h3>Activity Level Adjustment</h3>
+<ul>
+<li><strong>Hiking/moving location:</strong> +1,000-1,500 calories depending on terrain and load</li>
+<li><strong>Building/construction:</strong> +500-1,000 calories</li>
+<li><strong>Heavy agricultural work:</strong> +1,000-2,000 calories</li>
+<li><strong>Foraging/hunting:</strong> +500-1,500 calories</li>
+</ul>
+<p>Baseline needs assume temperate climate at rest. Most survival situations require 20-50% above baseline due to environmental stress and activity.</p>
+<div class="warning">
+<p>Underestimating caloric requirements leads to rapid weight loss, muscle degradation, and compromised immune function. Overestimate needs by 10-15% when in doubt—excess calories can be stored, but deficits compound daily. In extreme cold or high-activity survival situations, failure to provide 3,500+ calories daily results in dangerous physical decline within 2-3 weeks.</p>
+</div>
+</section>
+<section id="nutrients">
+<h2>Essential Nutrients in Rationing</h2>
+<p>Adequate rationing provides not only calories but also essential nutrients preventing deficiency diseases and maintaining health.</p>
+<h3>Macronutrient Breakdown</h3>
+<table><thead><tr><th scope="row">Nutrient</th><th scope="row">Daily Requirement</th><th scope="row">Function</th><th scope="row">Survival Foods</th></tr></thead><tbody><tr><td>Protein</td><td>50-70g (vary by weight)</td><td>Muscle maintenance, immune function</td><td>Beans, nuts, seeds, dried meat, canned fish</td></tr><tr><td>Carbohydrates</td><td>225-325g (45-65% calories)</td><td>Energy source, brain function</td><td>Grains, dried fruit, sugar, honey</td></tr><tr><td>Fat</td><td>55-80g (20-35% calories)</td><td>Energy, hormone production, vitamin absorption</td><td>Oil, nuts, seeds, fatty meats, butter</td></tr><tr><td>Fiber</td><td>25-35g</td><td>Digestive health, blood sugar control</td><td>Beans, whole grains, dried vegetables</td></tr></tbody></table>
+<h3>Micronutrient Concerns in Extended Rationing</h3>
+<p>Deficiency diseases develop slowly but become critical in extended shortages.</p>
+<h4>Vitamin C Deficiency (Scurvy)</h4>
+<ul>
+<li><strong>Requirement:</strong> 75-90mg daily</li>
+<li><strong>Signs:</strong> Bleeding gums, poor wound healing, fatigue, depression (appears after 12+ weeks)</li>
+<li><strong>Sources:</strong> Citrus fruit, fresh vegetables, sprouts, fermented foods (vitamin preserved)</li>
+</ul>
+<h4>Vitamin D Deficiency</h4>
+<ul>
+<li><strong>Requirement:</strong> 600-800 IU daily (higher if limited sun)</li>
+<li><strong>Signs:</strong> Bone pain, muscle weakness, depression (develops slowly)</li>
+<li><strong>Sources:</strong> Fatty fish, egg yolks, sunlight exposure (skin synthesis)</li>
+</ul>
+<h4>Iron Deficiency (Anemia)</h4>
+<ul>
+<li><strong>Requirement:</strong> 8-18mg daily (higher for menstruating women)</li>
+<li><strong>Signs:</strong> Fatigue, weakness, shortness of breath</li>
+<li><strong>Sources:</strong> Beans, lentils, red meat, fortified grains</li>
+</ul>
+<h4>Iodine Deficiency</h4>
+<ul>
+<li><strong>Requirement:</strong> 150mcg daily</li>
+<li><strong>Signs:</strong> Enlarged thyroid, fatigue, cold intolerance (develops over months)</li>
+<li><strong>Sources:</strong> Iodized salt (critical importance), seaweed, seafood</li>
+</ul>
+<div class="tip">
+<p>When fresh produce is unavailable during extended rationing, sprouting seeds and dried grains provides significant vitamin C. Sprouting mung beans or alfalfa seeds for 5-7 days increases vitamin content 5-10 times. Even minimal sprouting (2-3 tablespoons daily) prevents scurvy after 12+ weeks of limited produce. Store sprouting jars in cool locations; they require only water and daily rinsing.</p>
+</div>
+<h3>Survival Food Caloric Density</h3>
+<table><thead><tr><th scope="row">Food</th><th scope="row">Calories/Pound</th><th scope="row">Protein %</th><th scope="row">Storage Life</th><th scope="row">Advantages</th></tr></thead><tbody><tr><td>White rice</td><td>1,650</td><td>3%</td><td>30 years (cool, dry)</td><td>Calorie-dense, long storage, versatile</td></tr><tr><td>Wheat berries</td><td>1,650</td><td>14%</td><td>30 years (cool, dry)</td><td>Protein-rich, nutrient-dense, grindable</td></tr><tr><td>Dried beans</td><td>1,550</td><td>25%</td><td>30 years (cool, dry)</td><td>Excellent protein, fiber, nutrients</td></tr><tr><td>Peanut butter</td><td>2,590</td><td>30%</td><td>2 years (varied)</td><td>High protein, calorie-dense, tasty</td></tr><tr><td>Honey</td><td>1,370</td><td>0%</td><td>Indefinite</td><td>Long storage, quick energy, preservative</td></tr><tr><td>Cooking oil</td><td>4,085</td><td>0%</td><td>2-3 years</td><td>Maximum calorie density, essential for cooking</td></tr><tr><td>Nuts/seeds</td><td>2,600</td><td>15%</td><td>1-2 years</td><td>Balanced nutrition, calorie-dense</td></tr><tr><td>Pasta</td><td>1,680</td><td>6%</td><td>2-3 years (dry)</td><td>Satisfying, versatile, shelf-stable</td></tr><tr><td>Powdered milk</td><td>1,650</td><td>36%</td><td>10+ years (cool, dry)</td><td>Protein, calcium, long storage</td></tr><tr><td>Canned meat (fish/poultry)</td><td>680</td><td>25%</td><td>2-5 years</td><td>Complete protein, ready-to-eat, preserved</td></tr></tbody></table>
+</section>
+<section id="systems">
+<h2>Rationing Systems</h2>
+<p>Organized rationing systems ensure fair distribution and prevent premature depletion of food supplies.</p>
+<h3>Emergency (1-2 weeks)</h3>
+<p>Minimal rationing—focus on preventing panic and maintaining normalcy.</p>
+<ul>
+<li>Ration by meal rather than daily total</li>
+<li>Maintain familiar meal patterns to reduce stress</li>
+<li>Distribute modest reductions equally to all</li>
+<li>Consume perishables first (meat, dairy, fresh produce)</li>
+<li>Preserve shelf-stable foods for extended shortage</li>
+</ul>
+<h3>Short-Term (2-4 weeks)</h3>
+<p>More structured rationing as supply constraints become apparent.</p>
+<h4>Daily Allocation System</h4>
+<ol>
+<li>Calculate total food calories available</li>
+<li>Estimate number of people and days of shortage</li>
+<li>Divide total calories by (people × days) to get daily per-person allocation</li>
+<li>Allocate daily portions based on caloric needs (adjusted for children, pregnant/nursing women)</li>
+<li>Include diverse foods ensuring nutrients not just calories</li>
+</ol>
+<h4>Sample Daily Ration (1,800 calories/person)</h4>
+<ul>
+<li>6 oz grain/bread (600 calories): rice, pasta, bread, oats</li>
+<li>4 oz protein (400 calories): canned meat, beans, nuts, powdered milk</li>
+<li>4 oz vegetables/fruit (150 calories): canned, dried, or fresh if available</li>
+<li>2 tbsp fat (250 calories): oil, butter, lard for cooking and nutrition</li>
+<li>1-2 oz sugar/honey (150 calories): quick energy, morale</li>
+<li>Salt and iodized salt for flavor and essential nutrients</li>
+</ul>
+<h3>Extended Rationing (1-3+ months)</h3>
+<p>Strict rationing system required for survival during prolonged shortage.</p>
+<h4>Calorie-Based Rationing</h4>
+<ol>
+<li>Determine absolute minimum survival calories (typically 1,200-1,500/person/day)</li>
+<li>Identify critical nutrients requiring minimum intake (protein, vitamin C sources)</li>
+<li>Build rations around nutrient-dense foods</li>
+<li>Rotate foods to prevent monotony and psychological fatigue</li>
+<li>Include small amounts of preferred foods for morale</li>
+</ol>
+<h4>Class-Based System</h4>
+<p>Different rations for different activity/vulnerability levels:</p>
+<ul>
+<li><strong>Heavy labor class:</strong> 2,500 calories (construction, foraging, hunting)</li>
+<li><strong>Moderate activity class:</strong> 1,800 calories (cooking, water gathering, care work)</li>
+<li><strong>Light activity class:</strong> 1,200 calories (elderly, young children, ill/injured)</li>
+</ul>
+<p>Class-based systems can create resentment. Carefully communicate necessity and adjust based on actual survival circumstances. Morale is critical—unfair systems may cause rebellion.</p>
+</section>
+<section id="inventory">
+<h2>Food Inventory Management</h2>
+<p>Careful tracking prevents waste and ensures rations last entire shortage duration.</p>
+<h3>Inventory System</h3>
+<ol>
+<li><strong>List all available foods:</strong> Canned goods, grains, dried goods, frozen/fresh (if available)</li>
+<li><strong>Calculate calories per item:</strong> Multiply weight by caloric density</li>
+<li><strong>Total available calories:</strong> Sum all items</li>
+<li><strong>Divide by daily ration:</strong> Determines shortage duration with current supplies</li>
+<li><strong>Adjust rations if needed:</strong> If shortage longer than calculated, reduce daily allocation</li>
+</ol>
+<h3>Tracking Daily Consumption</h3>
+<ul>
+<li>Maintain simple spreadsheet or written log</li>
+<li>Record each day's rations distributed</li>
+<li>Track total calories consumed vs. allocated</li>
+<li>Identify waste sources and prevent recurrence</li>
+<li>Update shortage duration estimate weekly</li>
+</ul>
+<h3>FIFO Storage (First In, First Out)</h3>
+<ul>
+<li>Consume oldest foods first</li>
+<li>Maintain organized storage to easily identify rotation</li>
+<li>Check expiration dates; discard spoiled items</li>
+<li>Rotate fresh supplies as normal shopping continues</li>
+</ul>
+<h3>Reducing Waste</h3>
+<ul>
+<li><strong>Portion control:</strong> Issue exact quantities—no seconds until all fed</li>
+<li><strong>Creative use:</strong> Combine leftovers into mixed dishes</li>
+<li><strong>Composting:</strong> Animal feed or garden soil amendment</li>
+<li><strong>Careful cooking:</strong> Minimize spills and unintended waste</li>
+<li><strong>Education:</strong> Teach community importance of waste prevention</li>
+</ul>
+<p>Centralized cooking reduces waste and fuel use vs. individual cooking. All food combined into communal meals, then divided equally.</p>
+<div class="info-box">
+<p>Real-world example: A household of 4 adults with 1,800-calorie daily rations (7,200 calories/day) requires approximately 4.8 pounds of rice + beans + dried vegetables + fats daily to maintain nutrition. A typical 50-pound food supply lasts 10-11 days. For 30-day coverage, plan 150+ pounds minimum per household, plus 20% contingency (180 pounds total). This requires 1.5-2 cubic feet of storage space per person.</p>
+</div>
+</section>
+<section id="extended">
+<h2>Extended Rationing (3+ Months)</h2>
+<p>Extreme shortage requiring integration of non-traditional foods and acceptance of significant life changes.</p>
+<h3>Supplementing Rations</h3>
+<ul>
+<li><strong>Foraging:</strong> Forage for wild edibles to augment rations</li>
+<li><strong>Gardening:</strong> Fast-growing crops (greens, radishes, fast beans) harvest in 4-6 weeks</li>
+<li><strong>Hunting/trapping:</strong> Supplement protein and fat with wild game</li>
+<li><strong>Insect harvesting:</strong> Crickets, mealworms, grasshoppers edible and nutritious</li>
+<li><strong>Water plants:</strong> Cattail tubers, duck potato edible and abundant</li>
+</ul>
+<h3>Psychological Adaptation</h3>
+<ul>
+<li>Rationing causes psychological stress—address directly</li>
+<li>Small portions feel insufficient—slow eating, chewing thoroughly increases satisfaction</li>
+<li>Food monotony causes depression—rotate foods weekly even if very limited</li>
+<li>Share meals communally—social aspect reduces sense of deprivation</li>
+<li>Plan future meals together—gives sense of control and hope</li>
+</ul>
+<h3>Physiological Adaptation</h3>
+<ul>
+<li>Body adapts to reduced calories over 2-3 weeks</li>
+<li>Hunger sensation decreases as body downregulates appetite signals</li>
+<li>Activity level naturally reduces as energy decreases</li>
+<li>Cold tolerance increases—maintain adequate vitamin C and warmth</li>
+<li>Illness risk increases—maintain hygiene and rest</li>
+</ul>
+<h3>Minimum Survival Rations</h3>
+<table><thead><tr><th scope="row">Duration</th><th scope="row">Daily Calories</th><th scope="row">Macronutrient Focus</th><th scope="row">Health Considerations</th></tr></thead><tbody><tr><td>1-4 weeks</td><td>1,500-1,800</td><td>Balanced (maintain fitness)</td><td>Normal health maintenance</td></tr><tr><td>1-3 months</td><td>1,200-1,500</td><td>Carb-heavy (cheap energy)</td><td>Watch for deficiency signs</td></tr><tr><td>3+ months</td><td>1,000-1,200</td><td>Carb-heavy, minimum protein</td><td>Severe deficiency risk—supplement if possible</td></tr></tbody></table>
+<div class="warning">
+<p>Body weight loss during extended rationing follows predictable patterns: expect 1-2 pounds weekly at 1,200-1,500 calories daily; 2-4 pounds weekly at 1,000 calories daily. After 8 weeks of severe restriction (1,000-1,200 calories), most adults have lost 15-25% of body weight. This loss includes critical muscle mass. Physical capability diminishes proportionally—inability to perform heavy labor emerges by week 3-4. Long-term consequences include weakened immunity lasting weeks after rationing ends.</p>
+</div>
+</section>
+<section id="children">
+<h2>Special Dietary Needs in Rationing</h2>
+<p>Certain populations have different nutritional needs requiring adjusted rations to prevent long-term health damage.</p>
+<h3>Infants &amp; Young Children (Under 5)</h3>
+<ul>
+<li><strong>Caloric need:</strong> 1,000-1,400 calories/day (much higher per pound than adults)</li>
+<li><strong>Protein:</strong> Higher percentage required for growth (1.1g per pound bodyweight)</li>
+<li><strong>Fats:</strong> Essential for brain development—maintain fat intake even if cutting adults</li>
+<li><strong>Iron:</strong> Critical for development—fortified foods, animal products if available</li>
+<li><strong>Breastfeeding:</strong> Exclusively for under 6 months—mother's ration increased 300-500 calories</li>
+<li><strong>Supplementation:</strong> Synthetic vitamins critical if fresh foods unavailable</li>
+</ul>
+<h3>School-Age Children (5-13)</h3>
+<ul>
+<li><strong>Caloric need:</strong> 1,600-2,200 calories/day</li>
+<li><strong>Protein:</strong> 19-34g daily (high relative to body weight)</li>
+<li><strong>Calcium:</strong> 1,000-1,300mg daily (bone development critical)</li>
+<li><strong>Rationing challenge:</strong> High activity level makes maintenance difficult on reduced calories</li>
+<li><strong>Approach:</strong> Maintain children's portions as percentage of needs; reduce adult rations first</li>
+</ul>
+<h3>Pregnant Women</h3>
+<ul>
+<li><strong>Additional caloric need:</strong> 300-500 calories daily</li>
+<li><strong>Protein:</strong> Additional 25g daily</li>
+<li><strong>Folate:</strong> Critical for fetal development (leafy greens if available, or synthetic supplement)</li>
+<li><strong>Iron:</strong> Doubled requirement (30mg daily vs. 18mg non-pregnant)</li>
+<li><strong>Rationing approach:</strong> Prioritize pregnant women for nutrient-dense foods</li>
+</ul>
+<h3>Nursing Mothers</h3>
+<ul>
+<li><strong>Additional caloric need:</strong> 300-500 calories daily per nursing child</li>
+<li><strong>Fluid requirement:</strong> Increased to maintain milk production (2-3 liters daily minimum)</li>
+<li><strong>Nutrient-dense foods:</strong> Prioritize for milk quality and quantity</li>
+<li><strong>Multiple nursing:</strong> Multiple children exponentially increases mother's need</li>
+<li><strong>Lactation timeframe:</strong> Milk production remains high 6-12 months postpartum even during weaning</li>
+</ul>
+<div class="tip">
+<p>Nursing mothers on reduced rations should increase fluids by 50% and prioritize foods rich in calcium (dried milk, leafy greens, bones) and iron (beans, red meat). Milk quality diminishes over weeks of inadequate nutrition; infants may fail to gain weight or experience micronutrient deficiency despite frequent nursing. Continuing breastfeeding during rationing remains beneficial when mother's intake is maintained at minimum 2,000 calories daily.</p>
+</div>
+<h3>Elderly (65+ years)</h3>
+<ul>
+<li><strong>Caloric need:</strong> Often reduced to 1,600-2,000 (lower activity)</li>
+<li><strong>Protein:</strong> Slightly higher percentage (maintain muscle mass loss resistance)</li>
+<li><strong>Calcium:</strong> 1,000-1,200mg daily (bone loss prevention)</li>
+<li><strong>Micronutrients:</strong> Critical due to reduced absorption with age</li>
+<li><strong>Texture:</strong> Soft foods easier to eat if dental problems present</li>
+</ul>
+</section>
+<section id="starvation">
+<h2>Starvation Adaptation &amp; Limits</h2>
+<p>Understanding physiological changes during starvation helps manage health during extreme shortage.</p>
+<h3>Starvation Timeline</h3>
+<h4>Days 1-3: Glycogen Depletion</h4>
+<ul>
+<li>Body burns glucose from recent meals</li>
+<li>Blood sugar fluctuates causing weakness, headache, irritability</li>
+<li>No change in appearance or capability</li>
+</ul>
+<h4>Days 3-7: Ketosis Onset</h4>
+<ul>
+<li>Body begins breaking down fat for energy (ketone production)</li>
+<li>Appetite suppression (ketones reduce hunger signals)</li>
+<li>Mental clarity may improve as body adjusts</li>
+<li>Weight loss accelerates (water loss and fat metabolism)</li>
+</ul>
+<h4>Weeks 2-4: Metabolic Adaptation</h4>
+<ul>
+<li>Basal metabolic rate drops 20-30% (body conserves energy)</li>
+<li>Behavior becomes lethargic—conserves calories</li>
+<li>Protein breakdown increases (muscle loss begins)</li>
+<li>Susceptibility to cold increases</li>
+</ul>
+<h4>Weeks 4+: Organ Damage</h4>
+<ul>
+<li>Heart rate and blood pressure drop</li>
+<li>Immune system severely compromised (disease susceptibility increases)</li>
+<li>Muscle loss accelerates (up to 0.5 pounds daily)</li>
+<li>Organ damage begins (heart, brain affected)</li>
+<li>Death risk increases significantly after 40-60 days of starvation</li>
+</ul>
+<h3>Minimal Adequate Intake</h3>
+<ul>
+<li><strong>Protein:</strong> Minimum 25-30g daily (prevents dangerous muscle loss)</li>
+<li><strong>Carbohydrates:</strong> 100-150g daily (prevents ketoacidosis and supports brain)</li>
+<li><strong>Fat:</strong> 10-15g daily (essential fatty acids for organ function)</li>
+<li><strong>Vitamin C:</strong> 10mg daily (prevents scurvy after 12+ weeks)</li>
+<li><strong>Iodized salt:</strong> Essential (prevents thyroid dysfunction)</li>
+</ul>
+<h3>Extended Survival Beyond 40 Days</h3>
+<ul>
+<li>Supplementing with foraged greens or fast-growing crops essential</li>
+<li>Even small amounts of fresh food dramatically improves survival</li>
+<li>Animal protein becomes critical (disease susceptibility rises without)</li>
+<li>Psychological support and community morale crucial—depression worsens outcome</li>
+</ul>
+<div class="warning">
+<p>CRITICAL: Malnourishment after starvation period causes organ damage not fully reversible. Refeeding must be careful—large meals after starvation can cause fatal complications (refeeding syndrome, organ failure). Introduce calories gradually over 2-4 weeks: day 1-7 increase to 500 additional calories; week 2 to 1,000 additional calories; week 3-4 to full normal diet. Prioritize nutrient-dense foods (bones broths, offal, fermented foods) over quantity, especially vitamin B and phosphorus-rich sources.</p>
+</div>
+</section>
+<section id="morale">
+<h2>Morale &amp; Food Psychology</h2>
+<p>Psychological factors significantly impact survival outcomes. Food management affects morale dramatically.</p>
+<h3>Preventing Food Conflict</h3>
+<ul>
+<li><strong>Transparency:</strong> Explain rationing system clearly; mystery breeds resentment</li>
+<li><strong>Fair distribution:</strong> Equal portions for equal work prevents jealousy</li>
+<li><strong>Community decision:</strong> Allow input on rationing decisions when possible</li>
+<li><strong>Avoid hoarding:</strong> Enforce strict rules against private food stockpiles</li>
+<li><strong>Theft penalties:</strong> Severe punishment for stealing food maintains order</li>
+</ul>
+<h3>Maintaining Food Quality</h3>
+<ul>
+<li><strong>Varied diet:</strong> Rotate foods weekly to prevent monotony despite limited options</li>
+<li><strong>Flavoring:</strong> Save spices/salt for important meals boosting morale</li>
+<li><strong>Presentation:</strong> Attractive plating improves satiety perception</li>
+<li><strong>Temperature:</strong> Hot meals provide psychological comfort and better digestion</li>
+<li><strong>Celebration meals:</strong> Occasional feast (even if small) maintains hope</li>
+</ul>
+<h3>Social Aspects of Eating</h3>
+<ul>
+<li><strong>Communal meals:</strong> Shared eating strengthens community bonds</li>
+<li><strong>Meal rituals:</strong> Predictable meal times provide psychological structure</li>
+<li><strong>Family meals:</strong> Keep families eating together when possible</li>
+<li><strong>Food preparation:</strong> Involve community in cooking—creates investment in outcome</li>
+</ul>
+<div class="info-box">
+<p>Psychological research on rationing shows morale peaks when individuals participate in food decisions and mealtimes are predictable. Communities practicing transparent, fair rationing report 30-40% better mental health outcomes compared to opaque systems. Involving all ages in planning meals and cooking creates psychological resilience despite physical hardship. Establish consistent meal times (e.g., 8am, noon, 6pm) within 15 minutes variance; predictability reduces stress hormones and improves digestion.</p>
+</div>
+</section>
+<section id="mistakes">
+<h2>Common Rationing Mistakes</h2>
+<ul>
+<li><strong>Unequal distribution:</strong> Different portions create conflict and reduce morale</li>
+<li><strong>Premature consumption:</strong> Eating supplies too quickly leaves gap at end of shortage</li>
+<li><strong>Ignoring nutrients:</strong> Calorie-only focus misses deficiency diseases</li>
+<li><strong>Excessive waste:</strong> Poor cooking and storage wastes precious supplies</li>
+<li><strong>No supplementation:</strong> Assuming rations enough ignores need for foraged/hunted foods</li>
+<li><strong>Neglecting children:</strong> Cutting children's portions first harms long-term survival</li>
+<li><strong>Inadequate salt:</strong> Iodine deficiency and electrolyte imbalance causes serious problems</li>
+<li><strong>Hoarding encouragement:</strong> Individuals hiding food destabilizes system and causes conflict</li>
+<li><strong>Ignoring special needs:</strong> Not accommodating pregnant/nursing/elderly leads to crisis</li>
+<li><strong>Stopping supplementation too early:</strong> Cutting back before shortage ends causes unnecessary suffering</li>
+</ul>
+</section>
+<section id="practical">
+<h2>Practical Implementation Guide</h2>
+<h3>Week 1: Inventory &amp; Planning</h3>
+<p><strong>Days 1-2:</strong></p>
+<ol>
+<li>List all available food: Pantry, freezer, garden, storage units, neighbors' shared supplies</li>
+<li>Record quantities: Weight in pounds or identify standard containers (1 can = 15 oz, 1 gallon = 8 lbs)</li>
+<li>Research caloric content: Use USDA FoodData Central online or keep printed calorie tables</li>
+<li>Calculate total available calories by multiplying quantity × calories per unit</li>
+<li>Document expiration dates; prioritize consuming items expiring within 30 days</li>
+</ol>
+<p><strong>Days 3-7:</strong></p>
+<ol start="6">
+<li>Estimate group size and shortage duration (be pessimistic: assume longest plausible shortage)</li>
+<li>Calculate daily per-person allocation: Total calories ÷ (people × duration in days)</li>
+<li>Identify foods providing critical micronutrients (vitamin C sources, iodized salt, protein)</li>
+<li>Create weekly menus ensuring varied diet and preventing monotony</li>
+<li>Establish cooking schedule and fuel requirements (critical in winter)</li>
+</ol>
+<h3>Week 2-4: Implementation &amp; Monitoring</h3>
+<p><strong>First 2 weeks of rationing:</strong></p>
+<ul>
+<li>Issue daily rations at consistent times (minimize handling and theft opportunities)</li>
+<li>Track consumption using simple log: date, people fed, calories consumed vs. allocated</li>
+<li>Monitor for spoilage, pest damage, or moisture issues weekly</li>
+<li>Adjust rations only if shortage duration estimate changes significantly</li>
+<li>Check for emerging micronutrient deficiency signs (fatigue, mood, physical changes)</li>
+</ul>
+<p><strong>Weekly adjustments:</strong></p>
+<ul>
+<li>Rotate stored foods to ensure FIFO consumption</li>
+<li>Vary weekly menus to prevent psychological fatigue</li>
+<li>Address emerging conflicts or concerns immediately</li>
+<li>Resupply supplementary foods (foraged, grown, hunted) weekly</li>
+<li>Review inventory weekly; adjust projections based on consumption patterns</li>
+</ul>
+<div class="tip">
+<p>Keep ration cards if rationing affects multiple families—each card shows daily allocation and sign-off when issued. This creates transparency and prevents disputes. Card system also enables quick identification of theft or unauthorized distribution. Simple index cards work; include name, date, calories issued, recipient signature.</p>
+</div>
+<h3>Managing Morale During Rationing</h3>
+<p><strong>Psychological checkpoints:</strong></p>
+<ul>
+<li><strong>Week 1-2:</strong> Excitement/denial phase—morale typically high despite rationing</li>
+<li><strong>Week 3-4:</strong> Frustration phase—small portions feel insufficient; fatigue sets in</li>
+<li><strong>Week 5-8:</strong> Adaptation phase—body and mind adjust; psychological struggle peaks</li>
+<li><strong>Week 8+:</strong> Resignation/despair risk if no end visible; hope becomes critical</li>
+</ul>
+<p><strong>Interventions by phase:</strong></p>
+<ul>
+<li><strong>Weeks 1-2:</strong> Educate about rationing necessity; establish transparent system</li>
+<li><strong>Weeks 3-4:</strong> Increase social aspects of meals; involve people in decision-making; small celebration meals</li>
+<li><strong>Weeks 5-8:</strong> Emphasize visible supplementation (gardening, foraging, hunting success); celebrate milestones</li>
+<li><strong>Week 8+:</strong> Project end date; start planning post-shortage activities; maintain community rituals</li>
+</ul>
+<div class="info-box">
+<p>Groups practicing communal cooking report 25% better morale than those preparing individual portions from rations. Shared cooking also reduces fuel usage (one fire vs. multiple) and enables batch cooking efficiency. Assigning rotating cooks maintains community engagement and prevents fatigue. Allow 2-3 hour notice to prepare—sudden meal time changes increase psychological stress.</p>
+</div>
+<h3>Water Management During Food Rationing</h3>
+<p>Often overlooked: water needs increase during rationing.</p>
+<ul>
+<li><strong>Baseline:</strong> 1 gallon per person daily (2-3 liters)</li>
+<li><strong>During rationing:</strong> Increase 10-15% (dried foods require more water for cooking and digestion)</li>
+<li><strong>Cold climate:</strong> 25-50% increase (dry air, heating fuel needs)</li>
+<li><strong>Heavy labor:</strong> 50% additional (sweating, dehydration risk)</li>
+<li><strong>Illness/injury:</strong> 25-50% additional (fever, wound healing needs)</li>
+</ul>
+<p>Total water calculation: (people × 1.2 gallons) × (days of shortage) = minimum storage needed. For 4 people, 30-day shortage: 4 × 1.2 × 30 = 144 gallons (1,100 pounds). Store in food-grade containers in cool locations.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting Common Rationing Problems</h2>
+<h3>Problem: Food Spoilage Despite Storage</h3>
+<p><strong>Signs:</strong> Mold, discoloration, odor, unusual appearance</p>
+<p><strong>Prevention (most effective):</strong></p>
+<ul>
+<li>Store in cool (55-65°F ideal), dry locations away from direct sunlight</li>
+<li>Use airtight containers for opened packages; keep dried goods in sealed bags</li>
+<li>Check weekly for pests, moisture, leaks</li>
+<li>Rotate oldest items to front for consumption</li>
+</ul>
+<p><strong>Recovery:</strong></p>
+<ul>
+<li>Discard visibly moldy items (mold toxins unsafe even if &quot;cut off&quot;)</li>
+<li>Salvage if only slight surface discoloration on canned goods (acid/salt-cured foods resist spoilage)</li>
+<li>Use spoiled items for compost, not human consumption</li>
+</ul>
+<h3>Problem: Hunger and Fatigue Escalating After Week 3</h3>
+<p><strong>Cause:</strong> Body adjustment to reduced calories; glycogen depletion; possible inadequate macronutrient balance</p>
+<p><strong>Solutions (immediate):</strong></p>
+<ul>
+<li>Ensure protein at each meal (beans, nuts, dried meat, powdered milk)</li>
+<li>Include fat in meals (oil, butter, nuts)—satiety improves significantly</li>
+<li>Increase meal frequency to 4-5 small meals vs. 3 large (blood sugar stability)</li>
+<li>Ensure adequate salt (electrolyte balance affects fatigue)</li>
+</ul>
+<p><strong>Long-term:</strong></p>
+<ul>
+<li>Supplement with foraged foods or gardening even if minimal</li>
+<li>Increase B-complex intake (whole grains, beans) for energy metabolism</li>
+<li>Allow light activity only (heavy exertion on reduced rations unsustainable)</li>
+</ul>
+<h3>Problem: Specific Micronutrient Deficiency Emerging</h3>
+<p><strong>Scurvy signs (bleeding gums, poor healing, depression after 8+ weeks):</strong></p>
+<ul>
+<li>Immediately increase vitamin C sources: Sprouted seeds, canned citrus, fermented vegetables</li>
+<li>If fresh unavailable: Powdered vitamin C supplements (500mg daily; 0.5g powder = 500mg)</li>
+<li>Sprouting routine: Jar 2 tablespoons seeds, rinse twice daily, eat when sprouted (5-7 days)</li>
+</ul>
+<p><strong>Anemia signs (shortness of breath, extreme fatigue, pale lips):</strong></p>
+<ul>
+<li>Increase iron-rich foods: Beans, lentils, dark leafy greens if available, red meat</li>
+<li>Include vitamin C with iron-rich meals (improves absorption)</li>
+<li>Cast iron cookware increases iron content of cooked foods (especially acidic foods)</li>
+</ul>
+<p><strong>Iodine deficiency signs (goiter—neck swelling, fatigue, cold intolerance after 12+ weeks):</strong></p>
+<ul>
+<li>Ensure all cooking uses iodized salt (1/4 teaspoon daily = adequate iodine)</li>
+<li>Sources if salt unavailable: Seaweed (1 teaspoon = 1,000+ mcg), seafood</li>
+<li>Critical: Cannot be corrected after prolonged deficiency; prevention essential</li>
+</ul>
+<h3>Problem: Community Conflict Over Rationing</h3>
+<p><strong>Prevention strongest approach:</strong></p>
+<ol>
+<li>Establish rationing system before it becomes necessary</li>
+<li>Communicate clearly: total available supply, duration, daily per-person amount</li>
+<li>Show calculations: allow people to verify math</li>
+<li>Involve representatives in monitoring; create oversight committee</li>
+<li>Establish strict consequences for theft/hoarding (enforcement critical)</li>
+</ol>
+<p><strong>If conflict emerges:</strong></p>
+<ul>
+<li>Address immediately; unresolved conflict destabilizes entire system</li>
+<li>Reaffirm fairness: show data proving equal distribution</li>
+<li>Increase transparency: allow community to observe storage and distribution</li>
+<li>Adjust if legitimate concern (e.g., child growth needs not met)</li>
+<li>Remove individuals threatening system (may require authority structures)</li>
+</ul>
+<h3>Problem: Energy/Morale Collapse After Week 4-5</h3>
+<p><strong>Causes:</strong> Psychological adaptation phase combined with physical decline</p>
+<p><strong>Interventions:</strong></p>
+<ul>
+<li>Establish daily rituals providing structure (consistent meal times, community meetings)</li>
+<li>Create visible progress markers: Mark calendar showing rationing end date; celebrate weekly milestones</li>
+<li>Involve people in supplementation (gardening, foraging, hunting) providing hope</li>
+<li>Allow individual expression through food preparation (limited variations within rations)</li>
+<li>Maintain hygiene/grooming standards (deterioration accelerates hopelessness)</li>
+<li>Establish evening gatherings with no food focus (conversation, games, music maintain morale)</li>
+</ul>
+<div class="warning">
+<p>Morale collapse into depression/hopelessness occurs predictably weeks 4-6 and increases death risk despite adequate calories. Historical rationing failures show communities without social structures and morale support experience 3-4x higher casualty rates. Physical survival requires calories; psychological survival requires community, hope, and dignity. Invest equivalent effort in both.</p>
+</div>
+</section>
+<section id="references">
+<h2>Quick Reference Table: Ration Planning</h2>
+<table><thead><tr><th scope="row">Scenario</th><th scope="row">Daily Calories/Person</th><th scope="row">Duration</th><th scope="row">Total Supply Needed (4 people)</th><th scope="row">Key Considerations</th></tr></thead><tbody><tr><td>Emergency (unexpected shortage starts today)</td><td>1,800</td><td>2 weeks</td><td>50,400 calories (30 lbs mixed)</td><td>Consume perishables first; establish system immediately</td></tr><tr><td>Planned shortage (known end date)</td><td>1,500</td><td>4 weeks</td><td>84,000 calories (50 lbs)</td><td>Balanced nutrition critical; supplement with foraged foods</td></tr><tr><td>Extended crisis (unknown duration)</td><td>1,200</td><td>12 weeks</td><td>201,600 calories (120 lbs)</td><td>Class-based rationing; aggressive supplementation required</td></tr><tr><td>Severe shortage (survival minimum)</td><td>1,000</td><td>16 weeks</td><td>224,000 calories (130 lbs)</td><td>High deficiency risk; supplement vitamin C, iodine immediately; monitor health closely</td></tr></tbody></table>
+<p><strong>Calculation method:</strong> Daily calories × people × days = total needed. Divide by average calories/pound of stored food (rice/beans ≈ 1,600 cal/lb; oil ≈ 4,000 cal/lb) to determine pounds needed.</p>
+</section>
+<section id="communal-kitchen">
+<h2>Communal Kitchen Setup &amp; Management</h2>
+<p>When individual rationing transitions to community feeding, a communal kitchen becomes the operational hub. This section covers organization for communities of 50-500+ people.</p>
+<h3>Kitchen Design and Layout</h3>
+<p>Efficient kitchen layout follows food flow: storage → preparation → cooking → plating → serving → cleanup. Linear arrangement minimizes backtracking and contamination risk.</p>
+<p><strong>Functional Areas (for community of 200 people):</strong></p>
+<ul>
+<li><strong>Storage Area (12-20 sq meters):</strong> Dry goods storage (shelves, bins), cool storage (root cellar or cooled room 10-15°C). Temperature control is essential—spoilage represents major loss.</li>
+<li><strong>Preparation Area (20-30 sq meters):</strong> Vegetable washing and cutting station. Multiple cutting tables allow parallel processing.</li>
+<li><strong>Cooking Area (20-40 sq meters):</strong> Large cooking vessels (80-100L kettles), burners or ovens. 3-4 large pots handle bulk preparation. Adequate ventilation prevents heat buildup.</li>
+<li><strong>Plating/Portioning (15-20 sq meters):</strong> Clean area for plating, adding garnishes. Separate from raw preparation to prevent cross-contamination.</li>
+<li><strong>Serving Area (10-15 sq meters):</strong> Counter with warming equipment, serving utensils.</li>
+<li><strong>Cleanup Area (15-20 sq meters):</strong> Dishwashing station with running water, drying racks.</li>
+<li><strong>Dining Area:</strong> Tables and seating for 10-20% of community at any time. Staggered seatings maximize capacity.</li>
+</ul>
+<div class="info-box">
+<p><strong>Key Point:</strong> Communal kitchens must handle 150-200% daily food volume—meals plus prep for next day and inventory management. Adequate space prevents bottlenecks and reduces labor stress.</p>
+</div>
+<h3>Essential Equipment for Bulk Cooking</h3>
+<p><strong>Cooking Equipment (minimum for 200 people):</strong></p>
+<ul>
+<li>3-4 large kettles (80-100L capacity) for soups, stews, boiling grain</li>
+<li>3-4 large baking vessels (sheet pans, roasting vessels) for oven cooking</li>
+<li>Industrial burners or cooking surface (6-8 burner capacity minimum)</li>
+<li>Oven with minimum 3-4 shelf capacity</li>
+<li>Grain mill for flour production (if no commercial flour available)</li>
+<li>Vegetable cutting equipment: knives, cutting boards, mandoline or slicer</li>
+</ul>
+<p><strong>Processing Equipment:</strong></p>
+<ul>
+<li>Food scale for ingredient measurement (minimum 10kg capacity)</li>
+<li>Large mixing vessels (20-40L capacity)</li>
+<li>Thermometer for food temperature monitoring</li>
+<li>Large utensils: spoons, slotted spoons, tongs, measuring cups</li>
+</ul>
+<p><strong>Safety Equipment:</strong></p>
+<ul>
+<li>Thermometer for core temperature measurement</li>
+<li>First aid kit for kitchen injuries</li>
+<li>Fire extinguisher (Class ABC) near cooking area</li>
+<li>Separate cutting boards (raw and cooked items)</li>
+<li>Hand washing station with soap and clean towels</li>
+</ul>
+<h3>Kitchen Staffing and Workflow</h3>
+<p><strong>Staffing Levels (for 200-person community):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Daily Hours</th>
+<th>People Required</th>
+<th>Key Responsibilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kitchen Manager</td>
+<td>10 hours</td>
+<td>1</td>
+<td>Planning, coordination, quality control, inventory</td>
+</tr>
+<tr>
+<td>Prep Workers</td>
+<td>6 hours each</td>
+<td>2-3</td>
+<td>Vegetable washing/cutting, ingredient measurement</td>
+</tr>
+<tr>
+<td>Cooks</td>
+<td>6 hours each</td>
+<td>2-3</td>
+<td>Cooking, heating, timing, plating</td>
+</tr>
+<tr>
+<td>Serving Staff</td>
+<td>4 hours each</td>
+<td>2-3</td>
+<td>Serving meals, portion control</td>
+</tr>
+<tr>
+<td>Cleanup Workers</td>
+<td>6 hours each</td>
+<td>2-3</td>
+<td>Dishwashing, kitchen sanitation</td>
+</tr>
+</tbody>
+</table>
+<h3>Bulk Cooking Techniques</h3>
+<p><strong>Recipe Scaling Principles:</strong> Most ingredients scale linearly—double the recipe, double quantities. However, seasonings (salt, spices) may require less when scaling up; add gradually and taste.</p>
+<p><strong>Scaling Method:</strong></p>
+<ol>
+<li>Start with tested household recipe (makes 6-8 servings)</li>
+<li>Calculate individual serving size (recipe total weight ÷ servings)</li>
+<li>Calculate total weight needed for community (serving size × number of people)</li>
+<li>Calculate scaling factor: (needed weight) ÷ (original recipe weight)</li>
+<li>Multiply each ingredient by scaling factor</li>
+<li>Adjust seasonings down by 15-20% from linear calculation; taste and adjust gradually</li>
+</ol>
+<p><strong>Batch Cooking for Consistency:</strong> When cooking for 200+ people, divide into 2-3 batches in separate kettles rather than one enormous pot. Each batch is more uniform in quality and cooking time. Combine batches before plating.</p>
+<p><strong>Timing Strategy:</strong> Build meal construction backwards from service time:</p>
+<ul>
+<li>Service time: 12:00 PM</li>
+<li>Plating begins: 11:50 AM (10 minutes for 200 servings)</li>
+<li>Cooking finishes: 11:45 AM</li>
+<li>Cooking begins: Varies by dish (45 minutes for soup, 60 minutes for stew)</li>
+<li>Prep must be done: 15-20 minutes before cooking begins</li>
+</ul>
+<h3>Staple Bulk Recipes</h3>
+<p><strong>Basic Grain Porridge (serves 100):</strong></p>
+<ul>
+<li>12kg whole grain (oats, barley, wheat berries)</li>
+<li>60L water</li>
+<li>0.5kg salt</li>
+<li>Optional: 2kg dried fruit, honey or sweetener</li>
+<li>Cook in 4 kettles × 3L each; cook 45-60 minutes until soft</li>
+<li>Add salt at halfway point; stir regularly to prevent sticking</li>
+</ul>
+<p><strong>Basic Vegetable Stew (serves 100):</strong></p>
+<ul>
+<li>10kg root vegetables (potatoes, carrots, turnips—mixed)</li>
+<li>5kg onions</li>
+<li>30L vegetable or bone stock</li>
+<li>2kg dried beans (cooked separately in advance)</li>
+<li>50g salt, herbs to taste</li>
+<li>Cook in 4 kettles; simmer 45-60 minutes until tender</li>
+<li>Yield: Approximately 120-130 liters (1.2-1.3L per serving)</li>
+</ul>
+<p><strong>Basic Bean/Legume Soup (serves 100):</strong></p>
+<ul>
+<li>6kg dried beans (soaked overnight)</li>
+<li>30L water</li>
+<li>4kg onions, diced</li>
+<li>3kg carrots, diced</li>
+<li>2kg celery, diced</li>
+<li>50g salt, herbs</li>
+<li>Cook in 4 kettles; simmer 90-120 minutes until beans are soft</li>
+<li>Extremely nutritious and protein-rich; staple for food security</li>
+</ul>
+<div class="info-box">
+<p><strong>Key Point:</strong> During food security events, minimize complex recipes. Focus on simple combinations of grain and legume (complete protein), vegetables, and salt. These store well, cook predictably at volume, and provide reliable nutrition for extended periods.</p>
+</div>
+<h3>Outdoor Cooking Over Fire</h3>
+<p>If kitchens are unavailable, large iron kettles (30-50L capacity) can be suspended over fire on metal tripods. Water takes 30-45 minutes to boil depending on fire intensity. Stews and soups work well; requires constant stirring. Two people can manage 3-4 kettles simultaneously.</p>
+</section>
+<section id="fair-distribution">
+<h2>Fair Distribution Systems</h2>
+<p>Equitable food distribution is critical for community morale and fairness. Multiple systems exist; communities should choose based on size, resources, and values. Transparency is essential—all members must understand allocation systems.</p>
+<h3>Ration Card System</h3>
+<p><strong>Concept:</strong> Each community member receives ration card specifying daily allowance. Cards are presented at serving line; server provides allocated portion. This ensures everyone receives equal nutrition.</p>
+<p><strong>Implementation:</strong></p>
+<ol>
+<li><strong>Design Cards:</strong> Simple index cards listing daily calories and/or portions. Cards can be color-coded by age (different nutritional needs for children vs. adults).</li>
+<li><strong>Distribution Protocol:</strong> Members present cards at serving line. Server verifies identity and provides allocated portion. Cards collected and reset daily.</li>
+<li><strong>Portion Sizes:</strong> Age/activity-based portions:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Daily Calories</th>
+<th>Portion Guidelines</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Children (5-12 years)</td>
+<td>1800-2000</td>
+<td>50% adult portion</td>
+</tr>
+<tr>
+<td>Adolescents (13-18 years)</td>
+<td>2200-2600</td>
+<td>75% adult portion</td>
+</tr>
+<tr>
+<td>Women (sedentary)</td>
+<td>2000-2200</td>
+<td>1.0 portion</td>
+</tr>
+<tr>
+<td>Men (sedentary)</td>
+<td>2400-2600</td>
+<td>1.2 portions</td>
+</tr>
+<tr>
+<td>Heavy labor workers</td>
+<td>3000-3500</td>
+<td>1.5 portions</td>
+</tr>
+<tr>
+<td>Pregnant/nursing women</td>
+<td>2500-2800</td>
+<td>1.25 portions</td>
+</tr>
+<tr>
+<td>Elderly (65+)</td>
+<td>1800-2000</td>
+<td>0.9 portions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Advantages:</strong> Simple, transparent, prevents hoarding, ensures all members receive adequate nutrition. <strong>Disadvantages:</strong> requires accurate card management, doesn't allow for individual preference.</p>
+<h3>Needs-Based Allocation System</h3>
+<p><strong>Concept:</strong> Portions allocated based on individual circumstances (pregnancy, nursing, illness, physical labor demands). More complex than ration cards but allows flexibility.</p>
+<p><strong>Implementation:</strong></p>
+<ol>
+<li><strong>Assessment Phase:</strong> Community council evaluates each member for special circumstances (pregnancy, chronic illness, intensive labor, underweight conditions).</li>
+<li><strong>Allocation Categories:</strong> Basic, enhanced, intensive; members moved between categories as circumstances change.</li>
+<li><strong>Distribution Method:</strong> Members present themselves or special cards indicating category; server provides appropriate portion.</li>
+<li><strong>Ongoing Adjustment:</strong> Council reviews allocations monthly; adjusts based on changes.</li>
+</ol>
+<p><strong>Advantages:</strong> Responsive to actual needs, supports vulnerable members, flexible. <strong>Disadvantages:</strong> requires more administration, potential for favoritism, more complex to manage at scale.</p>
+<h3>Open Abundance System</h3>
+<p><strong>Concept:</strong> Meals served without quantity restrictions; members take what they need. Works best when food is abundant and community culture supports fair self-serving.</p>
+<p><strong>Implementation:</strong></p>
+<ol>
+<li><strong>Serving Setup:</strong> Display food in serving vessels with large spoons; members move through line with containers and fill as desired.</li>
+<li><strong>Social Enforcement:</strong> Community norms discourage excessive taking. Peer pressure maintains fairness.</li>
+<li><strong>Backup Rationing:</strong> If supplies decline, system shifts to ration cards. Clear trigger (food supplies drop below 20-day inventory) initiates switch.</li>
+</ol>
+<p><strong>Advantages:</strong> Minimal administration, psychologically positive, respects autonomy. <strong>Disadvantages:</strong> vulnerable to hoarding, requires strong community values and monitoring.</p>
+<h3>Work-Credit System</h3>
+<p><strong>Concept:</strong> Food access tied to community work contributions. Members who contribute more receive enhanced portions or specialty foods. Motivates participation and rewards effort.</p>
+<p><strong>Implementation:</strong></p>
+<ol>
+<li><strong>Work Classification:</strong> Essential roles (cooking, healthcare, security) earn standard portion plus supplements. Additional work (3+ hours/week beyond essential role) earns food credits.</li>
+<li><strong>Credit Conversion:</strong> Credits buy specialty foods from community pantry. 10 credits = 1 specialty portion.</li>
+<li><strong>Transparent Accounting:</strong> Work hours and credits tracked publicly; members view their balance daily.</li>
+</ol>
+<p><strong>Advantages:</strong> Motivates work participation, recognizes contributions. <strong>Disadvantages:</strong> complex administration, can create inequality, may not support disabled/elderly equitably.</p>
+<div class="info-box">
+<p><strong>Key Point:</strong> Most communities use hybrid systems: basic ration cards for all (ensuring security), with needs-based enhancements for vulnerable members, and work-credit supplements for additional effort. This balances security with fairness and motivation.</p>
+</div>
+</section>
+<section id="food-safety-scale">
+<h2>Food Safety at Community Scale</h2>
+<p>Foodborne illness is serious at community scale. Outbreaks sicken dozens and overwhelm limited healthcare resources. Prevention through rigorous protocols is essential.</p>
+<h3>Temperature Control and Storage</h3>
+<p><strong>Time-Temperature Principle:</strong> Bacterial growth is temperature-dependent. Danger zone is 5-60°C (41-140°F); bacteria multiply rapidly in this range.</p>
+<p><strong>Storage Protocol:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Food Type</th>
+<th>Ideal Storage Temp</th>
+<th>Storage Duration</th>
+<th>Spoilage Signs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cooked Foods</td>
+<td>Above 60°C (hot hold) or below 5°C (refrigerated)</td>
+<td>2-4 hours hot; 3-4 days refrigerated</td>
+<td>Odor, visible mold, slime</td>
+</tr>
+<tr>
+<td>Fresh Vegetables</td>
+<td>5-10°C (cool, moist)</td>
+<td>7-21 days depending on type</td>
+<td>Soft spots, visible rot, sprouting</td>
+</tr>
+<tr>
+<td>Grains/Legumes</td>
+<td>10-15°C, dry (&lt;12% moisture)</td>
+<td>6-12 months</td>
+<td>Insects, musty smell, discoloration</td>
+</tr>
+<tr>
+<td>Root Crops</td>
+<td>0-5°C, moderate humidity</td>
+<td>1-6 months depending on type</td>
+<td>Soft spots, sprouting, mold</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cooked Food Cooling:</strong> Hot foods must cool from 60°C to 20°C within 2 hours. Use shallow pans, ice baths, and air circulation to accelerate cooling. Never allow large batches to cool at room temperature.</p>
+<h3>Sanitation and Hygiene</h3>
+<p><strong>Hand Hygiene Protocol:</strong> Hands are primary disease vector. Kitchen staff must wash hands:</p>
+<ul>
+<li>At start of shift</li>
+<li>After touching face, hair, or body</li>
+<li>After using toilet</li>
+<li>After handling raw foods (especially meat, eggs)</li>
+<li>Between handling different foods</li>
+</ul>
+<p><strong>Hand Washing Procedure:</strong> Wet hands, apply soap, rub all surfaces for 20 seconds minimum, rinse thoroughly. Air dry or use clean towels (cloth towels must be washed daily).</p>
+<p><strong>Equipment Sanitation:</strong> Separate cutting boards for raw and cooked foods. Wash all equipment immediately after use. Sanitize high-touch surfaces with diluted bleach solution (1 part bleach to 9 parts water) daily.</p>
+<h3>Cross-Contamination Prevention</h3>
+<p><strong>Raw Food Handling:</strong> Raw animal products carry pathogenic bacteria. Prevent contact with ready-to-eat foods:</p>
+<ul>
+<li>Cook raw meat to minimum safe internal temperature</li>
+<li>Never place cooked meat back on surface that held raw meat without sanitizing</li>
+<li>Keep raw foods separated physically and in storage</li>
+<li>Use separate cutting boards and utensils for raw foods</li>
+</ul>
+<p><strong>Minimum Safe Internal Temperatures:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Food Type</th>
+<th>Temperature</th>
+<th>Verification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Poultry</td>
+<td>74°C (165°F)</td>
+<td>Thermometer at thickest point</td>
+</tr>
+<tr>
+<td>Beef/Pork (whole cuts)</td>
+<td>63°C (145°F)</td>
+<td>Thermometer at center</td>
+</tr>
+<tr>
+<td>Beef/Pork (ground)</td>
+<td>71°C (160°F)</td>
+<td>Thermometer at multiple points</td>
+</tr>
+<tr>
+<td>Eggs</td>
+<td>63°C (145°F) yolk/white</td>
+<td>No runny portions</td>
+</tr>
+<tr>
+<td>Fish</td>
+<td>63°C (145°F) at thickest point</td>
+<td>Flesh opaque, flakes easily</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Produce Safety:</strong> Wash all produce under running water. Use separate sink from meat washing. Discard any produce with visible mold, rot, or insect damage.</p>
+<h3>Outbreak Response</h3>
+<p><strong>Recognizing Foodborne Illness Outbreak:</strong> Multiple people (3+) experiencing same gastrointestinal symptoms within 72 hours of consuming same meal indicates possible outbreak. Symptoms: nausea, vomiting, diarrhea, abdominal pain, fever.</p>
+<p><strong>Immediate Response:</strong></p>
+<ol>
+<li><strong>Identify Source Meal:</strong> Ask affected individuals which meals they consumed; note timing.</li>
+<li><strong>Stop Serving Source:</strong> Immediately cease serving suspected food.</li>
+<li><strong>Sample Preservation:</strong> If possible, preserve samples of suspect food for analysis.</li>
+<li><strong>Healthcare Support:</strong> Provide fluids and electrolyte solutions to affected individuals. Monitor for severe dehydration.</li>
+<li><strong>Sanitation Deep-Clean:</strong> Sanitize all food preparation surfaces, equipment, and utensils thoroughly.</li>
+<li><strong>Investigation:</strong> Work with health authorities to identify causative organism and prevent recurrence.</li>
+</ol>
+<div class="warning">
+<p>Foodborne illness can be life-threatening, especially for vulnerable populations (children, elderly, immunocompromised). Rigorous food safety is a critical health protection measure.</p>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="agriculture.html">Agriculture &amp; Gardening</a>
+<a href="food-preservation.html">Food Preservation</a>
+<a href="foraging-hunting.html">Foraging, Hunting &amp; Fishing</a>
+<a href="insect-farming.html">Insect Farming &amp; Protein</a>
+<a href="trapping-snares.html">Trapping &amp; Snares</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

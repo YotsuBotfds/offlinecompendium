@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Knowledge Compendium - Feature Graphic Generator</title>
+    <!-- html2canvas bundled locally -->
+    <script src="html2canvas.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #0a1a0a;
+            color: #f5f0e8;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 28px;
+            color: #d4a574;
+        }
+
+        .subtitle {
+            margin-bottom: 30px;
+            color: #a8a099;
+            font-size: 14px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .variant-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: 2px solid #d4a574;
+            background: transparent;
+            color: #d4a574;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #d4a574;
+            color: #1a2e1a;
+        }
+
+        button.active {
+            background: #d4a574;
+            color: #1a2e1a;
+        }
+
+        .export-button {
+            border-color: #2d7a4a;
+            color: #2d7a4a;
+            margin-left: auto;
+        }
+
+        .export-button:hover {
+            background: #2d7a4a;
+            color: #f5f0e8;
+        }
+
+        /* Feature graphic canvas container */
+        .preview-section {
+            margin-bottom: 30px;
+        }
+
+        .preview-label {
+            font-size: 12px;
+            color: #a8a099;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #featureGraphic {
+            width: 1024px;
+            height: 500px;
+            background: linear-gradient(135deg, #1a2e1a 0%, #2d2416 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 1px solid #3a4a3a;
+        }
+
+        /* Topographic pattern overlay */
+        .topo-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        /* Content layout */
+        .graphic-content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+        }
+
+        /* Left side: App icon and branding */
+        .app-branding {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex: 0 0 auto;
+        }
+
+        .app-icon {
+            width: 140px;
+            height: 140px;
+            background: color-mix(in srgb, var(--accent) 15%, transparent);
+            border: 3px solid var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            flex-shrink: 0;
+        }
+
+        .app-icon.variant-minimal {
+            display: none;
+        }
+
+        .app-icon.variant-bold {
+            width: 160px;
+            height: 160px;
+            font-size: 100px;
+            border-width: 4px;
+        }
+
+        .branding-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .branding-text.variant-minimal {
+            display: none;
+        }
+
+        .app-name {
+            font-size: 48px;
+            font-weight: 700;
+            color: #f5f0e8;
+            letter-spacing: 3px;
+            line-height: 1;
+        }
+
+        .app-name.variant-bold {
+            font-size: 56px;
+            letter-spacing: 4px;
+        }
+
+        .app-tagline-subtitle {
+            font-size: 14px;
+            color: #a8a099;
+            letter-spacing: 0.5px;
+        }
+
+        .app-tagline-subtitle.variant-bold {
+            font-size: 15px;
+            color: #d4a574;
+            font-weight: 600;
+        }
+
+        /* Center-right: Main tagline */
+        .main-message {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+            margin-right: 30px;
+        }
+
+        .main-message.variant-minimal {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .tagline {
+            font-size: 36px;
+            font-weight: 700;
+            color: #f5f0e8;
+            line-height: 1.2;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .tagline.variant-minimal {
+            font-size: 42px;
+        }
+
+        .tagline.variant-bold {
+            font-size: 44px;
+            color: #d4a574;
+            font-weight: 800;
+        }
+
+        .sub-tagline {
+            font-size: 16px;
+            color: #a8a099;
+            font-weight: 500;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .sub-tagline.variant-minimal {
+            font-size: 15px;
+        }
+
+        .sub-tagline.variant-bold {
+            font-size: 18px;
+            color: #d4a574;
+            font-weight: 600;
+        }
+
+        /* Decorative icons */
+        .decorative-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .decorative-icons.variant-minimal {
+            display: none;
+        }
+
+        .icon-badge {
+            position: absolute;
+            font-size: 32px;
+            opacity: 0.25;
+            transition: all 0.3s ease;
+        }
+
+        .icon-badge:nth-child(1) {
+            top: 30px;
+            right: 60px;
+        }
+
+        .icon-badge:nth-child(2) {
+            bottom: 40px;
+            left: 50px;
+        }
+
+        .icon-badge:nth-child(3) {
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+        }
+
+        .icon-badge.variant-bold {
+            font-size: 48px;
+            opacity: 0.35;
+        }
+
+        /* Responsive adjustments for preview */
+        @media (max-width: 1200px) {
+            #featureGraphic {
+                width: calc(100vw - 60px);
+                height: calc((100vw - 60px) * 0.4883);
+            }
+
+            .graphic-content {
+                padding: 30px;
+            }
+
+            .app-branding {
+                gap: 20px;
+            }
+
+            .app-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 60px;
+            }
+
+            .app-name {
+                font-size: 32px;
+                letter-spacing: 2px;
+            }
+
+            .tagline {
+                font-size: 24px;
+            }
+
+            .sub-tagline {
+                font-size: 13px;
+            }
+        }
+
+        /* Info section */
+        .info-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(45, 36, 22, 0.4);
+            border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+            border-radius: 8px;
+            font-size: 13px;
+            color: #a8a099;
+        }
+
+        .info-section h3 {
+            color: #d4a574;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .info-section ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .info-section li {
+            margin: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .info-section li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #d4a574;
+        }
+
+        /* Loading state */
+        .export-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .status-message {
+            font-size: 12px;
+            color: #2d7a4a;
+            margin-left: 15px;
+            min-width: 150px;
+        }
+
+        .status-message.hidden {
+            display: none;
+        }
+
+        .status-message.error {
+            color: #d44a4a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Offline Knowledge Compendium</h1>
+        <p class="subtitle">Google Play Store Feature Graphic Generator (1024×500px)</p>
+
+        <div class="controls">
+            <div class="variant-buttons">
+                <button class="variant-btn active" data-variant="standard">Standard</button>
+                <button class="variant-btn" data-variant="minimal">Minimal</button>
+                <button class="variant-btn" data-variant="bold">Bold</button>
+            </div>
+            <button class="export-button" id="exportBtn">Export as PNG</button>
+            <div class="status-message hidden" id="statusMessage"></div>
+        </div>
+
+        <div class="preview-section">
+            <div class="preview-label">Preview (actual dimensions)</div>
+            <div id="featureGraphic">
+                <!-- Topographic pattern -->
+                <svg class="topo-pattern" viewBox="0 0 1024 500" preserveAspectRatio="none">
+                    <defs>
+                        <pattern id="topoPattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                            <path d="M 0 40 Q 20 30 40 40 T 80 40" fill="none" stroke="#f5f0e8" stroke-width="0.5"/>
+                            <path d="M 0 50 Q 20 45 40 50 T 80 50" fill="none" stroke="#f5f0e8" stroke-width="0.3"/>
+                            <circle cx="25" cy="60" r="15" fill="none" stroke="#f5f0e8" stroke-width="0.4"/>
+                            <circle cx="65" cy="30" r="10" fill="none" stroke="#f5f0e8" stroke-width="0.3"/>
+                        </pattern>
+                    </defs>
+                    <rect width="1024" height="500" fill="url(#topoPattern)"/>
+                </svg>
+
+                <!-- Decorative icons (standard & bold) -->
+                <div class="decorative-icons" id="decorativeIcons">
+                    <div class="icon-badge">🔥</div>
+                    <div class="icon-badge">🏥</div>
+                    <div class="icon-badge">⚒️</div>
+                </div>
+
+                <!-- Main content -->
+                <div class="graphic-content">
+                    <!-- Left: App branding -->
+                    <div class="app-branding">
+                        <div class="app-icon" id="appIcon">🛡️</div>
+                        <div class="branding-text">
+                            <div class="app-name" id="appName">OKC</div>
+                            <div class="app-tagline-subtitle" id="appSubtitle">Offline Knowledge Compendium</div>
+                        </div>
+                    </div>
+
+                    <!-- Center/Right: Main message -->
+                    <div class="main-message">
+                        <div class="tagline" id="mainTagline">480 Offline Survival Guides</div>
+                        <div style="font-size: 14px; color: #8b7355; letter-spacing: 0.5px;">Educational Reference Material</div>
+                        <div class="sub-tagline" id="subTagline">From Water Purification to Community Building</div>
+                        <div style="font-size: 12px; color: #c0b5a0; letter-spacing: 0.5px; margin-top: 4px;">Not a substitute for professional training</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>About This Tool</h3>
+            <ul>
+                <li>Exact dimensions: 1024×500px (Google Play Store feature graphic)</li>
+                <li>Choose between 3 design variations</li>
+                <li>Export as high-quality PNG ready for upload</li>
+                <li>Uses canvas rendering for pixel-perfect output</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const variants = {
+            standard: {
+                appIcon: '🛡️',
+                taglineSize: 36,
+                subTaglineSize: 16,
+                showIcons: true,
+                showBranding: true,
+                accentColor: false
+            },
+            minimal: {
+                appIcon: null,
+                taglineSize: 42,
+                subTaglineSize: 15,
+                showIcons: false,
+                showBranding: false,
+                accentColor: false
+            },
+            bold: {
+                appIcon: '🛡️',
+                taglineSize: 44,
+                subTaglineSize: 18,
+                showIcons: true,
+                showBranding: true,
+                accentColor: true
+            }
+        };
+
+        const elements = {
+            featureGraphic: document.getElementById('featureGraphic'),
+            appIcon: document.getElementById('appIcon'),
+            appName: document.getElementById('appName'),
+            appSubtitle: document.getElementById('appSubtitle'),
+            mainTagline: document.getElementById('mainTagline'),
+            subTagline: document.getElementById('subTagline'),
+            decorativeIcons: document.getElementById('decorativeIcons'),
+            variantBtns: document.querySelectorAll('.variant-btn'),
+            exportBtn: document.getElementById('exportBtn'),
+            statusMessage: document.getElementById('statusMessage')
+        };
+
+        let currentVariant = 'standard';
+
+        // Variant switching
+        elements.variantBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                elements.variantBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                currentVariant = btn.dataset.variant;
+                applyVariant(currentVariant);
+            });
+        });
+
+        function applyVariant(variant) {
+            const config = variants[variant];
+            const graphic = elements.featureGraphic;
+            const branding = graphic.querySelector('.app-branding');
+            const brandingText = graphic.querySelector('.branding-text');
+            const icons = graphic.querySelector('.decorative-icons');
+
+            // Remove all variant classes
+            graphic.className = 'graphic-content';
+            graphic.classList.add(`variant-${variant}`);
+
+            // Apply to all elements
+            Array.from(graphic.querySelectorAll('[id]')).forEach(el => {
+                el.className = (el.className || '').replace(/variant-\w+/g, '');
+                el.classList.add(`variant-${variant}`);
+            });
+
+            // Update icon visibility
+            if (config.appIcon === null) {
+                elements.appIcon.parentElement.style.display = 'none';
+                brandingText.style.display = 'none';
+            } else {
+                elements.appIcon.parentElement.style.display = 'flex';
+                brandingText.style.display = 'flex';
+            }
+
+            // Update icon display
+            if (config.showIcons) {
+                icons.style.display = 'block';
+            } else {
+                icons.style.display = 'none';
+            }
+
+            // Update accent color for bold variant
+            if (config.accentColor) {
+                elements.mainTagline.style.color = '#d4a574';
+                elements.subTagline.style.color = '#d4a574';
+            } else {
+                elements.mainTagline.style.color = '#f5f0e8';
+                elements.subTagline.style.color = '#a8a099';
+            }
+        }
+
+        // Export functionality
+        elements.exportBtn.addEventListener('click', async () => {
+            elements.exportBtn.disabled = true;
+            elements.statusMessage.classList.remove('hidden', 'error');
+            elements.statusMessage.textContent = 'Rendering...';
+
+            try {
+                const canvas = await html2canvas(elements.featureGraphic, {
+                    scale: 2,
+                    backgroundColor: null,
+                    logging: false,
+                    useCORS: true,
+                    allowTaint: true,
+                    width: 1024,
+                    height: 500
+                });
+
+                // Create download link
+                const link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = `compendium-feature-graphic-${currentVariant}-${new Date().toISOString().split('T')[0]}.png`;
+                link.click();
+
+                elements.statusMessage.textContent = 'Exported successfully!';
+                setTimeout(() => {
+                    elements.statusMessage.classList.add('hidden');
+                }, 3000);
+            } catch (error) {
+                elements.statusMessage.classList.add('error');
+                elements.statusMessage.textContent = 'Export failed: ' + error.message;
+                console.error('Export error:', error);
+            } finally {
+                elements.exportBtn.disabled = false;
+            }
+        });
+
+        // Initialize with standard variant
+        applyVariant('standard');
+    </script>
+
+    <div style="text-align: center; padding: 2rem 1rem; margin-top: 2rem; border-top: 1px solid color-mix(in srgb, var(--accent) 20%, transparent); font-size: 0.85rem; color: var(--muted);">
+        <a href="../disclaimer.html" style="color: #d4a574; text-decoration: none;">Important Disclaimer</a> · <a href="../terms.html" style="color: #d4a574; text-decoration: none;">Terms of Use</a>
+    </div>
+</body>
+</html>

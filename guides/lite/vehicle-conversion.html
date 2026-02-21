@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/vehicle-conversion.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vehicle Conversion</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Power Generation</span> ›
+<span>Vehicle Conversion</span>
+</div>
+
+<div class="warning">
+<strong>Safety Notice:</strong> This guide covers activities that carry some risk. Follow all safety precautions carefully.
+</div>
+
+<h1>Vehicle Conversion</h1>
+<p class="subtitle">Engine swaps, fuel conversion (gasoline to wood gas, biodiesel, alcohol), and electric conversion basics</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~12 min</span>
+<span>Updated: 2026-02-16</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#introduction">Overview: What Is Vehicle Conversion?</a></li>
+<li><a href="#engine-swap">Engine Swap Fundamentals</a></li>
+<li><a href="#compatibility">Engine Compatibility Analysis</a></li>
+<li><a href="#mounting">Engine Mounting &amp; Mounts</a></li>
+<li><a href="#fuel-systems">Fuel System Adaptation</a></li>
+<li><a href="#cooling">Cooling System Integration</a></li>
+<li><a href="#electrical">Electrical System Modifications</a></li>
+<li><a href="#wood-gas">Wood Gas Conversion</a></li>
+<li><a href="#biodiesel">Biodiesel Fuel Preparation</a></li>
+<li><a href="#ethanol">Ethanol Fuel Conversion</a></li>
+<li><a href="#electric">Electric Vehicle Conversion Basics</a></li>
+<li><a href="#planning">Conversion Planning &amp; Feasibility Assessment</a></li>
+<li><a href="#maintenance">Maintenance Schedule After Conversion</a></li>
+<li><a href="#troubleshooting">Troubleshooting Common Conversion Problems</a></li>
+<li><a href="#mistakes">Common Mistakes to Avoid</a></li>
+<li><a href="#safety">Safety Considerations for Converted Vehicles</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>Multiple Conversion Hazards:</strong> Vehicle conversions introduce multiple serious risks if performed improperly: (1) <strong>Engine Alignment Failure:</strong> Misaligned engine mounts or inadequate flexplate fastening cause catastrophic vibration, transmission failure, and loss of vehicle control. (2) <strong>Electrical Fire:</strong> Incorrect wiring or undersized battery cables cause overheating, insulation melt, and vehicle fire—difficult to extinguish with standard fire extinguishers. (3) <strong>Methanol/Ethanol Toxicity:</strong> Alternative fuel conversions (E85, methanol) require sealed fuel systems. Vapor inhalation causes neurological damage and blindness. Skin contact causes chemical burns. (4) <strong>EV Electrocution:</strong> Electric vehicle conversions use 400V+ battery systems. Contact causes cardiac arrest. High-voltage systems remain energized even when powered off; always use proper lockout procedures. Only qualified technicians should perform major conversions. Improper work voids insurance and creates liability.</p>
+</div>
+<!-- SVG-TODO: Engine bay layout with mount points diagram, cooling system flow diagram, fuel system pressure regulator schematic, EV battery pack arrangement, transmission torque multiplication chart, wood gas gasifier cross-section diagram -->
+<section id="introduction">
+<h2>Overview: What Is Vehicle Conversion?</h2>
+<p>Vehicle conversion expands the utility and lifespan of aging vehicles by adapting them to different powerplants, fuels, or power sources. In survival contexts—where fuel supply may be unpredictable, new vehicles unavailable, and repair skills paramount—conversion unlocks options unavailable through standard maintenance.</p>
+<p>Four main conversion types serve survival contexts:</p>
+<ol>
+<li><strong>Engine swaps</strong> — Replace worn engine with newer/different type (same fuel family or compatible fuel system)</li>
+<li><strong>Fuel conversion</strong> — Adapt vehicle to burn alternative fuel (wood gas, biodiesel, ethanol, methanol)</li>
+<li><strong>Electrical upgrades</strong> — Improve charging, ignition, accessories without replacing engine</li>
+<li><strong>Electric powertrain conversion</strong> — Replace internal combustion engine entirely with electric motor and battery pack</li>
+</ol>
+<p>Each conversion presents distinct challenges in mechanical compatibility, electrical integration, and long-term reliability. This guide covers planning, compatibility analysis, and practical implementation for each type.</p>
+<div class="info-box">
+<p><strong>Why Convert?</strong> Worn-out engines fail beyond repair. Replacement engines from salvage yards cost $500–3,000. Fuel conversions access locally available resources (cooking oil, wood, ethanol crops). Electric conversions eliminate fuel scarcity dependency—recharge using local power generation (solar, wind). No single conversion suits all survival scenarios; match conversion type to available resources and long-term fuel projections.</p>
+</div>
+</section>
+<section id="engine-swap">
+<h2>Engine Swap Fundamentals</h2>
+<h3>Why Swap Engines?</h3>
+<p><strong>Primary scenarios:</strong></p>
+<ul>
+<li>Original engine worn out or insufficient power for terrain/load requirements</li>
+<li>Newer engine more reliable, better emissions, better fuel efficiency</li>
+<li>Donor engine cheaper than full engine rebuild ($1,500–4,000 professional rebuild labor)</li>
+<li>Experimental builds (lightweight body + high-power engine = superior performance for exploration/hauling)</li>
+<li>Fuel availability (diesel fuel supply more abundant in region, necessitating gasoline-to-diesel swap)</li>
+</ul>
+<h3>Selection Criteria</h3>
+<p><strong>Power output:</strong> New engine must fit within chassis stress limits. Doubling engine power doubles engine load on frame, suspension, brakes (all must be upgraded). Doubling power typically requires frame reinforcement, upgraded suspension, larger brakes. Test limits: original 150 hp vehicle frame rated for 150 hp engine load. 300 hp engine on same frame causes frame stress 2×, leading to cracks in welds, suspension sagging, and eventual structural failure.</p>
+<p><strong>Torque delivery:</strong> High torque at low RPM requires robust transmission. Transmission must handle 150% of original engine torque for durability (accounts for repeated acceleration cycles). Over-revving (continuous high RPM) reduces engine life significantly. Example: Original transmission rated 200 Nm continuous torque. New engine produces 350 Nm peak. Transmission overloaded; synchros break (difficulty shifting, grinding noise), gears strip (teeth shear, loss of power in that gear, eventual complete transmission failure).</p>
+<p><strong>Engine size &amp; weight:</strong> Engine must fit in engine bay. Weight distribution affects handling (front-heavy = understeer, rear-heavy = oversteer). Aim for 40–60% weight distribution front-to-rear for good handling. Violating this rule creates dangerous handling defects: a 60/40 (front/rear) car becomes 70/30 with a heavy engine addition—severe understeer makes high-speed turns dangerous, tires wear excessively.</p>
+<h3>Donor Vehicle Selection</h3>
+<p><strong>Same manufacturer simpler:</strong> Electrical connectors match, mounting points align, cooling systems are compatible. Example: Chevy small-block engine mounts adapt to many Chevy vehicles across model years. Time savings: 40–60 hours labor reduction vs. cross-platform swap.</p>
+<p><strong>Generic mounts:</strong> Aftermarket engine mounts can interface engines to different vehicles (e.g., Chevy small-block engine mounts adapt to multiple vehicle types). Cost $400–800 for quality universal mounts.</p>
+<p><strong>Cross-platform engines:</strong> Need custom fabrication (mounting brackets, electrical adapters, cooling lines). Cost: $2,000–5,000 for professional engine swap labor plus engine cost ($500–3,000 for used donor). Timeline: 120–200 hours for hobbyist. Professional shop: 40–60 hours.</p>
+<div class="warning">
+<p><strong>Structural Load Risk:</strong> Frame and suspension designed for original engine. Over-power swaps cause cumulative stress: cracks at welds, sagging of subframes, suspension geometry misalignment. Inspect frame for stress cracks annually if boost over 50%.</p>
+</div>
+</section>
+<section id="compatibility">
+<h2>Engine Compatibility Analysis</h2>
+<h3>Weight &amp; Balance Calculations</h3>
+<p>Original curb weight 1500 kg, 60% front (900 kg front axle, 600 kg rear). Swap 200 kg heavier engine from donor: new weight 1700 kg. If heavier engine mounted in same location, front weight = 1100 kg (65%), rear 600 kg (35%). 65% front / 35% rear weight distribution creates dangerous understeer (vehicle tightens steering, excessive front tire wear, poor stability in turns). Optimal balance: 45–55% front-to-rear.</p>
+<p><strong>Weight distribution calculation:</strong></p>
+<ul>
+<li>Original: 60F/40R = 900 kg front, 600 kg rear. Center of gravity 60% forward from rear axle.</li>
+<li>Add 200 kg engine at original location (forward): 1100 kg front, 600 kg rear = 65F/35R. CG moves 2–3% forward, changing handling dramatically.</li>
+<li>Solution option 1: Relocate engine rearward 15–20 cm (reduces front load by ~30–40 kg). New distribution: 1070 kg front, 630 kg rear = 63F/37R. Improved but not ideal.</li>
+<li>Solution option 2: Add 100 kg ballast (lead weights) over rear axle. New distribution: 1100 kg front, 700 kg rear = 61F/39R. Acceptable balance maintained.</li>
+</ul>
+<p><strong>Underbody modification:</strong> Heavier engine requires upgraded suspension (stiffer springs to prevent sagging, stiffer shock absorbers to control motion). Original suspension designed for original engine weight may cause 2–3 cm lowering with heavier engine. Lowering reduces ground clearance (bottoming risk on bumps, increased scraping), can interfere with steering/suspension geometry.</p>
+<h3>Transmission &amp; Drivetrain Matching</h3>
+<p>Original transmission rated 200 Nm continuous torque (peak torque handling to 250 Nm for brief periods). New engine produces 350 Nm peak. Transmission overloaded; synchros break (difficulty shifting, grinding noise), gears strip (teeth shear, loss of power in that gear, eventual complete transmission failure).</p>
+<p><strong>Torque multiplication effect:</strong> Transmission first gear typically multiplies engine torque by 3–4×. Engine producing 350 Nm in first gear = 1050–1400 Nm applied to driveshaft. Original transmission rated for 200 Nm × 3.5 = 700 Nm maximum first-gear load. Exceeding limit causes failure.</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li><strong>Upgrade transmission</strong> (expensive, $1,500–4,000 for used, $5,000–10,000 new). Direct swap if same bellhousing pattern. Custom adapter if patterns differ (additional $500–1,500).</li>
+<li><strong>Limit engine power</strong> with electronic fuel management (computer reduces fuel injection, caps peak torque at 200 Nm). Sacrifices power advantage but preserves transmission. Suitable if prioritizing reliability over performance.</li>
+<li><strong>Use longer gear ratios</strong> (less multiplication per gear). Custom gears expensive but achievable for specific transmission models. Reduces acceleration, improves top speed and fuel economy.</li>
+<li><strong>Automatic transmission swap</strong> (less torque-sensitive). Automatic transmission's fluid coupling provides damping, absorbs torque spikes. More durable with oversized engines but less fuel-efficient.</li>
+</ol>
+<div class="danger">
+<p><strong>Transmission Failure Risk:</strong> Over-torque failures are sudden (complete loss of power) and dangerous. Always match transmission to engine torque, or electronically limit engine output. A transmission failure mid-journey in remote territory leaves vehicle stranded.</p>
+</div>
+<h3>Fuel System Compatibility</h3>
+<p>Original carburetor fuel delivery pressure 2–4 PSI. New fuel injection requires 40–60 PSI. Old mechanical fuel pump insufficient. Upgrade to electric fuel pump (in-tank, 40–60 PSI). Carburetor-to-fuel injection conversion requires computer and sensors.</p>
+<h3>Cooling System Capacity</h3>
+<p>Heat output proportional to power. New high-power engine generates 40–50% more heat. Original radiator inadequate; engine overheats (coolant temp &gt;100°C). Solution: upgrade radiator size (+30% core area). Add electric fan if mechanical fan insufficient. Larger cooling system adds weight and cost ($1,000–2,000).</p>
+</section>
+<section id="mounting">
+<h2>Engine Mounting &amp; Mounts</h2>
+<h3>Mount Points &amp; Stresses</h3>
+<p>Engine connects to frame at 3–4 points typically (front, rear, side/auxiliary). Engine produces several stresses mounts must resist:</p>
+<ol>
+<li>
+<p><strong>Inertial force:</strong> Accelerating 250–350 kg engine mass forward causes rearward reaction force on mounts. Typical acceleration 0.3g = 10 m/s² = 2.5–3.5 kN load on rear mount.</p>
+</li>
+<li>
+<p><strong>Torque reaction:</strong> Crankshaft torque tries to rotate engine in opposite direction of wheels. Engine torque 350 Nm causes ~70–100 N-m reaction torque trying to lift front of engine (nose-up rotation). Distributed to front and rear mounts.</p>
+</li>
+<li>
+<p><strong>Vibration:</strong> Unbalanced rotating components (crankshaft, harmonic imbalances from 4-cylinder or 6-cylinder design) create cyclic forces at engine running frequency (80–200 Hz at 3000–5000 RPM). Vibration amplitude 1–5 mm peak, frequency-dependent.</p>
+</li>
+<li>
+<p><strong>Torsional twist:</strong> During gear changes, engine torque reverses direction, twisting engine on mounts. Reversal forces create fatigue stress on mounts.</p>
+</li>
+</ol>
+<p>Mounts must: (A) Support static load (engine weight), (B) Resist dynamic forces (acceleration), (C) Absorb vibration (isolation), (D) Limit engine movement (prevent contact with frame/accessories). Failure means: engine sags, contacts radiator/frame, severe vibration transmission to cabin, metal-to-metal contact causing wear/damage.</p>
+<h3>Mount Types</h3>
+<p><strong>Solid mounts:</strong> Rigid steel or aluminum brackets. Transmit all vibration and noise directly to frame. Cheap but uncomfortable. Suitable only for stationary engines (stationary power generation). Not acceptable for vehicles.</p>
+<p><strong>Rubber mounts:</strong> Elastic bushings absorb vibration. Typical stiffness 100–500 N/mm for engine mounts. Softer mounts (lower stiffness) absorb more vibration but allow more engine movement (potential contact with frame at high acceleration). Stiffness selection trades vibration isolation against movement containment. Rubber degrades 1–2% annually; expect mount replacement every 5–8 years.</p>
+<p><strong>Polyurethane mounts:</strong> Harder than rubber (higher stiffness, less vibration isolation), longer lifespan (10–15 years). Good compromise for budget swaps.</p>
+<h3>Custom Mount Fabrication</h3>
+<p>Measure engine dimensions and bay dimensions, calculate clearance (minimum 50 mm all directions). Design brackets using 1/4&quot; steel plate (adequate for 400 hp engine). Weld brackets to engine and frame. Drill holes for rubber bushings and bolts. Test fitment before final installation. Cost: $500–1,500 for professional welding and design.</p>
+<div class="tip">
+<p><strong>Mount Design Best Practice:</strong> Over-design mounts by 50% safety factor. A mount calculated for 3.5 kN should be rated for 5+ kN. This accounts for cold starts (high torque shock), rough terrain (impact loads), and metal fatigue over time.</p>
+</div>
+</section>
+<section id="fuel-systems">
+<h2>Fuel System Adaptation</h2>
+<h3>Fuel Tank Compatibility</h3>
+<p>Original fuel tank adequate capacity but filler neck, sending unit, mounting points differ. Option: (1) Use original tank with custom filler neck adapter. (2) Mount new fuel tank in different location (trunk, under car, rear bumper). Tank location affects weight distribution and crash safety. Fuel tank location change requires custom fuel lines and sending unit adaptation.</p>
+<p><strong>Tank capacity considerations:</strong> Larger tank increases range but adds weight (fuel is ~0.75 kg per liter; an extra 20 liters = 15 kg added weight). Calculate fuel consumption: high-performance swaps may increase consumption 20–30%, requiring larger tank or more frequent refueling.</p>
+<h3>Fuel Pump Upgrade</h3>
+<p>Mechanical fuel pump (carburetor) delivers 4–6 GPM at 2–4 PSI. Fuel injection requires 10–15 GPM at 40–60 PSI. Electric in-tank pump provides: constant pressure regardless of engine speed, more volume capacity, quiet operation. Installation: drain tank, remove old sending unit, install new pump/sender assembly with check valve and filter. Cost $200–500. Electrical connection requires 10–12 gauge wire with relay and fuse.</p>
+<h3>Fuel Pressure Regulator</h3>
+<p>Maintains constant fuel pressure despite engine speed/load variations. Vacuum-actuated regulator varies pressure with intake manifold vacuum (reduces pressure at cruise, increases at full throttle). Mechanical bypass regulator diverts excess fuel back to tank. Typical regulator cost $100–200. Essential for consistent carburetor operation and fuel injection stability.</p>
+<div class="warning">
+<p><strong>Fuel System Fire Hazard:</strong> High-pressure fuel systems (40+ PSI) rupture lines easily if strained. Use automotive-grade fuel hoses (SAE J30R7, reinforced), clamp every 150 mm, and wrap lines away from engine heat. A fuel line rupture spraying gasoline on a 500°F exhaust manifold causes immediate fire. Install fuel shutoff valve accessible from driver seat for emergency.</p>
+</div>
+</section>
+<section id="cooling">
+<h2>Cooling System Integration</h2>
+<h3>Radiator Sizing &amp; Cooling Capacity</h3>
+<p>Cooling capacity required = (Power output × 1000) / Efficiency. High-power engine 350 kW with 33% thermal efficiency produces (350 × 1000 × 0.67) / 0.33 = 707 kW of waste heat to be cooled. Cooling requirement: 707 kW = 607,000 BTU/hour ≈ 608 kW cooling capacity needed.</p>
+<p><strong>Radiator core sizing:</strong> Core thermal capacity approximately 5–10 W/°C per 10×10 cm face area per 10 mm depth (varies by material, fin density, tube design). Estimate: 50×50 cm face area, 40 mm depth = ~1000 W/°C capacity. 608 kW ÷ 1000 W/°C = 60.8°C temperature rise across radiator. If inlet 95°C, outlet 34°C. In practice, add safety margin (oversizing 20–30%).</p>
+<p><strong>Engine-radiator temperature management:</strong> Typical operating temperature difference: engine 90–100°C, radiator outlet 70–80°C. Thermostat opens at 82–88°C to regulate flow. Target: engine running at 85–95°C (efficient combustion, thermal stress controlled, minimal detonation risk).</p>
+<p>Oversizing radiator improves: (1) Lower peak coolant temperature (reduced detonation risk), (2) Reduced fan load (larger core area = lower required airflow), (3) Better idling cooling (passive circulation without fan), (4) Extended engine life (lower thermal stress). Disadvantage: larger radiator adds weight (50–100 lbs) and cost ($800–2,000 for high-performance unit).</p>
+<p><strong>Radiator upgrade procedure:</strong> Measure original radiator size (height, width, depth). Source upgrade radiator 20–30% larger core volume. Modify cooling lines (hoses, sizing) to match new radiator connections. Upgrade water pump if flow rate insufficient (test by measuring coolant pressure: should be 10–20 psi at idle, 20–35 psi at cruise). Modify electric fan if necessary (larger fan for larger radiator).</p>
+<h3>Water Pump Compatibility</h3>
+<p>Original water pump flow rate (GPM) limited. New high-power engine requires higher flow. Centrifugal pump flow = impeller area × blade velocity. Larger pump, higher RPM, or different blade pitch increases flow. Swapped engine may require different water pump (different shaft size, different mounting). Custom shaft coupler ($100–200) or pulley adapter allows old pump pulley to drive new engine pump shaft.</p>
+<h3>Thermostat &amp; Temperature Control</h3>
+<p>Standard thermostat opens at 82°C, fully open 93°C. High-power engine running hot may need higher temperature threshold (88°C opening, 100°C full open) to reduce coolant flow restriction. Electronic fan switch turns fan on at 88°C, off at 82°C, improving efficiency. Manual electric fan (always on at idle, excessive noise and power) vs automatic (fan on demand, efficient and quiet). Automatic fans reduce fuel consumption 5–10%.</p>
+</section>
+<section id="electrical">
+<h2>Electrical System Modifications</h2>
+<h3>Charging System Upgrade</h3>
+<p>Original alternator 60–80 amp output sufficient for original ignition and accessories. New engine with fuel injection, electronic controls, upgraded electronics may demand 100–150 amps. Original alternator insufficient; battery slowly discharges. Upgrade alternator: high-output unit (120–200 amps) produces more power but adds engine load (reduces horsepower slightly, ~5–8 hp loss). Cost $400–800.</p>
+<p><strong>Alternator selection:</strong> High-output alternators generate more copper loss (heat). Ensure adequate cooling (electric fan on alternator housing, or relocate alternator to cooler location). Serpentine belt sizing: wider belts (1/2&quot; to 3/4&quot;) better for high-output alternators.</p>
+<h3>Wiring Harness Conversion</h3>
+<p>Original vehicle carburetor/points ignition minimal wiring. New fuel injection engine complex wiring: fuel pump relay, fuel injector drivers, ignition coil drivers, oxygen sensor, throttle position sensor, knock sensor, EGR solenoid, etc. Original wiring harness incompatible. Options:</p>
+<ol>
+<li><strong>Standalone engine management computer</strong> (piggyback) adapts signals. Example: Holley or Edelbrock aftermarket EFI system $1,200–2,500.</li>
+<li><strong>New complete wiring harness from donor vehicle</strong> (expensive, requires extensive fitting). Cost $800–1,500 + 20–40 hours labor.</li>
+<li><strong>Custom wiring</strong> (complex but most reliable long-term). Cost $500–1,000 materials + 30–50 hours labor.</li>
+</ol>
+<h3>Ignition &amp; Starting</h3>
+<p>Original points ignition may be mechanically inadequate for new engine. Electronic ignition module or distributorless system (DIS) with coil packs improves reliability and efficiency. Spark timing more precise, allowing higher compression. Starter motor: new engine higher compression may require more starting torque. Original starter struggles; upgrade to high-torque starter (heavier, draws more current, 150–200 amps). Cost $300–600.</p>
+<div class="info-box">
+<p><strong>Electrical System Specification for Swapped Engines:</strong> Document alternator output, starter amperage, and relay configuration before ordering parts. Mismatch between components causes electrical fires (underspec'd fuse fails, high-current draw bypasses protection) or no-start conditions (undersized starter solenoid chatters, won't engage).</p>
+</div>
+</section>
+<section id="wood-gas">
+<h2>Wood Gas Conversion</h2>
+<h3>Gasifier Principle</h3>
+<p>Wood or charcoal heated in low-oxygen environment (600–800°C) produces combustible gas: carbon monoxide (CO), hydrogen (H₂), methane (CH₄), nitrogen (N₂), plus tars and water vapor. Combustible gas 25–30% energy content of original gasoline (by volume), requiring 3–4× larger fuel storage. Gas fed to engine through mixing valve (replaces carburetor intake). Engine runs on mixture: 50% wood gas, 50% air.</p>
+<p><strong>Gasifier chemistry:</strong> Endothermic reaction:</p>
+<ul>
+<li>C + H₂O → CO + H₂ (main reaction, absorbs heat)</li>
+<li>C + CO₂ → 2 CO (secondary, contributes to gas)</li>
+<li>Temperature must exceed 800°C in reduction zone, or reaction stalls.</li>
+</ul>
+<h3>Gasifier Types</h3>
+<p><strong>Downdraft:</strong> Wood burns at top, gas flows downward through coal bed, exiting at bottom. Compact design, good for mobile applications. Tar content in exhaust problematic; requires cooler and tar extractor. Tars condense in exhaust system, clogging engine (accumulation of 50–100 cc of tar annually). Cleaning requires engine teardown.</p>
+<p><strong>Updraft:</strong> Coal bed at bottom, wood stacked above, hot gas drawn upward through coal. More efficient, less tar, simpler operation. Requires larger physical size (0.5–1.0 m³). Fuel consumption 5–8 kg/hour for 50 kW engine.</p>
+<p><strong>Cross-draft:</strong> Least common, compact, moderate tar. More complex design, requires experimentation.</p>
+<h3>System Integration</h3>
+<p>Gasifier mounted on vehicle, fed with firewood/charcoal during operation. Trip to forest every 50–100 km to gather wood (for continuous rural travel). Startup requires 10–20 minutes warm-up (gasifier reaching operating temperature). Cold start difficult; may require brief gasoline primer to light gasifier. Efficiency poor (35% vs 25% gasoline engine = similar overall efficiency despite low fuel calorific value).</p>
+<p><strong>Wood specification:</strong> Dry hardwood (oak, birch, ash) ideal. 1 kg dry wood ≈ 15–16 MJ energy. Engine efficiency 25% = 3.75–4 MJ mechanical output per kg wood. 50 kW engine needs 50,000 J/s ÷ 3.75 MJ/kg = 13.3 kg/hour wood consumption. Daily range (8 hours driving): 107 kg wood required, occupying 0.3–0.5 m³ vehicle space.</p>
+<p>Maintenance: weekly ash removal, monthly tar trap cleaning. Tar trap capacity 5–10 cc; if exceeded, tar dissolves seals and clogs engine.</p>
+<h3>Practical Limitations</h3>
+<p>Slow startup unsuitable for quick urban trips. Limited range (heavy wood/charcoal load). Odor from wood smoke. Environmental (if resource available sustainably). Most practical for remote rural vehicles with predictable routes and available wood resources. Not street-legal in most regions (emissions not certified).</p>
+<div class="danger">
+<p><strong>Wood Gas Safety:</strong> Incomplete gasification produces carbon monoxide (CO) gas mixed with fuel. Exhaust contains 1–5% CO (deadly in enclosed spaces). Vehicle cannot be refueled indoors, and exhaust manifold must vent outside building. Inspect exhaust regularly for leaks. A 2 mm hole in exhaust pipe near cabin air intake would poison occupants over 30–60 minutes.</p>
+</div>
+</section>
+<section id="biodiesel">
+<h2>Biodiesel Fuel Preparation</h2>
+<h3>Biodiesel Production</h3>
+<p>Vegetable oil transesterified (treated with catalyst, typically sodium hydroxide or potassium hydroxide) to break triglyceride chains into fatty acid methyl esters (FAME) and glycerin. Process:</p>
+<ol>
+<li>Mix vegetable oil with methanol and catalyst (1 liter oil + 0.2 liter methanol + 5 g catalyst)</li>
+<li>Stir 1–2 hours (exothermic, heat generated, 40–50°C)</li>
+<li>Settle 8–12 hours, allowing biodiesel and glycerin to separate</li>
+<li>Drain glycerin layer (bottom, denser)</li>
+<li>Wash biodiesel with distilled water (5 washes), dry with heat or desiccant</li>
+<li>Filter through 1–5 µm filter media</li>
+</ol>
+<p>Yield: 1 liter vegetable oil produces ~0.95 liters biodiesel (5% loss during processing).</p>
+<p><strong>Safety considerations:</strong> Methanol toxic (inhalation, skin absorption). Work outdoors with gloves. Catalyst corrosive. Reaction heats spontaneously; do not add cold water to hot mixture (violent boiling). Cost $5–15 per liter biodiesel (ingredients only, labor free for hobbyist).</p>
+<h3>Engine Compatibility</h3>
+<p>Biodiesel compatible with diesel engines with minimal modification. B20 (20% biodiesel, 80% diesel) approved for all modern diesel vehicles. B100 (pure biodiesel) requires fuel filter upgrades (biodiesel dissolves gum deposits, clogging original filter). Cold flow improves with additives or heating (biodiesel gels at -5°C, requiring fuel line heaters in winter).</p>
+<p><strong>Biodiesel properties:</strong></p>
+<ul>
+<li>Cetane rating: 48–52 (diesel 40–55), acceptable</li>
+<li>Flash point: 150°C (diesel 65°C), safer storage</li>
+<li>Energy content: 92% gasoline (32 MJ/liter vs 34 MJ)</li>
+<li>Lubricity: superior to diesel, reduces injector wear</li>
+</ul>
+<h3>Engine Modifications for Biodiesel</h3>
+<p>Fuel filter upgrade: finer mesh (5–10 µm) traps dissolved gum. Biodiesel tank coating: rubber seals swell slightly (acceptable), paint stripped by biodiesel (non-issue for steel tanks). Injector cleaning intervals shorter (biodiesel combustion leaves more carbon, requiring fuel system cleaning annually). Cost: $300–500 for fuel filter and cleaning supplies.</p>
+<p><strong>Compatibility issues by engine age:</strong></p>
+<ul>
+<li>Pre-1990 engines: require fuel filter + seals upgrade, 1–2 retrofit service</li>
+<li>1990–2005 engines: compatible with B20, B100 requires filter/heating</li>
+<li>2005+ engines: fully compatible B100 (designed for biodiesel-capable fuels)</li>
+</ul>
+<h3>Sourcing Feedstock</h3>
+<p>Vegetable oil sources: cooking oil (waste from restaurants), canola oil, soybean oil. Waste cooking oil cheapest ($0.10–0.50/liter). Fresh vegetable oil more expensive ($0.80–1.50/liter). Animal fat (tallow) also works but requires higher temperature transesterification.</p>
+<p><strong>Local sourcing strategy:</strong> Contact 5–10 restaurants, fast food outlets, bakeries in region. Offer to provide 5-gallon buckets for waste oil collection. Most establishments happily provide 10–50 liters per week (free disposal value). One liter per 20 km driving = 750 liters annually per vehicle = sourcing from 1–2 large restaurants feasible. Establish relationships now; supply chains matter in survival scenarios.</p>
+<div class="tip">
+<p><strong>Biodiesel Conversion Economics:</strong> Waste oil free or $0.10/liter. Processing cost $1–2 per liter (methanol, catalyst, labor). Final cost $1–2/liter. Diesel $1.50–2.50/liter at pump. Savings $0.50–1.50/liter. 10,000 liters annually = $5,000–15,000 savings. Payback period: 2–4 years for conversion investment.</p>
+</div>
+</section>
+<section id="ethanol">
+<h2>Ethanol Fuel Conversion</h2>
+<h3>E85 Engine Conversion</h3>
+<p>Ethanol (85%) + gasoline (15%) fuel with 105–112 octane rating (much higher than 87–89 octane gasoline). Requires:</p>
+<ol>
+<li>Fuel injectors delivering 25% more volume (higher fuel consumption of ethanol)</li>
+<li>Ignition timing adjusted (different combustion speed, faster burn)</li>
+<li>Cold-start enrichment control (ethanol poor volatility at cold temps)</li>
+<li>Fuel filter/pump compatible with ethanol (some plastics swell, degrading seals)</li>
+</ol>
+<p><strong>E85 fuel properties:</strong></p>
+<ul>
+<li>Energy content: 67% gasoline (21 MJ/liter vs 34 MJ)</li>
+<li>Octane rating: 105–112 (allows compression ratio 11:1+)</li>
+<li>Cooling effect: high latent heat of vaporization (absorbs engine heat)</li>
+<li>Water solubility: ethanol absorbs moisture; fuel hygiene critical (free water in tank causes corrosion)</li>
+</ul>
+<h3>Flex-Fuel Conversion</h3>
+<p>Factory flex-fuel vehicles (FFVs) equipped to run E85 or 100% gasoline automatically. Fuel blend sensor detects ethanol content, adjusts fuel injection and ignition timing accordingly. Sensor signal: low voltage = gasoline, high voltage = E85. Aftermarket flex-fuel kits ($800–2,000) adapt carburetor or EFI vehicles to run E85, but requires tuning and calibration. Less common than factory FFVs. Professional tuning $500–1,500 for calibration.</p>
+<h3>Performance vs Efficiency</h3>
+<p>Ethanol higher octane = higher boost/compression possible = more power (typically 5–15% power increase on boost). Ethanol energy content 67% gasoline = 25–30% higher fuel consumption. Net efficiency similar to gasoline: more power but more fuel consumed. Better for performance-oriented conversions, not economy-focused vehicles.</p>
+<p><strong>Cost-benefit analysis:</strong></p>
+<ul>
+<li>E85 fuel cost: $1.50–2.00/gallon (often cheaper than premium gasoline)</li>
+<li>Fuel consumption: 30% higher (e.g., 25 mpg gasoline → 17 mpg E85)</li>
+<li>Power gain: 10–15% (useful for performance vehicles)</li>
+<li>Suitable for: High-compression engines, turbo-charged vehicles, high-load hauling</li>
+</ul>
+<div class="warning">
+<p><strong>E85 Cold Start Problems:</strong> Below 0°C, ethanol volatility drops (poor evaporation). Engine floods with raw ethanol, stalling. Solutions: (1) Fuel heater ($200–400). (2) Glow plugs (diesel-style, preheats combustion chamber). (3) Cold start primer (90% gasoline, 10% ethanol, easier cold-start). Cold climates require solution or E85 conversion fails seasonally.</p>
+</div>
+</section>
+<section id="electric">
+<h2>Electric Vehicle Conversion Basics</h2>
+<h3>Component List for EV Conversion</h3>
+<ol>
+<li>
+<p><strong>Electric motor:</strong> AC induction (50–200 kW typical, robust, efficient 90–95%, cost $5,000–12,000), brushless DC (lightweight, 90–95% efficient, lower torque at low speed, cost $3,000–8,000), or permanent-magnet AC (Tesla-style, 95%+ efficient, most expensive $10,000–20,000 used).</p>
+</li>
+<li>
+<p><strong>Battery pack:</strong> Lithium (modern, 150–250 Wh/kg energy density, $10,000–15,000 for 20 kWh, 300-mile range possible), lead-acid (cheap $3,000–5,000, heavy 3–4 kg per kWh, limited range), or LiFePO4 (middle ground, longer life 5,000–10,000 cycles, $8,000–12,000). Capacity selection: 20 kWh = 30–50 miles range urban, 50 kWh = 75–120 miles, 100 kWh = 200–300 miles.</p>
+</li>
+<li>
+<p><strong>DC-DC converter:</strong> Steps down 400V battery to 12V for lights, accessories, ignition system. Typical 1–2 kW capacity ($200–500). Essential for vehicle operation (cannot run lights or accessories directly from battery voltage).</p>
+</li>
+<li>
+<p><strong>Motor controller:</strong> Drives motor at variable speed, handles regenerative braking (motor acts as generator during deceleration, recovering energy to battery). Size matched to motor power (50 kW motor requires 50+ kW controller, ~$1,000–3,000 depending on sophistication). Sophisticated controllers include thermal management, safety shutdown, SOC (state of charge) monitoring.</p>
+</li>
+<li>
+<p><strong>Onboard charger:</strong> Converts AC mains (120V or 240V house power) to DC for battery charging. 3–7 kW typical ($500–1,500). Slower chargers (3 kW) require 8+ hours for full charge, faster chargers (7+ kW) deliver full charge in 3–4 hours.</p>
+</li>
+<li>
+<p><strong>Mechanical integration:</strong> Motor coupling to transmission (direct drive or through gearbox), brake pedal force sensor (regenerative braking control), accelerator throttle sensor (motor speed command). Requires custom fabrication ($1,000–3,000 labor).</p>
+</li>
+<li>
+<p><strong>Safety systems:</strong> Contactors (high-power switches), fuses (DC-rated, 500V minimum), battery management system (BMS), thermal monitoring. Cost $500–1,500 for complete safety pack.</p>
+</li>
+</ol>
+<h3>Motor Selection</h3>
+<p><strong>AC induction:</strong> Robust, efficient (90–95%), high torque at low speed. Requires 3-phase inverter. Heavier than DC for same power. Best for retrofit (proven long-term reliability).</p>
+<p><strong>Brushless DC (BLDC):</strong> Lightweight, efficient (90–95%), lower torque at low speed. Requires electronic commutation (more complex controller). Good for weight-critical conversions.</p>
+<p><strong>Permanent-magnet AC:</strong> Tesla motor type, very efficient (95%), high power density. Expensive ($10,000–20,000 used). Best for premium performance conversions.</p>
+<h3>Battery System Design</h3>
+<p>Total energy = Range desired × Consumption per mile. A 100-mile range car consuming 200 Wh/mile needs 20 kWh. Cost: lithium $10,000–15,000, lead-acid $3,000–5,000. Battery management system (BMS) monitors cell voltage, temperature, enforces charge limits (prevents overcharge, overdischarge). Without BMS, lithium battery fails suddenly (internal short, fire risk).</p>
+<p><strong>Battery configuration:</strong></p>
+<ul>
+<li>Series connection (voltage summing): 16× 3.7V cells = 59V nominal for 400V 3-phase motor</li>
+<li>Parallel connection (current summing): cells in parallel increase amp-hour capacity</li>
+<li>Typical 20 kWh pack: 5,400 cells (prismatic or cylindrical) configured 100S54P (100 cells series, 54 parallel strings)</li>
+</ul>
+<h3>Range &amp; Charging Calculations</h3>
+<p><strong>Modern lithium EV performance:</strong></p>
+<ul>
+<li>20 kWh battery with 200 Wh/km efficiency = 100 km range (60 miles)</li>
+<li>40 kWh battery with 200 Wh/km efficiency = 200 km range (120 miles)</li>
+<li>60 kWh battery with 200 Wh/km efficiency = 300 km range (180 miles)</li>
+</ul>
+<p><strong>Charging speed:</strong></p>
+<ul>
+<li>120V Level 1 (15A, 1.8 kW): 20 kWh battery requires 11 hours (overnight charging acceptable)</li>
+<li>240V Level 2 (30A, 7 kW): 20 kWh battery requires 3 hours (common home charger)</li>
+<li>240V Level 2 (50A, 11 kW): 20 kWh battery requires 2 hours (requires heavy electrical service)</li>
+<li>DC fast charger (50–150 kW): 20 kWh battery charges to 80% in 15–30 minutes (typically at public stations, not viable for home installation)</li>
+</ul>
+<p><strong>Consumption efficiency:</strong></p>
+<ul>
+<li>Well-designed EV: 5–6 km per kWh (efficient, highway cruising at 100 km/h)</li>
+<li>Typical EV: 4–5 km per kWh (mixed city/highway)</li>
+<li>Urban driving: 3–4 km per kWh (frequent acceleration/braking, heating in winter)</li>
+</ul>
+<p><strong>Cost comparison:</strong> Electricity $0.12–0.15 per kWh (US average). 20 kWh battery = $2.40–3.00 cost per 100 km driven. Gasoline at $3/gallon, 30 mpg equivalent = $0.10 per km = $10 per 100 km. EV is 3–4× cheaper to operate.</p>
+<p><strong>Conversion economics:</strong></p>
+<ul>
+<li>Component cost: $15,000–25,000 (motor, battery, controller, charger, labor)</li>
+<li>Lost engine/transmission value: -$2,000–4,000 (salvage)</li>
+<li>Net conversion cost: $13,000–21,000</li>
+<li>Annual fuel savings: 15,000 km × ($0.10 - $0.03) = $1,050 per year</li>
+<li>Payback period: 13,000 ÷ 1,050 = 12 years (break-even, not including battery replacement)</li>
+</ul>
+<p><strong>Battery replacement cost:</strong> Lithium battery ~$400–600 per kWh. 40 kWh battery = $16,000–24,000 replacement cost at end of life (8–10 years). Payback period extends to 15–20 years before conversion becomes profitable. Better for high-mileage urban vehicles (15,000+ km/year) than occasional drivers (8,000 km/year).</p>
+<div class="danger">
+<p><strong>EV Fire Hazard:</strong> Lithium battery thermal runaway (internal short, fire) difficult to extinguish (water ineffective). Fire reaches 800–1,000°C. Extinguishing requires Class D fire extinguisher (dry powder) or battery immersion in sand/salt. Install thermal fuse on high-voltage battery (cuts power if temp &gt;60°C). Never park EV conversion in enclosed garage unattended.</p>
+</div>
+</section>
+<section id="planning">
+<h2>Conversion Planning &amp; Feasibility Assessment</h2>
+<h3>Quick Conversion Feasibility Checklist</h3>
+<table>
+<thead>
+<tr>
+<th>Conversion Type</th>
+<th>Donor Vehicle Availability</th>
+<th>Skill Required</th>
+<th>Cost Range</th>
+<th>Timeline</th>
+<th>Reliability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Engine swap (same model)</td>
+<td>Common</td>
+<td>Intermediate</td>
+<td>$3,000–8,000</td>
+<td>80–120 hours</td>
+<td>High (proven)</td>
+</tr>
+<tr>
+<td>Engine swap (cross-platform)</td>
+<td>Moderate</td>
+<td>Advanced</td>
+<td>$5,000–15,000</td>
+<td>120–200 hours</td>
+<td>Medium (custom)</td>
+</tr>
+<tr>
+<td>Wood gas system</td>
+<td>N/A (build custom)</td>
+<td>Advanced</td>
+<td>$2,000–5,000</td>
+<td>100+ hours</td>
+<td>Low (requires fuel gathering)</td>
+</tr>
+<tr>
+<td>Biodiesel conversion</td>
+<td>N/A (fuel source local)</td>
+<td>Intermediate</td>
+<td>$1,000–2,000</td>
+<td>40 hours</td>
+<td>High (once sourcing established)</td>
+</tr>
+<tr>
+<td>E85 conversion</td>
+<td>Moderate (aftermarket kits)</td>
+<td>Intermediate</td>
+<td>$1,500–3,000</td>
+<td>50 hours</td>
+<td>Medium (fuel availability critical)</td>
+</tr>
+<tr>
+<td>Electric conversion</td>
+<td>Good (motor/battery salvage)</td>
+<td>Advanced</td>
+<td>$15,000–30,000</td>
+<td>200+ hours</td>
+<td>Medium (range limited, charging infrastructure)</td>
+</tr>
+</tbody>
+</table>
+<h3>Risk Assessment by Conversion Type</h3>
+<p><strong>Engine swaps:</strong> Low risk if using proven donor platforms, high risk if improvising custom mounts. Mitigation: source engine from same-year model run or well-documented cross-platform swap. Pre-test engine on dyno if possible. Common failure: overlooked fuel system incompatibility (wrong pump pressure → fuel starvation at full throttle).</p>
+<p><strong>Fuel conversion:</strong> Medium risk due to engine tuning requirements. Biodiesel lowest risk (minimal engine modification), wood gas highest risk (requires new fuel system). Mitigation: test on non-critical vehicle first, establish fuel sourcing supply chain before conversion.</p>
+<p><strong>Electric conversion:</strong> Medium-high risk due to unfamiliar technology. Battery safety (risk of thermal runaway if damaged), electrical integration complexity, limited driving range. Mitigation: use proven battery management systems (no DIY BMS), professional electrical installation, start with small battery (lower risk).</p>
+<h3>Fuel Specifications Reference</h3>
+<table>
+<thead>
+<tr>
+<th>Fuel Type</th>
+<th>Energy Density</th>
+<th>Octane/Cetane</th>
+<th>Storage Life</th>
+<th>Cost/Liter</th>
+<th>Conversion Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gasoline</td>
+<td>34 MJ/L</td>
+<td>87–91</td>
+<td>6–12 months</td>
+<td>$2.50–4.00</td>
+<td>Baseline</td>
+</tr>
+<tr>
+<td>Diesel</td>
+<td>36 MJ/L</td>
+<td>40–55</td>
+<td>12–24 months</td>
+<td>$2.50–3.50</td>
+<td>Fuel system upgrade (pressure 5–30 PSI)</td>
+</tr>
+<tr>
+<td>Biodiesel (B100)</td>
+<td>32 MJ/L</td>
+<td>48–52</td>
+<td>6–12 months</td>
+<td>$1.50–2.00</td>
+<td>Filter upgrade, heating (cold regions)</td>
+</tr>
+<tr>
+<td>Ethanol (E85)</td>
+<td>21 MJ/L</td>
+<td>105–112</td>
+<td>12–18 months</td>
+<td>$1.50–2.50</td>
+<td>Injector upgrade, tuning</td>
+</tr>
+<tr>
+<td>Wood Gas</td>
+<td>6–10 MJ/m³</td>
+<td>N/A</td>
+<td>Real-time production</td>
+<td>$0.10–0.50 (wood)</td>
+<td>Gasifier system, 10–20 min startup</td>
+</tr>
+</tbody>
+</table>
+<div class="tip">
+<p><strong>Survival Fuel Selection Logic:</strong> In order of suitability for grid-collapse scenarios: (1) Biodiesel—uses vegetable oil (crop available), simple production, existing diesel infrastructure. (2) Ethanol—uses grain (crop available), complex production but proven methods. (3) Wood gas—uses available timber, complex equipment, slow startup. (4) Electric—requires grid electricity or solar generation, limited range, infrastructure dependent.</p>
+</div>
+</section>
+<section id="maintenance">
+<h2>Maintenance Schedule After Conversion</h2>
+<h3>Daily Inspections (Before Operation)</h3>
+<ul>
+<li><strong>Fuel level:</strong> Confirm adequate fuel for trip distance</li>
+<li><strong>Fluid leaks:</strong> Check under vehicle for drips (coolant, oil, fuel, transmission fluid)</li>
+<li><strong>Tire pressure:</strong> Underinflation increases consumption 5–10%, causes tire wear</li>
+<li><strong>Visual engine check:</strong> Confirm no loose hoses, wires, or debris near engine</li>
+</ul>
+<h3>Weekly Maintenance (First 100 hours post-conversion)</h3>
+<ul>
+<li><strong>Oil pressure:</strong> Monitor gauge; should read 20–50 PSI at cruise. Zero pressure indicates pump failure or clogged filter.</li>
+<li><strong>Coolant temperature:</strong> Confirm 85–95°C at cruise. Over 100°C indicates radiator inadequacy.</li>
+<li><strong>Transmission operation:</strong> Smooth shifts, no grinding or slipping. Any lag indicates torque converter/clutch wear.</li>
+<li><strong>Electrical:</strong> High-beam brightness (failing alternator dims lights), no warning lights on dash</li>
+</ul>
+<h3>Monthly Maintenance</h3>
+<ul>
+<li><strong>Oil change:</strong> Break-in oil change at 500 miles (fresh engine swap), then 5,000-mile intervals</li>
+<li><strong>Coolant level:</strong> Top off if lost more than 0.5 liter (indicates small leak, identify and repair)</li>
+<li><strong>Fuel filter inspection:</strong> Biodiesel conversions require more frequent changes (every 3 months initially)</li>
+<li><strong>Engine hose inspection:</strong> Look for swelling, cracks, brittleness (age/heat degradation)</li>
+</ul>
+<h3>Annual Maintenance</h3>
+<ul>
+<li><strong>Complete fluid inspection:</strong> Oil (color, level), coolant (color, concentration), transmission (color, level)</li>
+<li><strong>Exhaust system:</strong> Listen for leaks (high-pitched hiss = pinhole leak), inspect mounting (clamps, hangers)</li>
+<li><strong>Suspension:</strong> Jack vehicle, shake each wheel side-to-side (sloppy movement = worn joints)</li>
+<li><strong>Brake inspection:</strong> Pad thickness (should be &gt;6 mm), rotor thickness (measure with caliper if unsure)</li>
+</ul>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting Common Conversion Problems</h2>
+<h3>Engine Starting Issues</h3>
+<p><strong>Symptom:</strong> Engine cranks but doesn't start after fuel system upgrade.</p>
+<p><strong>Causes:</strong></p>
+<ol>
+<li>Fuel pump inoperative (no electric power, failed relay, blown fuse)</li>
+<li>Incorrect fuel pressure (too low for fuel injection, won't atomize)</li>
+<li>Ignition timing incorrect (advanced too far causes kickback on startup)</li>
+<li>Flooded cylinders (too much fuel, dilutes oil, hydrolock risk)</li>
+</ol>
+<p><strong>Diagnosis:</strong> Listen for fuel pump whine (present = pump functional, absent = check relay/fuse). Measure fuel pressure with gauge: should read 40–60 PSI for fuel injection. Check ignition timing with timing light (seek professional help if unfamiliar).</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Relay/fuse: replace ($10–20)</li>
+<li>Fuel pump inoperative: replace ($200–500)</li>
+<li>Fuel pressure low: check pump output, regulator setting, or filter clogging</li>
+<li>Timing off: rotate distributor or reprogram ECU (2–4 hours labor)</li>
+<li>Flooded: remove spark plugs, crank engine without ignition (forces fuel out), reinstall plugs</li>
+</ul>
+<h3>Overheating</h3>
+<p><strong>Symptom:</strong> Engine temperature climbs above 100°C, fans running constantly.</p>
+<p><strong>Causes:</strong></p>
+<ol>
+<li>Inadequate radiator size (cannot dissipate 40%+ additional heat from power increase)</li>
+<li>Fan inoperative (thermostat switch failed, electrical connection loose)</li>
+<li>Thermostat stuck closed (restricts coolant flow)</li>
+<li>Airflow obstruction (debris in radiator fins, not enough airflow at idle)</li>
+</ol>
+<p><strong>Diagnosis:</strong> Feel radiator (should be hot, ~90°C outlet). Listen for fan noise (manual fan should spin at high temps). Check coolant level (low level indicates leak or boiloff).</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Inadequate radiator: upgrade to larger core ($1,000–2,000)</li>
+<li>Fan inoperative: check wiring/thermostat switch ($100–300 repair)</li>
+<li>Stuck thermostat: replace ($50–150)</li>
+<li>Restricted airflow: clean radiator fins with compressed air, remove blocking debris</li>
+</ul>
+<div class="warning">
+<p><strong>Overheating Danger:</strong> Engine temperature &gt;105°C risks detonation (fuel ignites spontaneously before spark, destructive explosion inside cylinder). Can crack cylinder head or piston. If overheating occurs during operation, reduce power immediately, pull over, and allow cooling before proceeding.</p>
+</div>
+<h3>Transmission Slipping</h3>
+<p><strong>Symptom:</strong> Engine RPM rises without proportional acceleration; gears don't &quot;catch.&quot;</p>
+<p><strong>Causes:</strong></p>
+<ol>
+<li>Transmission fluid low (insufficient pressure to engage clutch/torque converter)</li>
+<li>Worn clutch discs (excessive power worn friction material)</li>
+<li>Torque converter damaged (internal damage from over-torque)</li>
+<li>Engine power exceeds transmission rating (too much torque applied)</li>
+</ol>
+<p><strong>Diagnosis:</strong> Check transmission fluid level (cold engine, on level ground). Fluid should be red, translucent. Dark/burned smell indicates overheating or internal wear. Check fluid condition: if fluid is dark brown, slipping has caused heat damage.</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Low fluid: top off with ATF (automatic transmission fluid). If level drops &gt;0.5 liter per week, identify leak source.</li>
+<li>Worn clutch: rebuild transmission ($1,500–3,000 labor + clutch kit $500–800)</li>
+<li>Torque converter damaged: replace ($500–1,500 used, $1,500–3,000 new)</li>
+<li>Over-torque: limit engine output with ECU tuning ($200–500) or upgrade transmission</li>
+</ul>
+<h3>Fuel System Pressure Loss</h3>
+<p><strong>Symptom:</strong> Vehicle starts but dies within seconds; weak acceleration.</p>
+<p><strong>Causes:</strong></p>
+<ol>
+<li>Fuel filter clogged (restricts flow, starves engine)</li>
+<li>Fuel pump output low (aging pump, worn impeller)</li>
+<li>Regulator leaking (pressure bleeds down to tank)</li>
+<li>Fuel line rupture (high-pressure fuel sprays out)</li>
+</ol>
+<p><strong>Diagnosis:</strong> Measure fuel pressure at rail with gauge (should be 40–60 PSI at idle, 60–75 PSI at full load). No pressure = pump failure or severe blockage.</p>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Clogged filter: replace ($50–150)</li>
+<li>Low pump output: replace pump ($200–500)</li>
+<li>Leaking regulator: replace ($100–200)</li>
+<li>Ruptured line: locate leak (listen for hissing), cut out bad section, splice with new hose (barbed tee fittings + hose clamps)</li>
+</ul>
+</section>
+<section id="mistakes">
+<h2>Common Mistakes to Avoid</h2>
+<p><strong>1. Ignoring weight distribution:</strong> Adding 200 kg engine without ballasting rear axle causes understeer and unsafe handling. Plan weight distribution before cutting into frame.</p>
+<p><strong>2. Undersizing fuel system:</strong> Original 2–4 PSI fuel pump cannot feed fuel injection engine. Always measure fuel pressure before assuming system is compatible.</p>
+<p><strong>3. Omitting alternator upgrade:</strong> 100+ amp electrical demand with 60 amp alternator depletes battery within 30 minutes driving. Upgrade before starting engine.</p>
+<p><strong>4. Poor electrical grounding:</strong> New engine harness must ground to frame at multiple points (engine block, firewall, chassis). Single ground point causes voltage drops, component failures, mysterious electrical gremlins.</p>
+<p><strong>5. Neglecting radiator upgrade:</strong> 40%+ power increase generates 40% more heat. Original radiator cannot dissipate it. Engine overheats, risks detonation.</p>
+<p><strong>6. Using wrong fuel:</strong> Installing biodiesel conversion, then filling with regular diesel, causes injector damage. Installing E85 conversion, then using regular gasoline, causes lean running and detonation. Label fuel filler cap with conversion type.</p>
+<p><strong>7. Overloading transmission:</strong> 350 Nm engine on 200 Nm transmission breaks within 50 hours driving. Match transmission to engine or limit output electronically.</p>
+<p><strong>8. Inadequate cooling lines:</strong> Heavier engine requires larger cooling capacity. Using original 0.75&quot; hoses on upgraded radiator causes flow restriction and poor cooling.</p>
+<p><strong>9. Ignoring fuel tank venting:</strong> Old fuel pump draws fuel, creating vacuum in tank. If vent blocked, tank collapses. Ensure vent line routed to atmosphere with check valve.</p>
+<p><strong>10. Skipping break-in period:</strong> New engine needs 500–1,000 mile break-in at moderate loads. Running hard immediately causes piston ring damage, excessive oil consumption.</p>
+</section>
+<section id="safety">
+<h2>Safety Considerations for Converted Vehicles</h2>
+<h3>Fuel System Fire Hazard</h3>
+<p>High-pressure fuel systems (40+ PSI) rupture lines easily if strained by vibration or impact. Fuel sprays onto hot engine parts (500°C+ exhaust manifold) ignites immediately. Fire spreads uncontrollably within seconds.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Use SAE J30R7 automotive fuel hose (Kevlar-reinforced, 100 PSI rated)</li>
+<li>Clamp hoses every 150 mm to prevent vibration movement</li>
+<li>Route fuel lines away from exhaust, heat sources</li>
+<li>Install fuel shutoff valve accessible from driver seat (emergency fuel cutoff)</li>
+<li>Add fire extinguisher (Class B, foam or dry powder) mounted in cabin</li>
+<li>Inspect fuel lines monthly for cracks, seeping, abrasion</li>
+</ul>
+<h3>Carbon Monoxide (CO) Hazard</h3>
+<p>Incomplete combustion in wood gas or poorly-tuned carburetors produces carbon monoxide. CO is odorless, colorless, deadly (binds hemoglobin, prevents oxygen transport). 1% CO in exhaust, prolonged exposure causes death.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Ensure exhaust vents completely outside cabin (no leaks)</li>
+<li>Keep cabin air vents set to outside air (not recirculate)</li>
+<li>Inspect exhaust for rust holes monthly (2 mm hole enough to poison occupants)</li>
+<li>Add exhaust extension if parked with engine running</li>
+<li>If feeling dizzy/nauseous while driving, turn off engine immediately and exit vehicle</li>
+</ul>
+<h3>Structural Integrity Under Load</h3>
+<p>Converted vehicles may exceed original design load limits. Frame welds crack under sustained stress. Suspension bottoms out on bumps, reducing ground clearance dangerously.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Inspect frame welds annually (look for stress cracks at engine mount welds, suspension pickup points)</li>
+<li>Measure ground clearance regularly (should not change by more than 1 cm over a year)</li>
+<li>Avoid overloading (follow original GVWR placard, do not exceed)</li>
+<li>Upgrade suspension if adding &gt;100 kg engine (stiffer springs/shocks)</li>
+</ul>
+<h3>Inadequate Braking</h3>
+<p>Heavier engines require larger brakes. Original brake system undersized causes longer stopping distance, brake fade (heat buildup reduces friction).</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Upgrade brake pads to higher-temp ceramic compound</li>
+<li>Consider larger rotor diameter (requires wheel modification)</li>
+<li>Bleed brakes monthly (remove air, maintain pressure)</li>
+<li>Test brake performance: stopping distance should not increase &gt;10% post-conversion</li>
+</ul>
+<div class="danger">
+<p><strong>Exhaust Fume Hazard:</strong> Running converted engine in enclosed space (garage, shed) causes CO buildup. Just 10 minutes running in enclosed space raises CO to lethal levels (400+ ppm). Never refuel or run engine indoors. Ensure adequate ventilation before working.</p>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="automotive-alternator-repurposing.html">Alternator Repurposing</a>
+<a href="electrical-generation.html">Power Generation</a>
+<a href="electrical-motors.html">Electric Motors</a>
+<a href="electrical-wiring.html">Electrical Wiring</a>
+<a href="internal-combustion.html">Internal Combustion Engines</a>
+<a href="railroads.html">Railroad Construction &amp; Operation</a>
+<a href="transportation.html">Transportation &amp; Infrastructure</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

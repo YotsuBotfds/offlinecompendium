@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/microstructure-phase-diagrams.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microstructure &amp; Phase Diagrams - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.structure-table th { background: var(--card); font-weight: 600; }
+.phase-specs td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+.transformation-box { margin: 1.5rem 0; padding: 1rem; background: var(--surface); border-radius: 4px; }
+
+</style>
+<meta name="description" content="Iron-carbon phase diagram, austenite/ferrite/pearlite/martensite, crystal structure basics, grain boundaries, heat treatment theory, cold working, and alloy phase diagrams.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/microstructure-phase-diagrams.html">
+<meta property="og:title" content="Microstructure &amp; Phase Diagrams">
+<meta property="og:description" content="Iron-carbon phase diagram, austenite/ferrite/pearlite/martensite, crystal structure basics, grain boundaries, heat treatment theory, cold working, and alloy phase diagrams.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Metalworking", "item": "https://zerotoherohero.com/#sec-metalworking"},
+    {"@type": "ListItem", "position": 3, "name": "Microstructure &amp; Phase Diagrams", "item": "https://zerotoherohero.com/guides/microstructure-phase-diagrams.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Microstructure &amp; Phase Diagrams",
+  "description": "Iron-carbon phase diagram, austenite/ferrite/pearlite/martensite, crystal structure basics, grain boundaries, heat treatment theory, cold working, and alloy phase diagrams.",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-461">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-metalworking">Metalworking</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Microstructure &amp; Phase Diagrams</span>
+</nav>
+<header>
+<h1>Microstructure &amp; Phase Diagrams</h1>
+<p class="subtitle">Iron-carbon phase diagram, austenite/ferrite/pearlite/martensite, crystal structure basics, grain boundaries, heat treatment theory, cold working, and alloy phase diagrams.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●●○</span>
+<span class="read-time">📖 ~16 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#crystal-structure">Crystal Structure Basics</a></li>
+<li><a href="#iron-carbon-diagram">Iron-Carbon Phase Diagram</a></li>
+<li><a href="#phases">Steel Phases and Microstructures</a></li>
+<li><a href="#heat-treatment">Heat Treatment Theory</a></li>
+<li><a href="#cold-working">Cold Working and Work Hardening</a></li>
+<li><a href="#alloy-diagrams">Alloy Phase Diagrams</a></li>
+<li><a href="#practical-application">Practical Application: Hardening a Tool</a></li>
+<li><a href="#microscopy">Reading Microstructure (Optical Microscopy)</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<p>Steel properties are determined by its microstructure — the arrangement of atoms and phases at microscopic scale. Understanding microstructure, phase diagrams, and how heat treatment changes structure enables you to control steel properties (hardness, toughness, ductility) precisely.</p>
+<section id="crystal-structure">
+<h2>Crystal Structure Basics</h2>
+<h3>Atomic Arrangement</h3>
+<p>Metals are crystalline: atoms arranged in repeating three-dimensional patterns.</p>
+<p><strong>Iron (Fe) crystal structures:</strong></p>
+<p><strong>Ferrite (α-iron):</strong></p>
+<ul>
+<li>Cubic (BCC — body-centered cubic): Iron atom at cube center + 8 at corners</li>
+<li>Stable below 912°C</li>
+<li>Relatively weak, ductile</li>
+<li>Magnetic</li>
+<li>Solves small amount of carbon (~0.02% at room temperature)</li>
+</ul>
+<p><strong>Austenite (γ-iron):</strong></p>
+<ul>
+<li>Cubic (FCC — face-centered cubic): Iron atoms at corners + 6 at face centers</li>
+<li>Stable 912–1394°C</li>
+<li>Stronger than ferrite</li>
+<li>Non-magnetic</li>
+<li>Dissolves much more carbon (~2% at 1150°C)</li>
+</ul>
+<p><strong>Delta (δ-iron):</strong></p>
+<ul>
+<li>BCC (like ferrite)</li>
+<li>Stable above 1394°C</li>
+<li>Rare in normal metallurgy</li>
+</ul>
+<h3>Grain Structure</h3>
+<p>Real metal contains many crystal grains (individual crystals) separated by grain boundaries.</p>
+<p><strong>Grain boundary effects:</strong></p>
+<ul>
+<li>Barrier to dislocation movement (dislocations carry deformation)</li>
+<li>Small grains = more boundaries = higher strength, lower ductility</li>
+<li>Large grains = fewer boundaries = lower strength, higher ductility</li>
+<li>Heat treatment controls grain size</li>
+</ul>
+<p><strong>Visible by etching:</strong> Polished and acid-etched steel reveals grain boundaries (optical microscope)</p>
+</section>
+<section id="iron-carbon-diagram">
+<h2>Iron-Carbon Phase Diagram</h2>
+<p>The foundation of steel metallurgy; shows what phases exist at different temperatures and carbon content.</p>
+<h3>Reading the Diagram</h3>
+<p><strong>Axes:</strong></p>
+<ul>
+<li>X-axis: Carbon content (% by weight), 0–6% (steels 0–2%, cast irons 2–6%)</li>
+<li>Y-axis: Temperature (°C), typically 0–1500°C</li>
+</ul>
+<p><strong>Key regions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Composition</th>
+<th>Phases Present</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ferrite (α)</td>
+<td>&lt;0.02% C</td>
+<td>Pure ferrite</td>
+<td>Room temperature; soft, ductile</td>
+</tr>
+<tr>
+<td>Pearlite (eutectoid)</td>
+<td>~0.77% C</td>
+<td>Ferrite + cementite lamellae</td>
+<td>Strength increased; still ductile</td>
+</tr>
+<tr>
+<td>Martensite</td>
+<td>Any C% (0–2%)</td>
+<td>BCT crystal structure</td>
+<td>Very hard, brittle if not tempered</td>
+</tr>
+<tr>
+<td>Austenite (γ)</td>
+<td>&gt;0.02% C at temp</td>
+<td>FCC iron dissolving carbon</td>
+<td>High-temperature phase</td>
+</tr>
+<tr>
+<td>Cementite (Fe₃C)</td>
+<td>6.7% C</td>
+<td>Iron carbide compound</td>
+<td>Very hard, brittle</td>
+</tr>
+</tbody>
+</table>
+<h3>Key Temperatures</h3>
+<p><strong>Upper critical temperature (A₃ line):</strong></p>
+<ul>
+<li>Below A₃: Ferrite + pearlite</li>
+<li>Above A₃: Austenite</li>
+<li>Varies with carbon content (higher C = lower A₃)</li>
+</ul>
+<p><strong>Lower critical temperature (A₁ line):</strong></p>
+<ul>
+<li>At 0.77% C (eutectoid), A₁ = 727°C</li>
+<li>Below: Ferrite + cementite (pearlite)</li>
+<li>Above: Austenite</li>
+</ul>
+<p><strong>Austenite formation temperature:</strong></p>
+<ul>
+<li>For most steels: ~750°C (depends on composition)</li>
+<li>Heating above this transforms ferrite/pearlite → austenite</li>
+</ul>
+</section>
+<section id="phases">
+<h2>Steel Phases and Microstructures</h2>
+<h3>Ferrite</h3>
+<p>Pure iron or low-carbon iron; BCC structure.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li>Hardness: 80–130 HV</li>
+<li>Strength: 200–300 MPa</li>
+<li>Ductility: Very high</li>
+<li>Toughness: Excellent</li>
+<li>Appearance: White, soft</li>
+</ul>
+<p><strong>Found in:</strong></p>
+<ul>
+<li>Pure iron (very low carbon)</li>
+<li>Hypoeutectoid steels (C &lt; 0.77%) at room temperature</li>
+<li>Dual-phase with pearlite</li>
+</ul>
+<h3>Cementite (Fe₃C)</h3>
+<p>Iron carbide; extremely hard but brittle.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li>Hardness: 800–1000 HV (very hard)</li>
+<li>Strength: Very high</li>
+<li>Ductility: None; brittle</li>
+<li>Toughness: Poor</li>
+<li>Appearance: White/light gray, brittle</li>
+</ul>
+<p><strong>Found in:</strong></p>
+<ul>
+<li>Hypereutectoid steels (C &gt; 0.77%)</li>
+<li>Network along grain boundaries (detrimental to toughness)</li>
+</ul>
+<h3>Pearlite (Eutectoid Microstructure)</h3>
+<p>Layered (lamellar) structure of ferrite and cementite at 0.77% C.</p>
+<p><strong>Formation:</strong></p>
+<ul>
+<li>Cooling austenite (0.77% C) below A₁ temperature</li>
+<li>Ferrite and cementite precipitate together in alternating layers</li>
+</ul>
+<p><strong>Properties (depends on cooling rate):</strong></p>
+<ul>
+<li>Coarse pearlite (slow cooling): Soft, ductile</li>
+<li>Fine pearlite (faster cooling): Harder, stronger but less ductile</li>
+<li>Pearlite structure can be refined by heat treatment</li>
+</ul>
+<p><strong>Hardness:</strong> 150–250 HV (varies with spacing)</p>
+<h3>Bainite</h3>
+<p>Intermediate structure between pearlite and martensite; forms during intermediate cooling rates.</p>
+<p><strong>Formation:</strong></p>
+<ul>
+<li>Cooling austenite at rate between very fast (martensite) and slow (pearlite)</li>
+<li>Acicular (needle-like) ferrite plates with cementite</li>
+<li>Requires specific temperature/cooling rate</li>
+</ul>
+<p><strong>Properties:</strong></p>
+<ul>
+<li>Hardness: 350–550 HV</li>
+<li>Good strength + some ductility (balance between hardness and toughness)</li>
+<li>Excellent toughness compared to martensite</li>
+</ul>
+<p><strong>Best for:</strong> Applications needing both hardness and toughness</p>
+<h3>Martensite</h3>
+<p>Ultra-hard structure formed by extremely fast cooling.</p>
+<div class="transformation-box">
+<p><strong>Formation (martensitic transformation):</strong></p>
+<ol>
+<li>Austenite cooled very quickly (quench in water, oil)</li>
+<li>Carbon atoms &quot;frozen&quot; in FCC lattice as cooling rate exceeds diffusion rate</li>
+<li>Distorted BCC structure (BCT) results; highly stressed</li>
+<li>Atomic-level distortion = extreme hardness</li>
+</ol>
+</div>
+<p><strong>Properties:</strong></p>
+<ul>
+<li>Hardness: 500–1000+ HV (depends on carbon content; higher C = harder)</li>
+<li>Strength: Very high</li>
+<li>Ductility: Very low; brittle</li>
+<li>Toughness: Poor (brittle)</li>
+<li>Appearance: Acicular (needle-like) microstructure</li>
+</ul>
+<p><strong>Issues:</strong></p>
+<ul>
+<li>Residual stress from quenching causes cracking/distortion</li>
+<li>Brittleness makes martensite unsuitable alone</li>
+<li>Must be tempered (reheated to moderate temperature) to improve toughness</li>
+</ul>
+</section>
+<section id="heat-treatment">
+<h2>Heat Treatment Theory</h2>
+<p>Controlling cooling rate and temperature transforms steel properties.</p>
+<h3>Annealing</h3>
+<p><strong>Purpose:</strong> Soften steel, relieve stress, improve ductility</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Heat to above A₃ temperature (form austenite)</li>
+<li>Hold at temperature (allow carbon to dissolve)</li>
+<li>Cool very slowly (furnace-cooled) to room temperature</li>
+<li>Slow cooling allows equilibrium phases (ferrite + pearlite) to form</li>
+</ol>
+<p><strong>Result:</strong> Soft, ductile structure; ready for machining/forming</p>
+<p><strong>Time:</strong> Long (hours to days depending on thickness)</p>
+<h3>Normalizing</h3>
+<p><strong>Purpose:</strong> Refine grain structure, improve properties for next step</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Heat to above A₃</li>
+<li>Cool in still air (slower than quench, faster than furnace cool)</li>
+</ol>
+<p><strong>Result:</strong> Fine pearlite + ferrite; better balance of hardness and ductility than annealing</p>
+<p><strong>Time:</strong> Moderate (cooling rate depends on size)</p>
+<h3>Quenching and Tempering (Hardening)</h3>
+<p><strong>Quenching:</strong></p>
+<ol>
+<li>Heat above A₃ (austenite formation)</li>
+<li>Cool extremely fast (water or oil)</li>
+<li>Martensite forms (extremely hard)</li>
+</ol>
+<p><strong>Tempering (essential follow-up):</strong></p>
+<ol>
+<li>Reheat quenched steel to moderate temperature (100–600°C depending on desired hardness)</li>
+<li>Carbon atoms move slightly; stress relief</li>
+<li>Martensite partially transforms to tempered martensite + ferrite/cementite</li>
+</ol>
+<p><strong>Result:</strong> Combination of hardness (martensite) + toughness (tempering relief)</p>
+<p><strong>Temperature effects:</strong></p>
+<ul>
+<li>Low temp (100–200°C): Minimal softening; maximum hardness retained</li>
+<li>Medium (300–400°C): Good balance hardness/toughness</li>
+<li>High (500–600°C): Much softer; excellent toughness; may be too soft for cutting tools</li>
+</ul>
+<h3>Case Hardening</h3>
+<p><strong>Purpose:</strong> Hard surface with ductile core</p>
+<p><strong>Methods:</strong></p>
+<p><strong>Carburizing:</strong></p>
+<ol>
+<li>Pack low-carbon steel in carbon-rich material (charcoal, carbon compounds)</li>
+<li>Heat to ~900°C for hours/days</li>
+<li>Carbon diffuses into surface; creates high-carbon surface layer</li>
+<li>Quench: Surface hardens (high carbon = very hard when quenched), core stays ductile (low carbon)</li>
+</ol>
+<p><strong>Nitriding:</strong></p>
+<ol>
+<li>Heat steel in nitrogen-rich atmosphere (ammonia gas)</li>
+<li>Nitrogen diffuses into surface; forms nitrides</li>
+<li>Creates extremely hard surface; doesn't require subsequent quenching</li>
+</ol>
+<p><strong>Result:</strong> Hard exterior resists wear; soft core absorbs impact without breaking</p>
+</section>
+<section id="cold-working">
+<h2>Cold Working and Work Hardening</h2>
+<p><strong>Cold working:</strong> Deforming metal at room temperature (below recrystallization temperature).</p>
+<h3>Mechanism</h3>
+<p><strong>Dislocation multiplication:</strong></p>
+<ul>
+<li>Deformation moves dislocations through crystal lattice</li>
+<li>Metal becomes work-hardened (dislocations pile up, restrict further movement)</li>
+<li>Strength increases; ductility decreases</li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Annealed steel: Soft, ductile, low strength</li>
+<li>After cold-working (bending, rolling, swaging): Hard, less ductile, high strength</li>
+<li>Cold-working increases hardness 20–50% without heat treatment</li>
+</ul>
+<h3>Practical Effects</h3>
+<p><strong>Spring wire:</strong></p>
+<ul>
+<li>Drawn wire work-hardens during drawing</li>
+<li>Resulting hardness suitable for springs</li>
+<li>Reheating removes work-hardening (annealing)</li>
+</ul>
+<p><strong>Sheet metal:</strong></p>
+<ul>
+<li>Stamping/pressing hardens surface (not through-hardened like quench)</li>
+<li>Metal becomes prone to brittle cracking if further bent</li>
+<li>Annealing between forming steps relieves stress, restores ductility</li>
+</ul>
+<h3>Recovery and Recrystallization</h3>
+<p><strong>Annealing after cold work:</strong></p>
+<ol>
+<li>Heating above recrystallization temperature (typically 50–70% of melting point, Tm)</li>
+<li>New crystal grains form; dislocations disappear</li>
+<li>Material returns to soft, ductile state</li>
+<li>Allows further cold-working</li>
+</ol>
+<p><strong>Recrystallization temperature:</strong> Lower for higher-carbon steels; typically 450–550°C for steel</p>
+</section>
+<section id="alloy-diagrams">
+<h2>Alloy Phase Diagrams</h2>
+<p>Beyond iron-carbon; alloys with other elements have their own phase diagrams.</p>
+<h3>Common Alloying Elements</h3>
+<p><strong>Chromium (Cr):</strong></p>
+<ul>
+<li>Increases hardness, corrosion resistance</li>
+<li>Extends austenite range (stabilizes FCC iron)</li>
+<li>Forms chromium carbides (very hard)</li>
+</ul>
+<p><strong>Nickel (Ni):</strong></p>
+<ul>
+<li>Increases toughness, ductility</li>
+<li>Extends austenite range</li>
+<li>Improves low-temperature properties</li>
+</ul>
+<p><strong>Molybdenum (Mo):</strong></p>
+<ul>
+<li>Increases strength, hardness</li>
+<li>Reduces temper brittleness</li>
+<li>Used in tool steels</li>
+</ul>
+<p><strong>Manganese (Mn):</strong></p>
+<ul>
+<li>Increases strength, hardenability</li>
+<li>Extends austenite range</li>
+</ul>
+<p><strong>Vanadium (V):</strong></p>
+<ul>
+<li>Extreme hardness</li>
+<li>Forms very hard carbides</li>
+<li>Used in high-speed tool steels</li>
+</ul>
+<h3>Microalloying</h3>
+<p>Small amounts (0.1–0.5%) of titanium, niobium, or vanadium create extremely fine grain structure and precipitation hardening.</p>
+<p><strong>Effect:</strong> Very high strength at low weight; modern structural steels</p>
+</section>
+<section id="practical-application">
+<h2>Practical Application: Hardening a Tool</h2>
+<p><strong>Example: Hardening a small chisel or tool steel punch</strong></p>
+<div class="transformation-box">
+<p><strong>Step 1: Annealing (if starting with hard stock)</strong></p>
+<ul>
+<li>Heat to ~750°C, hold 10 minutes, cool slowly</li>
+<li>Makes steel soft enough to file/grind to shape</li>
+</ul>
+<p><strong>Step 2: Hardening (quenching)</strong></p>
+<ul>
+<li>Heat to ~800–850°C (bright cherry red)</li>
+<li>Submerge in water/oil quench; extreme hardness</li>
+<li>Risk: Cracking from quench stress</li>
+</ul>
+<p><strong>Step 3: Tempering (essential)</strong></p>
+<ul>
+<li>Reheat to 200–300°C (light straw color to blue)</li>
+<li>Cool slowly (air is OK)</li>
+<li>Tool hardness retained; brittleness relieved</li>
+<li>Tool is now ready for use</li>
+</ul>
+<p><strong>Expected result:</strong></p>
+<ul>
+<li>Hardness: 55–65 HRC (Rockwell hardness)</li>
+<li>Suitable for cutting/shaping softer metals</li>
+</ul>
+</div>
+</section>
+<section id="microscopy">
+<h2>Reading Microstructure (Optical Microscopy)</h2>
+<p>Etched and polished steel sample reveals microstructure under microscope.</p>
+<p><strong>Identification:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Structure</th>
+<th>Appearance</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coarse grains</td>
+<td>Large polygonal shapes</td>
+<td>Slow cooling or high-temp annealing; coarse = low strength</td>
+</tr>
+<tr>
+<td>Fine grains</td>
+<td>Many small shapes</td>
+<td>Fast cooling or grain-refining treatment; fine = high strength</td>
+</tr>
+<tr>
+<td>Pearlite</td>
+<td>Layered/striped pattern</td>
+<td>Slow-cooled eutectoid steel; moderate hardness</td>
+</tr>
+<tr>
+<td>Bainite</td>
+<td>Acicular (needle-like) pattern</td>
+<td>Intermediate cooling rate; good balance properties</td>
+</tr>
+<tr>
+<td>Martensite</td>
+<td>Fine acicular, very fine</td>
+<td>Fast cooling (quenched); high hardness but brittle</td>
+</tr>
+<tr>
+<td>Cementite network</td>
+<td>Light grain boundaries</td>
+<td>High-carbon steel, improperly heat-treated; poor toughness</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Magnification:</strong> 50–1000x typical for tool steel analysis</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion</h2>
+<p>Steel metallurgy is the science of atomic arrangement and how heat controls it. The iron-carbon phase diagram is the roadmap; understanding what phases form at different temperatures and carbon contents lets you predict steel behavior. Quenching, tempering, annealing, and cold-working are tools to achieve desired properties. Mastery comes from practice: heat-treating samples, analyzing microstructure, testing properties, and iterating until you achieve the exact hardness/toughness balance your application needs.</p>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="metallurgy-basics.html">Metallurgy Fundamentals</a>
+<a href="steel-making.html">Steel Making</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

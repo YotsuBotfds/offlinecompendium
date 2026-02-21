@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/bellows-forge-blower-construction.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bellows &amp; Forge Blower Construction</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Metalworking</span> ›
+<span>Bellows &amp; Forge Blower Construction</span>
+</div>
+
+
+<h1>Bellows &amp; Forge Blower Construction</h1>
+<p class="subtitle">Build single-action leather bellows, double-action great bellows, hand-crank blowers, and tuyere/nozzle systems for forge air supply.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~7 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#why-forced-air-critical">Why Forced Air Is Critical</a></li>
+<li><a href="#single-action-bellows">Single-Action Leather Bellows</a></li>
+<li><a href="#double-action-great-bellows">Double-Action Great Bellows</a></li>
+<li><a href="#hand-crank-blower">Hand-Crank Centrifugal Blower</a></li>
+<li><a href="#tuyere-nozzle">Tuyere &amp; Nozzle Systems</a></li>
+<li><a href="#mounting-integration">Mounting &amp; Integration</a></li>
+<li><a href="#maintenance">Maintenance</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>No forge works without forced air. While a small charcoal fire can reach 600°C in open air, a <a href="blacksmithing.html">blacksmith's forge</a> requires 1100–1500°C to work metal effectively. This temperature is impossible without a continuous blast of air that accelerates the burn rate and concentrates heat in the firebox. Bellows — simple air pumps — are the low-tech solution.</p>
+<p>This guide covers four proven designs: hand-operated leather bellows (portable, reliable), double-action great bellows (continuous airflow, large scale), hand-crank centrifugal blower (salvage-based, consistent), and tuyere/nozzle systems (the interface between air supply and forge). Each has trade-offs in complexity, durability, and air volume.</p>
+<div class="info-box">
+<p><strong>Air volume targets:</strong></p>
+<ul>
+<li><strong>Small forge (3 ft × 1 ft firebox):</strong> 40–60 CFM (cubic feet per minute)</li>
+<li><strong>Medium forge (4 ft × 2 ft):</strong> 80–120 CFM</li>
+<li><strong>Large forge (6 ft × 3 ft):</strong> 150+ CFM</li>
+</ul>
+<p>Most hand-bellows can deliver 20–40 CFM on each stroke. Hand-crank blowers reach 80–150 CFM steadily.</p>
+</div>
+</section>
+<section id="why-forced-air-critical">
+<h2>Why Forced Air Is Critical</h2>
+<p><strong>Combustion chemistry:</strong> Charcoal burns much hotter in oxygen-rich air than in still air.</p>
+<ul>
+<li>Still air fire (natural draft): ~600°C max, slow burn</li>
+<li>Moderate air blast (bellows): 900–1100°C</li>
+<li>High-pressure air (blower): 1200–1500°C</li>
+</ul>
+<p><strong>Forge design principles:</strong></p>
+<p>Air must be delivered <strong>below the burning charcoal</strong>, not above it. An updraft design (air enters from the bottom, rises through the coal bed) creates maximum turbulence and heat concentration. The air heats as it passes through the coal, making the flame intensely hot but localized.</p>
+<p>Metal placed in this zone reaches working temperature (orange-red to yellow) in seconds for small items, minutes for large pieces.</p>
+</section>
+<section id="single-action-bellows">
+<h2>Single-Action Leather Bellows</h2>
+<p>Single-action bellows deliver a burst of air on the downstroke; the upstroke resets the chamber (minimal air delivery). Despite this limitation, they're effective for small forges and are easily made from leather, wood, and iron.</p>
+<p><strong>Materials:</strong></p>
+<ul>
+<li><strong>Leather:</strong> 4–6 oz vegetable-tanned leather (oil-tanned leather is too stiff). Minimum 24 × 36 inches for a medium pair. Thin calf or goat skin is ideal.</li>
+<li><strong>Wood frame:</strong> Ash, oak, or maple boards (1½ inches × ¾ inches thick). Plan for a 12 × 18 inch main chamber.</li>
+<li><strong>Air valve:</strong> Two pieces — a movable leather flap and a wooden or iron seat.</li>
+<li><strong>Tuyere pipe:</strong> 1–2 inch diameter iron or copper pipe (6–12 inches long), fitted with a wooden nozzle or clay reducer.</li>
+<li><strong>Hardware:</strong> Iron nails (2–3 inch), wooden dowels (½ inch diameter for valve pivots).</li>
+</ul>
+<p><strong>Construction steps:</strong></p>
+<ol>
+<li>
+<p><strong>Build the frame:</strong></p>
+<ul>
+<li>Cut four board pieces: two 18 inches (top/bottom), two 12 inches (sides)</li>
+<li>Join with mortise-and-tenon or overlapping joints; reinforce with iron corner brackets</li>
+<li>Create a <strong>bellows chamber:</strong> hollow rectangular box, roughly 18 × 12 × 6 inches</li>
+<li>The bottom of the frame is the <strong>discharge side</strong> where air exits into the tuyere</li>
+</ul>
+</li>
+<li>
+<p><strong>Attach the leather:</strong></p>
+<ul>
+<li>Soak the leather in water until pliable (1–2 hours)</li>
+<li>Stretch it over the frame, stapling or tacking it taut to the sides and front/back</li>
+<li>Leave the <strong>bottom (discharge side) open</strong> for the tuyere connection</li>
+<li>Ensure the leather is wrinkle-free and evenly tensioned</li>
+</ul>
+</li>
+<li>
+<p><strong>Install the intake valve:</strong></p>
+<ul>
+<li>Cut a flap from thin leather (6 × 8 inches)</li>
+<li>Hinge it with a leather strip or flexible wire at the top-back of the bellows</li>
+<li>Below the flap, attach a wooden seat (a shaped board with a ½-inch hole in the center)</li>
+<li>The flap should seal over the hole on the upstroke (drawing air) and open on the downstroke (preventing backflow)</li>
+</ul>
+</li>
+<li>
+<p><strong>Discharge nozzle:</strong></p>
+<ul>
+<li>Fit a 1–2 inch iron pipe into an opening in the bottom of the bellows (seal with clay or leather gasket)</li>
+<li>The pipe leads downward to the <strong>tuyere socket</strong> (below)</li>
+<li>Add a wooden or clay reducer at the end, tapering from 1½ inches to ½ inch, to concentrate the air jet</li>
+</ul>
+</li>
+<li>
+<p><strong>Add the handle:</strong></p>
+<ul>
+<li>Attach a wooden handle (shaped piece, 4–6 inches long) to the top of the frame</li>
+<li>This lever is used to push down (discharge) and pull up (intake)</li>
+</ul>
+</li>
+</ol>
+<p><strong>Operation:</strong></p>
+<ul>
+<li><strong>Downstroke:</strong> Force air out the discharge pipe. Feel resistance — this is air pressure building.</li>
+<li><strong>Upstroke:</strong> Release pressure; the intake flap opens and draws in air. No output during this phase.</li>
+<li><strong>Rhythm:</strong> Alternate strokes at 1–2 Hz (one per second) for continuous blast. A single operator can maintain this indefinitely.</li>
+</ul>
+<div class="tip">
+<p>Single-action bellows are most efficient when the operator uses full arm strength on the downstroke. Beginners often use shallow strokes — practice full compression for maximum air volume.</p>
+</div>
+</section>
+<section id="double-action-great-bellows">
+<h2>Double-Action Great Bellows</h2>
+<p>Double-action bellows deliver air on <strong>both downstroke and upstroke</strong>, providing nearly continuous airflow. This design is more complex but yields 2–3 times the air volume of single-action.</p>
+<p><strong>Materials (larger bellows):</strong></p>
+<ul>
+<li><strong>Leather:</strong> 6–8 oz vegetable-tanned leather, minimum 30 × 48 inches</li>
+<li><strong>Wood frame:</strong> As above, but larger: 24 × 18 × 8 inches internal chamber</li>
+<li><strong>Valves:</strong> Four pieces (two intake, two discharge) with separate leather flaps and seats</li>
+<li><strong>Hardware:</strong> As above, plus additional nails/dowels for the more complex interior</li>
+</ul>
+<p><strong>Key design difference:</strong></p>
+<p>A double-action bellows has an <strong>internal partition</strong> (a leather or wooden membrane) that divides the chamber into two halves. Each half has its own intake valve (at the top) and discharges through a common bottom outlet. When one half compresses (pushing air out), the other half expands (drawing air in). The process reverses on the opposite stroke.</p>
+<p><strong>Construction steps:</strong></p>
+<ol>
+<li>
+<p><strong>Build a larger frame:</strong> 24 inches long, 18 inches wide, 8 inches tall (deeper chamber than single-action)</p>
+</li>
+<li>
+<p><strong>Install the partition:</strong></p>
+<ul>
+<li>A flexible leather or thin wooden membrane divides the chamber lengthwise</li>
+<li>It flexes but does not seal completely (some leakage is expected; inefficiency is ~20%)</li>
+<li>Attach at the top and sides; leave the bottom open so both chambers discharge to the same outlet</li>
+</ul>
+</li>
+<li>
+<p><strong>Install four valve seats:</strong></p>
+<ul>
+<li>Two intake valves (one per chamber, at the top)</li>
+<li>Two discharge valve seats (one per chamber, at the bottom where they both converge)</li>
+<li>Intake flaps open inward (air drawn in); discharge flaps are one-way (prevent backflow)</li>
+</ul>
+</li>
+<li>
+<p><strong>Leather covering:</strong></p>
+<ul>
+<li>Stretch leather over the entire frame, but slit it at the partition to allow flexing</li>
+<li>Seal the slit edges with pitch or hide glue</li>
+</ul>
+</li>
+<li>
+<p><strong>Discharge piping:</strong></p>
+<ul>
+<li>Merge the two discharge paths into a single tuyere outlet (use a Y-junction if needed)</li>
+</ul>
+</li>
+</ol>
+<p><strong>Operation:</strong></p>
+<ul>
+<li>Both strokes produce airflow, reducing the work interval</li>
+<li>Air delivery is more consistent (fewer pulsations)</li>
+<li>Larger bellows can supply 60–100 CFM with vigorous operation</li>
+</ul>
+</section>
+<section id="hand-crank-blower">
+<h2>Hand-Crank Centrifugal Blower</h2>
+<p>A salvage-based design using a small electric motor's internal fan or a bicycle wheel + bucket can produce steady, high-volume air. This is ideal for consistent forge work without operator fatigue.</p>
+<p><strong>Materials:</strong></p>
+<ul>
+<li><strong>Fan element:</strong> Remove the fan wheel from a broken 1–2 HP electric motor, or craft a fan from sheet metal (8–12 inches diameter)</li>
+<li><strong>Bearings and axle:</strong> Use the motor's shaft and bearings, or improvise with wooden axles on bearing blocks</li>
+<li><strong>Housing:</strong> Sheet metal or wooden box (12 × 12 × 12 inches), fitted with the spinning fan inside</li>
+<li><strong>Handle/crank:</strong> 18–24 inch lever arm, offset from the axle to provide mechanical advantage (gear ratio ~5:1)</li>
+<li><strong>Air inlet:</strong> 3–4 inch hole at the side of the housing</li>
+<li><strong>Air outlet:</strong> 2-inch diameter nozzle, directed downward to the tuyere</li>
+</ul>
+<p><strong>Construction steps:</strong></p>
+<ol>
+<li>
+<p><strong>Mount the fan:</strong></p>
+<ul>
+<li>Secure the motor fan wheel to an axle (metal rod, ½ inch diameter)</li>
+<li>Mount axle in bearing blocks on both sides of a wooden frame</li>
+<li>The frame is the <strong>housing</strong> — a wooden box that channels air around the spinning fan</li>
+</ul>
+</li>
+<li>
+<p><strong>Seal the housing:</strong></p>
+<ul>
+<li>The spinning fan must operate in an enclosed space to create pressure</li>
+<li>All joints sealed with clay, sealant, or sheet metal tape</li>
+<li>Only two openings: <strong>intake</strong> (side) and <strong>outlet</strong> (bottom/side, directed to tuyere)</li>
+</ul>
+</li>
+<li>
+<p><strong>Install the crank:</strong></p>
+<ul>
+<li>Attach a lever arm (18–24 inches) to one end of the axle</li>
+<li>Use a gear reduction or simple mechanical advantage (e.g., the lever is 5× longer than the radius of the fan, so 1 turn of the crank spins the fan ~5 turns)</li>
+<li>Attach a hand grip at the end</li>
+</ul>
+</li>
+<li>
+<p><strong>Test assembly:</strong></p>
+<ul>
+<li>Spin by hand — feel resistance increase slightly as the fan accelerates (this is air pressure building in the sealed housing)</li>
+<li>The outlet should produce a visible, steady air jet</li>
+</ul>
+</li>
+</ol>
+<p><strong>Operation:</strong></p>
+<ul>
+<li>Crank smoothly at 1–2 revolutions per second</li>
+<li>Air output is continuous (no pulsation like bellows)</li>
+<li>Requires moderate arm strength but minimal skill — even untrained operators can maintain a steady blast</li>
+<li>Single operator can sustain this for extended work (hours) with brief rest breaks</li>
+</ul>
+<div class="tip">
+<p>A hand-crank blower is ideal when one smith needs to work while another tends the forge. The crank operator can work in shifts, and the air remains steady throughout.</p>
+</div>
+<p><strong>Air volume:</strong> A well-designed crank blower reaches <strong>80–150 CFM</strong> depending on fan size and crank speed.</p>
+</section>
+<section id="tuyere-nozzle">
+<h2>Tuyere &amp; Nozzle Systems</h2>
+<p>The tuyere is the final interface where air is delivered into the forge. Its design strongly affects how efficiently the heat is concentrated.</p>
+<p><strong>Tuyere socket (in the forge):</strong></p>
+<p>A cast iron socket, 2–3 inches outside diameter, threads or is bolted into the side of the forge firebox, just below the coal bed. The socket must angle slightly upward (15–20°) to direct air through the coal pile, not into empty space or under the coal.</p>
+<p><strong>Nozzle (air accelerator):</strong></p>
+<p>The pipe from the bellows connects to a nozzle that tapers air from 1½ inches diameter down to ½–¾ inches, concentrating the flow. This jet velocity increases air speed and creates a more intense burn zone.</p>
+<pre><code>Bellows → 1.5&quot; pipe → Tapering nozzle → 0.75&quot; jet → Coal bed
+                      (clay or turned wood)
+</code></pre>
+<p><strong>Nozzle materials:</strong></p>
+<ul>
+<li><strong>Clay (easiest):</strong> Hand-mold a tapered shape, fire in a kiln or above hot coals. Lasts 1–2 years before erosion.</li>
+<li><strong>Wood (temporary):</strong> Turned maple or ash, sealed with hide glue. Replace every few forging sessions.</li>
+<li><strong>Iron (durable):</strong> Cast or forged from iron, but labor-intensive to make. Lasts indefinitely.</li>
+</ul>
+<p><strong>Installation steps:</strong></p>
+<ol>
+<li>Secure the tuyere socket to the firebox side (use bolts and clay sealant)</li>
+<li>Connect the bellows pipe to the socket with iron pipe fittings or soft sealant (clay)</li>
+<li>Insert the tapering nozzle so the ½-inch jet extends 1–2 inches into the coal bed</li>
+</ol>
+<p><strong>Air regulation:</strong></p>
+<p>If the air blast is too strong, the coal bed can be blown apart or the metal overheated (burns/decarbs). If too weak, the metal doesn't reach working temperature. Simple controls:</p>
+<ul>
+<li><strong>Lever damper:</strong> A hinged plate above the intake valve partially blocks incoming air</li>
+<li><strong>Bypass valve:</strong> A tube with a valve that diverts excess air back to atmosphere</li>
+<li><strong>Bellows frequency:</strong> Simply stroke the bellows less frequently to reduce average airflow</li>
+</ul>
+<p>A good forge operator learns to <strong>feel</strong> the pressure needed — harder pressure for large pieces, lighter for fine work.</p>
+</section>
+<section id="mounting-integration">
+<h2>Mounting &amp; Integration</h2>
+<p><strong>Bellows placement:</strong></p>
+<ul>
+<li>Position the bellows <strong>to the side of the forge</strong>, 2–3 feet away</li>
+<li>Elevation: The bellows outlet should be <strong>at or slightly below the tuyere inlet</strong> (gravity helps air flow; avoid lifting air uphill)</li>
+<li>If the bellows is higher than the tuyere, the air column cools and loses pressure</li>
+</ul>
+<p><strong>Pipe routing:</strong></p>
+<ul>
+<li>Use 1–2 inch diameter iron pipe (seamless, not galvanized — galvanize coating vaporizes in heat)</li>
+<li>Route pipe away from the main forge body if possible (heat expansion warps connections)</li>
+<li>Use flexible leather or cloth hose for the final 6–12 inches where heat is most intense (protects iron from thermal stress)</li>
+</ul>
+<p><strong>Securing the bellows:</strong></p>
+<ul>
+<li>Mount on a sturdy wooden frame or forge stand</li>
+<li>The handle should be at comfortable arm height (waist to chest level) for the operator</li>
+<li>Ensure the entire assembly doesn't rock or shift during stroking</li>
+</ul>
+</section>
+<section id="maintenance">
+<h2>Maintenance</h2>
+<p><strong>Leather care:</strong></p>
+<ul>
+<li>Leather bellows benefit from occasional oiling (lanolin or hide oil) to remain supple</li>
+<li>Dry air and heat can crack leather — keep bellows in a cool, dry location when not in use</li>
+<li>Replace flaps every 2–5 years; leather stretches and valves weaken over time</li>
+</ul>
+<p><strong>Valve inspection:</strong></p>
+<ul>
+<li>Check that intake and discharge flaps seal tightly (no air leakage when idle)</li>
+<li>If a flap tears, it must be replaced; even small tears cause significant air loss</li>
+</ul>
+<p><strong>Tuyere maintenance:</strong></p>
+<ul>
+<li>Clay nozzles erode from coal particles and heat; replace every 2–3 years or when airflow visibly decreases</li>
+<li>Check the tuyere socket for ash buildup; clear with a wire or brush</li>
+</ul>
+<p><strong>Pipe and fittings:</strong></p>
+<ul>
+<li>Iron pipe corrodes if exposed to moisture; keep dry and lightly oiled</li>
+<li>Loose fittings can be re-tightened with a wrench</li>
+<li>Cracked or rusted sections should be replaced</li>
+</ul>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Weak air output or no airflow</strong></td>
+<td>Bellows valve stuck or torn; pipe blockage</td>
+<td>Check intake/discharge flaps for damage. Clear tuyere nozzle with a thin wire.</td>
+</tr>
+<tr>
+<td><strong>Hissing sound; air escapes from sides</strong></td>
+<td>Leather leak or loose seams</td>
+<td>Patch small leaks with hide glue and leather scraps. Re-seal major seams.</td>
+</tr>
+<tr>
+<td><strong>Bellows handle is hard to push/pull</strong></td>
+<td>Swollen leather (humidity) or air pressure imbalance</td>
+<td>Allow bellows to dry. Check that both intake and discharge valves open freely.</td>
+</tr>
+<tr>
+<td><strong>Coal bed blows apart during air blast</strong></td>
+<td>Tuyere nozzle too large (air velocity too low) or directed poorly</td>
+<td>Reduce nozzle diameter to ½ inch. Angle tuyere 15–20° upward so air passes through coal bed horizontally, not blasts straight up.</td>
+</tr>
+<tr>
+<td><strong>Metal heats slowly; forge temp insufficient</strong></td>
+<td>Weak airflow (bellows worn or blocked)</td>
+<td>Increase bellows frequency (stroke faster). Check nozzle for carbon buildup.</td>
+</tr>
+<tr>
+<td><strong>Crank blower is hard to turn</strong></td>
+<td>Fan friction increased; air pressure too high</td>
+<td>Ensure bearing blocks are aligned. Reduce outlet restriction. Check housing for air leaks that build pressure.</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="blacksmithing.html">Blacksmithing</a>
+<a href="foundry-casting.html">Foundry &amp; Metal Casting</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

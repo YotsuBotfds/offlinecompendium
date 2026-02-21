@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/crowd-control-riot-response.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crowd Control &amp; Riot Response</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Security &amp; Defense</span> ›
+<span>Crowd Control &amp; Riot Response</span>
+</div>
+
+
+<h1>Crowd Control &amp; Riot Response</h1>
+<p class="subtitle">Crowd psychology, de-escalation techniques, barrier deployment, non-lethal management, evacuation procedures, stampede prevention, differentiation between peaceful protest and riot, rules of engagement, communication with leaders.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~6 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview: Managing Collective Behavior</a></li>
+<li><a href="#crowd-psychology">Crowd Psychology &amp; Panic Dynamics</a></li>
+<li><a href="#de-escalation">De-Escalation Techniques</a></li>
+<li><a href="#barriers">Physical Barrier Deployment</a></li>
+<li><a href="#nonlethal">Non-Lethal Crowd Management</a></li>
+<li><a href="#evacuation">Evacuation Procedures</a></li>
+<li><a href="#stampede-prevention">Stampede Prevention Measures</a></li>
+<li><a href="#protest-vs-riot">Differentiating Protest from Riot</a></li>
+<li><a href="#rules-engagement">Rules of Engagement for Crowd Control</a></li>
+<li><a href="#post-incident">Post-Incident Review &amp; Accountability</a></li>
+<li><a href="#checklist">Crowd Management Readiness Checklist</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview: Managing Collective Behavior</h2>
+<p>Large crowds behave differently than individuals. Fear, anger, or excitement spreads contagiously. A peaceful market gathering can become a dangerous stampede in seconds if leadership is lost or panic triggers. A riot—uncontrolled violence by crowds—can destroy infrastructure, injure innocent people, and collapse community stability.</p>
+<p>This guide covers crowd management as a civil defense problem: how to prevent riots, how to de-escalate angry crowds, how to execute safe evacuations, and how to respond to violence without maximizing harm.</p>
+<p>The core principle: <strong>Remove the conditions that trigger panic; separate angry actors from peaceful crowds; enable safe retreat paths.</strong></p>
+<div class="warning">
+<p><strong>Ethical Framework:</strong> Riot response has a history of abuse—governments using crowd control tactics as oppression. This guide assumes you are protecting your community from genuine danger (looting, fire, violence), not suppressing legitimate political speech. If your &quot;crowd control&quot; is actually political repression, you are the problem, not the solution.</p>
+</div>
+</section>
+<section id="crowd-psychology">
+<h2>Crowd Psychology &amp; Panic Dynamics</h2>
+<p>Understanding how crowds behave is the first line of defense against disaster.</p>
+<h3>Individual to Crowd Transition</h3>
+<p>As crowds grow, individual responsibility dissolves:</p>
+<ol>
+<li>
+<p><strong>Small Group (10-50 people):</strong> Individual identity remains; people feel personally responsible. Negotiation possible.</p>
+</li>
+<li>
+<p><strong>Medium Group (50-500):</strong> Anonymity increases. Individuals feel less personal responsibility. Groupthink accelerates. Emotional contagion (fear, anger, excitement) spreads via line-of-sight and sound.</p>
+</li>
+<li>
+<p><strong>Large Crowd (500+ people):</strong> Individual identity nearly vanishes. Crowd acts with collective agency. Leaders at the front set behavior; followers in back imitate without understanding context. Crowd polarizes into factions.</p>
+</li>
+</ol>
+<h3>Panic Mechanisms</h3>
+<p>Panic occurs when:</p>
+<ul>
+<li><strong>Perceived threat exceeds exit capacity</strong> (more people than doors)</li>
+<li><strong>Sense of time pressure</strong> (people believe escape window closing)</li>
+<li><strong>Loss of leadership</strong> (authority figures flee or collapse)</li>
+<li><strong>Visual/auditory confirmation</strong> (seeing others panic amplifies fear)</li>
+</ul>
+<p>Stampedes kill by crushing, not violence. Most deaths occur at bottlenecks (doorways, bridges) as people compress against each other.</p>
+<h3>Emotional Contagion</h3>
+<p>Fear and anger spread like wildfire in crowds:</p>
+<ul>
+<li>A single person shouting &quot;Fire!&quot; can trigger evacuation panic</li>
+<li>A person throwing one rock gives permission for others</li>
+<li>A scream triggers flinching and running among nearby people</li>
+</ul>
+<p><strong>Counter-strategy:</strong> Establish and maintain calm authority figures visible throughout the crowd. A leader standing calmly and communicating clearly anchors behavior.</p>
+</section>
+<section id="de-escalation">
+<h2>De-Escalation Techniques</h2>
+<p>The best riot is one that never starts. Preventing escalation from protest to violence saves lives and prevents property damage.</p>
+<h3>Pre-Incident Assessment</h3>
+<p>Before a large gathering (market day, town meeting, fair), assess risk factors:</p>
+<ul>
+<li><strong>Triggers:</strong> Are there known sources of anger? (Economic hardship, political dispute, religious conflict, prior violence?)</li>
+<li><strong>Leadership:</strong> Are credible community leaders present? Will they advocate for order or violence?</li>
+<li><strong>Liquor availability:</strong> Alcohol reduces impulse control and increases aggression</li>
+<li><strong>Weapons:</strong> Are attendees armed? If so, is it normal (farmers with tools) or provocative?</li>
+<li><strong>Outside agitators:</strong> Are outsiders present known for violence at other gatherings?</li>
+</ul>
+<h3>De-Escalation During Tense Situations</h3>
+<p><strong>Leadership Presence:</strong> Visible authority figures reduce violence:</p>
+<ul>
+<li>Mayor, chief, religious leader, or respected elder should be visibly present and calm</li>
+<li>Establish a command post away from the crowd (so people don't see authority conferring nervously)</li>
+<li>Issue statements via clear communication channel (town crier, loudspeaker if available)</li>
+</ul>
+<p><strong>Clear Communication:</strong></p>
+<ul>
+<li>Address legitimate grievances directly: &quot;We hear your concerns about...&quot;</li>
+<li>Explain what will happen next: &quot;We will hold a hearing on [date]&quot;</li>
+<li>Set boundaries calmly: &quot;Violence will not be tolerated. Damage to property will be punished.&quot;</li>
+<li>Use repetition: Say the same message multiple times; crowds don't hear clearly</li>
+</ul>
+<p><strong>Physical Spacing:</strong></p>
+<ul>
+<li>Use barriers or lines of peacekeepers to create space between groups</li>
+<li>Prevent direct eye contact and shouting between opposed groups</li>
+<li>Allow angry people to have voice without direct confrontation (speaker's stage instead of mob-to-mob shouting)</li>
+</ul>
+<p><strong>Remove Provocateurs:</strong></p>
+<ul>
+<li>Identify individuals throwing objects or shouting violence</li>
+<li>Have peacekeepers separate them from the crowd (physically remove, don't arrest theatrically)</li>
+<li>Prevent them from becoming martyrs; quietly remove them, de-emphasize their action</li>
+</ul>
+<h3>Talking to Angry Leaders</h3>
+<p>If a crowd has a spokesperson or leader:</p>
+<ol>
+<li><strong>Isolate the leader:</strong> Pull them aside from the crowd for private conversation</li>
+<li><strong>Acknowledge their position:</strong> &quot;I understand you believe [grievance]. That's valid.&quot;</li>
+<li><strong>Explain constraints:</strong> &quot;The decision is made, but here's what we can do...&quot;</li>
+<li><strong>Offer alternatives:</strong> &quot;Instead of [riot], we can [solution]&quot;</li>
+<li><strong>Make them invested:</strong> &quot;Help us maintain order. Your people will listen to you.&quot;</li>
+</ol>
+<p>An angry leader who feels heard and respected often becomes an ally in preventing violence.</p>
+<div class="info-box">
+<p><strong>Historical Example:</strong> During the 1960s Civil Rights marches in the American South, negotiation with police and white leaders prevented some riots while failed negotiation led to tragic violence. Leadership and clear communication mattered.</p>
+</div>
+</section>
+<section id="barriers">
+<h2>Physical Barrier Deployment</h2>
+<p>Barriers serve multiple purposes:</p>
+<ul>
+<li>Create physical separation (prevents spontaneous violence between groups)</li>
+<li>Establish authority presence (shows leadership takes the gathering seriously)</li>
+<li>Control movement (channels crowd flow, prevents sudden surges)</li>
+<li>Enable safe retreat (provides defensible positions for peacekeepers)</li>
+</ul>
+<h3>Barrier Types</h3>
+<table>
+<thead>
+<tr>
+<th scope="col">Type</th>
+<th scope="col">Materials</th>
+<th scope="col">Uses</th>
+<th scope="col">Advantages/Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rope Barriers</strong></td>
+<td>Heavy rope, stakes</td>
+<td>Marking perimeter, creating lanes</td>
+<td>Quick to deploy; crowd can push through if pressed</td>
+</tr>
+<tr>
+<td><strong>Rail Barriers</strong></td>
+<td>Wooden rails, posts</td>
+<td>Separating groups, creating enclosures</td>
+<td>Sturdy; takes time to erect; blocks vision</td>
+</tr>
+<tr>
+<td><strong>Human Barriers (Peacekeepers)</strong></td>
+<td>Trained personnel, shields</td>
+<td>Direct control, clear communication</td>
+<td>Requires training; vulnerable to violence; prevents passage if too tight</td>
+</tr>
+<tr>
+<td><strong>Vehicle Barriers</strong></td>
+<td>Carts, wagons</td>
+<td>Blocking major access points, creating improvised fortifications</td>
+<td>Very effective; difficult to move; may provoke if used aggressively</td>
+</tr>
+<tr>
+<td><strong>Ditch/Embankment</strong></td>
+<td>Excavated terrain</td>
+<td>Separating areas, controlling vehicle access</td>
+<td>Permanent installation; takes weeks to dig; very effective</td>
+</tr>
+</tbody>
+</table>
+<h3>Barrier Positioning</h3>
+<ul>
+<li><strong>Perimeter barriers:</strong> Around the gathering area to control entry/exit</li>
+<li><strong>Separating barriers:</strong> Between hostile groups to prevent direct confrontation</li>
+<li><strong>Safe retreat corridors:</strong> Clear paths for peacekeepers to withdraw if overrun</li>
+<li><strong>Bottleneck management:</strong> At known chokepoints (bridges, narrow streets), position barriers to slow crowd flow and prevent crushing</li>
+</ul>
+<h3>Barrier Maintenance</h3>
+<p>Once deployed, barriers must be monitored:</p>
+<ul>
+<li>Personnel at each barrier point to answer questions and prevent damage</li>
+<li>Peacekeepers nearby to reinforce if barriers are attacked</li>
+<li>Escape routes kept clear for personnel</li>
+<li>Regular check-ins to prevent entrapment or panic near barriers</li>
+</ul>
+</section>
+<section id="nonlethal">
+<h2>Non-Lethal Crowd Management</h2>
+<p>If barriers and communication fail and a crowd becomes violent, response must use minimum necessary force.</p>
+<h3>Permitted Responses (Civil Defense Standard)</h3>
+<ul>
+<li><strong>Physical restraint:</strong> Hold, control, restrain without injury</li>
+<li><strong>Impact tools (baton, stick):</strong> Strike limbs to disable, not head</li>
+<li><strong>Protective equipment:</strong> Shields, helmets to protect against thrown objects</li>
+<li><strong>Dispersal formations:</strong> Coordinated advance with barriers/lines to push crowd apart</li>
+<li><strong>Chemicals (if available):</strong>
+<ul>
+<li>Tear gas: Irritant, non-lethal, causes retreat</li>
+<li>Pepper spray: Higher irritancy; can cause injury if misused</li>
+<li>Water cannons: Disperse crowds by blunt force of water; can cause injury if abused</li>
+</ul>
+</li>
+<li><strong>Sound devices:</strong> Loud horns to signal, disorient</li>
+<li><strong>Lighting:</strong> Bright lights to prevent coordination in darkness</li>
+</ul>
+<h3>Prohibited Responses (Lethal Force)</h3>
+<ul>
+<li>Firearms (except for lethal threats to life—last resort)</li>
+<li>Edged weapons (except for self-defense against armed opponents)</li>
+<li>Intentional injury to face, throat, or torso</li>
+<li>Prolonged physical restraint that impedes breathing</li>
+<li>Techniques that target vulnerable areas (neck, spine, groin, joint hyperextension)</li>
+</ul>
+<div class="danger">
+<p><strong>Liability:</strong> Using lethal force against an unarmed crowd is murder or manslaughter, not self-defense. Peacekeepers must receive explicit training and authority to use non-lethal force. Vigilantes using violence against crowds should face prosecution.</p>
+</div>
+<h3>Coordinated Formations</h3>
+<p>Effective dispersal requires organization:</p>
+<ol>
+<li><strong>Peacekeepers in line formation:</strong> Linked arms or shields creating a connected barrier</li>
+<li><strong>Advance calmly:</strong> Walk forward at steady pace (1-2 mph), giving people room to retreat</li>
+<li><strong>Loud verbal warning:</strong> Repeat &quot;Disperse now&quot; clearly and repeatedly</li>
+<li><strong>Targeting leaders:</strong> If crowd has a leader/speaker, focus on removing them from visibility</li>
+<li><strong>Avoid encirclement:</strong> Don't trap the crowd; always leave an exit path</li>
+</ol>
+<p>Cornering a crowd causes stampedes. Allow retreat.</p>
+</section>
+<section id="evacuation">
+<h2>Evacuation Procedures</h2>
+<p>When safety requires evacuating a crowd (fire, structural collapse, health hazard), poor procedure causes stampedes and deaths.</p>
+<h3>Before Evacuation</h3>
+<ul>
+<li><strong>Identify exits:</strong> Map all entry/exit points</li>
+<li><strong>Assign personnel:</strong> Station peacekeepers at each exit</li>
+<li><strong>Clear corridors:</strong> Ensure exit routes are not obstructed</li>
+<li><strong>Communicate system:</strong> Establish how word spreads (bells, runners, loudspeaker)</li>
+</ul>
+<h3>Evacuation Execution</h3>
+<ol>
+<li><strong>Clear signal:</strong> Sound alarm or bell repeatedly; make it unmistakable</li>
+<li><strong>Verbal messaging:</strong> &quot;Exit toward [direction]. Walk calmly. Do not run.&quot;</li>
+<li><strong>Repeating instructions:</strong> Continue messaging to prevent panic from silence</li>
+<li><strong>Gentle pressure:</strong> Personnel move people toward exits but don't push</li>
+<li><strong>Bottleneck management:</strong> At exits, slow movement to prevent crushing
+<ul>
+<li>Position a peacekeeper in the doorway to control flow (let people exit 1-2 at a time)</li>
+<li>Create a queue outside if needed; exiting people organize themselves</li>
+</ul>
+</li>
+</ol>
+<h3>Preventing Stampedes</h3>
+<ul>
+<li><strong>No running:</strong> Explicitly tell people not to run; running triggers panic in others</li>
+<li><strong>Lighting:</strong> If evacuation is at night, illuminate exit routes</li>
+<li><strong>Handholds:</strong> Provide ropes or rails to guide people (helpful for elderly, children)</li>
+<li><strong>Accounting:</strong> Track who exits; if anyone is missing, they may be trapped</li>
+</ul>
+<h3>Post-Evacuation</h3>
+<ul>
+<li><strong>Safe assembly point:</strong> Direct evacuated people to a marked location outside</li>
+<li><strong>Account for all:</strong> Confirm everyone is present; identify missing people</li>
+<li><strong>Medical response:</strong> Tend to anyone injured in the evacuation</li>
+<li><strong>Return-to-safety:</strong> Once the hazard is cleared, systematically guide people back</li>
+</ul>
+<div class="info-box">
+<p><strong>Stampede Dangers:</strong> Studies of crowd disasters (stadium collapses, nightclub fires) show that most deaths occur not from the initial hazard but from crushing in chaotic evacuation. Controlled, calm evacuation saves lives even in dangerous situations.</p>
+</div>
+</section>
+<section id="stampede-prevention">
+<h2>Stampede Prevention Measures</h2>
+<p>Stampedes kill more people than riots. Prevent them through design and procedure.</p>
+<h3>Facility Design</h3>
+<ul>
+<li><strong>Multiple exits:</strong> At least 2 exits per room; ideally, one exit per 250 people</li>
+<li><strong>Wide exits:</strong> Minimum 3-4 feet for each person per second (for egress rate ~1 person/second per foot of width)</li>
+<li><strong>Clear exit signage:</strong> Illuminated, unambiguous, visible from all areas</li>
+<li><strong>Obstacle-free corridors:</strong> No furniture, equipment, or people blocking paths</li>
+<li><strong>Handholds:</strong> Railings to guide movement without forcing</li>
+<li><strong>Ground surface:</strong> Level, non-slip floor (not stairs unless necessary)</li>
+</ul>
+<h3>Crowd Density Management</h3>
+<ul>
+<li><strong>Capacity limits:</strong> Cap attendance to 1 person per 3-4 square feet (prevents crushing even with vigorous movement)</li>
+<li><strong>Standing room only:</strong> Don't allow people to sit on stairs, aisles, or exit paths</li>
+<li><strong>Flow monitoring:</strong> Station people to count entries and prevent overcrowding</li>
+</ul>
+<h3>Communication During Emergencies</h3>
+<ul>
+<li><strong>Single authoritative voice:</strong> One clear, repeated message (not multiple people shouting conflicting instructions)</li>
+<li><strong>Calm tone:</strong> A panicked-sounding evacuation message triggers panic response in hearers</li>
+<li><strong>Specific instructions:</strong> &quot;Exit through the north doors toward the green field. Walk calmly. Families stay together.&quot;</li>
+<li><strong>Repetition:</strong> Same message repeated until everyone moves</li>
+</ul>
+<h3>Training</h3>
+<p>Every facility should conduct evacuation drills quarterly:</p>
+<ul>
+<li>Test all exits</li>
+<li>Measure evacuation time</li>
+<li>Identify bottlenecks</li>
+<li>Practice control procedures</li>
+<li>Educate staff and regular attendees</li>
+</ul>
+</section>
+<section id="protest-vs-riot">
+<h2>Differentiating Protest from Riot</h2>
+<p>Legal and ethical distinctions matter:</p>
+<p><strong>Peaceful Protest:</strong></p>
+<ul>
+<li>Gathering for political/social speech</li>
+<li>Organized, directed movement</li>
+<li>Willingness to negotiate or petition authority</li>
+<li>Generally non-violent (may push back against barriers but not attack)</li>
+<li>Participants disperse when requested (though may argue)</li>
+</ul>
+<p><strong>Riot:</strong></p>
+<ul>
+<li>Uncontrolled crowd violence</li>
+<li>Spontaneous or mob-directed actions</li>
+<li>Destruction of property, looting, assault</li>
+<li>Refusal to disperse even when ordered</li>
+<li>Formation of sub-groups attacking specific targets</li>
+</ul>
+<p><strong>Response Framework:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Peaceful protest</td>
+<td>Allow gathering; position peacekeepers to prevent counter-protests from clashing; remain neutral</td>
+</tr>
+<tr>
+<td>Protest with property damage</td>
+<td>Identify perpetrators; separate from peaceful protesters; de-escalate; arrest if laws broken</td>
+</tr>
+<tr>
+<td>Riot</td>
+<td>All-out response: barriers, dispersal formations, possible curfew</td>
+</tr>
+</tbody>
+</table>
+<p>Respecting peaceful protest while stopping riots prevents the &quot;oppression&quot; problem mentioned earlier.</p>
+<div class="warning">
+<p><strong>Dangerous Ambiguity:</strong> Authority sometimes labels peaceful protest as &quot;riot&quot; to justify violent response. Establish clear legal definitions beforehand, not in the heat of events.</p>
+</div>
+</section>
+<section id="rules-engagement">
+<h2>Rules of Engagement for Crowd Control</h2>
+<p>Before incidents occur, establish clear rules:</p>
+<ol>
+<li><strong>When peacekeepers deploy:</strong> Specify situations justifying deployment (announced in advance)</li>
+<li><strong>Rules for force:</strong> Define graduated response (presence → communication → physical restraint → impact tools)</li>
+<li><strong>Targeting:</strong> Who can peacekeepers target? (Only violent actors, not peaceful people)</li>
+<li><strong>Retreat:</strong> When do peacekeepers withdraw? (If overwhelmed, they should retreat rather than get encircled)</li>
+<li><strong>Accountability:</strong> How are peacekeepers reviewed if someone is injured?</li>
+<li><strong>Curfews:</strong> When are curfews imposed? (Should be exceptional, not routine)</li>
+</ol>
+<p>Make rules public beforehand. Communities accept force more readily if they know the limits.</p>
+</section>
+<section id="post-incident">
+<h2>Post-Incident Review &amp; Accountability</h2>
+<p>After any crowd control incident, conduct a review:</p>
+<ol>
+<li><strong>Document:</strong> Write down what happened, who was involved, what forces were used</li>
+<li><strong>Gather witness statements:</strong> Interview peacekeepers, victims, bystanders</li>
+<li><strong>Identify root causes:</strong> Why did this incident occur? What could prevent recurrence?</li>
+<li><strong>Review tactics:</strong> Did de-escalation work? When did it fail?</li>
+<li><strong>Investigate misconduct:</strong> Did any peacekeepers use excessive force? Investigate complaints</li>
+<li><strong>Public report:</strong> Share findings with community; be transparent about what happened</li>
+</ol>
+<p>Regular reviews build trust and improve future responses.</p>
+</section>
+<section id="checklist">
+<h2>Crowd Management Readiness Checklist</h2>
+<p><strong>Pre-Event Planning:</strong></p>
+<ul>
+<li>[ ] Assess risk factors (triggers, weapons, leadership, provocateurs)</li>
+<li>[ ] Identify exits and crowd flow paths</li>
+<li>[ ] Deploy visible leadership and peacekeepers</li>
+<li>[ ] Establish communication system (bells, runners, loudspeakers)</li>
+<li>[ ] Brief peacekeepers on de-escalation techniques</li>
+</ul>
+<p><strong>De-Escalation Setup:</strong></p>
+<ul>
+<li>[ ] Station authority figures visibly</li>
+<li>[ ] Plan to isolate and negotiate with leaders</li>
+<li>[ ] Remove obvious provocateurs</li>
+<li>[ ] Maintain calm verbal messaging</li>
+<li>[ ] Position barriers to separate groups</li>
+</ul>
+<p><strong>Barrier Deployment:</strong></p>
+<ul>
+<li>[ ] Place perimeter barriers at entry/exit points</li>
+<li>[ ] Deploy separating barriers between hostile groups</li>
+<li>[ ] Maintain escape corridors for peacekeepers</li>
+<li>[ ] Staff each barrier with peacekeepers</li>
+<li>[ ] Monitor for pressure or damage</li>
+</ul>
+<p><strong>Non-Lethal Response:</strong></p>
+<ul>
+<li>[ ] Brief peacekeepers on permitted force levels</li>
+<li>[ ] Ensure protective equipment available</li>
+<li>[ ] Practice dispersal formations</li>
+<li>[ ] Pre-position non-lethal tools (batons, shields)</li>
+<li>[ ] Establish clear command structure</li>
+</ul>
+<p><strong>Evacuation Readiness:</strong></p>
+<ul>
+<li>[ ] Map all exits and clear them of obstacles</li>
+<li>[ ] Assign personnel to each exit</li>
+<li>[ ] Establish safe assembly point</li>
+<li>[ ] Pre-plan how evacuation signal will be given</li>
+<li>[ ] Conduct evacuation drills quarterly</li>
+</ul>
+<p><strong>Post-Incident:</strong></p>
+<ul>
+<li>[ ] Document incident details</li>
+<li>[ ] Gather witness statements</li>
+<li>[ ] Investigate any use-of-force complaints</li>
+<li>[ ] Conduct public review</li>
+<li>[ ] Update procedures based on lessons learned</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="defense-planning-fortification.html">Community Defense Planning &amp; Fortification</a>
+<a href="community-organizing.html">Community Organizing &amp; Leadership</a>
+<a href="dispute-mediation-restorative-justice.html">Dispute Mediation and Restorative Justice</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

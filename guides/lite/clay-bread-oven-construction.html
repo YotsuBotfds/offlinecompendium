@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/clay-bread-oven-construction.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clay Bread Oven Construction</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Food &amp; Agriculture</span> ›
+<span>Clay Bread Oven Construction</span>
+</div>
+
+
+<h1>Clay Bread Oven Construction</h1>
+<p class="subtitle">Build cob ovens, brick bread/pizza ovens, and rocket stove mass heaters. Covers foundation, dome construction, thermal mass, chimney draft, curing, and operation.</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~7 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#oven-types-comparison">Oven Types Comparison</a></li>
+<li><a href="#site-selection-foundation">Site Selection &amp; Foundation</a></li>
+<li><a href="#cob-oven-construction">Cob Oven Construction</a></li>
+<li><a href="#brick-bread-oven">Brick Bread Oven</a></li>
+<li><a href="#rocket-stove-mass-heater">Rocket Stove Mass Heater</a></li>
+<li><a href="#thermal-mass-calculations">Thermal Mass Calculations</a></li>
+<li><a href="#chimney-draft">Chimney &amp; Draft</a></li>
+<li><a href="#curing-schedule">Curing Schedule</a></li>
+<li><a href="#operating-your-oven">Operating Your Oven</a></li>
+<li><a href="#maintenance-repair">Maintenance &amp; Repair</a></li>
+<li><a href="#safety">Safety</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Clay bread ovens are some of humanity's oldest and most reliable cooking infrastructure. Unlike metal stoves dependent on fuel supply logistics, a properly built clay or brick oven becomes a permanent community asset—thermally massive, efficient for large-scale baking, and functional for 50+ years with minimal maintenance. This guide covers cob (clay-straw) ovens, firebrick bread ovens, and rocket stove mass heaters—all variants of the same thermal principle.</p>
+<p>All three designs trap radiant heat in thick thermal walls, radiating that heat gradually after the fire is removed, allowing multiple batches to bake without refueling. A single firing cycle (1–2 hours of pre-heat) can bake 40–60 loaves, hundreds of kg of focaccia, or numerous pizzas. In community settings, oven maintenance can be shared labor.</p>
+<div class="info-box">
+<p><strong>Key fact:</strong> A well-built bread oven reaches 350–450°C (650–850°F) from wood coals. The thermal mass stores enough energy to bake for 4–6 hours after the fire is removed.</p>
+</div>
+</section>
+<section id="oven-types-comparison">
+<h2>Oven Types Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Build Cost</th>
+<th>Complexity</th>
+<th>Capacity (loaves/batch)</th>
+<th>Heat Retention</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cob Oven</strong> (clay + sand + straw)</td>
+<td>$50–150</td>
+<td>Low</td>
+<td>20–30</td>
+<td>Excellent (4–6 hrs)</td>
+<td>Community bakeries, bread primarily</td>
+</tr>
+<tr>
+<td><strong>Brick Bread Oven</strong> (firebrick dome + insulation)</td>
+<td>$150–500</td>
+<td>Medium</td>
+<td>30–50</td>
+<td>Excellent (4–6 hrs)</td>
+<td>Pizzerias, mixed baking, high turnover</td>
+</tr>
+<tr>
+<td><strong>Rocket Stove Mass Heater</strong> (J-tube + thermal bench)</td>
+<td>$80–300</td>
+<td>Medium</td>
+<td>N/A (space heater)</td>
+<td>Excellent (12+ hrs)</td>
+<td>Winter heating, cooking surface on top</td>
+</tr>
+</tbody>
+</table>
+<div class="tip">
+<p>Choose a cob oven for your first build if you have clay-rich soil nearby—it requires zero specialized equipment and uses only local materials.</p>
+</div>
+</section>
+<section id="site-selection-foundation">
+<h2>Site Selection &amp; Foundation</h2>
+<p><strong>Location considerations:</strong></p>
+<ul>
+<li><strong>Level ground:</strong> Uneven base causes uneven thermal performance and structural stress.</li>
+<li><strong>Elevation:</strong> Build at least 60 cm above grade to keep moisture away from the base.</li>
+<li><strong>Prevailing wind:</strong> Locate the chimney opening away from dominant wind directions to maximize draft.</li>
+<li><strong>Access:</strong> Situated near kitchen, or within 10 m for convenient bread/fuel transport.</li>
+<li><strong>Rain protection:</strong> Plan a roof or permanent shelter—water infiltration cracks cured ovens.</li>
+</ul>
+<p><strong>Foundation structure:</strong></p>
+<ol>
+<li><strong>Leveled pad:</strong> Clear vegetation, compact soil with hand tamper or foot.</li>
+<li><strong>Gravel base:</strong> 10–15 cm of compacted gravel (drains water, prevents frost heave).</li>
+<li><strong>Insulating hearth layer:</strong> Place:
+<ul>
+<li>5 cm layer of broken glass bottles (free insulation, compresses firmly)</li>
+<li>OR 5–8 cm of perlite or vermiculite mixed with clay slip (lightweight, insulating)</li>
+<li>OR straw (last resort—degrades over years but acceptable for temporary ovens)</li>
+</ul>
+</li>
+<li><strong>Leveling sand:</strong> 2–3 cm sand screed, troweled flat. This is your datum.</li>
+</ol>
+<div class="warning">
+<p><strong>Critical:</strong> The hearth must be absolutely level. Use a 2 m carpenter's level or water level (clear hose, sight height differences). An uneven hearth causes dome collapse and uneven cooking.</p>
+</div>
+<p>The hearth should measure 1.0–1.2 m diameter (for cob ovens) or 1.2–1.5 m (for brick ovens). Mark with string and a center pin.</p>
+</section>
+<section id="cob-oven-construction">
+<h2>Cob Oven Construction</h2>
+<p><strong>Materials needed:</strong></p>
+<ul>
+<li>Clay-rich soil (or pure clay; test by making a ball and drying—if it cracks, add sand)</li>
+<li>Coarse sand (if clay is too lean)</li>
+<li>Long straw (rye or wheat, 5–10 cm pieces)</li>
+<li>Water</li>
+</ul>
+<p><strong>Mix proportions by volume:</strong> 1 part clay : 3 parts sand : 0.5 parts straw</p>
+<p><strong>Testing your clay:</strong></p>
+<ol>
+<li>Take a handful of damp soil.</li>
+<li>Roll into a ball, let dry completely (3–5 days).</li>
+<li>If cracks appear, it's clay-rich (needs more sand). If it doesn't hold shape, it's sandy (needs more clay).</li>
+<li>Aim for mix that dries with hairline cracks only (not wide fissures).</li>
+</ol>
+<h3>Dome Construction</h3>
+<ol>
+<li>
+<p><strong>Create a sand mold:</strong></p>
+<ul>
+<li>Heap sand into a dome shape, 1 m high (for a 1 m diameter hearth, the dome should be roughly hemispherical).</li>
+<li>Dampen and compact the sand with a wooden trowel or tarp-wrapped tamper.</li>
+<li>The dome shape is your building form—the cob will be built <strong>around</strong> it, then removed once cured.</li>
+</ul>
+</li>
+<li>
+<p><strong>First cob layer (3–4 cm thick):</strong></p>
+<ul>
+<li>Mix clay, sand, and straw in a tarp or pit, stirring with a hoe.</li>
+<li>Add water gradually until you can pack it firmly (like stiff dough, not runny).</li>
+<li>Plaster this layer over the sand mold by hand or trowel, filling gaps and compacting as you go.</li>
+<li>Leave a doorway opening (height = 63% of dome height—typically 40–50 cm for a 1 m dome, width 50 cm).</li>
+</ul>
+</li>
+<li>
+<p><strong>Second layer (3–4 cm):</strong></p>
+<ul>
+<li>After 3–5 days of air drying, apply a second layer. Rough up the first layer slightly with a wire brush so the next layer bonds.</li>
+<li>Repeat the cob mix and application.</li>
+</ul>
+</li>
+<li>
+<p><strong>Third layer (final coat):</strong></p>
+<ul>
+<li>Apply a third, thinner layer (2–3 cm), smoothing the exterior.</li>
+<li>This is your final surface—work it carefully.</li>
+</ul>
+</li>
+</ol>
+<p>After curing 2–3 weeks, the sand mold is extracted by carefully digging it out from the doorway opening. The remaining cob dome is your oven.</p>
+<div class="tip">
+<p><strong>Dome thickness rule:</strong> Aim for 4–6 cm total at the crown, 8–10 cm at the base. Thick domes retain heat longer but take longer to heat up.</p>
+</div>
+<h3>Chimney Placement</h3>
+<p>The chimney should be 15–20 cm diameter, located at the back of the dome (opposite the doorway). Options:</p>
+<ul>
+<li><strong>Brick or tile pipe:</strong> Stack 10–12 courses above the dome apex.</li>
+<li><strong>Metal flue:</strong> 15 cm diameter stovepipe angled upward.</li>
+<li><strong>Cob:</strong> Continue cob up and over the crown as a chimney, hollowing it as you go.</li>
+</ul>
+<p><strong>Height:</strong> Minimum 1.5 m above the hearth (2 m for better draft).</p>
+<p>The chimney opening should be 15–20 cm diameter. A smaller opening increases draft (pulls more oxygen into the combustion zone) but can create backdraft if it's too tight.</p>
+</section>
+<section id="brick-bread-oven">
+<h2>Brick Bread Oven</h2>
+<p>Firebrick (refractory brick rated for &gt;1000°C) ovens are more durable than cob and can withstand metal door closures and more aggressive use.</p>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>200–400 firebricks (depending on dome size)</li>
+<li>Firebrick mortar (silica + fire clay)</li>
+<li>Ceramic fiber blanket insulation (optional but recommended)</li>
+<li>Steel ring or angle iron (optional, for structural support of the arch)</li>
+</ul>
+<p><strong>Construction steps:</strong></p>
+<ol>
+<li>
+<p><strong>Hearth:</strong> Lay firebricks dry (or mortared) on the insulating base, level and compacted. Typical hearth is 1.2 × 1.2 m.</p>
+</li>
+<li>
+<p><strong>Arch form:</strong> Construct a wooden arch form (like a barrel vault cross-section) to shape the dome. The form is built from plywood strips and temporary supports. Once the dome is complete and the mortar sets, the form is carefully removed.</p>
+</li>
+<li>
+<p><strong>Brick laying:</strong></p>
+<ul>
+<li>Begin at the bottom of the arch, laying firebricks in a radial pattern (each brick wedge-shaped to follow the curve).</li>
+<li>Use thin mortar joints (2–3 mm).</li>
+<li>Work upward and around symmetrically.</li>
+<li>The keystone (topmost brick at the crown) locks the arch.</li>
+</ul>
+</li>
+<li>
+<p><strong>Insulation layer:</strong> Once the inner dome is complete, apply ceramic fiber blanket (3–5 cm) over the exterior, or build an outer shell of insulating bricks.</p>
+</li>
+<li>
+<p><strong>Curing:</strong> Allow mortar to cure for 7–10 days before firing (mortar contains water that must evaporate).</p>
+</li>
+</ol>
+<div class="warning">
+<p><strong>Fire hazard:</strong> Firebrick mortar releases steam during initial curing. Do not seal the oven or place a door until fully cured. Explosive steam buildup can crack bricks.</p>
+</div>
+</section>
+<section id="rocket-stove-mass-heater">
+<h2>Rocket Stove Mass Heater</h2>
+<p>A rocket stove mass heater combines a compact, efficient combustion chamber with a large thermal mass. The J-tube design (vertical riser surrounded by insulation) creates intense, clean combustion. Heat is then transferred to a surrounding mass (adobe, brick, or stone bench) that slowly radiates warmth.</p>
+<p><strong>J-tube combustion chamber:</strong></p>
+<ul>
+<li><strong>Fuel chamber:</strong> Horizontal or slightly angled opening (feed wood pieces end-first).</li>
+<li><strong>Vertical riser (heat riser):</strong> 15–20 cm inner diameter, 60–100 cm tall, lined with high-alumina refractory brick or castable refractory.</li>
+<li><strong>Insulation:</strong> Wrap the riser with ceramic fiber blanket or perlite (3–5 cm).</li>
+<li><strong>Heat exchanger:</strong> Above the riser, attach a box (horizontal chamber) lined with brick, where hot gases transfer heat before venting to the chimney.</li>
+</ul>
+<p>The design principle: a tall, well-insulated combustion zone creates updraft and efficient burn. Most heat (70–80%) is transferred to the bench; only 20–30% exits via the chimney.</p>
+<p><strong>Thermal mass bench:</strong></p>
+<ul>
+<li>Build a box around the heat exchanger, 60–90 cm tall, filled with:
+<ul>
+<li>Firebricks</li>
+<li>Adobe blocks</li>
+<li>Stacked stone</li>
+</ul>
+</li>
+<li>Total mass should be 500–1000 kg (higher mass = longer heat retention, but slower warm-up).</li>
+</ul>
+<p><strong>Bench design:</strong></p>
+<ul>
+<li>The top surface can serve as a cooking platform (place a metal plate or grate on top).</li>
+<li>Benches can be built into sleeping lofts (heat radiates upward into a bed or bench seating).</li>
+<li>Allow 5–10 cm air gaps around the combustion zone so hot gas can flow freely.</li>
+</ul>
+</section>
+<section id="thermal-mass-calculations">
+<h2>Thermal Mass Calculations</h2>
+<p>Thermal mass stores and releases heat based on its specific heat capacity and mass.</p>
+<p><strong>Energy stored formula:</strong>
+Q = m × c × ΔT</p>
+<p>Where:</p>
+<ul>
+<li>Q = energy (joules)</li>
+<li>m = mass (kg)</li>
+<li>c = specific heat capacity (J/kg·°C)</li>
+<li>ΔT = temperature change (°C)</li>
+</ul>
+<p><strong>Example:</strong> A brick oven with 800 kg of firebrick and cob, cooling from 400°C to 50°C:</p>
+<p>ΔT = 400 − 50 = 350°C
+c (brick) ≈ 840 J/kg·°C
+Q = 800 × 840 × 350 = 235,200,000 J ≈ 65 kWh</p>
+<p>That energy can bake for 6+ hours. Compare to a metal box (1 kWh of stored heat for the same temperature drop).</p>
+<p><strong>Practical rule:</strong> For bread ovens, aim for 600–1000 kg of thermal mass (roughly 0.8–1.2 m³ of brick or cob). For rocket heaters, 800–1500 kg for 8–12 hour heat retention.</p>
+</section>
+<section id="chimney-draft">
+<h2>Chimney &amp; Draft</h2>
+<p><strong>Natural draft</strong> depends on:</p>
+<ul>
+<li><strong>Height:</strong> Every meter of chimney increases draft pressure by ~1 Pa (pascal). A 2 m chimney provides ~2 Pa—enough for good oxygen flow.</li>
+<li><strong>Temperature differential:</strong> Hot gases inside rise; cold outside air is denser. The temperature difference (e.g., 350°C inside, 20°C outside) creates ~330 Pa pressure difference.</li>
+<li><strong>Cross-section:</strong> Diameter must match the combustion chamber (15–20 cm typical). Too small = excessive backpressure. Too large = poor draft.</li>
+</ul>
+<p><strong>Testing draft:</strong></p>
+<ul>
+<li>Light a small fire and observe smoke. Smoke should exit the chimney steadily, not linger near the doorway.</li>
+<li>A &quot;draft check&quot; uses a thin stick near the doorway—if held vertically, smoke should pull it toward the oven.</li>
+</ul>
+<p><strong>Blockage issues:</strong></p>
+<ul>
+<li><strong>Creosote/soot buildup:</strong> In poorly maintained ovens, creosote accumulates inside the chimney. Scrape or burn it out (gradually with small fires) before it impedes airflow.</li>
+<li><strong>Bird nests:</strong> Install a chimney cap with a screen.</li>
+<li><strong>Settling:</strong> If the chimney tilts or subsides, realign it carefully—even 5° from vertical reduces draft.</li>
+</ul>
+<div class="warning">
+<p><strong>Safety:</strong> Never block or partially close the chimney with a door or plug while the fire is burning. Smoke and toxic gases (carbon monoxide) will back up into the cooking space.</p>
+</div>
+</section>
+<section id="curing-schedule">
+<h2>Curing Schedule</h2>
+<p>This is the single most critical phase. Curing removes water gradually and prevents cracking.</p>
+<p><strong>Week 1 (days 1–7):</strong></p>
+<ul>
+<li>Make 2–3 small fires (wood diameter &lt; 5 cm), each lasting 20–30 minutes.</li>
+<li>Let the oven cool fully between fires (4–6 hours).</li>
+<li>Do not exceed internal temperature of ~80°C (you should be able to hold your hand inside).</li>
+</ul>
+<p><strong>Week 2 (days 8–14):</strong></p>
+<ul>
+<li>Fires of similar size, lasting 30–40 minutes.</li>
+<li>Gradual temperature rise toward 150°C.</li>
+</ul>
+<p><strong>Week 3 (days 15–21):</strong></p>
+<ul>
+<li>Longer fires (40–50 minutes), reaching ~200°C.</li>
+</ul>
+<p><strong>Week 4 (days 22–28):</strong></p>
+<ul>
+<li>Full-size fires (1+ hours), reaching 300°C.</li>
+</ul>
+<p><strong>After week 4:</strong></p>
+<ul>
+<li>Oven is ready for normal use (350–450°C).</li>
+</ul>
+<div class="warning">
+<p><strong>Critical:</strong> Do NOT skip this schedule. Rapid heating causes steam pockets to explode within the mass, cracking bricks or cob. If cracks appear during curing, stop heating, allow 2 weeks of rest, and resume at a lower temperature.</p>
+</div>
+<p>The curing period can stretch 6–8 weeks in cold or humid climates. In hot, dry conditions, 4 weeks is typical.</p>
+</section>
+<section id="operating-your-oven">
+<h2>Operating Your Oven</h2>
+<h3>Pre-heating</h3>
+<ol>
+<li><strong>Load fuel:</strong> Stack small kindling and progressively larger wood pieces in the center of the hearth.</li>
+<li><strong>Ignite:</strong> Light the kindling. The fire will grow and spread heat throughout the dome.</li>
+<li><strong>Duration:</strong> After 1–2 hours, the dome reaches 350–450°C. You'll see heat shimmering above the hearth.</li>
+<li><strong>Cleanup:</strong> Once at temperature, scrape out all coals and ash (use a wet mop on a long handle, or a metal rake).</li>
+</ol>
+<h3>Baking Sequence</h3>
+<ol>
+<li><strong>Load first batch:</strong> Slide loaves or pizzas onto the hearth using a wooden peel (paddle).</li>
+<li><strong>Timing:</strong> Bread bakes in 20–30 minutes. Pizzas in 60–90 seconds (very hot). Watch the crust—it should brown evenly.</li>
+<li><strong>Rotation:</strong> If the dome is hotter at the back, rotate loaves halfway through.</li>
+<li><strong>Repeat:</strong> Slide subsequent batches in as earlier ones finish. The thermal mass supports 4–6 bakes without refueling.</li>
+</ol>
+<h3>Determining Temperature</h3>
+<ul>
+<li><strong>Hand test:</strong> Hold your hand 5 cm from the hearth for 2 seconds. If you can't hold it, it's &gt;350°C (bread-ready).</li>
+<li><strong>Flour test:</strong> Throw a pinch of flour on the hearth. It should brown in 2–3 seconds (350°C+).</li>
+<li><strong>Infrared thermometer:</strong> If you have one, aim at the interior dome surface.</li>
+</ul>
+</section>
+<section id="maintenance-repair">
+<h2>Maintenance &amp; Repair</h2>
+<p><strong>Annual inspection:</strong></p>
+<ul>
+<li>Check for cracks in the dome. Small hairline cracks (&lt; 1 cm) are normal.</li>
+<li>Inspect the chimney for blockages (soot, birds nests).</li>
+<li>Verify the hearth is level and compacted.</li>
+</ul>
+<p><strong>Repairing small cracks:</strong></p>
+<ul>
+<li>Mix a thin cob (2 parts sand : 1 part clay : 0.3 parts straw).</li>
+<li>Scrape out loose material from the crack.</li>
+<li>Pack in fresh cob with a trowel.</li>
+<li>Allow 2 weeks curing before relighting.</li>
+</ul>
+<p><strong>Chimney cleaning:</strong></p>
+<ul>
+<li>If smoke starts backing up, creosote has accumulated.</li>
+<li>For brick chimneys, attach a brush to a rope and scrub the interior from the top.</li>
+<li>For cob chimneys, use a wooden rod to break up deposits.</li>
+<li>Burn a large fire to dislodge loose soot.</li>
+</ul>
+<p><strong>Repointing the door:</strong> Over years, the door frame joint may loosen. Remortar with firebrick mortar.</p>
+<div class="tip">
+<p><strong>Long-term durability:</strong> Cob and brick ovens last 50+ years if sheltered from rain and maintained annually. The dome is more durable than metal stoves—there are working ovens built in the 1800s still in use.</p>
+</div>
+</section>
+<section id="safety">
+<h2>Safety</h2>
+<p><strong>Fire hazard:</strong></p>
+<ul>
+<li>Keep the oven at least 2 m from wooden structures, fences, and roofs.</li>
+<li>Never leave a fire unattended.</li>
+<li>Have water or a fire extinguisher nearby.</li>
+</ul>
+<p><strong>Thermal burns:</strong></p>
+<ul>
+<li>The dome surface reaches 200–300°C during operation. Wear gloves and long sleeves.</li>
+<li>Keep children supervised. The hearth is a significant burn hazard.</li>
+<li>The metal door (if used) can exceed 150°C—post a warning.</li>
+</ul>
+<p><strong>Smoke inhalation:</strong></p>
+<ul>
+<li>Poor draft can cause smoke backup. Ensure the chimney is clear and well-drafted.</li>
+<li>Do not operate in enclosed spaces without adequate ventilation.</li>
+</ul>
+<p><strong>Structural stability:</strong></p>
+<ul>
+<li>Ovens must be anchored to prevent tip-over. If free-standing, embed the base in concrete or anchor with straps.</li>
+<li>Check for settling annually (especially in clay soils with high water table).</li>
+</ul>
+<p>For more on outdoor cooking infrastructure, see <a href="food-preservation.html">Food Preservation</a> and <a href="fermentation-baking.html">Fermentation &amp; Baking</a>.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="fermentation-baking.html">Fermentation &amp; Baking</a>
+<a href="food-preservation.html">Food Preservation</a>
+<a href="brick-making-fired-earth.html">Brick Making &amp; Fired Earth</a>
+<a href="natural-building.html">Natural Building Materials</a>
+<a href="construction.html">Construction &amp; Carpentry</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

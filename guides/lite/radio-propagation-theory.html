@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/radio-propagation-theory.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radio Propagation Theory</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Communications</span> ›
+<span>Radio Propagation Theory</span>
+</div>
+
+
+<h1>Radio Propagation Theory</h1>
+<p class="subtitle">Ionospheric layers, skip zones, antenna polarization, ground wave propagation, HF frequency selection, and propagation prediction without computers</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~20 min</span>
+<span>Updated: 2026-02-18</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#ionosphere">The Ionosphere and Reflecting Layers</a></li>
+<li><a href="#propagation-modes">Propagation Modes and Skip Zones</a></li>
+<li><a href="#polarization">Antenna Polarization and Its Effects</a></li>
+<li><a href="#groundwave">Ground Wave Propagation in Depth</a></li>
+<li><a href="#hf-selection">HF Frequency Selection by Time and Season</a></li>
+<li><a href="#solar-effects">Solar Activity and Its Effects on Propagation</a></li>
+<li><a href="#antenna-angle">Radiation Angle and Antenna Design for Propagation</a></li>
+<li><a href="#prediction-no-computer">Propagation Prediction Without Computers</a></li>
+<li><a href="#practical-operating">Practical Operating Tips for Offline HF</a></li>
+<li><a href="#summary">Summary</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Radio waves travel through the atmosphere in multiple ways: directly along the ground, bounced off the ionosphere, or scattered by atmospheric irregularities. The path a signal takes determines the distance it can reach and whether communication is possible at all. Understanding propagation is essential for selecting frequencies, orienting antennas, and troubleshooting failed radio links.</p>
+<p>Ionospheric propagation (shortwave, HF) is unpredictable without preparation, but patterns repeat on cycles that can be learned and predicted using simple, offline methods. This guide covers the science of how radio signals propagate, the layers of the ionosphere that reflect them, and practical techniques for selecting frequencies and operating times without computer propagation prediction tools.</p>
+</section>
+<section id="ionosphere">
+<h2>The Ionosphere and Reflecting Layers</h2>
+<p>The ionosphere is a region of the upper atmosphere (60–600 km altitude) where ultraviolet radiation from the sun ionizes gas molecules, creating free electrons and positive ions. These layers reflect radio waves in the high-frequency (HF) band (3–30 MHz), enabling long-distance communication. Different layers reflect different frequencies and change with time of day and solar activity.</p>
+<h3>The Four Reflecting Layers</h3>
+<p><strong>D Layer (60–90 km altitude):</strong></p>
+<ul>
+<li>Most active during daylight</li>
+<li>Weakly ionized; absorbs low HF frequencies (1–3 MHz) more than higher frequencies</li>
+<li>Disappears at night, allowing lower frequencies to propagate via higher layers</li>
+<li>Primary daytime reflector for long-distance paths</li>
+</ul>
+<p><strong>E Layer (90–150 km altitude):</strong></p>
+<ul>
+<li>Most dense at solar noon</li>
+<li>Reflects frequencies around 3–10 MHz very efficiently during day</li>
+<li>Weakens significantly at night but may still reflect signals</li>
+<li>Creates short- to medium-distance propagation paths (300–2000 km)</li>
+</ul>
+<p><strong>F1 Layer (150–200 km altitude):</strong></p>
+<ul>
+<li>Exists during daylight; merges with F2 at night</li>
+<li>Reflects frequencies 5–20 MHz well</li>
+<li>Begins to merge with F2 around sunset</li>
+</ul>
+<p><strong>F2 Layer (200–400+ km altitude, can reach 600+ km at night):</strong></p>
+<ul>
+<li>Most variable and important for long-distance HF propagation</li>
+<li>Reflects frequencies 2–15 MHz (sometimes higher during high solar activity)</li>
+<li>Only useful layer at night; expands upward after sunset, allowing longer skip distances</li>
+<li>Critical for reliable overnight communication</li>
+<li>Extremely sensitive to solar activity (sunspots, flares, geomagnetic storms)</li>
+</ul>
+<div class="info-box">
+<p><strong>The ionosphere is a mirror made of free electrons.</strong> Radio waves at the right frequency are reflected back to Earth by these ionized layers, while frequencies too high pass straight through into space. The &quot;right&quot; frequency depends on the electron density, which changes with time of day, season, and solar cycle.</p>
+</div>
+<h3>Electron Density and Maximum Usable Frequency</h3>
+<p>The maximum usable frequency (MUF) is the highest frequency that will reflect off a given ionospheric layer at a given time and location. MUF depends on electron density, which is highest at solar noon and lowest at midnight.</p>
+<p><strong>MUF behavior:</strong></p>
+<ul>
+<li><strong>High electron density</strong> (noon, high solar activity) → higher MUF → can use higher frequencies (15–30 MHz or higher)</li>
+<li><strong>Low electron density</strong> (midnight, low solar activity) → lower MUF → must use lower frequencies (3–8 MHz)</li>
+<li>Frequencies above the MUF pass through the ionosphere to space</li>
+<li>Frequencies below the MUF may be reflected, depending on other factors</li>
+</ul>
+<p>For a given distance and reflecting layer, there is also a minimum usable frequency (MUF) below which the signal is absorbed by lower layers rather than reflected effectively.</p>
+</section>
+<section id="propagation-modes">
+<h2>Propagation Modes and Skip Zones</h2>
+<p>Radio signals can reach distant receivers via different paths, each with characteristic distance and frequency bands.</p>
+<h3>Ground Wave (Surface Wave)</h3>
+<p>Radio waves travel along the ground, following Earth's curvature slightly due to diffraction. Ground wave propagation is most effective for:</p>
+<ul>
+<li>Frequencies below 2 MHz (LF/MF bands)</li>
+<li>Within 100–500 km depending on frequency and soil conductivity</li>
+<li>Vertical polarization is essential (antennas should be vertical or end-fed)</li>
+</ul>
+<p>Ground wave is reliable and consistent but has limited range. It is independent of ionospheric conditions and works day and night.</p>
+<h3>Sky Wave (Ionospheric Reflection)</h3>
+<p>Signals reflect off the ionosphere and return to Earth at a distance of several hundred to thousands of kilometers. Sky wave propagation:</p>
+<ul>
+<li>Works best in the HF band (3–30 MHz)</li>
+<li>Can reach intercontinental distances (5000+ km) with a single bounce</li>
+<li>Varies dramatically with time of day, season, and solar activity</li>
+<li>Requires the MUF to be above the operating frequency</li>
+</ul>
+<p><strong>Single-hop propagation:</strong> Signal reflects once and returns to Earth 400–4000 km away, depending on frequency and angle of radiation.</p>
+<p><strong>Multi-hop propagation:</strong> Signal bounces multiple times between ionosphere and ground, reaching distances beyond 10,000 km. Each hop introduces attenuation and propagation delay.</p>
+<h3>Skip Zone (Dead Zone)</h3>
+<p>Between the point where ground wave stops being detectable and the first point where sky wave returns to Earth is a &quot;skip zone&quot;—an area of 100–500 km radius where no signal is heard. At very short distances (direct sky wave angle), the signal bounces very high into the ionosphere and travels far, leaving a dead zone in between.</p>
+<p><strong>Example:</strong> A 7 MHz signal using a 30° radiation angle may have ground wave coverage to 100 km and sky wave coverage starting at 500 km, leaving a 400 km dead zone.</p>
+<p><strong>Solutions to skip zone problems:</strong></p>
+<ul>
+<li>Use a lower frequency (lower radiation angle, extends ground wave range)</li>
+<li>Use ground wave exclusively (frequencies &lt;2 MHz, vertical antenna, efficient counterpoise)</li>
+<li>Adjust antenna radiation angle to reduce skip distance</li>
+<li>Change operating frequency if possible</li>
+</ul>
+<div class="warning">
+<p>In a skip zone, no amount of power or antenna gain will improve reception. The signal path physically does not exist at that distance. To reach nearby stations beyond ground wave range, frequency selection is the key.</p>
+</div>
+</section>
+<section id="polarization">
+<h2>Antenna Polarization and Its Effects</h2>
+<p>Polarization is the orientation of the radio wave's electric field. A vertically oriented antenna produces vertically polarized waves; a horizontal antenna produces horizontal polarization. Polarization loss occurs when transmit and receive antennas have mismatched polarization.</p>
+<h3>Polarization Loss</h3>
+<p>When a vertically polarized signal is received by a horizontally oriented antenna (or vice versa), the received signal strength drops dramatically—typically 20–30 dB in ideal conditions. Mismatched polarization makes communication difficult or impossible.</p>
+<p><strong>Correct polarization choices:</strong></p>
+<ul>
+<li><strong>Ground wave (surface wave propagation):</strong> Vertical polarization mandatory. Horizontal antennas receive almost nothing.</li>
+<li><strong>Sky wave at low angles (long distance):</strong> Nearly vertical polarization is standard and recommended. Use dipoles or end-fed wires oriented vertically or at steep angles.</li>
+<li><strong>Nearby sky wave (short distance, high angles):</strong> Polarization is less critical due to wave rotation in the ionosphere; either vertical or horizontal may work.</li>
+</ul>
+<h3>Polarization Rotation in the Ionosphere</h3>
+<p>As radio waves travel through the ionosphere at oblique angles, the geomagnetic field causes the polarization to rotate (Faraday rotation). This is why distant HF reception can work even with imperfect polarization matching, though with degradation.</p>
+<p><strong>Practical impact:</strong> For reliable long-distance communication, use vertical antennas (for ground wave and low-angle sky wave). For short-distance sky wave, horizontal antennas (dipoles) are acceptable but less optimal.</p>
+</section>
+<section id="groundwave">
+<h2>Ground Wave Propagation in Depth</h2>
+<p>Ground wave is the reliable, predictable workhorse of long-distance communication on lower frequencies. It requires:</p>
+<ol>
+<li>A vertical radiator (monopole or end-fed wire)</li>
+<li>A good ground system (counterpoise or earth ground)</li>
+<li>Frequencies in the LF/MF/lower HF bands</li>
+</ol>
+<h3>Range and Attenuation</h3>
+<p>Ground wave range depends on frequency, power, antenna efficiency, and ground conductivity:</p>
+<table>
+<thead>
+<tr>
+<th>Frequency</th>
+<th>Maximum Ground Wave Range</th>
+<th>Best Over</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>160 kHz (LF)</td>
+<td>500–1000 km</td>
+<td>salt water, sandy soil</td>
+</tr>
+<tr>
+<td>1.8 MHz (160m)</td>
+<td>200–400 km</td>
+<td>wet soil, water</td>
+</tr>
+<tr>
+<td>3.5 MHz (80m)</td>
+<td>100–200 km</td>
+<td>moist soil</td>
+</tr>
+<tr>
+<td>7 MHz (40m)</td>
+<td>50–100 km</td>
+<td>average soil</td>
+</tr>
+<tr>
+<td>10 MHz (30m)</td>
+<td>30–50 km</td>
+<td>any soil</td>
+</tr>
+<tr>
+<td>14 MHz (20m)</td>
+<td>20–30 km</td>
+<td>poor over poor soil</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ground conductivity effects:</strong> Seawater and moist soil conduct well, extending ground wave range. Desert sand and rocky terrain absorb the signal, reducing range significantly. Over poor ground, you may reach only 20–30 km on bands that reach 200 km over seawater.</p>
+<h3>Vertical Antennas and Ground Systems</h3>
+<p>A vertical antenna monopole requires a ground system (counterpoise) to operate efficiently:</p>
+<ul>
+<li><strong>Buried radials:</strong> 4–16 copper or aluminum wires buried 30–60 cm deep, radiating from the base of the antenna. Even partially buried radials are effective.</li>
+<li><strong>Elevated radials:</strong> Wires strung 0.3–2 meters above ground. Less effective than buried radials but easier to deploy in field conditions.</li>
+<li><strong>Salt water counterpoise:</strong> If near salt water, a saltwater ground plane can replace buried radials entirely.</li>
+</ul>
+<p>Without a ground system, ground wave range drops dramatically. An end-fed wire with no radials is nearly useless on ground wave.</p>
+</section>
+<section id="hf-selection">
+<h2>HF Frequency Selection by Time and Season</h2>
+<p>Since computer propagation prediction is unavailable offline, successful HF operation requires memorizing patterns and developing intuition about which frequencies work when.</p>
+<h3>Daily Pattern (Regardless of Season)</h3>
+<p><strong>Sunrise to midday (0600–1200 local time):</strong></p>
+<ul>
+<li>D and E layers active; F layer developing</li>
+<li>MUF is rising</li>
+<li>Best frequencies: 7–14 MHz (40m–20m bands)</li>
+<li>Longer paths improve as the morning progresses</li>
+<li>Avoid very low frequencies (3.5 MHz) due to D layer absorption</li>
+</ul>
+<p><strong>Midday to afternoon (1200–1600 local time):</strong></p>
+<ul>
+<li>F2 layer at maximum ionization</li>
+<li>MUF reaches peak; sometimes reaches 20+ MHz</li>
+<li>Best frequencies: 14–21 MHz (20m–15m bands) for distance; 7 MHz still works</li>
+<li>Occasionally 28 MHz (10m) is open on very high solar activity days</li>
+</ul>
+<p><strong>Late afternoon to sunset (1600–1900 local time):</strong></p>
+<ul>
+<li>D and E layers decay; F1 merges into F2</li>
+<li>Transition period with variable propagation</li>
+<li>Best frequencies: 7–14 MHz (40m–20m bands)</li>
+<li>Avoid the &quot;grey line&quot; (twilight zone) where propagation is very unpredictable</li>
+</ul>
+<p><strong>Evening to midnight (1900–0000 local time):</strong></p>
+<ul>
+<li>D layer gone; E layer weak</li>
+<li>F2 layer elevated after sunset</li>
+<li>MUF drops but F2 layer is now highest-altitude reflector</li>
+<li>Best frequencies: 3.5–7 MHz (80m–40m bands) for long distance</li>
+<li>14 MHz may still work for very long paths (8000+ km)</li>
+</ul>
+<p><strong>Midnight to sunrise (0000–0600 local time):</strong></p>
+<ul>
+<li>F2 most elevated; D layer absent</li>
+<li>MUF is lowest</li>
+<li>Best frequencies: 1.8–3.5 MHz (160m–80m bands) for long distance</li>
+<li>Reliable paths via single high-angle bounce</li>
+<li>Skip zones are largest; nearby stations out of range</li>
+</ul>
+<h3>Seasonal Variations</h3>
+<p><strong>Winter (December–February in Northern Hemisphere; June–August in Southern):</strong></p>
+<ul>
+<li>Shorter daylight hours reduce peak MUF</li>
+<li>Best frequencies: 3.5–7 MHz (80m–40m bands)</li>
+<li>Lower frequencies work better; higher frequencies less reliable</li>
+<li>Nighttime propagation is more reliable overall</li>
+</ul>
+<p><strong>Summer (June–August in Northern Hemisphere; December–February in Southern):</strong></p>
+<ul>
+<li>Longer daylight hours; higher MUF</li>
+<li>Best frequencies: 14–21 MHz (20m–15m bands)</li>
+<li>Higher frequencies open more often</li>
+<li>Skip zones larger due to lower radiation angles</li>
+<li>Daytime propagation dominates</li>
+</ul>
+<p><strong>Equinoxes (March and September):</strong></p>
+<ul>
+<li>Rapid day-length changes; propagation can be unstable</li>
+<li>Multiple frequencies often work simultaneously</li>
+<li>Transition bands (7 MHz, 14 MHz) are often reliable</li>
+</ul>
+<div class="tip">
+<p><strong>Golden rule for offline HF operation:</strong> Use lower frequencies (7 MHz or below) at night and in winter. Use higher frequencies (14 MHz and above) during day and in summer. If you don't know what frequency to try, pick the middle of the band (7.1 MHz for 40m, 14.1 MHz for 20m) and listen first.</p>
+</div>
+</section>
+<section id="solar-effects">
+<h2>Solar Activity and Its Effects on Propagation</h2>
+<p>The sun drives all ionospheric variation. Sunspot activity creates solar flares and releases charged particles that affect Earth's magnetic field and ionosphere.</p>
+<h3>Sunspot Cycle</h3>
+<p>The solar cycle repeats approximately every 11 years. At solar maximum, sunspot numbers are high, and the ionosphere is more ionized; MUF is higher and long-distance HF is more reliable. At solar minimum, the ionosphere is less ionized; MUF is lower and reliable HF communication is restricted to lower frequencies and shorter distances.</p>
+<p><strong>Current solar cycle status (as of 2026):</strong> We are in Cycle 25, which reached maximum around 2024–2025. Expect good HF propagation to continue through 2026 and decline toward 2030.</p>
+<h3>Solar Flares and Geomagnetic Storms</h3>
+<p>Major solar flares release radiation that increases D layer absorption, causing sudden, dramatic propagation loss. Flares are followed (12–36 hours later) by geomagnetic storms—disturbances in Earth's magnetic field that disrupt F layer ionization.</p>
+<p><strong>Signs of a solar flare or geomagnetic storm:</strong></p>
+<ul>
+<li>Sudden loss of propagation on bands that were open minutes before</li>
+<li>High HF band noise floor</li>
+<li>High-frequency bands (14 MHz and above) becoming unusable while low-frequency bands remain open</li>
+<li>Reception of stations at unexpected distances (auroral propagation, if in high latitudes)</li>
+</ul>
+<p><strong>Duration:</strong> Flares last minutes to hours. Geomagnetic storms last 6–48 hours. There is no way to predict flares without internet access, but you can observe their effects in real time by monitoring band conditions.</p>
+<h3>K-Index Estimation (Offline)</h3>
+<p>The K-index measures geomagnetic disturbance (0–9 scale). Without internet, you can infer K-index from propagation observations:</p>
+<ul>
+<li><strong>K 0–2 (quiet):</strong> Propagation is normal for time of day and season</li>
+<li><strong>K 3–4 (unsettled to minor storm):</strong> HF propagation degraded; skip zones expand; distant stations weaker</li>
+<li><strong>K 5–6 (major storm):</strong> 14 MHz and higher largely unusable; 7 MHz poor; stick to 3.5 MHz or below</li>
+<li><strong>K 7–9 (severe/extreme):</strong> Only lowest frequencies work; expect complete HF blackout on higher bands</li>
+</ul>
+<p><strong>Observation:</strong> If higher bands have suddenly become very noisy and distant stations are weaker than expected for the time of day, assume moderate to major geomagnetic storm is underway. Switch to lower frequencies.</p>
+</section>
+<section id="antenna-angle">
+<h2>Radiation Angle and Antenna Design for Propagation</h2>
+<p>The angle at which an antenna radiates energy into the sky affects which propagation mode is used and how far the signal reaches.</p>
+<h3>Low Angle Radiation (15–30°)</h3>
+<ul>
+<li>Reflects once off F2 layer at very high altitude</li>
+<li>Bounces at distance of 1000–4000 km from transmitter</li>
+<li>Used for long-distance communication</li>
+<li>Requires low antenna height (very close to ground) or very high antenna (above 30m) with specific design</li>
+</ul>
+<p><strong>Antennas for low angle:</strong></p>
+<ul>
+<li>Half-wave dipole at height ~λ/4 above ground (resonant height)</li>
+<li>Long-wire antennas (2–4 wavelengths) elevated 10+ meters</li>
+<li>Parabolic or Yagi directive beams pointed at horizon</li>
+</ul>
+<h3>High Angle Radiation (45–90°)</h3>
+<ul>
+<li>Reflects at lower altitude, closer to transmitter</li>
+<li>Short-range sky wave (300–1000 km)</li>
+<li>Fills skip zones partially</li>
+<li>Inherent to low antennas or vertical monopoles near ground</li>
+</ul>
+<p><strong>Antennas for high angle:</strong></p>
+<ul>
+<li>Vertical whip antenna at short height</li>
+<li>Dipole very close to ground (&lt;λ/8)</li>
+<li>Non-directive radiators</li>
+</ul>
+<h3>Omnidirectional vs. Directional Antennas</h3>
+<p>Omnidirectional antennas (whips, short dipoles, verticals) radiate equally in all directions. Directional antennas (long-wire, Yagi beams) concentrate energy toward the horizon in one direction, improving distant signal strength but requiring aiming.</p>
+<p>In a survival or field communication context, omnidirectional is preferred—you don't know where the distant station is located. Directional antennas are valuable for point-to-point links when direction is known.</p>
+</section>
+<section id="prediction-no-computer">
+<h2>Propagation Prediction Without Computers</h2>
+<p>Predicting whether a frequency will work requires observing patterns and applying rules of thumb:</p>
+<h3>At Sunrise/Sunset (Gray Line Propagation)</h3>
+<ul>
+<li>Conditions are unpredictable and change rapidly</li>
+<li>Try multiple frequencies; some will work unexpectedly well</li>
+<li>Long-distance openings often appear 1 hour before sunrise/after sunset</li>
+<li>Not reliable for scheduled communication, but excellent for exploratory listening</li>
+</ul>
+<h3>During Daylight</h3>
+<ol>
+<li>Check the highest frequency that shows any activity (distant stations, band noise)</li>
+<li>That frequency is near today's MUF</li>
+<li>Frequencies higher than that won't work; frequencies lower will work</li>
+<li>For long-distance, use a frequency at 70–80% of the estimated MUF</li>
+</ol>
+<h3>During Darkness</h3>
+<ol>
+<li>Lower frequencies become more reliable; higher frequencies may close</li>
+<li>Try the lowest frequency first (e.g., 3.5 MHz)</li>
+<li>Move upward in frequency until you can reliably reach your target</li>
+<li>Frequencies &gt;14 MHz rarely work overnight except on very long paths (&gt;5000 km)</li>
+</ol>
+<h3>Multi-Hour Predictions</h3>
+<ul>
+<li>If propagation on a frequency is poor, try lower frequencies or wait 1–2 hours for conditions to change</li>
+<li>Never assume a frequency is &quot;down&quot; if you don't hear anyone; listen on lower frequencies and try higher frequencies later</li>
+<li>Always have a Plan B—if primary frequency fails, know your backup frequencies (typically 1–2 bands lower)</li>
+</ul>
+</section>
+<section id="practical-operating">
+<h2>Practical Operating Tips for Offline HF</h2>
+<ol>
+<li>
+<p><strong>Maintain a propagation log:</strong> Note date, time, frequency, signal strengths heard, and which frequencies worked. After weeks of observation, patterns emerge.</p>
+</li>
+<li>
+<p><strong>Learn the gray line:</strong> Sunrise and sunset times are predictable. Gray line propagation is reliable at those times even during poor propagation overall.</p>
+</li>
+<li>
+<p><strong>Antennas matter:</strong> A poor antenna at a disadvantaged frequency will fail while a good antenna at a good frequency succeeds. Invest in antenna design; it's free and critical.</p>
+</li>
+<li>
+<p><strong>Listen more than you transmit:</strong> Listening tells you what frequencies are open without wasting power. After weeks of listening, you'll know which frequencies work when.</p>
+</li>
+<li>
+<p><strong>Seasonal and solar memory:</strong> Remember which frequencies worked last summer, last winter, and when the major geomagnetic storm shut down higher bands. Patterns repeat.</p>
+</li>
+<li>
+<p><strong>Prepare redundancy:</strong> If offshore communication is critical, plan to use 3.5 MHz (80m) as primary and 7 MHz (40m) as secondary. Both are reliable for long distance at most times of year.</p>
+</li>
+</ol>
+</section>
+<section id="summary">
+<h2>Summary</h2>
+<p>Radio propagation is governed by the ionosphere, which reflects HF waves to enable long-distance communication. The ionosphere has four layers that vary with time of day, season, and solar activity. By understanding these patterns, observing band conditions, and selecting frequencies wisely, you can operate HF radio reliably offline without propagation prediction software. Lower frequencies work at night and in winter; higher frequencies work during day and in summer. Always have a backup frequency planned, and use antenna design and radiation angle to reach your targets reliably.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="ham-radio.html">Ham Radio &amp; Communications</a>
+<a href="electricity.html">Electricity &amp; Magnetism</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

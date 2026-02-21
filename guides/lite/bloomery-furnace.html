@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/bloomery-furnace.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloomery Furnace Construction</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Metalworking</span> ›
+<span>Bloomery Furnace Construction</span>
+</div>
+
+
+<h1>Bloomery Furnace Construction</h1>
+<p class="subtitle">Build functional iron-smelting furnace from clay and stone - time-tested design for iron bloom production, metallurgical fundamentals, heat management, and wrought iron extraction</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~12 min</span>
+<span>Updated: 2026-02-16</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Bloomery Overview and Yields</a></li>
+<li><a href="#metallurgy-basics">Metallurgy Basics</a></li>
+<li><a href="#equipment-setup">Equipment Setup and Specifications</a></li>
+<li><a href="#dimensions">Optimal Dimensions and Scaling</a></li>
+<li><a href="#construction">Step-by-Step Construction</a></li>
+<li><a href="#bellows-details">Bellows System Design and Maintenance</a></li>
+<li><a href="#temperature-management">Temperature Management and Monitoring</a></li>
+<li><a href="#operation">Charging and Operation Sequence</a></li>
+<li><a href="#bloom-extraction">Bloom Extraction and Consolidation</a></li>
+<li><a href="#yield-calculations">Yield Calculations and Efficiency</a></li>
+<li><a href="#heat-treatment">Heat Treatment and Bloom Consolidation</a></li>
+<li><a href="#quality-testing">Iron Quality Assessment and Testing</a></li>
+<li><a href="#troubleshooting">Troubleshooting: Furnace Failures and Low Yield</a></li>
+<li><a href="#common-mistakes">Common Mistakes to Avoid</a></li>
+<li><a href="#cooling">Cooling &amp; Thermal Shock Prevention</a></li>
+<li><a href="#safety">Safety Hazards and Mitigation</a></li>
+<li><a href="#reference-tables">Material Reference Tables</a></li>
+<li><a href="#summary">Alternative Furnace Designs and Variations</a></li>
+<li><a href="#seasonal-and-climate-considerations-for-bloomery-operation">Seasonal and Climate Considerations for Bloomery Operation</a></li>
+<li><a href="#summary-and-quick-reference">Summary and Quick Reference</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Bloomery Overview and Yields</h2>
+<p>Bloomery is ancient smelting technology (2000+ years) still effective for small-scale iron production. Ore and charcoal are loaded into a pit furnace and heated to 1100-1350°C by air blast. Iron cannot fully melt at this temperature (melting point 1538°C) but becomes plastic and spongy, allowing slag to drain away. Final product: 15-30kg iron bloom per furnace run, requiring 8-12 hours of active smelting plus 2-4 hours of consolidation hammering.</p>
+<p><strong>Advantages:</strong> Simple construction using clay and stone available at most locations, fuel-efficient relative to output, produces wrought iron (pure, malleable, weldable), scalable from household backyard to village operation. <strong>Disadvantages:</strong> Slow process (8-12 hours active smelting per run), labor-intensive (constant bellows operation required), low reduction efficiency (20-30% ore converts to usable iron), requires extensive post-smelting hammering, high-temperature hazards throughout operation.</p>
+<p><svg aria-label="Bloomery Furnace Construction diagram 1" style="background:#1a2e1a;margin:20px 0;border-radius:8px;max-width:100%;height:auto" viewBox="0 0 500 550"><rect fill="#1a2e1a" height="550" width="500"></rect><text fill="#d4a574" font-size="18" font-weight="bold" text-anchor="middle" x="250" y="30">Bloomery Furnace Cross-Section</text><ellipse cx="250" cy="200" fill="none" rx="100" ry="120" stroke="#b8956a" stroke-width="2/"><text fill="#d4a574" font-size="11" font-weight="bold" text-anchor="middle" x="250" y="180">Furnace Pit</text><text fill="#d4a574" font-size="10" text-anchor="middle" x="250" y="195">D: 1-1.2m</text><text fill="#d4a574" font-size="10" text-anchor="middle" x="250" y="210">Depth: 0.8-1m</text><rect fill="#8b5a2b" height="80" stroke="#b8956a" stroke-width="2/" width="200" x="150" y="280"><text fill="#f5f0e8" font-size="11" text-anchor="middle" x="250" y="310">Iron Bloom (Hot)</text><text fill="#f5f0e8" font-size="10" text-anchor="middle" x="250" y="325">Consolidation Area</text><rect fill="#4a4a4a" height="40" stroke="#d4a574" stroke-width="1/" width="180" x="160" y="360"><text fill="#f5f0e8" font-size="10" text-anchor="middle" x="250" y="380">Slag Layer (Molten)</text><line stroke="#d4a574" stroke-width="2/" x1="220" x2="180" y1="320" y2="350"><line stroke="#d4a574" stroke-width="2/" x1="280" x2="320" y1="320" y2="350"><text fill="#d4a574" font-size="9" x="160" y="340">Slag drain holes</text><path d="M 100 200 L 80 200 L 75 210" fill="none" stroke="#b8956a" stroke-width="3"></path><text fill="#f5f0e8" font-size="9" x="50" y="190">Air pipe inlet</text><text "="" fill="#f5f0e8" font-size="8" x="50" y="205">(from bellows)</text><rect fill="none" height="120" stroke="#b8956a" stroke-dasharray="3,3" stroke-width="2" width="80" x="280" y="80"></rect><text fill="#d4a574" font-size="10" text-anchor="middle" x="320" y="125">Ore/Charcoal</text><text fill="#d4a574" font-size="9" text-anchor="middle" x="320" y="140">Stack</text><text fill="#f5f0e8" font-size="8" text-anchor="middle" x="320" y="155">(Layered)</text><circle cx="250" cy="60" fill="none" r="20" stroke="#b8956a" stroke-width="2/"><text fill="#f5f0e8" font-size="9" text-anchor="middle" x="250" y="65">Top</text><text fill="#f5f0e8" font-size="8" text-anchor="middle" x="250" y="80">(Open)</text><path d="M 130 100 L 110 85 M 160 100 L 140 85 M 190 100 L 170 85" stroke="#d4a574" stroke-width="2/"><text fill="#f5f0e8" font-size="8" x="70" y="110">Flame exhaust</text></path></circle></line></line></rect></rect></ellipse></svg></p>
+<div class="info-box">
+<p><strong>Historical Context:</strong> Bloomery furnaces enabled the Iron Age transition worldwide. This technology, refined over millennia, remains viable in resource-limited environments. Archaeological evidence shows bloomeries operated at 1100-1300°C with output of 10-25kg per firing using charcoal fuel. The simplicity of design—requiring only fire, air, ore, and fuel—made iron accessible to pre-industrial societies.</p>
+</div>
+</section>
+<section id="metallurgy">
+<p>For building bellows and air supply systems, see <a href="bellows-forge-blower-construction.html">Bellows &amp; Forge Blower Construction</a>. For charcoal production, see <a href="charcoal-kiln-construction.html">Charcoal Kiln Construction</a>.</p>
+<h2 id="metallurgy-basics">Metallurgy Basics</h2>
+<p>Understanding the chemistry of iron reduction explains why bloomeries work and how to diagnose problems.</p>
+<h3>Iron Ore Reduction Chemistry</h3>
+<p>Iron ore (typically Fe₂O₃, Fe₃O₄, or FeO) must be chemically reduced—oxygen removed—to produce metallic iron. The reduction process occurs in stages:</p>
+<p><strong>Stage 1 (700-900°C):</strong> Initial oxidation and drying. Water in ore and fuel are driven off. First reduction: Fe₂O₃ → Fe₃O₄ (begins at ~600°C).</p>
+<p><strong>Stage 2 (900-1100°C):</strong> Main reduction zone. Charcoal monoxide (CO) reacts with iron oxides:</p>
+<ul>
+<li>Fe₃O₄ + CO → 3FeO + CO₂</li>
+<li>FeO + CO → Fe + CO₂</li>
+</ul>
+<p>Spongy metallic iron forms from oxide. Temperature must stay above 900°C for adequate CO production; below 900°C, reduction stalls.</p>
+<p><strong>Stage 3 (1100-1350°C):</strong> Slag fusion and iron consolidation. Silica and other gangue (waste rock) combine with flux to form liquid slag (melting point 1050-1150°C). Slag drains downward, collecting at furnace bottom. Iron particles, now at 1100°C+, soften (approaching plastic state) and begin joining together. Continued heating and oxygen removal (by CO) produces larger, denser metal particles.</p>
+<div class="tip">
+<p><strong>The Critical Role of Temperature:</strong> Below 1000°C, reduction slows dramatically. Between 1100-1300°C, slag flows properly and iron particles coalescence optimally. Above 1350°C, bloom iron risks carburization (absorbing carbon, becoming brittle). Maintaining 1100-1300°C is the key to efficient bloomery operation.</p>
+</div>
+<h3>Slag Formation and Removal</h3>
+<p>Slag is liquid waste rock—primarily silica (SiO₂), alumina (Al₂O₃), and calcium compounds. At furnace temperatures, slag density is less than iron, so iron sinks to the bottom while slag floats upward and drains through channels. Efficient slag removal is essential: trapped slag creates voids in bloom, reducing iron quality.</p>
+<p>Flux (limestone, bone ash, or clay) lowers slag melting point, improving fluidity. 5-10kg flux per charge helps slag flow.</p>
+</section>
+<section id="equipment-setup">
+<h2>Equipment Setup and Specifications</h2>
+<h3>Furnace Pit Structure</h3>
+<p>The furnace pit consists of three layers:</p>
+<p><strong>Clay Lining (Interior):</strong> 10-15cm of refractory clay applied directly to pit walls and bottom. Must withstand 1100-1350°C repeatedly. Cracks develop with thermal cycling but are manageable if sealed promptly. Good clay is kaolin, fireclay, or local clay with &gt;20% silica content. Test unfamiliar clay by heating a sample ball to 800°C—it should not slump or crumble.</p>
+<p><strong>Stone Backing (Structural):</strong> 10-15cm of stone (granite, basalt, or river stone) stacked outside clay lining using clay mortar. Stones should be fist-sized or larger for efficient packing. Provides structural support and insulation. Never use limestone—it decomposes at 900°C and destroys the furnace structure.</p>
+<p><strong>Drainage System:</strong> Three 5-8cm diameter drain holes drilled through furnace bottom, sloped slightly outward at 5-10°. Molten slag flows into these channels during operation. After cooling, slag plugs are chipped out by tapping a rod through each hole from inside the furnace, breaking the hardened slag so it can be removed.</p>
+<h3>Air Delivery System</h3>
+<p><strong>Bellows Design:</strong> Box bellows measuring 0.5m × 0.5m × 0.2m deep, constructed from wooden frame (5×5cm beams) with two leather bags attached to a central baffle. One-way valves (simple leather flaps) operate: upstroke draws air into chamber; downstroke expels air through discharge pipe into the furnace air pipe. Each complete stroke moves 10-15 liters of air.</p>
+<p><strong>Air Pipe:</strong> Clay or metal tube, 5-10cm internal diameter, runs from bellows discharge to furnace pit. Must enter pit 30-40cm above bottom (reaction zone location). Pipe interior surfaces exposed to &gt;1000°C must be high-quality refractory clay; exterior sections can be standard clay or metal. Seal connections with clay mortar; metal connections require clay gasket around pipe.</p>
+<p><strong>Flow Rate Target:</strong> 15 strokes per minute (steady, continuous operation) = 150-225 liters/minute = 0.25-0.375 m³/min at 20-30 kPa pressure. This rate is adequate for bloomery operation without causing excessive turbulence in furnace.</p>
+<div class="warning">
+<p><strong>Bellows Pressure Hazard:</strong> Excessive bellows pressure (&gt;50 kPa) can rupture furnace walls or force molten slag out. Never force bellows; maintain steady rhythm. If air pipe blocks during smelting, stop bellows immediately—do not attempt to force pressure through.</p>
+</div>
+<h3>Tool Inventory</h3>
+<p>Essential tools for bloomery operation:</p>
+<ul>
+<li>Prying bar: 1m long, 2-3cm diameter steel rod or hardwood beam (extracts bloom)</li>
+<li>Tongs: 1m long, capable of gripping 50kg masses at 1000°C+ (specialized smithing tongs required)</li>
+<li>Sledgehammer: 4-6kg head, long handle (consolidation hammering)</li>
+<li>Anvil or flat stone: for resting bloom during hammering</li>
+<li>Bellows: as described above</li>
+<li>Moisture meter or scale for charge calculation</li>
+<li>Straw/cloth for insulation and heat management</li>
+</ul>
+</section>
+<section id="dimensions">
+<h2>Optimal Dimensions and Scaling</h2>
+<p>Size balances efficiency with constructability and single-team operation capability.</p>
+<table class="furnace-table"><thead><tr><th scope="row">Parameter</th><th scope="row">Dimension</th><th scope="row">Rationale</th></tr></thead><tbody><tr><td>Pit diameter</td><td>1.0–1.2m</td><td>Larger = more ore capacity (25–35kg bloom), harder to manage temperature uniformly. Smaller = limited output, fast overheating</td></tr><tr><td>Pit depth</td><td>0.8–1.0m</td><td>Deep enough for 100–150L ore/charcoal charge. Shallow pits = 50% capacity loss; deep pits = heat loss, slower heating</td></tr><tr><td>Pit wall thickness</td><td>20–30cm total</td><td>Clay 10–15cm (lining), stone 10–15cm (backing). Insulates furnace, prevents breaches</td></tr><tr><td>Dome height above rim</td><td>0.5–0.8m</td><td>Traps heat, allows space for flame development. Low dome = cramped, poor gas mixing; high = heat escape</td></tr><tr><td>Dome exhaust opening</td><td>0.25–0.35m diameter</td><td>At crown of dome. Allows flame/gas exit without excessive draft</td></tr><tr><td>Air pipe entry height</td><td>30–40cm above pit bottom</td><td>Submerged in reaction zone, high enough to prevent slag drowning of pipe intake</td></tr><tr><td>Air pipe diameter</td><td>5–10cm internal</td><td>Adequate flow (velocity <3 m/s) without turbulence. Smaller = pressure buildup; larger = velocity too low</td></tr></tbody></table>
+<div class="info-box">
+<p><strong>Scaling Considerations:</strong> For 1.2m diameter pit (maximum recommended), expected bloom yield is 20-30kg. For 0.8m diameter (minimum functional size), expect 10-15kg bloom. Two 1.0m pits can operate simultaneously with shared bellows (not recommended for beginners) but requires 4-5 person team instead of 3.</p>
+</div>
+</section>
+<section id="construction">
+<h2>Step-by-Step Construction</h2>
+<h3>Phase 1: Pit Excavation (Days 1–2)</h3>
+<ol>
+<li><strong>Mark layout:</strong> Using rope and center stake, mark circular area 1.2m diameter on relatively flat ground with good drainage (avoid low spots that collect water)</li>
+<li><strong>Excavate:</strong> Dig pit 1.0m deep, maintaining vertical walls where possible. Remove all loose soil from bottom; compact floor with tamping to prevent settling</li>
+<li><strong>Drain preparation:</strong> Drill or carve three drainage channels at pit bottom (sloped outward at 5-10°), ending 1-2m away from pit. Channels should be 5-8cm diameter, allowing 1-1.5 liter/second slug of molten slag to exit</li>
+</ol>
+<h3>Phase 2: Stone Foundation (Days 2–3)</h3>
+<ol>
+<li><strong>Base stone:</strong> Line pit bottom with large stones (fist-sized, ~10cm layer), creating stable foundation for clay lining. Use clay mortar between stones</li>
+<li><strong>Wall construction:</strong> Begin stacking stone walls from bottom to ground level (~1.0m height). Use clay mortar (same mix as furnace lining) between courses. Each stone should be 10-20cm diameter minimum</li>
+<li><strong>Compaction:</strong> As each 20cm of height is reached, compress stone/mortar layer with wooden mallet to eliminate voids</li>
+<li><strong>Verticity:</strong> Walls should be as vertical as practical; battered (sloped) walls &gt;5° reduce internal volume</li>
+</ol>
+<h3>Phase 3: Clay Lining (Days 3–4)</h3>
+<ol>
+<li><strong>Prepare clay:</strong> Dig clay (if needed), dry completely in sun (1-2 weeks). Crush dried clay to fine powder. Mix with sand (1 clay : 4 sand by volume) to reduce cracking. Add water to achieve thick putty consistency (40-50% water by weight). Knead for 60 minutes minimum to homogenize</li>
+<li><strong>Application:</strong> Apply clay lining 10-15cm thick to interior of stone pit walls. Press firmly to eliminate gaps and ensure contact with stone. Smooth interior with wet hands to remove voids and cracks</li>
+<li><strong>Drying:</strong> Cover partially with straw to allow slow, even drying over 1-2 days. Rapid drying (direct sun) causes surface checking; slow drying (covered) produces fewer cracks</li>
+<li><strong>Air pipe installation:</strong> When clay reaches leather-hard stage (firm but still soft), push clay tube through sidewall 30-40cm above pit bottom, angled slightly downward from outside surface. Seal around pipe with clay mortar, packed thoroughly to prevent leaks</li>
+<li><strong>Final inspection:</strong> Check for cracks larger than 3mm; seal with clay slurry if found</li>
+</ol>
+<h3>Phase 4: Dome Construction (Days 4–5)</h3>
+<ol>
+<li><strong>Dome frame:</strong> Dome can be built free-form (easier) or using a brick arch form. Free-form is adequate for bloomeries—symmetry less critical than structure</li>
+<li><strong>Layer construction:</strong> Hand-stack clay &quot;bricks&quot; (20×10×5cm size, sun-dried or fired if available) in domed pattern. Start at rim, angling each successive layer inward and upward at 10° tilt per layer. Outer edge of each brick sits on previous layer's inner edge, creating smooth dome profile</li>
+<li><strong>Crown opening:</strong> At dome crown, leave 0.25-0.35m diameter hole for flame/gas exhaust. Use clay ring around opening to prevent slag spatter</li>
+<li><strong>Smoothing:</strong> Smooth interior clay joints to eliminate gaps and voids. Gaps cause gas bypass (reduces efficiency). Exterior dome can be rough (covered by straw insulation)</li>
+<li><strong>Curing:</strong> Cover dome partially with straw to prevent cracking. Cure 2-3 days at room temperature</li>
+</ol>
+<h3>Phase 5: Surroundings Setup (Day 5)</h3>
+<ol>
+<li><strong>Bellows installation:</strong> Construct bellows 2-3m from furnace (allows air pipe cooling and positions bellows operator safely away from furnace radiation)</li>
+<li><strong>Air pipe run:</strong> Connect bellows discharge to furnace air pipe with wooden or clay tube. Insulate with straw wrapping to preheat incoming air (improves efficiency)</li>
+<li><strong>Material storage:</strong> Establish ore/charcoal storage 5-8m away upwind (prevents sparks/ash contamination). Keep separate dry storage for charcoal</li>
+<li><strong>Work area:</strong> Position anvil, tongs, sledgehammer, and cooling water bucket within 3-5m of furnace for quick access during bloom extraction</li>
+</ol>
+<h3>Phase 6: Curing (Days 5–7)</h3>
+<p>Allow furnace to cure fully at room temperature for 2-3 days before first firing. <strong>Critical:</strong> Slow heating in first run prevents cracks and breaches:</p>
+<ul>
+<li>Hours 0-2: Maintain 600-700°C (light charcoal fire, no bellows)</li>
+<li>Hours 2-4: Gradually increase to 800-900°C</li>
+<li>Hours 4+: Proceed to normal operating temperature (1100-1300°C)</li>
+</ul>
+<p>If cracks appear during first heating, stop, allow complete cooling (24 hours), seal cracks, and restart curing cycle.</p>
+<div class="danger">
+<p><strong>Structural Collapse Risk:</strong> If dome was not constructed symmetrically or if clay lining contains large gaps, structural failure can occur during heating. Signs: audible cracking sounds, visible bulging, or sudden temperature drop. If these occur, immediately stop bellows and allow slow cooling. Do not attempt rapid cooling (e.g., water) which causes catastrophic failure. After cooling, inspect dome; if severely damaged, rebuild dome section (2-3 day project).</p>
+</div>
+</section>
+<section id="bellows-details">
+<h2>Bellows System Design and Maintenance</h2>
+<h3>Simple Wooden Box Bellows</h3>
+<p><strong>Frame Construction:</strong> Hardwood beams (oak, maple, or similar) cut to 0.5m × 0.5m perimeter, with vertical posts 0.2m high. Cross-brace frame with internal divider (baffle) separating left and right chambers.</p>
+<p><strong>Leather Seals:</strong> Two heavy leather bags (cow or horse hide, 2-3mm thick), one mounted on each side of baffle. Bags must be supple enough to flex with pumping yet robust enough to resist puncture. Attach leather with copper rivets or stitching (5cm spacing around perimeter).</p>
+<p><strong>Valve System:</strong> Install simple one-way valves—just leather flaps (5×10cm) pinned at top edge. Upstroke: flap hangs open (inlet valve), draws air into chamber. Downstroke: flap seals shut, forces air through discharge tube. Discharge tube connects to furnace air pipe with clay-sealed joint.</p>
+<p><strong>Operation:</strong> Operator stands over bellows, pushes down on top with full body weight (0.4m travel distance per stroke), then pulls up with hands. Steady rhythm at 15 strokes/minute (one per 4 seconds) produces continuous air supply. Each stroke moves 10-15 liters of air at 20-30 kPa pressure.</p>
+<h3>Bellows Maintenance Schedule</h3>
+<p>Leather seals degrade with thermal cycling and mechanical stress. <strong>Replacement schedule:</strong> Every 18-24 months of regular use.</p>
+<p><strong>Failure indicators:</strong></p>
+<ul>
+<li>Pressure drops noticeably (bellows less responsive to same effort)</li>
+<li>Air leaks visible around seams (hissing sound audible)</li>
+<li>Leather cracks visible (especially around rivet holes)</li>
+</ul>
+<p><strong>Replacement procedure:</strong></p>
+<ol>
+<li>Soak old leather in water for 1 day to soften and ease removal</li>
+<li>Remove copper rivets with chisel or punch</li>
+<li>Carefully strip old leather</li>
+<li>Measure old leather or construct template from original</li>
+<li>Cut replacement leather from new hide (obtain large animal hide if available)</li>
+<li>Attach new leather with copper rivets or heavy thread stitching</li>
+</ol>
+<p><strong>Cost:</strong> Minimal if animal hides available locally (single cow hide yields 10-20 bellows worth of material). If purchasing leather, budget 2-4 day's wages per bellows.</p>
+<h3>Alternative: Foot Bellows</h3>
+<p>If hand-operated bellows prove too labor-intensive: foot-operated pump using two foot pedals operates two chambers alternately. Operator stands on a platform, alternating foot pressure on pedals (similar to bicycle pedaling motion). Hands remain free for other tasks. Less familiar to most operators but effective—used in traditional Asian smelting. Foot bellows require custom fabrication (~2-3 days labor) but use less operator effort than hand bellows.</p>
+<div class="tip">
+<p><strong>Efficiency Improvement:</strong> Mount bellows on a fulcrum frame (seesaw style) so operator weight assists downstroke. This reduces operator effort by 20-30% compared to simple box bellows. Construction adds 1-2 days but significantly reduces fatigue on 8-12 hour smelting runs.</p>
+</div>
+</section>
+<section id="temperature-management">
+<h2>Temperature Management and Monitoring</h2>
+<p>Maintaining 1100-1350°C in the optimal zone is critical for efficiency. Temperature control is achieved by adjusting air blast rate and fuel addition rate. Without pyrometers, color observation and sound are the only guides.</p>
+<h3>Temperature Indication (No Pyrometer Available)</h3>
+<p>Observe color through furnace pit opening or viewing port:</p>
+<table class="furnace-table"><thead><tr><th scope="row">Color Observed</th><th scope="row">Temperature (°C)</th><th scope="row">Iron State</th><th scope="row">Corrective Action</th></tr></thead><tbody><tr><td>Dark red</td><td>700–900°C</td><td>Warming phase, ore not yet reducing</td><td>Increase bellows rate, add more fuel</td></tr><tr><td>Bright cherry red</td><td>900–1100°C</td><td>Reduction beginning, gas formation active</td><td>Increase bellows slowly, monitor flame</td></tr><tr><td>Orange-red to yellow</td><td>1100–1300°C</td><td>Optimal zone: slag flowing, iron sponging</td><td>Maintain bellows, monitor for runaway</td></tr><tr><td>Bright yellow-white</td><td>1300–1400°C</td><td>Too hot, risk of iron carburization</td><td>Reduce bellows immediately, check damage</td></tr><tr><td>White (very rare)</td><td>>1400°C</td><td>Critical overheat, structural risk</td><td>Stop operation, inspect for breaches</td></tr></tbody></table>
+<p><strong>Flame monitoring:</strong> Bright yellow or orange flame at furnace top = good combustion and likely good temperature (1100-1300°C). Dark red or dull flame = lower temperature (&lt;1000°C). Flame should produce audible roaring sound when bellows operated—absence suggests low temperature or blockage.</p>
+<h3>Heat Loss Prevention Techniques</h3>
+<p><strong>Draft control:</strong> Cover furnace top opening with straw or clay board to reduce heat loss, leaving 10-15cm gap for flame exhaust. Excessive natural draft (windy location) cools furnace rapidly—build three-sided windbreak 2-3m away upwind.</p>
+<p><strong>Air intake location:</strong> Cold air from bellows intake can cool furnace if bellows positioned too close. Locate bellows 2-3m away. Insulate air pipe with straw wrapping (5-10cm thickness) to preheat incoming air and reduce heat loss from furnace.</p>
+<p><strong>Insulation maintenance:</strong> Dome insulation (straw covering) should be replaced every 2-3 fires if heavily burned away. Fresh insulation reduces radiant heat loss by ~20%.</p>
+<p><strong>Pit location:</strong> Avoid locations exposed to strong wind. Even slight wind can cool furnace 50-100°C. Sheltered valleys or locations with natural windbreaks are preferred.</p>
+<div class="warning">
+<p><strong>Temperature Runaway:</strong> If temperature exceeds 1350°C, reduce bellows immediately. Do not stop abruptly (which causes rapid cooling and cracking). Reduce slowly, continuing to operate bellows at 5-8 strokes/minute while monitoring temperature. If temperature stabilizes at 1100-1300°C, gradually return to normal rate. Runaway overheating can damage furnace structure and degrade bloom iron quality (excessive carbon absorption).</p>
+</div>
+</section>
+<section id="operation">
+<h2>Charging and Operation Sequence</h2>
+<h3>Charge Calculation</h3>
+<p>For nominal 1.0m diameter, 1.0m deep furnace pit (capacity ~0.8 m³):</p>
+<ul>
+<li><strong>Roasted iron ore:</strong> 100-120kg (hematite Fe₂O₃ preferred; magnetite Fe₃O₄ acceptable)</li>
+<li><strong>Charcoal:</strong> 30-40kg (finely broken, 5-10cm pieces; avoid fines &lt;1cm which block air flow)</li>
+<li><strong>Flux (optional but recommended):</strong> 5-10kg (limestone, bone ash, or clay flux aids slag fusion)</li>
+<li><strong>Total volume when packed loosely:</strong> 150-160L, fits furnace comfortably</li>
+</ul>
+<p><strong>Efficiency target:</strong> This charge should yield 18-25kg bloom (assuming 1100-1300°C maintained, adequate air supply).</p>
+<h3>Ore Roasting Prior to Charging</h3>
+<p>Pre-roasting ore dramatically improves smelting efficiency. Raw ore contains moisture and volatile compounds that absorb heat during the furnace run without contributing to reduction. Roasting removes these impurities and changes ore chemistry, improving reduction rates.</p>
+<p><strong>Roasting Setup:</strong>
+Build shallow fire pit 1-2 meters from main furnace. Heat ore in flat ceramic pan or open pit fire to 750-850°C for 2-3 hours. Target temperature judged by ore color change: raw ore (red-brown or black) becomes darker red-black when properly roasted. Visual indicator: ore surface develops slight gloss from dehydration.</p>
+<p><strong>Roasting Chemistry:</strong>
+Moisture (water in limonite ore) driven off. Goethite (FeO·OH) converts to Hematite (Fe₂O₃): 2FeO·OH → Fe₂O₃ + H₂O at 300°C, then further oxidation occurs. Carbonate ores (Siderite FeCO₃) decompose: FeCO₃ → FeO + CO₂ at 500°C. Each transformation improves subsequent reduction efficiency—roasted ore reduces faster at given furnace temperature. Practical effect: roasted ore yields 10-15% more final iron compared to unroasted ore from same charge weight.</p>
+<p><strong>Roasting Procedure:</strong></p>
+<ol>
+<li>Spread ore in single layer in shallow pan (5-10cm depth maximum)</li>
+<li>Heat over moderate fire, stir occasionally to ensure even heating (every 15 minutes)</li>
+<li>Target 2-3 hour heating duration at visible dull red heat</li>
+<li>Remove from fire, allow to cool to handling temperature (~50°C) in open air, do not quench in water (thermal shock cracks ore)</li>
+<li>Store roasted ore in dry location—reabsorption of moisture negates roasting benefit if exposed to rain or humidity for &gt;1-2 days</li>
+</ol>
+<p><strong>Quality Indicators:</strong>
+Properly roasted ore: darker color than original, lighter weight (moisture removed), crumbles easily in hand (brittleness increases), produces no dust cloud when shaken (clay binders sintered). If ore remains heavy and doesn't crumble, roasting incomplete—extend heating 30 minutes and retest.</p>
+<div class="tip">
+<p><strong>Roasting Efficiency Gains:</strong> Pre-roasting ore adds 3-4 hours labor but increases final iron yield by 2-3kg per 100kg ore charge (10-15% improvement). This improvement is equivalent to mining 10-15kg additional ore—clearly worthwhile investment of time. Roasting also improves furnace temperature stability because water evaporation no longer occurs during smelting, removing endothermic reaction that previously cooled furnace.</p>
+</div>
+<h3>Charging Procedure (Day of Smelting)</h3>
+<ol>
+<li><strong>Preparation:</strong> Assemble all materials nearby the furnace. Charcoal must be dry (stored under rain cover for 1+ week). Use roasted ore prepared day before (or 2-4 hours minimum cooling time). Flux (limestone, bone ash) crushed to powder, measured, ready.</li>
+<li><strong>Base layer:</strong> Place 10cm charcoal layer evenly at pit bottom (creates initial fuel bed for ignition). Ensure charcoal is broken into 5-10cm pieces (not fines &lt;1cm which block airflow).</li>
+<li><strong>Alternate layers:</strong> Add 10-15cm roasted ore layer, then 10cm charcoal, then 2-3kg flux powder layer, continue alternating until pit nearly full (leave 10-15cm headspace). Final layer should be charcoal to ensure good ignition. Mix flux throughout charge evenly (avoid concentrating at single depth).</li>
+<li><strong>Start fire:</strong> Light top charcoal layer with kindling (dry wood sticks or paper). Allow flame to establish for 30 minutes before introducing bellows</li>
+<li><strong>Begin gentle air blast:</strong> Start bellows operation at 5-10 strokes/minute (very slow, 1 stroke every 6-8 seconds). Furnace warms gradually over 30-60 minutes. At 600°C (dark red glow visible), increase to 15 strokes/minute</li>
+<li><strong>Add ore:</strong> As materials burn down, periodically add new ore/charcoal layers (every 30-60 minutes). Typical run adds ore 4-6 times over 8-hour operation. Before each addition, pull back charcoal at top, add new roasted ore (5-10kg), add 0.5-1kg flux, cover with charcoal, push charcoal bed back to original level. Maintain consistent temperature throughout by monitoring flame color and adjusting bellows rate.</li>
+</ol>
+<h3>Operational Duration and Team Requirements</h3>
+<p><strong>Continuous operation:</strong> 8-12 hours typical for single furnace smelting run. Constant bellows operation essential—any pause &gt;5 minutes risks furnace cooling below productive temperature.</p>
+<p><strong>Team composition:</strong> 2-3 person minimum:</p>
+<ul>
+<li><strong>Bellows operator (most physically demanding):</strong> 2-3 hour shifts, then rotate. Maintains steady 15 strokes/minute throughout operation</li>
+<li><strong>Charcoal feeder/temperature monitor:</strong> Observes furnace color, adds ore/fuel on schedule, watches for temperature problems</li>
+<li><strong>General labor/assistance:</strong> Prepares materials, manages water supply, assists with extraction/consolidation</li>
+</ul>
+<p>Fatigue is significant factor—schedule shifts to prevent operator exhaustion.</p>
+<div class="tip">
+<p><strong>Operating Efficiency Gains:</strong> Pre-roasting ore at 800°C for 2 hours increases bloom yield by ~10-15%. Pre-heating air pipe by wrapping with insulation increases temperature stability by 20-30°C. Crushing charcoal to 5-10cm pieces (instead of mixed sizes) improves gas flow and reduces dead zones in furnace.</p>
+</div>
+</section>
+<section id="bloom-extraction">
+<h2>Bloom Extraction and Consolidation</h2>
+<p>After 8-12 hour smelting run, bloomery must cool sufficiently to allow safe extraction, or bloom is extracted while still hot (traditional method, higher risk but faster).</p>
+<h3>Hot Extraction (Traditional Method)</h3>
+<p><strong>Advantages:</strong> Faster consolidation hammering (iron remains hot); bloom stays at optimal temperature for working. <strong>Disadvantages:</strong> Extreme burn hazard; molten slag splash risk; requires practiced technique.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li><strong>Prepare tools:</strong> Have prying bar (1m long), long tongs, wooden sledge, and bucket of water within immediate reach. Brief team on procedure before starting</li>
+<li><strong>Stop bellows:</strong> Cease air blast; allow furnace to rest 10-30 minutes (allows surface slag to solidify slightly without losing core heat)</li>
+<li><strong>Drain slag:</strong> Using long rod, punch through one of the bottom drain holes from furnace interior, breaking slag plug. Molten slag (1000°C+) flows out—monitor flow path to ensure it doesn't splash toward operator. Do not attempt to touch or redirect slag until cooled</li>
+<li><strong>Extract bloom:</strong> Using long prying bar, carefully work under bloom mass from one side. Attempt to lift entire mass in one smooth motion—very heavy (50-100kg) and very hot (800-900°C). Place on flat stone or steel plate 3-5m away from furnace</li>
+<li><strong>Cool briefly:</strong> Expose bloom to air for 2-5 minutes to allow thin oxide skin to form (prevents oxidation deep into metal). If too hot to approach, spray with water from distance using cup or ladle (do not immerse, which causes cracking from thermal shock)</li>
+</ol>
+<div class="danger">
+<p><strong>Molten Slag Hazard:</strong> Molten slag at 1000°C flows fast and far—establish 5m clear zone downwind from drain hole before opening. Slag that contacts skin causes severe third-degree burns. Wear heavy leather apron, long sleeves (leather if available), and closed-toe boots. Never wear synthetic fabrics (melt onto skin). Never reach into furnace opening during drainage.</p>
+</div>
+<h3>Cool Extraction (Safer, Slower)</h3>
+<ol>
+<li><strong>Stop bellows operation</strong></li>
+<li><strong>Cover furnace top</strong> with clay board to minimize drafting; allow full cooling over 24-48 hours</li>
+<li><strong>Extract when cool:</strong> Once furnace has cooled to &lt;200°C (cool enough to touch briefly), carefully remove dome sections or breach furnace sidewall to access bloom. This avoids hot slag contact but requires rebuilding dome afterward (2-3 day project)</li>
+</ol>
+<h3>Consolidation Hammering Procedure</h3>
+<p>Extracted bloom is spongy (porous, containing trapped slag and gas). Hammering while hot squeezes out slag and consolidates metal into dense iron:</p>
+<ol>
+<li><strong>Reheat if cooled:</strong> If bloom cooled below 700°C (dark red), reheat in forge fire to bright cherry-red (1000-1100°C) over 30 minutes</li>
+<li><strong>Striking pattern:</strong> Place bloom on anvil or large flat stone. Strike center with 4-6kg sledgehammer (full swing, not tapping). After first strike, turn bloom 90° (rotate on anvil), strike again. Rotate again, strike adjacent area. Continue in spiral pattern covering entire bloom surface</li>
+<li><strong>Strike intensity:</strong> Each strike should be hard enough to produce visible spark shower and audible ring. Gentle taps do not expel slag—full power required</li>
+<li><strong>Reheating cycle:</strong> After 10-15 strikes, bloom cools below dark red (&lt;700°C), losing workability. Return to forge, reheat 15-30 minutes to bright cherry-red, resume hammering</li>
+<li><strong>Repeat until complete:</strong> Continue heating/hammering cycles for 2-4 hours total. Consolidation complete when slag ceases to expel (no more slag particles flying from impacts) and bloom achieves dense, dark appearance</li>
+</ol>
+<p><strong>Final yield:</strong> 20-30kg usable wrought iron from ~100kg ore charge (20-30% efficiency). Metal is relatively pure iron—soft and ductile, suitable for smithing into tools, weapons, or hardware.</p>
+<div class="info-box">
+<p><strong>Slag Expulsion:</strong> Watch carefully during hammering for small metallic droplets and globs to be ejected from bloom surface. Early in consolidation, heavy slag expulsion occurs; by final cycles, very little exits. When no more slag appears after 5-10 strikes, consolidation is essentially complete. Continue 2-3 more cycles to ensure full density.</p>
+</div>
+</section>
+<section id="yield-calculations">
+<h2>Yield Calculations and Efficiency</h2>
+<p>Predicting iron output from ore charge helps assess viability and diagnose smelting problems.</p>
+<h3>Ore Analysis and Selection</h3>
+<p>Iron ore composition varies widely by source. Use this reference to estimate expected yield:</p>
+<table class="furnace-table"><thead><tr><th scope="row">Ore Type</th><th scope="row">Iron Content %</th><th scope="row">Primary Oxide</th><th scope="row">Typical Gangue %</th><th scope="row">Notes</th></tr></thead><tbody><tr><td>Hematite (Fe₂O₃)</td><td>70%</td><td>Fe₂O₃ 100%</td><td>~20% SiO₂</td><td>Preferred ore; good reduction; moderate slag volume</td></tr><tr><td>Magnetite (Fe₃O₄)</td><td>72%</td><td>Fe₃O₄ 89%</td><td>~15% SiO₂</td><td>Excellent ore; slightly lower reduction temp needed</td></tr><tr><td>Limonite (Fe₂O₃·3H₂O)</td><td>40–60%</td><td>Varies</td><td>~40% H₂O + SiO₂</td><td>Acceptable; higher moisture = lower yield; needs roasting</td></tr><tr><td>Bog ore (freshwater)</td><td>20–40%</td><td>FeO/Fe₂O₃</td><td>~50% organic + SiO₂</td><td>Low grade; high charcoal consumption; acceptable for small yields</td></tr></tbody></table>
+<h3>Ore Selection Strategy for Maximum Yield</h3>
+<p>Selecting proper ore source dramatically impacts final iron yield. Different ore types have vastly different economics:</p>
+<p><strong>Hematite (Fe₂O₃) - Preferred Ore:</strong>
+Advantages: highest iron content (70%), relatively easy reduction chemistry, lowest slag volume. Disadvantages: moderate hardness (mining requires more effort than limonite), limited geographic distribution. Sourcing strategy: identify hematite deposits by red-brown coloring on outcrops, test by scratching (red powder indicates hematite). 100kg hematite → 18-22kg final iron with good technique.</p>
+<p><strong>Magnetite (Fe₃O₄) - Secondary Choice:</strong>
+Advantages: excellent iron content (72%), natural magnetic properties simplify field identification (attracts compass), readily recognized. Disadvantages: sometimes requires more aggressive furnace conditions. Sourcing: magnetic properties enable rapid identification—pass compass over suspect ore, if deflection occurs magnetite likely. Often found in sand deposits (black sand = likely magnetite). 100kg magnetite → 20-24kg final iron (slightly higher than hematite due to iron content and reduction efficiency).</p>
+<p><strong>Limonite (FeO·OH·nH₂O) - Acceptable but Labor-Intensive:</strong>
+Advantages: widespread geographically, often easily accessible (weathered surface, doesn't require deep mining), color distinctive (brown-yellow). Disadvantages: high water content (30-40% weight), requires extensive pre-roasting to remove moisture, lower net iron yield. Chemistry: hydrated iron oxide requires more energy to remove water and oxygen. Sourcing: found in weathered zones, swamps, clay deposits. Pre-roasting mandatory—extend roasting 3-4 hours vs. 2-3 hours for hematite. 100kg limonite → 9-11kg final iron (due to moisture penalty and lower iron content 60% vs. 70%).</p>
+<p><strong>Bog Ore and Low-Grade Ores - Last Resort:</strong>
+Bog ore (20-40% iron content) requires unreasonably large ore volumes for modest yield. Avoid unless no better sources available. 100kg bog ore → 3-5kg final iron (75% penalty). Sourcing: low-grade deposits require testing—assay small sample by smelting to verify iron content before committing large mining effort.</p>
+<p><strong>Sourcing Recommendation Process:</strong>
+(1) Identify local ore sources through geological knowledge and field observation. (2) Test each source: break sample, observe color, test magnetic properties. (3) Small trial smelting: use 10-20kg ore from source, evaluate yield and final iron quality. (4) Scale up production from best-yielding source. (5) Seasonal mining strategy—identify sources accessible in different seasons (summer: shallow deposits, winter: frozen ground enables different locations).</p>
+<h3>Yield Calculation Example</h3>
+<p><strong>Scenario:</strong> 100kg hematite ore (70% iron content), bloomery efficiency 28%, 8% hammering loss:</p>
+<ol>
+<li><strong>Pure iron in ore:</strong> 100kg × 70% = 70kg pure iron content</li>
+<li><strong>Bloom extracted:</strong> 70kg × 28% efficiency = 19.6kg bloom (still contains ~5% trapped slag)</li>
+<li><strong>After consolidation:</strong> 19.6kg × (1 - 0.08) = 18.0kg final wrought iron product</li>
+</ol>
+<p><strong>Simplified formula:</strong> (Ore mass × iron content % × furnace efficiency × 0.92) = final iron</p>
+<p><strong>Typical results for 100kg hematite charge:</strong></p>
+<ul>
+<li>Hematite + good technique: 18-22kg final iron</li>
+<li>Hematite + average technique: 15-18kg final iron</li>
+<li>Magnetite (10-15% bonus): 20-24kg final iron</li>
+<li>Limonite (50% penalty due to moisture): 9-11kg final iron</li>
+<li>Bog ore (75% penalty due to low grade): 3-5kg final iron</li>
+</ul>
+<h3>Energy Requirements</h3>
+<p>Charcoal consumption rate: 0.3-0.5kg charcoal per kg iron produced. For 20kg final iron, require 6-10kg charcoal. Assuming 50-60kg wood needed per 10kg charcoal (charcoal is ~17% yield from wood):</p>
+<ul>
+<li>Total charcoal for 20kg iron: 8-12kg charcoal</li>
+<li>Wood required: 50-70kg (green or partially dry)</li>
+<li>Heat energy in charcoal: ~29 MJ/kg × 10kg = 290 MJ total</li>
+<li>Furnace thermal efficiency: ~20-25% (rest lost as exhaust)</li>
+<li>Useful heat captured: ~60-75 MJ</li>
+<li>Energy per kg of final iron: 3-4 MJ/kg usable heat</li>
+</ul>
+<p>This is lower than expected due to substantial heat loss through furnace walls and exhaust gases. Improved insulation and dome design can increase efficiency to 30-35%.</p>
+</section>
+<section id="heat-treatment">
+<h2>Heat Treatment and Bloom Consolidation</h2>
+<p>After initial consolidation hammering, wrought iron can be further refined through additional heat treatment cycles to improve quality and remove remaining defects.</p>
+<h3>Post-Consolidation Annealing</h3>
+<p>After bloom reaches apparent density, perform annealing cycle to relieve stress and improve workability:</p>
+<ol>
+<li><strong>Reheat bloom</strong> to bright cherry-red (1000°C), hold 15 minutes</li>
+<li><strong>Slow cool</strong> in air (wrapped in straw insulation if rapid cooling threatens cracking). Cooling should take 30-60 minutes from 1000°C to 100°C</li>
+<li><strong>Result:</strong> Iron becomes softer and more ductile, easier to smith into tools or weapons</li>
+</ol>
+<p>Repeat annealing 2-3 times for very high-quality finished iron.</p>
+<h3>Detecting Remaining Slag and Defects</h3>
+<p>Even after consolidation, some slag or voids may remain. Detection methods:</p>
+<ul>
+<li><strong>Cold chisel test:</strong> Place cold chisel on bloom surface, strike gently with hammer. Slag rings differently than iron (higher pitch sound). Slag appears as harder, more brittle material</li>
+<li><strong>Cross-section test:</strong> If a small portion of bloom can be sacrificed, break off small piece, crack with chisel to expose interior. Examine cross-section with magnification if available—trapped slag appears as black or gray glassy material amid metallic iron</li>
+<li><strong>Hammering response:</strong> During smithing, excessive slag pockets cause sudden cracks or fractures. If this occurs, reheat and consolidate further</li>
+</ul>
+</section>
+<section id="quality-testing">
+<h2>Iron Quality Assessment and Testing</h2>
+<h3>Physical Property Evaluation</h3>
+<p><strong>Malleability test:</strong> Heat small sample to bright cherry-red. On anvil, strike lightly with hammer—wrought iron deforms without cracking. If material cracks or shatters, excessive carbon present or trapped slag remains.</p>
+<p><strong>Tensile strength estimation:</strong> Forge heated iron sample into rough wire shape, cool, then attempt to bend with hands or light hammer. Pure wrought iron bends easily without breaking. Brittle fracture indicates carbon content too high or slag inclusions.</p>
+<p><strong>Hardness check:</strong> Scratch bloom surface with steel file (or harder stone). Wrought iron scratches easily (soft). If highly resistant to scratching, carbon content may be elevated (unsuitable for most traditional tools, better for weaponry if that is goal).</p>
+<h3>Yield Calculation Verification</h3>
+<p>After consolidation, weigh final bloom. Compare to expected yield:</p>
+<p><strong>Expected from ore:</strong> (Starting ore mass × iron content %) × (furnace efficiency 25%) × (consolidation success 92%) = expected bloom weight</p>
+<p><strong>Example:</strong> 100kg hematite (70% iron) → expected 16kg bloom</p>
+<p><strong>Actual vs. expected:</strong></p>
+<ul>
+<li>Within 10% of expected: Excellent run</li>
+<li>Within 10-20% of expected: Good run, standard quality</li>
+<li>
+<blockquote>
+<p>20% below expected: Problem with temperature, air supply, or ore quality (see Troubleshooting section)</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>Slag Analysis from Final Bloom:</strong></p>
+<p>Slag remaining in final consolidated bloom reveals furnace conditions during operation. Examine slag composition:</p>
+<p><strong>Black, glassy slag:</strong> Normal composition. Small amounts (1-5% by volume) acceptable. Result of proper slag drainage during reduction.</p>
+<p><strong>Red-colored slag (iron oxide mixed in):</strong> Indicates furnace temperature was too cool at some point—iron became viscous and mixed with slag. Prevention: improve insulation, increase bellows pressure slightly, use drier charcoal.</p>
+<p><strong>Light tan/beige slag:</strong> Indicates excess flux added or ore gangue silica content very high. Slag too thin (low viscosity), poor cohesion with iron mass. Prevention: reduce flux addition next run (target 5-8kg, not 10kg). Test ore composition from different source if problem persistent.</p>
+<p><strong>Large slag pockets (&gt;5cm chunks):</strong> Indicates poor slag drainage—drain holes may be blocked or positioned incorrectly. After furnace cools, check drain channels from interior. Clear any slag blockages using iron rod. Retest drainage by pouring water into pit—it should flow to all three drain holes. Fix positioning if water doesn't flow evenly.</p>
+<div class="tip">
+<p><strong>Slag Reprocessing Option:</strong> Slag from bloomery can be crushed and re-smelted in subsequent runs (adds 5-10% to charge as supplementary ore). This recovery reduces ore consumption but adds labor. Practical only if ore supply is limiting—otherwise discard slag.</p>
+</div>
+<h3>Slag Inclusion Estimation and Advanced Analysis</h3>
+<p>Crude method: Break small piece from cool bloom, examine on flat surface with sunlight. Count visible glassy slag inclusions:</p>
+<ul>
+<li>&lt;5 visible pieces in thumbnail-sized sample: Excellent consolidation</li>
+<li>5-15 visible pieces: Good consolidation, acceptable quality</li>
+<li>
+<blockquote>
+<p>15 visible pieces: Poor consolidation, iron quality compromised, further consolidation hammering recommended</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>Detailed Slag Assessment Procedure:</strong></p>
+<p>For more thorough evaluation, perform cross-section examination. Break or chisel small sample from bloom, exposing fresh internal surface. Examine under magnification (8-10x lens) if available, or naked eye in bright light. Observe:</p>
+<p><strong>Slag color and composition:</strong> Black, glassy slag indicates normal silicate composition (good). Gray or light-colored slag indicates excessive flux or different ore source—acceptable but note for comparison batches. Red-colored slag mixed with iron indicates furnace temperature was marginal—improve insulation or bellows pressure in next run. Banded or layered slag indicates incomplete mixing during smelting—stir charge more actively during operation.</p>
+<p><strong>Slag particle size distribution:</strong> Fine slag particles (&lt;1mm) indicate proper furnace temperature and slag fluidity—excellent consolidation occurred. Large slag chunks (&gt;5mm) indicate poor drainage or incomplete fusion—suggests furnace temperature too low or drain holes blocked. Very large slag regions (&gt;10mm) indicate catastrophic drainage failure—investigate furnace structure for damage or blockage.</p>
+<p><strong>Iron-slag interface examination:</strong> Clean sharp interface between iron and slag indicates proper separation. Rough or diffuse interface indicates slag partially adhered to iron during consolidation—suggests need for more vigorous hammering or higher temperature. Visible cracks at interface indicate internal stress—possibly from rapid cooling or uneven consolidation.</p>
+<p><strong>Void and porosity assessment:</strong> Small voids acceptable (&lt;1mm, less than 5% of sample). Larger voids (5-10mm) indicate trapped gas during smelting—improve air supply during operation. Extensive porosity (&gt;20% void volume) indicates major problem—either furnace temperature too low (metal didn't properly coalesce) or air supply inadequate. If extensive porosity observed, investigate furnace conditions in next run.</p>
+<p><strong>Preventive measures for next smelting run:</strong> If slag analysis reveals problems, implement corrective actions: (1) Low temperature indicated—add straw insulation, reduce wind exposure, increase bellows pressure; (2) Poor slag drainage indicated—verify drain holes are clear, test drainage by pouring water through pit after cool-down; (3) Incomplete consolidation indicated—extend hammering phase 2-3 additional cycles, ensure bloom remains at cherry-red during consolidation.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting: Furnace Failures and Low Yield</h2>
+<p>This section covers common problems, their causes, and solutions.</p>
+<h3>Temperature Issues</h3>
+<p><strong>Problem: Furnace never reaches orange-red (stays dark red below 1000°C)</strong></p>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Bellows not providing adequate air flow (leather seals leaking, operator not maintaining rhythm)</li>
+<li>Air pipe blocked by slag accumulation</li>
+<li>Charcoal moisture content too high (&gt;15% water)</li>
+<li>Furnace cooling too fast (inadequate insulation, strong wind exposure)</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>Stop operation, inspect bellows for leaks (listen for hissing, watch for pressure loss)</li>
+<li>If leaks present, repair leather seals immediately (1-2 hour job) or switch to backup bellows if available</li>
+<li>Check air pipe by running bellows without smelting charge—bellows should produce strong air jet at furnace opening</li>
+<li>If pipe blocked, stop operation, allow furnace to cool, clear blockage with rod</li>
+<li>Verify charcoal is dry (crisp, breaks cleanly). If moist, dry in sun 3-5 days before next attempt</li>
+<li>Add extra straw insulation to dome (layer 10-15cm thick). Build windbreak upwind of furnace</li>
+</ol>
+<p><strong>Temperature runaway (exceeds 1350°C, yellow flame)</strong></p>
+<p><strong>Possible causes:</strong></p>
+<ul>
+<li>Bellows operator exceeding 15 strokes/minute (over-supplying air)</li>
+<li>Furnace draft creating siphoning effect (air input exceeds control)</li>
+<li>Charcoal pieces too fine (burn too fast)</li>
+<li>Insufficient ore relative to charcoal (ore absorbs heat from combustion)</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>Reduce bellows rate to 8-10 strokes/minute immediately (do not stop abruptly)</li>
+<li>Continue at reduced rate while monitoring color—should cool to orange-red within 10-15 minutes</li>
+<li>If cooling slow, cover furnace top opening with clay board (reduce draft)</li>
+<li>Future charges: use charcoal 8-15cm pieces (reject fine material &lt;3cm). Add extra ore (120-150kg instead of 100kg) to increase heat absorption and slow temperature rise</li>
+<li>Brief bellows operator on importance of steady, controlled rhythm</li>
+</ol>
+<table class="defect-table"><thead><tr><th scope="row">Symptom</th><th scope="row">Likely Cause</th><th scope="row">Quick Fix</th><th scope="row">Prevention</th></tr></thead><tbody><tr><td>Dark red color, won't heat above 900°C</td><td>Insufficient air supply; moisture in charcoal</td><td>Inspect/repair bellows; dry charcoal</td><td>Test bellows before operation; store charcoal dry</td></tr><tr><td>Temperature swings (orange to dark red to orange, unstable)</td><td>Bellows operator inconsistent; draft fluctuations</td><td>Brief operator on steady rhythm; reduce wind exposure</td><td>Schedule experienced bellows operator; build windbreak</td></tr><tr><td>Bright yellow flame, runaway heating</td><td>Over-bellowing; fine charcoal burning too fast</td><td>Reduce bellows rate 30%; cover furnace top</td><td>Use 8-15cm charcoal pieces; brief operator on rate</td></tr><tr><td>Bloom yield 30% below expected</td><td>Low furnace temperature; ore quality poor; slag retention</td><td>Verify ore analysis; check final bloom weight</td><td>Pre-roast ore; increase bellows pressure slightly; improve slag drainage</td></tr></tbody></table>
+<h3>Furnace Structural Problems</h3>
+<p><strong>Problem: Visible cracks in dome or walls during operation</strong></p>
+<p><strong>Immediate action:</strong> Stop bellows immediately (do not stop abruptly—reduce to 5 strokes/minute, continue 30 minutes, then stop). Allow furnace to cool completely (24-48 hours, do not force cooling with water).</p>
+<p><strong>Assessment:</strong> After cooling, inspect crack severity:</p>
+<ul>
+<li>Small hairline cracks (&lt;3mm wide): Sealable, furnace usable</li>
+<li>Large cracks (3-10mm): Significant but repairable</li>
+<li>Breach (&gt;10mm or through-wall crack): Structural failure, dome or section must be rebuilt</li>
+</ul>
+<p><strong>Repair:</strong></p>
+<ol>
+<li>For hairline cracks: Clean crack with tool, wet thoroughly, force clay mortar (same mix as original lining) deep into crack, smooth flush with surface, cure 2-3 days before next firing</li>
+<li>For large cracks: Follow same procedure but may require 2-3 days curing before relighting furnace</li>
+<li>For breach: Stop all operations. Rebuild damaged section (if dome, 2-3 day project; if sidewall, 3-5 day project)</li>
+</ol>
+<h3>Poor Bloom Yield</h3>
+<p><strong>Problem: Bloom extracted weighs 40-50% below expected</strong></p>
+<p><strong>Diagnosis procedure:</strong></p>
+<ol>
+<li><strong>Verify ore analysis:</strong> If possible, determine actual iron content of ore used (visual inspection: hematite is red/black, magnetite is darker, limonite is brown). Poor yield sometimes due to ore grade lower than assumed</li>
+<li><strong>Calculate efficiency:</strong> (Final bloom weight ÷ [ore mass × estimated iron content]) × 100. Compare to 25-30% target</li>
+<li><strong>Inspect bloom quality:</strong> Break small piece—examine for slag inclusions. Excessive slag indicates poor slag drainage (low temperature, high viscosity slag)</li>
+<li><strong>Review operational log:</strong> Temperature stability? Air supply steady? Any problems noted during smelting?</li>
+</ol>
+<p><strong>Likely causes and solutions:</strong></p>
+<ul>
+<li><strong>Low furnace temperature (&lt;1050°C maintained):</strong> Slag became viscous, stuck to iron, reduced consolidation. Solution: improve insulation, increase bellows pressure slightly, dry charcoal more thoroughly</li>
+<li><strong>Poor slag drainage:</strong> Drain holes may be blocked or misaligned. Solution: for next run, check that drain holes are clear and sloped outward before charging</li>
+<li><strong>High slag content ore (&gt;40% gangue):</strong> Some ore sources simply produce more slag. Solution: add flux (limestone or bone ash) 8-10kg per charge to lower slag melting point</li>
+<li><strong>Insufficient consolidation hammering:</strong> Bloom still contained gas/slag even after hammering. Solution: continue consolidation 2-3 more heating/hammering cycles</li>
+</ul>
+</section>
+<section id="common-mistakes">
+<h2>Common Mistakes to Avoid</h2>
+<p>Learning from others' errors saves time and materials:</p>
+<ol>
+<li>
+<p><strong>Using limestone in furnace structure:</strong> Limestone (CaCO₃) decomposes at 900°C, releasing CO₂ gas and causing sudden structural failure. Use granite, basalt, or river stone only. Always test unfamiliar stone before building furnace</p>
+</li>
+<li>
+<p><strong>Charcoal too fine or too wet:</strong> Fine charcoal (&lt;3cm) burns too fast, causing temperature swings. Wet charcoal (&gt;15% moisture) reduces furnace temperature 100-200°C. Always pre-dry charcoal 3-5 days in sun; break into 5-10cm pieces before charging</p>
+</li>
+<li>
+<p><strong>Insufficient bellows operation:</strong> Operators sometimes reduce bellows rate to conserve effort. Result: temperature drops, slag doesn't flow, poor yield. Maintain steady 15 strokes/minute throughout operation despite fatigue</p>
+</li>
+<li>
+<p><strong>Extracting bloom too early:</strong> Attempting to extract bloom while furnace still &gt;400°C risks cracking iron (thermal shock from cooling). Always allow furnace to cool to &lt;200°C or perform hot extraction with adequate safety precautions</p>
+</li>
+<li>
+<p><strong>Inadequate consolidation hammering:</strong> After extraction, some operators assume consolidation is complete after light hammering. Slag continues escaping through 3-4 additional heating/hammering cycles. Allocate 3-4 hours for this critical phase</p>
+</li>
+<li>
+<p><strong>Poor air pipe positioning:</strong> If air pipe positioned &lt;20cm above pit bottom, molten slag can drown the pipe intake, blocking air supply mid-smelting. Always position 30-40cm above bottom</p>
+</li>
+<li>
+<p><strong>Rushing furnace curing:</strong> Heating furnace to full 1100°C temperature in first run causes cracking and breaches. First run must be slow-heated over 4+ hours. Accept this schedule</p>
+</li>
+<li>
+<p><strong>Neglecting bellows maintenance:</strong> Leather seals degraded beyond 24 months of use cause pressure loss and low yield. Establish maintenance schedule, replace leather proactively every 18-24 months</p>
+</li>
+<li>
+<p><strong>Over-relying on visual temperature indication:</strong> Color observation has ±100°C error margin. Experienced operators develop sense for flame sound and furnace behavior, but beginners often guess wrong. When uncertain, reduce bellows rate slightly and stabilize</p>
+</li>
+<li>
+<p><strong>Insufficient team coordination:</strong> Smelting is team effort. Poorly coordinated teams (bellows operator unaware of ore-feeder's schedule, etc.) cause temperature fluctuations and poor yield. Brief team before start, assign clear roles, establish hand signals for communication</p>
+</li>
+</ol>
+</section>
+<section id="cooling">
+<h2>Cooling &amp; Thermal Shock Prevention</h2>
+<p>After 8-12 hours of operation at 1100-1300°C, the bloomery must cool carefully to prevent dangerous thermal shock and structural failure.</p>
+<div class="danger">
+<p><strong>Thermal Shock During Cooling:</strong> After a bloomery firing, the furnace structure and bloom remain at 1100°C+ for hours. Rapid cooling (rain, water contact, cold wind) can cause explosive spalling of clay/brick furnace walls, sending high-velocity fragments outward. The bloom itself can crack violently if cooled too quickly.</p>
+<p><strong>Safe Cooling Protocol:</strong></p>
+<ol>
+<li>Allow furnace to cool naturally — do NOT attempt to speed cooling with water</li>
+<li>Maintain a 3-meter exclusion zone around the furnace for at least 6 hours after firing</li>
+<li>Do not remove the bloom until the furnace exterior is cool enough to touch with a bare hand</li>
+<li>Shield the furnace from rain with a non-flammable cover (sheet metal) during cooling</li>
+<li>Expect 12-24 hours for safe cooling in moderate weather; longer in cold conditions</li>
+</ol>
+</div>
+<h3>Slow Cooling Procedure (Safest)</h3>
+<p><strong>Duration:</strong> Allow furnace to cool over 24-48 hours without forced cooling.</p>
+<ol>
+<li><strong>Stop bellows operation</strong> immediately when smelting cycle complete</li>
+<li><strong>Cover furnace top</strong> with clay board or flat stone to minimize drafting (prevents rapid cooling that causes stress cracks)</li>
+<li><strong>Monitor temperature</strong> by observing color through viewing ports—should progress from bright orange to dark red over 4-6 hours</li>
+<li><strong>Allow full natural cooling</strong> to room temperature (24-48 hours total)</li>
+</ol>
+<p><strong>Why this matters:</strong> Rapid cooling creates internal stress concentrations in the clay lining and dome. Stress exceeds the material's strength, causing catastrophic cracking or collapse. Slow cooling allows heat to dissipate evenly throughout the furnace structure.</p>
+<h3>Thermal Shock Cracking (Signs &amp; Treatment)</h3>
+<p><strong>Warning signs during cooling:</strong></p>
+<ul>
+<li>Audible cracking sounds (sharp reports, like gunfire)</li>
+<li>Visible bulging or bowing of dome</li>
+<li>Large cracks (&gt;3mm) appearing in clay lining</li>
+<li>Temperature suddenly dropping faster than expected</li>
+</ul>
+<p><strong>Immediate response:</strong></p>
+<ul>
+<li>Stop all interventions immediately</li>
+<li>Do not attempt to force cooling with water or air blast</li>
+<li>Allow furnace to cool completely (24+ hours) at its own pace</li>
+<li>After cooling, inspect damage severity</li>
+<li>Small hairline cracks (&lt;3mm): sealable, furnace usable after repair</li>
+<li>Large cracks (&gt;3mm): significant but potentially repairable with 2-3 day rebuild</li>
+<li>Through-wall breach (&gt;10mm): structural failure, dome must be rebuilt before next firing</li>
+</ul>
+<h3>Recovery &amp; Prevention for Future Fires</h3>
+<p>After a slow cooling cycle:</p>
+<ol>
+<li><strong>Inspect the dome and lining</strong> thoroughly for large cracks before relighting</li>
+<li><strong>Seal hairline cracks</strong> with clay mortar mixed with sand (prevent ash infiltration)</li>
+<li><strong>Test the furnace</strong> by performing slow warm-up in first firing (same schedule as initial cure firing)</li>
+<li><strong>Future prevention:</strong> Always use slow cooling procedure. The time investment prevents costly furnace damage</li>
+</ol>
+</section>
+<section id="safety">
+<h2>Safety Hazards and Mitigation</h2>
+<p>Bloomery smelting involves extreme temperatures, caustic gases, and heavy materials. Serious injury is possible.</p>
+<div class="danger">
+<p><strong>DO NOT ATTEMPT in enclosed spaces.</strong> Bloomery furnaces produce deadly carbon monoxide (CO) gas, a colorless, odorless poison. ALL operations MUST occur outdoors or in purpose-built facilities with forced ventilation. Never work alone — require a safety observer present at all times.</p>
+<p><strong>PRIMARY KILLER: CARBON MONOXIDE (CO) POISONING</strong></p>
+<ul>
+<li>CO is produced continuously during bellows operation (charcoal/coke combustion)</li>
+<li>Invisible, odorless, colorless — cannot be detected without instruments</li>
+<li>Accumulates in body over time; symptoms may not appear until severe poisoning has occurred</li>
+<li>Early symptoms (headache, dizziness) easily confused with fatigue or exertion</li>
+<li>Severe exposure: confusion, loss of consciousness, death — often rapid</li>
+</ul>
+<p><strong>Mitigation:</strong></p>
+<ul>
+<li>Work ONLY in completely open outdoor areas — never in sheds, caves, or enclosed spaces</li>
+<li>Position furnace in well-ventilated area with prevailing wind moving exhaust away from operators</li>
+<li>Rotate bellows operators every 1-2 hours to minimize continuous exposure</li>
+<li>If headaches or dizziness develop during operation, take 30-minute break in fresh air immediately</li>
+<li>Evacuate all personnel to fresh air if anyone shows confusion or disorientation</li>
+<li>Call emergency medical services if CO poisoning suspected</li>
+</ul>
+<p><strong>BURN HAZARD FROM MOLTEN SLAG:</strong> Molten slag at 1000°C flows fast, adheres to skin, and causes severe third-degree burns instantly.</p>
+<ul>
+<li>Never reach into furnace openings without shielding</li>
+<li>Never touch slag until confirmed cool (&lt;200°C) by touching edge briefly with bare hand first</li>
+<li>Wear heavy leather apron and long sleeves (leather if available)</li>
+<li>Keep water bucket 3-5m away for emergency immersion if splash occurs</li>
+<li>Do not attempt to brush off slag—immerse affected area immediately in water and seek medical help</li>
+</ul>
+</div>
+<div class="warning">
+<p><strong>Carbon Monoxide (Monoxide) Exposure:</strong> Charcoal combustion produces CO gas, especially during bellows operation when O₂ is depleted. CO is colorless, odorless, and dangerous. Early symptoms: headache, dizziness, confusion. Severe exposure: loss of consciousness, death. Mitigation: operate smelting in well-ventilated outdoor area (always outdoors, never in enclosed spaces). If headaches develop during operation, take 30-minute break in fresh air. Rotate bellows operators frequently to avoid prolonged exposure</p>
+</div>
+<div class="danger">
+<p><strong>Structural Collapse:</strong> If furnace dome was not constructed symmetrically or if clay lining contains large unbonded gaps, structural failure can occur without warning during heating. Dome can collapse, trapping hot materials or causing explosions from rapid steam generation if water contacts molten interior. Mitigation: build dome carefully, ensuring smooth interior and no large voids. Cure furnace completely before operation. If cracks appear during first heating, stop immediately and allow slow cooling. Inspect dome frequently; if structural cracks observed, do not attempt further smelting until repairs complete</p>
+</div>
+<div class="warning">
+<p><strong>Eye Damage from Radiant Heat:</strong> Staring at furnace interior at 1100°C+ can damage eyes (retinal burns from infrared radiation). Do not look directly into furnace opening for extended periods. Wear broad-brimmed hat to shield eyes. Some traditional cultures used darkened goggles or slitted eye coverings for this reason—consider similar protection</p>
+</div>
+<p><strong>Burns from Iron and Tools:</strong> Extracted bloom remains very hot (800-900°C) even after 5-10 minute cooling. Always use tongs (never bare hands). Iron tools and anvils also become very hot—use gloves rated to 500°C (leather work gloves adequate). Touching hot iron causes severe burn instantly</p>
+<p><strong>Heavy Lift Injury:</strong> Extracted bloom weighs 50-100kg and is handled when hot. Risk of dropped bloom causing foot crush injury. Always ensure clear work area below bloom; never have hands/feet under suspended bloom. Use proper lifting technique (bend knees, straight back) to avoid back strain. Ensure at least two people present during extraction</p>
+<p><strong>Air Blast Injury:</strong> Bellows operator can suffer arm/shoulder fatigue or strain from repetitive motion over 8-12 hour operation. Schedule 2-3 hour shifts with breaks. Use fulcrum-based bellows (see earlier section) to reduce effort. Do not overextend range of motion</p>
+<p><strong>Charcoal Dust Inhalation:</strong> Fine charcoal dust from ore/fuel preparation can cause respiratory irritation or asthma-like symptoms with prolonged exposure. Wear dust mask (cloth at minimum, N95 if available) during charging and material preparation. Work upwind of dust clouds</p>
+<p><strong>Furnace Ignition and Spread:</strong> Bloomery charcoal fire produces intense radiant heat—nearby combustible materials (straw, wood, cloth, dry grass) can ignite unintentionally. Maintain 3-5m clear zone around furnace. Keep water supply nearby for emergency. Do not site furnace in dry grass area during dry season</p>
+<p><strong>Dehydration:</strong> Operators standing near 1100-1300°C furnace lose fluids rapidly from sweating and radiant heat stress. Symptoms: dizziness, confusion, heat exhaustion. Mitigation: provide cool drinking water (not ice cold, which shocks system). Schedule frequent short breaks (every 1-2 hours) in shaded area. Begin operation in early morning to avoid peak heat hours</p>
+</section>
+<section id="reference-tables">
+<h2>Material Reference Tables</h2>
+<h3>Charcoal Preparation</h3>
+<table class="furnace-table"><thead><tr><th scope="row">Charcoal Type</th><th scope="row">Combustion Temp (°C)</th><th scope="row">Efficiency vs. Hardwood</th><th scope="row">Notes</th></tr></thead><tbody><tr><td>Hardwood charcoal (oak, maple, birch)</td><td>1100–1200</td><td>100% baseline</td><td>Preferred. Dense, burns long. Hardwoods 20-25% yield from wood</td></tr><tr><td>Softwood charcoal (pine, spruce)</td><td>950–1100</td><td>80%</td><td>Acceptable but burns faster, requires more fuel. Softwoods 15-20% yield</td></tr><tr><td>Charcoal fines (<3cm pieces)</td><td>Varies</td><td>Variable</td><td>Burns fast, temperature swings, block air flow. Avoid or screen out</td></tr><tr><td>Wet charcoal (>15% moisture)</td><td>Reduced 100–200°C</td><td>60–70%</td><td>Evaporating water absorbs heat, lowers furnace temp. Always dry first</td></tr><tr><td>Charcoal from coal (poor substitute)</td><td>Lower</td><td>50–60%</td><td>Coal produces more ash, slag volume increases. Avoid if wood available</td></tr></tbody></table>
+<h3>Flux Options and Melting Points</h3>
+<table class="furnace-table"><thead><tr><th scope="row">Flux Material</th><th scope="row">Slag Melting Point Reduction</th><th scope="row">Availability</th><th scope="row">Typical Dose</th></tr></thead><tbody><tr><td>Limestone (CaCO₃)</td><td>100–150°C reduction</td><td>Common (chalk, calcite, shells)</td><td>5–10kg per charge</td></tr><tr><td>Bone ash (calcium phosphate)</td><td>75–100°C reduction</td><td>Moderate (burn animal bones)</td><td>5–10kg per charge</td></tr><tr><td>Wood ash (potassium oxide)</td><td>50–75°C reduction</td><td>Always available (fire ash)</td><td>2–5kg per charge</td></tr><tr><td>Clay (silica-based)</td><td>25–50°C reduction</td><td>Always available</td><td>5–10kg per charge</td></tr><tr><td>No flux (straight ore + charcoal)</td><td>—</td><td>—</td><td>Possible but slag viscous, reduces yield ~10%</td></tr></tbody></table>
+<h3>Expected Yields by Ore Type and Conditions</h3>
+<table class="furnace-table"><thead><tr><th scope="row">Ore Type</th><th scope="row">100kg Charge @ Good Conditions</th><th scope="row">@ Average Conditions</th><th scope="row">@ Poor Conditions</th><th scope="row">Comments</th></tr></thead><tbody><tr><td>Hematite (Fe₂O₃)</td><td>18–22kg final</td><td>15–18kg final</td><td>10–14kg final</td><td>Preferred ore; consistent results</td></tr><tr><td>Magnetite (Fe₃O₄)</td><td>20–24kg final</td><td>17–20kg final</td><td>12–16kg final</td><td>Slightly better yield than hematite</td></tr><tr><td>Limonite (Fe₂O₃·3H₂O)</td><td>9–11kg final</td><td>7–9kg final</td><td>4–6kg final</td><td>Requires thorough roasting; moisture penalty</td></tr><tr><td>Bog ore (20–40% Fe)</td><td>4–6kg final</td><td>2–4kg final</td><td>1–2kg final</td><td>High fuel consumption; low grade ore</td></tr></tbody></table>
+<h3>Fuel Consumption Rates</h3>
+<table class="furnace-table"><thead><tr><th scope="row">Operation Phase</th><th scope="row">Furnace Temp (°C)</th><th scope="row">Charcoal/Hour</th><th scope="row">Duration</th><th scope="row">Total per Run</th></tr></thead><tbody><tr><td>Startup (ramping to 1000°C)</td><td>600–1000</td><td>3–4kg/hr</td><td>2 hours</td><td>6–8kg</td></tr><tr><td>Reduction (optimal 1100–1300°C)</td><td>1100–1300</td><td>4–5kg/hr</td><td>6–8 hours</td><td>24–40kg</td></tr><tr><td>Maintenance (holding temp)</td><td>1200–1300</td><td>2–3kg/hr</td><td>1–2 hours</td><td>2–6kg</td></tr><tr><td colspan="4"><strong>Total charcoal per 8–12 hour run: 32–54kg (target ~40kg for 100kg ore charge)</strong></td></tr></tbody></table>
+</section>
+<section id="summary">
+<h2>Alternative Furnace Designs and Variations</h2>
+<p>While the standard bloomery design (1.0-1.2m diameter pit furnace) is proven and practical, variations exist for different circumstances:</p>
+<h3>Shaft Furnace (Taller, More Efficient Variant)</h3>
+<p>Shaft furnace extends vertically 2-3 meters above ground level, requiring more structural support but improving ore reduction efficiency. Construction: build chimney-like structure above pit furnace, stack clay bricks or stone to height 2-3m above ground surface. Advantage: increased height creates better natural draft (taller stack = greater pressure differential), reducing bellows operator effort by 20-30%. Disadvantage: structural complexity (requires reinforcing bands, more materials), higher heat loss from taller walls, more difficult to extract bloom (requires elevated platform). Yield improvement: 5-10% higher efficiency due to better gas distribution. Use if: bellows availability is limiting factor, labor for construction abundant.</p>
+<h3>Shaft-Less Low Furnace (Shallow Pit, More Portable)</h3>
+<p>Reverse direction: shallower pit furnace (0.4-0.5m deep) with larger diameter (1.5-2.0m) minimizes excavation for portable operation. Disadvantage: requires more bellows pressure (flat geometry = less natural draft), wider furnace diameter more difficult to manage temperature uniformly. Useful for: nomadic communities, locations with difficult soil conditions (rock, clay too hard for deep excavation), situations requiring rapid setup. Expected yield: 10-15% penalty due to temperature irregularity, but acceptable for emergency or small-scale production.</p>
+<h3>Multiple Small Furnaces (Parallel Operation)</h3>
+<p>Instead of one large furnace, operate 2-3 small (0.6-0.8m diameter) furnaces simultaneously, each with dedicated bellows operator. Advantages: redundancy (if one furnace fails, others continue), specialization possible (operators become expert at specific furnace), flexibility (different ore sources, different smelting durations). Disadvantages: requires 2-3x more construction labor, 2-3x material costs, more complex team coordination. Team requirement: 4-5 operators per 2 furnaces (compared to 3 for one larger furnace). Useful for: larger community with significant ore supply, situations where larger furnace would monopolize charcoal supply.</p>
+<h3>Emergency Pit Furnace (Minimal Construction)</h3>
+<p>If no time for proper bloomery: dig simple pit (0.6m deep, 0.8m diameter), line with clay (no stone backing), no dome. Use natural draft or simple hand bellows. Expected yield: 50% reduction in efficiency, output 5-8kg final iron instead of 20kg. Quality: lower grade (more slag inclusion), but functional in survival emergency. Recovery plan: once emergency passes, build proper furnace and re-smelt emergency bloom if quality inadequate.</p>
+<h2 id="seasonal-and-climate-considerations-for-bloomery-operation">Seasonal and Climate Considerations for Bloomery Operation</h2>
+<p><strong>Spring/Summer Operation (10-25°C):</strong></p>
+<ul>
+<li>Furnace stays hot longer due to ambient temperature—monitor carefully for temperature runaway</li>
+<li>Extended construction/curing time before first firing due to slower drying rates in humid conditions</li>
+<li>Charcoal storage more difficult—keep in sealed containers to prevent moisture absorption. Wood fuel absorbed additional moisture from air</li>
+<li>Operator fatigue from heat stress more pronounced—schedule shorter shifts (2-hour bellows operator rotations vs. 3 hours)</li>
+<li>First light of dawn preferred for start time—completes smelting before peak heat hours</li>
+</ul>
+<p><strong>Fall/Winter Operation (below 10°C):</strong></p>
+<ul>
+<li>Furnace cures faster due to rapid drying—can compress 5-7 day curing into 3-4 days</li>
+<li>Charcoal storage simpler—dry environment preserves quality without sealed containers</li>
+<li>Clay lining cracks less because thermal stresses during curing reduced (less temperature variation)</li>
+<li>Team morale improved—working near hot furnace no longer uncomfortable</li>
+<li>Molten slag flows slower in winter (viscosity increases 10-20% at colder ambient)—allow extra time for slag drainage</li>
+<li>First firing: slow heating protocol even more critical. Allow 5-6 hours initial warmup instead of 4 hours</li>
+</ul>
+<p><strong>Extreme Cold (below -10°C):</strong></p>
+<ul>
+<li>Metal tools become brittle—handle extraction tools with extra care during hot extraction</li>
+<li>Stone backing can crack if furnace constructed near end of freeze-thaw cycle—allow extra curing time and test by light hammering for soundness</li>
+<li>Clay lining may develop additional cracks from moisture trapped during curing—seal cracks immediately if visible</li>
+<li>Extracted bloom cools much faster, solidifying before full consolidation possible—keep furnace running longer into consolidation phase</li>
+</ul>
+<p><strong>Wet Season/High Humidity:</strong></p>
+<ul>
+<li>Charcoal absorbs moisture quickly—store in sealed containers even between firing sessions (do not leave exposed for more than 24 hours)</li>
+<li>Furnace dome is susceptible to water entry if rain heavy—consider roof structure over furnace (thatch or leaf covering, not enclosing)</li>
+<li>Drain holes may clog with water/sediment—inspect and clear before each firing</li>
+<li>Air pipe connection can retain water—tilt pipe slightly to allow drainage (ensure slope outward)</li>
+<li>Drying time for roasted ore extends—plan roasting 1-2 days before use, not same day</li>
+</ul>
+<h2 id="summary-and-quick-reference">Summary and Quick Reference</h2>
+<p><strong>Bloomery operation at a glance:</strong></p>
+<ol>
+<li><strong>Construct</strong> furnace pit (1.0–1.2m diameter), stone backing (10–15cm), clay lining (10–15cm), dome, air pipe. Allow 5–7 days construction + curing</li>
+<li><strong>Roast materials:</strong> 100–120kg iron ore at 800°C for 2–3 hours (improves yield 10-15%)</li>
+<li><strong>Prepare:</strong> Roasted ore, 30–40kg charcoal (8–15cm pieces, bone-dry), 5–10kg flux (limestone, bone ash, or clay)</li>
+<li><strong>Charge furnace</strong> in alternating layers: charcoal, roasted ore, charcoal, ore, repeat. Add flux 2-3kg per ore layer</li>
+<li><strong>Maintain temperature</strong> 1100–1350°C through bellows operation (15 strokes/min, steady rhythm) and fuel adjustment</li>
+<li><strong>Extract bloom</strong> after 8–12 hours smelting (hot extraction ~800–900°C or cool extraction after full cooling)</li>
+<li><strong>Consolidate</strong> through repeated heating (cherry-red) and full-force hammering (2–4 hours total) until slag ceases to exit</li>
+<li><strong>Yield expectation:</strong> 18–22kg final wrought iron from 100kg hematite ore (20–30% efficiency, improved with roasting)</li>
+</ol>
+<p><strong>Critical success factors:</strong></p>
+<ul>
+<li>Furnace temperature stability (1100–1300°C range)—prevents slag viscosity problems</li>
+<li>Steady bellows operation (no pauses &gt;5 minutes)—furnace cools rapidly without air supply</li>
+<li>Adequate slag drainage (drain holes clear and sloped)—excess slag trapped reduces yield</li>
+<li>Sufficient consolidation hammering (2–4 hours, multiple heating cycles)—slag expulsion takes time</li>
+<li>Pre-roasting ore (mandatory for efficiency)—removes moisture, improves reduction rate</li>
+<li>Team coordination (3-person team minimum)—fatigue management critical for 12-hour operation</li>
+<li>Safety discipline (burns and collapse risks are real)—protect all personnel continuously</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="foundry-casting.html">Foundry &amp; Metal Casting</a>
+<a href="magnet-production.html">Magnet Production</a>
+<a href="metallurgy-basics.html">Metallurgy Fundamentals</a>
+<a href="metalworking.html">Metalworking &amp; Blacksmithing</a>
+<a href="spring-manufacturing.html">Spring Manufacturing</a>
+<a href="steel-making.html">Steel Making</a>
+<a href="wire-drawing.html">Wire Drawing &amp; Cable Production</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

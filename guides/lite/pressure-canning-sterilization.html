@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/pressure-canning-sterilization.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pressure Canning &amp; Home Sterilization</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Food &amp; Agriculture</span> ›
+<span>Pressure Canning &amp; Home Sterilization</span>
+</div>
+
+
+<h1>Pressure Canning &amp; Home Sterilization</h1>
+<p class="subtitle">Master pressure canning for low-acid foods (meat, fish, vegetables) to prevent botulism. Calibrate gauges, calculate processing times by altitude, manage equipment safely, and troubleshoot common failures.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~20 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#botulism-fundamentals">Botulism Fundamentals</a></li>
+<li><a href="#pressure-canner-basics">Pressure Canner Basics</a></li>
+<li><a href="#gauge-calibration">Pressure Gauge Calibration</a></li>
+<li><a href="#processing-times">Processing Times by Altitude</a></li>
+<li><a href="#step-by-step-process">Step-by-Step Canning Process</a></li>
+<li><a href="#troubleshooting">Troubleshooting Common Problems</a></li>
+<li><a href="#specific-foods">Processing Specific Low-Acid Foods</a></li>
+<li><a href="#improvised-sterilization">Improvised High-Pressure Sterilization</a></li>
+<li><a href="#equipment-maintenance">Equipment Maintenance and Safety</a></li>
+<li><a href="#summary">Summary Checklist</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Pressure canning is the only safe method for preserving low-acid foods (meat, fish, vegetables) without refrigeration. Heat alone cannot kill Clostridium botulinum spores unless temperatures exceed boiling (212°F at sea level); pressure cookers achieve 240–250°F at 10–15 PSI, sufficient to destroy botulinum spores and ensure long-term safety. This guide covers the microbiology of botulism, pressure canner operation, processing time calculations by altitude, equipment calibration and maintenance, processing specific foods, troubleshooting failures, and improvised high-pressure sterilization for other applications (medical equipment, water sterilization).</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" aria-label="Pressure canning safety and processing guide">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .surface { fill: var(--surface, #2d2416); }
+      .text-main { fill: var(--text, #f5f0e8); font-size: 16px; font-family: sans-serif; }
+      .text-label { fill: var(--text, #f5f0e8); font-size: 14px; font-family: sans-serif; }
+      .accent { stroke: var(--accent, #d4a574); fill: none; stroke-width: 2; }
+      .accent-fill { fill: var(--accent, #d4a574); }
+      .danger { stroke: #e55d5d; fill: none; stroke-width: 2; }
+      .danger-fill { fill: #e55d5d; }
+      .border { stroke: var(--border, #4a5c4a); stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="800" height="500"/>
+
+  <!-- Title -->
+  <text x="400" y="30" class="text-main" font-size="24" font-weight="bold" text-anchor="middle">Pressure Canning Safety & Process</text>
+
+  <!-- Left: Botulism danger zones -->
+  <g>
+    <text x="140" y="65" class="text-main" font-weight="bold" text-anchor="middle">Botulism Risk: pH & Method</text>
+
+    <!-- High-acid (safe for water bath) -->
+    <rect x="40" y="85" width="100" height="90" class="surface" class="border"/>
+    <text x="90" y="105" class="text-label" font-weight="bold" text-anchor="middle">High-Acid</text>
+    <text x="90" y="120" class="text-label" text-anchor="middle" font-size="11">pH ≤4.6</text>
+    <text x="90" y="138" class="text-label" text-anchor="middle" font-size="10">Pickles, jams,</text>
+    <text x="90" y="153" class="text-label" text-anchor="middle" font-size="10">fruit, tomato sauce</text>
+    <text x="90" y="168" class="text-label" text-anchor="middle" font-size="10">✓ Water bath OK</text>
+
+    <!-- Low-acid (requires pressure) -->
+    <rect x="40" y="190" width="100" height="100" class="danger" class="border"/>
+    <text x="90" y="210" class="text-label" font-weight="bold" text-anchor="middle">Low-Acid</text>
+    <text x="90" y="228" class="text-label" text-anchor="middle" font-size="11">pH >4.6</text>
+    <text x="90" y="246" class="text-label" text-anchor="middle" font-size="10">Meat, fish, beans,</text>
+    <text x="90" y="261" class="text-label" text-anchor="middle" font-size="10">vegetables, soups</text>
+    <text x="90" y="276" class="text-label" text-anchor="middle" font-size="10">✗ Pressure REQUIRED</text>
+
+    <!-- Botulism symptoms -->
+    <rect x="40" y="310" width="100" height="100" class="surface" class="border"/>
+    <text x="90" y="330" class="text-label" font-weight="bold" text-anchor="middle">Botulism</text>
+    <text x="90" y="348" class="text-label" text-anchor="middle" font-size="10">Onset: 18-36 hours</text>
+    <text x="90" y="363" class="text-label" text-anchor="middle" font-size="10">Symptoms:</text>
+    <text x="90" y="378" class="text-label" text-anchor="middle" font-size="9">Blurred vision</text>
+    <text x="90" y="391" class="text-label" text-anchor="middle" font-size="9">Paralysis → Death</text>
+  </g>
+
+  <!-- Center: Pressure and temperature -->
+  <g>
+    <text x="400" y="65" class="text-main" font-weight="bold" text-anchor="middle">Pressure vs. Temperature</text>
+
+    <!-- Temperature scale -->
+    <g>
+      <text x="400" y="95" class="text-label" font-weight="bold" text-anchor="middle">Boiling water:</text>
+      <rect x="300" y="105" width="200" height="30" class="surface" class="border"/>
+      <text x="400" y="128" class="text-label" text-anchor="middle" font-weight="bold">212°F @ sea level</text>
+      <text x="400" y="145" class="text-label" text-anchor="middle" font-size="10">NOT sufficient to kill botulinum spores</text>
+    </g>
+
+    <!-- Pressure canning -->
+    <g>
+      <text x="400" y="175" class="text-label" font-weight="bold" text-anchor="middle">Pressure canning:</text>
+
+      <!-- 10 PSI -->
+      <rect x="280" y="195" width="110" height="50" class="surface" class="border"/>
+      <text x="335" y="210" class="text-label" font-weight="bold" text-anchor="middle">10 PSI</text>
+      <text x="335" y="228" class="text-label" text-anchor="middle" font-size="10">240°F</text>
+      <text x="335" y="241" class="text-label" text-anchor="middle" font-size="9">Sea level - 1000 ft</text>
+
+      <!-- 15 PSI -->
+      <rect x="410" y="195" width="110" height="50" class="surface" class="border"/>
+      <text x="465" y="210" class="text-label" font-weight="bold" text-anchor="middle">15 PSI</text>
+      <text x="465" y="228" class="text-label" text-anchor="middle" font-size="10">250°F</text>
+      <text x="465" y="241" class="text-label" text-anchor="middle" font-size="9">Higher elevations</text>
+
+      <text x="400" y="270" class="text-label" text-anchor="middle" font-size="10">Kills botulinum spores reliably</text>
+    </g>
+
+    <!-- Processing times example -->
+    <rect x="290" y="300" width="220" height="150" class="surface" class="border"/>
+    <text x="400" y="320" class="text-label" font-weight="bold" text-anchor="middle">Processing Times (10 PSI)</text>
+
+    <text x="300" y="345" class="text-label" font-size="10">Meat (quarts): 90 min</text>
+    <text x="300" y="363" class="text-label" font-size="10">Green beans: 25 min</text>
+    <text x="300" y="381" class="text-label" font-size="10">Corn (quarts): 85 min</text>
+    <text x="300" y="399" class="text-label" font-size="10">Fish (quarts): 110 min</text>
+    <text x="300" y="417" class="text-label" font-size="10">Adjust for elevation!</text>
+  </g>
+
+  <!-- Right: Canning process steps -->
+  <g>
+    <text x="670" y="65" class="text-main" font-weight="bold" text-anchor="middle">Processing Steps</text>
+
+    <!-- Step 1 -->
+    <rect x="600" y="85" width="140" height="35" class="surface" class="border"/>
+    <text x="670" y="103" class="text-label" text-anchor="middle" font-size="11">1. Prepare food (cook hot)</text>
+
+    <!-- Step 2 -->
+    <rect x="600" y="125" width="140" height="35" class="surface" class="border"/>
+    <text x="670" y="143" class="text-label" text-anchor="middle" font-size="11">2. Fill jars hot</text>
+
+    <!-- Step 3 -->
+    <rect x="600" y="165" width="140" height="35" class="surface" class="border"/>
+    <text x="670" y="183" class="text-label" text-anchor="middle" font-size="11">3. Remove air bubbles</text>
+
+    <!-- Step 4 -->
+    <rect x="600" y="205" width="140" height="35" class="surface" class="border"/>
+    <text x="670" y="223" class="text-label" text-anchor="middle" font-size="11">4. Wipe rims clean</text>
+
+    <!-- Step 5 -->
+    <rect x="600" y="245" width="140" height="35" class="surface" class="border"/>
+    <text x="670" y="263" class="text-label" text-anchor="middle" font-size="11">5. Load in canner</text>
+
+    <!-- Step 6 CRITICAL -->
+    <rect x="600" y="285" width="140" height="40" class="danger" class="border"/>
+    <text x="670" y="303" class="text-label" text-anchor="middle" font-weight="bold" font-size="10">6. VENT 10 MIN</text>
+    <text x="670" y="318" class="text-label" text-anchor="middle" font-size="9">(removes air!)</text>
+
+    <!-- Step 7 -->
+    <rect x="600" y="330" width="140" height="35" class="surface" class="border"/>
+    <text x="670" y="348" class="text-label" text-anchor="middle" font-size="11">7. Bring to pressure</text>
+
+    <!-- Step 8 -->
+    <rect x="600" y="370" width="140" height="35" class="surface" class="border"/>
+    <text x="670" y="388" class="text-label" text-anchor="middle" font-size="11">8. Maintain pressure</text>
+
+    <!-- Step 9 -->
+    <rect x="600" y="410" width="140" height="35" class="surface" class="border"/>
+    <text x="670" y="428" class="text-label" text-anchor="middle" font-size="11">9. Cool naturally</text>
+
+    <!-- Step 10 -->
+    <rect x="600" y="450" width="140" height="35" class="surface" class="border"/>
+    <text x="670" y="468" class="text-label" text-anchor="middle" font-size="11">10. Test seals (24 hrs)</text>
+  </g>
+
+  <!-- Bottom: Safety rules -->
+  <g>
+    <rect x="50" y="460" width="700" height="30" class="danger" class="border"/>
+    <text x="400" y="478" class="text-label" text-anchor="middle" font-weight="bold" font-size="12">CRITICAL: Always vent canner 10 minutes • Never open under pressure • Follow USDA times only • Check gauge yearly</text>
+  </g>
+</svg>
+</p>
+</section>
+<section id="botulism-fundamentals">
+<h2>Botulism Fundamentals</h2>
+<h3>Clostridium botulinum: The Hazard</h3>
+<p>Clostridium botulinum is an anaerobic (oxygen-hating) bacterium that produces botulinum toxin, one of the most potent toxins known. It is found in soil and water worldwide.</p>
+<p><strong>Key properties:</strong></p>
+<ul>
+<li><strong>Spores</strong>: Dormant forms survive harsh conditions (heat, cold, salt, acid).</li>
+<li><strong>Vegetative growth</strong>: Occurs in anaerobic (oxygen-free) environments with pH &gt;4.6 and temperature 40–120°F.</li>
+<li><strong>Toxin production</strong>: Occurs during vegetative growth; toxin is heat-stable (survives boiling after production).</li>
+</ul>
+<h3>Safety by pH and Acidity</h3>
+<p><strong>pH 4.6 cutoff</strong> (critical):</p>
+<ul>
+<li><strong>pH ≤4.6</strong> (acidic): Botulinum spores cannot germinate or produce toxin. Water bath canning (boiling, 212°F) is safe.</li>
+<li><strong>pH &gt;4.6</strong> (low-acid): Spores can germinate and produce toxin. Only pressure canning (240–250°F) kills spores reliably.</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>High-acid foods</strong> (water bath safe): Pickles, jams, jellies, fruit, tomato sauce with added acid.</li>
+<li><strong>Low-acid foods</strong> (pressure canning required): Meat, fish, poultry, vegetables, beans, soups, stews.</li>
+</ul>
+<div class="danger">
+<p>Pressure canning is mandatory for low-acid foods. Water bath canning or underprocessing can result in botulism, a potentially fatal foodborne illness. Botulinum toxin causes paralysis and death if untreated.</p>
+</div>
+<h3>Botulism Symptoms</h3>
+<p>Foodborne botulism occurs 18–36 hours after consuming contaminated food. Symptoms:</p>
+<ul>
+<li>Blurred vision, difficulty swallowing, dry mouth.</li>
+<li>Muscle weakness, paralysis (descending: face → neck → arms → trunk → respiratory muscles).</li>
+<li>Respiratory failure (death if untreated).</li>
+</ul>
+<p><strong>Treatment</strong>: Immediate hospitalization for supportive care (mechanical ventilation) and antitoxin (stops progression but does not reverse existing paralysis).</p>
+</section>
+<section id="pressure-canner-basics">
+<h2>Pressure Canner Basics</h2>
+<h3>Types of Pressure Canners</h3>
+<p><strong>Dial-gauge canner:</strong></p>
+<ul>
+<li>Manual pressure control (turn burner up/down to maintain pressure on gauge).</li>
+<li>Dial gauge reading (0–15 PSI typical).</li>
+<li>Cost: $50–150.</li>
+<li>Disadvantage: Gauge loses calibration over time; requires annual testing.</li>
+</ul>
+<p><strong>Weighted-gauge canner:</strong></p>
+<ul>
+<li>Automatic pressure regulation (weights sit on vent pipe; hiss audibly when pressure is correct).</li>
+<li>Three weights (5, 10, 15 PSI) added as needed.</li>
+<li>No gauge to calibrate; more reliable over time.</li>
+<li>Cost: $50–150.</li>
+<li>Advantage: Simple, accurate, durable.</li>
+</ul>
+<p><strong>Large commercial canners:</strong></p>
+<ul>
+<li>Steam-jacketed or electric; 20+ quart capacity.</li>
+<li>For large operations; $500+.</li>
+</ul>
+<p><strong>Choice for home use:</strong> Weighted-gauge canners are more reliable; dial-gauge canners require annual gauge testing.</p>
+<h3>Pressure vs. Temperature</h3>
+<p>Higher pressure = higher temperature = faster spore destruction.</p>
+<table>
+<thead>
+<tr>
+<th><strong>PSI</strong></th>
+<th><strong>Temperature (°F)</strong></th>
+<th><strong>Typical Use</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>227°F</td>
+<td>Rare (some high-altitude locations)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>240°F</td>
+<td>Mild climates; sea level to 1000 ft elevation</td>
+</tr>
+<tr>
+<td>15</td>
+<td>250°F</td>
+<td>Most US locations and higher elevations</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rule of thumb:</strong> At sea level and up to 1000 ft elevation, process at 10 PSI. Above 1000 ft, increase to 15 PSI.</p>
+<h3>Essential Equipment</h3>
+<ul>
+<li><strong>Canner</strong>: Pressure cooker designed for canning (NOT a stovetop pressure cooker; those lack venting and safety features).</li>
+<li><strong>Rack</strong>: Prevents jars from touching canner bottom (holds jars off direct heat).</li>
+<li><strong>Jars</strong>: Quart (32 oz) or pint (16 oz); Mason jars designed for canning.</li>
+<li><strong>Lids and bands</strong>: Self-sealing lids (used once); metal bands (reusable).</li>
+<li><strong>Jar lifter</strong>: Long-handled tool for removing hot jars safely.</li>
+<li><strong>Funnel</strong>: Wide-mouth plastic funnel for filling jars.</li>
+<li><strong>Bubble remover</strong>: Plastic stick for removing air bubbles from filled jars.</li>
+<li><strong>Magnetic lid lifter</strong>: Retrieves lids from hot water before use.</li>
+</ul>
+</section>
+<section id="gauge-calibration">
+<h2>Pressure Gauge Calibration</h2>
+<p>Dial gauges lose accuracy over time and require annual calibration.</p>
+<h3>Testing Dial Gauge Accuracy</h3>
+<p><strong>Method 1: Boiling water (at your elevation):</strong></p>
+<ol>
+<li>Fill canner with water; bring to a boil with vent open (let steam escape for 10 minutes).</li>
+<li>Close vent; allow pressure to rise on dial gauge.</li>
+<li>At sea level, pressure should read 0 PSI when water is boiling (212°F). If dial reads 5 PSI, gauge is off by 5 PSI (dangerous; it will underprocess).</li>
+<li>Correction: If gauge is off, add/subtract the difference from recipe times (e.g., if gauge reads 5 PSI at boiling, subtract 5 PSI from recipe pressure).</li>
+</ol>
+<p><strong>Method 2: Submitting to a testing center:</strong></p>
+<ul>
+<li>Cooperative Extension offices (county or state) test gauges annually for free or nominal fee (~$3–5).</li>
+<li>Mail or drop off dial gauge; replaced if error exceeds ±1 PSI.</li>
+</ul>
+<p><strong>Recommendation:</strong> Check gauge annually. If error is &gt;±1 PSI, have it serviced or replaced.</p>
+<div class="warning">
+<p>An inaccurate dial gauge is a serious food safety risk. Underprocessing (lower pressure than required) leaves botulinum spores alive; overprocessing (higher pressure) wastes time and fuel but does not harm safety.</p>
+</div>
+</section>
+<section id="processing-times">
+<h2>Processing Times by Altitude</h2>
+<p>Processing time increases with altitude (lower atmospheric pressure).</p>
+<h3>Altitude Correction Table</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Elevation (ft)</strong></th>
+<th><strong>Dial Gauge PSI</strong></th>
+<th><strong>Weighted PSI</strong></th>
+<th><strong>Time Multiplier</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–1000</td>
+<td>10</td>
+<td>10</td>
+<td>1.0×</td>
+</tr>
+<tr>
+<td>1001–2000</td>
+<td>11</td>
+<td>15</td>
+<td>1.05×</td>
+</tr>
+<tr>
+<td>2001–4000</td>
+<td>12</td>
+<td>15</td>
+<td>1.1×</td>
+</tr>
+<tr>
+<td>4001–6000</td>
+<td>13</td>
+<td>15</td>
+<td>1.2×</td>
+</tr>
+<tr>
+<td>6001–8000</td>
+<td>14</td>
+<td>15</td>
+<td>1.3×</td>
+</tr>
+<tr>
+<td>&gt;8000</td>
+<td>15</td>
+<td>15</td>
+<td>1.4×</td>
+</tr>
+</tbody>
+</table>
+<div class="danger">
+<p><strong>ALTITUDE BOTULISM RISK:</strong> Insufficient pressure at altitude allows Clostridium botulinum spores to survive processing. At higher elevations, atmospheric pressure is lower, which means water boils at a lower temperature — a canner at 10 PSI produces lower internal temperatures than at sea level. Always increase pressure according to the table above: use at least 11 PSI (dial gauge) or 15 PSI (weighted gauge) above 1,000 ft. As a general rule, increase pressure by 1 PSI per 1,000 feet above 2,000 ft elevation for dial gauges. Failure to adjust pressure for altitude causes botulism — a potentially fatal toxin that is colorless, odorless, and undetectable by visual inspection of the jar.</p>
+</div>
+<p><strong>Example</strong>: Recipe calls for 75 minutes at 10 PSI at sea level. At 3000 ft elevation:</p>
+<ul>
+<li>Use 12 PSI on dial gauge (or 15 PSI on weighted gauge).</li>
+<li>Time: 75 × 1.1 = 82.5 minutes (round to 85 minutes).</li>
+</ul>
+<p><strong>Determine your elevation:</strong></p>
+<ul>
+<li>Topographic map, GPS, smartphone app, or weather station.</li>
+<li>NOAA or USGS websites (search &quot;[your town] elevation&quot;).</li>
+</ul>
+<h3>Processing Time Table (Examples, 10 PSI, Sea Level)</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Food</strong></th>
+<th><strong>Jar Size</strong></th>
+<th><strong>Raw/Hot Pack</strong></th>
+<th><strong>Time</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Meat</strong> (ground, chunks)</td>
+<td>Pint</td>
+<td>Hot</td>
+<td>75 min</td>
+</tr>
+<tr>
+<td></td>
+<td>Quart</td>
+<td>Hot</td>
+<td>90 min</td>
+</tr>
+<tr>
+<td><strong>Poultry</strong> (pieces, chunks)</td>
+<td>Pint</td>
+<td>Hot</td>
+<td>75 min</td>
+</tr>
+<tr>
+<td></td>
+<td>Quart</td>
+<td>Hot</td>
+<td>90 min</td>
+</tr>
+<tr>
+<td><strong>Fish</strong> (plain, no liquid)</td>
+<td>Pint</td>
+<td>Hot</td>
+<td>100 min</td>
+</tr>
+<tr>
+<td></td>
+<td>Quart</td>
+<td>Hot</td>
+<td>110 min</td>
+</tr>
+<tr>
+<td><strong>Green beans</strong></td>
+<td>Pint</td>
+<td>Hot</td>
+<td>20 min</td>
+</tr>
+<tr>
+<td></td>
+<td>Quart</td>
+<td>Hot</td>
+<td>25 min</td>
+</tr>
+<tr>
+<td><strong>Carrots</strong></td>
+<td>Pint</td>
+<td>Hot</td>
+<td>25 min</td>
+</tr>
+<tr>
+<td></td>
+<td>Quart</td>
+<td>Hot</td>
+<td>30 min</td>
+</tr>
+<tr>
+<td><strong>Corn</strong></td>
+<td>Pint</td>
+<td>Hot</td>
+<td>55 min</td>
+</tr>
+<tr>
+<td></td>
+<td>Quart</td>
+<td>Hot</td>
+<td>85 min</td>
+</tr>
+<tr>
+<td><strong>Peas</strong></td>
+<td>Pint</td>
+<td>Hot</td>
+<td>40 min</td>
+</tr>
+<tr>
+<td></td>
+<td>Quart</td>
+<td>Hot</td>
+<td>50 min</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>Use times from USDA or &quot;Ball Blue Book&quot; (official reference).</li>
+<li>Hot pack (food heated before filling jars) is faster than raw pack.</li>
+<li>Quarts take longer than pints (more heat must penetrate center).</li>
+<li>Cold (high) elevations require longer times.</li>
+</ul>
+</section>
+<section id="step-by-step-process">
+<h2>Step-by-Step Canning Process</h2>
+<h3>Preparation</h3>
+<ol>
+<li><strong>Inspect jars</strong>: Look for cracks or chips; discard damaged jars.</li>
+<li><strong>Prepare jars</strong>: Wash in hot soapy water; rinse. Keep warm (in hot water or oven at 180°F).</li>
+<li><strong>Prepare lids</strong>: Pour boiling water over lids and bands; let soften (~5 minutes). Don't boil (damages sealing compound).</li>
+<li><strong>Prepare canner</strong>: Fill with 2–3 inches of water; place rack inside. Bring to boil.</li>
+</ol>
+<h3>Filling Jars</h3>
+<ol>
+<li><strong>Prepare food</strong>: Cook/heat food as recipe directs (hot pack = food is hot when jarred).</li>
+<li><strong>Fill jars</strong>: Using wide-mouth funnel, ladle hot food into warm jars. Leave headspace:
+<ul>
+<li><strong>Pint jars</strong>: 1 inch headspace (top of liquid should be 1 inch below jar rim).</li>
+<li><strong>Quart jars</strong>: 1.25 inches headspace.</li>
+</ul>
+</li>
+<li><strong>Remove air bubbles</strong>: Insert bubble remover (plastic stick) along inside of jar, moving it in a circle to release trapped air.</li>
+<li><strong>Wipe rims</strong>: Use damp cloth to wipe jar rims clean (any food residue prevents seal).</li>
+<li><strong>Add lids</strong>: Place hot lid (from water) on jar; screw band on finger-tight (not over-tightened).</li>
+</ol>
+<h3>Processing (Pressure Canning)</h3>
+<ol>
+<li><strong>Load jars</strong>: Place filled jars on rack in canner, standing upright. Do not let jars touch each other or canner walls.</li>
+<li><strong>Close vent</strong>: Close canner lid; ensure gasket (rubber seal) is clean and seated.</li>
+<li><strong>Vent the canner</strong> (critical): Open vent pipe (petcock); let steam escape for 10 minutes. This removes air from the canner (air prevents proper pressure/temperature).</li>
+<li><strong>Close vent</strong>: After 10 minutes, close vent pipe.</li>
+<li><strong>Bring to pressure</strong>: Increase heat; watch dial gauge (or listen for weight to start hissing). When gauge reaches target PSI (adjusted for elevation), start timing.</li>
+<li><strong>Maintain pressure</strong>: Keep pressure stable for entire processing time. Adjust burner heat to prevent pressure from fluctuating (if pressure drops, processing time begins over).</li>
+<li><strong>End processing</strong>: When time is complete, turn off burner and let canner cool naturally (15–30 minutes). Do NOT lower pressure rapidly (risk of seal failure).</li>
+<li><strong>Remove jars</strong>: When canner is cool enough to touch (not hot), open vent slowly, then open lid (open lid away from face to avoid steam).</li>
+<li><strong>Cool jars</strong>: Remove jars with jar lifter; place on cloth or wire rack at room temperature. Do NOT retighten bands.</li>
+</ol>
+<h3>Cooling and Sealing</h3>
+<ul>
+<li><strong>Sealing</strong>: As jars cool, lids seal with a &quot;pop&quot; sound (center of lid moves downward). This indicates a vacuum seal formed.</li>
+<li><strong>Timing</strong>: Cooling takes 12–24 hours. Seals form during this period; do not disturb jars.</li>
+<li><strong>Testing seals</strong>: After 12–24 hours, press center of each lid. If it springs back up, seal failed; jars must be reprocessed or refrigerated.</li>
+</ul>
+<h3>Storage</h3>
+<ul>
+<li><strong>Sealed jars</strong>: Remove bands, wash jars, label with date and contents. Store in a cool, dark place (50–70°F ideal).</li>
+<li><strong>Shelf life</strong>: 1–2 years at room temperature; 3–5 years if stored cool and dark.</li>
+<li><strong>Unsealed jars</strong>: Discard or refrigerate and use within 2 weeks.</li>
+</ul>
+<div class="info-box">
+<p>The &quot;pop&quot; sound during cooling is a seal forming as the jar cools and internal pressure drops below atmospheric, drawing the lid tight. This is a good sign of proper processing.</p>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting Common Problems</h2>
+<h3>Seal Failure (Lid Springs Back)</h3>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Underprocessing (pressure too low or time too short).</li>
+<li>Food residue on jar rim (prevents seal).</li>
+<li>Defective jars or lids.</li>
+<li>Overheated jars before processing (dissolved gases).</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Reprocess immediately: Remove lid, reheat food, add fresh hot lid, reprocess.</li>
+<li>Or: Cool, refrigerate, and use within 2 weeks.</li>
+</ol>
+<h3>Siphoning (Liquid Leaks During Processing)</h3>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Overfilled jars (too little headspace).</li>
+<li>Pressure increased too rapidly (internal pressure pushes liquid out).</li>
+<li>Jars not vented properly (air in jars expands during heating).</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Vent canner for 10 minutes before closing vent (releases air).</li>
+<li>Use correct headspace (1–1.25 inches).</li>
+<li>Increase pressure gradually (adjust heat slowly).</li>
+<li>Do not reuse siphoned jars; discard or refrigerate.</li>
+</ul>
+<h3>Underprocessing (Spores Survive)</h3>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Pressure too low (dial gauge inaccurate; PSI too low for altitude).</li>
+<li>Time too short.</li>
+<li>Large jar size with insufficient heat penetration.</li>
+</ul>
+<p><strong>Risk:</strong> Botulinum spores survive; toxin forms during storage. Jar may appear normal; toxin is colorless, odorless.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Verify dial gauge accuracy annually.</li>
+<li>Use correct PSI and time for elevation.</li>
+<li>Follow USDA times, not improvised recipes.</li>
+<li>Do NOT use water bath canning for low-acid foods.</li>
+</ul>
+<div class="danger">
+<p>Underprocessed jars are invisible hazards. Botulism may develop during storage without obvious spoilage signs. Never guess on processing times; always use tested recipes.</p>
+</div>
+<h3>Darkening (Food Discoloration)</h3>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Oxidation during cooking/storage.</li>
+<li>Natural chemical reactions in food (harmless).</li>
+</ul>
+<p><strong>Impact:</strong> Appearance is poor but food is safe. Prevents only if jars are not sealed; if sealed, oxidation is minimal.</p>
+<h3>Spurting When Opening Jar</h3>
+<p><strong>Cause:</strong></p>
+<ul>
+<li>Some spoilage or gas production during storage (indicates underprocessing or seal failure during storage).</li>
+</ul>
+<p><strong>Action:</strong> Discard jar; do not taste or smell.</p>
+</section>
+<section id="specific-foods">
+<h2>Processing Specific Low-Acid Foods</h2>
+<h3>Meat (Ground or Chunks)</h3>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Use fresh meat, free of excess fat (fat can form seal barriers).</li>
+<li>Cook meat until done (no pink).</li>
+<li>Cut into chunks if using whole meat pieces.</li>
+<li>Pack hot into jars; cover with boiling broth (leaving 1.25 inches headspace).</li>
+</ol>
+<p><strong>Processing:</strong></p>
+<ul>
+<li>Pints: 75 minutes at 10 PSI.</li>
+<li>Quarts: 90 minutes at 10 PSI.</li>
+</ul>
+<h3>Fish</h3>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Use fresh, high-quality fish.</li>
+<li>Pack raw into jars (do not cook beforehand).</li>
+<li>Add 1/2 tsp salt per pint (optional, for flavor).</li>
+<li>No liquid added (fish releases its own).</li>
+<li>Leave 1.25 inches headspace.</li>
+</ol>
+<p><strong>Processing:</strong></p>
+<ul>
+<li>Pints: 100 minutes at 10 PSI.</li>
+<li>Quarts: 110 minutes at 10 PSI.</li>
+</ul>
+<h3>Vegetables (Green Beans, Carrots, etc.)</h3>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Use young, tender vegetables.</li>
+<li>Wash, trim, cut into uniform pieces.</li>
+<li>Hot pack: Boil vegetables 2–5 minutes; pack hot with boiling water.</li>
+<li>Leave 1 inch headspace.</li>
+</ol>
+<p><strong>Processing (hot pack):</strong></p>
+<ul>
+<li>Green beans: Pints 20 min, Quarts 25 min @ 10 PSI.</li>
+<li>Carrots: Pints 25 min, Quarts 30 min @ 10 PSI.</li>
+</ul>
+<h3>Corn (Whole Kernel)</h3>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Use fresh corn, kernel-cut from cob.</li>
+<li>Boil 3 minutes; pack hot with boiling liquid (not cob cooking liquid; use fresh water or broth).</li>
+<li>Leave 1 inch headspace.</li>
+</ol>
+<p><strong>Processing:</strong></p>
+<ul>
+<li>Pints: 55 minutes @ 10 PSI.</li>
+<li>Quarts: 85 minutes @ 10 PSI.</li>
+</ul>
+</section>
+<section id="improvised-sterilization">
+<h2>Improvised High-Pressure Sterilization</h2>
+<p>Pressure canning principles apply to other sterilization needs (medical equipment, water supplies, etc.). Improvised systems are risky but possible in emergency conditions.</p>
+<h3>Improvised Pressure Vessel (Not Recommended)</h3>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>Heavy-duty pressure cooker or steel drum with fitted top.</li>
+<li>Pressure gauge (manometer or improvised water column).</li>
+<li>Safety relief valve (critical; prevents over-pressurization).</li>
+<li>Thermometer.</li>
+</ul>
+<p><strong>Safety critical warning:</strong></p>
+<ul>
+<li>Over-pressurization risks explosion (potentially fatal).</li>
+<li>Only attempt if trained in pressure vessel operation.</li>
+<li>Always include pressure relief valve.</li>
+</ul>
+<p><strong>Water column manometer</strong> (improvised pressure measurement):</p>
+<ul>
+<li>Fill a tube with water; height equals water pressure.</li>
+<li>1 PSI = 2.31 feet of water column (27.7 inches).</li>
+<li>10 PSI = 23 feet; 15 PSI = 35 feet (very tall; impractical).</li>
+<li>Alternative: Mercury column (1 PSI = 2 inches mercury), but mercury is toxic.</li>
+</ul>
+<h3>Water Sterilization via Pressure/Temperature</h3>
+<p>Pressure-boil water at 15 PSI, 250°F for 30 minutes to sterilize (kills bacteria, viruses, some parasites; not all chemical contaminants).</p>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Does not remove chemical contaminants (arsenic, nitrates, pesticides).</li>
+<li>Does not kill prions (infectious proteins causing diseases like CJD).</li>
+<li>Pressure sterilization is reliable only in equipment designed for it.</li>
+</ul>
+<h3>Alternative: Boiling</h3>
+<p>Simple boiling (rolling boil for 1 minute at sea level; 3 minutes above 6500 ft) kills most pathogens but not spores. Use for drinking water safety when pressure is not available.</p>
+</section>
+<section id="equipment-maintenance">
+<h2>Equipment Maintenance and Safety</h2>
+<h3>Canner Gasket (Rubber Seal)</h3>
+<p><strong>Maintenance:</strong></p>
+<ul>
+<li>Inspect before each use (look for cracks, discoloration, hardening).</li>
+<li>Clean with warm soapy water; dry completely.</li>
+<li>If gasket is hard, cracked, or does not seat properly, replace (cost ~$10–20).</li>
+</ul>
+<p><strong>Replacement frequency:</strong> Every 2–5 years (depending on use and material).</p>
+<h3>Vent Pipe Cleaning</h3>
+<p><strong>Maintenance:</strong></p>
+<ul>
+<li>After each use, clear vent pipe of food debris (blockage prevents pressure equalization).</li>
+<li>Use a thin wire or pipe cleaner to clear obstruction.</li>
+<li>Boil vent pipe briefly to remove residue.</li>
+</ul>
+<h3>Pressure Gauge (Dial)</h3>
+<p><strong>Maintenance:</strong></p>
+<ul>
+<li>Check calibration annually (see &quot;Gauge Calibration&quot; section).</li>
+<li>Keep clean (tap gently to remove debris).</li>
+<li>If gauge is cracked, replace immediately.</li>
+</ul>
+<h3>Jar Lids and Bands</h3>
+<p><strong>Reusability:</strong></p>
+<ul>
+<li><strong>Lids</strong>: Single-use only (sealing compound is consumed after one use).</li>
+<li><strong>Bands</strong>: Reusable; wash after use, dry thoroughly. Replace if bent or rusted.</li>
+</ul>
+<p><strong>Storage:</strong></p>
+<ul>
+<li>Keep new lids in a cool, dry place (moisture degrades sealing compound).</li>
+<li>Discard lids if sealing compound is discolored or hardened.</li>
+</ul>
+<h3>Safety Precautions</h3>
+<ul>
+<li><strong>Never open canner under pressure</strong>: Risk of explosion/scalding.</li>
+<li><strong>Never force canner lid open</strong>: Wait for pressure to equalize; vent pipe can be opened to release pressure slowly.</li>
+<li><strong>Always vent for 10 minutes</strong> before closing vent (releases air; ensures proper pressure).</li>
+<li><strong>Never leave canner unattended</strong> during processing (fire/pressure hazard).</li>
+<li><strong>Keep children and pets away</strong> from canning area (risk of scalding).</li>
+</ul>
+</section>
+<section id="summary">
+<h2>Summary Checklist</h2>
+<ol>
+<li><strong>Understand the hazard</strong>: Botulinum spores are deadly; pressure canning is the only safe method for low-acid foods.</li>
+<li><strong>Use proper equipment</strong>: Pressure canner (not pressure cooker), validated recipes, correct jars/lids.</li>
+<li><strong>Vent the canner</strong> for 10 minutes before closing vent (removes air).</li>
+<li><strong>Maintain pressure</strong> throughout processing time; do not allow pressure to drop.</li>
+<li><strong>Use correct processing times</strong> based on jar size, altitude, and food type.</li>
+<li><strong>Check dial gauge annually</strong> for calibration accuracy.</li>
+<li><strong>Cool jars slowly</strong> after processing; seals form during cooling.</li>
+<li><strong>Test seals</strong> after 12–24 hours; discard or reprocess if seal failed.</li>
+<li><strong>Store sealed jars</strong> in cool, dark place; use within 1–2 years.</li>
+<li><strong>Follow USDA/tested recipes only</strong>: Never guess on processing times or methods.</li>
+</ol>
+<p>Pressure canning is safe, reliable, and essential for preserving meat and vegetables without refrigeration. Proper technique and equipment maintenance ensure both safety and quality.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="food-preservation.html">Food Preservation</a>
+<a href="chemical-safety.html">Chemical Safety</a>
+<a href="pressure-vessels.html">Pressure Vessels</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

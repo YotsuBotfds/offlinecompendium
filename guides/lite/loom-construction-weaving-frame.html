@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/loom-construction-weaving-frame.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loom Construction &amp; Weaving Frames</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Building &amp; Engineering</span> ›
+<span>Loom Construction &amp; Weaving Frames</span>
+</div>
+
+
+<h1>Loom Construction &amp; Weaving Frames</h1>
+<p class="subtitle">Build frame looms, warp-weighted looms, rigid heddle looms, and inkle looms. Covers frame joinery, heddle construction, reed/beater making, warping procedures.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~8 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#loom-types-comparison">Loom Types Comparison</a></li>
+<li><a href="#simple-frame-loom">Simple Frame Loom</a></li>
+<li><a href="#warp-weighted-loom">Warp-Weighted Loom</a></li>
+<li><a href="#rigid-heddle-loom">Rigid Heddle Loom</a></li>
+<li><a href="#inkle-loom">Inkle Loom</a></li>
+<li><a href="#heddle-construction">Heddle Construction (Advanced)</a></li>
+<li><a href="#reed-beater">Reed/Beater Making</a></li>
+<li><a href="#warping-procedure">Warping Procedures</a></li>
+<li><a href="#maintenance">Maintenance</a></li>
+<li><a href="#first-project">First Project Guide</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>A loom is a force multiplier for textile production. Without a loom, weaving a cloth is a tedious 1-to-1 process (one thread at a time). With a loom, the weaver interlaces two perpendicular yarn systems — warp (lengthwise) and weft (crosswise) — at rates of 100+ picks per minute. A single weaver produces meters of cloth in a day that would take weeks by hand.</p>
+<p>This guide covers four designs suited to low-tech production: the frame loom (simplest, most portable), the warp-weighted loom (historical, vertical), the rigid heddle loom (most practical for production), and the inkle loom (specialized for bands and straps). Each design is explained with build materials, heddle/reed construction, and a warping walkthrough.</p>
+<div class="info-box">
+<p><strong>Loom terminology:</strong></p>
+<ul>
+<li><strong>Warp:</strong> Lengthwise threads, under tension</li>
+<li><strong>Weft:</strong> Crosswise threads, interlaced with warp</li>
+<li><strong>Shed:</strong> The gap between raised and lowered warp threads (where the shuttle passes)</li>
+<li><strong>Pick:</strong> One pass of the weft thread across the warp (one row of weave)</li>
+<li><strong>Heddle:</strong> A device that raises/lowers alternating warp threads to create the shed</li>
+</ul>
+</div>
+</section>
+<section id="loom-types-comparison">
+<h2>Loom Types Comparison</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Loom Type</strong></th>
+<th><strong>Warp Width</strong></th>
+<th><strong>Cloth Length</strong></th>
+<th><strong>Setup Time</strong></th>
+<th><strong>Speed</strong></th>
+<th><strong>Best For</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Frame loom</strong></td>
+<td>12–24 in</td>
+<td>12–36 in</td>
+<td>15 min</td>
+<td>Slow (portable)</td>
+<td>Small projects, tapestry, learning</td>
+</tr>
+<tr>
+<td><strong>Warp-weighted</strong></td>
+<td>18–36 in</td>
+<td>3–6 ft</td>
+<td>1–2 hours</td>
+<td>Moderate</td>
+<td>Large cloth, historical technique</td>
+</tr>
+<tr>
+<td><strong>Rigid heddle</strong></td>
+<td>12–36 in</td>
+<td>3–10 ft</td>
+<td>30–45 min</td>
+<td>Fast</td>
+<td>Production weaving, plain weave</td>
+</tr>
+<tr>
+<td><strong>Inkle</strong></td>
+<td>2–6 in</td>
+<td>10–20 ft</td>
+<td>20–30 min</td>
+<td>Very fast</td>
+<td>Bands, straps, trim</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="simple-frame-loom">
+<h2>Simple Frame Loom</h2>
+<p>The frame loom is the easiest to build and requires only four boards and some nails. It's ideal for learning weaving and creating small tapestries.</p>
+<p><strong>Materials:</strong></p>
+<ul>
+<li><strong>Four boards:</strong> 1 × 2 lumber (or similar), lengths = 18, 18, 12, 12 inches (adjust for desired width/height)</li>
+<li><strong>Nails:</strong> 1½–2 inch finish nails (20–30 nails for a 12-inch-wide loom)</li>
+<li><strong>Yarn:</strong> Warp yarn (4-ply worsted wool, 2–4 oz weight). Weft yarn can be any thickness (thinner for tabby, thicker for tapestry effects)</li>
+<li><strong>Dowel or stick:</strong> ½-inch dowel for the bottom roller (helps manage tension)</li>
+</ul>
+<p><strong>Construction:</strong></p>
+<ol>
+<li>
+<p><strong>Assemble the frame:</strong></p>
+<ul>
+<li>Lay the two 18-inch boards flat on a table, parallel, 12 inches apart</li>
+<li>Butt the two 12-inch boards between them, one at each end, forming a rectangle</li>
+<li>Screw or nail the corners firmly (use 3–4 fasteners per corner for rigidity)</li>
+</ul>
+</li>
+<li>
+<p><strong>Install warp pegs:</strong></p>
+<ul>
+<li>Drive nails along the top edge of the frame, spaced ½ inch apart (for a 12-inch-wide loom, that's 24 nails)</li>
+<li>Drive another row of matching nails along the bottom edge, directly below the top row</li>
+<li>Nails should protrude ½–¾ inches</li>
+</ul>
+</li>
+<li>
+<p><strong>Attach the tension dowel:</strong></p>
+<ul>
+<li>Fit a wooden dowel (½ inch diameter, 12 inches long) into notches or holes drilled on the inside of the two side boards, about 2 inches from the bottom</li>
+<li>The dowel holds the warp stable and can be rotated to increase tension as weaving progresses</li>
+</ul>
+</li>
+</ol>
+<p><strong>Warping the frame loom:</strong></p>
+<ol>
+<li><strong>Tie the yarn onto the first peg</strong> at the top left corner</li>
+<li><strong>Stretch warp yarn down</strong> to the matching peg at the bottom</li>
+<li><strong>Wrap around the bottom peg</strong> and bring the yarn back up to the top, side by side with the first wrap (creating a U-shape for each wrap)</li>
+<li><strong>Continue this figure-8 pattern</strong>, spacing wraps ½ inch apart, until you reach the right edge of the frame</li>
+<li><strong>Tie off</strong> at the top-right peg; weave the tail through the last few warps for security</li>
+</ol>
+<p><strong>Tension:</strong> The warp should be taut enough to pluck like a guitar string, but not so tight that the frame warps or twists.</p>
+<div class="tip">
+<p>For a beginner's first project, a 12-inch-wide, 18-inch-tall frame with a simple 2/2 plain weave (over 2 threads, under 2 threads) is ideal. It can be completed in 2–3 hours.</p>
+</div>
+<p><strong>Weaving on the frame loom:</strong></p>
+<ul>
+<li>Use a shed stick (a flat dowel or piece of card) pushed behind the warp to separate the warp threads into two layers</li>
+<li>Pass the weft shuttle (a simple inch-wide card wrapped with yarn works fine) through the shed, lay the yarn across, and beat it snug with the shed stick</li>
+<li>Flip the shed (rotate the stick 90°) and pass the shuttle back through the opposite shed</li>
+<li>Continue until the loom is full</li>
+</ul>
+<p><strong>Removal:</strong> Cut the warp ties at the top and bottom; slide the finished cloth off and tie the warp ends to prevent unraveling.</p>
+</section>
+<section id="warp-weighted-loom">
+<h2>Warp-Weighted Loom</h2>
+<p>The warp-weighted loom is the most historically significant design — used for thousands of years to weave linen and wool on a large scale. The warp hangs vertically, with heavy weights (stones or clay) hanging from the bottom of each warp thread to maintain tension.</p>
+<p><strong>Materials:</strong></p>
+<ul>
+<li><strong>Frame:</strong> Two upright posts (4 × 4 or two 2 × 4s together), 5–6 feet tall, set 2–3 feet apart</li>
+<li><strong>Top beam:</strong> A horizontal log or board (8–12 inches diameter, 2–3 feet long) spanning the uprights at the top, secured with bolts or rope</li>
+<li><strong>Shed bar:</strong> A wooden dowel or rod (1 inch diameter, 2 feet long), hung at about the top beam level</li>
+<li><strong>Heddle rod:</strong> A second bar below the shed bar, to control the alternate warp threads</li>
+<li><strong>Weights:</strong> Clay loom weights (shaped like a disk with a hole, 2–4 lbs each), or stones tied to warp bundles. For a 24-inch-wide loom, you'll need 40–50 weights.</li>
+<li><strong>Yarn:</strong> 2–4-ply wool (the warp can be fairly coarse; the weft finer)</li>
+</ul>
+<p><strong>Construction:</strong></p>
+<ol>
+<li>
+<p><strong>Set up the frame:</strong></p>
+<ul>
+<li>Dig post holes 2 feet deep and set the two uprights in concrete or packed earth</li>
+<li>Space them 3 feet apart</li>
+<li>Attach the top beam between the uprights with bolts and an angled support beam underneath (to prevent sag)</li>
+</ul>
+</li>
+<li>
+<p><strong>Hang the shed bar:</strong></p>
+<ul>
+<li>Secure it near the top beam (1–2 feet down from the top) using rope or leather straps so it can pivot slightly</li>
+<li>This bar will be used to separate the warp into a shed (front and back layers)</li>
+</ul>
+</li>
+<li>
+<p><strong>Hang the heddle rod:</strong></p>
+<ul>
+<li>Position it about 12 inches below the shed bar</li>
+<li>Attach heddle loops (short lengths of yarn) to every other warp thread; these threads will be controlled by the heddle rod</li>
+</ul>
+</li>
+<li>
+<p><strong>Warp preparation:</strong></p>
+<ul>
+<li>Wrap the warp yarn around the top beam in a continuous length, creating the warp for the full width of the loom</li>
+<li>The warp should hang straight down, creating a vertical &quot;V&quot; shape at the back</li>
+</ul>
+</li>
+<li>
+<p><strong>Attach loom weights:</strong></p>
+<ul>
+<li>Tie a small loop at the bottom of each warp thread (bundle every 2–3 threads together)</li>
+<li>Slip a loom weight (disk with a hole) onto each loop, or tie a stone to the bundle</li>
+<li>The weights hang 1–2 feet below the final woven edge, maintaining constant tension</li>
+</ul>
+</li>
+</ol>
+<p><strong>Weaving on a warp-weighted loom:</strong></p>
+<ul>
+<li><strong>Create the shed:</strong> Push the shed bar forward to separate the front and back warp layers</li>
+<li><strong>Pass the shuttle:</strong> Throw the weft shuttle through the shed from one side to the other</li>
+<li><strong>Change sheds:</strong> Pull the heddle rod toward you (raising the heddle-controlled warp threads) to reverse the shed</li>
+<li><strong>Beat the weft:</strong> Use a wooden sword (a flat board the width of the loom) to beat the weft threads snug against the developing cloth edge</li>
+<li>Continue alternating sheds and passing the shuttle; the loom weights keep the warp vertical and tensioned as the cloth grows downward</li>
+</ul>
+<p><strong>Yield:</strong> A warp-weighted loom can produce 3–6 feet of cloth in a sustained weaving session (6–8 hours of work).</p>
+<div class="warning">
+<p>Warp-weighted looms are freestanding and tall — set them up in a sheltered location. Wind gusts can shift the weight of the hanging warp and cause the entire structure to tip. Secure the base to prevent tipping.</p>
+</div>
+</section>
+<section id="rigid-heddle-loom">
+<h2>Rigid Heddle Loom</h2>
+<p>The rigid heddle loom is the most practical design for serious textile production. A &quot;rigid heddle&quot; is a flat frame (traditionally wood, now often composite or plastic) with a series of holes and slots. As the heddle is raised and lowered, warp threads (in the holes) and warp threads (in the slots) move in opposite directions, creating the shed.</p>
+<p><strong>Materials:</strong></p>
+<ul>
+<li><strong>Heddle:</strong> A wooden board (12–36 inches wide, 1½ inches tall, 1 inch thick) with evenly spaced holes (¼ inch diameter) and slots (¼–½ inch wide) in alternating pattern, spaced about ¼ inch apart. A 24-inch heddle might have 100+ holes and slots.</li>
+<li><strong>Frame:</strong> Two wooden uprights (36–48 inches tall), fixed 24–30 inches apart. The heddle hangs between them on rope or leather straps.</li>
+<li><strong>Beater/sword:</strong> A flat wooden blade (24 inches long, 2–3 inches tall, ½ inch thick) that swings in front of the heddle on rope or leather arms. This beats the weft into place.</li>
+<li><strong>Cloth beam/roller:</strong> A wooden dowel or rod (24 inches long, 1½–2 inches diameter) at the front of the frame, rotated by a handle. The woven cloth is wound onto this roller.</li>
+<li><strong>Warp beam/roller:</strong> A similar beam at the back, on which the warp is wrapped.</li>
+<li><strong>Yarn:</strong> Same as above — 2–4-ply yarn for warp and weft</li>
+</ul>
+<p><strong>Heddle construction (DIY):</strong></p>
+<p>If a commercial heddle is unavailable, you can construct one:</p>
+<ol>
+<li>
+<p><strong>Drill the holes:</strong> Mark a line down the center of a wooden board at ¼-inch intervals. Drill ¼-inch holes through the board, skipping every other mark (so holes are spaced ½ inch apart, center-to-center).</p>
+</li>
+<li>
+<p><strong>Cut the slots:</strong> Between each pair of holes, saw a slot ¼ inch wide and ½ inch tall (or slightly wider/taller, depending on yarn thickness). The slot must be symmetric — centered between two holes horizontally and positioned so that it's level with the holes when viewed from the front.</p>
+</li>
+<li>
+<p><strong>Sand smooth:</strong> All holes and slots must have smooth edges (rough edges snag yarn).</p>
+</li>
+</ol>
+<p><strong>Frame assembly:</strong></p>
+<ol>
+<li><strong>Build uprights:</strong> Two boards, 36–48 inches tall, spaced 24–30 inches apart, secured at the base with cross-bracing</li>
+<li><strong>Mount the heddle:</strong> Hang the heddle between the uprights using rope or leather straps that allow it to pivot up and down</li>
+<li><strong>Install beater arms:</strong> Attach two ropes or leather straps at the top of the frame, extending downward to the left and right of the heddle, and secure the beater/sword to these arms. The beater should hang about 6 inches in front of the heddle when at rest.</li>
+<li><strong>Install the cloth beam:</strong> Position a wooden roller at the front bottom of the frame, with a hand crank on one end</li>
+<li><strong>Install the warp beam:</strong> A matching roller at the back</li>
+</ol>
+<p><strong>Warping the rigid heddle loom:</strong></p>
+<ol>
+<li>
+<p><strong>Thread the warp:</strong> Starting from the left, insert each warp thread alternately through a <strong>hole</strong> and a <strong>slot</strong> in the heddle, working toward the right. A 24-inch heddle with ¼-inch spacing holds 96–120 warp threads (about 100 for typical cloth).</p>
+</li>
+<li>
+<p><strong>Wrap the warp:</strong> Wind the warp around the warp beam (rear) several times, creating multiple parallel lengths. Use spacers (cards or sticks) between wraps to keep the warp from tangling.</p>
+</li>
+<li>
+<p><strong>Tension the warp:</strong> Pull the warp beam toward you, creating 2–3 pounds of tension. Tie it off to the frame.</p>
+</li>
+<li>
+<p><strong>Thread the cloth beam:</strong> At the front, wrap the warp around the cloth beam (same warp ends that are wrapped on the warp beam) and tie off.</p>
+</li>
+</ol>
+<p><strong>Weaving on a rigid heddle loom:</strong></p>
+<ol>
+<li>
+<p><strong>Raise the heddle:</strong> Pull the heddle upward (the warp threads in the holes move up; threads in the slots move down). This creates a <strong>shed</strong> — a gap between the two sets of warp threads.</p>
+</li>
+<li>
+<p><strong>Pass the shuttle:</strong> Throw the weft shuttle through the shed from left to right.</p>
+</li>
+<li>
+<p><strong>Beat:</strong> Pull the beater/sword toward you, striking the weft against the developing cloth edge.</p>
+</li>
+<li>
+<p><strong>Lower the heddle:</strong> Push the heddle down (reversing which threads are up and down).</p>
+</li>
+<li>
+<p><strong>Pass the shuttle:</strong> Throw the weft from right to left through the new shed.</p>
+</li>
+<li>
+<p><strong>Beat:</strong> Strike the beater forward again.</p>
+</li>
+<li>
+<p><strong>Advance the cloth:</strong> Turn the cloth beam handle, winding the finished cloth onto the beam. Simultaneously, turn the warp beam handle backward, releasing more warp.</p>
+</li>
+</ol>
+<p><strong>Speed:</strong> A practiced weaver can throw 80–120 picks per minute on a rigid heddle loom — far faster than hand-weaving or frame looms.</p>
+<div class="tip">
+<p>The rhythm becomes automatic: <strong>raise-throw-beat-lower-throw-beat</strong>. It's almost musical. After 30 minutes of practice, most people find a comfortable pace.</p>
+</div>
+</section>
+<section id="inkle-loom">
+<h2>Inkle Loom</h2>
+<p>An inkle loom is a specialized frame for weaving narrow bands (1–6 inches wide). It uses a figure-8 warp arrangement around a series of pegs, making it quick to set up and ideal for tablet weaving, decorative bands, and trim.</p>
+<p><strong>Materials:</strong></p>
+<ul>
+<li><strong>Frame:</strong> Four boards (24, 24, 12, 12 inches) assembled into a rectangle, or a commercial inkle frame</li>
+<li><strong>Pegs:</strong> Wooden dowels (½ inch diameter) inserted into drilled holes around the frame perimeter, spaced to create the warp path</li>
+</ul>
+<p><strong>Peg arrangement:</strong></p>
+<p>The pegs are arranged in a specific pattern so that winding the warp around them creates a continuous figure-8 path. For a typical inkle loom:</p>
+<ul>
+<li><strong>Top-left peg (A)</strong> at position (1, 10)</li>
+<li><strong>Top-right peg (B)</strong> at position (11, 10)</li>
+<li><strong>Bottom pegs (C, D, E, F...)</strong> arranged in a series at positions (1, 2), (2, 2), (3, 2), ... (11, 2) (adjust spacing as needed)</li>
+</ul>
+<p><strong>Warping an inkle loom:</strong></p>
+<ol>
+<li><strong>Tie the warp</strong> to peg A (top-left)</li>
+<li><strong>Wrap the warp</strong> in a figure-8 pattern: down to peg C, across to peg D, back up to peg B, across to peg A, and repeat</li>
+<li><strong>Each loop</strong> around the peg sequence creates a new warp thread</li>
+<li><strong>Continue</strong> until the band is the desired width (typically 10–30 threads for a 2–4-inch band)</li>
+<li><strong>Tie off</strong> at the starting peg</li>
+</ol>
+<p><strong>Weaving on an inkle loom:</strong></p>
+<ul>
+<li>Simple over-under weaving (plain weave) creates a basic band</li>
+<li>Or use <strong>tablet weaving</strong> (threading warp through cards) for patterned bands</li>
+<li>Throw the shuttle through the shed, beat, and advance</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Fast setup (5–10 minutes vs. 30+ minutes for other looms)</li>
+<li>Portable (can be a small desk-size frame)</li>
+<li>Great for producing trim, belts, and decorative bands in bulk</li>
+<li>Warp lengths of 10–20 feet are achievable, making long bands without re-warping</li>
+</ul>
+</section>
+<section id="heddle-construction">
+<h2>Heddle Construction (Advanced)</h2>
+<p>For rigid heddle looms, heddles can be purchased or constructed by hand.</p>
+<p><strong>Wooden heddle (carved from a single board):</strong></p>
+<ol>
+<li>Select a straight-grained board (maple or ash, ¾–1 inch thick, ¼ inch taller than desired finished heddle)</li>
+<li>Mark the heddle grid: evenly spaced lines (¼ inch apart) representing the holes and slots</li>
+<li>Drill all holes first (½-inch bit, slow speed to avoid splintering)</li>
+<li>Saw the slots using a thin kerf saw, stopping at the pencil lines so slots don't extend to the edges (which would weaken the heddle)</li>
+<li>Sand the entire heddle until all holes and slots are smooth (no snagging)</li>
+<li>Test-fit warp yarn — it should slide freely</li>
+</ol>
+<p><strong>Heddle spacing (EPI = ends per inch):</strong></p>
+<p>Common spacings for different fabrics:</p>
+<table>
+<thead>
+<tr>
+<th>Yarn Weight</th>
+<th>Spacing</th>
+<th>EPI</th>
+<th>Heddle Holes/Inch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Thin (2-ply)</strong></td>
+<td>1/16 in</td>
+<td>16</td>
+<td>16</td>
+</tr>
+<tr>
+<td><strong>Medium (4-ply)</strong></td>
+<td>1/8 in</td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr>
+<td><strong>Thick (8-ply)</strong></td>
+<td>1/4 in</td>
+<td>4</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Alternative heddles:</strong></p>
+<ul>
+<li><strong>Heddle bar with loops:</strong> A dowel with small yarn loops tied at regular intervals (loops serve as the &quot;holes&quot;; warp threads pass through)</li>
+<li><strong>Multi-harness heddles:</strong> A complex loom might have 4+ heddles, each controlling a different set of warp threads, allowing for complex weaves (twill, damask, etc.)</li>
+</ul>
+</section>
+<section id="reed-beater">
+<h2>Reed/Beater Making</h2>
+<p>A reed (or beater) is the instrument that compacts the weft into place after each pass.</p>
+<p><strong>Wooden beater (simple):</strong></p>
+<ol>
+<li>Select a board (maple, ash, or pine), 24 inches long, 3 inches tall, ½ inch thick</li>
+<li>Sand smooth, rounding the edges</li>
+<li>Drill a hole near each end (½ inch) for attaching to the beater arms via rope or leather straps</li>
+<li>The flat face should be smooth and slightly curved (to match the natural arc of the warp)</li>
+</ol>
+<p><strong>Reed with teeth (more efficient):</strong></p>
+<p>For finer fabrics, a reed with teeth (cut slots) can be more efficient:</p>
+<ol>
+<li>Cut a series of 1-inch-tall slots into the bottom edge of the beater, spaced about ½ inch apart</li>
+<li>Each slot spans 3–4 warp threads, and the reed teeth (the wood between slots) compact the weft more uniformly</li>
+<li>This is particularly useful for plain weave (tabby) where consistent beat is important for a smooth fabric</li>
+</ol>
+</section>
+<section id="warping-procedure">
+<h2>Warping Procedures</h2>
+<p>The most common mistake beginners make is improper warping — crossed threads, tangled warp, or uneven tension. Here's the systematic approach:</p>
+<p><strong>Calculate warp length:</strong></p>
+<p>For a finished cloth, you need:</p>
+<ul>
+<li><strong>Loom waste:</strong> 2–3 feet (the beginning and end of warp that cannot be woven)</li>
+<li><strong>Desired cloth length:</strong> The actual length of fabric you want</li>
+<li><strong>Shrinkage:</strong> Typically 5–10% during finishing</li>
+<li><strong>Total warp length needed:</strong> (loom waste) + (cloth length) + (cloth length × shrinkage)</li>
+</ul>
+<p>Example: 2 feet loom waste + 4 feet cloth + 0.4 feet shrinkage = <strong>6.4 feet warp length per thread</strong></p>
+<p><strong>Warping a rigid heddle loom (step-by-step):</strong></p>
+<ol>
+<li>
+<p><strong>Measure and mark:</strong> Determine how many warp threads you need. For a 24-inch cloth at 8 EPI, you need 192 threads.</p>
+</li>
+<li>
+<p><strong>Use a warping board or pegs:</strong> Wind all 192 warp threads in a continuous figure-8 around two pegs set the appropriate distance apart (to create the 6.4-foot length). This takes 30–45 minutes for most weavers.</p>
+</li>
+<li>
+<p><strong>Bundle the warp:</strong> Tie the bundle at three points (start, middle, end) to prevent tangling.</p>
+</li>
+<li>
+<p><strong>Transfer to the loom:</strong> Carefully unwind one thread at a time, inserting it through the heddle (alternating holes and slots) and wrapping it around the front and back beams.</p>
+</li>
+<li>
+<p><strong>Tension:</strong> Crank both beams to create even tension across all threads (2–3 pounds per thread, roughly).</p>
+</li>
+</ol>
+<p><strong>Avoid common warping errors:</strong></p>
+<ul>
+<li><strong>Crossed threads:</strong> Every thread must follow a clear path through the heddle; intersecting threads cause shed problems.</li>
+<li><strong>Uneven tension:</strong> Tight threads vs. loose threads create an uneven cloth surface.</li>
+<li><strong>Twisted warp:</strong> If the warp bundle was twisted during transfer, individual threads may be twisted. Untwist before tensioning.</li>
+</ul>
+<div class="warning">
+<p>Improper warping is the #1 cause of weaving failures. If you encounter shed problems, dropped threads, or lumpy cloth, the issue is almost always in the warping step.</p>
+</div>
+</section>
+<section id="maintenance">
+<h2>Maintenance</h2>
+<p><strong>Loom care:</strong></p>
+<ul>
+<li><strong>Keep dry:</strong> Wood looms absorb moisture and can warp or swell. Store in a dry location. If stored long-term, check for wood rot before using.</li>
+<li><strong>Oil wooden parts:</strong> Periodically oil the frame and beams with linseed oil to prevent cracking.</li>
+<li><strong>Check beam alignment:</strong> Ensure the front and back beams are parallel and level. Misaligned beams cause uneven cloth.</li>
+</ul>
+<p><strong>Heddle maintenance:</strong></p>
+<ul>
+<li><strong>Clean slots and holes:</strong> Fluff and lint accumulate. Use a small brush or cloth to clean periodically.</li>
+<li><strong>Check for cracks:</strong> Wooden heddles can split if struck hard or exposed to moisture. Replace if cracked.</li>
+</ul>
+<p><strong>Warp management:</strong></p>
+<ul>
+<li><strong>Remove finished cloth carefully:</strong> Don't jerk or pull sharply — this can break warp threads.</li>
+<li><strong>Tie off warp ends:</strong> Use overhand knots to prevent unraveling while you're finishing the cloth.</li>
+</ul>
+</section>
+<section id="first-project">
+<h2>First Project Guide</h2>
+<p><strong>Recommended first weave: A simple 4-yard scarf on a rigid heddle loom</strong></p>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>4-ply worsted wool, 4 oz (for warp), 2 oz (for weft)</li>
+<li>Rigid heddle loom, 20-inch width</li>
+<li>Beater and shuttle (can be hand-made)</li>
+</ul>
+<p><strong>Steps:</strong></p>
+<ol>
+<li><strong>Warp:</strong> 160 threads at 8 EPI, total length 5 feet (allows for loom waste + 4 yards cloth)</li>
+<li><strong>First 12 inches:</strong> Plain weave (over 1, under 1). This is the easiest weave and builds rhythm.</li>
+<li><strong>Beat with consistent force:</strong> Aim for a fabric density of 10–12 picks per inch (match the warp density for balanced plain weave).</li>
+<li><strong>Weave for 4 yards:</strong> Total time = 4–6 hours of actual weaving (excluding setup).</li>
+<li><strong>Finish:</strong> Remove from loom, tie off warp ends, wash in warm water, and lay flat to dry.</li>
+</ol>
+<p><strong>Result:</strong> A warm, handmade wool scarf that cost $15 in materials and 6 hours of labor. Many handweavers find this deeply satisfying and continue to weaving as a serious craft.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="textiles.html">Textiles &amp; Fiber Arts</a>
+<a href="fiber-to-fabric-pipeline.html">Fiber to Fabric Pipeline</a>
+<a href="spinning-fiber-production.html">Spinning and Fiber Production</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

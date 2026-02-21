@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/microbiology-essentials-bio.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microbiology Essentials</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Biology</span> ›
+<span>Microbiology Essentials</span>
+</div>
+
+
+<h1>Microbiology Essentials</h1>
+<p class="subtitle">Practical microbiology for survival: bacteria, fungi, viruses, fermentation, sanitation, disease prevention, improvised microscopy</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~7 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview-the-microbial-world">Overview: The Microbial World</a></li>
+<li><a href="#bacterial-diversity-and-function">Bacterial Diversity and Function</a></li>
+<li><a href="#fungi-decomposers-and-food-producers">Fungi: Decomposers and Food Producers</a></li>
+<li><a href="#protozoa-and-waterborne-parasites">Protozoa and Waterborne Parasites</a></li>
+<li><a href="#viruses-structure-and-transmission">Viruses: Structure and Transmission</a></li>
+<li><a href="#microscopy-without-a-microscope">Microscopy Without a Microscope</a></li>
+<li><a href="#staining-and-simple-identification">Staining and Simple Identification</a></li>
+<li><a href="#culture-media-from-common-materials">Culture Media from Common Materials</a></li>
+<li><a href="#sanitation-and-sterilization">Sanitation and Sterilization</a></li>
+<li><a href="#water-testing-and-microbial-contamination">Water Testing and Microbial Contamination</a></li>
+<li><a href="#fermentation-microbiology">Fermentation Microbiology</a></li>
+<li><a href="#food-safety-and-spoilage-microbiology">Food Safety and Spoilage Microbiology</a></li>
+<li><a href="#soil-microbiology-and-agriculture">Soil Microbiology and Agriculture</a></li>
+<li><a href="#antibiotic-resistance-and-long-term-health">Antibiotic Resistance and Long-Term Health</a></li>
+<li><a href="#probiotic-foods-and-gut-health">Probiotic Foods and Gut Health</a></li>
+<li><a href="#summary-and-practical-microbiology-checklist">Summary and Practical Microbiology Checklist</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<h2 id="overview-the-microbial-world">Overview: The Microbial World</h2>
+<section id="overview">
+<p>Microorganisms—bacteria, fungi, protozoa, and viruses—are invisible to the naked eye yet profoundly shape survival outcomes. In a post-infrastructure scenario, understanding microbiology transitions from academic curiosity to practical necessity. Microbes govern water safety, food preservation, soil fertility, disease transmission, and the fermentation of preserved foods.</p>
+<p>This guide covers practical microbiology for survival contexts: identifying pathogenic threats, leveraging beneficial microbes for food production, constructing improvised observation tools, and implementing evidence-based sanitation.</p>
+<p>The microbial world consists of:</p>
+<ul>
+<li><strong>Bacteria</strong> — Single-celled prokaryotes (0.5–5 micrometers). Most are harmless or beneficial; some cause disease.</li>
+<li><strong>Fungi</strong> — Eukaryotic organisms including yeasts and molds. Essential for decomposition; some produce toxins.</li>
+<li><strong>Protozoa</strong> — Eukaryotic single-celled organisms (10–100 micrometers). Some are waterborne pathogens.</li>
+<li><strong>Viruses</strong> — Obligate intracellular parasites requiring host cells to reproduce. Cannot be cultured on simple media.</li>
+</ul>
+<p>Understanding microbial ecology—how different organisms compete, cooperate, and thrive under specific conditions—is the foundation of practical survival microbiology.</p>
+</section>
+<h2 id="bacterial-diversity-and-function">Bacterial Diversity and Function</h2>
+<section id="bacteria-diversity">
+<h3>Types of Bacteria in Survival Contexts</h3>
+<p>Bacteria are classified by shape (coccus, bacillus, spirillum), metabolic function (aerobic, anaerobic, photosynthetic), and ecological role.</p>
+<p><strong>Beneficial bacteria:</strong></p>
+<ul>
+<li><em>Lactobacillus</em> species — Produce lactic acid in fermentation; preserve foods and enhance gut health.</li>
+<li><em>Bacillus subtilis</em> — Soil-dwelling; helps decompose organic matter and fix nitrogen.</li>
+<li><em>Acetobacter</em> — Convert ethanol to acetic acid (vinegar fermentation).</li>
+<li>Cyanobacteria — Photosynthetic; fix atmospheric nitrogen in rice paddies and wetlands.</li>
+</ul>
+<p><strong>Pathogenic bacteria (primary concern):</strong></p>
+<ul>
+<li><em>Vibrio cholerae</em> — Waterborne; causes acute diarrheal disease.</li>
+<li><em>Salmonella</em> species — Foodborne; contaminates poultry, eggs, and unpasteurized dairy.</li>
+<li><em>Escherichia coli</em> (pathogenic strains) — Fecal indicator; O157:H7 causes hemorrhagic colitis.</li>
+<li><em>Clostridium botulinum</em> — Anaerobic; produces deadly botulotoxin in improperly canned foods.</li>
+</ul>
+<div class="warning">
+<p><strong>Critical:</strong> <em>Clostridium botulinum</em> produces spores that survive boiling. Safe preservation requires either pressure canning (121°C, 100 kPa for 20 minutes), acidification to pH &lt;3.8, or salt/sugar curing to reduce water activity below 0.85. Never rely on water-bath canning for low-acid foods.</p>
+</div>
+<h3>Bacterial Growth Requirements</h3>
+<p>All bacteria require:</p>
+<ol>
+<li><strong>Carbon source</strong> — Organic matter (glucose, amino acids, etc.)</li>
+<li><strong>Nitrogen source</strong> — Amino acids, proteins, or inorganic nitrates</li>
+<li><strong>Minerals</strong> — Phosphorus, sulfur, potassium, iron, magnesium</li>
+<li><strong>Appropriate pH</strong> — Most thrive at pH 6–8; some tolerate extremes</li>
+<li><strong>Moisture</strong> — Cannot divide below water activity (Aw) ~0.85</li>
+<li><strong>Temperature</strong> — Mesophiles (20–45°C), thermophiles (45–70°C), psychrophiles (&lt;20°C)</li>
+<li><strong>Oxygen</strong> — Aerobes require O₂; anaerobes do not; facultative anaerobes tolerate both</li>
+</ol>
+<p>In survival contexts, controlling these conditions preserves food (removing water, lowering pH, reducing oxygen) and prevents unwanted bacterial growth.</p>
+</section>
+<h2 id="fungi-decomposers-and-food-producers">Fungi: Decomposers and Food Producers</h2>
+<section id="fungi-types">
+<p>Fungi are eukaryotic decomposers essential for nutrient cycling. They break down dead wood, plant matter, and other organisms, returning nutrients to soil.</p>
+<h3>Common Fungal Groups</h3>
+<p><strong>Yeasts</strong> — Single-celled fungi; <em>Saccharomyces cerevisiae</em> ferments sugars to alcohol and CO₂.</p>
+<ul>
+<li>Used for bread leavening, beer/wine production, and distillation.</li>
+<li>Anaerobic fermentation produces alcohol (anaerobic respiration); aerobic growth produces more biomass.</li>
+</ul>
+<p><strong>Molds</strong> — Filamentous fungi with visible mycelium (thread-like networks).</p>
+<ul>
+<li><em>Aspergillus niger</em> — Used for citric acid production in fermentation.</li>
+<li><em>Penicillium roqueforti</em> — Blue-veining in cheese; produces penicillin-class antibiotics.</li>
+<li><em>Rhizopus</em> — Rapid decomposer; useful for tempeh (soybean cake) fermentation.</li>
+</ul>
+<p><strong>Mushrooms</strong> — Macroscopic fruiting bodies of fungal mycelium.</p>
+<ul>
+<li>Some are edible and nutritious; many are highly toxic.</li>
+<li>Cultivation requires sterile spawn, proper humidity (85–95%), and temperature control.</li>
+</ul>
+<div class="tip">
+<p><strong>Fungal food production:</strong> Grow mushrooms on straw, logs, or grain substrate. Most species fruit within 4–12 weeks at room temperature. Oyster mushrooms (<em>Pleurotus</em> species) are the most forgiving and tolerate poor conditions and variable temperatures.</p>
+</div>
+<h3>Mycotoxins and Food Safety</h3>
+<p>Certain molds produce mycotoxins—carcinogenic or neurotoxic compounds—if contamination occurs during storage.</p>
+<ul>
+<li><strong>Aflatoxins</strong> — Produced by <em>Aspergillus flavus</em> on peanuts, grains, and nuts in humid conditions.</li>
+<li><strong>Ochratoxin</strong> — Found in moldy coffee, grains, and dried fruits.</li>
+<li><strong>Trichothecenes</strong> — Produced by <em>Fusarium</em> species on wheat and barley.</li>
+</ul>
+<p><strong>Prevention:</strong> Store grains in airtight containers with moisture content &lt;13%, ensure good air circulation, discard visibly moldy food, and monitor for musty odors.</p>
+</section>
+<h2 id="protozoa-and-waterborne-parasites">Protozoa and Waterborne Parasites</h2>
+<section id="protozoa">
+<p>Protozoa are single-celled eukaryotes, larger than bacteria (10–100 micrometers) but still invisible to the naked eye. Several are obligate parasites causing waterborne disease.</p>
+<p><strong>Pathogenic protozoa:</strong></p>
+<ul>
+<li><em>Giardia lamblia</em> — Waterborne; causes giardiasis (chronic diarrhea, malabsorption). Cysts survive chlorination; require 1 micrometer filtration or 1-minute boiling.</li>
+<li><em>Cryptosporidium</em> — Waterborne; causes severe watery diarrhea. Highly resistant to chemical disinfection; requires 0.5 micrometer filtration or boiling.</li>
+<li><em>Entamoeba histolytica</em> — Fecal-oral; causes dysentery.</li>
+</ul>
+<div class="warning">
+<p><strong>Boiling effectiveness:</strong> Boiling for 1 minute at sea level kills most pathogens including bacteria and viruses. At high elevation (&gt;2000m), extend to 3 minutes. Cryptosporidium oocysts may require vigorous rolling boil for full inactivation.</p>
+</div>
+<p><strong>Water testing:</strong> Visual inspection alone is insufficient. Turbidity (cloudiness) indicates suspended particles including potential pathogens. Use 0.1 micrometer ceramic or sand filters followed by boiling or UV exposure for safe drinking water.</p>
+</section>
+<h2 id="viruses-structure-and-transmission">Viruses: Structure and Transmission</h2>
+<section id="viruses">
+<p>Viruses are obligate intracellular parasites—bundles of genetic material (DNA or RNA) surrounded by protein coats. They cannot be cultured on standard media and require living host cells to replicate.</p>
+<h3>Transmission Routes</h3>
+<p><strong>Respiratory (airborne):</strong></p>
+<ul>
+<li>SARS-CoV-2, influenza, measles, tuberculosis</li>
+<li>Spreads via aerosol droplets during coughing/sneezing</li>
+<li>Prevention: Ventilation, hand hygiene, respiratory isolation, vaccination (if available)</li>
+</ul>
+<p><strong>Fecal-oral:</strong></p>
+<ul>
+<li>Rotavirus, norovirus, hepatitis A, enteroviruses</li>
+<li>Spreads through contaminated food/water</li>
+<li>Prevention: Sanitation, handwashing, water treatment</li>
+</ul>
+<p><strong>Bloodborne:</strong></p>
+<ul>
+<li>HIV, hepatitis B and C</li>
+<li>Spreads via contact with infected blood or body fluids</li>
+<li>Prevention: Blood safety protocols, needle hygiene</li>
+</ul>
+<p><strong>Vector-borne:</strong></p>
+<ul>
+<li>Dengue, yellow fever, Zika (mosquitoes); plague (fleas)</li>
+<li>Prevention: Insect control, protective clothing</li>
+</ul>
+<h3>Viral Control Strategies</h3>
+<p>Viruses are sensitive to:</p>
+<ul>
+<li><strong>Heat</strong> — Most inactivated by 56°C for 30 minutes or 70°C for 5 minutes</li>
+<li><strong>UV light</strong> — 254 nm wavelength damages RNA/DNA; requires direct exposure</li>
+<li><strong>Chemical disinfectants</strong> — 70% ethanol, bleach (0.5%), iodine (2%) are effective</li>
+<li><strong>pH extremes</strong> — Most enveloped viruses (influenza, corona) inactivated at pH &lt;3 or &gt;11</li>
+</ul>
+<p>Unlike bacteria, viruses do not grow on culture media; diagnosis and monitoring rely on clinical observation or, in better-equipped settings, serology or PCR.</p>
+</section>
+<h2 id="microscopy-without-a-microscope">Microscopy Without a Microscope</h2>
+<section id="improvised-microscopy">
+<p>Direct observation of microorganisms requires magnification. In resource-limited settings, improvised microscopy enables basic identification and enumeration.</p>
+<h3>Water-Drop Lens</h3>
+<p>A simple water droplet can function as a lens, magnifying ~3–10×.</p>
+<p><strong>Construction:</strong></p>
+<ol>
+<li>Cut or punch a 2–3 mm hole in a piece of black cardstock or thin plastic.</li>
+<li>Place a water droplet on one side of the hole, held in place by surface tension.</li>
+<li>Position the specimen on the opposite side of the hole.</li>
+<li>Hold up to light and observe through the droplet.</li>
+</ol>
+<p>This provides enough magnification to spot larger microorganisms (protozoa, fungal spores) but not bacteria.</p>
+<h3>Salvaged Optics</h3>
+<p>If binoculars, magnifying glasses, or camera lenses are available, they can be repurposed:</p>
+<ul>
+<li><strong>Magnifying glass + eyepiece:</strong> Stack a magnifying glass and a strong eyepiece (or even a cell-phone camera lens) to increase magnification.</li>
+<li><strong>Fresnel lens:</strong> Salvaged from old LCD screens or overhead projectors; focus to create a strong lens.</li>
+<li><strong>Microscope objective repair:</strong> If a broken microscope exists, salvage undamaged objective lenses and rebuild using improvised tube and eyepiece.</li>
+</ul>
+<div class="info-box">
+<p><strong>Improvised stage lighting:</strong> Use a white paper or aluminum foil reflector to redirect sunlight onto the specimen from below, or use a candle/oil lamp for transmitted light. Dark-field (backlighting) makes flagella and cilia visible on moving organisms.</p>
+</div>
+</section>
+<h2 id="staining-and-simple-identification">Staining and Simple Identification</h2>
+<section id="staining-techniques">
+<h3>Gram Staining (Improvised)</h3>
+<p>Gram staining distinguishes bacteria by cell-wall composition, dividing them into Gram-positive (thick peptidoglycan) and Gram-negative (thin peptidoglycan + outer membrane).</p>
+<p><strong>Improvised gram stain protocol:</strong></p>
+<ol>
+<li><strong>Specimen preparation:</strong> Smear bacteria on a clean glass slide; air-dry and gently heat-fix over a flame.</li>
+<li><strong>Crystal violet (primary stain):</strong> Apply for 1 minute. Substitute: food coloring or ink diluted 1:10 with water.</li>
+<li><strong>Gram's iodine (mordant):</strong> Apply for 1 minute to bind the stain. Substitute: weak iodine solution (Lugol's iodine if available).</li>
+<li><strong>Alcohol/acetone (decolorizer):</strong> Rinse briefly. Substitute: ethanol (70%) or dilute acetic acid.</li>
+<li><strong>Safranin (counterstain):</strong> Apply for 1 minute. Substitute: dilute methylene blue or cheap red pen ink diluted 1:100.</li>
+<li><strong>Observation:</strong> Gram-positive cells retain purple; Gram-negative cells appear pink/red.</li>
+</ol>
+<p><strong>Alternative indicators:</strong></p>
+<ul>
+<li><strong>Methylene blue (simple stain):</strong> Stains all bacteria blue; easier than Gram but provides less information.</li>
+<li><strong>Malachite green (spore stain):</strong> Heat the stain to penetrate spore coats, then counterstain with safranin.</li>
+</ul>
+<h3>Morphology Observation</h3>
+<p>Even without staining, observe:</p>
+<ul>
+<li><strong>Shape:</strong> Cocci (round), bacilli (rod), spirilla (spiral), vibrio (comma-shaped)</li>
+<li><strong>Arrangement:</strong> Single, pairs (diplo-), chains (strepto-), clusters (staphylo-)</li>
+<li><strong>Motility:</strong> Observe living cells under magnification; motile cells indicate flagella or pili</li>
+<li><strong>Size:</strong> Estimate relative to known bacteria (~0.5–5 micrometers)</li>
+</ul>
+</section>
+<h2 id="culture-media-from-common-materials">Culture Media from Common Materials</h2>
+<section id="culture-media">
+<p>Growing microorganisms in the lab allows enumeration, isolation, and identification. Standard media can be approximated using kitchen ingredients.</p>
+<h3>Nutrient Broth (Liquid Medium)</h3>
+<p><strong>Recipe:</strong></p>
+<ul>
+<li>5 g beef bouillon powder (or gelatin-free stock)</li>
+<li>2.5 g sodium chloride (table salt)</li>
+<li>1 L water</li>
+<li>pH should reach ~6.8 (neutral)</li>
+</ul>
+<p><strong>Method:</strong> Dissolve ingredients in water, heat gently, cool, and inoculate. Cultures grow turbid within 24–48 hours at room temperature.</p>
+<h3>Nutrient Agar (Solid Medium)</h3>
+<p><strong>Recipe:</strong></p>
+<ul>
+<li>Nutrient broth (above)</li>
+<li>15 g gelatin or agar powder (if available; agar is superior)</li>
+<li>pH ~6.8</li>
+</ul>
+<p><strong>Method:</strong> Dissolve agar in hot water, cool to ~50°C, pour into sterilized containers (boiled petri dishes or small jars), and allow to set. Inoculate with sterile loop or needle. Colonies appear within 24–72 hours.</p>
+<div class="warning">
+<p><strong>Gelatin vs. agar:</strong> Gelatin melts at body temperature and is ideal only for room-temperature incubation. Agar has a much higher melting point (82°C) and is superior for all applications. If neither is available, use cornstarch suspension for very crude colony observation.</p>
+</div>
+<h3>Selective Media</h3>
+<p><strong>Fermentation media (for yeasts and LAB):</strong></p>
+<ul>
+<li>50 g sugar (glucose or honey)</li>
+<li>5 g peptone or yeast extract</li>
+<li>1 L water</li>
+<li>Inoculate with fruit juice, whey, or prior culture</li>
+<li>Incubate anaerobically (sealed container) at room temperature; observe foam/bubbles within 24 hours</li>
+</ul>
+<p><strong>High-salt media (for salt-tolerant bacteria):</strong></p>
+<ul>
+<li>Add 100–300 g NaCl per liter to nutrient broth</li>
+<li>Used for fermenting vegetables and meat</li>
+</ul>
+</section>
+<h2 id="sanitation-and-sterilization">Sanitation and Sterilization</h2>
+<section id="sanitation">
+<p>In low-resource settings, preventing contamination is more practical than eliminating established infection.</p>
+<h3>Heat Sterilization</h3>
+<ul>
+<li><strong>Boiling (100°C):</strong> Kills vegetative bacteria and viruses within 1 minute; requires 10 minutes for protozoan cysts and higher at altitude.</li>
+<li><strong>Pressure cooking (121°C, 100 kPa):</strong> Destroys bacterial spores; essential for canning and sterilizing equipment. Time depends on volume and density.</li>
+<li><strong>Dry heat (160°C for 2 hours):</strong> Sterilizes metal instruments and glass; requires an oven or controlled flame.</li>
+<li><strong>Flaming:</strong> Hold metal loops/needles in a flame until red-hot; kills all microorganisms but does not sterilize liquids.</li>
+</ul>
+<h3>Chemical Disinfection</h3>
+<ul>
+<li><strong>Bleach solution (0.5% sodium hypochlorite):</strong> Mix 1 part household bleach (~5% chlorine) with 10 parts water. Wipe or soak for 10 minutes. Effective for surfaces, not ideal for large water volumes (can cause off-flavors).</li>
+<li><strong>Iodine (2% Lugol's iodine):</strong> Add 8–10 drops per liter of water; wait 30 minutes. Effective against most pathogens except Cryptosporidium.</li>
+<li><strong>Vinegar (5% acetic acid):</strong> Spray or soak; slower than bleach but safer for food contact.</li>
+<li><strong>Alcohol (70%):</strong> Excellent for hand and equipment disinfection; evaporates quickly.</li>
+</ul>
+<div class="tip">
+<p><strong>Hand hygiene protocol:</strong> Wash hands with soap and water (friction for 20 seconds removes &gt;99% of transient bacteria), then dry with clean cloth or air. In resource-scarcity, rinse with water and wipe on clean cloth before food handling. Alcohol-based hand sanitizer works if soap is unavailable.</p>
+</div>
+<h3>Environmental Disinfection</h3>
+<ul>
+<li>Sweep or wipe surfaces with cloth dampened in disinfectant.</li>
+<li>Focus on high-touch areas: door handles, food-prep surfaces, eating utensils.</li>
+<li>Allow disinfectant to air-dry; do not rinse afterward (allows re-contamination).</li>
+</ul>
+</section>
+<h2 id="water-testing-and-microbial-contamination">Water Testing and Microbial Contamination</h2>
+<section id="water-testing">
+<h3>Visual and Sensory Assessment</h3>
+<p>Inspect water for:</p>
+<ul>
+<li><strong>Turbidity (cloudiness):</strong> Indicates suspended particles and potential pathogens.</li>
+<li><strong>Color:</strong> Brown/yellow often indicates organic matter; clear does not guarantee safety.</li>
+<li><strong>Odor:</strong> Musty smell suggests algal blooms or decaying organic matter.</li>
+<li><strong>Taste:</strong> Do not taste untreated water; any off-flavor suggests contamination.</li>
+</ul>
+<h3>Simple Turbidity Test</h3>
+<p>Fill a clear glass with water and hold it over a white background. You should be able to read text through it. If not, filter before treating.</p>
+<h3>Field Indicators</h3>
+<p><strong>Indicator organisms:</strong></p>
+<ul>
+<li><em>Escherichia coli</em> presence indicates fecal contamination and suggests presence of pathogenic bacteria and viruses.</li>
+<li>Coliforms (broader group) include <em>E. coli</em> and related species; presence indicates recent or remote contamination.</li>
+</ul>
+<p><strong>Improvised testing (no equipment):</strong></p>
+<ul>
+<li>Boil all water used for drinking and cooking.</li>
+<li>Use 0.1 micrometer ceramic filters if available; clean by back-flushing or boiling.</li>
+<li>UV exposure (direct sunlight for 6 hours in clear bottles, or dedicated UV lamps) inactivates bacteria and viruses but does not remove organic matter.</li>
+</ul>
+<div class="warning">
+<p><strong>Multiple barriers:</strong> Combine filtration (removes protozoa, some bacteria), chemical treatment (iodine kills bacteria/viruses, bleach is broad-spectrum), and boiling (final safety step) for maximum safety. A single method alone is insufficient for water of unknown origin.</p>
+</div>
+</section>
+<h2 id="fermentation-microbiology">Fermentation Microbiology</h2>
+<section id="fermentation">
+<p>Fermentation leverages beneficial microbes to preserve food, enhance nutrition, and produce flavor.</p>
+<h3>Lactic Acid Fermentation</h3>
+<p><em>Lactobacillus</em> species produce lactic acid, lowering pH below 3.8 and inhibiting pathogens.</p>
+<p><strong>Mechanism:</strong></p>
+<ol>
+<li>Salt (typically 2–5% by weight) creates osmotic stress, inhibiting pathogens but allowing LAB to thrive.</li>
+<li>LAB metabolize sugars to lactic acid, dropping pH over 1–3 weeks.</li>
+<li>Low pH preserves the product and inhibits spoilage.</li>
+</ol>
+<p><strong>Common ferments:</strong></p>
+<ul>
+<li>Sauerkraut (cabbage + 2% salt)</li>
+<li>Kimchi (vegetables + 3% salt + spices)</li>
+<li>Pickles (cucumbers + 5% brine)</li>
+<li>Miso (soybeans + salt + koji mold, fermented 6–12 months)</li>
+</ul>
+<p><strong>Conditions:</strong></p>
+<ul>
+<li>Temperature: 15–25°C ideal; slower at cooler temps, risk of contamination if too warm.</li>
+<li>Anaerobic: Use weighted lids or airlocks to prevent mold.</li>
+<li>Duration: 1–4 weeks for vegetables, months for miso/tempeh.</li>
+</ul>
+<h3>Alcoholic Fermentation</h3>
+<p><em>Saccharomyces cerevisiae</em> ferments sugars to ethanol and CO₂.</p>
+<p><strong>Mechanism:</strong></p>
+<ol>
+<li>Yeast consumes glucose under anaerobic conditions.</li>
+<li>Produces ethanol (~12–15% ABV as yeast tolerance limit) and CO₂.</li>
+<li>High alcohol inhibits most bacteria, preserving the product.</li>
+</ol>
+<p><strong>Applications:</strong></p>
+<ul>
+<li>Wine (fruit juice + yeast, 2–4 weeks)</li>
+<li>Beer (grain mash + hops + yeast, 2–4 weeks)</li>
+<li>Cider (apple juice + yeast, 3–6 weeks)</li>
+<li>Distilled spirits (fermented liquid + heating)</li>
+</ul>
+<p><strong>Starter culture:</strong> Dried yeast, whey, or a previous successful ferment inoculates a new batch. Ensure the inoculum is from a known safe source.</p>
+<div class="info-box">
+<p><strong>Fermentation as preservation:</strong> Products like sauerkraut, kimchi, and fermented beverages are shelf-stable without refrigeration if properly sealed, and improve in flavor over months. Fermentation also increases bioavailable nutrients (B vitamins, amino acids) and population of beneficial bacteria.</p>
+</div>
+</section>
+<h2 id="food-safety-and-spoilage-microbiology">Food Safety and Spoilage Microbiology</h2>
+<section id="food-safety">
+<h3>Common Foodborne Pathogens and Prevention</h3>
+<table>
+<thead>
+<tr>
+<th>Pathogen</th>
+<th>Source</th>
+<th>Symptoms</th>
+<th>Prevention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Salmonella</em></td>
+<td>Poultry, eggs, dairy</td>
+<td>Diarrhea, fever (1–3 days)</td>
+<td>Cook to safe temp; store cold</td>
+</tr>
+<tr>
+<td><em>Clostridium botulinum</em></td>
+<td>Improperly canned foods</td>
+<td>Paralysis, respiratory failure</td>
+<td>Pressure-can low-acid foods</td>
+</tr>
+<tr>
+<td><em>Listeria monocytogenes</em></td>
+<td>Soft cheeses, deli meats</td>
+<td>Fever, neurological symptoms</td>
+<td>Avoid high-risk foods when pregnant</td>
+</tr>
+<tr>
+<td><em>Campylobacter</em></td>
+<td>Poultry, contaminated water</td>
+<td>Diarrhea, cramping</td>
+<td>Cook poultry thoroughly; treat water</td>
+</tr>
+<tr>
+<td><em>Norovirus</em></td>
+<td>Shellfish, contaminated water</td>
+<td>Acute vomiting, diarrhea</td>
+<td>Good hygiene; cook shellfish</td>
+</tr>
+</tbody>
+</table>
+<h3>Spoilage vs. Pathogenic Microbes</h3>
+<p><strong>Spoilage bacteria</strong> (<em>Lactobacillus, Bacillus</em>) produce off-flavors and odors but usually are not pathogenic to healthy individuals. They indicate decay but not necessarily immediate danger.</p>
+<p><strong>Pathogenic bacteria</strong> (<em>Salmonella, Listeria</em>) often grow without visible spoilage, making them dangerous. Rely on proper cooking, canning, and refrigeration rather than sensory assessment.</p>
+<h3>Safe Food Handling</h3>
+<ol>
+<li><strong>Cook:</strong> Heat food to safe internal temperatures (74°C for poultry, 63°C for ground meat, 71°C for fish).</li>
+<li><strong>Cool:</strong> Refrigerate cooked food within 2 hours; store at &lt;4°C.</li>
+<li><strong>Separate:</strong> Use different cutting boards for raw meat and vegetables to prevent cross-contamination.</li>
+<li><strong>Store:</strong> High water activity (&gt;0.95) promotes bacterial growth; preserve via canning, drying, salting, fermentation, or freezing.</li>
+</ol>
+</section>
+<h2 id="soil-microbiology-and-agriculture">Soil Microbiology and Agriculture</h2>
+<section id="soil-microbiology">
+<p>Soil teems with microorganisms—bacteria, fungi, protozoa, nematodes—that govern nutrient cycling, plant health, and carbon sequestration.</p>
+<h3>Key Soil Processes</h3>
+<p><strong>Nitrogen fixation:</strong> Cyanobacteria and <em>Rhizobium</em> bacteria in legume root nodules convert atmospheric nitrogen (N₂) to bioavailable ammonia (NH₃). Grow legumes (beans, clover, alfalfa) and leave residue to enrich soil.</p>
+<p><strong>Decomposition:</strong> Fungi and bacteria break down dead plant/animal matter, releasing nitrogen, phosphorus, and potassium. A healthy soil with organic matter supports robust microbial populations.</p>
+<p><strong>Mycorrhizal networks:</strong> Fungal partners colonize plant roots, extending the plant's nutrient uptake in exchange for plant sugars. Avoid fungicides and excessive tilling, which disrupt these networks.</p>
+<h3>Building Soil Health</h3>
+<ul>
+<li><strong>Add compost:</strong> Microbe-rich compost inoculates soil with beneficial organisms.</li>
+<li><strong>Minimize tillage:</strong> Preserve soil structure and fungal networks.</li>
+<li><strong>Grow cover crops:</strong> Legumes (clover, vetch) and grasses (rye) add organic matter and fix nitrogen.</li>
+<li><strong>Mulch:</strong> Organic mulch (straw, leaves) feeds decomposers and conserves moisture.</li>
+<li><strong>Avoid pesticides/fungicides:</strong> Broad-spectrum chemicals eliminate beneficial microbes; use targeted approaches if needed.</li>
+</ul>
+<div class="tip">
+<p><strong>Quick compost:</strong> Layer green materials (grass, food scraps) and brown materials (straw, leaves) in a bin. Maintain moisture and turn weekly; decomposition completes in 4–8 weeks with active microbial colonization.</p>
+</div>
+</section>
+<h2 id="antibiotic-resistance-and-long-term-health">Antibiotic Resistance and Long-Term Health</h2>
+<section id="antibiotic-resistance">
+<p>Antibiotic resistance emerges when bacteria survive antibiotic exposure and pass resistance genes to offspring. In a scenario with limited pharmaceutical supply, minimizing resistance is critical.</p>
+<h3>Resistance Mechanisms</h3>
+<ul>
+<li><strong>Enzymatic degradation:</strong> Bacteria produce enzymes (e.g., beta-lactamase) that break down antibiotics.</li>
+<li><strong>Efflux pumps:</strong> Membrane transporters expel the antibiotic faster than it accumulates.</li>
+<li><strong>Target alteration:</strong> Mutations change the antibiotic's binding site, reducing efficacy.</li>
+</ul>
+<h3>Prevention Strategies</h3>
+<ol>
+<li><strong>Use antibiotics sparingly:</strong> Reserve for serious infections with clear bacterial etiology (not viral colds).</li>
+<li><strong>Complete the course:</strong> Even if symptoms resolve, finish prescribed antibiotics to prevent resistance selection.</li>
+<li><strong>Source control:</strong> Drain abscesses, remove foreign bodies, clean wounds—this reduces bacterial burden more than antibiotics alone.</li>
+<li><strong>Sanitation:</strong> Prevent infection through good hygiene, water treatment, and wound care.</li>
+<li><strong>Local application:</strong> Use antibiotic salves (neomycin, bacitracin) on minor wounds to minimize systemic use.</li>
+</ol>
+<div class="warning">
+<p><strong>Antibiotic salves expire:</strong> Homemade or salvaged antibiotics lose potency over time. Prioritize prevention and sanitation over reliance on old medications.</p>
+</div>
+</section>
+<h2 id="probiotic-foods-and-gut-health">Probiotic Foods and Gut Health</h2>
+<section id="probiotics">
+<p>Probiotic foods contain live beneficial bacteria, primarily <em>Lactobacillus</em> and <em>Bifidobacterium</em> species, which colonize the gut and support digestion, immune function, and nutrient absorption.</p>
+<h3>Common Probiotic Foods</h3>
+<ul>
+<li><strong>Sauerkraut and kimchi:</strong> Fermented vegetables rich in LAB; stable at room temperature if kept anaerobic.</li>
+<li><strong>Yogurt and kefir:</strong> Fermented milk; requires dairy and starter culture or prior batch.</li>
+<li><strong>Miso paste:</strong> Fermented soybean; adds umami flavor and probiotics to soups.</li>
+<li><strong>Tempeh:</strong> Fermented soybean cake; higher protein than tofu, easier to digest.</li>
+<li><strong>Kombucha:</strong> Fermented tea; requires a SCOBY (symbiotic culture of bacteria and yeast) and careful technique to avoid contamination.</li>
+</ul>
+<h3>Cultivation and Storage</h3>
+<ul>
+<li><strong>Maintain diversity:</strong> Consume multiple fermented foods to ensure varied beneficial bacteria strains.</li>
+<li><strong>Store cool if possible:</strong> Refrigeration slows fermentation but extends shelf life; room-temperature storage is acceptable if the product is properly sealed and anaerobic.</li>
+<li><strong>Avoid heat:</strong> Cooking fermented foods kills the bacteria; consume raw or add after cooking.</li>
+</ul>
+<div class="info-box">
+<p><strong>Gut dysbiosis recovery:</strong> In scenarios with limited food variety, fermented foods help restore a healthy microbiota after antibiotic use or diarrheal disease. Offer gradual introduction to avoid digestive upset.</p>
+</div>
+</section>
+<h2 id="summary-and-practical-microbiology-checklist">Summary and Practical Microbiology Checklist</h2>
+<section id="summary">
+<p>Understanding microbiology in survival contexts means recognizing that microbes are both allies (fermentation, soil health, probiotics) and adversaries (foodborne pathogens, waterborne disease).</p>
+<p><strong>Key priorities:</strong></p>
+<ol>
+<li><strong>Water safety:</strong> Boil or filter all water from unknown sources; combine multiple methods (filtration + disinfection + boiling).</li>
+<li><strong>Food preservation:</strong> Use fermentation, canning, drying, salting, or freezing to inhibit pathogenic growth.</li>
+<li><strong>Sanitation:</strong> Maintain clean water supply, proper hand hygiene, and environmental disinfection to prevent disease transmission.</li>
+<li><strong>Soil health:</strong> Build microbial populations through compost, cover crops, and reduced chemical input; supports long-term food security.</li>
+<li><strong>Observation:</strong> Use simple tools (water-drop lens, staining, culture media) to identify and monitor microbes when possible.</li>
+<li><strong>Antibiotic stewardship:</strong> Reserve antibiotics for serious infections; prioritize prevention.</li>
+</ol>
+<p>Practical microbiology is fundamentally about applying knowledge of invisible organisms to solve survival challenges: sourcing safe food, producing preserved foods, maintaining health, and building fertile soil.</p>
+</section>
+<p><svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" aria-label="Microbial Cell Types and Simple Microscope Diagram">
+  <defs>
+    <style>
+      :root {
+        --bg: #1a2e1a;
+        --text: #f5f0e8;
+        --accent: #d4a574;
+        --surface: #2d2416;
+        --border: #4a6741;
+      }
+      .text-label { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 500; }
+      .text-small { font-family: system-ui, -apple-system, sans-serif; font-size: 12px; }
+      .text-title { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: bold; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="700" fill="var(--bg)"/>
+
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" class="text-title" fill="var(--accent)">Microbial Cell Types &amp; Simple Microscope</text>
+
+  <!-- LEFT SECTION: BACTERIAL CELLS -->
+  <text x="120" y="80" class="text-label" fill="var(--accent)">Bacterial Cells</text>
+
+  <!-- Coccus (Sphere) -->
+  <g>
+    <circle cx="80" cy="180" r="35" fill="none" stroke="var(--accent)" stroke-width="2"/>
+    <circle cx="80" cy="180" r="28" fill="var(--surface)" opacity="0.6"/>
+    <circle cx="80" cy="180" r="25" fill="var(--border)" opacity="0.4"/>
+    <line x1="80" y1="210" x2="80" y2="250" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <text x="80" y="270" text-anchor="middle" class="text-small" fill="var(--text)">Coccus</text>
+  </g>
+
+  <!-- Bacillus (Rod) -->
+  <g>
+    <rect x="160" y="150" width="60" height="35" rx="8" fill="var(--surface)" opacity="0.6" stroke="var(--accent)" stroke-width="2"/>
+    <rect x="165" y="155" width="50" height="25" rx="6" fill="var(--border)" opacity="0.4"/>
+    <line x1="190" y1="210" x2="190" y2="250" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <text x="190" y="270" text-anchor="middle" class="text-small" fill="var(--text)">Bacillus</text>
+  </g>
+
+  <!-- Spirillum (Spiral) -->
+  <g>
+    <path d="M 280 150 Q 310 150 310 180 Q 310 210 280 210" fill="none" stroke="var(--accent)" stroke-width="2"/>
+    <path d="M 285 160 Q 305 160 305 180 Q 305 200 285 200" fill="var(--surface)" opacity="0.6" stroke="var(--border)" stroke-width="1"/>
+    <line x1="295" y1="220" x2="295" y2="250" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <text x="295" y="270" text-anchor="middle" class="text-small" fill="var(--text)">Spirillum</text>
+  </g>
+
+  <!-- Vibrio (Comma) -->
+  <g>
+    <path d="M 370 160 Q 390 160 395 185 Q 393 210 370 210" fill="var(--surface)" opacity="0.6" stroke="var(--accent)" stroke-width="2" rx="8"/>
+    <path d="M 375 168 Q 388 168 392 185 Q 390 202 375 202" fill="var(--border)" opacity="0.4"/>
+    <line x1="395" y1="220" x2="395" y2="250" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <text x="395" y="270" text-anchor="middle" class="text-small" fill="var(--text)">Vibrio</text>
+  </g>
+
+  <!-- MIDDLE-LEFT SECTION: EUKARYOTIC CELLS -->
+  <text x="120" y="330" class="text-label" fill="var(--accent)">Eukaryotic Microbes</text>
+
+  <!-- Fungal Spore -->
+  <g>
+    <circle cx="80" cy="420" r="20" fill="var(--surface)" opacity="0.6" stroke="var(--accent)" stroke-width="2"/>
+    <circle cx="80" cy="420" r="16" fill="var(--border)" opacity="0.4"/>
+    <circle cx="75" cy="416" r="3" fill="var(--accent)" opacity="0.5"/>
+    <circle cx="85" cy="420" r="3" fill="var(--accent)" opacity="0.5"/>
+    <line x1="80" y1="450" x2="80" y2="490" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <text x="80" y="510" text-anchor="middle" class="text-small" fill="var(--text)">Fungal Spore</text>
+  </g>
+
+  <!-- Protozoan (larger, with nucleus) -->
+  <g>
+    <circle cx="200" cy="420" r="32" fill="var(--surface)" opacity="0.6" stroke="var(--accent)" stroke-width="2"/>
+    <circle cx="200" cy="420" r="28" fill="var(--border)" opacity="0.3"/>
+    <circle cx="200" cy="420" r="12" fill="var(--accent)" opacity="0.6"/>
+    <circle cx="200" cy="420" r="8" fill="var(--surface)"/>
+    <!-- Cilia -->
+    <line x1="168" y1="400" x2="155" y2="385" stroke="var(--accent)" stroke-width="1.5" opacity="0.7"/>
+    <line x1="165" y1="418" x2="150" y2="420" stroke="var(--accent)" stroke-width="1.5" opacity="0.7"/>
+    <line x1="168" y1="436" x2="155" y2="455" stroke="var(--accent)" stroke-width="1.5" opacity="0.7"/>
+    <line x1="200" y1="454" x2="200" y2="490" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <text x="200" y="510" text-anchor="middle" class="text-small" fill="var(--text)">Protozoan</text>
+  </g>
+
+  <!-- Yeast cell (budding) -->
+  <g>
+    <circle cx="320" cy="400" r="28" fill="var(--surface)" opacity="0.6" stroke="var(--accent)" stroke-width="2"/>
+    <circle cx="320" cy="400" r="24" fill="var(--border)" opacity="0.3"/>
+    <circle cx="320" cy="400" r="10" fill="var(--accent)" opacity="0.6"/>
+    <!-- Bud -->
+    <circle cx="348" cy="390" r="16" fill="var(--surface)" opacity="0.6" stroke="var(--accent)" stroke-width="1.5"/>
+    <circle cx="348" cy="390" r="12" fill="var(--border)" opacity="0.3"/>
+    <line x1="320" y1="430" x2="320" y2="490" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <text x="320" y="510" text-anchor="middle" class="text-small" fill="var(--text)">Yeast</text>
+  </g>
+
+  <!-- RIGHT SECTION: SIMPLE MICROSCOPE -->
+  <text x="650" y="80" class="text-label" fill="var(--accent)">Improvised Microscope</text>
+
+  <!-- Eyepiece (ocular lens) -->
+  <g>
+    <circle cx="650" cy="130" r="18" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+    <circle cx="650" cy="130" r="14" fill="var(--surface)" opacity="0.4"/>
+    <line x1="650" y1="115" x2="650" y2="95" stroke="var(--accent)" stroke-width="3"/>
+    <text x="690" y="135" class="text-small" fill="var(--text)">Eyepiece</text>
+  </g>
+
+  <!-- Tube -->
+  <rect x="640" y="150" width="20" height="120" fill="none" stroke="var(--accent)" stroke-width="3" rx="3"/>
+  <line x1="635" y1="160" x2="625" y2="170" stroke="var(--border)" stroke-width="2"/>
+  <line x1="665" y1="160" x2="675" y2="170" stroke="var(--border)" stroke-width="2"/>
+
+  <!-- Objective lens -->
+  <g>
+    <circle cx="650" cy="280" r="16" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+    <circle cx="650" cy="280" r="12" fill="var(--surface)" opacity="0.4"/>
+    <line x1="650" y1="298" x2="650" y2="320" stroke="var(--accent)" stroke-width="2"/>
+    <text x="690" y="285" class="text-small" fill="var(--text)">Objective</text>
+  </g>
+
+  <!-- Stage -->
+  <g>
+    <rect x="600" y="320" width="100" height="15" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+    <rect x="615" y="325" width="70" height="5" fill="var(--accent)" opacity="0.3"/>
+    <text x="625" y="360" class="text-small" fill="var(--text)">Glass Slide</text>
+  </g>
+
+  <!-- Specimen (bacterial cells on slide) -->
+  <g>
+    <circle cx="630" cy="332" r="4" fill="var(--accent)" opacity="0.7"/>
+    <circle cx="645" cy="330" r="3.5" fill="var(--accent)" opacity="0.7"/>
+    <circle cx="655" cy="333" r="3" fill="var(--accent)" opacity="0.7"/>
+    <circle cx="665" cy="331" r="3.5" fill="var(--accent)" opacity="0.7"/>
+  </g>
+
+  <!-- Focus knob -->
+  <g>
+    <circle cx="585" cy="280" r="12" fill="none" stroke="var(--accent)" stroke-width="2"/>
+    <circle cx="585" cy="280" r="8" fill="var(--surface)" opacity="0.4"/>
+    <line x1="585" y1="273" x2="585" y2="265" stroke="var(--accent)" stroke-width="2"/>
+    <text x="550" y="285" class="text-small" fill="var(--text)">Focus</text>
+  </g>
+
+  <!-- Base/Arm -->
+  <path d="M 650 335 L 650 380 Q 650 390 670 390 L 740 390" fill="none" stroke="var(--accent)" stroke-width="3"/>
+  <ellipse cx="705" cy="400" rx="50" ry="15" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+  <text x="705" y="475" text-anchor="middle" class="text-small" fill="var(--text)">Base (wood/salvaged material)</text>
+
+  <!-- Light source indicator -->
+  <g>
+    <circle cx="760" cy="360" r="10" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="780" y="365" class="text-small" fill="var(--text)">Light source</text>
+    <text x="780" y="380" class="text-small" fill="var(--border)">(candle/mirror/sunlight)</text>
+  </g>
+
+  <!-- BOTTOM SECTION: KEY FACTS -->
+  <text x="500" y="580" text-anchor="middle" class="text-label" fill="var(--accent)">Key Survival Microbiology Facts</text>
+
+  <!-- Fact boxes -->
+  <rect x="50" y="610" width="200" height="70" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" rx="4"/>
+  <text x="60" y="630" class="text-small" fill="var(--text)" font-weight="bold">Water Safety</text>
+  <text x="60" y="650" class="text-small" fill="var(--text)">Boil 1 min at sea level, 3 min at altitude. Combine</text>
+  <text x="60" y="665" class="text-small" fill="var(--text)">filtration + disinfection for max safety.</text>
+
+  <rect x="270" y="610" width="200" height="70" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" rx="4"/>
+  <text x="280" y="630" class="text-small" fill="var(--text)" font-weight="bold">Food Preservation</text>
+  <text x="280" y="650" class="text-small" fill="var(--text)">Fermentation, canning, drying, salting inhibit</text>
+  <text x="280" y="665" class="text-small" fill="var(--text)">pathogenic growth via pH, Aw, or anaerobic.</text>
+
+  <rect x="490" y="610" width="200" height="70" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" rx="4"/>
+  <text x="500" y="630" class="text-small" fill="var(--text)" font-weight="bold">Probiotics</text>
+  <text x="500" y="650" class="text-small" fill="var(--text)">Sauerkraut, yogurt, miso, tempeh support</text>
+  <text x="500" y="665" class="text-small" fill="var(--text)">gut health. Ferment at 15–25°C, keep anaerobic.</text>
+
+  <rect x="710" y="610" width="240" height="70" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" rx="4"/>
+  <text x="720" y="630" class="text-small" fill="var(--text)" font-weight="bold">Hand Hygiene &amp; Sanitation</text>
+  <text x="720" y="650" class="text-small" fill="var(--text)">Wash 20 sec with soap/water, or use 70% ethanol.</text>
+  <text x="720" y="665" class="text-small" fill="var(--text)">Disinfect surfaces with bleach (0.5%), iodine (2%).</text>
+</svg>
+</p>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="microbiology-basics.html">Microbiology Fundamentals</a>
+<a href="fermentation-science-applied.html">Fermentation Science (Applied)</a>
+<a href="water-chemistry-treatment.html">Water Chemistry &amp; Treatment</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

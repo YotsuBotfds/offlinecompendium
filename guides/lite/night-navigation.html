@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/night-navigation.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Night Navigation</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Immediate Survival</span> ›
+<span>Night Navigation</span>
+</div>
+
+
+<h1>Night Navigation</h1>
+<p class="subtitle">Star identification for both hemispheres, Polaris and Southern Cross navigation, moon phase direction finding, shadow stick methods, terrain reading, and no-tech orientation techniques.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~13 min</span>
+<span>Updated: 2026-02-18</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#polaris-navigation">Navigation by Polaris (North Star)</a></li>
+<li><a href="#southern-cross-navigation">Navigation by the Southern Cross (Crux)</a></li>
+<li><a href="#moon-navigation">Moon Phase Direction Finding</a></li>
+<li><a href="#shadow-stick-technique">Shadow Stick Direction at Dusk</a></li>
+<li><a href="#moon-navigation-expanded">Moon Navigation (Expanded)</a></li>
+<li><a href="#orions-belt-navigation">Orion's Belt and Seasonal Navigation</a></li>
+<li><a href="#light-discipline-night-vision">Light Discipline and Night Vision Preservation</a></li>
+<li><a href="#terrain-association-techniques">Terrain Association at Night</a></li>
+<li><a href="#terrain-silhouette-reading">Terrain Silhouette Reading and Landmark Navigation</a></li>
+<li><a href="#comprehensive-orientation">Comprehensive Night Orientation System</a></li>
+<li><a href="#no-tech-compass-alternatives">No-Tech Compass Alternatives</a></li>
+<li><a href="#navigation-reference-diagram">Navigation References</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Night navigation without instruments relies on celestial and terrestrial landmarks that remain visible in darkness. Unlike daytime navigation where the sun provides a clear reference, night travel requires learning constellation patterns, understanding celestial motion, and reading landscape features by starlight. This guide covers navigating by the North Star (Polaris), the Southern Cross (Crux), lunar cycles, shadow sticks, and terrain silhouettes—techniques used by ancient mariners and desert travelers for millennia.</p>
+<p>The key advantage of night navigation is that stars are visible on clear nights anywhere on Earth, making celestial navigation reliable in wilderness settings where compasses are unavailable or unreliable (near magnetic anomalies or mineral deposits). Combined with map reading and terrain awareness, night navigation provides robust orientation even in complete darkness.</p>
+</section>
+<section id="polaris-navigation">
+<h2>Navigation by Polaris (North Star)</h2>
+<p>In the Northern Hemisphere, Polaris (also called the North Star or Pole Star) sits nearly directly above the North Celestial Pole. This makes it the most reliable fixed reference point for nighttime navigation.</p>
+<h3>Locating Polaris</h3>
+<p>Polaris is not the brightest star in the night sky—it's moderately bright, making it easy to spot once you know where to look. The most reliable method is finding it through the &quot;Big Dipper&quot; asterism (also called the Plough in some regions).</p>
+<p><strong>The Big Dipper method</strong>:</p>
+<ol>
+<li>
+<p><strong>Locate the Big Dipper constellation</strong>, which resembles a large ladle or spoon in the northern sky. It's composed of seven bright stars that form a distinctive shape: a rectangular bowl with a handle extending downward.</p>
+</li>
+<li>
+<p><strong>Find the two stars that form the outer edge of the bowl</strong> (the ones farthest from the handle). These are called the &quot;pointer stars.&quot;</p>
+</li>
+<li>
+<p><strong>Draw an imaginary line through these two pointer stars and extend it outward about five times the distance between them</strong>. This line points directly at Polaris, which sits at the extension.</p>
+</li>
+<li>
+<p><strong>Polaris appears to hover near a point in the sky that never moves</strong>, unlike all other stars, which appear to rotate around it nightly.</p>
+</li>
+</ol>
+<p>Once located, Polaris provides a constant true north reference. It remains visible throughout the year from any location in the Northern Hemisphere.</p>
+<h3>Using Polaris for Direction</h3>
+<p><strong>True north</strong>: Polaris indicates true north (not magnetic north, which varies by location). Standing with Polaris directly above you, you're facing true north. South is directly behind, east is to your left, and west is to your right.</p>
+<p><strong>Latitude estimation</strong>: Polaris's altitude angle above the horizon equals your latitude in degrees. If Polaris is 10 degrees above the horizon, you're at 10°N latitude. This allows rough position estimation without instruments—measure the angle using your hand: a closed fist at arm's length spans about 10 degrees.</p>
+<p><strong>Seasonal changes</strong>: The Big Dipper rotates around Polaris throughout the year. In summer, the handle points upward; in autumn, it points leftward; in winter, it points downward; in spring, it points rightward. Knowing the season helps you quickly identify the Big Dipper's position.</p>
+<h3>Backup Constellations for Locating Polaris</h3>
+<p>If the Big Dipper is below the horizon or obscured, use <strong>Cassiopeia</strong>, a W-shaped constellation opposite the Big Dipper across Polaris. Cassiopeia and the Big Dipper circle Polaris nightly—when one is low, the other is high, ensuring at least one is visible most nights.</p>
+</section>
+<section id="southern-cross-navigation">
+<h2>Navigation by the Southern Cross (Crux)</h2>
+<p>In the Southern Hemisphere, the Southern Cross (Crux) constellation serves the same navigational purpose as Polaris in the north. However, Crux doesn't mark true south directly—additional steps are required.</p>
+<h3>Locating the Southern Cross</h3>
+<p>The Southern Cross consists of four bright stars arranged in a cross or diamond shape. It's smaller than the Northern Hemisphere's Big Dipper and requires darker skies to observe clearly—light pollution can make it difficult to spot in urban areas.</p>
+<p><strong>Identifying the constellation</strong>:</p>
+<ol>
+<li>
+<p><strong>Look for four bright stars forming a lopsided cross</strong>. The Southern Cross is the smallest constellation recognized by modern astronomy, making it distinctive once you identify it.</p>
+</li>
+<li>
+<p><strong>The constellation is always visible from the Southern Hemisphere</strong> and rotates around the South Celestial Pole throughout the year.</p>
+</li>
+<li>
+<p><strong>Distinguish it from the False Cross</strong> (a nearby asterism), which is larger and less distinct. The true Southern Cross has four clearly bright stars; the False Cross is more diffuse.</p>
+</li>
+</ol>
+<h3>Determining South Using the Southern Cross</h3>
+<p>Crux itself doesn't sit directly over the South Pole, so you must construct a reference line:</p>
+<ol>
+<li>
+<p><strong>Identify the two stars that form the longer axis of the cross</strong> (the vertical line when the cross is upright). These are called the major stars of the cross.</p>
+</li>
+<li>
+<p><strong>From the brightest star (Acrux, at the bottom of the cross), draw an imaginary line extending downward through the cross</strong> about four and a half times the length of the longer axis.</p>
+</li>
+<li>
+<p><strong>From this point, drop a vertical line straight down to the horizon</strong>. This is approximately true south.</p>
+</li>
+</ol>
+<p>Alternatively, use the <strong>Pointer Stars</strong> (two bright stars to the right of the Southern Cross, called Centauri Alpha and Beta). Draw a line between these two stars, bisect that line, and from the midpoint draw a perpendicular line downward to the horizon. This also points approximately south.</p>
+<h3>Latitude Estimation in the Southern Hemisphere</h3>
+<p>The altitude of the Southern Cross's center point above the horizon roughly equals your latitude south of the equator. A cross sitting 30 degrees above the horizon indicates approximately 30°S latitude.</p>
+</section>
+<section id="moon-navigation">
+<h2>Moon Phase Direction Finding</h2>
+<p>The moon's position and phase provide directional references, especially on nights when stars are obscured.</p>
+<h3>Moon Phase and Cardinal Directions</h3>
+<p><strong>Lunar phase basics</strong>:</p>
+<ul>
+<li><strong>New Moon</strong>: Not visible; occurs when the moon is between Earth and the Sun</li>
+<li><strong>Waxing Crescent</strong>: Thin, bright sliver visible in the western sky just after sunset</li>
+<li><strong>First Quarter</strong>: Half-lit, visible in the southern sky (Northern Hemisphere) or northern sky (Southern Hemisphere) at sunset</li>
+<li><strong>Waxing Gibbous</strong>: More than half-lit, rising after sunset, highest in the sky around midnight</li>
+<li><strong>Full Moon</strong>: Completely illuminated, rising at sunset, highest at midnight, setting at sunrise</li>
+<li><strong>Waning Gibbous</strong>: More than half-lit, rising after moonrise at midnight, visible in the pre-dawn eastern sky</li>
+<li><strong>Last Quarter</strong>: Half-lit, rising around midnight, visible in the eastern sky</li>
+<li><strong>Waning Crescent</strong>: Thin sliver visible in the eastern sky before dawn</li>
+</ul>
+<h3>Directional Rules</h3>
+<div class="info-box">
+<p><strong>Northern Hemisphere rule</strong>: If the moon is visible, imagine a line from the moon to the horizon. In the Northern Hemisphere, the sun is south of this line, so south is generally in that direction. More precisely: at sunset, a waxing (growing) moon is south; a waning (shrinking) moon is north of due south.</p>
+<p><strong>Southern Hemisphere rule</strong>: The opposite applies—a waxing moon is north of the observer.</p>
+</div>
+<p><strong>Crescent moon compass</strong>: The crescent (curved part) of the moon points toward the sun. The sun is always south in the Northern Hemisphere (roughly) and always north in the Southern Hemisphere. The point of the crescent tips toward this direction.</p>
+<h3>Timing and Moon Rise</h3>
+<p>The moon rises roughly 50 minutes later each night due to its orbit around Earth. Knowing the date and approximate moon phase allows you to estimate when the moon will rise and where—providing a time reference and directional confirmation.</p>
+</section>
+<section id="shadow-stick-technique">
+<h2>Shadow Stick Direction at Dusk</h2>
+<p>The shadow stick (or sun staff) method provides cardinal directions during twilight hours, when the sun is below the horizon but the sky is still illuminated. This method bridges daytime solar navigation and nighttime star navigation.</p>
+<h3>Shadow Stick Setup (Complete Procedure)</h3>
+<ol>
+<li>
+<p><strong>Plant an upright stick (any length, 18 inches or taller) firmly in level ground</strong> where you can see its shadow clearly. Use a vertical reference (check with plumb line or test with water level if available). The stick must be truly vertical for accuracy.</p>
+</li>
+<li>
+<p><strong>Timing: Begin 30–45 minutes before sunset</strong>, when the sun is still 10–15 degrees above the horizon and casts long, easily visible shadows.</p>
+</li>
+<li>
+<p><strong>Mark the shadow tip precisely</strong>: Using a stone, chalk, or scratch mark, mark where the shadow tip touches the ground. Be exact—this is your west reference point.</p>
+</li>
+<li>
+<p><strong>Wait 5–10 minutes</strong> (longer waits improve accuracy, but 5–10 minutes is practical).</p>
+</li>
+<li>
+<p><strong>Mark the shadow tip again</strong> at the new location. The shadow will have moved 5–10 feet depending on sun height. This second mark is your east reference point.</p>
+</li>
+<li>
+<p><strong>Draw a line connecting the two marks</strong>: This line runs east-west. The first mark is west; the second (more recent) mark is east. Accuracy improves with longer observation periods—a 15-minute observation yields a line accurate to within 2–3 degrees of true east-west.</p>
+</li>
+<li>
+<p><strong>Find north and south</strong>: Stand on the line with the first mark (west) to your right. Draw a perpendicular line through the marks pointing directly toward the stick. In the Northern Hemisphere, this direction is north; south is the opposite direction. In the Southern Hemisphere, reverse this.</p>
+</li>
+</ol>
+<h3>Why This Works</h3>
+<p>The sun moves 15 degrees per hour across the sky (360 degrees in 24 hours). As the sun moves west, shadows move east. By marking two positions, you create a precise east-west reference. The perpendicular to this line points north-south.</p>
+<h3>Extended Observation into Darkness</h3>
+<p>On very clear twilight evenings, you can continue using this shadow stick as your night navigation reference:</p>
+<ol>
+<li>
+<p><strong>As twilight deepens</strong>, the shadow becomes harder to see, but the marked line remains on the ground—still visible for 20–30 minutes after sunset depending on sky clarity.</p>
+</li>
+<li>
+<p><strong>Use the marked east-west line as a reference</strong> for identifying Polaris or the Southern Cross. Once you locate a star within 20–30 degrees of the north/south direction indicated by your perpendicular, confirm it's the correct star by checking its altitude and motion patterns.</p>
+</li>
+<li>
+<p><strong>Refine your direction estimate</strong> by using the shadow stick line as a calibration tool. This is especially valuable if clouds partially obscure stars—you have a ground reference that remains visible when celestial references fade.</p>
+</li>
+</ol>
+<h3>Accuracy Considerations</h3>
+<ul>
+<li><strong>Best performed near the equinoxes</strong> (March 21, September 21) when the sun moves true east-west</li>
+<li><strong>In summer/winter, shadows deviate slightly</strong> from true east-west, but the error is minor (within 5 degrees) for the twilight window</li>
+<li><strong>Level ground is essential</strong>—perform this on flat terrain, not slopes</li>
+<li><strong>Sunny vs. cloudy days</strong>: A clear, sunny day produces sharp shadow edges; partial clouds diffuse shadows, reducing accuracy</li>
+</ul>
+<h3>Nighttime Continuation</h3>
+<p>Once stars emerge:</p>
+<ol>
+<li><strong>Use the east-west line you marked</strong> to verify Polaris location (should be north of the line at night in Northern Hemisphere)</li>
+<li><strong>Cross-reference</strong>: If Polaris is not roughly north of your marked line, recheck your star identification</li>
+<li><strong>At least 30 minutes into darkness</strong>, you should have confirmed your cardinal directions via multiple methods (shadow stick east-west line + star identification)</li>
+</ol>
+</section>
+<section id="moon-navigation-expanded">
+<h2>Moon Navigation (Expanded)</h2>
+<p>The moon provides reliable directional references, especially on nights when stars are obscured by clouds or haze.</p>
+<h3>Moon Rise, Set, and Direction Rules</h3>
+<p><strong>Moon rise time:</strong> The moon rises approximately 50 minutes later each night due to its orbital motion. Knowing the current moon phase and the date, you can predict when and where the moon will rise.</p>
+<p><strong>Moon position in sky:</strong></p>
+<ul>
+<li>At moonrise, the moon is at the eastern horizon</li>
+<li>The moon transits the southern sky meridian (Northern Hemisphere) at its highest point—this is true south</li>
+<li>At moonset, the moon is at the western horizon</li>
+<li>Time of transit: approximately 6 hours after moonrise for First Quarter moon, 12 hours after moonrise for Full Moon</li>
+</ul>
+<h3>Cardinal Direction Determination by Moon Phase</h3>
+<div class="info-box">
+<p><strong>Northern Hemisphere Rule (Simple Method):</strong></p>
+<ul>
+<li><strong>Visualize a line from the moon to the horizon.</strong> The sun is always somewhere along the north-south meridian</li>
+<li><strong>Waxing (growing) moons:</strong> The moon is south of the sun during early evening, so south is generally in the direction between the moon and the southern horizon</li>
+<li><strong>Waning (shrinking) moons:</strong> The moon is north of the sun in the pre-dawn hours, so north is in the direction between the moon and the northern horizon</li>
+<li><strong>Full Moon:</strong> Rises due east at sunset, transits due south, sets due west—it simply marks your local meridian (true north-south line)</li>
+</ul>
+</div>
+<h3>Crescent Moon as a Compass</h3>
+<p>The crescent (curved part) of the moon points roughly toward the sun. This is an ancient navigation technique.</p>
+<ol>
+<li><strong>Locate the crescent shape</strong> of a visible waxing or waning moon</li>
+<li><strong>The points of the crescent &quot;aim&quot; toward the sun</strong>, even though the sun is below the horizon</li>
+<li><strong>In Northern Hemisphere:</strong> Since the sun is south, the crescent points roughly south</li>
+<li><strong>In Southern Hemisphere:</strong> The crescent points roughly north</li>
+<li><strong>This is accurate to within 10–15 degrees</strong> and works when stars are obscured but the moon is visible</li>
+</ol>
+<h3>Using Moon Brightness for Time Estimation</h3>
+<p>The moon's position in the sky helps estimate time:</p>
+<ul>
+<li><strong>Moon at eastern horizon:</strong> Moonrise (time varies by phase, but typically sunset for Full Moon, midnight for New Moon)</li>
+<li><strong>Moon at zenith (directly overhead):</strong> Roughly 3–6 hours after moonrise depending on phase</li>
+<li><strong>Moon at western horizon:</strong> Moonset (roughly 12 hours after moonrise for Full Moon)</li>
+</ul>
+<h3>Moon Phase Calendar</h3>
+<p>Without a calendar, you can estimate the current moon phase by observing:</p>
+<ol>
+<li><strong>Waxing moons</strong> (growing) appear in the western sky in early evening</li>
+<li><strong>Full Moon</strong> is highest in the sky at midnight</li>
+<li><strong>Waning moons</strong> (shrinking) appear in the eastern sky in the pre-dawn hours</li>
+<li><strong>The cycle repeats every 29.5 days</strong></li>
+</ol>
+<p>If you know the date of a recent Full Moon, you can estimate the current phase:</p>
+<ul>
+<li>Full Moon + 7–8 days = Waning Gibbous</li>
+<li>Full Moon + 14–15 days = Waning Crescent (visible in pre-dawn east)</li>
+<li>Full Moon + 22–23 days = Waxing Crescent (visible in post-sunset west)</li>
+</ul>
+</section>
+<section id="orions-belt-navigation">
+<h2>Orion's Belt and Seasonal Navigation</h2>
+<p>Orion is a distinctive constellation visible in winter months (Northern Hemisphere, November–March) near the equator. While it doesn't directly point to cardinal directions like Polaris or the Southern Cross, it provides an excellent directional reference and time marker.</p>
+<h3>Identifying Orion</h3>
+<p>Orion is one of the most recognizable constellations:</p>
+<ul>
+<li>Three bright stars in a line form <strong>Orion's Belt</strong></li>
+<li>A bright star above the belt is <strong>Betelgeuse</strong> (reddish)</li>
+<li>A bright star below the belt is <strong>Rigel</strong> (bluish-white)</li>
+<li>Fainter stars form the body/limbs</li>
+</ul>
+<h3>Using Orion for Direction</h3>
+<ol>
+<li><strong>Orion's Belt runs east-west</strong> at certain times during the evening (true angle depends on time and latitude, but the belt approaches horizontal in early evening)</li>
+<li><strong>At midnight</strong>, Orion transits the southern meridian, and the belt roughly runs east-west</li>
+<li><strong>Extend the line formed by the three belt stars</strong> to the western horizon—this points roughly west. Extend eastward to find east.</li>
+<li><strong>Using this east-west reference</strong>, determine north (perpendicular, roughly toward Polaris) and south</li>
+</ol>
+<h3>Seasonal Timing</h3>
+<ul>
+<li><strong>November–December:</strong> Orion rises in the east after sunset</li>
+<li><strong>January:</strong> Orion is highest in the southern sky at midnight</li>
+<li><strong>February–March:</strong> Orion sets in the west before dawn</li>
+<li><strong>April–October:</strong> Orion is not visible (below the horizon during darkness)</li>
+</ul>
+<h3>Combining with Polaris</h3>
+<p>For best accuracy in winter, use Orion's belt to establish east-west, then verify your north direction using Polaris. This combination creates a robust directional system.</p>
+</section>
+<section id="light-discipline-night-vision">
+<h2>Light Discipline and Night Vision Preservation</h2>
+<p>Maintaining your night vision is critical for safely navigating dark terrain.</p>
+<h3>How Night Vision Works</h3>
+<p>Your eyes adapt to darkness over 20–30 minutes as the retina's rod cells become more sensitive. This natural night vision provides sufficient light to navigate by starlight alone, but bright light destroys this adaptation in seconds.</p>
+<h3>Light Discipline Principles</h3>
+<ol>
+<li>
+<p><strong>Avoid white light sources</strong> (flashlights, fire) during critical navigation. Even brief exposure takes 20+ minutes to readapt.</p>
+</li>
+<li>
+<p><strong>Use red light if illumination is necessary</strong> — red wavelengths minimally disrupt night vision adaptation. Red headlamps or covered flashlights with red film preserve night vision better than white light.</p>
+</li>
+<li>
+<p><strong>Avoid looking directly at the moon</strong> or bright stars for extended periods — these can fatigue your eyes and temporarily reduce your night vision adaptation.</p>
+</li>
+<li>
+<p><strong>Use peripheral vision</strong> — the edge of your retina (with more rod cells) is more sensitive to dim light than your central vision. Looking slightly to the side of an object often reveals it more clearly in darkness.</p>
+</li>
+</ol>
+<h3>Practical Light Discipline</h3>
+<p><strong>During navigation:</strong></p>
+<ul>
+<li>Navigate by starlight alone if possible</li>
+<li>If you must use a light, keep it dim and covered with red film</li>
+<li>Turn off lights between navigation checks</li>
+<li>Use brief flashes (1–2 seconds) rather than continuous illumination</li>
+<li>Never shine light toward the sky or at other people's eyes</li>
+</ul>
+<p><strong>Camp setup:</strong></p>
+<ul>
+<li>Use a dim fire away from your navigation area</li>
+<li>If you need a light, position it to one side, not directly in your vision</li>
+<li>Consider a sheltered light source (inside a tent/shelter) so it doesn't disrupt outdoor night vision</li>
+</ul>
+<p><strong>Time for readaptation:</strong></p>
+<ul>
+<li>Initial adaptation (useful vision): 5–10 minutes</li>
+<li>Full adaptation: 20–30 minutes</li>
+<li>One brief white light exposure resets the process</li>
+</ul>
+</section>
+<section id="terrain-association-techniques">
+<h2>Terrain Association at Night</h2>
+<p>Beyond visual navigation, experienced night travelers use sound, smell, wind, and ground texture to maintain orientation.</p>
+<h3>Sound Navigation</h3>
+<p><strong>Water sounds:</strong></p>
+<ul>
+<li>Running streams/rivers create constant auditory landmarks</li>
+<li>Identify which direction water flows (generally downhill)</li>
+<li>Use water sound direction to confirm terrain knowledge</li>
+</ul>
+<p><strong>Wind patterns:</strong></p>
+<ul>
+<li>Certain terrain channels wind in predictable directions</li>
+<li>Valley floors funnel wind in one direction; ridges in another</li>
+<li>After 5–10 minutes of travel, wind direction can confirm you're still in the expected terrain</li>
+</ul>
+<p><strong>Wildlife sounds:</strong></p>
+<ul>
+<li>Owls, insects, and nocturnal animals often congregate near water</li>
+<li>Hearing patterns can confirm proximity to known landmarks</li>
+</ul>
+<h3>Smell Navigation</h3>
+<p>Deserts and scrublands have distinctive scents:</p>
+<ul>
+<li><strong>Salt:</strong> Proximity to water or salt flats</li>
+<li><strong>Vegetation:</strong> Specific plants (sagebrush, juniper) have recognizable smells; changes in smell indicate terrain transitions</li>
+<li><strong>Weather:</strong> Smell changes 30–60 minutes before rain or storms</li>
+</ul>
+<h3>Ground Texture and Touch Navigation</h3>
+<p>For hikers on known trails:</p>
+<ul>
+<li><strong>Trail surface:</strong> Rocks, sand, or hardpan have distinct textures underfoot</li>
+<li><strong>Slope angle:</strong> Slope changes indicate terrain features (entering a valley, cresting a ridge)</li>
+<li><strong>Vegetation contact:</strong> Dense vegetation vs. open ground is tactile and auditory</li>
+</ul>
+<h3>Integration Strategy</h3>
+<p>Combine multiple sensory cues:</p>
+<ol>
+<li><strong>Primary (visual):</strong> Star direction + terrain silhouettes</li>
+<li><strong>Secondary (auditory):</strong> Water sounds, wind direction, wildlife</li>
+<li><strong>Tertiary (tactile):</strong> Ground texture, slope changes</li>
+<li><strong>Redundant check:</strong> Smell, vegetation transitions</li>
+</ol>
+<p>This creates a multi-modal navigation system that functions even with partial sensory inputs.</p>
+</section>
+<section id="terrain-silhouette-reading">
+<h2>Terrain Silhouette Reading and Landmark Navigation</h2>
+<p>Starlight is sufficient to navigate by terrain, if you've memorized key landmarks before nightfall or can read terrain shapes silhouetted against the sky.</p>
+<h3>Pre-Night Planning</h3>
+<p>Before darkness falls, scout your route during daylight or twilight:</p>
+<ol>
+<li>
+<p><strong>Identify prominent peaks, ridgelines, or unique terrain features</strong> that will be silhouetted against the night sky.</p>
+</li>
+<li>
+<p><strong>Note valleys, saddles (low points between peaks), and ridges</strong> that serve as navigation guides.</p>
+</li>
+<li>
+<p><strong>Identify water features</strong> (rivers, streams) by listening for sound—moving water produces constant auditory landmarks even in darkness.</p>
+</li>
+<li>
+<p><strong>Remember which peaks or ridges align with your intended direction of travel</strong>.</p>
+</li>
+</ol>
+<h3>Night Navigation Using Silhouettes</h3>
+<p>Once darkness falls:</p>
+<ol>
+<li>
+<p><strong>Use stars as your primary directional reference</strong> (Polaris, Southern Cross, or moon).</p>
+</li>
+<li>
+<p><strong>Confirm your direction by noting which silhouettes align with your destination</strong>. For example, if you're traveling north and Polaris is directly ahead, the mountain ridge ahead should remain in the same position relative to Polaris.</p>
+</li>
+<li>
+<p><strong>Follow valley bottoms or ridgelines that parallel your intended direction</strong>. Terrain naturally guides movement—valleys funnel travelers, ridges provide clear pathways.</p>
+</li>
+<li>
+<p><strong>Listen for water sounds</strong> to confirm your position relative to rivers or streams. Water noise is directional and can be heard from 0.5–2 km away depending on flow volume.</p>
+</li>
+</ol>
+<h3>Limitations and Safety</h3>
+<div class="warning">
+<p>Terrain navigation at night is dangerous. Steep cliffs, dense forest, and hidden obstacles cause injuries. Nighttime travel is best reserved for clear nights with good starlight, relatively open terrain, and clear celestial references. If terrain is steep or cluttered, camp and resume travel at dawn.</p>
+</div>
+</section>
+<section id="comprehensive-orientation">
+<h2>Comprehensive Night Orientation System</h2>
+<p>Combining multiple techniques creates a robust navigation framework even without instruments.</p>
+<h3>Pre-Travel Preparation</h3>
+<p>Before traveling at night:</p>
+<ol>
+<li>
+<p><strong>Check weather</strong>: Clear nights allow star navigation; cloudy nights require moon or terrain navigation.</p>
+</li>
+<li>
+<p><strong>Determine the lunar phase and moon rise/set times</strong> for your location and date. This tells you when the moon will be available as a reference.</p>
+</li>
+<li>
+<p><strong>Learn the positions of Polaris or Crux</strong> for your latitude, using the techniques described above.</p>
+</li>
+<li>
+<p><strong>Plan your route during daylight</strong>, noting landmarks, terrain features, and cardinal directions of key waypoints.</p>
+</li>
+<li>
+<p><strong>Bring a small pencil and paper</strong> to sketch terrain or note observations.</p>
+</li>
+</ol>
+<h3>Navigation Hierarchy During Travel</h3>
+<p>When navigating at night:</p>
+<ol>
+<li>
+<p><strong>Start with celestial references</strong> (Polaris, Southern Cross, moon) to establish cardinal direction.</p>
+</li>
+<li>
+<p><strong>Confirm with terrain silhouettes</strong> to verify you're following the intended path.</p>
+</li>
+<li>
+<p><strong>Use water sounds and other auditory cues</strong> to maintain positional awareness.</p>
+</li>
+<li>
+<p><strong>Stop periodically</strong> (every 30 minutes to 1 hour) to reorient, rest, and recalibrate your direction using stars.</p>
+</li>
+<li>
+<p><strong>If clouds obscure celestial references</strong>, rely on terrain memory and previously established waypoint directions to maintain course until stars reappear.</p>
+</li>
+</ol>
+<h3>Speed and Safety Trade-Offs</h3>
+<p>Night travel is slower than daytime travel—expect roughly 50% of your normal walking speed due to reduced visibility and caution. Balance the urgency of reaching your destination against the safety risks of night travel. In true wilderness survival, it's often better to shelter at night and resume travel at dawn than to risk injury or becoming lost in darkness.</p>
+</section>
+<section id="no-tech-compass-alternatives">
+<h2>No-Tech Compass Alternatives</h2>
+<p>If you've lost or broken a compass, these methods provide reliable alternatives:</p>
+<p><strong>Sunrise/sunset observation</strong>: The sun rises in the east and sets in the west. At midday, the sun is south (in Northern Hemisphere) or north (in Southern Hemisphere). Using this simple observation and your watch (if available) or shadow-stick method, you can determine cardinal directions during any daytime hour.</p>
+<p><strong>Leaf moss test (unreliable but helpful)</strong>: North-facing slopes in forests receive less sun and often have more moss growth. This is not reliable enough as a primary method but serves as confirmation—if you believe you're heading north and you notice moss is slightly more prevalent, that's a weak confirmation.</p>
+<p><strong>Wind patterns</strong>: In many regions, prevailing winds blow from consistent directions. If you know your region's prevailing wind direction, you can use wind as a weak reference. This is unreliable in variable weather but useful as one of many confirmatory cues.</p>
+<p><strong>Animal behavior</strong>: Certain animals have directional habits (birds flying in specific directions during migration seasons, animals seeking water that flows in certain directions). This is extremely unreliable and should not be trusted as a primary method.</p>
+<p>The most reliable no-tech methods remain celestial—stars, sun, and moon. These are consistent, predictable, and visible worldwide.</p>
+</section>
+<section id="navigation-reference-diagram">
+<h2>Navigation References</h2>
+<p><svg viewBox="0 0 900 550" xmlns="http://www.w3.org/2000/svg" aria-label="Key constellation patterns for night navigation showing Polaris via Big Dipper, Southern Cross, and star positions">
+  <defs>
+    <style>
+      .night-sky { fill: var(--bg); }
+      .star-major { fill: var(--accent); }
+      .star-minor { fill: var(--text); opacity: 0.7; }
+      .constellation-line { stroke: var(--accent); stroke-width: 1.5; fill: none; opacity: 0.6; }
+      .pointer-line { stroke: var(--accent2); stroke-width: 2; fill: none; stroke-dasharray: 4,4; }
+      .reference-line { stroke: var(--accent); stroke-width: 1; fill: none; opacity: 0.5; }
+      .label { font-size: 12px; fill: var(--text); font-weight: bold; }
+      .small-label { font-size: 10px; fill: var(--text); opacity: 0.8; }
+      .compass-direction { font-size: 14px; fill: var(--accent); font-weight: bold; }
+      .info-box { fill: var(--card); stroke: var(--border); stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="550" class="night-sky" />
+
+  <!-- Title -->
+  <text x="450" y="35" font-size="20" font-weight="bold" fill="var(--accent)" text-anchor="middle">Night Navigation: Key Constellations</text>
+
+  <!-- ===== NORTHERN HEMISPHERE SECTION ===== -->
+  <text x="225" y="65" font-size="16" font-weight="bold" fill="var(--accent)" text-anchor="middle">NORTHERN HEMISPHERE</text>
+
+  <!-- Big Dipper constellation -->
+  <circle cx="120" cy="140" r="4" class="star-major" />
+  <circle cx="150" cy="135" r="4" class="star-major" />
+  <circle cx="180" cy="140" r="4" class="star-major" />
+  <circle cx="210" cy="145" r="4" class="star-major" />
+  <circle cx="140" cy="100" r="3.5" class="star-major" />
+  <circle cx="160" cy="85" r="3.5" class="star-major" />
+  <circle cx="180" cy="70" r="3.5" class="star-major" />
+
+  <!-- Big Dipper lines -->
+  <path d="M 120 140 L 150 135 L 180 140 L 210 145" class="constellation-line" stroke-width="2" />
+  <path d="M 150 135 L 140 100 L 160 85 L 180 70" class="constellation-line" stroke-width="2" />
+
+  <!-- Labels -->
+  <text x="120" y="165" font-size="10" fill="var(--text)" text-anchor="middle">Bowl</text>
+  <text x="160" y="50" font-size="10" fill="var(--text)" text-anchor="middle">Handle</text>
+
+  <!-- Pointer stars annotation -->
+  <text x="210" y="130" font-size="9" fill="var(--text)">Pointer</text>
+  <text x="210" y="145" font-size="9" fill="var(--text)">Stars</text>
+
+  <!-- Pointer line to Polaris -->
+  <path d="M 210 145 L 300 60" class="pointer-line" stroke-width="2.5" />
+
+  <!-- Polaris (North Star) -->
+  <circle cx="300" cy="60" r="5" class="star-major" />
+  <circle cx="300" cy="60" r="8" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.5" />
+  <text x="300" y="40" font-size="11" fill="var(--accent)" text-anchor="middle" font-weight="bold">POLARIS</text>
+  <text x="300" y="28" font-size="10" fill="var(--accent)" text-anchor="middle">(North Star)</text>
+
+  <!-- Cassiopeia (alternate reference) -->
+  <circle cx="350" cy="100" r="3.5" class="star-major" />
+  <circle cx="370" cy="95" r="3.5" class="star-major" />
+  <circle cx="390" cy="100" r="3.5" class="star-major" />
+  <circle cx="410" cy="105" r="3.5" class="star-major" />
+  <circle cx="430" cy="100" r="3.5" class="star-major" />
+
+  <!-- Cassiopeia lines -->
+  <path d="M 350 100 L 370 95 L 390 100 L 410 105 L 430 100" class="constellation-line" stroke-width="2" />
+  <text x="390" y="125" font-size="10" fill="var(--text)" text-anchor="middle">Cassiopeia</text>
+  <text x="390" y="138" font-size="9" fill="var(--text)" text-anchor="middle">(W-shape)</text>
+
+  <!-- Reference line: Horizon and directions -->
+  <path d="M 50 200 L 400 200" class="reference-line" stroke-width="2" />
+  <text x="50" y="225" font-size="12" fill="var(--text)" font-weight="bold">Horizon</text>
+
+  <!-- Direction indicator -->
+  <text x="250" y="240" font-size="14" fill="var(--accent)" font-weight="bold">↑ NORTH</text>
+
+  <!-- Information box for Northern Hemisphere -->
+  <rect x="50" y="270" width="350" height="120" class="info-box" rx="4" />
+  <text x="70" y="290" font-size="11" font-weight="bold" fill="var(--text)">HOW TO USE:</text>
+  <text x="70" y="308" font-size="9" fill="var(--text)">1. Find the Big Dipper (7 bright stars)</text>
+  <text x="70" y="323" font-size="9" fill="var(--text)">2. Locate the two pointer stars (outer edge of bowl)</text>
+  <text x="70" y="338" font-size="9" fill="var(--text)">3. Draw line through pointers, extend 5× their distance</text>
+  <text x="70" y="353" font-size="9" fill="var(--text)">4. Polaris sits at that point — indicates TRUE NORTH</text>
+  <text x="70" y="368" font-size="9" fill="var(--text)">5. If Big Dipper is low, find Cassiopeia opposite side</text>
+  <text x="70" y="383" font-size="9" fill="var(--text)">6. Polaris altitude = your latitude in degrees</text>
+
+  <!-- ===== SOUTHERN HEMISPHERE SECTION ===== -->
+  <text x="675" y="65" font-size="16" font-weight="bold" fill="var(--accent)" text-anchor="middle">SOUTHERN HEMISPHERE</text>
+
+  <!-- Southern Cross (Crux) -->
+  <circle cx="600" cy="140" r="4" class="star-major" />
+  <circle cx="630" cy="130" r="4" class="star-major" />
+  <circle cx="660" cy="140" r="4" class="star-major" />
+  <circle cx="630" cy="170" r="4" class="star-major" />
+
+  <!-- Crux lines (cross pattern) -->
+  <path d="M 630 130 L 630 170" class="constellation-line" stroke-width="2.5" />
+  <path d="M 600 140 L 660 140" class="constellation-line" stroke-width="2.5" />
+
+  <!-- Labels for Crux -->
+  <text x="625" y="120" font-size="10" fill="var(--text)">Acrux</text>
+  <text x="660" y="165" font-size="10" fill="var(--text)">Gacrux</text>
+
+  <!-- Pointer Stars (Alpha and Beta Centauri) -->
+  <circle cx="500" cy="180" r="4" class="star-major" />
+  <circle cx="530" cy="160" r="4" class="star-major" />
+  <path d="M 500 180 L 530 160" class="constellation-line" stroke-width="2" />
+  <text x="465" y="200" font-size="10" fill="var(--text)" text-anchor="middle">Centauri</text>
+  <text x="465" y="213" font-size="9" fill="var(--text)" text-anchor="middle">Pointers</text>
+
+  <!-- South direction indicator -->
+  <path d="M 630 170 L 630 250" class="pointer-line" stroke-width="2.5" />
+  <text x="630" y="280" font-size="14" fill="var(--accent)" text-anchor="middle" font-weight="bold">↓ SOUTH</text>
+
+  <!-- Reference line: Horizon -->
+  <path d="M 500" y="250" L 800 250" class="reference-line" stroke-width="2" />
+  <text x="510" y="275" font-size="12" fill="var(--text)" font-weight="bold">Horizon</text>
+
+  <!-- Information box for Southern Hemisphere -->
+  <rect x="500" y="270" width="350" height="120" class="info-box" rx="4" />
+  <text x="520" y="290" font-size="11" font-weight="bold" fill="var(--text)">HOW TO USE:</text>
+  <text x="520" y="308" font-size="9" fill="var(--text)">1. Locate the Southern Cross (4 bright stars in cross)</text>
+  <text x="520" y="323" font-size="9" fill="var(--text)">2. Extend the long axis downward ~4.5× its length</text>
+  <text x="520" y="338" font-size="9" fill="var(--text)">3. Drop perpendicular to horizon — that is TRUE SOUTH</text>
+  <text x="520" y="353" font-size="9" fill="var(--text)">4. Alternative: Use Centauri pointers, bisect line,</text>
+  <text x="520" y="368" font-size="9" fill="var(--text)">   drop perpendicular downward to horizon</text>
+  <text x="520" y="383" font-size="9" fill="var(--text)">5. Crux altitude ≈ your latitude south of equator</text>
+
+  <!-- ===== BOTTOM: SEASONAL ROTATION ===== -->
+  <text x="450" y="430" font-size="14" font-weight="bold" fill="var(--accent)" text-anchor="middle">SEASONAL POSITIONS (Northern Hemisphere - Big Dipper)</text>
+
+  <!-- Four seasonal positions showing rotation -->
+  <!-- Summer (handle up) -->
+  <circle cx="150" cy="480" r="3" class="star-major" />
+  <circle cx="150" cy="510" r="3" class="star-major" />
+  <text x="150" y="530" font-size="9" fill="var(--text)" text-anchor="middle">Summer</text>
+  <text x="150" y="542" font-size="8" fill="var(--text)" text-anchor="middle">(handle up)</text>
+
+  <!-- Fall (handle left) -->
+  <circle cx="300" cy="480" r="3" class="star-major" />
+  <circle cx="270" cy="480" r="3" class="star-major" />
+  <text x="300" y="530" font-size="9" fill="var(--text)" text-anchor="middle">Fall</text>
+  <text x="300" y="542" font-size="8" fill="var(--text)" text-anchor="middle">(handle left)</text>
+
+  <!-- Winter (handle down) -->
+  <circle cx="450" cy="480" r="3" class="star-major" />
+  <circle cx="450" cy="510" r="3" class="star-major" />
+  <text x="450" y="530" font-size="9" fill="var(--text)" text-anchor="middle">Winter</text>
+  <text x="450" y="542" font-size="8" fill="var(--text)" text-anchor="middle">(handle down)</text>
+
+  <!-- Spring (handle right) -->
+  <circle cx="600" cy="480" r="3" class="star-major" />
+  <circle cx="630" cy="480" r="3" class="star-major" />
+  <text x="600" y="530" font-size="9" fill="var(--text)" text-anchor="middle">Spring</text>
+  <text x="600" y="542" font-size="8" fill="var(--text)" text-anchor="middle">(handle right)</text>
+
+  <!-- Note -->
+  <text x="750" y="495" font-size="9" fill="var(--text)" font-style="italic">Big Dipper rotates around Polaris</text>
+  <text x="750" y="508" font-size="9" fill="var(--text)" font-style="italic">nightly. Use handle position as</text>
+  <text x="750" y="521" font-size="9" fill="var(--text)" font-style="italic">approximate time indicator</text>
+
+</svg>
+</p>
+<p>The above diagram shows the positions of Polaris (North Star) relative to the Big Dipper and Cassiopeia in the Northern Hemisphere, and the Southern Cross pointing toward the South Celestial Pole in the Southern Hemisphere. Use these patterns to establish cardinal directions on clear nights.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="astronomy-calendar.html">Astronomy &amp; Calendar Systems</a>
+<a href="navigation.html">Navigation &amp; Timekeeping</a>
+<a href="survival-basics.html">Survival Basics &amp; First 72 Hours</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

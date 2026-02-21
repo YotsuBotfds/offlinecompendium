@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/scrap-metal-identification.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scrap Metal Identification</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Scavenging &amp; Salvage</span> ›
+<span>Scrap Metal Identification</span>
+</div>
+
+
+<h1>Scrap Metal Identification</h1>
+<p class="subtitle">Spark testing, magnetic testing, density, chemical spot tests, hazardous material avoidance, and sorting.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~26 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#location-scouting">Location Scouting</a></li>
+<li><a href="#tools-required">Tools Required</a></li>
+<li><a href="#extraction-procedures">Extraction Procedures</a></li>
+<li><a href="#identification">Identification Methods</a></li>
+<li><a href="#processing-cleaning">Processing &amp; Cleaning</a></li>
+<li><a href="#testing-methods">Testing Methods</a></li>
+<li><a href="#visual-inspection">Visual Inspection Method</a></li>
+<li><a href="#magnet-test">Magnet Test</a></li>
+<li><a href="#spark-test">Spark Test Patterns</a></li>
+<li><a href="#density">Density &amp; Weight Test</a></li>
+<li><a href="#sound-test">Sound &amp; Resonance Test</a></li>
+<li><a href="#chemical-tests">Chemical Spot Tests</a></li>
+<li><a href="#material-properties">Material Properties Guide</a></li>
+<li><a href="#value-ranking">Value &amp; Ranking</a></li>
+<li><a href="#magnet-test-2">Magnet Test</a></li>
+<li><a href="#spark-test-2">Personal Protective Equipment for Metal Work</a></li>
+<li><a href="#hazard-identification">Hazard Identification</a></li>
+<li><a href="#common-mistakes">Common Mistakes</a></li>
+<li><a href="#safety">Safety Considerations</a></li>
+<li><a href="#field-identification">Field Identification Procedures</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Metal identification determines salvage value, processing requirements, and functional applications. The same physical piece can be worth $0.03/lb if it's mild steel or $60+/gram if it's precious metal. Accurate identification prevents wasted effort, allows proper sorting, and enables recycling or repurposing decisions. This guide covers field-tested identification methods suitable for on-site assessment without laboratory equipment.</p>
+<div class="info-box">
+<p>Speed-to-identification hierarchy: (1) Visual inspection (30 seconds); (2) Magnet test (1 minute); (3) Spark test (2-5 minutes); (4) Density comparison (2-3 minutes); (5) Chemical tests (5+ minutes). Use visual and magnet tests first; proceed to more complex methods only if needed.</p>
+</div>
+<!-- SVG-TODO: Metal color and appearance reference chart -->
+<!-- SVG-TODO: Spark pattern comparison diagram -->
+</section>
+<section id="location-scouting">
+<h2>Location Scouting</h2>
+<p>Metal-rich environments vary significantly in composition and value density.</p>
+<h3>Automotive Sources</h3>
+<p>Vehicles contain diverse metals: engine blocks (cast iron), radiators (copper/aluminum), wiring (copper), transmission parts (steel), trim (stainless or chrome-plated steel), battery terminals (lead). Average vehicle yields 100-200 lbs of salvageable metal. Disassembly requires time but returns high-value materials. Scrap yards often allow dismantling for material recovery.</p>
+<h3>Industrial Facilities</h3>
+<p>Manufacturing plants, factories, and mills contain machinery, structural steel, fasteners, wiring, and equipment. Value density is exceptional; a single large facility may contain tons of valuable metal. Access is restricted and safety hazards are significant (moving machinery, chemical exposure).</p>
+<h3>Plumbing and Electrical Systems</h3>
+<p>Copper pipe from plumbing is exceptionally valuable ($2-4/lb). Electrical wiring contains copper ($2-3/lb after stripping insulation). Brass fittings provide supplemental copper recovery. Building salvage targeting plumbing and electrical systems is highly profitable.</p>
+<h3>Electronics and Appliances</h3>
+<p>Circuit boards contain precious metals (gold, silver, palladium). Copper winding in electric motors. Aluminum heat sinks. Steel casings and frames. Electronics salvage requires time for disassembly but yields high-value materials. Large appliances (refrigerators, washers) contain copper, aluminum, and steel.</p>
+<h3>Construction Debris</h3>
+<p>Building demolition sites contain structural steel (beams, rebar), sheet metal, fasteners, and miscellaneous metal components. Debris fields are chaotic; organization is minimal. Time spent locating valuable materials is significant but yields are substantial.</p>
+<h3>Residential Locations</h3>
+<p>Single-family homes contain plumbing (copper), electrical wiring, HVAC systems (aluminum, copper), kitchen appliances, and miscellaneous metal items. Average residential yield: 20-50 lbs per house. Lower value density than industrial but easier access and lower safety risk.</p>
+</section>
+<section id="tools-required">
+<h2>Tools Required</h2>
+<p>Metal identification and processing requires specific safety equipment and tools.</p>
+<h3>Essential Tools</h3>
+<ul>
+<li>Magnets (strong permanent magnet or electromagnet)</li>
+<li>Grinding wheel or steel surface (for spark testing)</li>
+<li>Utility knife (for stripping insulation, sectioning)</li>
+<li>Pliers and hammer (for disassembly)</li>
+<li>Gloves (heat protection, contamination prevention)</li>
+<li>Eye protection (mandatory for spark testing)</li>
+</ul>
+<h3>Optional Equipment</h3>
+<ul>
+<li>Respirator (for grinding dust, chemical fumes)</li>
+<li>Acid solutions (for chemical spot testing)</li>
+<li>Scale or balance (estimate weight/value)</li>
+<li>Density reference samples (comparison standard)</li>
+</ul>
+<!-- SVG-TODO: Essential metal salvage tools setup and safety -->
+</section>
+<section id="extraction-procedures">
+<h2>Extraction Procedures</h2>
+<p>Removing metals from structures and equipment requires systematic approaches.</p>
+<h3>Copper Wire Extraction</h3>
+<p>Copper wiring in walls, appliances, and equipment is valuable. Extraction: (1) Identify wire runs in walls (follow conduit paths); (2) Carefully cut through drywall to access without damaging wire; (3) Pull wire from conduit or walls; (4) Strip insulation (utility knife blade, or burn in low-oxygen environment if insulation is not toxic PVC); (5) Coil and store separately. Insulated vs. bare copper commands different prices; separate if possible.</p>
+<div class="warning">
+<p>Burning insulation indoors creates toxic fumes. If stripping by burning, do so outdoors in well-ventilated location. Modern plastics produce dioxins when burned—limit burning to known plastic-free insulation (rubber, cloth).</p>
+</div>
+<h3>Copper Pipe Salvage</h3>
+<p>Plumbing copper is easily extracted: (1) Identify water supply lines and heating system pipes; (2) Disconnect or cut pipes at joints; (3) Drain water (collect if useful); (4) Coil or straighten pipes; (5) Polish or clean if oxidized (increases value slightly). Brass fittings are removed from joints and stored separately. Copper pipe commands $2-4/lb; brass fittings add $1-2/lb.</p>
+<h3>Radiator Extraction</h3>
+<p>Car and equipment radiators contain copper cores and aluminum tanks. Core is valuable; tank less so. Radiators are heavy; extraction requires careful handling. Cut apart if possible to separate copper from aluminum, or sell as composite if weight isn't limiting.</p>
+<h3>Electric Motor Disassembly</h3>
+<p>Motors contain copper windings (high value) surrounded by steel casings. Extracting copper requires: (1) Remove motor from equipment; (2) Cut through steel case using angle grinder or saw; (3) Carefully extract copper coils; (4) Remove any paper or varnish insulation; (5) Store copper separately. Large industrial motors yield 10-20 lbs of copper per unit.</p>
+<h3>Fastener Collection</h3>
+<p>Salvaging loose fasteners (screws, bolts, nuts, nails, rivets) is time-consuming but yields valuable material. Collect by size and type; separating ferrous (steel) from non-ferrous (brass, stainless) increases value. A five-gallon bucket of mixed fasteners yields 30-50 lbs of sorted metal.</p>
+</section>
+<section id="identification">
+<h2>Identification Methods</h2>
+<p>Combining multiple identification techniques increases accuracy and confidence.</p>
+<h3>Visual Inspection Method</h3>
+<p>First assessment determines basic metal type. Color, surface condition, and stamping provide initial identification.</p>
+<h4>Metal Color Guide</h4>
+<table><thead><tr><th scope="row">Color</th><th scope="row">Metal Type</th><th scope="row">Notes</th></tr></thead><tbody><tr><td>Bright silver, shiny</td><td>Aluminum or Silver</td><td>Check weight to distinguish (aluminum lighter)</td></tr><tr><td>Yellow/gold color</td><td>Brass or Bronze</td><td>Brass lighter, more yellow; bronze heavier, redder</td></tr><tr><td>Reddish/copper color</td><td>Copper</td><td>Pure copper very red; alloys less pure</td></tr><tr><td>Dark gray/black</td><td>Iron or Steel</td><td>Rust indicates iron/steel; look for rust patina</td></tr><tr><td>Silvery-white</td><td>Nickel, Chrome, or Stainless</td><td>Very resistant to rust and corrosion</td></tr><tr><td>Gray with patina</td><td>Zinc or Galvanized Steel</td><td>Distinctive gray powdery coating</td></tr></tbody></table>
+<h4>Surface Features</h4>
+<ul>
+<li><strong>Rust/patina:</strong> Indicates ferrous metal (iron, steel). Bright rust = fresh exposed surface; dark oxidation = aged steel</li>
+<li><strong>Tarnish:</strong> Black tarnish = copper/brass/silver. Silver bright beneath tarnish confirms precious metal</li>
+<li><strong>Stamping:</strong> Part numbers, composition marks, or country origins provide definitive identification</li>
+<li><strong>Thickness:</strong> Thin, flexible sheet = likely aluminum or soft metals. Rigid, thick = likely iron/steel</li>
+</ul>
+</section>
+<section id="processing-cleaning">
+<h2>Processing &amp; Cleaning</h2>
+<p>Clean metals command higher prices and allow accurate identification.</p>
+<h3>Oxide and Rust Removal</h3>
+<p>Surface rust doesn't indicate interior degradation. Remove rust using: (1) Mechanical means (wire brush, steel wool, grinding); (2) Chemical means (acid soak, commercial rust removers); (3) Abrasive means (sandblasting, grinding wheels). Steel underlying rust is often intact and functional. Don't reject rusty metal; clean it.</p>
+<h3>Insulation Stripping</h3>
+<p>Wiring and components often have plastic or rubber insulation. Stripping increases value and allows visual confirmation of metal type. Methods: (1) Mechanical (utility knife blade, wire stripper); (2) Chemical (acetone or similar solvent softens some plastics); (3) Thermal (careful heating softens insulation for removal—outdoors only to avoid fumes). Separate copper from insulation completely.</p>
+<h3>Separation of Metals</h3>
+<p>Mixed-metal assemblies (radiators with copper and aluminum, circuit boards with multiple metals) can be partially disassembled if time permits. Copper is more valuable than aluminum; separating increases total value. Electronics with precious metals are valuable as-is; additional disassembly usually isn't worth time investment.</p>
+</section>
+<section id="testing-methods">
+<h2>Testing Methods</h2>
+<p>Use appropriate tests based on identification confidence and time available.</p>
+<section id="visual-inspection">
+<h2>Visual Inspection Method</h2>
+<p>First assessment determines basic metal type. Color, surface condition, and stamping provide initial identification.</p>
+<h3>Metal Color Guide:</h3>
+<table><thead><tr><th scope="row">Color</th><th scope="row">Metal Type</th><th scope="row">Notes</th></tr></thead><tbody><tr><td>Bright silver, shiny</td><td>Aluminum or Silver</td><td>Check weight to distinguish (aluminum lighter)</td></tr><tr><td>Yellow/gold color</td><td>Brass or Bronze</td><td>Brass lighter, more yellow; bronze heavier, redder</td></tr><tr><td>Reddish/copper color</td><td>Copper</td><td>Pure copper very red; alloys less pure</td></tr><tr><td>Dark gray/black</td><td>Iron or Steel</td><td>Rust indicates iron/steel; look for rust patina</td></tr><tr><td>Silvery-white</td><td>Nickel, Chrome, or Stainless</td><td>Very resistant to rust and corrosion</td></tr><tr><td>Gray with patina</td><td>Zinc or Galvanized Steel</td><td>Distinctive gray powdery coating</td></tr></tbody></table>
+<h3>Surface Features:</h3>
+<ul>
+<li><strong>Rust/patina:</strong> Indicates ferrous metal (iron, steel). Bright rust = fresh exposed surface; dark oxidation = aged steel</li>
+<li><strong>Tarnish:</strong> Black tarnish = copper/brass/silver. Silver bright beneath tarnish confirms precious metal</li>
+<li><strong>Stamping:</strong> Part numbers, composition marks, or country origins provide definitive identification</li>
+<li><strong>Thickness:</strong> Thin, flexible sheet = likely aluminum or soft metals. Rigid, thick = likely iron/steel</li>
+</ul>
+</section>
+<section id="magnet-test">
+<h2>Magnet Test</h2>
+<p>Magnet test rapidly determines ferrous vs. non-ferrous metal. Strong electromagnet or permanent magnet (neodymium preferred) required.</p>
+<h3>Test Procedure:</h3>
+<ol>
+<li>Place magnet near metal sample (not touching)</li>
+<li>Observe attraction: strong pull = ferrous; no pull = non-ferrous</li>
+<li>Test multiple points (some alloys have variable magnetic properties)</li>
+<li>Note: stainless steel may be weakly magnetic or non-magnetic depending on alloy composition</li>
+</ol>
+<h3>Interpretation:</h3>
+<ul>
+<li><strong>Strong magnetic pull:</strong> Iron, steel, or magnetic stainless steel (austenitic stainless non-magnetic)</li>
+<li><strong>Weak/no pull:</strong> Aluminum, copper, brass, bronze, or non-magnetic stainless</li>
+</ul>
+<h3>Limitations:</h3>
+<p>Magnet test only distinguishes ferrous vs. non-ferrous. Additional testing required for specific metal identification within categories.</p>
+</section>
+<section id="spark-test">
+<h2>Spark Test Patterns</h2>
+<p>Spark testing involves striking metal against grinding wheel or steel surface. Spark pattern reveals composition.</p>
+<h3>Test Setup:</h3>
+<ol>
+<li>Use grinding wheel or hard steel striking surface</li>
+<li>Hold sample at 30-45 degree angle to surface</li>
+<li>Apply light pressure (heavy pressure distorts results)</li>
+<li>Observe spark color, shape, and behavior</li>
+<li>Safety: wear eye protection; sparks reach 2000°C</li>
+</ol>
+<h3>Spark Pattern Guide:</h3>
+<p><svg aria-label="Scrap Metal Identification diagram 1" style="background:#1a2e1a;margin:20px 0" viewBox="0 0 700 500"><defs><lineargradient id="sparkgrad" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" style="stop-color:#3a4e3a;stop-opacity:1"></stop><stop offset="100%" style="stop-color:#1a2e1a;stop-opacity:1"></stop></lineargradient></defs><rect fill="url(#sparkgrad)" height="500" width="700"></rect><text fill="#d4a574" font-size="18" font-weight="bold" text-anchor="middle" x="350" y="30">Spark Test Patterns</text><text fill="#f5f0e8" font-weight="bold" x="50" y="70">Iron/Steel:</text><line stroke="#ffaa00" stroke-width="2" x1="50" x2="150" y1="85" y2="85"></line><line stroke="#ffaa00" stroke-width="1.5" x1="55" x2="100" y1="85" y2="65"></line><line stroke="#ffaa00" stroke-width="1" x1="70" x2="110" y1="85" y2="50"></line><line stroke="#ffaa00" stroke-width="1" x1="85" x2="120" y1="85" y2="60"></line><text fill="#d4a574" font-size="12" x="50" y="110">Long sparks, yellow, branching</text><text fill="#f5f0e8" font-weight="bold" x="50" y="130">Stainless Steel:</text><line stroke="#ffaa00" stroke-width="2" x1="50" x2="150" y1="145" y2="145"></line><line stroke="#ffaa00" stroke-width="1" x1="60" x2="90" y1="145" y2="130"></line><line stroke="#ffaa00" stroke-width="1" x1="80" x2="105" y1="145" y2="140"></line><text fill="#d4a574" font-size="12" x="50" y="170">Short sparks, yellow-red, stubby</text><text fill="#f5f0e8" font-weight="bold" x="50" y="190">Aluminum:</text><line stroke="#ffff88" stroke-width="1" x1="50" x2="150" y1="205" y2="205"></line><text fill="#d4a574" font-size="12" x="50" y="230">No sparks (or very dull red sparks)</text><text fill="#f5f0e8" font-weight="bold" x="50" y="250">Copper/Brass:</text><line stroke="#ffaa00" stroke-width="1" x1="50" x2="150" y1="265" y2="265"></line><text fill="#d4a574" font-size="12" x="50" y="290">No distinctive sparks or dull orange</text><text fill="#f5f0e8" font-weight="bold" x="50" y="310">High-Carbon Steel:</text><line stroke="#ffaa00" stroke-width="2" x1="50" x2="200" y1="325" y2="325"></line><line stroke="#ffaa00" stroke-width="1.5" x1="55" x2="150" y1="325" y2="280"></line><line stroke="#ffaa00" stroke-width="1" x1="80" x2="180" y1="325" y2="270"></line><text fill="#d4a574" font-size="12" x="50" y="350">Very long sparks, many bursts, explosive</text><text fill="#f5f0e8" font-weight="bold" x="50" y="370">Cast Iron:</text><line stroke="#ffaa00" stroke-width="2" x1="50" x2="150" y1="385" y2="385"></line><text fill="#d4a574" font-size="12" x="50" y="410">Medium sparks, red color, less branching</text><text fill="#d4a574" font-size="11" font-style="italic" x="50" y="430">Note: high-carbon steel shows explosive spark bursts</text><text fill="#d4a574" font-size="11" font-style="italic" x="50" y="450">Low-carbon steel shows simple stream of sparks</text></svg></p>
+<h3>Detailed Interpretation:</h3>
+<ul>
+<li><strong>Iron/Low-carbon steel:</strong> Yellow sparks extending 1-2 meters, branching pattern, continuous stream</li>
+<li><strong>High-carbon steel:</strong> Bright yellow sparks with explosive bursts, very long streams (2+ meters), many small sparkles</li>
+<li><strong>Stainless steel (austenitic):</strong> Short orange sparks, minimal branching, blocky appearance</li>
+<li><strong>Cast iron:</strong> Reddish sparks, less branching than steel, shorter streams</li>
+<li><strong>Aluminum:</strong> No sparks (too soft); or very dull red spark if high-speed contact</li>
+<li><strong>Copper/brass:</strong> Very dull orange or no sparks</li>
+</ul>
+</section>
+<section id="density">
+<h2>Density &amp; Weight Test</h2>
+<p>Different metals have characteristic densities. Comparing sample weight to expected size provides clues.</p>
+<h3>Density Comparison:</h3>
+<table><thead><tr><th scope="row">Metal</th><th scope="row">Density (g/cm³)</th><th scope="row">Relative Feel</th></tr></thead><tbody><tr><td>Aluminum</td><td>2.7</td><td>Very light (lightest common metal)</td></tr><tr><td>Zinc</td><td>7.1</td><td>Light-medium</td></tr><tr><td>Iron/Steel</td><td>7.8</td><td>Medium</td></tr><tr><td>Nickel</td><td>8.9</td><td>Medium-heavy</td></tr><tr><td>Copper</td><td>9.0</td><td>Medium-heavy</td></tr><tr><td>Silver</td><td>10.5</td><td>Heavy</td></tr><tr><td>Lead</td><td>11.3</td><td>Very heavy (heaviest common metal)</td></tr></tbody></table>
+<h3>Test Method:</h3>
+<p>Hold sample in hand; estimate weight relative to volume. Aluminum feels light for size; lead feels disproportionately heavy. Comparative testing (aluminum vs. steel piece of identical size) demonstrates density difference clearly.</p>
+</section>
+<section id="sound-test">
+<h2>Sound &amp; Resonance Test</h2>
+<p>Striking metal produces distinctive sound based on composition and purity.</p>
+<h3>Sound Characteristics:</h3>
+<ul>
+<li><strong>Aluminum:</strong> High-pitched, quick decay. &quot;Ting&quot; sound characteristic.</li>
+<li><strong>Steel:</strong> Medium pitch, longer sustain. &quot;Ring&quot; characteristic.</li>
+<li><strong>Brass:</strong> Bright ring, good sustain. Higher pitch than steel.</li>
+<li><strong>Lead:</strong> Dull thud, no ring. Sound stops immediately.</li>
+<li><strong>Copper:</strong> Dull, flat sound (softer material absorbs vibration).</li>
+</ul>
+<h3>Testing Method:</h3>
+<ol>
+<li>Support metal sample so it can vibrate freely</li>
+<li>Strike gently with hammer or solid object</li>
+<li>Listen to initial sound (pitch) and decay (sustain time)</li>
+<li>Compare known samples to unknown for verification</li>
+</ol>
+</section>
+<section id="chemical-tests">
+<h2>Chemical Spot Tests</h2>
+<p>Specific chemical reactions identify metals. Requires basic chemicals but highly definitive.</p>
+<h3>Nitric Acid Test:</h3>
+<p><strong>Procedure:</strong> Apply small drop of dilute nitric acid to metal surface. Observe reaction.</p>
+<p><strong>Results:</strong> Copper dissolves readily (produces blue solution). Iron reacts moderately. Aluminum may react. Aluminum foil can be used to displace copper from solution (demonstrates chemical reactivity).</p>
+<h3>Copper Sulfate Test (For Iron/Steel):</h3>
+<p><strong>Procedure:</strong> Apply copper sulfate solution to steel surface. Observe color change.</p>
+<p><strong>Result:</strong> Steel turns copper-colored as displaced copper plates steel surface. Aluminum produces similar result.</p>
+<h3>Magnesium Reaction Test:</h3>
+<p><strong>Procedure:</strong> Place sample in dilute hydrochloric acid solution. Observe bubbling.</p>
+<p><strong>Result:</strong> Iron/steel bubbles vigorously (hydrogen gas evolution). Copper does not react. Aluminum reacts very quickly.</p>
+<h3>Safety Precautions:</h3>
+<p>Chemical testing requires careful handling. Acid can burn skin. Always: wear gloves, use small amounts of acid, work in ventilated area, dispose of chemical waste properly.</p>
+</section>
+<section id="material-properties">
+<h2>Material Properties Guide</h2>
+<table><thead><tr><th scope="row">Metal</th><th scope="row">Appearance</th><th scope="row">Magnetic</th><th scope="row">Spark Test</th><th scope="row">Key Properties</th></tr></thead><tbody><tr><td>Iron</td><td>Dark gray, rust easily</td><td>Very magnetic</td><td>Yellow sparks, branching</td><td>Heavy, strong, rusts</td></tr><tr><td>Steel</td><td>Silvery gray, rust resistant</td><td>Magnetic</td><td>Yellow sparks (varies by carbon)</td><td>Very strong, durable</td></tr><tr><td>Aluminum</td><td>Bright silver, light</td><td>Non-magnetic</td><td>No sparks</td><td>Very light, soft, fast</td></tr><tr><td>Copper</td><td>Reddish-brown</td><td>Non-magnetic</td><td>No sparks</td><td>Excellent conductor, soft</td></tr><tr><td>Brass</td><td>Yellow-gold color</td><td>Non-magnetic</td><td>No sparks</td><td>Good conductor, medium hardness</td></tr><tr><td>Lead</td><td>Dull gray, soft</td><td>Non-magnetic</td><td>No sparks</td><td>Very heavy, very soft, toxic</td></tr></tbody></table>
+</section>
+<section id="value-ranking">
+<h2>Value &amp; Ranking</h2>
+<p>Scrap metal value fluctuates; ranking based on typical market rates (subject to change).</p>
+<h3>Typical Scrap Value Ranking:</h3>
+<ol>
+<li><strong>Precious metals (gold, silver, platinum):</strong> $10-60+ per gram</li>
+<li><strong>Copper wire/pure copper:</strong> $2-4 per pound</li>
+<li><strong>Brass/bronze:</strong> $1-2 per pound</li>
+<li><strong>Aluminum:</strong> $0.30-0.60 per pound</li>
+<li><strong>Stainless steel:</strong> $0.10-0.30 per pound</li>
+<li><strong>Steel/iron:</strong> $0.03-0.15 per pound</li>
+</ol>
+<h3>Sorting for Value:</h3>
+<p>Separate valuable metals from bulk steel. Copper wire extremely valuable (pure copper with no iron). Brass fittings valuable. Aluminum valuable due to lightweight (bulk doesn't equal weight value). Mixed metals pay less (recyclers charge for separation).</p>
+</section>
+<section id="magnet-test">
+<h2 id="magnet-test-2">Magnet Test</h2>
+<p>Magnet test rapidly determines ferrous vs. non-ferrous metal. Use a strong magnet (neodymium preferred) or electromagnet.</p>
+<h3>Test Procedure</h3>
+<ol>
+<li>Place magnet near metal sample (not touching)</li>
+<li>Observe attraction: strong pull = ferrous; no pull = non-ferrous</li>
+<li>Test multiple points (some alloys have variable magnetic properties)</li>
+<li>Note: stainless steel may be weakly magnetic or non-magnetic depending on alloy composition</li>
+</ol>
+<h3>Interpretation</h3>
+<ul>
+<li><strong>Strong magnetic pull:</strong> Iron, steel, or magnetic stainless steel</li>
+<li><strong>Weak/no pull:</strong> Aluminum, copper, brass, bronze, or non-magnetic stainless</li>
+<li><strong>Very strong pull:</strong> Likely steel or cast iron</li>
+</ul>
+<h3>Limitations</h3>
+<p>Magnet test only distinguishes ferrous vs. non-ferrous. Additional testing required for specific metal identification within categories. Some stainless steels are non-magnetic, complicating identification—use spark test for confirmation.</p>
+</section>
+<section id="spark-test">
+<h2 id="spark-test-2">Personal Protective Equipment for Metal Work</h2>
+<div class="danger">
+<p><strong>METAL FUME FEVER</strong>: Welding or cutting galvanized (zinc-coated) steel produces zinc oxide fumes that cause flu-like symptoms 4-10 hours after exposure. While usually self-limiting, repeated exposure causes cumulative lung damage. ALWAYS grind off galvanized coating before welding/cutting, or use forced ventilation.</p>
+</div>
+<div class="danger">
+<p><strong>HEXAVALENT CHROMIUM</strong>: Welding or grinding stainless steel, chrome-plated, or chromium-containing alloys produces hexavalent chromium — a potent carcinogen. Requires minimum P100 respirator, not just a dust mask. Symptoms may not appear for years.</p>
+</div>
+<h3>Minimum PPE Requirements</h3>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Eye Protection</th>
+<th>Respiratory</th>
+<th>Gloves</th>
+<th>Other</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifying/sorting</td>
+<td>Safety glasses</td>
+<td>Dust mask if cutting</td>
+<td>Leather work gloves</td>
+<td>Steel-toe boots</td>
+</tr>
+<tr>
+<td>Grinding/cutting</td>
+<td>Full face shield + safety glasses</td>
+<td>P100 respirator</td>
+<td>Heavy leather</td>
+<td>Hearing protection, leather apron</td>
+</tr>
+<tr>
+<td>Welding</td>
+<td>Auto-darkening hood (shade 10-13)</td>
+<td>P100 under hood if ventilation poor</td>
+<td>Welding gauntlets</td>
+<td>Fire-resistant clothing, leather apron</td>
+</tr>
+<tr>
+<td>Torch cutting</td>
+<td>Shade 5 goggles minimum</td>
+<td>P100 respirator</td>
+<td>Heavy leather</td>
+<td>Fire-resistant clothing</td>
+</tr>
+</tbody>
+</table>
+<h3>Radioactive Metal Detection</h3>
+<div class="warning">
+<p>Some salvaged metals may be radioactive, particularly from medical equipment (cobalt-60, cesium-137), industrial gauges, and military surplus. Signs include: unusual shielding around small sources, radiation warning symbols (trefoil), materials from hospitals/laboratories. If you suspect radioactive contamination: do NOT handle, maintain 10+ meter distance, mark the area, and warn others. There is no safe field method for handling radioactive materials.</p>
+</div>
+<section id="hazard-identification">
+<h2>Hazard Identification</h2>
+<p>Certain metals and locations present specific hazards.</p>
+<h3>Lead and Lead Paint</h3>
+<p>Lead is toxic, particularly in dust form. Locations with lead paint (pre-1978 buildings), lead solder (old plumbing), or lead storage batteries contain hazardous material. Lead appears as dull gray metal, very heavy for size. Handling lead: (1) Wear gloves; (2) Avoid creating dust (don't grind, cut, or burn lead); (3) Wash hands thoroughly after contact; (4) Store separately; (5) Never melt lead indoors. Lead poisoning causes neurological damage, particularly in children. Prevention is critical.</p>
+<h3>Asbestos in Insulation</h3>
+<p>Vintage insulation materials (particularly thermal or acoustic insulation) may contain asbestos fibers. Never disturb suspected asbestos—inhalation causes mesothelioma (incurable cancer). Suspect asbestos in: old building insulation, pipe insulation, electrical component insulation. If suspected, isolate and don't handle.</p>
+<h3>Radioactive or Hazardous Metal Sources</h3>
+<p>Medical equipment, old instruments, and industrial items may contain radioactive material or hazardous compounds. Unknown items from medical, research, or industrial facilities should be handled with suspicion. If an item has no obvious function and unknown origin, err on the side of caution—don't handle it. Geiger counter (if available) can detect radioactivity.</p>
+<h3>Heavy Metal Contamination</h3>
+<p>Metals may be contaminated with toxic compounds. Electronics may contain mercury, cadmium, or other toxins. Lead-acid batteries contain sulfuric acid. Transformers may contain PCBs (polychlorinated biphenyls—carcinogenic). When disassembling electronics or equipment, wear gloves and assume contamination unless confirmed otherwise.</p>
+</section>
+<section id="common-mistakes">
+<h2>Common Mistakes</h2>
+<h3>Mistake 1: Confusing Aluminum with Silver</h3>
+<p><strong>Error:</strong> Treating aluminum as precious metal due to bright color. Aluminum is cheap (scrap value $0.30-0.60/lb).</p>
+<p><strong>Solution:</strong> Weight test distinguishes (aluminum light for size; silver heavy). Magnet test (aluminum non-magnetic; most silver non-magnetic but context matters).</p>
+<h3>Mistake 2: Mistaking Brass for Gold</h3>
+<p><strong>Error:</strong> Assuming yellow color indicates gold. Brass much cheaper than gold.</p>
+<p><strong>Solution:</strong> Weight test (brass much heavier than appearance suggests, but not as heavy as solid gold). Magnet test (brass non-magnetic). Acid test (distinctive tarnish patterns).</p>
+<h3>Mistake 3: Over-Heating During Spark Test</h3>
+<p><strong>Error:</strong> Excessive grinding pressure burning sample. Spark pattern becomes unreliable.</p>
+<p><strong>Solution:</strong> Use light pressure. Cool sample between tests if it becomes too hot (cannot hold comfortably).</p>
+<h3>Mistake 4: Assuming All Magnetic Metals Are Iron</h3>
+<p><strong>Error:</strong> Magnetic response means iron/steel. Some stainless steels and nickel are magnetic.</p>
+<p><strong>Solution:</strong> Combine magnet test with spark test and appearance. Magnetic + no spark = possible stainless or nickel (check for shine and stamping).</p>
+<h3>Mistake 5: Mixing Contaminated Metal with Clean Salvage</h3>
+<p><strong>Error:</strong> Storing lead-contaminated metal or hazardous materials with clean salvage.</p>
+<p><strong>Solution:</strong> Immediately identify and isolate hazardous materials. Store lead separately, clearly marked. Keep radioactive or suspicious items isolated until confirmed safe.</p>
+</section>
+<section id="safety">
+<h2>Safety Considerations</h2>
+<h3>Personal Protective Equipment</h3>
+<p>Always wear: (1) Gloves (leather for heat protection during spark testing, nitrile for chemical tests); (2) Eye protection (mandatory during spark testing); (3) Respirator if grinding, burning, or dealing with moldy/dusty materials; (4) Closed-toe shoes (protect from dropped metal); (5) Long sleeves when working with hot metal or sparks.</p>
+<h3>Heat Safety</h3>
+<p>Metal can retain heat long after removal from fire or machinery. Test temperature by holding near (not touching) before handling. Molten metal is obviously dangerous—never attempt handling. Cooling metal in water creates steam hazard—stand back when immersing hot metal.</p>
+<h3>Chemical Safety</h3>
+<p>Acids and chemical solutions: (1) Never pour water into acid (pour acid into water); (2) Never mix chemicals unless specifically instructed; (3) Assume all spills are dangerous; (4) Rinse skin immediately with water if chemical contact occurs; (5) Work in ventilated area; (6) Never taste or inhale chemical fumes; (7) Dispose of waste properly (don't pour down drains).</p>
+<h3>Structural Safety During Salvage</h3>
+<p>When salvaging metal from buildings or equipment: (1) Assess structural integrity before entering; (2) Never work alone; (3) Use proper lifting techniques (metal is heavy; back strain is common); (4) Watch for sharp edges on cut or torn metal; (5) Never salvage from moving machinery; (6) Use lockout procedures if equipment is present (tag and lock machinery before working near it).</p>
+</section>
+<section id="scavenging-prioritization">
+<section id="field-identification">
+<h2>Field Identification Procedures</h2>
+<p>Systematic testing in the field allows confident metal identification without laboratory equipment. Use a logical progression: visual assessment → magnet test → spark test → density/file test → chemical test (if time and materials allow).</p>
+<h3>Spark Testing by Metal Type</h3>
+<p>Spark testing reveals metal composition through spark pattern, color, and behavior. Requires safety equipment and a grinding wheel or hard steel surface.</p>
+<p><strong>Spark Test Setup:</strong></p>
+<ul>
+<li><strong>Safety first:</strong> Wear eye protection (safety glasses or face shield); sparks reach 1200-2000°C</li>
+<li><strong>Grinding surface:</strong> Use a stationary bench grinder or hard steel striking surface (anvil, metal plate)</li>
+<li><strong>Angle:</strong> Hold sample at 30-45 degrees to surface</li>
+<li><strong>Pressure:</strong> Light, consistent pressure (heavy pressure distorts spark pattern)</li>
+<li><strong>Distance:</strong> Hold sample 6-12 inches from your eyes to observe spark behavior clearly</li>
+</ul>
+<p><strong>Spark Color and Pattern Guide:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metal Type</th>
+<th>Spark Color</th>
+<th>Pattern</th>
+<th>Distance</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mild Steel</strong></td>
+<td>Yellow-orange</td>
+<td>Branching trees</td>
+<td>1-2 meters</td>
+<td>Most common; continuous stream</td>
+</tr>
+<tr>
+<td><strong>High-Carbon Steel</strong></td>
+<td>Bright yellow</td>
+<td>Fine branches, explosive bursts</td>
+<td>2+ meters</td>
+<td>Very long, many sparkles, dramatic</td>
+</tr>
+<tr>
+<td><strong>Stainless Steel (Austenitic)</strong></td>
+<td>Short orange</td>
+<td>Blocky, few branches</td>
+<td>&lt;0.5m</td>
+<td>Very short streams, minimal branching</td>
+</tr>
+<tr>
+<td><strong>Cast Iron</strong></td>
+<td>Red-orange</td>
+<td>Short, stubby</td>
+<td>&lt;1 meter</td>
+<td>Fewer sparkles, heavier pattern</td>
+</tr>
+<tr>
+<td><strong>Aluminum</strong></td>
+<td>Dim red/none</td>
+<td>Very sparse</td>
+<td>None visible</td>
+<td>Too soft; usually no sparks</td>
+</tr>
+<tr>
+<td><strong>Copper/Brass</strong></td>
+<td>Dull orange/red</td>
+<td>Minimal</td>
+<td>&lt;0.3m</td>
+<td>Very few sparks, soft metal</td>
+</tr>
+<tr>
+<td><strong>Nickel</strong></td>
+<td>Bright orange-white</td>
+<td>Fine, long</td>
+<td>1-2 meters</td>
+<td>Similar to high-carbon steel but slightly different color</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>Long, bright sparks with explosive bursts = high-carbon steel (valuable, holds hardness)</li>
+<li>Continuous yellow stream = mild steel (common, lower value)</li>
+<li>Short, blocky sparks = stainless steel (corrosion-resistant, valuable)</li>
+<li>Very short or no sparks = soft metal (aluminum, copper, or non-ferrous)</li>
+</ul>
+<h3>File Test for Hardness</h3>
+<p>Filing a sample reveals hardness, which correlates with metal type and quality.</p>
+<p><strong>File Test Procedure:</strong></p>
+<ol>
+<li>Use a metal file (any cheap file works) or a hardened steel nail</li>
+<li>Stroke the file across the sample surface with moderate pressure</li>
+<li>Observe resistance: does file bite easily or glide across surface?</li>
+<li>Listen: soft metals produce smooth sound; hard metals produce grinding sound</li>
+<li>Feel the file as you stroke: easy movement = soft metal; heavy resistance = hard metal</li>
+</ol>
+<p><strong>Hardness Interpretation:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Resistance</th>
+<th>Metal Type</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File bites easily, metal streaks away</td>
+<td>Aluminum, copper, lead, soft brass</td>
+<td>Lower value (soft)</td>
+</tr>
+<tr>
+<td>Moderate file resistance, small filings</td>
+<td>Mild steel, annealed stainless</td>
+<td>Medium value</td>
+</tr>
+<tr>
+<td>Heavy file resistance, grinding sound</td>
+<td>High-carbon steel, hardened stainless</td>
+<td>Higher value</td>
+</tr>
+<tr>
+<td>File cannot bite, skips/bounces</td>
+<td>Extremely hard tool steel, tungsten</td>
+<td>Specialized alloy, high value</td>
+</tr>
+</tbody>
+</table>
+<h3>Magnet Test (Ferrous/Non-Ferrous Separation)</h3>
+<p>Quick, simple test distinguishes ferrous (iron-containing) from non-ferrous metals.</p>
+<p><strong>Magnet Test Procedure:</strong></p>
+<ol>
+<li>Use a strong permanent magnet (neodymium preferred) or an electromagnet</li>
+<li>Hold magnet near sample (not touching)</li>
+<li>Observe: strong pull = ferrous; no pull or weak pull = non-ferrous</li>
+<li>Test multiple areas of sample (some alloys have variable magnetic properties)</li>
+</ol>
+<p><strong>Results Interpretation:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Magnet Response</th>
+<th>Metal Category</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strong pull</td>
+<td>Ferrous</td>
+<td>Iron, mild steel, carbon steel, magnetic stainless</td>
+</tr>
+<tr>
+<td>Weak pull</td>
+<td>Semi-ferrous</td>
+<td>Some stainless alloys, nickel</td>
+</tr>
+<tr>
+<td>No pull</td>
+<td>Non-ferrous</td>
+<td>Aluminum, copper, brass, lead, non-magnetic stainless</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Special cases:</strong></p>
+<ul>
+<li>Stainless steel: most types non-magnetic, but some austenitic alloys are weakly magnetic</li>
+<li>Copper-plated steel: magnet pulls steel underneath, confirming ferrous core</li>
+</ul>
+<h3>Water Displacement (Density Estimation)</h3>
+<p>Comparing density reveals metal type without sophisticated equipment.</p>
+<p><strong>Density Test Procedure:</strong></p>
+<ol>
+<li>Measure sample weight on scale (or estimate by hand comparison to known weights)</li>
+<li>Measure or estimate volume (length × width × height for rectangular pieces, or water displacement method)</li>
+<li>Calculate density: Weight ÷ Volume</li>
+<li>Compare to reference densities (see reference table in earlier section)</li>
+</ol>
+<p><strong>Quick Hand-Feel Comparison:</strong></p>
+<ul>
+<li>Hold two pieces of identical size: one aluminum, one steel</li>
+<li>The steel piece feels disproportionately heavier</li>
+<li>An aluminum piece feels surprisingly light for its size</li>
+<li>This difference is density: same volume, different weight</li>
+</ul>
+<p><strong>Field Method:</strong> Carry reference weights (a 1-pound aluminum block, a 1-pound steel block). Compare unknown piece to reference blocks to estimate density category.</p>
+<h3>Acid Testing (Advanced, Chemical Method)</h3>
+<p>Definitive identification using dilute acids. Requires safety equipment and appropriate chemicals. Use sparingly to confirm uncertain identifications.</p>
+<p><strong>Safety Requirements:</strong></p>
+<ul>
+<li>Wear gloves and eye protection</li>
+<li>Work outdoors or in well-ventilated area</li>
+<li>Keep vinegar or baking soda nearby to neutralize acid (if using strong acids)</li>
+<li>Use pipette or dropper (never pour acid; use small amounts only)</li>
+</ul>
+<p><strong>Acid Reactions by Metal:</strong></p>
+<ul>
+<li><strong>Copper:</strong> Reacts with dilute nitric acid, producing blue-green coloration (copper nitrate). No reaction with dilute hydrochloric acid.</li>
+<li><strong>Iron/Steel:</strong> Reacts with dilute hydrochloric acid, producing hydrogen gas (fizzing sound). Rust forms immediately when acid contacts exposed steel.</li>
+<li><strong>Aluminum:</strong> Reacts with strong acid (not dilute) or alkaline solution (baking soda + water produces hydrogen gas bubble foam).</li>
+<li><strong>Brass:</strong> Reacts with nitric acid, producing reddish coloration. Weaker reaction than pure copper.</li>
+<li><strong>Lead:</strong> Minimal reaction with most dilute acids. Heavy white deposit forms with sulfuric acid.</li>
+<li><strong>Stainless steel:</strong> Passive (no reaction) with dilute acids. This corrosion resistance is the defining feature.</li>
+</ul>
+<p><strong>Field-Safe Alternative:</strong> Use vinegar (weak acetic acid) as gentler alternative. Copper reacts slowly, producing blue-green tint. Steel shows rust acceleration. Stainless shows no reaction.</p>
+<h3>Rapid Field Identification Flowchart</h3>
+<pre><code>START: Examine sample visually
+├─ Bright silver color? → Test weight vs. aluminum reference
+│  └─ Much heavier? → Likely stainless steel
+│  └─ Much lighter? → Likely aluminum
+├─ Copper/reddish color? → Magnet test
+│  └─ No magnetic pull? → Copper or brass
+│  └─ Slight pull? → Copper alloy or nickel
+├─ Yellow/brass color? → File test for softness
+│  └─ File bites easily? → Brass (non-ferrous)
+│  └─ Heavy resistance? → Possible bronze or hardened brass
+├─ Dark gray/black? → Magnet test
+│  └─ Strong pull? → Iron or steel (spark test for grade)
+│  └─ No pull? → Cast iron or low-carbon steel
+│  └─ Run spark test?
+│     ├─ Long bright sparks? → High-carbon steel ✓
+│     ├─ Continuous yellow? → Mild steel ✓
+│     └─ Short orange? → Stainless steel ✓
+
+RESULT: Confirm with density/file test if time permits
+</code></pre>
+<h3>Building a Portable Test Kit</h3>
+<p>Create a lightweight field kit for quick identification:</p>
+<p><strong>Essential items (under 3 lbs total):</strong></p>
+<ul>
+<li>1 × Strong permanent magnet (2&quot;x1&quot;x0.5&quot; neodymium block ~$10)</li>
+<li>1 × Metal file (cheap 6&quot; mill file ~$5)</li>
+<li>1 × Small scale or balance (0-5 lb capacity, ~$15)</li>
+<li>1 × Reference samples (small cubes of aluminum, steel, copper, brass, stainless—total ~$30)</li>
+<li>1 × Measuring tape (estimate volume of samples)</li>
+<li>1 × Flashlight (inspect dark surfaces for rust/tarnish)</li>
+<li>1 × Work gloves (protect hands from sharp edges, hot surfaces)</li>
+<li>1 × Safety glasses (eye protection for spark testing)</li>
+</ul>
+<p><strong>Optional items (add if working with acids):</strong></p>
+<ul>
+<li>1 × Bottle dilute vinegar (weak acid, safe)</li>
+<li>1 × Pipette or dropper</li>
+<li>1 × Baking soda solution (neutralizes acid)</li>
+<li>1 × Glass rod or stirring stick</li>
+</ul>
+<div class="tip">
+<p><strong>Building Your Test Kit:</strong></p>
+<p>Assemble reference cubes by purchasing small amounts of each metal type from a specialty metals supplier, or salvage them from equipment: aluminum from old electronics, steel from nails/bolts, copper from electrical wire, brass from fittings, stainless from kitchen utensils. Cut into uniform 1&quot;×1&quot;×1&quot; cubes (or reasonable approximation). Label each with permanent marker and store in a small cloth pouch.</p>
+<p>Your reference samples become invaluable: hold unknown piece in one hand, reference cube in other, compare weight immediately. Train yourself to feel the difference until density evaluation becomes intuitive.</p>
+</div>
+</section>
+<h3>The Priority Matrix</h3>
+<p>When entering any salvage site, time is limited and carrying capacity is finite. A systematic priority framework ensures maximum value extraction.</p>
+<h4>Tier 1: Immediate Survival (grab first)</h4>
+<ul>
+<li><strong>Medical supplies:</strong> Antibiotics, painkillers, bandages, suture materials, antiseptics. Irreplaceable and degrade over time.</li>
+<li><strong>Water purification:</strong> Filters, purification tablets, bleach, activated charcoal.</li>
+<li><strong>Seeds:</strong> Viable seed stock is priceless. Sealed, dry seeds remain viable for years.</li>
+<li><strong>Tools:</strong> Quality steel hand tools (wrenches, pliers, screwdrivers, hammers, saws, files). Prioritize over power tools.</li>
+</ul>
+<h4>Tier 2: High-Value Materials</h4>
+<ul>
+<li><strong>Copper wire and pipe:</strong> Essential for electrical systems. Strip from walls, salvage from plumbing, harvest from motor windings.</li>
+<li><strong>Fasteners:</strong> Screws, bolts, nuts, nails, rivets. Extremely difficult to manufacture. Collect aggressively and sort by size.</li>
+<li><strong>Bearings and gears:</strong> Precision components that cannot be replicated with hand tools.</li>
+<li><strong>Glass:</strong> Window glass, laboratory glass, lenses, mirrors. Energy-intensive to manufacture.</li>
+<li><strong>Springs:</strong> Coil springs, leaf springs, clock springs. Difficult to manufacture without spring steel.</li>
+</ul>
+<h4>Tier 3: Bulk Materials</h4>
+<ul>
+<li><strong>Steel and iron:</strong> Structural steel, rebar, sheet metal. Prioritize tool steel and stainless over mild structural steel.</li>
+<li><strong>Wire:</strong> All types for binding, fencing, snares, and electrical work.</li>
+<li><strong>Fabric and cordage:</strong> Rope, cord, cable, tarp, canvas. Synthetics are especially valuable for strength and rot resistance.</li>
+<li><strong>Containers:</strong> Buckets, drums, barrels, cans, bottles. Essential for food and water storage.</li>
+</ul>
+<h3>Site-Specific Priorities</h3>
+<ul>
+<li><strong>Residential:</strong> Kitchen knives, cast iron cookware, tools, garden tools, canning supplies, sewing materials, reference books, spices and salt.</li>
+<li><strong>Automotive shop:</strong> Jacks, welding equipment, metal stock, lubricants, batteries, hand tools.</li>
+<li><strong>Hospital/clinic:</strong> Surgical instruments, sterilization equipment, reference texts, medications, IV supplies.</li>
+<li><strong>Hardware store:</strong> Fasteners (highest priority), hand tools, adhesives, rope, plumbing fittings, electrical components, seed stock.</li>
+<li><strong>School/library:</strong> Reference books, maps, science equipment, art supplies, musical instruments, first aid kits.</li>
+</ul>
+<h3>Safety Protocols</h3>
+<ul>
+<li><strong>Structural assessment:</strong> Before entering any building, assess from outside. Look for sagging roofs, leaning walls, foundation cracks. Never enter alone.</li>
+<li><strong>Hazard identification:</strong> Watch for asbestos, chemical spills, unstable shelving, broken glass, and biological hazards. Wear respiratory protection.</li>
+<li><strong>Time limits:</strong> Set maximum 30-60 minutes per site. Post a lookout. Agree on emergency signals before entering.</li>
+<li><strong>Documentation:</strong> Note location, contents remaining, structural condition, and hazards. Share intelligence with the community.</li>
+</ul>
+</section>
+</section>
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="construction.html">Construction &amp; Carpentry</a>
+<a href="cra-01-forging-metalwork.html">Forging &amp; Metalwork</a>
+<a href="non-ferrous-metalworking.html">Non-Ferrous Metalworking</a>
+<a href="rural-scavenging-guide.html">Rural Scavenging: Location-by-Location Guide</a>
+<a href="stone-tools.html">Stone Tool Making</a>
+<a href="waste-management-recycling.html">Waste Management &amp; Recycling Systems</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

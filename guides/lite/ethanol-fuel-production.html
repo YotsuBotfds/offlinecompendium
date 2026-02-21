@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/ethanol-fuel-production.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ethanol Fuel Production by Fermentation</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Power Generation</span> ›
+<span>Ethanol Fuel Production by Fermentation</span>
+</div>
+
+
+<h1>Ethanol Fuel Production by Fermentation</h1>
+<p class="subtitle">Production of ethanol fuel through fermentation of sugar, starch, and cellulose feedstocks, including mashing, yeast management, distillation, denaturation, anhydrous ethanol production, and engine modification for E85 fuel.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~14 min</span>
+<span>Updated: 2026-02-18</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#feedstock">Feedstock Selection and Preparation</a></li>
+<li><a href="#fermentation">Fermentation Chemistry and Yeast Management</a></li>
+<li><a href="#distillation">Distillation and Purification</a></li>
+<li><a href="#anhydrous">Anhydrous Ethanol Production</a></li>
+<li><a href="#engine-modification">Engine Modification for Ethanol Fuels</a></li>
+<li><a href="#yield">Feedstock Yield Summary</a></li>
+<li><a href="#safety">Safety Considerations</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Ethanol (ethyl alcohol) is a renewable fuel derived from fermentation of sugars and starches. A diesel or gasoline engine, with minor modifications, can run on pure ethanol (E100) or ethanol-gasoline blends (E10, E85). In regions where petroleum is unavailable, local ethanol production using agricultural feedstock or recycled sugars can sustain a fleet of vehicles.</p>
+<p>This guide covers feedstock selection (sugarcane, grain, potatoes, cellulose), fermentation chemistry and yeast management, distillation and purification methods, denaturation for tax-exempt fuel-grade ethanol, production of anhydrous ethanol (water-free), and engine modifications for high-ethanol fuels. Ethanol production is legal for fuel in many jurisdictions but remains restricted or prohibited in some regions; verify local regulations before beginning.</p>
+<div class="warning">
+<p><strong>Legal and Regulatory Notice:</strong> Distillation of ethanol for fuel is heavily regulated or prohibited in many countries and regions. In the United States, for example, home fuel ethanol production is illegal without federal and state permits, even for personal use. Similar restrictions apply in Canada, Australia, and many European nations. Check your local, state/provincial, and national laws before attempting any ethanol production or distillation. This guide is provided for educational and survival knowledge purposes only. Unauthorized fuel production may result in substantial criminal penalties, equipment seizure, and fines. If ethanol production is illegal in your jurisdiction, this guide documents the technical principles for reference but should not be used for actual fuel production.</p>
+</div>
+</section>
+<section id="feedstock">
+<h2>Feedstock Selection and Preparation</h2>
+<h3>Sugar Feedstocks</h3>
+<p>Sugarcane and sugar beets are the ideal ethanol feedstock because they require no chemical preprocessing—the sugar is extracted directly and fermented.</p>
+<p><strong>Sugarcane:</strong> Crushed stalks yield 5–8% sugar by weight (50–80 liters of fresh juice from 1 metric ton of cane).</p>
+<ul>
+<li>Processing: Use a manual or motor-driven cane press (roller mill) to extract juice</li>
+<li>Juice composition: 80% water, 15–18% sucrose, 2–5% invert sugars (glucose, fructose), 1–2% fiber and minerals</li>
+<li>Fermentation yield: ~0.5 liters of ethanol per liter of juice (assuming complete fermentation of sugars)</li>
+<li>Residue (bagasse): 300–400 kg dry matter per ton cane; excellent fuel for boiling water to power the press</li>
+</ul>
+<p><strong>Sugar beets:</strong> Roots yield 4–6% sugar by weight (40–60 liters of juice from 1 metric ton of beets).</p>
+<ul>
+<li>Processing: Thin-slice beets, add hot water (60–70°C), and macerate for 30–60 minutes to extract juice; strain and collect liquid</li>
+<li>Juice composition: similar to sugarcane, with higher mineral content (requires lime addition to improve clarity)</li>
+<li>Fermentation yield: ~0.5 liters ethanol per liter of juice</li>
+<li>Residue (pulp): 600–800 kg per ton beets; useful as livestock feed</li>
+</ul>
+<p><strong>Molasses:</strong> Byproduct of sugar refining; contains 40–50% fermentable sugars plus non-fermentable compounds.</p>
+<ul>
+<li>Sourcing: Purchase from sugar mills or refineries</li>
+<li>Dilution: Molasses is too concentrated for direct fermentation; dilute with water to reach 10–15% sugar concentration (refractometer reading ~12°)</li>
+<li>Cost: Often cheaper than fresh juice if available locally</li>
+</ul>
+<h3>Starch Feedstocks</h3>
+<p>Grains (corn, barley, wheat, rye) and tubers (potatoes, cassava) contain starch, which must be hydrolyzed (broken into sugars) before fermentation.</p>
+<p><strong>Grain preparation:</strong></p>
+<ol>
+<li>Mill or crush the grain to increase surface area</li>
+<li>Heat with water (ratio 1 kg grain to 3 L water) to 65–70°C for 30 minutes (mashing)</li>
+<li>Add amylase enzyme (available from brewing suppliers) or malt extract (1–2% by weight of grain) to break starch into sugars</li>
+<li>Hold at 65–70°C for 1–2 hours, stirring occasionally</li>
+<li>Cool to 20°C, strain through cheesecloth, collect the liquid (wort)</li>
+<li>Fermentation yield: ~0.4–0.45 liters ethanol per kg of grain</li>
+</ol>
+<p><strong>Potato preparation:</strong></p>
+<ol>
+<li>Peel and cube potatoes (peels can be composted or fed to animals)</li>
+<li>Heat cubes with water (1 kg potato to 2 L water) to 95°C for 20 minutes (cooking gelatinizes starch)</li>
+<li>Cool to 65°C</li>
+<li>Add amylase enzyme or malt (same dose as grain)</li>
+<li>Hold at 65°C for 1 hour, stirring occasionally</li>
+<li>Cool, strain, ferment</li>
+<li>Fermentation yield: ~0.3–0.35 liters ethanol per kg of potato (lower than grain due to lower starch content)</li>
+</ol>
+<p><strong>Malt extract (shortcut):</strong> Purchase dried malt extract from brewing suppliers. Dissolve in water at a ratio of 1 kg extract per 4 L water, cool to 20°C, and ferment directly. This eliminates the need for enzyme addition but is more expensive than raw grain.</p>
+<h3>Cellulose Feedstocks</h3>
+<p>Wood, straw, and other plant material contain cellulose, which is difficult to ferment because cellulose is not readily available to enzymes. Cellulosic ethanol production is advanced and not recommended for small-scale operations without specialized equipment.</p>
+<p>If cellulose must be used, acid pre-treatment is necessary:</p>
+<ol>
+<li>Grind or chip cellulosic material to fine particles</li>
+<li>Soak in dilute sulfuric acid (1–2% by weight) at room temperature for 12–24 hours or heated to 150–170°C for 30–60 minutes (high-temperature acid hydrolysis)</li>
+<li>Neutralize with calcium carbonate or sodium hydroxide until pH reaches 6–7</li>
+<li>Filter and recover the sugar solution (yield is typically 30–50% of theoretical maximum)</li>
+<li>Ferment as with sugar feedstock</li>
+</ol>
+<p>For small-scale work, avoid cellulosic feedstocks unless other options are unavailable.</p>
+</section>
+<section id="fermentation">
+<h2>Fermentation Chemistry and Yeast Management</h2>
+<h3>The Fermentation Reaction</h3>
+<p>Yeast (Saccharomyces cerevisiae) converts glucose and fructose into ethanol and carbon dioxide:</p>
+<p><strong>C₆H₁₂O₆ (sugar) → 2 C₂H₅OH (ethanol) + 2 CO₂ (carbon dioxide)</strong></p>
+<p>Theoretical yield: 1 kg glucose produces 0.51 kg ethanol and 0.49 kg CO₂. In practice, some sugar is consumed for yeast growth and other fermentation byproducts (heat, fusel alcohols), so actual yield is 80–95% of theoretical.</p>
+<h3>Yeast Selection and Propagation</h3>
+<p><strong>Yeast strain:</strong> Use commercial distiller's yeast or brewer's yeast, available from homebrewing suppliers. Common strains:</p>
+<ul>
+<li><strong>Lalvin EC-1118:</strong> High alcohol tolerance (up to 18% ABV), fast fermentation, clean flavors</li>
+<li><strong>Safale US-05:</strong> Mild fruitiness, good alcohol tolerance (15% ABV), popular for fuel production</li>
+<li><strong>White Labs WLP720:</strong> Distiller's yeast, very clean, alcohol tolerance 18%+</li>
+</ul>
+<p><strong>Yeast viability:</strong> Fresh yeast ferments in 5–7 days; old or poorly stored yeast ferments slowly (10–14 days) or stalls. Store yeast at 4°C in a sealed container; use within 6 months of manufacture.</p>
+<p><strong>Yeast propagation:</strong> For large batches (&gt;100 liters), grow a yeast starter to ensure sufficient cell count:</p>
+<ol>
+<li>Mix 1–2 kg of sugar (or malt extract) with 5 L of water; heat to dissolve, cool to 20°C</li>
+<li>Add 1 packet of dry yeast per 100 L of final fermentation volume</li>
+<li>Aerate by stirring or bubbling air through the starter for 24 hours</li>
+<li>Use immediately when foam forms (12–24 hours after inoculation)</li>
+</ol>
+<p>For small batches (&lt;100 liters), rehydrate dry yeast according to the package instructions and pitch directly into the substrate.</p>
+<h3>Fermentation Conditions</h3>
+<p><strong>Temperature:</strong> Optimal range is 18–25°C for S. cerevisiae. Outside this range:</p>
+<ul>
+<li>&lt;15°C: fermentation stalls or becomes very slow</li>
+<li>
+<blockquote>
+<p>30°C: yeast becomes stressed, produces off-flavors and fusel alcohols, flocculates (settles) prematurely</p>
+</blockquote>
+</li>
+<li>Maintain temperature with a water bath or insulated fermentation vessel</li>
+</ul>
+<p><strong>pH:</strong> Target 5.5–6.5 (slightly acidic) to favor yeast growth over contaminating bacteria. Most grain and fruit juices naturally fall in this range.</p>
+<p><strong>Aeration:</strong> Yeast requires oxygen for growth; aerate the must (sugar solution) by stirring vigorously for 1–2 minutes before inoculation. Once fermentation begins (within 12 hours), do not add air; anaerobic conditions favor ethanol production over biomass growth.</p>
+<p><strong>Nutrient supplementation:</strong> Wort and juice typically contain sufficient nitrogen and minerals for fermentation. If fermentation stalls, add yeast nutrient (available from brewing suppliers) at 1–2 g per 100 liters of must.</p>
+<h3>Fermentation Monitoring and Completion</h3>
+<p>Monitor fermentation by measuring specific gravity (density) with a hydrometer:</p>
+<ul>
+<li>Initial gravity (OG): Measure at the start of fermentation</li>
+<li>Final gravity (FG): Measure daily until stable for 2 consecutive days</li>
+<li>Alcohol percentage: (OG - FG) × 131 ≈ ABV (alcohol by volume percentage)</li>
+</ul>
+<p>Example: If OG = 1.100 and FG = 1.010, alcohol = (1.100 - 1.010) × 131 ≈ 11.8% ABV.</p>
+<p>Fermentation is complete when gravity has dropped to the equilibrium level (typically 0.990–1.000 for dry fermentation, meaning all fermentable sugar is consumed) and remains stable for 48 hours.</p>
+<div class="tip">
+<p>Active fermentation produces vigorous CO₂ bubbles and has a pleasant yeasty, fruity aroma. As fermentation slows, bubbling decreases. When gravity stabilizes, fermentation is nearly complete; allow 2–3 more days of slow fermentation to ensure all sugar is consumed, improving ethanol yield and reducing off-flavors.</p>
+</div>
+</section>
+<section id="distillation">
+<h2>Distillation and Purification</h2>
+<p>Fermented must contains ~10–15% ethanol by volume, along with water, yeast cells, and flavor compounds. To concentrate ethanol and purify it for fuel, distillation is necessary.</p>
+<div class="danger">
+<p><strong>METHANOL WARNING — READ BEFORE PROCEEDING:</strong> Distillation of fermented liquids produces methanol (wood alcohol) in the first vapors (&quot;heads&quot;). Methanol is a lethal poison: as little as 10 mL causes permanent blindness; 30 mL can be fatal. Methanol is colorless, mixes completely with ethanol, and cannot be detected by taste or smell. You MUST discard the first 5-10% of all distillate (the &quot;heads&quot; fraction) — this contains concentrated methanol, acetaldehyde, and other toxic compounds. Even when producing fuel-grade ethanol not intended for consumption, methanol vapors are toxic if inhaled in enclosed spaces. NEVER taste distillate to assess quality. If methanol ingestion is suspected, administer ethanol (drinking alcohol) immediately as an emergency antidote and seek medical care.</p>
+</div>
+<h3>Distillation Principles</h3>
+<p>Ethanol boils at 78.3°C; water boils at 100°C. By heating fermented must to ~80°C, ethanol vaporizes preferentially and can be condensed back to liquid in a cooling coil. Repeated distillation increases ethanol concentration.</p>
+<h3>Simple Pot Still (Home Scale)</h3>
+<p>A pot still is a large kettle with a long, narrow column (condenser) attached to the top that allows vapors to cool as they rise.</p>
+<p><strong>Construction:</strong></p>
+<ol>
+<li>Use a large stainless steel pot (10–50 liters) as the still</li>
+<li>Drill a hole in the lid and install a thermowell (tube) so a thermometer can monitor internal temperature</li>
+<li>Attach a copper tube or aluminum coil for vapor to pass through before condensing</li>
+<li>Run cooling water through the condenser jacket or surround the condenser with ice</li>
+<li>Collect distillate (condensed ethanol) in a clean glass jar</li>
+</ol>
+<p><strong>Operation:</strong></p>
+<ol>
+<li>Pour fermented must into the still (fill to ~60% capacity)</li>
+<li>Heat slowly to 80°C (monitor with thermometer in thermowell)</li>
+<li>Ethanol vapors rise into the condenser, cool, and drip into the collection jar</li>
+<li>Distill until vapors no longer condense (temperature rises above 95°C) or the still empties</li>
+<li>The first ~5% of distillate (heads) and last ~5% (tails) have undesirable flavor; discard these</li>
+<li>Collect and pool the middle 90% (hearts)</li>
+</ol>
+<p><strong>Yield:</strong> Fermented must at 12% ABV typically yields 40–50% of the liquid volume as concentrated ethanol (60–80% ABV) after a single distillation.</p>
+<h3>Reflux Still (Improved Efficiency)</h3>
+<p>A reflux still uses a packed column (filled with copper turnings, glass beads, or ceramic saddles) to increase contact between rising vapors and cooling descending liquid. This produces higher purity ethanol with fewer distillation cycles.</p>
+<p><strong>Simple reflux still construction:</strong></p>
+<ol>
+<li>Stack copper scrubbing pads inside a metal tube (2 inches diameter, 18–24 inches tall)</li>
+<li>Attach the tube vertically to the pot still opening</li>
+<li>At the top of the column, install a cooling condenser (water-jacketed copper coil or ice-surrounded tube)</li>
+<li>Adjust heat so vapors rise slowly through the packed column (vigorous boiling causes flooding; if vapor whooshes out the top, reduce heat)</li>
+</ol>
+<p><strong>Operation:</strong></p>
+<ol>
+<li>Heat the pot still to 80–85°C (lower than a simple pot still)</li>
+<li>Vapors rise slowly through the packed column, condense, fall back, and re-evaporate multiple times</li>
+<li>This internal fractionation separates ethanol (lower boiling point) from water and higher alcohols (higher boiling points)</li>
+<li>Distillate emerges at 85–95% ABV after a single pass</li>
+<li>Second distillation improves purity to 95–98% ABV</li>
+</ol>
+<p>A reflux still reduces heat and time requirements significantly compared to pot stills and improves product purity.</p>
+<h3>Denaturation for Fuel Use</h3>
+<p>In most countries, fuel-grade ethanol is denatured (rendered undrinkable) to exempt it from beverage alcohol taxes. Common denaturants:</p>
+<ul>
+<li><strong>Methyl isobutyl ketone (MIBK):</strong> 5% by volume; does not affect combustion, readily available</li>
+<li><strong>Acetone:</strong> 2–3% by volume; highly flammable, not recommended for small-scale use</li>
+<li><strong>Gasoline:</strong> 2–5% by volume; improves cold-start and flame visibility</li>
+<li><strong>Denatonium benzoate (Bitrex):</strong> 0.01% by volume; bitter taste (used in conjunction with other denaturants)</li>
+</ul>
+<p>For small-scale fuel use, add 5% MIBK by volume or 3% acetone by volume to the distilled ethanol. Mix thoroughly and store in a labeled, sealed container.</p>
+<div class="warning">
+<p>Denatured ethanol is toxic and must never be consumed. Label all containers clearly as fuel only. Store in glass or metal containers away from heat and ignition sources.</p>
+</div>
+</section>
+<section id="anhydrous">
+<h2>Anhydrous Ethanol Production</h2>
+<p>Pure anhydrous ethanol (100% ethanol, 0% water) is necessary for E85 fuel (85% ethanol, 15% gasoline blend) and some engine modifications. Distillation alone cannot remove the last ~4% of water because ethanol and water form an azeotrope (a mixture that cannot be further separated by distillation).</p>
+<h3>Azeotropic Distillation</h3>
+<p>To break the ethanol-water azeotrope, add a third component that preferentially binds water:</p>
+<ol>
+<li>
+<p><strong>Benzene method (historical, now restricted):</strong> Add benzene to fermented must; distillation removes benzene-water azeotrope at 69°C, leaving pure ethanol. This is toxic and no longer recommended.</p>
+</li>
+<li>
+<p><strong>Molecular sieve method (modern, practical):</strong> Use zeolite or silica gel to absorb water from ~95% ethanol.</p>
+<ul>
+<li>Pass the ethanol through a column packed with activated molecular sieve 3A or 4A</li>
+<li>Water is absorbed; ethanol passes through</li>
+<li>Heated regeneration (120°C for 2–4 hours) drives off absorbed water</li>
+<li>Reuse the same sieve multiple times</li>
+</ul>
+</li>
+<li>
+<p><strong>Lime method (simple, home-scale):</strong> Heat 95% ethanol with freshly slaked lime (CaO) for 1–2 hours. Lime reacts with water:</p>
+<ul>
+<li>CaO + H₂O → Ca(OH)₂</li>
+<li>Filter out the calcium hydroxide; distill again to recover pure ethanol</li>
+<li>Yield: 85–90% of input ethanol as anhydrous product</li>
+</ul>
+</li>
+</ol>
+<p>The lime method is accessible for small-scale operations: purchase quicklime (calcium oxide) from agricultural or construction suppliers, hydrate it carefully (exothermic reaction; add water slowly to lime, never the reverse), and proceed as described.</p>
+</section>
+<section id="engine-modification">
+<h2>Engine Modification for Ethanol Fuels</h2>
+<p>Ethanol has different combustion and physical properties than gasoline, requiring engine modifications for optimal performance and reliability.</p>
+<h3>Material Compatibility</h3>
+<p>Pure or high-ethanol fuels (E85, E100) are hygroscopic (absorb water from air) and can be corrosive. Modified engines require:</p>
+<ul>
+<li><strong>Fuel system:</strong> Stainless steel or plastic (polyethylene) fuel tanks and lines; avoid uncoated steel or aluminum (which corrode in ethanol)</li>
+<li><strong>Fuel filter:</strong> Fine paper filter (10 µm) to remove water and sediment; change frequently (every 500–1000 hours)</li>
+<li><strong>Seals and gaskets:</strong> Nitrile or Viton (not natural rubber); ethanol swells natural rubber, causing leaks</li>
+<li><strong>Carburetor float bowl:</strong> Stainless steel or plastic; not brass (which corrodes in ethanol)</li>
+</ul>
+<h3>Cold Start and Vapor Lock</h3>
+<p>Ethanol has a lower energy density than gasoline (21.1 MJ/kg vs 43.4 MJ/kg) and a lower Reid vapor pressure (volatility). This causes two problems:</p>
+<ol>
+<li>
+<p><strong>Poor cold start:</strong> Ethanol is less volatile, so less vaporizes in a cold carburetor. Solution: Keep the fuel tank warm (wrap with insulation and a heating element) or add 5–10% gasoline to improve volatility.</p>
+</li>
+<li>
+<p><strong>Vapor lock prevention:</strong> Despite lower volatility, ethanol fuel lines can develop vapor pockets in hot conditions. Insulate fuel lines and keep them away from the hot engine exhaust.</p>
+</li>
+</ol>
+<h3>Fuel Mixture and Engine Tuning</h3>
+<p>Ethanol's stoichiometric air-fuel ratio is 9:1 by mass (compared to 14.7:1 for gasoline). This means ethanol requires more air per unit mass.</p>
+<p><strong>Carburetor adjustment:</strong></p>
+<ul>
+<li>Richen the main jet 10–20% (increase flow rate)</li>
+<li>Lean out the idle mixture screw slightly (opposite of what you would do for ethanol as an additive to gasoline)</li>
+<li>Adjust the power enrichment valve for stoichiometric ratio at wide-open throttle</li>
+</ul>
+<p><strong>Ignition timing:</strong></p>
+<ul>
+<li>Advance spark timing by 3–5° compared to gasoline</li>
+<li>Ethanol has a slower flame speed and higher octane rating; advanced timing compensates and improves combustion</li>
+</ul>
+<h3>Fuel Injection Conversion (Dedicated E85/E100 Engines)</h3>
+<p>For vehicles originally equipped with gasoline fuel injection, an aftermarket E85 conversion kit can be installed:</p>
+<ul>
+<li>Replace fuel pump with a high-flow model (ethanol requires more volume due to lower energy density)</li>
+<li>Install fuel injectors sized 25–30% larger (for the same power output)</li>
+<li>Use an ethanol content sensor (capacitive sensor) to detect fuel composition and adjust fuel flow and timing dynamically</li>
+<li>Modern engine control units (ECUs) in flex-fuel vehicles already include this compensation</li>
+</ul>
+<p>Vehicles specifically designed for E85 (flex-fuel vehicles) require no modification beyond using E85 at the pump.</p>
+<h3>Performance Expectations</h3>
+<p>An engine optimized for E85 will produce:</p>
+<ul>
+<li>Similar power output as on gasoline</li>
+<li>10–15% lower fuel economy (due to lower energy density of ethanol)</li>
+<li>Cleaner emissions (especially particulate matter and NOx)</li>
+<li>Improved acceleration and knock resistance (ethanol's high octane rating)</li>
+</ul>
+</section>
+<section id="yield">
+<h2>Feedstock Yield Summary</h2>
+<p>To estimate ethanol production from a given feedstock, use these benchmarks:</p>
+<table>
+<thead>
+<tr>
+<th>Feedstock</th>
+<th>Ethanol per Unit</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sugarcane juice</td>
+<td>0.5 L per liter</td>
+<td>80% theoretical; assumes complete fermentation</td>
+</tr>
+<tr>
+<td>Sugar beet juice</td>
+<td>0.45 L per liter</td>
+<td>Slightly lower due to higher mineral content</td>
+</tr>
+<tr>
+<td>Molasses (50% sugar)</td>
+<td>0.25 L per liter</td>
+<td>Dilute to 12% sugar before fermenting</td>
+</tr>
+<tr>
+<td>Corn grain</td>
+<td>0.4 L per kg</td>
+<td>After enzymatic hydrolysis and fermentation</td>
+</tr>
+<tr>
+<td>Wheat grain</td>
+<td>0.38 L per kg</td>
+<td>Similar to corn; slightly lower yield</td>
+</tr>
+<tr>
+<td>Potatoes</td>
+<td>0.3 L per kg</td>
+<td>After cooking and enzymatic hydrolysis</td>
+</tr>
+<tr>
+<td>Wood (cellulose)</td>
+<td>0.15–0.2 L per kg</td>
+<td>After acid hydrolysis; low recovery</td>
+</tr>
+</tbody>
+</table>
+<p>For a community-scale ethanol plant (e.g., 1000 L per week):</p>
+<ul>
+<li>Sugarcane: 2000 L juice input per week (1 metric ton cane ≈ 50 L juice)</li>
+<li>Corn: 2500 kg grain per week</li>
+<li>Potatoes: 3300 kg per week</li>
+</ul>
+<p>Energy input (heat for distillation, yeast propagation, etc.) typically accounts for 20–30% of the ethanol's energy output; the net energy gain is positive if feedstock is locally available and renewable.</p>
+</section>
+<section id="safety">
+<h2>Safety Considerations</h2>
+<h3>Ethanol Fire and Explosion Risk</h3>
+<p>Ethanol vapor is flammable in concentrations of 3.3–19% by volume in air. Keep all ethanol production and storage away from ignition sources.</p>
+<ul>
+<li><strong>Fire prevention:</strong> Store ethanol in sealed containers, keep away from open flames, electrical sparks, and hot surfaces (&gt;363°C)</li>
+<li><strong>Vapor handling:</strong> Fermentation and distillation produce ethanol vapor; work outdoors or in well-ventilated areas</li>
+<li><strong>Fire suppression:</strong> If ethanol catches fire, use a Class B extinguisher (foam or dry powder) or smother with sand; water is ineffective on ethanol fires</li>
+</ul>
+<h3>Methanol Contamination</h3>
+<p>If fermented juice is contaminated with wild yeast or bacteria, it may produce methanol (wood alcohol) instead of ethanol. Methanol is toxic and cannot be safely removed by home distillation (it boils at 64°C, below ethanol's 78°C, and mixes with ethanol in the distillate).</p>
+<ul>
+<li>Prevention: Use only purchased, pure yeast strains; maintain clean equipment; ferment at the correct temperature</li>
+<li>Detection: Methanol has a chemical smell (like paint thinner); ethanol has a pleasant alcoholic smell</li>
+<li>Safe practice: Always use a reflux still (which separates methanol from ethanol better than a pot still) and discard the first 5% and last 5% of distillate</li>
+</ul>
+<h3>Heat and Pressure</h3>
+<p>Distillation generates heat; ensure the system is vented properly so pressure does not build up (risk of explosion). Do not seal a distillation vessel under pressure.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion</h2>
+<p>Ethanol production is a viable approach to generating renewable fuel from local agricultural resources. The biochemistry is straightforward (fermentation is well-understood), and the distillation technology is accessible to small-scale producers. Challenges include energy efficiency (much heat is required for distillation), feedstock availability (sugar and starch crops require land and water), and regulatory compliance (fuel alcohol production is restricted in some regions). For communities with surplus agricultural production, ethanol fuel can offset petroleum imports and provide energy security.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="chemistry-fundamentals.html">Chemistry from Scratch</a>
+<a href="fermentation-baking.html">Fermentation &amp; Baking</a>
+<a href="wine-brewing.html">Wine, Brewing &amp; Distillation</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

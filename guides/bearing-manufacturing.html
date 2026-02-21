@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/bearing-manufacturing.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bearing Manufacturing - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.bearing-spec-table th { background: var(--card); padding: 8px; }
+.lubrication-chart { font-size: 0.9em; }
+
+</style>
+<meta name="description" content="Ball bearings, journal bearings, bronze alloys, lubrication theory, fitting tolerances, and failure mode analysis.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/bearing-manufacturing.html">
+<meta property="og:title" content="Bearing Manufacturing">
+<meta property="og:description" content="Ball bearings, journal bearings, bronze alloys, lubrication theory, fitting tolerances, and failure mode analysis.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Metalworking", "item": "https://zerotoherohero.com/#sec-metalworking"},
+    {"@type": "ListItem", "position": 3, "name": "Bearing Manufacturing", "item": "https://zerotoherohero.com/guides/bearing-manufacturing.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Bearing Manufacturing",
+  "description": "Ball bearings, journal bearings, bronze alloys, lubrication theory, fitting tolerances, and failure mode analysis.",
+  "dateModified": "2026-02-19",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-172">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-metalworking">Metalworking</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Bearing Manufacturing</span>
+</nav>
+<header>
+<h1>Bearing Manufacturing</h1>
+<p class="subtitle">Ball bearings, journal bearings, bronze alloys, lubrication theory, fitting tolerances, and failure mode analysis.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●●○</span>
+<span class="read-time">📖 ~9 min read</span>
+<span class="last-updated">· Updated: 2026-02-19</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction to Bearing Manufacturing</a></li>
+<li><a href="#types">Bearing Types and Selection</a></li>
+<li><a href="#plain">Plain Bearings and Bushings</a></li>
+<li><a href="#materials">Plain Bearing Materials</a></li>
+<li><a href="#ball">Ball Bearing Manufacturing Essentials</a></li>
+<li><a href="#grinding">Steel Ball Grinding and Hardening</a></li>
+<li><a href="#races">Inner and Outer Race Manufacturing</a></li>
+<li><a href="#lubrication">Lubrication Theory and Film Formation</a></li>
+<li><a href="#lubricant-prod">Lubricant Production from Accessible Materials</a></li>
+<li><a href="#fitting">Fitting and Tolerance Standards</a></li>
+<li><a href="#failure">Bearing Failure Modes and Prevention</a></li>
+<li><a href="#troubleshooting">Bearing Troubleshooting and Diagnosis</a></li>
+<li><a href="#common-mistakes">Common Mistakes in Bearing Manufacturing</a></li>
+<li><a href="#hardness-testing">Hardness Testing Specifications</a></li>
+<li><a href="#failure-modes-under-load">Failure Modes Under Load</a></li>
+<li><a href="#quickref">Quick Reference: Bearing Specifications</a></li>
+<li><a href="#community-production">Community-Scale Bearing Production</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<!-- SVG-TODO: Cross-section of ball bearing showing races and balls, plain bearing with oil grooves diagram, hardness comparison chart for bearing steels, lubrication regimes hydrodynamic vs boundary -->
+<section id="introduction">
+<h2>Introduction to Bearing Manufacturing</h2>
+<p>Bearings enable machinery to function by reducing friction between rotating shafts and stationary housings. Two primary types serve most applications: plain (journal) bearings using lubrication film, and rolling-element bearings using balls or rollers. Understanding bearing design, material selection, manufacturing techniques, and lubrication allows production of reliable bearings in resource-limited environments.</p>
+<p>This guide covers bearing types, material selection, manufacturing procedures, lubrication formulation, failure analysis, and troubleshooting. Emphasis on practical production methods suitable for communities with access to basic metalworking equipment.</p>
+</section>
+<section id="types">
+<h2>Bearing Types and Selection</h2>
+<table><thead><tr><th scope="row">Type</th><th scope="row">Load Capacity</th><th scope="row">Speed Range</th><th scope="row">Cost</th><th scope="row">Maintenance</th></tr></thead><tbody><tr><td>Plain bearing (journal)</td><td>High</td><td>Low-Medium</td><td>Very low</td><td>Regular lubrication</td></tr><tr><td>Ball bearing</td><td>Moderate</td><td>High</td><td>Moderate</td><td>Sealed, minimal</td></tr><tr><td>Roller bearing</td><td>Very high</td><td>Medium</td><td>Moderate-High</td><td>Regular lubrication</td></tr><tr><td>Thrust bearing</td><td>Moderate (axial only)</td><td>Medium</td><td>Moderate</td><td>Lubrication</td></tr><tr><td>Wooden water bearing</td><td>High at low speed</td><td>Low</td><td>Very low</td><td>Water lubrication</td></tr></tbody></table>
+<h3>Selection Criteria</h3>
+<p><strong>Speed capability:</strong> Plain bearings suitable for &lt;3000 RPM. Ball bearings excel at 5000+ RPM. Roller bearings intermediate (2000-8000 RPM range). Excessive speed on plain bearings creates heat generation and wear acceleration.</p>
+<p><strong>Load requirements:</strong> Journal bearings support high radial loads (perpendicular to shaft). Roller bearings support high radial and axial loads. Thrust bearings handle axial loads only. Select bearing type matching load direction and magnitude.</p>
+<p><strong>Maintenance requirements:</strong> Plain bearings require regular lubrication (daily-weekly depending on speed). Ball bearings sealed, minimal maintenance (annual relubrication). Roller bearings moderate lubrication (weekly-monthly). Select based on maintenance availability.</p>
+<p><strong>Cost-efficiency:</strong> Plain bearings cheapest to manufacture (basic machining). Ball bearings require precision grinding (expensive). Roller bearings intermediate cost. For survival contexts, plain bearings often optimal if maintenance is reliable.</p>
+</section>
+<section id="plain">
+<h2>Plain Bearings and Bushings</h2>
+<p>The simplest bearing type: a shaft rotating inside a stationary hole. Radial load capacity depends on bearing surface area and material friction properties.</p>
+<h3>Design Considerations</h3>
+<ul>
+<li><strong>Length-to-diameter ratio:</strong> L/D of 0.5-2.0 typical; longer bearings reduce side loading and distribute loads over larger area</li>
+<li><strong>Surface finish:</strong> Smooth surfaces (Ra &lt;0.8 μm) reduce friction and wear; rough surfaces trap particles and accelerate degradation</li>
+<li><strong>Clearance:</strong> Small clearance (0.5-2 mm for 50 mm diameter) allows oil film formation without excessive wobble</li>
+<li><strong>Cooling:</strong> High-speed operation generates heat; requires circulation or natural dissipation to prevent oil breakdown</li>
+</ul>
+<h3>DIY Plain Bearing Construction</h3>
+<p><strong>Detailed step-by-step procedure:</strong></p>
+<ol>
+<li>
+<p>Start with a steel or aluminum outer tube (inner diameter = shaft diameter + clearance). For a 50 mm shaft requiring 0.5-2 mm clearance, bore the tube to 50.5-52 mm inner diameter. Wall thickness should be at least 10-15 mm for structural rigidity and pressure capacity.</p>
+</li>
+<li>
+<p>Mount the tube in a lathe chuck; support with tailstock if length &gt;100 mm to prevent whipping. Use a sharp HSS or carbide boring tool.</p>
+</li>
+<li>
+<p>Bore the inner surface incrementally: rough bore at 0.3 mm feed rate using 0.5 mm depth of cut, then finish bore at 0.1 mm feed rate with 0.25 mm depths. Measure bore diameter with precision calipers after each pass; final tolerance ±0.1 mm. Cool continuously with cutting oil to prevent work-hardening.</p>
+</li>
+<li>
+<p>Insert a bronze or babbit liner (if using a composite bearing) by either casting (pour molten bronze/babbit directly into the bore with shaft as mold core) or shrink-fitting (heat outer tube to 200°C, slide in pre-cast liner, cool to lock in place).</p>
+</li>
+<li>
+<p>Machine oil grooves on the inner surface to distribute lubricant uniformly:</p>
+<ul>
+<li><strong>Spiral grooves:</strong> Feed rate 0.5-2 mm per revolution; creates centrifugal pumping action. Best for high-speed bearings (&gt;500 RPM). Depth 2-3 mm, width 3-5 mm.</li>
+<li><strong>Axial grooves:</strong> 2-4 parallel grooves along bearing length; simpler but less effective. Width 2-4 mm, depth 1-2 mm, spaced 20-30 mm apart.</li>
+<li>Orientation: Position grooves to carry oil from inlet toward loaded zone.</li>
+</ul>
+</li>
+<li>
+<p>Drill oil inlet holes (1/4&quot; diameter typical, or 6-8 mm) at the unloaded side of the bearing; drill outlet holes at the loaded side. Position inlets tangentially to create swirling flow. Outlets should permit oil escape without air suction.</p>
+</li>
+<li>
+<p>Test fit with the shaft: Insert shaft and rotate by hand. Bearing should rotate freely with slight resistance from oil film formation (indicating hydrodynamic wedge is forming). If binding, re-bore to larger diameter. If excessive play (&gt;3 mm for 50 mm shaft), reduce diameter by 0.5 mm increments.</p>
+</li>
+<li>
+<p>Final inspection: Check for bearing wobble (radial runout &gt;0.2 mm indicates bore concentricity issue), listen for noise (grinding = poor surface finish or contamination), feel for rough spots or catch points (microscopic scratches may catch during operation at speed).</p>
+</li>
+</ol>
+<h3>Bearing Clearance Specifications</h3>
+<p>Excessive clearance (&gt;3 mm for 50 mm shaft) allows excessive shaft wobble, reduces load capacity dramatically, creates mechanical noise and vibration. Insufficient clearance (&lt;0.2 mm) causes metal-to-metal friction, rapid heat generation above 100°C, and bearing seizure (shaft stops rotating). Optimal clearance: <strong>0.001-0.003&quot; per inch of shaft diameter</strong> (metric: 0.025-0.075 mm for 25 mm shaft). Tolerance: ±0.0005&quot; for production bearings. Measure with feeler gauges during assembly, adjust by boring to size incrementally.</p>
+<div class="warning">
+<p><strong>High-Speed Plain Bearing Risk:</strong> Above 1500 RPM, inadequate clearance causes friction heating that can degrade lubricant within minutes. Monitor bearing temperature with infrared thermometer (target &lt;70°C). If bearing temperature exceeds 80°C, increase clearance immediately by 0.5 mm and retest.</p>
+</div>
+</section>
+<section id="materials">
+<h2>Plain Bearing Materials</h2>
+<table><thead><tr><th scope="row">Material</th><th scope="row">Composition</th><th scope="row">Properties</th><th scope="row">Max Load/Speed</th></tr></thead><tbody><tr><td>Bronze (CuSn)</td><td>88% Cu, 12% Sn</td><td>Good friction, wear-resistant, expensive</td><td>Moderate load, high speed</td></tr><tr><td>Babbit (Sn-Sb-Cu)</td><td>Sn 90%, Sb 7.5%, Cu 2.5%</td><td>Low friction, soft (excellent conformability), lead-free</td><td>High load, low speed</td></tr><tr><td>Brass (CuZn)</td><td>70% Cu, 30% Zn</td><td>Cheaper than bronze, adequate friction</td><td>Moderate load/speed</td></tr><tr><td>Lignum vitae (wood)</td><td>Hardwood, self-lubricating</td><td>Low friction, water-lubricating capability</td><td>High load, slow speed</td></tr><tr><td>PTFE (plastic)</td><td>Polytetrafluoroethylene polymer</td><td>Lowest friction, dry-lubricating, no maintenance</td><td>Low-moderate, all speeds</td></tr></tbody></table>
+<h3>Bronze (Copper-Tin) Bearing Production</h3>
+<p><strong>Composition selection:</strong> SAE 660 (88% Cu, 10% Sn, 2% Pb) is traditional; lead-free alternatives available (phosphor bronze 95% Cu, 4% Sn, 1% Phosphorus). Pour temperature 1100-1150°C (far above melting point 1000°C) ensures complete fluidity and fills mold cavities without premature solidification.</p>
+<p><strong>Casting procedure:</strong></p>
+<ol>
+<li>Prepare sand mold or metal mold for bearing shape (cylindrical bushing). Line mold with refractory clay or graphite to prevent adhesion.</li>
+<li>Heat bronze ingot in crucible to 1100°C until completely molten (bright cherry-red, free-flowing). Temperature check: dip steel rod; if it melts instantly, bronze is ready.</li>
+<li>Pour into mold slowly (prevents air entrapment, creates clean casting without porosity). Pour time should be 3-5 seconds for 500 g casting.</li>
+<li>Cool in mold (1-2 hours for large bearings, prevents stress cracking). Allow furnace cooling to room temperature before removing.</li>
+<li>Remove bearing, cool completely (at least 12 hours) before machining to avoid thermal warping.</li>
+<li>Bore to final diameter with lathe (0.1-0.3 mm feed rate, light depth of cut).</li>
+<li>Finish bore surface to &lt;1 μm roughness using fine feed rate (0.05 mm per rev).</li>
+</ol>
+<div class="danger">
+<p><strong>Molten Bronze Hazard:</strong> Molten bronze at 1100°C causes severe burn injuries instantly. Wear heat-resistant gloves reaching to elbow, face shield, and leather apron. Never pour directly over hands or other person. Have cold water bath ready (but DO NOT immerse hot bronze suddenly—causes violent steam explosion). Report all burns immediately.</p>
+</div>
+<h3>Babbit Bearing Production</h3>
+<p><strong>Pouring a babbit liner into a bearing shell:</strong></p>
+<ol>
+<li>Prepare a bearing mold: Split outer shell with a mold core (shaft dummy) inserted concentrically. Clamping must be firm; any movement causes misalignment.</li>
+<li>Heat the outer shell to 150-200°C to prevent rapid cooling (which causes cracks and porosity in soft babbit). Use furnace or heat gun; measure with infrared thermometer.</li>
+<li>Heat babbit ingot to 260-290°C until molten (do not exceed 315°C or tin will oxidize, creating gray dross and weak castings). Heating time: 20-30 minutes in furnace.</li>
+<li>Pour molten babbit into the mold cavity slowly to avoid air bubbles. Pour rate should be 30-60 seconds for complete fill. Tilt mold gently during pour to encourage air release.</li>
+<li>Cool slowly; allow 8-12 hours for complete cooling (prevent temperature shock). Cover with insulating blanket if ambient temperature &lt;15°C.</li>
+<li>Remove the mold core and finish the bearing surface if needed (light lathe finishing for smoothness).</li>
+<li>The bearing is now ready for oil lubrication and use. Babbit softness means it conformably adapts to shaft irregularities.</li>
+</ol>
+<p><strong>Advantages:</strong> Babbit extremely soft (excellent conformability to shaft surface irregularities and misalignment), low friction (suitable for high-speed operation up to 5000 RPM with adequate oil), inexpensive to pour (requires minimal material). <strong>Disadvantages:</strong> Low melting point 250°C (oil breakdown at high temperatures causes heat buildup), inferior load capacity to bronze (limited to &lt;100 MPa contact stress), softer surface wears faster.</p>
+<h3>Bearing Liner Finishing</h3>
+<p>After casting or insertion, bore bearing surface to final size. Use sharp lathe tools (dull tools create work-hardening and poor surface finish; replace when boring rate drops 20%). Feed speed: 0.1-0.3 mm per revolution (slower than steel, babbit is soft and work-hardens if fed too fast). Cool with cutting oil or soluble oil emulsion (prevents galling where tool chatters, improves surface finish to &lt;0.5 μm). Final finish &lt;0.5 μm critical for long bearing life (rough surfaces accumulate particles and accelerate wear).</p>
+<div class="tip">
+<p><strong>Efficient Bronze/Babbit Production:</strong> Pre-pour multiple bearing blanks in sand molds before machining. Single furnace heat produces 8-12 bearings. Batch machining (all rough bores, then all finish bores, then all groove cuts) is more efficient than completing each bearing individually. Reduces total production time by 30-40%.</p>
+</div>
+</section>
+<section id="ball">
+<h2>Ball Bearing Manufacturing Essentials</h2>
+<p><svg aria-label="Bearing Manufacturing diagram 1" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg"><circle cx="300" cy="150" fill="none" r="120" stroke="currentColor" stroke-width="2"></circle><circle cx="300" cy="150" fill="none" r="100" stroke="currentColor" stroke-dasharray="3,3" stroke-width="1"></circle><circle cx="300" cy="150" fill="none" r="60" stroke="currentColor" stroke-width="2"></circle><text fill="currentColor" font-size="11" text-anchor="middle" x="300" y="155"> Inner race </text><circle cx="340" cy="110" fill="none" r="15" stroke="currentColor" stroke-width="1.5"></circle><circle cx="380" cy="150" fill="none" r="15" stroke="currentColor" stroke-width="1.5"></circle><circle cx="340" cy="190" fill="none" r="15" stroke="currentColor" stroke-width="1.5"></circle><circle cx="260" cy="190" fill="none" r="15" stroke="currentColor" stroke-width="1.5"></circle><circle cx="220" cy="150" fill="none" r="15" stroke="currentColor" stroke-width="1.5"></circle><circle cx="260" cy="110" fill="none" r="15" stroke="currentColor" stroke-width="1.5"></circle><path d="M 280 130 Q 300 120 320 130 Q 300 140 280 130" fill="rgba(200,200,200,0.3)" stroke="currentColor" stroke-width="1"></path><text fill="currentColor" font-size="10" text-anchor="middle" x="300" y="90"> Cage </text><text fill="currentColor" font-size="11" x="450" y="110"> Outer race </text><text fill="currentColor" font-size="11" x="450" y="160"> Ball </text><text fill="currentColor" font-size="11" x="450" y="210"> Inner race </text></svg></p>
+<p>Ball bearing assembly: inner race, outer race, balls, and retaining cage</p>
+<h3>Production Steps</h3>
+<ul>
+<li>Forge or cast steel balls (high-carbon steel AISI 52100, 1% carbon content)</li>
+<li>Spherical grinding to precise diameter (±0.001 inch tolerance, ±0.025 mm)</li>
+<li>Hardening by quenching and tempering (Rc 58-65)</li>
+<li>Lapping to final diameter and surface finish (Ra &lt;0.2 μm)</li>
+<li>Manufacture races by turning and grinding</li>
+<li>Assemble cage, insert balls, and press races together</li>
+</ul>
+<h3>Sourcing Ball Stock</h3>
+<p>Cast steel balls from scrap cast iron (iron-based, requires remelting at 1500°C, difficult without specialized foundry equipment). Forged ball approach: heat rod of SAE 1045 or 1050 steel to bright red (approximately 900°C), forge into sphere using round dies, repeat heating and reshaping for 3-5 cycles until uniform geometry achieved. Spherical grinding more practical if any grinding equipment available; requires less iterations and produces rounder balls faster.</p>
+</section>
+<section id="grinding">
+<h2>Steel Ball Grinding and Hardening</h2>
+<h3>Grinding Procedure</h3>
+<ol>
+<li>
+<p>Start with forged or cast steel ball blanks (slightly oversized, ~10% larger than final size). Example: for 10 mm final diameter balls, start with 11 mm blanks.</p>
+</li>
+<li>
+<p>Place balls in a spherical grinding machine with a rotating grinding wheel (silicon carbide 80-120 grit, or diamond if available). Grinding wheel should be 100-150 mm diameter.</p>
+</li>
+<li>
+<p>Feed balls against the wheel gradually (0.1-0.2 mm per revolution feed rate) to remove material uniformly. Rotate balls between feeds to create sphere. Avoid rapid material removal (&gt;0.5 mm per feed), which causes surface cracking and heat damage.</p>
+</li>
+<li>
+<p>Cool with cutting fluid (water-soluble oil or synthetic) continuously. Target fluid flow 5-10 liters/minute.</p>
+</li>
+<li>
+<p>Check diameter periodically with precision calipers; measure in three directions (perpendicular to each other). Final diameter target ±0.0005 inch (±0.0125 mm). Tolerance for 10 mm balls: 9.9875-10.0125 mm.</p>
+</li>
+<li>
+<p>Remove balls when size achieved; allow to cool before next process step. Handle with cotton gloves to prevent fingerprint rust.</p>
+</li>
+</ol>
+<p><strong>Grinding machine alternatives:</strong> Bench grinder adapted with spherical fixture (V-groove wheel holder). Two grinding wheels perpendicular to each other with shaft between them. Labor-intensive but achievable with basic equipment; skilled operator can produce 30-50 balls per day.</p>
+<h3>Hardening and Tempering</h3>
+<p><strong>Quenching procedure:</strong></p>
+<ol>
+<li>
+<p>Heat balls to 800-850°C (bright cherry red color) in a furnace. Soak time 15-20 minutes ensures uniform temperature throughout (critical for larger balls &gt;10 mm diameter; small balls need 5-10 minutes only). Use temperature measuring strips or pyrometer if available.</p>
+</li>
+<li>
+<p>Quench rapidly in cold water or oil (cold water quenches faster, 30-60 seconds immersion; oil is slower but safer, 60-120 seconds). Immediate cooling upon removal from furnace is essential—delay &gt;5 seconds reduces hardness significantly.</p>
+</li>
+<li>
+<p>Ball becomes very hard but brittle after quenching; proceed immediately to tempering to relieve stress.</p>
+</li>
+</ol>
+<p><strong>Tempering (stress relief):</strong></p>
+<ol>
+<li>
+<p>Reheat quenched balls to 180-250°C (pale yellow to straw color) in oven. Lower temperatures (180°C) produce harder balls (Rc 62-65) suitable for high-load applications. Higher temperatures (250°C) produce tougher balls (Rc 58-62) with less brittleness.</p>
+</li>
+<li>
+<p>Soak for 1-2 hours; this relieves internal stresses introduced during quenching. Longer soak (2+ hours) reduces residual stress further but provides minimal hardness benefit.</p>
+</li>
+<li>
+<p>Cool slowly in air (do not quench after tempering—this reverts hardness loss). Final hardness Rc 58-65.</p>
+</li>
+<li>
+<p>Final hardness balances high strength (from quenching) with low brittleness (from tempering). Proper tempering prevents catastrophic fracture during rolling contact.</p>
+</li>
+</ol>
+<p><strong>Hardness verification:</strong> Use hardness tester or file test (properly hardened ball resists file scratching; soft ball marks easily). Rc 58-65 is target (equivalent to ~650 HV Vickers hardness). File test: apply file with hand pressure; hardened balls produce only light scratching with visible metal dust. Soft balls show deep scratches and chips.</p>
+<div class="danger">
+<p><strong>Quenching Oil Fire Risk:</strong> Rapid quenching oil heats explosively if water splashes in. Use dedicated quench oil (mineral oil with fire-safe additives). Never use water-based emulsion oils for steel hardening. Keep fire extinguisher (powder type, Class B for oil fires) within arm's reach during all hardening operations. If fire occurs in quench oil, smother with sand or dry powder—DO NOT use water.</p>
+</div>
+</section>
+<section id="races">
+<h2>Inner and Outer Race Manufacturing</h2>
+<h3>Turning</h3>
+<ol>
+<li>
+<p>Start with cylindrical steel stock (AISI 52100, 80-100 mm diameter typical for small bearings). Stock should be 20-30% longer than finished bearing width to allow for facing and parting.</p>
+</li>
+<li>
+<p>Mount in lathe chuck; support with tailstock if length &gt;150 mm. Turn OD to slightly oversized (0.5-1 mm oversize).</p>
+</li>
+<li>
+<p>If making outer race: bore hole through center to bearing ID +0.5 mm, then turn OD grooves. If making inner race: turn OD grooves on solid bar, then turn down shaft if required.</p>
+</li>
+<li>
+<p>Create ball-seating grooves: radius-shaped cavity where balls rest (radius = 5-10% larger than ball radius). Groove depth = ball diameter - 0.5 mm. Use radius cutting tool or grind specialized groove cutter.</p>
+</li>
+<li>
+<p>Surface finish is critical: Ra &lt;0.4 μm for best rolling performance. Multiple light finishing passes with sharp tool.</p>
+</li>
+</ol>
+<h3>Grinding the Grooves</h3>
+<ol>
+<li>
+<p>Use a grinding wheel shaped to the groove profile (can be hand-dressed or custom-profiled). Wheel diameter 100-150 mm, grit 120-180.</p>
+</li>
+<li>
+<p>Feed the wheel carefully into the race groove (0.1 mm per pass feed rate to prevent chatter). Work piece should rotate 500-1000 RPM during grinding.</p>
+</li>
+<li>
+<p>Remove 0.2-0.5 mm of material to achieve desired groove shape and finish. This removes turning marks and produces final smooth surface.</p>
+</li>
+<li>
+<p>Cool with cutting fluid; inspect with profile gauge (metal template of desired groove profile) for accuracy. Profile must match ball radius precisely; deviation &gt;0.1 mm reduces bearing life.</p>
+</li>
+</ol>
+<h3>Hardening Races</h3>
+<p>Races are hardened identically to balls: quench at 800-850°C, temper at 180-250°C to achieve Rc 58-65. Avoid overheating (&gt;900°C causes grain growth and brittleness). Avoid slow cooling (quenching must be rapid—water cooling 30-60 seconds or oil cooling 60-120 seconds). After hardening, inspect races under magnifying glass (5x-10x) for surface cracks (indicate incomplete quench or overheating).</p>
+<h3>Assembly Procedure</h3>
+<ol>
+<li>
+<p>Inspect all races and balls for damage (cracks, dents, chips). Use bright light and magnifying glass. Reject any component with visible defects.</p>
+</li>
+<li>
+<p>Insert balls into outer race groove (space evenly; ball-to-ball spacing should be within 1 mm uniformity).</p>
+</li>
+<li>
+<p>Insert inner race through assembled balls (care needed to prevent balls from falling). Use smooth guiding motion to prevent race from wedging.</p>
+</li>
+<li>
+<p>Ensure cage (retainer) holds balls evenly spaced (ball-to-ball spacing uniform). Measure spacing with calipers; adjust cage if necessary.</p>
+</li>
+<li>
+<p>Press outer race onto inner race assembly; should slide smoothly with slight preload (gentle resistance to rotation). Preload should require 2-5 kg hand force to rotate.</p>
+</li>
+<li>
+<p>Test spin: bearing should rotate freely with no binding. Spin with finger; should coast for 5-10 seconds minimum before stopping.</p>
+</li>
+</ol>
+</section>
+<section id="lubrication">
+<h2>Lubrication Theory and Film Formation</h2>
+<h3>Hydrodynamic (Thick Film) Lubrication</h3>
+<p>At high speeds or with viscous oils, a complete oil film separates surfaces:</p>
+<ul>
+<li>Film thickness &gt; 1 micrometer; surfaces do not touch (ideal condition)</li>
+<li>Friction from oil viscosity, not metal-to-metal sliding</li>
+<li>No wear occurs</li>
+<li>Pressure builds up in converging oil wedge; supports load dynamically</li>
+</ul>
+<p><strong>Velocity-dependent:</strong> Higher speed creates thicker film. At rest, no film (boundary lubrication applies). At 100 RPM slow rotation: thin film (1-5 μm). At 1000 RPM: moderate film (5-20 μm). At 5000+ RPM: thick film (20+ μm). This is why high-speed bearings can use lighter oils.</p>
+<h3>Boundary Lubrication</h3>
+<p>At low speeds, with thin lubricants, or high loads, metal contact occurs:</p>
+<ul>
+<li>Film thickness &lt;0.1 micrometer; surfaces separated by molecular layers only</li>
+<li>Friction depends on surface chemistry (adsorbed oil molecules prevent metal-to-metal contact)</li>
+<li>Wear occurs; life of bearing is limited</li>
+<li>Antiwear additives reduce friction and prolong life</li>
+</ul>
+<p><strong>Additives critical:</strong> Zinc dialkyldithiophosphate (ZDDP) 1-2% in oil dramatically reduces wear rate (extends life by 2-3x). Molybdenum disulfide (MoS₂) 2-5% further reduces friction in boundary regime.</p>
+<h3>Bearing Operating Regimes</h3>
+<ul>
+<li><strong>Rolling bearings (high speed, low viscosity):</strong> Hydrodynamic film; load carried by pressure in oil wedges between balls and races</li>
+<li><strong>Plain bearings (low speed, high viscosity):</strong> Boundary-to-mixed lubrication; high friction, requires careful design and monitoring</li>
+<li><strong>Water-lubricated bearings (very low friction):</strong> Hydrodynamic, but water has low viscosity; requires large clearances and specific geometry</li>
+</ul>
+</section>
+<section id="lubricant-prod">
+<h2>Lubricant Production from Accessible Materials</h2>
+<h3>Animal Fat Rendering</h3>
+<p>Traditional method still effective for producing basic lubricant:</p>
+<ol>
+<li>
+<p>Render animal fat (beef tallow, lard) by heating to 120-150°C with slow stirring (prevents charring). Use large iron pot or copper kettle, 30-40 liter capacity for batch production.</p>
+</li>
+<li>
+<p>Heat melts fat and separates water/protein (rendered fat is clear, no particles). Rendering time: 2-4 hours depending on fat particle size. Skim floating solids continuously.</p>
+</li>
+<li>
+<p>Cool and filter through cheesecloth (multiple layers for fine particles); solid wax/fat separates from liquid oil in days. Rendered liquid oil should be golden/amber color.</p>
+</li>
+<li>
+<p>Use clear rendered oil as bearing lubricant (works for low-speed bearings &lt;1000 RPM). Store in sealed dark bottles; shelf life 6-12 months before oxidation.</p>
+</li>
+<li>
+<p>Viscosity at 40°C: ~150-500 cSt depending on animal and processing (beef tallow 200-300 cSt, lard 150-250 cSt).</p>
+</li>
+</ol>
+<p><strong>Animal selection:</strong> Beef tallow superior to pork lard (higher melting point 40-50°C, better stability at higher temperatures). Chicken fat inferior (too soft, melts at 30-35°C). Fish oil adequate (oxidizes faster, shorter shelf life 3-6 months).</p>
+<h3>Making Grease from Tallow + Lime</h3>
+<p>Thickened lubricant for slow-speed bearings:</p>
+<ol>
+<li>
+<p>Mix rendered tallow (90% by weight) with calcium hydroxide (slaked lime, 10%). For 900 g tallow, add 100 g lime (powder form).</p>
+</li>
+<li>
+<p>Heat mixture to 80-100°C with vigorous stirring for 30-60 minutes. Stirring creates emulsification; mixture becomes thick and homogeneous.</p>
+</li>
+<li>
+<p>The lime forms soap-like structure, thickening the oil into grease consistency.</p>
+</li>
+<li>
+<p>Cool to room temperature; resulting grease is suitable for low-speed bearings (&lt;500 RPM). Consistency: similar to butter; appropriate for applications where oil leakage must be prevented.</p>
+</li>
+<li>
+<p>Store in sealed grease tins. Application: pack bearing cavity 1/3 to 1/2 full with grease; excess is expelled during rotation.</p>
+</li>
+</ol>
+<p><strong>Shelf life:</strong> 6-12 months in cool, dark storage. Tallow oxidizes over time, grease becomes rancid (odor develops, effectiveness decreases). Refresh by reheating and re-thickening with additional lime (add 2-3% by weight) if needed.</p>
+<h3>Mineral Oil as Lubricant</h3>
+<p>If access to petroleum refining is available, mineral oil fractions are superior lubricants:</p>
+<ul>
+<li>ISO VG 32 (32 cSt @ 40°C): Light bearing oil; for high-speed, precision bearings (&gt;3000 RPM)</li>
+<li>ISO VG 46 (46 cSt @ 40°C): Standard for most industrial bearings (500-3000 RPM range)</li>
+<li>ISO VG 100+ (&gt;100 cSt): Heavy oils for slow-speed, heavily-loaded bearings (&lt;500 RPM, high load)</li>
+</ul>
+<p><strong>Viscosity classification:</strong> Higher numbers = thicker oil. Viscosity varies with temperature (hot oil is thinner, cold oil is thicker). Multigrade oils (10W-40, 15W-50) maintain viscosity across temperature range using viscosity index improvers.</p>
+</section>
+<section id="fitting">
+<h2>Fitting and Tolerance Standards</h2>
+<h3>ISO Tolerance Grades</h3>
+<p>Bearing fits are standardized to ensure proper function:</p>
+<table><thead><tr><th scope="row">Fit Type</th><th scope="row">Inner Race Tolerance</th><th scope="row">Outer Race Tolerance</th><th scope="row">Application</th></tr></thead><tbody><tr><td>Slip fit (loose)</td><td>g6</td><td>G7</td><td>Shafts that require easy removal; rotating inner race on stationary shaft</td></tr><tr><td>Running fit (normal)</td><td>k6</td><td>H7</td><td>Normal operating condition; standard for fixed inner race</td></tr><tr><td>Press fit (tight)</td><td>m6</td><td>H6</td><td>Stationary inner race; prevents rotation on shaft</td></tr><tr><td>Force fit (very tight)</td><td>p5</td><td>H5</td><td>Rigidly fixed; requires press to assemble/disassemble</td></tr></tbody></table>
+<h3>Practical Tolerancing</h3>
+<ul>
+<li>Measure shaft with precision calipers or micrometer to 0.01 mm tolerance. Measure at 3 points (top, side) to verify roundness.</li>
+<li>Inner race bore should be 0.0-0.2 mm larger than shaft (k6 fit = 0.002-0.008&quot; for 50 mm shaft)</li>
+<li>Outer race diameter should be 0.1-0.3 mm smaller than housing bore (H7 fit = 0.002-0.010&quot; clearance for 100 mm housing)</li>
+<li>Align races concentrically using test rotation; if bearing binds, one race is misaligned (bore is eccentric)</li>
+<li>Use bearing puller for disassembly (never tap races with hammer, damages balls and races)</li>
+</ul>
+<h3>Assembly Procedure</h3>
+<ol>
+<li>
+<p>Press inner race onto shaft (use hydraulic press, uniform pressure prevents tilting). Press force 2-5 tons for small bearings. Press slowly (10-20 seconds) to avoid shock.</p>
+</li>
+<li>
+<p>Install bearing assembly into housing. Slide outer race in, or press if interference fit required.</p>
+</li>
+<li>
+<p>Press outer race into housing (uniform pressure, avoid tilting). Same pressure and speed as inner race pressing.</p>
+</li>
+<li>
+<p>Verify smooth rotation (hand spin, no binding or noise). Bearing should rotate freely with light resistance.</p>
+</li>
+<li>
+<p>Install snap ring or retaining plate to prevent axial movement. Test axial play with feeler gauge (should be &lt;0.5 mm).</p>
+</li>
+<li>
+<p>Add bearing cover to exclude dirt and contain lubricant. Cover should allow slight oil seepage (prevents heat buildup from seal friction) but exclude most contamination.</p>
+</li>
+</ol>
+</section>
+<section id="failure">
+<h2>Bearing Failure Modes and Prevention</h2>
+<table><thead><tr><th scope="row">Failure Mode</th><th scope="row">Cause</th><th scope="row">Prevention</th></tr></thead><tbody><tr><td>Spalling (flaking)</td><td>Surface fatigue from repeated rolling contact stress; subsurface cracks propagate and flake away material</td><td>Reduce load; increase bearing size; ensure proper lubrication (hydrodynamic film)</td></tr><tr><td>Brinelling (denting)</td><td>Static load or impact crushes balls into races, creating permanent deformation</td><td>Avoid shock loads; use soft impacts during installation; use preload bearings</td></tr><tr><td>Cage failure</td><td>Cage becomes loose or breaks; balls can skid and overlap, increasing friction</td><td>Ensure proper cage design; adequate lubrication (reduces ball skidding); monitor bearing for noise</td></tr><tr><td>Wear/scoring</td><td>Boundary lubrication; metal-to-metal contact over time creates scratches</td><td>Ensure adequate lubrication; use oils with antiwear additives; increase bearing size if overloaded</td></tr><tr><td>Corrosion/rusting</td><td>Water contamination or poor storage in humid environment</td><td>Use sealed bearings; store in dry environment; apply preservative oil if storing long-term</td></tr></tbody></table>
+<h3>Bearing Life Estimation</h3>
+<p>For rolling-element bearings, the <strong>L10 life</strong> (life at which 10% of bearings fail) can be estimated:</p>
+<p>L₁₀ = (C/P)³ × 10⁶ revolutions</p>
+<ul>
+<li>C = bearing dynamic load capacity (manufacturer rating, or 2000-5000 N for small bearings)</li>
+<li>P = applied radial load</li>
+<li>Example: A bearing with C=10,000 N subjected to P=500 N gives L₁₀ = (10000/500)³ × 10⁶ = 8 billion revolutions</li>
+<li>At 1000 RPM, this equals ~10,000 hours or ~1.1 years of continuous operation</li>
+</ul>
+<p><strong>Practical lifespan:</strong> Well-lubricated bearing under moderate load: 5-10 years service life typical. Poorly lubricated bearing under high load: 6-12 months before failure. Temperature monitoring essential: bearing at 40-50°C indicates healthy operation; above 70°C indicates insufficient lubrication.</p>
+</section>
+<section id="troubleshooting">
+<h2>Bearing Troubleshooting and Diagnosis</h2>
+<h3>Common Bearing Problems and Solutions</h3>
+<p><strong>Excessive Friction/Binding:</strong></p>
+<ul>
+<li><strong>Symptom:</strong> Bearing difficult to rotate, generates heat quickly</li>
+<li><strong>Probable causes:</strong> Insufficient clearance (&lt;0.5 mm), inadequate lubrication, bearing misalignment</li>
+<li><strong>Diagnosis:</strong> Measure bearing clearance with feeler gauge; check oil level and quality; spin bearing freely off shaft</li>
+<li><strong>Solution:</strong> Increase clearance by 0.5 mm boring if possible; add fresh oil; realign mounting</li>
+</ul>
+<p><strong>Noise During Rotation (grinding or rumbling):</strong></p>
+<ul>
+<li><strong>Symptom:</strong> Audible grinding, growling, or popping sounds during operation</li>
+<li><strong>Probable causes:</strong> Ball/race surface damage (spalling), contamination (dirt particles), excessive preload</li>
+<li><strong>Diagnosis:</strong> Inspect bearing races and balls visually under magnifying glass; drain and inspect lubricant for particles</li>
+<li><strong>Solution:</strong> Replace bearing if spalling confirmed; flush bearing with clean oil; reduce preload if excessive</li>
+</ul>
+<p><strong>Runout/Eccentricity:</strong></p>
+<ul>
+<li><strong>Symptom:</strong> Bearing rotates but shaft wobbles side-to-side, indicator shows 0.5+ mm radial runout</li>
+<li><strong>Probable causes:</strong> Bore not concentric (eccentricity), outer race loose in housing, inner race loose on shaft</li>
+<li><strong>Diagnosis:</strong> Mount dial indicator on stationary part; measure runout at bearing outer diameter</li>
+<li><strong>Solution:</strong> Re-bore bearing to correct eccentricity; press outer/inner race more tightly</li>
+</ul>
+<p><strong>Leaking Oil/Grease:</strong></p>
+<ul>
+<li><strong>Symptom:</strong> Oil visible around bearing, dripping or seeping from cover</li>
+<li><strong>Probable causes:</strong> Seal damaged, overfilled with lubricant, bearing running too hot</li>
+<li><strong>Diagnosis:</strong> Inspect seal for cracks; measure lubricant quantity (should fill 1/3 of bearing cavity)</li>
+<li><strong>Solution:</strong> Replace seal; reduce lubricant quantity; check for overload condition causing heat</li>
+</ul>
+<p><strong>Bearing Temperature &gt;80°C (Overheating):</strong></p>
+<ul>
+<li><strong>Symptom:</strong> Bearing hot to touch during operation, lubricant oxidizing (color darkens to brown/black)</li>
+<li><strong>Probable causes:</strong> High friction from inadequate clearance, high load beyond bearing capacity, high-speed operation with insufficient cooling</li>
+<li><strong>Diagnosis:</strong> Measure clearance with feeler gauge; verify load is within bearing rating; check speed (if &gt;5000 RPM, requires superior cooling)</li>
+<li><strong>Solution:</strong> Increase clearance by 0.5 mm; reduce load or speed; improve cooling (oil circulation loop, cooling fins)</li>
+</ul>
+<h3>Radial Runout Measurement</h3>
+<p>Runout indicates bearing/shaft alignment error:</p>
+<ol>
+<li>Mount dial indicator on fixed support, indicator tip touching bearing outer race</li>
+<li>Rotate shaft one complete revolution</li>
+<li>Read maximum and minimum indicator values; difference = radial runout</li>
+<li>Runout &gt;0.2 mm (0.008&quot;) indicates misalignment or bearing defect</li>
+<li>Acceptable runout &lt;0.1 mm for precision bearings, &lt;0.2 mm for industrial bearings</li>
+</ol>
+<h3>Axial Clearance Check</h3>
+<p>Axial clearance prevents preload during thermal expansion:</p>
+<ol>
+<li>Push shaft in one direction fully; measure position</li>
+<li>Push shaft in opposite direction fully; measure position</li>
+<li>Difference = axial clearance</li>
+<li>Acceptable range: 0.2-0.5 mm for small bearings (&lt;50 mm), 0.5-1.0 mm for larger bearings</li>
+<li>Zero clearance causes preload that increases friction and heat generation</li>
+</ol>
+</section>
+<section id="common-mistakes">
+<h2>Common Mistakes in Bearing Manufacturing</h2>
+<h3>Design and Planning Mistakes</h3>
+<p><strong>Undersizing bearing for load:</strong> Selecting bearing with load capacity C &lt; applied load P causes rapid spalling and bearing failure in weeks rather than years. <strong>Prevention:</strong> Calculate or estimate load accurately; add 50% safety margin when in doubt; use larger bearing if size permits.</p>
+<p><strong>Inadequate clearance for speed:</strong> Using plain bearing with tight clearance (0.5 mm) at high speed (&gt;2000 RPM) generates friction heat exceeding 100°C. <strong>Prevention:</strong> Increase clearance to 2 mm minimum for high-speed plain bearings; switch to ball bearings for speeds &gt;3000 RPM.</p>
+<p><strong>Mixing lubrication types:</strong> Using viscous grease in high-speed ball bearing designed for light oil causes excessive churning and heat generation. <strong>Prevention:</strong> Verify lubricant viscosity matches bearing speed rating; ISO VG 10-32 for rolling bearings, ISO VG 46-100 for plain bearings.</p>
+<h3>Manufacturing Mistakes</h3>
+<p><strong>Poor surface finish on bearing surfaces (Ra &gt;1 μm):</strong> Rough boring leaves tool marks that trap particles and accelerate wear. <strong>Prevention:</strong> Use sharp tools; finish bore at 0.05 mm feed rate; use cutting oil to improve surface finish.</p>
+<p><strong>Inadequate hardness after quenching/tempering (Rc &lt;58):</strong> Under-hardened bearings spall prematurely. <strong>Prevention:</strong> Verify furnace temperature reaches 800-850°C (use color reference); quench rapidly; temper at correct temperature 180-250°C.</p>
+<p><strong>Misaligned races (bore eccentricity &gt;0.5 mm):</strong> Eccentric bore causes uneven load distribution, spalling in high-stress zones. <strong>Prevention:</strong> Use precision lathe; support long bores with tailstock; check bore with dial indicator in two planes.</p>
+<p><strong>Contamination during assembly:</strong> Sand particles, dust, or oxide film between races cause rapid wear. <strong>Prevention:</strong> Work in clean environment; wear lint-free gloves; degrease all parts before assembly; blow compressed air to remove dust.</p>
+<h3>Quality Control Mistakes</h3>
+<p><strong>No testing before deployment:</strong> Bearing with hidden defect (internal crack, porosity) fails in field. <strong>Prevention:</strong> Spin test every bearing for 10-15 minutes at operating RPM before deployment; monitor temperature and noise.</p>
+<p><strong>No documentation of bearing specifications:</strong> Unable to match replacement bearings to failed units. <strong>Prevention:</strong> Label all bearings with material type, hardness, manufacturing date, operator; maintain production records.</p>
+<p><strong>Skipping lubrication maintenance:</strong> Bearing dries out or becomes contaminated. <strong>Prevention:</strong> Establish lubrication schedule (weekly-monthly depending on application); inspect lubricant color (dark brown = oxidized, needs replacement).</p>
+</section>
+<section id="hardness-testing">
+<h2>Hardness Testing Specifications</h2>
+<p>Bearing surfaces must achieve specific hardness ranges to provide adequate load capacity while maintaining resistance to fatigue spalling. Hardness testing without commercial equipment is feasible using field methods.</p>
+<h3>Rockwell Hardness Testing Method</h3>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Place bearing sample on solid steel anvil or plate</li>
+<li>Use calibrated Rockwell hardness tester (if available) with appropriate penetrator (cone or ball)</li>
+<li>Apply specified load for specified time (typically 15 seconds)</li>
+<li>Read hardness from dial; record as Rc scale reading</li>
+</ol>
+<p><strong>Target hardness ranges by bearing type:</strong></p>
+<ul>
+<li>Ball bearing races: Rc 58-65 (approximately 650-750 HV Vickers hardness)</li>
+<li>Journal bearing liners (bronze): Rc 35-45 (softer, conformable to shaft irregularities)</li>
+<li>Roller bearing components: Rc 60-65 (highest hardness for heavy load capacity)</li>
+</ul>
+<p><strong>Rockwell test limitations:</strong> Requires commercial hardness tester; cost-prohibitive for small operations. Provides accurate readings but needs calibrated equipment.</p>
+<h3>Brinell Hardness Testing Method</h3>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Place bearing sample on steel block</li>
+<li>Press hardened ball (typically 10mm diameter) into surface under known load (3000 kg standard)</li>
+<li>Hold for 30 seconds</li>
+<li>Measure diameter of indentation with calipers or microscope</li>
+<li>Calculate hardness: HB = 2P / (π×D×(D-√(D²-d²))), where P=load, D=ball diameter, d=indentation diameter</li>
+</ol>
+<p><strong>Advantages:</strong> Can be improvised with weights and precision ball (ball bearing ball)
+<strong>Disadvantages:</strong> Leaves surface indent (destructive); difficult to perform accurately without commercial equipment</p>
+<h3>File Test Method (Improvised, Field-Ready)</h3>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Use standard hardened file (hacksaw file works)</li>
+<li>Apply light hand pressure to bearing surface; judge resistance to scratching</li>
+<li>Compare to reference sample or previous tests</li>
+<li>Grade hardness subjectively: file &quot;bites&quot; (soft), &quot;barely bites&quot; (medium), &quot;won't bite&quot; (hard)</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>Properly hardened bearing (Rc 58-65): File produces only light scratching; surface shows visible file marks but metal is not easily gouged</li>
+<li>Under-hardened bearing (Rc &lt;55): File bites deeply; surface shows significant gouges</li>
+<li>Over-hardened bearing (Rc &gt;66): File produces minimal marks; surface appears nearly unchanged</li>
+</ul>
+<p><strong>Advantages:</strong> Requires no equipment; quick field assessment
+<strong>Disadvantages:</strong> Subjective; depends on operator experience; destroys small section of bearing surface</p>
+<h3>Rebound Hardness Method (Scleroscope Test)</h3>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Drop standardized weight from known height onto bearing surface</li>
+<li>Measure height of rebound</li>
+<li>Harder surfaces produce higher rebound (more energy reflected)</li>
+<li>Compare rebound to reference scale</li>
+</ol>
+<p><strong>Interpretation:</strong> Higher rebound = harder material. Requires comparison samples for calibration.</p>
+<p><strong>Advantages:</strong> Non-destructive (no permanent damage); relatively quick
+<strong>Disadvantages:</strong> Sensitive to surface finish and small variations; less accurate than other methods; requires reference samples</p>
+<h3>Target Hardness Ranges by Material</h3>
+<p><strong>Ball bearing steel (AISI 52100):</strong> 58-65 Rc (recommended for high-speed applications)
+<strong>Plain bearing bronze (SAE 660):</strong> 35-45 Rc (intentionally soft for conformability; hardness comes from composition)
+<strong>Babbit liner:</strong> 20-30 Rc (very soft; conformability is primary advantage)
+<strong>Roller bearing races:</strong> 60-65 Rc (maximum hardness for heavy load capacity)</p>
+<div class="info-box">
+<p><strong>Hardness vs. Strength:</strong> Hardness (resistance to scratching/indentation) differs from strength (resistance to breaking). Ball bearing races need high hardness to resist spalling. Journal bearing liners need moderate hardness and high conformability—attempting to harden journal liners beyond Rc 45 reduces their primary advantage (ability to conform to shaft irregularities).</p>
+</div>
+</section>
+<section id="failure-modes-under-load">
+<h2>Failure Modes Under Load</h2>
+<p>Understanding how bearings fail enables prevention and diagnosis of problems in field conditions.</p>
+<h3>Fatigue Spalling</h3>
+<p><strong>Description:</strong> Surface material flakes away from repeated rolling contact stress. Subsurface cracks initiate under the surface (where stress is maximum) and propagate until material fragments separate.</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Audible clicking or clunking during rotation (fragment catching on races)</li>
+<li>Progressive increase in noise and vibration</li>
+<li>Bearing temperature increase above 80°C</li>
+<li>Visible pits or missing chunks on bearing race surfaces (inspect with magnifying glass)</li>
+</ul>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Excessive load exceeding bearing capacity (C rating)</li>
+<li>Inadequate lubrication (boundary lubrication instead of hydrodynamic)</li>
+<li>Long service life exceeding L10 design life</li>
+<li>Contamination (sand/particles accelerate wear)</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Size bearing with adequate load capacity (C &gt; 1.5×applied load minimum)</li>
+<li>Maintain hydrodynamic lubrication with appropriate viscosity</li>
+<li>Replace before expected life end if heavy-duty service</li>
+<li>Keep bearing clean; prevent particle contamination</li>
+</ul>
+<p><strong>Remediation:</strong> Replace bearing; spalled bearing cannot be salvaged. Running spalled bearing to failure risks secondary damage to shaft.</p>
+<h3>Brinelling (Impact Damage)</h3>
+<p><strong>Description:</strong> Static load or impact crushes balls into races, creating permanent indentations that cause rough operation.</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Rough, grinding sensation during rotation</li>
+<li>Bearing binds intermittently as balls pass over indentation</li>
+<li>Visible dented marks on inner and outer races (6 or more indentations around race circumference)</li>
+<li>Damage typically occurs during assembly or storage</li>
+</ul>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Sharp hammer blows during installation (races should never be hammered directly)</li>
+<li>Static load applied to bearing during storage (hanging load on shaft with bearing unsupported)</li>
+<li>Drop or impact during handling</li>
+<li>Vibration during shipment without proper support</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Use soft mallet (leather or copper) if any tapping needed; never strike metal tools directly</li>
+<li>Support bearing during assembly with press (distributed force)</li>
+<li>Avoid static loads on parked equipment; support shaft on additional points</li>
+<li>Protect bearings during storage from dropped objects and impacts</li>
+</ul>
+<p><strong>Remediation:</strong> Minor brinelling (shallow dents) may be tolerable if noise is acceptable. Deep brinelling requires bearing replacement.</p>
+<h3>Fretting Corrosion</h3>
+<p><strong>Description:</strong> Oxidation and wear at contact surfaces due to micro-motion (fretting) between bearing components. Typically occurs between inner race and shaft, or outer race and housing.</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Bearing loose on shaft or in housing; can be moved by hand</li>
+<li>Reddish-brown oxide dust around bearing</li>
+<li>Loss of concentricity (bearing no longer centered)</li>
+<li>Increased vibration and noise</li>
+</ul>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Interference fit not tight enough (inner race slides on shaft under high load)</li>
+<li>Outer race rotating in housing (should be stationary)</li>
+<li>Inadequate press force during assembly</li>
+<li>Corrosion weakens the contact surface</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Ensure proper fit (k6 on shaft, H7 in housing per ISO standards)</li>
+<li>Use moderate press force (hydraulic press, not hammer)</li>
+<li>Apply thin oil coating to contact surfaces before assembly</li>
+<li>Verify bearing doesn't move after assembly (grasp outer race, attempt to twist—should not rotate)</li>
+</ul>
+<p><strong>Remediation:</strong> Remove bearing and clean shaft/housing. Increase interference fit slightly (bore housing slightly smaller, or turn down shaft slightly if possible). Reassemble with proper force.</p>
+<h3>Adhesive Wear</h3>
+<p><strong>Description:</strong> Metal-to-metal contact causes adhesion and tearing of material between surfaces. Occurs under boundary lubrication or when hydrodynamic film fails.</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Rough surfaces with metal transferred between races and balls</li>
+<li>Galling marks visible under magnification</li>
+<li>High friction and heat generation</li>
+<li>Bearing becomes difficult to rotate</li>
+</ul>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Inadequate lubrication viscosity (oil too thin, providing insufficient film)</li>
+<li>Overheating that breaks down oil film</li>
+<li>Contaminated lubricant with broken-down oil particles</li>
+<li>High load exceeding film capacity</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Maintain hydrodynamic film with appropriate viscosity (ISO VG 32 for rolling bearings, VG 46-100 for journal bearings)</li>
+<li>Monitor temperature; bearing &gt;80°C indicates inadequate lubrication</li>
+<li>Use clean, undegraded lubricant</li>
+<li>Reduce load or improve cooling if necessary</li>
+</ul>
+<p><strong>Remediation:</strong> Clean bearing thoroughly; replace lubricant with fresh oil; reduce operating load or speed.</p>
+<h3>Cage Failure</h3>
+<p><strong>Description:</strong> Bearing cage (ball retainer) becomes loose, cracks, or breaks, allowing balls to rub against races and against each other.</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Audible clicking or rattling during rotation</li>
+<li>Bearing develops multiple zones of noise (not just smooth operation)</li>
+<li>Visible cracks in cage material</li>
+<li>Cage visibly loose when bearing is disassembled</li>
+</ul>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Inadequate lubrication causes cage to bind and overheat</li>
+<li>Impact damage during assembly</li>
+<li>Cage material fatigued over long service</li>
+<li>Cage designed for too low speed (high centrifugal forces break weak cage)</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Ensure adequate lubrication to reduce cage friction</li>
+<li>Assemble carefully; avoid impacts</li>
+<li>Select cage material and design appropriate for operating speed</li>
+<li>Replace bearing before expected cage fatigue life</li>
+</ul>
+<p><strong>Remediation:</strong> Replace bearing; cage repair is not feasible in field conditions.</p>
+<h3>Misalignment Effects</h3>
+<p><strong>Description:</strong> Inner and outer races not concentric; balls experience uneven load distribution and localized high stress.</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Noise localized to certain points in bearing rotation (one area noisier than others)</li>
+<li>Uneven wear visible on bearing races (one side of race worn more than other)</li>
+<li>Radial runout of bearing &gt;0.2 mm</li>
+<li>Binding or rough spots during rotation</li>
+</ul>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Bore not concentric (eccentric drilling or boring)</li>
+<li>Housing worn or deformed</li>
+<li>Shaft bent</li>
+<li>Bearing pressed in at angle</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Precision bore and housing preparation (±0.1 mm tolerance)</li>
+<li>Support long shafts with tailstock during final bore pass</li>
+<li>Verify shaft straightness before bearing assembly</li>
+<li>Use gradual, perpendicular press force (not at angle)</li>
+</ul>
+<p><strong>Remediation:</strong> Re-bore housing concentrically if possible; replace bearing; straighten shaft if bent (if possible).</p>
+<h3>Failure Mode Diagnostic Table</h3>
+<table><thead><tr><th scope="col">Failure Mode</th><th scope="col">Primary Symptom</th><th scope="col">Inspection Finding</th><th scope="col">Root Cause</th><th scope="col">Quick Fix</th></tr></thead><tbody><tr><td>Spalling</td><td>Audible clicking, increasing noise</td><td>Pits/missing chunks visible on races</td><td>Excessive load or inadequate lubrication</td><td>Replace bearing; reduce load if possible</td></tr><tr><td>Brinelling</td><td>Rough grinding sensation, intermittent binding</td><td>Indentations on races (6+ dents)</td><td>Impact damage or static load</td><td>Replace if deep dents; monitor if shallow</td></tr><tr><td>Fretting</td><td>Bearing loose on shaft, increased runout</td><td>Reddish oxide, race moves on shaft</td><td>Loose fit or corrosion</td><td>Increase interference fit on reassembly</td></tr><tr><td>Adhesive wear</td><td>High friction, excessive heat</td><td>Rough surfaces, metal transfer visible</td><td>Inadequate lubrication or overheating</td><td>Clean bearing, replace lubricant, reduce load</td></tr><tr><td>Cage failure</td><td>Clicking/rattling, loose cage visible</td><td>Cracked or broken cage</td><td>Poor lubrication or age</td><td>Replace bearing</td></tr><tr><td>Misalignment</td><td>Localized noise, rough spots</td><td>Uneven race wear, high runout >0.2mm</td><td>Eccentric bore or bent shaft</td><td>Re-bore or replace bearing; straighten shaft</td></tr></tbody></table>
+<div class="tip">
+<p><strong>Field Inspection Protocol:</strong> Periodically remove bearing from service and inspect visually. Look for visible damage (pits, indentations, discoloration). Spin bearing by hand—any binding, roughness, or grinding sensation indicates damage. If damage is minor (few small pits), bearing can continue in service. If damage is widespread, replace immediately.</p>
+</div>
+</section>
+<section id="wood-bearings">
+<h3>Lignum Vitae (Ironwood) Water-Lubricated Bearing</h3>
+<p>A traditional bearing that requires only water for lubrication, ideal for water-powered machinery:</p>
+<ul>
+<li>Material: Lignum vitae wood (Guaiacum officinale), self-lubricating with natural resins</li>
+<li>Bore a hole through the wood block slightly larger than the shaft (0.5-2 mm clearance)</li>
+<li>Allow water to flow continuously through the bearing (water acts as lubricant, cooling agent)</li>
+<li>Very low friction under water lubrication; high load capacity despite being wood (designed for heavy water pump shafts)</li>
+<li>Replacement interval: 1-2 years under continuous operation</li>
+</ul>
+<p><strong>Advantages:</strong> No oil required, waterproof by nature (suitable for hydropower applications), biodegradable. <strong>Disadvantages:</strong> Expensive (rare hardwood, $100+ per bearing block), requires continuous water flow, swells/shrinks with humidity changes (affects clearance).</p>
+<h3>Ceramic Ball Bearings</h3>
+<p>Experimental alternative with advantages:</p>
+<ul>
+<li>Silicon nitride (Si₃N₄) balls: 40% lighter than steel, lower density creates less centrifugal force at high speed</li>
+<li>Lower friction coefficient (μ = 0.02-0.04 vs 0.08-0.12 for steel), cooler running, higher speed capability (20000+ RPM achievable)</li>
+<li>Extremely hard (harder than steel); resistant to wear and corrosion (suitable for wet environments)</li>
+<li>Disadvantage: Expensive ($50-100 per ball) and brittle; prone to catastrophic failure under shock loads (does not yield like steel)</li>
+</ul>
+<h3>DIY Bearing Testing</h3>
+<p>Create test stand: motor driving bearing shaft, measure temperature rise and noise. Mount bearing in test frame with temperature sensor (infrared thermometer or thermocouple) touching outer race. Temperature &gt;80°C indicates excessive friction or inadequate lubrication (normal is 40-60°C). Noise (grinding, rumbling) indicates ball/race damage. Test under various speeds (500, 1000, 2000, 5000 RPM) and loads to characterize bearing performance before deployment.</p>
+<div class="tip">
+<p><strong>Bearing Test Protocol:</strong> Run each bearing for 15 minutes at operating speed with no external load (pure friction test). Record temperature at 5, 10, 15 minute marks. Temperature rise should be &lt;20°C. If temperature continues rising above 60°C after 15 minutes, bearing has inadequate clearance or lubrication.</p>
+</div>
+</section>
+<section id="quickref">
+<h2>Quick Reference: Bearing Specifications</h2>
+<table><thead><tr><th scope="row">Parameter</th><th scope="row">Journal Bearing (Plain)</th><th scope="row">Ball Bearing (Rolling)</th></tr></thead><tbody><tr><td>Optimal L/D ratio</td><td>0.5-2.0</td><td>0.5-1.0 (cage height)</td></tr><tr><td>Clearance</td><td>0.0025-0.0075" per inch diameter</td><td>0.001-0.003" per inch diameter</td></tr><tr><td>Surface finish (Ra)</td><td><0.8 μm</td><td><0.2 μm</td></tr><tr><td>Lubrication viscosity</td><td>ISO VG 46-100</td><td>ISO VG 10-32</td></tr><tr><td>Maximum RPM</td><td>3000 (typical)</td><td>10000+ (typical)</td></tr><tr><td>Temperature rise</td><td>40-70°C above ambient</td><td>30-50°C above ambient</td></tr><tr><td>Relubrication interval</td><td>Weekly-Monthly</td><td>3-6 months (sealed)</td></tr><tr><td>Expected life</td><td>5-10 years (moderate load)</td><td>7-15 years (moderate load)</td></tr></tbody></table>
+</section>
+<section id="community-production">
+<h2>Community-Scale Bearing Production</h2>
+<h3>Setup and Equipment Requirements</h3>
+<p>Producing bearings sustainably requires foundational equipment: furnace (capable of 1100°C for bronze, 150°C for babbit), lathe with chuck (for boring and facing), grinding wheel (for ball spherical grinding), precision calipers/micrometer for tolerance verification, quality steel stock or salvage source.</p>
+<p><strong>Furnace options:</strong> Crucible furnace (charcoal or coke-fired reaching 1200°C), electric resistance furnace (if power available), or simple pit furnace with clay/stone construction heated with wood fire reaching 1200°C.</p>
+<p><strong>Bearing workshop minimum:</strong> 200-400 square feet space, temperature-controlled (heat affects tolerances by 0.05-0.1 mm per 10°C change), dust management to prevent contamination of precision work. Flooring should be concrete for stability and easy cleanup.</p>
+<h3>Bearing Production Workflow</h3>
+<ol>
+<li><strong>Material procurement:</strong> Source steel stock (new or salvage rail/machinery parts, 1-2 kg per bearing typical)</li>
+<li><strong>Forging/casting:</strong> Produce bearing blanks (balls, races, bushings) from ingots or billets</li>
+<li><strong>Rough machining:</strong> Lathe work to basic dimensions (within 1-2 mm of final size)</li>
+<li><strong>Fine grinding:</strong> Precision grinding to final dimensions (±0.05-0.1 mm) and surface finish</li>
+<li><strong>Heat treatment:</strong> Hardening and tempering for hardness/durability (Rc 58-65 target)</li>
+<li><strong>Final inspection:</strong> Verify dimensions, hardness, surface finish against specifications</li>
+<li><strong>Assembly:</strong> Join races and balls (for ball bearings) or prepare bushing (plain bearings)</li>
+<li><strong>Testing:</strong> Spin test under load to verify function before deployment (minimum 15 minutes at operating RPM)</li>
+</ol>
+<p><strong>Production rate:</strong> Experienced team of 3-4 people can produce 10-20 journal bearings or 5-10 ball bearing sets per day with basic equipment. Increase efficiency with multiple stations (one person forges blanks, another machines on lathe, third handles heat treatment, fourth does final assembly).</p>
+<h3>Quality Control Procedures</h3>
+<p>Establish testing protocols: diameter measurement (all bearing units, ±0.1 mm tolerance), surface finish inspection (visual comparison to known standard, target Ra &lt;0.5-0.8 μm), hardness test (file method or hardness tester, target Rc 58-65), spin test (check for noise, binding, smooth rotation at 5 minute intervals), load test (apply known load, measure deformation &lt;0.5 mm expected).</p>
+<div class="tip">
+<p><strong>Documentation:</strong> Maintain production records noting material source, production date, operator, dimensions, hardness, test results, and field performance. Enable continuous improvement and troubleshooting when bearing failures occur. Track which batches/operators produce longest-lived bearings; identify and replicate best practices.</p>
+</div>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="foundry-casting.html">Foundry &amp; Metal Casting</a>
+<a href="machine-tools.html">Machine Tools &amp; Workshop</a>
+<a href="metallurgy-basics.html">Metallurgy Fundamentals</a>
+<a href="metalworking.html">Metalworking &amp; Blacksmithing</a>
+<a href="petroleum-refining.html">Petroleum Refining</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

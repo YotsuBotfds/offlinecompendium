@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/fermentation-science-applied.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fermentation Science (Applied) - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.ferment-table { width: 100%; margin: 1rem 0; }
+.ferment-table th, .ferment-table td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
+.ferment-box { margin: 1rem 0; padding: 1rem; background: var(--card); border-left: 4px solid var(--accent); }
+
+</style>
+<meta name="description" content="Yeast biology, sugar fermentation kinetics, alcohol and lactic acid fermentation, troubleshooting">
+<link rel="canonical" href="https://zerotoherohero.com/guides/fermentation-science-applied.html">
+<meta property="og:title" content="Fermentation Science (Applied)">
+<meta property="og:description" content="Yeast biology, sugar fermentation kinetics, alcohol and lactic acid fermentation, troubleshooting">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Industrial Chemistry", "item": "https://zerotoherohero.com/#sec-chemistry"},
+    {"@type": "ListItem", "position": 3, "name": "Fermentation Science (Applied)", "item": "https://zerotoherohero.com/guides/fermentation-science-applied.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Fermentation Science (Applied)",
+  "description": "Yeast biology, sugar fermentation kinetics, alcohol and lactic acid fermentation, troubleshooting",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-424">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-chemistry">Industrial Chemistry</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Fermentation Science (Applied)</span>
+</nav>
+<header>
+<h1>Fermentation Science (Applied)</h1>
+<p class="subtitle">Yeast biology, sugar fermentation kinetics, alcohol and lactic acid fermentation, troubleshooting</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~17 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#fermentation-fundamentals">Fermentation Fundamentals</a></li>
+<li><a href="#yeast-biology">Yeast Biology</a></li>
+<li><a href="#alcohol-fermentation">Alcohol Fermentation</a></li>
+<li><a href="#lactic-acid-fermentation">Lactic Acid Fermentation</a></li>
+<li><a href="#acetic-acid-fermentation">Acetic Acid Fermentation (Vinegar)</a></li>
+<li><a href="#fermentation-parameters">Key Fermentation Parameters</a></li>
+<li><a href="#wild-fermentation">Wild Fermentation and Starter Cultures</a></li>
+<li><a href="#fermentation-troubleshooting">Troubleshooting Fermentation</a></li>
+<li><a href="#fermentation-vessel-design">Fermentation Vessel Design</a></li>
+<li><a href="#applications">Industrial and Practical Applications</a></li>
+<li><a href="#practical-example">Practical Example: Quick Sauerkraut</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<p>Fermentation harnesses microorganisms to preserve food, produce alcohol, generate flavor compounds, and create nutritious foods. This guide covers the science and practical application of controlled fermentation in low-tech environments.</p>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Fermentation Types and Microbial Growth Phases">
+  <defs>
+    <style>
+      .ferment-label { font-family: Arial, sans-serif; font-size: 12px; fill: var(--text); }
+      .ferment-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: var(--text); }
+      .growth-curve { stroke: var(--accent); stroke-width: 2.5; fill: none; }
+      .phase-zone { fill: var(--card); opacity: 0.3; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="var(--bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="30" class="ferment-title" text-anchor="middle">Fermentation Types &amp; Microbial Growth</text>
+
+  <!-- Fermentation types section -->
+  <text x="50" y="65" class="ferment-title">Three Main Types of Fermentation:</text>
+
+  <!-- Alcohol Fermentation -->
+  <g>
+    <rect x="50" y="85" width="220" height="120" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="70" y="105" class="ferment-label" style="font-weight: bold;">Alcohol Fermentation</text>
+    <text x="70" y="125" class="ferment-label">Yeast: *Saccharomyces cerevisiae*</text>
+    <text x="70" y="142" class="ferment-label">Sugar → Ethanol + CO₂</text>
+    <text x="70" y="160" class="ferment-label">Products: Beer, Wine, Mead</text>
+    <text x="70" y="177" class="ferment-label">Optimal: 20–28°C</text>
+    <text x="70" y="194" class="ferment-label">Time: 1–3 weeks</text>
+  </g>
+
+  <!-- Lactic Acid Fermentation -->
+  <g>
+    <rect x="290" y="85" width="220" height="120" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="310" y="105" class="ferment-label" style="font-weight: bold;">Lactic Acid Ferment.</text>
+    <text x="310" y="125" class="ferment-label">Bacteria: *Lactobacillus* spp.</text>
+    <text x="310" y="142" class="ferment-label">Sugar → Lactic Acid</text>
+    <text x="310" y="160" class="ferment-label">Products: Sauerkraut, Kimchi</text>
+    <text x="310" y="177" class="ferment-label">Optimal: 20–25°C</text>
+    <text x="310" y="194" class="ferment-label">Time: 1–6 weeks</text>
+  </g>
+
+  <!-- Acetic Acid Fermentation -->
+  <g>
+    <rect x="530" y="85" width="220" height="120" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="550" y="105" class="ferment-label" style="font-weight: bold;">Acetic Acid Ferment.</text>
+    <text x="550" y="125" class="ferment-label">Bacteria: *Acetobacter* spp.</text>
+    <text x="550" y="142" class="ferment-label">Alcohol → Acetic Acid</text>
+    <text x="550" y="160" class="ferment-label">Products: Vinegar</text>
+    <text x="550" y="177" class="ferment-label">Optimal: 25–30°C</text>
+    <text x="550" y="194" class="ferment-label">Time: 2–6 months</text>
+  </g>
+
+  <!-- Growth curve section -->
+  <text x="50" y="250" class="ferment-title">Microbial Growth Phases (Yeast Fermentation):</text>
+
+  <!-- Axes -->
+  <line x1="50" y1="350" x2="50" y2="270" stroke="var(--text)" stroke-width="1.5"/>
+  <line x1="50" y1="350" x2="730" y2="350" stroke="var(--text)" stroke-width="1.5"/>
+
+  <!-- Y-axis label -->
+  <text x="20" y="310" class="ferment-label" style="font-size: 10px;" text-anchor="middle">Cell Count</text>
+
+  <!-- X-axis label -->
+  <text x="390" y="375" class="ferment-label" style="font-size: 10px;" text-anchor="middle">Time (hours)</text>
+
+  <!-- Growth phases background -->
+  <!-- Lag phase -->
+  <rect x="50" y="270" width="80" height="80" class="phase-zone" fill="#8b7355" opacity="0.2"/>
+  <text x="90" y="315" class="ferment-label" text-anchor="middle" style="font-size: 9px; font-weight: bold;">LAG</text>
+
+  <!-- Log phase -->
+  <rect x="130" y="270" width="150" height="80" class="phase-zone" fill="#d4a574" opacity="0.3"/>
+  <text x="205" y="315" class="ferment-label" text-anchor="middle" style="font-size: 9px; font-weight: bold;">LOG</text>
+
+  <!-- Stationary phase -->
+  <rect x="280" y="270" width="150" height="80" class="phase-zone" fill="#8b9f9f" opacity="0.2"/>
+  <text x="355" y="315" class="ferment-label" text-anchor="middle" style="font-size: 9px; font-weight: bold;">STATIONARY</text>
+
+  <!-- Death phase -->
+  <rect x="430" y="270" width="100" height="80" class="phase-zone" fill="#6f5f4f" opacity="0.2"/>
+  <text x="480" y="315" class="ferment-label" text-anchor="middle" style="font-size: 9px; font-weight: bold;">DEATH</text>
+
+  <!-- Curve -->
+  <polyline points="60,340 100,330 150,290 180,270 210,275 280,280 330,285 380,286 430,305 480,330 530,345" class="growth-curve"/>
+
+  <!-- Phase labels with time -->
+  <text x="90" y="365" class="ferment-label" text-anchor="middle" style="font-size: 9px;">0–8h</text>
+  <text x="205" y="365" class="ferment-label" text-anchor="middle" style="font-size: 9px;">8–72h</text>
+  <text x="355" y="365" class="ferment-label" text-anchor="middle" style="font-size: 9px;">72h–1 week</text>
+  <text x="480" y="365" class="ferment-label" text-anchor="middle" style="font-size: 9px;">1+ weeks</text>
+
+  <!-- Legend -->
+  <text x="50" y="415" class="ferment-title">Phase Descriptions:</text>
+
+  <g>
+    <rect x="50" y="430" width="180" height="60" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="65" y="447" class="ferment-label" style="font-weight: bold;">Lag Phase (0–8h):</text>
+    <text x="65" y="464" class="ferment-label" style="font-size: 10px;">Cells adjust to environment</text>
+    <text x="65" y="477" class="ferment-label" style="font-size: 10px;">No visible fermentation</text>
+  </g>
+
+  <g>
+    <rect x="245" y="430" width="180" height="60" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="260" y="447" class="ferment-label" style="font-weight: bold;">Log Phase (8–72h):</text>
+    <text x="260" y="464" class="ferment-label" style="font-size: 10px;">Rapid growth &amp; fermentation</text>
+    <text x="260" y="477" class="ferment-label" style="font-size: 10px;">Active CO₂ bubbles</text>
+  </g>
+
+  <g>
+    <rect x="440" y="430" width="180" height="60" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="455" y="447" class="ferment-label" style="font-weight: bold;">Stationary/Death:</text>
+    <text x="455" y="464" class="ferment-label" style="font-size: 10px;">Sugar depleted, alcohol accumulates</text>
+    <text x="455" y="477" class="ferment-label" style="font-size: 10px;">Fermentation ceases</text>
+  </g>
+
+  <!-- Key formula box -->
+  <g>
+    <rect x="640" y="260" width="140" height="90" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" rx="4"/>
+    <text x="655" y="280" class="ferment-label" style="font-weight: bold;">Key Formula:</text>
+    <text x="655" y="300" class="ferment-label" style="font-size: 11px;">C₆H₁₂O₆ →</text>
+    <text x="655" y="317" class="ferment-label" style="font-size: 11px;">2 C₂H₅OH</text>
+    <text x="655" y="334" class="ferment-label" style="font-size: 11px;">+ 2 CO₂</text>
+  </g>
+
+</svg>
+</p>
+<section id="fermentation-fundamentals">
+<h2>Fermentation Fundamentals</h2>
+<p><strong>Definition:</strong> Anaerobic (without oxygen) breakdown of organic compounds (usually sugars) by microorganisms, producing energy for the organism and byproducts (alcohol, organic acids, CO₂).</p>
+<p><strong>Key equation (alcohol fermentation):</strong>
+$$\text{C}<em>6\text{H}</em>{12}\text{O}_6 \rightarrow 2\text{C}_2\text{H}_5\text{OH} + 2\text{CO}_2 + \text{Energy}$$</p>
+<p>One molecule of glucose (sugar) yields two molecules of ethanol and two of CO₂.</p>
+<p><strong>Why fermentation preserves food:</strong></p>
+<ul>
+<li><strong>Acid production (low pH):</strong> Acidic conditions inhibit pathogenic bacteria. pH &lt;4.5 is generally safe from <em>Clostridium botulinum</em> (botulism risk).</li>
+<li><strong>Alcohol production:</strong> Ethanol inhibits microorganism growth. 3–5% alcohol by volume is preservative; 10%+ is highly preservative.</li>
+<li><strong>Competition:</strong> Fermentation microorganisms outcompete pathogens for nutrients.</li>
+</ul>
+<div class="tip">
+<p>Fermented foods are not sterile—beneficial microorganisms remain alive. This is why unpasteurized ferments like sauerkraut have probiotic value.</p>
+</div>
+</section>
+<section id="yeast-biology">
+<h2>Yeast Biology</h2>
+<p>Yeasts are single-celled fungi, most commonly <em>Saccharomyces cerevisiae</em> (baker's/brewer's yeast).</p>
+<p><strong>Life cycle:</strong></p>
+<ol>
+<li><strong>Lag phase (0–8 hours):</strong> Yeast cells adjust to the environment; no visible fermentation.</li>
+<li><strong>Log phase (8–72 hours):</strong> Rapid growth and fermentation; CO₂ production accelerates.</li>
+<li><strong>Stationary phase (72+ hours):</strong> Fermentation slows as sugar depletes or alcohol accumulates.</li>
+<li><strong>Death phase (&gt;1 week):</strong> Yeast cells die or go dormant if no sugar remains.</li>
+</ol>
+<p><strong>Temperature sensitivity:</strong></p>
+<ul>
+<li><strong>Below 10°C:</strong> Very slow fermentation; dormancy.</li>
+<li><strong>10–20°C:</strong> Slow fermentation; long lag phase.</li>
+<li><strong>20–30°C:</strong> Optimal for most yeast; 20–25°C for lager yeasts, 25–30°C for ale yeasts.</li>
+<li><strong>Above 35°C:</strong> Yeast death; fermentation stops.</li>
+</ul>
+<p><strong>Sugar metabolism:</strong></p>
+<ul>
+<li><strong>Glucose (6-carbon sugar):</strong> Fermented fastest. 1 gram yields ~0.51 g ethanol.</li>
+<li><strong>Fructose (6-carbon sugar):</strong> Similar rate to glucose.</li>
+<li><strong>Sucrose (table sugar):</strong> Yeast secretes invertase enzyme to split sucrose into glucose + fructose, then ferments.</li>
+<li><strong>Lactose (milk sugar):</strong> Most brewing yeasts cannot ferment lactose. Some specialty yeasts (e.g., <em>Kluyveromyces lactis</em>) can.</li>
+</ul>
+<p><strong>Alcohol tolerance:</strong></p>
+<ul>
+<li>Most <em>S. cerevisiae</em> strains tolerate up to 12–15% ABV.</li>
+<li>Some &quot;champagne&quot; or &quot;distiller's&quot; strains tolerate 18–20% ABV.</li>
+<li>Above ~12% ABV, yeast growth slows; cell death increases.</li>
+</ul>
+</section>
+<section id="alcohol-fermentation">
+<h2>Alcohol Fermentation</h2>
+<p>Converting sugary liquids (fruit juices, honey, grains) into alcohol using yeast.</p>
+<h3>Beer Fermentation</h3>
+<p><strong>Ingredients:</strong> Malted grain (barley, wheat, rye), hops (bittering, aroma), yeast, water.</p>
+<p><strong>Basic process:</strong></p>
+<ol>
+<li><strong>Mashing (malt extraction):</strong> Soak crushed malt in hot water (65–70°C) for 1–2 hours. Enzymes in malt convert grain starches to fermentable sugars. The resulting sugar-rich liquid is called &quot;wort.&quot;</li>
+<li><strong>Boiling:</strong> Heat wort to 100°C for 60 minutes. Boiling sterilizes the wort and allows hops to infuse bitter/aromatic compounds.</li>
+<li><strong>Cooling:</strong> Cool to 20–25°C before adding yeast. Hot liquid kills yeast.</li>
+<li><strong>Fermentation:</strong> Add yeast; allow 1–2 weeks at 20–25°C. CO₂ production indicates active fermentation.</li>
+<li><strong>Bottling:</strong> When fermentation ceases (no more CO₂ bubbles for 3 days), bottle and allow to carbonate at room temperature (1–2 weeks).</li>
+</ol>
+<p><strong>Gravity measurements (if hydrometer available):</strong></p>
+<ul>
+<li><strong>Original gravity (OG):</strong> Sugar content before fermentation. Measured in specific gravity units (1.040 = 4% sugar by gravity).</li>
+<li><strong>Final gravity (FG):</strong> Residual sugar after fermentation (typically 1.010 for dry beer).</li>
+<li><strong>Alcohol by volume (ABV):</strong> (OG − FG) × 131.25. Example: (1.050 − 1.010) × 131.25 ≈ 5.25% ABV.</li>
+</ul>
+<div class="warning">
+<p>Ensure fermentation vessels are clean but not necessarily sterile. Wild yeast and bacteria on equipment can produce off-flavors or spoil batches. Boiling water or mild acid (vinegar) solution cleans effectively.</p>
+</div>
+<h3>Wine Fermentation</h3>
+<p><strong>Ingredients:</strong> Fruit juice (grapes, apples, berries), yeast (optional if relying on wild yeast).</p>
+<p><strong>Basic process:</strong></p>
+<ol>
+<li><strong>Crushing:</strong> Macerate fruit to release juice; fermentation often begins with wild yeasts present.</li>
+<li><strong>Primary fermentation:</strong> In an open vessel or airlock, 1–3 weeks. Active fermentation produces vigorous CO₂ bubble.</li>
+<li><strong>Racking (transfer):</strong> Pour clear wine off sediment (dead yeast) into a clean vessel, leaving sediment behind.</li>
+<li><strong>Secondary fermentation:</strong> Optional; 1–3 months for slow fermentation and flavor development.</li>
+<li><strong>Bottling:</strong> Store in sealed bottles. Can age for months/years.</li>
+</ol>
+<p><strong>Wild fermentation:</strong> If no yeast is added, natural yeasts on fruit skin initiate fermentation. This is traditional for some wines but carries higher risk of spoilage.</p>
+<h3>Mead Fermentation (Honey + Water)</h3>
+<p><strong>Ingredients:</strong> Honey, water, yeast, optional nutrients (amino acids, minerals).</p>
+<p><strong>Basic process:</strong></p>
+<ol>
+<li><strong>Mixing:</strong> Dissolve honey in water at roughly 1:4 ratio (25% honey by weight). Heat gently to 65°C to dissolve and pasteurize without destroying flavor.</li>
+<li><strong>Cooling:</strong> Cool to 20–25°C.</li>
+<li><strong>Fermentation:</strong> Add yeast; ferment for 2–6 months depending on ABV target.</li>
+<li><strong>Bottling:</strong> Similar to wine; can age for years.</li>
+</ol>
+<p><strong>Challenges:</strong> Honey often lacks nutrients (nitrogen sources) that yeast needs. Adding yeast nutrient (ammonium phosphate, ~0.5 g/liter) prevents stuck fermentation.</p>
+</section>
+<section id="lactic-acid-fermentation">
+<h2>Lactic Acid Fermentation</h2>
+<p>Bacteria (<em>Lactobacillus</em> spp.) convert sugars to lactic acid (CH₃CH(OH)COOH), preserving vegetables and creating sour flavors.</p>
+<h3>Sauerkraut (Fermented Cabbage)</h3>
+<p><strong>Ingredients:</strong> Cabbage, salt (2–3% by weight).</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li><strong>Shred cabbage</strong> finely (1–3 mm strips).</li>
+<li><strong>Mix with salt</strong> (calculate 2–3% of total weight). Example: 1 kg cabbage + 20–30 g salt.</li>
+<li><strong>Massage:</strong> Squeeze the cabbage by hand for 5–10 minutes. Salt draws out juice (osmotic pressure); the juice forms a brine.</li>
+<li><strong>Pack:</strong> Press shredded cabbage into a clean jar, keeping the vegetables submerged under their own brine.</li>
+<li><strong>Maintain anaerobic conditions:</strong> Use a weight (glass jar, stone, or fermentation lid) to keep cabbage below the brine. Mold grows on the surface if exposed to air.</li>
+<li><strong>Ferment:</strong> At room temperature (20–25°C), fermentation begins within 3–5 days. Bubbles form; the liquid becomes cloudy.</li>
+<li><strong>Taste after 1–2 weeks.</strong> Full sour flavor develops in 3–6 weeks.</li>
+</ol>
+<p><strong>What happens:</strong> Salt kills pathogenic bacteria but allows <em>Lactobacillus</em> to thrive. Lactic acid bacteria ferment cabbage sugars, producing lactic acid and dropping pH below 4.5, preserving the product indefinitely.</p>
+<h3>Kimchi (Spicy Fermented Vegetables)</h3>
+<p><strong>Ingredients:</strong> Napa cabbage or daikon, salt, garlic, ginger, chili, optional fish sauce.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li><strong>Salt brine:</strong> Prepare 3–5% salt solution by dissolving salt in water.</li>
+<li><strong>Submerge cabbage:</strong> Soak for 2–4 hours to wilt and salt the leaves.</li>
+<li><strong>Make paste:</strong> Mix garlic, ginger, chili powder, and optional fish sauce into a paste.</li>
+<li><strong>Assemble:</strong> Spread paste between leaves of the cabbage, then roll or pack tightly.</li>
+<li><strong>Ferment:</strong> Pack into a jar with remaining brine; keep submerged. Ferment at 20–25°C for 1–3 weeks.</li>
+</ol>
+<p><strong>Result:</strong> Spicy, sour, probiotic-rich food; shelf-stable for months when refrigerated.</p>
+<h3>Yogurt (Lactic Acid Fermentation in Milk)</h3>
+<p><strong>Ingredients:</strong> Milk (cow, goat, or other), <em>Lactobacillus bulgaricus</em> or <em>Streptococcus thermophilus</em> starter.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li><strong>Heat milk</strong> to 85°C (185°F) for 30 minutes, then cool to 43°C (110°F). Heat denatures milk proteins and kills wild bacteria.</li>
+<li><strong>Add starter culture:</strong> Mix 2–5% (by volume) of yogurt containing active cultures.</li>
+<li><strong>Incubate:</strong> Keep at 43°C for 4–12 hours. The longer the fermentation, the sourer the yogurt.</li>
+<li><strong>Cool:</strong> Refrigerate to stop fermentation.</li>
+</ol>
+<p><strong>Result:</strong> Creamy, sour yogurt containing live probiotics; shelf-stable for 2–3 weeks refrigerated.</p>
+</section>
+<section id="acetic-acid-fermentation">
+<h2>Acetic Acid Fermentation (Vinegar)</h2>
+<p>Bacteria (<em>Acetobacter</em> spp.) oxidize alcohol to acetic acid (CH₃COOH).</p>
+<p><strong>Reaction:</strong>
+$$\text{C}_2\text{H}_5\text{OH} + \text{O}_2 \rightarrow \text{CH}_3\text{COOH} + \text{H}_2\text{O}$$</p>
+<p><strong>Ingredients:</strong> Alcohol (beer, wine, hard cider, or spirit diluted to ~5–10% ABV), optional <em>Acetobacter</em> culture.</p>
+<p><strong>Procedure (slow method):</strong></p>
+<ol>
+<li><strong>Add alcohol</strong> to a glass or ceramic vessel (avoid metal; acetic acid corrodes).</li>
+<li><strong>Expose to air:</strong> Cover with cloth or coffee filter to allow oxygen access but exclude dust/insects.</li>
+<li><strong>Ferment:</strong> At 20–30°C, acetic acid fermentation progresses over 2–6 months. A gelatinous mat (<em>mother</em>) forms on the surface.</li>
+<li><strong>Taste:</strong> Once the desired sourness is reached (4–7% acetic acid), bottle and seal.</li>
+</ol>
+<p><strong>Result:</strong> Vinegar; shelf-stable indefinitely; useful for cooking, preserving, and cleaning.</p>
+</section>
+<section id="fermentation-parameters">
+<h2>Key Fermentation Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optimal Range</th>
+<th>Effect if too low</th>
+<th>Effect if too high</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temperature</td>
+<td>20–28°C</td>
+<td>Slow fermentation</td>
+<td>Yeast death</td>
+</tr>
+<tr>
+<td>pH</td>
+<td>4.0–7.0 (depends on ferment type)</td>
+<td>Slow fermentation</td>
+<td>Spoilage risk</td>
+</tr>
+<tr>
+<td>Sugar concentration</td>
+<td>5–25% by weight</td>
+<td>Incomplete fermentation</td>
+<td>Stuck fermentation, yeast inhibition</td>
+</tr>
+<tr>
+<td>Salt (for lacto-ferments)</td>
+<td>2–3% by weight</td>
+<td>Spoilage risk</td>
+<td>Overly salty, slow fermentation</td>
+</tr>
+<tr>
+<td>Oxygen (initial)</td>
+<td>Minimal/anaerobic</td>
+<td>Increased risk of spoilage</td>
+<td>Not an issue for established ferments</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="wild-fermentation">
+<h2>Wild Fermentation and Starter Cultures</h2>
+<p><strong>Wild fermentation</strong> relies on naturally present yeast and bacteria. Common in traditional sauerkraut, kimchi, and wine-making.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>No need to purchase starter cultures.</li>
+<li>Unique, locally-flavored ferments.</li>
+<li>Resilient to environment.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Unpredictable; inconsistent results.</li>
+<li>Higher spoilage risk if wild microflora unfavorable.</li>
+<li>Longer lag phase.</li>
+</ul>
+<p><strong>Starter cultures</strong> are pure strains of beneficial microorganisms (yeast or bacteria). Examples: dried brewers' yeast, yogurt cultures, sauerkraut juice from a previous batch.</p>
+<p><strong>Using a starter:</strong> A previous successful batch's liquid (rich in the desired microorganism) inoculated into a new batch accelerates fermentation and reduces spoilage risk.</p>
+<p><strong>Creating a wild starter (example, for bread):</strong></p>
+<ol>
+<li>Mix flour + water (1:1 ratio) in a jar.</li>
+<li>Leave at room temperature, loosely covered.</li>
+<li>Feed daily: discard half, add fresh flour + water.</li>
+<li>After 5–10 days, vigorous bubbling indicates yeast/bacteria colonization.</li>
+<li>Use in ferments or baking.</li>
+</ol>
+</section>
+<section id="fermentation-troubleshooting">
+<h2>Troubleshooting Fermentation</h2>
+<table class="ferment-table">
+<thead>
+<tr>
+  <th>Problem</th>
+  <th>Likely Cause</th>
+  <th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>No fermentation (no bubbles)</strong></td>
+  <td>Temperature too cold; dead yeast; sugar depleted</td>
+  <td>Move to warmer location (20–25°C); add fresh yeast; ensure sugar present</td>
+</tr>
+<tr>
+  <td><strong>Stuck fermentation (stopped early)</strong></td>
+  <td>Yeast died from high alcohol; insufficient nutrients; high sugar concentration</td>
+  <td>Add yeast nutrient; dilute if possible; ensure pH 5–6; raise temperature</td>
+</tr>
+<tr>
+  <td><strong>Off-flavors (vinegar, sulfur)</strong></td>
+  <td>Wild bacteria contamination; too warm; stress on yeast</td>
+  <td>Use cleaner techniques; lower temperature to 20–22°C; aerate if alcohol smell dominates</td>
+</tr>
+<tr>
+  <td><strong>Mold on surface</strong></td>
+  <td>Exposure to air; lack of proper seal</td>
+  <td>Skim off mold; improve anaerobic seal; if mold is widespread, discard batch</td>
+</tr>
+<tr>
+  <td><strong>White film (kahm yeast)</strong></td>
+  <td>Wild yeast surface growth (usually harmless)</td>
+  <td>Skim off; improve seal; ferment will continue below surface</td>
+</tr>
+<tr>
+  <td><strong>Too much sourness</strong></td>
+  <td>Over-fermentation; too much acid production</td>
+  <td>Reduce fermentation time for future batches; refrigerate to slow fermentation</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="fermentation-vessel-design">
+<h2>Fermentation Vessel Design</h2>
+<p><strong>Ideal vessel characteristics:</strong></p>
+<ul>
+<li><strong>Material:</strong> Glass or food-grade plastic (avoid metal for acidic ferments; avoid lead-glazed ceramic).</li>
+<li><strong>Seal:</strong> Airlock valve (one-way) for anaerobic ferments; cloth or coffee filter for acetic ferments (requires oxygen).</li>
+<li><strong>Size:</strong> Leave 20–30% headspace for CO₂ buildup and bubbling.</li>
+<li><strong>Cleanliness:</strong> Boil before use or soak in mild bleach solution (1 tsp per gallon) for 30 minutes, then rinse thoroughly.</li>
+</ul>
+<p><strong>Airlock types:</strong></p>
+<ul>
+<li><strong>S-shaped airlock:</strong> Water-filled tube; gas bubbles through, preventing backflow.</li>
+<li><strong>3-piece airlock:</strong> Cylindrical with floating ball; simple and robust.</li>
+</ul>
+<p><strong>Improvised airlocks:</strong></p>
+<ul>
+<li>Balloon over bottle neck (fermentation pushes balloon; gas escapes but air doesn't enter).</li>
+<li>Plastic tube filled with water and submerged in a cup of water (same principle as S-shaped airlock).</li>
+</ul>
+</section>
+<section id="applications">
+<h2>Industrial and Practical Applications</h2>
+<p><strong>Ethanol fuel:</strong> Fermentation of sugarcane, corn, or cellulose can produce ethanol for fuel. In low-tech contexts, fermented agricultural waste produces bioethanol for cooking/heating.</p>
+<p><strong>Biogas:</strong> Anaerobic bacteria ferment organic waste (manure, food scraps) to produce methane-rich biogas, usable as cooking fuel.</p>
+<p><strong>Food preservation:</strong> Fermentation extends shelf life of vegetables, dairy, and grains from days to months/years without refrigeration.</p>
+<p><strong>Flavor development:</strong> Long fermentation (months/years) develops complex flavors in wine, beer, cheese, and cured meats.</p>
+</section>
+<section id="practical-example">
+<h2>Practical Example: Quick Sauerkraut</h2>
+<p><strong>Ingredients:</strong> 1 kg green cabbage, 20 g sea salt (~2%).</p>
+<p><strong>Timeline:</strong></p>
+<ol>
+<li><strong>Day 1 (Prep, 15 min):</strong> Shred cabbage, mix with salt, massage for 10 minutes until liquid releases. Pack tightly in a clean quart jar, pressing cabbage below the brine. Cover with cloth.</li>
+<li><strong>Day 3–5 (Active fermentation starts):</strong> Bubbles form; liquid becomes cloudy; smell is sour and tangy.</li>
+<li><strong>Day 14 (Taste):</strong> Flavor is sour but still mild. Can eat now or allow longer fermentation.</li>
+<li><strong>Day 28 (Full fermentation):</strong> Deeper sour flavor, full probiotics. Tastes like store-bought sauerkraut. Remove cloth, cap jar, refrigerate.</li>
+</ol>
+<p><strong>Storage:</strong> Refrigerated sauerkraut keeps for 6–12 months. Can consume straight from the jar; no cooking required.</p>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="fermentation-baking.html">Fermentation &amp; Baking</a>
+<a href="food-preservation.html">Food Preservation</a>
+<a href="homestead-chemistry.html">Homestead Chemistry</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

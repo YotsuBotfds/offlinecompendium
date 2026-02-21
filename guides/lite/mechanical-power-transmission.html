@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/mechanical-power-transmission.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mechanical Power Transmission</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Transportation</span> ›
+<span>Mechanical Power Transmission</span>
+</div>
+
+
+<h1>Mechanical Power Transmission</h1>
+<p class="subtitle">Design and implement shafts, couplings, belt drives, V-belt alternatives, gear trains (spur, bevel, worm), chain drives, clutches, flywheels, and power take-off systems. Includes lubrication strategies.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~19 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#shafts-bearings">Shafts and Bearings</a></li>
+<li><a href="#couplings">Couplings and Alignment</a></li>
+<li><a href="#belt-drives">Belt Drives: Flat, V-Belt, and Rope</a></li>
+<li><a href="#gear-trains">Gear Trains: Spur, Bevel, and Worm</a></li>
+<li><a href="#chain-drives">Chain Drives</a></li>
+<li><a href="#clutches-flywheels">Clutches and Flywheels</a></li>
+<li><a href="#power-takeoff">Power Take-Off (PTO) Systems</a></li>
+<li><a href="#lubrication">Lubrication Strategy</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Mechanical power transmission moves rotational or linear energy from a power source (engine, water wheel, wind turbine) to a load (pump, saw blade, propeller). Efficiency losses occur in every transfer step—bearings, friction, misalignment. Well-designed transmission systems maintain 85–95% efficiency; poorly designed systems lose 30–50% of power as heat.</p>
+<p>This guide covers shaft design, coupling selection, belt and chain drives, gear trains, clutches, and flywheels. Understanding these components allows rapid design and repair of industrial machinery.</p>
+</section>
+<section id="shafts-bearings">
+<h2>Shafts and Bearings</h2>
+<p>A <strong>shaft</strong> transmits torque and power. It experiences bending stress (from lateral loads like gear forces), torsional stress (twisting), and axial stress (compression/tension along its length).</p>
+<h3>Shaft Material and Diameter</h3>
+<p>Steel shafts are standard. Diameter is determined by torque and material strength:</p>
+<pre><code>Torque (lb-ft) = Power (hp) × 5,250 ÷ RPM
+
+Shaft diameter (inches) ≈ ∛(16 × Torque / τ_allowable)
+
+Allowable shear stress (τ_allowable):
+- Steel, cut keyway: 4,000–6,000 psi
+- Steel, machined: 8,000–12,000 psi
+- Cast iron: 2,000–4,000 psi
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>Power: 10 hp at 600 RPM
+Torque = 10 × 5,250 ÷ 600 = 87.5 lb-ft
+τ_allowable = 6,000 psi (cut keyway)
+
+Shaft diameter = ∛(16 × 87.5 × 12 / 6,000) = ∛(28) ≈ 3.0 inches
+</code></pre>
+<p><strong>Practical shaft diameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Power (hp)</strong></th>
+<th><strong>RPM</strong></th>
+<th><strong>Torque</strong></th>
+<th><strong>Shaft Diameter</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1,200</td>
+<td>4.4 lb-ft</td>
+<td>0.75 in</td>
+<td>Belt drive input shaft</td>
+</tr>
+<tr>
+<td>5</td>
+<td>600</td>
+<td>43.75 lb-ft</td>
+<td>1.5 in</td>
+<td>Intermediate gear shaft</td>
+</tr>
+<tr>
+<td>10</td>
+<td>300</td>
+<td>175 lb-ft</td>
+<td>2.2 in</td>
+<td>Heavy-duty industrial shaft</td>
+</tr>
+<tr>
+<td>25</td>
+<td>150</td>
+<td>875 lb-ft</td>
+<td>3.5 in</td>
+<td>Large machinery (mill, pump)</td>
+</tr>
+</tbody>
+</table>
+<h3>Bearings</h3>
+<p>Bearings support the shaft and reduce friction. Two main types:</p>
+<p><strong>Rolling-element bearings</strong> (ball, roller, tapered): Friction ~50–100 watts at moderate load/speed. Require periodic lubrication.</p>
+<p><strong>Plain bearings</strong> (bronze, babbitt): Friction ~200–500 watts at same load/speed; require continuous oil flow. Used in high-speed machinery.</p>
+<p><strong>Bearing selection:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Load Capacity</strong></th>
+<th><strong>Speed Limit</strong></th>
+<th><strong>Maintenance</strong></th>
+<th><strong>Cost</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ball bearing</td>
+<td>Medium</td>
+<td>High (&gt;3,000 RPM)</td>
+<td>Low (sealed)</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Roller bearing</td>
+<td>High</td>
+<td>Medium (2,000 RPM)</td>
+<td>Low</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Tapered bearing</td>
+<td>High + radial</td>
+<td>High</td>
+<td>Low</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Plain bearing (oil)</td>
+<td>Very high</td>
+<td>Very high (5,000+ RPM)</td>
+<td>High (daily oiling)</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Rubber bushing</td>
+<td>Low (flexible)</td>
+<td>Low</td>
+<td>Very low</td>
+<td>Very low</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bearing spacing:</strong> Bearings are spaced to prevent shaft deflection. Maximum distance between bearings = 1.5–2.5× shaft diameter, depending on load. A 2-inch shaft can span 3–5 feet between bearing supports.</p>
+</section>
+<section id="couplings">
+<h2>Couplings and Alignment</h2>
+<p>A <strong>coupling</strong> joins two shafts and transmits torque. Rigid couplings require perfect alignment; flexible couplings allow slight misalignment.</p>
+<p><strong>Rigid flange coupling:</strong></p>
+<ul>
+<li><strong>Design</strong>: Two flanges bolted together on co-linear shafts.</li>
+<li><strong>Torque capacity</strong>: Depends on bolt size and number.</li>
+<li><strong>Alignment tolerance</strong>: ±0.05 inches (very tight; requires precision machining).</li>
+<li><strong>Cost</strong>: Moderate (machined flanges).</li>
+<li><strong>Use case</strong>: Precision machinery, close-coupled equipment.</li>
+</ul>
+<p><strong>Flexible couplings:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Misalignment Tolerance</strong></th>
+<th><strong>Power Loss</strong></th>
+<th><strong>Compliance</strong></th>
+<th><strong>Cost</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jaw (rubber insert)</td>
+<td>±0.25 in lateral, ±2° angular</td>
+<td>5–10%</td>
+<td>High</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Oldham (sliding block)</td>
+<td>±0.5 in lateral, ±5° angular</td>
+<td>2–5%</td>
+<td>Medium</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Bellows (metal spring)</td>
+<td>±0.1 in lateral, ±1° angular</td>
+<td>1–3%</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Chain</td>
+<td>±0.25 in lateral, ±3° angular</td>
+<td>5–10%</td>
+<td>Medium</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Grid (metal spring)</td>
+<td>±0.1 in lateral, ±1° angular</td>
+<td>2–5%</td>
+<td>Low</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Designing for misalignment:</strong></p>
+<p>Parallel misalignment (shaft offset) and angular misalignment (shaft angle difference) induce bending stress on the coupling and shaft. Deflection increases with misalignment distance and decreases with coupling stiffness.</p>
+<pre><code>Bending moment = Offset × Coupling stiffness
+If offset = 0.25 in and torque = 500 lb-ft:
+Bending moment ≈ 0.25 × 500 = 125 lb-in (small but cumulative)
+
+With a flexible coupling (Oldham): Moment absorbed, no transmission to shaft.
+With rigid coupling: Moment transferred to bearing, reducing bearing life.
+</code></pre>
+</section>
+<section id="belt-drives">
+<h2>Belt Drives: Flat, V-Belt, and Rope</h2>
+<p>Belt drives are the simplest power transmission for separated shafts. They slip under overload (protecting machinery), are quiet, and require minimal maintenance.</p>
+<h3>Flat Belt Drives</h3>
+<p><strong>Design parameters:</strong></p>
+<pre><code>Speed ratio = Driver pulley diameter ÷ Driven pulley diameter
+Belt length = π × (D_driver + D_driven) ÷ 2 + 2 × Center distance
+
+Example: 4-inch driver, 12-inch driven pulley, 36-inch center distance
+Speed ratio = 4 ÷ 12 = 1:3 (speed reduction)
+Belt length = π × (4 + 12) ÷ 2 + 2 × 36 = 25.1 + 72 = 97.1 inches
+
+Belt tension = (Power × 63,025) ÷ (RPM × Pulley radius)
+10 hp at 1,200 RPM, 2-inch radius driver:
+Tension = (10 × 63,025) ÷ (1,200 × 2) = 262 lbs in belt
+
+Slack side tension ≈ 0.3 × Tight side tension = 78.6 lbs
+Total tension on shaft = Tight + Slack = 262 + 78.6 = 340 lbs downward
+</code></pre>
+<p><strong>Belt materials and widths:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Material</strong></th>
+<th><strong>Max Speed</strong></th>
+<th><strong>Efficiency</strong></th>
+<th><strong>Durability</strong></th>
+<th><strong>Typical Width</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leather (tanned)</td>
+<td>4,000 ft/min</td>
+<td>95%</td>
+<td>5–10 years</td>
+<td>2–12 inches</td>
+</tr>
+<tr>
+<td>Canvas (cloth)</td>
+<td>3,000 ft/min</td>
+<td>90%</td>
+<td>3–7 years</td>
+<td>2–12 inches</td>
+</tr>
+<tr>
+<td>Rubber (plain)</td>
+<td>3,500 ft/min</td>
+<td>92%</td>
+<td>7–15 years</td>
+<td>2–12 inches</td>
+</tr>
+<tr>
+<td>Rubber (grooved V-belt)</td>
+<td>5,000 ft/min</td>
+<td>96%</td>
+<td>10–20 years</td>
+<td>0.5–2 inches</td>
+</tr>
+<tr>
+<td>Rope (manila, 5/8 in dia)</td>
+<td>2,000 ft/min</td>
+<td>88%</td>
+<td>2–5 years</td>
+<td>Multiple ropes per drive</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Flat belt tension adjustment:</strong></p>
+<p>Tension is maintained by moving the driven pulley closer or farther from the driver:</p>
+<pre><code>Ideal tension: Belt deflects 0.5–1 inch under finger pressure at midspan.
+Too slack: Belt slips under load; power loss.
+Too tight: Bearing load increases; bearing life halves per 50% tension increase.
+</code></pre>
+<h3>V-Belt Drives</h3>
+<p>V-belts have a trapezoidal cross-section and ride in a V-groove on the pulley. They grip via friction and don't slip as easily as flat belts.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>95–98% efficiency (no slipping).</li>
+<li>Compact; can transmit more power per inch of belt width.</li>
+<li>Self-aligning (wedge shape centers the belt).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Higher pulley cost (grooved pulleys must be machined).</li>
+<li>Shorter lifespan in high-speed service (&gt;4,000 RPM).</li>
+</ul>
+<p><strong>V-belt section sizes:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Section</strong></th>
+<th><strong>Pitch Width</strong></th>
+<th><strong>Height</strong></th>
+<th><strong>Power Range</strong></th>
+<th><strong>Speed Range</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>0.5 in</td>
+<td>0.31 in</td>
+<td>0.5–15 hp</td>
+<td>600–6,000 RPM</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.625 in</td>
+<td>0.39 in</td>
+<td>1–50 hp</td>
+<td>500–5,000 RPM</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0.75 in</td>
+<td>0.47 in</td>
+<td>5–100 hp</td>
+<td>500–3,500 RPM</td>
+</tr>
+<tr>
+<td>D</td>
+<td>1.0 in</td>
+<td>0.625 in</td>
+<td>15–200 hp</td>
+<td>400–3,000 RPM</td>
+</tr>
+<tr>
+<td>E</td>
+<td>1.25 in</td>
+<td>0.78 in</td>
+<td>30–300 hp</td>
+<td>400–2,500 RPM</td>
+</tr>
+</tbody>
+</table>
+<h3>Rope Drives</h3>
+<p>Larger belts are impractical; rope drives use multiple parallel ropes for high-power transmission.</p>
+<p><strong>Design:</strong></p>
+<ul>
+<li><strong>Rope diameter</strong>: 0.5–1.5 inches.</li>
+<li><strong>Number of ropes</strong>: 3–12 depending on power.</li>
+<li><strong>Center distance</strong>: 20–30× rope diameter.</li>
+<li><strong>Efficiency</strong>: 88–92% (rope slips slightly in groove).</li>
+</ul>
+<p><strong>Rope drive example:</strong></p>
+<pre><code>5 ropes, 7/8-inch diameter, 1,200 RPM driver at 6 inches radius, 3,600 RPM driven at 2 inches radius
+
+Power per rope ≈ 2–4 hp (depending on rope material and tension)
+Total power: 5 × 3 = 15 hp possible
+
+Tension calculation: Similar to flat belt; total tension ≈ 5 × (per-rope tension)
+</code></pre>
+<div class="tip">
+<p>Belt drives are ideal for low-cost, low-maintenance power transmission. Check belt tension monthly and replace belts every 7–10 years to prevent failure. Multiple narrow belts outlast single wide belts in terms of serviceability.</p>
+</div>
+</section>
+<section id="gear-trains">
+<h2>Gear Trains: Spur, Bevel, and Worm</h2>
+<p>Gears are the most efficient mechanical power transmission, with losses of only 2–5%. They can transmit very high torques and precise speed ratios.</p>
+<h3>Spur Gears</h3>
+<p><strong>Spur gears</strong> have straight teeth parallel to the axis. Most common for power transmission between parallel shafts.</p>
+<p><strong>Design:</strong></p>
+<pre><code>Speed ratio = Driven gear teeth ÷ Driver gear teeth
+
+Torque ratio = Speed ratio (inverse power law)
+If speed decreases by 3:1, torque increases by 3:1.
+
+Mesh frequency = Teeth × RPM ÷ 60
+A 20-tooth gear at 600 RPM meshes 200 times per second.
+Higher mesh frequency = smoother (less vibration).
+</code></pre>
+<p><strong>Pitch and module:</strong></p>
+<p>Pitch is the distance between teeth (measured along the pitch circle).</p>
+<pre><code>Module = Pitch diameter (inches) ÷ Number of teeth
+Pitch = 25.4 ÷ Module (for metric module)
+
+Standard modules: 0.5, 1, 1.5, 2, 2.5, 3, 4, 5, 6 mm
+or Diametral pitch: 12, 10, 8, 6, 5, 4, 3 (teeth per inch of diameter)
+
+Example: 20-tooth gear with module 2 mm
+Pitch diameter = 20 × 2 = 40 mm
+</code></pre>
+<p><strong>Gear materials:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Material</strong></th>
+<th><strong>Max PV (pressure × velocity)</strong></th>
+<th><strong>Efficiency</strong></th>
+<th><strong>Cost</strong></th>
+<th><strong>Durability</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cast iron</td>
+<td>200 ft/min·psi</td>
+<td>95%</td>
+<td>Low</td>
+<td>10–20 years</td>
+</tr>
+<tr>
+<td>Steel (cut teeth)</td>
+<td>1,000 ft/min·psi</td>
+<td>97%</td>
+<td>Moderate</td>
+<td>20–40 years</td>
+</tr>
+<tr>
+<td>Steel (hardened)</td>
+<td>3,000+ ft/min·psi</td>
+<td>98%</td>
+<td>High</td>
+<td>50+ years</td>
+</tr>
+<tr>
+<td>Bronze (pinion, steel gear)</td>
+<td>500 ft/min·psi</td>
+<td>96%</td>
+<td>Moderate</td>
+<td>15–30 years</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Gear tooth failure modes:</strong></p>
+<ul>
+<li><strong>Pitting</strong>: Spalling (flaking) of surface due to Hertzian stress. Prevented by case-hardening or shot-peening.</li>
+<li><strong>Root bending</strong>: Tooth root cracks under repeated bending. Prevented by proper module selection and heat treatment.</li>
+<li><strong>Wear</strong>: Gradual loss of tooth profile due to abrasive particles in oil. Prevented by oil filtration and cleanliness.</li>
+</ul>
+<h3>Bevel Gears</h3>
+<p><strong>Bevel gears</strong> transmit power between non-parallel shafts (typically at 90°, but 30–120° angles possible).</p>
+<p><strong>Types:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Angle Range</strong></th>
+<th><strong>Efficiency</strong></th>
+<th><strong>Speed Limit</strong></th>
+<th><strong>Cost</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Straight bevel</td>
+<td>45–90°</td>
+<td>95%</td>
+<td>2,000 RPM</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Spiral bevel</td>
+<td>30–120°</td>
+<td>97%</td>
+<td>5,000 RPM</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Zerol bevel</td>
+<td>90°</td>
+<td>96%</td>
+<td>3,000 RPM</td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Applications:</strong></p>
+<ul>
+<li><strong>Ship propulsion</strong>: Diesel engine output shaft (horizontal) to propeller shaft (vertical).</li>
+<li><strong>Automotive differentials</strong>: Driveshaft (horizontal) to wheel axles (vertical).</li>
+<li><strong>Industrial machinery</strong>: Vertical turbine shafts to horizontal shafts.</li>
+</ul>
+<p><strong>Design note:</strong> Bevel gear design is complex; tooth engagement and contact stress depend on pitch cone angle, which varies along the tooth length. Pre-cut commercial bevel gears are recommended for production machinery.</p>
+<h3>Worm and Worm Gear</h3>
+<p><strong>Worm drives</strong> use a worm (screw) meshing with a worm gear (spiral-toothed wheel). They provide very high speed reduction (5:1 to 100:1) in compact form.</p>
+<p><strong>Design:</strong></p>
+<pre><code>Speed ratio = Number of gear teeth ÷ Number of worm threads
+
+Example: 40-tooth worm gear, 1-thread worm
+Speed ratio = 40:1
+
+Worm rotates 40 times for each gear rotation.
+</code></pre>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Compact (small footprint for large reduction).</li>
+<li>Self-locking (if drive is one-way); prevents backdriving (gear can't drive worm).</li>
+<li>Smooth, quiet engagement.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li><strong>Lower efficiency</strong>: 40–80% (vs. 95%+ for spur/bevel gears) due to sliding friction between worm and gear teeth.</li>
+<li><strong>Heat generation</strong>: 20–60% of input power becomes heat; requires cooling.</li>
+<li><strong>Lubrication critical</strong>: Worm drives fail rapidly without proper oil flow.</li>
+</ul>
+<p><strong>Efficiency calculation:</strong></p>
+<pre><code>Worm friction angle α = arctan(Coefficient of friction / tan(Worm helix angle))
+Efficiency = cos(α) / cos(α + Worm lead angle)
+
+Typical: 50–70% efficiency for a 40:1 worm drive at 1,200 RPM input.
+</code></pre>
+<p><strong>Worm drive example:</strong></p>
+<pre><code>Input: 1 hp at 1,200 RPM
+Reduction: 20:1 (worm with 1 thread, gear with 20 teeth)
+Output: 20 × 5,250 ÷ 1,200 = 87.5 lb-ft torque at 60 RPM
+
+If efficiency = 60%:
+Heat dissipated = (1 – 0.6) × 1 hp × 746 watts/hp = 298 watts (cooling required)
+</code></pre>
+<div class="warning">
+<p>Worm drives generate significant heat and require continuous oil circulation. Thermal breakdown of the oil accelerates wear. Install an external cooling loop (heat exchanger) for high-speed, high-power worm drives.</p>
+</div>
+</section>
+<section id="chain-drives">
+<h2>Chain Drives</h2>
+<p>Chain drives mesh sprockets (toothed wheels) with a chain. They are simple, robust, and efficient (90–95%), but noisier than gears and require lubrication.</p>
+<p><strong>Chain types:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Pitch</strong></th>
+<th><strong>Strength</strong></th>
+<th><strong>Speed</strong></th>
+<th><strong>Lubrication</strong></th>
+<th><strong>Cost</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Roller chain</td>
+<td>0.5–2.0 in</td>
+<td>Low–moderate</td>
+<td>0–2,000 ft/min</td>
+<td>Oil bath or spray</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Singlestrand chain</td>
+<td>1–2 in</td>
+<td>Moderate</td>
+<td>0–2,500 ft/min</td>
+<td>Oil bath</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Duplex/triplex</td>
+<td>0.5–1.0 in</td>
+<td>Moderate–high</td>
+<td>1,000–4,000 ft/min</td>
+<td>Oil bath or spray</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Transmission chain (HTD)</td>
+<td>0.375–1.0 in</td>
+<td>High</td>
+<td>0–10,000 ft/min</td>
+<td>Sealed (dry chain)</td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sprocket selection:</strong></p>
+<pre><code>Number of teeth:
+- Driver (pinion): 9–25 teeth (fewer teeth increase speed ratio and load on teeth)
+- Driven: 20–100+ teeth (larger reduces noise and wear)
+
+Pitch diameter = Pitch × Number of teeth ÷ π
+
+Speed ratio = Driven sprocket teeth ÷ Driver sprocket teeth
+Output speed (RPM) = Input RPM × Speed ratio (inverse)
+
+Example: 13-tooth driver at 1,200 RPM, 52-tooth driven
+Speed ratio = 52 ÷ 13 = 4:1
+Output RPM = 1,200 ÷ 4 = 300 RPM
+</code></pre>
+<p><strong>Chain length:</strong></p>
+<pre><code>Chain length (links) = [2 × Center distance ÷ Pitch] + (Driver teeth + Driven teeth) ÷ 2
+
+Example: 13-tooth driver, 52-tooth driven, 6-inch center distance, 0.5-inch pitch
+Chain length = [2 × 6 ÷ 0.5] + (13 + 52) ÷ 2 = 24 + 32.5 = 56.5 links (round to 56 or 57)
+</code></pre>
+<p><strong>Lubrication and maintenance:</strong></p>
+<ul>
+<li><strong>Oil bath</strong>: Chain runs through oil reservoir (best for low-speed, protected drives).</li>
+<li><strong>Oil mist</strong>: Atomized oil spray from reservoir (for moderate speeds).</li>
+<li><strong>Sealed/dry chains</strong>: Integral lubricant sealed inside rollers (requires no external lubrication; used on bicycles, motorcycles).</li>
+</ul>
+<p><strong>Chain wear and tension:</strong></p>
+<pre><code>Acceptable sag (slack) = 0.5–1.0 inches at midspan (for typical 6–12 foot center distance)
+
+Excessive sag causes:
+- Noise (chain bangs against itself)
+- Wear (accelerated tooth wear)
+- Breakage (uneven load distribution)
+
+Adjustment: Move sprocket to change center distance.
+If slack is excessive, shorten the chain by 1–2 links (requires breaking and reassembling the chain).
+</code></pre>
+</section>
+<section id="clutches-flywheels">
+<h2>Clutches and Flywheels</h2>
+<p><strong>Clutches</strong> engage and disengage power transmission without stopping the input (engine/motor). <strong>Flywheels</strong> store rotational energy (inertia) and smooth power delivery.</p>
+<h3>Clutches</h3>
+<p><strong>Friction clutch:</strong></p>
+<pre><code>Torque capacity = μ × Normal force × Radius × Number of friction surfaces
+
+μ = Coefficient of friction (0.3–0.6 for steel on bronze, 0.4–0.8 for steel on cast iron)
+Normal force (lbs) = Spring force pressing plates together
+Radius = Effective radius of friction surface
+
+Example: Dry plate clutch
+μ = 0.5, Normal force = 500 lbs, Radius = 3 inches, 2 surfaces (both sides)
+Torque = 0.5 × 500 × 3 × 2 ÷ 12 = 125 lb-ft
+
+A 10 hp engine at 1,200 RPM produces 52.5 lb-ft; this clutch can transmit 2.4× the engine torque.
+</code></pre>
+<p><strong>Engagement methods:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Engagement</strong></th>
+<th><strong>Disengagement</strong></th>
+<th><strong>Slip</strong></th>
+<th><strong>Cost</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manual friction</td>
+<td>Hand lever</td>
+<td>Spring return</td>
+<td>Controllable (0–100%)</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Centrifugal</td>
+<td>Speed-dependent (releases at RPM threshold)</td>
+<td>Automatic (drops RPM)</td>
+<td>Automatic</td>
+<td>Low–moderate</td>
+</tr>
+<tr>
+<td>Hydraulic</td>
+<td>Hydraulic pressure</td>
+<td>Pressure release</td>
+<td>Smooth</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Electromagnetic</td>
+<td>Magnetic coil energized</td>
+<td>De-energize coil</td>
+<td>Immediate</td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Centrifugal clutch:</strong></p>
+<p>Weights on the input shaft spin outward as speed increases, engaging the output shaft via friction.</p>
+<pre><code>Engagement RPM ≈ √(Spring stiffness ÷ Weight mass)
+
+Typical: Engagement at 1,500–3,000 RPM; works best for engines with variable speed.
+Used on small engines (lawn mowers, generators) to allow engine startup without load.
+</code></pre>
+<h3>Flywheels</h3>
+<p>A <strong>flywheel</strong> is a heavy disk that stores rotational energy (inertia). It smooths power delivery from pulsating engines (single-cylinder, multi-cylinder with irregular firing) and absorbs/releases energy during load transients.</p>
+<p><strong>Energy storage:</strong></p>
+<pre><code>Rotational kinetic energy = 0.5 × I × ω²
+
+I = Moment of inertia (lb-in²)
+ω = Angular velocity (radians/sec) = RPM × 2π ÷ 60
+
+For a solid disk: I = 0.5 × M × R²
+M = Mass (lbs)
+R = Radius (inches)
+
+Example: 50-lb disk, 6-inch radius, 1,200 RPM
+ω = 1,200 × 2π ÷ 60 = 125.7 rad/sec
+I = 0.5 × 50 × 6² = 900 lb-in²
+Energy = 0.5 × 900 × 125.7² ÷ 1,129.5 = 6,340 in-lbs = 528 ft-lbs
+</code></pre>
+<p><strong>Effect on speed regulation:</strong></p>
+<p>Flywheels reduce speed variation (govern) when load fluctuates:</p>
+<pre><code>Speed regulation = (Max RPM – Min RPM) ÷ Steady-state RPM
+
+Without flywheel: Speed variation 20–50% (engine hunts, jerks)
+With flywheel (moment of inertia = 10× engine): Speed variation 2–5%
+
+Rule of thumb: Flywheel inertia should be 5–20× engine's inertia to achieve smooth speed control.
+</code></pre>
+<p><strong>Application:</strong> Belt-driven machinery (saw mill, grain mill) requires a large flywheel to smooth power delivery from a single-cylinder engine, preventing the load from jerking the engine to a stall.</p>
+</section>
+<section id="power-takeoff">
+<h2>Power Take-Off (PTO) Systems</h2>
+<p>A <strong>PTO</strong> is a rotating shaft that allows a powered vehicle or stationary engine to drive auxiliary equipment (pump, saw, thresher, grain auger).</p>
+<p><strong>Standard PTO specifications:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Designation</strong></th>
+<th><strong>Shaft Diameter</strong></th>
+<th><strong>Spline Teeth</strong></th>
+<th><strong>Rotation</strong></th>
+<th><strong>Speed Range</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAE #1 (small)</td>
+<td>0.56 in</td>
+<td>6 teeth</td>
+<td>CCW</td>
+<td>500–1,500 RPM</td>
+</tr>
+<tr>
+<td>SAE #2 (medium)</td>
+<td>0.75 in</td>
+<td>6 teeth</td>
+<td>CCW</td>
+<td>500–2,000 RPM</td>
+</tr>
+<tr>
+<td>SAE #3 (large)</td>
+<td>1.125 in</td>
+<td>20 teeth</td>
+<td>CCW</td>
+<td>500–1,000 RPM</td>
+</tr>
+<tr>
+<td>SAE #4 (very large)</td>
+<td>1.375 in</td>
+<td>20 teeth</td>
+<td>CCW</td>
+<td>500–1,000 RPM</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PTO coupling:</strong></p>
+<p>A <strong>PTO clutch</strong> allows the operator to engage/disengage equipment without stopping the engine. Common design: friction plate clutch controlled by a foot pedal or hand lever.</p>
+<p><strong>Power delivery:</strong></p>
+<pre><code>Power at PTO = Engine power × Gear ratio × Efficiency
+
+Example: Tractor with 20 hp engine, 1,200 RPM PTO, 90% transmission efficiency
+Torque at PTO = 20 × 5,250 ÷ 1,200 = 87.5 lb-ft × 0.9 = 78.8 lb-ft
+
+A grain auger (100 lb-ft torque required at 600 RPM) can run on this PTO with a 2:1 reduction gearbox.
+</code></pre>
+<p><strong>Safety:</strong> PTO shafts are dangerous (entanglement risk). Guards and shear pins (safety devices that break under overload) are essential.</p>
+</section>
+<section id="lubrication">
+<h2>Lubrication Strategy</h2>
+<p>Lubrication reduces friction in bearings, gears, and sliding surfaces. Oil film thickness must exceed surface roughness to prevent metal-to-metal contact.</p>
+<p><strong>Lubrication regimes:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Regime</strong></th>
+<th><strong>Oil Film</strong></th>
+<th><strong>Friction</strong></th>
+<th><strong>Wear</strong></th>
+<th><strong>Temperature</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hydrodynamic (full-film)</td>
+<td>Thick (&gt;1 micron)</td>
+<td>Low (0.005–0.015)</td>
+<td>None</td>
+<td>Stable</td>
+</tr>
+<tr>
+<td>Elastohydrodynamic (EHL)</td>
+<td>Moderate (0.1–1 micron)</td>
+<td>Moderate</td>
+<td>Low</td>
+<td>+20–50°F above ambient</td>
+</tr>
+<tr>
+<td>Boundary (thin-film)</td>
+<td>Thin (&lt;0.1 micron)</td>
+<td>High (0.1–0.5)</td>
+<td>Rapid</td>
+<td>Can spike to 400°F</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Oil selection:</strong></p>
+<p><strong>Gear oil</strong> (ISO VG 46–150): Higher viscosity; designed for high-pressure boundary conditions (gearbox).</p>
+<p><strong>Machine oil</strong> (ISO VG 10–32): Lower viscosity; for low-speed, high-load machinery (plain bearings, slideway lubrication).</p>
+<p><strong>Way oil</strong> (ISO VG 22–46): Very smooth, low friction; for precision machine tool slideways.</p>
+<p><strong>Viscosity index (VI)</strong>: How much the oil's viscosity changes with temperature.</p>
+<pre><code>VI = 100 at 40°C and 100°C for a standard oil
+High VI (&gt;140): Oil stays stable across wide temperature ranges (good for engines, outdoor equipment).
+Low VI (&lt;100): Oil viscosity changes rapidly with temperature (adequate for enclosed, temperature-stable machinery).
+</code></pre>
+<p><strong>Greases</strong> (ball bearings, sealed joints): Soap base + mineral oil. Stays in place better than oil, but loses effectiveness over time.</p>
+<p><strong>Lubrication intervals:</strong></p>
+<ul>
+<li><strong>Oil bath</strong>: Change every 1,000–2,000 hours or annually (whichever comes first).</li>
+<li><strong>Oil mist/spray</strong>: Check oil level weekly; refill as needed. Change every 5,000 hours.</li>
+<li><strong>Grease (sealed bearings)</strong>: Regrease every 6–12 months or 1,000–2,000 hours.</li>
+<li><strong>Dry bearings/bushings</strong>: Lubricate at installation; relubricate if squeak/wear develops.</li>
+</ul>
+<div class="warning">
+<p>Over-lubrication is as harmful as under-lubrication. Excess oil causes overheating, foaming, and accelerated breakdown. Fill oil reservoirs to the marked level line; excess oil increases drag and heat generation.</p>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="mechanical-advantage-construction.html">Mechanical Advantage in Construction</a>
+<a href="electrical-motors.html">Electric Motors</a>
+<a href="watercraft-propulsion.html">Watercraft Propulsion Systems</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

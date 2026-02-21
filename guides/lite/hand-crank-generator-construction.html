@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/hand-crank-generator-construction.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hand-Crank Generator Construction</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Power Generation</span> ›
+<span>Hand-Crank Generator Construction</span>
+</div>
+
+
+<h1>Hand-Crank Generator Construction</h1>
+<p class="subtitle">Build hand-crank DC generators, bicycle-powered generators, and simple AC alternators. Covers magnet selection, coil winding, rotor/stator assembly, voltage regulation, and battery charging.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~8 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#electromagnetic-principles">Electromagnetic Principles</a></li>
+<li><a href="#magnet-selection">Magnet Selection &amp; Salvage</a></li>
+<li><a href="#coil-winding">Coil Winding</a></li>
+<li><a href="#hand-crank-dc-generator">Hand-Crank DC Generator Design</a></li>
+<li><a href="#bicycle-powered-generator">Bicycle-Powered Generator</a></li>
+<li><a href="#simple-ac-alternator">Simple AC Alternator</a></li>
+<li><a href="#voltage-regulation">Voltage Regulation</a></li>
+<li><a href="#battery-charging">Battery Charging</a></li>
+<li><a href="#load-matching">Load Matching &amp; Power Budget</a></li>
+<li><a href="#output-expectations">Realistic Output Expectations</a></li>
+<li><a href="#troubleshooting">Troubleshooting &amp; Maintenance</a></li>
+<li><a href="#safety">Safety &amp; Practical Considerations</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<h2 id="overview">Overview</h2>
+<p>A hand-crank generator converts mechanical energy (human muscle) into electrical energy. A human cranking continuously can produce 5–20 watts of electrical power—enough to charge batteries, power LED lighting, run a radio, or contribute to a larger renewable system. Understanding generator design allows you to build reliable power sources from salvaged materials or locally-manufactured components.</p>
+<div class="info-box">
+<p><strong>Why This Matters</strong>
+In low-energy scenarios, manual power generation bridges gaps between renewable sources. A hand-crank generator requires no fuel, produces no pollution, and can be built with basic tools and salvaged motors/alternators. For emergency lighting, radio operation, or battery charging, it's one of the most reliable and low-tech power solutions available.</p>
+</div>
+<section id="electromagnetic-principles">
+<h2>Electromagnetic Principles</h2>
+<p>All generators work on <strong>Faraday's law of electromagnetic induction:</strong> a changing magnetic field induces electrical current in a coil.</p>
+<h3>The Mechanism</h3>
+<ol>
+<li><strong>A rotating magnet</strong> (or rotating coil in a stationary magnetic field) changes the magnetic field direction through a fixed coil.</li>
+<li><strong>This changing flux</strong> induces a voltage in the coil proportional to:
+<ul>
+<li><strong>Magnet strength</strong> (measured in Tesla or Gauss)</li>
+<li><strong>Number of coil turns</strong> (more turns = higher voltage)</li>
+<li><strong>Rate of rotation</strong> (faster spinning = higher frequency)</li>
+</ul>
+</li>
+</ol>
+<div class="power-calc">
+<p><strong>Faraday's Law (simplified):</strong></p>
+<p>Voltage (V) ≈ 0.318 × Field Strength (T) × Coil Turns × Rotation Speed (RPM)</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Neodymium magnet: 0.4 Tesla at coil surface</li>
+<li>Coil with 100 turns</li>
+<li>Rotating at 300 RPM</li>
+<li>Voltage ≈ 0.318 × 0.4 × 100 × 300 ≈ 3,800 V (unrealistic; need multiple magnets)</li>
+</ul>
+<p>(The 0.318 factor accounts for sine-wave averaging and unit conversions.)</p>
+</div>
+<h3>Power Output</h3>
+<p>Power depends on voltage, current, and load resistance:</p>
+<p><strong>P = V × I</strong> (watts)</p>
+<p>If your generator produces 10 volts and supplies 2 amps, output is 20 watts. A human hand-cranking can sustain 20 watts for an hour—beyond that, fatigue sets in and output drops.</p>
+<div class="tip">
+<p><strong>Human Power Budget</strong></p>
+<ul>
+<li>Sustained output while cranking: 5–15 watts</li>
+<li>Peak output (short bursts): 20–50 watts</li>
+<li>Duration: 30 min comfortable, 1–2 hours with breaks</li>
+<li>Three people rotating shifts can maintain power generation 24/7</li>
+</ul>
+</div>
+</section>
+<section id="magnet-selection">
+<h2>Magnet Selection &amp; Salvage</h2>
+<p>The magnetic field strength directly determines generator output. Strong magnets are essential.</p>
+<h3>Magnet Types</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Strength</th>
+<th>Remanence</th>
+<th>Cost</th>
+<th>Salvage Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ferrite (ceramic)</strong></td>
+<td>Weak, 0.2–0.3 T</td>
+<td>Fair</td>
+<td>Low</td>
+<td>Older motors, loudspeakers</td>
+</tr>
+<tr>
+<td><strong>Alnico</strong></td>
+<td>Moderate, 0.5–0.8 T</td>
+<td>Good</td>
+<td>Medium</td>
+<td>Vintage motors, compasses</td>
+</tr>
+<tr>
+<td><strong>Neodymium (NdFeB)</strong></td>
+<td>Very strong, 1.0–1.4 T</td>
+<td>Excellent</td>
+<td>High-ish</td>
+<td>Hard drives, computer fans, new motors</td>
+</tr>
+<tr>
+<td><strong>Samarium-cobalt</strong></td>
+<td>Strong, 0.8–1.1 T</td>
+<td>Excellent</td>
+<td>Expensive</td>
+<td>Rare, specialized motors</td>
+</tr>
+</tbody>
+</table>
+<p><strong>For hand-crank generators, neodymium magnets are ideal</strong> because they are:</p>
+<ul>
+<li>Compact (high strength in small size)</li>
+<li>Commonly salvaged (hard drives, motors)</li>
+<li>Affordable at scale ($0.50–2 per magnet)</li>
+</ul>
+<h3>Salvaging Neodymium Magnets</h3>
+<p><strong>From computer hard drives:</strong></p>
+<ol>
+<li>Disassemble a dead hard drive (use screwdrivers, be careful of sharp edges).</li>
+<li>Locate the voice coil actuator—this is a motor with powerful neodymium magnets underneath.</li>
+<li>Carefully pry the magnet away using a small lever. It will cling strongly; support the drive with one hand.</li>
+<li>Typical hard drive: Two magnets, each ~30 × 15 × 5 mm, strength 0.3–0.5 T.</li>
+</ol>
+<p><strong>From brushless DC motors (computer fans, power tools):</strong></p>
+<ol>
+<li>Cut or grind open the motor can.</li>
+<li>Inside, the rotor contains 2–4 permanent magnets bonded to a iron core.</li>
+<li>Carefully remove the rotor.</li>
+<li>Extract magnets (they are often glued; heat or chemical treatment may be needed to separate).</li>
+<li>Typical computer fan: 2–4 small magnets, ~10 × 5 × 3 mm each, 0.2–0.3 T.</li>
+</ol>
+<p><strong>From old AC motors (larger salvage):</strong></p>
+<ol>
+<li>Rare, but some AC induction motors contain permanent magnet rotors.</li>
+<li>Check by spinning the shaft by hand—high resistance to spinning indicates permanent magnets (the magnetic field creates resistance even without power).</li>
+</ol>
+<h3>Testing Magnet Strength</h3>
+<p><strong>Gauss meter method (if available):</strong></p>
+<ul>
+<li>A $20–40 digital Gauss meter instantly measures field strength in Gauss or Tesla.</li>
+<li>Place the probe 5 mm above the magnet's pole face.</li>
+<li>Typical neodymium hard drive magnet reads 3,000–5,000 Gauss (0.3–0.5 Tesla).</li>
+</ul>
+<p><strong>No meter? Use these tests:</strong></p>
+<ol>
+<li><strong>Weight test:</strong> A powerful neodymium magnet (1.0+ T) can support 10+ kg of steel. Weak magnets support &lt;1 kg.</li>
+<li><strong>Distance test:</strong> Drop a steel ball near the magnet. A strong magnet attracts it from 10+ cm away; weak magnets only work from contact.</li>
+<li><strong>Lift test:</strong> Attach a magnet to a vertical steel plate. Try to pull it off. Powerful neodymium resists with surprising force.</li>
+</ol>
+<div class="warning">
+<p><strong>Magnet Safety</strong></p>
+<ul>
+<li>Neodymium magnets are brittle and can shatter if they slam together (pieces become flying shards).</li>
+<li>Strong magnets can pinch fingers painfully. Handle carefully, keep away from young children.</li>
+<li>Magnets can damage electronics: keep away from credit cards, pacemakers, and sensitive devices.</li>
+<li>Store magnets in a wooden box with spacing between them to prevent clustering.</li>
+</ul>
+</div>
+</section>
+<section id="coil-winding">
+<h2>Coil Winding</h2>
+<p>The coil converts changing magnetic flux into electrical voltage. Coil design directly impacts output.</p>
+<h3>Wire Selection</h3>
+<p><strong>For hand-crank generators, use 18–22 AWG enameled copper wire</strong> (diameter 0.5–1.0 mm).</p>
+<table>
+<thead>
+<tr>
+<th>Wire Gauge (AWG)</th>
+<th>Diameter (mm)</th>
+<th>Resistance per 100m (Ω)</th>
+<th>Applications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>18</td>
+<td>1.02</td>
+<td>0.65</td>
+<td>High current (5+ amps), short coils</td>
+</tr>
+<tr>
+<td>20</td>
+<td>0.81</td>
+<td>1.05</td>
+<td>Balanced, general-purpose</td>
+</tr>
+<tr>
+<td>22</td>
+<td>0.64</td>
+<td>1.67</td>
+<td>Higher voltage output, thinner coils</td>
+</tr>
+<tr>
+<td>24</td>
+<td>0.51</td>
+<td>2.68</td>
+<td>Fine wire, very high turns</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why &quot;enameled&quot;?</strong> Enameled wire is coated with a thin insulating varnish so individual turns don't short together. Bare copper would form a short circuit as coils overlap.</p>
+<h3>Calculating Turns &amp; Dimensions</h3>
+<p>For a simple hand-crank generator:</p>
+<ul>
+<li><strong>Target output:</strong> 6–12 volts at 100–300 RPM</li>
+<li><strong>Coil diameter:</strong> 40–80 mm (depends on available bobbin/former)</li>
+<li><strong>Turns:</strong> 100–300 turns (more turns = higher voltage, but higher resistance)</li>
+</ul>
+<p><strong>Rough formula:</strong></p>
+<div class="power-calc">
+<p>Voltage (V) ≈ 0.001 × Flux Density (T) × Turns × RPM</p>
+<p>Example:</p>
+<ul>
+<li>Neodymium magnet: 0.4 T average flux at coil</li>
+<li>200 turns</li>
+<li>200 RPM crank speed</li>
+<li>Voltage ≈ 0.001 × 0.4 × 200 × 200 ≈ 16 volts (reasonable)</li>
+</ul>
+</div>
+<h3>Bobbin Construction</h3>
+<p>A <strong>bobbin</strong> is the form around which wire is wound. It can be made from:</p>
+<ul>
+<li><strong>Wooden dowel</strong> (40–60 mm diameter) wound with paper layers</li>
+<li><strong>PVC pipe</strong> (1.5–2&quot; schedule 40)</li>
+<li><strong>Plastic spool</strong> (scavenged from thread or wire)</li>
+<li><strong>Cardboard tube</strong> from paper towels (surprisingly sturdy if wrapped)</li>
+</ul>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Cut bobbin to 60–80 mm length.</li>
+<li>Wrap one end with thin paper or cloth to create a lip (prevents wire from sliding off).</li>
+<li>Sand the surface lightly so wire grips.</li>
+</ol>
+<h3>Winding Technique</h3>
+<div class="winding-steps">
+<h4>Step-by-Step Coil Winding</h4>
+<ol>
+<li>
+<p><strong>Secure one end:</strong> Tie the wire end to the bobbin with a tight knot or dab of epoxy. Mark this as the &quot;start&quot; lead.</p>
+</li>
+<li>
+<p><strong>Organize your workspace:</strong> Mount the bobbin horizontally in a hand-drill (use the chuck to grip the bobbin shaft). You can now spin it by turning the drill handle.</p>
+</li>
+<li>
+<p><strong>Begin winding:</strong> Hold the wire supply spool 1–2 meters away so it can unreel under tension. Place a light tension on the wire (a helper's finger works, or a spring clip).</p>
+</li>
+<li>
+<p><strong>Wind in orderly layers:</strong></p>
+<ul>
+<li>Spin the bobbin slowly while feeding wire.</li>
+<li>Wind wire in tight, parallel rows along the bobbin length.</li>
+<li>After reaching one end, advance the wire laterally and wind back along the other side (creating a double-layer).</li>
+<li>Repeat until you reach the target turn count (e.g., 200 turns).</li>
+</ul>
+</li>
+<li>
+<p><strong>Secure the end:</strong> Tie off the wire at the final turn.</p>
+</li>
+<li>
+<p><strong>Test continuity:</strong> With a multimeter on resistance mode, check that the two wire leads show 10–50 ohms (typical for 200-turn coil in 20 AWG). No reading = broken wire.</p>
+</li>
+<li>
+<p><strong>Inspect:</strong> Look for any obvious shorts or loose wraps. The coil should feel solid when tapped.</p>
+</li>
+</ol>
+</div>
+<h3>Coil Forms (Pre-wound Options)</h3>
+<p>If hand-winding is too tedious:</p>
+<ul>
+<li><strong>Scavenge from electric motors:</strong> Many AC/DC motors contain pre-wound coils. Extract and test for the right voltage at your target RPM.</li>
+<li><strong>Salvage from generator sets:</strong> Small gensets often have modular coil packs that can be repurposed.</li>
+<li><strong>Commission a coil-winding service:</strong> Some motor repair shops will wind custom coils for a modest fee if you provide specifications.</li>
+</ul>
+</section>
+<section id="hand-crank-dc-generator">
+<h2>Hand-Crank DC Generator Design</h2>
+<p>A simple DC generator uses permanent magnets rotating past a stationary coil, with a <strong>commutator and brushes</strong> to convert AC output to DC.</p>
+<h3>Component Assembly</h3>
+<p><strong>Parts needed:</strong></p>
+<ol>
+<li><strong>Rotor:</strong> Shaft with permanent magnets attached (or wound around)</li>
+<li><strong>Stator:</strong> Stationary coil(s)</li>
+<li><strong>Commutator:</strong> Split ring (usually copper) on the rotating shaft that switches coil connections</li>
+<li><strong>Brushes:</strong> Carbon or copper contacts that slide on the commutator</li>
+<li><strong>Bearings:</strong> Support the spinning shaft (bronze bushings or ball bearings)</li>
+<li><strong>Frame:</strong> Steel or aluminum housing</li>
+<li><strong>Handle:</strong> Crank lever (gear-reduced for ergonomics)</li>
+</ol>
+<h3>Simple DC Generator Configuration</h3>
+<p><strong>Permanent Magnet DC (PMDC) motor principle in reverse:</strong></p>
+<ol>
+<li><strong>Rotor:</strong> Mount neodymium magnets (2–4 magnets, alternating polarity) around the circumference of a wooden or plastic disk (100–150 mm diameter).</li>
+<li><strong>Stator coil:</strong> Position the coil stationary in the center of the magnetic field, with the rotor spinning around it.</li>
+<li><strong>Commutator:</strong> A 2-segment split ring (or 4-segment for smoother output) is bonded to the rotor shaft. Each segment connects to one end of the coil.</li>
+<li><strong>Brushes:</strong> Two carbon or brass brush blocks are mounted on the frame, positioned 180° apart (opposite the commutator segments). They touch the commutator and conduct current to the external circuit.</li>
+<li><strong>Wiring:</strong> As the rotor spins, the brushes alternate which coil segment they touch, reversing the coil connection every half-turn. This rectifies the coil's alternating output into unidirectional DC current.</li>
+</ol>
+<h3>Commutator Construction</h3>
+<p><strong>Simple 2-segment commutator:</strong></p>
+<ol>
+<li>Machine or solder two half-rings of copper or brass, each covering a semicircle of the rotor shaft.</li>
+<li>Insulate them from each other with a thin mica or plastic sheet.</li>
+<li>Bond the coil wire ends to the two segments (one end to each half).</li>
+<li>Test continuity: spin the shaft and measure resistance between the two segments—it should cycle between near-zero (when a brush touches each segment) and very high (when brushes are in transition).</li>
+</ol>
+<h3>Brush Holders</h3>
+<p>Brushes must press lightly against the commutator (3–6 newtons of force) and slide smoothly without binding.</p>
+<p><strong>Simple design:</strong></p>
+<ol>
+<li>Machine or file two slots in the generator frame, positioned 180° apart.</li>
+<li>Fit carbon brushes (salvaged from old electric drills or motors) into the slots with light spring tension.</li>
+<li>Connect wire leads to each brush.</li>
+</ol>
+<p><strong>Commutation timing:</strong> For maximum voltage output, brushes should be positioned 90° offset from the magnetic poles. Experiment: spin the generator by hand and measure voltage output as you rotate the brush holders around; peak voltage occurs at the optimal position.</p>
+</section>
+<section id="bicycle-powered-generator">
+<h2>Bicycle-Powered Generator</h2>
+<p>A bicycle is an efficient platform for human-powered generation because:</p>
+<ul>
+<li>Gearing is already optimized for human pedaling (60–120 RPM crank, 200–400 RPM rear wheel depending on gearing)</li>
+<li>Pedaling is more efficient than cranking for sustained power</li>
+<li>Power output is higher: 50–100 watts sustainable vs. 5–20 watts hand-crank</li>
+</ul>
+<h3>Mounting Method 1: Friction Drive (Simplest)</h3>
+<ol>
+<li><strong>Remove the rear wheel</strong> or add a second wheel alongside it.</li>
+<li><strong>Mount a generator rotor</strong> (40–80 mm diameter disk with permanent magnets) tangentially against the tire or rim.</li>
+<li><strong>As the bike wheel spins</strong>, friction drives the generator rotor.</li>
+<li><strong>Output:</strong> ~50 watts at moderate pedaling effort (RPM depends on wheel size and gearing).</li>
+</ol>
+<p><strong>Pros:</strong> Simple, no mechanical modification to the bike.
+<strong>Cons:</strong> Friction slip (5–10% power loss), tire wear, less efficient than direct drive.</p>
+<h3>Mounting Method 2: Chain Drive (Better Efficiency)</h3>
+<ol>
+<li><strong>Install a sprocket</strong> (20–30 teeth) on the generator shaft.</li>
+<li><strong>Route a chain</strong> from a sprocket on the rear axle (or crank axle) to the generator sprocket.</li>
+<li><strong>Adjust chain tension</strong> to ~15 mm slack at the midpoint.</li>
+<li><strong>Output:</strong> ~80–100 watts (depending on pedaling effort and chain efficiency).</li>
+</ol>
+<p><strong>Pros:</strong> Direct mechanical link, high efficiency (95%+).
+<strong>Cons:</strong> Requires modifications to the frame, possible chain drop under load.</p>
+<h3>Practical Setup</h3>
+<p><strong>Bike generator stand:</strong></p>
+<ol>
+<li>Mount the bicycle on a stationary trainer (a roller frame that lifts the rear wheel and holds it at fixed height).</li>
+<li>Attach the generator to the stand frame next to the rear wheel.</li>
+<li>Use a friction or chain drive to couple them.</li>
+<li>The rider pedals while stationary, spinning the generator continuously.</li>
+</ol>
+<p><strong>Sustained power:</strong> A fit person can pedal for 1–2 hours at 50–75 watts. In a grid-down scenario, three people rotating shifts (1 hour on, 2 hours off) provides 24/7 power generation at ~50 watts average.</p>
+</section>
+<section id="simple-ac-alternator">
+<h2>Simple AC Alternator</h2>
+<p>An <strong>alternator</strong> outputs AC current (alternating sine wave) directly, without a commutator.</p>
+<h3>Stator Coils (Multiple Windings)</h3>
+<p>An AC alternator uses <strong>multiple coils</strong> stationary around the rotor. As the magnet rotates past each coil, each coil generates a sine-wave voltage that lags or leads its neighbor.</p>
+<p><strong>Simple 3-phase alternator:</strong></p>
+<ol>
+<li>Three coils, spaced 120° apart around a stator ring.</li>
+<li>A rotor with one pair of magnetic poles (or two pairs for higher frequency) spins inside.</li>
+<li>Each coil generates a voltage that peaks when the magnet is aligned with that coil.</li>
+<li>The three voltages are out of phase by 120°, but their sum is nearly zero—this is the principle of 3-phase AC.</li>
+</ol>
+<p><strong>Output:</strong> With three coils and alternating pole magnets:</p>
+<ul>
+<li>Voltage ≈ 10–20 volts AC RMS at ~100 RPM hand-crank (or 100+ volts AC at bike-generator speeds)</li>
+<li>Frequency = (number of pole pairs × RPM) / 60. Example: 1 pole pair, 300 RPM = 5 Hz. (Mains frequency is 50–60 Hz, so hand-crank frequencies are much lower.)</li>
+</ul>
+<h3>AC to DC Conversion (Rectifier)</h3>
+<p>To charge batteries or run DC devices, AC must be converted to DC using a <strong>rectifier:</strong></p>
+<ol>
+<li><strong>Single diode:</strong> Half-wave rectification. Only the positive half of the sine wave passes. Inefficient (~50% of AC power is wasted), but simple.</li>
+<li><strong>Bridge rectifier (4 diodes):</strong> Full-wave rectification. Both positive and negative halves are converted to DC. Efficient (~90%), standard for real generators.</li>
+<li><strong>Voltage doubler (2 diodes):</strong> Peaks of the AC wave are captured in series, roughly doubling the output voltage.</li>
+</ol>
+<p><strong>Bridge rectifier wiring (for 3-phase alternator):</strong></p>
+<ul>
+<li>Connect the three alternator coils to a 3-phase bridge rectifier IC (available for $5–20).</li>
+<li>Output is DC, with some ripple (residual AC). A capacitor (470–2200 µF, 50V rating) across the output smooths ripple.</li>
+</ul>
+</section>
+<section id="voltage-regulation">
+<h2>Voltage Regulation</h2>
+<p>As load varies (battery charging, turning on/off lights), generator voltage fluctuates. <strong>Voltage regulation</strong> keeps output stable.</p>
+<h3>Zener Diode Regulation (Simple)</h3>
+<p>A <strong>Zener diode</strong> conducts when the voltage exceeds its &quot;Zener voltage,&quot; shunting excess current to ground.</p>
+<p><strong>Circuit:</strong></p>
+<ol>
+<li>Zener diode (rated for desired output voltage, e.g., 12V Zener for 12V output) in parallel with the load.</li>
+<li>Series resistor to limit current: R ≈ (Max Generator Voltage − Zener Voltage) / Max Current</li>
+<li>Example: Generator output 15V max, Zener 12V, max current 2A: R ≈ (15−12)/2 = 1.5Ω resistor</li>
+</ol>
+<p><strong>Pros:</strong> Simple, cheap ($2–5).
+<strong>Cons:</strong> Inefficient (excess power is wasted as heat in the resistor), limited to small currents (&lt;5A).</p>
+<h3>Linear Voltage Regulator (Better)</h3>
+<p>An <strong>LM7812</strong> (12V output) or similar linear regulator IC actively controls output voltage:</p>
+<ol>
+<li>Input from generator → capacitor (filter ripple) → regulator input</li>
+<li>Regulator output → capacitor (0.1 µF ceramic, 10 µF electrolytic) → load</li>
+<li>Typical circuit: 3-pin IC (input, ground, output). No external resistors needed.</li>
+</ol>
+<p><strong>Pros:</strong> Stable output, efficient for moderate loads (&lt;1–2A).
+<strong>Cons:</strong> Heat dissipation (difference between input and output voltage is wasted as heat).</p>
+<h3>PWM Controller (Advanced, Most Efficient)</h3>
+<p>A <strong>PWM (pulse-width modulation) charge controller</strong> rapidly switches the generator on/off, varying the duty cycle to regulate power.</p>
+<p><strong>Common IC:</strong> LM2596 or similar buck (step-down) controller.</p>
+<p><strong>Pros:</strong> Can reduce input voltage to output voltage (e.g., 20V input → 12V output) with ~90% efficiency.
+<strong>Cons:</strong> More complex circuit, requires inductor and diode, needs tuning.</p>
+<div class="tip">
+<p><strong>For most hand-crank generators, a Zener diode or simple linear regulator suffices.</strong> Unless you're building a large-scale solar/wind system, the extra complexity of PWM isn't justified.</p>
+</div>
+</section>
+<section id="battery-charging">
+<h2>Battery Charging</h2>
+<p>Hand-crank generators charge batteries; batteries then power devices on demand.</p>
+<h3>Matching Voltage</h3>
+<ul>
+<li><strong>Generator output:</strong> Sized to match battery voltage (e.g., 6V generator → 6V battery, 12V generator → 12V battery).</li>
+<li><strong>Charging current:</strong> Typically 0.1–1 C (C = battery capacity in amp-hours). Example: 10 Ah battery charges at 1–10 amps.</li>
+<li><strong>Over-voltage margin:</strong> 10–15% above battery voltage to ensure charging. A 12V battery needs 13–14V input to charge reliably.</li>
+</ul>
+<h3>Simple Charging Setup</h3>
+<ol>
+<li><strong>Generator with rectifier + voltage regulator → charging jack (e.g., USB, DC barrel connector)</strong></li>
+<li><strong>Battery with charge controller</strong> (prevents overcharging):
+<ul>
+<li><strong>Simple:</strong> Disconnects charger when battery reaches full voltage (relay or latch circuit).</li>
+<li><strong>MPPT:</strong> More sophisticated, tracks the optimal generator voltage to maximize power transfer (overkill for hand-crank).</li>
+</ul>
+</li>
+<li><strong>Load (LED, radio, charger) draws from the battery</strong>, not directly from the generator.</li>
+</ol>
+<h3>Charging Rate Example</h3>
+<p><strong>Hand-crank generator:</strong> 12V, 1A sustained output (12 watts)
+<strong>Lead-acid battery:</strong> 12V, 50 Ah capacity
+<strong>Charging time to 50% capacity:</strong> 25 Ah / 1 A = 25 hours of hand-cranking (15 minutes per day for 100 days, or 2 hours continuously)</p>
+<p>This illustrates why <strong>storage is critical</strong>: you can't run devices directly on hand-crank power continuously. Generate power, store it, consume as needed.</p>
+</section>
+<section id="load-matching">
+<h2>Load Matching &amp; Power Budget</h2>
+<p>Mismatched loads kill generators or drain batteries rapidly.</p>
+<h3>Load Resistance &amp; Current</h3>
+<p><strong>Ohm's law:</strong> I = V / R</p>
+<p>A 12V generator with internal resistance 2Ω driving a 10Ω load:</p>
+<ul>
+<li>Current = 12 / 10 = 1.2 amps</li>
+<li>Power delivered to load = 12 × 1.2 = 14.4 watts</li>
+<li>Power lost in generator's internal resistance = (1.2)² × 2 = 2.88 watts (waste)</li>
+</ul>
+<p><strong>The goal:</strong> Match load resistance to generator output impedance (~1–5Ω for hand-crank generators) to maximize power transfer. This requires <strong>resistance matching</strong> or voltage regulation.</p>
+<h3>Typical Loads (12V system)</h3>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>Power Draw</th>
+<th>Duration</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LED light (high-efficiency)</strong></td>
+<td>0.5–2 W</td>
+<td>Continuous</td>
+<td>2–4 hours on 12V 10 Ah battery</td>
+</tr>
+<tr>
+<td><strong>Compact radio (AM/FM)</strong></td>
+<td>0.5–1 W</td>
+<td>Continuous</td>
+<td>20–40 hours on same battery</td>
+</tr>
+<tr>
+<td><strong>Phone charger (USB 5V)</strong></td>
+<td>5 W</td>
+<td>1–2 hours</td>
+<td>Requires DC-DC converter (12V→5V)</td>
+</tr>
+<tr>
+<td><strong>Small fan</strong></td>
+<td>3–5 W</td>
+<td>Continuous</td>
+<td>20–30 hours on battery</td>
+</tr>
+<tr>
+<td><strong>CFL bulb (13W equivalent)</strong></td>
+<td>3 W</td>
+<td>Continuous</td>
+<td>30–40 hours on battery</td>
+</tr>
+</tbody>
+</table>
+<h3>Power Budget Calculation</h3>
+<p><strong>System:</strong> Hand-crank generator (10W sustained), battery (100 Wh), loads (radio 1W, light 2W)</p>
+<p><strong>Daily generation:</strong> 30 minutes cranking × 10W = 5 Wh
+<strong>Daily consumption:</strong> (1 + 2)W × 8 hours = 24 Wh
+<strong>Daily deficit:</strong> 24 − 5 = −19 Wh (you're losing energy overall)</p>
+<p><strong>Solution:</strong> Either increase generation time (crank 2+ hours daily) or reduce load duration.</p>
+</section>
+<section id="output-expectations">
+<h2>Realistic Output Expectations</h2>
+<div class="generator-types">
+<div class="gen-type">
+<div class="gen-power">Hand-Crank: 5–20 watts</div>
+Sustained human output ~10–15 watts. Peaks 20–30 watts in short bursts. Best for emergency backup, not primary power.
+</div>
+<div class="gen-type">
+<div class="gen-power">Bicycle-Powered: 50–100 watts</div>
+Fit cyclist sustains 50W for hours. Trained cyclists reach 100+ W. Suitable for 24/7 generation with shifts.
+</div>
+<div class="gen-type">
+<div class="gen-power">Simple AC Alternator: 30–150 watts</div>
+Depends on magnet strength, coil turns, RPM. Lab bench setups can reach 150W; hand-crank limited by human effort.
+</div>
+</div>
+<p><strong>Scaling:</strong> A hand-crank generator is personal-scale (one person, emergency). Bicycle generators support small households. For community-scale needs, you need hydro/wind turbines or large engine alternators.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting &amp; Maintenance</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No voltage output</strong></td>
+<td>Broken coil wire, failed magnets, brushes not touching</td>
+<td>Test coil continuity, check magnet polarity, adjust brush position</td>
+</tr>
+<tr>
+<td><strong>Low voltage</strong></td>
+<td>Slow RPM, weak magnets, high load resistance</td>
+<td>Crank/pedal faster, test magnet strength, reduce load</td>
+</tr>
+<tr>
+<td><strong>Stuttering voltage</strong></td>
+<td>Commutator segments dirty/worn, brush misalignment</td>
+<td>Clean commutator with fine sandpaper, realign brushes</td>
+</tr>
+<tr>
+<td><strong>Excessive noise/vibration</strong></td>
+<td>Rotor imbalance, worn bearings</td>
+<td>Rebalance rotor, replace bearings</td>
+</tr>
+<tr>
+<td><strong>Coil overheating</strong></td>
+<td>Over-current (load too light), poor ventilation</td>
+<td>Add resistance, ensure fan/ventilation</td>
+</tr>
+<tr>
+<td><strong>Battery won't charge</strong></td>
+<td>Voltage too low, polarity reversed, bad battery</td>
+<td>Check output voltage (should be 10–15% above battery), reverse leads if needed</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="safety">
+<h2>Safety &amp; Practical Considerations</h2>
+<div class="warning">
+<p><strong>Electrical Safety</strong></p>
+<ul>
+<li>High-voltage alternators (&gt;50V AC) can cause serious shock. Always treat electrical circuits with respect.</li>
+<li>Rotating shafts and open coils can catch hair and clothing. Use guards.</li>
+<li>Batteries can deliver dangerous current. Short circuits between terminals can cause burns.</li>
+</ul>
+</div>
+<div class="warning">
+<p><strong>Fatigue</strong></p>
+<ul>
+<li>Continuous hand-cranking for &gt;1 hour causes wrist and shoulder fatigue.</li>
+<li>Bike pedaling is more sustainable but still tiring.</li>
+<li>Plan for multiple people to rotate shifts if 24/7 generation is needed.</li>
+</ul>
+</div>
+<div class="tip">
+<p><strong>Maintenance</strong></p>
+<ul>
+<li>Oil bearings every month during continuous use.</li>
+<li>Clean commutator (if DC) with fine sandpaper quarterly.</li>
+<li>Check brush wear; replace if &lt;3 mm length remaining.</li>
+<li>Inspect wire insulation for cracks; wrap with tape if damaged.</li>
+<li>Test output voltage monthly; replace magnets if strength drops noticeably.</li>
+</ul>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="electricity-basics-for-beginners.html">Electricity Basics for Beginners</a>
+<a href="batteries-power-storage.html">batteries-power-storage</a>
+<a href="emergency-power-bootstrap.html">Emergency Power Bootstrap</a>
+<a href="electrical-generation-systems.html">electrical-generation-systems</a>
+<a href="wire-drawing-metal-production.html">wire-drawing-metal-production</a>
+<a href="blacksmithing-forge-work.html">blacksmithing-forge-work</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/blood-medicine.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood Medicine &amp; Transfusion</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Medical &amp; Health</span> ›
+<span>Blood Medicine &amp; Transfusion</span>
+</div>
+
+<div class="danger">
+<strong>⚠ SAFETY WARNING</strong><br>This guide covers activities with significant risk of injury or harm. Professional training may be required.
+</div>
+
+<h1>Blood Medicine &amp; Transfusion</h1>
+<p class="subtitle">Field blood typing (ABO/Rh), emergency transfusion protocols, blood storage, IV fluid preparation, and hemorrhage management.</p>
+<div class="meta">
+<span>●●●● expert</span>
+<span>~5 min</span>
+<span>Updated: 2026-02-15</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">1. Blood Biology &amp; ABO/Rh System</a></li>
+<li><a href="#field-typing">2. Field Blood Typing Methods</a></li>
+<li><a href="#transfusion">3. Emergency Transfusion Protocols</a></li>
+<li><a href="#storage">4. Blood Storage Without Refrigeration</a></li>
+<li><a href="#auto">5. Autotransfusion &amp; Cell Salvage</a></li>
+<li><a href="#plasma">6. Plasma &amp; Volume Expanders</a></li>
+<li><a href="#hemorrhage">7. Hemorrhage Management</a></li>
+<li><a href="#iv">8. IV Fluid Preparation from Scratch</a></li>
+<li><a href="#complications">9. Transfusion Reactions &amp; Complications</a></li>
+<li><a href="#special">10. Special Populations &amp; Conditions</a></li>
+<li><a href="#quick-reference-summary">Quick Reference Summary</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>Medical Disclaimer:</strong> This guide is for educational reference in emergency situations where professional medical care is unavailable. These procedures carry risks of serious harm or death. Performing medical procedures without proper training and licensing may be illegal in your jurisdiction. Always seek professional medical care when available.</p>
+</div>
+<div class="danger">
+<p><strong>EXTREME RISK WARNING:</strong> Blood transfusion outside a hospital setting carries extreme risks including transmission of HIV, hepatitis B and C, and other bloodborne pathogens. Hemolytic transfusion reactions (from blood type mismatch) can be rapidly fatal. Blood typing errors are the leading cause of transfusion deaths. Emergency transfusion should only be attempted when death from blood loss is imminent and no professional medical care is available.</p>
+</div>
+<section id="overview">
+<h2>1. Blood Biology &amp; ABO/Rh System</h2>
+<h3>Red Blood Cell Antigens</h3>
+<div class="card">
+<div class="card">
+<p>ABO Blood Group System</p>
+</div>
+</div>
+<p>Red blood cells contain glycoproteins on their surface; two major glycoproteins define ABO blood type:</p>
+<ul>
+<li><strong>A Antigen:</strong> N-acetylgalactosamine linked to H antigen</li>
+<li><strong>B Antigen:</strong> D-galactose linked to H antigen</li>
+<li><strong>H Antigen:</strong> Core structure (present in all; part of ABO)</li>
+</ul>
+<p><strong>Four Blood Types (determined by alleles):</strong></p>
+<table style="margin-top: 10px;"><thead><tr><th scope="col">Blood Type</th><th scope="col">RBC Antigens</th><th scope="col">Plasma Antibodies</th><th scope="col">Frequency (~%)</th></tr></thead><tbody><tr><td><strong>A</strong></td><td>A antigen</td><td>Anti-B antibodies (natural)</td><td>41%</td></tr><tr><td><strong>B</strong></td><td>B antigen</td><td>Anti-A antibodies (natural)</td><td>10%</td></tr><tr><td><strong>AB</strong></td><td>A &amp; B antigens</td><td>None (universal recipient)</td><td>4%</td></tr><tr><td><strong>O</strong></td><td>Neither A nor B antigen</td><td>Anti-A &amp; Anti-B (universal donor)</td><td>45%</td></tr></tbody></table>
+:::
+<h3>Rh (Rhesus) System</h3>
+<div class="card">
+<div class="card">
+<p>Rh D Antigen</p>
+</div>
+</div>
+<p><strong>Rh Positive:</strong> RBCs express D antigen (85% of population); antibodies don't occur naturally unless sensitized by transfusion or pregnancy</p>
+<p><strong>Rh Negative:</strong> RBCs lack D antigen (15% of population); develop anti-D antibodies if transfused Rh+ blood or pregnant with Rh+ fetus</p>
+<p><strong>Clinical Significance:</strong> Rh- women should receive Rh- transfusions (to prevent sensitization); if Rh+ given in emergency, Rh immunoglobulin prevents sensitization if given within 72 hours
+:::</p>
+<h3>Compatibility Rules</h3>
+<div class="info-box">
+<p><strong>Golden Rules:</strong></p>
+<ul>
+<li><strong>Type O Negative:</strong> Universal donor RBCs (lack all major antigens); safe for any recipient in emergency</li>
+<li><strong>Type AB Positive:</strong> Universal recipient plasma (no antibodies)</li>
+<li><strong>Key Principle:</strong> Match RBC antigens with recipient antibodies; if recipient has anti-A, give A-antigen-negative blood (B or O)</li>
+</ul>
+<p><strong>Transfusion Table:</strong></p>
+<table style="margin-top: 10px; font-size: 0.9em;"><thead><tr><th scope="col">Recipient Blood Type</th><th scope="col">Can Receive (RBC)</th><th scope="col">Cannot Receive</th><th scope="col">Can Donate To</th></tr></thead><tbody><tr><td><strong>O+</strong></td><td>O+, O-</td><td>A, B, AB</td><td>O+, A+, B+, AB+</td></tr><tr><td><strong>O-</strong></td><td>O- only</td><td>All others (due to natural anti-A/B)</td><td>Any (universal donor)</td></tr><tr><td><strong>A+</strong></td><td>A+, A-, O+, O-</td><td>B+, B-, AB+, AB-</td><td>A+, AB+</td></tr><tr><td><strong>A-</strong></td><td>A-, O-</td><td>B or AB (rh status OK)</td><td>A-, A+, AB-, AB+</td></tr><tr><td><strong>B+</strong></td><td>B+, B-, O+, O-</td><td>A+, A-, AB+, AB-</td><td>B+, AB+</td></tr><tr><td><strong>B-</strong></td><td>B-, O-</td><td>A or AB</td><td>B-, B+, AB-, AB+</td></tr><tr><td><strong>AB+</strong></td><td>All types (universal recipient)</td><td>None</td><td>AB+ only</td></tr><tr><td><strong>AB-</strong></td><td>A-, B-, O-, AB-</td><td>Rh+ types</td><td>AB-, AB+</td></tr></tbody></table>
+</div>
+</section>
+<section id="field-typing">
+<h2>2. Field Blood Typing Methods</h2>
+<h3>Slide Agglutination Test (Rapid Typing)</h3>
+<div class="card">
+<div class="card">
+<p>Emergency Blood Type Determination</p>
+</div>
+</div>
+<p><strong>Principle:</strong> Mix patient's RBCs with known antibodies (anti-A, anti-B, anti-D); agglutination (clumping) indicates presence of corresponding antigen</p>
+<p><strong>Materials Needed:</strong></p>
+<ul>
+<li>Patient blood (fresh capillary or venous)</li>
+<li>Anti-A serum (from known type B blood, or commercial)</li>
+<li>Anti-B serum (from known type A blood, or commercial)</li>
+<li>Anti-D serum (Rh typing; from type O Rh- donor, or commercial)</li>
+<li>Glass slides or white tiles</li>
+<li>Sterile lancets or pipettes</li>
+</ul>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Collect patient blood (5-10 µL from fingerstick or venipuncture)</li>
+<li>Place three drops of blood on separate areas of slide (or tile)</li>
+<li>Add one drop anti-A serum to first drop; mix thoroughly with stick/needle</li>
+<li>Add one drop anti-B serum to second drop; mix</li>
+<li>Add one drop anti-D serum to third drop; mix</li>
+<li>Rock slide gently; observe for agglutination (clumping appears in 10-30 seconds)</li>
+<li><strong>Interpretation:</strong>
+<ul>
+<li>A + Anti-A = agglutination; A + Anti-B = no agglutination</li>
+<li>B + Anti-B = agglutination; B + Anti-A = no agglutination</li>
+<li>AB + Anti-A and Anti-B = both agglutinate</li>
+<li>O + Anti-A and Anti-B = no agglutination</li>
+<li>Rh+ + Anti-D = agglutination; Rh- + Anti-D = no agglutination
+:::</li>
+</ul>
+</li>
+</ol>
+<h3>Reverse (Back) Type Testing</h3>
+<div class="info-box">
+<p><strong>Confirmation Test:</strong> Test patient's plasma (serum) against known RBCs to verify forward type</p>
+<ul>
+<li>Mix patient serum + type A RBCs; should agglutinate only if patient is B or O (has anti-A)</li>
+<li>Mix patient serum + type B RBCs; should agglutinate only if patient is A or O (has anti-B)</li>
+<li>Result must match forward type for reliability</li>
+</ul>
+</div>
+<h3>SVG: Blood Type Test Result Chart</h3>
+<p><svg aria-label="Blood Medicine &amp; Emergency Transfusion Compendium diagram 1" style="margin: 20px 0; border: 1px solid var(--border); border-radius: 8px;" viewBox="0 0 900 500"><text fill="var(--accent)" font-size="16" font-weight="bold" text-anchor="middle" x="450" y="30"> Blood Type Determination - Agglutination Results </text><text fill="var(--text)" font-weight="bold" x="50" y="65"> Legend: </text><rect fill="var(--accent)" height="20" rx="3" width="20" x="50" y="75"></rect><text fill="var(--text)" font-size="12" x="80" y="90"> Agglutination (clumping) </text><rect fill="var(--surface)" height="20" rx="3" stroke="var(--border)" stroke-width="2" width="20" x="50" y="105"></rect><text fill="var(--text)" font-size="12" x="80" y="120"> No agglutination (clear) </text><g transform="translate(50, 150)"><text fill="var(--accent2)" font-size="13" font-weight="bold" x="0" y="0"> Type O- </text><rect fill="var(--surface)" height="60" stroke="var(--border)" stroke-width="1" width="60" x="0" y="15"></rect><text fill="var(--muted)" font-size="10" text-anchor="middle" x="30" y="35"> Anti-A </text><rect fill="var(--surface)" height="20" stroke="var(--border)" stroke-width="1" width="40" x="10" y="48"></rect><text fill="var(--text)" font-size="11" text-anchor="middle" x="30" y="60"> - </text><rect fill="var(--surface)" height="60" stroke="var(--border)" stroke-width="1" width="60" x="70" y="15"></rect><text fill="var(--muted)" font-size="10" text-anchor="middle" x="100" y="35"> Anti-B </text><rect fill="var(--surface)" height="20" stroke="var(--border)" stroke-width="1" width="40" x="80" y="48"></rect><text fill="var(--text)" font-size="11" text-anchor="middle" x="100" y="60"> - </text><rect fill="var(--surface)" height="60" stroke="var(--border)" stroke-width="1" width="60" x="140" y="15"></rect><text fill="var(--muted)" font-size="10" text-anchor="middle" x="170" y="35"> Anti-D </text><rect fill="var(--surface)" height="20" stroke="var(--border)" stroke-width="1" width="40" x="150" y="48"></rect><text fill="var(--text)" font-size="11" text-anchor="middle" x="170" y="60"> - </text></g><g transform="translate(280, 150)"><text fill="var(--accent2)" font-size="13" font-weight="bold" x="0" y="0"> Type A+ </text><rect fill="var(--surface)" height="60" stroke="var(--border)" stroke-width="1" width="60" x="0" y="15"></rect><text fill="var(--muted)" font-size="10" text-anchor="middle" x="30" y="35"> Anti-A </text><rect fill="var(--accent)" height="20" width="40" x="10" y="48"></rect><text fill="var(--text)" font-size="11" text-anchor="middle" x="30" y="60"> + </text><rect fill="var(--surface)" height="60" stroke="var(--border)" stroke-width="1" width="60" x="70" y="15"></rect><text fill="var(--muted)" font-size="10" text-anchor="middle" x="100" y="35"> Anti-B </text><rect fill="var(--surface)" height="20" stroke="var(--border)" stroke-width="1" width="40" x="80" y="48"></rect><text fill="var(--text)" font-size="11" text-anchor="middle" x="100" y="60"> - </text><rect fill="var(--surface)" height="60" stroke="var(--border)" stroke-width="1" width="60" x="140" y="15"></rect><text fill="var(--muted)" font-size="10" text-anchor="middle" x="170" y="35"> Anti-D </text><rect fill="var(--accent)" height="20" width="40" x="150" y="48"></rect><text fill="var(--text)" font-size="11" text-anchor="middle" x="170" y="60"> + </text></g><g transform="translate(510, 150)"><text fill="var(--accent2)" font-size="13" font-weight="bold" x="0" y="0"> Type AB- </text><rect fill="var(--surface)" height="60" stroke="var(--border)" stroke-width="1" width="60" x="0" y="15"></rect><text fill="var(--muted)" font-size="10" text-anchor="middle" x="30" y="35"> Anti-A </text><rect fill="var(--accent)" height="20" width="40" x="10" y="48"></rect><text fill="var(--text)" font-size="11" text-anchor="middle" x="30" y="60"> + </text><rect fill="var(--surface)" height="60" stroke="var(--border)" stroke-width="1" width="60" x="70" y="15"></rect><text fill="var(--muted)" font-size="10" text-anchor="middle" x="100" y="35"> Anti-B </text><rect fill="var(--accent)" height="20" width="40" x="80" y="48"></rect><text fill="var(--text)" font-size="11" text-anchor="middle" x="100" y="60"> + </text><rect fill="var(--surface)" height="60" stroke="var(--border)" stroke-width="1" width="60" x="140" y="15"></rect><text fill="var(--muted)" font-size="10" text-anchor="middle" x="170" y="35"> Anti-D </text><rect fill="var(--surface)" height="20" stroke="var(--border)" stroke-width="1" width="40" x="150" y="48"></rect><text fill="var(--text)" font-size="11" text-anchor="middle" x="170" y="60"> - </text></g><g transform="translate(740, 150)"><text fill="var(--accent2)" font-size="13" font-weight="bold" x="0" y="0"> Type B+ </text><rect fill="var(--surface)" height="60" stroke="var(--border)" stroke-width="1" width="60" x="0" y="15"></rect><text fill="var(--muted)" font-size="10" text-anchor="middle" x="30" y="35"> Anti-A </text><rect fill="var(--surface)" height="20" stroke="var(--border)" stroke-width="1" width="40" x="10" y="48"></rect><text fill="var(--text)" font-size="11" text-anchor="middle" x="30" y="60"> - </text><rect fill="var(--surface)" height="60" stroke="var(--border)" stroke-width="1" width="60" x="70" y="15"></rect><text fill="var(--muted)" font-size="10" text-anchor="middle" x="100" y="35"> Anti-B </text><rect fill="var(--accent)" height="20" width="40" x="80" y="48"></rect><text fill="var(--text)" font-size="11" text-anchor="middle" x="100" y="60"> + </text><rect fill="var(--surface)" height="60" stroke="var(--border)" stroke-width="1" width="60" x="140" y="15"></rect><text fill="var(--muted)" font-size="10" text-anchor="middle" x="170" y="35"> Anti-D </text><rect fill="var(--accent)" height="20" width="40" x="150" y="48"></rect><text fill="var(--text)" font-size="11" text-anchor="middle" x="170" y="60"> + </text></g><text fill="var(--text)" font-weight="bold" x="50" y="350"> Interpretation Guide: </text><text fill="var(--text)" font-size="12" x="50" y="375"> Count positive results: 0+ = Type O | 1+ on Anti-A/B only = A or B | 2+ on Anti-A/B = Type AB </text><text fill="var(--text)" font-size="12" x="50" y="395"> Anti-D result determines Rh: + = Positive | - = Negative </text><text fill="var(--accent2)" font-size="12" font-weight="bold" x="50" y="420"> Always confirm with reverse typing when possible (test patient serum vs. known RBCs) </text></svg></p>
+</section>
+<section id="transfusion">
+<h2>3. Emergency Transfusion Protocols</h2>
+<h3>Transfusion Preparation &amp; IV Access</h3>
+<div class="card">
+<div class="card">
+<p>Setup for Safe Transfusion</p>
+</div>
+</div>
+<ul>
+<li><strong>IV Access:</strong> 18-20 gauge needle (larger bore = faster flow); peripheral vein (antecubital preferred)</li>
+<li><strong>IV Fluid Line:</strong> Standard blood transfusion set with 170-200 micron filter (removes clots/debris)</li>
+<li><strong>Blood Warmer (Optional):</strong> Cold blood causes hypothermia; warm to 37°C if possible (wrap warm container, or run through warm water); never microwave</li>
+<li><strong>Two-person Verification:</strong> Both staff verify patient ID, blood type, unit number before infusion
+:::</li>
+</ul>
+<h3>Transfusion Rate &amp; Volume</h3>
+<div class="info-box">
+<p><strong>Flow Rate Calculation:</strong></p>
+<p>Drops/min = (Volume in mL × drop factor) / Time in minutes</p>
+<p><strong>Standard Blood Set:</strong> Drop factor = 15 drops/mL</p>
+<p><strong>Example:</strong> Transfuse 1 unit (500 mL) in 2 hours:</p>
+<p>(500 × 15) / 120 min = 62.5 drops/min</p>
+<p><strong>Emergency Transfusion:</strong> Full speed (gravity or manual squeeze) - don't worry about exact rate if hemorrhagic shock</p>
+<p><strong>Routine Transfusion:</strong> 60-120 mL/hour (1-2 units over 2-4 hours)</p>
+</div>
+<h3>Cross-Matching (Compatibility Testing)</h3>
+<div class="card">
+<div class="card">
+<p>Before Transfusion</p>
+</div>
+</div>
+<p><strong>Full Cross-Match (Gold Standard - if time allows):</strong></p>
+<ul>
+<li>Mix patient serum + donor RBCs at different temperatures (37°C, room temp, cold)</li>
+<li>Watch for agglutination or hemolysis</li>
+<li>Coombs test (antiglobulin test): detects IgG antibodies</li>
+<li>Time: 30-60 minutes</li>
+</ul>
+<p><strong>Abbreviated/Type &amp; Screen (Emergency):</strong></p>
+<ul>
+<li>Type patient's blood + screen for unexpected antibodies</li>
+<li>Time: 5-10 minutes</li>
+<li>Acceptable if no antibodies detected</li>
+</ul>
+<p><strong>Uncross-Matched Transfusion (Massive Hemorrhage):</strong></p>
+<ul>
+<li>Use O Rh- blood if patient type unknown</li>
+<li>Continue cross-matching in parallel; notify blood bank immediately</li>
+<li>Risk of transfusion reaction acceptable in life-or-death situation
+:::</li>
+</ul>
+</section>
+<section id="storage">
+<h2>4. Blood Storage Without Refrigeration</h2>
+<h3>Preservation Solutions</h3>
+<div class="card">
+<div class="card">
+<p>Storage Media</p>
+</div>
+</div>
+<table><thead><tr><th scope="col">Solution</th><th scope="col">Composition</th><th scope="col">Shelf Life (at 2-8°C)</th><th scope="col">Advantages</th></tr></thead><tbody><tr><td><strong>CPD (Citrate-Phosphate-Dextrose)</strong></td><td>Citrate (anticoagulant), phosphate (buffer), dextrose (RBC nutrition)</td><td>21 days</td><td>Standard, proven, affordable</td></tr><tr><td><strong>CPDA-1</strong></td><td>CPD + adenine (RBC ATP preservation)</td><td>35 days</td><td>Extended storage; better RBC viability</td></tr><tr><td><strong>Normal Saline (Homemade)</strong></td><td>0.9% NaCl in sterile water</td><td>1-7 days</td><td>Simple, no anticoagulant (for wash/salvage)</td></tr><tr><td><strong>Whole Blood (Minimal Additive)</strong></td><td>Minimal CPD (2:1 blood:additive ratio)</td><td>5-7 days</td><td>Used directly; high hemoglobin</td></tr></tbody></table>
+:::
+<h3>Improvised Blood Bank Without Electricity</h3>
+<div class="info-box">
+<p><strong>Passive Cooling Methods:</strong></p>
+<ul>
+<li><strong>Ice House/Cellar:</strong> Insulated underground room; maintains ~5-10°C year-round</li>
+<li><strong>Night Cooling:</strong> Cool outside air at night (winter/cold climates); circulate through storage box via dampers</li>
+<li><strong>Evaporative Cooling:</strong> Zeer pot or wet wrapping; cools ~10-15°C below ambient</li>
+<li><strong>Spring House:</strong> Structure over cold spring/stream; water temperature ~8-12°C</li>
+<li><strong>Temperature Monitoring:</strong> Maximum/minimum thermometer; record daily; alert if &gt;10°C</li>
+</ul>
+</div>
+<h3>Homemade CPD Solution</h3>
+<div class="card">
+<div class="card">
+<p>DIY Preservation Solution</p>
+</div>
+</div>
+<p><strong>Recipe (for 70 mL CPD per unit of blood):</strong></p>
+<ul>
+<li>Sodium citrate: 1.66 grams</li>
+<li>Sodium diphosphate: 0.42 grams</li>
+<li>Dextrose (glucose): 1.82 grams</li>
+<li>Distilled water: up to 70 mL (use sterile if available)</li>
+</ul>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Dissolve each chemical in small amount of distilled water (warm slightly if needed)</li>
+<li>Combine solutions; stir until complete dissolution</li>
+<li>pH should be ~6.2-6.4 (check with pH strips if available)</li>
+<li>Sterilize by boiling 10-15 minutes; cool before use</li>
+<li>Store in sterile glass bottles; airtight seal</li>
+</ol>
+<p><strong>Usage:</strong> Add 70 mL CPD per 500 mL whole blood; mix thoroughly
+:::</p>
+<h3>Blood Viability &amp; Expiration</h3>
+<div class="warning">
+<p><strong>Visual Inspection Before Use:</strong></p>
+<ul>
+<li><strong>Discard If:</strong> Hemolysis visible (red discoloration of plasma/serum), cloudiness, clots present, obvious contamination/mold, leaking bag/bottle</li>
+<li><strong>OK If:</strong> Normal red color, clear plasma, no particulates</li>
+</ul>
+<p><strong>Shelf Life Calculation:</strong> Record collection date; CPD = 21 days, CPDA-1 = 35 days from collection. Discard after expiration.</p>
+</div>
+</section>
+<section id="auto">
+<h2>5. Autotransfusion &amp; Cell Salvage</h2>
+<h3>Recovering Patient's Own Blood</h3>
+<div class="card">
+<div class="card">
+<p>Intraoperative &amp; Trauma Salvage</p>
+</div>
+</div>
+<p><strong>Principle:</strong> Collect patient's own blood from surgical field or trauma wound; process and reinfuse to avoid donor blood transfusion</p>
+<p><strong>Simple Gravity Method:</strong></p>
+<ul>
+<li>Place collection bowl under surgical field/wound</li>
+<li>Add CPD anticoagulant immediately (1 part CPD : 9 parts blood ratio)</li>
+<li>Let cells settle 30-60 minutes; remove clear plasma above</li>
+<li>Carefully pour red cell layer into sterile bag/container</li>
+<li>Wash RBCs with normal saline (centrifuge if available, or let settle and decant plasma)</li>
+<li>Reinfuse through blood filter into IV line</li>
+</ul>
+<p><strong>Benefits:</strong> Reduces donor blood need; no blood bank dependency; patient's own cells (no allergy risk)</p>
+<p><strong>Contraindications:</strong> Do NOT use if blood contaminated with feces, urine, or infection; do NOT use if &gt;6 hours outside body
+:::</p>
+<h3>Peritoneal Lavage Salvage</h3>
+<div class="info-box">
+<p><strong>For Abdominal Trauma:</strong></p>
+<ul>
+<li>After peritoneal washout during surgical exploration, salvage discarded blood</li>
+<li>Dilute if bloody (reduce hemolysis); filter through gauze</li>
+<li>Add CPD anticoagulant</li>
+<li>Wash RBCs to remove contaminating fluids/electrolytes</li>
+<li>Reinfuse; monitor for complications</li>
+</ul>
+</div>
+</section>
+<section id="plasma">
+<h2>6. Plasma &amp; Volume Expanders</h2>
+<h3>Plasma Separation</h3>
+<div class="card">
+<div class="card">
+<p>Obtaining Plasma from Whole Blood</p>
+</div>
+</div>
+<p><strong>Simple Gravity Method (no centrifuge):</strong></p>
+<ol>
+<li>Allow whole blood in CPD to stand upright 30-60 minutes in cool location (cells sink to bottom)</li>
+<li>Carefully pour clear yellow plasma above into sterile container (don't disturb red cells)</li>
+<li>Seal plasma container; store refrigerated or frozen (plasma stable 1 year frozen; 5-7 days refrigerated)</li>
+<li>Discard red cell layer or use for RBC transfusion
+:::</li>
+</ol>
+<h3>Plasma Expanders &amp; Albumin Alternatives</h3>
+<div class="card">
+<div class="card">
+<p>Volume Replacement Without Donor Plasma</p>
+</div>
+</div>
+<table><thead><tr><th scope="col">Expander</th><th scope="col">Composition</th><th scope="col">Osmolarity</th><th scope="col">Effectiveness</th><th scope="col">Preparation</th></tr></thead><tbody><tr><td><strong>Normal Saline (NS)</strong></td><td>0.9% NaCl in water</td><td>308 mOsm/L</td><td>Isotonic; 1 mL NS = 1 mL plasma volume (~25% remains in circulation after 1 hr)</td><td>Heat sterilize; simple</td></tr><tr><td><strong>Lactated Ringer's (LR)</strong></td><td>Na+, K+, Ca2+, Cl-, Lactate</td><td>273 mOsm/L</td><td>Balanced electrolytes; slightly hypotonic; physiologic</td><td>Make from individual salts; complex</td></tr><tr><td><strong>Dextrose 5% (D5W)</strong></td><td>5% glucose in water</td><td>252 mOsm/L</td><td>Hypotonic; glucose metabolized; mainly becomes free water (distributes to all compartments)</td><td>Simple; dextrose + water</td></tr><tr><td><strong>Gelatin Solutions</strong></td><td>Gelatin (protein derivative) in saline</td><td>Colloidal</td><td>Colloid; stays in circulation longer (~4 hours); mimics albumin</td><td>Requires gelatin powder + sterile saline</td></tr><tr><td><strong>Dextran</strong></td><td>Polysaccharide polymers</td><td>Colloidal</td><td>Long circulation time; high viscosity; can impair clotting</td><td>Difficult to synthesize; usually not home-made</td></tr></tbody></table>
+:::
+<h3>Homemade Saline Solution</h3>
+<div class="info-box">
+<p><strong>Normal Saline (0.9% NaCl):</strong></p>
+<p><strong>Recipe (for 1 liter):</strong></p>
+<ul>
+<li>Sodium chloride (table salt): 9 grams</li>
+<li>Distilled water: 1 liter</li>
+</ul>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Dissolve salt completely in distilled water</li>
+<li>Transfer to clean glass bottles</li>
+<li>Autoclave (pressure cook 20 min at 15 PSI) or boil 20 minutes if no autoclave</li>
+<li>Cool; seal with sterile cap</li>
+<li>Label with date prepared; use within 30 days if refrigerated</li>
+</ol>
+</div>
+</section>
+<section id="hemorrhage">
+<h2>7. Hemorrhage Management</h2>
+<h3>Bleeding Control Hierarchy</h3>
+<div class="card">
+<div class="card">
+<p>ABCs of Hemorrhage Control</p>
+</div>
+</div>
+<p><strong>Direct Pressure &amp; Elevation (Primary):</strong> Apply firm pressure with cloth/gauze; elevate limb above heart; maintain 5-10 minutes minimum</p>
+<p><strong>Pressure Dressing:</strong> If bleeding continues, apply elastic bandage firmly (not tourniquets yet); recheck distal pulses</p>
+<p><strong>Tourniquet (Life-Limb Decision):</strong> Apply above bleeding site if arterial bleeding not controlled by pressure; mark time applied; risk limb loss after 2 hours</p>
+<p><strong>Internal Hemorrhage (Shock Response):</strong></p>
+<ul>
+<li><strong>Position:</strong> Supine with legs elevated 30° (improves cerebral/cardiac perfusion)</li>
+<li><strong>Keep Warm:</strong> Prevent hypothermia (wrap in blankets)</li>
+<li><strong>IV Access:</strong> Establish 2 large-bore IVs immediately</li>
+<li><strong>Fluid Resuscitation:</strong> Start with 1-2 liters fast NS/LR; reassess response
+:::</li>
+</ul>
+<h3>Shock Stages &amp; Transfusion Trigger</h3>
+<div class="card">
+<div class="card">
+<p>Blood Loss Classification</p>
+</div>
+</div>
+<table><thead><tr><th scope="col">Class</th><th scope="col">Blood Loss</th><th scope="col">% Loss</th><th scope="col">Clinical Signs</th><th scope="col">Transfusion Needed?</th></tr></thead><tbody><tr><td><strong>I</strong></td><td>&lt;750 mL</td><td>&lt;15%</td><td>Anxiety, mild tachycardia; normal BP</td><td>Crystalloid only</td></tr><tr><td><strong>II</strong></td><td>750-1500 mL</td><td>15-30%</td><td>Tachycardia (100-120), mild hypotension, cool skin</td><td>Crystalloid; transfuse if no response</td></tr><tr><td><strong>III</strong></td><td>1500-2000 mL</td><td>30-40%</td><td>HR &gt;120, SBP &lt;100, altered mental status</td><td>YES - transfuse RBCs + FFP</td></tr><tr><td><strong>IV</strong></td><td>&gt;2000 mL</td><td>&gt;40%</td><td>Severe shock; barely palpable pulse; unconscious</td><td>YES - massive transfusion protocol (1:1:1 RBC:FFP:platelets)</td></tr></tbody></table>
+:::
+<h3>Transfusion Trigger (When to Transfuse)</h3>
+<div class="warning">
+<p><strong>General Rules:</strong></p>
+<ul>
+<li><strong>Hemoglobin &lt;7 g/dL:</strong> Transfuse (tissue hypoxia risk) - except if stable/chronic anemia</li>
+<li><strong>Hemoglobin 7-10 g/dL:</strong> Transfuse if symptomatic (chest pain, severe dyspnea) or ongoing bleeding</li>
+<li><strong>Hemoglobin &gt;10 g/dL:</strong> Transfuse only if ongoing massive bleeding or cardiac disease</li>
+<li><strong>Active Hemorrhage:</strong> Don't wait for Hgb result; transfuse if Class III-IV shock</li>
+</ul>
+</div>
+</section>
+<section id="iv">
+<h2>8. IV Fluid Preparation from Scratch</h2>
+<h3>Normal Saline (NS) - Recipe</h3>
+<div class="card">
+<div class="card">
+<p>0.9% Sodium Chloride Solution</p>
+</div>
+</div>
+<p><strong>For 500 mL:</strong> NaCl 4.5 grams + distilled water 500 mL</p>
+<p><strong>For 1000 mL:</strong> NaCl 9 grams + distilled water 1000 mL</p>
+<p><strong>Sterilization:</strong> Boil 20 minutes at rolling boil; cool; store in sterile glass bottles with airtight caps
+:::</p>
+<h3>Lactated Ringer's Solution - Recipe</h3>
+<div class="card">
+<div class="card">
+<p>Balanced Electrolyte Solution</p>
+</div>
+</div>
+<p><strong>For 1000 mL (approximate):</strong></p>
+<ul>
+<li>Sodium chloride: 6 grams</li>
+<li>Potassium chloride: 0.3 grams</li>
+<li>Calcium chloride: 0.3 grams</li>
+<li>Sodium lactate: 2.6 grams (or sodium bicarbonate 0.7g as substitute)</li>
+<li>Distilled water: to 1000 mL</li>
+</ul>
+<p><strong>Preparation:</strong> Dissolve each in order; stir thoroughly; pH should be ~6.5; sterilize by boiling 20 min</p>
+<p><strong>Note:</strong> Calcium may precipitate with bicarbonate; keep solutions separate if possible, mix just before use
+:::</p>
+<h3>5% Dextrose in Water (D5W) - Recipe</h3>
+<div class="info-box">
+<p><strong>For 500 mL:</strong> Dextrose (glucose) 25 grams + distilled water 500 mL</p>
+<p><strong>For 1000 mL:</strong> Dextrose 50 grams + distilled water 1000 mL</p>
+<p><strong>Sterilization:</strong> Boil 20 minutes; cool slowly to avoid crystal formation; use sterile containers</p>
+</div>
+<h3>IV Administration Technique</h3>
+<div class="card">
+<div class="card">
+<p>Peripheral IV Insertion</p>
+</div>
+</div>
+<ul>
+<li><strong>Site Selection:</strong> Antecubital fossa (inner elbow) preferred; dorsal hand/forearm alternative; avoid lower extremity if possible (thrombosis risk)</li>
+<li><strong>Needle Size:</strong> 18-20 gauge for rapid infusion (hemorrhage); 22 gauge acceptable for maintenance</li>
+<li><strong>Insertion Technique:</strong> Palpate vein; prep with alcohol x2 (touch-dry); bevel-up insertion at 20-30° angle; advance until flashback seen; thread catheter; remove needle into sharps container</li>
+<li><strong>Secure:</strong> Apply transparent dressing; tape catheter firmly; label with date/time/gauge</li>
+<li><strong>Patency:</strong> Flush with NS if no infusion running every 6-12 hours (prevent clotting)
+:::</li>
+</ul>
+<h3>Central Line (Subclavian/Jugular) - Emergency Only</h3>
+<div class="warning">
+<p><strong>Last Resort If No Peripheral Access:</strong> Risk of pneumothorax, hemothorax, air embolism, infection. Requires training. Only if desperate (massive hemorrhage, no peripheral veins accessible).</p>
+</div>
+</section>
+<section id="complications">
+<h2>9. Transfusion Reactions &amp; Complications</h2>
+<h3>Acute Hemolytic Transfusion Reaction (AHTR)</h3>
+<div class="warning">
+<p><strong>Cause:</strong> ABO incompatibility (wrong blood type); patient antibodies attack transfused RBCs; hemolysis releases hemoglobin into plasma</p>
+<p><strong>Signs (Usually within 10-30 min of starting transfusion):</strong></p>
+<ul>
+<li>Fever (&gt;1°C rise), chills, flushing</li>
+<li>Chest/back/flank pain, dyspnea</li>
+<li>Hypotension, tachycardia, shock</li>
+<li>Dark urine (hemoglobinuria), jaundice (delayed)</li>
+<li>Bleeding (DIC from tissue damage)</li>
+</ul>
+<p><strong>Immediate Action:</strong></p>
+<ol>
+<li>STOP TRANSFUSION IMMEDIATELY</li>
+<li>Verify patient identity, unit label, blood type</li>
+<li>Keep IV line open with NS (support circulation)</li>
+<li>Treat shock: O₂, fluids, dopamine if available</li>
+<li>Monitor urine color (if catheter); maintain urine output &gt;200 mL/hr (prevent acute kidney injury from hemoglobin precipitation)</li>
+<li>Give diuretics (furosemide) and/or bicarbonate (urine alkalinization reduces hemoglobin precipitation)</li>
+</ol>
+</div>
+<h3>Febrile Non-Hemolytic Transfusion Reaction (FNHTR)</h3>
+<div class="info-box">
+<p><strong>Cause:</strong> Reaction to leukocytes/cytokines in transfused blood (not hemolysis)</p>
+<p><strong>Signs:</strong> Fever, chills, headache, NO hemoglobinuria, hemodynamically stable</p>
+<p><strong>Management:</strong> Slow transfusion rate; antipyretics (acetaminophen); monitor; can continue if hemolysis ruled out (urine clear)</p>
+</div>
+<h3>Bacterial Contamination</h3>
+<div class="warning">
+<p><strong>Risk if Blood Storage Compromised:</strong> Growth of gram-negative bacteria (especially <em>Yersinia enterocolitica</em> , <em>Serratia</em> )</p>
+<p><strong>Signs:</strong> Fever, shock, DIC, renal failure; onset during/shortly after transfusion</p>
+<p><strong>Prevention:</strong> Strict asepsis during collection/processing; visual inspection (cloudiness); discard if any sign of contamination</p>
+</div>
+<h3>Air Embolism</h3>
+<div class="warning">
+<p><strong>Cause:</strong> Air enters IV line during infusion or from pump malfunction</p>
+<p><strong>Signs:</strong> Sudden chest pain, dyspnea, hypotension, loss of consciousness (if large bubble reaches heart)</p>
+<p><strong>Prevention:</strong> Prime IV lines with fluid (no air); use gravity or positive-pressure pump carefully; position patient left side-down if suspected (air pools in right heart, minimizing pulmonary entry)</p>
+</div>
+<h3>Citrate Toxicity (Massive Transfusion)</h3>
+<div class="info-box">
+<p><strong>Problem:</strong> Citrate in CPD binds calcium; after large transfusions, hypocalcemia causes cardiac arrhythmias, prolonged QT interval</p>
+<p><strong>Signs:</strong> Arrhythmias, paresthesias (tingling), tetany</p>
+<p><strong>Management:</strong> Calcium gluconate IV (10-20 mL of 10% solution) for symptomatic hypocalcemia; monitor cardiac rhythm</p>
+</div>
+</section>
+<section id="special">
+<h2>10. Special Populations &amp; Conditions</h2>
+<h3>Massive Transfusion Protocol</h3>
+<div class="card">
+<div class="card">
+<p>Hemorrhagic Shock Requiring &gt;4 Units</p>
+</div>
+</div>
+<p><strong>Massive Transfusion Definition:</strong> &gt;4 units RBC in 1 hour, or patient expected to need replacement of entire blood volume within 24 hours</p>
+<p><strong>Ratio Approach (1:1:1):</strong> For every 1 unit RBC, give 1 unit Fresh Frozen Plasma (FFP) + 1 unit platelets (if available)</p>
+<p><strong>Rationale:</strong> Massive transfusion dilutes clotting factors and platelets (coagulopathy); balanced replacement prevents DIC</p>
+<p><strong>Practical:</strong> If no FFP/platelets, at least alternate RBC with saline/LR to dilute less aggressively
+:::</p>
+<h3>Neonatal Transfusion</h3>
+<div class="info-box">
+<p><strong>Differences from Adults:</strong></p>
+<ul>
+<li><strong>Blood Volume:</strong> ~80 mL/kg (smaller total blood volume)</li>
+<li><strong>Transfusion Volume:</strong> 10-15 mL/kg per unit (much smaller volumes)</li>
+<li><strong>Type:</strong> O Rh- or type-specific if available</li>
+<li><strong>IV Access:</strong> Umbilical vein (if available) or peripheral; avoid lower extremity</li>
+<li><strong>Warmth:</strong> Critical; keep neonate warm during transfusion (hypothermia fatal)</li>
+</ul>
+</div>
+<h3>Burn Patients</h3>
+<div class="card">
+<div class="card">
+<p>Special Transfusion Considerations</p>
+</div>
+</div>
+<p><strong>Large Volume Fluid Resuscitation:</strong> Parkland formula = 4 mL × kg × %BSA burned; half given in first 8 hours</p>
+<p><strong>RBC Transfusion Trigger (Different):</strong> Burn patients need higher Hgb (~10-12 g/dL) for adequate tissue perfusion; aggressive resuscitation required</p>
+<p><strong>Coagulopathy Risk:</strong> Massive fluid resuscitation dilutes clotting factors; give FFP proactively if &gt;6 units RBC anticipated
+:::</p>
+<h3>Trauma-Induced Coagulopathy</h3>
+<div class="warning">
+<p><strong>Phenomenon:</strong> Massive injury triggers consumption of clotting factors/platelets even before significant blood loss</p>
+<p><strong>Prevention:</strong> Don't delay transfusion; start early; use 1:1:1 protocol; avoid hypothermia (worsens coagulopathy)</p>
+<p><strong>Fresh Frozen Plasma:</strong> Essential; if unavailable, outcomes poor in massive transfusion</p>
+</div>
+</section>
+<h2 id="quick-reference-summary">Quick Reference Summary</h2>
+<div class="card">
+<div class="card">
+<p>Blood Type Compatibility at a Glance</p>
+</div>
+</div>
+<table style="font-size: 0.85em;"><thead><tr><th scope="col">Patient Type</th><th scope="col">Safe RBC</th><th scope="col">Safe Plasma</th><th scope="col">Safe Platelets</th></tr></thead><tbody><tr><td><strong>O+</strong></td><td>O+, O-</td><td>AB, O-</td><td>Any</td></tr><tr><td><strong>O-</strong></td><td>O- (ONLY)</td><td>AB, O-</td><td>Any</td></tr><tr><td><strong>A+</strong></td><td>A+, A-, O+, O-</td><td>AB, A, O-</td><td>Any</td></tr><tr><td><strong>A-</strong></td><td>A-, O-</td><td>AB, A, O-</td><td>Any</td></tr><tr><td><strong>B+</strong></td><td>B+, B-, O+, O-</td><td>AB, B, O-</td><td>Any</td></tr><tr><td><strong>B-</strong></td><td>B-, O-</td><td>AB, B, O-</td><td>Any</td></tr><tr><td><strong>AB+</strong></td><td>Any (universal recipient)</td><td>AB only</td><td>Any</td></tr><tr><td><strong>AB-</strong></td><td>AB-, A-, B-, O-</td><td>AB only</td><td>Any Rh-</td></tr></tbody></table>
+:::
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="burn-treatment.html">Burn Treatment &amp; Management</a>
+<a href="elder-care.html">Elder Care &amp; Geriatric Medicine</a>
+<a href="first-aid.html">First Aid and Emergency Response</a>
+<a href="insulin-extraction.html">Insulin Extraction &amp; Purification</a>
+<a href="medications.html">Essential Medications</a>
+<a href="mental-health-counseling.html">Mental Health &amp; Counseling</a>
+<a href="midwifery.html">Midwifery &amp; Childbirth</a>
+<a href="nutrition-deficiency-diseases.html">Nutrition Science &amp; Deficiency Diseases</a>
+<a href="obstetric-emergencies.html">Obstetric Emergencies</a>
+<a href="orthopedics-fractures.html">Orthopedics &amp; Fracture Management</a>
+<a href="parasitology-tropical.html">Parasitology &amp; Tropical Diseases</a>
+<a href="pharmaceutical-production.html">Pharmaceutical Production</a>
+<a href="trauma-hemorrhage-control.html">Trauma Hemorrhage Control</a>
+<a href="vaccine-production.html">Vaccine Production &amp; Immunization</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

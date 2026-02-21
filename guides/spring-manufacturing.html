@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/spring-manufacturing.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spring Manufacturing - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+navnavnavnavnav
+.spring-coil { fill: none; stroke: var(--accent2); stroke-width: 2; }
+.spring-line { fill: none; stroke: var(--accent2); stroke-width: 2; }
+.label { fill: var(--text); font-size: 12px; }
+.title { fill: var(--accent); font-size: 13px; font-weight: bold; }
+.arrow { fill: var(--accent); stroke: var(--accent); stroke-width: 1.5; }
+.wood { fill: #8B4513; stroke: #654321; stroke-width: 1; }
+.metal { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
+.wire { fill: none; stroke: var(--accent2); stroke-width: 2; }
+.label { fill: var(--text); font-size: 11px; }
+.title { fill: var(--accent); font-size: 13px; font-weight: bold; }
+.color-bar { stroke: var(--border); stroke-width: 1; }
+.label { fill: var(--text); font-size: 11px; }
+.temp { fill: var(--muted); font-size: 10px; }
+.title { fill: var(--accent); font-size: 13px; font-weight: bold; }
+.leaf { fill: var(--accent2); opacity: 0.7; }
+.bolt { fill: var(--card); stroke: var(--accent); stroke-width: 1; }
+.label { fill: var(--text); font-size: 11px; }
+.title { fill: var(--accent); font-size: 13px; font-weight: bold; }
+.dimension { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3,3; }
+</style>
+<meta name="description" content="Coil springs, leaf springs, clock springs, spring steel identification, heat treatment, design calculations">
+<link rel="canonical" href="https://zerotoherohero.com/guides/spring-manufacturing.html">
+<meta property="og:title" content="Spring Manufacturing">
+<meta property="og:description" content="Coil springs, leaf springs, clock springs, spring steel identification, heat treatment, design calculations">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Metalworking", "item": "https://zerotoherohero.com/#sec-metalworking"},
+    {"@type": "ListItem", "position": 3, "name": "Spring Manufacturing", "item": "https://zerotoherohero.com/guides/spring-manufacturing.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Spring Manufacturing",
+  "description": "Coil springs, leaf springs, clock springs, spring steel identification, heat treatment, design calculations",
+  "dateModified": "2026-02-16",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-175">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-metalworking">Metalworking</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Spring Manufacturing</span>
+</nav>
+<header>
+<h1>Spring Manufacturing</h1>
+<p class="subtitle">Coil springs, leaf springs, clock springs, spring steel identification, heat treatment, design calculations</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~17 min read</span>
+<span class="last-updated">· Updated: 2026-02-16</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#types">Spring Types &amp; Classification</a></li>
+<li><a href="#materials">Spring Steel &amp; Material Selection</a></li>
+<li><a href="#coil-winding">Coil Spring Winding</a></li>
+<li><a href="#heat-treatment">Heat Treatment &amp; Tempering</a></li>
+<li><a href="#leaf-springs">Leaf Spring Manufacturing</a></li>
+<li><a href="#clock-springs">Clock &amp; Spiral Springs</a></li>
+<li><a href="#testing">Testing &amp; Quality Control</a></li>
+<li><a href="#design">Design Calculations</a></li>
+<li><a href="#applications">Applications &amp; Use Cases</a></li>
+<li><a href="#diagrams">Reference Diagrams</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<section id="types">
+<h2>Spring Types &amp; Classification</h2>
+<h3>Compression Springs</h3>
+<p>The most common spring type. Pushes back against an applied compressive force. Examples: shock absorbers, mattress springs, button switches.</p>
+<ul>
+<li><strong>Design:</strong> Tightly wound coil with open space between coils</li>
+<li><strong>Force direction:</strong> Resists being compressed; pushes outward</li>
+<li><strong>End treatment:</strong> Usually ground flat for stable seating</li>
+<li><strong>Common diameters:</strong> 5-50mm for hand-made springs</li>
+</ul>
+<h3>Extension (Tension) Springs</h3>
+<p>Resists being pulled apart. Examples: door closure springs, garage door springs, trampolines.</p>
+<ul>
+<li><strong>Design:</strong> Tightly wound coil with hooks or eyes at ends for attachment</li>
+<li><strong>Force direction:</strong> Resists being stretched; pulls inward</li>
+<li><strong>Initial tension:</strong> Often pre-tensioned to resist opening even unloaded</li>
+<li><strong>End styles:</strong> Hooks, eyes, or loops for mechanical attachment</li>
+</ul>
+<h3>Torsion Springs</h3>
+<p>Resists twisting or rotation. Examples: door hinges, clothespins, mouse traps.</p>
+<ul>
+<li><strong>Design:</strong> Coiled wire, sometimes with straight lever arms extending from ends</li>
+<li><strong>Force direction:</strong> Resists rotational torque</li>
+<li><strong>Application:</strong> Torque applied to lever arms, not to coil itself</li>
+<li><strong>Complex geometry:</strong> More difficult to design and manufacture than compression springs</li>
+</ul>
+<h3>Leaf Springs</h3>
+<p>Flat strips stacked or arranged in layers. Examples: vehicle suspension, machine backstops.</p>
+<ul>
+<li><strong>Design:</strong> One or more flat steel strips, tapered or uniform thickness</li>
+<li><strong>Force direction:</strong> Bends under compressive or shear load</li>
+<li><strong>Advantage:</strong> Can handle side loads and high impacts</li>
+<li><strong>High load capacity:</strong> Can absorb significant mechanical energy</li>
+</ul>
+<h3>Belleville (Disc) Springs</h3>
+<p>Cone-shaped washers stacked together. Used for compact high-force applications.</p>
+<ul>
+<li><strong>Design:</strong> Hardened steel washer with coned profile</li>
+<li><strong>Stacking:</strong> Multiple discs stacked for higher force or different characteristics</li>
+<li><strong>Advantages:</strong> Extremely compact, very high force capacity</li>
+<li><strong>Manufacturing:</strong> Difficult without specialized dies—rarely made from scratch</li>
+</ul>
+<h3>Clock/Spiral Springs</h3>
+<p>Thin ribbon coiled in a flat spiral. Stores and releases energy in mechanisms.</p>
+<ul>
+<li><strong>Design:</strong> Ribbon of flat stock coiled inside an arbor (central shaft)</li>
+<li><strong>Function:</strong> Stores mechanical energy when wound, releases when unwound</li>
+<li><strong>Applications:</strong> Clock mechanisms, toy wind-ups, music boxes</li>
+<li><strong>Unique property:</strong> Power is nearly constant over most of travel</li>
+</ul>
+</section>
+<section id="materials">
+<h2>Spring Steel &amp; Material Selection</h2>
+<h3>Spring Steel Composition</h3>
+<p>Spring steel is high-carbon steel with specific properties optimized for elastic deformation:</p>
+<table><thead><tr><th scope="row">Property</th><th scope="row">Target Range</th><th scope="row">Effect</th></tr></thead><tbody><tr><td>Carbon Content</td><td>0.6-1.0%</td><td>Enables hardening; higher carbon = higher strength but less ductility</td></tr><tr><td>Manganese</td><td>0.5-1.0%</td><td>Increases hardenability and toughness</td></tr><tr><td>Silicon</td><td>0.1-0.5%</td><td>Increases strength and hardenability</td></tr><tr><td>Chromium</td><td>Optional</td><td>Increases corrosion resistance and hardenability</td></tr><tr><td>Vanadium</td><td>Optional</td><td>Increases toughness and fatigue resistance</td></tr></tbody></table>
+<h3>Identifying Spring Steel by Spark Test</h3>
+<p>A quick field test using a grinding wheel can identify spring steel:</p>
+<ol>
+<li><strong>Grind the sample:</strong> Hold metal against rotating grinding wheel</li>
+<li><strong>Observe spark pattern:</strong> Hold wheel steady and let sparks shower out</li>
+<li><strong>Spark characteristics:</strong>
+<ul>
+<li><strong>Low carbon steel:</strong> Few sparks, mostly yellow, short travel (2-3cm)</li>
+<li><strong>Medium carbon steel:</strong> More sparks, orange-yellow, longer travel (8-15cm)</li>
+<li><strong>High carbon (spring) steel:</strong> Many sparks, white-orange, very long travel (20-40cm), with star-burst pattern at end</li>
+<li><strong>Manganese alloy:</strong> Sparks spread in narrow fan</li>
+<li><strong>Chromium alloy:</strong> Few sparks, more uniform color</li>
+</ul>
+</li>
+<li><strong>Conclusion:</strong> Long, bright sparks with star pattern = good spring steel</li>
+</ol>
+<h3>Salvaging Spring Steel</h3>
+<p>High-carbon spring steel can be scavenged from:</p>
+<ul>
+<li><strong>Vehicle springs:</strong> Leaf springs, coil springs from suspension (best source—already hardened)</li>
+<li><strong>Old tools:</strong> Files, punches, chisels (often higher carbon than general-purpose steel)</li>
+<li><strong>Machinery:</strong> Springs from old appliances, clocks, watches</li>
+<li><strong>Saw blades:</strong> Hand saw and bandsaw blades are high-carbon spring steel</li>
+<li><strong>Bearing races:</strong> From old machinery—very hard steel, suitable for springs</li>
+<li><strong>Lock springs:</strong> Very reliable high-carbon material</li>
+</ul>
+<p><strong>Caution:</strong> Many salvaged springs are already tempered. Re-hardening may change their properties. If using salvaged springs, test them thoroughly before relying on them.</p>
+<h3>Steel Hardness &amp; Temper</h3>
+<p>Spring steel must be hard enough to spring back but not so brittle that it breaks. This balance is called &quot;temper&quot;:</p>
+<table><thead><tr><th scope="row">Temper Color</th><th scope="row">Temperature (°C)</th><th scope="row">Hardness</th><th scope="row">Use</th></tr></thead><tbody><tr><td>Pale straw</td><td>200-230</td><td>Very hard</td><td>Cutting tools, springs in harsh conditions</td></tr><tr><td>Straw yellow</td><td>230-260</td><td>Hard</td><td>Springs, punches</td></tr><tr><td>Brown</td><td>260-280</td><td>Moderate</td><td>General springs, tolerates impacts</td></tr><tr><td>Purple</td><td>280-310</td><td>Tough</td><td>Tools that need impact resistance</td></tr><tr><td>Dark blue</td><td>310-330</td><td>Flexible</td><td>Thin springs, flexible tools</td></tr><tr><td>Light blue</td><td>330-370</td><td>Very flexible</td><td>Flexible, non-critical springs</td></tr></tbody></table>
+<p>For general-purpose springs, aim for straw-yellow to brown color—strong enough for demanding applications but tough enough to resist fatigue.</p>
+<div class="warning">
+<p>Common material selection errors: (1) Using mild steel instead of spring steel—mild steel cannot be hardened and will not spring back; (2) Selecting steel that is already over-tempered (too blue/dark)—additional heating may make it too soft or cause sudden brittleness; (3) Mixing salvaged springs of unknown origin—different steels may require different heat treatment temperatures. Always verify material composition with a spark test before committing to a long build.</p>
+</div>
+</section>
+<section id="coil-winding">
+<h2>Coil Spring Winding</h2>
+<h3>Mandrel Selection</h3>
+<p>The mandrel (the rod around which wire is wound) determines the internal diameter of the spring:</p>
+<ul>
+<li><strong>Mandrel diameter:</strong> Should match or be slightly smaller than desired spring inner diameter</li>
+<li><strong>Material:</strong> Hardened steel rod (to resist deformation from tight winding)</li>
+<li><strong>Length:</strong> At least as long as the final spring, preferably longer for secure clamping</li>
+<li><strong>Surface finish:</strong> Smooth to prevent binding the wire</li>
+</ul>
+<h3>Pitch Calculation</h3>
+<p>Pitch is the distance between successive coils. It affects the spring rate and force distribution:</p>
+<ul>
+<li><strong>Formula:</strong> Pitch = (Total Spring Length) / (Number of Coils)</li>
+<li><strong>Typical range:</strong> 1.0-3.0mm for hand-made springs, depending on wire diameter</li>
+<li><strong>Spacing method:</strong> Maintain consistent spacing by counting revolutions or using a guide</li>
+<li><strong>Closed springs:</strong> Pitch approximately equals 0.5-1.0 × wire diameter</li>
+<li><strong>Open springs:</strong> Pitch several times the wire diameter, 3-5mm typical</li>
+</ul>
+<h3>Hand-Winding Procedure</h3>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Secure mandrel in a vise, horizontal position preferred</li>
+<li>Fix wire end to mandrel with a tack weld or by looping and clamping</li>
+<li>Position yourself opposite the free wire end</li>
+</ol>
+<p><strong>Winding Process:</strong></p>
+<ol>
+<li><strong>Apply tension:</strong> Keep wire under moderate tension as you rotate the mandrel</li>
+<li><strong>Rotate steadily:</strong> Slowly rotate the mandrel, advancing the wire along its length after each complete revolution</li>
+<li><strong>Maintain pitch:</strong> Move the wire a fixed distance (the desired pitch) after each rotation</li>
+<li><strong>Progress along length:</strong> Continue until reaching the desired spring length</li>
+<li><strong>Secure the end:</strong> Tack weld or clamp the ending wire to the mandrel to prevent unraveling</li>
+</ol>
+<p><strong>Winding Jig (Alternative):</strong></p>
+<ul>
+<li>A rotating jig with the mandrel in the center and a movable guide carriage helps maintain consistent pitch</li>
+<li>Hand crank rotates the mandrel while you advance the guide carriage manually</li>
+<li>More uniform coils result from a well-designed jig</li>
+<li>DIY jigs can be made from wood, metal scraps, and bearings</li>
+</ul>
+<h3>Removing the Spring from the Mandrel</h3>
+<p>Once wound, the spring must be separated from the mandrel:</p>
+<ol>
+<li><strong>Cool the spring:</strong> If tack-welded, allow to cool; if clamped, loosen gradually</li>
+<li><strong>Support the coil:</strong> The spring may collapse or distort if not supported during removal</li>
+<li><strong>Slide slowly:</strong> Gently slide the spring off the mandrel, keeping it straight</li>
+<li><strong>Inspect:</strong> Check for distortion or crossed coils (coil touching the one above or below)</li>
+</ol>
+<div class="note">
+<p><strong>Tip:</strong> Tightly wound springs are difficult to remove from the mandrel without damage. Applying a lubricant (oil or grease) to the mandrel before winding helps with removal.</p>
+</div>
+</section>
+<section id="heat-treatment">
+<h2>Heat Treatment &amp; Tempering</h2>
+<h3>Normalizing</h3>
+<p>Normalizing removes internal stresses and refines grain structure for better properties:</p>
+<ol>
+<li><strong>Heat to bright cherry red:</strong> 780-820°C in a forge or furnace</li>
+<li><strong>Hold at temperature:</strong> 5-10 minutes to ensure uniform heating</li>
+<li><strong>Cool in air:</strong> Remove from heat and allow to cool in still air (not forced cooling)</li>
+<li><strong>Result:</strong> Grain structure is refined; spring is softer and more workable</li>
+</ol>
+<h3>Hardening</h3>
+<p>Hardening increases the strength and enables the spring to hold its shape. The exact hardening temperature depends on the carbon content of your steel:</p>
+<p><strong>Critical Hardening Temperatures by Carbon Content:</strong></p>
+<table><thead><tr><th scope="row">Carbon Content</th><th scope="row">Steel Type</th><th scope="row">Hardening Temperature</th><th scope="row">Visual Indicator</th><th scope="row">Common Applications</th></tr></thead><tbody><tr><td>0.6% C</td><td>Low-carbon spring steel</td><td>770-800°C</td><td>Dark cherry red (dark red, almost burgundy)</td><td>Leaf springs, flexible springs for low stress</td></tr><tr><td>0.8% C</td><td>Medium-carbon spring steel</td><td>800-840°C</td><td>Bright cherry red (medium red)</td><td>Coil springs, torsion springs, general purpose</td></tr><tr><td>1.0% C</td><td>High-carbon spring steel</td><td>840-860°C</td><td>Bright orange-red (orange-red, lighter than cherry)</td><td>Clock springs, high-stress springs, music wire</td></tr></tbody></table>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li><strong>Identify carbon content:</strong> Use spark test (high-carbon shows prolific white sparks with starburst pattern), visual inspection of salvaged source, or color guides</li>
+<li><strong>Heat to correct temperature:</strong> Reference table above for your specific steel. Under-heating (too cool) results in incomplete hardening; over-heating (too hot) causes grain growth and brittleness</li>
+<li><strong>Maintain temperature:</strong> Hold at target temperature for 5-10 minutes to ensure uniform heating throughout the spring</li>
+<li><strong>Quench rapidly:</strong> Plunge into cold water or oil to cool rapidly</li>
+<li><strong>Oil vs water:</strong> Oil quenching is safer (less risk of cracking and explosion); water cools faster but risks cracking from thermal shock. For springs thicker than 3mm, use oil</li>
+<li><strong>Result:</strong> Spring is very hard but also brittle—cannot be used yet until tempered</li>
+</ol>
+<div class="danger">
+<p>Quenching hot steel produces extreme thermal shock. Water quenching can cause violent steam explosions and serious burns or injuries. Steel may shatter suddenly during quench. Always wear full protective equipment: heat-resistant gloves, face shield, leather apron, and steel-toed boots. Never quench alone. Have a fire extinguisher and first aid kit immediately available.</p>
+</div>
+<div class="warning">
+<p>Oil quenching is significantly safer than water quenching but still presents burn risks. Hot oil can splash when the spring is immersed. Ensure adequate ventilation to avoid breathing oil smoke. Keep oil temperature below 200°C to prevent auto-ignition.</p>
+</div>
+<h3>Tempering (Drawing the Temper)</h3>
+<p>After hardening, tempering reduces brittleness while maintaining strength. This step is critical for spring quality:</p>
+<div class="danger">
+<p>Tempered springs retain extreme heat long after removal from the heat source. The steel will be hot enough to cause severe burns and ignite skin tissue. Never touch a tempering spring with bare hands or unprotected skin. Use heavy heat-resistant gloves, tongs, or a heat-safe container. Be aware that the spring may look dark and cool but remain dangerously hot inside. Allow extended cooling time before handling.</p>
+</div>
+<p><strong>Temperature-Based Tempering (Preferred Method):</strong></p>
+<ol>
+<li><strong>Heat to desired temper temperature:</strong> 250-350°C for most springs (straw-yellow to brown color)</li>
+<li><strong>Watch the color:</strong> As steel heats, oxides form and colors progress: pale straw → straw yellow → brown → purple → blue</li>
+<li><strong>Stop at target color:</strong> For general springs, stop at straw-yellow to light brown (around 280-300°C)</li>
+<li><strong>Cool naturally:</strong> Remove from heat and cool in air</li>
+</ol>
+<p><strong>Color Tempering Guide by Carbon Content:</strong></p>
+<table><thead><tr><th scope="row">Carbon Content</th><th scope="row">Steel Type</th><th scope="row">Recommended Temper Color</th><th scope="row">Temperature</th><th scope="row">Use Cases</th></tr></thead><tbody><tr><td>0.6% C</td><td>Low-carbon spring steel</td><td>Brown to light purple</td><td>270-300°C</td><td>Flexible springs, leaf springs, low-stress applications</td></tr><tr><td>0.8% C</td><td>Medium-carbon spring steel</td><td>Straw yellow to brown</td><td>240-290°C</td><td>General coil springs, torsion springs, balanced hardness/toughness</td></tr><tr><td>1.0% C</td><td>High-carbon spring steel</td><td>Pale straw to straw yellow</td><td>210-260°C</td><td>Music wire, clock springs, high-stress applications requiring maximum hardness</td></tr></tbody></table>
+<p><strong>General Color Tempering Guide:</strong></p>
+<ul>
+<li><strong>Pale straw (200-230°C):</strong> Maximum hardness, brittle; use for cutting tools only</li>
+<li><strong>Straw yellow (230-260°C):</strong> Hard springs; good for high-stress applications</li>
+<li><strong>Brown (260-290°C):</strong> Balanced hardness/toughness; best for general springs</li>
+<li><strong>Purple (290-310°C):</strong> More flexible; use if spring needs to tolerate impacts</li>
+<li><strong>Dark blue (310-330°C):</strong> Very flexible; thin springs, cloth winding springs</li>
+</ul>
+<p><strong>Temperature Measurement Method:</strong></p>
+<ol>
+<li>If you have a thermometer, target 280-300°C for general springs</li>
+<li>Heat slowly to avoid overshooting</li>
+<li>Remove from heat source and allow to cool in air</li>
+</ol>
+<p><strong>No-Thermometer Method (Oil Bath):</strong></p>
+<ol>
+<li>Heat oil to a medium temperature (feels hot but not boiling—roughly 280-300°C)</li>
+<li>Place hardened spring coil into hot oil</li>
+<li>Watch color develop as spring heats from residual heat</li>
+<li>Remove when brown color appears</li>
+<li>Cool in air or quench in clean oil to stop color progression</li>
+</ol>
+<h3>Complete Heat Treatment Sequence</h3>
+<p><strong>For high-carbon wire drawn from scratch:</strong></p>
+<ol>
+<li>Draw wire to final diameter through progressive dies (work-hardens the wire)</li>
+<li>Anneal the drawn wire (heat to red, cool slowly) to make it soft enough to coil</li>
+<li>Wind into spring shape on mandrel</li>
+<li>Harden the coiled spring (bright cherry red, quench in oil)</li>
+<li>Temper to desired hardness (300°C, light brown color)</li>
+</ol>
+<p><strong>For salvaged spring steel:</strong></p>
+<ol>
+<li>If already hardened and tempered, may be ready to use as-is</li>
+<li>If too hard or too soft, normalize first (heat to red, cool in air)</li>
+<li>Harden if necessary</li>
+<li>Temper to desired properties</li>
+</ol>
+</section>
+<section id="leaf-springs">
+<h2>Leaf Spring Manufacturing</h2>
+<h3>Single Leaf Spring</h3>
+<p>The simplest form of leaf spring—a single flat piece of steel:</p>
+<p><strong>Material Preparation:</strong></p>
+<ol>
+<li>Start with flat stock (salvaged from machinery, or flatten rod by hammering)</li>
+<li>Thickness typically 3-8mm, width 20-100mm depending on load</li>
+<li>Length 150-500mm for hand-made applications</li>
+</ol>
+<p><strong>Shaping:</strong></p>
+<ol>
+<li><strong>Cut to rough length:</strong> Cut approximately 10% longer than final length (for trimming after bending)</li>
+<li><strong>Optional taper:</strong> Thin the ends slightly (file or hammer) for smoother bending characteristics</li>
+<li><strong>Eye forming:</strong> If mounting holes are needed, drill before final hardening</li>
+</ol>
+<p><strong>Heat Treatment:</strong></p>
+<ol>
+<li>Normalize if salvaged metal (heat to red, cool in air)</li>
+<li>Harden (heat to bright cherry red, quench in oil)</li>
+<li>Temper to brown color (280-300°C) for good balance of strength and flexibility</li>
+</ol>
+<p><strong>Setting the Curve:</strong></p>
+<ol>
+<li>While still warm from tempering, bend the spring to desired curve on a shaping form</li>
+<li>Hold or clamp in position until cooled</li>
+<li>The spring will retain the set shape</li>
+</ol>
+<h3>Multi-Leaf (Stacked) Springs</h3>
+<p>Several leaves stacked together for higher load capacity:</p>
+<p><strong>Design:</strong></p>
+<ul>
+<li>Typically 3-7 leaves of progressively shorter length</li>
+<li>Master leaf (longest) carries most load; shorter leaves share and distribute load</li>
+<li>Each leaf can be identical thickness or tapered</li>
+</ul>
+<p><strong>Assembly:</strong></p>
+<ol>
+<li><strong>Prepare all leaves:</strong> Cut, shape, and heat-treat identically</li>
+<li><strong>Stack arrangement:</strong> Longest leaf on bottom, progressively shorter leaves on top, or reverse</li>
+<li><strong>Centering:</strong> Ensure all leaves are centered on the assembly</li>
+<li><strong>Center bolt:</strong> A bolt through the middle (with a bushing) clamps all leaves together while allowing sliding</li>
+<li><strong>Clamp plates:</strong> Metal U-shaped brackets at the ends secure the leaf assembly to the vehicle or frame</li>
+</ol>
+<h3>Leaf Spring Properties</h3>
+<p>Design considerations for multi-leaf springs:</p>
+<ul>
+<li><strong>Load capacity:</strong> Approximately proportional to number of leaves and thickness</li>
+<li><strong>Stiffness:</strong> Higher with more leaves, thicker leaves, or shorter length</li>
+<li><strong>Deflection under load:</strong> Can be calculated but empirically testing is more reliable</li>
+<li><strong>Natural frequency:</strong> Softer springs have lower natural frequency (smoother ride but lower resonance)</li>
+</ul>
+</section>
+<section id="clock-springs">
+<h2>Clock &amp; Spiral Springs</h2>
+<h3>Mainspring for Mechanical Clocks</h3>
+<p>A long, thin ribbon coiled in a flat spiral, storing energy when wound:</p>
+<p><strong>Material &amp; Dimensions:</strong></p>
+<ul>
+<li><strong>Stock:</strong> High-carbon spring steel ribbon (0.2-1.0mm thick, 5-15mm wide)</li>
+<li><strong>Length:</strong> 600-1200mm for typical clock (determines energy storage duration)</li>
+<li><strong>Salvage sources:</strong> Old clock or watch mechanisms (these are often excellent quality)</li>
+</ul>
+<p><strong>Coiling Process:</strong></p>
+<ol>
+<li><strong>Create arbor:</strong> A tapered or stepped rod that goes in the center of the spring (salvage from old clocks or machine)</li>
+<li><strong>Attach inner end:</strong> Rivet or weld the ribbon's inner end to the arbor</li>
+<li><strong>Wind tightly:</strong> Carefully coil the ribbon in flat, tight spirals around the arbor</li>
+<li><strong>Maintain spacing:</strong> Coils should barely touch but not overlap or bind</li>
+<li><strong>Outer end treatment:</strong> The outer end is usually bent or riveted to a hook for attachment to the outer case</li>
+</ol>
+<p><strong>Alternative Method (If No Arbor):</strong></p>
+<ol>
+<li>Coil the ribbon by hand into a tight spiral on a flat surface</li>
+<li>Once coiled, insert the arbor through the center (carefully, to avoid crushing coils)</li>
+<li>Secure the inner end to the arbor</li>
+</ol>
+<h3>Power Calculation</h3>
+<p>A spiral spring's power output depends on its torque and how far it can unwind:</p>
+<ul>
+<li><strong>Torque:</strong> The rotational force at any point; roughly constant over the spring's useful travel</li>
+<li><strong>Energy stored:</strong> Torque × angle unwound (in radians)</li>
+<li><strong>Practical output:</strong> Most clock springs provide steady power over most of their unwinding travel, with slight variation at the beginning and end</li>
+</ul>
+<p>For practical purposes, a spiral spring's power output can be estimated by observing how long it powers a clock mechanism (typically 7-14 days for a wall clock, requiring re-winding weekly).</p>
+<h3>Escapement Considerations</h3>
+<p>The escapement mechanism regulates power release from the mainspring:</p>
+<ul>
+<li><strong>Constant force:</strong> Spiral spring's nearly constant power is ideal for maintaining regular timekeeping</li>
+<li><strong>Spring stiffness:</strong> Spring stiffness and tension affect the force felt at the escapement</li>
+<li><strong>Testing:</strong> Wind the spring and observe how long it actually runs your mechanism; adjust tension if needed</li>
+</ul>
+<h3>Hand-Wound Timepiece Springs</h3>
+<p>If making a clock from scratch with a hand-wound spiral spring:</p>
+<ol>
+<li><strong>Start with high-quality ribbon:</strong> Salvaged springs from antique clocks are best; modern springs are mass-produced and may vary</li>
+<li><strong>Carefully design the arbor:</strong> It must fit precisely—too loose and the spring spins freely, too tight and friction is excessive</li>
+<li><strong>Provide a barrel:</strong> A cylindrical case around the coiled spring protects it and guides power transmission</li>
+<li><strong>Test the power:</strong> Wind fully and measure how long it runs your mechanism; adjust spring tension or dimensions if needed</li>
+</ol>
+</section>
+<section id="testing">
+<h2>Testing &amp; Quality Control</h2>
+<h3>Deflection Testing</h3>
+<p>A simple test to verify the spring rate matches expectations:</p>
+<ol>
+<li><strong>Mount the spring:</strong> Secure one end (for compression springs, place on a flat surface; for extension springs, hang vertically)</li>
+<li><strong>Apply known load:</strong> Add weight in known increments (100g, 500g, etc.)</li>
+<li><strong>Measure deflection:</strong> Measure how far the spring compresses or extends with each added load</li>
+<li><strong>Calculate spring rate:</strong> Spring rate (k) = Force / Deflection (in N/mm or kg/cm)</li>
+<li><strong>Check linearity:</strong> A good spring should deflect proportionally to load; non-linearity indicates work-hardening or poor material</li>
+</ol>
+<div class="tip">
+<p>Quick field testing shortcut: Use a ruler, stack of weights (coins, water bottles, or known objects), and simple observation. For a compression spring, mark the initial position and apply incremental weights, checking the deflection at each step. For best accuracy, use a calipers or dial indicator if available, but visual estimation to ±1mm is often sufficient for quality assurance. This low-tech approach requires no equipment and quickly identifies defective springs before installation.</p>
+</div>
+<h3>Set Testing (Permanent Deformation)</h3>
+<p>A spring should not permanently deform if used within its design limits:</p>
+<ol>
+<li><strong>Compress/extend fully:</strong> Apply maximum expected load to the spring</li>
+<li><strong>Hold briefly:</strong> Hold at full deflection for 30-60 seconds</li>
+<li><strong>Release and measure:</strong> Release load and measure any remaining deformation</li>
+<li><strong>Acceptable limit:</strong> Less than 5% permanent set is good; more than 10% indicates poor tempering or overloading</li>
+</ol>
+<h3>Fatigue Testing</h3>
+<p>Springs often fail from repeated cycling, not single overload:</p>
+<ol>
+<li><strong>Cyclic loading:</strong> Repeatedly compress and release the spring (or wind/unwind for spiral springs) thousands of times</li>
+<li><strong>Inspection:</strong> After 1,000-10,000 cycles, inspect for cracks or changes in behavior</li>
+<li><strong>Ideal result:</strong> Spring continues functioning without change</li>
+<li><strong>Failure modes:</strong> Cracks (usually start at coil edges), broken wires, or significant loss of spring rate indicate poor material or tempering</li>
+</ol>
+<h3>Visual Inspection Checklist</h3>
+<ul>
+<li><strong>Surface finish:</strong> Should be smooth, no deep scratches or rough areas that could start cracks</li>
+<li><strong>Coil geometry:</strong> For coil springs, coils should be evenly spaced and roughly circular</li>
+<li><strong>No cracks:</strong> Look carefully for any hairline cracks, especially at coil ends</li>
+<li><strong>Proper color:</strong> Should show temper color (straw yellow to brown) if heat-treated properly</li>
+<li><strong>No rust:</strong> For springs that must resist corrosion, surface should be clean and protected</li>
+</ul>
+</section>
+<section id="design">
+<h2>Design Calculations</h2>
+<h3>Spring Rate Formula</h3>
+<p>For a helical compression or extension spring:</p>
+<p><strong>Spring Rate (k) = (G × d⁴) / (8 × D³ × n)</strong></p>
+<p>Where:</p>
+<ul>
+<li><strong>G</strong> = Shear modulus (for steel, approximately 81,000 MPa)</li>
+<li><strong>d</strong> = Wire diameter (mm)</li>
+<li><strong>D</strong> = Mean coil diameter (mm)—the average diameter of the spring (outer diameter minus one wire diameter)</li>
+<li><strong>n</strong> = Number of active coils (coils that deflect; end coils often don't contribute)</li>
+</ul>
+<p><strong>Example:</strong> A spring with 1.5mm wire, 15mm mean diameter, and 10 active coils:</p>
+<ul>
+<li>k = (81,000 × 1.5⁴) / (8 × 15³ × 10)</li>
+<li>k = (81,000 × 5.0625) / (8 × 3375 × 10)</li>
+<li>k ≈ 15 N/mm (or 1.5 kg/cm)</li>
+</ul>
+<h3>Stress Calculations</h3>
+<p>Shear stress in the spring material:</p>
+<p><strong>Shear Stress (τ) = (8 × F × D) / (π × d³)</strong></p>
+<p>Where:</p>
+<ul>
+<li><strong>F</strong> = Applied force (N)</li>
+<li><strong>D</strong> = Mean coil diameter (mm)</li>
+<li><strong>d</strong> = Wire diameter (mm)</li>
+</ul>
+<p><strong>Safe Stress Limit:</strong></p>
+<ul>
+<li>Spring steel can typically handle 400-800 MPa of shear stress for static loads</li>
+<li>For cyclic loads (repeated compression/extension), use 200-400 MPa to avoid fatigue failure</li>
+<li>Always keep stress below this limit for reliable operation</li>
+</ul>
+<h3>Deflection Formula</h3>
+<p>How much a spring compresses or extends under load:</p>
+<p><strong>Deflection (δ) = F / k</strong></p>
+<p>Where:</p>
+<ul>
+<li><strong>F</strong> = Applied force (N)</li>
+<li><strong>k</strong> = Spring rate (N/mm)</li>
+</ul>
+<h3>Practical Design Process</h3>
+<ol>
+<li><strong>Define requirements:</strong> What force must the spring support? How much deflection is acceptable?</li>
+<li><strong>Choose wire diameter:</strong> Start with 1-3mm for hand-made springs</li>
+<li><strong>Select coil diameter:</strong> Typically 2-5 times the wire diameter</li>
+<li><strong>Calculate coils needed:</strong> Using the spring rate formula, determine number of coils to achieve desired stiffness</li>
+<li><strong>Check stress:</strong> Ensure calculated stress is within safe limits</li>
+<li><strong>Prototype and test:</strong> Build a test spring and measure its actual properties; adjust design if necessary</li>
+</ol>
+<p><strong>Iterative Approach:</strong> If your first design doesn't meet requirements, adjust one parameter (wire diameter, coil diameter, or number of coils) and recalculate.</p>
+</section>
+<section id="applications">
+<h2>Applications &amp; Use Cases</h2>
+<h3>Door Latches &amp; Hinges</h3>
+<ul>
+<li><strong>Spring type:</strong> Torsion or compression spring</li>
+<li><strong>Function:</strong> Returns door to closed position; allows smooth opening</li>
+<li><strong>Design requirement:</strong> Moderate force, long cycle life (millions of operations)</li>
+</ul>
+<h3>Vehicle Suspension</h3>
+<ul>
+<li><strong>Spring type:</strong> Leaf springs or coil springs</li>
+<li><strong>Function:</strong> Absorbs shocks from road surface; supports vehicle weight</li>
+<li><strong>Design requirement:</strong> High load capacity, excellent fatigue resistance, consistent performance over millions of cycles</li>
+</ul>
+<h3>Mouse Traps &amp; Mechanical Triggers</h3>
+<ul>
+<li><strong>Spring type:</strong> Torsion or compression spring, often with lever arm</li>
+<li><strong>Function:</strong> Stores mechanical energy; released by trigger to snap shut</li>
+<li><strong>Design requirement:</strong> Sufficient force to quickly snap shut; reliable cocking</li>
+</ul>
+<h3>Clock Mechanisms</h3>
+<ul>
+<li><strong>Spring type:</strong> Spiral mainspring, small balance springs, escapement springs</li>
+<li><strong>Function:</strong> Powers movement; regulates timekeeping</li>
+<li><strong>Design requirement:</strong> Precision, consistent power output, long service life without maintenance</li>
+</ul>
+<h3>Safety Valves</h3>
+<ul>
+<li><strong>Spring type:</strong> Compression spring under a valve disk</li>
+<li><strong>Function:</strong> Holds valve closed against fluid pressure; opens when pressure exceeds set limit</li>
+<li><strong>Design requirement:</strong> Reliable, repeatable opening pressure, corrosion resistance</li>
+</ul>
+<h3>Brake Systems</h3>
+<ul>
+<li><strong>Spring type:</strong> Return springs (compression or torsion)</li>
+<li><strong>Function:</strong> Returns brake shoes or pads to released position after braking</li>
+<li><strong>Design requirement:</strong> Consistent force, excellent fatigue life, heat resistance</li>
+</ul>
+</section>
+<section id="diagrams">
+<h2>Reference Diagrams</h2>
+<h3>Spring Types Comparison</h3>
+<p><svg aria-label="Spring Manufacturing diagram 1" viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg"><style>
+.spring-coil { fill: none; stroke: var(--accent2); stroke-width: 2; }
+.spring-line { fill: none; stroke: var(--accent2); stroke-width: 2; }
+.label { fill: var(--text); font-size: 12px; }
+.title { fill: var(--accent); font-size: 13px; font-weight: bold; }
+.arrow { fill: var(--accent); stroke: var(--accent); stroke-width: 1.5; }
+</style><text class="title" x="20" y="20">Compression</text><circle class="spring-coil" cx="50" cy="50" r="15"></circle><circle class="spring-coil" cx="50" cy="75" r="15"></circle><circle class="spring-coil" cx="50" cy="100" r="15"></circle><line stroke="var(--surface)" stroke-width="4" x1="35" x2="65" y1="125" y2="125"></line><text class="label" x="25" y="145">Pushes back when</text><text class="label" x="25" y="160">compressed</text><text class="title" x="150" y="20">Extension</text><path class="spring-coil" d="M 190 35 Q 190 45 200 50 Q 210 55 200 60 Q 190 65 200 70 Q 210 75 200 80 Q 190 85 200 90 Q 210 95 200 100 Q 190 105 200 110 Q 210 115 200 120"></path><line class="spring-line" x1="170" x2="190" y1="35" y2="35"></line><line class="spring-line" x1="200" x2="220" y1="120" y2="120"></line><text class="label" x="140" y="145">Resists being</text><text class="label" x="140" y="160">pulled apart</text><text class="title" x="280" y="20">Torsion</text><circle class="spring-coil" cx="330" cy="70" r="20"></circle><line class="spring-line" x1="310" x2="280" y1="50" y2="50"></line><line class="spring-line" x1="350" x2="380" y1="90" y2="90"></line><text class="label" x="280" y="145">Resists twisting</text><text class="label" x="280" y="160">or rotation</text><text class="title" x="420" y="20">Leaf Spring</text><rect fill="var(--accent2)" height="8" opacity="0.8" width="50" x="430" y="50"></rect><rect fill="var(--accent2)" height="8" opacity="0.6" width="46" x="432" y="60"></rect><rect fill="var(--accent2)" height="8" opacity="0.4" width="42" x="434" y="70"></rect><line class="spring-line" x1="410" x2="480" y1="85" y2="85"></line><text class="label" x="410" y="145">Flat strips stacked</text><text class="label" x="410" y="160">for load support</text><path class="arrow" d="M 45 35 L 55 35" marker-end="url(#arrowhead)"></path><path class="arrow" d="M 55 130 L 45 130" marker-end="url(#arrowhead)"></path><path class="arrow" d="M 160 70 L 140 70" marker-end="url(#arrowhead)"></path><path class="arrow" d="M 220 70 L 240 70" marker-end="url(#arrowhead)"></path><path class="arrow" d="M 290 50 L 280 40" marker-end="url(#arrowhead)"></path><path class="arrow" d="M 380 90 L 390 100" marker-end="url(#arrowhead)"></path><defs><marker id="arrowhead" markerheight="7" markerwidth="10" orient="auto" refx="9" refy="3.5"><polygon fill="var(--accent)" points="0 0, 10 3.5, 0 7"></polygon></marker></defs></svg></p>
+<p>Figure 1: Common spring types and their force directions</p>
+<h3>Coil Spring Winding Jig</h3>
+<p><svg aria-label="Spring Manufacturing diagram 2" viewBox="0 0 450 280" xmlns="http://www.w3.org/2000/svg"><style>
+.wood { fill: #8B4513; stroke: #654321; stroke-width: 1; }
+.metal { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
+.wire { fill: none; stroke: var(--accent2); stroke-width: 2; }
+.label { fill: var(--text); font-size: 11px; }
+.title { fill: var(--accent); font-size: 13px; font-weight: bold; }
+</style><text class="title" x="40" y="25">DIY Coil Spring Winding Jig</text><rect class="wood" height="150" rx="5" width="200" x="50" y="60"></rect><rect class="metal" height="12" rx="6" width="100" x="100" y="110"></rect><circle class="metal" cx="100" cy="116" r="8"></circle><circle class="metal" cx="200" cy="116" r="8"></circle><circle class="metal" cx="200" cy="116" fill="none" r="15" stroke-width="2"></circle><line class="metal" stroke-width="2" x1="200" x2="220" y1="116" y2="116"></line><circle class="metal" cx="225" cy="116" r="4"></circle><line class="wire" x1="40" x2="100" y1="90" y2="90"></line><text class="label" x="30" y="85">Wire from coil</text><rect class="wood" height="40" rx="3" width="40" x="250" y="95"></rect><circle class="metal" cx="260" cy="115" r="4"></circle><circle class="metal" cx="280" cy="115" r="4"></circle><line class="metal" stroke-width="2" x1="255" x2="285" y1="110" y2="110"></line><line class="metal" stroke-dasharray="3,3" stroke-width="1" x1="250" x2="290" y1="130" y2="130"></line><text class="label" x="245" y="150">Pitch guide</text><text class="label" x="245" y="163">(moves axially)</text><line class="metal" opacity="0.3" stroke-width="3" x1="250" x2="250" y1="60" y2="220"></line><text class="label" x="120" y="50">Mandrel</text><path d="M 150 45 L 150 55" stroke="var(--accent2)" stroke-width="1"></path><path d="M 150 50 L 160 50" stroke="var(--accent2)" stroke-width="1"></path><text class="label" x="55" y="230">Wooden frame</text><text class="label" x="55" y="245">with bearings</text><text class="label" x="300" y="200">Guide carriage moves</text><text class="label" x="300" y="215">along guide rod after</text><text class="label" x="300" y="230">each rotation to</text><text class="label" x="300" y="245">maintain consistent pitch</text></svg></p>
+<p>Figure 2: Simple hand-operated coil spring winding jig using wooden frame and metal components</p>
+<h3>Heat Treatment Color Sequence</h3>
+<p><svg aria-label="Spring Manufacturing diagram 3" viewBox="0 0 450 260" xmlns="http://www.w3.org/2000/svg"><style>
+.color-bar { stroke: var(--border); stroke-width: 1; }
+.label { fill: var(--text); font-size: 11px; }
+.temp { fill: var(--muted); font-size: 10px; }
+.title { fill: var(--accent); font-size: 13px; font-weight: bold; }
+</style><text class="title" x="40" y="25">Spring Tempering Color Guide</text><rect class="color-bar" fill="#E8D4B0" height="30" width="80" x="50" y="50"></rect><text class="label" x="60" y="75">Pale Straw</text><text class="temp" x="60" y="90">200-230°C</text><rect class="color-bar" fill="#E8C850" height="30" width="80" x="140" y="50"></rect><text class="label" x="150" y="75">Straw Yellow</text><text class="temp" x="150" y="90">230-260°C</text><rect class="color-bar" fill="#D4A050" height="30" width="80" x="230" y="50"></rect><text class="label" x="240" y="75">Brown</text><text class="temp" x="240" y="90">260-290°C</text><rect class="color-bar" fill="#884488" height="30" width="80" x="320" y="50"></rect><text class="label" x="330" y="75">Purple</text><text class="temp" x="330" y="90">290-310°C</text><rect class="color-bar" fill="#1a1a5c" height="30" width="80" x="50" y="130"></rect><text class="label" x="60" y="155">Dark Blue</text><text class="temp" x="60" y="170">310-330°C</text><rect class="color-bar" fill="#2a2a8c" height="30" width="80" x="140" y="130"></rect><text class="label" x="150" y="155">Light Blue</text><text class="temp" x="150" y="170">330-370°C</text><text class="title" x="50" y="210">Spring Temper Properties</text><rect fill="none" height="35" rx="3" stroke="var(--border)" stroke-width="1" width="350" x="50" y="220"></rect><text class="label" x="60" y="235">Pale/Straw: Very hard but brittle - for cutting tools</text><text class="label" x="60" y="250">Brown: Best balance - general springs, good strength + toughness</text><rect fill="none" height="35" rx="3" stroke="var(--border)" stroke-width="1" width="350" x="50" y="258"></rect><text class="label" x="60" y="273">Dark Blue: Flexible - for thin springs, tolerates impacts</text></svg></p>
+<p>Figure 3: Spring steel tempering color progression and corresponding properties</p>
+<h3>Leaf Spring Assembly</h3>
+<p><svg aria-label="Spring Manufacturing diagram 4" viewBox="0 0 450 240" xmlns="http://www.w3.org/2000/svg"><style>
+.leaf { fill: var(--accent2); opacity: 0.7; }
+.bolt { fill: var(--card); stroke: var(--accent); stroke-width: 1; }
+.label { fill: var(--text); font-size: 11px; }
+.title { fill: var(--accent); font-size: 13px; font-weight: bold; }
+.dimension { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3,3; }
+</style><text class="title" x="40" y="25">Multi-Leaf Spring Stack Assembly</text><text class="label" x="40" y="50">Side View (Compressed)</text><rect class="leaf" height="12" rx="3" width="150" x="50" y="60"></rect><text class="label" x="60" y="72">Master leaf (longest)</text><rect class="leaf" height="10" rx="2" width="140" x="55" y="75"></rect><text class="label" x="65" y="85">Secondary leaf</text><rect class="leaf" height="8" rx="2" width="130" x="60" y="87"></rect><text class="label" x="70" y="96">Tertiary leaf</text><circle class="bolt" cx="130" cy="75" r="6"></circle><line stroke="var(--card)" stroke-width="3" x1="130" x2="130" y1="60" y2="95"></line><text class="label" x="140" y="78">Center bolt</text><rect fill="var(--surface)" height="30" stroke="var(--accent)" stroke-width="2" width="15" x="40" y="100"></rect><rect fill="var(--surface)" height="30" stroke="var(--accent)" stroke-width="2" width="15" x="195" y="100"></rect><text class="label" x="25" y="130">Clamp</text><text class="label" x="210" y="130">Clamp</text><text class="label" x="40" y="160">Under Load (Deflected):</text><path class="leaf" d="M 50 170 Q 130 140 200 170" fill="none" stroke="var(--accent2)" stroke-width="3"></path><text class="label" x="100" y="160">Bends downward</text><path d="M 80 150 L 80 140" marker-end="url(#arrowhead)" stroke="var(--accent)" stroke-width="1.5"></path><path d="M 170 150 L 170 140" marker-end="url(#arrowhead)" stroke="var(--accent)" stroke-width="1.5"></path><text class="label" x="75" y="138">Load</text><rect fill="none" height="150" rx="3" stroke="var(--border)" stroke-width="1" width="190" x="250" y="50"></rect><text class="title" x="260" y="70">Leaf Spring Properties</text><text class="label" x="260" y="90">• More leaves = higher load capacity</text><text class="label" x="260" y="105">• Can handle side loads</text><text class="label" x="260" y="120">• Good shock absorption</text><text class="label" x="260" y="135">• Each leaf can be individually</text><text class="label" x="270" y="150">tapered or uniform thickness</text><text class="label" x="260" y="165">• Center bolt distributes load</text><text class="label" x="270" y="180">evenly across leaves</text><text class="label" x="260" y="195">• Ideal for vehicle suspension</text><defs><marker id="arrowhead" markerheight="7" markerwidth="10" orient="auto" refx="9" refy="3.5"><polygon fill="var(--accent)" points="0 0, 10 3.5, 0 7"></polygon></marker></defs></svg></p>
+<p>Figure 4: Multi-leaf spring assembly and loading behavior</p>
+</section>
+<section id="mistakes">
+<h3>Common Mistakes &amp; Solutions</h3>
+<div class="warning">
+<p>Tempering mistakes often result from not recognizing color progression correctly or overshooting temperature. If a spring is over-tempered (too blue), it becomes too soft and loses spring properties permanently. Always temper one test spring first to verify your heating method and color recognition under your specific workshop lighting before tempering production springs. If unsure, aim for light straw-yellow (slightly under-tempered) rather than brown or blue—a stiffer spring is more forgiving than a too-soft one.</p>
+</div>
+<ul>
+<li><strong>Spring Breaks During Heat Treatment:</strong> Usually caused by uneven heating (localized temperature spikes) or too-rapid cooling. Solution: Heat slowly and uniformly. Use oil quenching instead of water. For large springs, allow controlled slow cooling after hardening instead of rapid quench.</li>
+<li><strong>Spring Won't Spring Back (Permanently Bent):</strong> Over-tempered (too soft) or not hardened enough. Solution: Re-harden and temper to straw-yellow to brown color (280-300°C). Perform set testing to verify no permanent deformation under expected load.</li>
+<li><strong>Spring Too Stiff (Doesn't Compress Enough):</strong> Either wire diameter is too large, mean diameter is too small, or number of coils too few. Solution: Measure and compare to design calculations. If stiffness is too high, carefully anneal the spring (heat to red, cool slowly) to soften slightly, then retempo to brown color. For next spring, reduce wire diameter or increase mean diameter.</li>
+<li><strong>Spring Too Soft (Compresses Too Much):</strong> Wire diameter too thin, mean diameter too large, or too many coils. Solution: Check calculations. For next spring, increase wire diameter or reduce mean diameter. If this spring must work, consider using multiple springs in parallel (stacking multiple springs of same dimension).</li>
+<li><strong>Uneven Pitch (Coils Spaced Inconsistently):</strong> Manual error during winding or guide carriage slipping. Solution: Use a properly operating winding jig with locking carriage. For hand winding, count rotations and measure position frequently to maintain consistency.</li>
+<li><strong>Coils Binding (Touching Incorrectly During Deflection):</strong> Pitch is too tight or coils are slightly oval instead of circular. Solution: Increase pitch slightly for next spring. Check that mandrel is perfectly straight. Ensure even tension during winding.</li>
+<li><strong>Spring Fatigue Failure (Cracks After Repeated Cycling):</strong> Material was not hardened properly, stress exceeds safe limits, or design is inherently weak. Solution: Verify proper hardening and tempering. Check stress calculations. Increase wire diameter or reduce mean diameter to lower stress for same force.</li>
+<li><strong>Color Variation During Tempering (Can't Tell When Temperature is Right):</strong> Inconsistent heating source or difficulty seeing color in your workshop light. Solution: Use oil bath method (heat oil to target temp, dip spring in oil, watch color develop). If using fire, use controlled charcoal fire rather than flame, and work in consistent lighting.</li>
+</ul>
+<div class="tip">
+<p>Quality control shortcut: Skip precise color matching and instead use the bend test—after hardening and cooling, gently tap the spring with a hammer. A properly tempered spring should bend slightly without cracking (showing toughness) but return to shape when released (showing elasticity). If it cracks easily, it's too hard (under-tempered); if it bends permanently, it's too soft (over-tempered). This simple tactile test is faster and more reliable than trying to match colors, especially in poor lighting.</p>
+</div>
+<ul>
+<li><strong>Salvaged Spring Becomes Brittle After Heating:</strong> Original tempering was already at limit; additional heating pushed it past optimal. Solution: Test salvaged springs by bending before reheating. If already hard and springy, don't re-harden—just use as-is. If you must re-temper, aim for darker blue color (more flexible) instead of straw-yellow.</li>
+<li><strong>Leaf Spring Stays Curved When Unloaded:</strong> Material didn't fully anneal before shaping, or cooling wasn't slow enough. Solution: Re-anneal (heat to red, cool very slowly—bury in sand for several hours). Reshape while warm and cool slowly to lock in the desired shape.</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="blacksmithing.html">Blacksmithing</a>
+<a href="bloomery-furnace.html">Bloomery Furnace Construction</a>
+<a href="foundry-casting.html">Foundry &amp; Metal Casting</a>
+<a href="steel-making.html">Steel Making</a>
+<a href="metalworking.html">Metalworking &amp; Blacksmithing</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/acoustics-sound-amplification.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acoustics and Sound Amplification - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.horn-formula { background: var(--card); border: 1px solid var(--border); padding: 12px; margin: 16px 0; border-radius: 4px; font-family: monospace; }
+.frequency-chart { margin: 16px 0; padding: 12px; background: var(--card); border: 1px solid var(--border); border-radius: 4px; }
+.acoustics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 16px 0; }
+.acoustics-item { border: 1px solid var(--border); padding: 8px; border-radius: 4px; background: var(--card); text-align: center; }
+
+</style>
+<meta name="description" content="Horn design principles, resonance chambers, passive PA systems, megaphone construction, acoustic treatment, instrument amplification, and noise barriers">
+<link rel="canonical" href="https://zerotoherohero.com/guides/acoustics-sound-amplification.html">
+<meta property="og:title" content="Acoustics and Sound Amplification">
+<meta property="og:description" content="Horn design principles, resonance chambers, passive PA systems, megaphone construction, acoustic treatment, instrument amplification, and noise barriers">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Foundational Sciences", "item": "https://zerotoherohero.com/#sec-sciences"},
+    {"@type": "ListItem", "position": 3, "name": "Acoustics and Sound Amplification", "item": "https://zerotoherohero.com/guides/acoustics-sound-amplification.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Acoustics and Sound Amplification",
+  "description": "Horn design principles, resonance chambers, passive PA systems, megaphone construction, acoustic treatment, instrument amplification, and noise barriers",
+  "dateModified": "2026-02-18",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-326">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-sciences">Foundational Sciences</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Acoustics and Sound Amplification</span>
+</nav>
+<header>
+<h1>Acoustics and Sound Amplification</h1>
+<p class="subtitle">Horn design principles, resonance chambers, passive PA systems, megaphone construction, acoustic treatment, instrument amplification, and noise barriers</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~18 min read</span>
+<span class="last-updated">· Updated: 2026-02-18</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#sound-basics">Sound Basics and Frequency</a></li>
+<li><a href="#horn-design">Horn Design Principles</a></li>
+<li><a href="#resonance-chamber">Resonance Chambers</a></li>
+<li><a href="#megaphone">Megaphone Construction</a></li>
+<li><a href="#acoustic-treatment">Acoustic Treatment and Room Acoustics</a></li>
+<li><a href="#instrument-amplification">Acoustic Instrument Amplification</a></li>
+<li><a href="#noise-barriers">Noise Barriers and Sound Shielding</a></li>
+<li><a href="#practical-builds">Practical Builds: Step-by-Step Projects</a></li>
+<li><a href="#summary">Summary</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Sound is a mechanical wave propagating through air, and its behavior can be predicted and controlled using acoustic principles. In low-electricity or offline scenarios, passive sound amplification—using horns, resonance chambers, and acoustic design—provides effective communication and entertainment without electronics. A simple megaphone amplifies speech across a gathering. A well-designed horn multiplies the output of a musical instrument. Acoustic treatment of a room improves speech intelligibility and reduces noise. Understanding how sound travels, reflects, and resonates enables you to work with sound as a resource rather than a problem.</p>
+<p>This guide covers the physics of sound propagation, practical designs for horns and passive amplifiers, and techniques for acoustic treatment—all using materials available in any environment.</p>
+</section>
+<section id="sound-basics">
+<h2>Sound Basics and Frequency</h2>
+<p>Sound is a pressure wave. When a sound source (voice, instrument, speaker) vibrates, it creates alternating high and low pressure regions that propagate outward through air at approximately 343 m/s at room temperature (1235 km/h).</p>
+<h3>Frequency and Pitch</h3>
+<p>Frequency (Hz, cycles per second) determines pitch:</p>
+<table>
+<thead>
+<tr>
+<th>Frequency Range</th>
+<th>Source</th>
+<th>Hearing Characteristics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20–50 Hz</td>
+<td>Bass, large drums, vehicle rumble</td>
+<td>Below human speech; felt more than heard</td>
+</tr>
+<tr>
+<td>50–250 Hz</td>
+<td>Male voice, low notes, drums</td>
+<td>Deep, resonant</td>
+</tr>
+<tr>
+<td>250–2000 Hz</td>
+<td>Female voice, speech intelligibility, violin</td>
+<td>Most speech energy; good clarity</td>
+</tr>
+<tr>
+<td>2000–5000 Hz</td>
+<td>Consonants, clarity, violin high notes</td>
+<td>Intelligibility critical; sensitive ears</td>
+</tr>
+<tr>
+<td>5000–20000 Hz</td>
+<td>Whistle, small animals, highest piano notes</td>
+<td>High-frequency detail</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practical implication:</strong> Amplifying frequencies 250–2000 Hz is most important for speech. Bass (50–250 Hz) carries power but less information. Treble (5000+ Hz) is important for clarity but carries less energy and is more easily absorbed by walls and obstacles.</p>
+<h3>Sound Pressure Level (SPL)</h3>
+<p>SPL in decibels (dB) measures sound intensity on a logarithmic scale. An increase of 3 dB represents a doubling of acoustic power; 10 dB is perceived as roughly twice as loud.</p>
+<table>
+<thead>
+<tr>
+<th>SPL</th>
+<th>Source</th>
+<th>Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>40 dB</td>
+<td>Library, whisper</td>
+<td>Quiet; can be startled by sudden sounds</td>
+</tr>
+<tr>
+<td>60 dB</td>
+<td>Normal conversation at 1 meter</td>
+<td>Typical office, public speaking</td>
+</tr>
+<tr>
+<td>80 dB</td>
+<td>Busy traffic, small stereo</td>
+<td>Prolonged exposure causes fatigue</td>
+</tr>
+<tr>
+<td>90 dB</td>
+<td>Lawn mower, large gathering</td>
+<td>Hearing damage with extended exposure</td>
+</tr>
+<tr>
+<td>100+ dB</td>
+<td>Loud concert, emergency siren</td>
+<td>Immediate hearing damage risk</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Passive amplification goal:</strong> Increase SPL by 6–12 dB using horns and chambers, sufficient to reach 100–150 people in open space or 30–50 in an enclosed area.</p>
+</section>
+<section id="horn-design">
+<h2>Horn Design Principles</h2>
+<p>A horn is a tapered tube that amplifies sound by controlling radiation resistance and focusing acoustic energy. The ideal horn shape expands cross-sectional area in a specific mathematical pattern that matches the acoustic impedance of the source to free air.</p>
+<h3>Exponential Horn</h3>
+<p>The exponential horn is the most efficient horn shape:</p>
+<p><strong>Design formula:</strong> Cross-sectional area = A₀ × e^(mx)</p>
+<p>Where:</p>
+<ul>
+<li>A₀ = area at the throat (small end)</li>
+<li>m = flare constant (controls how quickly the horn expands)</li>
+<li>x = distance along the horn axis</li>
+<li>e = mathematical constant (2.718...)</li>
+</ul>
+<p><strong>Simpler approach:</strong> Use a shape that starts narrow and widens gradually, accelerating the expansion. An exponential curve is ideal but a parabolic or conical approximation works well.</p>
+<h3>Conical Horn</h3>
+<p>A cone with fixed flare angle is simpler to construct and reasonably efficient:</p>
+<p><strong>Design formula:</strong> Radius at distance x = R₀ + (flare_angle × x)</p>
+<p>For example, a cone starting with 2 cm radius throat and 1 cm expansion per 10 cm length:</p>
+<ul>
+<li>At x = 0 (throat): radius = 2 cm</li>
+<li>At x = 10 cm: radius = 3 cm</li>
+<li>At x = 50 cm: radius = 7 cm</li>
+<li>At x = 100 cm: radius = 12 cm</li>
+</ul>
+<p>Conical horns are 85–95% as efficient as exponential horns but far easier to build.</p>
+<h3>Horn Dimensions for Common Frequencies</h3>
+<p>The length of the horn should be a multiple of the wavelength of the frequency being amplified:</p>
+<table>
+<thead>
+<tr>
+<th>Frequency</th>
+<th>Wavelength</th>
+<th>Recommended Horn Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100 Hz</td>
+<td>3.4 m</td>
+<td>1.7 m (half-wave), 3.4 m (full wave)</td>
+</tr>
+<tr>
+<td>200 Hz</td>
+<td>1.7 m</td>
+<td>0.85 m (half-wave), 1.7 m (full wave)</td>
+</tr>
+<tr>
+<td>500 Hz</td>
+<td>0.69 m</td>
+<td>0.35 m (quarter-wave), 0.69 m (half-wave)</td>
+</tr>
+<tr>
+<td>1000 Hz</td>
+<td>0.34 m</td>
+<td>0.17 m (quarter-wave), 0.34 m (half-wave)</td>
+</tr>
+<tr>
+<td>2000 Hz</td>
+<td>0.17 m</td>
+<td>0.085 m (quarter-wave), 0.17 m (half-wave)</td>
+</tr>
+</tbody>
+</table>
+<p>For speech (250–2000 Hz), a quarter-wave horn (15–35 cm long) provides practical amplification without excessive length.</p>
+<div class="info-box">
+<p><strong>Practical horn sizing:</strong> For general-purpose speech amplification, a horn 30–50 cm long with throat diameter 3–5 cm and mouth diameter 15–25 cm provides useful gain (6–10 dB) and is portable. Longer horns (1–2 meters) provide more gain (10–15 dB) but are bulky and require mounting.</p>
+</div>
+<h3>Horn Materials and Construction</h3>
+<p><strong>Optimal materials:</strong></p>
+<ul>
+<li><strong>Wood:</strong> Plywood rings stacked and shaped, sealed with paint or varnish. Lightweight and resonant (adds mid-frequency warmth).</li>
+<li><strong>Metal:</strong> Sheet metal (aluminum, steel) rolled and welded or riveted. Durable, loud (can be too bright), and conductive to vibration.</li>
+<li><strong>Cardboard:</strong> Heavy corrugated tubing or stacked layers, sealed with duct tape or paint. Lightweight, adequate for temporary use; degrades in moisture.</li>
+<li><strong>PVC pipe:</strong> Large-diameter PVC pipe with tapered end sections glued or fastened. Effective and durable, though not as efficient as smooth cones.</li>
+</ul>
+<p><strong>Construction steps:</strong></p>
+<ol>
+<li>Cut out cone templates from paper or thin cardboard</li>
+<li>Roll templates into final cone shape</li>
+<li>Secure with tape, glue, or fasteners</li>
+<li>Seal all seams to prevent air leakage</li>
+<li>Mount small sound source (speaker, microphone, instrument) at the throat</li>
+<li>Paint or finish exterior for weather protection</li>
+</ol>
+</section>
+<section id="resonance-chamber">
+<h2>Resonance Chambers</h2>
+<p>A resonance chamber is an enclosed volume that amplifies sound at specific frequencies. When a sound wave travels into the chamber, the volume resonates at frequencies matching the chamber's natural modes, reinforcing those frequencies.</p>
+<h3>Resonance Frequency</h3>
+<p>A chamber's resonance frequency depends on its volume and the frequency of sound it amplifies:</p>
+<p><strong>Basic formula:</strong> f = c / (4 × L)</p>
+<p>Where:</p>
+<ul>
+<li>f = resonance frequency (Hz)</li>
+<li>c = speed of sound (343 m/s)</li>
+<li>L = longest dimension of the chamber (meters)</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>A chamber 0.34 m across: f = 343 / (4 × 0.34) = 252 Hz (low male voice)</li>
+<li>A chamber 0.17 m across: f = 343 / (4 × 0.17) = 504 Hz (female voice/midrange)</li>
+<li>A chamber 0.085 m across: f = 343 / (4 × 0.085) = 1010 Hz (clarity/presence)</li>
+</ul>
+<h3>Passive PA System with Chamber and Horn</h3>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Enclose a small resonance chamber (wooden box, 0.3–0.5 m on a side)</li>
+<li>Mount a sound source (microphone, acoustic instrument pickup) at the chamber wall</li>
+<li>Attach a horn (30–50 cm long) to the chamber outlet</li>
+<li>Sound from the source excites the chamber; resonance amplifies mid-range frequencies; the horn further projects sound outward</li>
+</ol>
+<p><strong>Amplification:</strong> Combined horn + chamber can provide 12–18 dB gain (4–6× perceived loudness) sufficient for presentations to 50–100 people.</p>
+<p><strong>Example assembly:</strong></p>
+<ul>
+<li>Wooden box 40 × 40 × 40 cm (64 liter volume, resonance ~215 Hz)</li>
+<li>Microphone mounted inside with small opening</li>
+<li>Horn (50 cm long, 5 cm throat, 20 cm mouth) attached to one side</li>
+<li>Simple stand or mounting holds the assembly at shoulder height</li>
+<li>Speaker speaks into the microphone opening; amplified sound projects through the horn</li>
+</ul>
+</section>
+<section id="megaphone">
+<h2>Megaphone Construction</h2>
+<p>A megaphone is the simplest sound projector—a cone that directs the speaker's voice into a narrow beam, reducing spreading loss and increasing distance reach.</p>
+<h3>Simple Megaphone</h3>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>Conical form (plastic, wood, or cardboard); 30–50 cm long</li>
+<li>Throat: 5–8 cm diameter (mouth-sized)</li>
+<li>Mouth: 15–25 cm diameter (projects sound forward)</li>
+<li>Handle (wooden dowel or rope) mounted perpendicular to axis</li>
+</ul>
+<p><strong>Construction:</strong></p>
+<ol>
+<li>Roll heavy paper or thin plastic into a cone</li>
+<li>Seal with tape or glue</li>
+<li>Cut a 5 cm diameter hole at the narrow end (throat)</li>
+<li>Smooth and seal all seams</li>
+<li>Attach a handle at the rear for holding</li>
+</ol>
+<p><strong>Use:</strong></p>
+<ul>
+<li>Hold the megaphone with the throat near your mouth (sound enters cone)</li>
+<li>Aim the mouth toward the audience</li>
+<li>Speak clearly into the throat</li>
+<li>Sound is concentrated forward, reducing wasted energy to sides/back</li>
+</ul>
+<p><strong>Effectiveness:</strong> Megaphone provides 4–6 dB gain and directs sound into a ~60° cone (vs. typical ~180° sphere of bare voice). Enables communication to 100+ meters in open terrain, or 30–50 meters in forests/urban areas.</p>
+<h3>Parabolic Reflector Megaphone</h3>
+<p>A parabolic (curved) reflector focuses sound waves toward a focal point, providing directional amplification without a horn.</p>
+<p><strong>Construction:</strong></p>
+<ul>
+<li>Use a parabolic metal or wooden bowl (50–100 cm diameter)</li>
+<li>Mount a microphone at the focal point (center, 10–30 cm from the vertex)</li>
+<li>Sound from the microphone reflects off the parabolic surface, converging and projecting forward</li>
+</ul>
+<p><strong>Amplification:</strong> 8–12 dB directional gain. Sound is highly directional (~30° cone) and effective for long distance (200+ meters) pointing directly at listener; less effective off-axis.</p>
+<p><strong>Practical application:</strong> Useful for announcements to a specific area or calling across a valley, but requires precise aiming.</p>
+</section>
+<section id="acoustic-treatment">
+<h2>Acoustic Treatment and Room Acoustics</h2>
+<p>Hard surfaces (stone, tile, concrete) reflect sound, causing echoes and reverberation that degrade speech clarity. Soft surfaces (fabric, foam, vegetation) absorb sound. Treating a space acoustically improves speech intelligibility and reduces noise.</p>
+<h3>Absorption Coefficient</h3>
+<p>Different materials absorb different amounts of sound energy at different frequencies. A material with absorption coefficient 0.5 at 500 Hz absorbs 50% of the sound energy at that frequency and reflects 50%.</p>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>250 Hz</th>
+<th>500 Hz</th>
+<th>1000 Hz</th>
+<th>2000 Hz</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bare concrete</td>
+<td>0.02</td>
+<td>0.02</td>
+<td>0.04</td>
+<td>0.05</td>
+<td>Very reflective</td>
+</tr>
+<tr>
+<td>Carpet (thin)</td>
+<td>0.02</td>
+<td>0.06</td>
+<td>0.14</td>
+<td>0.37</td>
+<td>Moderate absorption at high frequencies</td>
+</tr>
+<tr>
+<td>Carpet (thick)</td>
+<td>0.08</td>
+<td>0.24</td>
+<td>0.57</td>
+<td>0.69</td>
+<td>Good broad absorption</td>
+</tr>
+<tr>
+<td>Foam (25mm)</td>
+<td>0.08</td>
+<td>0.20</td>
+<td>0.56</td>
+<td>0.72</td>
+<td>Effective; needs thickness &gt;20mm</td>
+</tr>
+<tr>
+<td>Fiberglass batts</td>
+<td>0.10</td>
+<td>0.30</td>
+<td>0.80</td>
+<td>0.80</td>
+<td>Excellent; available from construction</td>
+</tr>
+<tr>
+<td>Curtains (heavy)</td>
+<td>0.07</td>
+<td>0.31</td>
+<td>0.49</td>
+<td>0.75</td>
+<td>Good; improves mid/high frequency</td>
+</tr>
+<tr>
+<td>Moss/plants</td>
+<td>0.10</td>
+<td>0.40</td>
+<td>0.70</td>
+<td>0.80</td>
+<td>Excellent; adds aesthetics</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practical selection:</strong></p>
+<ul>
+<li>For reducing echo and improving clarity: Use materials with high absorption at 500–2000 Hz (curtains, fiberglass, foam)</li>
+<li>For reducing low-frequency rumble: Use thicker materials (&gt;100mm) that absorb 100–500 Hz</li>
+<li>For aesthetic appeal: Use living moss or plants (highly absorbent, self-renewing)</li>
+</ul>
+<h3>Room Treatment Layout</h3>
+<p><strong>Critical absorption areas:</strong></p>
+<ol>
+<li><strong>Parallel hard surfaces:</strong> Hard walls opposite each other cause flutter echo (rapid bouncing). Treat one wall with absorption.</li>
+<li><strong>Ceiling:</strong> Hard ceilings reflect sound downward; absorb ceiling areas above speaking/listening areas.</li>
+<li><strong>Rear wall:</strong> Sound traveling backward bounces off rear wall back toward speaker; treat rear wall to reduce this.</li>
+<li><strong>Corners:</strong> Low frequencies accumulate in room corners due to standing waves; place bass traps (low-frequency absorbers) in corners if severe echo occurs.</li>
+</ol>
+<p><strong>Improvement:</strong> Treating a 10 × 10 meter room with 40% ceiling foam, 50% of rear wall covered with heavy curtains, and carpet on the floor reduces reverberation time by 40–60%, improving speech intelligibility dramatically.</p>
+</section>
+<section id="instrument-amplification">
+<h2>Acoustic Instrument Amplification</h2>
+<p>Musical instruments can be amplified without electricity using resonance chambers and horns designed for musical frequencies.</p>
+<h3>Acoustic Guitar Amplification</h3>
+<p>A standard acoustic guitar produces 70–85 dB at 1 meter. Amplification to 90–100 dB (sufficient for 50+ people) can be achieved with a horn.</p>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Mount a 40–60 cm horn on the guitar body, positioning the horn mouth to project sound forward</li>
+<li>Or place the guitar inside a resonance chamber (wooden box) with a horn outlet</li>
+</ol>
+<p><strong>Effectiveness:</strong> Provides 6–12 dB additional SPL without electricity.</p>
+<h3>Small Drum Amplification</h3>
+<p>Drums produce powerful low-frequency sound (70–95 dB) but benefit from directional projection.</p>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Place a large parabolic reflector behind the drum (1–2 meters diameter)</li>
+<li>The reflector focuses sound forward, reducing wasted energy upward/sideways</li>
+<li>Add a horn in front of the drum (if further amplification needed)</li>
+</ol>
+<p><strong>Effectiveness:</strong> Parabolic reflector provides 4–6 dB directional gain; horn adds another 4–6 dB for total 8–12 dB.</p>
+<h3>Microphone to Horn (Low-Tech PA)</h3>
+<p>A small acoustic microphone (diaphragm) can be coupled to a large horn:</p>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Mount a small diaphragm at the throat of a large horn (3–5 meters long)</li>
+<li>When sound hits the diaphragm, it vibrates</li>
+<li>Vibration excites the horn, which projects sound outward</li>
+<li>Requires no electricity; purely mechanical</li>
+</ol>
+<p><strong>Amplification:</strong> Large horn can provide 18–24 dB gain (8–15× louder), sufficient for outdoor announcements to 500+ people.</p>
+<p><strong>Limitation:</strong> This method requires a large horn (impractical to move) and is limited to single-frequency or narrow-band sounds (works well for speech in 500–2000 Hz range).</p>
+</section>
+<section id="noise-barriers">
+<h2>Noise Barriers and Sound Shielding</h2>
+<p>In some situations, you need to reduce sound reaching certain areas—blocking machinery noise, shielding a rest area from traffic, or containing sound for privacy.</p>
+<h3>Barrier Principles</h3>
+<p>Sound reflects off hard surfaces and diffracts (bends) around edges of barriers. An effective barrier:</p>
+<ol>
+<li>Has high mass (dense material)</li>
+<li>Covers the entire line-of-sight path between source and receiver</li>
+<li>Extends above and around the sound source to prevent diffraction over/around edges</li>
+<li>Is lined with absorption on the side facing the sound source</li>
+</ol>
+<h3>Barrier Construction</h3>
+<p><strong>High-mass materials:</strong></p>
+<ul>
+<li>Concrete wall (20 cm thick: 45 dB reduction)</li>
+<li>Stacked stone (30 cm thick: 30 dB reduction)</li>
+<li>Sandbags (stacked 1.5 meters high: 15–20 dB reduction)</li>
+<li>Heavy soil berm (2+ meters high: 20–30 dB reduction)</li>
+<li>Water (1 meter depth: 25 dB reduction)</li>
+</ul>
+<p><strong>Absorption lining:</strong></p>
+<ul>
+<li>Foam or fiberglass (5–10 cm thick) attached to barrier surface facing source</li>
+<li>Carpet or burlap hung on the source side</li>
+<li>Vegetation (dense shrubs, trees: cumulative effect when dense enough)</li>
+</ul>
+<p><strong>Barrier placement:</strong></p>
+<ul>
+<li>Position barrier as close as possible to noise source (doubling distance reduces sound by 6 dB; barrier avoids this loss)</li>
+<li>Ensure barrier blocks line-of-sight between source and receiver</li>
+<li>Extend barrier above and beyond source to prevent diffraction</li>
+</ul>
+<p><strong>Example:</strong> A machinery shop with a 20 cm concrete wall on three sides (sealed, no gaps) and a door on the fourth side reduces interior noise transmission by 40+ dB, making outside sound inaudible.</p>
+</section>
+<section id="practical-builds">
+<h2>Practical Builds: Step-by-Step Projects</h2>
+<h3>Project 1: Portable Megaphone (30 minutes)</h3>
+<p><strong>Materials:</strong> Heavy paper or thin plywood, tape or fasteners, wooden handle, scissors/saw</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Cut a rectangular piece of material 50 cm × 30 cm</li>
+<li>Roll into a cone shape; secure seams with tape or glue</li>
+<li>Cut a 5 cm diameter hole at the narrow end</li>
+<li>Smooth and seal with duct tape or paint</li>
+<li>Attach a wooden handle perpendicular to the axis using fasteners or strong tape</li>
+<li>Test: Speak into the narrow end; sound projects from the wide end</li>
+</ol>
+<p><strong>Amplification:</strong> 4–6 dB gain; effective to 50–100 meters</p>
+<h3>Project 2: Resonance Chamber with Horn (2–3 hours)</h3>
+<p><strong>Materials:</strong> Plywood or pine boards (0.4 m × 0.4 m × 0.4 m box), PVC pipe (5 cm diameter, 0.5 m length), screws/fasteners, wood glue, paint</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Build a wooden box 0.4 m cube, sealed except for two 5 cm diameter holes on opposite faces</li>
+<li>Attach PVC pipe (horn) to one hole, extending 0.5 m and angled at 15° upward</li>
+<li>At the other hole, mount a small screen or funnel to direct sound into the box</li>
+<li>Seal all seams with caulk or paint</li>
+<li>Mount on a stand so the horn points toward the audience</li>
+</ol>
+<p><strong>Use:</strong> Attach microphone inside; amplifies speech 10–15 dB for presentations to 50–100 people</p>
+<h3>Project 3: Parabolic Reflector (4–6 hours)</h3>
+<p><strong>Materials:</strong> Fiberglass or aluminum sheet (1–2 mm thick, 1.5 m diameter), wooden frame (2×4 lumber), paint or sealant</p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Cut aluminum or fiberglass into a large parabolic shape using a template or bending jig</li>
+<li>Mount on wooden frame to hold parabolic shape</li>
+<li>Mount a microphone at the focal point (center, 0.25–0.5 m from the vertex)</li>
+<li>Paint exterior; seal any gaps</li>
+</ol>
+<p><strong>Use:</strong> Highly directional; effective for long-distance announcements (200+ meters) when pointed directly at listener</p>
+</section>
+<section id="summary">
+<h2>Summary</h2>
+<p>Acoustic principles enable amplification without electricity. Horns and resonance chambers combine to provide 10–20 dB gain, sufficient for presentations and announcements to large groups. Megaphones are portable and simple; parabolic reflectors offer high directionality. Acoustic treatment (absorption, barriers) improves intelligibility and reduces noise. Understanding frequency, wavelength, and resonance allows design of effective acoustic devices from basic materials. These passive systems require no power, minimal maintenance, and are reliable in any environment—essential for offline communication and entertainment.</p>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="construction.html">Construction &amp; Carpentry</a>
+<a href="instrument-construction.html">Musical Instrument Construction</a>
+<a href="physics-machines.html">Physics &amp; Simple Machines</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

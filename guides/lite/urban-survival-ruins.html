@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/urban-survival-ruins.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Survival &amp; Scavenging in Ruins</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Immediate Survival</span> ›
+<span>Urban Survival &amp; Scavenging in Ruins</span>
+</div>
+
+
+<h1>Urban Survival &amp; Scavenging in Ruins</h1>
+<p class="subtitle">Structural collapse hazards, building entry safety assessment, scavenging priority matrix, floor-by-floor clearing procedures, hazardous material identification, urban water sources, improvised tools from debris, navigation in rubble, shelter selection, and group protocols.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~32 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#collapse-patterns">Structural Collapse Patterns and Void Types</a></li>
+<li><a href="#building-assessment">Pre-Entry Building Assessment</a></li>
+<li><a href="#scavenging-priority">Scavenging Priority Matrix</a></li>
+<li><a href="#floor-procedures">Floor-by-Floor Clearing Procedures</a></li>
+<li><a href="#hazmat-identification">Hazardous Material Identification</a></li>
+<li><a href="#urban-water">Urban Water Sources</a></li>
+<li><a href="#improvised-tools">Improvised Tools from Urban Debris</a></li>
+<li><a href="#navigation-rubble">Navigation in Rubble and Debris Fields</a></li>
+<li><a href="#shelter-selection">Shelter Selection in Damaged Buildings</a></li>
+<li><a href="#group-protocols">Group Scavenging Protocols and Communication</a></li>
+<li><a href="#specialized-environments">Scavenging in Specialized Environments</a></li>
+<li><a href="#psychological-factors">Psychological Factors and Decision Making</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>CRITICAL HAZARD WARNING:</strong> Urban rubble is one of the most dangerous environments you can enter. Collapses are sudden, unpredictable, and often fatal. Structural failures cause more deaths in disaster zones than any other hazard. This guide covers risk mitigation and best practices, but no guide can eliminate the danger of entering collapsed structures. Assume every damaged building will collapse further. Enter only if survival depends on it, and never alone. Structural engineers assess disaster sites for a reason—they require professional equipment and training you may not have.</p>
+</div>
+<section id="overview">
+<h2>Overview</h2>
+<p>In major disasters, collapses create networks of damaged buildings, debris fields, and unstable structures. Urban survivors must navigate this environment to locate water, food, medicine, tools, and shelter materials. Unlike rural survival, urban scavenging involves life-threatening structural hazards, chemical/biological contaminants, and the need to rapidly assess building safety before entry.</p>
+<p>This guide covers the essential skills: recognizing collapse patterns and void types (where survivors shelter), assessing building integrity before entry, systematic scavenging procedures, identifying hazardous materials, extracting water from urban sources, improvising tools, and maintaining team discipline in chaotic environments.</p>
+<p>The goal is to maximize scavenging efficiency while minimizing collapse risk—which means accepting some risk, but doing so with open eyes and systematic procedures rather than recklessness.</p>
+</section>
+<section id="collapse-patterns">
+<h2>Structural Collapse Patterns and Void Types</h2>
+<p>When buildings collapse, they create voids—pockets of space where people can survive. Understanding collapse patterns helps you recognize safe zones and avoid pancaking buildings that offer no protection.</p>
+<p><svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" aria-label="Building collapse void types: pancake, lean-to, and V-shape collapse patterns with survivor positions marked">
+  <!-- Background -->
+  <rect width="900" height="500" fill="var(--bg)"/>
+
+  <!-- Title and labels -->
+  <text x="450" y="30" font-size="28" font-weight="bold" text-anchor="middle" fill="var(--text)">Collapse Void Types and Survivor Zones</text>
+
+  <!-- PANCAKE COLLAPSE (Left) -->
+  <g>
+    <!-- Label -->
+    <text x="150" y="80" font-size="18" font-weight="bold" fill="var(--accent)" text-anchor="middle">Pancake Collapse</text>
+
+    <!-- Ground line -->
+    <line x1="50" y1="380" x2="250" y2="380" stroke="var(--border)" stroke-width="2"/>
+
+    <!-- Stacked floors (pancake effect) -->
+    <rect x="80" y="320" width="140" height="20" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+    <rect x="80" y="280" width="140" height="20" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+    <rect x="80" y="240" width="140" height="20" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+    <rect x="80" y="200" width="140" height="20" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+    <rect x="80" y="160" width="140" height="20" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+
+    <!-- Minimal void spaces (very small) -->
+    <rect x="95" y="325" width="30" height="8" fill="var(--accent2)" opacity="0.6"/>
+    <rect x="95" y="285" width="25" height="6" fill="var(--accent2)" opacity="0.6"/>
+
+    <!-- Danger symbol -->
+    <circle cx="150" cy="400" r="12" fill="var(--accent)" opacity="0.8"/>
+    <text x="150" y="405" font-size="20" font-weight="bold" text-anchor="middle" fill="var(--bg)">X</text>
+    <text x="150" y="425" font-size="12" fill="var(--text)" text-anchor="middle">No survival</text>
+  </g>
+
+  <!-- LEAN-TO COLLAPSE (Center) -->
+  <g>
+    <!-- Label -->
+    <text x="450" y="80" font-size="18" font-weight="bold" fill="var(--accent)" text-anchor="middle">Lean-To Collapse</text>
+
+    <!-- Ground line -->
+    <line x1="350" y1="380" x2="550" y2="380" stroke="var(--border)" stroke-width="2"/>
+
+    <!-- Standing portion (left side) -->
+    <rect x="360" y="200" width="40" height="180" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+
+    <!-- Leaning structure (angled roof/upper portion) -->
+    <polygon points="400,200 400,180 520,320 520,340" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+
+    <!-- Ground-level void beneath lean -->
+    <polygon points="400,340 520,340 520,380 400,380" fill="var(--accent2)" opacity="0.5" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,3"/>
+
+    <!-- Survivor position indicator -->
+    <circle cx="440" cy="350" r="6" fill="var(--text)"/>
+    <line x1="440" y1="356" x2="440" y2="370" stroke="var(--text)" stroke-width="2"/>
+
+    <!-- Safe zone label -->
+    <text x="450" y="425" font-size="12" fill="var(--text)" text-anchor="middle">Moderate risk</text>
+    <text x="450" y="440" font-size="11" fill="var(--muted)" text-anchor="middle">void below lean</text>
+  </g>
+
+  <!-- V-SHAPE COLLAPSE (Right) -->
+  <g>
+    <!-- Label -->
+    <text x="750" y="80" font-size="18" font-weight="bold" fill="var(--accent)" text-anchor="middle">V-Shape Collapse</text>
+
+    <!-- Ground line -->
+    <line x1="650" y1="380" x2="850" y2="380" stroke="var(--border)" stroke-width="2"/>
+
+    <!-- Left collapsed wall (angled) -->
+    <polygon points="680,200 680,180 750,380 720,380" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+
+    <!-- Right collapsed wall (angled opposite) -->
+    <polygon points="820,200 820,180 750,380 780,380" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+
+    <!-- Central V-shaped void -->
+    <polygon points="720,280 720,380 780,380 780,280" fill="var(--accent2)" opacity="0.5" stroke="var(--border)" stroke-width="1" stroke-dasharray="3,3"/>
+
+    <!-- Survivor position (center of V) -->
+    <circle cx="750" cy="330" r="7" fill="var(--text)"/>
+    <text x="750" y="355" font-size="10" fill="var(--text)" text-anchor="middle">Survivor</text>
+
+    <!-- Safe zone indicator -->
+    <text x="750" y="425" font-size="12" fill="var(--text)" text-anchor="middle">Better survivability</text>
+    <text x="750" y="440" font-size="11" fill="var(--muted)" text-anchor="middle">larger central void</text>
+  </g>
+
+  <!-- Legend -->
+  <g>
+    <text x="50" y="470" font-size="12" font-weight="bold" fill="var(--text)">Legend:</text>
+    <rect x="50" y="475" width="15" height="15" fill="var(--surface)" stroke="var(--border)" stroke-width="1"/>
+    <text x="70" y="487" font-size="11" fill="var(--text)">Structural element</text>
+
+    <rect x="250" y="475" width="15" height="15" fill="var(--accent2)" opacity="0.5"/>
+    <text x="270" y="487" font-size="11" fill="var(--text)">Survivor void space</text>
+
+    <circle cx="420" cy="482" r="6" fill="var(--text)"/>
+    <text x="435" y="487" font-size="11" fill="var(--text)">Survivor position</text>
+  </g>
+</svg>
+</p>
+<h3>Pancake Collapse</h3>
+<p><strong>Pattern</strong>: Upper floors fall nearly parallel to the ground, stacking like pancakes. Occurs in buildings with weak column connections or lateral force damage (earthquakes, explosions, shock waves).</p>
+<p><strong>Survivor zones</strong>: Minimal. Small spaces between floor slabs may trap air, but these are rare and hard to reach. Confined spaces offer little protection.</p>
+<p><strong>Risk</strong>: Extremely high. Victims are typically crushed. Even if you survive initial collapse, pancaked buildings tend to settle further and offer no structural support.</p>
+<p><strong>Avoid</strong>: Entering buildings with evidence of pancake collapse. The risks far exceed any scavenging benefit.</p>
+<h3>Lean-To Collapse</h3>
+<p><strong>Pattern</strong>: Upper structure leans against a partially standing wall or neighbor building, creating an angled surface. One side of the building collapses; the other partially stands.</p>
+<p><strong>Survivor zones</strong>: Spaces underneath the angled roof are potentially survivable. The weight of the collapsing structure rests on the leaning surface, not on the void below.</p>
+<p><strong>Risk</strong>: Moderate to high. The leaning structure can shift if not stable. Secondary collapse is common if lower supports fail.</p>
+<p><strong>Entry approach</strong>: If entry is necessary, work from the high side of the lean (where the building still stands). Prop supports under the leaning section to prevent further settling. Work quickly. Have an exit route.</p>
+<h3>V-Shape Collapse</h3>
+<p><strong>Pattern</strong>: Two adjacent buildings collapse toward each other, or interior portions of a building fail inward, creating a V-shaped void. The apex (peak) of the V is highest; the sides are angled walls.</p>
+<p><strong>Survivor zones</strong>: The V-shape is the most survivable collapse pattern. The central void can be surprisingly spacious, and the angled walls provide some support.</p>
+<p><strong>Risk</strong>: Moderate. V-shaped voids are more stable than pancakes or lean-tos, but secondary collapse is possible. The weight of surrounding debris can trigger further failure.</p>
+<p><strong>Entry approach</strong>: If safe entry exists, work from the top/center of the V. Anchor yourself to stable points. Work with spotters who monitor for any movement or dust clouds.</p>
+<h3>Void Stability Assessment</h3>
+<p>Before entering a void or collapsed space:</p>
+<ol>
+<li><strong>Observe motion</strong>: Listen for creaking, groaning, or particle falls. Movement means the structure is still settling—do not enter.</li>
+<li><strong>Check dust clouds</strong>: Fresh dust clouds indicate ongoing collapse activity. Wait 30-60 minutes for settling to cease before approach.</li>
+<li><strong>Test weight</strong>: Throw rubble into the void or lean on accessible wreckage. If it gives way easily, the void is unstable.</li>
+<li><strong>Look for secondary collapse triggers</strong>: Is there unstable debris above the void? Are there overhanging slabs? These can cascade and seal the void or bury occupants.</li>
+</ol>
+</section>
+<section id="building-assessment">
+<h2>Pre-Entry Building Assessment</h2>
+<p>Before you ever step into a damaged building, conduct a thorough exterior assessment. Many decisions to avoid entry happen before you cross the threshold.</p>
+<h3>External Safety Checklist</h3>
+<p>Use this checklist for every building you approach:</p>
+<ul class="safety-checklist">
+<li><strong>Gas smell:</strong> Any smell of natural gas, propane, or chemicals? Gas leaks are invisible and explosive. Do not enter. Mark the building as hazardous and move on.</li>
+<li><strong>Electrical hazards:</strong> Downed power lines touching the building? Water contact with electrical systems? Do not touch anything metal. High voltage can arc from distance.</li>
+<li><strong>Active fire or smoke:</strong> Any fire or heavy smoke? Risk of explosion, toxic fumes, and fresh collapse as fire weakens structure. Avoid.</li>
+<li><strong>Structural lean:</strong> Does the building lean noticeably? Is it tilted more than ~5° from vertical? Extreme lean suggests imminent collapse.</li>
+<li><strong>Foundation damage:</strong> Is the building's base damaged, shifted, or separated from the foundation? This indicates severe structural compromise. High collapse risk.</li>
+<li><strong>Exterior walls cracked or displaced:</strong> Large diagonal cracks (>1cm wide) or displaced walls suggest severe damage. Proceed with extreme caution.</li>
+<li><strong>Partial roof collapse:</strong> Are portions of the roof missing or visibly caved in? Indicates structural failure above. Plan exit routes carefully.</li>
+<li><strong>Debris piles against the building:</strong> Is rubble piled against the exterior from floors above? This debris can shift and collapse further.</li>
+<li><strong>Surrounding buildings collapsed nearby:</strong> If neighboring buildings have failed, yours may be next. Assess carefully.</li>
+<li><strong>Water pooled around the building:</strong> Water indicates drainage failure and possible basement flooding or ground instability.</li>
+</ul>
+<p><strong>Red flags</strong>: If you check more than 3 boxes above, the building is too dangerous. Move on. There are always other structures to scavenge, and your life is worth more than supplies.</p>
+<h3>Interior Entry Assessment</h3>
+<p>If the exterior check passes, approach an entrance and look inside (do not yet enter):</p>
+<ol>
+<li><strong>Stability of entry point</strong>: Is the doorway/window intact or damaged? Are cracks visible around the opening? Doors that don't close properly indicate frame damage.</li>
+<li><strong>Air quality</strong>: Can you smell gas, chemicals, or decay? Any smell = hazardous. Leave.</li>
+<li><strong>Dust and particle activity</strong>: Is dust still falling? Are there active sounds of settling or creaking?</li>
+<li><strong>Lighting and visibility</strong>: Can you see interior without a light? Dark ruins are hard to navigate and easy to fall through.</li>
+<li><strong>Noise assessment</strong>: Shout or make noise. Does the building seem stable or does the noise cause echoing shifts/rattles?</li>
+</ol>
+<p><strong>Go/no-go decision</strong>: If any interior assessment suggests danger, do not enter. Document the building's location and move to the next structure.</p>
+</section>
+<section id="scavenging-priority">
+<h2>Scavenging Priority Matrix</h2>
+<p>Time in a damaged building is limited by collapse risk. Spend it efficiently. Use a priority matrix to guide your team's focus.</p>
+<div class="hazard-matrix">
+<p><strong>Priority 1 (Critical): Water &amp; Medical</strong></p>
+<ul>
+<li>Water sources: Water heaters, intact pipes, toilet tanks (cleanable)</li>
+<li>Medical supplies: Pharmacy sections, medical offices, hospitals, first-aid kits</li>
+<li>Medications (expired is better than nothing): Antibiotics, pain relievers, antacids, antihistamines</li>
+</ul>
+<p><strong>Priority 2 (High): Food &amp; Cooking</strong></p>
+<ul>
+<li>Packaged/canned foods (check for damage)</li>
+<li>Sealed containers (dried goods)</li>
+<li>Salt, sugar, oils</li>
+<li>Cooking vessels, matches, lighter</li>
+<li>Vitamin/mineral supplements</li>
+</ul>
+<p><strong>Priority 3 (Medium): Tools &amp; Materials</strong></p>
+<ul>
+<li>Hand tools: Hammers, crowbars, saws, pliers, screwdrivers</li>
+<li>Fasteners: Nails, screws, bolts, wire</li>
+<li>Rope, paracord, cable</li>
+<li>Duct tape, plastic sheeting</li>
+<li>Metal pipes, wood beams (useful for propping/building)</li>
+</ul>
+<p><strong>Priority 4 (Low): Comfort &amp; Miscellaneous</strong></p>
+<ul>
+<li>Clothing, blankets, sleeping bags</li>
+<li>Books (reference material)</li>
+<li>Batteries, flashlights</li>
+<li>Soap, hygiene items</li>
+<li>Furniture (only if shelter is incomplete)</li>
+</ul>
+</div>
+<p><strong>Time allocation</strong>: Assign team members to rooms by priority. In a 2-hour scavenging window:</p>
+<ul>
+<li>45 min: Priority 1 (water/medical)</li>
+<li>30 min: Priority 2 (food)</li>
+<li>30 min: Priority 3 (tools)</li>
+<li>15 min: Priority 4 if time permits, exit by deadline</li>
+</ul>
+<p><strong>Do not exceed time budget.</strong> Collapse risk increases with duration. Leave before your deadline regardless of how much you've found.</p>
+</section>
+<section id="floor-procedures">
+<h2>Floor-by-Floor Clearing Procedures</h2>
+<p>Systematic clearing prevents missed resources and reduces confusion. Use this procedure for each floor:</p>
+<h3>Pre-Entry to Floor</h3>
+<ol>
+<li><strong>Assess floor condition</strong>: Is the floor visibly sagging, cracked, or suspect? Wet (water damage)? Hot (fire danger)?</li>
+<li><strong>Test the floor</strong>: Throw debris onto the floor. Does it hold weight? Does anything shift?</li>
+<li><strong>Identify load-bearing walls vs partitions</strong>: Interior walls (non-structural) are safer to move through. Exterior and walls under heavy loads are riskier.</li>
+<li><strong>Plan exit routes</strong>: Identify the primary exit and an alternate escape route before entering.</li>
+</ol>
+<h3>Clearing Sequence</h3>
+<ol>
+<li><strong>Start at a known structural point</strong> (interior wall, load-bearing column) and work outward in sections.</li>
+<li><strong>Search high and low</strong>: Shelves, closets, cabinets are at eye/head level. Basements, under counters are below. Don't miss either.</li>
+<li><strong>Mark cleared areas</strong>: Use chalk, tape, or stones to mark areas you've cleared. Prevents re-searching.</li>
+<li><strong>Identify hazards</strong>: Downed electrical wires, broken glass, sharp metal, holes in floors.</li>
+<li><strong>Move slowly and deliberately</strong>: Rushing causes accidents. Falls through floors are among the most common injuries in damaged buildings.</li>
+</ol>
+<h3>High-Risk Areas to Avoid</h3>
+<ul>
+<li><strong>Basements</strong>: Flooding risk, structural failure, mold, trapped gases. Only enter if absolutely necessary and with breathing protection.</li>
+<li><strong>Attics</strong>: Often collapsed or unstable. Minimal resources usually justify risk.</li>
+<li><strong>Kitchens</strong>: Gas connections, collapsed cabinets, broken glass.</li>
+<li><strong>Bathrooms</strong>: Structural weakness (pipes weaken floor joists), mold, contamination.</li>
+</ul>
+<h3>Exiting</h3>
+<ol>
+<li><strong>Backtrack on the route you entered</strong>: Do not try new routes while exiting.</li>
+<li><strong>Move toward daylight</strong>: Natural light guides you toward exits.</li>
+<li><strong>Exit before dusk</strong>: Don't become stranded in a dark building at night.</li>
+</ol>
+</section>
+<section id="hazmat-identification">
+<h2>Hazardous Material Identification</h2>
+<p>Damaged buildings contain chemicals that are lethal in small amounts.</p>
+<h3>Common Hazardous Materials by Location</h3>
+<div class="material-types">
+<div class="material-card">
+<strong>Kitchens & Bathrooms:</strong>
+Drain cleaners (alkaline burns), bleach (respiratory), mold (spores)
+</div>
+<div class="material-card">
+<strong>Basements & Garages:</strong>
+Paint, solvents, pesticides, car batteries (corrosive acid), fuel
+</div>
+<div class="material-card">
+<strong>Offices:</strong>
+Fluorescent ballasts (PCBs—reproductive toxin), asbestos (ceiling tiles, insulation pre-1980)
+</div>
+<div class="material-card">
+<strong>Industrial Buildings:</strong>
+Heavy metals, solvents, reactive chemicals (stored in drums/containers)
+</div>
+</div>
+<h3>Identification and Avoidance</h3>
+<p><strong>Visual signs of hazardous materials:</strong></p>
+<ul>
+<li>Labeled containers (even faded labels indicate chemicals)</li>
+<li>Discolored or stained floors/walls (indicates spills)</li>
+<li>Strong chemical smell (even if you can't identify it, the smell = toxin)</li>
+<li>Dead insects/animals near an area (poisoning indicator)</li>
+</ul>
+<p><strong>Safe practice:</strong></p>
+<ul>
+<li>Assume any sealed container is hazardous unless labeled otherwise</li>
+<li>Assume any area with strong odor is toxic</li>
+<li>Never open unknown containers</li>
+<li>If you encounter visible chemical spills, mark the area and avoid it</li>
+<li>If you smell something unknown, leave that floor immediately</li>
+</ul>
+<h3>Asbestos (Pre-1980s Buildings)</h3>
+<p>Asbestos was used in insulation, ceiling tiles, floor tiles, roofing, and pipe wrapping until 1980. When damaged, asbestos fibers become airborne and are inhaled—causing mesothelioma (incurable cancer, 40+ year latency).</p>
+<p><strong>Identification:</strong></p>
+<ul>
+<li>Loose insulation around pipes</li>
+<li>Damaged, flaking ceiling tiles or sprayed insulation</li>
+<li>Crumbling asbestos blankets on pipes</li>
+</ul>
+<p><strong>Safe practice:</strong></p>
+<ul>
+<li>If you see any fluffy/fibrous insulation that looks damaged, do not disturb it</li>
+<li>Wear N95 mask and long sleeves if you must work near suspect materials</li>
+<li>Assume pre-1980 buildings contain asbestos in insulation</li>
+</ul>
+<h3>Lead Paint (Pre-1978)</h3>
+<p>Lead paint was widely used. Damaged/peeling paint creates lead dust when disturbed.</p>
+<p><strong>Identification:</strong></p>
+<ul>
+<li>Peeling, cracked paint in pre-1978 buildings</li>
+<li>Any painted surface that's disturbed or powdered</li>
+</ul>
+<p><strong>Safe practice:</strong></p>
+<ul>
+<li>Assume all pre-1978 buildings have lead paint</li>
+<li>Do not create dust (don't scrape, sand, or burn paint)</li>
+<li>Wet-wipe painted surfaces to avoid dust inhalation</li>
+<li>Wash hands/face thoroughly after contact</li>
+</ul>
+</section>
+<section id="urban-water">
+<h2>Urban Water Sources</h2>
+<p>Water is Priority 1. Damaged buildings contain water you can salvage.</p>
+<h3>Water Heaters</h3>
+<p><strong>Location</strong>: Basements, mechanical rooms, garages</p>
+<p><strong>Salvage procedure:</strong></p>
+<ol>
+<li>Turn off the gas or electricity supply to the heater</li>
+<li>Locate the drain valve at the base (usually a brass knob)</li>
+<li>Place a container under the valve</li>
+<li>Turn the valve counterclockwise—water drains out (may be hot, be careful)</li>
+<li>A 40-gallon electric heater yields ~40 gallons of water</li>
+</ol>
+<p><strong>Safety</strong>: Drain water can be scalding. Let it cool. The water inside is unfiltered but reasonably clean. Boil or chemically treat before drinking.</p>
+<h3>Intact Pipes and Faucets</h3>
+<p><strong>Method:</strong></p>
+<ol>
+<li>Locate the main water shutoff valve (usually near the meter, at the building's entry point)</li>
+<li>Turn it counterclockwise to shut off supply</li>
+<li>Open a faucet at the highest point (allows air in)</li>
+<li>Open a faucet at the lowest point—water drains out</li>
+<li>Collect this water (it's likely clean if the supply isn't contaminated)</li>
+</ol>
+<p><strong>Caution</strong>: If the building's water meter shows the supply is still on and water is flowing, the municipal system is still supplying. Collect and treat this water carefully—municipal water may be contaminated post-disaster.</p>
+<h3>Toilet Tanks (Not Bowls)</h3>
+<p><strong>Critical distinction</strong>: Water in the <em>tank</em> (the container behind the toilet) is clean. Water in the <em>bowl</em> is contaminated and dangerous.</p>
+<p><strong>Salvage procedure:</strong></p>
+<ol>
+<li>Shut off the water supply to the toilet (valve on the wall behind tank)</li>
+<li>Lift the tank lid</li>
+<li>Collect water from the tank using a clean container</li>
+<li>Boil or chemically treat before drinking</li>
+<li>Each toilet tank contains 3-7 gallons</li>
+</ol>
+<p><strong>Caution</strong>: Do not use water from the bowl. Do not confuse tank and bowl water sources.</p>
+<h3>Radiators and Heating Systems</h3>
+<p>Closed-loop heating systems (radiators) contain water that's been treated with antifreeze or inhibitors. This water is toxic to drink and should not be used except for non-potable purposes (washing, cooling).</p>
+</section>
+<section id="improvised-tools">
+<h2>Improvised Tools from Urban Debris</h2>
+<p>Urban ruins provide raw materials for tools and shelter supports.</p>
+<h3>Metal Bars and Rods</h3>
+<p><strong>Sources</strong>: Rebar from concrete, metal fencing, bed frames, door/window frames</p>
+<p><strong>Uses</strong>: Levers, prying tools, digging, propping supports, reinforcement</p>
+<p><strong>Shaping</strong>: If you have a hammer, bend hot metal (heat over fire if time permits). Cold metal is harder to bend but can be shaped with force.</p>
+<h3>Wooden Beams and Boards</h3>
+<p><strong>Sources</strong>: Studs from walls, floor joists, roof trusses, furniture</p>
+<p><strong>Uses</strong>: Propping collapsing structures, building shelters, constructing tools</p>
+<p><strong>Assessment</strong>: Check for rot, insect damage, or warping. Sound wood (rings when struck with metal) is usable.</p>
+<h3>Rope and Cordage</h3>
+<p><strong>Sources</strong>: Paracord from backpacks, electrical cable (insulation removed), fabric torn into strips and braided, vines/plant stems</p>
+<p><strong>Technique</strong>: Cut fabric into 1-inch strips, braid strips into rope. Each 10 feet of cloth yields ~15-20 feet of braid.</p>
+<h3>Containers</h3>
+<p><strong>Sources</strong>: Buckets, pans, pots, plastic storage containers, barrels</p>
+<p><strong>Uses</strong>: Water collection, carrying supplies, cooking vessels</p>
+<p><strong>Assessment</strong>: Check for leaks and damage. Even cracked containers can be sealed with clay or pitch.</p>
+<h3>Cutting Tools</h3>
+<p><strong>Sources</strong>: Glass shards (wrapped for safety), metal scraps with sharp edges, flint/stone (knapped for edges)</p>
+<p><strong>Safety</strong>: Glass shards are extremely sharp but fragile. Wrap the non-cutting portion in cloth or tape to prevent hand cuts. Handle carefully.</p>
+</section>
+<section id="navigation-rubble">
+<h2>Navigation in Rubble and Debris Fields</h2>
+<p>Rubble is disorienting. You can become lost quickly.</p>
+<h3>Navigation Tools</h3>
+<p><strong>Compass</strong>: Use a compass (or improvise with magnetized iron and water) to maintain direction. Earth's magnetic field remains constant even if streets are obliterated.</p>
+<p><strong>Landmarks</strong>: Identify tall structures (church spires, water towers, intact buildings) as reference points. Memorize their directions.</p>
+<p><strong>Rope trails</strong>: If operating a team, have someone string rope behind the group. This guides rescuers and allows you to retrace steps.</p>
+<h3>Rebar Interference</h3>
+<p><strong>Problem</strong>: Rebar and metal infrastructure create magnetic anomalies. A compass near a large metal object can swing wildly.</p>
+<p><strong>Solution</strong>: Test your compass at 20+ feet from metal structures. Take readings away from metal. Orient yourself by distant landmarks, not compass needles in magnetic-rich environments.</p>
+<h3>Dead Reckoning</h3>
+<p>If you lose visual landmarks:</p>
+<ol>
+<li>Note your direction of travel (compass bearing)</li>
+<li>Count paces or steps (rough distance estimate)</li>
+<li>Every 100 steps, stop and assess your location</li>
+<li>Mark your position mentally using destroyed/intact buildings as reference</li>
+</ol>
+<h3>Returning to Base</h3>
+<p>Always establish a clear return route. If you must backtrack:</p>
+<ol>
+<li>Walk backwards along your entry route if possible</li>
+<li>Use the opposite compass bearing from your outbound direction</li>
+<li>If you're disoriented, move to high ground and reorient using visible landmarks</li>
+</ol>
+<div class="warning">
+<p><strong>Never stay in rubble after dark.</strong> Disorientation and fall risk multiply dramatically at night. Set a hard deadline and exit before sunset.</p>
+</div>
+</section>
+<section id="shelter-selection">
+<h2>Shelter Selection in Damaged Buildings</h2>
+<p>If you must shelter in damaged structures, site selection reduces collapse risk.</p>
+<h3>Best Shelter Locations</h3>
+<p><strong>Load-bearing walls and corners</strong>: Corners of buildings (where two exterior walls meet) are structurally stronger and provide two protective walls. Interior load-bearing walls (walls directly supporting weight above) are safer than exterior walls.</p>
+<p><strong>Small rooms</strong>: A single room with a low ceiling is safer than a large room. If the ceiling collapses, it covers less area. Small rooms in sturdy buildings are ideal.</p>
+<p><strong>Under stable roof overhang</strong>: An exterior overhang (eave or porch) can protect you if the main structure collapses around it. The overhang may stay intact.</p>
+<p><strong>Ground floors (not basements)</strong>: Ground floors allow quick exit. Basements flood and trap you. Upper floors are risky if lower structures are compromised.</p>
+<h3>Building Types by Safety</h3>
+<p><strong>Concrete frame buildings (safest)</strong>: Post-and-beam construction with concrete columns. The frame is often more stable than the walls around it.</p>
+<p><strong>Masonry (moderate)</strong>: Brick and stone buildings are strong but can fail in sections. Brick dust can suffocate occupants in a collapse.</p>
+<p><strong>Wood frame (least safe)</strong>: Wooden buildings collapse completely or partially more easily. Upper stories are riskier.</p>
+<h3>Avoiding Progressive Collapse</h3>
+<p>Progressive collapse occurs when the failure of one element triggers failure of others (like dominoes). Avoid:</p>
+<ul>
+<li>Sheltering directly under heavy loads (appliances, HVAC units, stored materials)</li>
+<li>Rooms where upper floors have already partially failed</li>
+<li>Structures where multiple walls show severe cracks</li>
+</ul>
+</section>
+<section id="group-protocols">
+<h2>Group Scavenging Protocols and Communication</h2>
+<p>Operating as a team in dangerous conditions requires discipline.</p>
+<h3>Team Size and Roles</h3>
+<p><strong>Recommended team</strong>: 3-5 people</p>
+<ul>
+<li>2-3 scavengers (searching, loading supplies)</li>
+<li>1 spotter (monitoring structural condition, watching for collapse signs)</li>
+<li>1 security/perimeter (watching for threats, managing exit, radio communication if available)</li>
+</ul>
+<h3>Pre-Entry Briefing</h3>
+<p>Before entering any building, conduct a 5-minute briefing:</p>
+<ol>
+<li><strong>Assign roles</strong>: Who goes in, who stays outside, who communicates</li>
+<li><strong>Set time limit</strong>: &quot;Exit in 90 minutes, no exceptions&quot;</li>
+<li><strong>Identify exits</strong>: Confirm primary and alternate exit routes</li>
+<li><strong>Establish signals</strong>: Non-verbal signals for &quot;get out now&quot; (whistle blasts, hand signals)</li>
+<li><strong>Medical plan</strong>: Who is responsible for injured person evacuation</li>
+</ol>
+<h3>In-Building Communication</h3>
+<ul>
+<li><strong>Whistle codes</strong>: 1 blast = &quot;I'm okay&quot;, 2 blasts = &quot;Pause here&quot;, 3 blasts = &quot;EVACUATE NOW&quot;</li>
+<li><strong>Radio</strong>: If you have functioning radios, maintain periodic check-ins (every 15 minutes)</li>
+<li><strong>Buddy system</strong>: Scavengers never separate. Always work in pairs within a floor.</li>
+</ul>
+<h3>Evacuation Triggers</h3>
+<p><strong>Immediate evacuation</strong> if:</p>
+<ul>
+<li>Any member signals distress or injury</li>
+<li>You hear creaking, groaning, or rumbling</li>
+<li>Dust clouds form</li>
+<li>A wall, ceiling, or floor shifts visibly</li>
+<li>Time limit expires (exit regardless of what you're doing)</li>
+</ul>
+<p><strong>Secondary collapse during evacuation is common.</strong> Move quickly but don't panic. Run to the exit, don't stop to grab items.</p>
+<h3>Load Management</h3>
+<ul>
+<li>Limit each person's load to 40 lbs maximum (allows rapid movement and climbing if needed)</li>
+<li>Use backpacks over carrying bags (frees both hands)</li>
+<li>Leave high-value items on the ground floor for rapid pickup on exit if time permits</li>
+</ul>
+<h3>After-Action Review</h3>
+<p>After exiting, regroup and:</p>
+<ol>
+<li>Account for all personnel</li>
+<li>Assess injuries</li>
+<li>Note what worked and what didn't</li>
+<li>Document the building's condition for the team's future reference</li>
+</ol>
+</section>
+<section id="specialized-environments">
+<h2>Scavenging in Specialized Environments</h2>
+<h3>Pharmacies and Hospitals</h3>
+<p><strong>Priority items</strong>: Antibiotics, painkillers, anti-diarrheal, antihistamine, topical antiseptics, bandages</p>
+<p><strong>Hazards</strong>: Glass breakage (vials, bottles), chemical spills, contaminated instruments</p>
+<p><strong>Procedure</strong>: Wear gloves. Avoid touching floor chemicals. Collect only intact, recognizable medications. Check expiration dates when possible, but expired meds are often better than none.</p>
+<h3>Gas Stations and Fuel Storage</h3>
+<p><strong>Avoid entirely.</strong> Fuel vapors are explosive and toxic. Fuel pumps may still be active. The hazard far exceeds any benefit. Leave immediately if you smell gasoline or fumes.</p>
+<h3>Food Storage and Restaurants</h3>
+<p><strong>Priority items</strong>: Packaged foods, canned goods, dry goods, oils, spices, water</p>
+<p><strong>Hazards</strong>: Mold, spoilage, pest infestation, gas leaks from kitchen</p>
+<p><strong>Procedure</strong>: Collect sealed, undamaged containers only. Smell before taking anything. If it smells wrong, leave it.</p>
+<h3>Libraries and Archives</h3>
+<p><strong>Non-essential but valuable</strong>: Books on survival skills, technical references, maps, historical records</p>
+<p><strong>Hazards</strong>: Mold spores (respiratory), water damage, structural weakness in upper floors (these buildings are heavy)</p>
+<p><strong>Procedure</strong>: Take only books you can carry. Avoid upper stories if the building shows structural damage.</p>
+</section>
+<section id="psychological-factors">
+<h2>Psychological Factors and Decision Making</h2>
+<p>Disaster environments distort judgment. Combat these effects:</p>
+<h3>Disaster Anxiety</h3>
+<p>You will feel fear and stress. This is normal and keeps you alert. However, excessive fear leads to poor decisions (unnecessary risks, abandoning teammates).</p>
+<p><strong>Manage it:</strong></p>
+<ul>
+<li>Take 10 deep breaths before entering each building</li>
+<li>Remind yourself of your objective (water/medical supplies)</li>
+<li>Focus on immediate tasks, not the big picture loss</li>
+<li>Trust your training and procedures</li>
+</ul>
+<h3>Sunk Cost Fallacy</h3>
+<p>After investing time searching a building, you're tempted to stay longer to &quot;maximize the haul.&quot; This is dangerous.</p>
+<p><strong>Solution</strong>: Stick to your time limits. Leaving empty-handed is safer than staying 30 minutes longer and triggering a collapse. The next building will have resources.</p>
+<h3>Panic in a Group</h3>
+<p>If one person panics during evacuation, it can spread.</p>
+<p><strong>Prevention</strong>: Pre-agreed signals and roles reduce panic. Everyone knows their job. When chaos strikes, people default to practice.</p>
+<h3>Decision Paralysis</h3>
+<p>Faced with multiple dangerous choices (which building? which route?), you may freeze.</p>
+<p><strong>Solution</strong>: Establish decision rules before the situation arises. &quot;We check buildings from south to north.&quot; &quot;We never enter structures tilted more than 5°.&quot; Rules eliminate on-the-spot decisions.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="search-rescue.html">Search &amp; Rescue Operations</a>
+<a href="first-aid.html">First Aid and Emergency Response</a>
+<a href="improvised-weapons.html">Improvised Weapons and Defensive Tools</a>
+<a href="water-purification.html">Water Purification</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

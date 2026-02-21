@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/composting-systems.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Composting Systems</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Food &amp; Agriculture</span> ›
+<span>Composting Systems</span>
+</div>
+
+
+<h1>Composting Systems</h1>
+<p class="subtitle">Design and manage hot, cold, vermicompost, bokashi, and humanure composting systems using carbon-nitrogen ratios and decomposition timelines.</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~19 min</span>
+<span>Updated: 2026-02-18</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#cn-ratio-fundamentals">Carbon-to-Nitrogen (C:N) Ratio Fundamentals</a></li>
+<li><a href="#hot-composting">Hot Composting (Thermophilic)</a></li>
+<li><a href="#cold-composting">Cold Composting (Passive Piling)</a></li>
+<li><a href="#vermicomposting">Vermicomposting (Earthworm Composting)</a></li>
+<li><a href="#bokashi-fermentation">Bokashi Fermentation (Anaerobic Pre-Composting)</a></li>
+<li><a href="#humanure-composting">Humanure Composting (Human Waste Processing)</a></li>
+<li><a href="#troubleshooting">Troubleshooting Composting Problems</a></li>
+<li><a href="#system-selection-guide">Which System to Choose?</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Composting is controlled decomposition of organic matter, accelerating the natural breakdown of plant material and animal byproducts into rich humus. Unlike passive decay (which takes years), managed composting recycles nutrients into garden soil in weeks to months. The process requires the right balance of carbon (energy source for microbes), nitrogen (protein source), moisture, and oxygen. Different composting systems suit different waste streams, timelines, and space constraints.</p>
+<p>This guide covers five major composting approaches: hot composting (fast, thermophilic), cold composting (slow, passive), vermicomposting (earthworm-powered), bokashi fermentation (anaerobic pre-composting), and humanure composting (human waste processing). Each has specific C:N ratios, troubleshooting strategies, and safety protocols.</p>
+</section>
+<section id="cn-ratio-fundamentals">
+<h2>Carbon-to-Nitrogen (C:N) Ratio Fundamentals</h2>
+<p>Microbes that decompose organic matter require carbon as an energy source and nitrogen as a protein source. The optimal C:N ratio for most composting is 25–30:1 (carbon to nitrogen by mass). At this ratio, microbes consume carbon and nitrogen simultaneously, minimizing excess of either.</p>
+<p><strong>Carbon-rich materials (C:N ratio ~100–500:1):</strong></p>
+<ul>
+<li>Dry leaves: 30–80:1</li>
+<li>Straw/hay: 40–100:1</li>
+<li>Cardboard (dye-free): 300–400:1</li>
+<li>Wood chips: 200–500:1</li>
+<li>Sawdust: 200–500:1</li>
+<li>Newspaper (dye-free): 170:1</li>
+<li>Paper bags (dye-free): 200:1</li>
+</ul>
+<p><strong>Nitrogen-rich materials (C:N ratio ~5–20:1):</strong></p>
+<ul>
+<li>Fresh grass clippings: 12–15:1</li>
+<li>Coffee grounds: 20:1</li>
+<li>Compost tea grounds: 15:1</li>
+<li>Alfalfa meal: 12:1</li>
+<li>Food scraps (vegetable): 12–15:1</li>
+<li>Manure (fresh): 5–15:1 (varies by animal)</li>
+<li>Urine (human): 0.8–2:1</li>
+</ul>
+<p><strong>Calculating your pile's C:N ratio:</strong>
+If you combine 50 lbs dry leaves (40:1) with 25 lbs fresh grass (12:1) and 5 lbs manure (8:1), the blended C:N ratio is approximately:</p>
+<pre><code>(50 lbs × 40) + (25 lbs × 12) + (5 lbs × 8)
+─────────────────────────────────────────── = (2000 + 300 + 40) / 80 = 29:1
+50 + 25 + 5
+</code></pre>
+<p>This 29:1 ratio is ideal. If you add more leaves, C:N climbs (slower decomposition). If you add more manure, C:N drops (excess nitrogen lost as ammonia gas—a waste).</p>
+<div class="warning">
+<p>Fresh manure contains high levels of pathogens (E. coli, Salmonella). Use only in hot composting piles (60°C+) or in cold piles aged 6+ months before food crop contact. Never use fresh manure on leafy greens or root crops within 90 days of application.</p>
+</div>
+</section>
+<section id="hot-composting">
+<h2>Hot Composting (Thermophilic)</h2>
+<p>Hot composting harnesses thermophilic (heat-loving) bacteria to rapidly decompose organic matter. Temperatures reach 50–70°C (122–158°F) within 24–48 hours, fast enough to kill most pathogens and weed seeds. The finished compost is ready in 4–8 weeks.</p>
+<p><strong>Requirements for hot composting:</strong></p>
+<ul>
+<li><strong>Pile size</strong>: Minimum 3 ft × 3 ft × 3 ft (27 cubic feet). Smaller piles lose heat and decompose slowly.</li>
+<li><strong>Materials</strong>: Mix carbon and nitrogen sources to achieve 25–30:1 C:N ratio.</li>
+<li><strong>Moisture</strong>: 50–60% by weight (squeeze test: a few drops of water, not a stream).</li>
+<li><strong>Oxygen</strong>: Turning every 3–5 days introduces oxygen; prevents anaerobic odors.</li>
+<li><strong>Temperature feedback</strong>: Thermophilic decomposition generates heat. Use a compost thermometer to track pile temperature.</li>
+</ul>
+<p><strong>Building a hot compost pile:</strong></p>
+<ol>
+<li>Layer carbon-rich material (6 inches dry leaves) then nitrogen-rich material (3 inches grass, manure, or kitchen scraps).</li>
+<li>Repeat layers until the pile is 3+ ft tall.</li>
+<li>Water each layer to 50–60% moisture.</li>
+<li>After 24–48 hours, the pile's core should reach 50°C. If it doesn't, add more nitrogen-rich material (grass, manure) or reduce the pile size.</li>
+</ol>
+<p><strong>Turning schedule:</strong></p>
+<ul>
+<li><strong>Days 0–3</strong>: Turn at day 1 and day 3 (day 1 to break compaction, day 3 when core heats).</li>
+<li><strong>Days 3–7</strong>: Turn every 3 days.</li>
+<li><strong>Days 7+</strong>: Turn weekly until temperature drops below 40°C (indicates decomposition near completion).</li>
+</ul>
+<p>Turning mixes outer (cool) material into the hot core, ensuring uniform decomposition. Each turn restarts the thermophilic phase; the pile heats again within 24 hours.</p>
+<p><strong>Temperature milestones:</strong></p>
+<ul>
+<li><strong>24–48 hours</strong>: Pile reaches 50–60°C (thermophilic phase begins).</li>
+<li><strong>Days 7–14</strong>: Peak temperature 65–70°C (weed seeds and many pathogens killed at 55°C+).</li>
+<li><strong>Days 14–28</strong>: Temperature plateaus at 50–60°C then declines as available material is consumed.</li>
+<li><strong>Days 28–42</strong>: Temperature drops to 35–45°C; decomposition slows (mesophilic phase).</li>
+<li><strong>Days 42–56</strong>: Finished compost is stable, cool, and ready to use.</li>
+</ul>
+<div class="tip">
+<p>Hot composting is fastest in warm seasons (spring–summer, 10–14 days) and slower in cool seasons (fall–winter, 21–28 days) due to lower ambient temperatures. In cold climates, insulate piles with straw bales or burlap to maintain heat.</p>
+</div>
+<p><strong>Finished compost indicators:</strong></p>
+<ul>
+<li>Dark brown or black color</li>
+<li>Crumbly texture (not slimy or soggy)</li>
+<li>Earthy smell (no ammonia or rotting odor)</li>
+<li>Unrecognizable source materials</li>
+<li>Temperature below 40°C</li>
+</ul>
+</section>
+<section id="cold-composting">
+<h2>Cold Composting (Passive Piling)</h2>
+<p>Cold composting requires no turning and minimal management. Decomposition relies on mesophilic (cool-loving) microbes and fungi, which work more slowly than thermophilic bacteria. Cold piles reach steady-state temperatures of 20–40°C and take 6–12 months to finish.</p>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li><strong>Space</strong>: Designate a corner of the yard; no size minimum (larger piles decompose faster).</li>
+<li><strong>Layering</strong>: Optional. Simply pile material and let it settle.</li>
+<li><strong>Moisture</strong>: Rainfall usually maintains adequate moisture. Add water only if the pile looks dry.</li>
+<li><strong>Oxygen</strong>: No turning, so oxygen is minimal. The pile becomes semi-anaerobic at the center. This is acceptable (though slower) for cold composting.</li>
+<li><strong>Feedstock</strong>: Avoid meat, fish, and fresh manure (attract rodents and create odor). Use only plant material and aged manure.</li>
+</ul>
+<p><strong>Building a cold compost pile:</strong></p>
+<ol>
+<li>Pile all carbonaceous material (leaves, straw, cardboard) in a designated area.</li>
+<li>Add nitrogen sources (grass clippings, kitchen vegetable scraps) as available throughout the season.</li>
+<li>Water if the pile looks dry (squeeze test: no moisture exuding, or very little).</li>
+<li>Return to it once every 3–6 months to assess progress; no turning necessary.</li>
+</ol>
+<p><strong>Timeline:</strong></p>
+<ul>
+<li><strong>Months 0–2</strong>: Visible decomposition of fresh materials; pile may heat slightly at surface.</li>
+<li><strong>Months 2–6</strong>: Material shrinks; mold growth visible (normal).</li>
+<li><strong>Months 6–12</strong>: Most material unrecognizable; lower layers beginning to look like soil.</li>
+<li><strong>Months 12+</strong>: Finished compost is dark, crumbly, and indistinguishable from garden soil.</li>
+</ul>
+<p>Cold composting works best for high-volume, low-urgency composting (e.g., annual leaf accumulation from fall cleanup). It's ideal if you have multiple bins and can rotate them: add to bin 1 in year 1, let it sit for 12 months, then use in year 2 while starting bin 2.</p>
+<div class="info-box">
+<p>Cold compost is safer than unfinished hot compost for direct food contact because pathogens have time to die off over the 12-month timeline. However, always use finished cold compost only, not partially decomposed material.</p>
+</div>
+</section>
+<section id="vermicomposting">
+<h2>Vermicomposting (Earthworm Composting)</h2>
+<p>Vermicomposting leverages earthworms to break down organic matter more efficiently than bacteria alone. Earthworms digest material and excrete nutrient-rich castings (worm feces) that are excellent for plants. A well-maintained vermicompost bin produces finished compost in 3–6 months.</p>
+<p><strong>Equipment needed:</strong></p>
+<ul>
+<li><strong>Bin</strong>: 2–3 cubic feet (e.g., 18-inch storage box, wooden crate, or commercial bin). Holes for aeration; drainage tray below to catch &quot;worm tea&quot; (excess moisture).</li>
+<li><strong>Bedding</strong>: Shredded newspaper, cardboard, or aged compost (5–10 lbs for a large bin).</li>
+<li><strong>Worms</strong>: 1–2 lbs of red wigglers (<em>Eisenia fetida</em>) or tiger worms. Buy from a vermicompost supplier, not soil-dwelling earthworms (which won't thrive in bins).</li>
+<li><strong>Food scraps</strong>: Vegetable and fruit scraps, coffee grounds, eggshells (crushed), bread, cooked grains.</li>
+</ul>
+<p><strong>Avoid in vermicompost bins:</strong></p>
+<ul>
+<li>Meat, fish, dairy (attract pests, create odor)</li>
+<li>Citrus in large quantities (acidic; too much lowers pH)</li>
+<li>Onions and garlic in large quantities (antimicrobial; inhibit worms)</li>
+<li>Oils and greasy foods (anaerobic decomposition)</li>
+</ul>
+<p><strong>Building a vermicompost bin:</strong></p>
+<ol>
+<li>Layer bedding 4–6 inches deep. Moisten to 70% (squeeze test: water drips, but not a stream).</li>
+<li>Bury food scraps 2–3 inches deep in the bedding. Spread scraps across the bin, not in one spot (prevents mold hotspots).</li>
+<li>Add worms and cover the bin. It should smell like earth, not compost.</li>
+<li>Feed weekly or bi-weekly with small quantities (½–1 lb of scraps per 100 worms per week). Overfeed → putrefaction and mold.</li>
+</ol>
+<p><strong>Harvesting:</strong></p>
+<ul>
+<li><strong>Method 1 (migration harvest)</strong>: Stop feeding the bin 2 weeks before harvest. Worms migrate to fresh food in a new tray stacked on top. Finished castings remain below. After 2 weeks, remove the bottom tray and use the castings.</li>
+<li><strong>Method 2 (manual sorting)</strong>: Spread the bin's contents on a flat surface. Expose to light (worms retreat into castings). Pick out worms and return to the bin. Collect castings.</li>
+</ul>
+<p><strong>Timeline:</strong></p>
+<ul>
+<li><strong>Weeks 1–4</strong>: Worms adapt to the bin; minimal visible change.</li>
+<li><strong>Weeks 4–8</strong>: Bedding begins to break down; worms multiply.</li>
+<li><strong>Weeks 12–20</strong>: Material is mostly unrecognizable; castings accumulate.</li>
+<li><strong>Weeks 20–26</strong>: Bin is ~50% finished castings; harvest time.</li>
+</ul>
+<p><strong>Maintenance:</strong></p>
+<ul>
+<li><strong>Moisture</strong>: Keep bedding at 60–70%. If too wet, add dry bedding; if too dry, mist with water.</li>
+<li><strong>Aeration</strong>: Fluff bedding with a garden fork every 2 weeks to prevent anaerobic pockets.</li>
+<li><strong>Temperature</strong>: Optimal 55–77°F. Below 50°F or above 85°F, worm activity slows.</li>
+<li><strong>pH</strong>: Keep neutral (6.5–7.5). If smelly, the pile is acidic; add crushed eggshells or calcium carbonate.</li>
+</ul>
+<div class="warning">
+<p>Vermicompost produces excellent compost, but a poorly maintained bin becomes a pest haven (fruit flies, mites, gnats). If this happens, stop feeding, increase aeration, and ensure moisture is optimal. Introduce nematodes (predatory, harmless to worms) if pest problems persist.</p>
+</div>
+</section>
+<section id="bokashi-fermentation">
+<h2>Bokashi Fermentation (Anaerobic Pre-Composting)</h2>
+<p>Bokashi uses anaerobic fermentation with inoculated bran to rapidly pre-compost organic matter (including meat, fish, and dairy—materials unsuitable for aerobic composting). The bokashi process takes 2 weeks, producing a partly decomposed &quot;pre-compost&quot; that's then buried in soil or added to an aerobic compost pile for final finishing.</p>
+<p><strong>Equipment:</strong></p>
+<ul>
+<li><strong>Bokashi bucket</strong>: 5–20 gallons with a tight-fitting lid and spigot at the base (to drain liquid).</li>
+<li><strong>Bokashi bran</strong>: Wheat or other grain bran inoculated with Effective Microorganisms (EM-1 bacteria). Available commercially or DIY-inoculated.</li>
+</ul>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Layer organic material (food scraps, meat, fish, dairy, paper, cardboard) and bokashi bran (1 part bran : 4 parts material by volume). Sprinkle bran between layers.</li>
+<li>Pack material down to reduce air pockets. Close the lid tightly.</li>
+<li>Every 1–2 days, open the lid, add more material + bran, repack, and drain the spigot (bokashi &quot;tea&quot; is acidic; dilute 1:10 with water for foliar spray or drain disposal).</li>
+<li>After 2 weeks, the material looks pickled (intact but mushy) and smells sour (fermentation smell, not rot smell). This is finished bokashi.</li>
+</ol>
+<p><strong>After fermentation:</strong></p>
+<ul>
+<li><strong>Option 1 (accelerate finishing)</strong>: Bury bokashi pre-compost 8 inches deep in garden beds. In 2–4 weeks, the material fully decomposes in soil, improving structure and tilth.</li>
+<li><strong>Option 2 (finish in compost bin)</strong>: Add bokashi pre-compost to a hot compost pile with carbon material (leaves, straw). It decomposes in 2–3 weeks due to the partial fermentation already completed.</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Accepts meat, fish, dairy, oils (no aerobic composting)</li>
+<li>Fast (2-week fermentation + 2–4 week finishing in soil or pile)</li>
+<li>No odor if lid stays closed (fermentation is sealed, not anaerobic putrefaction)</li>
+<li>Bokashi tea is a mild fertilizer</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Requires bokashi bran (cost)</li>
+<li>Pre-compost must still be finished (not true &quot;finished compost&quot; after 2 weeks)</li>
+<li>Spigot must be drained regularly to prevent liquid pooling</li>
+</ul>
+<div class="tip">
+<p>Make your own bokashi bran by inoculating grain bran with EM-1 starter cultures (available online). Mix inoculant per instructions, dry the bran, and store in an airtight container. Cost is 40% of commercial bokashi bran.</p>
+</div>
+</section>
+<section id="humanure-composting">
+<h2>Humanure Composting (Human Waste Processing)</h2>
+<p>Humanure (feces and urine) is a valuable nutrient source but carries pathogenic risks. Proper composting kills pathogens and converts humanure into garden compost. This is critical in off-grid, low-water, or disaster contexts where flush toilets are unavailable.</p>
+<p><strong>Safety protocols—non-negotiable:</strong></p>
+<ul>
+<li>Never use humanure compost on food crops that are eaten raw (salads, berries). Use only on non-food ornamentals, on cooked-food crops (tomatoes, squash), or on food crops in a 12+ month cure period.</li>
+<li>Hot composting (55°C+ for 7+ days) kills most pathogens. Cold composting requires 12–24 months cure time.</li>
+<li>Feces-only is safer than feces + urine (urine alone is sterile but feces contain pathogens).</li>
+</ul>
+<p><strong>Collection and storage:</strong></p>
+<ol>
+<li><strong>Humanure bucket</strong>: 5-gallon bucket with a toilet seat and lid. Separate urine (if possible) into a different container.</li>
+<li><strong>Cover material</strong>: After each use, sprinkle carbon material (dry leaves, sawdust, aged manure, or paper shreds) over feces. This reduces smell and begins carbon layering.</li>
+<li><strong>Emptying schedule</strong>: Empty the bucket every 3–7 days into a compost pile (see below).</li>
+</ol>
+<p><strong>Humanure composting pile:</strong></p>
+<ol>
+<li><strong>Dedicated location</strong>: At least 200 feet from wells, surface water, or neighbors' property. In high-density situations, this distance is infeasible; use a composting toilet instead (a commercial black-soldier-fly or vermicompost system) or connect to municipal sewer.</li>
+<li><strong>Pile construction</strong>: Layer humanure (2 inches) with carbon cover material (4–6 inches dry leaves, sawdust, or straw). Repeat. Target a final C:N ratio of 20–25:1.</li>
+<li><strong>Moisture</strong>: Keep pile at 50–60%. Too wet → anaerobic smell; too dry → slow decomposition.</li>
+<li><strong>Hot composting finish</strong>: After 12 months, turn the pile into a hot compost bin (see Hot Composting section). Achieve internal temperature of 55°C+ for 7+ consecutive days. This kills remaining pathogens.</li>
+<li><strong>Cure time</strong>: After hot composting, allow the pile to sit for 6–12 additional months before use.</li>
+</ol>
+<p><strong>Total timeline: 18–24 months from collection to use.</strong></p>
+<p><strong>Urine-only composting (simpler):</strong>
+Urine is sterile and can be:</p>
+<ul>
+<li><strong>Stored</strong>: 6+ months in a sealed container kills remaining bacteria (if any).</li>
+<li><strong>Diluted and applied</strong>: 10:1 ratio (water:urine) as a nitrogen fertilizer. Do not apply to foliage (acidic); water in at soil level.</li>
+<li><strong>Mixed with compost</strong>: Add to compost piles to boost nitrogen content and speed decomposition (urine has C:N of ~0.8:1; it's pure nitrogen).</li>
+</ul>
+<div class="warning">
+<p>Never harvest or use incompletely finished humanure compost. Incomplete composting = pathogen survival = disease risk. If unsure of your pile's status, leave it alone for an extra 6 months. The extra time is safer than premature use.</p>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting Composting Problems</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Problem</strong></th>
+<th><strong>Cause</strong></th>
+<th><strong>Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pile smells like ammonia</td>
+<td>Excess nitrogen (fresh manure, grass, food scraps)</td>
+<td>Add dry carbon material (leaves, straw, cardboard). Reduce nitrogen feedstock by 50%.</td>
+</tr>
+<tr>
+<td>Pile smells like rotting eggs</td>
+<td>Anaerobic decomposition (too wet, too compact)</td>
+<td>Turn the pile; add carbon material. Ensure drainage. Reduce water input.</td>
+</tr>
+<tr>
+<td>Pile is cold (not heating up)</td>
+<td>Pile too small, or C:N ratio too high (excess carbon)</td>
+<td>Combine piles if multiple small ones. Add nitrogen (grass, manure). Minimum 3×3×3 ft.</td>
+</tr>
+<tr>
+<td>Pile is soggy and compacted</td>
+<td>Overly wet, poor aeration</td>
+<td>Turn frequently; add dry carbon. Ensure drainage hole or spigot. Reduce watering.</td>
+</tr>
+<tr>
+<td>Pests (rats, raccoons) in compost</td>
+<td>Meat, fish, dairy, or fresh manure in cold pile</td>
+<td>Use hot compost only; never add meat/fish/dairy to cold piles. Bury scraps deep; cover with dense layer. Use closed bins.</td>
+</tr>
+<tr>
+<td>Mold growing on cold pile</td>
+<td>Normal fungal decomposition</td>
+<td>Mold accelerates decomposition. Increase aeration; mold indicates healthy activity.</td>
+</tr>
+<tr>
+<td>Finished compost is still acidic (smells sour)</td>
+<td>Anaerobic fermentation (like bokashi)</td>
+<td>This is okay; it's anaerobic decomposition. Dry it in the sun for 2 weeks or bury in garden beds to neutralize.</td>
+</tr>
+<tr>
+<td>Vermicompost bin is too wet and smelly</td>
+<td>Overfed, poor drainage, high moisture</td>
+<td>Stop feeding for 2 weeks. Add dry bedding. Increase aeration. Reduce watering.</td>
+</tr>
+<tr>
+<td>Worms are escaping from bin</td>
+<td>Too wet, ammonia buildup, pH too low</td>
+<td>Add dry bedding. Reduce feeding. Add crushed eggshells to raise pH. Ensure proper moisture (50–70%).</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="system-selection-guide">
+<h2>Which System to Choose?</h2>
+<p><strong>Hot composting</strong>: Choose if you want finished compost in 4–8 weeks, have adequate space, and don't mind weekly turning.</p>
+<p><strong>Cold composting</strong>: Choose if you have ample space, can wait 6–12 months, and want zero maintenance.</p>
+<p><strong>Vermicomposting</strong>: Choose if space is limited, you want high-quality castings, and you can manage moisture/feeding on a schedule.</p>
+<p><strong>Bokashi</strong>: Choose if you eat meat/fish/dairy and want pre-composting in 2 weeks before final finishing.</p>
+<p><strong>Humanure</strong>: Choose only in off-grid or low-water contexts, with adequate land distance from water sources. Use with utmost care and patience.</p>
+<p>Most successful gardeners combine systems: a hot compost pile for seasonal yard waste, a cold pile for continuous collection, and a vermicompost bin for food scraps. This redundancy ensures a constant supply of finished compost and spreads management across systems.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="agriculture.html">Agriculture &amp; Gardening</a>
+<a href="biogas-production.html">Biogas Production</a>
+<a href="sanitation.html">Sanitation &amp; Public Health</a>
+<a href="soil-science-remediation.html">Soil Science &amp; Land Remediation</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

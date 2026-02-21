@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/supply-chain-logistics.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supply Chain Management &amp; Logistics - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.supply-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+.supply-table th { background-color: var(--card); color: var(--accent); padding: 12px; text-align: left; border-bottom: 2px solid var(--accent); }
+.supply-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.supply-table tr:nth-child(even) { background-color: rgba(212, 165, 116, 0.05); }
+.inventory-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+.inventory-card { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 16px; }
+.inventory-card h4 { color: var(--accent); margin-top: 0; }
+.transport-list { list-style: none; padding: 0; }
+.transport-list li { padding: 12px; margin: 8px 0; background: var(--surface); border-left: 3px solid var(--accent); border-radius: 4px; }
+
+</style>
+<meta name="description" content="Supply chain design, inventory management, warehouse organization, transportation modes, demand forecasting, procurement, quality control, perishable goods logistics, cold chain management, and record-keeping systems.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/supply-chain-logistics.html">
+<meta property="og:title" content="Supply Chain Management &amp; Logistics">
+<meta property="og:description" content="Supply chain design, inventory management, warehouse organization, transportation modes, demand forecasting, procurement, quality control, perishable goods logistics, cold chain management, and record-keeping systems.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Resource Management", "item": "https://zerotoherohero.com/#sec-resource-management"},
+    {"@type": "ListItem", "position": 3, "name": "Supply Chain Management &amp; Logistics", "item": "https://zerotoherohero.com/guides/supply-chain-logistics.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Supply Chain Management &amp; Logistics",
+  "description": "Supply chain design, inventory management, warehouse organization, transportation modes, demand forecasting, procurement, quality control, perishable goods logistics, cold chain management, and record-keeping systems.",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-438">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-resource-management">Resource Management</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Supply Chain Management &amp; Logistics</span>
+</nav>
+<header>
+<h1>Supply Chain Management &amp; Logistics</h1>
+<p class="subtitle">Supply chain design, inventory management, warehouse organization, transportation modes, demand forecasting, procurement, quality control, perishable goods logistics, cold chain management, and record-keeping systems.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~35 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#supply-chain-design">Supply Chain Design Fundamentals</a></li>
+<li><a href="#inventory-management">Inventory Management Without Computers</a></li>
+<li><a href="#warehouse-organization">Warehouse Organization &amp; Layout</a></li>
+<li><a href="#transportation-modes">Transportation Mode Selection</a></li>
+<li><a href="#demand-forecasting">Demand Forecasting Without Computers</a></li>
+<li><a href="#procurement-vendor">Procurement and Vendor Management</a></li>
+<li><a href="#quality-control">Quality Control at Receiving</a></li>
+<li><a href="#perishable-goods">Perishable Goods Logistics</a></li>
+<li><a href="#cold-chain">Cold Chain Management</a></li>
+<li><a href="#record-keeping">Record-Keeping Systems</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<section id="supply-chain-design">
+<h2>Supply Chain Design Fundamentals</h2>
+<p>A functioning supply chain transforms raw resources into finished goods and delivers them to consumers. In a rebuilding economy, designing efficient supply chains is critical to meeting basic needs and supporting specialization.</p>
+<h3>The Three-Stage Chain</h3>
+<p>The foundation of any supply chain consists of three core stages:</p>
+<ol>
+<li><strong>Source</strong> — Where raw materials originate (farms, forests, mines, salvage operations)</li>
+<li><strong>Warehouse/Storage</strong> — Central collection and holding points</li>
+<li><strong>Distribution</strong> — Movement to end consumers or secondary markets</li>
+</ol>
+<p>Each stage involves movement, storage, and record-keeping costs. Minimizing unnecessary transfers reduces spoilage, transportation waste, and labor requirements.</p>
+<h3>Network Design Principles</h3>
+<p><strong>Proximity reduces cost:</strong> Locate warehouses between suppliers and consumers to minimize total distance traveled. In pre-industrial networks, warehouses were positioned at natural transportation hubs — rivers, coastal ports, roads.</p>
+<p><strong>Hub consolidation:</strong> Instead of every supplier sending to every customer, consolidate shipments through regional hubs. A farmer doesn't deliver directly to each village; grain moves to a central mill, then to local markets.</p>
+<p><strong>Backward integration:</strong> When suppliers and distributors are geographically separated, establish intermediate collection points. For example, dozens of small herding operations funnel livestock to a central market or slaughterhouse.</p>
+<div class="tip">
+<p>Map your supply chain visually before implementation. Identify sources, count storage locations, identify distribution endpoints, and calculate total movement distances. This reveals bottlenecks.</p>
+</div>
+</section>
+<section id="inventory-management">
+<h2>Inventory Management Without Computers</h2>
+<p>Inventory control prevents both shortages and wasteful excess storage. Without digital systems, manual inventory methods must be reliable and auditable.</p>
+<h3>FIFO Principle (First In, First Out)</h3>
+<p>The FIFO method prevents spoilage and waste:</p>
+<ul>
+<li><strong>Oldest stock moves first</strong> — Label containers or batches with acquisition dates</li>
+<li><strong>Physical rotation</strong> — Place new incoming goods behind existing stock on shelves</li>
+<li><strong>Perishables require strict enforcement</strong> — Grains, oils, preserved foods all degrade over time</li>
+</ul>
+<p>For critical items like seeds or medicines, maintain a separate &quot;reserve inventory&quot; kept under ideal conditions and never touched except during genuine shortage.</p>
+<h3>Safety Stock and Reorder Points</h3>
+<p><strong>Safety stock</strong> is a buffer to prevent stockouts:</p>
+<ul>
+<li>Calculate average usage over a time period (e.g., 100 kg of grain per week)</li>
+<li>Multiply by typical lead time (2 weeks to receive new shipment) = minimum safety stock (200 kg)</li>
+<li>Never let active inventory fall below this level without triggering a reorder</li>
+</ul>
+<p><strong>Reorder point</strong> = (Average Daily Use × Lead Time) + Safety Stock</p>
+<p><strong>Manual trigger system:</strong> Designate one person (inventory master) to count critical items weekly and issue reorder notices when thresholds are reached.</p>
+<h3>Inventory Tracking Ledger</h3>
+<p>Create a physical log for each inventory item:</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Item</th>
+<th>Quantity In</th>
+<th>Quantity Out</th>
+<th>Running Balance</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-02-01</td>
+<td>Wheat (kg)</td>
+<td>500</td>
+<td>—</td>
+<td>1200</td>
+<td>Shipment from Mill A</td>
+</tr>
+<tr>
+<td>2026-02-03</td>
+<td>Wheat (kg)</td>
+<td>—</td>
+<td>150</td>
+<td>1050</td>
+<td>Distribution to Market B</td>
+</tr>
+<tr>
+<td>2026-02-05</td>
+<td>Wheat (kg)</td>
+<td>—</td>
+<td>200</td>
+<td>850</td>
+<td>Town food ration</td>
+</tr>
+</tbody>
+</table>
+<p>Update daily. Conduct monthly physical counts to verify ledger accuracy.</p>
+<div class="warning">
+<p>Inventory shrinkage (loss to theft, waste, spoilage) is often 5–15% in manual systems. Conduct surprise counts. Investigate discrepancies immediately.</p>
+</div>
+</section>
+<section id="warehouse-organization">
+<h2>Warehouse Organization &amp; Layout</h2>
+<p>Efficient layout reduces retrieval time, prevents damage, and enables rapid counting.</p>
+<h3>Zones and Segregation</h3>
+<p>Divide warehouse space by product type:</p>
+<ul>
+<li><strong>Zone A (High-Use)</strong> — Frequently shipped items closest to loading dock</li>
+<li><strong>Zone B (Medium-Use)</strong> — Moderate-frequency items in middle shelves</li>
+<li><strong>Zone C (Low-Use)</strong> — Bulk or seasonal goods, upper shelves or rear</li>
+<li><strong>Hazmat/Special</strong> — Separate, secured area for tools, chemicals, fuel</li>
+</ul>
+<p>Color-code zones with paint or flags for visual identification.</p>
+<h3>Storage Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Product Type</th>
+<th>Stacking</th>
+<th>Ventilation</th>
+<th>Temperature</th>
+<th>Protection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grain / Flour</td>
+<td>6+ high (cask)</td>
+<td>Good</td>
+<td>Dry</td>
+<td>Sealed container, rodent-proof</td>
+</tr>
+<tr>
+<td>Oil / Liquid</td>
+<td>Single height</td>
+<td>Light air flow</td>
+<td>Cool</td>
+<td>Opaque vessels, elevated</td>
+</tr>
+<tr>
+<td>Root Vegetables</td>
+<td>4–5 high</td>
+<td>Good</td>
+<td>0–5°C</td>
+<td>Straw bedding, dark</td>
+</tr>
+<tr>
+<td>Cloth / Fiber</td>
+<td>8+ high</td>
+<td>Minimal</td>
+<td>Dry</td>
+<td>Sealed, periodic airing</td>
+</tr>
+<tr>
+<td>Tools / Metal</td>
+<td>1–2 high</td>
+<td>Dry</td>
+<td>Cool</td>
+<td>Oiled cloth wrapping</td>
+</tr>
+</tbody>
+</table>
+<h3>Aisle &amp; Access</h3>
+<ul>
+<li><strong>Main aisle:</strong> Wide enough for two-person teams with hand cart (4+ feet)</li>
+<li><strong>Secondary aisles:</strong> Minimum 3 feet for inspection access</li>
+<li><strong>Wall shelving:</strong> Maximum 8 feet high; require sturdy ladders and safety protocols</li>
+<li><strong>Weight limits:</strong> Mark floor sections with maximum load capacity (especially upper floors)</li>
+</ul>
+<div class="danger">
+<p>Prevent warehouse fires by maintaining clear aisles, storing flammable goods away from heat sources, and keeping sand or water buckets accessible. Organize monthly fire safety checks.</p>
+</div>
+</section>
+<section id="transportation-modes">
+<h2>Transportation Mode Selection</h2>
+<p>Choosing the right mode depends on distance, volume, perishability, and available infrastructure.</p>
+<ul>
+<li><strong>Human/Animal Carry</strong> — 50–200 kg per person, 20–30 km/day. Best for small volumes, remote areas.</li>
+<li><strong>Animal Cart</strong> — 200–800 kg, 25–40 km/day. Requires maintained roads, minimizes human labor.</li>
+<li><strong>River/Canal Barge</strong> — 5–50 tons, low fuel cost, slow (10–20 km/day). Ideal for bulk goods, major rivers.</li>
+<li><strong>Coastal Ship</strong> — 20–200 tons, variable speed, weather-dependent. Long-distance, bulk goods.</li>
+<li><strong>Rail (if established)</strong> — 50–100 tons, fixed routes, regular schedule. Most efficient for volume.</li>
+</ul>
+<p><strong>Decision matrix:</strong> For local trade, carts and animals are standard. For regional consolidation, water transport dominates. Long-distance backbone routes use whatever infrastructure exists.</p>
+</section>
+<section id="demand-forecasting">
+<h2>Demand Forecasting Without Computers</h2>
+<p>Accurate demand prediction prevents overstock and shortages.</p>
+<h3>Historical Pattern Analysis</h3>
+<ol>
+<li><strong>Collect monthly or seasonal usage data</strong> — Track consumption for at least one full year</li>
+<li><strong>Identify patterns</strong> — Note seasonal spikes (e.g., increased grain use in winter)</li>
+<li><strong>Calculate baseline</strong> — Average non-spike consumption</li>
+<li><strong>Add safety margin</strong> — Increase forecast by 10–15% for uncertainty</li>
+</ol>
+<h3>Factors to Consider</h3>
+<ul>
+<li><strong>Population changes</strong> — Births, deaths, migration</li>
+<li><strong>Seasonal demand</strong> — Winter heating needs, harvest periods</li>
+<li><strong>Special events</strong> — Festivals, religious observances, market days</li>
+<li><strong>Economic shifts</strong> — Availability of competing goods, price changes</li>
+<li><strong>Supply disruptions</strong> — Failed harvests, trade interruptions</li>
+</ul>
+<h3>Consensus Forecasting</h3>
+<p>Gather input from market vendors, farmers, and distributors. Combine their individual estimates into a median forecast. This reduces individual bias and captures local knowledge.</p>
+<div class="tip">
+<p>Document all forecasts and actual usage side-by-side. Calculate forecast accuracy monthly. Adjust your methods based on systematic errors (e.g., if forecasts consistently overshoot by 15%).</p>
+</div>
+</section>
+<section id="procurement-vendor">
+<h2>Procurement and Vendor Management</h2>
+<p>Reliable supplier relationships are foundational to supply chain stability.</p>
+<h3>Vendor Selection Criteria</h3>
+<ul>
+<li><strong>Consistency</strong> — Do they deliver on schedule?</li>
+<li><strong>Quality</strong> — Are specifications met reliably?</li>
+<li><strong>Capacity</strong> — Can they scale if demand increases?</li>
+<li><strong>Reliability</strong> — Do they have backup suppliers if disrupted?</li>
+<li><strong>Terms</strong> — Payment timing, minimum orders, return policies</li>
+</ul>
+<h3>Formalizing Agreements</h3>
+<p>Even without written legal contracts, establish clear terms with each vendor:</p>
+<ul>
+<li>Specify product quality (grade, size, moisture content, defects allowed)</li>
+<li>Agree on delivery schedule (weekly, monthly, seasonal)</li>
+<li>Define payment terms (cash on delivery, 30-day credit, barter arrangement)</li>
+<li>Set minimum order quantities</li>
+<li>Establish dispute resolution (who decides if goods are &quot;defective&quot;?)</li>
+</ul>
+<p>Maintain vendor contact information, transaction history, and performance notes in a ledger.</p>
+<h3>Diversification</h3>
+<p>Never rely on a single supplier for critical goods. If one fails, supply chains collapse. Maintain relationships with at least 2–3 vendors for each essential input.</p>
+</section>
+<section id="quality-control">
+<h2>Quality Control at Receiving</h2>
+<p>Receiving is the last checkpoint before inventory acceptance.</p>
+<h3>Inspection Protocol</h3>
+<ol>
+<li><strong>Count and weigh</strong> — Verify quantity matches invoice</li>
+<li><strong>Physical inspection</strong> — Check for damage, contamination, spoilage</li>
+<li><strong>Specification check</strong> — Size, grade, moisture (use simple tools: scales, moisture meters if available)</li>
+<li><strong>Sample testing</strong> — For grain, taste for rancidity; for cloth, check for tears; for tools, test function</li>
+</ol>
+<h3>Rejection &amp; Resolution</h3>
+<ul>
+<li><strong>Minor defects:</strong> Accept with 10–20% price reduction negotiated on-site</li>
+<li><strong>Major defects:</strong> Refuse shipment; document reason and vendor response</li>
+<li><strong>Partial damage:</strong> Accept good portions; document loss and claim adjustment</li>
+</ul>
+<div class="warning">
+<p>A single contaminated grain shipment can spoil the entire warehouse batch if mixed immediately. Quarantine suspicious shipments separately until verified.</p>
+</div>
+</section>
+<section id="perishable-goods">
+<h2>Perishable Goods Logistics</h2>
+<p>Perishables require specialized handling to minimize loss.</p>
+<h3>Shelf Life Management</h3>
+<p>Create a perishable goods matrix:</p>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Shelf Life</th>
+<th>Optimal Temp</th>
+<th>Humidity</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fresh Fish</td>
+<td>1–2 days</td>
+<td>0–2°C</td>
+<td>Iced</td>
+<td>Salt curing extends to weeks</td>
+</tr>
+<tr>
+<td>Vegetables</td>
+<td>1–4 weeks</td>
+<td>2–8°C</td>
+<td>85–95%</td>
+<td>Root crops last longer</td>
+</tr>
+<tr>
+<td>Fruit</td>
+<td>3–14 days</td>
+<td>0–10°C</td>
+<td>Variable</td>
+<td>Unripe extends life</td>
+</tr>
+<tr>
+<td>Meat</td>
+<td>2–7 days</td>
+<td>0–2°C</td>
+<td>Low</td>
+<td>Salting/smoking extends</td>
+</tr>
+<tr>
+<td>Dairy</td>
+<td>3–7 days</td>
+<td>2–5°C</td>
+<td>Moderate</td>
+<td>Fermentation extends dramatically</td>
+</tr>
+</tbody>
+</table>
+<h3>Transport Strategy</h3>
+<ul>
+<li><strong>Short routes first:</strong> Use perishables for nearby delivery before distant markets</li>
+<li><strong>Quick turnover:</strong> Prioritize older batches in distribution</li>
+<li><strong>Protective packaging:</strong> Insulate with straw, cloth, or ice when available</li>
+<li><strong>Temperature monitoring:</strong> Simple thermometer sticks placed in shipments track exposure</li>
+</ul>
+</section>
+<section id="cold-chain">
+<h2>Cold Chain Management</h2>
+<p>Maintaining temperature during storage and transport is critical for perishables.</p>
+<h3>Ice Houses and Root Cellars</h3>
+<p>In temperate climates:</p>
+<ul>
+<li><strong>Ice houses:</strong> Insulated structures storing winter ice in sawdust, providing cooling through warm months (30–50 kg of ice per food container)</li>
+<li><strong>Root cellars:</strong> Underground or heavily insulated structures maintaining 0–5°C year-round, ideal for produce storage</li>
+</ul>
+<h3>Minimal-Tech Cooling Methods</h3>
+<ul>
+<li><strong>Evaporative cooling:</strong> Place water containers in well-ventilated areas; evaporation lowers temperature 5–15°C</li>
+<li><strong>Spring/stream water:</strong> Route cool running water through storage areas</li>
+<li><strong>Elevation:</strong> High-altitude storage naturally cooler (roughly 1°C cooler per 300 m elevation gain)</li>
+<li><strong>Nocturnal ventilation:</strong> Open storage at night, close during hot days to trap cool air</li>
+</ul>
+<h3>Documentation</h3>
+<p>Record temperature daily in storage areas. Note any spoilage. Use patterns to improve insulation, ventilation, or scheduling.</p>
+<div class="danger">
+<p>If spoilage suddenly increases, investigate immediately. Rapid degradation indicates temperature rise, pest infiltration, or product contamination.</p>
+</div>
+</section>
+<section id="record-keeping">
+<h2>Record-Keeping Systems</h2>
+<p>Reliable documentation prevents losses, detects fraud, and enables optimization.</p>
+<h3>Essential Records</h3>
+<ol>
+<li><strong>Inventory ledger</strong> — Item, quantity, date, source, destination (as described in Inventory Management section)</li>
+<li><strong>Transaction log</strong> — All incoming and outgoing shipments: what, when, who, where, condition</li>
+<li><strong>Vendor ledger</strong> — Contact info, terms, performance history, dispute resolution</li>
+<li><strong>Receiving reports</strong> — Signed verification of deliveries: count, quality, discrepancies</li>
+<li><strong>Quality records</strong> — Rejection reasons, contamination incidents, corrective actions</li>
+</ol>
+<h3>Physical Storage of Records</h3>
+<ul>
+<li><strong>Daily ledgers</strong> — Keep active ledgers in waterproof containers near the warehouse entrance</li>
+<li><strong>Archived records</strong> — Store completed ledgers in a dry room separate from warehouse, organized by month/year</li>
+<li><strong>Backup copies</strong> — If resources allow, maintain a duplicate set of records in a separate location to protect against fire or flood</li>
+</ul>
+<h3>Regular Audits</h3>
+<ul>
+<li><strong>Monthly:</strong> Physical count of high-value items; reconcile with ledger</li>
+<li><strong>Quarterly:</strong> Spot-check low-use items; review vendor performance</li>
+<li><strong>Annually:</strong> Full inventory count; identify trends in waste/spoilage; update forecasts</li>
+</ul>
+<p><svg aria-label="Supply Chain Network diagram showing source to warehouse to distribution flow" height="400" style="background-color: transparent;" viewBox="0 0 600 300" width="600">
+  <!-- Title -->
+  <text fill="var(--accent, #d4a574)" font-size="18" font-weight="bold" text-anchor="middle" x="300" y="25">Three-Stage Supply Chain</text>
+
+  <!-- Source Stage -->
+  <g>
+    <rect x="20" y="60" width="120" height="100" fill="var(--card, #2d2416)" stroke="var(--accent, #d4a574)" stroke-width="2" rx="8"/>
+    <text fill="var(--accent, #d4a574)" font-size="14" font-weight="bold" text-anchor="middle" x="80" y="85">SOURCE</text>
+    <text fill="var(--text, #f5f0e8)" font-size="11" text-anchor="middle" x="80" y="105">Farms</text>
+    <text fill="var(--text, #f5f0e8)" font-size="11" text-anchor="middle" x="80" y="122">Mines</text>
+    <text fill="var(--text, #f5f0e8)" font-size="11" text-anchor="middle" x="80" y="139">Salvage</text>
+  </g>
+
+  <!-- Warehouse Stage -->
+  <g>
+    <rect x="240" y="60" width="120" height="100" fill="var(--card, #2d2416)" stroke="var(--accent, #d4a574)" stroke-width="2" rx="8"/>
+    <text fill="var(--accent, #d4a574)" font-size="14" font-weight="bold" text-anchor="middle" x="300" y="85">WAREHOUSE</text>
+    <text fill="var(--text, #f5f0e8)" font-size="11" text-anchor="middle" x="300" y="105">Storage</text>
+    <text fill="var(--text, #f5f0e8)" font-size="11" text-anchor="middle" x="300" y="122">Consolidation</text>
+    <text fill="var(--text, #f5f0e8)" font-size="11" text-anchor="middle" x="300" y="139">Inventory</text>
+  </g>
+
+  <!-- Distribution Stage -->
+  <g>
+    <rect x="460" y="60" width="120" height="100" fill="var(--card, #2d2416)" stroke="var(--accent, #d4a574)" stroke-width="2" rx="8"/>
+    <text fill="var(--accent, #d4a574)" font-size="14" font-weight="bold" text-anchor="middle" x="520" y="85">DISTRIBUTION</text>
+    <text fill="var(--text, #f5f0e8)" font-size="11" text-anchor="middle" x="520" y="105">Markets</text>
+    <text fill="var(--text, #f5f0e8)" font-size="11" text-anchor="middle" x="520" y="122">Consumers</text>
+    <text fill="var(--text, #f5f0e8)" font-size="11" text-anchor="middle" x="520" y="139">Retailers</text>
+  </g>
+
+  <!-- Flow Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--accent, #d4a574)"/>
+    </marker>
+  </defs>
+
+  <path d="M 140 110 L 240 110" stroke="var(--accent, #d4a574)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 360 110 L 460 110" stroke="var(--accent, #d4a574)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Bottom section: Transportation modes -->
+  <text fill="var(--accent, #d4a574)" font-size="13" font-weight="bold" x="20" y="200">Transportation Modes:</text>
+
+  <!-- Mode boxes -->
+  <g>
+    <rect x="20" y="210" width="100" height="80" fill="var(--surface, #1a2e1a)" stroke="var(--border, #444)" stroke-width="1" rx="4"/>
+    <text fill="var(--accent, #d4a574)" font-size="11" font-weight="bold" text-anchor="middle" x="70" y="228">Human Carry</text>
+    <text fill="var(--text, #f5f0e8)" font-size="9" text-anchor="middle" x="70" y="242">50-200 kg</text>
+    <text fill="var(--text, #f5f0e8)" font-size="9" text-anchor="middle" x="70" y="255">20-30 km/day</text>
+    <text fill="var(--muted, #999)" font-size="8" text-anchor="middle" x="70" y="268">Short, remote</text>
+  </g>
+
+  <g>
+    <rect x="140" y="210" width="100" height="80" fill="var(--surface, #1a2e1a)" stroke="var(--border, #444)" stroke-width="1" rx="4"/>
+    <text fill="var(--accent, #d4a574)" font-size="11" font-weight="bold" text-anchor="middle" x="190" y="228">Animal Cart</text>
+    <text fill="var(--text, #f5f0e8)" font-size="9" text-anchor="middle" x="190" y="242">200-800 kg</text>
+    <text fill="var(--text, #f5f0e8)" font-size="9" text-anchor="middle" x="190" y="255">25-40 km/day</text>
+    <text fill="var(--muted, #999)" font-size="8" text-anchor="middle" x="190" y="268">Local trade</text>
+  </g>
+
+  <g>
+    <rect x="260" y="210" width="100" height="80" fill="var(--surface, #1a2e1a)" stroke="var(--border, #444)" stroke-width="1" rx="4"/>
+    <text fill="var(--accent, #d4a574)" font-size="11" font-weight="bold" text-anchor="middle" x="310" y="228">Water Barge</text>
+    <text fill="var(--text, #f5f0e8)" font-size="9" text-anchor="middle" x="310" y="242">5-50 tons</text>
+    <text fill="var(--text, #f5f0e8)" font-size="9" text-anchor="middle" x="310" y="255">10-20 km/day</text>
+    <text fill="var(--muted, #999)" font-size="8" text-anchor="middle" x="310" y="268">Bulk goods</text>
+  </g>
+
+  <g>
+    <rect x="380" y="210" width="100" height="80" fill="var(--surface, #1a2e1a)" stroke="var(--border, #444)" stroke-width="1" rx="4"/>
+    <text fill="var(--accent, #d4a574)" font-size="11" font-weight="bold" text-anchor="middle" x="430" y="228">Coastal Ship</text>
+    <text fill="var(--text, #f5f0e8)" font-size="9" text-anchor="middle" x="430" y="242">20-200 tons</text>
+    <text fill="var(--text, #f5f0e8)" font-size="9" text-anchor="middle" x="430" y="255">Variable speed</text>
+    <text fill="var(--muted, #999)" font-size="8" text-anchor="middle" x="430" y="268">Long distance</text>
+  </g>
+
+  <g>
+    <rect x="500" y="210" width="100" height="80" fill="var(--surface, #1a2e1a)" stroke="var(--border, #444)" stroke-width="1" rx="4"/>
+    <text fill="var(--accent, #d4a574)" font-size="11" font-weight="bold" text-anchor="middle" x="550" y="228">Rail System</text>
+    <text fill="var(--text, #f5f0e8)" font-size="9" text-anchor="middle" x="550" y="242">50-100 tons</text>
+    <text fill="var(--text, #f5f0e8)" font-size="9" text-anchor="middle" x="550" y="255">Fixed routes</text>
+    <text fill="var(--muted, #999)" font-size="8" text-anchor="middle" x="550" y="268">High volume</text>
+  </g>
+</svg></p>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="economics-trade.html">Economics &amp; Trade</a>
+<a href="rationing-distribution.html">Rationing &amp; Equitable Distribution</a>
+<a href="road-networks-logistics.html">Road Networks &amp; Logistics Planning</a>
+<a href="currency-systems-barter.html">Currency Systems &amp; Barter Economics</a>
+<a href="double-entry-bookkeeping.html">Double-Entry Bookkeeping</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

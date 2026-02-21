@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/microbiology-basics.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microbiology Fundamentals - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.microbe-table { width: 100%; margin: 1rem 0; }
+.microbe-table th, .microbe-table td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
+.stain-box { margin: 1rem 0; padding: 1rem; background: var(--card); border-left: 4px solid var(--accent); }
+
+</style>
+<meta name="description" content="Bacteria, viruses, fungi, parasites, microscopy, staining, culture media, field identification">
+<link rel="canonical" href="https://zerotoherohero.com/guides/microbiology-basics.html">
+<meta property="og:title" content="Microbiology Fundamentals">
+<meta property="og:description" content="Bacteria, viruses, fungi, parasites, microscopy, staining, culture media, field identification">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Foundational Sciences", "item": "https://zerotoherohero.com/#sec-sciences"},
+    {"@type": "ListItem", "position": 3, "name": "Microbiology Fundamentals", "item": "https://zerotoherohero.com/guides/microbiology-basics.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Microbiology Fundamentals",
+  "description": "Bacteria, viruses, fungi, parasites, microscopy, staining, culture media, field identification",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-426">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-sciences">Foundational Sciences</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Microbiology Fundamentals</span>
+</nav>
+<header>
+<h1>Microbiology Fundamentals</h1>
+<p class="subtitle">Bacteria, viruses, fungi, parasites, microscopy, staining, culture media, field identification</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~17 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#microbial-taxonomy">Microbial Taxonomy</a></li>
+<li><a href="#bacteria-classification">Bacteria: Classification and Identification</a></li>
+<li><a href="#viruses-fungi-parasites">Viruses, Fungi, and Parasites</a></li>
+<li><a href="#culture-media">Culture Media Preparation</a></li>
+<li><a href="#colony-morphology">Colony Morphology (Identification by Appearance)</a></li>
+<li><a href="#antibiotic-sensitivity">Antibiotic Sensitivity Testing (Kirby-Bauer Method)</a></li>
+<li><a href="#water-testing">Water Testing for Pathogens</a></li>
+<li><a href="#infection-control">Infection Control Principles</a></li>
+<li><a href="#microscope-construction">Improvised Microscope Construction</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<p>Microorganisms are invisible to the naked eye but profoundly affect human health and survival. This guide covers the fundamental classification, identification, and practical testing of bacteria, viruses, fungi, and parasites in low-resource settings.</p>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Microorganism Classification and Gram Staining">
+  <defs>
+    <style>
+      .micro-label { font-family: Arial, sans-serif; font-size: 12px; fill: var(--text); }
+      .micro-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: var(--text); }
+      .microbe-shape { stroke: var(--text); stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="var(--bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="30" class="micro-title" text-anchor="middle">Microorganism Classification &amp; Size Scale</text>
+
+  <!-- Size scale ruler -->
+  <text x="50" y="65" class="micro-title">Relative Sizes:</text>
+
+  <!-- Red blood cell (7 µm) -->
+  <circle cx="120" cy="100" r="12" fill="#c41e3a" class="microbe-shape"/>
+  <text x="120" y="130" class="micro-label" text-anchor="middle" style="font-size: 10px; font-weight: bold;">RBC</text>
+  <text x="120" y="145" class="micro-label" text-anchor="middle" style="font-size: 9px;">7 µm</text>
+
+  <!-- Bacteria (1–5 µm, shown at scale) -->
+  <ellipse cx="220" cy="100" rx="4" ry="8" fill="#8b7355" class="microbe-shape"/>
+  <text x="220" y="130" class="micro-label" text-anchor="middle" style="font-size: 10px; font-weight: bold;">Bacterium</text>
+  <text x="220" y="145" class="micro-label" text-anchor="middle" style="font-size: 9px;">1–5 µm</text>
+
+  <!-- Virus (0.05–0.3 µm, shown enlarged) -->
+  <circle cx="300" cy="100" r="2" fill="var(--accent)" class="microbe-shape"/>
+  <text x="300" y="130" class="micro-label" text-anchor="middle" style="font-size: 10px; font-weight: bold;">Virus</text>
+  <text x="300" y="145" class="micro-label" text-anchor="middle" style="font-size: 9px;">0.05–0.3 µm</text>
+
+  <!-- Giardia cyst (10–14 µm) -->
+  <ellipse cx="380" cy="100" rx="8" ry="10" fill="#7a9f7f" class="microbe-shape"/>
+  <text x="380" y="130" class="micro-label" text-anchor="middle" style="font-size: 10px; font-weight: bold;">Giardia</text>
+  <text x="380" y="145" class="micro-label" text-anchor="middle" style="font-size: 9px;">10–14 µm</text>
+
+  <!-- Bacterial shapes section -->
+  <text x="50" y="185" class="micro-title">Bacterial Shapes:</text>
+
+  <!-- Cocci -->
+  <g>
+    <circle cx="100" cy="230" r="8" fill="var(--surface)" class="microbe-shape"/>
+    <circle cx="120" cy="230" r="8" fill="var(--surface)" class="microbe-shape"/>
+    <circle cx="140" cy="230" r="8" fill="var(--surface)" class="microbe-shape"/>
+    <text x="120" y="270" class="micro-label" text-anchor="middle" style="font-weight: bold;">Cocci (Spherical)</text>
+    <text x="120" y="286" class="micro-label" text-anchor="middle" style="font-size: 10px;">*Staphylococcus, Streptococcus*</text>
+  </g>
+
+  <!-- Bacilli -->
+  <g>
+    <rect x="85" y="220" width="30" height="20" fill="var(--surface)" class="microbe-shape" rx="3"/>
+    <rect x="125" y="220" width="30" height="20" fill="var(--surface)" class="microbe-shape" rx="3"/>
+    <text x="120" y="270" class="micro-label" text-anchor="middle" style="font-weight: bold;">Bacilli (Rod-shaped)</text>
+    <text x="120" y="286" class="micro-label" text-anchor="middle" style="font-size: 10px;">*E. coli, Bacillus anthracis*</text>
+  </g>
+
+  <!-- Spirilla -->
+  <g>
+    <path d="M 70 230 Q 80 215 90 230 Q 100 245 110 230 Q 120 215 130 230" fill="none" class="microbe-shape" stroke-width="2"/>
+    <text x="100" y="270" class="micro-label" text-anchor="middle" style="font-weight: bold;">Spirilla (Spiral)</text>
+    <text x="100" y="286" class="micro-label" text-anchor="middle" style="font-size: 10px;">*Vibrio cholerae, Spirillum*</text>
+  </g>
+
+  <!-- Gram staining results -->
+  <text x="420" y="185" class="micro-title">Gram Staining Results:</text>
+
+  <!-- Gram-Positive -->
+  <g>
+    <rect x="420" y="210" width="160" height="90" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="500" y="230" class="micro-label" text-anchor="middle" style="font-weight: bold;">Gram-Positive</text>
+    <circle cx="450" cy="260" r="6" fill="#7a5f9f" class="microbe-shape"/>
+    <circle cx="470" cy="260" r="6" fill="#7a5f9f" class="microbe-shape"/>
+    <circle cx="490" cy="260" r="6" fill="#7a5f9f" class="microbe-shape"/>
+    <circle cx="510" cy="260" r="6" fill="#7a5f9f" class="microbe-shape"/>
+    <circle cx="530" cy="260" r="6" fill="#7a5f9f" class="microbe-shape"/>
+    <text x="500" y="285" class="micro-label" text-anchor="middle" style="font-size: 10px;">Purple Color</text>
+    <text x="500" y="300" class="micro-label" text-anchor="middle" style="font-size: 9px;">Thick peptidoglycan layer</text>
+  </g>
+
+  <!-- Gram-Negative -->
+  <g>
+    <rect x="600" y="210" width="160" height="90" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="680" y="230" class="micro-label" text-anchor="middle" style="font-weight: bold;">Gram-Negative</text>
+    <circle cx="630" cy="260" r="6" fill="#c45a5a" class="microbe-shape"/>
+    <circle cx="650" cy="260" r="6" fill="#c45a5a" class="microbe-shape"/>
+    <circle cx="670" cy="260" r="6" fill="#c45a5a" class="microbe-shape"/>
+    <circle cx="690" cy="260" r="6" fill="#c45a5a" class="microbe-shape"/>
+    <circle cx="710" cy="260" r="6" fill="#c45a5a" class="microbe-shape"/>
+    <text x="680" y="285" class="micro-label" text-anchor="middle" style="font-size: 10px;">Pink/Red Color</text>
+    <text x="680" y="300" class="micro-label" text-anchor="middle" style="font-size: 9px;">Thin peptidoglycan + outer membrane</text>
+  </g>
+
+  <!-- Microorganism groups -->
+  <text x="50" y="360" class="micro-title">The Four Kingdoms of Microorganisms:</text>
+
+  <!-- Bacteria -->
+  <g>
+    <rect x="50" y="380" width="170" height="100" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="135" y="400" class="micro-label" text-anchor="middle" style="font-weight: bold;">Bacteria</text>
+    <text x="65" y="420" class="micro-label" style="font-size: 10px;">• Prokaryotes (no nucleus)</text>
+    <text x="65" y="435" class="micro-label" style="font-size: 10px;">• 0.5–5 µm</text>
+    <text x="65" y="450" class="micro-label" style="font-size: 10px;">• Reproduce by binary fission</text>
+    <text x="65" y="465" class="micro-label" style="font-size: 10px;">• Identified by Gram stain</text>
+  </g>
+
+  <!-- Viruses -->
+  <g>
+    <rect x="235" y="380" width="170" height="100" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="320" y="400" class="micro-label" text-anchor="middle" style="font-weight: bold;">Viruses</text>
+    <text x="250" y="420" class="micro-label" style="font-size: 10px;">• Acellular</text>
+    <text x="250" y="435" class="micro-label" style="font-size: 10px;">• 0.02–0.3 µm</text>
+    <text x="250" y="450" class="micro-label" style="font-size: 10px;">• Require host cells</text>
+    <text x="250" y="465" class="micro-label" style="font-size: 10px;">• Require electron microscope</text>
+  </g>
+
+  <!-- Fungi -->
+  <g>
+    <rect x="420" y="380" width="170" height="100" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="505" y="400" class="micro-label" text-anchor="middle" style="font-weight: bold;">Fungi</text>
+    <text x="435" y="420" class="micro-label" style="font-size: 10px;">• Eukaryotes (with nucleus)</text>
+    <text x="435" y="435" class="micro-label" style="font-size: 10px;">• 5–100 µm</text>
+    <text x="435" y="450" class="micro-label" style="font-size: 10px;">• Molds (filaments) &amp; Yeasts</text>
+    <text x="435" y="465" class="micro-label" style="font-size: 10px;">• Reproduce by spores</text>
+  </g>
+
+  <!-- Parasites -->
+  <g>
+    <rect x="605" y="380" width="170" height="100" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <text x="690" y="400" class="micro-label" text-anchor="middle" style="font-weight: bold;">Parasites</text>
+    <text x="620" y="420" class="micro-label" style="font-size: 10px;">• Eukaryotic organisms</text>
+    <text x="620" y="435" class="micro-label" style="font-size: 10px;">• Protozoa: 10–50 µm</text>
+    <text x="620" y="450" class="micro-label" style="font-size: 10px;">• Helminths: 1–30 cm</text>
+    <text x="620" y="465" class="micro-label" style="font-size: 10px;">• Visible to naked eye</text>
+  </g>
+
+</svg>
+</p>
+<section id="microbial-taxonomy">
+<h2>Microbial Taxonomy</h2>
+<p><strong>The four kingdoms of microorganisms:</strong></p>
+<ol>
+<li><strong>Bacteria:</strong> Single-celled prokaryotes (no nucleus); typically 0.5–5 micrometers (µm); reproduce by binary fission (splitting).</li>
+<li><strong>Viruses:</strong> Acellular; much smaller (0.02–0.3 µm); require host cells to reproduce; cause infection by hijacking cellular machinery.</li>
+<li><strong>Fungi:</strong> Eukaryotes (with nucleus); typically 5–100 µm; include molds (filamentous) and yeasts (round cells); reproduce by spores or budding.</li>
+<li><strong>Parasites:</strong> Eukaryotic organisms visible to the naked eye or barely visible under low magnification; include protozoa (single-celled) and helminths (worms).</li>
+</ol>
+<p><strong>Size comparison:</strong></p>
+<ul>
+<li>Red blood cell: ~7 µm (visible under microscope).</li>
+<li>Typical bacterium: 1–5 µm (requires microscope at ×400 magnification).</li>
+<li>Virus: 0.05–0.3 µm (requires electron microscope for visualization).</li>
+<li>Parasite (e.g., <em>Giardia</em> cyst): 10–14 µm (visible under ×100 microscope).</li>
+</ul>
+</section>
+<section id="bacteria-classification">
+<h2>Bacteria: Classification and Identification</h2>
+<p>Bacteria are classified by shape and staining properties.</p>
+<h3>Shape</h3>
+<ul>
+<li><strong>Coccus (cocci):</strong> Spherical cells. Examples: <em>Staphylococcus aureus</em>, <em>Streptococcus pyogenes</em>.</li>
+<li><strong>Bacillus (bacilli):</strong> Rod-shaped cells. Examples: <em>Escherichia coli</em>, <em>Bacillus anthracis</em>.</li>
+<li><strong>Spirillum (spirilla):</strong> Spiral/helical cells. Examples: <em>Vibrio cholerae</em>, <em>Spirillum volutans</em>.</li>
+<li><strong>Vibrio:</strong> Curved rod. Example: <em>Vibrio cholerae</em>.</li>
+</ul>
+<h3>Gram Staining (Bacterial Identification)</h3>
+<p><strong>Principle:</strong> Gram staining differentiates bacteria into two groups based on cell wall composition.</p>
+<p><strong>Gram-positive bacteria:</strong> Thick peptidoglycan layer; retain crystal violet (stain purple).</p>
+<ul>
+<li>Examples: <em>Staphylococcus</em>, <em>Streptococcus</em>, <em>Clostridium</em>.</li>
+<li>Generally less dangerous; more susceptible to antibiotics.</li>
+</ul>
+<p><strong>Gram-negative bacteria:</strong> Thin peptidoglycan layer with outer lipid membrane; do not retain crystal violet (stain pink/red with safranin counterstain).</p>
+<ul>
+<li>Examples: <em>Escherichia coli</em>, <em>Vibrio cholerae</em>, <em>Salmonella</em>.</li>
+<li>Often more dangerous; more resistant to antibiotics.</li>
+</ul>
+<p><strong>Gram staining procedure (field method):</strong></p>
+<ol>
+<li><strong>Prepare a smear:</strong> Spread a loop of bacteria-containing liquid thinly on a glass slide.</li>
+<li><strong>Heat fix:</strong> Pass the slide through a flame 3–5 times to kill and fix bacteria.</li>
+<li><strong>Crystal violet stain:</strong> Apply for 1 minute; rinse gently with water.</li>
+<li><strong>Gram's iodine:</strong> Apply for 1 minute (acts as mordant); rinse.</li>
+<li><strong>Alcohol rinse:</strong> Apply acetone or 70% alcohol for 30 seconds; rinse immediately.</li>
+<li><strong>Safranin counterstain:</strong> Apply for 30 seconds; rinse and blot dry.</li>
+<li><strong>Examine:</strong> Under ×1000 magnification (oil immersion), Gram-positive appear purple; Gram-negative appear pink.</li>
+</ol>
+<h3>Other Bacterial Tests</h3>
+<p><strong>Acid-fast staining</strong> (for <em>Mycobacterium tuberculosis</em>, <em>Mycobacterium leprae</em>):</p>
+<ul>
+<li>Uses carbol fuchsin dye and heat.</li>
+<li>Acid-fast bacteria appear red; others are blue (methylene blue background).</li>
+<li>Complex waxy cell wall retains the dye.</li>
+</ul>
+<p><strong>Oxygen preference:</strong></p>
+<ul>
+<li><strong>Aerobic:</strong> Require oxygen; grow on the surface of culture plates.</li>
+<li><strong>Anaerobic:</strong> Cannot tolerate oxygen; grow only in the absence of oxygen.</li>
+<li><strong>Facultative:</strong> Can grow with or without oxygen.</li>
+</ul>
+</section>
+<section id="viruses-fungi-parasites">
+<h2>Viruses, Fungi, and Parasites</h2>
+<h3>Viruses</h3>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Acellular; consist of genetic material (RNA or DNA) surrounded by a protein coat.</li>
+<li>Cannot reproduce independently; require host cells.</li>
+<li>Size: 0.02–0.3 micrometers.</li>
+<li>Cannot be seen with standard microscopy; require electron microscopy.</li>
+</ul>
+<p><strong>Field identification:</strong> Viruses cause specific disease patterns (symptoms) and can be tested via:</p>
+<ul>
+<li><strong>Serological tests:</strong> Blood tests detecting antibodies (slow in field).</li>
+<li><strong>Antigen tests:</strong> Rapid detection in saliva, nasal secretions (requires test kits).</li>
+</ul>
+<p><strong>Common viruses:</strong> Influenza, measles, chickenpox, polio, hepatitis, COVID-19.</p>
+<h3>Fungi</h3>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Eukaryotic organisms; contain a nucleus and membrane-bound organelles.</li>
+<li>Cell wall contains chitin (not cellulose like plants).</li>
+<li>Reproduce via spores.</li>
+</ul>
+<p><strong>Two main forms:</strong></p>
+<ul>
+<li><strong>Molds:</strong> Filamentous; form visible colonies (fuzzy growth on food, damp surfaces).</li>
+<li><strong>Yeasts:</strong> Single-celled; round or oval; ferment sugars.</li>
+</ul>
+<p><strong>Field identification:</strong></p>
+<ul>
+<li><strong>Appearance:</strong> Molds visible to naked eye; white, black, or green fuzzy growth.</li>
+<li><strong>Microscopy:</strong> Septate or non-septate hyphae (filaments); spore-bearing structures visible at ×100–400.</li>
+<li><strong>Odor:</strong> Moldy/earthy smell indicates fungal growth.</li>
+</ul>
+<p><strong>Common problematic fungi:</strong> <em>Candida albicans</em> (yeast infection), <em>Aspergillus</em> (mold, respiratory disease), <em>Cryptococcus</em> (meningitis).</p>
+<h3>Parasites</h3>
+<p><strong>Protozoa (single-celled parasites):</strong></p>
+<ul>
+<li>Size: 10–50 micrometers.</li>
+<li>Examples: <em>Giardia lamblia</em> (giardiasis), <em>Entamoeba histolytica</em> (amoebic dysentery), <em>Plasmodium</em> (malaria).</li>
+<li>Identification: Microscopic examination of stool, blood, or body fluids.</li>
+</ul>
+<p><strong>Helminths (parasitic worms):</strong></p>
+<ul>
+<li>Visible to naked eye (1–30 cm) or under microscope.</li>
+<li>Examples: Roundworms, tapeworms, hookworms, schistosomes.</li>
+<li>Identification: Eggs visible in stool under microscope; adult worms sometimes in vomit or feces.</li>
+</ul>
+<p><strong>Field identification of parasites:</strong></p>
+<ol>
+<li><strong>Stool examination:</strong> Fix a small sample (pea-sized) in 10% formalin. Centrifuge and examine under microscope at ×100–400.</li>
+<li><strong>Blood smear:</strong> For malaria—take a drop of blood, spread thinly, dry, stain with Giemsa, and examine for parasite-infected red blood cells.</li>
+<li><strong>Visual inspection:</strong> Large tapeworm segments in stool are visible to naked eye.</li>
+</ol>
+</section>
+<section id="culture-media">
+<h2>Culture Media Preparation</h2>
+<p>Growing microorganisms in culture allows identification, testing, and preservation.</p>
+<h3>Basic Media Composition</h3>
+<p><strong>Nutrient agar (general-purpose bacterial medium):</strong></p>
+<ul>
+<li>Ingredients: Beef extract (3 g), peptone (5 g), sodium chloride (5 g), agar (15 g), distilled water (1 liter).</li>
+<li><strong>Beef extract:</strong> Source of vitamins, minerals.</li>
+<li><strong>Peptone:</strong> Nitrogen source.</li>
+<li><strong>NaCl:</strong> Maintains osmotic balance.</li>
+<li><strong>Agar:</strong> Gel that solidifies at 37°C, allowing colonial growth.</li>
+</ul>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Dissolve all ingredients in 1 liter distilled water.</li>
+<li>Heat to 121°C (250°F) at pressure (15 psi) for 15 minutes to sterilize.</li>
+<li>Cool to ~50°C; pour into sterile petri dishes (~20 mL per dish).</li>
+<li>Allow to solidify at room temperature (~1 hour); plates are ready for inoculation.</li>
+</ol>
+<h3>Alternative Media (Low-Resource)</h3>
+<p><strong>Potato dextrose agar (for fungi):</strong></p>
+<ul>
+<li>Boil 200g potatoes, filter; add 20g sugar, 15g agar, 1L water.</li>
+<li>Sterilize as above.</li>
+</ul>
+<p><strong>Broth culture (liquid medium):</strong></p>
+<ul>
+<li>Same ingredients as agar but omit agar. Useful for growing large quantities; lacks the solid surface for colonial observation.</li>
+</ul>
+<h3>Streak Plating (Isolation Method)</h3>
+<p>To isolate a pure culture from a mixed sample:</p>
+<ol>
+<li><strong>Sterilize a wire loop:</strong> Heat over a flame until glowing red; cool for 10 seconds in the air (do not touch anything).</li>
+<li><strong>Load the loop:</strong> Touch the loop to the sample (liquid or colony).</li>
+<li><strong>Streak the plate:</strong> Drag the loop across the agar surface in a zig-zag pattern, covering 1/3 of the plate.</li>
+<li><strong>Re-sterilize the loop:</strong> Flame again; cool briefly.</li>
+<li><strong>Streak from the first region:</strong> Drag the loop through the edge of the first streak into the next 1/3 of the plate.</li>
+<li><strong>Repeat:</strong> Flame, cool, and streak from the second region into the final 1/3.</li>
+<li><strong>Incubate:</strong> Place plate upside down (agar on top, condensation on lid) at 37°C for 24–48 hours.</li>
+<li><strong>Observe:</strong> Isolated colonies should appear in the final streak region; each colony is a pure culture from a single cell.</li>
+</ol>
+</section>
+<section id="colony-morphology">
+<h2>Colony Morphology (Identification by Appearance)</h2>
+<p>On solid media, individual cells multiply into visible colonies. Colony characteristics help identify microorganisms.</p>
+<table class="microbe-table">
+<thead>
+<tr>
+  <th>Characteristic</th>
+  <th>Variations</th>
+  <th>Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Shape</strong></td>
+  <td>Round, irregular, star-shaped</td>
+  <td>Helps identify species</td>
+</tr>
+<tr>
+  <td><strong>Color</strong></td>
+  <td>Clear, white, yellow, orange, red, black, green</td>
+  <td>Pigment production; some colors indicate pathogenic species</td>
+</tr>
+<tr>
+  <td><strong>Size</strong></td>
+  <td>Pinpoint (1–2 mm), small (2–5 mm), large (&gt;5 mm)</td>
+  <td>Growth rate; larger colonies often indicate favorable conditions</td>
+</tr>
+<tr>
+  <td><strong>Texture</strong></td>
+  <td>Smooth, rough, mucoid, powdery</td>
+  <td>Surface composition; mucoid colonies often pathogenic (e.g., *Klebsiella*)</td>
+</tr>
+<tr>
+  <td><strong>Edge</strong></td>
+  <td>Smooth, irregular, feathery, serrated</td>
+  <td>Helps differentiate closely related species</td>
+</tr>
+<tr>
+  <td><strong>Elevation</strong></td>
+  <td>Flat, raised, umbonate (nipple-like)</td>
+  <td>Growth pattern; raised colonies often indicate denser growth</td>
+</tr>
+</tbody>
+</table>
+<div class="tip">
+<p><em>Staphylococcus aureus</em> colonies are typically small, round, white/golden, and mucoid. <em>Escherichia coli</em> colonies are typically small, round, clear or whitish, and smooth. Color and texture are key differentiators.</p>
+</div>
+</section>
+<section id="antibiotic-sensitivity">
+<h2>Antibiotic Sensitivity Testing (Kirby-Bauer Method)</h2>
+<p>Determines which antibiotics are effective against a bacterial isolate.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li><strong>Prepare a lawn:</strong> Spread a pure bacterial culture thinly across an entire agar plate (creates a uniform surface).</li>
+<li><strong>Place antibiotic discs:</strong> Using sterile forceps, place antibiotic-impregnated paper discs on the lawn (do not press).</li>
+<li><strong>Incubate:</strong> 37°C for 24 hours.</li>
+<li><strong>Measure zones:</strong> Clear zones around discs indicate antibiotic sensitivity. Resistant bacteria grow all the way to the disc.</li>
+<li><strong>Interpret:</strong> Zone diameter determines sensitivity (varies by antibiotic and bacteria; see reference tables).</li>
+</ol>
+<p><strong>Example:</strong> If a tetracycline disc shows a 20 mm clear zone around it, the bacterium is sensitive to tetracycline.</p>
+</section>
+<section id="water-testing">
+<h2>Water Testing for Pathogens</h2>
+<h3>Total Coliform Count</h3>
+<p>Coliforms are Gram-negative bacteria found in the intestines of warm-blooded animals. Their presence in water indicates fecal contamination.</p>
+<p><strong>Field method (Most Probable Number, MPN):</strong></p>
+<ol>
+<li><strong>Prepare serial dilutions:</strong> From 100 mL water, dilute to 10⁻¹, 10⁻², 10⁻³, etc.</li>
+<li><strong>Inoculate media:</strong> Add 1 mL of each dilution to tubes of lactose broth.</li>
+<li><strong>Incubate:</strong> 35°C for 24–48 hours.</li>
+<li><strong>Observe:</strong> Gas production (bubbles in inverted tubes) indicates coliform fermentation.</li>
+<li><strong>Count positives:</strong> Determine MPN from the number of positive tubes at each dilution.</li>
+<li><strong>Result:</strong> Safe drinking water should have 0 CFU/100 mL.</li>
+</ol>
+<h3>Parasite Testing (Stool Examination)</h3>
+<ol>
+<li><strong>Collect sample:</strong> Fresh stool (~5 grams); place in a container with 10% formalin as preservative.</li>
+<li><strong>Prepare a smear:</strong> Mix a small portion with water on a glass slide.</li>
+<li><strong>Examine under microscope</strong> (×100–400 magnification):
+<ul>
+<li><strong>Giardia cysts:</strong> Oval, 10–14 µm, distinctive &quot;falling leaf&quot; motility if fresh.</li>
+<li><strong>Roundworm eggs:</strong> Oval, 40–60 µm, with smooth shell.</li>
+<li><strong>Hookworm eggs:</strong> Similar to roundworm but smaller (40–50 µm).</li>
+<li><strong>Tapeworm proglottids/eggs:</strong> Segments visible in stool; eggs are round, 40–50 µm.</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="infection-control">
+<h2>Infection Control Principles</h2>
+<p><strong>Hand hygiene:</strong></p>
+<ul>
+<li>Wash with soap and water for at least 20 seconds.</li>
+<li>Alcohol-based sanitizer if water unavailable (requires 60%+ alcohol).</li>
+<li>Critical times: Before eating, after toileting, after handling sick person.</li>
+</ul>
+<p><strong>Food safety:</strong></p>
+<ul>
+<li>Cook thoroughly to internal temperature (71°C / 160°F for meat).</li>
+<li>Store at &lt;4°C (refrigerate) or &gt;65°C (hot hold).</li>
+<li>Avoid cross-contamination (use separate cutting boards for meat and vegetables).</li>
+</ul>
+<p><strong>Disinfection:</strong></p>
+<ul>
+<li><strong>Boiling:</strong> 100°C for 10 minutes kills most pathogens (except some spores requiring longer).</li>
+<li><strong>Bleach solution:</strong> 1:10 dilution (1 part bleach, 9 parts water) is effective; allow 10 minutes contact time.</li>
+<li><strong>Sunlight:</strong> UV exposure kills many pathogens; leave water in clear containers in sun for 6+ hours (SODIS method).</li>
+</ul>
+<p><strong>Isolation of infected persons:</strong></p>
+<ul>
+<li>Separate from healthy individuals when possible.</li>
+<li>Use separate eating/drinking utensils.</li>
+<li>Restrict contact with vulnerable people (elderly, infants, immunocompromised).</li>
+</ul>
+</section>
+<section id="microscope-construction">
+<h2>Improvised Microscope Construction</h2>
+<p>For cultures without access to a commercial microscope, a simple one can be improvised using a water droplet and glass lenses.</p>
+<p><strong>Simple water droplet microscope:</strong></p>
+<ol>
+<li>Place a droplet of liquid sample on a glass slide.</li>
+<li>Hold a drinking glass (or water-filled round bottle) above the droplet as a lens.</li>
+<li>Adjust the distance until the image magnifies (approximately 10–20×).</li>
+<li>Microscopic organisms may be visible as shadows or as mobile particles.</li>
+</ol>
+<p><strong>Better improvised scope (using a magnifying glass):</strong></p>
+<ol>
+<li>Mount a magnifying glass (~10× magnification) in a fixed position above a glass slide.</li>
+<li>Use a light source (sunlight or lamp) positioned below.</li>
+<li>Prepare a thin wet mount slide (sample + drop of water covered with a glass cover slip).</li>
+<li>Observe through the lens.</li>
+</ol>
+<p><strong>Limitations:</strong> Low magnification (10–20×) allows viewing of large parasites and fungi but not bacteria or viruses.</p>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="microscopy.html">Microscopy &amp; Magnification</a>
+<a href="infection-control.html">Infection Control</a>
+<a href="sterilization-methods.html">Sterilization Methods</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

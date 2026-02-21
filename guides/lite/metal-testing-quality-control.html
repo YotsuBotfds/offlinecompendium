@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/metal-testing-quality-control.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metal Testing &amp; Quality Control</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Metalworking</span> ›
+<span>Metal Testing &amp; Quality Control</span>
+</div>
+
+
+<h1>Metal Testing &amp; Quality Control</h1>
+<p class="subtitle">Non-destructive and field-expedient metal testing without lab equipment: spark testing, file testing, bend testing, heat-color temperature estimation, visual and sound testing (ring test), hardness estimation, and weld inspection basics.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~11 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview: Testing Metal Without a Laboratory</a></li>
+<li><a href="#spark-testing">Spark Testing</a></li>
+<li><a href="#file-testing">File Testing (Hardness Estimation)</a></li>
+<li><a href="#bend-testing">Bend Testing</a></li>
+<li><a href="#heat-color">Heat-Color Temperature Estimation</a></li>
+<li><a href="#sound-testing">Sound Testing (Ring Test)</a></li>
+<li><a href="#visual-inspection">Visual Inspection</a></li>
+<li><a href="#weld-inspection">Weld Inspection Basics</a></li>
+<li><a href="#quality-control-system">Building a Workshop Quality Control System</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview: Testing Metal Without a Laboratory</h2>
+<p>In industrial settings, metal testing relies on spectrometers, tensile testing machines, hardness testers, ultrasonic probes, and X-ray equipment. None of this is available in a post-infrastructure workshop. Yet the need to identify and verify metal quality is just as critical — perhaps more so, because using the wrong material for a load-bearing application, a cutting tool, or a pressure vessel can cause catastrophic failure.</p>
+<p>Field-expedient metal testing uses the five senses plus simple tools to determine material composition, hardness, ductility, structural integrity, and suitability for specific applications. These methods are not as precise as laboratory testing, but experienced practitioners achieve remarkably accurate results — blacksmiths have used spark testing and heat-color assessment for centuries.</p>
+<p>This guide covers the primary field testing methods, their applications and limitations, and quality control procedures for workshop production. For the underlying metallurgy, see <a href="metallurgy-basics.html">Metallurgy Basics</a>. For identifying salvaged scrap metal, see <a href="scrap-metal-identification.html">Scrap Metal Identification</a>. For preventing defects in cast products, see <a href="foundry-defects-prevention.html">Foundry Defects &amp; Prevention</a>.</p>
+</section>
+<section id="spark-testing">
+<h2>Spark Testing</h2>
+<p>Spark testing is the most valuable field method for identifying ferrous metals. When steel or iron is pressed against a spinning grinding wheel, the sparks produced have characteristic patterns that indicate carbon content and alloy composition.</p>
+<h3>Equipment</h3>
+<ul>
+<li>A bench grinder or angle grinder with a clean, medium-grit (60-80) aluminum oxide wheel</li>
+<li>A dark background — perform spark tests in low ambient light or against a dark wall for maximum visibility</li>
+<li>Eye protection (mandatory — you are intentionally generating high-speed metal particles)</li>
+</ul>
+<h3>Technique</h3>
+<p>Hold the sample lightly against the grinding wheel at a consistent angle and pressure. Do not press hard — moderate pressure produces the most readable spark pattern. Observe the spark stream in terms of:</p>
+<ul>
+<li><strong>Length</strong> of the spark stream (carrier lines)</li>
+<li><strong>Color</strong> of the sparks (yellow, orange, white, red)</li>
+<li><strong>Branching</strong> (forks and secondary branches off the main carrier)</li>
+<li><strong>Bursting</strong> (star-shaped explosions at the tips — indicates carbon content)</li>
+<li><strong>Volume</strong> (number of sparks per unit time)</li>
+</ul>
+<h3>Spark Patterns by Material</h3>
+<table class="spark-table">
+<tr><th>Material</th><th>Carrier Length</th><th>Color</th><th>Branching</th><th>Bursting</th></tr>
+<tr><td>Wrought iron / pure iron</td><td>Long (60+ cm)</td><td>Straw yellow</td><td>None to minimal</td><td>None</td></tr>
+<tr><td>Low-carbon steel (0.05-0.20%)</td><td>Long (50-60 cm)</td><td>Light yellow</td><td>Few small forks</td><td>Very few, small</td></tr>
+<tr><td>Medium-carbon steel (0.20-0.50%)</td><td>Medium (40-50 cm)</td><td>Yellow</td><td>Moderate branching</td><td>Moderate star bursts</td></tr>
+<tr><td>High-carbon steel (0.50-1.0%)</td><td>Shorter (30-40 cm)</td><td>Bright yellow-white</td><td>Heavy branching</td><td>Numerous star bursts, bright</td></tr>
+<tr><td>Tool steel (>1.0% C)</td><td>Short (20-30 cm)</td><td>White</td><td>Dense branching</td><td>Profuse bursting, bushy</td></tr>
+<tr><td>Cast iron (2-4% C)</td><td>Very short (15-20 cm)</td><td>Dull red-orange</td><td>Minimal</td><td>Dull red bursts, few</td></tr>
+<tr><td>Stainless steel (chromium alloy)</td><td>Short (20-30 cm)</td><td>Orange to straw</td><td>Moderate</td><td>Few, distinctive orange</td></tr>
+<tr><td>Manganese steel</td><td>Medium</td><td>Yellow</td><td>Moderate</td><td>White, forked bursts</td></tr>
+</table>
+<div class="tip">
+<p>Build a reference library. Keep labeled samples of known metals and test them alongside unknown samples. Comparing sparks side-by-side is far more reliable than comparing against memory or written descriptions. Over time, you will develop an intuitive recognition of spark patterns that no chart can fully convey. For the underlying science of steel composition, see <a href="steel-making.html">Steel Making</a>.</p>
+</div>
+<h3>Limitations</h3>
+<ul>
+<li>Cannot distinguish between different alloys with similar carbon content (e.g., 4140 vs. 4340)</li>
+<li>Non-ferrous metals (aluminum, copper, brass, bronze) produce minimal or no sparks — spark testing is useless for these materials</li>
+<li>Operator experience dramatically affects accuracy — a novice may misread patterns</li>
+<li>Surface coatings, plating, or case-hardening can produce misleading results from surface material rather than core material. Grind through any coating to bare metal before testing</li>
+<li>Wheel condition affects results — a glazed or contaminated wheel produces inconsistent sparks</li>
+</ul>
+</section>
+<section id="file-testing">
+<h2>File Testing (Hardness Estimation)</h2>
+<p>File testing provides a rough but practical estimate of metal hardness using nothing more than a standard steel file.</p>
+<h3>Principle</h3>
+<p>A hardened steel file (typically 60-65 HRC Rockwell hardness) will cut materials softer than itself but skate over materials of equal or greater hardness. By noting how easily the file bites, you can estimate the workpiece hardness.</p>
+<h3>Procedure</h3>
+<ol>
+<li>Select a sharp, new or well-maintained file (a dull file gives false results — everything feels hard to a dull file)</li>
+<li>Apply the file to the workpiece with moderate, consistent pressure on a forward stroke</li>
+<li>Evaluate the result:</li>
+</ol>
+<p><strong>File bites easily, cuts freely:</strong> Workpiece is soft — below approximately 40 HRC. Unhardened mild or medium-carbon steel, wrought iron, most non-ferrous metals.</p>
+<p><strong>File bites with difficulty, some skating:</strong> Workpiece is moderately hard — approximately 40-55 HRC. Partially hardened steel, hard alloy steel.</p>
+<p><strong>File skates completely, no bite:</strong> Workpiece is hard — above approximately 55 HRC. Fully hardened tool steel, case-hardened surfaces, hardened high-carbon steel.</p>
+<p><strong>File barely scratches, glass-like surface:</strong> Workpiece is extremely hard — above 60 HRC. Hardened tool steel, ceramic coatings, carbide.</p>
+<div class="info-box">
+<p><strong>Calibration strategy:</strong> File test a set of known-hardness samples to calibrate your perception. If you have access to hardened drill bits (approximately 60 HRC), un-heat-treated bolts (approximately 20-30 HRC), and a good knife blade (approximately 55-58 HRC), you have three reference points that bracket most workshop materials.</p>
+</div>
+<h3>Applications</h3>
+<ul>
+<li><strong>Verifying heat treatment:</strong> After hardening and tempering, file test the workpiece to confirm it reached the intended hardness. See <a href="tool-hardening-edges.html">Tool Hardening &amp; Edges</a> for heat treatment procedures</li>
+<li><strong>Identifying unknown stock:</strong> Combined with spark testing, file testing helps narrow identification of salvaged metal</li>
+<li><strong>Quality control in production:</strong> Batch-test output from a hardening operation to catch under- or over-tempered pieces</li>
+</ul>
+</section>
+<section id="bend-testing">
+<h2>Bend Testing</h2>
+<p>Bend testing evaluates ductility — the ability of a metal to deform plastically without fracturing. This is critical for materials used in structural applications, springs, or any component subject to bending loads.</p>
+<h3>Simple Bend Test</h3>
+<ol>
+<li>Prepare a test sample: a strip or bar of the material, approximately 6-10mm wide and 3-5mm thick, 100-150mm long</li>
+<li>Clamp one end firmly in a vise</li>
+<li>Bend the free end by hand or with a hammer, aiming for a 90-degree bend</li>
+<li>Observe the result:</li>
+</ol>
+<p><strong>Bends smoothly with no cracking:</strong> High ductility. Suitable for structural use, forming, bending operations. Typical of mild steel, copper, aluminum.</p>
+<p><strong>Bends with visible surface cracking but does not fracture:</strong> Moderate ductility. Usable for structural applications with limited bending. Typical of medium-carbon steel.</p>
+<p><strong>Fractures during bending (snaps cleanly):</strong> Brittle. Not suitable for structural bending loads. Typical of hardened high-carbon steel, cast iron, or overly quenched material. May be suitable for cutting tools or compression-only applications.</p>
+<p><strong>Fractures with granular, crystalline fracture surface:</strong> Very brittle with large grain structure. Suggests poor material quality, overheating during forging, or incorrect heat treatment.</p>
+<div class="warning">
+<p><strong>Bend testing destroys the sample.</strong> Only test material you can afford to sacrifice — use offcuts or extra pieces from the same stock. Never bend-test a finished component unless you intend to discard it. The test permanently deforms or fractures the sample.</p>
+</div>
+<h3>Reverse Bend Test (Fatigue Assessment)</h3>
+<p>Bend the sample back and forth through 90 degrees repeatedly. Count the number of cycles before failure. Higher cycle count indicates better fatigue resistance. This is particularly relevant for springs, hinges, and components subject to repeated loading. Compare results to known materials using the same sample dimensions.</p>
+</section>
+<section id="heat-color">
+<h2>Heat-Color Temperature Estimation</h2>
+<p>When heating metal for forging, tempering, or heat treatment, temperature is critical. Without a pyrometer or thermocouple, smiths rely on the color of heated metal to estimate temperature. This technique requires practice but becomes highly reliable with experience.</p>
+<h3>Steel Color-Temperature Chart</h3>
+<p>The following colors are observed in subdued lighting (not direct sunlight — bright ambient light washes out lower colors):</p>
+<table class="color-table">
+<tr><th>Color</th><th>Approximate Temperature</th><th>Significance</th></tr>
+<tr><td>Pale straw yellow</td><td>200°C (390°F)</td><td>Light temper — springs, saws</td></tr>
+<tr><td>Dark straw / bronze</td><td>230°C (450°F)</td><td>Medium temper — cold chisels, hammers</td></tr>
+<tr><td>Purple / violet</td><td>260°C (500°F)</td><td>Moderate temper — axes, wood chisels</td></tr>
+<tr><td>Blue</td><td>290°C (550°F)</td><td>Soft temper — springs, screwdrivers</td></tr>
+<tr><td>Pale blue / grey</td><td>320°C (610°F)</td><td>Softened — too soft for most tools</td></tr>
+<tr><td>Faint red (barely visible)</td><td>400°C (750°F)</td><td>Stress relief temperature</td></tr>
+<tr><td>Dark red</td><td>500-600°C (930-1100°F)</td><td>Sub-critical — annealing begins</td></tr>
+<tr><td>Cherry red</td><td>750°C (1380°F)</td><td>Critical temperature for many steels — austenite transformation</td></tr>
+<tr><td>Bright cherry</td><td>850°C (1560°F)</td><td>Good forging heat — hardening temperature for medium-carbon steel</td></tr>
+<tr><td>Orange</td><td>1000°C (1830°F)</td><td>Optimal forging heat for most carbon steel</td></tr>
+<tr><td>Light orange / yellow</td><td>1100°C (2010°F)</td><td>Maximum safe forging heat — grain growth above this</td></tr>
+<tr><td>Yellow-white</td><td>1200°C (2190°F)</td><td>Welding heat for forge welding — surface scaling increases rapidly</td></tr>
+<tr><td>White / sparkling</td><td>1300°C+ (2370°F+)</td><td>Burning — steel is being destroyed, carbon is oxidizing out</td></tr>
+</table>
+<div class="danger">
+<p><strong>Burning steel is irreversible.</strong> If steel reaches white heat with visible sparks flying from the surface, the carbon is oxidizing out of the metal. Burned steel cannot be restored — it is permanently weakened and must be scrapped. This is the most common beginner mistake in blacksmithing. Learn to recognize the yellow-to-white transition and pull the work from the fire immediately. See <a href="blacksmithing.html">Blacksmithing</a> for forging temperature management.</p>
+</div>
+<h3>Tempering Colors</h3>
+<p>Tempering colors (straw through blue) appear on polished steel surfaces as thin oxide films. They are visible only on clean, bright metal — scale or forge-black surfaces will not show tempering colors. After hardening:</p>
+<ol>
+<li>Polish a flat section of the workpiece to bright bare metal</li>
+<li>Heat slowly and evenly — use a torch, hot sand, or an oven rather than direct forge fire for control</li>
+<li>Watch the colors travel across the polished surface</li>
+<li>When the correct color reaches the critical area (cutting edge, working surface), quench immediately in water or oil</li>
+</ol>
+<div class="tip">
+<p>When tempering blades, heat from the spine toward the edge. The spine reaches tempering temperature first (softer, tougher) and the color runs toward the edge. Quench when the desired color reaches the edge. This produces a blade with a hard edge and a tough spine — the optimal combination. For detailed heat treatment procedures, see <a href="tool-hardening-edges.html">Tool Hardening &amp; Edges</a>.</p>
+</div>
+</section>
+<section id="sound-testing">
+<h2>Sound Testing (Ring Test)</h2>
+<p>Sound testing uses the acoustic properties of metal to detect cracks, voids, and composition differences.</p>
+<h3>The Ring Test</h3>
+<p>Suspend the part freely (hang from a string or balance on a fingertip at its center of gravity) and tap it with a small hammer or hard object. Listen to the resulting sound:</p>
+<p><strong>Clear, sustained ring:</strong> Sound metal with no significant internal defects. Typical of good-quality steel, cast iron, and bronze. Higher pitch indicates harder material.</p>
+<p><strong>Dull thud with no ring:</strong> Indicates a crack, internal void, lamination, or compositional issue. The defect absorbs vibration energy and prevents resonance.</p>
+<p><strong>Short ring that dies quickly:</strong> May indicate a surface crack or partial defect that does not fully interrupt resonance but dampens it.</p>
+<h3>Applications</h3>
+<ul>
+<li><strong>Anvil testing:</strong> A good anvil rings clearly when struck. A cracked anvil thuds. This test is essential when evaluating salvaged anvils.</li>
+<li><strong>Casting quality:</strong> Newly cast parts should ring clearly. A dull sound indicates porosity, inclusions, or cracks. See <a href="foundry-defects-prevention.html">Foundry Defects &amp; Prevention</a>.</li>
+<li><strong>Grinding wheel testing:</strong> Before mounting a new or salvaged grinding wheel, tap-test it. A cracked wheel will not ring. A cracked grinding wheel that disintegrates at operating speed is lethal.</li>
+<li><strong>Weld inspection:</strong> Tap along a welded joint. A change in sound character may indicate an incomplete weld or subsurface defect.</li>
+</ul>
+<div class="warning">
+<p><strong>Always ring-test grinding wheels before use.</strong> A cracked grinding wheel spinning at 3000+ RPM will explode, sending fragments at bullet-like speeds. This kills. Suspend the wheel on a pencil through the center hole, tap with a screwdriver handle, and listen. If it does not ring clearly, discard it. No exceptions.</p>
+</div>
+</section>
+<section id="visual-inspection">
+<h2>Visual Inspection</h2>
+<p>Careful visual examination reveals a surprising amount of information about metal quality, heat treatment history, and structural integrity.</p>
+<h3>Fracture Surface Analysis</h3>
+<p>When a metal part breaks, examine the fracture surface:</p>
+<ul>
+<li><strong>Fine-grained, grey, matte surface:</strong> Good quality steel with proper heat treatment. Fine grain indicates correct forging and heat treatment temperatures.</li>
+<li><strong>Coarse, crystalline, bright surface:</strong> Overheated metal with excessive grain growth. The larger the visible crystals, the weaker the material. Common in steel that was forged at too high a temperature or held at high temperature too long.</li>
+<li><strong>Fibrous, torn surface with elongated features:</strong> Ductile fracture — the material stretched before breaking. Indicates good ductility (desirable for structural applications).</li>
+<li><strong>Flat, smooth, shiny surface:</strong> Brittle fracture — the material snapped without deformation. Indicates excessive hardness or poor toughness.</li>
+<li><strong>Layered or flaky appearance:</strong> Lamination — the material has internal separations, likely from rolling or forging defects. Unreliable for load-bearing applications.</li>
+</ul>
+<h3>Surface Condition Assessment</h3>
+<ul>
+<li><strong>Scale patterns:</strong> Heavy, thick, irregular scale indicates overheating or excessive time at forging temperature. Light, even scale is normal.</li>
+<li><strong>Color variations:</strong> Uneven color on quenched or tempered steel indicates uneven heating — the piece may have inconsistent hardness across its length or width.</li>
+<li><strong>Surface cracks:</strong> Fine cracks radiating from edges, corners, or quench lines indicate quench cracking — the steel was too hard, cooled too fast, or had stress risers. Quench-cracked parts are structurally compromised and should not be used for critical applications.</li>
+<li><strong>Porosity:</strong> Visible pits or holes on a casting surface indicate gas porosity. Subsurface porosity may be worse than surface porosity. Structurally significant for pressure-containing applications.</li>
+</ul>
+</section>
+<section id="weld-inspection">
+<h2>Weld Inspection Basics</h2>
+<p>Without ultrasonic or X-ray equipment, weld inspection relies on visual examination, mechanical testing, and sound testing.</p>
+<h3>Visual Weld Inspection</h3>
+<p>Examine every weld for:</p>
+<ul>
+<li><strong>Undercut:</strong> Grooves melted into the base metal along the weld toe. Reduces cross-section and creates stress concentrations. Caused by excessive heat or travel speed.</li>
+<li><strong>Porosity:</strong> Visible gas pores (holes) in the weld surface. Minor surface porosity is often acceptable; extensive porosity indicates contamination (moisture, oil, paint on the joint) or shielding failure.</li>
+<li><strong>Incomplete fusion:</strong> Visible gaps between the weld metal and base metal. The weld did not properly bond to the parent material. Structurally unreliable.</li>
+<li><strong>Cracks:</strong> Any visible crack in a weld is unacceptable for structural applications. Cracks propagate under load. Grind out and re-weld.</li>
+<li><strong>Underfill:</strong> Weld surface is below the level of the base metal. The joint has less cross-section than designed. Add more weld metal.</li>
+<li><strong>Excess reinforcement (too high):</strong> Weld crown excessively above the surface. Creates stress concentration at the toe. Grind flush for critical applications.</li>
+<li><strong>Spatter:</strong> Droplets of weld metal on the surrounding surface. Not structurally significant but indicates process control issues.</li>
+</ul>
+<p>For welding technique and metallurgy, see <a href="welding-metallurgy.html">Welding Metallurgy</a>.</p>
+<h3>Destructive Weld Testing</h3>
+<p>When evaluating a new welder's skill, a new welding process, or a new material combination, destructive testing of sample welds is essential:</p>
+<p><strong>Nick-break test:</strong> Saw a notch into the weld, then break the sample in a vise. Examine the fracture surface for porosity, slag inclusions, incomplete fusion, and cracks.</p>
+<p><strong>Bend test:</strong> Cut a strip across the weld and bend it in a vise (face bend, root bend, or side bend). A good weld bends without cracking. Cracks opening on the tension side indicate weld defects.</p>
+<p><strong>Macro-etch test:</strong> Cut the weld cross-section, polish the surface, and etch with a mild acid (vinegar or dilute muriatic acid). The acid reveals the weld profile, penetration depth, heat-affected zone, and internal defects visible under magnification.</p>
+<div class="tip">
+<p>Establish a testing protocol for your workshop. Before any welder works on a critical joint (structural, pressure, load-bearing), they should produce and pass a sample weld test using the same material and position as the production joint. This is standard industrial practice even with modern testing equipment, and it is even more important when field-expedient testing is the only option.</p>
+</div>
+</section>
+<section id="quality-control-system">
+<h2>Building a Workshop Quality Control System</h2>
+<p>Quality control is not a single test — it is a system of checks at every stage of production.</p>
+<h3>Incoming Material Inspection</h3>
+<p>Every piece of metal entering the workshop should be:</p>
+<ol>
+<li><strong>Spark tested</strong> to identify composition</li>
+<li><strong>File tested</strong> to estimate hardness</li>
+<li><strong>Visually inspected</strong> for cracks, corrosion, and lamination</li>
+<li><strong>Labeled</strong> with identified type and date received</li>
+<li><strong>Stored by type</strong> — never mix known and unknown metals in the same rack</li>
+</ol>
+<h3>In-Process Checks</h3>
+<ul>
+<li><strong>After forging:</strong> Visual inspection for cracks, folds, and dimensional accuracy. Ring test for hidden defects</li>
+<li><strong>After heat treatment:</strong> File test to verify hardness. Visual check for quench cracks and distortion. Bend test on sacrificial samples if batch processing</li>
+<li><strong>After welding:</strong> Complete visual weld inspection per the criteria above. Sound test along weld lines. Destructive test samples from the same batch if producing critical joints</li>
+<li><strong>After finishing:</strong> Visual inspection under raking light. Coating adhesion test. Dimensional verification</li>
+</ul>
+<h3>Record-Keeping</h3>
+<p>Maintain a workshop log recording:</p>
+<ul>
+<li>Material identification (spark test results, source, assumed composition)</li>
+<li>Heat treatment parameters (color/temperature, quench medium, temper color/temperature)</li>
+<li>Test results (file test hardness estimate, bend test outcome, weld inspection findings)</li>
+<li>Final application (what the part was used for)</li>
+</ul>
+<p>This log becomes invaluable over time. When a part fails in service, the log allows tracing back to identify whether the cause was material, process, or application. When a particular salvage source consistently produces good or bad steel, the log records that pattern.</p>
+<div class="info-box">
+<p><strong>Quality control is a culture, not a checklist.</strong> The goal is a workshop where every person instinctively inspects their work, questions suspect material, and tests before trusting. This culture develops when testing is routine, findings are discussed openly, and failures are analyzed without blame. Communities that build this culture produce safer, more reliable tools and equipment for everyone. For broader skill development structures, see <a href="metalworking-fundamentals.html">Metalworking Fundamentals</a>.</p>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="blacksmithing.html">Blacksmithing</a>
+<a href="bloomery-furnace.html">Bloomery Furnace Construction</a>
+<a href="copper-bronze-alloys.html">Copper, Bronze &amp; Non-Ferrous Alloys</a>
+<a href="foundry-defects-prevention.html">Foundry Defect Analysis</a>
+<a href="metallurgy-basics.html">Metallurgy Fundamentals</a>
+<a href="metalworking.html">Metalworking &amp; Blacksmithing</a>
+<a href="metalworking-fundamentals.html">metalworking-fundamentals</a>
+<a href="non-ferrous-metalworking.html">Non-Ferrous Metalworking</a>
+<a href="scrap-metal-identification.html">Scrap Metal Identification</a>
+<a href="steel-making.html">Steel Making</a>
+<a href="tool-hardening-edges.html">Tool Hardening &amp; Edge Maintenance</a>
+<a href="welding-metallurgy.html">Welding Metallurgy &amp; Joint Integrity</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

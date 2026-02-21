@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/electrical-generation.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Generation - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.tech-spec-table { font-size: 0.95em; }
+.tech-spec-table th { background-color: var(--card); padding: 8px; }
+.efficiency-chart { margin: 15px 0; }
+.danger-highlight { color: var(--accent); font-weight: bold; }
+
+</style>
+<meta name="description" content="Generators, alternators, dynamos, wind turbines, micro-hydro systems, and voltage regulation for off-grid power">
+<link rel="canonical" href="https://zerotoherohero.com/guides/electrical-generation.html">
+<meta property="og:title" content="Power Generation">
+<meta property="og:description" content="Generators, alternators, dynamos, wind turbines, micro-hydro systems, and voltage regulation for off-grid power">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Power Generation", "item": "https://zerotoherohero.com/#sec-power-generation"},
+    {"@type": "ListItem", "position": 3, "name": "Power Generation", "item": "https://zerotoherohero.com/guides/electrical-generation.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Power Generation",
+  "description": "Generators, alternators, dynamos, wind turbines, micro-hydro systems, and voltage regulation for off-grid power",
+  "dateModified": "2026-02-19",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-229">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-power-generation">Power Generation</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Power Generation</span>
+</nav>
+<div class="warning">
+<strong>Safety Notice:</strong> This guide covers activities that carry some risk. Follow all safety precautions carefully. See our <a href="../disclaimer.html">liability disclaimer</a>.
+</div>
+<header>
+<h1>Power Generation</h1>
+<p class="subtitle">Generators, alternators, dynamos, wind turbines, micro-hydro systems, and voltage regulation for off-grid power</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●●○</span>
+<span class="read-time">📖 ~22 min read</span>
+<span class="last-updated">· Updated: 2026-02-19</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#0-overview-amp-system-selection">0. Overview &amp; System Selection</a></li>
+<li><a href="#1-site-assessment-amp-resource-evaluation">1. Site Assessment &amp; Resource Evaluation</a></li>
+<li><a href="#generators">2. Generators &amp; Alternators</a></li>
+<li><a href="#design">3. System Design &amp; Capacity Planning</a></li>
+<li><a href="#wind">4. Wind Turbine Construction &amp; Installation</a></li>
+<li><a href="#microhydro">Micro-Hydro Systems</a></li>
+<li><a href="#solar">Solar Basics</a></li>
+<li><a href="#regulation">Voltage Regulation</a></li>
+<li><a href="#circuits">Charging Circuits &amp; Rectification</a></li>
+<li><a href="#wiring-installation">Electrical Connections &amp; Wiring Safety</a></li>
+<li><a href="#alternator-dynamo-comparison">Alternator vs Dynamo Comparison</a></li>
+<li><a href="#core-principles">Core Principles &amp; Theory</a></li>
+<li><a href="#materials-tools">Materials &amp; Tools</a></li>
+<li><a href="#efficiency">System Efficiency &amp; Optimization</a></li>
+<li><a href="#efficiency-amp-optimization">Efficiency &amp; Optimization</a></li>
+<li><a href="#quick-reference">Quick Reference Table</a></li>
+<li><a href="#storage">Energy Storage &amp; Battery Management</a></li>
+<li><a href="#step-by-step">Step-by-Step Generator Installation</a></li>
+<li><a href="#variations-alternatives">Common Mistakes &amp; Failure Modes</a></li>
+<li><a href="#variations-amp-alternatives">Variations &amp; Alternatives</a></li>
+<li><a href="#integration-amp-scaling-for-community-systems">Integration &amp; Scaling for Community Systems</a></li>
+<li><a href="#maintenance">Maintenance Schedule &amp; Preventive Care</a></li>
+<li><a href="#troubleshooting">Troubleshooting Common Issues</a></li>
+<li><a href="#safety-guidelines">Safety Guidelines &amp; Hazard Prevention</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>Backfeed Hazard:</strong> Improperly installed generators connected to grid power create backfeed—electrical current flowing backward into the distribution network. This electrocutes utility workers and causes fires in transformers and wiring. A 5kW generator backfeeding 240V single-phase creates 50+ amps in neutral/ground connections designed for &lt;20A, causing overheating and fire. Backfeed prevention: (1) Always use a listed transfer switch or lockout-tagout to ensure generator is never connected to grid simultaneously. Never use a double-throw switch or male connector directly into wall outlet. (2) Install a main breaker disconnect that physically prevents both utility and generator from being powered concurrently. (3) Test the system with an electrician to confirm isolation. Failure to prevent backfeed is a code violation, voids insurance, and risks electrocution deaths of utility workers and neighbors.</p>
+</div>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Generator internal cross-section showing magnetic field, coils, commutator, and rotor">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 14px; }
+      .label { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 12px; }
+      .accent { fill: var(--accent, #d4a574); }
+      .border { stroke: var(--border, #444); stroke-width: 2; }
+      .coil { stroke: var(--accent, #d4a574); stroke-width: 2; fill: none; }
+      .field { stroke: var(--accent2, #7fb3d5); stroke-width: 1.5; fill: none; opacity: 0.7; }
+      .rotor { fill: var(--surface, #2d2416); stroke: var(--border, #444); stroke-width: 2; }
+      .commutator { fill: var(--card, #3d3228); stroke: var(--accent, #d4a574); stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" class="bg"/>
+
+  <!-- Stator casing (outer cylinder) -->
+  <circle cx="400" cy="280" r="200" class="rotor" stroke-width="3"/>
+
+  <!-- Stator slots with coils -->
+  <g id="stator-slots">
+    <!-- Coil 1 (top) -->
+    <path d="M 380 100 Q 370 150 380 200" class="coil"/>
+    <path d="M 420 100 Q 430 150 420 200" class="coil"/>
+    <!-- Coil 2 (right) -->
+    <path d="M 620 260 Q 570 270 520 260" class="coil"/>
+    <path d="M 620 300 Q 570 290 520 300" class="coil"/>
+    <!-- Coil 3 (bottom) -->
+    <path d="M 420 460 Q 430 410 420 360" class="coil"/>
+    <path d="M 380 460 Q 370 410 380 360" class="coil"/>
+    <!-- Coil 4 (left) -->
+    <path d="M 180 300 Q 230 290 280 300" class="coil"/>
+    <path d="M 180 260 Q 230 270 280 260" class="coil"/>
+  </g>
+
+  <!-- Rotor (rotating magnetic field core) -->
+  <circle cx="400" cy="280" r="120" class="rotor"/>
+
+  <!-- Magnetic field lines (N-S poles) -->
+  <g id="magnetic-field">
+    <!-- North pole (top) -->
+    <path d="M 400 180 Q 420 200 400 220" class="field" />
+    <path d="M 400 180 Q 380 200 400 220" class="field" />
+    <path d="M 410 190 Q 430 210 410 230" class="field" />
+    <path d="M 390 190 Q 370 210 390 230" class="field" />
+
+    <!-- South pole (bottom) -->
+    <path d="M 400 340 Q 420 320 400 300" class="field" />
+    <path d="M 400 340 Q 380 320 400 300" class="field" />
+    <path d="M 410 330 Q 430 310 410 290" class="field" />
+    <path d="M 390 330 Q 370 310 390 290" class="field" />
+  </g>
+
+  <!-- Commutator (segmented cylinder at shaft end) -->
+  <rect x="360" y="400" width="80" height="25" class="commutator" rx="3"/>
+  <line x1="380" y1="400" x2="380" y2="425" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="400" y1="400" x2="400" y2="425" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="420" y1="400" x2="420" y2="425" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+
+  <!-- Commutator brushes (carbon) -->
+  <g id="brushes">
+    <rect x="325" y="408" width="15" height="8" class="accent" rx="2"/>
+    <rect x="460" y="408" width="15" height="8" class="accent" rx="2"/>
+  </g>
+
+  <!-- Shaft -->
+  <rect x="390" y="250" width="20" height="100" class="rotor"/>
+
+  <!-- Bearing mount -->
+  <circle cx="400" cy="130" r="12" class="border" fill="none" stroke-width="2"/>
+  <circle cx="400" cy="430" r="12" class="border" fill="none" stroke-width="2"/>
+
+  <!-- Labels -->
+  <text x="320" y="100" class="text" font-weight="bold">Stator Coils</text>
+  <line x1="320" y1="105" x2="350" y2="140" stroke="var(--text, #f5f0e8)" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <text x="420" y="50" class="text" font-weight="bold">Magnetic Field (N Pole)</text>
+
+  <text x="30" y="280" class="text" font-weight="bold">Rotor Core</text>
+  <line x1="150" y1="280" x2="230" y2="280" stroke="var(--text, #f5f0e8)" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <text x="340" y="470" class="label">Commutator</text>
+
+  <text x="650" y="280" class="label">AC Output</text>
+  <path d="M 620 270 L 680 270 L 680 290 L 620 290" stroke="var(--accent, #d4a574)" stroke-width="2" fill="none"/>
+
+  <text x="320" y="450" class="label">Carbon Brush</text>
+  <line x1="370" y1="448" x2="332" y2="412" stroke="var(--text, #f5f0e8)" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Description text -->
+  <text x="20" y="25" class="label" font-weight="bold">AC Generator Internal Cross-Section</text>
+  <text x="20" y="45" class="label">Stator coils generate voltage as rotor magnetic field rotates past them</text>
+</svg>
+</p>
+<p><svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" aria-label="Wind turbine blade aerodynamics showing airfoil profile and lift forces">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 14px; }
+      .label { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 12px; }
+      .accent { fill: var(--accent, #d4a574); }
+      .accent2 { fill: var(--accent2, #7fb3d5); }
+      .vector { stroke: var(--accent, #d4a574); stroke-width: 3; }
+      .flow { stroke: var(--accent2, #7fb3d5); stroke-width: 2; fill: none; }
+      .pressure { stroke: #ff6b6b; stroke-width: 2; fill: none; }
+      .blade { fill: var(--card, #3d3228); stroke: var(--accent, #d4a574); stroke-width: 2; }
+      .grid { stroke: var(--border, #444); stroke-width: 0.5; opacity: 0.3; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" class="bg"/>
+
+  <!-- Grid for reference -->
+  <g class="grid">
+    <line x1="0" y1="50" x2="800" y2="50"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="350" x2="800" y2="350"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="450" x2="800" y2="450"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+  </g>
+
+  <!-- Title -->
+  <text x="20" y="30" class="text" font-weight="bold" font-size="16">Wind Turbine Blade Aerodynamics</text>
+
+  <!-- Section 1: Airfoil Profile and Attack Angle -->
+  <g id="airfoil-section">
+    <text x="30" y="100" class="text" font-weight="bold">Airfoil Profile (Cross-Section)</text>
+
+    <!-- Wind flow arrows (from left) -->
+    <path d="M 80 200 L 120 200" class="flow" marker-end="url(#arrowblue)"/>
+    <path d="M 80 220 L 120 220" class="flow" marker-end="url(#arrowblue)"/>
+    <path d="M 80 240 L 120 240" class="flow" marker-end="url(#arrowblue)"/>
+
+    <!-- Airfoil shape (NACA-style) -->
+    <path d="M 150 210 Q 180 180 220 195 Q 240 220 220 245 Q 180 260 150 230 Z" class="blade"/>
+
+    <!-- Attack angle indicator -->
+    <line x1="150" y1="220" x2="180" y2="220" stroke="var(--text, #f5f0e8)" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="185" y="225" class="label">Attack angle (α)</text>
+
+    <!-- Leading and trailing edges -->
+    <text x="140" y="250" class="label" font-size="11">Leading edge</text>
+    <text x="220" y="250" class="label" font-size="11">Trailing edge</text>
+  </g>
+
+  <!-- Section 2: Pressure Distribution -->
+  <g id="pressure-distribution">
+    <text x="30" y="320" class="text" font-weight="bold">Pressure Distribution Around Blade</text>
+
+    <!-- Upper surface (low pressure) -->
+    <path d="M 80 380 Q 150 340 220 370" class="pressure" stroke="#ff6b6b"/>
+    <text x="240" y="360" class="label" font-size="11" fill="#ff6b6b">Low pressure (suction)</text>
+
+    <!-- Lower surface (high pressure) -->
+    <path d="M 80 380 Q 150 410 220 380" class="pressure" stroke="#4ecdc4"/>
+    <text x="240" y="400" class="label" font-size="11" fill="#4ecdc4">High pressure</text>
+
+    <!-- Center airfoil -->
+    <path d="M 150 370 Q 170 360 200 375 Q 200 380 170 385 Q 150 375 150 370" class="blade"/>
+  </g>
+
+  <!-- Section 3: Force Vectors -->
+  <g id="force-vectors">
+    <text x="30" y="480" class="text" font-weight="bold">Force Resultants (at optimal angle)</text>
+
+    <!-- Reference point (blade cross-section) -->
+    <circle cx="150" cy="540" r="15" class="blade"/>
+
+    <!-- Relative wind vector (from left) -->
+    <path d="M 150 540 L 80 540" class="vector" marker-end="url(#arrowyellow)"/>
+    <text x="40" y="555" class="label" font-size="11">Relative wind</text>
+
+    <!-- Lift vector (upward/perpendicular to wind) -->
+    <path d="M 150 540 L 150 460" class="vector" marker-end="url(#arrowgreen)" stroke="#44aa44"/>
+    <text x="160" y="470" class="label" font-size="11" fill="#44aa44">Lift (L)</text>
+
+    <!-- Drag vector (backward/parallel to wind) -->
+    <path d="M 150 540 L 100 540" class="vector" marker-end="url(#arrowred)" stroke="#ff6b6b"/>
+    <text x="85" y="570" class="label" font-size="11" fill="#ff6b6b">Drag (D)</text>
+
+    <!-- Resultant force (L/D) -->
+    <path d="M 150 540 L 130 460" class="vector" stroke="var(--accent, #d4a574)" marker-end="url(#arrowyellow)"/>
+    <text x="100" y="500" class="label" font-size="11">Resultant</text>
+  </g>
+
+  <!-- Legend/Key Information -->
+  <g id="legend">
+    <rect x="450" y="80" width="320" height="480" fill="var(--surface, #2d2416)" stroke="var(--border, #444)" stroke-width="1" rx="4"/>
+    
+    <text x="470" y="105" class="text" font-weight="bold">Key Parameters</text>
+
+    <text x="470" y="140" class="label">Attack Angle (α):</text>
+    <text x="470" y="160" class="label" font-size="11">Angle between blade chord and relative wind</text>
+    <text x="470" y="175" class="label" font-size="11">Optimal: 8-12° for maximum L/D ratio</text>
+
+    <text x="470" y="205" class="label">Coefficient of Lift (CL):</text>
+    <text x="470" y="225" class="label" font-size="11">Pressure difference generated by airfoil shape</text>
+    <text x="470" y="240" class="label" font-size="11">Typical range: 0.8-1.4 at optimal angle</text>
+
+    <text x="470" y="270" class="label">Coefficient of Drag (CD):</text>
+    <text x="470" y="290" class="label" font-size="11">Air resistance opposing motion</text>
+    <text x="470" y="305" class="label" font-size="11">Typical range: 0.01-0.05 (lower is better)</text>
+
+    <text x="470" y="335" class="label">Lift-to-Drag Ratio (L/D):</text>
+    <text x="470" y="355" class="label" font-size="11">Efficiency metric: higher = better power extraction</text>
+    <text x="470" y="370" class="label" font-size="11">Optimal range: 60-100 at design wind speed</text>
+
+    <text x="470" y="400" class="label">Stall Angle:</text>
+    <text x="470" y="420" class="label" font-size="11">Beyond ~15-20°, boundary layer separates</text>
+    <text x="470" y="435" class="label" font-size="11">Lift drops, drag increases (aerodynamic stall)</text>
+
+    <text x="470" y="465" class="label">Tip Speed Ratio (λ):</text>
+    <text x="470" y="485" class="label" font-size="11">Blade tip speed ÷ wind speed</text>
+    <text x="470" y="500" class="label" font-size="11">Optimal: 6-8 for horizontal-axis turbines</text>
+  </g>
+
+  <!-- SVG markers for arrows -->
+  <defs>
+    <marker id="arrowyellow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0,0 10,5 0,10" fill="var(--accent, #d4a574)"/>
+    </marker>
+    <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0,0 10,5 0,10" fill="#44aa44"/>
+    </marker>
+    <marker id="arrowred" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0,0 10,5 0,10" fill="#ff6b6b"/>
+    </marker>
+    <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0,0 10,5 0,10" fill="var(--accent2, #7fb3d5)"/>
+    </marker>
+  </defs>
+</svg>
+</p>
+<p><svg viewBox="0 0 900 550" xmlns="http://www.w3.org/2000/svg" aria-label="Micro-hydro system layout from water intake to powerhouse with elevation profile">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 14px; }
+      .label { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 12px; }
+      .water { fill: var(--accent2, #7fb3d5); stroke: none; opacity: 0.8; }
+      .pipe { fill: none; stroke: var(--accent, #d4a574); stroke-width: 3; }
+      .terrain { fill: var(--muted, #5a6e5a); }
+      .structure { fill: var(--card, #3d3228); stroke: var(--accent, #d4a574); stroke-width: 2; }
+      .dimension { stroke: var(--text, #f5f0e8); stroke-width: 1; }
+      .dimension-label { fill: var(--accent, #d4a574); font-size: 11px; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="550" class="bg"/>
+
+  <!-- Title -->
+  <text x="20" y="30" class="text" font-weight="bold" font-size="16">Micro-Hydro System Layout with Elevation Profile</text>
+
+  <!-- Terrain/landscape profile -->
+  <path d="M 0 350 Q 150 300 300 250 L 300 550 L 0 550 Z" class="terrain" opacity="0.4"/>
+  <path d="M 300 250 Q 450 200 600 180 L 600 550 L 300 550 Z" class="terrain" opacity="0.5"/>
+  <path d="M 600 180 Q 700 150 850 150 L 850 550 L 600 550 Z" class="terrain" opacity="0.6"/>
+
+  <!-- Water source (mountain stream) -->
+  <circle cx="100" cy="280" r="8" class="water" stroke="var(--accent2, #7fb3d5)" stroke-width="2"/>
+  <text x="60" y="310" class="label">Mountain Stream</text>
+
+  <!-- Intake structure -->
+  <g id="intake">
+    <rect x="85" y="300" width="30" height="40" class="structure"/>
+    <path d="M 100 340 L 100 380" class="pipe"/>
+    <text x="35" y="270" class="label" font-weight="bold">1. Water Intake</text>
+  </g>
+
+  <!-- Settling tank -->
+  <g id="settling-tank">
+    <circle cx="180" cy="380" r="25" class="structure"/>
+    <path d="M 180 405 L 180 440" class="pipe"/>
+    <text x="155" y="450" class="label" font-size="11">Settling tank</text>
+    <text x="145" y="465" class="label" font-size="10">(removes sediment)</text>
+  </g>
+
+  <!-- Penstock (main pressure pipe) -->
+  <g id="penstock">
+    <path d="M 180 440 Q 250 500 350 450" class="pipe" stroke-width="4" stroke="var(--accent, #d4a574)"/>
+    <text x="240" y="480" class="label" font-weight="bold">Penstock</text>
+    <text x="240" y="495" class="label" font-size="10">Schedule 40 PVC or steel</text>
+  </g>
+
+  <!-- Elevation drop dimension -->
+  <g id="elevation-arrow">
+    <line x1="420" y1="150" x2="420" y2="480" class="dimension" stroke-dasharray="3,3"/>
+    <path d="M 410 160 L 420 150 L 430 160" fill="none" class="dimension"/>
+    <path d="M 410 470 L 420 480 L 430 470" fill="none" class="dimension"/>
+    <text x="435" y="320" class="dimension-label" font-weight="bold">Head (H)</text>
+    <text x="435" y="335" class="dimension-label" font-size="11">10-50 meters</text>
+  </g>
+
+  <!-- Powerhouse structure -->
+  <g id="powerhouse">
+    <rect x="500" y="420" width="80" height="80" class="structure" stroke-width="2"/>
+    <rect x="510" y="430" width="60" height="20" fill="var(--surface, #2d2416)" stroke="none"/>
+    <text x="520" y="445" class="label" font-size="12">Generator</text>
+    <text x="480" y="510" class="label" font-weight="bold">2. Powerhouse</text>
+  </g>
+
+  <!-- Turbine inlet -->
+  <g id="turbine-inlet">
+    <path d="M 350 450 L 500 460" class="pipe" stroke-width="3"/>
+    <text x="400" y="440" class="label" font-size="11">Nozzle valve</text>
+  </g>
+
+  <!-- Turbine wheel -->
+  <g id="turbine">
+    <circle cx="520" cy="460" r="20" class="structure"/>
+    <circle cx="520" cy="460" r="15" fill="none" class="structure" stroke-width="1"/>
+    <!-- Buckets/paddles -->
+    <line x1="540" y1="460" x2="545" y2="460" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <line x1="500" y1="460" x2="495" y2="460" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <line x1="520" y1="440" x2="520" y2="435" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <line x1="520" y1="480" x2="520" y2="485" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <text x="540" y="495" class="label" font-size="11">Turbine wheel</text>
+  </g>
+
+  <!-- Generator connection -->
+  <g id="generator-shaft">
+    <line x1="540" y1="440" x2="540" y2="430" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <rect x="535" y="420" width="10" height="10" fill="var(--accent, #d4a574)"/>
+    <text x="510" y="415" class="label" font-size="10">Shaft connection</text>
+  </g>
+
+  <!-- Tailrace (exit) -->
+  <g id="tailrace">
+    <path d="M 500 500 L 650 500" class="pipe" stroke-width="3"/>
+    <path d="M 650 500 Q 700 510 750 500 L 750 550 L 650 550 Q 650 500 650 500" class="water"/>
+    <text x="680" y="470" class="label" font-size="11">3. Tailrace (return to stream)</text>
+  </g>
+
+  <!-- Control valve/spillway -->
+  <g id="spillway">
+    <rect x="330" y="430" width="20" height="30" class="structure"/>
+    <text x="300" y="425" class="label" font-size="11">Spillway</text>
+    <text x="290" y="440" class="label" font-size="10">(overflow during high water)</text>
+  </g>
+
+  <!-- Flow rate indicator -->
+  <g id="flow-info">
+    <text x="20" y="520" class="text" font-weight="bold">Flow Rate (Q):</text>
+    <text x="200" y="520" class="label" font-size="11">Measured at intake (liters/sec or gallons/min)</text>
+
+    <text x="20" y="540" class="text" font-weight="bold">Power Potential (P):</text>
+    <text x="200" y="540" class="label" font-size="11">P = 9.81 × Q × H (watts), where Q=m³/s, H=meters</text>
+  </g>
+
+  <!-- Component legend -->
+  <g id="legend">
+    <rect x="20" y="60" width="350" height="80" fill="var(--surface, #2d2416)" stroke="var(--border, #444)" stroke-width="1" rx="3"/>
+    <text x="35" y="80" class="text" font-size="12" font-weight="bold">Key Components:</text>
+    <text x="35" y="100" class="label" font-size="11">• Intake: Diverts water from stream</text>
+    <text x="35" y="115" class="label" font-size="11">• Settling tank: Removes sand/sediment (prevents turbine wear)</text>
+    <text x="35" y="130" class="label" font-size="11">• Penstock: High-pressure pipe carries water downhill</text>
+  </g>
+</svg>
+</p>
+<p><svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" aria-label="Penstock friction loss calculation diagram showing pipe diameter effects">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 14px; }
+      .label { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 12px; }
+      .axis { stroke: var(--text, #f5f0e8); stroke-width: 2; }
+      .grid { stroke: var(--border, #444); stroke-width: 0.5; opacity: 0.3; }
+      .curve1 { stroke: #ff6b6b; stroke-width: 3; fill: none; }
+      .curve2 { stroke: #4ecdc4; stroke-width: 3; fill: none; }
+      .curve3 { stroke: #44aa44; stroke-width: 3; fill: none; }
+      .curve4 { stroke: var(--accent, #d4a574); stroke-width: 3; fill: none; }
+      .pipe-example { fill: var(--card, #3d3228); stroke: var(--border, #444); stroke-width: 1; }
+      .legend-box { fill: var(--surface, #2d2416); stroke: var(--border, #444); stroke-width: 1; }
+      .warning-box { fill: #3d1a1a; stroke: #ff6b6b; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="600" class="bg"/>
+
+  <!-- Title -->
+  <text x="20" y="30" class="text" font-weight="bold" font-size="16">Penstock Friction Loss vs Pipe Diameter</text>
+
+  <!-- Left section: Friction loss graph -->
+  <g id="graph-section">
+    <!-- Axes -->
+    <line x1="80" y1="50" x2="80" y2="400" class="axis"/>
+    <line x1="80" y1="400" x2="480" y2="400" class="axis"/>
+
+    <!-- Grid lines -->
+    <g class="grid">
+      <line x1="80" y1="100" x2="480" y2="100"/>
+      <line x1="80" y1="150" x2="480" y2="150"/>
+      <line x1="80" y1="200" x2="480" y2="200"/>
+      <line x1="80" y1="250" x2="480" y2="250"/>
+      <line x1="80" y1="300" x2="480" y2="300"/>
+      <line x1="80" y1="350" x2="480" y2="350"/>
+      <line x1="100" y1="390" x2="100" y2="410"/>
+      <line x1="150" y1="390" x2="150" y2="410"/>
+      <line x1="200" y1="390" x2="200" y2="410"/>
+      <line x1="250" y1="390" x2="250" y2="410"/>
+      <line x1="300" y1="390" x2="300" y2="410"/>
+      <line x1="350" y1="390" x2="350" y2="410"/>
+      <line x1="400" y1="390" x2="400" y2="410"/>
+      <line x1="450" y1="390" x2="450" y2="410"/>
+    </g>
+
+    <!-- Axis labels -->
+    <text x="20" y="230" class="text" font-weight="bold" transform="rotate(-90 20 230)">Friction Loss (meters of head)</text>
+    <text x="280" y="440" class="text" font-weight="bold">Pipe Diameter (inches)</text>
+
+    <!-- Y-axis scale (0-25 meters) -->
+    <text x="45" y="410" class="label" text-anchor="end">0</text>
+    <text x="45" y="360" class="label" text-anchor="end">5</text>
+    <text x="45" y="310" class="label" text-anchor="end">10</text>
+    <text x="45" y="260" class="label" text-anchor="end">15</text>
+    <text x="45" y="210" class="label" text-anchor="end">20</text>
+    <text x="45" y="160" class="label" text-anchor="end">25</text>
+
+    <!-- X-axis scale -->
+    <text x="100" y="425" class="label" text-anchor="middle">1"</text>
+    <text x="150" y="425" class="label" text-anchor="middle">2"</text>
+    <text x="200" y="425" class="label" text-anchor="middle">3"</text>
+    <text x="250" y="425" class="label" text-anchor="middle">4"</text>
+    <text x="300" y="425" class="label" text-anchor="middle">5"</text>
+    <text x="350" y="425" class="label" text-anchor="middle">6"</text>
+    <text x="400" y="425" class="label" text-anchor="middle">8"</text>
+    <text x="450" y="425" class="label" text-anchor="middle">10"</text>
+
+    <!-- Curves for different flow rates -->
+    <!-- 50 L/min (0.0008 m³/s) -->
+    <path d="M 100 320 L 150 280 L 200 240 L 250 210 L 300 180 L 350 160 L 400 140 L 450 120" class="curve1"/>
+    <!-- 100 L/min -->
+    <path d="M 100 360 L 150 320 L 200 280 L 250 250 L 300 220 L 350 190 L 400 160 L 450 135" class="curve2"/>
+    <!-- 200 L/min -->
+    <path d="M 100 390 L 150 360 L 200 330 L 250 300 L 300 270 L 350 240 L 400 210 L 450 180" class="curve3"/>
+    <!-- 500 L/min -->
+    <path d="M 100 398 L 150 385 L 200 370 L 250 350 L 300 330 L 350 310 L 400 280 L 450 250" class="curve4"/>
+  </g>
+
+  <!-- Legend -->
+  <g id="legend">
+    <rect x="520" y="50" width="350" height="150" class="legend-box" rx="3"/>
+    <text x="535" y="70" class="text" font-weight="bold">Flow Rates:</text>
+    <line x1="535" y1="80" x2="555" y2="80" class="curve1"/>
+    <text x="565" y="85" class="label">50 L/min (13 gal/min)</text>
+    <line x1="535" y1="105" x2="555" y2="105" class="curve2"/>
+    <text x="565" y="110" class="label">100 L/min (26 gal/min)</text>
+    <line x1="535" y1="130" x2="555" y2="130" class="curve3"/>
+    <text x="565" y="135" class="label">200 L/min (53 gal/min)</text>
+    <line x1="535" y1="155" x2="555" y2="155" class="curve4"/>
+    <text x="565" y="160" class="label">500 L/min (132 gal/min)</text>
+  </g>
+
+  <!-- Example calculation section -->
+  <g id="calculation-box">
+    <rect x="520" y="220" width="350" height="180" class="legend-box" rx="3"/>
+    <text x="535" y="240" class="text" font-weight="bold">Friction Loss Formula:</text>
+    <text x="535" y="265" class="label" font-family="monospace">hf = 0.0208 × f × (L/D⁵) × Q²</text>
+    <text x="535" y="290" class="label" font-size="11">where:</text>
+    <text x="545" y="308" class="label" font-size="10">hf = friction loss (meters)</text>
+    <text x="545" y="323" class="label" font-size="10">f = Darcy-Weisbach friction factor (~0.02-0.03)</text>
+    <text x="545" y="338" class="label" font-size="10">L = penstock length (meters)</text>
+    <text x="545" y="353" class="label" font-size="10">D = pipe diameter (meters)</text>
+    <text x="545" y="368" class="label" font-size="10">Q = flow rate (m³/s)</text>
+    <text x="535" y="385" class="label" font-weight="bold" font-size="11">Rule: Loss drops exponentially as diameter increases!</text>
+  </g>
+
+  <!-- Design guidelines -->
+  <g id="guidelines-box">
+    <rect x="520" y="420" width="350" height="150" class="legend-box" rx="3"/>
+    <text x="535" y="440" class="text" font-weight="bold">Pipe Sizing Guidelines:</text>
+    <text x="535" y="465" class="label" font-size="11">✓ Design for ≤5% friction loss (best practice)</text>
+    <text x="545" y="480" class="label" font-size="10">Example: 100 meters drop × 0.05 = 5 meters max loss</text>
+    <text x="535" y="500" class="label" font-size="11">✓ Oversizing by one diameter step costs little more</text>
+    <text x="545" y="515" class="label" font-size="10">but saves 60-80% in friction losses</text>
+    <text x="535" y="535" class="label" font-size="11">✓ Use Schedule 40 PVC minimum (pressure rated)</text>
+    <text x="535" y="550" class="label" font-size="11">✓ Smooth pipe interior = lower friction factor</text>
+  </g>
+
+  <!-- Practical example pipes section -->
+  <g id="pipe-examples">
+    <text x="20" y="480" class="text" font-weight="bold">Typical Pipe Sizing Examples (100 m penstock, 100 L/min):</text>
+
+    <!-- 2" pipe -->
+    <rect x="20" y="510" width="6" height="30" class="pipe-example" opacity="0.5"/>
+    <text x="30" y="532" class="label" font-weight="bold">2"</text>
+    <text x="30" y="548" class="label" font-size="10">~18 m loss</text>
+    <text x="30" y="562" class="label" font-size="9">(AVOID)</text>
+
+    <!-- 3" pipe -->
+    <rect x="110" y="510" width="8" height="30" class="pipe-example" opacity="0.6"/>
+    <text x="120" y="532" class="label" font-weight="bold">3"</text>
+    <text x="120" y="548" class="label" font-size="10">~5.2 m loss</text>
+    <text x="120" y="562" class="label" font-size="9">(Good)</text>
+
+    <!-- 4" pipe -->
+    <rect x="200" y="510" width="10" height="30" class="pipe-example" opacity="0.7"/>
+    <text x="210" y="532" class="label" font-weight="bold">4"</text>
+    <text x="210" y="548" class="label" font-size="10">~1.8 m loss</text>
+    <text x="210" y="562" class="label" font-size="9">(Excellent)</text>
+
+    <!-- 6" pipe -->
+    <rect x="290" y="510" width="12" height="30" class="pipe-example" opacity="0.8"/>
+    <text x="300" y="532" class="label" font-weight="bold">6"</text>
+    <text x="300" y="548" class="label" font-size="10">~0.4 m loss</text>
+    <text x="300" y="562" class="label" font-size="9">(Over-sized)</text>
+  </g>
+
+  <!-- Warning -->
+  <g id="warning">
+    <rect x="20" y="425" width="460" height="50" class="warning-box" rx="3"/>
+    <text x="35" y="445" class="text" font-weight="bold" fill="#ff6b6b">⚠ WARNING: Under-sizing penstock dramatically reduces power output</text>
+    <text x="35" y="465" class="label" fill="#ffaaaa">A 2" pipe loses more water to friction than actual power generation!</text>
+  </g>
+</svg>
+</p>
+<p><svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" aria-label="AC alternator rotor field coil excitation circuit with voltage regulator">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 14px; }
+      .label { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 12px; }
+      .wire { stroke: var(--accent, #d4a574); stroke-width: 2; fill: none; }
+      .component { fill: var(--card, #3d3228); stroke: var(--border, #444); stroke-width: 1.5; }
+      .coil { fill: none; stroke: var(--accent, #d4a574); stroke-width: 2; }
+      .legend-box { fill: var(--surface, #2d2416); stroke: var(--border, #444); stroke-width: 1; }
+      .title-box { fill: var(--surface, #2d2416); stroke: var(--accent, #d4a574); stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="600" class="bg"/>
+
+  <!-- Title -->
+  <text x="20" y="30" class="text" font-weight="bold" font-size="16">AC Alternator Excitation Circuit with Voltage Regulation</text>
+
+  <!-- Left section: Rotor assembly -->
+  <g id="rotor-section">
+    <text x="20" y="70" class="text" font-weight="bold">Rotor Assembly (Rotating):</text>
+
+    <!-- Rotor core/iron -->
+    <circle cx="120" cy="180" r="60" class="component" stroke-width="2"/>
+    <!-- Field coil -->
+    <circle cx="120" cy="180" r="45" fill="none" class="coil" stroke-width="3"/>
+    <path d="M 100 160 Q 90 180 100 200" class="coil"/>
+    <path d="M 140 160 Q 150 180 140 200" class="coil"/>
+
+    <!-- Rotor shaft -->
+    <rect x="110" y="240" width="20" height="50" class="component"/>
+    <text x="75" y="310" class="label">Rotor shaft</text>
+
+    <!-- Slip rings -->
+    <circle cx="105" cy="300" r="8" class="component"/>
+    <circle cx="135" cy="300" r="8" class="component"/>
+    <text x="70" y="330" class="label">Slip rings</text>
+    <text x="65" y="345" class="label">(DC current in)</text>
+  </g>
+
+  <!-- Middle section: Excitation system circuit -->
+  <g id="excitation-circuit">
+    <text x="320" y="70" class="text" font-weight="bold">Excitation System:</text>
+
+    <!-- Voltage regulator block -->
+    <rect x="350" y="100" width="120" height="80" class="title-box" rx="4" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <text x="365" y="125" class="text" font-weight="bold" font-size="12">Voltage</text>
+    <text x="365" y="143" class="text" font-weight="bold" font-size="12">Regulator</text>
+    <text x="365" y="165" class="label" font-size="10">(AVR Module)</text>
+    <text x="375" y="180" class="label" font-size="9">240V AC input</text>
+
+    <!-- Sensor (voltage sense) -->
+    <g id="sensor">
+      <rect x="280" y="120" width="40" height="40" class="component" rx="3"/>
+      <text x="290" y="148" class="label" font-size="10">Voltage</text>
+      <text x="295" y="160" class="label" font-size="10">Sensor</text>
+    </g>
+
+    <!-- Sensor feedback line -->
+    <path d="M 320 140 L 350 140" class="wire"/>
+    <text x="325" y="135" class="label" font-size="9">240V output</text>
+
+    <!-- Rectifier stage -->
+    <g id="rectifier">
+      <rect x="350" y="220" width="120" height="60" class="title-box" rx="3"/>
+      <text x="370" y="245" class="label" font-size="11">Diode Rectifier</text>
+      <text x="375" y="260" class="label" font-size="10">AC → DC conversion</text>
+      <text x="372" y="275" class="label" font-size="10">(~70-150V DC)</text>
+    </g>
+
+    <!-- Regulator to rectifier connection -->
+    <path d="M 410 180 L 410 220" class="wire"/>
+
+    <!-- Slip ring connection (to rotor) -->
+    <path d="M 410 280 L 300 300 L 200 300" class="wire" stroke-width="3"/>
+    <text x="340" y="295" class="label" font-size="10">DC field excitation</text>
+
+    <!-- Stator AC output (feedback) -->
+    <path d="M 320 140 L 280 140 L 280 250 L 320 250" class="wire" stroke-dasharray="3,3"/>
+  </g>
+
+  <!-- Right section: Output and control -->
+  <g id="output-section">
+    <text x="600" y="70" class="text" font-weight="bold">Stator Output (3-Phase AC):</text>
+
+    <!-- Stator coil representation -->
+    <circle cx="700" cy="150" r="50" class="component" stroke-width="2"/>
+    <circle cx="700" cy="150" r="35" fill="none" class="coil"/>
+
+    <!-- Three-phase output terminals -->
+    <g id="terminals">
+      <circle cx="650" cy="230" r="6" class="component"/>
+      <text x="625" y="235" class="label">Phase A</text>
+
+      <circle cx="700" cy="240" r="6" class="component"/>
+      <text x="675" y="250" class="label">Phase B</text>
+
+      <circle cx="750" cy="230" r="6" class="component"/>
+      <text x="750" y="245" class="label">Phase C</text>
+    </g>
+
+    <!-- Output waveforms -->
+    <g id="waveforms">
+      <text x="600" y="310" class="text" font-weight="bold">AC Output Voltage (120-480V):</text>
+
+      <!-- Phase A wave -->
+      <path d="M 620 340 Q 640 320 660 340 Q 680 360 700 340" class="wire" fill="none"/>
+      <text x="605" y="375" class="label" font-size="10">Phase A</text>
+
+      <!-- Phase B wave (120° shifted) -->
+      <path d="M 620 410 Q 640 420 660 410 Q 680 390 700 410" class="wire" fill="none" stroke="#4ecdc4"/>
+      <text x="605" y="445" class="label" font-size="10">Phase B</text>
+
+      <!-- Phase C wave (240° shifted) -->
+      <path d="M 620 480 Q 640 470 660 480 Q 680 490 700 480" class="wire" fill="none" stroke="#44aa44"/>
+      <text x="605" y="515" class="label" font-size="10">Phase C</text>
+    </g>
+  </g>
+
+  <!-- Bottom: Control flow and feedback -->
+  <g id="control-flow">
+    <rect x="20" y="380" width="860" height="200" class="legend-box" rx="4"/>
+
+    <text x="40" y="405" class="text" font-weight="bold">Automatic Voltage Regulation (AVR) Feedback Loop:</text>
+
+    <!-- Step 1 -->
+    <rect x="40" y="430" width="140" height="50" class="component" rx="3"/>
+    <text x="55" y="450" class="label" font-weight="bold">1. Sensor reads</text>
+    <text x="55" y="468" class="label" font-size="10">240V AC output</text>
+
+    <!-- Arrow -->
+    <path d="M 190 455 L 220 455" class="wire"/>
+
+    <!-- Step 2 -->
+    <rect x="230" y="430" width="140" height="50" class="component" rx="3"/>
+    <text x="245" y="450" class="label" font-weight="bold">2. Compare to</text>
+    <text x="245" y="468" class="label" font-size="10">reference voltage</text>
+
+    <!-- Arrow -->
+    <path d="M 380 455 L 410 455" class="wire"/>
+
+    <!-- Step 3 -->
+    <rect x="420" y="430" width="140" height="50" class="component" rx="3"/>
+    <text x="435" y="450" class="label" font-weight="bold">3. Adjust field</text>
+    <text x="435" y="468" class="label" font-size="10">coil DC current</text>
+
+    <!-- Arrow -->
+    <path d="M 570 455 L 600 455" class="wire"/>
+
+    <!-- Step 4 -->
+    <rect x="610" y="430" width="140" height="50" class="component" rx="3"/>
+    <text x="625" y="450" class="label" font-weight="bold">4. Output voltage</text>
+    <text x="625" y="468" class="label" font-size="10">stabilizes to target</text>
+
+    <!-- Feedback loop arrow (back to start) -->
+    <path d="M 610 480 L 40 480" class="wire" stroke-dasharray="3,3"/>
+    <text x="300" y="520" class="label" font-size="10">Continuous feedback maintains constant voltage despite load changes</text>
+
+    <!-- Key specifications -->
+    <text x="40" y="555" class="label" font-weight="bold">Regulation Performance:</text>
+    <text x="40" y="575" class="label" font-size="11">• Voltage regulation: ±1-3% (holds voltage constant from no-load to full-load)</text>
+    <text x="40" y="590" class="label" font-size="11">• Response time: 50-500 ms (adjusts excitation within one cycle of disturbance)</text>
+  </g>
+</svg>
+</p>
+<p><svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg" aria-label="Parallel generator synchronization phasor diagram showing frequency and phase alignment">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 14px; }
+      .label { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 12px; }
+      .axis { stroke: var(--text, #f5f0e8); stroke-width: 2; }
+      .grid { stroke: var(--border, #444); stroke-width: 0.5; opacity: 0.3; }
+      .phasor { stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .phasor-line { stroke-width: 4; fill: none; }
+      .circle { fill: none; stroke: var(--border, #444); stroke-width: 1; }
+      .legend-box { fill: var(--surface, #2d2416); stroke: var(--border, #444); stroke-width: 1; }
+      .good { stroke: #44aa44; }
+      .warning { stroke: #ffaa44; }
+      .danger { stroke: #ff6b6b; }
+      .reference { stroke: var(--accent2, #7fb3d5); }
+      .title-box { fill: var(--surface, #2d2416); stroke: var(--accent, #d4a574); stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- SVG arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--accent, #d4a574)"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="700" class="bg"/>
+
+  <!-- Title -->
+  <text x="20" y="30" class="text" font-weight="bold" font-size="16">Parallel Generator Synchronization - Phasor Diagram</text>
+
+  <!-- Left section: Phasor representation -->
+  <g id="phasor-diagram">
+    <text x="20" y="70" class="text" font-weight="bold">Synchronization Phasors (Voltage vectors):</text>
+
+    <!-- Phasor circle (reference circle for 240V) -->
+    <circle cx="200" cy="250" r="120" class="circle"/>
+    <circle cx="200" cy="250" r="4" fill="var(--text, #f5f0e8)"/>
+
+    <!-- Reference axis (0°) -->
+    <line x1="200" y1="250" x2="320" y2="250" class="axis"/>
+    <text x="330" y="255" class="label">0°</text>
+
+    <!-- 90° axis -->
+    <line x1="200" y1="250" x2="200" y2="130" class="axis" opacity="0.5"/>
+    <text x="195" y="115" class="label">90°</text>
+
+    <!-- Grid lines at 30° intervals -->
+    <g class="grid">
+      <line x1="200" y1="250" x2="304" y2="190" stroke-dasharray="2,2"/>
+      <line x1="200" y1="250" x2="304" y2="310" stroke-dasharray="2,2"/>
+      <line x1="200" y1="250" x2="260" y2="130" stroke-dasharray="2,2"/>
+      <line x1="200" y1="250" x2="260" y2="370" stroke-dasharray="2,2"/>
+    </g>
+
+    <!-- GOOD case: In-phase alignment (0° difference) -->
+    <g id="good-case">
+      <line x1="200" y1="250" x2="320" y2="250" class="phasor-line good"/>
+      <text x="310" y="240" class="label" fill="#44aa44" font-weight="bold">Gen 1: 0°</text>
+
+      <line x1="200" y1="250" x2="316" y2="250" class="phasor-line good" stroke-width="2" opacity="0.8"/>
+      <text x="310" y="265" class="label" fill="#44aa44" font-weight="bold">Gen 2: 0.5°</text>
+
+      <text x="150" y="390" class="label" fill="#44aa44" font-weight="bold">✓ GOOD: &lt;5° phase difference</text>
+      <text x="130" y="410" class="label" fill="#44aa44" font-size="11">Smooth synchronization, minimal transient current</text>
+    </g>
+  </g>
+
+  <!-- Right section: Problem cases -->
+  <g id="problem-cases">
+    <text x="450" y="70" class="text" font-weight="bold">Problem Scenarios:</text>
+
+    <!-- Case 1: Frequency mismatch -->
+    <g id="case-frequency">
+      <rect x="450" y="90" width="420" height="130" class="title-box" rx="3"/>
+
+      <text x="470" y="115" class="text" font-weight="bold" font-size="12">Case 1: Frequency Mismatch</text>
+
+      <!-- Phasor circles for frequency case -->
+      <circle cx="550" cy="160" r="30" class="circle" opacity="0.5"/>
+      <line x1="550" y1="160" x2="580" y2="160" class="phasor-line warning"/>
+      <text x="585" y="165" class="label" font-size="10">Grid: 60.0 Hz</text>
+
+      <circle cx="620" cy="160" r="30" class="circle" opacity="0.5"/>
+      <line x1="620" y1="160" x2="635" y2="160" class="phasor-line danger"/>
+      <text x="640" y="165" class="label" font-size="10">Gen: 61.5 Hz</text>
+
+      <text x="470" y="200" class="label" font-size="11">Problem: Generator 1.5 Hz faster than grid</text>
+      <text x="470" y="218" class="label" font-size="11">Result: 100 A inrush current on sync, generator trips offline</text>
+    </g>
+
+    <!-- Case 2: Phase shift -->
+    <g id="case-phase">
+      <rect x="450" y="240" width="420" height="130" class="title-box" rx="3"/>
+
+      <text x="470" y="265" class="text" font-weight="bold" font-size="12">Case 2: Phase Shift (Voltage Magnitude Mismatch)</text>
+
+      <!-- Phasor representation -->
+      <circle cx="550" cy="315" r="30" class="circle" opacity="0.5"/>
+      <line x1="550" y1="315" x2="580" y2="315" class="phasor-line good" stroke-width="3"/>
+      <text x="585" y="320" class="label" font-size="10">Grid: 240V</text>
+
+      <circle cx="620" cy="315" r="30" class="circle" opacity="0.5"/>
+      <line x1="620" y1="315" x2="648" y2="315" class="phasor-line warning" stroke-width="2"/>
+      <text x="650" y="320" class="label" font-size="10">Gen: 252V</text>
+
+      <text x="470" y="355" class="label" font-size="11">Problem: Generator voltage 12V higher than grid</text>
+      <text x="470" y="373" class="label" font-size="11">Result: Reactive power spike; capacitive current on sync</text>
+    </g>
+
+    <!-- Case 3: Large phase angle -->
+    <g id="case-large-angle">
+      <rect x="450" y="390" width="420" height="130" class="title-box" rx="3"/>
+
+      <text x="470" y="415" class="text" font-weight="bold" font-size="12">Case 3: Large Phase Angle Difference (&gt;15°)</text>
+
+      <!-- Phasor representation -->
+      <circle cx="550" cy="465" r="30" class="circle" opacity="0.5"/>
+      <line x1="550" y1="465" x2="580" y2="465" class="phasor-line good" stroke-width="3"/>
+      <text x="585" y="470" class="label" font-size="10">Grid: 0°</text>
+
+      <circle cx="620" cy="465" r="30" class="circle" opacity="0.5"/>
+      <line x1="620" y1="465" x2="640" y2="440" class="phasor-line danger" stroke-width="3"/>
+      <text x="630" y="425" class="label" font-size="10">Gen: 25°</text>
+
+      <text x="470" y="505" class="label" font-size="11">Problem: Generator out of phase with grid by 25°</text>
+      <text x="470" y="523" class="label" font-size="11">Result: 800+ A fault current; equipment damage, circuit breaker trips</text>
+    </g>
+  </g>
+
+  <!-- Bottom: Synchronization procedure -->
+  <g id="procedure-box">
+    <rect x="20" y="560" width="860" height="120" class="legend-box" rx="4"/>
+
+    <text x="40" y="585" class="text" font-weight="bold">Three Conditions for Safe Synchronization:</text>
+
+    <text x="40" y="610" class="label" font-weight="bold">1. Frequency Match:</text>
+    <text x="400" y="610" class="label" font-size="11">Generator frequency = Grid frequency ±0.1 Hz (59.9-60.1 Hz in 60 Hz regions)</text>
+
+    <text x="40" y="635" class="label" font-weight="bold">2. Voltage Magnitude Match:</text>
+    <text x="400" y="635" class="label" font-size="11">Generator voltage = Grid voltage ±5% (e.g., 228-252V for 240V grid)</text>
+
+    <text x="40" y="660" class="label" font-weight="bold">3. Phase Sequence and Angle:</text>
+    <text x="400" y="660" class="label" font-size="11">Phase sequence same as grid (A-B-C); phase angle &lt;5° apart (within one sine cycle)</text>
+  </g>
+</svg>
+</p>
+<h2 id="0-overview-amp-system-selection">0. Overview &amp; System Selection</h2>
+<p>Power generation represents the foundation of modern survival infrastructure. When centralized grids fail, ability to convert available energy sources (wind, water, mechanical) into electrical power determines community resilience. This guide explores practical generator types, scaling from small 50W systems to multi-kilowatt installations, and real-world application decisions based on available resources and load requirements. Understanding generators separates communities that maintain basic electricity from those reverting to purely manual operations.</p>
+<div class="info-box">
+<p><strong>Why Power Generation Matters:</strong> A 5kW generator system produces ~120 kWh per month of continuous baseload power, sufficient for refrigeration, water pumping, lighting, and communication in most survival scenarios. Without generation capability, communities default to daytime-only electrical work and manual labor inefficiency.</p>
+</div>
+<h3>System Type Selection Matrix</h3>
+<p>Choosing the right generator type depends on three factors: (1) available mechanical/environmental energy source, (2) required continuous power output, and (3) acceptable installation complexity. Hand-crank systems require zero infrastructure but produce 5-20W maximum. Water turbine systems produce 500W-10kW but require geological surveys and $2000-20000 installation. IC engine generators offer flexibility but consume fuel at 2-10 L/hour under load. Solar and wind systems provide intermittent power requiring battery banks for continuous availability.</p>
+<div class="note">
+<p><strong>System Sizing Principle:</strong> Size generator to match average load, not peak load. A system with 1kW average demand and 5kW peak (brief surges) should have 1.5-2kW generator + 10-15kWh battery for peak smoothing. Oversized generators (5-10kW) running at 10-20% capacity operate at 50-60% efficiency, wasting fuel and producing poor regulation.</p>
+</div>
+<section id="site-assessment">
+<p>For building a hand-crank or bicycle generator, see <a href="../hand-crank-generator-construction.html">Hand-Crank Generator Construction</a>.</p>
+<h2 id="1-site-assessment-amp-resource-evaluation">1. Site Assessment &amp; Resource Evaluation</h2>
+<h3>Energy Resource Availability Audit</h3>
+<p>Before selecting a generator type, conduct environmental assessment:</p>
+<p><strong>Water Resources:</strong> Identify flowing streams with measurable head (vertical drop) and flow rate. Visit during dry season—recorded flow typically 50-70% of wet-season flow. Measure head with surveying level or improvised water manometer (clear tubing with water, noting height difference). Flow calculation: time how long bucket fills (liters in seconds = L/s). Document accessibility (year-round or seasonal variation).</p>
+<p><strong>Wind Resources:</strong> Anemometer data from nearby weather stations helps, but micro-siting matters. Turbulence from trees, buildings, and terrain reduces available wind by 30-60%. Rule of thumb: average wind speed increases 0.5 m/s per meter of height above ground. A 10 meter tower location will have 2-4× the power of ground-level location.</p>
+<p><strong>Mechanical Input:</strong> Existing engine (diesel, gasoline, manual), water wheel, or pedal-power systems. Assessment requires honest torque/RPM measurement under load. A small hand crank might sustain 20W, but 100W proves exhausting for long periods.</p>
+<p><strong>Solar Potential:</strong> Peak sun hours available locally determine solar panel productivity. Cloudy climates (3-4 peak sun hours/day) require larger arrays and batteries than sunny climates (5-6 hours/day).</p>
+<h3>Load Profiling &amp; Demand Calculation</h3>
+<p>Average power consumption = (Sum of appliance watts × hours per day) / 24 hours. Example: refrigerator 150W for 18 hours + lights 60W for 5 hours + water pump 500W for 1 hour = (150×18 + 60×5 + 500×1) / 24 = 134W average. Peak load (simultaneous operation): 150 + 60 + 500 = 710W. Proper sizing requires matching generator continuous rating to average load and battery system to smooth peaks.</p>
+<div class="warning">
+<p><strong>Load Forecast Critical:</strong> Underestimating consumption leads to undersized systems that fail at critical times. Overestimating wastes capital on unused capacity. Measure existing electricity use if available (look at utility bills: kWh/month ÷ 30 ÷ 24 = average watts). Add 20% contingency for growth and inefficiencies.</p>
+</div>
+<section id="generators">
+<h2>2. Generators &amp; Alternators</h2>
+<h3>Mechanical Power to Electrical Power &amp; Faraday's Law</h3>
+<p>Generators convert mechanical rotational energy into electrical power through electromagnetic induction. Faraday's law states: <strong>E = -N × (ΔΦ/Δt)</strong> where E is induced voltage (volts), N is number of coil turns, and ΔΦ/Δt is rate of magnetic flux change (webers per second). Practical implications: voltage output is directly proportional to coil turns and rotation speed. A generator spinning at 1000 RPM produces 2× the voltage of the same generator at 500 RPM.</p>
+<p>Torque required to turn generator increases dramatically with electrical load. Mechanical input power (watts) = Electrical output power (watts) / Efficiency. Typical efficiency 80-95% depending on design and load, but real systems often underperform due to improper loading and mechanical friction.</p>
+<p><strong>Worked Example:</strong> A 5kW AC alternator operating at 90% efficiency requires 5000W / 0.90 = 5556W mechanical input. If mechanical input is only a 2HP (1491W) water turbine, the generator is oversized and will stall under load.</p>
+<h3>AC Alternators: Principles &amp; Operation</h3>
+<p>An AC alternator uses rotating magnetic field (rotor with magnets) passing through stationary coils (stator). As magnet rotates, flux through stator coil varies sinusoidally, inducing sinusoidal AC voltage. No commutator needed—this eliminates brush wear for AC generators. Output voltage amplitude depends on: (1) rotor speed in RPM, (2) magnetic field strength (measured in teslas), (3) number of stator windings, (4) air gap between rotor and stator. Closer air gap increases flux density dramatically but risks rotor rubbing.</p>
+<p>Terminal voltage under load drops due to armature reaction (magnetic field created by stator current opposes rotor field). No-load voltage may be 250V AC, but at full 50A load, terminal voltage might drop to 200V without voltage regulation. Good voltage regulators hold output within ±5% over the full load range.</p>
+<p><strong>AC Generator Excitation:</strong> Permanent magnet alternators self-generate without external power source but have poor voltage regulation. Electromagnet-excited alternators use small amount of output current to maintain rotor field, allowing better regulation via field current adjustment. Some designs use rotating rectifier on rotor shaft (brushless alternators), eliminating brush maintenance entirely.</p>
+<p><strong>Frequency and Speed Relationship:</strong> For AC grid synchronization, frequency = (RPM × number of poles) / 120. A 4-pole alternator at 1800 RPM produces 60 Hz. A 2-pole at 3600 RPM also produces 60 Hz. Slower machines (6-pole at 1200 RPM) are more efficient with better bearings but larger and heavier.</p>
+<h3>DC Generators: Dynamos &amp; Commutation</h3>
+<p>DC generators use rotating armature coil(s) with mechanical commutator (split ring) and carbon brushes. As coil rotates through magnetic field, commutator switches coil connections to external circuit, reversing internal voltage direction synchronously with external switching. Result: pulsating DC voltage across output terminals. Ripple voltage typically 4-8% in modern designs with 4+ pole-pair windings.</p>
+<p>Output voltage proportional to: (1) Magnetic flux density, (2) Number of armature coils, (3) RPM, (4) Series/shunt field configuration. DC generators require brush inspection every 500-1000 hours and commutator resurfacing if arcing occurs.</p>
+<p><strong>Field Excitation Modes:</strong></p>
+<ul>
+<li><strong>Shunt-excited:</strong> Field coil in parallel with load. Voltage regulation 15-20% droop. Stable operation, used when constant voltage required.</li>
+<li><strong>Series-excited:</strong> Field in series with load. Voltage rises with load (good for battery charging with natural current limiting). Poor regulation unsuitable for AC appliances.</li>
+<li><strong>Compound-excited:</strong> Both shunt and series fields. Compensates load-related voltage drop, achieving 2-5% regulation. Superior performance, used in high-quality stationary generators.</li>
+</ul>
+<div class="danger">
+<p><strong>Brush Entanglement Hazard:</strong> Rotating commutator and brushes can snag loose clothing, hair, or fingers, causing severe injury or severing. ALWAYS install mechanical guards around brush assemblies. Never reach into running commutator area for any reason.</p>
+</div>
+<div class="danger">
+<p><strong>Arc Flash &amp; Stored Energy Hazard:</strong> Large generators (&gt;10kW) store lethal energy in rotating magnetic fields and charged capacitors. Disconnecting electrical load does NOT de-energize magnetic field—rotor continues storing kinetic energy for minutes after shutdown. Never touch generator terminals or rotor assembly immediately after shutdown. High-current arc flash during fault conditions causes severe burns at distance. Always wear Class 2 arc-rated PPE (sleeves, gloves, face shield) when working near energized generator terminals.</p>
+</div>
+<h3>Comparison Table: AC vs DC Generators</h3>
+<table><thead><tr><th scope="col">Feature</th><th scope="col">AC Alternator</th><th scope="col">DC Dynamo</th></tr></thead><tbody><tr><td>Output Type</td><td>AC sine wave (50/60 Hz)</td><td>DC pulsating (4-8% ripple)</td></tr><tr><td>Commutator Required</td><td>No (slip rings only)</td><td>Yes (brushes, maintenance)</td></tr><tr><td>Voltage Regulation</td><td>5-15% droop (poor)</td><td>2-8% droop (good)</td></tr><tr><td>Efficiency at rated load</td><td>85-95%</td><td>80-92%</td></tr><tr><td>Maintenance interval</td><td>Annual (slip ring cleaning)</td><td>Every 500 hours (brush/commutator)</td></tr><tr><td>Best application</td><td>Grid sync, AC loads</td><td>Battery charging, stable DC systems</td></tr><tr><td>Cost at 5kW</td><td>$800-1500</td><td>$1200-2200</td></tr><tr><td>Stored Energy Hazard</td><td>Rotating magnetic field</td><td>Rotating rotor + stored mechanical energy</td></tr><tr><td>Electrocution Risk</td><td>High if wet/grounded</td><td>High if wet/grounded</td></tr><tr><td>Protection Required</td><td>Maintenace lockout, insulated tools</td><td>Commutator guard, lockout/tagout</td></tr></tbody></table>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Generator internal cross-section showing magnetic field, coils, commutator, and rotor">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 14px; }
+      .label { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 12px; }
+      .accent { fill: var(--accent, #d4a574); }
+      .border { stroke: var(--border, #444); stroke-width: 2; }
+      .coil { stroke: var(--accent, #d4a574); stroke-width: 2; fill: none; }
+      .field { stroke: var(--accent2, #7fb3d5); stroke-width: 1.5; fill: none; opacity: 0.7; }
+      .rotor { fill: var(--surface, #2d2416); stroke: var(--border, #444); stroke-width: 2; }
+      .commutator { fill: var(--card, #3d3228); stroke: var(--accent, #d4a574); stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" class="bg"/>
+
+  <!-- Stator casing (outer cylinder) -->
+  <circle cx="400" cy="280" r="200" class="rotor" stroke-width="3"/>
+
+  <!-- Stator slots with coils -->
+  <g id="stator-slots">
+    <!-- Coil 1 (top) -->
+    <path d="M 380 100 Q 370 150 380 200" class="coil"/>
+    <path d="M 420 100 Q 430 150 420 200" class="coil"/>
+    <!-- Coil 2 (right) -->
+    <path d="M 620 260 Q 570 270 520 260" class="coil"/>
+    <path d="M 620 300 Q 570 290 520 300" class="coil"/>
+    <!-- Coil 3 (bottom) -->
+    <path d="M 420 460 Q 430 410 420 360" class="coil"/>
+    <path d="M 380 460 Q 370 410 380 360" class="coil"/>
+    <!-- Coil 4 (left) -->
+    <path d="M 180 300 Q 230 290 280 300" class="coil"/>
+    <path d="M 180 260 Q 230 270 280 260" class="coil"/>
+  </g>
+
+  <!-- Rotor (rotating magnetic field core) -->
+  <circle cx="400" cy="280" r="120" class="rotor"/>
+
+  <!-- Magnetic field lines (N-S poles) -->
+  <g id="magnetic-field">
+    <!-- North pole (top) -->
+    <path d="M 400 180 Q 420 200 400 220" class="field" />
+    <path d="M 400 180 Q 380 200 400 220" class="field" />
+    <path d="M 410 190 Q 430 210 410 230" class="field" />
+    <path d="M 390 190 Q 370 210 390 230" class="field" />
+
+    <!-- South pole (bottom) -->
+    <path d="M 400 340 Q 420 320 400 300" class="field" />
+    <path d="M 400 340 Q 380 320 400 300" class="field" />
+    <path d="M 410 330 Q 430 310 410 290" class="field" />
+    <path d="M 390 330 Q 370 310 390 290" class="field" />
+  </g>
+
+  <!-- Commutator (segmented cylinder at shaft end) -->
+  <rect x="360" y="400" width="80" height="25" class="commutator" rx="3"/>
+  <line x1="380" y1="400" x2="380" y2="425" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="400" y1="400" x2="400" y2="425" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="420" y1="400" x2="420" y2="425" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+
+  <!-- Commutator brushes (carbon) -->
+  <g id="brushes">
+    <rect x="325" y="408" width="15" height="8" class="accent" rx="2"/>
+    <rect x="460" y="408" width="15" height="8" class="accent" rx="2"/>
+  </g>
+
+  <!-- Shaft -->
+  <rect x="390" y="250" width="20" height="100" class="rotor"/>
+
+  <!-- Bearing mount -->
+  <circle cx="400" cy="130" r="12" class="border" fill="none" stroke-width="2"/>
+  <circle cx="400" cy="430" r="12" class="border" fill="none" stroke-width="2"/>
+
+  <!-- Labels -->
+  <text x="320" y="100" class="text" font-weight="bold">Stator Coils</text>
+  <line x1="320" y1="105" x2="350" y2="140" stroke="var(--text, #f5f0e8)" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <text x="420" y="50" class="text" font-weight="bold">Magnetic Field (N Pole)</text>
+
+  <text x="30" y="280" class="text" font-weight="bold">Rotor Core</text>
+  <line x1="150" y1="280" x2="230" y2="280" stroke="var(--text, #f5f0e8)" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <text x="340" y="470" class="label">Commutator</text>
+
+  <text x="650" y="280" class="label">AC Output</text>
+  <path d="M 620 270 L 680 270 L 680 290 L 620 290" stroke="var(--accent, #d4a574)" stroke-width="2" fill="none"/>
+
+  <text x="320" y="450" class="label">Carbon Brush</text>
+  <line x1="370" y1="448" x2="332" y2="412" stroke="var(--text, #f5f0e8)" stroke-width="1" stroke-dasharray="2,2"/>
+
+  <!-- Description text -->
+  <text x="20" y="25" class="label" font-weight="bold">AC Generator Internal Cross-Section</text>
+  <text x="20" y="45" class="label">Stator coils generate voltage as rotor magnetic field rotates past them</text>
+</svg>
+</p>
+<h3>Generator Performance Under Variable Load</h3>
+<p>Generator efficiency changes dramatically with load level. Understanding performance curves prevents oversizing and fuel waste.</p>
+<h4>Efficiency Curves for Different Generator Types</h4>
+<p><strong>Gasoline generators (typical small portable units):</strong></p>
+<ul>
+<li>25% load: 65-70% efficiency (poor; mostly wasted heat)</li>
+<li>50% load: 75-80% efficiency (reasonable)</li>
+<li>75% load: 80-85% efficiency (good; near optimal)</li>
+<li>100% load: 80-82% efficiency (peaks; cannot exceed rated power)</li>
+<li>Trend: Efficiency rises with load up to 75-100%, then plateaus</li>
+</ul>
+<p><strong>Diesel generators (small to mid-size):</strong></p>
+<ul>
+<li>25% load: 70-75% efficiency</li>
+<li>50% load: 80-85% efficiency (good)</li>
+<li>75% load: 85-90% efficiency (excellent; diesel's sweet spot)</li>
+<li>100% load: 85-88% efficiency (maintains high efficiency even at full load)</li>
+<li>Trend: Diesel maintains higher efficiency across wider load range than gasoline</li>
+</ul>
+<p><strong>Permanent magnet alternators (brushless, self-excited):</strong></p>
+<ul>
+<li>25% load: 75-80% efficiency</li>
+<li>50% load: 82-87% efficiency</li>
+<li>75% load: 87-92% efficiency</li>
+<li>100% load: 88-90% efficiency (excellent stability)</li>
+<li>Trend: Highest overall efficiency; best for undersized systems (running permanently at low capacity)</li>
+</ul>
+<p><strong>AC alternators with voltage regulator (common retrofit):</strong></p>
+<ul>
+<li>25% load: 70-75% efficiency (regulator overhead)</li>
+<li>50% load: 80-85% efficiency</li>
+<li>75% load: 85-90% efficiency</li>
+<li>100% load: 85-88% efficiency</li>
+<li>Trend: Regulator electronics add 5% loss at light load, negligible at full load</li>
+</ul>
+<p><strong>Practical implication:</strong> A 5kW generator operating at 25% load (1.25kW) runs at 65-70% efficiency. The same generator at 100% load (5kW) operates at 80-90% efficiency. This means right-sizing is critical—oversized generators waste 30-40% of fuel as heat at typical operating loads.</p>
+<h4>Load Management Strategies</h4>
+<p><strong>Strategy 1: Consolidate loads (batch operation)</strong></p>
+<ul>
+<li>Group high-load appliances to run simultaneously, then turn off together</li>
+<li>Example: Run refrigerator + water heater together (total 800W) for 1 hour, then reduce to refrigerator only (150W) for 3 hours</li>
+<li>Effect: Generator spends more time at higher efficiency (50-100% load) rather than idle or very light load</li>
+<li>Fuel savings: 20-30% reduction in fuel consumption vs. scattered loads throughout day</li>
+</ul>
+<p><strong>Strategy 2: Use battery bank to smooth peak loads</strong></p>
+<ul>
+<li>Keep generator running at constant 50-75% load (optimal efficiency zone)</li>
+<li>Battery charges during generator runtime, discharges to cover peak loads</li>
+<li>Example: Generator produces steady 1kW; battery stores 2-3kWh during 3-hour run; battery supplies peaks (2-5kW) for 8 hours</li>
+<li>Fuel savings: 40-50% reduction in total fuel use (generator doesn't waste energy running at low load to cover occasional peaks)</li>
+</ul>
+<p><strong>Strategy 3: Shift loads to optimal times</strong></p>
+<ul>
+<li>Operate high-load appliances (water heater, chargers) during peak renewable generation (solar midday, wind evening)</li>
+<li>Reserve generator for essential baseline loads (refrigeration, critical systems)</li>
+<li>Effect: Extends battery autonomy; reduces generator runtime</li>
+<li>Fuel savings: 30-40% reduction if renewable sources provide 50% of typical load</li>
+</ul>
+<h4>Performance Degradation Factors</h4>
+<p><strong>Altitude effects:</strong></p>
+<ul>
+<li>Sea level: Baseline 100%</li>
+<li>2000 meters: -10% power output (thinner air = less oxygen for combustion)</li>
+<li>4000 meters: -20-25% power output</li>
+<li>6000+ meters: -35-40% power output (barely functional)</li>
+<li>Implication: High-altitude systems must be oversized 20-40% to achieve equivalent low-altitude power</li>
+</ul>
+<p><strong>Temperature effects:</strong></p>
+<ul>
+<li>Optimal: 15-25°C (engines produce rated power)</li>
+<li>Cold (&lt;0°C): -10-15% power output; starting requires extended cranking or preheating</li>
+<li>Hot (&gt;40°C): -5-10% power output; cooling fan may run continuously, reducing efficiency</li>
+<li>Very hot (&gt;50°C): -10-20% power output; risk of overheating; reduced lifespan</li>
+</ul>
+<p><strong>Fuel quality effects:</strong></p>
+<ul>
+<li>Fresh, correct octane/cetane fuel: Rated performance</li>
+<li>Aged fuel (&gt;6 months): -5-10% output; gum deposits clog injectors/carburetors</li>
+<li>Low octane (if required high octane): -15-25% power and efficiency; engine knock risk</li>
+<li>Contaminated fuel (water, sediment): -20-50% output; engine misfire/stall risk</li>
+<li>Poor quality diesel (high sulfur, wax): -10-20% output; filter clogging</li>
+</ul>
+<p><strong>Mechanical condition effects:</strong></p>
+<ul>
+<li>New, well-maintained engine: Baseline 100%</li>
+<li>500 hours service: -2-5% (minor wear)</li>
+<li>2000 hours service: -5-10% (moderate wear, ring blow-by)</li>
+<li>5000+ hours service: -10-20% (significant ring wear, compression loss)</li>
+<li>Extremely worn (&gt;10,000 hours): -25-40% power loss; consider rebuild</li>
+</ul>
+<p><strong>Fuel consumption impact:</strong></p>
+<ul>
+<li>Well-tuned generator at optimal load: ~0.2-0.3 L/kWh (gasoline), 0.15-0.2 L/kWh (diesel)</li>
+<li>Poorly tuned or underloaded generator: 0.4-0.6 L/kWh (gasoline), 0.3-0.4 L/kWh (diesel)</li>
+<li>This means a 20% efficiency loss from poor tuning = 50-100% increase in fuel cost</li>
+</ul>
+<p><strong>Implication:</strong> Maintenance and optimal load management are as important as generator size in determining operating costs.</p>
+<h3>Efficiency &amp; Loss Analysis</h3>
+<p>Generator electrical losses fall into two categories: copper losses (I²R heating in windings) and core losses (hysteresis and eddy currents in iron). Copper loss = I² × R, where I is load current in amps and R is winding resistance in ohms. Doubling current quadruples copper loss, making oversized generators problematic—a 5kW alternator carrying only 1kW load (0.2× rated current) operates at 65-70% efficiency vs 92% at full rated load.</p>
+<p><strong>Worked Example - Efficiency Calculation:</strong></p>
+<ul>
+<li>5kW alternator with 2Ω armature resistance</li>
+<li>At 50% rated load (50A): Copper loss = 50² × 2 = 5000W = 5kW</li>
+<li>Electrical output 2500W, so total input = 2500 + 5 = 2505W</li>
+<li>Efficiency = 2500 / 2505 = 99.8%—WRONG! Forgot field loss and mechanical loss.</li>
+<li>With 300W field loss and 200W friction: Total input = 2500 + 300 + 200 + 5 = 3005W</li>
+<li>True efficiency = 2500 / 3005 = 83%</li>
+</ul>
+<p>This explains why matching generator capacity to actual load matters critically.</p>
+</section>
+<section id="design">
+<h2>3. System Design &amp; Capacity Planning</h2>
+<h3>Load Calculation &amp; Generator Sizing</h3>
+<p>Electrical load calculation starts with itemizing all devices and their duty cycles:</p>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>Power (W)</th>
+<th>Daily Hours</th>
+<th>Daily Energy (Wh)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Refrigerator</td>
+<td>150</td>
+<td>18</td>
+<td>2700</td>
+</tr>
+<tr>
+<td>LED lighting (10 lights)</td>
+<td>100</td>
+<td>5</td>
+<td>500</td>
+</tr>
+<tr>
+<td>Water pump</td>
+<td>500</td>
+<td>1</td>
+<td>500</td>
+</tr>
+<tr>
+<td>Laptop charging</td>
+<td>100</td>
+<td>2</td>
+<td>200</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td>-</td>
+<td>-</td>
+<td><strong>3900</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Average continuous load = 3900 Wh / 24 hours = <strong>163W continuous</strong>. Peak simultaneous load = 150 + 100 + 500 + 100 = <strong>850W peak</strong>.</p>
+<p>Generator sizing: Select continuous rating ≥ average load, and peak rating ≥ peak load. For this example, a 500W continuous generator with 2000W peak rating works. Battery sizing: for 24-hour autonomy with 163W average load = 3900 Wh needed. Use 1.3× safety factor for depth-of-discharge = 5070 Wh total battery capacity (48V × 105Ah or 12V × 420Ah).</p>
+<div class="tip">
+<p><strong>Oversizing Cost-Benefit:</strong> A 1kW generator costs ~$200 more than 500W but runs at 50% load efficiency vs 75% at full load. Over 5 years, the extra fuel consumption (~30% more) costs ~$1500. Choose right-sized generator unless redundancy is critical.</p>
+</div>
+<h3>Voltage Selection: 12V vs 24V vs 48V</h3>
+<p>Off-grid systems commonly use 12V, 24V, or 48V DC buses. Choice impacts wire sizing and battery cost:</p>
+<p><strong>12V systems:</strong> Smallest battery cells (6 cells in series). Wire losses severe for distances &gt;10 meters. For 1kW at 12V = 83A → requires 6 AWG copper wire (~$2.50/meter) for &lt;5% drop. Cost scales quickly.</p>
+<p><strong>24V systems:</strong> Half the current of 12V systems (50A for 1kW), reduces wire costs. Standard vehicle alternators output 28V (close), making salvage easier. Better balance of cost and practicality.</p>
+<p><strong>48V systems:</strong> Quarter the current of 12V (21A for 1kW). Thin wire sufficient (10-12 AWG for 30+ meters). Efficient for larger installations (&gt;5kW). Requires specialized 48V inverters and charge controllers (higher cost, but fewer total components).</p>
+<p><strong>Formula for wire sizing:</strong> Amps = Power (W) / Voltage (V). Voltage drop = (2 × Amps × Wire length (m) × Wire resistance (Ω/m)). Target &lt;5% drop: 5% of 48V = 2.4V allowed drop.</p>
+<h3>Redundancy &amp; Hybrid Systems</h3>
+<p>Single-source failures (engine breakdown, drought, calm weather) risk total power loss. Hybrid systems combine two+ sources: diesel engine (reliable but expensive fuel) + water turbine (intermittent but free fuel) + solar panels (weather-dependent but zero maintenance). Battery bank provides storage to smooth intermittent sources.</p>
+<p><strong>Example 5kW hybrid:</strong></p>
+<ul>
+<li>2kW AC alternator on 1500W water turbine (baseload when water flows)</li>
+<li>2kW diesel genset (backup/peak)</li>
+<li>2kW solar array (daytime supplement in dry season)</li>
+<li>25kWh battery bank (stores excess for 6-12 hour autonomy)</li>
+<li>5kW inverter (provides 240V AC to appliances)</li>
+</ul>
+<p>This configuration ensures operation during single-source failures while optimizing fuel consumption and capital cost.</p>
+<div class="warning">
+<p><strong>Fuel Storage Hazard:</strong> Long-term fuel storage (&gt;6 months) in tropical climates causes water condensation and algae growth in tanks. Diesel systems require fuel stabilizer additives and biocide treatments every 6 months. Gasoline deteriorates within 3-6 months; prioritize fresh fuel rotation or switch to diesel for long-term scenarios.</p>
+</div>
+</section>
+<section id="wind">
+<h2>4. Wind Turbine Construction &amp; Installation</h2>
+<h3>Practical Wind Turbine Basics</h3>
+<p>Wind turbines convert kinetic energy from wind into rotational mechanical energy, then into electricity. Power available in wind = 0.5 × ρ × A × V³, where ρ is air density (1.225 kg/m³), A is swept area, V is wind speed. Doubling wind speed increases power 8×. Small turbine at 10 m/s and 1 m² blade area yields approximately 610W in ideal conditions, accounting for typical 35% efficiency.</p>
+<h3>Blade Design Principles</h3>
+<p>Blade shape (airfoil) creates lift force perpendicular to wind flow. Blade area swept through one revolution must be reasonable size—typical home turbine 2-5 meter diameter blades. Blade pitch (angle of attack) affects efficiency; typical 15-25 degrees. Variable-pitch blades automatically adjust angle to maintain constant RPM as wind speed changes.</p>
+<h3>Rotor Speed &amp; Gearing</h3>
+<p>Small wind turbines operate 60-500 RPM depending on blade size. Direct-drive generators (rare) spin at turbine RPM. More common: gearbox steps up to 1500-3600 RPM for AC generator or permanent magnet generator. Gearing losses typically 3-5%. Gear ratio = Generator RPM / Turbine RPM. A 100 RPM turbine with 3600 RPM generator needs 36:1 gearing.</p>
+<h3>Yaw Control &amp; Tail</h3>
+<p>Horizontal-axis wind turbine needs mechanism to point into wind. Small turbines use simple vane tail to orient automatically. Larger machines need active yaw motors. Vertical-axis turbines (Darrieus type) accept wind from any direction but are less efficient and harder to service.</p>
+<h3>Furling &amp; Overspeed Protection</h3>
+<p>Without speed control, turbine accelerates to dangerous speeds in high wind. Options: (1) Mechanical furling: tail side-mounts and twists turbine away from strong wind. (2) Pitch control: blades twist to reduce angle of attack. (3) Electrical load increases with speed, naturally limiting RPM. (4) Braking system shuts down turbine in extreme wind.</p>
+</section>
+<section id="microhydro">
+<h2>Micro-Hydro Systems</h2>
+<h3>Head, Flow, &amp; Power Calculation</h3>
+<p>Hydroelectric power depends on: Power (W) = 9800 × Flow (m³/s) × Head (m) × Efficiency. &quot;Head&quot; is vertical drop from intake to generator (not pipe length). A stream with 2 m³/s flow and 10 m head yields 196 kW theoretical power. Typical efficiency 60-80% depending on system quality. Even small streams with modest head can produce useful power.</p>
+<h3>Turbine Types for Micro-Hydro</h3>
+<p><strong>Pelton wheel:</strong> Best for high head (&gt;20m), low flow. Free-jet design hits buckets. Efficiency 80-90%. Self-regulating; excess water spills to load-chamber without energy loss.</p>
+<p><strong>Turgo wheel:</strong> Medium head (10-30m), medium flow. Similar to Pelton but more compact. Crossflow enters one side, exits opposite side.</p>
+<p><strong>Francis turbine:</strong> Medium head (5-20m), large flow. Runner blades direct water spiral inward and outward. High efficiency 85-90% when properly designed. Most common commercial hydroelectric.</p>
+<p><strong>Crossflow (Banki):</strong> Very low head (1-10m), high flow. Water crosses turbine twice, simple construction. Efficiency 60-75%. Easy to build by hand from PVC or metal.</p>
+<p><strong>Screw generator:</strong> Archimedean screw turned by flowing water. Very low head. Simple, fish-friendly. Efficiency 60-75%. Recently developed for micro-hydro.</p>
+</section>
+<section id="solar">
+<h2>Solar Basics</h2>
+<h3>Photovoltaic Effect &amp; Panel Types</h3>
+<p>Solar panels convert photons directly to electrons through photovoltaic effect in semiconductor junction. Monocrystalline panels: highest efficiency (18-22%) but expensive. Polycrystalline: moderate efficiency (15-18%), lower cost. Thin-film: lowest efficiency (10-13%) but flexible and lightweight. Panel output rated in watts under standard test conditions (1000 W/m² sunlight, 25°C).</p>
+<h3>Voltage &amp; Current Characteristics</h3>
+<p>Typical panel produces ~37V open circuit, ~30V at rated power point. Current depends on panel size: 6 watt panel produces ~0.2A, 400W panel produces ~10A at rated power. String multiple panels in series for higher voltage (add voltages), parallel for higher current (add currents). Series-parallel combinations achieve desired voltage and current.</p>
+<h3>Maximum Power Point Tracking</h3>
+<p>Solar panel power output varies with voltage. Peak power occurs at specific voltage depending on load. MPPT charge controller adjusts internal switching to track peak power point, increasing harvest by 20-30% vs fixed voltage charging. Essential for efficient battery charging from solar panels.</p>
+<h3>Temperature Effects</h3>
+<p>Panel efficiency decreases with temperature: approximately -0.5% per degree Celsius above 25°C. A hot panel at 60°C produces 17.5% less power than nameplate rating. Heat dissipation critical in sunny climates; allow airflow under mounted panels. Cold panels actually work better than rated (up to +2% efficiency increase).</p>
+</section>
+<section id="regulation">
+<h2>Voltage Regulation</h2>
+<h3>Load Resistance &amp; Voltage Sag</h3>
+<p>Generator terminal voltage drops under load due to internal resistance and armature reaction. Generator with 2Ω internal resistance and 50A load: voltage drop = 50 × 2 = 100V. A 240V generator supplying 50A sees terminal voltage drop to 140V without regulation. Load resistance method: fixed shunt resistance (rheostatic control) dissipates excess power but wastes energy.</p>
+<h3>Voltage Regulation Circuits</h3>
+<p><strong>Field Current Control (Excitation):</strong> Varying the DC current through rotor field coil adjusts magnetic flux, varying output voltage. Electronic regulator senses output voltage and adjusts field current automatically. Very efficient. Most common method for AC and DC generators.</p>
+<p><strong>Rectifier Control:</strong> For AC generators, rectifier bridge voltage varies with average current. Tapped secondary winding and variable switching provide regulation. Brushless alternators use rotating rectifier on rotor, eliminating slip rings and brushes.</p>
+<h3>Load-Share Paralleling</h3>
+<p>Parallel-connecting multiple generators requires synchronization: same frequency and voltage, &lt;30° phase angle difference. Droop load-sharing: each generator droops voltage slightly with load (4-6% droop). Generator delivering more current has proportionally more voltage sag, naturally balancing load. Frequency-droop paralleling uses same principle for frequency control.</p>
+<h3>Battery Charging Regulators</h3>
+<p>Two-stage regulation common: constant-current stage charges battery quickly (bulk charge), then constant-voltage stage maintains charge as battery approaches full. Voltage setting typically 13.8V for 12V battery (1.15× nominal). Charge current limited by battery capacity (C/10 rate for lead-acid, 1C safe for lithium) and generator power.</p>
+<div class="warning">
+<p><strong>Overcharge Protection Critical:</strong> Unregulated charging of lead-acid batteries exceeding 14.4V causes water loss and explosive hydrogen gas generation inside battery. Lithium batteries overcharged above 4.2V per cell (50.4V for 48V bank) cause thermal runaway and fire. Always use properly configured charge controller with voltage limits and temperature compensation.</p>
+</div>
+</section>
+<section id="circuits">
+<h2>Charging Circuits &amp; Rectification</h2>
+<h3>AC to DC Rectification</h3>
+<p>Half-wave rectifier: single diode conducts every other half-cycle, blocking reverse current. Output is pulsating DC with large ripple (48% ripple voltage). Full-wave bridge: four diodes, conducting on each half-cycle. Output has smaller ripple (4% at 60 Hz). Center-tap transformer alternative uses two diodes but requires transformer with center tap.</p>
+<h3>Smoothing &amp; Filtering</h3>
+<p>Capacitive filter (large capacitor across output) charges during each conducted pulse, discharges through load between pulses. Larger capacitor = lower ripple voltage. Rule of thumb: 2-4 µF per amp of output current. Inductive filter (choke in series) smooths current ripple. LC filter combines capacitive and inductive to achieve both voltage and current smoothing.</p>
+<h3>Diode Selection</h3>
+<p>Diode peak reverse voltage (PRV) rating must exceed peak AC voltage × 1.4. For 120V AC: peak = 170V, so 400V+ diodes needed. Current rating must handle peak current, which for capacitor-input filter is 3-5× RMS current. Use fast-recovery diodes (1-5 µs) for smooth power supplies; slow-recovery acceptable for power supplies &lt;10 kHz ripple frequency.</p>
+<h3>Transformer Sizing</h3>
+<p>Transformer secondary voltage must be peak voltage of rectifier output plus 2-3V for diode drops. For 24V DC output, secondary needs 17-18V. Current rating must handle RMS current to secondary (typically 1.5-2× DC output current due to diode conduction angle). Transformer losses typically 5-8%; efficiency improves with larger core.</p>
+</section>
+<section id="wiring-installation">
+<h2>Electrical Connections &amp; Wiring Safety</h2>
+<h3>Wire Sizing &amp; Ampacity Selection</h3>
+<p>Proper wire sizing prevents overheating and voltage drop. Three factors determine minimum wire gauge: (1) current carrying capacity (ampacity), (2) maximum allowable voltage drop (typically 3-5%), and (3) distance from generator to load.</p>
+<p><strong>Ampacity Formula:</strong> Amps = Power (watts) / Voltage (V). A 5000W generator at 240V AC requires 5000/240 = 20.8A continuous current. A 2000W solar charger at 48V requires 2000/48 = 41.7A.</p>
+<p><strong>Voltage Drop Formula:</strong> Voltage drop (V) = 2 × Amps × Distance (meters) × Wire resistance per meter. Wire resistance depends on gauge and material. Copper at 20°C: 10 AWG = 0.00328 Ω/m, 8 AWG = 0.00206 Ω/m, 6 AWG = 0.00130 Ω/m.</p>
+<p><strong>Worked Example - Wire Sizing:</strong></p>
+<ul>
+<li>Application: 3kW generator at 48V located 15 meters from battery house</li>
+<li>Current: I = 3000W / 48V = 62.5A</li>
+<li>Acceptable voltage drop: 5% of 48V = 2.4V allowed</li>
+<li>Rearranging voltage drop formula: Wire resistance max = Drop / (2 × Amps × Distance) = 2.4 / (2 × 62.5 × 15) = 0.00128 Ω/m</li>
+<li>From table: 6 AWG copper (0.00130 Ω/m) exceeds this barely. Choose 4 AWG (0.00082 Ω/m) for safety margin</li>
+<li>Actual drop with 4 AWG: 2 × 62.5 × 15 × 0.00082 = 1.54V (3.2% drop) ✓ Acceptable</li>
+</ul>
+<table><thead><tr><th scope="col">Wire Gauge (AWG)</th><th scope="col">Resistance (Ω/m)</th><th scope="col">Max Ampacity (60°C)</th><th scope="col">Max Ampacity (75°C)</th><th scope="col">Cost ($/meter)</th></tr></thead><tbody><tr><td>10</td><td>0.00328</td><td>30A</td><td>35A</td><td>$0.80</td></tr><tr><td>8</td><td>0.00206</td><td>40A</td><td>50A</td><td>$1.30</td></tr><tr><td>6</td><td>0.00130</td><td>55A</td><td>65A</td><td>$2.10</td></tr><tr><td>4</td><td>0.00082</td><td>70A</td><td>85A</td><td>$3.40</td></tr><tr><td>2</td><td>0.00052</td><td>95A</td><td>115A</td><td>$5.50</td></tr><tr><td>0</td><td>0.00033</td><td>125A</td><td>150A</td><td>$9.20</td></tr></tbody></table>
+<div class="warning">
+<p><strong>Undersized Wiring Hazard:</strong> Wire smaller than calculated produces excessive voltage drop (above 5%) and dangerous heat generation. A 10 AWG wire carrying 80A (undersized for this load) dissipates 80² × 0.00328 = 21W/meter. Over a 20-meter run, this generates 420W of waste heat—enough to melt insulation and cause fire. Always oversize by one wire gauge for safety margin. Use marine-grade tinned copper for corrosion resistance in wet climates.</p>
+</div>
+<h3>Grounding &amp; Bonding</h3>
+<p>Proper grounding protects against electrocution and lightning. Earth ground rod: minimum 1 meter depth, 10mm diameter copper. Measure earth resistance with megohm meter; target &lt;25 ohms for safety. Separate earth ground from system voltage ground at generator terminals (except DC systems where they bond at main negative bus).</p>
+<p>Generator frame bonding: All metal frame parts connected to single ground wire, no isolation. Prevents floating voltage creating shock hazard. Bonding wire minimum 6 AWG (same size as largest ungrounded conductor).</p>
+<p><strong>Worked Example - Grounding System:</strong></p>
+<ul>
+<li>5kW 240V AC alternator installation with 30-meter conduit run to main panel</li>
+<li>Earth rod installation: 1.2 meter depth in moist soil</li>
+<li>Ground wire sizing: Fault current capacity 5000W / 240V = 20.8A continuous → choose 10 AWG minimum for fault path (though 6 AWG chosen for margin)</li>
+<li>Ground conductor routing: Separate from AC power wires (prevent inductive coupling). Install in separate conduit or 30cm clearance minimum.</li>
+</ul>
+<div class="tip">
+<p><strong>Low-impedance grounding best practice:</strong> Bond equipment frame, neutral bus, and earth ground at single point (generator terminal box). Reduces potential rise during fault and accelerates breaker trip. Double-check bonding with multimeter continuity test (should read &lt;0.1 ohms).</p>
+</div>
+<h3>Overcurrent Protection</h3>
+<p>Breakers and fuses protect against: (1) overload (continuous current exceeding wire ampacity), (2) short circuit (near-zero resistance fault), (3) arc fault (unintended arcing between conductors). Sizing: breaker/fuse rating = wire ampacity (not load rating). For 6 AWG wire (65A at 75°C), install 60A breaker.</p>
+<p><strong>Main breaker trip time vs current:</strong></p>
+<ul>
+<li>At rated current (65A): breaker does not trip (continuous operation OK)</li>
+<li>At 2× rated (130A): breaker trips in 5-60 seconds (thermal overload)</li>
+<li>At 10× rated (650A): breaker trips in &lt;1 second (magnetic fault detection)</li>
+</ul>
+<div class="info-box">
+<p><strong>Breaker Coordination:</strong> Install breaker at generator output, then secondary breaker at battery/inverter input. Secondary breaker rated for continuous load (150% load current), main breaker for fault protection. This prevents nuisance trips from temporary surges while maintaining safety.</p>
+</div>
+</section>
+<section id="alternator-dynamo-comparison">
+<h2>Alternator vs Dynamo Comparison</h2>
+<table><thead><tr><th scope="col">Feature</th><th scope="col">AC Alternator</th><th scope="col">DC Dynamo</th></tr></thead><tbody><tr><td>Output Type</td><td>AC (sinusoidal)</td><td>DC (steady)</td></tr><tr><td>Commutator Needed</td><td>No</td><td>Yes (requires maintenance)</td></tr><tr><td>Load Regulation</td><td>5-15% voltage droop at full load</td><td>2-8% droop (better regulated)</td></tr><tr><td>Efficiency</td><td>85-95%</td><td>80-92%</td></tr><tr><td>Maintenance</td><td>Minimal (slip rings only)</td><td>Regular brush/commutator inspection</td></tr><tr><td>Best Use</td><td>Grid sync, AC appliance power</td><td>Battery charging, off-grid DC systems</td></tr><tr><td>Cost at 5kW</td><td>$800-1500</td><td>$1200-2000 (larger, heavier)</td></tr></tbody></table>
+<div class="info-box">
+<p><strong>Key Decision:</strong> For off-grid systems with battery storage, alternators with rectifiers are superior to dynamos. Fewer moving parts, better efficiency, lower maintenance. Choose dynamos only if batteryless DC systems required or salvage availability favors dynamos.</p>
+</div>
+</section>
+<section id="core-principles">
+<h2>Core Principles &amp; Theory</h2>
+<h3>Electromagnetic Induction Fundamentals</h3>
+<p>Faraday's law of electromagnetic induction states: induced voltage equals the negative rate of change of magnetic flux. In practical terms: E = -N × (ΔΦ/Δt), where N is the number of coil turns and ΔΦ/Δt is the rate of magnetic field change. Faster flux change = higher voltage. More turns = higher voltage. This principle applies to all generators regardless of mechanical input source.</p>
+<p><strong>Practical Implication:</strong> A generator spinning at 1000 RPM produces proportionally higher voltage than the same generator at 500 RPM. A generator with 200 coil turns produces twice the voltage of an identical generator with 100 turns. Both factors compound: doubling RPM and doubling turns produce 4× voltage.</p>
+<h3>Torque and Power Relationship</h3>
+<p>Mechanical power input (watts) = Torque (N⋅m) × Angular velocity (rad/s). Torque required increases dramatically with electrical load. A lightly loaded generator requires minimal torque to turn. A heavily loaded generator requires 3-5 times greater torque for the same RPM. This is why hand-crank generators become difficult to turn under electrical load—the magnetic &quot;braking&quot; effect increases with current draw.</p>
+<p>Power output can never exceed input (conservation of energy). A 100W mechanical input at 85% efficiency yields 85W electrical output. Oversized generators relative to mechanical input underutilize the available power—a 5kW generator on a 500W mechanical drive operates at 10% capacity, with correspondingly poor efficiency.</p>
+<div class="warning">
+<p><strong>Warning:</strong> Never exceed a generator's rated mechanical input. A small wind turbine driving an oversized generator stalls under heavy load (insufficient torque to turn it). Match generator size to mechanical power source capability.</p>
+</div>
+</section>
+<section id="materials-tools">
+<h2>Materials &amp; Tools</h2>
+<p><strong>Generator Inspection/Testing Equipment:</strong></p>
+<ul>
+<li>Multimeter (AC/DC voltage, current, resistance measurement) - $20-50</li>
+<li>Oscilloscope (optional, for waveform analysis) - $100-300</li>
+<li>Megohm meter (test insulation resistance) - $50-150</li>
+<li>Tachometer (measure RPM) - $20-60</li>
+</ul>
+<p><strong>Generator Installation Materials:</strong></p>
+<ul>
+<li>Heavy-gauge wire (10-4 AWG typical) - $2-5 per meter</li>
+<li>Breakers, disconnect switches, fuses - $50-200 per system</li>
+<li>Mounting frame materials (angle iron, bolts) - $100-300</li>
+<li>Vibration isolation mounts - $50-150</li>
+<li>Insulation materials (heat shrink, tape) - $20-50</li>
+</ul>
+<p><strong>Repair/Maintenance Supplies:</strong></p>
+<ul>
+<li>Bearing grease (marine-grade for corrosion resistance) - $20-40</li>
+<li>Brushes (if dynamo) - $10-30 per pair</li>
+<li>Insulation varnish (for rewinding coils) - $30-80</li>
+<li>Electrical tape, solder, flux - $20-40</li>
+</ul>
+<p><strong>Field-Craftable Alternatives:</strong></p>
+<ul>
+<li>Hand-crank generators from bicycle dynamos (15-30W output) - salvage from bicycles</li>
+<li>Mechanical bearings from skateboard wheels or machinery - free salvage</li>
+<li>Rotor magnets from discarded microwave ovens - contains strong rare-earth magnets</li>
+<li>Copper wire windings salvaged from old motors/transformers - very scalable source</li>
+</ul>
+</section>
+<section id="efficiency">
+<h2>System Efficiency &amp; Optimization</h2>
+<h3>Overall System Efficiency Analysis</h3>
+<p>Total off-grid system efficiency = Generator (85-95%) × Wiring/Transmission (93-98%) × Rectification (92-98%) × Battery charging (90-98%) × Inverter (85-95%). Cascading losses are multiplicative: 90% × 95% × 95% × 90% = 73% total system efficiency. This explains why oversized systems with excessive wiring loss or multiple conversion stages underperform.</p>
+<h2 id="efficiency-amp-optimization">Efficiency &amp; Optimization</h2>
+<h3>System Losses Accounting</h3>
+<p>Typical generator system efficiency breakdown: Generator 85-95%, Transmission (wiring) 2-5% loss, Rectifier (if needed) 1-3%, Filter/regulation circuits 1-2%, Battery charging 5-10%. Total system efficiency 65-85% depending on components. Improving any single component cascades to overall improvement.</p>
+<h3>Mechanical Losses in Rotating Machinery</h3>
+<p>Bearing friction: typically 1-2% power loss in well-maintained equipment. Windage losses (air friction on rotor): 1-3% at high speed. Cogging losses (magnetic resistance as rotor turns): 0.5-1%. Total mechanical loss typically 2-5%, with smaller machines having higher percentage losses.</p>
+<h3>Electrical Losses</h3>
+<p>I²R loss in windings: Heat = I² × R. Copper resistance increases with temperature. At 75°C operation vs 25°C, resistance increases ~20%, affecting efficiency. Doubling current quadruples I²R loss, making proper wire sizing essential. Core losses (hysteresis and eddy currents) typically 1-3% in modern steel, higher in older machines.</p>
+<h3>Optimization Strategies</h3>
+<p>Match generator size to typical load: oversized generators run at low efficiency. Use step-up gearing to run generator at optimal RPM (usually 1500-3600 RPM for alternators). Minimize transmission wiring—voltage drop losses increase with resistance and current squared. Use MPPT for solar systems. Regular maintenance—clean air filter, change oil, inspect bearings.</p>
+</section>
+<section id="quick-reference">
+<h2>Quick Reference Table</h2>
+<table class="tech-spec-table"><thead><tr><th scope="col">Generator Type</th><th scope="col">Efficiency</th><th scope="col">Best RPM</th><th scope="col">Voltage Regulation</th><th scope="col">Maintenance</th><th scope="col">Cost (5kW)</th></tr></thead><tbody><tr><td>AC Alternator (brush)</td><td>88-94%</td><td>1800-3600</td><td>Good (5-10%)</td><td>Minimal</td><td>$1000-1500</td></tr><tr><td>DC Dynamo (brush)</td><td>82-90%</td><td>1000-1800</td><td>Excellent (2-5%)</td><td>Regular brushes</td><td>$1500-2200</td></tr><tr><td>Homopolar Dynamo</td><td>75-85%</td><td>500-2000</td><td>Variable (10-20%)</td><td>Minimal</td><td>$800-1200</td></tr><tr><td>Pelton Wheel Gen</td><td>75-85%</td><td>1500-3600</td><td>Mechanical gov (3-6%)</td><td>Seasonal (sediment)</td><td>$5000-12000</td></tr><tr><td>Wind Turbine</td><td>30-45%</td><td>500-3600</td><td>Electronic ctrl</td><td>Annual bearing inspect</td><td>$8000-20000</td></tr></tbody></table>
+<div class="tip">
+<p><strong>Optimization Insight:</strong> For off-grid households, 3-5 kW AC alternator with 12-48V battery bank and 5kW inverter provides versatile power. Sized appropriately, this system achieves 70-75% total efficiency and maintains UPS-like continuous operation.</p>
+</div>
+</section>
+<section id="storage">
+<h2>Energy Storage &amp; Battery Management</h2>
+<h3>Battery Selection for Off-Grid Systems</h3>
+<table><thead><tr><th scope="col">Battery Type</th><th scope="col">Cost per kWh</th><th scope="col">Efficiency</th><th scope="col">Lifespan</th><th scope="col">Low-Temp Performance</th><th scope="col">Maintenance</th><th scope="col">Best Application</th></tr></thead><tbody><tr><td>Lead-acid (flooded)</td><td>$100-150</td><td>80-90%</td><td>3-7 years</td><td>Poor (50% capacity at 0°C)</td><td>Monthly water level check</td><td>Generator charging (constant voltage)</td></tr><tr><td>Lead-acid (AGM)</td><td>$150-200</td><td>85-92%</td><td>4-8 years</td><td>Moderate (70% at 0°C)</td><td>None (sealed)</td><td>Reliable systems, wet climates</td></tr><tr><td>Lithium LiFePO4</td><td>$300-500</td><td>95%+</td><td>10-15 years</td><td>Good (85% at 0°C with heater)</td><td>BMS monitoring</td><td>Solar + wind hybrid, intermittent generation</td></tr><tr><td>Nickel-metal hydride</td><td>$200-300</td><td>85-92%</td><td>5-10 years</td><td>Moderate</td><td>Hysteresis monitoring</td><td>Legacy systems, hybrid electric vehicles</td></tr></tbody></table>
+<p><strong>Lead-acid:</strong> Inexpensive, reliable when properly maintained, 80-90% charge efficiency. Capacity reduces at low temperature (50% capacity at 0°C) and high discharge rates (C/1 rate produces 20% capacity loss). Requires monthly water level checks (distilled water only). Lifespan 3-7 years with proper maintenance. Best for continuous generator charging where stable charging voltage maintained.</p>
+<p><strong>Lithium (LiFePO4):</strong> Higher cost initially ($3-8 per Wh vs $0.15-0.25 for lead-acid) but 10-15 year lifespan and better efficiency justify cost over 20-year system life. Requires active management circuit (BMS) preventing overcharge (&gt;3.65V per cell causes thermal runaway). Excellent low-temperature performance (85% capacity at 0°C with internal heater). Superior for intermittent systems (solar, wind) where deep discharge cycles occur frequently.</p>
+<p><strong>Nickel-metal hydride:</strong> Rare in new systems but found in salvaged hybrid vehicle packs. Good 85-92% efficiency and moderate 5-10 year lifespan. Hysteresis effect (memory) requires careful charging profiles—capacity degrades if repeatedly charged to same level without full discharge cycles.</p>
+<h3>Charge Rate &amp; Battery Sizing</h3>
+<p><strong>Formula: Battery capacity (Ah) = Hours of autonomy × Average load current (A) × Depth-of-discharge factor</strong></p>
+<p>Example: System requiring 24 hours autonomy with 10A average load at 48V.</p>
+<ul>
+<li>Energy required: 10A × 24h = 240 Ah at 48V</li>
+<li>Depth-of-discharge factor: Lead-acid typically discharged only to 50% (factor = 2.0) for extended lifespan; lithium can discharge to 20% (factor = 1.25)</li>
+<li>Battery capacity needed: 240 × 2.0 = 480 Ah for lead-acid (or 300 Ah lithium)</li>
+</ul>
+<p><strong>Charge time calculation:</strong> Time (hours) = Battery capacity (Ah) / Average charge current (A)</p>
+<p>Worked Example:</p>
+<ul>
+<li>480 Ah lead-acid battery charged at 100A from generator</li>
+<li>Theoretical charge time: 480 / 100 = 4.8 hours</li>
+<li>Practical charge time: 6-8 hours (charging current naturally decreases as battery voltage rises toward final 14.4V)</li>
+<li>Two-stage charging: Stage 1 (bulk) 0-80% takes 4 hours at 100A; Stage 2 (absorption) 80-100% takes 2-4 hours at declining current</li>
+</ul>
+<div class="warning">
+<p><strong>Battery Acid Safety Hazard:</strong> Lead-acid battery electrolyte is 30% sulfuric acid—causing severe chemical burns on skin and blindness if splashed in eyes. Always wear acid-resistant apron, nitrile gloves, and safety glasses when servicing batteries. If acid contacts skin: immediately flush with water for 15 minutes, then apply baking soda paste to neutralize. If ingested (extremely unlikely): drink milk or water immediately and seek emergency medical care.</p>
+</div>
+<h3>System Management Electronics</h3>
+<p><strong>Charge controller:</strong> Regulates generator/solar input voltage to safe battery charging voltage (13.8V for 12V batteries, 27.6V for 24V, 55.2V for 48V). Implements two-stage charging: constant-current stage (bulk charge) until 80%, then constant-voltage stage (absorption) until 100%. Quality controllers include temperature compensation (increase voltage in cold, decrease in heat).</p>
+<p><strong>Inverter:</strong> Converts DC battery voltage to 120V/240V AC for AC appliances. Typical efficiency 85-95% (pure sine wave inverters &gt;90%, modified sine wave &lt;85%). Standby power draw 50-100W even with no load (measure annually as efficiency degrades). Right-size inverter to continuous load—an 8kW inverter on 2kW average load operates at 25% efficiency, wasting 500W continuously.</p>
+<p><strong>DC-DC converter:</strong> Steps voltage up or down for different circuit voltages (e.g., 48V battery to 24V auxiliary circuits, 12V phone charging). Typical efficiency 85-95%. Use only synchronous buck/boost designs for off-grid systems.</p>
+<p><strong>Smart monitoring:</strong> Measures real-time power flow (watts in/out), battery state-of-charge (%), calculates autonomy remaining (hours until critical discharge). Good systems integrate daily/monthly energy reports for optimization. Use shunt-based amp-hour counters (0.001 ohm sense resistor) for battery SOC estimation—more reliable than voltage-only estimation for lead-acid.</p>
+</section>
+<section id="step-by-step">
+<h2>Step-by-Step Generator Installation</h2>
+<h3>Phase 1: Foundation &amp; Alignment (Day 1-2)</h3>
+<ol>
+<li>Build concrete foundation pad (minimum 500mm × 500mm × 100mm deep) if stationary installation</li>
+<li>Mount generator on vibration isolation feet (prevents structure damage from vibration)</li>
+<li>Align generator shaft with prime mover (engine/turbine) within 0.5mm total runout</li>
+<li>Test rotation: hand-crank generator to verify free movement before power connection</li>
+</ol>
+<h3>Phase 2: Mechanical Connection (Day 2)</h3>
+<ol start="5">
+<li>Install coupling between prime mover and generator (flexible coupling absorbs minor misalignment)</li>
+<li>Secure all bolts with mechanical lockwashers (prevents loosening from vibration)</li>
+<li>Install protective guards around rotating shafts (safety requirement)</li>
+<li>Test mechanical drive: operate at no-load for 10 minutes, monitoring temperature and noise</li>
+</ol>
+<h3>Phase 3: Electrical Integration (Day 3)</h3>
+<ol start="9">
+<li>Install AC terminal box with breaker disconnects (safety requirement)</li>
+<li>Run copper wiring from generator terminals through conduit to main panel</li>
+<li>Size wire gauge based on expected current (consult electrical tables for wire size vs current)</li>
+<li>Ground generator frame to earth ground rod (electrical safety)</li>
+<li>Install voltmeter and ammeter on control panel for real-time monitoring</li>
+</ol>
+<h3>Phase 4: Load Connection &amp; Testing (Day 4)</h3>
+<ol start="14">
+<li>Start generator unloaded, measure output voltage and frequency</li>
+<li>Apply resistive load incrementally (light bulbs, heaters) and observe voltage regulation</li>
+<li>At full rated load, verify frequency within 1% of target (59-61 Hz for 60 Hz rated)</li>
+<li>Record baseline: output voltage, current, frequency at half/full load</li>
+</ol>
+<h3>Common Mistakes to Avoid:</h3>
+<ul>
+<li><strong>Undersizing wiring:</strong> Results in voltage drop exceeding 5%. Use oversized wire (one size larger than calculated).</li>
+<li><strong>Inadequate grounding:</strong> Creates shock hazard. Always install proper ground rod and conductor.</li>
+<li><strong>Over-torque on coupling bolts:</strong> Breaks shafts. Tighten to specified torque (consult manufacturer).</li>
+<li><strong>Running generator into sustained short circuit:</strong> Damages windings. Install proper breaker protection.</li>
+</ul>
+<div class="danger">
+<p><strong>Critical Safety:</strong> Never operate generator indoors or in enclosed spaces. Exhaust produces carbon monoxide (lethal). Always operate outdoors with exhaust directed away from living areas.</p>
+</div>
+</section>
+<section id="variations-alternatives">
+<h2>Common Mistakes &amp; Failure Modes</h2>
+<p>Systematic analysis of generator system failures reveals repeating patterns:</p>
+<p><strong>Undersizing Generator:</strong>
+Most common mistake. Selecting generator based on peak load instead of average load wastes capital and fuel. A household with 163W average load and 850W peak attempts to buy 5kW generator for &quot;safety margin.&quot; This 5kW generator running at 163W (3% capacity) operates at 50-60% efficiency vs 90% at rated load. Over 10 years with continuous operation: 5000W / 0.55 efficiency = 9091W mechanical input, costing 2-3× more fuel than properly sized 500W generator at full efficiency. Solution: Calculate average load, size generator at 1.2-1.5× average (not peak).</p>
+<p><strong>Inadequate Wire Sizing:</strong>
+Second most common—installer sizes wire for continuous current without accounting for voltage drop. A 30-meter run from generator to battery house with undersized 10 AWG wire on a 3kW (62.5A) load drops 62.5 × 2 × 30 × 0.00328 = 12.3V—over 25% drop on a 48V system! This voltage drop: (1) reduces charging current to batteries, (2) dissipates 62.5² × 0.00328 × 30 = 386W as heat (fire risk), (3) damages connected equipment rated for 48V but receiving only 35.7V. Always calculate voltage drop before installation; use one wire gauge larger than minimum.</p>
+<p><strong>Missing Overcurrent Protection:</strong>
+Generator without breaker allows unlimited fault current. A short circuit between positive and negative battery terminals presents &lt;0.1 ohm resistance—at 48V, this draws 480A. Copper wire cannot dissipate this heat; insulation melts in seconds, causing arc flash and fire. Always install breaker sized at 125% of generator continuous current rating.</p>
+<p><strong>Poor Grounding:</strong>
+Inadequate earth ground creates floating voltage—multiple conductors at different potentials relative to ground. During fault, current cannot flow to ground, so fault protection does not activate. Test earth resistance (should be &lt;25 ohms). Ground rod must be &gt;1 meter depth in moist soil. Dry sandy soil may require two rods in parallel with bonding wire.</p>
+<p><strong>Neglecting Battery Temperature Compensation:</strong>
+Charge voltage for lead-acid decreases ~3mV per °C temperature rise. A 13.8V charge setting suitable at 25°C becomes overcharge at 40°C (charging at 14.1V risks water loss and hydrogen generation). Proper charge controllers include thermistor for automatic compensation. Manual override required for systems without compensation: lower charge voltage in heat, raise in cold.</p>
+<p><strong>Running Generator into Sustained Overload:</strong>
+Continuous operation above rated capacity causes winding overheating. I²R loss increases with square of current. A 5kW generator rated 20A at 250V producing 25A (125% rated) dissipates 25² / 20² = 1.56× the heat. Winding temperature rises from 80°C nominal to 120°C, causing insulation degradation. After few hours of overload, insulation breaks down and winding shorts internally. Solution: monitor output current with ammeter; reduce load if exceeding rating.</p>
+<div class="tip">
+<p><strong>Prevention Strategy:</strong> Use data logging. Record output voltage, current, frequency, temperature daily for first month of operation. This baseline reveals whether design correctly matches actual load. Early detection of oversizing or undersizing allows correction before system failure.</p>
+</div>
+<h2 id="variations-amp-alternatives">Variations &amp; Alternatives</h2>
+<h3>Portable vs Stationary Generators</h3>
+<p><strong>Portable (5-20 kW):</strong> Lighter frame, smaller footprint, transportable via truck. Useful for temporary installations or mobile operations. Vibration isolation less critical. Fuel efficiency typically 5-8 L/hour at full load. Good for short-term powering specific appliances.</p>
+<p><strong>Stationary (20+ kW):</strong> Permanent foundation, larger fuel/propane tank integration, better efficiency (7-10% less fuel consumption vs portable). Integrated cooling, reduced noise from acoustic enclosures. Expensive civil works ($3000-8000 installation). Permanent connection to building electrical system.</p>
+<h3>Prime Mover Options</h3>
+<ul>
+<li><strong>Internal combustion (diesel/gasoline):</strong> Most common. 500-5000W easily available. Efficiency 25-35%. High fuel cost in long-term scenarios.</li>
+<li><strong>Manual/hand-crank:</strong> 5-20W output. Zero fuel cost. Extreme labor cost—hand-cranking 1 hour provides &lt;0.05 kWh.</li>
+<li><strong>Compressed air:</strong> Stored energy from manual pump. 200-1000W. Episodic availability (limited air tank).</li>
+<li><strong>Water turbine:</strong> 500W-10kW. Free fuel (stream flow), but installation cost $2000-20000.</li>
+<li><strong>Wind turbine:</strong> Variable output (0-5kW). Free fuel (wind), but intermittent and location-dependent.</li>
+</ul>
+<div class="info-box">
+<p><strong>Hybrid Systems Best Practice:</strong> Combine generator types. Example: 3kW AC alternator on water turbine (baseload) + 5kW solar panels (daytime supplement) + 2kW diesel genset (backup for cloudy/low-flow periods) + 15kWh battery bank. This diversification ensures continuous power despite single-source failures.</p>
+</div>
+<h2 id="integration-amp-scaling-for-community-systems">Integration &amp; Scaling for Community Systems</h2>
+<h3>Scaling Beyond Single Generator</h3>
+<p>Single generator systems max out around 10-20kW practically (large diesel sets &gt;20kW become difficult to move and service). Communities requiring &gt;20kW combine multiple generators in parallel configuration:</p>
+<p><strong>Series Connection (NOT RECOMMENDED):</strong> Generators in series add voltage but face synchronization problems. AC generators must maintain identical frequency and phase—any 2% frequency difference causes large circulating currents. DC generators in series experience unequal voltage division due to different internal resistances. Rarely used except in specialized high-voltage applications.</p>
+<p><strong>Parallel Connection:</strong> Multiple generators operate in parallel when voltage, frequency, and phase all match within tolerance. Load automatically divides based on droop characteristics. Typical 5-10 kW paralleling:</p>
+<ul>
+<li>Two 5kW generators each produce 240V 60Hz</li>
+<li>Synchronize generators to within 0.1Hz and &lt;5V</li>
+<li>Connect with equal-length cables to prevent circulating current imbalance</li>
+<li>Each generator droops ~4% from no-load to full load, allowing load-sharing based on droop magnitude</li>
+</ul>
+<p><strong>Load-Share Controller:</strong> Monitors each generator current and frequency, adjusting fuel input to balance load. Without controller, stronger generator delivers more power while weaker generator merely idles—inefficient. Frequency-droop paralleling: faster generator naturally delivers less power (higher frequency reduces phase current), balancing load.</p>
+<h3>Battery Bank Expansion</h3>
+<p>Modular battery configuration scales from 2.4kWh (12V × 200Ah) to 100+ kWh for large community systems:</p>
+<p><strong>Series Strings:</strong> Eight 12V batteries in series create 96V system (higher efficiency, lower current, smaller wire). Requires careful balancing—if one cell fails, entire string voltage drops unpredictably.</p>
+<p><strong>Parallel Strings:</strong> Multiple independent battery strings charged in parallel. If one string fails, others continue operation. Requires isolation diodes preventing discharge through failed string: <strong>Diode voltage drop = 0.7V, Power loss = Current × 0.7V</strong>. For 200A system, parallel diode losses = 200 × 0.7 = 140W continuously—significant inefficiency. Better approach: individual charge controller per string with independent blocking diodes.</p>
+<p><strong>Cells in Series &amp; Parallel:</strong> 8 strings of 4 cells in series (8S4P configuration) achieves 48V × 200Ah. Allows modular expansion—add another string to increase capacity without voltage changes.</p>
+<div class="info-box">
+<p><strong>Community Power Management:</strong> Successful multi-generator systems require: (1) centralized monitoring (real-time power flow, battery SOC, generator status), (2) automatic load shedding (if insufficient generation, shed non-essential loads like heating, retain critical refrigeration), (3) operator training (manual override procedures when automation fails), (4) maintenance coordination (schedule generator service without community blackout).</p>
+</div>
+</section>
+<section id="maintenance">
+<h2>Maintenance Schedule &amp; Preventive Care</h2>
+<p>Systematic maintenance prevents failures and extends generator lifespan 2-3×. Create maintenance log documenting: date, hours operated, temperature, voltage output, observations.</p>
+<h3>Daily Checks (Before operation)</h3>
+<ul>
+<li><strong>Visual inspection:</strong> Look for fuel leaks, loose connections, corrosion on terminals</li>
+<li><strong>Voltage test:</strong> Verify generator output voltage within ±10% nominal before load</li>
+<li><strong>Sound check:</strong> Listen for unusual grinding, whining, or knocking sounds</li>
+<li><strong>Safety check:</strong> Ensure all guards intact, no debris near cooling vents</li>
+</ul>
+<h3>Weekly Maintenance (Every 40-50 hours)</h3>
+<ul>
+<li><strong>Oil level check</strong> (if IC engine): Inspect dipstick, top off as needed with correct grade</li>
+<li><strong>Belt tension:</strong> Check alternator belt (if separate); adjust if loose &gt;5mm deflection</li>
+<li><strong>Cooling fins inspection:</strong> Remove debris from radiator and cooling fins</li>
+<li><strong>Battery terminal inspection:</strong> Check for corrosion (white/blue deposits), clean with baking soda solution</li>
+<li><strong>Load test:</strong> Run at 50% load for 30 minutes, verify stable voltage and RPM</li>
+</ul>
+<h3>Monthly Maintenance (Every 160-200 hours)</h3>
+<ul>
+<li><strong>Detailed electrical test:</strong> Measure no-load voltage, voltage regulation under progressively increasing load</li>
+<li><strong>Insulation resistance test:</strong> Use megohm meter between windings and frame; target &gt;10 megohms</li>
+<li><strong>Grounding verification:</strong> Test earth ground resistance (target &lt;25 ohms)</li>
+<li><strong>Air filter cleaning/replacement</strong> (if IC engine): Clogged filter reduces cooling and efficiency</li>
+<li><strong>Fuel filter check</strong> (if IC engine): Replace if fuel flow appears restricted</li>
+</ul>
+<h3>Quarterly Maintenance (Every 640-800 hours)</h3>
+<ul>
+<li><strong>Brush inspection</strong> (if dynamo/brushed machine): Measure brush length; replace if worn &lt;5mm</li>
+<li><strong>Commutator examination:</strong> Look for pitting, discoloration indicating arcing. Polish with fine sandpaper if minor oxidation</li>
+<li><strong>Bearing inspection:</strong> Check for excessive play in shaft. Apply marine-grade grease (2-3 pumps of grease gun)</li>
+<li><strong>Coupling alignment verification:</strong> Measure run-out with dial indicator; adjust if &gt;0.5mm</li>
+<li><strong>Load bank test:</strong> Simulate full-rated load for 2 hours; verify no overheat, stable frequency</li>
+</ul>
+<h3>Annual Maintenance (Seasonal or every 2000+ hours)</h3>
+<ul>
+<li><strong>Winding resistance measurement:</strong> Measure phase-to-phase and phase-to-ground resistance with ohmmeter; compare to baseline</li>
+<li><strong>Capacitor replacement</strong> (if AC alternator with capacitive excitation): Electrolytic capacitors age and fail after 5-10 years</li>
+<li><strong>Bearing replacement:</strong> Remove bearings, inspect for wear (spalling, discoloration), replace if damaged</li>
+<li><strong>Field coil inspection:</strong> Verify insulation integrity; look for charring or moisture damage</li>
+<li><strong>Transformer oil analysis</strong> (if oil-cooled): Check viscosity, water content, dielectric strength (sample to lab)</li>
+</ul>
+<div class="tip">
+<p><strong>Log Everything:</strong> Maintain written maintenance records. Track operating hours, load patterns, ambient temperature, fuel consumption. This data reveals degradation trends allowing planned replacement before failure. A generator failing during critical supply task poses greater hardship than scheduled maintenance.</p>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting Common Issues</h2>
+<p><strong>Generator produces no output:</strong></p>
+<ul>
+<li>Check fuel supply (if IC engine) and verify prime mover rotating shaft</li>
+<li>Test excitation circuit (if AC alternator with separate excitation)—measure DC voltage on rotor winding with multimeter</li>
+<li>If no rotor voltage, capacitor self-excitation circuit failed (replace with new electrolytic capacitor rated for service voltage)</li>
+<li>For brushed machines, verify brushes making contact with commutator; replace if worn</li>
+</ul>
+<p><strong>Output voltage too low (&lt;80% rated):</strong></p>
+<ul>
+<li>Reduce load (generator may be beyond rated capacity)</li>
+<li>Check for loose connections causing resistance (inspect all terminals with multimeter continuity test)</li>
+<li>Verify rotor speed matches target RPM (too slow produces proportionally low voltage)</li>
+<li>Check field winding resistance with ohmmeter (burned windings show extremely high resistance &gt;1000 ohms)</li>
+<li>Clean corrosion from slip rings or commutator with fine emery cloth</li>
+</ul>
+<p><strong>Output voltage unstable/fluctuating:</strong></p>
+<ul>
+<li>Mechanical oscillation in prime mover (check alignment with dial indicator, tighten coupling bolts)</li>
+<li>Load rapidly switching on/off (lights flickering). Solution: add mechanical flywheel to increase inertia and smooth output</li>
+<li>Excitation circuit instability: aging electrolytic capacitor loses capacitance. Solution: replace capacitor with identical rating</li>
+<li>Variable prime mover speed (if water turbine, check intake flow stability; if wind turbine, use electronic load-matching controller)</li>
+</ul>
+<p><strong>Generator overheating (&gt;90°C winding temperature):</strong></p>
+<ul>
+<li>Overload condition—reduce load or upgrade to larger generator</li>
+<li>Blocked cooling vents—clean intake air filter and remove debris from cooling fins</li>
+<li>Low oil/coolant level (if IC engine)—check dipstick and add correct grade oil</li>
+<li>Bearing wear creating increased friction—feeling rough in rotation. Solution: replace bearing assembly</li>
+</ul>
+<p><strong>Excessive vibration/noise:</strong></p>
+<ul>
+<li>Rotor imbalance creating centrifugal force. Solution: mark heavy spot on rotor, dynamically balance with counterweight</li>
+<li>Loose foundation bolts—tighten all mounting bolts to specified torque (typically 20-30 N⋅m for small generators)</li>
+<li>Worn coupling allowing axial or angular movement—replace with new flexible coupling</li>
+<li>Damaged blade or rotor—if wind turbine, retire damaged blade and repair or replace rotor</li>
+</ul>
+<div class="warning">
+<p><strong>Moisture &amp; Corrosion Risk:</strong> High-humidity environments (coastal areas, tropics) cause copper oxidation and insulation degradation. Store generator in heated/dry shelter. Use silica gel desiccant in terminal boxes. Apply dielectric grease to all external connections monthly to prevent corrosion.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="safety-guidelines">
+<h2>Safety Guidelines &amp; Hazard Prevention</h2>
+<h3>Electrocution Prevention</h3>
+<p>Generators produce lethal voltage (120-480V AC or 12-48V DC). Contact with energized conductors causes electrocution. Safe work procedures:</p>
+<ul>
+<li><strong>Always ground generator to earth rod</strong> (minimum 1-meter depth, 10mm diameter copper). Test earth resistance &lt;25 ohms with megohm meter.</li>
+<li><strong>Install main disconnect breaker</strong> accessible near operator position. Breaker must be visible and reachable within 3 seconds.</li>
+<li><strong>Use GFCI (Ground Fault Circuit Interrupt) protection</strong> on any wet-area circuits. GFCI trips within 30 milliseconds if current imbalance detected (5mA threshold typical).</li>
+<li><strong>Label all electrical terminals</strong> with &quot;HIGH VOLTAGE HAZARD&quot; warning. Use red warning tape on energized conductors.</li>
+<li><strong>Never verify voltage by touch.</strong> Always use multimeter (set to appropriate AC/DC range before touching terminals). Avoid simultaneous contact with two conductors.</li>
+<li><strong>Wet conditions dramatically increase risk.</strong> Never operate generators in rain. Provide weatherproof shelter (roof, side walls, but ensure ventilation). Wear rubber-soled boots and dry gloves when working near wet equipment.</li>
+</ul>
+<div class="danger">
+<p><strong>Electrocution Hazard:</strong> Even 120V AC can cause fatal fibrillation if current path crosses heart. Wet skin reduces contact resistance from 100,000 ohms to &lt;1000 ohms, increasing current from 1.2mA (dry) to 120mA (wet)—enough to cause cardiac arrest. Assume all generators are live. Treat every terminal as a shock hazard.</p>
+</div>
+<h3>Mechanical &amp; Rotation Hazards</h3>
+<p>Rotating machinery creates entanglement and crushing hazards. Prevention:</p>
+<ul>
+<li><strong>Install mechanical guards</strong> around all rotating shafts within 2 meters of operator work area. Guards must prevent hand access to rotating surfaces.</li>
+<li><strong>Never operate generator alone.</strong> In emergency (entanglement, electrocution), another person can shut down and provide aid.</li>
+<li><strong>Remove loose clothing, hair ties, jewelry.</strong> Long hair can be caught in &lt;0.3 seconds at typical generator RPM.</li>
+<li><strong>Stop generator before any maintenance.</strong> Allow 5-minute cooldown. If IC engine, remove fuel from tank (prevents spill during maintenance).</li>
+<li><strong>Use lockout/tagout procedures.</strong> After stopping, place lock on fuel shutoff valve or circuit breaker. Attach tag: &quot;DO NOT OPERATE—MAINTENANCE IN PROGRESS.&quot; Remove only when maintenance verified complete.</li>
+</ul>
+<div class="warning">
+<p><strong>Mechanical Entanglement Risk:</strong> Hair caught in rotating shaft at 1800 RPM experiences 60 scalp pulls per second—scalp can be completely removed in &lt;3 seconds. Fingers caught in coupling between generator and prime mover experience crushing forces &gt;1000 N. Always ensure guards cover ALL rotating parts within arm's reach.</p>
+</div>
+<h3>Stored Energy &amp; Runaway Risk</h3>
+<p>Large rotating machinery stores kinetic energy. After electrical load disconnected, rotor continues spinning:</p>
+<p><strong>Kinetic energy stored = 0.5 × Inertia (kg⋅m²) × (Angular velocity)²</strong></p>
+<p>A 5kW generator with flywheel (Inertia = 0.5 kg⋅m²) at 1800 RPM (188 rad/s) stores: 0.5 × 0.5 × (188)² = 8,836 joules. This energy continues as spinning rotor—equivalent to 880 W dissipation over 10 seconds. Touching rotor during this period causes severe burns.</p>
+<ul>
+<li><strong>Never touch rotor or shaft immediately after generator stops.</strong> Wait 5+ minutes for complete deceleration.</li>
+<li><strong>Engage mechanical brake if available.</strong> Some generators have internal brakes activated at shutdown.</li>
+<li><strong>Prevent unintended restart.</strong> Remove ignition keys for IC-engine generators. Install electrical disconnect preventing accidental energization.</li>
+</ul>
+<h3>Fire &amp; Explosion Prevention</h3>
+<p>IC-engine generators and fuel storage create fire/explosion risk:</p>
+<ul>
+<li><strong>Keep fuel stored in approved metal cans</strong> (never plastic—static buildup), &gt;3 meters from ignition sources including generator exhaust</li>
+<li><strong>Maintain 2+ meter clearance</strong> around exhaust outlet (can exceed 400°C, igniting nearby materials)</li>
+<li><strong>Never refuel while running or hot.</strong> Wait until engine cools (~5 minutes after shutdown). Always ground fuel can to generator frame with wire to prevent static buildup during transfer</li>
+<li><strong>Install spark arrestor on exhaust</strong> (prevents wildfire ignition in dry climates)</li>
+<li><strong>Have fire extinguisher rated for Class C (electrical fire) nearby.</strong> Dry powder ABC extinguishers suitable for all generator fire types.</li>
+<li><strong>Hydrogen gas generation:</strong> Lead-acid batteries under fast charging produce hydrogen gas (explosive at 4-74% air concentration). Ensure adequate ventilation. Never operate smoking materials near charging batteries.</li>
+</ul>
+<div class="danger">
+<p><strong>Hydrogen Gas Explosion Hazard:</strong> Charging 200 Ah lead-acid battery at 50A charge rate produces ~0.2 liters hydrogen per hour. In an enclosed space without ventilation, this accumulates to explosive concentration in &lt;2 hours. ALWAYS ensure mechanical ventilation (open vents, duct fan) when fast-charging batteries. One spark from a relay or brush can detonate accumulated hydrogen, destroying the battery and nearby equipment.</p>
+</div>
+<h3>Environmental &amp; Community Considerations</h3>
+<ul>
+<li><strong>Contain generator in secondary containment</strong> (oil pan, concrete berm with drain) preventing oil spill contamination. Size containment for 110% of fuel tank capacity.</li>
+<li><strong>Minimize noise—use acoustic enclosure</strong> if community noise restrictions exist (typically 75-85 dB limit). Muffler upgrading reduces exhaust noise 10-15 dB.</li>
+<li><strong>Regular maintenance prevents fuel leaks and air pollution.</strong> Check hoses, fittings, tank for seepage monthly.</li>
+<li><strong>Proper fuel disposal:</strong> Never dump old generator fuel. Store in labeled containers for hazardous waste program pickup.</li>
+</ul>
+<div class="info-box">
+<p><strong>Personal Protective Equipment (PPE):</strong> When working on live generators: safety glasses (prevent arc flash eye damage), arc-rated long sleeves and pants (synthetic materials melt in arc flash—use cotton or Nomex), leather gloves, steel-toe boots, insulated hand tools for &lt;50V work. For &gt;50V work, use rubber gloves rated for system voltage plus 1000V safety margin.</p>
+</div>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="acetylene-carbide-production.html">Acetylene &amp; Carbide Production</a>
+<a href="automotive-alternator-repurposing.html">Alternator Repurposing</a>
+<a href="batteries.html">Battery Construction</a>
+<a href="battery-restoration.html">Battery Restoration &amp; Reconditioning</a>
+<a href="charcoal-fuels.html">Charcoal &amp; Fuels</a>
+<a href="electric-motor-rewinding.html">Electric Motor Rewinding</a>
+<a href="electrical-motors.html">Electric Motors</a>
+<a href="electrical-wiring.html">Electrical Wiring</a>
+<a href="electricity.html">Electricity &amp; Magnetism</a>
+<a href="emergency-power-bootstrap.html">Emergency Power Bootstrap</a>
+<a href="energy-systems.html">Energy Systems</a>
+<a href="hydroelectric.html">Hydroelectric Power</a>
+<a href="micro-hydro-turbine.html">Micro-Hydro Turbine Systems</a>
+<a href="power-distribution.html">Power Distribution &amp; Micro-Grids</a>
+<a href="small-engines.html">Small Engines &amp; Mechanical Power</a>
+<a href="solar-technology.html">Solar Technology</a>
+<a href="steam-engines.html">Steam Engines &amp; Power Generation</a>
+<a href="thermal-energy-storage.html">Thermal Energy Storage</a>
+<a href="vacuum-technology.html">Vacuum Technology</a>
+<a href="vehicle-conversion.html">Vehicle Conversion</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/heat-management.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heat Management - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.thermal-calc { background: var(--surface); padding: 1rem; border-left: 3px solid var(--accent); }
+.formula-box { font-family: monospace; background: var(--bg); padding: 0.75rem; margin: 0.5rem 0; }
+table.heat-values { width: 100%; border-collapse: collapse; }
+table.heat-values td { padding: 0.5rem; border: 1px solid var(--accent); }
+
+</style>
+<meta name="description" content="Master passive heating/cooling, thermal mass, insulation, fire safety, and shelter thermal design for survival situations. Covers chemistry of combustion, thermodynamics of heat transfer, and integrated heating systems.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/heat-management.html">
+<meta property="og:title" content="Heat Management">
+<meta property="og:description" content="Master passive heating/cooling, thermal mass, insulation, fire safety, and shelter thermal design for survival situations. Covers chemistry of combustion, thermodynamics of heat transfer, and integrated heating systems.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Immediate Survival", "item": "https://zerotoherohero.com/#sec-survival"},
+    {"@type": "ListItem", "position": 3, "name": "Heat Management", "item": "https://zerotoherohero.com/guides/heat-management.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Heat Management",
+  "description": "Master passive heating/cooling, thermal mass, insulation, fire safety, and shelter thermal design for survival situations. Covers chemistry of combustion, thermodynamics of heat transfer, and integrated heating systems.",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-234">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-survival">Immediate Survival</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Heat Management</span>
+</nav>
+<div class="warning">
+<strong>Safety Notice:</strong> This guide covers activities that carry some risk. Follow all safety precautions carefully. See our <a href="../disclaimer.html">liability disclaimer</a>.
+</div>
+<header>
+<h1>Heat Management</h1>
+<p class="subtitle">Master passive heating/cooling, thermal mass, insulation, fire safety, and shelter thermal design for survival situations. Covers chemistry of combustion, thermodynamics of heat transfer, and integrated heating systems.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●●○</span>
+<span class="read-time">📖 ~12 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">1. Overview: Heat Management in Survival Contexts</a></li>
+<li><a href="#passive-cooling">2. Passive Cooling Systems</a></li>
+<li><a href="#thermal-mass">3. Thermal Mass &amp; Heat Capacity Calculations</a></li>
+<li><a href="#insulation">4. Insulation Materials &amp; R-Value Calculations</a></li>
+<li><a href="#heating">5. Heating Systems for Survival</a></li>
+<li><a href="#thermal-mass-heating">Heating Enhancement: Thermal Mass for Extended Warmth</a></li>
+<li><a href="#insulation-for-heating">Insulation Strategy for Heating Efficiency</a></li>
+<li><a href="#passive-heating-solar">Passive Solar Heating Integration</a></li>
+<li><a href="#heating-system-integration">Integrated Heating System Design</a></li>
+<li><a href="#chemistry">6. Chemical Theory: Combustion &amp; Heat Generation</a></li>
+<li><a href="#fire">7. Fire Management &amp; Safety</a></li>
+<li><a href="#shelters">8. Shelter Design for Different Climates</a></li>
+<li><a href="#troubleshooting">9. Troubleshooting Heating &amp; Cooling Problems</a></li>
+<li><a href="#waste-disposal">10. Waste Handling &amp; Disposal</a></li>
+<li><a href="#mistakes">11. Common Mistakes &amp; Lessons Learned</a></li>
+<li><a href="#reference">12. Reference Tables &amp; Quick-Calc Formulas</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<div class="warning">
+<p><strong>Burn Hazard:</strong> Stored thermal energy in heated masses, fluids, and phase-change materials can cause severe burns. Use appropriate PPE when handling heated materials. Insulated thermal storage systems can retain dangerous temperatures for extended periods.</p>
+</div>
+<section id="overview">
+<h2>1. Overview: Heat Management in Survival Contexts</h2>
+<p>Heat and cold are among the deadliest threats in survival scenarios. This guide covers the environmental and engineering aspects of temperature control — shelter design, insulation, heating systems, and combustion science — to help you maintain safe shelter conditions with minimal resources.</p>
+<div class="info-box">
+<p><strong>Why This Matters:</strong> Proper heat management extends survival window from days to weeks, allowing time for rescue or travel to safety. For medical emergencies related to temperature — heat stroke, heat exhaustion, and hypothermia — see <a href="../thermal-injuries.html">Thermal Injuries: Hypothermia &amp; Heat Stroke</a>.</p>
+</div>
+<p>Heat management divides into two domains:</p>
+<ol>
+<li><strong>Environmental Control:</strong> Shelter design, insulation, passive heating/cooling, thermal mass — controlling surroundings without electricity</li>
+<li><strong>Chemistry &amp; Combustion:</strong> Understanding fuel properties, heat transfer, fire management, and combustion safety</li>
+</ol>
+<p>This guide emphasizes <em>redundancy</em>—multiple heating/cooling methods ensure you survive equipment failure or unexpected conditions.</p>
+<p><svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" aria-label="Rocket mass heater cross-section showing burn chamber, thermal mass, insulation, and heat flow patterns">
+  <defs>
+    <style>
+      .metal { fill: var(--muted); stroke: var(--border); stroke-width: 2; }
+      .fire { fill: var(--accent2); opacity: 0.8; }
+      .thermal-mass { fill: var(--card); stroke: var(--border); stroke-width: 2; }
+      .insulation { fill: var(--surface); stroke: var(--border); stroke-width: 1; stroke-dasharray: 4,2; opacity: 0.6; }
+      .heat-flow { stroke: var(--accent2); stroke-width: 2; opacity: 0.7; marker-end: url(#arrow-heat); }
+      .cool-flow { stroke: var(--accent); stroke-width: 2; opacity: 0.5; marker-end: url(#arrow-cool); }
+      .label { font-size: 12px; fill: var(--text); font-weight: bold; }
+      .small-label { font-size: 10px; fill: var(--text); opacity: 0.8; }
+      .dimension { font-size: 9px; fill: var(--text); opacity: 0.7; }
+      .info-box { fill: var(--card); stroke: var(--border); stroke-width: 1.5; }
+      .title { font-size: 16px; font-weight: bold; fill: var(--accent); }
+    </style>
+    <marker id="arrow-heat" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--accent2)" />
+    </marker>
+    <marker id="arrow-cool" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="600" fill="var(--bg)" />
+
+  <!-- Title -->
+  <text x="450" y="35" font-size="18" font-weight="bold" fill="var(--accent)" text-anchor="middle">Rocket Mass Heater - Cross-Section with Airflow</text>
+
+  <!-- ===== MAIN HEATER STRUCTURE ===== -->
+
+  <!-- Ground line -->
+  <rect x="50" y="380" width="800" height="10" fill="var(--muted)" opacity="0.5" />
+  <text x="60" y="398" font-size="10" fill="var(--text)">Ground/Foundation</text>
+
+  <!-- === BURN CHAMBER (Left side - L-tube design) === -->
+
+  <!-- Vertical chamber (left part of L) -->
+  <rect x="80" y="260" width="50" height="120" class="metal" />
+  <!-- Internal fire chamber -->
+  <rect x="85" y="265" width="40" height="110" fill="var(--fire)" />
+  <!-- Flame visualization -->
+  <polygon points="95,300 105,280 115,300 110,310 100,315" fill="var(--accent2)" opacity="0.9" />
+  <polygon points="100,305 110,285 120,305 115,315 105,320" fill="var(--accent2)" opacity="0.7" />
+
+  <!-- Wood input (top opening) -->
+  <rect x="85" y="255" width="40" height="8" fill="var(--muted)" stroke="var(--border)" stroke-width="1" />
+  <text x="130" y="262" font-size="9" fill="var(--text)">Fuel input</text>
+
+  <!-- Grate (ash falls through) -->
+  <line x1="85" y1="340" x2="125" y2="340" stroke="var(--muted)" stroke-width="2" />
+  <line x1="90" y1="342" x2="120" y2="342" stroke="var(--muted)" stroke-width="1" />
+  <line x1="85" y1="346" x2="125" y2="346" stroke="var(--muted)" stroke-width="1" />
+
+  <!-- Horizontal chamber (right part of L) -->
+  <rect x="130" y="330" width="120" height="50" class="metal" />
+  <!-- Internal heat exchange space -->
+  <rect x="135" y="335" width="110" height="40" fill="var(--surface)" opacity="0.5" />
+
+  <!-- 90-degree turn angle indicator -->
+  <path d="M 130 330 L 130 360 L 160 360" stroke="var(--accent)" stroke-width="1" fill="none" stroke-dasharray="3,3" />
+
+  <!-- === THERMAL MASS (Cob/Brick surround) === -->
+
+  <!-- Main thermal mass block -->
+  <rect x="60" y="380" width="250" height="180" class="thermal-mass" />
+
+  <!-- Interior showing layers -->
+  <!-- Outer insulation layer -->
+  <rect x="65" y="385" width="240" height="15" class="insulation" />
+  <text x="70" y="397" font-size="8" fill="var(--text)" opacity="0.8">Ceramic fiber blanket</text>
+
+  <!-- Heat exchanger channels (hot gases circulating) -->
+  <path d="M 135 415 Q 150 430, 140 450 Q 130 465, 150 475" class="heat-flow" stroke-width="3" />
+  <path d="M 160 415 Q 175 430, 165 450 Q 155 465, 175 475" class="heat-flow" stroke-width="3" />
+  <path d="M 185 415 Q 200 430, 190 450 Q 180 465, 200 475" class="heat-flow" stroke-width="3" />
+
+  <!-- Cob/thermal mass (clay-sand-straw) -->
+  <text x="90" y="520" font-size="10" fill="var(--text)" font-weight="bold">Cob/Brick Thermal Mass</text>
+  <text x="90" y="535" font-size="9" fill="var(--text)">(200-400 lbs)</text>
+
+  <!-- Exterior air (cooler) flowing around -->
+  <path d="M 75 390 L 75 410" class="cool-flow" />
+  <path d="M 75 430 L 75 450" class="cool-flow" />
+  <path d="M 75 470 L 75 500" class="cool-flow" />
+  <text x="45" y="440" font-size="9" fill="var(--text)">Cooler</text>
+  <text x="45" y="452" font-size="9" fill="var(--text)">exterior</text>
+
+  <!-- Chimney exit (right side) -->
+  <rect x="310" y="340" width="35" height="150" class="metal" />
+  <!-- Exit vent -->
+  <path d="M 320 340 L 320 330" class="heat-flow" stroke-width="2" />
+  <text x="365" y="345" font-size="9" fill="var(--text)">Hot gases</text>
+  <text x="365" y="357" font-size="9" fill="var(--text)">to chimney</text>
+
+  <!-- Chimney connection arrows -->
+  <path d="M 220 350 L 310 350" class="heat-flow" stroke-width="2" />
+
+  <!-- === BENCH/SEATING (Optional thermal mass seat) === -->
+  <rect x="360" y="380" width="180" height="80" class="thermal-mass" />
+  <rect x="365" y="385" width="170" height="12" class="insulation" />
+
+  <!-- Sitting surface -->
+  <rect x="360" y="450" width="180" height="30" fill="var(--card)" stroke="var(--border)" stroke-width="2" />
+  <text x="450" y="472" font-size="10" fill="var(--text)" text-anchor="middle" font-weight="bold">Thermal Mass Bench</text>
+
+  <!-- Heat radiation arrows from bench to user -->
+  <path d="M 380 445 L 380 420" class="heat-flow" stroke-width="2" opacity="0.6" />
+  <path d="M 450 445 L 450 420" class="heat-flow" stroke-width="2" opacity="0.6" />
+  <path d="M 520 445 L 520 420" class="heat-flow" stroke-width="2" opacity="0.6" />
+
+  <!-- === SECONDARY HEAT DISTRIBUTION (water barrel) === -->
+  <circle cx="580" cy="450" r="40" class="thermal-mass" />
+  <circle cx="580" cy="450" r="35" fill="var(--surface)" opacity="0.6" />
+
+  <!-- Water inside -->
+  <path d="M 545 450 Q 545 470, 550 485 L 610 485 Q 615 470, 615 450 Z" fill="var(--surface)" opacity="0.8" />
+
+  <!-- Pipe connections -->
+  <rect x="312" y="395" width="20" height="8" fill="var(--muted)" stroke="var(--border)" stroke-width="1" />
+  <path d="M 332 399 L 545 430" class="heat-flow" stroke-width="2" />
+
+  <text x="580" y="515" font-size="10" fill="var(--text)" text-anchor="middle" font-weight="bold">Water Barrel</text>
+  <text x="580" y="528" font-size="9" fill="var(--text)" text-anchor="middle">(420 lbs water)</text>
+
+  <!-- === LEFT SIDE: SPECIFICATIONS === -->
+  <rect x="50" y="50" width="280" height="200" class="info-box" rx="4" />
+
+  <text x="70" y="70" font-size="12" font-weight="bold" fill="var(--text)">ROCKET HEATER SPECS:</text>
+
+  <text x="70" y="90" font-size="10" fill="var(--text)" font-weight="bold">Burn Chamber:</text>
+  <text x="75" y="105" font-size="9" fill="var(--text)">• 6-8" diameter L-tube</text>
+  <text x="75" y="118" font-size="9" fill="var(--text)">• Insulated with ceramic blanket</text>
+  <text x="75" y="131" font-size="9" fill="var(--text)">• 2000°F+ combustion zone</text>
+  <text x="75" y="144" font-size="9" fill="var(--text)">• Grate for ash collection</text>
+
+  <text x="70" y="165" font-size="10" fill="var(--text)" font-weight="bold">Heat Exchange:</text>
+  <text x="75" y="180" font-size="9" fill="var(--text)">• Gases flow through thermal mass</text>
+  <text x="75" y="193" font-size="9" fill="var(--text)">• Cob/bricks absorb heat slowly</text>
+  <text x="75" y="206" font-size="9" fill="var(--text)">• Water barrels supplement storage</text>
+
+  <text x="70" y="227" font-size="10" fill="var(--text)" font-weight="bold">Performance:</text>
+  <text x="75" y="242" font-size="9" fill="var(--text)">• Efficiency: 80-90%</text>
+
+  <!-- === RIGHT SIDE: HEATING SEQUENCE === -->
+  <rect x="570" y="50" width="310" height="320" class="info-box" rx="4" />
+
+  <text x="590" y="70" font-size="12" font-weight="bold" fill="var(--text)">HEATING SEQUENCE:</text>
+
+  <!-- Phase 1 -->
+  <text x="590" y="92" font-size="10" fill="var(--accent)" font-weight="bold">PHASE 1: Active Burning (1-2 hours)</text>
+  <text x="595" y="108" font-size="9" fill="var(--text)">• Load fuel (1-2 logs)</text>
+  <text x="595" y="121" font-size="9" fill="var(--text)">• Burn chamber reaches 2000°F+</text>
+  <text x="595" y="134" font-size="9" fill="var(--text)">• Hot gases heat thermal mass</text>
+  <text x="595" y="147" font-size="9" fill="var(--text)">• Room temperature rises 5-10°F/hour</text>
+
+  <!-- Phase 2 -->
+  <text x="590" y="170" font-size="10" fill="var(--accent)" font-weight="bold">PHASE 2: Coasting (4-8 hours)</text>
+  <text x="595" y="186" font-size="9" fill="var(--text)">• Fire dies, burn chamber cools</text>
+  <text x="595" y="199" font-size="9" fill="var(--text)">• Thermal mass radiates stored heat</text>
+  <text x="595" y="212" font-size="9" fill="var(--text)">• Room maintains 65-70°F</text>
+  <text x="595" y="225" font-size="9" fill="var(--text)">• Water barrel continues releasing heat</text>
+
+  <!-- Phase 3 -->
+  <text x="590" y="248" font-size="10" fill="var(--accent)" font-weight="bold">PHASE 3: Slow Release (12-24 hours)</text>
+  <text x="595" y="264" font-size="9" fill="var(--text)">• Cob mass slowly cools</text>
+  <text x="595" y="277" font-size="9" fill="var(--text)">• Heat loss ~2-5°F per hour</text>
+  <text x="595" y="290" font-size="9" fill="var(--text)">• Room stays 10-15°F above outside</text>
+  <text x="595" y="303" font-size="9" fill="var(--text)">• Ready for next fire cycle</text>
+
+  <!-- Efficiency note -->
+  <rect x="580" y="330" width="290" height="35" fill="var(--accent2)" opacity="0.15" stroke="var(--accent2)" stroke-width="1" />
+  <text x="595" y="347" font-size="9" fill="var(--text)" font-weight="bold">KEY: Only 1-2 logs/day needed vs. 4-6 for open fireplace</text>
+  <text x="595" y="360" font-size="9" fill="var(--text)">80-90% efficient design stores heat for 12-24h release</text>
+
+</svg>
+</p>
+</section>
+<section id="passive-cooling">
+<h2>2. Passive Cooling Systems</h2>
+<p>Managing heat through design and natural principles reduces dependence on active cooling (fans, AC) which require electricity. These methods require no fuel and leverage free atmospheric energy.</p>
+<div class="tip">
+<p>Passive cooling can reduce indoor temperature 5-25°F below outdoor peak depending on method and climate. Combining multiple methods multiplies effectiveness.</p>
+</div>
+<h3>Cross-Ventilation</h3>
+<p>Wind-driven natural ventilation cools buildings without mechanical means.</p>
+<h4>Principles</h4>
+<ul>
+<li><strong>Pressure difference:</strong> Wind creates high pressure on windward side, low pressure on leeward</li>
+<li><strong>Stack effect:</strong> Hot air rises and escapes high openings; cool air enters low openings</li>
+<li><strong>Effectiveness:</strong> Can reduce indoor temps 5-15°F below outdoor in moderate climates</li>
+</ul>
+<h4>Implementation</h4>
+<ul>
+<li>Position openings perpendicular to prevailing wind direction</li>
+<li>Size windward openings slightly smaller than leeward (increases wind speed)</li>
+<li>Place openings low on windward side (receives cool air) and high on leeward (hot air exits)</li>
+<li>Use window baffles or doors to direct air flow through building</li>
+<li>Remove internal obstructions to maximize airflow</li>
+</ul>
+<h3>Evaporative Cooling (Swamp Cooling)</h3>
+<p>Dry climates: evaporating water cools air effectively. Humidity increases but net cooling benefit significant.</p>
+<h4>Principles</h4>
+<ul>
+<li>Water evaporation absorbs heat (latent heat of vaporization)</li>
+<li>Effectiveness depends on relative humidity—works best in dry climates</li>
+<li>Can reduce temperature 15-25°F in dry conditions</li>
+</ul>
+<h4>Simple Implementation</h4>
+<ol>
+<li>Place wet cloths or straw in window opening (blocks direct sun, evaporates water)</li>
+<li>Create wind-driven system: cloth over frame allows breeze to pass through wet material</li>
+<li>Install evaporative cooler: fan draws air through water-saturated pads</li>
+<li>Maintain water supply (pond, tank) with gravity feed or hand filling</li>
+</ol>
+<h3>Night-Time Cooling</h3>
+<p>Heat energy stored during day; cool building at night using outdoor air, then insulate during hot day.</p>
+<h4>Strategy</h4>
+<ol>
+<li>During day (heat peak): Close all openings, draw shades, minimize internal heat generation</li>
+<li>At night (temperature drop): Open windows fully allowing cool night air to enter</li>
+<li>Heat-absorbing materials (concrete, stone) absorb cool night air energy</li>
+<li>Early morning: Close windows before temperature rises</li>
+<li>Net result: Building stays 5-15°F cooler than outdoor peak</li>
+</ol>
+<h3>Shading Systems</h3>
+<ul>
+<li><strong>External shading:</strong> Prevents heat from entering (more effective than internal shading)</li>
+<li><strong>Vegetation:</strong> Trees/vines shade walls and windows (loose 25-50% of sun)</li>
+<li><strong>Reflective surfaces:</strong> Light-colored roofs/walls reflect heat (can be 20-30°F cooler)</li>
+<li><strong>Overhangs:</strong> Properly sized overhangs block summer sun while allowing winter sun</li>
+</ul>
+</section>
+<section id="thermal-mass">
+<h2>3. Thermal Mass &amp; Heat Capacity Calculations</h2>
+<p>Materials with high heat capacity store heat energy, moderating temperature swings. Essential for passive survivability. Thermal mass is the <em>workhouse</em> of passive climate control—properly designed thermal mass reduces daily temperature swings by 40-60%.</p>
+<p>Note: See the rocket mass heater cross-section diagram at the beginning of this guide for thermal mass integration details.</p>
+<h3>Understanding Heat Capacity</h3>
+<p><strong>Heat capacity</strong> = amount of thermal energy required to raise material temperature. Expressed in BTU/lb°F (British Thermal Units per pound per degree Fahrenheit).</p>
+<div class="info-box">
+<p><strong>Formula:</strong> Q = m × c × ΔT</p>
+<p>Where:</p>
+<ul>
+<li>Q = heat energy (BTU)</li>
+<li>m = mass (lbs)</li>
+<li>c = specific heat capacity (BTU/lb°F)</li>
+<li>ΔT = temperature change (°F)</li>
+</ul>
+</div>
+<p><strong>Example Calculation:</strong> How much heat does 500 lbs of concrete absorb raising 10°F?</p>
+<pre><code>Q = 500 lbs × 0.22 BTU/lb°F × 10°F = 1,100 BTU
+</code></pre>
+<p>This 1,100 BTU moderates a 200 sq ft room temperature swing (reducing swing from 20°F to ~15°F).</p>
+<h3>Thermal Mass Principles</h3>
+<ul>
+<li><strong>Heat capacity:</strong> Amount of heat required to raise 1 pound 1°F</li>
+<li><strong>Specific heat:</strong> Water (1.0 BTU/lb°F) is reference; most materials lower</li>
+<li><strong>Time lag:</strong> Thermal mass delays heat peak inside by hours (outdoor peak is afternoon; indoor peak might be evening)</li>
+<li><strong>Damping:</strong> Thermal mass reduces temperature swings (interior stays closer to average)</li>
+</ul>
+<h3>Materials by Thermal Mass</h3>
+<table><thead><tr><th scope="row">Material</th><th scope="row">Density (lbs/cubic ft)</th><th scope="row">Specific Heat</th><th scope="row">Typical Use</th><th scope="row">Practical Notes</th></tr></thead><tbody><tr><td>Water</td><td>62.4</td><td>1.0</td><td>Tanks, barrels, bottles</td><td>Highest capacity, moveable</td></tr><tr><td>Concrete</td><td>140-150</td><td>0.2-0.25</td><td>Floors, walls, foundation</td><td>Readily available, durable</td></tr><tr><td>Stone/masonry</td><td>150-170</td><td>0.2-0.25</td><td>Walls, floors</td><td>Excellent durability</td></tr><tr><td>Brick</td><td>120-130</td><td>0.2</td><td>Walls, thermal mass walls</td><td>Moderate capacity, typical construction</td></tr><tr><td>Adobe/clay</td><td>120-140</td><td>0.2</td><td>Walls, thermal mass</td><td>Good capacity, lower durability</td></tr><tr><td>Sand/soil</td><td>100-120</td><td>0.2</td><td>Below-grade thermal mass</td><td>Plentiful, lower cost</td></tr><tr><td>Wood</td><td>30-50</td><td>0.3</td><td>Structural, minimal thermal</td><td>Low capacity but available</td></tr></tbody></table>
+<h3>Thermal Mass Design</h3>
+<h4>Effective Thermal Mass Walls</h4>
+<ul>
+<li><strong>Exterior surface:</strong> Dark color absorbs solar heat (5-8 inches thick optimal)</li>
+<li><strong>Interior exposure:</strong> Exposed surface inside building releases stored heat to living space</li>
+<li><strong>Insulation:</strong> Insulate on exterior of thermal mass (prevents heat loss to outside)</li>
+<li><strong>Result:</strong> 8-inch concrete wall stores 100-150 BTU per square foot daily heat swing</li>
+</ul>
+<h4>Water as Thermal Mass</h4>
+<ul>
+<li>55-gallon barrels filled with water (420 lbs water per barrel)</li>
+<li>Stack barrels creating solar-collecting wall (dark exterior, interior exposure)</li>
+<li>Each barrel stores 2,100-3,500 BTU swing energy</li>
+<li>4 barrels (2,200 lbs water) moderate temperature swing in 200 sq ft room by 10-15°F</li>
+</ul>
+</section>
+<section id="insulation">
+<h2>4. Insulation Materials &amp; R-Value Calculations</h2>
+<p>Proper insulation prevents heat loss in winter and heat gain in summer. Essential for maintaining livable temperatures without active heating/cooling. Insulation effectiveness is measured in R-value (thermal resistance).</p>
+<h3>Understanding R-Value &amp; Heat Loss</h3>
+<p><strong>R-value</strong> = thermal resistance. Higher R-value = slower heat flow through material.</p>
+<div class="info-box">
+<p><strong>Formula:</strong> Heat Loss = Area × ΔT / R-value</p>
+<p>Where:</p>
+<ul>
+<li>Heat Loss = BTU/hour</li>
+<li>Area = square feet of wall/roof</li>
+<li>ΔT = inside/outside temperature difference (°F)</li>
+<li>R-value = total insulation resistance</li>
+</ul>
+</div>
+<p><strong>Example:</strong> 500 sq ft wall, 40°F temperature difference, R-13 insulation:</p>
+<pre><code>Heat Loss = 500 sq ft × 40°F / 13 = 1,538 BTU/hour
+</code></pre>
+<p>Without insulation (R-0): 500 × 40 / 0.5 = 40,000 BTU/hour (26× more heat loss!)</p>
+<p><strong>Practical Implication:</strong> If wood stove outputs 20,000 BTU/hour:</p>
+<ul>
+<li>Without insulation: heats only 30 sq ft to 50°F above outdoor</li>
+<li>With R-13: heats 200 sq ft</li>
+<li>With R-30: heats 500 sq ft</li>
+</ul>
+<h3>Insulation Value (R-Value)</h3>
+<p>R-value measures resistance to heat flow. Higher R-value = better insulation.</p>
+<table><thead><tr><th scope="row">Material</th><th scope="row">R-Value/Inch</th><th scope="row">Typical Installation</th><th scope="row">Cost per Sq Ft</th><th scope="row">Notes</th></tr></thead><tbody><tr><td>Fiberglass batt</td><td>3.2-3.8</td><td>Between studs</td><td>$0.30-0.50</td><td>Most common, moderate performance</td></tr><tr><td>Cellulose (blown)</td><td>3.6-3.8</td><td>Walls, attic</td><td>$0.40-0.70</td><td>Good performance, air-sealing needed</td></tr><tr><td>Mineral wool (rock wool)</td><td>3.8-4.0</td><td>Walls, attic</td><td>$0.50-0.80</td><td>Better fire resistance than fiberglass</td></tr><tr><td>Foam board (XPS/EPS)</td><td>4.0-5.5</td><td>Exterior, foundation</td><td>$0.60-1.20</td><td>High performance, moisture issues</td></tr><tr><td>Spray foam (open-cell)</td><td>3.6-3.8</td><td>Any cavity</td><td>$0.70-1.00</td><td>Seals air gaps, good performance</td></tr><tr><td>Straw bales</td><td>1.5-2.5</td><td>Walls</td><td>$0.10-0.25</td><td>Renewable, lower cost, needs rodent protection</td></tr><tr><td>Sawdust/wood chips</td><td>2.0-3.0</td><td>Loose fill</td><td>$0.05-0.15</td><td>Plentiful, settling over time</td></tr><tr><td>Air gap (still)</td><td>1.0</td><td>Cavity design</td><td>Free</td><td>Prevents convection—useful in design</td></tr></tbody></table>
+<h3>Insulation Strategy by Climate</h3>
+<h4>Cold Climates</h4>
+<ul>
+<li><strong>Roof/attic:</strong> R-30 to R-60 (heat loss concentrated at top)</li>
+<li><strong>Walls:</strong> R-13 to R-20 (fiberglass, cellulose, or spray foam)</li>
+<li><strong>Foundation:</strong> R-10 (prevents ground heat loss)</li>
+<li><strong>Air sealing:</strong> Critical—air leaks negate insulation value</li>
+</ul>
+<h4>Hot Climates</h4>
+<ul>
+<li><strong>Roof:</strong> R-20 to R-30 (prevents solar heat gain)</li>
+<li><strong>Walls:</strong> R-10 to R-13 (moderate importance)</li>
+<li><strong>Windows:</strong> Low-E coatings reflect heat (critical in cooling dominant climates)</li>
+<li><strong>Ventilation:</strong> Prioritize over insulation—ventilation removes heat</li>
+</ul>
+<h3>DIY Insulation Options</h3>
+<ul>
+<li><strong>Straw/hay bales:</strong> Fill wall cavities (1.5-2.5 R-value per inch), exterior finish protects from weather</li>
+<li><strong>Sawdust/wood chips:</strong> Loose-fill attic insulation, settle over time requiring periodic topping</li>
+<li><strong>Newspaper/cardboard:</strong> Shredded paper blown into cavities, lower performance</li>
+<li><strong>Vegetable scraps/straw:</strong> Mixed with clay for earthen plaster, moderate insulation value</li>
+</ul>
+</section>
+<section id="heating">
+<h2>5. Heating Systems for Survival</h2>
+<p>Maintaining adequate warmth is critical for survival in cold climates. Multiple heating methods provide redundancy and resilience. Fire-based heating systems provide both direct radiant heat and the ability to warm thermal mass.</p>
+<h3>Open Hearth Fires (Primitive Heating)</h3>
+<p>The simplest heating method—a fire in an open location with chimney or vent.</p>
+<h4>Efficiency and Heat Delivery</h4>
+<ul>
+<li><strong>Efficiency:</strong> 10-25% (most heat escapes; variable based on design)</li>
+<li><strong>Heat delivery:</strong> Primarily radiant from flames; some convection in the space</li>
+<li><strong>Advantage:</strong> Simple construction, works anywhere with fuel</li>
+<li><strong>Disadvantage:</strong> High fuel consumption, poor room heating beyond immediate vicinity</li>
+</ul>
+<h4>Construction for Survival</h4>
+<ol>
+<li><strong>Fire pit:</strong> Center of structure with rocks arranged in a circle (4-6 foot diameter minimum)</li>
+<li><strong>Chimney:</strong> Hole in roof directly above fire, or angled chimney pipe (even crude pipe from clay or metal improves draft)</li>
+<li><strong>Thermal mass around fire:</strong> Stone surround absorbs and releases heat (increases efficiency by 20-30%)</li>
+</ol>
+<h4>Fuel Requirements for Full Heating</h4>
+<p>Continuous heating: 2-3 full-size logs per hour in moderate cold (freezing conditions). For a full season (Nov-Mar), a small shelter might require 8-12 cords of wood.</p>
+<h3>Wood Burning Stoves</h3>
+<p>Most reliable heating method for off-grid survival. Requires fuel preparation but highly effective.</p>
+<h4>Efficiency Factors</h4>
+<ul>
+<li><strong>Modern stoves:</strong> 80-90% efficient (heat into living space)</li>
+<li><strong>Open fireplaces:</strong> 10-15% efficient (most heat escapes up chimney)</li>
+<li><strong>Masonry heaters:</strong> 85-90% efficient (thermal mass captures heat)</li>
+</ul>
+<h4>Wood Requirements</h4>
+<ul>
+<li><strong>Heating season (Nov-Mar):</strong> 4-8 cords hardwood per year depending on climate and efficiency</li>
+<li><strong>Seasoning time:</strong> 6-12 months (moisture content below 20% required)</li>
+<li><strong>Storage:</strong> Keep dry, allow air circulation</li>
+<li><strong>Splitting:</strong> Smaller pieces dry faster and burn more efficiently</li>
+</ul>
+<h4>Installation Safety</h4>
+<ul>
+<li>Chimney clearance from combustible materials: 18-24 inches (follow local code)</li>
+<li>Non-combustible floor under stove (minimum 18 inches)</li>
+<li>Regular chimney cleaning prevents fire hazard</li>
+<li>Carbon monoxide detector essential (detects incomplete combustion)</li>
+</ul>
+<h3>Masonry Heaters (Traditional Design)</h3>
+<p>Traditional European design using thermal mass to improve efficiency dramatically.</p>
+<h4>Function</h4>
+<ul>
+<li>Hot gases from firebox pass through maze-like heat exchanger in thermal mass</li>
+<li>Heat absorbed by masonry (typically 200-500 lbs thermal mass)</li>
+<li>Masonry releases heat gradually into living space (12-24 hours)</li>
+<li>Dramatic efficiency improvement: 1-2 fires warm home for full day</li>
+</ul>
+<h4>Construction Complexity</h4>
+<ul>
+<li>Requires skilled masonry (difficult DIY)</li>
+<li>Cost: $3,000-8,000 for built-in unit</li>
+<li>Worth investment if installed in new construction</li>
+</ul>
+<h4>DIY Masonry Heater (Simplified)</h4>
+<p>A salvage-friendly version:</p>
+<ol>
+<li><strong>Build a firebox</strong> from fire-resistant materials (refractory bricks, metal stove insert)</li>
+<li><strong>Surround with thermal mass:</strong> 200-400 lbs of bricks, stones, or water barrels arranged around the firebox</li>
+<li><strong>Create airflow:</strong> Hot gases from firebox pass around/through the thermal mass before exiting chimney</li>
+<li><strong>Sealing:</strong> Use insulating material (clay, concrete) to create efficient air channels</li>
+</ol>
+<p>Result: 60-75% efficiency—less than professional masonry heaters but far better than open fireplaces.</p>
+<h3>Rocket Mass Heater</h3>
+<p>A DIY-friendly approach combining a high-efficiency burn chamber with thermal mass.</p>
+<h4>Design Principles</h4>
+<ol>
+<li><strong>Insulated burn chamber:</strong> Small firebox with excellent draft (J-tube or L-tube configuration)</li>
+<li><strong>High-temperature zone:</strong> Fire burns very hot and complete, generating maximum energy per log</li>
+<li><strong>Heat exchanger:</strong> Hot gases pass around thermal mass (cob, bricks, water)</li>
+<li><strong>Slow release:</strong> Thermal mass stores energy and releases it over 12-24 hours</li>
+</ol>
+<h4>Construction Overview</h4>
+<ul>
+<li><strong>Burn chamber:</strong> Metal or brick insert, 6-8 inches internal diameter, L-shaped</li>
+<li><strong>Insulation:</strong> Ceramic fiber blanket or high-temperature insulation around burn chamber (reduces ambient heating, increases burn efficiency)</li>
+<li><strong>Thermal mass:</strong> Cob (clay-sand-straw mixture), bricks, or water barrels surrounding the burn chamber</li>
+<li><strong>Bench integration:</strong> Often integrated into a thermal mass bench where people sit/sleep</li>
+</ul>
+<h4>Efficiency</h4>
+<ul>
+<li><strong>80-90% efficient</strong> (comparable to commercial masonry heaters)</li>
+<li><strong>Fuel requirement:</strong> 2-3 logs per day for continuous warmth (vs. 4-6 logs for open fireplace)</li>
+<li><strong>Installation cost:</strong> $500-2,000 (DIY) vs. $3,000-8,000 for professional masonry heater</li>
+</ul>
+<h4>Materials and Assembly</h4>
+<p>Common DIY rocket heater uses:</p>
+<ul>
+<li>Metal barrel or stove insert as burn chamber</li>
+<li>Ceramic fiber blanket for insulation</li>
+<li>Mud/cob (clay + sand + straw) for thermal mass and sealing</li>
+<li>Rockwool or mineral wool for additional insulation</li>
+</ul>
+<h3>Hypocaust System (Roman Heating)</h3>
+<p>An ancient approach still viable for fixed structures with good thermal mass.</p>
+<h4>Concept</h4>
+<p>Hot gases from a furnace pass through channels beneath floors and walls, heating the entire structure. The thermal mass (stone, concrete) absorbs heat and releases it over many hours.</p>
+<h4>Modern DIY Application</h4>
+<ol>
+<li><strong>Furnace or fire chamber:</strong> Basement or below-floor location with strong draft chimney</li>
+<li><strong>Floor channels:</strong> Bricks or stone arranged to create air passages under the living space floor</li>
+<li><strong>Insulation:</strong> Below the floor channels, insulation prevents heat loss downward</li>
+<li><strong>Return vents:</strong> Hot air circulates back to the furnace</li>
+</ol>
+<h4>Efficiency</h4>
+<ul>
+<li><strong>75-85% efficient</strong> (thermal mass stores most heat efficiently)</li>
+<li><strong>Fuel requirement:</strong> 3-5 logs per day for a small house</li>
+<li><strong>Advantage:</strong> Even heat distribution; comfortable radiant floor warmth</li>
+<li><strong>Disadvantage:</strong> Complex to build; requires below-floor space</li>
+</ul>
+<h3>Heat Distribution in Enclosed Spaces</h3>
+<p>Regardless of heating method, proper heat distribution maximizes efficiency.</p>
+<h4>Convection Patterns</h4>
+<ul>
+<li><strong>Hot air rises</strong> — position heating device in center or lower level of multi-story building</li>
+<li><strong>Cold air returns downward</strong> — ensure cold air can return to heating source for reheating</li>
+<li><strong>Ceiling baffles:</strong> Suspended cloth barriers reduce space above occupant zone, keeping warm air where people are</li>
+</ul>
+<h4>Chimney Draft and Air Supply</h4>
+<ul>
+<li><strong>Draft creates suction:</strong> Proper chimney draft removes hot air from living space</li>
+<li><strong>Combustion air source:</strong> Ensure adequate outside air reaches the furnace (otherwise, room becomes depressurized and drafty)</li>
+<li><strong>Dedicated outside air pipe:</strong> Best practice—bring fresh air directly to furnace, not from living space</li>
+</ul>
+<h4>Multi-Room Heating</h4>
+<ul>
+<li><strong>Central heating:</strong> Single furnace heats all spaces (most efficient)</li>
+<li><strong>Thermal mass doors:</strong> Close doors between heated and unheated spaces to retain heat</li>
+<li><strong>Interior thermal mass placement:</strong> Position water tanks or stone masses where they receive direct fire heat, then release to surrounding rooms</li>
+</ul>
+</section>
+<section id="thermal-mass-heating">
+<h2>Heating Enhancement: Thermal Mass for Extended Warmth</h2>
+<p>Thermal mass stores heat from the fire and releases it slowly, extending warmth 12-24 hours between fires.</p>
+<h3>Water-Based Thermal Mass</h3>
+<p><strong>55-gallon water barrels positioned near the heat source:</strong></p>
+<ul>
+<li>Each barrel holds 420 lbs of water (3,150 BTU absorbed per 10°F rise)</li>
+<li>Position directly beside or above heating device where they receive radiant heat</li>
+<li>Water reaches 150-160°F from proximity to fire (won't boil due to distance)</li>
+<li>Releases heat gradually as it cools from 160°F back to room temperature</li>
+</ul>
+<p><strong>Calculation:</strong> 4 barrels (1,680 lbs water) absorb enough heat from a hot wood stove to warm a small 200 sq ft room for 12 hours. Temperature drop: 20°F over 12 hours = roughly maintaining 15°F above freezing with no additional fire.</p>
+<h3>Stone/Concrete Thermal Mass</h3>
+<p><strong>Exposed stone or concrete floors/walls:</strong></p>
+<ul>
+<li>Absorb heat from radiant fire</li>
+<li>Thick thermal mass (8-12 inches) required for significant storage</li>
+<li>Stone/concrete heats slowly but holds heat longer than water</li>
+</ul>
+<p><strong>Calculation:</strong> 100 sq ft of 8-inch concrete directly heated by stove absorbs 800-1,200 BTU when heated from 50°F to 100°F, then releases this over 8-12 hours.</p>
+<h3>Cob or Adobe for DIY Thermal Mass</h3>
+<ul>
+<li><strong>Material:</strong> Clay, sand, straw, water mixed into thick plaster-like consistency</li>
+<li><strong>Application:</strong> 4-6 inch thick layer on walls surrounding heating source</li>
+<li><strong>Advantages:</strong> Made from local materials, excellent heat capacity (similar to concrete), moldable</li>
+<li><strong>Limitations:</strong> Takes longer to build than filling water barrels</li>
+</ul>
+<h3>Positioning for Maximum Effectiveness</h3>
+<ol>
+<li><strong>Thermal mass should surround heating source</strong> (at least 3 sides if possible)</li>
+<li><strong>Position mass where it receives direct radiant heat</strong> (not in a separate room)</li>
+<li><strong>Expose mass to living space</strong> (inside wall surface radiates heat to occupants, not to outside)</li>
+<li><strong>Insulate behind thermal mass</strong> (prevent heat loss through exterior walls)</li>
+</ol>
+</section>
+<section id="insulation-for-heating">
+<h2>Insulation Strategy for Heating Efficiency</h2>
+<p>Excellent insulation is prerequisite for effective heating—no heating system can overcome massive heat loss through poor insulation.</p>
+<h3>Heat Loss Prioritization</h3>
+<p><strong>In cold climates, heat loss priority by location:</strong></p>
+<ol>
+<li><strong>Roof/attic (40-45% of heat loss):</strong> Heat rises; uninsulated attic bleeds massive amounts</li>
+<li><strong>Walls (25-30% of heat loss):</strong> Single-layer construction loses continuously</li>
+<li><strong>Windows/doors (15-20% of heat loss):</strong> Air leakage and conduction through glass</li>
+<li><strong>Foundation/basement (10-15% of heat loss):</strong> Ground heat loss and air infiltration</li>
+</ol>
+<p><strong>Immediate insulation improvements (priority order):</strong></p>
+<ol>
+<li>Seal air leaks around doors, windows, pipes (caulk, weatherstripping)</li>
+<li>Insulate attic/roof (greatest impact per effort)</li>
+<li>Insulate exterior walls (expensive but most effective)</li>
+<li>Insulate or cover windows (heavy curtains help)</li>
+</ol>
+<h3>DIY Insulation for Survival Shelter</h3>
+<p><strong>Straw/hay insulation:</strong></p>
+<ul>
+<li>Stuff between walls: 1.5-2.5 R-value per inch</li>
+<li>Cost: Near-free in agricultural areas</li>
+<li>Limitations: Susceptible to rodents, settling over time</li>
+</ul>
+<p><strong>Sawdust or wood chips:</strong></p>
+<ul>
+<li>Blown into attic or wall cavities: 2-3 R-value per inch</li>
+<li>Cost: Free from mills or salvage</li>
+<li>Limitations: Fire risk (don't use with hot pipes); settling requires periodic topping</li>
+</ul>
+<p><strong>Newspaper/cardboard shredding:</strong></p>
+<ul>
+<li>Mixed with clay or straw paste: 2-2.5 R-value per inch</li>
+<li>Cost: Free from recycling</li>
+<li>Limitations: Labor-intensive application; vulnerability to water</li>
+</ul>
+<p><strong>Living insulation (living walls with vegetation):</strong></p>
+<ul>
+<li>Moss, ivy on north-facing exterior: modest R-value (~1-2), but reduces wind loading</li>
+<li>Cost: Free (seeds or cuttings)</li>
+<li>Benefit: Secondary—air barrier effect more important than thermal resistance</li>
+</ul>
+</section>
+<section id="passive-heating-solar">
+<h2>Passive Solar Heating Integration</h2>
+<p>Combining proper insulation, thermal mass, and south-facing windows creates significant free heating in many climates.</p>
+<h3>South-Facing Window Sizing</h3>
+<p><strong>Winter sun path (Northern Hemisphere):</strong></p>
+<ul>
+<li>Sun angle very low (15-30° above horizon)</li>
+<li>Long-distance penetration into building (15-30+ feet from south wall)</li>
+<li>Direct sun heats floor and thermal mass</li>
+</ul>
+<p><strong>Window area calculation:</strong></p>
+<ul>
+<li><strong>Optimum ratio:</strong> 7-12% of floor area in south-facing windows (varies by latitude and climate)</li>
+<li><strong>Example:</strong> 200 sq ft room = 14-24 sq ft of south-facing windows</li>
+<li><strong>Excessive glazing:</strong> Beyond 12% causes overheating in spring/fall; requires shading control</li>
+</ul>
+<h3>Overhang Design</h3>
+<p>Properly sized roof overhangs block summer sun while allowing winter sun penetration.</p>
+<p><strong>Calculation:</strong></p>
+<ul>
+<li><strong>Overhang length</strong> = H × tan(summer sun angle - winter sun angle) / 12</li>
+<li><strong>Example (40°N latitude):</strong> Winter sun angle = 25°; Summer sun angle = 72°</li>
+<li>Overhang of 2-3 feet blocks summer sun but allows full winter penetration</li>
+</ul>
+<h3>Thermal Mass Placement</h3>
+<p><strong>Critical:</strong> Place thermal mass where it receives direct winter sun.</p>
+<ul>
+<li><strong>Dark-colored concrete floor:</strong> Receives direct sun, heats to 90-110°F on sunny winter days, releases at night</li>
+<li><strong>Water barrels:</strong> Position in south-facing room where they receive 4+ hours direct sun daily</li>
+<li><strong>Result:</strong> 1,000-2,000 BTU stored daily on sunny days; released as outside temperature drops at night</li>
+</ul>
+<h3>Shading Strategy</h3>
+<p><strong>Summer (Jun-Aug):</strong> Close shading (curtains, blinds) to block sun penetration
+<strong>Spring/Fall (Mar-May, Sep-Oct):</strong> Partially open shading; adjust to control temperature
+<strong>Winter (Nov-Feb):</strong> Fully open; maximize sun penetration</p>
+<h3>Seasonal Effectiveness</h3>
+<ul>
+<li><strong>Cloudy climate:</strong> Passive solar contributes 20-30% of heating load</li>
+<li><strong>Sunny climate:</strong> Passive solar contributes 40-60% of heating load</li>
+<li><strong>Worst case (northern, cloudy winters):</strong> Still provides consistent 15-25% reduction in active heating needs</li>
+</ul>
+</section>
+<section id="heating-system-integration">
+<h2>Integrated Heating System Design</h2>
+<p>Best survival heating combines multiple methods for redundancy and efficiency.</p>
+<h3>Recommended Multi-Layer Approach</h3>
+<ol>
+<li><strong>Primary heat source:</strong> Wood stove or furnace with 2-3 cords seasoned wood in storage</li>
+<li><strong>Thermal mass:</strong> 4-8 water barrels or equivalent stone/concrete mass</li>
+<li><strong>Insulation:</strong> Minimum R-13 walls, R-30 attic (or equivalent DIY materials)</li>
+<li><strong>Passive solar:</strong> South-facing windows (if location allows)</li>
+<li><strong>Secondary heat:</strong> Rocket heater or small backup stove</li>
+<li><strong>Emergency heat:</strong> Sealed room kit (plastic sheeting, tape) for ultimate heat concentration if primary system fails</li>
+</ol>
+<h3>System Redundancy Example (Small House, 500 sq ft)</h3>
+<p><strong>Primary:</strong></p>
+<ul>
+<li>Wood stove, 80% efficient: 15,000-20,000 BTU/hour output</li>
+<li>Requires 2-3 logs daily in moderate cold (20°F)</li>
+<li>Seasonal wood: 6-8 cords</li>
+</ul>
+<p><strong>Thermal mass:</strong></p>
+<ul>
+<li>4 water barrels (1,680 lbs water): stores 8,400-12,600 BTU, extends heat 8-12 hours</li>
+<li>Reduces fuel need by 20-30%</li>
+</ul>
+<p><strong>Insulation:</strong></p>
+<ul>
+<li>R-13 walls + R-30 attic: reduces heat loss by 60% vs. uninsulated</li>
+<li>Heat loss calculation: 500 sq ft with ΔT 50°F at R-20 average = 1,250 BTU/hour loss</li>
+<li>Stove output (15,000 BTU) vastly exceeds loss—comfortable warmth</li>
+</ul>
+<p><strong>Passive solar:</strong></p>
+<ul>
+<li>50 sq ft south-facing glass: provides 3,000-5,000 BTU on sunny winter days (30% of daily load)</li>
+<li>Reduces fuel need by 15-20% in sunny climates</li>
+</ul>
+<p><strong>Backup:</strong></p>
+<ul>
+<li>Rocket mass heater or small ceramic heater (if electricity available): 80% efficient, requires 1-2 logs/day</li>
+<li>Activates if primary stove fails</li>
+</ul>
+</section>
+<section id="chemistry">
+<h2>6. Chemical Theory: Combustion &amp; Heat Generation</h2>
+<p>Understanding combustion chemistry is critical for safe, efficient heating. Incomplete combustion produces carbon monoxide—a colorless, odorless killer.</p>
+<h3>Combustion Chemistry Fundamentals</h3>
+<p><strong>Complete combustion:</strong></p>
+<pre><code>Fuel + Oxygen → Carbon Dioxide + Water + Heat
+</code></pre>
+<p>For wood (approximate formula C₆H₁₀O₅):</p>
+<pre><code>C₆H₁₀O₅ + 6O₂ → 6CO₂ + 5H₂O + Energy (~8,000-9,000 BTU/lb)
+</code></pre>
+<p><strong>Incomplete combustion</strong> (insufficient oxygen):</p>
+<pre><code>Fuel + Limited Oxygen → Carbon Monoxide + Particulates + Incomplete Products + Heat
+</code></pre>
+<p>This is extremely dangerous—CO bonds tightly to hemoglobin, preventing oxygen transport.</p>
+<div class="warning">
+<p>Carbon monoxide (CO) symptoms mimic flu: headache, dizziness, nausea, confusion. Death follows within minutes at high concentrations (&gt;1,200 ppm). NEVER burn charcoal indoors. Install CO detectors.</p>
+</div>
+<h3>Heat of Combustion</h3>
+<p><strong>Heat of combustion</strong> = thermal energy released per unit fuel mass (BTU/lb for wood, coal; BTU/gallon for liquid fuels).</p>
+<div class="info-box">
+<p><strong>Formula:</strong> Total Heat Available = Fuel Mass × Heat of Combustion × Efficiency</p>
+<p>Where:</p>
+<ul>
+<li>Fuel Mass = pounds of fuel burned</li>
+<li>Heat of Combustion = BTU/lb (from table below)</li>
+<li>Efficiency = fraction converted to usable heat (80% for good stove, 15% for fireplace)</li>
+</ul>
+</div>
+<p><strong>Example:</strong> 10 lbs hardwood in 85% efficient stove:</p>
+<pre><code>Total Heat = 10 lbs × 8,500 BTU/lb × 0.85 = 72,250 BTU delivered to room
+</code></pre>
+<h3>Fuel Combustion Properties</h3>
+<table><thead><tr><th scope="row">Fuel Type</th><th scope="row">Heat of Combustion (BTU/lb)</th><th scope="row">Flame Temperature</th><th scope="row">Smoke/Particulates</th></tr></thead><tbody><tr><td>Hardwood (oak, maple, ash)</td><td>8,000-9,000</td><td>~2,000°F</td><td>Moderate (creosote)</td></tr><tr><td>Softwood (pine, spruce, fir)</td><td>7,000-8,000</td><td>~1,900°F</td><td>High (heavy creosote)</td></tr><tr><td>Anthracite coal</td><td>13,000-14,000</td><td>~2,200°F</td><td>Low, sulfur compounds</td></tr><tr><td>Bituminous coal</td><td>12,000-13,000</td><td>~2,100°F</td><td>Moderate, high sulfur</td></tr><tr><td>Charcoal</td><td>12,000-13,000</td><td>~2,400°F</td><td>Very low, danger: CO</td></tr><tr><td>Peat</td><td>6,000-7,000</td><td>~1,800°F</td><td>High ash, slow burn</td></tr></tbody></table>
+<div class="danger">
+<p><strong>Charcoal in enclosed spaces is lethal.</strong> 1 charcoal grill (3,000-4,000 BTU) generates ~200 ppm CO in a sealed room within minutes. Fatal concentrations (&gt;1,200 ppm) reached in &lt;10 minutes. Outdoor use only.</p>
+</div>
+<h3>Combustion Air Requirements</h3>
+<p>Complete combustion requires adequate oxygen supply. Rough estimate:</p>
+<p><strong>Air needed = 11 lbs air per 1 lb fuel</strong></p>
+<p>A poorly ventilated stove or fireplace cannot draw sufficient air, causing incomplete combustion.</p>
+<div class="note">
+<p><strong>Red flag:</strong> Smoky interior despite clear chimney = insufficient air supply. Solution: open a window slightly (1-2 inches) to supply combustion air, or upgrade to air-intake stove.</p>
+</div>
+</section>
+<section id="fire">
+<h2>7. Fire Management &amp; Safety</h2>
+<p>Fire provides essential heat and cooking but requires careful management to prevent disaster. Proper technique prevents burns and structure fires.</p>
+<h3>Fire Building Principles</h3>
+<h4>Three Components (Fire Triangle)</h4>
+<ul>
+<li><strong>Fuel:</strong> Combustible material (wood, coal, etc.)</li>
+<li><strong>Oxygen:</strong> Air supply</li>
+<li><strong>Heat:</strong> Ignition temperature reached</li>
+</ul>
+<h4>Fire-Building Strategy</h4>
+<ol>
+<li>Gather materials: Tinder (dry leaves, bark, cotton), kindling (twigs, small branches), fuel (larger wood)</li>
+<li>Build tinder bundle: Fluff tinder allowing oxygen circulation</li>
+<li>Add kindling: Arrange in teepee or log-cabin structure</li>
+<li>Apply heat: Ignite tinder with spark, flame, or friction</li>
+<li>Gradual escalation: As tinder catches kindling, add increasingly larger fuel</li>
+<li>Stable fire: Once established, add larger pieces as needed</li>
+</ol>
+<h3>Fuel Types &amp; Characteristics</h3>
+<table><thead><tr><th scope="row">Fuel Type</th><th scope="row">Heat Value (BTU/lb)</th><th scope="row">Moisture Needs</th><th scope="row">Safety Concerns</th></tr></thead><tbody><tr><td>Hardwood (oak, maple)</td><td>8,000-9,000</td><td>Dry (below 20%)</td><td>Sparks, long-lasting coals</td></tr><tr><td>Softwood (pine, spruce)</td><td>7,000-8,000</td><td>Dry (below 20%)</td><td>Heavy sparks, creosote buildup in chimney</td></tr><tr><td>Coal (anthracite)</td><td>13,000-14,000</td><td>Dry</td><td>Produces CO, sulfur/ash content high</td></tr><tr><td>Charcoal</td><td>12,000-13,000</td><td>Dry</td><td>Carbon monoxide danger—never burn indoors</td></tr><tr><td>Peat</td><td>6,000-7,000</td><td>Dry</td><td>Slow burn, copious ash</td></tr></tbody></table>
+<h3>Fire Safety &amp; CO Prevention</h3>
+<div class="danger">
+<p>Carbon monoxide poisoning from incomplete combustion is a silent killer. Symptoms (headache, dizziness, confusion) mimic flu; death follows within 10-30 minutes at high concentrations. Never burn charcoal indoors—fatal levels reached in minutes.</p>
+</div>
+<p><strong>CO Detection &amp; Prevention:</strong></p>
+<ul>
+<li>Install battery-powered CO detector (audible alarm at 70+ ppm)</li>
+<li>Ensure adequate ventilation (1 inch window gap minimum)</li>
+<li>Regular chimney cleaning (monthly during heating season)</li>
+<li>Never block chimney or air intakes</li>
+<li>Use only approved stoves/fireplaces indoors</li>
+</ul>
+<h4>Burn Injury Prevention</h4>
+<ul>
+<li>Keep fire contained in approved container/stove</li>
+<li>Never leave burning fire unattended</li>
+<li>Maintain 10-foot clearance from combustible materials</li>
+<li>Use fire screen to prevent spark escape</li>
+<li>Keep fire extinguisher or water supply nearby</li>
+<li>Allow adequate cooling before handling ash</li>
+</ul>
+<h4>Chimney Maintenance</h4>
+<ul>
+<li><strong>Cleaning frequency:</strong> Monthly during heating season (remove creosote buildup)</li>
+<li><strong>Method:</strong> Chimney brush and rods (professional service preferred)</li>
+<li><strong>Inspection:</strong> Chimney must be clear of nests, debris, cracks</li>
+<li><strong>Pipe installation:</strong> Minimum 18-24 inches clearance from wood framing</li>
+</ul>
+</section>
+<section id="thermal-injuries">
+<div class="info-box">
+<p>For emergency treatment of hypothermia and heat stroke, including recognition, staging, field treatment protocols, fluid/electrolyte replacement, and prevention strategies, see <a href="../thermal-injuries.html">Thermal Injuries: Hypothermia &amp; Heat Stroke</a>.</p>
+</div>
+</section>
+<section id="shelters">
+<h2>8. Shelter Design for Different Climates</h2>
+<p>Shelter design adapts to climate extremes. Proper shelter prevents most heat/cold injuries and extends survival capability.</p>
+<h3>Cold Climate Shelters</h3>
+<h4>Principles</h4>
+<ul>
+<li>Minimize surface area (reduces heat loss)</li>
+<li>Maximize insulation (trap dead air)</li>
+<li>Single small room concentrates heat</li>
+<li>Below-ground location uses geothermal heat</li>
+</ul>
+<h4>Designs</h4>
+<ul>
+<li><strong>Dome/igloo:</strong> Spherical shape minimizes surface, minimal waste heat loss</li>
+<li><strong>Underground burrow:</strong> Geothermal heat maintains ~50°F even in extreme cold</li>
+<li><strong>Log cabin with thermal mass:</strong> Stone/water thermal mass absorbs fire heat, releases at night</li>
+<li><strong>Insulated box:</strong> Small chamber with R-30 insulation requires minimal heat source</li>
+</ul>
+<h3>Hot Climate Shelters</h3>
+<h4>Principles</h4>
+<ul>
+<li>Maximize surface area and ventilation (increase cooling)</li>
+<li>Shade from direct sun</li>
+<li>High ceilings allow heat to rise and exit</li>
+<li>Light-colored exterior reflects solar radiation</li>
+</ul>
+<h4>Designs</h4>
+<ul>
+<li><strong>Open-sided structure (ramada):</strong> Shade without enclosure, maximum ventilation</li>
+<li><strong>Wind tower:</strong> Tall structure directs wind down through interior</li>
+<li><strong>Thick-walled underground room:</strong> Earth provides cooling through mass (stays cool year-round)</li>
+<li><strong>Thatch roof structure:</strong> Reflective, allows ventilation beneath</li>
+</ul>
+<h3>Mixed Climate Design</h3>
+<ul>
+<li><strong>Adjustable ventilation:</strong> Close in winter, open in summer</li>
+<li><strong>Thermal mass:</strong> Stores heat in winter, provides cooling mass in summer</li>
+<li><strong>Strategic windows:</strong> South-facing in north; shaded in south</li>
+<li><strong>Variable shading:</strong> Deciduous trees provide summer shade, allow winter sun</li>
+</ul>
+<h3>Shelter Surface Area &amp; Heat Loss</h3>
+<p>Shelter design minimizes heat loss in winter by reducing exposed surface area.</p>
+<div class="info-box">
+<p><strong>Formula:</strong> Surface Area = 2(lw + lh + wh) for rectangular shelter</p>
+<p>Where l=length, w=width, h=height. Spherical/dome shapes minimize surface for given volume.</p>
+</div>
+<p><strong>Example comparison:</strong> Room to house 1 person in 0°F weather</p>
+<ul>
+<li>Rectangular box 8×8×7 ft: Surface = 480 sq ft</li>
+<li>Igloo dome 12 ft diameter: Surface = 450 sq ft (6% less)</li>
+<li>Underground burrow 10×10×7 ft: Walls/floor only = 340 sq ft (29% less, plus geothermal benefit)</li>
+</ul>
+<p>The underground burrow requires 30% less heating energy AND receives free geothermal warmth (~50°F ground temp in winter).</p>
+<div class="tip">
+<p>Dig down 3-4 feet in cold climates to access geothermal heat. Even a modest underground chamber stays naturally above freezing.</p>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>9. Troubleshooting Heating &amp; Cooling Problems</h2>
+<p>Common issues and fixes for heat management systems.</p>
+<h3>Heating Problems</h3>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Insufficient heat from stove</td>
+<td>Wet wood, incorrect draft, undersized stove</td>
+<td>Use seasoned wood (moisture &lt;20%), check chimney clearance, increase thermal mass</td>
+</tr>
+<tr>
+<td>Smoke backing into room</td>
+<td>Negative pressure, blocked flue</td>
+<td>Open window 1-2 inches for combustion air, clear chimney</td>
+</tr>
+<tr>
+<td>Uneven temperature (hot spots/cold zones)</td>
+<td>Inadequate circulation, thermal mass placement</td>
+<td>Improve air circulation with fans, position thermal mass near occupant areas</td>
+</tr>
+<tr>
+<td>High fuel consumption</td>
+<td>Poor insulation, air leaks</td>
+<td>Seal air gaps (weatherstripping), increase R-value in attic/walls</td>
+</tr>
+<tr>
+<td>Chimney fire</td>
+<td>Creosote buildup</td>
+<td>Monthly chimney cleaning, use only seasoned hardwood</td>
+</tr>
+</tbody>
+</table>
+<div class="warning">
+<p><strong>Chimney fires are dangerous.</strong> Never attempt to extinguish yourself. Close damper if possible, evacuate, call fire department. Prevention through monthly cleaning is essential.</p>
+</div>
+<h3>Cooling Problems</h3>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Evaporative cooler ineffective</td>
+<td>High humidity, design fault</td>
+<td>Only works in dry climates (below 40% humidity). Switch to passive cooling.</td>
+</tr>
+<tr>
+<td>Poor nighttime cooling</td>
+<td>Insufficient air exchange, windows closed too early</td>
+<td>Open windows fully at night (dusk until early morning), ensure 2+ window openings</td>
+</tr>
+<tr>
+<td>Thermal mass not absorbing heat</td>
+<td>Wrong material, insufficient volume, poor placement</td>
+<td>Use concrete/water (higher capacity than wood), ensure 5+ tons per room, expose to sun on dark surface</td>
+</tr>
+<tr>
+<td>Cross-ventilation inadequate</td>
+<td>Windward openings too large, leeward openings too small</td>
+<td>Size windward 70% of leeward opening; position perpendicular to wind direction</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="waste-disposal">
+<h2>10. Waste Handling &amp; Disposal</h2>
+<p>Heating and combustion leave residues requiring safe handling.</p>
+<h3>Ash Disposal</h3>
+<p>Wood ash from stoves/fireplaces:</p>
+<ul>
+<li><strong>Mineral content:</strong> Potassium (K), calcium (Ca), magnesium (Mg)—valuable for soil amendment</li>
+<li><strong>Production rate:</strong> ~10-15 lbs ash per cord hardwood burned</li>
+<li><strong>Density:</strong> ~45 lbs/cubic foot (loose)</li>
+</ul>
+<div class="info-box">
+<p><strong>Safe ash handling formula:</strong></p>
+<ul>
+<li>Remove only <em>cooled</em> ash (wait 48 hours minimum after fire extinguished)</li>
+<li>Use metal ash can (prevent spontaneous combustion of warm coals)</li>
+<li>Never store ash in plastic containers</li>
+<li>Depth limit: 2 feet maximum (heat risk from compaction)</li>
+</ul>
+</div>
+<p><strong>Reuse options:</strong></p>
+<ul>
+<li>Soil amendment: 10-20 lbs ash per 100 sq ft garden (raises pH, adds minerals)</li>
+<li>De-icing agent (gritty, less harmful than salt)</li>
+<li>Chicken dust bath (controls parasites)</li>
+<li>Composting accelerant (small amounts only—too much raises pH excessively)</li>
+</ul>
+<div class="warning">
+<p>Never use ash from treated/painted wood (contains heavy metals). Only use ash from untreated firewood.</p>
+</div>
+<h3>Creosote Residue</h3>
+<p>Creosote deposits in chimney:</p>
+<ul>
+<li><strong>Composition:</strong> Complex hydrocarbons from incomplete wood combustion</li>
+<li><strong>Danger:</strong> Highly flammable; chimney fires reach 2,000°F+</li>
+<li><strong>Prevention:</strong> Burn only seasoned wood (&lt;20% moisture), maintain draft, professional cleaning monthly</li>
+</ul>
+<p><strong>Disposal:</strong> NEVER attempt DIY creosote removal—call certified chimney sweep. Creosote is toxic and flammable.</p>
+<h3>Combustion Byproducts (Coal/Charcoal)</h3>
+<ul>
+<li><strong>Coal ash:</strong> Contains sulfur compounds; acid (pH ~3-4). Do NOT add to garden directly.</li>
+<li><strong>Charcoal residue:</strong> Nearly pure carbon; inert, can be crushed as grit or garden mulch</li>
+<li><strong>Never indoor charcoal:</strong> Carbon monoxide production makes indoor charcoal use lethal</li>
+</ul>
+</section>
+<section id="mistakes">
+<h2>11. Common Mistakes &amp; Lessons Learned</h2>
+<ul>
+<li><strong>Insufficient thermal mass:</strong> Temperature swings remain severe even with insulation (need 5+ tons water/concrete per room)</li>
+<li><strong>Inadequate air sealing:</strong> Air leaks negate insulation value (10% leakage = 40% heat loss). Caulk, weatherstrip, block penetrations.</li>
+<li><strong>Ignoring humidity:</strong> Damp insulation loses effectiveness (fiberglass loses 30-40% R-value when wet). Prevent moisture ingress.</li>
+<li><strong>Oversized heating:</strong> Large fire/stove cycles frequently, wastes fuel and causes temperature swings. Right-size to building thermal load.</li>
+<li><strong>Poor chimney draft:</strong> Improper installation reduces efficiency and increases CO risk. Maintain 18-24 inch clearance from combustibles.</li>
+<li><strong>Single heating source dependency:</strong> Backup heating critical in cold survival. Maintain minimum 2-3 independent heat sources.</li>
+<li><strong>Burning unseasoned wood:</strong> Wet wood (&gt;25% moisture) produces creosote, smolders inefficiently. Season 6-12 months minimum.</li>
+<li><strong>Ignoring CO detection:</strong> Assume complete combustion at your peril. Install CO detector. Dead people can't rescue themselves.</li>
+</ul>
+<p>For medical mistakes related to hypothermia rewarming, heat stroke treatment, and hydration planning, see <a href="../thermal-injuries.html">Thermal Injuries: Hypothermia &amp; Heat Stroke</a>.</p>
+<div class="danger">
+<p><strong>Fatal mistakes:</strong> Never burn charcoal indoors. Never ignore CO detector warnings. These kill quickly and irreversibly.</p>
+</div>
+</section>
+<section id="reference">
+<h2>12. Reference Tables &amp; Quick-Calc Formulas</h2>
+<h3>Quick R-Value Selection Guide</h3>
+<p>Choose R-value based on heating degree days (HDD) in your climate:</p>
+<table>
+<thead>
+<tr>
+<th>Climate Zone</th>
+<th>Annual HDD</th>
+<th>Wall R-Value</th>
+<th>Roof R-Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tropical (Hawaii)</td>
+<td>&lt;500</td>
+<td>5-10</td>
+<td>5-10</td>
+<td>Cooling critical, minimal insulation</td>
+</tr>
+<tr>
+<td>Temperate (CA, FL, TX south)</td>
+<td>500-2,000</td>
+<td>10-13</td>
+<td>15-20</td>
+<td>Moderate cooling/heating</td>
+</tr>
+<tr>
+<td>Moderate Cold (MO, VA, mid-elevation)</td>
+<td>2,000-5,000</td>
+<td>13-19</td>
+<td>20-30</td>
+<td>Winter heating primary</td>
+</tr>
+<tr>
+<td>Cold (PA, MA, upper midwest)</td>
+<td>5,000-8,000</td>
+<td>19-25</td>
+<td>30-45</td>
+<td>Severe heating demands</td>
+</tr>
+<tr>
+<td>Extreme (AK, MT high elevation)</td>
+<td>8,000-15,000</td>
+<td>25-35</td>
+<td>45-60</td>
+<td>Minimal cooling, maximum heating</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> These are typical modern code minimums. Survival contexts might accept lower values with enhanced behavioral adaptation (more clothing, fewer heated spaces).</p>
+<h3>Emergency Medical Quick Reference</h3>
+<div class="info-box">
+<p>For detailed emergency protocols on heat stroke, heat exhaustion, and hypothermia — including staging, field treatment, and prevention — see <a href="../thermal-injuries.html">Thermal Injuries: Hypothermia &amp; Heat Stroke</a>.</p>
+</div>
+<h3>Combustion Air Requirements (Rule of Thumb)</h3>
+<p>Rough calculation: <strong>1 BTU/hour of heating requires ~0.3 cubic feet air/minute</strong></p>
+<p>Example: 20,000 BTU/hour stove needs:</p>
+<pre><code>20,000 BTU/hr × 0.3 CFM/BTU = 6,000 CFM = 360 cubic feet/minute air supply
+</code></pre>
+<p>For typical 1,500 sq ft room: 360 CFM ÷ 1,500 sq ft = air change every 4 minutes. This requires:</p>
+<ul>
+<li>Dedicated outside air intake, OR</li>
+<li>1-2 inch window gap (emergency supply, loses heat)</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="agriculture.html">Agriculture &amp; Gardening</a>
+<a href="animal-husbandry.html">Animal Husbandry &amp; Veterinary</a>
+<a href="construction.html">Construction &amp; Carpentry</a>
+<a href="desalination-systems.html">Desalination Systems</a>
+<a href="fire-suppression.html">Fire Suppression &amp; Wildland Fire</a>
+<a href="first-aid.html">First Aid and Emergency Response</a>
+<a href="food-preservation.html">Food Preservation</a>
+<a href="indoor-farming.html">Indoor &amp; Hydroponic Farming</a>
+<a href="plastic-production.html">Plastic Production</a>
+<a href="thermal-injuries.html">Thermal Injuries: Hypothermia &amp; Heat Stroke</a>
+<a href="vinegar-ferments.html">Vinegar &amp; Fermented Condiments</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

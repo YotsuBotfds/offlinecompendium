@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/road-networks-logistics.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Road Networks &amp; Logistics Planning</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Transportation</span> ›
+<span>Road Networks &amp; Logistics Planning</span>
+</div>
+
+
+<h1>Road Networks &amp; Logistics Planning</h1>
+<p class="subtitle">Route selection, road classification, waypoint systems, convoy logistics, supply depot placement, travel time estimation, maintenance scheduling.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~6 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview: The Network Effect</a></li>
+<li><a href="#route-selection">Route Selection Criteria</a></li>
+<li><a href="#road-classification">Road Classification &amp; Standards</a></li>
+<li><a href="#waypoint-system">Waypoint &amp; Milestone Systems</a></li>
+<li><a href="#supply-depots">Supply Depot Placement</a></li>
+<li><a href="#convoy-logistics">Convoy Scheduling &amp; Operations</a></li>
+<li><a href="#maintenance">Road Maintenance Scheduling</a></li>
+<li><a href="#emergency-detours">Emergency Detour Planning</a></li>
+<li><a href="#checklist">Road Network Planning Checklist</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview: The Network Effect</h2>
+<p>Roads are the circulatory system of any functioning civilization. In a post-collapse world without airplanes, trains, or trucks, the ability to move goods, information, and people overland determines whether communities survive in isolation or thrive through trade and mutual aid.</p>
+<p>Road networks are expensive to build and maintain. A single road mile requires months of labor: clearing vegetation, grading soil, placing drainage, and ongoing repair. Therefore, early road planning must be strategic—identifying essential routes that maximize connectivity per unit of labor invested.</p>
+<p>This guide covers three core topics:</p>
+<ol>
+<li><strong>Route Selection:</strong> Choosing paths that minimize grade, avoid waterlogging, and connect settlements strategically</li>
+<li><strong>Road Classification:</strong> Sizing roads for their intended use (footpath vs. all-weather cart road)</li>
+<li><strong>Logistics Planning:</strong> Placing depots, estimating travel times, scheduling convoys, and maintenance</li>
+</ol>
+<div class="info-box">
+<p><strong>Economic Impact:</strong> A well-planned road network can increase trade volume by 300-500% compared to footpath-only systems. The investment in roads pays back through increased commerce and information flow.</p>
+</div>
+</section>
+<section id="route-selection">
+<h2>Route Selection Criteria</h2>
+<p>Choosing where to build roads is the highest-leverage decision in logistics planning. A poorly chosen route requires constant maintenance and limits cargo capacity. A well-chosen route serves for decades with minimal work.</p>
+<h3>Elevation &amp; Grade</h3>
+<p><strong>Maximum Sustainable Grade:</strong></p>
+<ul>
+<li>Cart roads: 5-8% (1 meter vertical per 12-20 meters horizontal). Beyond this, draft animals tire quickly and empty carts roll backward.</li>
+<li>Pack animal trails: 10-15% (horses and mules negotiate steeper terrain).</li>
+<li>Foot paths: 20%+ (humans can scramble, but comfort and speed suffer).</li>
+</ul>
+<p><strong>Consequences of Steep Grades:</strong></p>
+<ul>
+<li>Travel time increases non-linearly (a 10% grade takes 3x longer than 2% grade)</li>
+<li>Cargo capacity halves or worse (animals must travel slower with less weight)</li>
+<li>Road damage increases (erosion, rutting, wear)</li>
+<li>Fuel consumption for modern vehicles increases exponentially</li>
+</ul>
+<p><strong>Survey Method:</strong> Walk the proposed route with a transit level or simple clinometer (a piece of string with a weight, marking the angle). Measure rise over known horizontal distance.</p>
+<h3>Drainage &amp; Waterlogging</h3>
+<p>Roads built on poorly drained soil become impassable mud during rain. Prioritize routes that:</p>
+<ul>
+<li><strong>Follow ridgelines or elevated terrain:</strong> Water drains naturally downslope; soil stays firm</li>
+<li><strong>Cross streams at low points:</strong> Minimize water table height; use ford sites with stable bedrock</li>
+<li><strong>Avoid valleys and flats:</strong> These collect rainwater; soil compaction and vegetation keep water trapped</li>
+<li><strong>Use crown and ditch design:</strong> Raise the road centerline slightly (2-4 inches per 10 feet width) and dig side ditches to shed water</li>
+</ul>
+<p>Soil types matter:</p>
+<ul>
+<li><strong>Sandy soil:</strong> Drains well; roads firm up quickly after rain</li>
+<li><strong>Clay soil:</strong> Waterlogged; becomes impassable mud; requires extensive drainage investment</li>
+<li><strong>Rocky soil:</strong> Excellent drainage; supports good roads but hard to excavate</li>
+<li><strong>Loamy soil:</strong> Mixed; acceptable with proper grading and ditching</li>
+</ul>
+<h3>Straight vs. Switchback Alignment</h3>
+<p>For lightly-traveled footpaths, switchbacks are acceptable and reduce local grade. For cart roads, straighter alignment matters more:</p>
+<ul>
+<li>Switchbacks double or triple travel distance</li>
+<li>Carts with long axles struggle on tight curves</li>
+<li>Straight roads encourage faster travel and reduce accident risk</li>
+</ul>
+<p>Optimal: Straight sections connected by gentle curves (radius &gt;100 feet for carts).</p>
+<h3>Strategic Connectivity</h3>
+<p>Choose routes that:</p>
+<ul>
+<li><strong>Connect major settlements</strong> (most demand, justifies maintenance investment)</li>
+<li><strong>Serve multiple settlements</strong> (a route serving 3 communities spreads labor cost)</li>
+<li><strong>Provide access to critical resources</strong> (water mills, forests, quarries, agricultural land)</li>
+<li><strong>Offer fallback alternatives</strong> (redundancy; if one route floods, others still function)</li>
+</ul>
+<p>Example network for a region with 5 settlements:</p>
+<ul>
+<li>Primary spine: the longest, busiest route connecting the two largest settlements</li>
+<li>Secondary branches: connecting smaller settlements to the spine</li>
+<li>Tertiary: local roads within settlements and to nearby fields</li>
+</ul>
+</section>
+<section id="road-classification">
+<h2>Road Classification &amp; Standards</h2>
+<p>Not all roads are equal. Matching road type to intended use saves labor and maintenance effort.</p>
+<table>
+<thead>
+<tr>
+<th scope="col">Classification</th>
+<th scope="col">Width</th>
+<th scope="col">Surface</th>
+<th scope="col">Cargo Type</th>
+<th scope="col">Annual Maintenance</th>
+<th scope="col">When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Footpath</strong></td>
+<td>2-3 ft</td>
+<td>Cleared dirt, packed</td>
+<td>Hand-carried goods only</td>
+<td>Low (brush clearing)</td>
+<td>Inter-village foot traffic, shepherds, scouts</td>
+</tr>
+<tr>
+<td><strong>Pack Trail</strong></td>
+<td>3-4 ft</td>
+<td>Graded dirt, stoned in places</td>
+<td>Pack animals (horses, mules, llamas)</td>
+<td>Moderate (annual grading, stone refresh)</td>
+<td>Mountain routes, moderate distance (5-20 miles)</td>
+</tr>
+<tr>
+<td><strong>Cart Road (Dry Season)</strong></td>
+<td>8-12 ft</td>
+<td>Graded dirt, possibly stoned</td>
+<td>Carts in dry weather</td>
+<td>Moderate-High (grading after rain, rut repair)</td>
+<td>Short distances (1-5 miles) with good drainage</td>
+</tr>
+<tr>
+<td><strong>All-Weather Cart Road</strong></td>
+<td>12-16 ft</td>
+<td>Stone foundation, gravel/shale surfacing</td>
+<td>Carts year-round</td>
+<td>High (regular stone replenishment, drainage ditch cleaning)</td>
+<td>Primary routes, high-traffic corridors, permanent trade roads</td>
+</tr>
+<tr>
+<td><strong>Paved Road</strong></td>
+<td>12-20 ft</td>
+<td>Fitted stone or concrete</td>
+<td>Heavy carts, multiple vehicles</td>
+<td>Moderate-High (mortar repair, surface patching)</td>
+<td>Major trade arteries, multi-century infrastructure</td>
+</tr>
+</tbody>
+</table>
+<h3>Road Width Standards</h3>
+<p>Width must accommodate:</p>
+<ul>
+<li><strong>Two-way traffic:</strong> At least 1-2 vehicle widths per direction, plus passing space</li>
+<li><strong>Cart turning radius:</strong> A cart with 6-foot axle length needs ~20-foot turning radius; roads should be wide enough for curves</li>
+<li><strong>Drainage ditches:</strong> 1-2 feet on each side for water management</li>
+<li><strong>Repairs and expansion:</strong> Room to improve segments without complete reconstruction</li>
+</ul>
+<p>A practical 12-foot cart road accommodates two carts side-by-side, passing, and drainage.</p>
+<h3>Surfacing Methods</h3>
+<p><strong>Graded Dirt:</strong> Minimal effort, low durability. Good for light traffic; becomes mud in rain.</p>
+<p><strong>Stoned Foundation:</strong> Layer of 4-6 inches stone/gravel, crowned and ditched. Improves drainage and extends life significantly. Labor-intensive but worthwhile for roads with regular use.</p>
+<p><strong>Fitted Stone:</strong> Large flat stones closely fitted (Roman style). Expensive in labor but lasts centuries with minimal maintenance. Reserved for major trade routes.</p>
+<p><strong>Recycled Materials:</strong> In post-collapse scenarios, scavenge paving materials from abandoned roads and buildings. Older roads often used superior materials and can be recovered and relaid.</p>
+</section>
+<section id="waypoint-system">
+<h2>Waypoint &amp; Milestone Systems</h2>
+<p>A coherent waypoint system enables travelers to:</p>
+<ul>
+<li>Estimate remaining travel time</li>
+<li>Plan rest stops and overnight camps</li>
+<li>Identify resource locations (water, shelter, food)</li>
+<li>Report positions to other travelers</li>
+</ul>
+<h3>Waypoint Standards</h3>
+<p><strong>Spacing:</strong> 3-5 miles apart (2-3 hours travel for carts). At this interval, travelers can gauge progress and plan the day's journey.</p>
+<p><strong>Physical Markers:</strong></p>
+<ul>
+<li><strong>Stone cairns:</strong> Stacked rocks at route junctions and mile markers. Durable, visible from distance.</li>
+<li><strong>Carved marker posts:</strong> Wooden posts with carved notches or symbols. Easier to read distance/direction but require replacement every 5-10 years.</li>
+<li><strong>Mile/distance markers:</strong> Notches or painted lines on posts indicating distance to major settlements.</li>
+</ul>
+<p><strong>Waypoint Information:</strong></p>
+<ul>
+<li>Distance to next settlement (in miles or day-travel equivalent)</li>
+<li>Water availability (stream, well, spring nearby)</li>
+<li>Shelter status (maintained rest house, village shelter, camping area)</li>
+<li>Hazards (steep grade, river ford, muddy section, bandit reports)</li>
+</ul>
+<h3>Landmark Communication System</h3>
+<p>Create a standardized system for marking hazards and special information:</p>
+<ul>
+<li><strong>Red cairn:</strong> Danger (washout, flooding, bridge failure)</li>
+<li><strong>Blue cairn:</strong> Water source within 100 feet</li>
+<li><strong>White cairn:</strong> Maintained shelter or village ahead</li>
+<li><strong>Notched post:</strong> Number of notches = distance multiplier (e.g., 1 notch = 1 mile, 2 notches = 2 miles)</li>
+</ul>
+<p>Communities maintain waypoint systems cooperatively. Each settlement is responsible for markers within their territory, creating incentive for good maintenance.</p>
+</section>
+<section id="supply-depots">
+<h2>Supply Depot Placement</h2>
+<p>Depots (supply caches) enable long-distance trade and reduce travel burden. Strategic depot placement multiplies effective range.</p>
+<h3>Depot Spacing &amp; Capacity</h3>
+<p><strong>Spacing:</strong> Every 15-25 miles (4-6 days travel). A traveling cart can consume supplies; depots replenish before emptying.</p>
+<p><strong>Capacity:</strong> Sized for a typical merchant caravan:</p>
+<ul>
+<li>5-10 carts = 5-10 tons payload</li>
+<li>Depots hold 10-50 tons (supplies for multiple caravans or seasonal storage)</li>
+</ul>
+<p><strong>Typical Contents:</strong></p>
+<ul>
+<li>Feed for draft animals (grain, hay)</li>
+<li>Water casks (for routes crossing dry terrain)</li>
+<li>Emergency food (non-perishable)</li>
+<li>Spare cart wheels, axles, nails</li>
+<li>Tool repair items (rope, metal stock, grease)</li>
+<li>First aid and medicines</li>
+</ul>
+<h3>Selection Criteria</h3>
+<p>Locate depots at:</p>
+<ol>
+<li><strong>Defensible settlements:</strong> Built into village infrastructure, guarded by the community</li>
+<li><strong>Natural shelter sites:</strong> Near streams, with access to firewood and pasture</li>
+<li><strong>Junctions:</strong> Where multiple routes converge (maximizes utility)</li>
+<li><strong>Regular resource access:</strong> Near forests, pastures, or fields for resupply</li>
+</ol>
+<p>Avoid placing depots in isolated locations—maintenance and security suffer. Link depots to settlements wherever possible.</p>
+<h3>Inventory Management</h3>
+<p>Depots must be maintained and rotated:</p>
+<ul>
+<li><strong>Quarterly inspections:</strong> Check for spoilage, rodent damage, rotting wood</li>
+<li><strong>Seasonal restocking:</strong> Replenish after heavy trading seasons</li>
+<li><strong>Standardized inventory:</strong> All depots carry identical supplies for consistency</li>
+<li><strong>Record-keeping:</strong> Log withdrawals and deposits to prevent theft and guide restocking</li>
+</ul>
+<div class="warning">
+<p><strong>Theft Risk:</strong> Unguarded depots in remote locations are vulnerable to theft or vandalism. Either locate depots in settlements or accept losses and over-stock accordingly.</p>
+</div>
+</section>
+<section id="convoy-logistics">
+<h2>Convoy Scheduling &amp; Operations</h2>
+<p>A single cart travels slowly and exposes the merchant to bandit risk. Organized convoys are safer and more efficient.</p>
+<h3>Convoy Composition</h3>
+<p><strong>Small Convoy (local trade):</strong></p>
+<ul>
+<li>3-5 carts</li>
+<li>2-3 guards/armed attendants</li>
+<li>1 navigator/route expert</li>
+<li>Total personnel: 8-15</li>
+</ul>
+<p><strong>Large Convoy (long-distance trade):</strong></p>
+<ul>
+<li>10-20 carts</li>
+<li>5-10 guards</li>
+<li>Navigator, clerk, cook, farrier</li>
+<li>Total personnel: 30-50</li>
+</ul>
+<p><strong>Animal Requirements:</strong></p>
+<ul>
+<li>2-3 draft animals per cart (primary + spare)</li>
+<li>Pack animals for personal gear and guards</li>
+<li>Extra animals for replacement if injury/fatigue occurs</li>
+<li>Ratio: 1 spare animal for every 3-4 working animals</li>
+</ul>
+<h3>Daily Routine &amp; Pacing</h3>
+<p><strong>Morning (6 AM - Noon):</strong></p>
+<ul>
+<li>Feed and water animals</li>
+<li>Check harnesses, wheels, axles</li>
+<li>Inspect cargo security</li>
+<li>Depart and travel 8-10 miles</li>
+</ul>
+<p><strong>Midday (Noon - 2 PM):</strong></p>
+<ul>
+<li>Rest and water animals</li>
+<li>Crew lunch</li>
+<li>Repairs as needed</li>
+</ul>
+<p><strong>Afternoon (2 PM - 6 PM):</strong></p>
+<ul>
+<li>Resume travel for 8-10 miles</li>
+<li>Total daily distance: 16-20 miles (2-3 days between major waypoints)</li>
+</ul>
+<p><strong>Evening (6 PM onward):</strong></p>
+<ul>
+<li>Establish camp or reach waypoint shelter</li>
+<li>Secure cargo and animals</li>
+<li>Cook, eat, maintain equipment</li>
+<li>Guards on rotation (2-hour shifts)</li>
+</ul>
+<h3>Travel Time Estimation</h3>
+<p>Base speed: 2-3 mph for loaded carts (flat terrain, good road)</p>
+<p>Modifiers:</p>
+<ul>
+<li>Uphill: halve the speed</li>
+<li>Muddy/poor road: reduce by 30-50%</li>
+<li>Steep terrain: reduce by 50-70%</li>
+<li>Mountain passes: 1 mile per hour or less</li>
+</ul>
+<p>Example: A 30-mile route with mixed terrain (10 miles flat, 10 miles uphill, 10 miles mountain pass):</p>
+<ul>
+<li>Flat: 3-4 hours at 3 mph</li>
+<li>Uphill: 5-7 hours at 1.5 mph</li>
+<li>Mountain: 10-15 hours at 1 mph</li>
+<li><strong>Total: 18-26 hours travel time over 3 days with rest</strong></li>
+</ul>
+<div class="info-box">
+<p><strong>Planning Buffer:</strong> Always add 20% to estimates for unexpected delays (weather, animal exhaustion, minor repairs). A 3-day journey should be scheduled as 3.6-4 days to avoid panic and dangerous rushing.</p>
+</div>
+</section>
+<section id="maintenance">
+<h2>Road Maintenance Scheduling</h2>
+<p>Even well-built roads degrade. Systematic maintenance prevents expensive emergency reconstruction.</p>
+<h3>Inspection Schedule</h3>
+<ul>
+<li><strong>After storms:</strong> Check for washouts, erosion, debris</li>
+<li><strong>Spring and fall:</strong> Full route inspection for frost heave, settling, drainage issues</li>
+<li><strong>Annual inventory:</strong> Document all repairs needed for the coming year</li>
+</ul>
+<h3>Maintenance Tasks</h3>
+<table>
+<thead>
+<tr>
+<th scope="col">Task</th>
+<th scope="col">Frequency</th>
+<th scope="col">Labor (per mile)</th>
+<th scope="col">Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Brush/Vegetation Clearing</strong></td>
+<td>Spring + Summer</td>
+<td>4-8 person-days</td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Ditch Cleaning (drainage)</strong></td>
+<td>After heavy rain</td>
+<td>3-5 person-days</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Rut Filling & Grading</strong></td>
+<td>Spring + Fall</td>
+<td>6-12 person-days</td>
+<td>High</td>
+</tr>
+<tr>
+<td><strong>Stone Foundation Repair</strong></td>
+<td>As needed (2-3 years)</td>
+<td>10-20 person-days</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td><strong>Bridge/Ford Inspection</strong></td>
+<td>Quarterly</td>
+<td>2-4 person-days</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td><strong>Erosion Control (step building, terracing)</strong></td>
+<td>As needed (mountain roads)</td>
+<td>15-30 person-days</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+<h3>Maintenance Labor Organization</h3>
+<ul>
+<li><strong>Community rotation:</strong> Each settlement maintains road segments within their territory (typically 3-5 miles)</li>
+<li><strong>Annual work days:</strong> 4-6 full community work days per year per 10-mile segment</li>
+<li><strong>Equipment:</strong> Shovels, grading tools, hand tools, stone sledges</li>
+<li><strong>Incentive:</strong> Maintain depots and market access; neglected roads lose trade traffic</li>
+</ul>
+</section>
+<section id="emergency-detours">
+<h2>Emergency Detour Planning</h2>
+<p>When washouts, landslides, or blockages occur, alternative routes must be ready:</p>
+<ol>
+<li><strong>Identify natural bypass routes:</strong> Scout second-choice routes before they're needed</li>
+<li><strong>Pre-clear minor alternatives:</strong> Minimal brush clearing of backup routes</li>
+<li><strong>Mark detours:</strong> Clear signage and waypoint markers showing alternate path</li>
+<li><strong>Estimate delay:</strong> Know travel time penalties; communicate to merchants</li>
+<li><strong>Prioritize repair:</strong> Set timelines for restoring primary routes</li>
+</ol>
+<p>Example: Main north-south road floods in spring. Communities maintain a temporary east-detour requiring 2 extra days travel. During flood season, merchants use the detour; after water recedes, main road repair is prioritized.</p>
+</section>
+<section id="checklist">
+<h2>Road Network Planning Checklist</h2>
+<p><strong>Initial Survey:</strong></p>
+<ul>
+<li>[ ] Map settlements needing connection</li>
+<li>[ ] Scout potential primary and secondary routes</li>
+<li>[ ] Measure grades, identify water crossings</li>
+<li>[ ] Assess soil types and drainage challenges</li>
+<li>[ ] Estimate labor and material for each route segment</li>
+</ul>
+<p><strong>Primary Route:</strong></p>
+<ul>
+<li>[ ] Choose route with lowest total grade and best drainage</li>
+<li>[ ] Establish width and classification standards</li>
+<li>[ ] Plan waypoint locations (3-5 mile spacing)</li>
+<li>[ ] Identify supply depot sites</li>
+<li>[ ] Create distance markers and landmark descriptions</li>
+</ul>
+<p><strong>Secondary Routes:</strong></p>
+<ul>
+<li>[ ] Identify resource access routes (mills, forests, fields)</li>
+<li>[ ] Plan connections for redundancy</li>
+<li>[ ] Use lower standards (narrower, pack-trail suitable)</li>
+</ul>
+<p><strong>Logistics:</strong></p>
+<ul>
+<li>[ ] Establish convoy organization standards</li>
+<li>[ ] Create traveling guides with distances and estimated times</li>
+<li>[ ] Organize maintenance schedules by community</li>
+<li>[ ] Set up depot inventory management</li>
+</ul>
+<p><strong>Communication:</strong></p>
+<ul>
+<li>[ ] Document the entire network plan (maps, waypoint descriptions)</li>
+<li>[ ] Share with all communities</li>
+<li>[ ] Establish seasonal updates (spring, fall)</li>
+<li>[ ] Create merchant-friendly guides</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="road-building.html">Road Building &amp; Paving</a>
+<a href="cart-wagon-construction.html">Cart and Wagon Construction</a>
+<a href="draft-animals.html">Draft Animals &amp; Working Livestock</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

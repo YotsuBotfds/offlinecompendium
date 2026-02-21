@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/message-authentication-courier.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message Authentication &amp; Courier Protocols</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Communications</span> ›
+<span>Message Authentication &amp; Courier Protocols</span>
+</div>
+
+
+<h1>Message Authentication &amp; Courier Protocols</h1>
+<p class="subtitle">Wax seals, challenge-response protocols, one-time pads, courier vetting, dead drops, chain of custody, and tamper-evident methods for secure communication.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~16 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#why-authentication">Why Message Authentication Matters</a></li>
+<li><a href="#physical-authentication">Physical Authentication Methods</a></li>
+<li><a href="#challenge-response">Challenge-Response Verbal Protocols</a></li>
+<li><a href="#one-time-pad">One-Time Pad Basics for Message Integrity</a></li>
+<li><a href="#courier-selection">Courier Selection and Vetting</a></li>
+<li><a href="#dead-drops">Dead Drops and Cut-Outs</a></li>
+<li><a href="#chain-custody">Chain of Custody and Documentation</a></li>
+<li><a href="#tamper-evident">Tamper-Evident Packaging and Sealing</a></li>
+<li><a href="#message-priorities">Message Priority Levels and Routing</a></li>
+<li><a href="#destruction">Message Destruction Protocols</a></li>
+<li><a href="#emergency-compromise">Emergency Authentication When Systems Are Compromised</a></li>
+<li><a href="#pigeon-authentication">Message Authentication via Pigeon Delivery</a></li>
+<li><a href="#integration">Integration with Cryptography and Codes</a></li>
+<li><a href="#summary">Key Principles Summary</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<h2 id="overview">Overview</h2>
+<p>In a low-connectivity environment, written messages are the primary record of agreements, orders, and intelligence. A forged message can trigger wars; an altered instruction can cause disaster. Message authentication—proving that a message is from whom it claims to be and has not been modified—is as critical as the message's content.</p>
+<p>This guide covers practical, non-technological methods for authenticating messages and securing the chain of custody during delivery. These methods have been used for millennia and require no electricity, internet, or cryptographic expertise.</p>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Courier relay network diagram showing message flow from originator through sealed messages via relay stations to recipient with authentication checks at each point">
+  <defs>
+    <style>
+      .node-main { fill: var(--accent); stroke: var(--border); stroke-width: 2; }
+      .node-relay { fill: var(--surface); stroke: var(--border); stroke-width: 2; }
+      .node-end { fill: var(--accent2); stroke: var(--border); stroke-width: 2; }
+      .flow-line { stroke: var(--accent); stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .message-seal { fill: var(--accent); opacity: 0.7; }
+      .label { font-family: sans-serif; font-size: 14px; fill: var(--text); text-anchor: middle; font-weight: bold; }
+      .label-small { font-family: sans-serif; font-size: 12px; fill: var(--text); text-anchor: middle; }
+      .label-tiny { font-family: sans-serif; font-size: 11px; fill: var(--text); opacity: 0.8; }
+      .check { fill: var(--accent); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="25" class="label" font-size="16">Courier Relay Network with Authentication Checks</text>
+
+  <!-- Originator (Community A) -->
+  <circle cx="80" cy="250" r="35" class="node-main"/>
+  <text x="80" y="255" class="label">Originator</text>
+
+  <!-- Authentication step 1 -->
+  <g>
+    <text x="80" y="320" class="label-small">Compose message</text>
+    <text x="80" y="335" class="label-tiny">Seal with wax</text>
+    <text x="80" y="348" class="label-tiny">Sign and authenticate</text>
+  </g>
+
+  <!-- Message flowing to Relay 1 -->
+  <path d="M 115 250 L 200 250" class="flow-line"/>
+  <circle cx="157" cy="240" r="12" class="message-seal"/>
+  <text x="157" y="255" class="label-tiny">🔒</text>
+
+  <!-- Relay Station 1 -->
+  <circle cx="250" cy="250" r="30" class="node-relay"/>
+  <text x="250" y="253" class="label-small">Relay 1</text>
+
+  <!-- Authentication check at Relay 1 -->
+  <g>
+    <text x="250" y="320" class="label-small">Verify seal</text>
+    <text x="250" y="335" class="label-tiny">Check sender ID</text>
+    <text x="250" y="348" class="label-tiny">Log handoff</text>
+    <circle cx="235" cy="360" r="5" class="check"/>
+    <text x="250" y="365" class="label-tiny">✓ Pass</text>
+  </g>
+
+  <!-- Message flowing to Relay 2 -->
+  <path d="M 280 250 L 365 250" class="flow-line"/>
+  <circle cx="322" cy="240" r="12" class="message-seal"/>
+  <text x="322" y="255" class="label-tiny">🔒</text>
+
+  <!-- Relay Station 2 -->
+  <circle cx="415" cy="250" r="30" class="node-relay"/>
+  <text x="415" y="253" class="label-small">Relay 2</text>
+
+  <!-- Authentication check at Relay 2 -->
+  <g>
+    <text x="415" y="320" class="label-small">Verify seal</text>
+    <text x="415" y="335" class="label-tiny">Confirm chain</text>
+    <text x="415" y="348" class="label-tiny">Log handoff</text>
+    <circle cx="400" cy="360" r="5" class="check"/>
+    <text x="415" y="365" class="label-tiny">✓ Pass</text>
+  </g>
+
+  <!-- Message flowing to final courier -->
+  <path d="M 445 250 L 530 250" class="flow-line"/>
+  <circle cx="487" cy="240" r="12" class="message-seal"/>
+  <text x="487" y="255" class="label-tiny">🔒</text>
+
+  <!-- Final Courier -->
+  <circle cx="580" cy="250" r="28" class="node-relay"/>
+  <text x="580" y="250" class="label-small">Courier</text>
+  <text x="580" y="265" class="label-tiny">(Final)</text>
+
+  <!-- Authentication check at Courier -->
+  <g>
+    <text x="580" y="320" class="label-small">Verify seal</text>
+    <text x="580" y="335" class="label-tiny">Memorize</text>
+    <text x="580" y="348" class="label-tiny">challenge phrase</text>
+    <circle cx="565" cy="360" r="5" class="check"/>
+    <text x="580" y="365" class="label-tiny">✓ Ready</text>
+  </g>
+
+  <!-- Message flowing to Recipient -->
+  <path d="M 608 250 L 693 250" class="flow-line"/>
+  <circle cx="650" cy="240" r="12" class="message-seal"/>
+  <text x="650" y="255" class="label-tiny">🔒</text>
+
+  <!-- Recipient (Community B) -->
+  <circle cx="740" cy="250" r="35" class="node-end"/>
+  <text x="740" y="255" class="label">Recipient</text>
+
+  <!-- Final authentication -->
+  <g>
+    <text x="740" y="320" class="label-small">Challenge courier</text>
+    <text x="740" y="335" class="label-tiny">"What sign brings you?"</text>
+    <text x="740" y="348" class="label-tiny">Verify response</text>
+    <circle cx="725" cy="360" r="5" class="check"/>
+    <text x="740" y="365" class="label-tiny">✓ Accept</text>
+  </g>
+
+  <!-- Return path (optional) -->
+  <path d="M 720 280 Q 400 380 100 280" class="flow-line" stroke-dasharray="5,5"/>
+  <text x="400" y="410" class="label-tiny">Return message path (optional confirmation)</text>
+
+  <!-- Legend -->
+  <g transform="translate(30, 460)">
+    <text x="0" y="0" class="label" font-size="12" font-weight="normal" text-anchor="start">Legend:</text>
+    <circle cx="120" cy="-7" r="6" class="node-main"/>
+    <text x="135" y="-2" class="label-small" text-anchor="start">Originator/Recipient</text>
+
+    <circle cx="350" cy="-7" r="6" class="node-relay"/>
+    <text x="365" y="-2" class="label-small" text-anchor="start">Relay Station</text>
+
+    <circle cx="600" cy="-7" r="6" class="message-seal"/>
+    <text x="615" y="-2" class="label-small" text-anchor="start">Sealed Message</text>
+  </g>
+
+</svg>
+</p>
+<section id="why-authentication">
+<h2>Why Message Authentication Matters</h2>
+<h3>Threats to Message Integrity</h3>
+<p><strong>Impersonation:</strong> An attacker forges a message claiming to be from authority, ordering actions (troop movement, supply release, alliance dissolution). Without authentication, the false message may be executed.</p>
+<p><strong>Interception and reading:</strong> A message is intercepted in transit, revealing intelligence (troop positions, supply routes, medical shortages). While interception may be unavoidable, knowing the message is secure from reading gives sender confidence to share sensitive content.</p>
+<p><strong>Modification in transit:</strong> A message is altered (a supply order changed from &quot;100 kg grain&quot; to &quot;10 kg&quot;), arriving with false instructions that the recipient executes.</p>
+<p><strong>Replay attacks:</strong> An old, valid message is delivered again as if current, triggering duplicate orders or bypassing time-sensitive decisions (e.g., a ceasefire message delivered weeks late).</p>
+<h3>Authentication Requirements</h3>
+<p>Effective authentication answers:</p>
+<ol>
+<li><strong>Is this message from the claimed sender?</strong> (Authenticity)</li>
+<li><strong>Has this message been modified since sending?</strong> (Integrity)</li>
+<li><strong>Can the sender later deny sending this message?</strong> (Non-repudiation)</li>
+<li><strong>Can the sender verify the recipient received the correct message?</strong> (Confirmation)</li>
+</ol>
+<p>Not all authentication methods satisfy all four requirements. You choose methods based on the message's importance and your available resources.</p>
+</section>
+<section id="physical-authentication">
+<h2>Physical Authentication Methods</h2>
+<h3>Wax Seals: The Historical Standard</h3>
+<p>A wax seal is a physical marker of authenticity and tamper-evidence. Breaking the seal indicates the message was opened in transit.</p>
+<p><strong>Equipment:</strong></p>
+<ul>
+<li>Sealing wax (paraffin or beeswax, hard at room temperature)</li>
+<li>Sealing ring or stamp (unique design, metal or stone, engraved with sender's mark or initials)</li>
+<li>Candle or small heat source to warm the wax</li>
+<li>Paper or parchment for wrapping the message</li>
+</ul>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Write and fold the message</li>
+<li>Wrap the folded message with string or thread</li>
+<li>Heat the sealing ring or stamp briefly over a candle</li>
+<li>Apply a small amount of sealing wax to the junction of the string and message</li>
+<li>Press the heated seal firmly into the warm wax for 5–10 seconds</li>
+<li>Cool for 30 seconds before removing the seal</li>
+<li>The cooled wax bears the unique imprint of your ring; any attempt to open the message will crack the seal</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Tamper-evident (broken seal signals interference)</li>
+<li>Unique to each sender (if seal is known and not counterfeited)</li>
+<li>Works in any climate; survives water exposure</li>
+<li>Costs minimal resources (candle, wax, seal)</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Seal can be counterfeited if design is known</li>
+<li>Does not prevent reading if seal is carefully broken and re-sealed</li>
+<li>Provides no protection if seal design is copied</li>
+</ul>
+<p><strong>Expanding security:</strong> Use multiple seals on a single message. Multiple seals are harder to replicate perfectly. If any seal is broken or poorly re-sealed, the message is flagged as suspicious.</p>
+<div class="tip">
+<p>A seal's value depends on its uniqueness. If everyone in your community has a similar seal, the mark loses authentication value. Commission a unique seal for each leader; keep the seal design secret. Circulate a description (&quot;my seal bears a crossed hammer and anvil&quot;) only to trusted recipients.</p>
+</div>
+<h3>Tally Sticks: Split Authentication Tokens</h3>
+<p>A tally stick is a stick broken in half, each party keeping one half. Later, if both halves fit together perfectly, it proves both parties are authentic.</p>
+<p><strong>Creating a tally stick:</strong></p>
+<ol>
+<li>Use a straight piece of wood (4–6 inches long, pencil diameter)</li>
+<li>Carve a unique pattern or message into the wood along its length</li>
+<li>Break the stick cleanly at a specific point (often through a letter or symbol)</li>
+<li>Sender keeps one half, recipient gets the other</li>
+</ol>
+<p><strong>Usage:</strong></p>
+<ul>
+<li>Sender writes the message and signs it with a wax seal from the sender's registered seal</li>
+<li>Recipient receives message and tally-stick half</li>
+<li>Recipient verifies the two halves of the tally stick fit perfectly</li>
+<li>Perfect fit confirms the message is legitimate</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Nearly impossible to counterfeit (wood grain and break patterns are unique)</li>
+<li>No technology required</li>
+<li>Survives centuries with proper storage</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Requires pre-distribution of tally-stick halves before message sending</li>
+<li>Time-consuming to create unique designs</li>
+<li>Not suitable for frequent, ad-hoc communications</li>
+</ul>
+<p><strong>Usage scenario:</strong> A leader of Community A breaks tally sticks with leaders of Communities B and C before formal alliance is formed. Later, when Community A sends a message requesting aid, it includes a piece of its tally stick. Communities B and C verify the fit, confirming the message is genuine.</p>
+<h3>Unique Tokens and Countersigns</h3>
+<p>Simple, memorable tokens that change with each message layer, creating a chain of verification.</p>
+<p><strong>Tokens:</strong> Small physical objects (coins, carved tokens, beads) passed along with the message, exchanged for a return token</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Before deployment, sender and recipient exchange a set of unique tokens (e.g., &quot;You will recognize my couriers by the red clay bead they carry; when they arrive, give them the blue stone&quot;)</li>
+<li>Courier carries the token to the recipient</li>
+<li>Recipient verifies the token matches the expected description</li>
+<li>Recipient gives the courier a return token to carry back to the sender</li>
+<li>Sender receives the return token, confirming the message arrived</li>
+</ol>
+<p><strong>Countersigns:</strong> Verbal passwords or phrases exchanged in advance</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Sender: &quot;Tell my message bearer, 'The snow falls westward'&quot;</li>
+<li>Message bearer arrives at recipient's location</li>
+<li>Recipient: &quot;What sign brings you?&quot;</li>
+<li>Bearer: &quot;The snow falls westward&quot;</li>
+<li>Recipient recognizes the countersign and accepts the message</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Works across all distances</li>
+<li>Simple and memorable</li>
+<li>Changes for each communication (low repetition = low forgery risk)</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Bearer can be tortured for the token/phrase</li>
+<li>Token can be lost or stolen</li>
+<li>Does not provide non-repudiation (sender can deny sending)</li>
+</ul>
+</section>
+<section id="challenge-response">
+<h2>Challenge-Response Verbal Protocols</h2>
+<p>When a message bearer arrives in person, challenge-response protocols authenticate both bearer and message through dialogue.</p>
+<h3>Standard Challenge-Response Flow</h3>
+<p><strong>Advance setup:</strong></p>
+<ul>
+<li>Sender and recipient establish a challenge-response pair in private</li>
+<li>Challenge: A question or statement</li>
+<li>Response: A correct answer, known only to the authorized bearer</li>
+</ul>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Challenge: &quot;How many fingers does a crow have?&quot;</li>
+<li>Response: &quot;None, it has talons&quot;</li>
+<li>Setup: Only people who know this exchange are the sender, recipient, and the bearer who memorizes it</li>
+</ul>
+<p><strong>Arrival and verification:</strong></p>
+<ol>
+<li>Bearer arrives at recipient's location</li>
+<li>Recipient: &quot;On what authority do you come?&quot;</li>
+<li>Bearer: &quot;I carry a message from [Sender Name]&quot;</li>
+<li>Recipient: &quot;What sign do you bring?&quot; (Challenge)</li>
+<li>Bearer: &quot;None, it has talons&quot; (Response)</li>
+<li>Recipient: &quot;You are welcome. The message is accepted.&quot;</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Cannot be forged in writing (only works in person)</li>
+<li>Requires memorization; bearer cannot lose it</li>
+<li>Different challenge-response pairs for different senders</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Bearer must be memorized the exact response</li>
+<li>Coercion (torture, threats) can extract the response</li>
+<li>Single challenge-response pair should be used only once; repetition creates predictability</li>
+</ul>
+<h3>Tiered Challenge-Response</h3>
+<p>For high-security communications, use multiple challenge-response layers:</p>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Response</th>
+<th>Used For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;On what authority do you come?&quot;</td>
+<td>&quot;By the will of the Northern Council&quot;</td>
+<td>Identify sender's community</td>
+</tr>
+<tr>
+<td>&quot;What sign do you bring?&quot;</td>
+<td>&quot;The snow falls westward&quot;</td>
+<td>Authenticate message</td>
+</tr>
+<tr>
+<td>&quot;What word must be spoken?&quot;</td>
+<td>&quot;Three ravens and a stone&quot;</td>
+<td>Verify bearer's knowledge</td>
+</tr>
+</tbody>
+</table>
+<p>If the bearer fails any response, the message is rejected and the bearer is questioned further.</p>
+<div class="warning">
+<p>Do not use the same challenge-response pair for multiple messages. Once a response is known and used, change it for the next message. An attacker who learns the response can impersonate the bearer on future deliveries.</p>
+</div>
+</section>
+<section id="one-time-pad">
+<h2>One-Time Pad Basics for Message Integrity</h2>
+<p>A one-time pad is a shared secret used to create a checksum (integrity code) for a message. If the message is modified, the checksum no longer matches, revealing tampering.</p>
+<h3>Simplified One-Time Pad for Integrity (Not Encryption)</h3>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Sender and recipient share a private, written pad: a list of numbers or letters (e.g., &quot;73, 45, 92, 18, 64...&quot;)</li>
+<li>Both parties keep their copy in a secure location; only they know the contents</li>
+</ol>
+<p><strong>Message sending:</strong></p>
+<ol>
+<li>Sender writes the message in plain text (readable, unencrypted)</li>
+<li>Sender counts the letters in the message (spaces and punctuation ignored)</li>
+<li>Sender uses the first N numbers from the pad to create a checksum:
+<ul>
+<li>Example: Message is &quot;Send 50 bags of grain&quot; (17 letters)</li>
+<li>Pad values: 7, 3, 4, 5, 9, 2, 1, 8, 6, 4, 1, 2, 3, 5, 7, 2, 9</li>
+<li>Checksum: Add all pad values = 99</li>
+</ul>
+</li>
+<li>Sender sends the message plus checksum: &quot;Send 50 bags of grain. Checksum: 99&quot;</li>
+<li>Sender crosses off the 17 pad values used (will not repeat them)</li>
+</ol>
+<p><strong>Recipient verification:</strong></p>
+<ol>
+<li>Recipient receives the message and checksum</li>
+<li>Recipient counts the letters: 17</li>
+<li>Recipient uses the first 17 numbers from their pad: 7, 3, 4, 5, 9, 2, 1, 8, 6, 4, 1, 2, 3, 5, 7, 2, 9</li>
+<li>Recipient adds the 17 numbers: 99</li>
+<li>Recipient's checksum (99) matches the sent checksum (99)</li>
+<li>Message is verified as unaltered</li>
+<li>Recipient crosses off the 17 pad values used</li>
+</ol>
+<p><strong>If message is altered:</strong></p>
+<ul>
+<li>Attacker changes &quot;Send 50 bags&quot; to &quot;Send 5 bags&quot;</li>
+<li>Message now has 15 letters (2 fewer)</li>
+<li>Recipient calculates checksum using only 15 pad values: 7, 3, 4, 5, 9, 2, 1, 8, 6, 4, 1, 2, 3, 5, 7 = 89</li>
+<li>Sent checksum (99) does not match calculated checksum (89)</li>
+<li>Recipient knows the message was altered</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Simple math (addition only)</li>
+<li>Works without technology</li>
+<li>Proves message integrity</li>
+<li>Sender cannot deny sending (non-repudiation)</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Pad must be pre-shared and kept secret</li>
+<li>Does not prevent reading (message is in plain text)</li>
+<li>Checksum is short; determined attacker could find a modified message that matches by brute force (but takes time)</li>
+</ul>
+<p><strong>Practical use:</strong> Use this method for critical orders (troop movements, supply allocations) where integrity is paramount and you can tolerate plain-text reading if necessary.</p>
+</section>
+<section id="courier-selection">
+<h2>Courier Selection and Vetting</h2>
+<p>The best authentication method fails if the courier is compromised. Courier reliability is foundational.</p>
+<h3>Vetting Process</h3>
+<p><strong>Background check:</strong></p>
+<ul>
+<li>How long has the courier been known to the community?</li>
+<li>What is their reputation for honesty?</li>
+<li>Have they previously delivered messages without incident?</li>
+<li>Do they have family/property in the community (hostage value)?</li>
+</ul>
+<p><strong>Loyalty assessment:</strong></p>
+<ul>
+<li>Does the courier have loyalty to both sender and recipient's communities?</li>
+<li>Are they economically dependent on either party (reduces bribery risk)?</li>
+<li>Have they refused bribes or threats in the past?</li>
+</ul>
+<p><strong>Capability assessment:</strong></p>
+<ul>
+<li>Can they navigate the route safely?</li>
+<li>Do they have stamina for long-distance travel?</li>
+<li>Are they discreet (will not brag about message contents)?</li>
+<li>Can they memorize challenge-response phrases?</li>
+</ul>
+<h3>Courier Categories</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Speed</th>
+<th>Risk</th>
+<th>Use For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Walk/hike</td>
+<td>Slow (20 km/day)</td>
+<td>Low</td>
+<td>Non-urgent, high-security messages</td>
+</tr>
+<tr>
+<td>Horse/mounted</td>
+<td>Fast (50 km/day)</td>
+<td>Medium</td>
+<td>Time-sensitive orders, military messages</td>
+</tr>
+<tr>
+<td>Relay (multiple runners)</td>
+<td>Medium (30 km/day sustained)</td>
+<td>Low</td>
+<td>Long distances, distributed risk</td>
+</tr>
+<tr>
+<td>Specialized (pigeon, etc.)</td>
+<td>Variable</td>
+<td>Very low</td>
+<td>Critical messages, minimal human contact</td>
+</tr>
+</tbody>
+</table>
+<h3>Courier Compensation</h3>
+<p>Couriers should be paid after delivery is confirmed, never before:</p>
+<ul>
+<li>Payment in food, goods, or currency</li>
+<li>Bonus for rapid delivery</li>
+<li>Bonus for return confirmation (if return token received)</li>
+<li>Withhold payment if message is lost or arrives late without cause</li>
+</ul>
+<div class="tip">
+<p>Build a roster of trusted couriers. Test them on low-stakes messages before trusting them with critical intelligence or orders. A courier's reputation is their asset; they will guard it carefully.</p>
+</div>
+</section>
+<section id="dead-drops">
+<h2>Dead Drops and Cut-Outs</h2>
+<p>When direct courier delivery is impossible, a dead drop allows secure message exchange without the sender and recipient meeting.</p>
+<h3>Dead Drop Procedure</h3>
+<p><strong>Advance agreement:</strong></p>
+<ul>
+<li>Sender and recipient agree on a location (safe, discreet, observable from distance)</li>
+<li>Agreed-upon sign/signal to indicate a message is waiting (rock arrangement, cloth, chalk mark)</li>
+<li>Schedule for checking (e.g., &quot;every dawn,&quot; &quot;on the 5th of each month&quot;)</li>
+</ul>
+<p><strong>Message placement:</strong></p>
+<ol>
+<li>Sender writes message with authentication (seal, checksum, or tally-stick fragment)</li>
+<li>Sender places message in a container (metal box, cloth, leather pouch) with the agreed-upon signal</li>
+<li>Sender leaves the location</li>
+<li>Recipient checks the location at the agreed time</li>
+<li>Recipient observes the signal (indicates message present)</li>
+<li>Recipient retrieves the message, removes the signal</li>
+<li>Recipient verifies authentication</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Sender and recipient need not meet or be in communication</li>
+<li>Recipient can choose safe timing to retrieve</li>
+<li>Useful for infiltration, espionage, or high-risk situations</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Message may be stolen or discovered before collection</li>
+<li>Location may be compromised or observed by enemies</li>
+<li>No confirmation of receipt (sender doesn't know if message was read)</li>
+</ul>
+<h3>Cut-Outs (Intermediaries)</h3>
+<p>A cut-out is a trusted third party who handles the dead drop, breaking the direct connection between sender and recipient.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Community A wants to send intelligence to Community C but fears direct contact will compromise C</li>
+<li>Community A uses a trusted merchant (Community B) as a cut-out</li>
+<li>A leaves message at an agreed drop with B</li>
+<li>B retrieves message, replaces with a blank note (breaking the visible connection)</li>
+<li>B later leaves A's message at a drop accessible to C</li>
+<li>C retrieves message; does not know it came from A (C thinks B is the source)</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Operational security: if C is infiltrated, they cannot reveal A's identity</li>
+<li>Plausible deniability: B can claim the message is its own, not passed along</li>
+<li>Distributes trust: single compromise doesn't expose sender-recipient relationship</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Third party becomes a liability if compromised</li>
+<li>Adds delay (message passes through intermediate hands)</li>
+<li>Requires extraordinary trust in the cut-out</li>
+</ul>
+</section>
+<section id="chain-custody">
+<h2>Chain of Custody and Documentation</h2>
+<p>Critical messages require documented proof of who handled them, when, and where. This creates accountability and aids investigation if a message goes wrong.</p>
+<h3>Chain of Custody Log</h3>
+<p>For sensitive messages (orders, intelligence, agreements), maintain a written log:</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Time</th>
+<th>From</th>
+<th>To</th>
+<th>Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-02-20</td>
+<td>08:00</td>
+<td>Commander A</td>
+<td>Courier R</td>
+<td>Sealed, wax verified</td>
+<td>Message authority verified by seal</td>
+</tr>
+<tr>
+<td>2026-02-20</td>
+<td>12:00</td>
+<td>Courier R</td>
+<td>Checkpoint Guard</td>
+<td>In transit</td>
+<td>Checked for tampering; seal intact</td>
+</tr>
+<tr>
+<td>2026-02-21</td>
+<td>16:00</td>
+<td>Checkpoint Guard</td>
+<td>Commander B</td>
+<td>Delivered</td>
+<td>Seal verified; authentication confirmed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required fields:</strong></p>
+<ul>
+<li>Date and time (allows detection of delays or timing anomalies)</li>
+<li>Person transferring the message</li>
+<li>Person receiving the message</li>
+<li>Status (sealed/unsealed, authenticated/not)</li>
+<li>Notes (any concerns, damage, or discrepancies)</li>
+</ul>
+<p><strong>Who maintains the log:</strong></p>
+<ul>
+<li>For outgoing messages: Sender's organization</li>
+<li>For incoming messages: Recipient's organization</li>
+<li>For in-transit messages: Checkpoints or relay stations</li>
+</ul>
+<h3>Investigation Procedure</h3>
+<p>If a message is questioned (its authenticity, receipt, or content):</p>
+<ol>
+<li>Retrieve the chain of custody log</li>
+<li>Interview each person who handled the message</li>
+<li>Verify timestamps and any transit delays</li>
+<li>Check physical condition of the message (seals, packaging, legibility)</li>
+<li>Compare the message with any other copies or drafts</li>
+<li>Interview the courier about the delivery condition and any suspicious encounters</li>
+</ol>
+<p><strong>If tampering is detected:</strong></p>
+<ul>
+<li>Document exact damage or discrepancies</li>
+<li>Secure the message as evidence</li>
+<li>Notify sender and recipient</li>
+<li>Investigate who had access to the message during transit</li>
+<li>Adjust security procedures for future messages (new couriers, new routes, new authentication methods)</li>
+</ul>
+</section>
+<section id="tamper-evident">
+<h2>Tamper-Evident Packaging and Sealing</h2>
+<p>Beyond wax seals, several methods make tampering obvious and make re-sealing without detection nearly impossible.</p>
+<h3>Multiple Seal Method</h3>
+<p>Using 3–5 wax seals on a single message makes tampering difficult:</p>
+<ul>
+<li>First seal on the paper fold where message closes</li>
+<li>Second seal on the string wrapping the message</li>
+<li>Third seal on the outside of a cloth wrapper</li>
+<li>Fourth and fifth seals holding the wrapper closed</li>
+</ul>
+<p>If an attacker opens the message, they must carefully break and re-create 5 seals. Misalignment, color variation, or imperfect impressions reveal tampering.</p>
+<h3>Knot and Thread Method</h3>
+<p>Secure a message using a distinctive knot that cannot be undone and re-tied identically:</p>
+<ol>
+<li>Wrap message with a single thread (linen, silk, or hemp)</li>
+<li>Tie the thread with a distinctive, complex knot (e.g., a sequence of overhand knots with the thread doubled)</li>
+<li>Apply wax seals at the knot locations</li>
+<li>Recipient observes the knot pattern; if the thread is cut and re-tied, the knot pattern will not match exactly</li>
+</ol>
+<p><strong>Advantage:</strong> Requires the attacker to know the exact knot pattern, which may vary person-to-person.</p>
+<h3>Dust and Powder Method</h3>
+<p>Small quantities of distinctive dust or powder between sealed layers reveal opening:</p>
+<ol>
+<li>Place message in an envelope</li>
+<li>Seal envelope with wax</li>
+<li>Sprinkle distinctive powder (flour, charcoal, or colored sand) around the outside of the sealed envelope</li>
+<li>Place in an outer wrapper, seal it</li>
+<li>If the inner envelope is opened, the powder will be disturbed or missing</li>
+<li>Recipient observes the powder pattern; disruption indicates tampering</li>
+</ol>
+<p><strong>Advantage:</strong> Simple, requires no special equipment, can detect even careful opening.</p>
+<p><strong>Disadvantage:</strong> Powder can be blown away by wind or humidity variations, producing false alarms.</p>
+<div class="info-box">
+<p>The goal of tamper-evidence is not absolute security—a skilled attacker with enough time can defeat any physical seal. The goal is making tampering obvious and expensive in time and effort, deterring casual interference and allowing detection of compromise.</p>
+</div>
+</section>
+<section id="message-priorities">
+<h2>Message Priority Levels and Routing</h2>
+<p>Different messages require different handling, speed, and security based on their urgency and content.</p>
+<h3>Priority Classification</h3>
+<p><strong>Priority 1 — Immediate (military threat, life-safety decision):</strong></p>
+<ul>
+<li>Route: Fastest available (mounted courier, relay stations)</li>
+<li>Authentication: Challenge-response verbal, tally-stick, or multiple seals</li>
+<li>Confirmation: Return message requested within hours</li>
+<li>Example: &quot;Enemy force sighted 10 km north; mobilize defense&quot;</li>
+</ul>
+<p><strong>Priority 2 — Urgent (next day response needed):</strong></p>
+<ul>
+<li>Route: Fast courier or relay</li>
+<li>Authentication: Wax seal and checksum</li>
+<li>Confirmation: Return message requested within 24 hours</li>
+<li>Example: &quot;Approve emergency supply release; medical emergency in progress&quot;</li>
+</ul>
+<p><strong>Priority 3 — Standard (routine, response within 3–5 days):</strong></p>
+<ul>
+<li>Route: Regular mail relay, weekly runs</li>
+<li>Authentication: Wax seal</li>
+<li>Confirmation: Not required unless sensitive content</li>
+<li>Example: &quot;Report on grain harvest; request supplies for winter&quot;</li>
+</ul>
+<p><strong>Priority 4 — Low (informational, no urgent action required):</strong></p>
+<ul>
+<li>Route: Bulk mail, monthly shipments</li>
+<li>Authentication: Simple seal or token</li>
+<li>Confirmation: Not required</li>
+<li>Example: &quot;Community news, births, trade offers&quot;</li>
+</ul>
+<h3>Routing by Priority</h3>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Transport Mode</th>
+<th>Speed</th>
+<th>Frequency</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Immediate</td>
+<td>Mounted relay</td>
+<td>50–80 km/day</td>
+<td>On-demand</td>
+<td>High (multiple riders)</td>
+</tr>
+<tr>
+<td>Urgent</td>
+<td>Fast courier</td>
+<td>40–50 km/day</td>
+<td>As-needed</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Standard</td>
+<td>Regular courier</td>
+<td>20–30 km/day</td>
+<td>2–3x weekly</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>Bulk mail wagon</td>
+<td>15–20 km/day</td>
+<td>Weekly/monthly</td>
+<td>Very low (per kg)</td>
+</tr>
+</tbody>
+</table>
+<div class="tip">
+<p>Establish a standard routing system. Communities should know: &quot;If you need a message delivered in 24 hours, pay 3 silver coins and give it to the market relay. If you need it in 48 hours, pay 1 silver coin and give it to the scheduled courier.&quot; This reduces ad-hoc negotiations and prevents abuse of the system.</p>
+</div>
+</section>
+<section id="destruction">
+<h2>Message Destruction Protocols</h2>
+<p>After a message has been read and acted upon, secure destruction prevents its later discovery and use as evidence or for intelligence.</p>
+<h3>Destruction Methods</h3>
+<p><strong>Burning:</strong></p>
+<ul>
+<li>Most secure; leaves no readable residue</li>
+<li>Perform in a fire hot enough to ash the paper completely</li>
+<li>Residual fragments should be non-readable</li>
+</ul>
+<p><strong>Pulping:</strong></p>
+<ul>
+<li>Soak paper in water until it becomes pulp</li>
+<li>Drain and scatter</li>
+<li>More time-consuming than burning but suitable if fire is dangerous</li>
+</ul>
+<p><strong>Burial:</strong></p>
+<ul>
+<li>Bury at depth (1+ meter) in a remote location</li>
+<li>Mark the location privately if retrieval is later needed</li>
+<li>Risk: Location may be discovered and dug up</li>
+</ul>
+<p><strong>Shredding and mixing:</strong></p>
+<ul>
+<li>Tear message into small pieces</li>
+<li>Mix with other waste (kitchen scraps, yard debris)</li>
+<li>Scatter in multiple locations</li>
+<li>Time-consuming but reduces single-point discovery risk</li>
+</ul>
+<h3>Timing of Destruction</h3>
+<ul>
+<li><strong>Sensitive military intelligence:</strong> Destroy within hours of receipt</li>
+<li><strong>Operational orders:</strong> Destroy after confirmation of execution</li>
+<li><strong>Agreements and contracts:</strong> Retain for the duration of the agreement, then destroy by mutual arrangement</li>
+<li><strong>Routine communications:</strong> Can be destroyed after 1–3 months if no further action needed</li>
+</ul>
+<p><strong>Exception:</strong> Keep one copy in secure archive if the message might later serve as legal evidence (e.g., a signed agreement between communities).</p>
+<div class="warning">
+<p>Do not allow messages to accumulate. A large stash of old messages is a security liability if your location is ever infiltrated or captured. Establish a monthly message destruction routine.</p>
+</div>
+</section>
+<section id="emergency-compromise">
+<h2>Emergency Authentication When Systems Are Compromised</h2>
+<p>If your primary authentication system is discovered or fails (seals are counterfeited, couriers are captured, challenge-response phrases are leaked), you need contingency methods.</p>
+<h3>Signs of Compromise</h3>
+<ul>
+<li>Multiple messages from the same sender using different handwriting</li>
+<li>Messages with seals that don't match the known sender's seal</li>
+<li>Couriers arriving with conflicting or implausible information</li>
+<li>Unexpected messages from trusted senders with urgent, unusual requests</li>
+<li>Messages that contradict previously received instructions from the same sender</li>
+</ul>
+<h3>Emergency Procedures</h3>
+<p><strong>Activate secondary authentication:</strong></p>
+<ul>
+<li>Switch to a backup challenge-response pair (establish multiple pairs in advance)</li>
+<li>Request return message with a new authentication code (sender proves receipt by returning a specific countersign)</li>
+<li>Use a different courier (rotate to an alternate person)</li>
+</ul>
+<p><strong>Recall recent messages:</strong></p>
+<ul>
+<li>Gather all recent messages from the suspected compromised sender</li>
+<li>Check for consistency in handwriting, seal impressions, and language</li>
+<li>If inconsistency is found, assume all recent messages are suspect</li>
+</ul>
+<p><strong>Notify allied communities:</strong></p>
+<ul>
+<li>Warn partners that authentication systems may be compromised</li>
+<li>Coordinate on backup procedures (share alternative authentication codes in advance)</li>
+<li>Request that partners verify any urgent orders with a follow-up message</li>
+</ul>
+<p><strong>Reset authentication:</strong></p>
+<ul>
+<li>Arrange a personal meeting with the sender (if safe) to establish new authentication codes</li>
+<li>Use a messenger from a trusted allied community to deliver the new codes</li>
+<li>Destroy all old authentication records (burned, not archived)</li>
+</ul>
+</section>
+<section id="pigeon-authentication">
+<h2>Message Authentication via Pigeon Delivery</h2>
+<p>Pigeons and messenger birds provide alternative courier routes with some unique authentication advantages.</p>
+<h3>Advantages of Pigeon Delivery</h3>
+<ul>
+<li>No human courier to be intercepted or captured</li>
+<li>Faster than land courier (pigeons cover 50+ km/day)</li>
+<li>Minimal cargo capacity (discourages theft; thieves want documents of value, pigeons carry only paper)</li>
+<li>Difficult to forge a pigeon arrival (pigeon must come from a known loft)</li>
+</ul>
+<h3>Pigeon Message Authentication</h3>
+<p><strong>Unique leg bands:</strong></p>
+<ul>
+<li>Each pigeon wears a numbered metal band on its leg</li>
+<li>Sender and recipient maintain a registry: &quot;Pigeon #47 belongs to Community A&quot;</li>
+<li>Message is attached to the band with wax seals or cloth wrappings</li>
+<li>Recipient verifies the pigeon number, confirming it came from the expected sender</li>
+</ul>
+<p><strong>Feather marking:</strong></p>
+<ul>
+<li>Message is attached to a primary feather (wing) of the pigeon</li>
+<li>Sender dyes or marks the feather with a unique pattern or color</li>
+<li>Recipient verifies the feather marking, confirming the pigeon was processed by the expected sender</li>
+</ul>
+<p><strong>Message tube sealing:</strong></p>
+<ul>
+<li>Message is rolled into a small tube and sealed with wax</li>
+<li>Tube is attached to the pigeon's leg with a leather strap</li>
+<li>Only the sealed tube is opened; the pigeon's leg remains untouched</li>
+<li>Recipient can verify the wax seal is intact before reading</li>
+</ul>
+<p><strong>Challenge-response via return pigeon:</strong></p>
+<ul>
+<li>Sender delivers a message with a challenge question</li>
+<li>Recipient reads the message and releases the pigeon with a return message containing the response</li>
+<li>Sender receives the return pigeon and verifies the correct answer, confirming the recipient received the original message</li>
+</ul>
+<div class="tip">
+<p>If you use pigeons for critical communications, maintain careful records of which pigeons belong to which communities. A pigeon's absence or presence is itself a signal; neighbors will notice if pigeons suddenly start arriving from a previously quiet community, and that can attract unwanted attention.</p>
+</div>
+</section>
+<section id="integration">
+<h2>Integration with Cryptography and Codes</h2>
+<p>Message authentication works alongside cryptographic codes for multi-layered security:</p>
+<ul>
+<li><strong>Authentication</strong> proves the message is from the claimed sender and hasn't been altered</li>
+<li><strong>Encryption/codes</strong> prevent reading if the message is intercepted</li>
+</ul>
+<p>For the highest security:</p>
+<ol>
+<li>Compose a message and encrypt it using a code or cipher (see the Cryptography guide)</li>
+<li>Calculate a checksum using a one-time pad</li>
+<li>Apply wax seals and pack with tamper-evident materials</li>
+<li>Include the checksum in plain text outside the encrypted section</li>
+<li>Send via courier with challenge-response authentication</li>
+</ol>
+<p><strong>Flow:</strong> Encrypted message + visible checksum + wax seal + authenticated courier = message cannot be read (encryption), altered (checksum + seal), or spoofed (authentication).</p>
+</section>
+<section id="summary">
+<h2>Key Principles Summary</h2>
+<ul>
+<li><strong>Layering is essential.</strong> No single authentication method is foolproof; combine multiple methods (seal + checksum + courier vetting).</li>
+<li><strong>Tamper-evidence beats prevention.</strong> You cannot stop a determined attacker from opening a message, but you can make them obviously compromise it.</li>
+<li><strong>Courier reliability is foundational.</strong> The best seals fail if the courier is compromised; invest in vetting and compensation.</li>
+<li><strong>Documentation enables investigation.</strong> Chain of custody logs reveal where tampering occurred and aid in identifying the breach source.</li>
+<li><strong>Redundancy in authentication codes.</strong> Maintain backup challenge-response pairs and alternative methods in case primary systems are compromised.</li>
+<li><strong>Destruction reduces liability.</strong> Secure destruction of messages after use prevents their later discovery and use against you.</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="cryptography-codes.html">Cryptography &amp; Codes</a>
+<a href="signals-communication.html">Signals &amp; Communication</a>
+<a href="postal-service-establishment.html">Postal Service &amp; Communication Networks</a>
+<a href="pigeon-keeping-messenger.html">Pigeon Keeping &amp; Messenger Birds</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

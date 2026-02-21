@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/stone-masonry.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stone Masonry Construction</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Building &amp; Engineering</span> ›
+<span>Stone Masonry Construction</span>
+</div>
+
+
+<h1>Stone Masonry Construction</h1>
+<p class="subtitle">Coursing patterns, lime mortar mixing and pointing, arch construction, dry-stone walls, foundation selection, quoins, lintels, chimney construction, stone-cutting tools.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~9 min</span>
+<span>Updated: 2026-02-18</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#stone-types">Stone Types and Selection</a></li>
+<li><a href="#coursing-patterns">Coursing Patterns</a></li>
+<li><a href="#lime-mortar">Lime Mortar Mixing and Pointing</a></li>
+<li><a href="#arch-construction">Arch Construction</a></li>
+<li><a href="#dry-stone-walls">Dry-Stone Wall Building</a></li>
+<li><a href="#foundation-work">Foundation Stone Selection and Placement</a></li>
+<li><a href="#lintels-and-quoins">Lintels, Quoins, and Corner Details</a></li>
+<li><a href="#chimney-construction">Chimney Construction</a></li>
+<li><a href="#stone-cutting-tools">Stone Cutting and Dressing Tools</a></li>
+<li><a href="#masonry-maintenance">Maintenance and Repair</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Stone masonry is the art and craft of laying stone with mortar to create durable, weather-resistant structures. From ancient cathedrals to vernacular farmhouses, stone buildings have proven their longevity—many dating 500+ years. Unlike mortared brick, stone masonry requires understanding stone properties, mortar chemistry, and assembly techniques suited to irregular materials.</p>
+<p>This guide covers coursing patterns, mortar recipes, essential stone-laying techniques, and structural details (arches, chimneys, foundations) for building lasting stone structures.</p>
+</section>
+<section id="stone-types">
+<h2>Stone Types and Selection</h2>
+<p><strong>Common building stones:</strong></p>
+<ul>
+<li>
+<p><strong>Limestone:</strong> Soft to medium hardness; easy to cut; good compressive strength (30–100 MPa). Weathers to a pale gray. Absorbs water; prone to chemical weathering in acidic environments.</p>
+</li>
+<li>
+<p><strong>Sandstone:</strong> Medium hardness; absorbs water readily; weathering-resistant if fine-grained. Compressive strength 20–80 MPa. Warmer color than limestone.</p>
+</li>
+<li>
+<p><strong>Granite:</strong> Hard, crystalline; excellent compressive strength (100–300 MPa); very durable. Difficult to shape by hand; best used in rough, undressed form.</p>
+</li>
+<li>
+<p><strong>Slate:</strong> Splits easily along foliation; excellent for roofing and fine details. Can be split into thin sheets. Compressive strength 100–200 MPa.</p>
+</li>
+<li>
+<p><strong>Basalt/Trap rock:</strong> Very hard; dark; excellent durability; difficult to dress. Often used in foundation stones or rough walls.</p>
+</li>
+</ul>
+<p><strong>Grading and selection:</strong></p>
+<p>For load-bearing walls, choose stones with:</p>
+<ul>
+<li>Uniform color and grain (indicates consistent quality)</li>
+<li>No laminations or soft veins (indicative of weak layers)</li>
+<li>No clay residue (indicates breakdown of the parent rock)</li>
+<li>Straight, unburred edges (easier to lay)</li>
+</ul>
+<p>Test strength by striking with a hammer: sound stones ring; weak stones thud.</p>
+<p><strong>Facing vs. backup stone:</strong></p>
+<ul>
+<li><strong>Facing stone:</strong> Visible exterior; select for appearance and durability. ~150–200 mm thick.</li>
+<li><strong>Backup stone:</strong> Interior; less critical for appearance. Can use smaller, irregular pieces. ~150–300 mm thick.</li>
+</ul>
+</section>
+<section id="coursing-patterns">
+<h2>Coursing Patterns</h2>
+<p>Coursing is the arrangement of stones in horizontal layers. Different patterns offer varying aesthetic and structural properties.</p>
+<p><strong>Random rubble (most economical):</strong></p>
+<ul>
+<li>Stones of varying sizes laid without attempt at regular courses</li>
+<li>No horizontal alignment</li>
+<li>Strong if properly leveled and mortar joints are full</li>
+<li>Common in vernacular construction</li>
+<li>Suitable for foundations and rough walls</li>
+</ul>
+<p><strong>Squared rubble (intermediate):</strong></p>
+<ul>
+<li>Stones roughly squared with hammer or chisel</li>
+<li>Laid in approximate horizontal courses, usually 2–4 stones high per course</li>
+<li>More regular appearance than random rubble; easier to build plumb</li>
+<li>Better structural performance than random (fewer weak planes)</li>
+<li>Common in rural stone buildings</li>
+</ul>
+<p><strong>Ashlar (formal, expensive):</strong></p>
+<ul>
+<li>Stones precisely squared and dressed to uniform size</li>
+<li>Laid in regular horizontal courses of constant height</li>
+<li>Highly professional appearance</li>
+<li>Requires skilled stonecutters and careful layout</li>
+<li>Used for high-quality buildings, public structures</li>
+</ul>
+<p><strong>Coursed ashlar:</strong></p>
+<ul>
+<li>Ashlar stones in regular horizontal courses with consistent height per course</li>
+<li>Often alternates stone sizes for visual effect</li>
+<li>Maximum structural strength due to through-bonds (stones extending across the full wall thickness)</li>
+</ul>
+<p><strong>Dry-stone (no mortar):</strong></p>
+<ul>
+<li>Stones fitted together without mortar, relying on gravity and friction</li>
+<li>Requires careful stone selection and fitting</li>
+<li>Excellent long-term durability (no mortar to fail)</li>
+<li>Traditional in some regions; still used for field walls</li>
+<li>Weaker than mortared walls; limited height (~1.5–2 m)</li>
+</ul>
+<!-- SVG: stone-masonry-patterns-1.svg: Four elevation views showing random rubble, squared rubble, coursed ashlar, and dry-stone coursing patterns side-by-side. -->
+</section>
+<section id="lime-mortar">
+<h2>Lime Mortar Mixing and Pointing</h2>
+<p>Lime mortar is the traditional choice for stone masonry. Unlike Portland cement (which is hard and inflexible), lime mortar is permeable, allowing moisture to escape from the stone, and self-healing (lime reabsorbs CO₂ from air to form calcium carbonate).</p>
+<p><strong>Lime types:</strong></p>
+<ul>
+<li><strong>Non-hydraulic (high-calcium) lime:</strong> Pure calcium hydroxide; slow to set (months); requires CO₂ from air; extremely flexible</li>
+<li><strong>Hydraulic lime (natural cement):</strong> Contains silicates; sets faster (weeks); some strength from hydration reaction; moderate flexibility</li>
+<li><strong>Natural cement:</strong> Quarried from marl (limestone + clay); intermediate properties</li>
+</ul>
+<p>For historic preservation or long-life structures, use non-hydraulic or natural hydraulic lime (NHL 2–3.5).</p>
+<p><strong>Recipe for non-hydraulic lime mortar:</strong></p>
+<pre><code>By volume:
+1 part hydrated lime (Ca(OH)₂)
+3 parts sand (washed, medium grain, 0.5–2 mm)
+0.1 parts pozzolan (volcanic ash, silica fume, or metakaolin) optional, improves durability
+
+By weight:
+1 kg hydrated lime
+3 kg sand
+0.1 kg pozzolan (if used)
+Add water until workable (typically 0.5–0.8 L water per kg lime)
+</code></pre>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Measure dry lime and sand</li>
+<li>Mix dry in a mortar box or trough, breaking up any lime lumps</li>
+<li>Add pozzolan if using</li>
+<li>Mix thoroughly until uniform color</li>
+<li>Create a well; add water gradually</li>
+<li>Mix with a shovel or hoe until uniform, plastic consistency</li>
+<li>Allow mortar to &quot;slake&quot; for 30 minutes (hydrated lime completes hydration)</li>
+<li>Mix again before use</li>
+</ol>
+<p><strong>Testing workability:</strong></p>
+<ul>
+<li>The mortar should hold a shovel impression without slumping</li>
+<li>A fist-sized ball should hold shape but compress slightly</li>
+<li>It should not be stiff (hard to work into joints) or too wet (slumps and stains)</li>
+</ul>
+<p><strong>Setting timeline:</strong></p>
+<ul>
+<li>Non-hydraulic lime: Initial set in 2–3 weeks; full cure over 6–12 months as it carbonate</li>
+<li>Hydraulic lime: Initial set in 1–2 weeks; full cure in 3–6 months</li>
+</ul>
+<p><strong>Pointing (joint finishing):</strong></p>
+<p>After mortar firms up (3–7 days), strike the joints with a tool to create a finished profile:</p>
+<ul>
+<li><strong>Flush joint:</strong> Strike flush with stone surface; simple; collects water</li>
+<li><strong>Recessed joint (raked):</strong> Tool scraped back 8–12 mm; sheds water; traditional</li>
+<li><strong>V-joint:</strong> Angled tool creates a V-shaped profile; aesthetic; sheds water well</li>
+<li><strong>Weathered joint:</strong> Angled down and out; excellent water shedding; used on exposed faces</li>
+</ul>
+<p>Point from top to bottom of a section to avoid mortar falling into lower joints. Work gently to avoid displacing stones.</p>
+<div class="warning">
+<p>Do not use Portland cement with soft, historic stone. Portland cement is harder than the stone, preventing water vapor escape. Water becomes trapped, freezing and thawing, breaking the stone apart over 10–20 years.</p>
+</div>
+</section>
+<section id="arch-construction">
+<h2>Arch Construction</h2>
+<p>Arches distribute compressive loads outward and downward, allowing large openings with minimal horizontal support. Understanding arch geometry is critical for load transfer and durability.</p>
+<p><strong>Arch terminology:</strong></p>
+<ul>
+<li><strong>Voussoirs:</strong> Wedge-shaped stones forming the arch ring</li>
+<li><strong>Intrados:</strong> Inner (concave) surface of the arch</li>
+<li><strong>Extrados:</strong> Outer (convex) surface of the arch</li>
+<li><strong>Springer:</strong> First voussoir at the spring line (base of the arch)</li>
+<li><strong>Crown:</strong> Topmost voussoir at the center of the span</li>
+<li><strong>Keystone:</strong> Crown voussoir; can be decorative (larger, carved)</li>
+<li><strong>Impost:</strong> Stone block supporting the arch base (on the pier/wall)</li>
+<li><strong>Spring line:</strong> Imaginary line at the base of the arch, defining the arch curve geometry</li>
+</ul>
+<p><strong>Arch shapes and geometry:</strong></p>
+<ul>
+<li><strong>Circular (Roman):</strong> Constant radius; easy to calculate and construct. Radius typically 1.5–3× the opening width.</li>
+</ul>
+<p>For a 3 m opening with radius = 2.5 m:</p>
+<pre><code>Rise (height of arch) = √(R² − (span/2)²)
+                      = √(2.5² − 1.5²)
+                      = √(6.25 − 2.25) = 2 m
+</code></pre>
+<ul>
+<li>
+<p><strong>Segmental:</strong> Part of a circle; lower rise than full circular; elegant appearance.</p>
+</li>
+<li>
+<p><strong>Pointed (Gothic):</strong> Two circular arcs meeting at a point at the crown; distributes loads inward and downward; stronger than circular arch.</p>
+</li>
+</ul>
+<p><strong>Voussoir sizing and cutting:</strong></p>
+<p>Voussoirs must be wedge-shaped to fit the circular intrados. For a 3 m span arch at 2.5 m radius:</p>
+<pre><code>Number of voussoirs (ideal): ≈ 1.5 × (span in m) = 1.5 × 3 = 4.5; round up to 5 per side
+Angle per voussoir: = Total arch angle / number of voussoirs
+Total arch angle = 2 × arcsin(span / 2 / radius) = 2 × arcsin(1.5 / 2.5) ≈ 73.74°
+Angle per voussoir: 73.74° / 5 ≈ 15°
+</code></pre>
+<p>Each voussoir is a wedge with an angle of 15°. The thickness at the intrados should match the surrounding mortar joint (~15 mm); at the extrados, 40–60 mm.</p>
+<p><strong>Centering (temporary support):</strong></p>
+<p>An arch cannot stand until complete. A wooden frame (centering) supports the voussoirs during construction.</p>
+<ol>
+<li>
+<p><strong>Design the centering:</strong> A wooden arch (barrel shape) that matches the intrados curvature. Support it on posts with adjustable jacks.</p>
+</li>
+<li>
+<p><strong>Set the centering:</strong> Level and secure it precisely; it will bear 100–150 kg per m² (full weight of arch, mortar, and stones above).</p>
+</li>
+<li>
+<p><strong>Lay the voussoirs:</strong> Start at both springers, working toward the crown. Butter (apply) mortar to the sides and backs of each voussoir; tap into place with a mallet.</p>
+</li>
+<li>
+<p><strong>Install the keystone:</strong> Last voussoir at the crown; tap gently until snug.</p>
+</li>
+<li>
+<p><strong>Allow cure:</strong> Leave centering in place for 2–4 weeks for lime mortar to gain initial strength (longer for thick, heavy arches).</p>
+</li>
+<li>
+<p><strong>Remove centering:</strong> Lower the jacks slowly and evenly; monitor for cracks or movement. Remove posts once the arch is fully supported by surrounding masonry.</p>
+</li>
+</ol>
+<!-- SVG: stone-masonry-arch-1.svg: Cross-section showing arch geometry with labeled parts, plus detail of voussoir wedge shapes and centering structure. -->
+<div class="tip">
+<p>Overconstruct the centering—it is far cheaper to have excess timber than to have an arch collapse. Design jacks to support 1.5–2× estimated arch weight.</p>
+</div>
+</section>
+<section id="dry-stone-walls">
+<h2>Dry-Stone Wall Building</h2>
+<p>Dry-stone walls require no mortar and rely on careful stone fitting and gravity. Common in upland regions (UK, Alps, Appalachian mountains).</p>
+<p><strong>Principles:</strong></p>
+<ol>
+<li>
+<p><strong>Through-bonds:</strong> Use &quot;through-stones&quot; or &quot;bonding stones&quot; that extend the full thickness of the wall, tying front and back together.</p>
+</li>
+<li>
+<p><strong>Interlocking:</strong> Fit larger stones first, nestling smaller stones into gaps to prevent rocking.</p>
+</li>
+<li>
+<p><strong>Level tops and bottoms:</strong> Roughly level each stone on its bed before placing the next course.</p>
+</li>
+<li>
+<p><strong>Vertical alignment:</strong> Joints should be roughly vertical, not stepped horizontally (steps create rocking weakness).</p>
+</li>
+<li>
+<p><strong>Overhang:</strong> Each course typically projects 10–25 mm outward (taller wall = more overhang) to shed water and increase stability.</p>
+</li>
+</ol>
+<p><strong>Construction sequence:</strong></p>
+<ol>
+<li>
+<p><strong>Foundation:</strong> Prepare a level, compacted base (gravel or stone). Width = wall thickness × 1.25–1.5 (batter).</p>
+</li>
+<li>
+<p><strong>First course:</strong> Place large, flat foundation stones; tap into place and check for level.</p>
+</li>
+<li>
+<p><strong>Secondary courses:</strong> Fill gaps with smaller stones; check that stones do not rock. Tap with a hammer to settle each stone.</p>
+</li>
+<li>
+<p><strong>Through-stones:</strong> Every third or fourth course, place at least one through-stone per meter of width.</p>
+</li>
+<li>
+<p><strong>Packing:</strong> Use small stones (shards) to fill gaps; avoid voids. Tap packing stones until snug.</p>
+</li>
+<li>
+<p><strong>Upper courses:</strong> Repeat with progressively smaller stones as the wall rises (pressure decreases).</p>
+</li>
+<li>
+<p><strong>Coping:</strong> Top course should be flat stones laid on edge for visual finish and water shedding.</p>
+</li>
+</ol>
+<p><strong>Maximum height without mortar:</strong> 1.5–2 m (1–1.5 m is safer and more durable).</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>No mortar needed; works in areas where mortar is unavailable or too expensive</li>
+<li>Self-draining (no water trap); ideal for field walls</li>
+<li>Simple repair: tilt-out failed stones, repack</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Time-consuming (requires skillful selection and fitting)</li>
+<li>Lower structural capacity than mortared masonry</li>
+<li>More prone to settlement and tilt as soil underneath settles</li>
+</ul>
+</section>
+<section id="foundation-work">
+<h2>Foundation Stone Selection and Placement</h2>
+<p>Foundation stones bear the entire weight of the structure. Proper selection and placement are critical.</p>
+<p><strong>Selection criteria:</strong></p>
+<ul>
+<li><strong>Large, flat stones:</strong> Minimize rocking and settlement. At least 300×400 mm face area, 200–300 mm thick.</li>
+<li><strong>Hard, durable material:</strong> Granite, basalt, or compacted limestone preferred. Avoid soft sandstone or soft limestone (prone to frost damage).</li>
+<li><strong>Unblemished:</strong> Free of cracks, fossils, or weak layers.</li>
+<li><strong>Full contact:</strong> Stones should rest fully on their bed (not balancing on edges).</li>
+</ul>
+<p><strong>Foundation layout:</strong></p>
+<ol>
+<li>
+<p><strong>Excavate trenches</strong> to below frost line (depth varies by region; typically 0.5–1.5 m).</p>
+</li>
+<li>
+<p><strong>Compact base:</strong> 100–150 mm of gravel, compacted to 95% Proctor density.</p>
+</li>
+<li>
+<p><strong>Place large foundation stones:</strong> These are the largest and best-shaped in the foundation. Space them on compacted gravel, checking level with a straightedge.</p>
+</li>
+<li>
+<p><strong>Pack between stones:</strong> Use smaller stone chips to fill gaps, compacting as you go.</p>
+</li>
+<li>
+<p><strong>Check for voids:</strong> Tap around each stone; hollow sounds indicate air gaps. Remove the stone, re-pack, and reset.</p>
+</li>
+<li>
+<p><strong>Build up in courses:</strong> Add courses until reaching above-grade level (300–500 mm above finished grade, to protect from splash).</p>
+</li>
+</ol>
+<p><strong>Foundation wall thickness:</strong></p>
+<p>Typically 500–700 mm (20–28 inches) for stone masonry. This provides adequate bearing area for the weight above and resistance to lateral earth pressure.</p>
+</section>
+<section id="lintels-and-quoins">
+<h2>Lintels, Quoins, and Corner Details</h2>
+<p><strong>Lintels (horizontal supports for openings):</strong></p>
+<p>Lintels bridge the gap above a window or door, carrying the masonry weight from above.</p>
+<ul>
+<li>
+<p><strong>Stone lintel:</strong> A single long stone or two shorter stones side-by-side. Must have adequate bearing on the jambs (masonry walls on either side): minimum 150 mm bearing per side, ideally 250 mm for large openings.</p>
+</li>
+<li>
+<p><strong>Sizing:</strong> For an opening 1.5 m wide with 2 m of masonry above (density 2400 kg/m³):</p>
+</li>
+</ul>
+<pre><code>Weight above = 1.5 m × 2 m × 2400 kg/m³ = 7200 kg
+Load per lintel = 7200 kg / 2 = 3600 kg (if two lintels)
+Bending moment = Load × span / 4 = 3600 kg × 1.5 m / 4 ≈ 1350 kg·m
+
+For a stone lintel 0.3 m deep × 0.4 m wide:
+Section modulus = (0.4 × 0.3²) / 6 = 0.006 m³
+Stress = moment / section modulus = 1350 / 0.006 = 225 kPa (acceptable for stone)
+</code></pre>
+<ul>
+<li><strong>Installation:</strong> Set lintels in a mortar bed; ensure full bearing on both sides. Allow 7 days cure before loading masonry above.</li>
+</ul>
+<p><strong>Quoins (corner details):</strong></p>
+<p>Quoins are large, often decorative stones at the corners of a building, creating a visual emphasis and functional tie between intersecting walls.</p>
+<ul>
+<li>
+<p><strong>Flush quoins:</strong> Corners are flush with the wall face; common in modest buildings.</p>
+</li>
+<li>
+<p><strong>Projecting quoins:</strong> Quoins extend 100–200 mm beyond the wall face; formal appearance; common in high-quality construction.</p>
+</li>
+<li>
+<p><strong>Alternating sizes:</strong> Alternate large and small quoin stones for visual pattern.</p>
+</li>
+<li>
+<p><strong>Bonding:</strong> Quoins should be through-stones (extending into both walls at the corner), providing structural tie.</p>
+</li>
+</ul>
+<p><strong>Corner construction:</strong></p>
+<ol>
+<li>Lay one wall to the corner; place a quoin stone extending into the perpendicular wall.</li>
+<li>Lay the perpendicular wall, interlocking with the quoin.</li>
+<li>Repeat, alternating quoin placement to create a strong bond.</li>
+</ol>
+</section>
+<section id="chimney-construction">
+<h2>Chimney Construction</h2>
+<p>Chimneys are tall, thin structures requiring careful design and execution. They are prone to cracking and failure if built incorrectly.</p>
+<p><strong>Design principles:</strong></p>
+<ul>
+<li>
+<p><strong>Size:</strong> Interior flue = 100–150 mm × 100–150 mm (4–6 inches) for wood stove; 150–200 mm for furnace. Larger flues are less efficient (cooler gas, slower draft).</p>
+</li>
+<li>
+<p><strong>Height:</strong> Minimum 3 m from hearth to top; 0.5–1 m above the roofline. Taller chimneys draw better but are structurally harder to support.</p>
+</li>
+<li>
+<p><strong>Straight:</strong> Avoid bends; each 45° bend increases draft loss by 15%. If bends are necessary, limit to one 45° offset.</p>
+</li>
+<li>
+<p><strong>Insulation:</strong> Double or triple-wall chimneys are preferable (inner flue, air gap, outer masonry). This keeps the flue warm, improving draft and preventing creosote buildup.</p>
+</li>
+</ul>
+<p><strong>Construction steps:</strong></p>
+<ol>
+<li>
+<p><strong>Foundation:</strong> Chimneys must rest on a substantial masonry foundation below frost line; they are too heavy to rest on wood floor joists.</p>
+</li>
+<li>
+<p><strong>Build base:</strong> Begin below floor level with a base course 500–600 mm thick, filled stone. This distributes the chimney weight.</p>
+</li>
+<li>
+<p><strong>Interior flue:</strong> Line the chimney with clay flue liners (terracotta tubes in standard sizes). These are mortared together with fire-resistant mortar (clay mortar or special chimney mortar).</p>
+<ul>
+<li>Butt joints (not overlapping) to prevent buildup inside</li>
+<li>Full mortar bed on all sides</li>
+<li>Support on ledge stones every 1 m of height</li>
+</ul>
+</li>
+<li>
+<p><strong>Masonry surround:</strong> Build masonry around the flue liners, ensuring full joints and no voids.</p>
+</li>
+<li>
+<p><strong>Cleanout door:</strong> Install a metal cleanout door at the base for sweeping.</p>
+</li>
+<li>
+<p><strong>Roof flashing:</strong> Install lead, copper, or stainless steel flashing where the chimney passes through the roof; critical to prevent leaks.</p>
+</li>
+<li>
+<p><strong>Cap and crown:</strong> Top the chimney with a mortared cap (projecting 50 mm all around) to shed water. Slope the cap away from the flue.</p>
+</li>
+</ol>
+<div class="warning">
+<p>Chimneys are subject to extreme temperature swings and are vulnerable to frost damage if not properly built. Never use Portland cement mortar in the chimney flue (it cracks at high temperature). Use clay mortar or special fire-resistant mortar rated for chimney use.</p>
+</div>
+</section>
+<section id="stone-cutting-tools">
+<h2>Stone Cutting and Dressing Tools</h2>
+<p>Hand tools for cutting and shaping stone are essential for creating fitted stonework.</p>
+<p><strong>Essential tools:</strong></p>
+<ul>
+<li>
+<p><strong>Pointing chisel:</strong> Narrow (5–10 mm) for fine work and pointing joints. Flat or rounded edge.</p>
+</li>
+<li>
+<p><strong>Cold chisel (pitching tool):</strong> Flat, wide (25–50 mm) for rough dressing and splitting stone along grain.</p>
+</li>
+<li>
+<p><strong>Point (spike chisel):</strong> Pointed, for breaking out chips and roughing in shape.</p>
+</li>
+<li>
+<p><strong>Bush hammer (bushing tool):</strong> Head with multiple points (~9–16); creates a rough, textured finish. Useful for dressing soft stone.</p>
+</li>
+<li>
+<p><strong>Stone saw (toothed):</strong> For cutting limestone and softer stone. Modern circular or reciprocating saws work; hand saws are possible but slow.</p>
+</li>
+<li>
+<p><strong>Squares and levels:</strong> Ensure edges are perpendicular and courses are level.</p>
+</li>
+</ul>
+<p><strong>Technique:</strong></p>
+<ol>
+<li>
+<p><strong>Mark the cut line</strong> with a pencil or chalk.</p>
+</li>
+<li>
+<p><strong>Score the line</strong> with a chisel and hammer, tapping gently along the full line.</p>
+</li>
+<li>
+<p><strong>Drive the chisel</strong> perpendicular to the stone surface, advancing the line. Work from both sides of a thick stone for even breaking.</p>
+</li>
+<li>
+<p><strong>Finish edges</strong> with pointing chisel, working from the edge inward to avoid spalling.</p>
+</li>
+<li>
+<p><strong>Test fit</strong> the shaped stone before placing in the wall.</p>
+</li>
+</ol>
+<p>Safety: Wear eye protection; stone chips fly. Use gloves to prevent bruising from bouncing tools.</p>
+</section>
+<section id="masonry-maintenance">
+<h2>Maintenance and Repair</h2>
+<p><strong>Annual inspection:</strong></p>
+<ul>
+<li>Check for cracks, especially radiating from lintels or windows</li>
+<li>Look for spalled (crumbling) stone or mortar erosion</li>
+<li>Inspect roof and flashings for water entry</li>
+<li>Check for efflorescence (white salt stains), which indicate water infiltration</li>
+</ul>
+<p><strong>Repointing:</strong></p>
+<p>If mortar is eroding or missing, repoint:</p>
+<ol>
+<li>Remove old mortar to 25–30 mm depth (carefully, with hand tools to avoid damaging the stone)</li>
+<li>Dampen the stones (but not wet)</li>
+<li>Pack new mortar into joints with a trowel, pressing fully</li>
+<li>Strike the joints to match adjacent work</li>
+<li>Allow 2–3 weeks cure before exposing to weather</li>
+</ol>
+<p><strong>Stone replacement:</strong></p>
+<p>If a stone is badly damaged or crumbling:</p>
+<ol>
+<li>Carefully remove the failed stone (drill out mortar joints; avoid damaging neighbors)</li>
+<li>Clean the cavity and dampen</li>
+<li>Fit a replacement stone of similar size and material</li>
+<li>Point the new stone into place</li>
+</ol>
+<p>Replacing a stone in the middle of a wall is labor-intensive but possible. Replacement should match the original stone in color, texture, and scale.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="construction.html">Construction &amp; Carpentry</a>
+<a href="lime-cement.html">Lime, Cement &amp; Mortar</a>
+<a href="natural-building.html">Natural Building Materials</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

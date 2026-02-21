@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/computing-logic.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computing &amp; Logic</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Foundational Sciences</span> ›
+<span>Computing &amp; Logic</span>
+</div>
+
+
+<h1>Computing &amp; Logic</h1>
+<p class="subtitle">Binary math, logic gates, mechanical computing, transistors, programming concepts, and the path to digital technology.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~5 min</span>
+<span>Updated: 2026-02-16</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#counting-systems">1. Counting Systems</a></li>
+<li><a href="#abacus">2. The Abacus</a></li>
+<li><a href="#binary">3. Binary Number System</a></li>
+<li><a href="#boolean-logic">4. Boolean Logic</a></li>
+<li><a href="#mechanical">5. Mechanical Computing</a></li>
+<li><a href="#relay-logic">6. Relay Logic</a></li>
+<li><a href="#vacuum-tubes">7. Vacuum Tubes</a></li>
+<li><a href="#transistors">8. Transistors</a></li>
+<li><a href="#digital-circuits">9. Digital Circuits</a></li>
+<li><a href="#memory-storage">10. Memory &amp; Storage</a></li>
+<li><a href="#programming">11. Programming Fundamentals</a></li>
+<li><a href="#path-forward">12. The Path Forward</a></li>
+<li><a href="#practical-salvage">13. Practical Salvage Strategy for Computing Reconstruction</a></li>
+<li><a href="#summary-the-path-from-abacus-to-computer">Summary: The Path from Abacus to Computer</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="counting-systems">
+<h2>1. Counting Systems</h2>
+<p>Before machines can think, we need a way to represent numbers. Different civilizations developed different methods, each suited to their tools and needs.</p>
+<div class="note">
+<h3>Tally Marks</h3>
+<p>The simplest counting system uses single marks for each unit. In many cultures, five marks are crossed through to represent groups of five:</p>
+<p>| = 1 || = 2 ||| = 3 |||| = 4 ╱|||| = 5 ╱|||| ╱|||| = 10</p>
+<p>Tally marks are intuitive but become unwieldy for large numbers.</p>
+</div>
+<div class="note">
+<h4>Base-10 (Decimal)</h4>
+<p>The decimal system, used almost universally today, likely developed because humans have ten fingers. Each position represents a power of 10:</p>
+<p>345 = (3 × 10²) + (4 × 10¹) + (5 × 10⁰) = (3 × 100) + (4 × 10) + (5 × 1) = 300 + 40 + 5</p>
+<p>This positional notation is efficient for human calculation and allows representation of arbitrarily large numbers.</p>
+</div>
+<div class="note">
+<h4>Base-2 (Binary)</h4>
+<p>With only two digits (0 and 1), binary is ideal for machines because it requires only two physical states:</p>
+<p>101₂ = (1 × 2²) + (0 × 2¹) + (1 × 2⁰) = (1 × 4) + (0 × 2) + (1 × 1) = 4 + 0 + 1 = 5₁₀</p>
+<p>Why binary matters for machines: A switch can be ON (1) or OFF (0). A voltage can be HIGH (1) or LOW (0). A hole in a card can be PRESENT (1) or ABSENT (0). Two states map naturally to binary digits, making binary the perfect choice for electronic computation.</p>
+</div>
+<div class="note">
+<h4>Base-16 (Hexadecimal)</h4>
+<p>Hexadecimal uses digits 0-9 and letters A-F (where A=10, B=11, ... F=15). It's convenient because each hex digit represents exactly four binary digits:</p>
+<p>AF₁₆ = (10 × 16¹) + (15 × 16⁰) = 160 + 15 = 175₁₀ 1010 1111₂ = AF₁₆ This makes hex useful for representing binary data in a compact, human-readable form.</p>
+</div>
+</section>
+<section id="abacus">
+<h2>2. The Abacus</h2>
+<p>One of humanity's first computing devices, the abacus is a frame with rods holding movable beads. By moving beads, users can perform arithmetic with remarkable speed and accuracy.</p>
+<h3>Construction and Operation</h3>
+<p>A typical abacus has:</p>
+<ul>
+<li>Horizontal rods representing place values (units, tens, hundreds, etc.)</li>
+<li>Beads on each rod (typically 10 per rod for decimal systems)</li>
+<li>A dividing bar separating upper and lower sections (for advanced techniques)</li>
+</ul>
+<p>Each position's value is determined by how many beads are moved toward the dividing bar . To add 3 + 5:</p>
+<ol>
+<li>Move 3 beads on the units rod toward the bar</li>
+<li>Move 5 more beads on the same rod toward the bar</li>
+<li>You now have 8 beads toward the bar = 8</li>
+</ol>
+<p>Subtraction, multiplication, and even division are possible on an abacus, though multiplication requires understanding place value and repeated addition.</p>
+<h3>Abacus Diagram</h3>
+<p><svg aria-label="Computing &amp; Logic diagram 1" height="250" viewBox="0 0 400 250" width="400" xmlns="http://www.w3.org/2000/svg"><rect fill="none" height="210" stroke="#53d8a8" stroke-width="2" width="360" x="20" y="20"></rect><line stroke="#53d8a8" stroke-width="1" x1="20" x2="10" y1="20" y2="15"></line><line stroke="#53d8a8" stroke-width="1" x1="380" x2="390" y1="20" y2="15"></line><line stroke="#e94560" stroke-width="2" x1="20" x2="380" y1="120" y2="120"></line><text fill="#aaa" font-size="12" text-anchor="end" x="10" y="75"> Hundreds </text><text fill="#aaa" font-size="12" text-anchor="end" x="10" y="165"> Tens </text><line stroke="#aaa" stroke-width="1" x1="50" x2="350" y1="70" y2="70"></line><circle cx="70" cy="70" fill="#53d8a8" r="6"></circle><circle cx="85" cy="70" fill="#53d8a8" r="6"></circle><circle cx="130" cy="70" fill="#e94560" r="8"></circle><circle cx="155" cy="70" fill="#e94560" r="8"></circle><circle cx="180" cy="70" fill="#e94560" r="8"></circle><circle cx="205" cy="70" fill="#e94560" r="8"></circle><circle cx="230" cy="70" fill="#e94560" r="8"></circle><line stroke="#aaa" stroke-width="1" x1="50" x2="350" y1="160" y2="160"></line><circle cx="70" cy="160" fill="#53d8a8" r="6"></circle><circle cx="85" cy="160" fill="#53d8a8" r="6"></circle><circle cx="130" cy="160" fill="#e94560" r="8"></circle><circle cx="155" cy="160" fill="#e94560" r="8"></circle><circle cx="180" cy="160" fill="#e94560" r="8"></circle><circle cx="280" cy="160" fill="#888" r="8"></circle><circle cx="305" cy="160" fill="#888" r="8"></circle><text fill="#53d8a8" font-size="14" font-weight="bold" text-anchor="middle" x="200" y="195"> Value: 30 </text></svg></p>
+<p>A skilled abacus user can perform calculations nearly as fast as a modern calculator, demonstrating that computation doesn't require electricity—only a systematic method and physical representation of numbers.</p>
+</section>
+<section id="binary">
+<h2>3. Binary Number System</h2>
+<p>Binary is the language of computers. Everything a computer does ultimately comes down to manipulating binary digits (bits)—sequences of 1s and 0s.</p>
+<h3>Converting Decimal to Binary</h3>
+<p>To convert a decimal number to binary, repeatedly divide by 2 and record the remainders:</p>
+<p>13 ÷ 2 = 6 remainder 1 6 ÷ 2 = 3 remainder 0 3 ÷ 2 = 1 remainder 1 1 ÷ 2 = 0 remainder 1 Read remainders bottom to top: 1101₂ = 13₁₀</p>
+<h3>Converting Binary to Decimal</h3>
+<p>Multiply each bit by its position value (power of 2) and sum:</p>
+<p>1011₂ = (1×8) + (0×4) + (1×2) + (1×1) = 8 + 0 + 2 + 1 = 11₁₀</p>
+<h3>Binary Arithmetic</h3>
+<div class="note">
+<h4>Binary Addition</h4>
+<p>Rules: 0+0=0, 0+1=1, 1+0=1, 1+1=10 (0 with carry 1)</p>
+<p>1010 (10₁₀) + 101 ( 5₁₀) ------- 1111 (15₁₀)</p>
+</div>
+<div class="note">
+<h4>Binary Multiplication</h4>
+<p>Like decimal multiplication, but with only 0 and 1:</p>
+<p>101 (5₁₀) × 11 (3₁₀) ----- 101 101 ----- 1111 (15₁₀)</p>
+</div>
+<h3>Worked Example: Converting 156 Decimal to Binary</h3>
+<ol>
+<li>156 ÷ 2 = 78 remainder <strong>0</strong></li>
+<li>78 ÷ 2 = 39 remainder <strong>0</strong></li>
+<li>39 ÷ 2 = 19 remainder <strong>1</strong></li>
+<li>19 ÷ 2 = 9 remainder <strong>1</strong></li>
+<li>9 ÷ 2 = 4 remainder <strong>1</strong></li>
+<li>4 ÷ 2 = 2 remainder <strong>0</strong></li>
+<li>2 ÷ 2 = 1 remainder <strong>0</strong></li>
+<li>1 ÷ 2 = 0 remainder <strong>1</strong></li>
+</ol>
+<p>Reading remainders from bottom to top: <strong>10011100₂</strong> = 156₁₀</p>
+<p>Verify: (1×128) + (0×64) + (0×32) + (1×16) + (1×8) + (1×4) + (0×2) + (0×1) = 128 + 16 + 8 + 4 = 156 ✓</p>
+<div class="tip">
+<h3>Quick Binary Trick</h3>
+<p>Powers of 2 are easy to recognize in binary—each is a 1 followed by zeros: 1₂ = 1, 10₂ = 2, 100₂ = 4, 1000₂ = 8, 10000₂ = 16. To multiply by 2 in binary, just shift left (add a 0 on the right). To divide by 2, shift right. This makes binary arithmetic much faster than decimal once you get the pattern.</p>
+</div>
+<h3>Reference Table: Decimal 0-255 in Binary</h3>
+<table><thead><tr><th scope="row">Decimal</th><th scope="row">Binary</th><th scope="row">Decimal</th><th scope="row">Binary</th><th scope="row">Decimal</th><th scope="row">Binary</th></tr></thead><tbody><tr><td>0</td><td>00000000</td><td>85</td><td>01010101</td><td>170</td><td>10101010</td></tr><tr><td>1</td><td>00000001</td><td>86</td><td>01010110</td><td>171</td><td>10101011</td></tr><tr><td>2</td><td>00000010</td><td>87</td><td>01010111</td><td>172</td><td>10101100</td></tr><tr><td>3</td><td>00000011</td><td>88</td><td>01011000</td><td>173</td><td>10101101</td></tr><tr><td>4</td><td>00000100</td><td>89</td><td>01011001</td><td>174</td><td>10101110</td></tr><tr><td>15</td><td>00001111</td><td>100</td><td>01100100</td><td>200</td><td>11001000</td></tr><tr><td>16</td><td>00010000</td><td>127</td><td>01111111</td><td>156</td><td>10011100</td></tr><tr><td>32</td><td>00100000</td><td>144</td><td>10010000</td><td>255</td><td>11111111</td></tr></tbody></table>
+<p>An 8-bit binary number (one byte) can represent values from 0 to 255. A 16-bit number can represent 0 to 65,535. The formula for maximum value is: <strong>Maximum = 2^n − 1</strong>, where n is the number of bits. The number of bits determines the range of values a computer can work with.</p>
+</section>
+<section id="boolean-logic">
+<h2>4. Boolean Logic</h2>
+<p>Boolean logic is a system of logic using only two values: TRUE (1) and FALSE (0). Logic gates combine these values according to mathematical rules, forming the foundation of all digital computation.</p>
+<div class="note">
+<h3>AND Gate</h3>
+<p>Output is TRUE only if ALL inputs are TRUE.</p>
+<table><thead><tr><th scope="row">A</th><th scope="row">B</th><th scope="row">A AND B</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></tbody></table>
+</div>
+<div class="note">
+<h4>OR Gate</h4>
+<p>Output is TRUE if ANY input is TRUE.</p>
+<table><thead><tr><th scope="row">A</th><th scope="row">B</th><th scope="row">A OR B</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></tbody></table>
+</div>
+<div class="note">
+<h4>NOT Gate</h4>
+<p>Output is the opposite of the input (inverts the signal).</p>
+<table><thead><tr><th scope="row">A</th><th scope="row">NOT A</th></tr></thead><tbody><tr><td>0</td><td>1</td></tr><tr><td>1</td><td>0</td></tr></tbody></table>
+</div>
+<div class="note">
+<h4>XOR Gate (Exclusive OR)</h4>
+<p>Output is TRUE if inputs are DIFFERENT.</p>
+<table><thead><tr><th scope="row">A</th><th scope="row">B</th><th scope="row">A XOR B</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></tbody></table>
+</div>
+<div class="note">
+<h4>NAND Gate</h4>
+<p>NOT AND: Output is FALSE only if ALL inputs are TRUE.</p>
+<table><thead><tr><th scope="row">A</th><th scope="row">B</th><th scope="row">A NAND B</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></tbody></table>
+<p>NAND is universal: Every logic function can be built using only NAND gates. This makes NAND the most efficient basic building block for digital circuits.</p>
+</div>
+<h3>Worked Example: Building a Circuit with Multiple Gates</h3>
+<p>Let's say we want a circuit that activates a pump if EITHER (Water Level is HIGH <strong>AND</strong> Pressure is LOW) <strong>OR</strong> (Power Switch is ON <strong>AND</strong> Pressure is LOW).</p>
+<p>In Boolean algebra: <strong>Output = (H AND L) OR (P AND L)</strong> where H = High Level, P = Power, L = Low Pressure</p>
+<p>Truth table (showing selected rows):</p>
+<table>
+<thead>
+<tr>
+<th>H</th>
+<th>P</th>
+<th>L</th>
+<th>H AND L</th>
+<th>P AND L</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>The pump activates whenever pressure is low AND at least one activation condition is met.</p>
+<div class="info-box">
+<h3>De Morgan's Laws</h3>
+<p>Two critical rules for simplifying Boolean expressions:</p>
+<ul>
+<li><strong>NOT(A AND B) = (NOT A) OR (NOT B)</strong></li>
+<li><strong>NOT(A OR B) = (NOT A) AND (NOT B)</strong></li>
+</ul>
+<p>These laws are essential for circuit optimization. If you need to invert a complex expression, apply De Morgan's laws instead of adding another NOT gate—fewer gates means fewer failures and lower power consumption.</p>
+</div>
+<h3>Logic Gate Symbols</h3>
+<p><svg aria-label="Computing &amp; Logic diagram 2" height="320" viewBox="0 0 600 320" width="600" xmlns="http://www.w3.org/2000/svg"><g><text fill="#53d8a8" font-size="14" font-weight="bold" x="30" y="30"> AND </text><line stroke="#e94560" stroke-width="2" x1="20" x2="40" y1="50" y2="50"></line><line stroke="#e94560" stroke-width="2" x1="20" x2="40" y1="70" y2="70"></line><path d="M 40 45 L 40 75 Q 60 75 60 60 Q 60 45 40 45" fill="none" stroke="#53d8a8" stroke-width="2"></path><line stroke="#53d8a8" stroke-width="2" x1="60" x2="80" y1="60" y2="60"></line><circle cx="80" cy="60" fill="#53d8a8" r="3"></circle></g><g><text fill="#53d8a8" font-size="14" font-weight="bold" x="130" y="30"> OR </text><line stroke="#e94560" stroke-width="2" x1="120" x2="140" y1="50" y2="50"></line><line stroke="#e94560" stroke-width="2" x1="120" x2="140" y1="70" y2="70"></line><path d="M 140 45 Q 145 45 160 60 Q 145 75 140 75 Q 145 70 145 50" fill="none" stroke="#53d8a8" stroke-width="2"></path><line stroke="#53d8a8" stroke-width="2" x1="160" x2="180" y1="60" y2="60"></line><circle cx="180" cy="60" fill="#53d8a8" r="3"></circle></g><g><text fill="#53d8a8" font-size="14" font-weight="bold" x="230" y="30"> NOT </text><line stroke="#e94560" stroke-width="2" x1="220" x2="240" y1="60" y2="60"></line><path d="M 240 50 L 260 60 L 240 70 Z" fill="none" stroke="#53d8a8" stroke-width="2"></path><circle cx="265" cy="60" fill="none" r="4" stroke="#53d8a8" stroke-width="2"></circle><line stroke="#53d8a8" stroke-width="2" x1="269" x2="285" y1="60" y2="60"></line></g><g><text fill="#53d8a8" font-size="14" font-weight="bold" x="330" y="30"> XOR </text><line stroke="#e94560" stroke-width="2" x1="320" x2="340" y1="50" y2="50"></line><line stroke="#e94560" stroke-width="2" x1="320" x2="340" y1="70" y2="70"></line><path d="M 343 45 Q 348 45 360 60 Q 348 75 343 75 Q 348 70 348 50" fill="none" stroke="#53d8a8" stroke-width="2"></path><path d="M 340 45 Q 345 45 357 60 Q 345 75 340 75" fill="none" stroke="#53d8a8" stroke-width="1"></path><line stroke="#53d8a8" stroke-width="2" x1="360" x2="380" y1="60" y2="60"></line><circle cx="380" cy="60" fill="#53d8a8" r="3"></circle></g><g><text fill="#53d8a8" font-size="14" font-weight="bold" x="430" y="30"> NAND </text><line stroke="#e94560" stroke-width="2" x1="420" x2="440" y1="50" y2="50"></line><line stroke="#e94560" stroke-width="2" x1="420" x2="440" y1="70" y2="70"></line><path d="M 440 45 L 440 75 Q 460 75 460 60 Q 460 45 440 45" fill="none" stroke="#53d8a8" stroke-width="2"></path><circle cx="465" cy="60" fill="none" r="4" stroke="#53d8a8" stroke-width="2"></circle><line stroke="#53d8a8" stroke-width="2" x1="469" x2="485" y1="60" y2="60"></line></g><text fill="#aaa" font-size="12" x="30" y="130"> Input </text><line stroke="#e94560" stroke-width="2" x1="30" x2="80" y1="140" y2="140"></line><text fill="#aaa" font-size="12" x="30" y="160"> Output </text><line stroke="#53d8a8" stroke-width="2" x1="30" x2="80" y1="170" y2="170"></line><text fill="#53d8a8" font-size="13" font-weight="bold" x="30" y="210"> AND Truth Table </text><text fill="#eee" font-size="11" x="30" y="235"> 0 AND 0 = 0 </text><text fill="#eee" font-size="11" x="30" y="255"> 0 AND 1 = 0 </text><text fill="#eee" font-size="11" x="30" y="275"> 1 AND 0 = 0 </text><text fill="#eee" font-size="11" x="30" y="295"> 1 AND 1 = 1 </text><text fill="#53d8a8" font-size="13" font-weight="bold" x="320" y="210"> NAND Universality </text><text fill="#eee" font-size="11" x="320" y="235"> Can build AND, OR, NOT, </text><text fill="#eee" font-size="11" x="320" y="255"> XOR, and every other logic </text><text fill="#eee" font-size="11" x="320" y="275"> gate using only NAND </text><text fill="#eee" font-size="11" x="320" y="295"> gates. Maximum efficiency! </text></svg></p>
+<div class="warning">
+<h3>Timing Hazards in Digital Circuits</h3>
+<p>When building circuits from multiple gates, propagation delays (the time a signal takes to travel through a gate) can cause glitches. If one input arrives before another, the output may briefly produce an incorrect value before settling to the correct result. In mission-critical systems (like survival equipment controllers), add delay-compensation logic or use synchronization techniques to prevent false triggers.</p>
+</div>
+</section>
+<section id="mechanical">
+<h2>5. Mechanical Computing</h2>
+<p>Before electronics, machines performed calculations using gears, cams, and mechanical linkages. These devices demonstrate that computation is fundamentally about manipulating physical objects according to rules.</p>
+<h3>Charles Babbage's Difference Engine</h3>
+<p>In the 1820s, Charles Babbage conceived of the Difference Engine , a machine to calculate polynomial functions using the method of differences. It featured:</p>
+<ul>
+<li>Mechanical columns representing numbers (each digit a separate wheel)</li>
+<li>Automatic carry mechanism (when a wheel turns past 9, it increments the next column)</li>
+<li>Programmable operation through mechanical arrangement</li>
+</ul>
+<h3>The Analytical Engine</h3>
+<p>Babbage's later Analytical Engine (1840s) included:</p>
+<ul>
+<li>A &quot;mill&quot; (processor) performing arithmetic</li>
+<li>A &quot;store&quot; (memory) holding numbers</li>
+<li>Control mechanisms using punched cards (borrowed from the Jacquard loom)</li>
+<li>The ability to perform conditional branching</li>
+</ul>
+<p>The Analytical Engine contained the conceptual elements of modern computers, though Babbage never fully constructed it.</p>
+<h3>The Jacquard Loom</h3>
+<p>In 1804, Joseph Marie Jacquard invented a loom controlled by punched cards. Each card described one row of the pattern; the holes determined which threads were raised. This was the first large-scale programmable machine, and it inspired Babbage's use of cards for the Analytical Engine.</p>
+<p>The Jacquard loom demonstrates that you don't need electronic computers for programmability—you need a systematic way to encode instructions (the punched card) and a mechanism to read and obey them (the reader mechanism).</p>
+<h3>Mechanical Logic with Gears</h3>
+<p><svg aria-label="Computing &amp; Logic diagram 3" height="250" viewBox="0 0 500 250" width="500" xmlns="http://www.w3.org/2000/svg"><text fill="#53d8a8" font-size="16" font-weight="bold" text-anchor="middle" x="250" y="25"> Gear-Based Mechanical AND Gate </text><g><text fill="#aaa" font-size="12" text-anchor="middle" x="80" y="70"> Input A </text><circle cx="80" cy="100" fill="none" r="30" stroke="#e94560" stroke-width="2"></circle><circle cx="80" cy="100" fill="#e94560" r="5"></circle><line stroke="#e94560" stroke-width="2" x1="80" x2="80" y1="70" y2="60"></line><line stroke="#e94560" stroke-width="2" x1="110" x2="120" y1="100" y2="100"></line></g><g><text fill="#aaa" font-size="12" text-anchor="middle" x="420" y="70"> Input B </text><circle cx="420" cy="100" fill="none" r="30" stroke="#e94560" stroke-width="2"></circle><circle cx="420" cy="100" fill="#e94560" r="5"></circle><line stroke="#e94560" stroke-width="2" x1="420" x2="420" y1="70" y2="60"></line><line stroke="#e94560" stroke-width="2" x1="390" x2="380" y1="100" y2="100"></line></g><g><text fill="#aaa" font-size="12" text-anchor="middle" x="250" y="160"> Output (A AND B) </text><circle cx="250" cy="120" fill="none" r="45" stroke="#53d8a8" stroke-width="2"></circle><circle cx="250" cy="120" fill="#53d8a8" r="8"></circle><line stroke="#53d8a8" stroke-width="2" x1="250" x2="250" y1="75" y2="60"></line><line stroke="#53d8a8" stroke-width="2" x1="295" x2="310" y1="120" y2="120"></line><line stroke="#53d8a8" stroke-width="2" x1="205" x2="190" y1="120" y2="120"></line></g><text fill="#aaa" font-size="11" text-anchor="middle" x="250" y="200"> Both input gears must turn to engage </text><text fill="#aaa" font-size="11" text-anchor="middle" x="250" y="217"> the output gear. If either input is OFF, </text><text fill="#aaa" font-size="11" text-anchor="middle" x="250" y="234"> the output gear cannot turn (AND logic). </text></svg></p>
+</section>
+<section id="relay-logic">
+<h2>6. Relay Logic</h2>
+<p>An electromagnetic relay is a switch controlled by electricity. When current flows through a coil, it creates a magnetic field that pulls a metal contact, closing (or opening) an electrical circuit. Relays bridged the gap between mechanical and electronic computing.</p>
+<h3>How a Relay Works</h3>
+<p>A relay has:</p>
+<ul>
+<li>A coil of wire (input circuit)</li>
+<li>An electromagnet that activates when current flows</li>
+<li>A mechanical switch (output circuit) that closes or opens</li>
+</ul>
+<p>One relay can control another, allowing relay logic to build complex switching networks. Mark I (1944) , one of the first computers, used 3,300 relays.</p>
+<h3>Building Logic Gates from Relays</h3>
+<p><svg aria-label="Computing &amp; Logic diagram 4" height="400" viewBox="0 0 600 400" width="600" xmlns="http://www.w3.org/2000/svg"><g><text fill="#53d8a8" font-size="14" font-weight="bold" x="80" y="30"> AND Gate (Two Relays in Series) </text><text fill="#aaa" font-size="11" x="20" y="70"> Input A: </text><line stroke="#aaa" stroke-width="1" x1="20" x2="40" y1="80" y2="80"></line><circle cx="40" cy="80" fill="#e94560" r="4"></circle><g><rect fill="none" height="30" stroke="#53d8a8" stroke-width="2" width="30" x="50" y="65"></rect><text fill="#53d8a8" font-size="10" text-anchor="middle" x="65" y="85"> RA </text></g><g><line stroke="#aaa" stroke-width="1" x1="100" x2="115" y1="80" y2="80"></line><line stroke="#aaa" stroke-width="2" x1="115" x2="115" y1="75" y2="85"></line><circle cx="115" cy="80" fill="#53d8a8" r="2"></circle></g><text fill="#aaa" font-size="11" x="20" y="120"> Input B: </text><line stroke="#aaa" stroke-width="1" x1="20" x2="40" y1="130" y2="130"></line><circle cx="40" cy="130" fill="#e94560" r="4"></circle><g><rect fill="none" height="30" stroke="#53d8a8" stroke-width="2" width="30" x="50" y="115"></rect><text fill="#53d8a8" font-size="10" text-anchor="middle" x="65" y="135"> RB </text></g><g><line stroke="#aaa" stroke-width="1" x1="100" x2="115" y1="130" y2="130"></line><line stroke="#aaa" stroke-width="2" x1="115" x2="115" y1="125" y2="135"></line><circle cx="115" cy="130" fill="#53d8a8" r="2"></circle></g><line stroke="#aaa" stroke-width="1" x1="115" x2="130" y1="80" y2="80"></line><line stroke="#aaa" stroke-width="1" x1="130" x2="130" y1="80" y2="130"></line><line stroke="#aaa" stroke-width="1" x1="130" x2="115" y1="130" y2="130"></line><text fill="#53d8a8" font-size="11" font-weight="bold" x="140" y="106"> Output </text><text fill="#aaa" font-size="10" x="140" y="122"> (both needed) </text></g><g><text fill="#53d8a8" font-size="14" font-weight="bold" x="330" y="30"> OR Gate (Two Relays in Parallel) </text><text fill="#aaa" font-size="11" x="280" y="70"> Input A: </text><line stroke="#aaa" stroke-width="1" x1="280" x2="300" y1="80" y2="80"></line><circle cx="300" cy="80" fill="#e94560" r="4"></circle><g><rect fill="none" height="30" stroke="#53d8a8" stroke-width="2" width="30" x="310" y="65"></rect><text fill="#53d8a8" font-size="10" text-anchor="middle" x="325" y="85"> RA </text></g><g><line stroke="#aaa" stroke-width="1" x1="360" x2="375" y1="80" y2="80"></line><line stroke="#aaa" stroke-width="2" x1="375" x2="375" y1="75" y2="85"></line><circle cx="375" cy="80" fill="#53d8a8" r="2"></circle></g><text fill="#aaa" font-size="11" x="280" y="140"> Input B: </text><line stroke="#aaa" stroke-width="1" x1="280" x2="300" y1="150" y2="150"></line><circle cx="300" cy="150" fill="#e94560" r="4"></circle><g><rect fill="none" height="30" stroke="#53d8a8" stroke-width="2" width="30" x="310" y="135"></rect><text fill="#53d8a8" font-size="10" text-anchor="middle" x="325" y="155"> RB </text></g><g><line stroke="#aaa" stroke-width="1" x1="360" x2="375" y1="150" y2="150"></line><line stroke="#aaa" stroke-width="2" x1="375" x2="375" y1="145" y2="155"></line><circle cx="375" cy="150" fill="#53d8a8" r="2"></circle></g><line stroke="#aaa" stroke-width="1" x1="375" x2="390" y1="80" y2="80"></line><line stroke="#aaa" stroke-width="1" x1="375" x2="390" y1="150" y2="150"></line><line stroke="#aaa" stroke-width="1" x1="390" x2="390" y1="80" y2="150"></line><line stroke="#aaa" stroke-width="1" x1="390" x2="410" y1="115" y2="115"></line><text fill="#53d8a8" font-size="11" font-weight="bold" x="420" y="106"> Output </text><text fill="#aaa" font-size="10" x="420" y="122"> (either works) </text></g><g><text fill="#53d8a8" font-size="12" font-weight="bold" x="60" y="250"> Relay Advantages: </text><text fill="#eee" font-size="11" x="60" y="270"> • Mechanical (no mysterious electricity) </text><text fill="#eee" font-size="11" x="60" y="285"> • Can switch large currents </text><text fill="#eee" font-size="11" x="60" y="300"> • Reliable for many cycles </text><text fill="#e94560" font-size="12" font-weight="bold" x="60" y="330"> Relay Disadvantages: </text><text fill="#eee" font-size="11" x="60" y="350"> • Slow (mechanical movement takes milliseconds) </text><text fill="#eee" font-size="11" x="60" y="365"> • Power-hungry </text><text fill="#eee" font-size="11" x="60" y="380"> • Bulky (thousands of relays fill entire rooms) </text></g></svg></p>
+<p>Relay computers like the Mark I could perform calculations, but they were slow, power-hungry, and required constant maintenance. A single relay failure could stop the entire machine. Relays foreshadowed the need for faster switching devices.</p>
+<div class="info-box">
+<h3>Salvaging Relays from Dead Equipment</h3>
+<p>Industrial relays are robust and long-lived. Common sources for salvage:</p>
+<ul>
+<li>Telephone switchboards (extremely reliable German/Swedish models)</li>
+<li>Old industrial motors (soft starter circuits)</li>
+<li>Automotive solenoids (heavier duty than standard relays)</li>
+<li>Control systems from HVAC units and manufacturing equipment</li>
+<li>Slot machines, vending machines, and other coin-op equipment</li>
+</ul>
+<p>Test a salvaged relay by applying power to the coil and listening for the distinctive click. Measure coil resistance with a multimeter (typically 100-1000 ohms). A relay with corroded contacts can often be cleaned with electronic contact cleaner or carefully scraped with a small file.</p>
+</div>
+<div class="tip">
+<h3>Scaling Relay Computers</h3>
+<p>Each relay adds cost, power consumption, and cooling requirements. For a salvage-based computing project, prioritize AND/NAND logic (most useful), then OR gates. You can build other functions from these primitives, but with more gates and higher latency. A rule of thumb: Every additional relay in series adds ~10-20ms of switching time. For a practical calculator, target sub-100ms response times, limiting chains to 5-10 gates.</p>
+</section>
+<section id="vacuum-tubes">
+<h2>7. Vacuum Tubes</h2>
+<p>A vacuum tube (or valve) is an electronic device that uses the flow of electrons through a vacuum to amplify or switch electrical signals. Unlike relays, tubes have no moving parts, so they can switch millions of times per second.</p>
+<h3>The Triode</h3>
+<p>A triode tube has three electrodes:</p>
+<ul>
+<li>Cathode: Heated filament that emits electrons</li>
+<li>Grid: Control electrode between cathode and anode. A small voltage on the grid controls electron flow.</li>
+<li>Anode (Plate): Receives electrons, creating output current</li>
+</ul>
+<p>When the grid is negatively charged, it repels electrons and blocks current (OFF). When positively charged, it allows electrons through (ON). The grid voltage acts as a switch or amplifier.</p>
+<h3>Triode Cross-Section Diagram</h3>
+<p><svg aria-label="Computing &amp; Logic diagram 5" height="280" viewBox="0 0 500 280" width="500" xmlns="http://www.w3.org/2000/svg"><ellipse cx="250" cy="140" fill="none" rx="140" ry="110" stroke="#53d8a8" stroke-width="2"></ellipse><ellipse cx="250" cy="140" fill="#0a0a15" opacity="0.3" rx="130" ry="100"></ellipse><g><text fill="#aaa" font-size="12" text-anchor="middle" x="250" y="240"> Cathode (filament) </text><rect fill="none" height="8" stroke="#e94560" stroke-width="2" width="40" x="230" y="210"></rect><line stroke="#666" stroke-width="2" x1="230" x2="220" y1="225" y2="240"></line><line stroke="#666" stroke-width="2" x1="270" x2="280" y1="225" y2="240"></line></g><g><text fill="#aaa" font-size="12" x="120" y="145"> Grid </text><circle cx="250" cy="140" fill="none" r="45" stroke="#e94560" stroke-dasharray="3,3" stroke-width="1"></circle><line stroke="#e94560" stroke-width="1" x1="250" x2="250" y1="95" y2="185"></line><line stroke="#e94560" stroke-width="1" x1="205" x2="295" y1="140" y2="140"></line><line stroke="#666" stroke-width="2" x1="250" x2="242" y1="100" y2="75"></line><line stroke="#666" stroke-width="2" x1="242" x2="230" y1="75" y2="50"></line></g><g><text fill="#aaa" font-size="12" x="370" y="65"> Anode (Plate) </text><rect fill="none" height="10" stroke="#53d8a8" stroke-width="2" width="60" x="360" y="30"></rect><line stroke="#666" stroke-width="2" x1="390" x2="390" y1="30" y2="15"></line></g><g fill="none" stroke="#53d8a8" stroke-dasharray="5,5" stroke-width="1.5"><line x1="240" x2="235" y1="215" y2="180"></line><line x1="250" x2="250" y1="215" y2="190"></line><line x1="260" x2="265" y1="215" y2="180"></line><text fill="#53d8a8" font-size="10" x="270" y="200"> Electron flow </text></g><g><text fill="#aaa" font-size="11" x="30" y="55"> Input signal </text><text fill="#aaa" font-size="11" x="30" y="70"> (grid voltage) </text><line stroke="#aaa" stroke-width="1" x1="40" x2="240" y1="45" y2="75"></line><text fill="#aaa" font-size="11" x="420" y="55"> Output signal </text><text fill="#aaa" font-size="11" x="420" y="70"> (anode current) </text><line stroke="#aaa" stroke-width="1" x1="390" x2="420" y1="20" y2="45"></line></g></svg></p>
+<h3>Building Logic Gates from Tubes</h3>
+<p>A tube can function as a NOT gate: low input voltage (grid near ground) allows high anode current (output HIGH). High input voltage blocks electrons, producing low output (LOW). Other gates can be built by combining tubes, similar to relay logic but much faster.</p>
+<p>The first large-scale electronic computer, ENIAC (1946), used 18,000 vacuum tubes. It performed calculations 1000 times faster than relay computers but consumed 150 kilowatts of power and required constant tube replacement. The tubes were the most frequent cause of failure.</p>
+</section>
+<section id="transistors">
+<h2>8. Transistors</h2>
+<p>A transistor is a semiconductor device that acts as an electronic switch or amplifier. Invented in 1947, transistors are smaller, faster, more reliable, and far more power-efficient than vacuum tubes.</p>
+<h3>How Semiconductors Work</h3>
+<p>A semiconductor is a material (like silicon) with conductivity between conductors and insulators. By adding impurities (doping):</p>
+<ul>
+<li>N-type (negative): Extra electrons, donate negative charges</li>
+<li>P-type (positive): Missing electrons (holes), accept electrons</li>
+</ul>
+<p>A junction between P and N layers creates a diode (one-way valve). By using multiple layers, we create transistors.</p>
+<h3>NPN and PNP Transistors</h3>
+<p><svg aria-label="Computing &amp; Logic diagram 6" height="300" viewBox="0 0 550 300" width="550" xmlns="http://www.w3.org/2000/svg"><g><text fill="#53d8a8" font-size="14" font-weight="bold" x="100" y="30"> NPN Transistor </text><circle cx="100" cy="80" fill="none" r="25" stroke="#53d8a8" stroke-width="2"></circle><line stroke="#53d8a8" stroke-width="2" x1="100" x2="100" y1="55" y2="35"></line><text fill="#aaa" font-size="11" x="115" y="40"> C (Collector) </text><line stroke="#e94560" stroke-width="2" x1="75" x2="55" y1="80" y2="80"></line><text fill="#aaa" font-size="11" x="30" y="85"> B (Base) </text><line stroke="#53d8a8" stroke-width="2" x1="100" x2="100" y1="105" y2="125"></line><polygon fill="#53d8a8" points="100,105 95,112 105,112"></polygon><text fill="#aaa" font-size="11" x="115" y="130"> E (Emitter) </text><text fill="#aaa" font-size="9" x="85" y="85"> P </text><text fill="#eee" font-size="11" x="50" y="160"> Control current at base </text><text fill="#eee" font-size="11" x="50" y="177"> switches current from </text><text fill="#eee" font-size="11" x="50" y="194"> collector to emitter </text></g><g><text fill="#53d8a8" font-size="14" font-weight="bold" x="350" y="30"> PNP Transistor </text><circle cx="350" cy="80" fill="none" r="25" stroke="#53d8a8" stroke-width="2"></circle><line stroke="#53d8a8" stroke-width="2" x1="350" x2="350" y1="55" y2="35"></line><text fill="#aaa" font-size="11" x="365" y="40"> C (Collector) </text><line stroke="#e94560" stroke-width="2" x1="325" x2="305" y1="80" y2="80"></line><text fill="#aaa" font-size="11" x="280" y="85"> B (Base) </text><line stroke="#53d8a8" stroke-width="2" x1="350" x2="350" y1="105" y2="125"></line><polygon fill="#53d8a8" points="350,105 345,112 355,112" transform="rotate(180 350 112)"></polygon><text fill="#aaa" font-size="11" x="365" y="130"> E (Emitter) </text><text fill="#aaa" font-size="9" x="335" y="85"> N </text><text fill="#eee" font-size="11" x="300" y="160"> Control current at base </text><text fill="#eee" font-size="11" x="300" y="177"> switches current from </text><text fill="#eee" font-size="11" x="300" y="194"> emitter to collector </text></g><g><text fill="#53d8a8" font-size="12" font-weight="bold" x="50" y="260"> Why Transistors Changed Everything: </text><text fill="#eee" font-size="10" x="50" y="280"> • 1000x smaller than vacuum tubes • 1000x less power • Millions can fit on a chip • Reliable (decades of life) • Cheap to manufacture </text></g></svg></p>
+<p>The transistor was the killer innovation that made modern computers possible. By the 1960s, transistors replaced tubes, and in the 1970s, millions of transistors were packed into single chips (integrated circuits). This exponential miniaturization continues today.</p>
+</section>
+<section id="digital-circuits">
+<h2>9. Digital Circuits</h2>
+<p>The fundamental building blocks of computers are circuits that perform specific functions. These can be combined to create arithmetic units, memory, and processors.</p>
+<h3>The Half Adder</h3>
+<p>A half adder adds two single-bit numbers and produces a sum and a carry-out:</p>
+<table><thead><tr><th scope="row">A</th><th scope="row">B</th><th scope="row">Sum</th><th scope="row">Carry</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>1</td><td>0</td><td>1</td></tr></tbody></table>
+<p>Sum = A XOR B (exclusive or), Carry = A AND B</p>
+<h3>The Full Adder</h3>
+<p>A full adder adds two bits plus a carry-in, producing sum and carry-out. A full adder is two half adders combined. By chaining full adders, we can add multi-bit numbers:</p>
+<p>Example: Adding 5 + 3 in binary 101 (5) + 011 (3) ------- 1000 (8) Bit 0: 1 + 1 = 10 (sum 0, carry 1) Bit 1: 0 + 1 + 1(carry) = 10 (sum 0, carry 1) Bit 2: 1 + 0 + 1(carry) = 10 (sum 0, carry 1) Bit 3: 0 + 0 + 1(carry) = 1 (sum 1, carry 0) Result: 1000 (8)</p>
+<h3>Half Adder Circuit</h3>
+<p><svg aria-label="Computing &amp; Logic diagram 7" height="320" viewBox="0 0 500 320" width="500" xmlns="http://www.w3.org/2000/svg"><text fill="#53d8a8" font-size="14" font-weight="bold" text-anchor="middle" x="250" y="25"> Half Adder Logic Circuit </text><g><text fill="#aaa" font-size="11" x="30" y="60"> Input A </text><line stroke="#e94560" stroke-width="2" x1="30" x2="60" y1="70" y2="70"></line><text fill="#aaa" font-size="11" x="30" y="110"> Input B </text><line stroke="#e94560" stroke-width="2" x1="30" x2="60" y1="120" y2="120"></line></g><g><text fill="#53d8a8" font-size="12" font-weight="bold" x="150" y="45"> Sum Path: A XOR B </text><line stroke="#e94560" stroke-width="2" x1="60" x2="90" y1="70" y2="70"></line><line stroke="#e94560" stroke-width="2" x1="60" x2="90" y1="120" y2="85"></line><path d="M 90 65 Q 95 65 105 77.5 Q 95 90 90 90 Q 95 85 95 70" fill="none" stroke="#53d8a8" stroke-width="2"></path><line stroke="#53d8a8" stroke-width="2" x1="105" x2="140" y1="77.5" y2="77.5"></line><circle cx="140" cy="77.5" fill="#53d8a8" r="3"></circle><text fill="#53d8a8" font-size="11" x="160" y="85"> Sum (XOR) </text></g><g><text fill="#53d8a8" font-size="12" font-weight="bold" x="150" y="155"> Carry Path: A AND B </text><line stroke="#e94560" stroke-width="2" x1="60" x2="90" y1="70" y2="160"></line><line stroke="#e94560" stroke-width="2" x1="60" x2="90" y1="120" y2="180"></line><path d="M 90 155 L 90 185 Q 110 185 110 170 Q 110 155 90 155" fill="none" stroke="#53d8a8" stroke-width="2"></path><line stroke="#53d8a8" stroke-width="2" x1="110" x2="140" y1="170" y2="170"></line><circle cx="140" cy="170" fill="#53d8a8" r="3"></circle><text fill="#53d8a8" font-size="11" x="160" y="178"> Carry (AND) </text></g><g><text fill="#53d8a8" font-size="12" font-weight="bold" x="50" y="240"> Half Adder Truth Table: </text><line stroke="#border" stroke-width="1" x1="50" x2="250" y1="250" y2="250"></line><text fill="#aaa" font-size="10" x="60" y="267"> A B | Sum Carry </text><line stroke="#border" stroke-width="1" x1="50" x2="250" y1="272" y2="272"></line><text fill="#eee" font-size="10" x="60" y="288"> 0 0 | 0 0 </text><text fill="#eee" font-size="10" x="60" y="305"> 0 1 | 1 0 </text><text fill="#eee" font-size="10" x="60" y="322"> 1 0 | 1 0 </text><text fill="#eee" font-size="10" x="180" y="288"> 1 1 | 0 1 </text></g></svg></p>
+<h3>Flip-Flops (Memory)</h3>
+<p>A flip-flop is a circuit that can hold a state (0 or 1) and maintain it indefinitely until changed. The simplest flip-flop uses two cross-coupled NAND gates:</p>
+<p>SET input ──┐ ├─ NAND ──┐ │ ├─ Q output (1) ┌──┤ │ │ └─ NAND ──┘ │ ↓ RESET input Q-bar output (0)</p>
+<p>When SET is triggered, Q becomes 1 and stays 1 even after the input goes away. When RESET is triggered, Q becomes 0. This is the foundation of digital memory.</p>
+<h3>Registers and Counters</h3>
+<p>Registers are groups of flip-flops that store multi-bit numbers. An 8-bit register can store any value from 0 to 255 and hold it until new data is loaded.</p>
+<p>Counters are circuits that increment or decrement automatically with each clock pulse, used for timing and sequencing operations.</p>
+<h3>Binary Arithmetic Reference</h3>
+<p>Key formulas for building computational circuits:</p>
+<p><strong>Sum of n bits:</strong> S(n) = Σ(b_i × 2^i) for i = 0 to n-1</p>
+<p><strong>Overflow detection:</strong> If result &gt; (2^n - 1), overflow flag set</p>
+<p><strong>Two's complement (negative numbers):</strong> Invert all bits, then add 1</p>
+<ul>
+<li>Example: -5 in 8-bit = NOT(00000101) + 1 = 11111010 + 1 = 11111011</li>
+</ul>
+<p><strong>Bit shift operations:</strong></p>
+<ul>
+<li>Left shift by k: multiply by 2^k</li>
+<li>Right shift by k: divide by 2^k (floor division for unsigned)</li>
+<li>Example: 1011₂ &lt;&lt; 2 = 101100₂ (11₁₀ × 4 = 44₁₀)</li>
+</ul>
+<div class="info-box">
+<h3>Building a 4-Bit Adder Circuit</h3>
+<p>To add two 4-bit numbers (0-15 each):</p>
+<ol>
+<li>Create 4 full adders, one for each bit position</li>
+<li>Connect carry output from bit i to carry input of bit i+1</li>
+<li>Input A₃A₂A₁A₀ and B₃B₂B₁B₀</li>
+<li>Output S₃S₂S₁S₀ (sum) and C_out (carry)</li>
+</ol>
+<p>Truth example: 7 + 5 = 12</p>
+<ul>
+<li>A = 0111₂, B = 0101₂</li>
+<li>Bit 0: 1 + 1 = 10₂ (S=0, C=1)</li>
+<li>Bit 1: 1 + 0 + 1 = 10₂ (S=0, C=1)</li>
+<li>Bit 2: 1 + 1 + 1 = 11₂ (S=1, C=1)</li>
+<li>Bit 3: 0 + 0 + 1 = 01₂ (S=1, C=0)</li>
+<li>Result: 1100₂ = 12₁₀</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="memory-storage">
+<h2>10. Memory &amp; Storage</h2>
+<p>A computer is useless without a way to store data—both during computation (memory) and permanently (storage).</p>
+<h3>Magnetic Core Memory</h3>
+<p>Before semiconductors, computers used magnetic core memory : tiny ferrite rings threaded on wires in a 3D grid. Each ring could be magnetized in one of two directions, storing a 1 or 0. Reading required a destructive read (the ring had to be rewritten), but cores were reliable and retained data without power.</p>
+<h3>Paper Tape and Punch Cards</h3>
+<p>Paper tape stores data as holes punched through tape. Readers detect hole presence (1) or absence (0). Early computers used paper tape for both programs and data input/output.</p>
+<p>Punch cards (IBM 80-column cards) stored one row of data per card. A deck of cards represented a complete program or dataset. Operators sorted cards by hand and fed them into readers.</p>
+<h3>Magnetic Tape and Disk</h3>
+<p>Magnetic tape works like audio tape: data is stored as magnetic patterns on a plastic tape. Access is sequential (you must wind through the tape to find data).</p>
+<p>Magnetic disk (hard drive concept) stores data on a spinning platter's surface. Access is random (the read head can jump to any position). Disks are faster than tape for data retrieval.</p>
+<h3>Magnetic Core Memory Construction</h3>
+<p>A single magnetic core (ferrite ring, typically 1-3mm diameter) could store one bit. A 4K memory (4,096 bits) required:</p>
+<ul>
+<li>4,096 cores arranged in a 64×64 grid</li>
+<li>2 select wires through each core (x and y address)</li>
+<li>1 read wire through each core</li>
+<li>1 write wire threading through all cores</li>
+</ul>
+<p>Access time: typically 1-10 microseconds (much slower than modern RAM).</p>
+<div class="note">
+<p><strong>Memory vs. Storage:</strong></p>
+<ul>
+<li><strong>Memory (RAM):</strong> Fast, volatile (loses data when powered off), small capacity (gigabytes to terabytes in modern systems)</li>
+<li><strong>Storage:</strong> Slower, non-volatile (retains data when powered off), large capacity (terabytes to exabytes)</li>
+</ul>
+<p>Formula for addressing capacity: <strong>Capacity (bits) = 2^(address lines)</strong></p>
+<ul>
+<li>Example: 12 address lines = 2^12 = 4,096 addressable locations</li>
+</ul>
+</div>
+</section>
+<section id="programming">
+<h2>11. Programming Fundamentals</h2>
+<p>A computer without instructions is just a pile of components. Programming is the art of encoding instructions that tell the computer what to do.</p>
+<h3>What is a Program?</h3>
+<p>A program is a sequence of instructions executed one after another (with jumps for loops and conditionals). Each instruction tells the CPU to:</p>
+<ul>
+<li>Load data from memory into a register</li>
+<li>Perform arithmetic or logic on data in registers</li>
+<li>Store results back to memory</li>
+<li>Jump to a different instruction (if a condition is met)</li>
+</ul>
+<h3>Machine Code vs. Assembly Language</h3>
+<p>Machine code is the raw language of the CPU: sequences of 1s and 0s (or hex numbers). Example:</p>
+<p>10110000 01100001 (Load 97 into register A) 01100100 11000100 (Add 196 to register A) 10010100 (Store register A to memory)</p>
+<p>Assembly language uses mnemonics (short words) to represent instructions, making programming more human-readable:</p>
+<p>MOV A, 61h ; Load 97 (0x61) into register A ADD A, C4h ; Add 196 (0xC4) to A MOV [100h], A ; Store A to memory address 0x100</p>
+<p>An assembler program converts assembly code to machine code. Higher-level languages (like C or Python) compile to assembly or machine code.</p>
+<h3>Algorithms</h3>
+<p>An algorithm is a step-by-step procedure to solve a problem. Examples:</p>
+<ul>
+<li>Sorting (Bubble Sort): Compare adjacent elements, swap if out of order, repeat until sorted</li>
+<li>Searching (Binary Search): In a sorted list, divide in half and check if target is higher or lower, repeat until found</li>
+<li>Arithmetic: Step-by-step procedures like long division or square root calculation</li>
+</ul>
+<h3>Worked Example: Bubble Sort</h3>
+<p>Sorting the array [5, 2, 8, 1] in ascending order:</p>
+<p><strong>Pass 1:</strong> [5,2,8,1] → [2,5,8,1] → [2,5,1,8] (largest bubbled to end)
+<strong>Pass 2:</strong> [2,5,1,8] → [2,1,5,8] (second-largest in place)
+<strong>Pass 3:</strong> [2,1,5,8] → [1,2,5,8] (array now sorted)</p>
+<p><strong>Algorithm complexity:</strong> O(n²) comparisons in worst case (n = array size)</p>
+<p>For a survival scenario, sorting is essential for: maintaining sensor readings, organizing data by priority, processing signals in order. A simple bubble sort is easy to implement in assembly language.</p>
+<h3>Flowcharts</h3>
+<p>A flowchart is a visual representation of an algorithm:</p>
+<p><svg aria-label="Computing &amp; Logic diagram 8" height="450" viewBox="0 0 400 450" width="400" xmlns="http://www.w3.org/2000/svg"><text fill="#53d8a8" font-size="14" font-weight="bold" text-anchor="middle" x="200" y="25"> Flowchart: Finding the Maximum of Two Numbers </text><g><ellipse cx="200" cy="60" fill="none" rx="40" ry="25" stroke="#53d8a8" stroke-width="2"></ellipse><text fill="#eee" font-size="12" text-anchor="middle" x="200" y="65"> START </text></g><line marker-end="url(#arrowhead)" stroke="#aaa" stroke-width="2" x1="200" x2="200" y1="85" y2="110"></line><g><path d="M 160 130 L 200 110 L 240 130 L 200 150 Z" fill="none" stroke="#e94560" stroke-width="2"></path><text fill="#eee" font-size="11" text-anchor="middle" x="200" y="135"> Input: A, B </text></g><line stroke="#aaa" stroke-width="2" x1="200" x2="200" y1="150" y2="175"></line><g><path d="M 200 175 L 260 220 L 200 265 L 140 220 Z" fill="none" stroke="#53d8a8" stroke-width="2"></path><text fill="#eee" font-size="11" text-anchor="middle" x="200" y="225"> A &gt; B? </text></g><line stroke="#aaa" stroke-width="2" x1="260" x2="310" y1="220" y2="220"></line><text fill="#aaa" font-size="10" x="280" y="210"> YES </text><line stroke="#aaa" stroke-width="2" x1="200" x2="200" y1="265" y2="290"></line><text fill="#aaa" font-size="10" x="210" y="280"> NO </text><g><path d="M 310 200 L 350 220 L 310 240 L 270 220 Z" fill="none" stroke="#e94560" stroke-width="2"></path><text fill="#eee" font-size="11" text-anchor="middle" x="310" y="225"> Max = A </text></g><line stroke="#aaa" stroke-width="2" x1="310" x2="310" y1="240" y2="350"></line><line stroke="#aaa" stroke-width="2" x1="310" x2="200" y1="350" y2="350"></line><g><path d="M 160 310 L 200 290 L 240 310 L 200 330 Z" fill="none" stroke="#e94560" stroke-width="2"></path><text fill="#eee" font-size="11" text-anchor="middle" x="200" y="315"> Max = B </text></g><line stroke="#aaa" stroke-width="2" x1="200" x2="200" y1="330" y2="350"></line><g><ellipse cx="200" cy="375" fill="none" rx="40" ry="25" stroke="#53d8a8" stroke-width="2"></ellipse><text fill="#eee" font-size="12" text-anchor="middle" x="200" y="380"> END </text></g><defs><marker id="arrowhead" markerheight="10" markerwidth="10" orient="auto" refx="5" refy="5"><polygon fill="#aaa" points="0 0, 10 5, 0 10"></polygon></marker></defs></svg></p>
+<p>Flowcharts help visualize program logic before writing code. Modern programming uses pseudocode (English-like descriptions) or directly writes in high-level languages, but the underlying concepts remain the same: sequences, conditionals, and loops.</p>
+</section>
+<section id="path-forward">
+<h2>12. The Path Forward</h2>
+<p>We've traced the path from logic gates to digital circuits. The next leap is scale: packing millions or billions of transistors onto a single chip. This requires overcoming enormous engineering challenges.</p>
+<h3>Integrated Circuits (ICs)</h3>
+<p>An integrated circuit puts many transistors on a single chip of silicon. Early ICs (1960s) had dozens of transistors. Modern processors have billions.</p>
+<h3>Moore's Law</h3>
+<p>In 1965, Gordon Moore observed that the number of transistors on a chip doubled approximately every 2 years. This trend, known as Moore's Law , held for decades:</p>
+<p>1971: Intel 4004 - 2,300 transistors 1982: Intel 286 - 134,000 transistors 2003: Intel Pentium 4 - 42,000,000 transistors 2023: Modern CPUs - 50,000,000,000+ transistors</p>
+<p>This exponential growth is ending (physical limits of silicon), but it powered the computer revolution.</p>
+<h3>What's Needed: The Manufacturing Challenge</h3>
+<p>To build modern chips, you need:</p>
+<div class="note">
+<h4>1. Pure Silicon</h4>
+<p>Silicon must be 99.9999999% pure. Impurities would ruin the chip. This requires sophisticated purification processes.</p>
+</div>
+<div class="note">
+<h4>2. Crystal Growth</h4>
+<p>Pure silicon is grown into large single crystals (ingots) under controlled conditions, then sliced into wafers.</p>
+</div>
+<div class="note">
+<h4>3. Photolithography</h4>
+<p>The key manufacturing step. A pattern is projected onto a light-sensitive chemical on the wafer, then developed like a photograph. This creates tiny transistor features (now measured in nanometers—billionths of a meter).</p>
+</div>
+<div class="note">
+<h4>4. Doping and Etching</h4>
+<p>Dopants (impurities) are added to create P and N regions. Plasma etching removes material to form trenches and connections.</p>
+</div>
+<div class="note">
+<h4>5. Clean Rooms</h4>
+<p>A single dust particle can ruin a chip. Manufacturing occurs in cleanrooms with filtered air, controlled temperature, and workers in protective suits. Cleanroom technology is extremely expensive.</p>
+</div>
+<h3>The Knowledge Needed to Rebuild</h3>
+<p>To reconstruct computing from scratch, you would need:</p>
+<ul>
+<li>Deep understanding of semiconductor physics and materials science</li>
+<li>Expertise in photolithography and vacuum systems</li>
+<li>Precision engineering for mechanical and thermal control</li>
+<li>Software stack: assemblers, compilers, operating systems</li>
+<li>Decades of development time and billions in capital investment</li>
+</ul>
+<h3>A More Realistic Path Forward</h3>
+<p>Rather than starting from transistors, a recovering civilization would likely:</p>
+<ol>
+<li>Redevelop relay logic (mechanical but understandable)</li>
+<li>Progress to vacuum tubes, then discrete transistors</li>
+<li>Build simple digital circuits (adders, registers, memory)</li>
+<li>Construct a basic computer from these parts</li>
+<li>Develop assembly language and basic software</li>
+<li>Eventually, if resources allow, move toward integrated circuits</li>
+</ol>
+<p>The knowledge is the barrier, not the materials. Silicon is abundant, but the expertise to purify it, understand photolithography, and manage cleanroom processes took humanity decades to develop.</p>
+</section>
+<section id="practical-salvage">
+<h2>13. Practical Salvage Strategy for Computing Reconstruction</h2>
+<p>If rebuilding computing capability, prioritize in this order:</p>
+<p><strong>Stage 1 - Basic Circuits (achievable in months):</strong></p>
+<ul>
+<li>Salvage relays and build simple AND/OR gates</li>
+<li>Construct a 4-bit binary counter using relay logic</li>
+<li>Build a basic adding circuit (half adder or full adder)</li>
+<li>Create a simple toggle switch memory using latching relays</li>
+</ul>
+<p><strong>Stage 2 - Elementary Computer (achievable in 1-2 years with a small team):</strong></p>
+<ul>
+<li>Assemble 16-64 relays into a programmable calculator</li>
+<li>Develop punched-card or paper-tape input mechanism (borrow Jacquard loom principles)</li>
+<li>Create magnetic core memory from salvaged iron powder and wire</li>
+<li>Build simple control circuits for conditional branching</li>
+</ul>
+<p><strong>Stage 3 - Software Stack (achievable in parallel):</strong></p>
+<ul>
+<li>Write assembly language documentation (pen and paper if needed)</li>
+<li>Create an assembler (manual first, then automated once computer exists)</li>
+<li>Develop basic algorithms for common tasks (sorting, searching, arithmetic)</li>
+<li>Document your instruction set for future programmers</li>
+</ul>
+<h3>Critical Skill Bottlenecks</h3>
+<p><strong>Electronic Understanding:</strong> Before salvaging, learn how relays, solenoids, and magnetic circuits work. A single misunderstood relay can waste months.</p>
+<p><strong>Mechanical Precision:</strong> Relay logic requires precise electrical connections. Poor solder joints or loose wiring cause intermittent failures that are maddeningly difficult to debug.</p>
+<p><strong>Discipline in Design:</strong> Document every connection, every relay assignment. A schematic saved now is worth a week of troubleshooting later.</p>
+<p><strong>Mathematical Foundation:</strong> Understanding binary, Boolean logic, and simple algorithms is non-negotiable. These concepts are <em>harder</em> than the electronics—master them first.</p>
+</section>
+<h2 id="summary-the-path-from-abacus-to-computer">Summary: The Path from Abacus to Computer</h2>
+<p>Computing is fundamentally about representation (numbers, binary), manipulation (logic gates), and control (stored programs). The evolution from tally marks to modern processors is a journey of:</p>
+<ul>
+<li><strong>Abstraction:</strong> From physical objects (beads, gears) to abstract concepts (bits, algorithms)</li>
+<li><strong>Automation:</strong> From manual calculation to machines that follow encoded instructions</li>
+<li><strong>Speed:</strong> From mechanical (seconds per calculation) to electronic (billions per second)</li>
+<li><strong>Scale:</strong> From individual devices to billions of transistors on a chip</li>
+</ul>
+<p>Each step—abacus, mechanical calculator, relay computer, vacuum tube computer, transistor computer, integrated circuit—built on the previous. Understanding this progression is essential for anyone seeking to rebuild civilization's computing foundation.
+:::</p>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="mathematics.html">Mathematics &amp; Measurement</a>
+<a href="precision-measurement.html">Precision Measurement Standards</a>
+<a href="precision-measurement-tools.html">Precision Measurement Tools</a>
+<a href="mechanical-drawing.html">Technical Drawing &amp; Drafting</a>
+<a href="surveying-land-management.html">Surveying &amp; Land Management</a>
+<a href="slide-rule-nomography.html">Slide Rules &amp; Nomography</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

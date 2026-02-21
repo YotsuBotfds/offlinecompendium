@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screenshot Generator</title>
+    <!-- html2canvas bundled locally -->
+    <script src="html2canvas.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a1a0a 0%, #1a2e1a 50%, #2d2416 100%);
+            color: #f5f0e8;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .header {
+            max-width: 1400px;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #d4a574;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #c0b5a0;
+            margin-bottom: 1.5rem;
+        }
+
+        .controls {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(45, 36, 22, 0.6);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #d4a574;
+        }
+
+        .control-group label {
+            font-weight: 600;
+            color: #d4a574;
+        }
+
+        .control-group select {
+            padding: 0.5rem 1rem;
+            background: #1a2e1a;
+            color: #f5f0e8;
+            border: 1px solid #d4a574;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .control-group select:hover {
+            border-color: #e8b896;
+        }
+
+        .toggle-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .toggle-btn {
+            padding: 0.5rem 1rem;
+            background: #1a2e1a;
+            color: #f5f0e8;
+            border: 1px solid #d4a574;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn.active {
+            background: #d4a574;
+            color: #1a2e1a;
+        }
+
+        .toggle-btn:hover {
+            border-color: #e8b896;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #d4a574;
+            color: #1a2e1a;
+        }
+
+        .btn-primary:hover {
+            background: #e8b896;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px color-mix(in srgb, var(--accent) 30%, transparent);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #d4a574;
+            border: 2px solid #d4a574;
+        }
+
+        .btn-secondary:hover {
+            background: color-mix(in srgb, var(--accent) 10%, transparent);
+            border-color: #e8b896;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .screenshots-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            padding: 0 1rem;
+        }
+
+        .screenshot-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .screenshot-frame {
+            position: relative;
+            width: 100%;
+            max-width: 360px;
+            aspect-ratio: 1080 / 1920;
+            background: #000;
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), inset 0 0 0 12px #1a1a1a;
+            overflow: hidden;
+            border: 8px solid #1a1a1a;
+        }
+
+        .screenshot-frame.ios {
+            aspect-ratio: 1290 / 2796;
+            border-radius: 50px;
+            padding: 14px;
+            border: 10px solid #1a1a1a;
+        }
+
+        .screenshot-content {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a2e1a 0%, #2d2416 100%);
+            border-radius: 32px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .screenshot-content.ios {
+            border-radius: 40px;
+        }
+
+        .screenshot-caption {
+            text-align: center;
+            color: #d4a574;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        /* Status bar styling */
+        .status-bar {
+            background: #0a0a0a;
+            height: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+            font-size: 0.75rem;
+            color: #f5f0e8;
+            border-bottom: 1px solid #2d2416;
+        }
+
+        /* Content area */
+        .content-area {
+            flex: 1;
+            overflow: hidden;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Home screen grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            flex: 1;
+        }
+
+        .category-card {
+            background: #2d2416;
+            border: 1px solid #3d3420;
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            background: #3d3420;
+            border-color: #d4a574;
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-name {
+            color: #d4a574;
+            font-weight: 600;
+            font-size: 0.85rem;
+            font-family: Georgia, serif;
+        }
+
+        /* Guide page layout */
+        .guide-layout {
+            display: flex;
+            gap: 1rem;
+            height: 100%;
+        }
+
+        .guide-toc {
+            width: 90px;
+            background: #1a2e1a;
+            border-right: 1px solid #3d3420;
+            padding: 1rem 0.75rem;
+            font-size: 0.65rem;
+            overflow-y: auto;
+            color: #c0b5a0;
+        }
+
+        .toc-item {
+            padding: 0.5rem 0.25rem;
+            border-left: 2px solid transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-item.active {
+            border-left-color: #d4a574;
+            color: #d4a574;
+        }
+
+        .guide-main {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .guide-title {
+            color: #d4a574;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            font-family: Georgia, serif;
+        }
+
+        .guide-section-title {
+            color: #d4a574;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-top: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-family: Georgia, serif;
+        }
+
+        .guide-text {
+            color: #f5f0e8;
+            font-size: 0.75rem;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            font-family: Georgia, serif;
+        }
+
+        .diagram-placeholder {
+            background: #1a2e1a;
+            border: 2px dashed #3d3420;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            text-align: center;
+            color: #c0b5a0;
+            font-size: 0.7rem;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Progress tracking screen */
+        .progress-container {
+            padding: 1rem 0;
+        }
+
+        .progress-title {
+            color: #d4a574;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            font-family: Georgia, serif;
+        }
+
+        .progress-bar-wrapper {
+            margin-bottom: 1rem;
+        }
+
+        .progress-label {
+            color: #c0b5a0;
+            font-size: 0.7rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #1a2e1a;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #3d3420;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #d4a574 0%, #e8b896 100%);
+            transition: width 0.5s ease;
+        }
+
+        .reading-phases {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .phase-item {
+            background: #2d2416;
+            border-left: 3px solid #3d3420;
+            border-radius: 6px;
+            padding: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .phase-item.completed {
+            background: #1a2e1a;
+            border-left-color: #d4a574;
+        }
+
+        .phase-name {
+            color: #f5f0e8;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: Georgia, serif;
+        }
+
+        .phase-check {
+            color: #d4a574;
+            font-weight: bold;
+        }
+
+        /* Search screen */
+        .search-bar {
+            background: #2d2416;
+            border: 1px solid #3d3420;
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .search-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #f5f0e8;
+            font-size: 0.9rem;
+            font-family: Georgia, serif;
+        }
+
+        .search-input::placeholder {
+            color: #c0b5a0;
+        }
+
+        .search-results {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .result-item {
+            background: #2d2416;
+            border-left: 3px solid #d4a574;
+            border-radius: 6px;
+            padding: 0.75rem;
+        }
+
+        .result-title {
+            color: #d4a574;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+            font-family: Georgia, serif;
+        }
+
+        .result-snippet {
+            color: #c0b5a0;
+            font-size: 0.7rem;
+            line-height: 1.3;
+            font-family: Georgia, serif;
+        }
+
+        /* Quick reference cards */
+        .quick-ref-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+        }
+
+        .quick-ref-card {
+            background: #2d2416;
+            border-left: 4px solid #d4a574;
+            border-radius: 8px;
+            padding: 0.75rem;
+        }
+
+        .quick-ref-title {
+            color: #d4a574;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            font-family: Georgia, serif;
+        }
+
+        .quick-ref-content {
+            color: #f5f0e8;
+            font-size: 0.7rem;
+            line-height: 1.4;
+            font-family: Georgia, serif;
+        }
+
+        /* Offline indicator */
+        .offline-indicator {
+            background: #1a2e1a;
+            border: 2px solid #d4a574;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .offline-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .offline-text {
+            color: #d4a574;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+            font-family: Georgia, serif;
+        }
+
+        .offline-subtext {
+            color: #c0b5a0;
+            font-size: 0.75rem;
+            font-family: Georgia, serif;
+        }
+
+        /* Instructions */
+        .instructions {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding: 2rem;
+            background: rgba(45, 36, 22, 0.4);
+            border: 1px solid #3d3420;
+            border-radius: 12px;
+            color: #c0b5a0;
+        }
+
+        .instructions h2 {
+            color: #d4a574;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .instructions ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .instructions li {
+            margin-bottom: 0.75rem;
+        }
+
+        .instructions code {
+            background: #1a2e1a;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d4a574;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .screenshots-container {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .controls {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Loading state */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .download-status {
+            text-align: center;
+            color: #d4a574;
+            margin-top: 1rem;
+            font-weight: 600;
+            min-height: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Screenshot Generator</h1>
+        <p>Create professional App Store marketing screenshots</p>
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <label>Platform:</label>
+            <div class="toggle-group">
+                <button class="toggle-btn active" data-size="play-store">Google Play (1080x1920)</button>
+                <button class="toggle-btn" data-size="ios">Apple App Store (1290x2796)</button>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="downloadAll()">Download All Screenshots</button>
+            <button class="btn btn-secondary" onclick="downloadSingle('all')">Preview Mode</button>
+        </div>
+    </div>
+
+    <div id="download-status" class="download-status"></div>
+
+    <div class="screenshots-container" id="screenshots-container">
+        <!-- Screenshot 1: Home Grid -->
+        <div class="screenshot-wrapper">
+            <div class="screenshot-frame" data-screenshot="1">
+                <div class="screenshot-content">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <span>●●●●●</span>
+                    </div>
+                    <div class="content-area">
+                        <div style="margin-bottom: 0.75rem;">
+                            <div style="color: #d4a574; font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem; font-family: Georgia, serif;">Offline Knowledge Compendium</div>
+                            <div style="color: #c0b5a0; font-size: 0.8rem; font-family: Georgia, serif;">480 Survival Guides</div>
+                            <div style="color: #8b7355; font-size: 0.7rem; font-family: Georgia, serif; margin-top: 0.3rem;">Educational Reference Material</div>
+                        </div>
+                        <div class="grid-container">
+                            <div class="category-card">
+                                <div class="category-icon">🏕️</div>
+                                <div class="category-name">Survival</div>
+                            </div>
+                            <div class="category-card">
+                                <div class="category-icon">⚕️</div>
+                                <div class="category-name">Medical</div>
+                            </div>
+                            <div class="category-card">
+                                <div class="category-icon">🌾</div>
+                                <div class="category-name">Agriculture</div>
+                            </div>
+                            <div class="category-card">
+                                <div class="category-icon">🏗️</div>
+                                <div class="category-name">Building</div>
+                            </div>
+                            <div class="category-card">
+                                <div class="category-icon">🔨</div>
+                                <div class="category-name">Crafts</div>
+                            </div>
+                            <div class="category-card">
+                                <div class="category-icon">⚒️</div>
+                                <div class="category-name">Metalwork</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screenshot-caption">480 Survival Guides, 100% Offline</div>
+        </div>
+
+        <!-- Screenshot 2: Guide Page -->
+        <div class="screenshot-wrapper">
+            <div class="screenshot-frame" data-screenshot="2">
+                <div class="screenshot-content">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <span>●●●●●</span>
+                    </div>
+                    <div class="content-area">
+                        <div class="guide-layout">
+                            <div class="guide-toc">
+                                <div class="toc-item active">Overview</div>
+                                <div class="toc-item">Materials</div>
+                                <div class="toc-item">Steps</div>
+                                <div class="toc-item">Tips</div>
+                                <div class="toc-item">Safety</div>
+                            </div>
+                            <div class="guide-main">
+                                <div class="guide-title">Water Purification</div>
+                                <div class="guide-text">Learn to purify drinking water using multiple techniques suited for survival situations.</div>
+
+                                <div class="guide-section-title">Boiling Method</div>
+                                <div class="guide-text">The most effective method: bring water to a rolling boil for at least one minute.</div>
+
+                                <div class="diagram-placeholder">📊 Diagram: Boiling temperatures</div>
+
+                                <div class="guide-section-title">Filtering</div>
+                                <div class="guide-text">Create a sand and gravel filter using layered materials.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screenshot-caption">Illustrated Step-by-Step Guides</div>
+        </div>
+
+        <!-- Screenshot 3: Progress Tracking -->
+        <div class="screenshot-wrapper">
+            <div class="screenshot-frame" data-screenshot="3">
+                <div class="screenshot-content">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <span>●●●●●</span>
+                    </div>
+                    <div class="content-area">
+                        <div class="progress-container">
+                            <div class="progress-title">Your Learning Journey</div>
+                            <div style="color: #c0b5a0; font-size: 0.75rem; margin-bottom: 1rem; font-family: Georgia, serif;">24 of 32 guides completed</div>
+
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-label">Overall Progress</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-title" style="margin-top: 1rem; font-size: 0.95rem;">Reading Phases</div>
+                            <div class="reading-phases">
+                                <div class="phase-item completed">
+                                    <span class="phase-name">Phase 0: Foundations</span>
+                                    <span class="phase-check">✓</span>
+                                </div>
+                                <div class="phase-item completed">
+                                    <span class="phase-name">Phase 1: Survival Skills</span>
+                                    <span class="phase-check">✓</span>
+                                </div>
+                                <div class="phase-item">
+                                    <span class="phase-name">Phase 2: Advanced</span>
+                                    <span style="color: #c0b5a0; font-size: 0.7rem;">6/8</span>
+                                </div>
+                                <div class="phase-item">
+                                    <span class="phase-name">Phase 3: Mastery</span>
+                                    <span style="color: #c0b5a0; font-size: 0.7rem;">0/8</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screenshot-caption">Track Your Learning Journey</div>
+        </div>
+
+        <!-- Screenshot 4: Search -->
+        <div class="screenshot-wrapper">
+            <div class="screenshot-frame" data-screenshot="4">
+                <div class="screenshot-content">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <span>●●●●●</span>
+                    </div>
+                    <div class="content-area">
+                        <div class="search-bar">
+                            <span style="color: #d4a574;">🔍</span>
+                            <input type="text" class="search-input" placeholder="Search 480 guides..." value="water">
+                        </div>
+
+                        <div style="color: #d4a574; font-weight: 700; margin-bottom: 0.75rem; font-size: 0.85rem; font-family: Georgia, serif;">Results for "water"</div>
+
+                        <div class="search-results">
+                            <div class="result-item">
+                                <div class="result-title">Water Purification</div>
+                                <div class="result-snippet">Boiling, filtering, and chemical treatment methods...</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-title">Finding Water</div>
+                                <div class="result-snippet">Locating reliable water sources in any environment...</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-title">Water Storage</div>
+                                <div class="result-snippet">Proper containers and preservation techniques...</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-title">Hydration</div>
+                                <div class="result-snippet">Understanding water needs and dehydration prevention...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screenshot-caption">Search Anything Instantly</div>
+        </div>
+
+        <!-- Screenshot 5: Emergency Reference -->
+        <div class="screenshot-wrapper">
+            <div class="screenshot-frame" data-screenshot="5">
+                <div class="screenshot-content">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <span>●●●●●</span>
+                    </div>
+                    <div class="content-area">
+                        <div style="margin-bottom: 0.75rem;">
+                            <div style="color: #d4a574; font-weight: 700; font-size: 1.1rem; font-family: Georgia, serif;">Emergency Quick Ref</div>
+                            <div style="color: #d44a4a; font-size: 0.65rem; font-family: Georgia, serif; margin-top: 0.3rem;">For educational reference only. Not a substitute for certified first aid training.</div>
+                        </div>
+
+                        <div class="quick-ref-container">
+                            <div class="quick-ref-card">
+                                <div class="quick-ref-title">⚠️ Hypothermia Warning</div>
+                                <div class="quick-ref-content">Shivering, confusion, slurred speech. Move to shelter immediately.</div>
+                            </div>
+                            <div class="quick-ref-card">
+                                <div class="quick-ref-title">🩹 First Aid Priority</div>
+                                <div class="quick-ref-content">ABC: Airway, Breathing, Circulation. Apply direct pressure to bleeding.</div>
+                            </div>
+                            <div class="quick-ref-card">
+                                <div class="quick-ref-title">☠️ Poisoning</div>
+                                <div class="quick-ref-content">Never induce vomiting. Call for help. Identify the substance.</div>
+                            </div>
+                            <div class="quick-ref-card">
+                                <div class="quick-ref-title">🔥 Severe Burns</div>
+                                <div class="quick-ref-content">Cool burn with water. Cover with clean cloth. Seek medical help.</div>
+                            </div>
+                            <div class="quick-ref-card">
+                                <div class="quick-ref-title">🌡️ High Fever</div>
+                                <div class="quick-ref-content">Cool compress. Hydrate. Monitor temperature. Seek medical attention.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screenshot-caption">Emergency Quick Reference</div>
+        </div>
+
+        <!-- Screenshot 6: Offline Capability -->
+        <div class="screenshot-wrapper">
+            <div class="screenshot-frame" data-screenshot="6">
+                <div class="screenshot-content">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <span>✈️ ●●●●●</span>
+                    </div>
+                    <div class="content-area">
+                        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; padding: 2rem 1rem; text-align: center;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">✈️</div>
+                            <div style="color: #d4a574; font-weight: 700; font-size: 1.2rem; margin-bottom: 1rem; font-family: Georgia, serif;">Airplane Mode Active</div>
+                            <div style="color: #f5f0e8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; font-family: Georgia, serif;">
+                                All 480 guides are fully available offline. No internet connection needed.
+                            </div>
+
+                            <div class="offline-indicator">
+                                <div class="offline-text">✓ Fully Functional</div>
+                                <div class="offline-subtext">Search, read, track progress, and more</div>
+                            </div>
+
+                            <div style="background: #2d2416; border-radius: 8px; padding: 1rem; border-left: 3px solid #d4a574;">
+                                <div style="color: #d4a574; font-weight: 600; font-size: 0.85rem; margin-bottom: 0.5rem; font-family: Georgia, serif;">Download Size: 18 MB</div>
+                                <div style="color: #c0b5a0; font-size: 0.75rem; font-family: Georgia, serif;">One-time download includes everything</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screenshot-caption">Works Without Internet</div>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h2>How to Use</h2>
+        <ol>
+            <li><strong>Select Platform:</strong> Choose between Google Play (1080x1920) or Apple App Store (1290x2796) dimensions.</li>
+            <li><strong>Preview:</strong> The screenshots will display in the selected format. Each one shows a different feature of the Offline Knowledge Compendium app.</li>
+            <li><strong>Download All:</strong> Click the "Download All Screenshots" button to export all 6 screenshots as PNG images. They will be saved to your Downloads folder with names like <code>compendium-screenshot-1.png</code>, <code>compendium-screenshot-2.png</code>, etc.</li>
+            <li><strong>Individual Export:</strong> Each screenshot can be downloaded individually by right-clicking the phone frame and selecting "Save image as".</li>
+            <li><strong>Dimensions:</strong> The exported images are full resolution and ready for upload to Google Play Console or Apple App Store Connect.</li>
+            <li><strong>Customization:</strong> Edit the content inside the phone frames by modifying the HTML directly if needed.</li>
+        </ol>
+        <p><strong>Note:</strong> Screenshots are generated using html2canvas and may look slightly different when printed vs. on screen due to rendering differences. Preview before uploading to app stores.</p>
+    </div>
+
+    <script>
+        let currentSize = 'play-store';
+
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentSize = this.dataset.size;
+                updateScreenshots();
+            });
+        });
+
+        function updateScreenshots() {
+            const container = document.getElementById('screenshots-container');
+            const frames = container.querySelectorAll('.screenshot-frame');
+
+            frames.forEach(frame => {
+                if (currentSize === 'ios') {
+                    frame.classList.add('ios');
+                    frame.style.maxWidth = '100%';
+                } else {
+                    frame.classList.remove('ios');
+                    frame.style.maxWidth = '360px';
+                }
+                // Reflow to update aspect ratio
+                frame.offsetHeight;
+            });
+        }
+
+        async function downloadAll() {
+            const statusEl = document.getElementById('download-status');
+            const frames = document.querySelectorAll('.screenshot-frame');
+            const button = event.target;
+
+            button.disabled = true;
+            statusEl.textContent = 'Preparing screenshots...';
+
+            try {
+                for (let i = 0; i < frames.length; i++) {
+                    const frame = frames[i];
+                    const screenshotNum = i + 1;
+
+                    statusEl.textContent = `Generating screenshot ${screenshotNum} of 6...`;
+
+                    const canvas = await html2canvas(frame, {
+                        backgroundColor: '#000000',
+                        scale: 2,
+                        useCORS: true,
+                        allowTaint: true,
+                        logging: false,
+                        ignoreElements: (element) => {
+                            return element.classList && element.classList.contains('screenshot-caption');
+                        }
+                    });
+
+                    const link = document.createElement('a');
+                    link.href = canvas.toDataURL('image/png');
+                    link.download = `compendium-screenshot-${screenshotNum}.png`;
+                    link.click();
+
+                    // Small delay between downloads
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                }
+
+                statusEl.textContent = '✓ All screenshots downloaded successfully!';
+                setTimeout(() => {
+                    statusEl.textContent = '';
+                }, 3000);
+            } catch (error) {
+                statusEl.textContent = '✗ Error generating screenshots: ' + error.message;
+                console.error(error);
+            } finally {
+                button.disabled = false;
+            }
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateScreenshots();
+        });
+    </script>
+
+    <div style="text-align: center; padding: 2rem 1rem; margin-top: 2rem; border-top: 1px solid color-mix(in srgb, var(--accent) 20%, transparent); font-size: 0.85rem; color: var(--muted);">
+        <a href="../disclaimer.html" style="color: #d4a574; text-decoration: none;">Important Disclaimer</a> · <a href="../terms.html" style="color: #d4a574; text-decoration: none;">Terms of Use</a>
+    </div>
+</body>
+</html>

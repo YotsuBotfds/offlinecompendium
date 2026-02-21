@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/electrical-rectification-conversion.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrical Rectification &amp; AC/DC Conversion - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.rect-table { width: 100%; margin: 1rem 0; }
+.rect-table th, .rect-table td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
+.circuit-box { margin: 1rem 0; padding: 1rem; background: var(--card); border-left: 4px solid var(--accent); }
+
+</style>
+<meta name="description" content="Diodes, half-wave and full-wave rectification, bridge rectifiers, voltage regulation, transformers">
+<link rel="canonical" href="https://zerotoherohero.com/guides/electrical-rectification-conversion.html">
+<meta property="og:title" content="Electrical Rectification &amp; AC/DC Conversion">
+<meta property="og:description" content="Diodes, half-wave and full-wave rectification, bridge rectifiers, voltage regulation, transformers">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Foundational Sciences", "item": "https://zerotoherohero.com/#sec-sciences"},
+    {"@type": "ListItem", "position": 3, "name": "Electrical Rectification &amp; AC/DC Conversion", "item": "https://zerotoherohero.com/guides/electrical-rectification-conversion.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Electrical Rectification &amp; AC/DC Conversion",
+  "description": "Diodes, half-wave and full-wave rectification, bridge rectifiers, voltage regulation, transformers",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-428">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-sciences">Foundational Sciences</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Electrical Rectification &amp; AC/DC Conversion</span>
+</nav>
+<header>
+<h1>Electrical Rectification &amp; AC/DC Conversion</h1>
+<p class="subtitle">Diodes, half-wave and full-wave rectification, bridge rectifiers, voltage regulation, transformers</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●●○</span>
+<span class="read-time">📖 ~17 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#ac-vs-dc-basics">AC vs. DC Basics</a></li>
+<li><a href="#diode-principles">Diode Principles</a></li>
+<li><a href="#half-wave-rectification">Half-Wave Rectification</a></li>
+<li><a href="#full-wave-rectification">Full-Wave Rectification</a></li>
+<li><a href="#capacitor-smoothing">Capacitor Filtering (Smoothing)</a></li>
+<li><a href="#voltage-regulation">Voltage Regulation</a></li>
+<li><a href="#transformers">Transformers: Voltage and Current Conversion</a></li>
+<li><a href="#inverters">Inverters: DC to AC Conversion</a></li>
+<li><a href="#salvaging-components">Salvaging Rectifier Components</a></li>
+<li><a href="#practical-circuit">Practical Example: Simple 5V Power Supply</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<p>Converting between AC (alternating current) and DC (direct current) is fundamental to modern power systems. This guide covers the electronics of rectification, voltage regulation, and practical circuit construction.</p>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="AC Rectification Waveforms and Bridge Rectifier">
+  <defs>
+    <style>
+      .rect-label { font-family: Arial, sans-serif; font-size: 12px; fill: var(--text); }
+      .rect-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: var(--text); }
+      .wave { stroke: var(--accent); stroke-width: 2.5; fill: none; }
+      .wave-ref { stroke: var(--muted); stroke-width: 1; fill: none; stroke-dasharray: 3,3; }
+      .component { stroke: var(--text); stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="var(--bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="30" class="rect-title" text-anchor="middle">AC Rectification &amp; Full-Wave Bridge Rectifier</text>
+
+  <!-- Input AC waveform -->
+  <text x="50" y="65" class="rect-title">Input AC (120V RMS = 170V Peak):</text>
+  <g>
+    <rect x="50" y="85" width="300" height="80" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <!-- Axis -->
+    <line x1="60" y1="140" x2="340" y2="140" stroke="var(--muted)" stroke-width="1"/>
+    <!-- Grid lines -->
+    <line x1="110" y1="135" x2="110" y2="145" stroke="var(--muted)" stroke-width="0.5"/>
+    <line x1="160" y1="135" x2="160" y2="145" stroke="var(--muted)" stroke-width="0.5"/>
+    <line x1="210" y1="135" x2="210" y2="145" stroke="var(--muted)" stroke-width="0.5"/>
+    <line x1="260" y1="135" x2="260" y2="145" stroke="var(--muted)" stroke-width="0.5"/>
+    <!-- AC sine wave -->
+    <path d="M 60 140 Q 85 110 110 140 Q 135 170 160 140 Q 185 110 210 140 Q 235 170 260 140 Q 285 110 310 140 Q 330 160 340 140" class="wave"/>
+    <!-- Labels -->
+    <text x="200" y="165" class="rect-label" text-anchor="middle" style="font-size: 10px;">Period = 1/60s (60Hz)</text>
+    <text x="200" y="155" class="rect-label" text-anchor="middle" style="font-size: 9px;">±170V peak oscillation</text>
+  </g>
+
+  <!-- Half-wave rectified output -->
+  <text x="400" y="65" class="rect-title">Half-Wave Rectified (1 Diode):</text>
+  <g>
+    <rect x="400" y="85" width="300" height="80" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <!-- Axis -->
+    <line x1="410" y1="140" x2="690" y2="140" stroke="var(--muted)" stroke-width="1"/>
+    <!-- Grid lines -->
+    <line x1="460" y1="135" x2="460" y2="145" stroke="var(--muted)" stroke-width="0.5"/>
+    <line x1="510" y1="135" x2="510" y2="145" stroke="var(--muted)" stroke-width="0.5"/>
+    <line x1="560" y1="135" x2="560" y2="145" stroke="var(--muted)" stroke-width="0.5"/>
+    <line x1="610" y1="135" x2="610" y2="145" stroke="var(--muted)" stroke-width="0.5"/>
+    <!-- Half-wave output -->
+    <path d="M 410 140 Q 435 110 460 140 Q 485 140 510 140 Q 535 110 560 140 Q 585 140 610 140 Q 635 110 660 140 Q 680 150 690 140" class="wave"/>
+    <!-- Labels -->
+    <text x="550" y="165" class="rect-label" text-anchor="middle" style="font-size: 10px;">Only positive half-cycles</text>
+    <text x="550" y="155" class="rect-label" text-anchor="middle" style="font-size: 9px;">50% power loss, large ripple</text>
+  </g>
+
+  <!-- Full-wave rectified output -->
+  <text x="50" y="210" class="rect-title">Full-Wave Rectified (Bridge, 4 Diodes):</text>
+  <g>
+    <rect x="50" y="230" width="300" height="80" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <!-- Axis -->
+    <line x1="60" y1="285" x2="340" y2="285" stroke="var(--muted)" stroke-width="1"/>
+    <!-- Grid lines -->
+    <line x1="110" y1="280" x2="110" y2="290" stroke="var(--muted)" stroke-width="0.5"/>
+    <line x1="160" y1="280" x2="160" y2="290" stroke="var(--muted)" stroke-width="0.5"/>
+    <line x1="210" y1="280" x2="210" y2="290" stroke="var(--muted)" stroke-width="0.5"/>
+    <line x1="260" y1="280" x2="260" y2="290" stroke="var(--muted)" stroke-width="0.5"/>
+    <!-- Full-wave output (both half-cycles) -->
+    <path d="M 60 285 Q 85 255 110 285 Q 135 255 160 285 Q 185 255 210 285 Q 235 255 260 285 Q 285 255 310 285 Q 330 275 340 285" class="wave"/>
+    <!-- Labels -->
+    <text x="200" y="310" class="rect-label" text-anchor="middle" style="font-size: 10px;">All half-cycles utilized</text>
+    <text x="200" y="320" class="rect-label" text-anchor="middle" style="font-size: 9px;">2× frequency (120Hz ripple), much smoother</text>
+  </g>
+
+  <!-- Capacitor-smoothed output -->
+  <text x="400" y="210" class="rect-title">With Capacitor Smoothing (1000µF):</text>
+  <g>
+    <rect x="400" y="230" width="300" height="80" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <!-- Axis -->
+    <line x1="410" y1="285" x2="690" y2="285" stroke="var(--muted)" stroke-width="1"/>
+    <!-- Grid lines -->
+    <line x1="460" y1="280" x2="460" y2="290" stroke="var(--muted)" stroke-width="0.5"/>
+    <line x1="510" y1="280" x2="510" y2="290" stroke="var(--muted)" stroke-width="0.5"/>
+    <line x1="560" y1="280" x2="560" y2="290" stroke="var(--muted)" stroke-width="0.5"/>
+    <line x1="610" y1="280" x2="610" y2="290" stroke="var(--muted)" stroke-width="0.5"/>
+    <!-- Smooth DC with tiny ripple -->
+    <path d="M 410 285 L 690 285" class="wave" stroke-width="2"/>
+    <path d="M 410 283 Q 430 281 450 283 Q 470 285 490 283 Q 510 281 530 283 Q 550 285 570 283 Q 590 281 610 283 Q 630 285 650 283 Q 670 281 690 283" class="wave" stroke-width="1"/>
+    <!-- Labels -->
+    <text x="550" y="310" class="rect-label" text-anchor="middle" style="font-size: 10px;">Nearly smooth DC</text>
+    <text x="550" y="320" class="rect-label" text-anchor="middle" style="font-size: 9px;">Tiny ripple remaining (~1–2V variation)</text>
+  </g>
+
+  <!-- Bridge Rectifier Circuit -->
+  <text x="50" y="360" class="rect-title">Bridge Rectifier Circuit (4 Diodes):</text>
+
+  <g>
+    <rect x="50" y="380" width="700" height="100" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+
+    <!-- AC input (left side) -->
+    <text x="80" y="400" class="rect-label" style="font-weight: bold;">AC IN</text>
+    <line x1="80" y1="410" x2="80" y2="430" stroke="var(--text)" stroke-width="2"/>
+    <line x1="90" y1="410" x2="90" y2="430" stroke="var(--text)" stroke-width="2"/>
+
+    <!-- Top-left diode -->
+    <circle cx="110" cy="420" r="6" fill="var(--surface)" class="component"/>
+    <text x="110" y="435" class="rect-label" text-anchor="middle" style="font-size: 9px;">D1</text>
+
+    <!-- Top-right diode -->
+    <circle cx="230" cy="420" r="6" fill="var(--surface)" class="component"/>
+    <text x="230" y="435" class="rect-label" text-anchor="middle" style="font-size: 9px;">D2</text>
+
+    <!-- Bottom-left diode -->
+    <circle cx="110" cy="460" r="6" fill="var(--surface)" class="component"/>
+    <text x="110" y="475" class="rect-label" text-anchor="middle" style="font-size: 9px;">D3</text>
+
+    <!-- Bottom-right diode -->
+    <circle cx="230" cy="460" r="6" fill="var(--surface)" class="component"/>
+    <text x="230" y="475" class="rect-label" text-anchor="middle" style="font-size: 9px;">D4</text>
+
+    <!-- DC output (right side, positive and negative) -->
+    <text x="600" y="400" class="rect-label" style="font-weight: bold;">DC OUT</text>
+    <text x="610" y="415" class="rect-label" style="font-weight: bold;">+</text>
+    <line x1="610" y1="420" x2="610" y2="430" stroke="var(--accent)" stroke-width="2"/>
+    <text x="610" y="455" class="rect-label" style="font-weight: bold;">−</text>
+    <line x1="610" y1="450" x2="610" y2="460" stroke="var(--accent)" stroke-width="2"/>
+
+    <!-- Labels explaining operation -->
+    <text x="320" y="400" class="rect-label" style="font-size: 10px;">When AC is positive:</text>
+    <text x="320" y="415" class="rect-label" style="font-size: 10px;">Current flows D1 → Load → D4</text>
+    <text x="320" y="440" class="rect-label" style="font-size: 10px;">When AC is negative:</text>
+    <text x="320" y="455" class="rect-label" style="font-size: 10px;">Current flows D3 → Load → D2</text>
+  </g>
+
+</svg>
+</p>
+<section id="ac-vs-dc-basics">
+<h2>AC vs. DC Basics</h2>
+<p><strong>Direct Current (DC):</strong></p>
+<ul>
+<li>Current flows in one direction continuously.</li>
+<li>Voltage is constant.</li>
+<li>Example: Battery (1.5V, 9V, 12V).</li>
+<li>Symbol: → or ⊕⊖</li>
+</ul>
+<p><strong>Alternating Current (AC):</strong></p>
+<ul>
+<li>Current reverses direction periodically (oscillates).</li>
+<li>Voltage oscillates between positive and negative.</li>
+<li>Frequency: 50 Hz (Europe, Asia) or 60 Hz (North America).</li>
+<li>Voltage is given as RMS (root mean square), not peak.</li>
+<li>Example: 120V AC (RMS) = 170V peak.</li>
+</ul>
+<p><strong>RMS vs. Peak voltage:</strong></p>
+<ul>
+<li>RMS = Peak / √2 ≈ Peak / 1.414</li>
+<li>Example: 120V AC (RMS) = 120 × 1.414 ≈ 170V peak</li>
+</ul>
+<p><strong>Why AC is commonly used:</strong></p>
+<ul>
+<li>Easy to transmit over long distances.</li>
+<li>Transformers (see below) easily change AC voltage.</li>
+<li>More efficient generation from turbines/generators.</li>
+</ul>
+<p><strong>Why DC is needed:</strong></p>
+<ul>
+<li>Electronics (transistors, LEDs, computers) require DC.</li>
+<li>Batteries are DC.</li>
+<li>DC is easier to store and use off-grid.</li>
+</ul>
+</section>
+<section id="diode-principles">
+<h2>Diode Principles</h2>
+<p>A diode is a semiconductor device that allows current to flow in one direction only.</p>
+<p><strong>Internal structure (simplified):</strong></p>
+<ul>
+<li>P-type region: Doped with acceptors (extra &quot;holes&quot;); positive charge carriers.</li>
+<li>N-type region: Doped with donors (extra electrons); negative charge carriers.</li>
+<li>Junction: Where P meets N; creates a depletion region with a built-in electric field.</li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<ul>
+<li><strong>Forward bias:</strong> Positive voltage applied to P, negative to N. The electric field opposes the depletion region, allowing current to flow easily. Voltage drop: ~0.7V for silicon, ~0.3V for germanium.</li>
+<li><strong>Reverse bias:</strong> Opposite polarity. The electric field reinforces the depletion region, blocking current. Only a tiny leakage current (~nanoamps) flows.</li>
+</ul>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li><strong>Forward voltage drop (Vf):</strong> ~0.7V for silicon diodes at typical current. Most of the applied voltage is &quot;lost&quot; across the diode.</li>
+<li><strong>Maximum reverse voltage (Vr_max):</strong> If exceeded, the diode breaks down and allows reverse current (destructive).</li>
+<li><strong>Maximum forward current (If_max):</strong> Diodes have current ratings; exceeding them causes overheating and damage.</li>
+</ul>
+<p><strong>Common diodes:</strong></p>
+<ul>
+<li><strong>1N4007:</strong> General purpose, 1A max, 1000V reverse rating. Ubiquitous in power supplies.</li>
+<li><strong>1N4148:</strong> Fast switching diode, 200mA max, good for low-power circuits.</li>
+<li><strong>Schottky diode:</strong> Lower forward voltage drop (~0.3–0.4V), faster switching. Useful for low-voltage, high-current applications.</li>
+</ul>
+<div class="tip">
+<p>When a diode conducts, ~0.7V is &quot;used up&quot; across it. In a 12V DC circuit, you'd see ~11.3V at the load if one diode is in series.</p>
+</div>
+</section>
+<section id="half-wave-rectification">
+<h2>Half-Wave Rectification</h2>
+<p><strong>Concept:</strong> Use a single diode to block one half of the AC cycle, allowing only positive half-cycles through.</p>
+<p><strong>Circuit:</strong></p>
+<ul>
+<li>AC source → Diode → Load resistor → back to AC source (completing the circuit).</li>
+</ul>
+<p><strong>Waveform:</strong></p>
+<ul>
+<li>Input: Sinusoidal AC (oscillates ±170V peak for 120V RMS).</li>
+<li>Diode conducts during positive half-cycle; blocks during negative half-cycle.</li>
+<li>Output: Pulsating DC (positive bumps, zero when diode blocks).</li>
+</ul>
+<p><strong>Voltage output:</strong></p>
+<ul>
+<li>Peak DC voltage ≈ Peak AC voltage - Vf (diode drop) ≈ 170 - 0.7 ≈ 169.3V.</li>
+<li>Average DC voltage ≈ Peak voltage / π ≈ 170 / 3.14 ≈ 54V.</li>
+</ul>
+<p><strong>Power loss:</strong></p>
+<ul>
+<li>Diode dissipates power: P = Vf × I. For 1A through the diode, P ≈ 0.7W (small but noticeable in efficiency).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Only half the power available (50% of the AC power is discarded).</li>
+<li>Large ripple in the output (pulsating, not smooth DC).</li>
+<li>High peak current through diode (stresses it).</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Simplicity: Only one component (the diode).</li>
+<li>No transformer required.</li>
+</ul>
+<div class="warning">
+<p>Half-wave rectification is rarely used in modern designs due to inefficiency. It's mainly seen in simple low-power circuits or historical equipment.</p>
+</div>
+</section>
+<section id="full-wave-rectification">
+<h2>Full-Wave Rectification</h2>
+<p><strong>Center-tap transformer rectifier:</strong>
+Uses two diodes and a center-tapped transformer to rectify both halves of the AC cycle.</p>
+<p><strong>Circuit:</strong></p>
+<ul>
+<li>AC source → Transformer with center tap.</li>
+<li>Two secondary windings (from center tap to each end) feed two diodes.</li>
+<li>Both diode outputs combine into a load resistor.</li>
+</ul>
+<p><strong>Waveform:</strong></p>
+<ul>
+<li>During positive half of AC: Top diode conducts, bottom diode blocks.</li>
+<li>During negative half of AC: Bottom diode conducts, top diode blocks.</li>
+<li>Output: Pulsating DC (positive bumps every half-cycle, no gaps).</li>
+</ul>
+<p><strong>Voltage output:</strong></p>
+<ul>
+<li>Peak DC voltage ≈ Peak secondary voltage - Vf ≈ 85 - 0.7 ≈ 84.3V (for a 120V RMS input with 1:1 transformer).</li>
+<li>Average DC voltage ≈ 2 × Peak / π ≈ 2 × 85 / 3.14 ≈ 54V.</li>
+</ul>
+<p><strong>Advantages over half-wave:</strong></p>
+<ul>
+<li>Double the output current (uses both half-cycles).</li>
+<li>Lower ripple frequency (pulsates at 2× the AC frequency = 100 Hz or 120 Hz, easier to filter).</li>
+<li>Lower peak diode current (stress is shared).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Requires a center-tap transformer (adds cost, weight, size).</li>
+<li>Still has significant ripple.</li>
+</ul>
+<h3>Bridge Rectifier (Full-Wave Without Center Tap)</h3>
+<p><strong>Circuit:</strong></p>
+<ul>
+<li>Four diodes arranged in a Wheatstone bridge configuration.</li>
+<li>AC source feeds opposite corners; DC output taken from other two corners.</li>
+</ul>
+<p><strong>Waveform:</strong></p>
+<ul>
+<li>During positive half-cycle: Two diodes conduct (top-left to bottom-right path).</li>
+<li>During negative half-cycle: Other two diodes conduct (opposite path).</li>
+<li>Output: Pulsating DC (positive bumps every half-cycle).</li>
+</ul>
+<p><strong>Voltage output:</strong></p>
+<ul>
+<li>Peak DC voltage ≈ Peak AC - 2×Vf (two diodes conduct in series) ≈ 170 - 1.4 ≈ 168.6V (for full-wave from 120V AC).</li>
+<li>Average: ≈ 2 × 85 / π ≈ 54V.</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>No center-tap transformer needed (simpler, cheaper).</li>
+<li>All four diodes share the load equally.</li>
+<li>Standard configuration; bridge rectifier ICs are inexpensive (e.g., 1A bridge for $1).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Still has ripple; requires filtering for smooth DC.</li>
+<li>Two diodes always conduct in series, creating slightly higher voltage drop than theoretical (1.4V instead of 0.7V).</li>
+</ul>
+<div class="tip">
+<p>Bridge rectifiers are the industry standard for AC-to-DC conversion. They're simple, cheap, and reliable.</p>
+</div>
+</section>
+<section id="capacitor-smoothing">
+<h2>Capacitor Filtering (Smoothing)</h2>
+<p>Ripple in the rectified output can be reduced using a capacitor in parallel with the load.</p>
+<p><strong>Principle:</strong></p>
+<ul>
+<li>Capacitor charges when the diode conducts (rectified peak voltage).</li>
+<li>Capacitor discharges into the load when the diode blocks.</li>
+<li>The voltage drop across the capacitor is small (slow discharge between peaks).</li>
+</ul>
+<p><strong>Result:</strong> Output voltage is nearly constant (smooth DC), not pulsating.</p>
+<p><strong>Ripple voltage calculation (simple formula):</strong></p>
+<div class="circuit-box">
+V_ripple ≈ (Peak DC voltage) / (2 × f × R × C)
+<p>Where:</p>
+<ul>
+<li>f = frequency (Hz) = 50 or 60</li>
+<li>R = load resistance (Ω)</li>
+<li>C = capacitor value (F)</li>
+<li>Higher C reduces ripple; smaller load R increases ripple</li>
+</ul>
+</div>
+<p><strong>Example:</strong> Bridge rectifier with 85V peak DC, 60 Hz, 1000Ω load, 1000 µF capacitor:
+V_ripple ≈ 85 / (2 × 60 × 1000 × 0.001) = 85 / 120 ≈ 0.7V</p>
+<p>This means the output would vary between 84.3V and 83.6V (quite smooth).</p>
+<p><strong>Capacitor selection:</strong></p>
+<ul>
+<li><strong>Value:</strong> Typically 1000–10000 µF for power supplies.</li>
+<li><strong>Voltage rating:</strong> Must be higher than the peak DC voltage (e.g., 100V capacitor for 85V peak DC, with safety margin).</li>
+<li><strong>Type:</strong> Electrolytic capacitors are common; must observe polarity (+ and −).</li>
+</ul>
+<p><strong>Caution:</strong> Using too small a capacitor leaves ripple; using too large a capacitor charges too slowly and limits output current.</p>
+</section>
+<section id="voltage-regulation">
+<h2>Voltage Regulation</h2>
+<p>A power supply needs constant output voltage regardless of load changes.</p>
+<h3>Zener Diode Regulation</h3>
+<p>A Zener diode conducts in reverse (which would destroy a normal diode) and maintains a constant voltage across itself.</p>
+<p><strong>Circuit:</strong></p>
+<ul>
+<li>Rectified DC supply → Series resistor (Rs) → Junction.</li>
+<li>Zener diode connected from junction to ground (reverse bias).</li>
+<li>Load connected from junction to ground (in parallel with zener).</li>
+</ul>
+<p><strong>Operation:</strong></p>
+<ul>
+<li>If load draws current, voltage at the junction tries to drop. The zener conducts, supplying current to keep voltage constant.</li>
+<li>If load draws less current, zener conducts less to maintain voltage.</li>
+</ul>
+<p><strong>Voltage regulation formula:</strong></p>
+<div class="circuit-box">
+Rs ≈ (V_supply - V_zener) / (I_max + I_zener_max)
+<p>Where:</p>
+<ul>
+<li>V_supply = unregulated input voltage</li>
+<li>V_zener = desired zener voltage (regulation voltage)</li>
+<li>I_max = maximum load current</li>
+<li>I_zener_max = maximum zener current (from zener datasheet)</li>
+</ul>
+</div>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Zener diodes dissipate heat; large currents generate excessive heat.</li>
+<li>Not suitable for high-power applications (&gt;1A).</li>
+<li>Simple design; good for low-power circuits.</li>
+</ul>
+<p><strong>Common zener voltages:</strong> 5.1V, 6.2V, 9.1V, 12V, 15V.</p>
+<h3>Series Pass Transistor Regulation</h3>
+<p>For higher currents, a transistor acts as a variable resistor to maintain constant voltage.</p>
+<p><strong>Basic principle:</strong></p>
+<ul>
+<li>Transistor is placed in series with the load.</li>
+<li>Base of transistor is controlled by a feedback circuit that senses output voltage.</li>
+<li>If output voltage drops, base voltage increases, transistor conducts more, raising output voltage.</li>
+<li>If output voltage rises, base voltage decreases, transistor conducts less, lowering output voltage.</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Can handle multiple amps (limited by transistor power rating).</li>
+<li>More efficient than simple zener regulation.</li>
+<li>Better load regulation (output voltage remains constant despite load changes).</li>
+</ul>
+<p><strong>Components:</strong></p>
+<ul>
+<li>Pass transistor (e.g., 2N3055, rated for 5–15A at high voltage).</li>
+<li>Error amplifier (opamp or discrete transistor circuit).</li>
+<li>Zener reference diode.</li>
+<li>Resistor divider for feedback.</li>
+</ul>
+</section>
+<section id="transformers">
+<h2>Transformers: Voltage and Current Conversion</h2>
+<p>A transformer changes AC voltage and current using electromagnetic induction.</p>
+<p><strong>Principle:</strong></p>
+<ul>
+<li>Primary winding carries AC current, creating a changing magnetic field.</li>
+<li>Secondary winding is magnetically coupled; the field induces an AC voltage.</li>
+</ul>
+<p><strong>Voltage ratio:</strong></p>
+<div class="circuit-box">
+V_secondary / V_primary = N_secondary / N_primary
+<p>Where N = number of turns in each coil</p>
+</div>
+<p><strong>Current ratio (inverse):</strong></p>
+<div class="circuit-box">
+I_secondary / I_primary = N_primary / N_secondary
+</div>
+<p><strong>Power is conserved (ignoring losses):</strong></p>
+<div class="circuit-box">
+P_primary = P_secondary
+V_primary × I_primary ≈ V_secondary × I_secondary
+</div>
+<p><strong>Transformer types:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Use</th>
+<th>Voltage Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Step-down</td>
+<td>AC mains to logic/device supply</td>
+<td>Typically 120V / 12V = 10:1</td>
+</tr>
+<tr>
+<td>Step-up</td>
+<td>Low voltage to high voltage</td>
+<td>Typically 12V to 120V = 1:10</td>
+</tr>
+<tr>
+<td>Isolation</td>
+<td>Safety (ground isolation)</td>
+<td>1:1 (same voltage, isolated)</td>
+</tr>
+<tr>
+<td>Center-tap</td>
+<td>For full-wave rectification</td>
+<td>120V to 60V + 60V from center</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Transformer core types:</strong></p>
+<ul>
+<li><strong>Laminated iron core:</strong> Most common; reduces eddy current losses.</li>
+<li><strong>Ferrite core:</strong> High frequency transformers (not for 50/60 Hz).</li>
+<li><strong>Air core:</strong> No core; less efficient, used in RF circuits.</li>
+</ul>
+<p><strong>Efficiency:</strong></p>
+<ul>
+<li>Good transformers: 95–99% efficient.</li>
+<li>Copper losses (I²R in the wire).</li>
+<li>Core losses (hysteresis, eddy currents).</li>
+</ul>
+<div class="warning">
+<p>Transformers only work with AC. A DC voltage through a transformer produces no output (the static magnetic field doesn't induce secondary voltage).</p>
+</div>
+</section>
+<section id="inverters">
+<h2>Inverters: DC to AC Conversion</h2>
+<p>An inverter converts DC (from batteries, solar panels) to AC (for running standard appliances).</p>
+<p><strong>Simple square-wave inverter:</strong></p>
+<ol>
+<li>DC source → Switch (mechanical or electronic relay).</li>
+<li>Switch alternates direction of DC flow through the load at 50–60 Hz.</li>
+<li>Output is a square wave (not sinusoidal).</li>
+</ol>
+<p><strong>Waveform:</strong> Square wave (sharp transitions between +V and −V), not the smooth sine wave of utility AC.</p>
+<p><strong>Problems with square-wave output:</strong></p>
+<ul>
+<li>Transformers may overheat (not optimized for square waves).</li>
+<li>Audio circuits produce buzzing.</li>
+<li>Many motors run inefficiently or may be damaged.</li>
+</ul>
+<p><strong>Sine-wave inverter:</strong></p>
+<ul>
+<li>Uses pulse-width modulation (PWM) or multiple switching to approximate a sine wave.</li>
+<li>Much more expensive but compatible with any AC load.</li>
+<li>Efficiency: 85–95% depending on design.</li>
+</ul>
+<p><strong>Circuit complexity:</strong></p>
+<ul>
+<li>PWM controller (timer or microcontroller).</li>
+<li>Switching transistors (MOSFETs or IGBTs) arranged in an H-bridge.</li>
+<li>Filter (inductor and capacitor) to smooth the PWM output.</li>
+<li>Transformer (optional) for voltage boost.</li>
+</ul>
+<p><strong>Common inverter sizes:</strong></p>
+<ul>
+<li>300W (laptop, small devices)</li>
+<li>1000W (TV, microwave)</li>
+<li>3000W (air conditioner, high-power tools)</li>
+</ul>
+</section>
+<section id="salvaging-components">
+<h2>Salvaging Rectifier Components</h2>
+<p>In austere settings, electronic components can often be recovered from discarded equipment.</p>
+<p><strong>Old computer power supplies:</strong></p>
+<ul>
+<li>Often contain bridge rectifier ICs (e.g., 1A or 2A bridges).</li>
+<li>Large filter capacitors (100–1000 µF).</li>
+<li>Transformers (can be used for voltage conversion if rewound or found with the right ratio).</li>
+</ul>
+<p><strong>Diodes from LED devices, televisions:</strong></p>
+<ul>
+<li>Many contain 1N4007 diodes (general-purpose 1A rectifier).</li>
+<li>Can be desoldered and reused.</li>
+</ul>
+<p><strong>Transistors from old radios, amplifiers:</strong></p>
+<ul>
+<li>Power transistors (2N3055, etc.) for regulation.</li>
+<li>Smaller transistors for control circuits.</li>
+</ul>
+<p><strong>Transformers from old appliances:</strong></p>
+<ul>
+<li>Microwave ovens have powerful high-voltage transformers (use with extreme caution; they can deliver lethal shocks).</li>
+<li>Old radios have small audio transformers (useful for impedance matching or low-power rectification).</li>
+</ul>
+<p><strong>Capacitors:</strong></p>
+<ul>
+<li>Electrolytic capacitors from power supplies; check voltage rating before reuse.</li>
+<li>Always test capacitors before use; leaking capacitors fail spectacularly (rupture, catch fire).</li>
+</ul>
+<div class="warning">
+<p>Old CRT televisions and microwave ovens contain dangerously high voltages (thousands of volts) that can deliver lethal shocks even when unplugged. Always discharge capacitors safely before touching internal components.</p>
+</div>
+</section>
+<section id="practical-circuit">
+<h2>Practical Example: Simple 5V Power Supply</h2>
+<p><strong>Goal:</strong> Convert 120V AC mains to 5V DC for small electronics.</p>
+<p><strong>Components:</strong></p>
+<ol>
+<li>120V AC (mains) → Step-down transformer (10:1) → 12V AC.</li>
+<li>12V AC → Bridge rectifier (1A) → ~8.5V DC (peak, smoothed).</li>
+<li>8.5V DC → 1000 µF capacitor (smoothing) → ~8V DC (average).</li>
+<li>8V DC → 5V Zener diode (1N4744 or similar 5.1V Zener) with 220Ω series resistor → 5V DC.</li>
+<li>Output: 5V DC ± 0.2V for loads up to 500 mA.</li>
+</ol>
+<p><strong>Efficiency:</strong> ~85% (transformer losses, diode drops, zener heating).</p>
+<p><strong>Cost (salvaged components):</strong> ~$0 (if found in old electronics).</p>
+<p><strong>Safety:</strong> Always fuse the primary AC input (1A fuse) to prevent fire if something shorts.</p>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="transistors.html">Transistors &amp; Semiconductors</a>
+<a href="electrical-wiring.html">Electrical Wiring</a>
+<a href="electrical-generation.html">Power Generation</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

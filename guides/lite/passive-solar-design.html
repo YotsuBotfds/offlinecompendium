@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/passive-solar-design.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passive Solar Design</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Building &amp; Engineering</span> ›
+<span>Passive Solar Design</span>
+</div>
+
+
+<h1>Passive Solar Design</h1>
+<p class="subtitle">South-facing glazing ratios by latitude, thermal mass sizing, overhang angles, direct and isolated gain systems, Trombe walls, clerestory windows, night insulation, seasonal heat balance.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~8 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#solar-geometry">Solar Geometry and Latitude Considerations</a></li>
+<li><a href="#thermal-mass">Thermal Mass Sizing</a></li>
+<li><a href="#direct-and-isolated-gain">Direct Gain vs. Isolated Gain Systems</a></li>
+<li><a href="#trombe-walls">Trombe Wall Construction</a></li>
+<li><a href="#clerestory-windows">Clerestory Windows and Ventilation</a></li>
+<li><a href="#night-insulation">Night Insulation and Shutters</a></li>
+<li><a href="#seasonal-balance">Seasonal Heat Balance Calculations</a></li>
+<li><a href="#construction-checklist">Worked Design Examples with Complete Building Calculations</a></li>
+<li><a href="#construction-checklist-2">Construction Checklist</a></li>
+<li><a href="#maintenance">Maintenance and Seasonal Operation</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Passive solar design harnesses the sun's energy for heating and cooling without mechanical systems. By combining proper glazing, thermal mass, shading, and ventilation, a building can maintain comfortable temperatures year-round with minimal external energy input. This approach is especially critical in off-grid and low-connectivity environments where backup heating systems may be unavailable or fuel-dependent.</p>
+<p>The fundamental principle is simple: capture winter heat when the sun is low in the sky, store it in thermal mass, insulate it at night, and reject summer heat when the sun is high. Success requires understanding your latitude, climate, seasonal sun angles, and building orientation. This guide covers the calculations, design strategies, and construction methods for effective passive solar systems.</p>
+</section>
+<section id="solar-geometry">
+<h2>Solar Geometry and Latitude Considerations</h2>
+<p>The sun's height in the sky changes throughout the year. At solar noon (when the sun crosses the meridian), the altitude angle determines how much direct radiation reaches a vertical south-facing surface.</p>
+<p><strong>Solar declination</strong> ranges from +23.5° in summer to −23.5° in winter. The altitude angle at solar noon is calculated as:</p>
+<pre><code>Altitude = 90° − Latitude + Declination
+</code></pre>
+<p>For example, at 40°N latitude:</p>
+<ul>
+<li>Winter (declination −23.5°): Altitude = 90 − 40 − 23.5 = 26.5°</li>
+<li>Summer (declination +23.5°): Altitude = 90 − 40 + 23.5 = 73.5°</li>
+</ul>
+<p>The <strong>overhang angle</strong> is the angle of a horizontal projection above a south-facing window. To block summer sun while allowing winter sun through:</p>
+<pre><code>Overhang Angle = arctan(Height ÷ Horizontal Depth)
+</code></pre>
+<p>Design the overhang so that at summer solstice noon, the shadow just reaches the bottom of the window. At winter solstice, sunlight penetrates completely.</p>
+<p><strong>Glazing orientation:</strong> True south is ideal in the Northern Hemisphere; true north in the Southern Hemisphere. Allow ±15° deviation for aesthetics or topography, but beyond this, solar gains drop significantly. Avoid east or west-facing glass for primary heating—thermal mass cannot store the heat gained late in the day before nightfall, causing overheating and discomfort.</p>
+<div class="warning">
+<p>Oversizing south-facing glazing causes summer overheating and winter night heat loss. Always balance gain area with thermal mass capacity and night insulation.</p>
+</div>
+</section>
+<section id="thermal-mass">
+<h2>Thermal Mass Sizing</h2>
+<p>Thermal mass absorbs solar heat during the day and releases it at night. Common materials include water, concrete, brick, and stone. Each has different heat capacity and thermal conductivity.</p>
+<p><strong>Specific heat capacity</strong> (energy per kg per °C):</p>
+<ul>
+<li>Water: 4.18 kJ/(kg·°C) — highest capacity</li>
+<li>Concrete: 0.84 kJ/(kg·°C)</li>
+<li>Brick: 0.84 kJ/(kg·°C)</li>
+<li>Stone: 0.75 kJ/(kg·°C)</li>
+</ul>
+<p><strong>Thermal mass design rule:</strong> For every square foot of south-facing glazing, provide 5–7 pounds of thermal mass (or 50–70 kg per m² of glass). This stores a 10–15°C temperature swing over 24 hours without excessive overheating.</p>
+<p>For a 10 m² of south-facing windows:</p>
+<ul>
+<li>Required mass = 10 m² × 500–700 kg/m² = 5000–7000 kg</li>
+</ul>
+<p>This could be:</p>
+<ul>
+<li>Water: ~6000 liters in insulated tanks</li>
+<li>Concrete slab: ~2.5 m × 4 m × 0.3 m thick = ~3000 kg (plus additional mass from walls)</li>
+<li>Brick wall: Two-wythe (double) wall ~40 cm thick, 10 m² face area = ~8000 kg</li>
+</ul>
+<p><strong>Water walls</strong> are the most efficient: a row of dark-painted steel or plastic barrels or tanks behind the glass absorbs and stores heat. Water should be 150–200 mm deep to allow sunlight to reach the room floor.</p>
+<p><strong>Concrete and masonry</strong> work well as floor slabs or interior walls. For maximum effectiveness, expose 80% of the thermal mass surface to solar radiation. Paint it dark (black, dark brown, or dark red) to increase absorptance to 90%+. Lighter surfaces absorb only 50–60% of incident radiation.</p>
+<div class="tip">
+<p>For maximum performance, orient thermal mass to receive direct sunlight in winter (late morning to mid-afternoon). In north-facing rooms, thermal mass is far less effective unless air is actively circulated from south-facing zones.</p>
+</div>
+</section>
+<section id="direct-and-isolated-gain">
+<h2>Direct Gain vs. Isolated Gain Systems</h2>
+<p><strong>Direct gain</strong> is the simplest strategy: sunlight enters through south-facing windows, strikes thermal mass directly (floors, walls), and heats the living space immediately. Heat is stored in the mass and released at night.</p>
+<p>Advantages:</p>
+<ul>
+<li>No additional equipment or complex ducting</li>
+<li>High solar gain efficiency (60–80%)</li>
+<li>Works well for single-room or open-plan spaces</li>
+</ul>
+<p>Disadvantages:</p>
+<ul>
+<li>Requires substantial internal thermal mass</li>
+<li>Summer overheating risk if shading is inadequate</li>
+<li>Glazing heat loss at night can negate gains</li>
+</ul>
+<p>Design steps for direct gain:</p>
+<ol>
+<li>Calculate altitude angle for your latitude (as above)</li>
+<li>Size glazing area: 10–20% of floor area in cold climates; 5–10% in temperate zones</li>
+<li>Ensure thermal mass is dark and directly sunlit for 6+ hours daily</li>
+<li>Install operable exterior shutters or night insulation</li>
+<li>Provide adequate shading to prevent summer overheating</li>
+</ol>
+<p><strong>Isolated gain</strong> systems (such as Trombe walls or sunspaces) separate the solar collection zone from the living space, reducing overheating risk.</p>
+<p>With an isolated gain system, a low-conductivity barrier (often glazing) creates an air gap. Heat crosses into the room via vents or radiation through the wall. This allows better temperature control: vents can be closed to prevent excessive heat transfer, and the wall can be shaded independently.</p>
+</section>
+<section id="trombe-walls">
+<h2>Trombe Wall Construction</h2>
+<p>A Trombe wall (or thermal storage wall) consists of a dark-painted masonry or concrete wall (150–300 mm thick) with glazing separated 25–100 mm away. Solar radiation heats the wall; convection through upper and lower vents transfers heat to the room.</p>
+<p><strong>Design process:</strong></p>
+<ol>
+<li>
+<p><strong>Wall thickness:</strong> 200–250 mm of concrete or brick is optimal. Thickness affects the time lag before heat emerges into the room. A 250 mm wall has a time lag of 10–12 hours; a 150 mm wall, 6–8 hours. Choose thickness based on when you want peak heat release (late evening for living spaces).</p>
+</li>
+<li>
+<p><strong>Glazing selection:</strong> Single pane (7–10 mm) with an air gap of 50–75 mm. Double glazing with a 50 mm gap offers better insulation but costs more. The gap must be sealed to prevent convection loss.</p>
+</li>
+<li>
+<p><strong>Vent sizing:</strong></p>
+<ul>
+<li>Lower vents (inlet): 1–2% of wall area</li>
+<li>Upper vents (outlet): 1–2% of wall area</li>
+</ul>
+<p>For a 4 m tall × 3 m wide wall (12 m²):</p>
+<ul>
+<li>Vent area = 12 m² × 0.015 = 0.18 m² per pair</li>
+<li>Lower inlet = 0.18 m² (e.g., 0.6 m wide × 0.3 m tall)</li>
+<li>Upper outlet = 0.18 m² (same dimensions)</li>
+</ul>
+</li>
+<li>
+<p><strong>Paint:</strong> Use high-emissivity, high-absorptance paint (black, dark gray, or dark green). Absorptance should be 90%+; emissivity 85%+. Avoid glossy finishes; matte is preferred.</p>
+</li>
+<li>
+<p><strong>Insulation:</strong> Insulate the exterior of the wall (behind the mass) to prevent heat loss to outside. Use 50–100 mm of insulation.</p>
+</li>
+<li>
+<p><strong>Dampers (optional):</strong> Install check dampers (flapper or ball type) in vents to prevent reverse convection at night. Without dampers, warm air escapes upward and out the top vent after sunset.</p>
+</li>
+</ol>
+<!-- SVG: trombe-wall-1.svg: Cross-section of Trombe wall showing glazing, air gap, masonry wall, insulation, and lower/upper vents. -->
+<div class="warning">
+<p>Trombe walls require careful vent sizing. Oversized vents cause excessive heat loss; undersized vents reduce heat transfer. Test the design with simple paper vents before construction.</p>
+</div>
+</section>
+<section id="clerestory-windows">
+<h2>Clerestory Windows and Ventilation</h2>
+<p>Clerestory windows (high windows near the roof line on the south side) admit winter sun while allowing heat to rise into thermal mass overhead or into a loft. They also enable natural convective cooling in summer by exhausting warm air.</p>
+<p><strong>Summer ventilation strategy:</strong> Open low windows on the windward (incoming) side and clerestories on the leeward side to create a convective loop. Air enters cool, rises as it's warmed, and exits through high vents, exhausting excess heat. This is called <strong>cross-ventilation</strong> or <strong>stack ventilation</strong>.</p>
+<p><strong>Clerestory sizing:</strong></p>
+<ul>
+<li>Area: 8–12% of floor area in spaces receiving good natural ventilation</li>
+<li>Height above floor: Place the sill at least 2 m high to avoid glare and direct impact on occupants</li>
+<li>Angle: Tilt glazing 15–20° outward from vertical to admit winter sun while minimizing summer solar gain</li>
+</ul>
+<p><strong>Shading for clerestories:</strong></p>
+<ul>
+<li>Horizontal overhangs are less effective for high windows (the sun is near vertical at noon)</li>
+<li>Use angled louvers or exterior screens oriented north-south</li>
+<li>Operable blinds or cellular shades inside provide flexibility</li>
+</ul>
+<div class="tip">
+<p>Clerestory windows reduce reliance on summer air conditioning. Combined with strategic low-window opening and ceiling fans, they can keep spaces 3–5°C cooler without active cooling.</p>
+</div>
+</section>
+<section id="night-insulation">
+<h2>Night Insulation and Shutters</h2>
+<p>At night, large glazing areas become a heat loss liability. Uninsulated double-pane windows have U-values of 2.5–3.0 W/(m²·K); single pane, 5–6 W/(m²·K). In a cold night, a 10 m² window loses more heat through conduction than a south-facing wall gains during daytime.</p>
+<p><strong>Exterior shutters or insulated panels:</strong></p>
+<ul>
+<li>R-value: Aim for R-3 to R-5 (total; including window and shutter)</li>
+<li>Material: Rigid foam (XPS or polyiso, 75–100 mm), or wooden panels lined with fibreglass/mineral wool</li>
+<li>Mechanism: Hinged (simple, manual), sliding (easier on large windows), or folding (space-efficient)</li>
+</ul>
+<p>For a 10 m² window losing 30 W/K:</p>
+<ul>
+<li>Without shutters: 10 m² × 3 W/(m²·K) = 30 W/K heat loss</li>
+<li>With R-4 shutters (0.7 m²·K/W): 10 m² × (0.7 + existing R) ≈ 7 W/K</li>
+<li>Night savings (12 hours at 10°C difference): 30 − 7 = 23 W/K × 36,000 s = ~828 kJ</li>
+</ul>
+<p><strong>Interior cellular shades or curtains:</strong></p>
+<ul>
+<li>Easier to operate daily than exterior shutters</li>
+<li>R-value: 0.5–2.0 (less effective, but better than nothing)</li>
+<li>Fit shades snugly to frame to block air gaps</li>
+</ul>
+<p><strong>Thermal shutters construction:</strong></p>
+<ul>
+<li>Build frames from wood (1×2 or 2×2 lumber)</li>
+<li>Line with 75–100 mm XPS foam board; glue and mechanically fasten</li>
+<li>Cover exterior with marine plywood or aluminum cladding for durability</li>
+<li>Add weatherstripping around all edges</li>
+<li>Mount on heavy-duty hinges (for 50–100 kg shutters, use three 12 mm hinges)</li>
+</ul>
+</section>
+<section id="seasonal-balance">
+<h2>Seasonal Heat Balance Calculations</h2>
+<p>To verify that your passive solar design provides adequate winter heating without summer overheating, perform a simplified heat balance.</p>
+<p><strong>Winter balance:</strong></p>
+<pre><code>Solar gain = Glazing area × Solar altitude factor × Glazing transmittance
+           = 10 m² × 0.5 × 0.85 = 4.25 kW on a clear winter day
+
+Building heat loss = UA × ΔT
+where U = average U-value of all surfaces (W/(m²·K))
+      A = total surface area (m²)
+      ΔT = inside/outside temperature difference (K or °C)
+</code></pre>
+<p>For a well-insulated building in a 40°N location:</p>
+<ul>
+<li>Solar gain: ~4 kW at solar noon on a clear winter day</li>
+<li>Heat loss at 20°C inside / 0°C outside: 500 m² walls × 0.3 W/(m²·K) × 20 K = 3 kW</li>
+</ul>
+<p>The building nearly balances on a sunny day. On cloudy days, auxiliary heating is needed.</p>
+<p><strong>Summer balance:</strong></p>
+<p>Summer solar gain on horizontal and vertical surfaces is much higher due to the high sun angle. For the same building:</p>
+<pre><code>Horizontal roof: 10 m² × cos(90° − 73.5°) × 900 W/m² = 2.7 kW
+Unshaded south windows: 10 m² × 0.85 × 0.1 × 900 W/m² = 0.77 kW (if overhang allows 10% of noon radiation)
+</code></pre>
+<p>With shading (overhang) reducing direct gain to near zero, heat gain is minimal. Residual gain from diffuse radiation (~100 W/m² on cloudy days) is manageable.</p>
+<p><strong>Design iteration:</strong></p>
+<ol>
+<li>Calculate winter solar gain for your latitude</li>
+<li>Estimate building heat loss (insulation + infiltration)</li>
+<li>If solar gain &lt; loss, increase glazing area or improve insulation</li>
+<li>If summer temperature rise (with shading) exceeds 5°C, add thermal mass or ventilation</li>
+</ol>
+<div class="info-box">
+<p>A rough rule: In a cold climate (heating season &gt; 6 months), design for ~1 kW solar gain per 100 m² of floor area. In a temperate climate, reduce this to 0.5 kW per 100 m².</p>
+</div>
+</section>
+<section id="construction-checklist">
+<h2>Worked Design Examples with Complete Building Calculations</h2>
+<h3>Example 1: Small Cabin (400 sq ft) at 40°N Latitude</h3>
+<p><strong>Building specifications:</strong></p>
+<ul>
+<li>Location: 40°N latitude (northern USA, southern Canada)</li>
+<li>Floor area: 400 sq² (20 ft × 20 ft)</li>
+<li>Wall area: 500 sq² (assuming 8 ft walls, single story)</li>
+<li>Roof area: 450 sq²</li>
+<li>South-facing glazing: 80 sq² (20% of floor area; aggressive for cold climate)</li>
+<li>Insulation: R-25 walls, R-40 roof, R-10 foundation</li>
+</ul>
+<p><strong>Thermal mass calculation:</strong></p>
+<p>Solar gain on south window: 80 sq² × 0.5 (solar factor) × 0.85 (transmission) = 34 kW on a clear winter day
+(Note: 0.5 is altitude factor at 40°N winter; varies by hour)</p>
+<p>Building heat loss at 20°C inside, 0°C outside (ΔT = 20°C):</p>
+<ul>
+<li>Walls: 500 sq² × (1/R-25) × 20 = 400 W</li>
+<li>Roof: 450 sq² × (1/R-40) × 20 = 225 W</li>
+<li>Foundation: 150 sq² × (1/R-10) × 20 = 300 W</li>
+<li>Infiltration (assume 0.5 air changes/hour): 400 sq ft × 8 ft × (1.08 air density) × 0.5 change/hr × 20°C = 1,728 W</li>
+<li><strong>Total loss: ~2,650 W (0.75 kW)</strong></li>
+</ul>
+<p><strong>Thermal mass requirement:</strong> 80 sq² × 600 kg/sq² = 48,000 kg (48 metric tons)</p>
+<p>Options:</p>
+<ul>
+<li>Water: 48,000 L (12,700 gallons) in insulated tanks</li>
+<li>Concrete slab: 4 m × 5 m × 0.24 m thick (covers entire floor)</li>
+<li>Brick interior walls: Two-wythe walls totaling ~25 m of wall area × 2 m height × 8000 kg/m² = ~400,000 kg (excessive; not needed)</li>
+</ul>
+<p><strong>Recommended:</strong> Concrete slab floor (0.24 m thick, ~50,000 kg) + internal masonry wall (10 m × 2 m × 400 kg/m²  = ~8,000 kg) = ~58,000 kg total.</p>
+<p><strong>Overhang sizing:</strong></p>
+<p>At 40°N:</p>
+<ul>
+<li>Winter solar altitude: 26.5° (Dec 21)</li>
+<li>Summer solar altitude: 73.5° (Jun 21)</li>
+</ul>
+<p>Window height: 1.5 m (from floor). To shade top of window in summer but allow winter sun:</p>
+<p>Overhang depth = 1.5 m × tan(26.5°) / tan(73.5° − 26.5°) = 1.5 × 0.5 / tan(47°) = 0.73 m / 1.07 = <strong>0.68 m (27 inches)</strong></p>
+<p><strong>Expected performance:</strong></p>
+<p>Winter (clear day):</p>
+<ul>
+<li>Solar gain: 34 kW</li>
+<li>Building loss: 0.75 kW</li>
+<li><strong>Net gain: 33.25 kW, heating interior ~16°C above outside over 8 hours of sun</strong></li>
+<li>Thermal mass stores: 58,000 kg × 0.84 kJ/(kg·°C) × 10°C rise = 487 MJ (enough for ~7 hours of night heating at full loss rate)</li>
+<li>Night loss (12 hours): 12 × 0.75 kW = 9 kWh ≈ 32 MJ</li>
+<li><strong>Interior temperature at sunrise: ~8–12°C above outside (comfortable if inside starts at 20°C)</strong></li>
+</ul>
+<p><strong>Conclusion:</strong> Cabin can maintain 15–20°C on sunny winter days with no backup heat. Cloudy days require backup (small wood stove, 1–2 kW electric heater). Sunspace or thermal shutters would improve night retention.</p>
+<hr>
+<h3>Example 2: Greenhouse Structure (800 sq ft, 40°N)</h3>
+<p><strong>Building specifications:</strong></p>
+<ul>
+<li>Floor area: 800 sq² (20 ft × 40 ft)</li>
+<li>South-facing glazing: 200 sq² (glass roof tilted 45°, south wall vertical glass)</li>
+<li>Walls: 40% glass, 60% insulated (north/east/west walls with R-15)</li>
+<li>Mass: 6 m × 20 m × 0.5 m concrete slab = 60,000 kg</li>
+</ul>
+<p><strong>Heat balance (winter, 0°C outside, target 15°C inside, ΔT = 15°C):</strong></p>
+<p>Solar gain (Dec 21, 10 am–3 pm, 5 hours):</p>
+<ul>
+<li>Glass area: 200 sq² × 0.75 (altitude × transmittance) × 4 hours average = 600 kWh per day = 75 kW average</li>
+</ul>
+<p>Building loss:</p>
+<ul>
+<li>Glazing (U = 3 W/m²K, 200 sq² ): 200 × 3 × 15 = 9 kW</li>
+<li>Insulated walls (R-15, 300 sq²): 300 × (1/R-15) × 15 = 300 W</li>
+<li>Infiltration (1 air change/hour, 8000 m³ × 1.08 × 15°C): ~3.6 kW</li>
+<li><strong>Total loss: 13 kW</strong></li>
+</ul>
+<p><strong>Net gain: 75 − 13 = 62 kW during sun hours; positive balance; overheating risk</strong></p>
+<p><strong>Thermal mass</strong> (60,000 kg concrete):</p>
+<ul>
+<li>Heat capacity: 60,000 × 0.84 × ΔT = 50,400 ΔT kJ</li>
+<li>If mass absorbs 62 kW × 5 hours = 310 MJ: 310,000 = 50,400 ΔT → <strong>ΔT = 6°C rise</strong></li>
+<li><strong>Interior rises from 15°C to 21°C during sun hours; comfortable</strong></li>
+</ul>
+<p><strong>Night cooling (12 hours at full loss = 13 kW loss):</strong></p>
+<ul>
+<li>Heat loss: 13 kW × 12 hours = 156 MJ ≈ 3 kWh</li>
+<li>Thermal mass releases: 60,000 kg × 0.84 × 6°C = 302 MJ</li>
+<li><strong>Sufficient to maintain ~12°C at sunrise</strong> (21°C − 9°C drop = 12°C)</li>
+</ul>
+<p><strong>Conclusion:</strong> Greenhouse self-regulates well with passive design. No backup heat needed most days. Thermal shutters or night insulation would further improve performance, allowing target temperature of 15°C to be maintained even on cloudy days.</p>
+<hr>
+<h3>Example 3: Community Building (2,000 sq ft) at 40°N</h3>
+<p><strong>Building specifications:</strong></p>
+<ul>
+<li>Floor area: 2,000 sq² (large community hall or multipurpose building)</li>
+<li>South-facing glazing: 300 sq² (15% of floor area; conservative for community use)</li>
+<li>Wall area: 2,000 sq² (assuming high roof; 12 ft eaves)</li>
+<li>Insulation: R-30 walls, R-50 roof, R-15 foundation (well-insulated public building)</li>
+<li>Thermal mass: Large concrete floor (2000 sq² × 0.3 m thick) + interior stone walls</li>
+<li>Mass total: 2000 × 0.3 × 2400 kg/m³ + 200 m of stone wall (2 m high, 0.4 m thick) = 1,440,000 + 320,000 = <strong>1,760,000 kg</strong></li>
+</ul>
+<p><strong>Heat balance (winter, design: 18°C inside, 0°C outside, ΔT = 18°C):</strong></p>
+<p>Solar gain (Dec 21, 8 am–4 pm, 8 hours):</p>
+<ul>
+<li>South glass (300 sq²): 300 × 0.5 (altitude) × 0.85 (transmittance) = 128 kW peak</li>
+<li>Average over 8 hours: ~80 kW</li>
+<li><strong>Daily solar input: 80 kW × 8 hours = 640 MWh = 640 MJ</strong></li>
+</ul>
+<p>Building loss:</p>
+<ul>
+<li>Walls: 2000 × (1/R-30) × 18 = 1,200 W</li>
+<li>Roof: 2000 × (1/R-50) × 18 = 720 W</li>
+<li>Foundation: 500 × (1/R-15) × 18 = 600 W</li>
+<li>Infiltration (0.5 air change/hour, 24,000 m³): 24,000 × 1.08 × 0.5/3600 × 18 = 6.5 kW</li>
+<li><strong>Total loss: ~10 kW</strong></li>
+</ul>
+<p><strong>Net gain (during sun): 80 − 10 = 70 kW</strong></p>
+<p><strong>Daily balance:</strong></p>
+<ul>
+<li>Solar gain: 640 MJ</li>
+<li>Night loss (12 hours): 10 kW × 12 = 120 MJ</li>
+<li><strong>Net positive: 520 MJ per clear winter day</strong></li>
+</ul>
+<p><strong>Thermal mass:</strong></p>
+<ul>
+<li>Heat absorbed over 8 hours: 640 MJ</li>
+<li>Thermal capacity: 1,760,000 kg × 0.84 × ΔT = 1,478,400 ΔT kJ</li>
+<li>Temperature rise: 640,000 / 1,478,400 = <strong>0.43°C</strong></li>
+<li><strong>Interior rises from 18°C to 18.43°C during daytime (small rise due to large mass)</strong></li>
+</ul>
+<p><strong>Night heating from mass:</strong></p>
+<ul>
+<li>Mass releases: 1,760,000 × 0.84 × 0.43°C = 640 MJ (equals daytime gain; perfect balance)</li>
+<li><strong>Temperature maintains 18°C throughout night</strong></li>
+</ul>
+<p><strong>Conclusion:</strong> This large community building is nearly perfectly balanced for 40°N passive solar design. On sunny winter days, interior maintains 18°C without backup heat. On cloudy days (no solar input), loss is −120 MJ/day; backup heat (~3 kW) would be needed. A small wood stove or electric heater in the common space would handle cloudy stretches. Overheating is minimal (only 0.43°C rise); no summerexcessive cooling needed beyond natural ventilation.</p>
+<hr>
+<h2 id="construction-checklist-2">Construction Checklist</h2>
+<p>When building a passive solar structure:</p>
+<ol>
+<li>
+<p><strong>Site preparation:</strong> Orient the building so the longest wall faces within ±15° of true south. Clear obstructions (trees, neighbors' buildings) from the southern sky out to 30° elevation.</p>
+</li>
+<li>
+<p><strong>Foundation and mass:</strong> Place a concrete slab or masonry thermal mass directly under south-facing windows. Ensure it is exposed (not carpeted) and painted dark.</p>
+</li>
+<li>
+<p><strong>Glazing installation:</strong> Use thermally broken frames (aluminum with rubber or polyurethane breaks). Seal all edges with weatherstripping. Install weep holes at the bottom to drain water.</p>
+</li>
+<li>
+<p><strong>Insulation:</strong> Insulate roof to R-40, walls to R-20, foundation to R-10 (above grade) and R-5 (below grade, if accessible). Minimize thermal bridging through framing.</p>
+</li>
+<li>
+<p><strong>Ventilation:</strong> Install operable windows for cross-ventilation. Size intake vents low and exhaust vents high. Ensure 0.5–1.0 m/s air speed during summer.</p>
+</li>
+<li>
+<p><strong>Shading:</strong> Build or install overhangs and shutters before finishing. Test shading at summer solstice to verify sun rejection.</p>
+</li>
+<li>
+<p><strong>Testing:</strong> Monitor indoor/outdoor temperatures for the first winter. Adjust vent dampers, shutter operation, and thermal mass exposure based on actual performance.</p>
+</li>
+</ol>
+</section>
+<section id="maintenance">
+<h2>Maintenance and Seasonal Operation</h2>
+<p><strong>Winter operation:</strong></p>
+<ul>
+<li>Open all shutters and vents during clear days</li>
+<li>Close shutters at sunset to trap heat</li>
+<li>Monitor interior temperature; use small backup heater only if interior falls below 15°C</li>
+<li>Keep glazing clean (10% loss per year of dust accumulation)</li>
+</ul>
+<p><strong>Summer operation:</strong></p>
+<ul>
+<li>Close or angle shutters to block midday sun</li>
+<li>Open all windows in early morning and late evening to cool the thermal mass</li>
+<li>Close windows during the hottest part of the day to trap cool air</li>
+<li>Use ceiling fans to distribute air and increase skin cooling</li>
+</ul>
+<p><strong>Annual maintenance:</strong></p>
+<ul>
+<li>Inspect glazing seals for condensation or drafts</li>
+<li>Check dampers and vents for debris or mechanical failure</li>
+<li>Paint thermal mass if it becomes light-colored (cleaning may be sufficient)</li>
+<li>Trim vegetation to maintain southern sun access</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="earth-sheltering.html">Earth-Sheltering Construction</a>
+<a href="energy-systems.html">Energy Systems</a>
+<a href="natural-building.html">Natural Building Materials</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

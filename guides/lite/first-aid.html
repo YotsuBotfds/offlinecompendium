@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/first-aid.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Aid and Emergency Response</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Medical &amp; Health</span> ›
+<span>First Aid and Emergency Response</span>
+</div>
+
+
+<h1>First Aid and Emergency Response</h1>
+<p class="subtitle">Comprehensive life-saving techniques for acute injuries and sudden illnesses in resource-limited environments</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~26 min</span>
+<span>Updated: 2026-02-18</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#recognition-amp-assessment-of-life-threatening-conditions">Recognition &amp; Assessment of Life-Threatening Conditions</a></li>
+<li><a href="#equipment">Equipment &amp; Materials</a></li>
+<li><a href="#triage">Triage and Scene Assessment</a></li>
+<li><a href="#cpr">CPR and Rescue Breathing</a></li>
+<li><a href="#bleeding">Hemorrhage Control</a></li>
+<li><a href="#shock">Shock Management</a></li>
+<li><a href="#wounds">Wound Management</a></li>
+<li><a href="#fractures">Fracture and Splinting</a></li>
+<li><a href="#burns">Burn Treatment</a></li>
+<li><a href="#choking">Choking and Airway Management</a></li>
+<li><a href="#poisoning">Poisoning and Overdose</a></li>
+<li><a href="#complications">Complications &amp; When to Stop Care</a></li>
+<li><a href="#recovery">Recovery &amp; Aftercare</a></li>
+<li><a href="#troubleshooting">Troubleshooting: What If Your Intervention Isn't Working?</a></li>
+<li><a href="#fieldadaptations">Field Adaptations: Making Do Without Ideal Equipment</a></li>
+<li><a href="#quick-reference">Quick Reference Table: Emergency Decision Tree</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<h2 id="overview">Overview</h2>
+<p>First aid encompasses the immediate, life-preserving interventions provided in the first minutes to hours after injury or sudden illness. In survival scenarios, professional emergency services may be unavailable for hours or days, making these skills essential for preventing unnecessary death. First aid priorities are simple: maintain airway patency, ensure adequate breathing, restore and maintain circulation, and prevent deterioration until professional care is reached or the patient stabilizes. Early intervention in the &quot;golden hour&quot; (first 60 minutes after trauma or onset of acute illness) dramatically improves survival odds. This guide covers recognition, assessment, and field management of life-threatening emergencies using principles that work with or without equipment.</p>
+<div class="info-box">
+<p><strong>Critical Fact:</strong> Approximately 40% of trauma deaths occur within the first 24 hours—most within the first 4 hours. Rapid assessment and decisive action during this window save lives. In wilderness or disaster settings with no evacuation available, maintaining the patient's ABCs while preventing infection and secondary shock is the entire medical role.</p>
+</div>
+<h2 id="recognition-amp-assessment-of-life-threatening-conditions">Recognition &amp; Assessment of Life-Threatening Conditions</h2>
+<p>Rapid, systematic assessment is the foundation of effective first aid. Use the ABCDE approach:</p>
+<ul>
+<li><strong>A - Airway</strong> — Is the airway patent? Can the patient speak or cry?</li>
+<li><strong>B - Breathing</strong> — Is the patient breathing? Are breath sounds present bilaterally?</li>
+<li><strong>C - Circulation</strong> — Is there a pulse? Is there severe bleeding?</li>
+<li><strong>D - Disability</strong> — What is the patient's mental status? Can they respond to commands?</li>
+<li><strong>E - Exposure</strong> — Full assessment of all injuries; assess for hypothermia, hidden wounds.</li>
+</ul>
+<p>Take only 60-90 seconds for primary assessment. Treat immediately identified threats (airway obstruction, apnea, cardiac arrest, severe hemorrhage) before moving to secondary assessment. Document what you find; if multiple casualties, re-triage periodically as conditions change.</p>
+<div class="danger">
+<p><strong>Life-Threatening Signs Requiring Immediate Intervention:</strong></p>
+<ul>
+<li>No pulse or absent breathing</li>
+<li>Severe airway obstruction (stridor, inability to speak)</li>
+<li>Severe hemorrhage (arterial spurting, limb amputation)</li>
+<li>Tension pneumothorax (extreme distress, unilateral absent breath sounds, JVD, tracheal deviation)</li>
+<li>Severe anaphylaxis (stridor, respiratory distress, systemic edema)</li>
+</ul>
+</div>
+<section id="equipment">
+<h2>Equipment &amp; Materials</h2>
+<h3>Essential First Aid Kit (survival-focused)</h3>
+<ul>
+<li>Hemostatic gauze (Combat Gauze or equivalent): 3-4 packs</li>
+<li>Tourniquet (CAT or SOFT-W): 2 each</li>
+<li>Elastic bandages (ACE or equivalent): 3 rolls in various widths</li>
+<li>Triangular bandages (or cloth strips 36&quot; × 36&quot;): 6 pieces</li>
+<li>Sterile gauze pads (4×4&quot; and 2×2&quot;): 20+ pads</li>
+<li>Non-adherent dressing (Telfa, Mepitel): 10 pads</li>
+<li>Adhesive tape (1&quot; width): 1 roll</li>
+<li>Antiseptic wipes or alcohol pads: 20 pads</li>
+<li>Topical antibiotic ointment (Neosporin or Bacitracin): 1 tube</li>
+<li>Pain relief: Ibuprofen 400mg tabs (24 tabs), Acetaminophen 500mg tabs (12 tabs)</li>
+<li>Antihistamine (Diphenhydramine 25mg): 6 tabs</li>
+<li>Antacid tablets: 12 tablets</li>
+<li>Epinephrine auto-injector (if allergies known): 2 pens, 0.3mg each</li>
+<li>Oral rehydration salts: 3-4 packets</li>
+<li>Thermometer (non-contact if possible): 1</li>
+<li>Gloves (nitrile, powder-free): 20 pairs</li>
+<li>Eye shield or clear plastic wrap: 2 pieces</li>
+<li>CPR barrier/pocket mask: 1</li>
+<li>Scissors (trauma shears): 1 pair</li>
+<li>Tweezers (for splinter removal): 1 pair</li>
+</ul>
+<h3>Field Improvisation</h3>
+<p>Without commercial supplies, adapt: clean cloth strips for pressure and elevation, clay or plantain leaves (if known) for poultices, cool stream water for wound irrigation, branches/rolled bark for splints, boiled cloth for sterile dressing, charcoal from fire (when cold) mixed with clay for wound packing, plant-derived pain relief (willow bark tea has salicin), pressure and elevation as alternatives to medications.</p>
+<div class="tip">
+<p><strong>High-Priority Improvisation:</strong> The most critical items to improvise when absent are hemostatic pressure (cloth, even torn clothing soaked in solution), tourniquets (cloth strips, belts, vines wound tightly), and splinting material (cardboard, branches, pillows). These three categories prevent death from bleeding and shock.</p>
+</div>
+</section>
+<section id="triage">
+<h2>Triage and Scene Assessment</h2>
+<h3>Scene Safety First</h3>
+<p>Before approaching victim: identify hazards (traffic, fire, chemical, electrical, water). Ensure personal safety first—injured rescuer becomes additional casualty. Establish perimeter. Don appropriate PPE (gloves, eye protection). Call for emergency services if available. Position yourself upwind of hazardous materials.</p>
+<h3>Triage Categories</h3>
+<table><thead><tr><th scope="row">Category</th><th scope="row">Color</th><th scope="row">Criteria</th><th scope="row">Treatment Order</th></tr></thead><tbody><tr><td>Immediate</td><td>Red</td><td>Life-threatening but survivable (airway obstruction, severe bleeding, shock)</td><td>First</td></tr><tr><td>Delayed</td><td>Yellow</td><td>Serious but stable (fractures, moderate lacerations, conscious head injury)</td><td>Second</td></tr><tr><td>Minor</td><td>Green</td><td>Walking wounded (minor lacerations, sprains, minor burns)</td><td>Third</td></tr><tr><td>Expectant</td><td>Black</td><td>Dead or unsalvageable (no respirations after airway opening, severe head/thoracic trauma)</td><td>Last</td></tr></tbody></table>
+<h3>Primary Assessment (ABCs)</h3>
+<p><strong>A - Airway:</strong> Clear obstruction, position for drainage. Open mouth, clear debris, tilt head back. <strong>B - Breathing:</strong> Assess respiration rate and quality. Listen for breathing sounds. Prepare rescue breathing if needed. <strong>C - Circulation:</strong> Check carotid pulse for 10 seconds. If absent, begin CPR. Look for massive external bleeding. Control with direct pressure.</p>
+</section>
+<section id="cpr">
+<h2>CPR and Rescue Breathing</h2>
+<h3>Adult CPR Sequence</h3>
+<p>For unresponsive, non-breathing adult: 1) Call for help. 2) Place supine on firm surface. 3) Open airway (head tilt-chin lift). 4) Give 30 chest compressions at 100-120 bpm (press hard, push fast, allow full recoil). 5) Give 2 rescue breaths (watch chest rise). 6) Continue 30:2 ratio until AED available, patient revives, or clearly deceased.</p>
+<h3>Compression Technique</h3>
+<p>Position: heel of one hand on lower half of breastbone, other hand on top, fingers interlaced. Depress 2-2.4 inches at least 100 bpm but no more than 120 bpm. Allow full chest recoil between compressions. Minimize interruptions. Rotate compressor every 2 minutes if multiple rescuers to prevent fatigue.</p>
+<h3>Rescue Breathing</h3>
+<p>After 30 compressions: pinch nose, create seal with mouth, blow for 1 second until chest visibly rises. Deliver 2 breaths. If breaths don't cause chest rise, reposition airway and try again. Continue CPR immediately after breaths. If unable to provide rescue breaths, hands-only CPR (continuous compressions) nearly as effective, especially in adults.</p>
+<h3>Choking Adult (Conscious)</h3>
+<p>If patient coughing and talking: encourage continued coughing, monitor. If unable to speak, cough, or breathe: perform Heimlich maneuver. Stand behind, wrap arms around abdomen just above umbilicus. Make fist with one hand, grasp with other. Press firmly upward with quick thrusts. Repeat 5 times or until object expelled or patient loses consciousness. If unconscious, position supine and begin CPR.</p>
+<h3>Recovery Position</h3>
+<p>For unconscious, breathing patient: place on side with head tilted back to maintain airway. Left arm under head, right arm across chest. Right knee bent. This position allows drainage, prevents aspiration. Check airway frequently. Monitor breathing and pulse continuously.</p>
+<div class="danger">
+<p><strong>When to Stop CPR:</strong> CPR may be discontinued if: (1) ROSC achieved (return of spontaneous circulation—pulse returns); (2) advanced life support assumed; (3) rescuer exhaustion/danger to self; (4) obvious death (rigor mortis, decomposition, decapitation); (5) do-not-resuscitate order present. In wilderness settings with no access to medical care, CPR may continue for 30-60 minutes if patient is normothermic and hypothermia is ruled out.</p>
+</div>
+<div class="warning">
+<p><strong>CPR Complications:</strong> Rib fractures occur in ~25% of CPR recipients; this is normal and not a reason to stop. Never pause compressions &gt;10 seconds. In cold-water drowning, patient is &quot;not dead until warm and dead&quot;—continue resuscitation until body temperature &gt;30°C or lifeless for &gt;3 hours.</p>
+</div>
+</section>
+<section id="bleeding">
+<h2>Hemorrhage Control</h2>
+<h3>Wound Classification</h3>
+<ul>
+<li><strong>Abrasion:</strong> Superficial scrape, minimal bleeding, high infection risk</li>
+<li><strong>Laceration:</strong> Clean cut from sharp object, predictable bleeding, varies by location/depth</li>
+<li><strong>Puncture:</strong> Deep, narrow wound from pointed object; risk of deep infection, hidden blood loss</li>
+<li><strong>Avulsion:</strong> Tissue torn away; significant bleeding, tissue viability depends on mechanism</li>
+<li><strong>Crush Injury:</strong> Traumatic tissue damage from blunt force; severe pain, rhabdomyolysis risk</li>
+</ul>
+<h3>Direct Pressure Technique</h3>
+<p>Apply firm, continuous pressure with clean cloth directly on wound for minimum 10 minutes. Do NOT repeatedly lift cloth to check. If blood soaks through, add layers on top (don't remove). Elevation helps: position limb above heart level. If extremity, consider distal pulse and limb viability. Pressure should stop bleeding in 10-15 minutes for most wounds.</p>
+<h3>Tourniquet Application</h3>
+<p>For severe limb hemorrhage uncontrolled by pressure (amputation, massive laceration): apply tourniquet 2-3 inches above wound, never over joint. Tighten until bleeding stops completely and distal pulse disappears. Note time applied (critical for tissue viability). Tourniquet can safely remain for 2+ hours in survival setting if necessary. High risk of limb loss if &gt;4-6 hours. Reassess distal circulation when possible.</p>
+<h3>Wound Packing</h3>
+<p>For deep wounds with uncontrolled bleeding: pack wound firmly with hemostatic gauze (Combat Gauze, Celox, or plain if unavailable) saturated with direct pressure. Maintain pressure for full recommended time (up to 3 minutes for hemostatic gauze). Cover with compression dressing. Do not remove packing prematurely; let it stay in place for 24-48 hours.</p>
+<h3>Hemorrhage Staging</h3>
+<table><thead><tr><th scope="row">Class</th><th scope="row">Blood Loss</th><th scope="row">Symptoms</th><th scope="row">Intervention</th></tr></thead><tbody><tr><td>I</td><td>&lt;15% BV</td><td>Minimal, no shock signs</td><td>Observation, oral fluids if conscious</td></tr><tr><td>II</td><td>15-30% BV</td><td>Anxiety, tachycardia, tachypnea</td><td>Aggressive fluid replacement, elevate limbs</td></tr><tr><td>III</td><td>30-40% BV</td><td>Confusion, weak pulse, pale, cold</td><td>IV fluids, tourniquet for limb injury, prepare for evacuation</td></tr><tr><td>IV</td><td>&gt;40% BV</td><td>Unconscious, barely palpable pulse, severe vasoconstriction</td><td>CPR, aggressive resuscitation, urgent evacuation</td></tr></tbody></table>
+<div class="danger">
+<p><strong>Arterial vs. Venous Bleeding:</strong> Arterial bleeding is bright red, pulsatile, and gushes; it's life-threatening and requires immediate tourniquet. Venous bleeding is dark red, flows steadily, and responds to direct pressure. Capillary bleeding (oozing) is slowest but indicates perfusion. Massive limb hemorrhage (amputation, mangled extremity) requires tourniquet application within 2 minutes to prevent Class IV shock.</p>
+</div>
+<div class="warning">
+<p><strong>Tourniquet Safety:</strong> Application time is noted (critical for prognosis). Tissue remains viable for 2+ hours even in ideal conditions; &gt;4-6 hours risks permanent damage. High tourniquet (above blood pressure cuff location) is safer than low tourniquet. Never apply directly over skin; place over clothing or padding. Reassess distal circulation when safe to do so; if limb becomes pulseless and blue, tourniquet is working but monitor closely.</p>
+</div>
+</section>
+<section id="shock">
+<h2>Shock Management</h2>
+<h3>Shock Recognition</h3>
+<p>Shock is inadequate tissue perfusion. Early signs: anxiety, restlessness, tachycardia (heart rate &gt;100), rapid shallow breathing, pale clammy skin, delayed capillary refill (&gt;2 seconds). Late signs: unconsciousness, barely palpable pulse, severe bradycardia, cold extremities. Act immediately; shock is life-threatening.</p>
+<h3>Types of Shock</h3>
+<ul>
+<li><strong>Hypovolemic:</strong> Blood/fluid loss. Treatment: control bleeding, fluid replacement, elevate legs.</li>
+<li><strong>Cardiogenic:</strong> Heart pump failure. Treatment: elevate head, minimize activity, medications if available.</li>
+<li><strong>Septic:</strong> Systemic infection. Treatment: antibiotics, fluid replacement, identify infection source.</li>
+<li><strong>Anaphylactic:</strong> Severe allergic reaction. Treatment: epinephrine IM, airway support, antihistamines.</li>
+<li><strong>Neurogenic:</strong> Spinal cord injury. Treatment: immobilize spine, fluid support cautiously.</li>
+</ul>
+<h3>Shock Management Protocol</h3>
+<ol>
+<li>Maintain airway; position patient on back with legs elevated 8-12 inches (cardiac exception: head elevated if pulmonary edema suspected)</li>
+<li>Control all bleeding; apply pressure and tourniquet as needed</li>
+<li>Prevent further heat loss; insulate from ground, cover with blankets</li>
+<li>Maintain calm reassuring presence; anxiety worsens shock</li>
+<li>Prepare for evacuation; shock is medical emergency</li>
+<li>Monitor closely; record vital signs every 15 minutes if possible</li>
+<li>If accessible: start IV lines, give fluids for hypovolemic shock (if internal bleeding suspected, limit fluids)</li>
+</ol>
+<div class="danger">
+<p><strong>Shock Decompensation:</strong> If patient deteriorates to Class IV shock (altered mental status, barely palpable pulse, skin cold/clammy), time is critical. Prepare for CPR. If no IV access and oral fluids impossible (unconscious or vomiting), patient is at imminent risk of death. In field settings, keep patient warm, elevate legs, and focus on evacuation.</p>
+</div>
+<div class="tip">
+<p><strong>Field Fluid Resuscitation:</strong> If IV fluids unavailable and patient conscious, provide small frequent sips of oral rehydration solution (ORS) or salted water (1 teaspoon salt + ½ teaspoon sugar per liter). Avoid large volumes that trigger vomiting. Monitor urine output (if possible); dark urine indicates dehydration.</p>
+</div>
+</section>
+<section id="wounds">
+<h2>Wound Management</h2>
+<h3>Wound Cleaning</h3>
+<p>For minor wounds: wash with soap and clean water, removing visible dirt and debris. For field expedient: use boiled cooled water (minimum) or saline solution. Avoid harsh antiseptics on large wounds (kills healthy tissue). For contaminated wounds: aggressive cleaning more important than infection prevention medication.</p>
+<h3>Infection Prevention</h3>
+<ul>
+<li>Remove all foreign material (dirt, fiber, etc.)</li>
+<li>Irrigate copiously with clean water (2+ liters for heavily contaminated)</li>
+<li>Consider high-pressure irrigation if available and wound not heavily contaminated initially</li>
+<li>Avoid tourniquet effect from tight bandaging; allow some drainage initially</li>
+<li>Elevate when possible to reduce swelling and promote drainage</li>
+<li>Monitor for signs of infection (increasing pain, red streaking, purulent drainage, fever)</li>
+</ul>
+<h3>Closure Decisions</h3>
+<p>Primary closure (immediate suturing): appropriate for clean wounds &lt;6-8 hours old. Delay closure: contaminated/heavily bleeding wounds or after 8 hours. May close after infection risk passes (24-48 hours). Never close puncture wounds; allow drainage. Wounds on highly vascular areas (face, scalp) tolerate delayed closure better than less vascular areas.</p>
+<h3>Dressing Changes</h3>
+<p>For wounds with continuous drainage: change dressing daily or when soaked through. For healing wounds: change dressing every 2-3 days if keeping closed, or every day if wet. Clean gently, assess for signs of infection, apply fresh antiseptic/antibiotic ointment, cover with clean dressing. Watch for malodor, excessive drainage, discoloration indicating infection.</p>
+<div class="warning">
+<p><strong>Infection Recognition Timeline:</strong> Early infection (24-48 hours): redness, warmth, increasing pain, minor drainage. Progressive infection (3-7 days): spreading erythema, purulent drainage (yellow/green), red streaking toward heart, fever. Systemic infection (&gt;7 days): fever, chills, malaise, possible septic shock. Start antibiotics immediately if available upon recognizing infection progression.</p>
+</div>
+<div class="info-box">
+<p><strong>Antibiotic Dosing for Common Wound Infections:</strong> Amoxicillin 500mg three times daily × 7 days; Cephalexin 500mg four times daily × 7 days; Clindamycin 300-450mg four times daily × 7 days (covers MRSA). Dosing assumes normal renal function. If infection suspected with fever/systemic signs, increase vigilance and begin evacuating patient.</p>
+</div>
+</section>
+<section id="fractures">
+<h2>Fracture and Splinting</h2>
+<h3>Fracture Signs</h3>
+<p>Pain (especially with movement), swelling (usually within minutes), deformity (bone angle abnormal), discoloration (bruising appears), loss of function, crepitus (grinding sensation). Open fractures have break in skin; high infection risk. Compartment syndrome (swelling so severe as to cut off circulation) is surgical emergency.</p>
+<h3>Splinting Principles</h3>
+<ul>
+<li><strong>Immobilize:</strong> Prevent movement of fracture site; reduces pain and prevents neurovascular damage</li>
+<li><strong>Include joints:</strong> Splint joint above and below fracture site</li>
+<li><strong>Pad well:</strong> Prevents pressure ulcers; use cloth, foam, or rolled newspaper</li>
+<li><strong>Check distal circulation:</strong> After splinting, verify pulses, color, temperature, capillary refill distal to splint</li>
+<li><strong>Monitor for swelling:</strong> Loosen splint if swelling worsens or toes/fingers become cold/blue</li>
+<li><strong>Elevate when possible:</strong> Reduces swelling, improves comfort</li>
+</ul>
+<h3>Field Expedient Splinting</h3>
+<p>Without commercial splints: improvise with rolled newspapers, cardboard, boards, or pillows. Secure with cloth strips, torn fabric, or vines. Sling and swathe for upper limb using cloth strips. For leg: double-splint (board on each side) secured with cloth strips every 4-6 inches. For spine: rigid splint or firm surface (backboard). Ensure splint doesn't cut off circulation.</p>
+<h3>Open Fracture Management</h3>
+<p>Priority: control bleeding (arterial bleeding immediate threat), clean wound, stabilize fracture before transport. Cover wound with clean dressing; do not probe. Administer antibiotics if available (reduces infection risk significantly). Tetanus prophylaxis if available. Open fractures almost always require professional care; stabilize and evacuate.</p>
+</section>
+<section id="burns">
+<h2>Burn Treatment</h2>
+<h3>Burn Classification</h3>
+<table><thead><tr><th scope="row">Depth</th><th scope="row">Appearance</th><th scope="row">Sensation</th><th scope="row">Healing</th></tr></thead><tbody><tr><td>Superficial (1st degree)</td><td>Red, dry</td><td>Very painful</td><td>3-7 days, no scarring</td></tr><tr><td>Partial thickness (2nd degree)</td><td>Blistered, wet, red</td><td>Very painful to touch</td><td>2-3 weeks, may scar</td></tr><tr><td>Full thickness (3rd degree)</td><td>Charred, leathery, white</td><td>Pain at edges only</td><td>Requires grafting, will scar</td></tr><tr><td>Deep tissue (4th degree)</td><td>Charred muscle/bone</td><td>Minimal</td><td>Amputation may be needed</td></tr></tbody></table>
+<h3>Burn Percentage (Rule of 9s)</h3>
+<p>Head: 9%, each arm: 9%, chest: 18%, abdomen: 18%, each leg: 18%, genitals: 1%. Burns &gt;20% require fluid resuscitation (severe dehydration risk). Burns &gt;30% mortality significant even with professional care. &gt;50% burns have poor prognosis in field settings.</p>
+<h3>Acute Burn Management</h3>
+<ol>
+<li>Stop burning: extinguish flames, remove from heat source</li>
+<li>Cool wound: immerse in cool water for 10-20 minutes (reduces depth), avoid ice (risks frostbite)</li>
+<li>Assess: determine depth percentage, estimate % of body surface area</li>
+<li>Cover: use clean, dry cloth; prevents contamination and reduces heat loss</li>
+<li>Pain control: NSAIDs, opioids if available and patient can swallow</li>
+<li>Fluids: for &gt;20% burns, replace volume (Parkland formula: 4mL × %TBSA × body weight in kg in first 24 hours, half in first 8 hours)</li>
+<li>Prevent infection: change dressing daily, watch for infection signs</li>
+</ol>
+<h3>Burn Wound Care</h3>
+<p>Daily cleaning: remove loose tissue gently, apply antibiotic ointment (Silvadene if available), cover with non-adherent dressing. Watch for eschar (dead tissue) that may restrict breathing/circulation on circumferential burns. Monitor for compartment syndrome. Elevate burned limbs. Encourage movement to prevent contractures.</p>
+<div class="tip">
+<p><strong>Parkland Formula for Large Burns:</strong> For any burn &gt;20% TBSA, fluid resuscitation is critical. Formula: 4 mL × % TBSA × body weight (kg). Give half over first 8 hours, remainder over next 16 hours. Example: 40 kg patient with 30% burn = 4 × 30 × 40 = 4,800 mL total; give 2,400 mL in first 8 hours, then 300 mL/hour for next 16 hours. Titrate to urine output (0.5 mL/kg/hour adult, 1 mL/kg/hour child).</p>
+</div>
+</section>
+<section id="choking">
+<h2>Choking and Airway Management</h2>
+<h3>Foreign Body Airway Obstruction (FBAO)</h3>
+<p>Signs: unable to speak, weak cough, no breathing sounds, panic, cyanosis. If partial obstruction (still coughing/talking): encourage continued coughing, monitor, prepare to act. If complete obstruction: immediate intervention needed—perform Heimlich for adults, back blows + chest thrusts for infants.</p>
+<h3>Infant Choking</h3>
+<p>For infant (&lt;1 year) with FBAO: 1) Give 5 back blows: support chin/jaw with hand, deliver sharp blows between shoulder blades. 2) Give 5 chest thrusts: place 2 fingers on breastbone just below nipple line, press downward 1-1.5 inches, 5 times. 3) Sweep mouth (only if can see object). 4) Repeat cycle until object dislodges or infant becomes unconscious.</p>
+<h3>Airway Positioning</h3>
+<p>Head tilt-chin lift: Place hand on forehead, tilt head back gently. Place fingers under chin, lift gently. Opens airway by removing tongue obstruction. For trauma: avoid neck extension; use jaw thrust instead (fingers under angle of jaw, lift forward without neck extension).</p>
+<h3>Oral Airway Insertion</h3>
+<p>For unconscious patient without gag reflex: measure oral airway (corner of mouth to earlobe). Insert upside down, rotate 180 degrees as sliding into mouth, or insert directly right-side up. Airway keeps tongue forward, allows breathing around. Monitor closely; removes airway if patient becomes conscious/gags.</p>
+</section>
+<section id="poisoning">
+<h2>Poisoning and Overdose</h2>
+<h3>Poison Assessment</h3>
+<p>Determine: substance (if possible), route of exposure (ingestion, inhalation, skin, injection), time of exposure, amount, patient condition. Symptoms vary by toxin: altered mental status, seizures, respiratory depression, arrhythmias, GI upset, skin/eye irritation.</p>
+<h3>General Poisoning Management</h3>
+<ul>
+<li><strong>Activate airway protection:</strong> Position for drainage, be prepared to suction</li>
+<li><strong>Decontamination:</strong> Remove contaminated clothing, wash skin thoroughly with water (avoid harsh scrubbing)</li>
+<li><strong>Induced vomiting:</strong> Generally NOT recommended (risks aspiration, further tissue damage); only for specific substances with professional guidance</li>
+<li><strong>Activated charcoal:</strong> If available and ingestion &lt;1-2 hours: 50-100g mixed with water (only if airway protected). Binds many toxins, prevents absorption</li>
+<li><strong>Supportive care:</strong> Fluids, monitor airway, manage seizures with benzodiazepines if available</li>
+<li><strong>Antidotes:</strong> Specific to toxin (naloxone for opioids, methylene blue for methemoglobinemia, etc.)</li>
+</ul>
+<h3>Common Toxin Overview</h3>
+<table><thead><tr><th scope="row">Toxin</th><th scope="row">Route</th><th scope="row">Effects</th><th scope="row">Management</th></tr></thead><tbody><tr><td>Opioids</td><td>Any</td><td>Respiratory depression, pinpoint pupils</td><td>Naloxone IV/IM/IN</td></tr><tr><td>Stimulants (cocaine, meth)</td><td>Any</td><td>Hypertension, agitation, arrhythmias</td><td>Benzodiazepines, supportive care</td></tr><tr><td>Anticholinergics</td><td>Ingestion</td><td>Tachycardia, dilated pupils, altered mental status</td><td>Supportive, physostigmine if severe</td></tr><tr><td>Acetaminophen</td><td>Ingestion</td><td>Liver damage (delayed 24-72 hours)</td><td>N-acetylcysteine if &lt;8 hours</td></tr><tr><td>Corrosives</td><td>Ingestion</td><td>Burning mouth/throat, vomiting blood</td><td>Do NOT induce vomiting; dilute, supportive care</td></tr></tbody></table>
+</section>
+<section id="complications">
+<h2>Complications &amp; When to Stop Care</h2>
+<h3>Life-Threatening Complications</h3>
+<p>Complications during first aid require immediate recognition and response. The most dangerous are:</p>
+<div class="danger">
+<p><strong>Tension Pneumothorax (Life-Threat):</strong> Collapsed lung with continued air entry creates pressure that collapses the other lung. Signs: severe dyspnea, unilateral absent breath sounds, JVD (jugular venous distension), tracheal deviation toward opposite side, shock-like presentation. Field treatment: needle decompression (insert 14-16 gauge needle at midclavicular line, 2nd intercostal space). If this occurs post-trauma, suspect penetrating injury to chest.</p>
+</div>
+<div class="danger">
+<p><strong>Hemorrhagic Shock Progression to Cardiac Arrest:</strong> Despite interventions, Class IV hemorrhage may progress to cardiac arrest. Perform CPR if patient arrests. If no ROSC after 20 minutes of resuscitation in setting where evacuation is impossible and patient is normothermic, consider terminating resuscitation.</p>
+</div>
+<div class="danger">
+<p><strong>Airway Compromise from Angioedema:</strong> In anaphylaxis or severe facial trauma, swelling of airway can occlude it completely within minutes. Signs: difficulty swallowing, drooling, stridor (on inspiration) or stertor (on expiration), tripod positioning. Prepare for emergency airway if trained; otherwise position for drainage, have suction ready, consider epinephrine IM immediately if anaphylaxis suspected.</p>
+</div>
+<h3>Secondary Complications</h3>
+<ul>
+<li><strong>Rhabdomyolysis (crush injury):</strong> Myoglobin release causes dark urine. Risk of acute kidney injury. Aggressive fluid resuscitation (goal urine output 200-300 mL/hour) can mitigate. If dark cola-colored urine develops, increase fluids and prepare for evacuation.</li>
+<li><strong>Fat embolism (after long-bone fracture):</strong> Delayed (24-48 hours): confusion, petechial rash on chest/axillae, shortness of breath. Supportive care only in field; prevent by early immobilization.</li>
+<li><strong>Tetanus risk (after puncture/crush wounds):</strong> If booster status unknown or &gt;5 years since last dose, tetanus risk high. If available, give tetanus toxoid IM (0.5 mL). If previously never vaccinated, give 3-dose series over 6 months if possible.</li>
+</ul>
+<h3>When to Terminate Resuscitation</h3>
+<p>In resource-limited settings, resuscitation is terminated when:</p>
+<ol>
+<li>ROSC achieved (return of spontaneous circulation)</li>
+<li>Obvious death (rigor mortis, dependent lividity, decapitation, decomposition, immersion in ice &gt;6 hours)</li>
+<li>Resuscitation ongoing for &gt;30-60 minutes with no signs of life (normothermic patient)</li>
+<li>Patient hypothermic but unrecovered after passive external rewarming and &gt;3 hours no vital signs (or until core temperature &gt;30°C)</li>
+<li>Rescuer safety threatened or rescuer exhaustion prevents effective CPR</li>
+<li>Signed DNR (do-not-resuscitate) order present</li>
+</ol>
+<div class="info-box">
+<p><strong>Cold Water Exception:</strong> Hypothermic patients have survived complete cardiac arrest &gt;3 hours if in extremely cold water. Motto: &quot;No one is dead until they are warm and dead.&quot; Continue gentle resuscitation (avoid rough movement that can trigger VF in hypothermic heart) and slow rewarming.</p>
+</div>
+</section>
+<section id="recovery">
+<h2>Recovery &amp; Aftercare</h2>
+<h3>Post-Trauma Monitoring (0-72 hours)</h3>
+<p>Immediate post-trauma period is high-risk. Monitor for delayed deterioration:</p>
+<p><strong>Hours 0-6:</strong></p>
+<ul>
+<li>Vitals every 15-30 minutes (heart rate, blood pressure, respiratory rate, mental status)</li>
+<li>Assess for hidden bleeding (abdominal distension, femoral area swelling, chest asymmetry)</li>
+<li>Pain control: ibuprofen 600-800 mg every 6 hours (if no GI bleed suspected) or acetaminophen 650-1000 mg every 4-6 hours</li>
+<li>Prevent aspiration: NPO (nothing by mouth) if altered mental status or potential abdominal injury</li>
+<li>Tetanus status: update if needed</li>
+</ul>
+<p><strong>Hours 6-24:</strong></p>
+<ul>
+<li>Vitals every 1-2 hours</li>
+<li>Monitor wound for oozing, drainage character change</li>
+<li>Start dressing changes if indicated (wet or contaminated)</li>
+<li>Elevate injured areas</li>
+<li>Reassess neurovascular status in fractured limbs every 2-4 hours</li>
+</ul>
+<p><strong>Hours 24-72:</strong></p>
+<ul>
+<li>Vitals every 4-6 hours (if stable)</li>
+<li>Wound care daily, watch for infection</li>
+<li>Pain reassessment; consider reducing opioids if available</li>
+<li>Early movement of uninjured joints to prevent stiffness</li>
+<li>Monitor for fever (indicates infection or other complication)</li>
+</ul>
+<h3>Aftercare Timeline by Injury Type</h3>
+<table><thead><tr><th>Injury Type</th><th>Week 1-2</th><th>Week 2-6</th><th>Week 6+</th></tr></thead><tbody><tr><td>Lacerations</td><td>Daily dressing changes, watch for infection, remove sutures if present at day 7-10</td><td>Reduced dressing frequency, watch scar formation, sun protection</td><td>Scar maturation, gentle pressure garment if hypertrophic</td></tr><tr><td>Burns (superficial)</td><td>Daily cleaning, topical antibiotic, pain management, blister intact if possible</td><td>Transition to less frequent dressing changes, moisturize with lotion, assess for contractures</td><td>Scar care, possible splinting if contracture risk</td></tr><tr><td>Fractures</td><td>Splint/cast immobilization, elevate, ice initially, pain control</td><td>Initiate gentle active range of motion if safe, progress to resistance exercises</td><td>Full weight-bearing or activity progression as tolerated, physical therapy if available</td></tr><tr><td>Head Injury (concussion)</td><td>Rest, dark room, avoid stimulation, monitor for worsening headache/vomiting/drowsiness</td><td>Gradual return to activity, balance/coordination exercises if deficits persist</td><td>Return-to-activity protocol (physical exertion only if symptom-free)</td></tr></tbody></table>
+<h3>Infection Prevention &amp; Monitoring</h3>
+<p>Infection risk is highest days 2-10 post-injury. Daily assessment protocol:</p>
+<ul>
+<li><strong>Appearance:</strong> Redness extending &gt;2 cm from wound edges, yellow/green/foul drainage, black discoloration (necrosis), increasing warmth</li>
+<li><strong>Systemic signs:</strong> Temperature &gt;38.5°C (101°F), chills, malaise, headache, lymphadenopathy (swollen nodes in draining direction)</li>
+<li><strong>Action if suspected:</strong> Start antibiotics immediately (if available), increase dressing frequency to 2x daily, elevate, monitor closely for progression to sepsis</li>
+</ul>
+<div class="warning">
+<p><strong>Sepsis Warning Signs (Medical Emergency):</strong> Fever &gt;39°C (102°F), shaking chills, rapid heart rate &gt;120, rapid breathing &gt;20, confusion, low blood pressure, decreased urine output. If suspected, patient requires evacuation urgently. While awaiting evacuation: aggressive fluid replacement (3-4 L/day if conscious and tolerating oral), antibiotics if available, cooling measures for fever.</p>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting: What If Your Intervention Isn't Working?</h2>
+<h3>CPR Not Producing Chest Rise with Rescue Breaths</h3>
+<p><strong>Problem:</strong> Breaths don't cause visible chest rise; you're giving breaths but airway still obstructed.</p>
+<p><strong>Diagnosis:</strong> Airway repositioning hasn't worked, or foreign body still present.</p>
+<p><strong>Action:</strong></p>
+<ol>
+<li>Reposition airway aggressively: head-tilt-chin-lift or jaw-thrust</li>
+<li>If jaw-thrust not yet tried, try it</li>
+<li>Look in mouth; if object visible and can grasp safely, remove it</li>
+<li>Consider oral airway insertion if available and patient unconscious</li>
+<li>If still unsuccessful after 2-3 attempts at repositioning: continue hands-only CPR (compressions alone), as this is nearly as effective in adults</li>
+</ol>
+<h3>Tourniquet Applied but Bleeding Continues</h3>
+<p><strong>Problem:</strong> Tourniquet in place for 2+ minutes but blood still oozing around it or wound continues to bleed.</p>
+<p><strong>Diagnosis:</strong> Tourniquet placement incorrect (too distal, not tight enough, or placed loosely over clothing)</p>
+<p><strong>Action:</strong></p>
+<ol>
+<li>Tighten significantly more (should be tight enough that patient would complain if conscious)</li>
+<li>If still bleeding, apply second tourniquet above (proximal to) the first</li>
+<li>Check that tourniquet is on skin/bone, not just soft tissue</li>
+<li>If it's limb amputation above tourniquet, consider packing proximal wound with gauze</li>
+<li>Document time and move to next priority</li>
+</ol>
+<h3>Severe Burn Patient Hypothermic Despite Being Near Fire/Heat</h3>
+<p><strong>Problem:</strong> Large burn patient is shivering, confused, core temperature dropping despite environmental heat.</p>
+<p><strong>Diagnosis:</strong> Massive fluid/heat loss through burned skin causing severe hypothermia risk.</p>
+<p><strong>Action:</strong></p>
+<ol>
+<li>Cover burn wounds with clean, dry blankets (both insulate and prevent evaporative cooling)</li>
+<li>Remove wet clothing</li>
+<li>Provide warm fluids (if conscious and swallowing; avoid hot liquids that increase fluid loss)</li>
+<li>Seek passive rewarming (shelter, keep dry, close skin-to-skin if available)</li>
+<li>If IV fluids available, warm them before administration</li>
+<li>Prepare for evacuation; severe burns combined with hypothermia is high mortality</li>
+</ol>
+<h3>Patient with Crush Injury Refuses Evacuation</h3>
+<p><strong>Problem:</strong> Patient trapped briefly, now alert and refusing evacuation. Crush injury to leg.</p>
+<p><strong>Diagnosis:</strong> Possible crush syndrome; patient may deteriorate rapidly once tourniquet or compression released.</p>
+<p><strong>Action:</strong></p>
+<ol>
+<li>Explain that rhabdomyolysis (muscle breakdown from crush) may cause sudden shock/kidney failure within hours</li>
+<li>Start IV fluids immediately if available (aggressive hydration critical)</li>
+<li>Urine may turn dark brown/cola-colored; this is sign of severe myoglobinuria</li>
+<li>Insist on evacuation even if patient protests; crush injuries are deceptive</li>
+<li>If evacuation delayed &gt;4 hours, maintain aggressive fluid intake, monitor urine color hourly</li>
+</ol>
+</section>
+<section id="fieldadaptations">
+<h2>Field Adaptations: Making Do Without Ideal Equipment</h2>
+<h3>CPR Without CPR Barrier</h3>
+<p>If no pocket mask or face shield: hands-only CPR (compressions without breaths) is preferred in adults. If trained in rescue breathing and willing: tilt head, pinch nose, create seal with mouth, deliver breath. Risk of disease transmission exists but lower than no resuscitation.</p>
+<h3>Bleeding Control Without Hemostatic Gauze</h3>
+<p>Hemostatic agents accelerate clotting. Without them: clean gauze, any cloth, even leaves or moss can work. Key is sustained direct pressure for 10-15 minutes without lifting. If tourniquet needed, cloth tourniquets work as well as commercial; wrap tightly 2-3 inches above wound.</p>
+<h3>Pain Relief Without Medications</h3>
+<ul>
+<li>Willow bark tea (contains salicin, precursor to aspirin): steep inner bark 5-10 minutes</li>
+<li>Ginger tea: anti-inflammatory</li>
+<li>Elevation and ice (if available) to reduce swelling</li>
+<li>Immobilization of injured part reduces pain significantly</li>
+<li>Guided breathing: slow, deep breathing activates parasympathetic nervous system</li>
+</ul>
+<h3>Fluid Resuscitation in Dehydrated Patient with No IV Access</h3>
+<ul>
+<li>Oral rehydration solution (1 L boiled water + 6 teaspoons sugar + ½ teaspoon salt)</li>
+<li>Small frequent sips (every 5 minutes, 30 mL per sip) better tolerated than large volumes</li>
+<li>If patient vomiting: wait 10 minutes, try again more slowly</li>
+<li>Target: 2-3 L over 24 hours if conscious and tolerating oral (equivalent to modest IV resuscitation)</li>
+</ul>
+<h3>Improvised Splinting Materials</h3>
+<ul>
+<li>Cardboard: lightweight, can be shaped, secure with cloth strips</li>
+<li>Rolled newspaper: surprisingly stiff when wrapped, compress with tape</li>
+<li>Branches/bark: natural availability, may need padding with cloth</li>
+<li>Pillows: soft, good for upper extremity</li>
+<li>Sling: use cloth strip around neck, support upper arm</li>
+<li>Elevate on rolled clothing to reduce swelling</li>
+</ul>
+<div class="tip">
+<p><strong>Universal Principle:</strong> Any immobilization is better than none. Swelling and pain worsen if fracture moves. Even crude splinting prevents converting simple fracture to compound (open) fracture.</p>
+</div>
+</section>
+<section id="quick-reference">
+<h2>Quick Reference Table: Emergency Decision Tree</h2>
+<table><thead><tr><th>Sign/Symptom</th><th>Immediate Assessment</th><th>Action (No Airway/Breathing/Circulation Problem)</th><th>Action (Airway/Breathing/Circulation Compromised)</th></tr></thead><tbody><tr><td>Unresponsive, not breathing</td><td>Check pulse (10 sec)</td><td>Recovery position, monitor</td><td>Start CPR, 30:2 ratio, continue until recovery or clearly deceased</td></tr><tr><td>Severe limb bleeding (arterial)</td><td>Bright red, pulsatile, gushing</td><td>Direct pressure, elevate</td><td>Tourniquet 2-3" above wound immediately, note time</td></tr><tr><td>Gasping/stridor/unable to speak</td><td>Check if choking, trauma, anaphylaxis</td><td>Position for drainage, monitor</td><td>Heimlich if choking, epinephrine if anaphylaxis, airway support</td></tr><tr><td>Chest trauma, breathing difficult</td><td>Listen for bilateral breath sounds, JVD, tracheal deviation</td><td>Oxygen if available, pain control, position upright</td><td>Needle decompression if tension pneumothorax, CPR if arrest</td></tr><tr><td>Altered mental status, normal vitals</td><td>Check glucose (if diabetic), pupil size, toxin exposure, head injury</td><td>Recovery position, monitor neurology every 15 min</td><td>Ensure airway patent, prepare for deterioration, glucose if hypoglycemic</td></tr><tr><td>Severe allergic reaction</td><td>Stridor, facial swelling, respiratory distress, hives</td><td>Antihistamine, monitor airway</td><td>Epinephrine IM 0.3-0.5 mg lateral thigh, repeat every 5-15 min, airway management</td></tr><tr><td>Poisoning/overdose</td><td>Substance, route, time, vitals</td><td>Observation, supportive care, fluids if indicated</td><td>Airway support, activated charcoal if ingestion <2 hours, specific antidotes if available</td></tr><tr><td>Major burn (>20% TBSA)</td><td>%TBSA using Rule of 9s, depth assessment</td><td>Cool with water, cover, elevate, pain control, evacuate</td><td>Airway support if face/mouth burned, aggressive fluid resuscitation per Parkland formula</td></tr></tbody></table>
+</section>
+<section id="safety">
+<div class="warning">
+<h3>Critical Safety Protocols</h3>
+<ul>
+<li>Scene safety is paramount: do not become victim yourself. Assess hazards before entry.</li>
+<li>Airway emergency (inability to maintain patent airway): prepare for emergency airway procedures (cricothyrotomy if trained)</li>
+<li>Severe hemorrhage with shock: apply tourniquet immediately if limb injury, even if pressure hasn't failed yet</li>
+<li>Poisoning with altered consciousness: assume full stomach; protect airway, prepare for vomiting</li>
+<li>Anaphylaxis: epinephrine IM (0.3-0.5mg IM in outer thigh, repeat every 5-15 min as needed) before antihistamines</li>
+</ul>
+</div>
+</section>
+<section id="mistakes">
+<h3>Common First Aid Errors</h3>
+<ol>
+<li>
+<p><strong>Tourniquet hesitation:</strong> Applying too late results in permanent disability or loss of limb; apply early for severe limb bleeding. Consequence: tissue death, amputation. <em>Fix: If arterial bleeding, don't wait for pressure to fail—apply tourniquet within 2 minutes.</em></p>
+</li>
+<li>
+<p><strong>Ineffective CPR:</strong> Shallow compressions (pressing &lt;2 inches or &lt;100 bpm) fail to generate adequate perfusion. Consequence: brain death despite continued CPR. <em>Fix: Press hard (2-2.4 inches), push fast (100-120 bpm), allow full recoil between compressions.</em></p>
+</li>
+<li>
+<p><strong>Airway neglect:</strong> Unprotected airway in altered consciousness = aspiration of vomit/blood. Consequence: asphyxiation, aspiration pneumonia. <em>Fix: Position on side immediately, monitor airway, prepare for suctioning.</em></p>
+</li>
+<li>
+<p><strong>Infection spread:</strong> Reusing contaminated dressings or touching wounds with unwashed hands spreads bacteria. Consequence: wound infection, sepsis. <em>Fix: Use clean/sterile materials for each dressing change, wear gloves, wash hands between patients.</em></p>
+</li>
+<li>
+<p><strong>Shock underestimation:</strong> Waiting for shock to appear before intervening wastes critical time. Consequence: progression to Class IV shock, death. <em>Fix: Anticipate shock; begin interventions (elevation, bleeding control, fluids) immediately upon injury.</em></p>
+</li>
+<li>
+<p><strong>Over-tightening tourniquets:</strong> Excessive tightness can crush remaining soft tissue. Consequence: tissue damage beyond the original injury. <em>Fix: Tighten until bleeding stops completely and distal pulse disappears, then stop—tight is good, crushing is not.</em></p>
+</li>
+<li>
+<p><strong>Ignoring subtle signs:</strong> Mild tachycardia, anxiety, mild confusion early in shock are often dismissed. Consequence: shock progression missed. <em>Fix: Take vital signs systematically; recognize early compensation as sign of blood loss.</em></p>
+</li>
+</ol>
+<div class="danger">
+<p><strong>Critical Mistake: Removing Tourniquet in Field:</strong> Tourniquet removal by non-surgeon can cause sudden reperfusion shock (fluid released from dead muscle tissue causes hypotension). Leave tourniquet in place until professional surgical care available. If absolutely necessary to remove (e.g., for clothing), do slowly and monitor closely for shock.</p>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="avalanche-safety.html">Avalanche Safety and Rescue</a>
+<a href="blood-medicine.html">Blood Medicine &amp; Transfusion</a>
+<a href="burn-treatment.html">Burn Treatment &amp; Management</a>
+<a href="chemical-safety.html">Chemical Safety</a>
+<a href="dentistry.html">Dentistry</a>
+<a href="elder-care.html">Elder Care &amp; Geriatric Medicine</a>
+<a href="emergency-dental.html">Emergency Dental Procedures</a>
+<a href="family-emergency-plan.html">Family Emergency Plan</a>
+<a href="heat-management.html">Heat Management</a>
+<a href="herbal-antibiotics.html">Herbal Antibiotics &amp; Natural Medicine</a>
+<a href="herbalism.html">Herbalism &amp; Medicinal Plants</a>
+<a href="high-altitude-living.html">High-Altitude Living &amp; Mountain Adaptation</a>
+<a href="home-inventory.html">Home Inventory</a>
+<a href="hydrotherapy-fever-management.html">Hydrotherapy and Fever Management</a>
+<a href="infant-child-care.html">Infant &amp; Child Care (Birth to Age 5)</a>
+<a href="jungle-survival.html">Jungle Survival Systems</a>
+<a href="medical-reference.html">Medical &amp; Survival Medicine</a>
+<a href="medications.html">Essential Medications</a>
+<a href="mental-health-counseling.html">Mental Health &amp; Counseling</a>
+<a href="midwifery.html">Midwifery &amp; Childbirth</a>
+<a href="nutrition-deficiency-diseases.html">Nutrition Science &amp; Deficiency Diseases</a>
+<a href="obstetric-emergencies.html">Obstetric Emergencies</a>
+<a href="orthodontics-survival.html">Survival Orthodontics</a>
+<a href="orthopedics-fractures.html">Orthopedics &amp; Fracture Management</a>
+<a href="parasitology-tropical.html">Parasitology &amp; Tropical Diseases</a>
+<a href="pediatric-emergency-medicine.html">Pediatric Emergency Medicine</a>
+<a href="pharmaceutical-production.html">Pharmaceutical Production</a>
+<a href="psychological-resilience.html">Psychological Resilience</a>
+<a href="public-health-epidemiology.html">Public Health Systems &amp; Epidemiology</a>
+<a href="quick-reference.html">Quick Reference Cards</a>
+<a href="search-rescue.html">Search &amp; Rescue Operations</a>
+<a href="sign-language-communication.html">Visual Communication &amp; Sign Language</a>
+<a href="sterilization-methods.html">Sterilization Methods</a>
+<a href="sur-03-herbal-medicine.html">Herbal Medicine Guide</a>
+<a href="surgery-field.html">Field Surgery &amp; Emergency Procedures</a>
+<a href="suture-material-production.html">Suture Material Production</a>
+<a href="the-go-bag.html">The Go-Bag</a>
+<a href="toxicology.html">Toxicology &amp; Poison Management</a>
+<a href="toxicology-poisoning-response.html">Toxicology and Poisoning Response</a>
+<a href="trauma-hemorrhage-control.html">Trauma Hemorrhage Control</a>
+<a href="vaccine-production.html">Vaccine Production &amp; Immunization</a>
+<a href="veterinary.html">Veterinary Medicine</a>
+<a href="wound-care-chronic.html">Chronic Wound Care</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/chemistry-lab-protocols-safety.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micro-Scale Chemistry Lab Safety &amp; SOPs</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Industrial Chemistry</span> ›
+<span>Micro-Scale Chemistry Lab Safety &amp; SOPs</span>
+</div>
+
+
+<h1>Micro-Scale Chemistry Lab Safety &amp; SOPs</h1>
+<p class="subtitle">Lab setup, glassware improvisation, ventilation, PPE, safety procedures, waste disposal</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~16 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#lab-site-selection">Lab Site Selection and Setup</a></li>
+<li><a href="#glassware-improvisation">Glassware and Equipment Improvisation</a></li>
+<li><a href="#ventilation-requirements">Ventilation Requirements</a></li>
+<li><a href="#ppe-requirements">Personal Protective Equipment (PPE)</a></li>
+<li><a href="#chemical-storage">Chemical Storage and Compatibility</a></li>
+<li><a href="#standard-operating-procedures">Standard Operating Procedures (SOPs) for Common Reactions</a></li>
+<li><a href="#waste-disposal">Waste Disposal</a></li>
+<li><a href="#emergency-procedures">Emergency Procedures</a></li>
+<li><a href="#record-keeping">Record Keeping and Quality Control</a></li>
+<li><a href="#practical-checklist">Pre-Work Checklist</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<p>Performing chemistry in austere environments requires safety discipline and improvisation. This guide covers lab setup, ventilation, protective equipment, standard operating procedures, and waste disposal in low-resource conditions.</p>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Chemistry Lab Setup and Safety Equipment">
+  <defs>
+    <style>
+      .lab-label { font-family: Arial, sans-serif; font-size: 12px; fill: var(--text); }
+      .lab-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: var(--text); }
+      .equipment { stroke: var(--text); stroke-width: 1.5; }
+      .hazard-highlight { stroke: #c41e3a; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="var(--bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="30" class="lab-title" text-anchor="middle">Safe Chemistry Lab Setup &amp; Equipment</text>
+
+  <!-- Lab bench setup -->
+  <text x="50" y="65" class="lab-title">Improvised Lab Bench Layout:</text>
+
+  <!-- Ventilation fan -->
+  <g>
+    <circle cx="680" cy="120" r="20" fill="var(--surface)" class="equipment"/>
+    <text x="680" y="125" class="lab-label" text-anchor="middle" style="font-size: 10px;">Fan</text>
+    <line x1="680" y1="140" x2="680" y2="280" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="695" y="210" class="lab-label" style="font-size: 9px;">Exhaust</text>
+  </g>
+
+  <!-- Fume hood -->
+  <g>
+    <rect x="550" y="100" width="100" height="120" fill="none" class="hazard-highlight"/>
+    <text x="600" y="145" class="lab-label" text-anchor="middle" style="font-size: 11px; font-weight: bold;">Fume Hood</text>
+    <text x="600" y="160" class="lab-label" text-anchor="middle" style="font-size: 9px;">(Open front)</text>
+    <text x="600" y="175" class="lab-label" text-anchor="middle" style="font-size: 9px;">or Outdoor</text>
+  </g>
+
+  <!-- Reaction bench -->
+  <g>
+    <!-- Tabletop -->
+    <rect x="320" y="260" width="200" height="20" fill="var(--surface)" class="equipment"/>
+
+    <!-- Reaction vessel -->
+    <circle cx="380" cy="240" r="15" fill="#4a7c9f" class="equipment"/>
+    <text x="380" y="245" class="lab-label" text-anchor="middle" style="font-size: 9px; fill: white;">Flask</text>
+
+    <!-- Heat source -->
+    <circle cx="440" cy="250" r="8" fill="var(--accent)" class="equipment"/>
+    <circle cx="440" cy="250" r="5" fill="#8b6f47"/>
+    <text x="440" y="275" class="lab-label" text-anchor="middle" style="font-size: 8px;">Heat</text>
+
+    <!-- Ice bath -->
+    <rect x="350" y="280" width="60" height="30" fill="var(--card)" class="equipment"/>
+    <text x="380" y="300" class="lab-label" text-anchor="middle" style="font-size: 8px;">Ice bath</text>
+  </g>
+
+  <!-- PPE Requirements -->
+  <text x="50" y="250" class="lab-title">Essential PPE (Personal Protective Equipment):</text>
+
+  <!-- Head protection -->
+  <g>
+    <ellipse cx="80" cy="310" rx="15" ry="20" fill="var(--card)" class="equipment"/>
+    <text x="80" y="335" class="lab-label" text-anchor="middle" style="font-size: 10px; font-weight: bold;">Hair tie</text>
+  </g>
+
+  <!-- Eye protection -->
+  <g>
+    <circle cx="150" cy="300" r="12" fill="#4a7c9f" class="equipment"/>
+    <circle cx="165" cy="300" r="12" fill="#4a7c9f" class="equipment"/>
+    <line x1="155" y1="300" x2="160" y2="300" stroke="var(--text)" stroke-width="1"/>
+    <text x="157" y="335" class="lab-label" text-anchor="middle" style="font-size: 10px; font-weight: bold;">Goggles</text>
+  </g>
+
+  <!-- Gloves -->
+  <g>
+    <rect x="220" y="290" width="20" height="35" rx="5" fill="var(--accent2)" class="equipment"/>
+    <rect x="250" y="290" width="20" height="35" rx="5" fill="var(--accent2)" class="equipment"/>
+    <text x="235" y="335" class="lab-label" text-anchor="middle" style="font-size: 10px; font-weight: bold;">Gloves</text>
+  </g>
+
+  <!-- Apron -->
+  <g>
+    <polygon points="320,290 360,290 365,330 315,330" fill="var(--surface)" class="equipment"/>
+    <text x="340" y="345" class="lab-label" text-anchor="middle" style="font-size: 10px; font-weight: bold;">Apron</text>
+  </g>
+
+  <!-- Shoes -->
+  <g>
+    <ellipse cx="400" cy="320" rx="10" ry="8" fill="var(--surface)" class="equipment"/>
+    <ellipse cx="420" cy="320" rx="10" ry="8" fill="var(--surface)" class="equipment"/>
+    <text x="410" y="345" class="lab-label" text-anchor="middle" style="font-size: 10px; font-weight: bold;">Closed shoes</text>
+  </g>
+
+  <!-- Chemical storage -->
+  <text x="50" y="410" class="lab-title">Chemical Storage by Hazard Class:</text>
+
+  <!-- Acids -->
+  <g>
+    <rect x="50" y="430" width="90" height="60" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <text x="95" y="450" class="lab-label" text-anchor="middle" style="font-weight: bold;">Acids</text>
+    <text x="95" y="467" class="lab-label" text-anchor="middle" style="font-size: 9px;">H₂SO₄, HCl</text>
+    <text x="95" y="482" class="lab-label" text-anchor="middle" style="font-size: 8px;">Separate</text>
+  </g>
+
+  <!-- Bases -->
+  <g>
+    <rect x="155" y="430" width="90" height="60" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <text x="200" y="450" class="lab-label" text-anchor="middle" style="font-weight: bold;">Bases</text>
+    <text x="200" y="467" class="lab-label" text-anchor="middle" style="font-size: 9px;">NaOH, KOH</text>
+    <text x="200" y="482" class="lab-label" text-anchor="middle" style="font-size: 8px;">From acids</text>
+  </g>
+
+  <!-- Oxidizers -->
+  <g>
+    <rect x="260" y="430" width="90" height="60" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <text x="305" y="450" class="lab-label" text-anchor="middle" style="font-weight: bold;">Oxidizers</text>
+    <text x="305" y="467" class="lab-label" text-anchor="middle" style="font-size: 9px;">H₂O₂, KMnO₄</text>
+    <text x="305" y="482" class="lab-label" text-anchor="middle" style="font-size: 8px;">Away from</text>
+  </g>
+
+  <!-- Flammables -->
+  <g>
+    <rect x="365" y="430" width="90" height="60" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <text x="410" y="450" class="lab-label" text-anchor="middle" style="font-weight: bold;">Flammables</text>
+    <text x="410" y="467" class="lab-label" text-anchor="middle" style="font-size: 9px;">Ethanol, Acetone</text>
+    <text x="410" y="482" class="lab-label" text-anchor="middle" style="font-size: 8px;">Metal cabinet</text>
+  </g>
+
+  <!-- Safety equipment section -->
+  <text x="550" y="250" class="lab-title">Emergency Equipment:</text>
+
+  <!-- Fire extinguisher -->
+  <g>
+    <rect x="550" y="270" width="20" height="50" fill="#c41e3a" class="equipment"/>
+    <circle cx="560" cy="270" r="5" fill="var(--accent)"/>
+    <text x="590" y="300" class="lab-label" style="font-size: 10px;">Fire Extinguisher</text>
+  </g>
+
+  <!-- Eyewash station -->
+  <g>
+    <rect x="550" y="330" width="30" height="35" fill="var(--surface)" class="equipment"/>
+    <circle cx="565" cy="320" r="8" fill="#4a7c9f"/>
+    <line x1="565" y1="328" x2="565" y2="365" stroke="#4a7c9f" stroke-width="2"/>
+    <text x="600" y="350" class="lab-label" style="font-size: 10px;">Eyewash Station</text>
+  </g>
+
+  <!-- First aid kit -->
+  <g>
+    <rect x="550" y="380" width="25" height="35" fill="var(--surface)" class="equipment"/>
+    <text x="562" y="400" class="lab-label" text-anchor="middle" style="font-size: 12px; font-weight: bold; fill: #c41e3a;">+</text>
+    <text x="600" y="400" class="lab-label" style="font-size: 10px;">First Aid Kit</text>
+  </g>
+
+  <!-- Buddy system -->
+  <g>
+    <text x="550" y="435" class="lab-title">Safety Principle:</text>
+    <rect x="550" y="450" width="220" height="40" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" rx="3"/>
+    <text x="565" y="470" class="lab-label" style="font-weight: bold;">✓ Never work alone</text>
+    <text x="565" y="485" class="lab-label">Keep buddy within sight</text>
+  </g>
+
+</svg>
+</p>
+<section id="lab-site-selection">
+<h2>Lab Site Selection and Setup</h2>
+<p><strong>Location requirements:</strong></p>
+<ul>
+<li><strong>Ventilation:</strong> Highest priority. Fumes must disperse without accumulating.</li>
+<li><strong>Isolation:</strong> Away from living/eating areas. Minimum 10 meters upwind from inhabited spaces.</li>
+<li><strong>Stable surface:</strong> Bench or table that won't tip. Concrete or packed earth, not soft ground.</li>
+<li><strong>Water access:</strong> For cooling, dilution, and emergency use.</li>
+<li><strong>Drainage:</strong> A dedicated runoff area (see waste disposal).</li>
+</ul>
+<p><strong>Ideal setup (austere context):</strong></p>
+<ul>
+<li>Outdoor bench under a roof overhang (protection from rain, overhead ventilation).</li>
+<li>Alternatively, a shed or garage with open doors and windows at opposite ends (cross-ventilation).</li>
+<li>Never use basements or confined spaces without powered ventilation.</li>
+</ul>
+<div class="warning">
+<p>Never conduct chemistry in bedrooms, kitchens, or living areas. Vapors from many reactions are toxic. Spills can contaminate food and water.</p>
+</div>
+</section>
+<section id="glassware-improvisation">
+<h2>Glassware and Equipment Improvisation</h2>
+<p>In low-resource settings, standard chemistry glassware (beakers, flasks, condensers) may be unavailable. Safe alternatives exist.</p>
+<p><strong>Containers:</strong></p>
+<ul>
+<li><strong>Beakers:</strong> Large drinking glasses (borosilicate if available; ordinary glass if necessary, but risk of breakage). Do not use plastic for hot solutions or strong solvents.</li>
+<li><strong>Flasks:</strong> Mason jars, beer bottles, or wine bottles with stoppers. Ensure thick glass (borosilicate preferred).</li>
+<li><strong>Test tubes:</strong> Glass vials, small bottles, or improvised tubes made by heating and drawing glass.</li>
+</ul>
+<p><strong>Heat sources:</strong></p>
+<ul>
+<li><strong>Flame:</strong> Charcoal fire, alcohol lamp, propane burner. Requires careful temperature control.</li>
+<li><strong>Water bath:</strong> Suspend containers in hot water (65–95°C) for gentle heating without direct flame.</li>
+<li><strong>Sand bath:</strong> Bury container in hot sand for even heating (up to 200°C).</li>
+</ul>
+<p><strong>Cooling methods:</strong></p>
+<ul>
+<li><strong>Ice/cold water bath:</strong> Surround flask with ice or cold water in a larger container.</li>
+<li><strong>Air cooling:</strong> Allow to cool at room temperature (slow but safe).</li>
+</ul>
+<p><strong>Stirring and mixing:</strong></p>
+<ul>
+<li><strong>Glass rod:</strong> Drawn glass or ceramic rod. Do not use wooden spoons (absorb liquids).</li>
+<li><strong>Stirring stick:</strong> Smooth stick, whittle and sand smooth.</li>
+</ul>
+<p><strong>Filtration:</strong></p>
+<ul>
+<li><strong>Coffee filters:</strong> Paper filters work for many applications; note they can dissolve in some solvents.</li>
+<li><strong>Cloth filter:</strong> Fine cotton cloth, suspended in a funnel-shaped frame.</li>
+<li><strong>Sand/charcoal filter:</strong> Layer sand and charcoal in a tube.</li>
+</ul>
+<p><strong>Volumetric measurement (if scale unavailable):</strong></p>
+<ul>
+<li><strong>Graduated containers:</strong> Mark glass jars with water levels at known volumes (mL, cups).</li>
+<li><strong>Weighing by water displacement:</strong> Fill a container with water, add solid, measure water level rise = volume.</li>
+</ul>
+</section>
+<section id="ventilation-requirements">
+<h2>Ventilation Requirements</h2>
+<p><strong>Principle:</strong> Hazardous vapors must be removed from the breathing zone.</p>
+<p><strong>Adequate ventilation methods:</strong></p>
+<ul>
+<li><strong>Natural draft:</strong> Open-sided outdoor setup with cross-breeze. Adequate for low-hazard reactions.</li>
+<li><strong>Cross-ventilation:</strong> Two opposite openings (windows/doors) in a building, creating air flow. Minimum 2+ air changes per hour.</li>
+<li><strong>Powered ventilation:</strong> Fan pulling air through the lab and out a duct to a safe location.</li>
+</ul>
+<p><strong>Fume hood (improvised):</strong></p>
+<ol>
+<li>Construct a simple box around the reaction area, open on the front.</li>
+<li>Install a fan pulling air from the front into a duct leading outside.</li>
+<li>Ensure the duct terminates far from windows, doors, and air intakes (&gt;3 meters away).</li>
+<li>Aim for 80–120 linear feet per minute (lfm) face velocity at the hood opening.</li>
+</ol>
+<p><strong>Testing ventilation:</strong></p>
+<ul>
+<li>Light a match or incense stick near the hood face; smoke should be drawn steadily into the hood, not backward.</li>
+<li>If smoke drifts back toward you, ventilation is inadequate; halt the reaction until fixed.</li>
+</ul>
+<div class="warning">
+<p>Vapors heavier than air (many organic solvents, chlorine gas) settle near the ground. Ventilation at ground level is critical. Ensure fans are positioned low and to the side of the work area.</p>
+</div>
+</section>
+<section id="ppe-requirements">
+<h2>Personal Protective Equipment (PPE)</h2>
+<p><strong>Minimum PPE for all chemical work:</strong></p>
+<div class="ppe-checklist">
+- **Eye protection:** Chemical splash goggles (not just safety glasses; must seal around eyes). Check for scratches/cracks; replace if damaged.
+- **Gloves:** Nitrile or butyl rubber for general use; specific gloves for specific chemicals (neoprene for oils, butyl for organic solvents, PVC for acids/bases).
+- **Apron:** Lab coat or durable apron covering the body to mid-shin. Avoid long sleeves hanging into work area.
+- **Closed-toe shoes:** Leather or synthetic; cover the foot completely. No sandals.
+- **Hair restraint:** Long hair tied back or covered. Loose hair near flame is a fire hazard.
+- **Respirator:** For work with volatile compounds or dust. P100 cartridge mask (not disposable dust mask) for some applications. Note: respirators are only effective if properly fitted.
+</div>
+<p><strong>Hazard-specific PPE:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Hazard</th>
+<th>Additional PPE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Strong acids (H₂SO₄, HCl)</td>
+<td>Acid-resistant gloves (butyl); face shield over goggles</td>
+</tr>
+<tr>
+<td>Strong bases (NaOH, KOH)</td>
+<td>Base-resistant gloves; eye wash station nearby</td>
+</tr>
+<tr>
+<td>Solvents (acetone, ether, toluene)</td>
+<td>Solvent-resistant gloves (butyl); respiratory protection if vapors visible</td>
+</tr>
+<tr>
+<td>Flammable compounds</td>
+<td>Fire-resistant apron; no open flame nearby; extinguisher at hand</td>
+</tr>
+<tr>
+<td>Toxic powders/dusts</td>
+<td>N95 or P100 respirator; hat/hood to prevent dust settling on hair/clothes</td>
+</tr>
+</tbody>
+</table>
+<div class="danger">
+<p>Never work alone. Always have another person within sight who can call for help in case of injury. Share the lab space with a buddy, even if they're not actively assisting.</p>
+</div>
+</section>
+<section id="chemical-storage">
+<h2>Chemical Storage and Compatibility</h2>
+<p>Improper storage can cause fires, explosions, or toxic gas release.</p>
+<p><strong>Storage by hazard class:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Examples</th>
+<th>Storage Rules</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acids</td>
+<td>H₂SO₄, HCl, HNO₃</td>
+<td>Separate from bases; store in glass bottles with tight caps; label clearly. Keep away from metals.</td>
+</tr>
+<tr>
+<td>Bases</td>
+<td>NaOH, KOH, NH₃</td>
+<td>Separate from acids; store in plastic or glass. Avoid metal containers (corrode).</td>
+</tr>
+<tr>
+<td>Oxidizers</td>
+<td>H₂O₂, KMnO₄, K₂Cr₂O₇</td>
+<td>Store separately from flammables, reducing agents, and organic materials. Do not mix.</td>
+</tr>
+<tr>
+<td>Flammables</td>
+<td>Ethanol, acetone, ether</td>
+<td>Store in metal cabinet, away from heat/flame. Keep quantities &lt;5 liters. Use only non-sparking tools.</td>
+</tr>
+<tr>
+<td>Organic compounds</td>
+<td>Benzene, toluene</td>
+<td>Same as flammables; volatile—store in sealed, cool location.</td>
+</tr>
+<tr>
+<td>Oxidizing metals</td>
+<td>Sodium, potassium, calcium carbide</td>
+<td>Store under mineral oil or inert atmosphere (argon if available). Extremely reactive with water.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Incompatible pairs (never mix or store adjacent):</strong></p>
+<ul>
+<li>Acids + bases</li>
+<li>Oxidizers + reducing agents (charcoal, sulfur, phosphorus)</li>
+<li>Halogens (Cl₂) + ammonia or organic compounds</li>
+<li>Sodium/potassium + water, acids, halogens</li>
+</ul>
+<p><strong>Container requirements:</strong></p>
+<ul>
+<li><strong>Glass bottles:</strong> Preferred for most chemicals. Use HDPE (high-density polyethylene) plastic for strong bases.</li>
+<li><strong>Tight caps:</strong> Prevent evaporation and contamination.</li>
+<li><strong>Labels:</strong> Date, chemical name, hazard class, and safe handling notes.</li>
+<li><strong>Secondary containment:</strong> Store bottles in trays or buckets to catch spills.</li>
+</ul>
+</section>
+<section id="standard-operating-procedures">
+<h2>Standard Operating Procedures (SOPs) for Common Reactions</h2>
+<h3>Diluting Sulfuric Acid</h3>
+<p><strong>Hazard:</strong> Diluting sulfuric acid releases extreme heat; water added to acid boils and spatters.</p>
+<p><strong>Correct procedure (always acid into water, never water into acid):</strong></p>
+<ol>
+<li>Fill a glass beaker with distilled water (~100 mL).</li>
+<li>Place the beaker in a cold water bath (ice water in a larger container).</li>
+<li>Slowly pour concentrated H₂SO₄ into the water, stirring continuously.</li>
+<li>The mixture becomes very hot; the water bath prevents boiling.</li>
+<li>After dilution, allow to cool before use.</li>
+</ol>
+<p><strong>Never:</strong> Add water to concentrated acid.</p>
+<h3>Neutralizing Acid Spills</h3>
+<p><strong>Materials:</strong> Sodium bicarbonate (baking soda) or calcium carbonate (chalk powder).</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Evacuate the area; ensure adequate ventilation.</li>
+<li>Don protective gear (gloves, goggles, apron).</li>
+<li>Sprinkle baking soda liberally over the spill. Effervescence (fizzing) indicates neutralization.</li>
+<li>Once fizzing stops, sweep up the residue and dispose (see waste disposal).</li>
+<li>Rinse the area with water.</li>
+</ol>
+<p><strong>For strong acids (HCl, HNO₃):</strong> Baking soda is sufficient. For small spills (&lt;100 mL), baking soda is adequate. For larger spills, use calcium carbonate.</p>
+<h3>Preparing Solutions from Dry Chemicals</h3>
+<p><strong>Example: 1 molar NaOH solution (40 g/L)</strong></p>
+<ol>
+<li>Measure 40 g solid NaOH (use a scale or estimate by volume).</li>
+<li>Add to 1 liter of distilled water slowly, stirring constantly.</li>
+<li>Exothermic reaction: the solution heats significantly. Place beaker in ice water to cool.</li>
+<li>Once cool, transfer to a labeled bottle.</li>
+</ol>
+<p><strong>Note:</strong> Always add solid to water, never water to solid (can clump and react violently).</p>
+<h3>Conducting a Safe Acid-Base Titration</h3>
+<p><strong>Purpose:</strong> Determine concentration of an unknown acid using a standard base.</p>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Fill a burette (or graduated syringe) with standardized NaOH solution.</li>
+<li>Add 10 mL of unknown acid to a flask.</li>
+<li>Add 2–3 drops of phenolphthalein indicator (colorless in acid, pink in base).</li>
+<li>Slowly add NaOH from the burette, swirling the flask.</li>
+<li>Stop when the solution turns light pink (neutralization endpoint).</li>
+<li>Record the volume of NaOH used.</li>
+</ol>
+<p><strong>Calculation:</strong> Moles of acid = moles of base = M(NaOH) × V(NaOH) / V(acid)</p>
+</section>
+<section id="waste-disposal">
+<h2>Waste Disposal</h2>
+<p><strong>Principle:</strong> Never dump chemical waste in drains, soil, or water. Improvise disposal methods based on waste type.</p>
+<p><strong>Acid waste:</strong></p>
+<ol>
+<li>Neutralize with baking soda until fizzing stops.</li>
+<li>Dilute with water (10:1 ratio).</li>
+<li>Pour into a designated container or bury in a lined pit away from water sources.</li>
+</ol>
+<p><strong>Base waste:</strong></p>
+<ol>
+<li>Neutralize with dilute acid (vinegar, weak HCl solution) until pH neutral (test with pH paper).</li>
+<li>Dilute with water.</li>
+<li>Dispose as above.</li>
+</ol>
+<p><strong>Organic solvent waste:</strong></p>
+<ol>
+<li>Do not pour down drains (contaminates water, volatile vapors).</li>
+<li>Collect in sealed, labeled containers.</li>
+<li>Store away from heat/flame.</li>
+<li>If possible, evaporate in a well-ventilated area (outdoors, not indoors) or burn in a controlled fire (not recommended; only if no alternative).</li>
+</ol>
+<p><strong>Toxic metal waste (Hg, Pb, Cr):</strong></p>
+<ol>
+<li>Collect in sealed containers; label clearly.</li>
+<li>Store away from children/animals.</li>
+<li>Do not dispose; contact environmental authorities if possible, or store indefinitely in a safe location.</li>
+</ol>
+<p><strong>Safe disposal pit (if no sewer available):</strong></p>
+<ol>
+<li>Dig a 1-meter pit in an area away from wells, streams, and groundwater (&gt;50 meters uphill from water sources).</li>
+<li>Line with clay or plastic to prevent seepage.</li>
+<li>Cover with soil and compost; allow natural decomposition.</li>
+<li>Use only for neutralized aqueous waste (not organic solvents, heavy metals, or flammables).</li>
+</ol>
+</section>
+<section id="emergency-procedures">
+<h2>Emergency Procedures</h2>
+<h3>Chemical Splash in Eyes</h3>
+<ol>
+<li><strong>Immediately flush with water</strong> for at least 15 minutes, using an eyewash station or clean running water.</li>
+<li><strong>Seek medical help</strong> even if the burn feels minor.</li>
+<li><strong>Do not rub the eye</strong>; allow water to flush away the chemical.</li>
+</ol>
+<h3>Skin Exposure to Acid</h3>
+<ol>
+<li><strong>Remove contaminated clothing</strong> immediately.</li>
+<li><strong>Flush with water</strong> for 10–15 minutes.</li>
+<li><strong>For strong acids (H₂SO₄):</strong> Seek medical attention; do not assume flushing is sufficient.</li>
+</ol>
+<h3>Skin Exposure to Base</h3>
+<ol>
+<li><strong>Flush with water</strong> for 10–15 minutes.</li>
+<li><strong>Dry with clean cloth</strong>; do not apply other substances.</li>
+<li><strong>Seek medical help</strong> if blistering or pain persists.</li>
+</ol>
+<h3>Inhalation of Toxic Vapor</h3>
+<ol>
+<li><strong>Move to fresh air immediately.</strong></li>
+<li><strong>Sit upright</strong> to aid breathing.</li>
+<li><strong>Call for medical help.</strong></li>
+<li><strong>If unconscious:</strong> Position on side (recovery position); ensure airway open.</li>
+</ol>
+<h3>Fire</h3>
+<ol>
+<li><strong>Alert others</strong> and evacuate the area.</li>
+<li><strong>Use appropriate extinguisher:</strong>
+<ul>
+<li><strong>Class A (wood/paper):</strong> Water or dry powder.</li>
+<li><strong>Class B (flammable liquids):</strong> CO₂ or dry powder, NOT water.</li>
+<li><strong>Class C (electrical):</strong> CO₂ or dry powder, NOT water.</li>
+</ul>
+</li>
+<li><strong>If fire is large or spreading:</strong> Do not attempt to extinguish; evacuate and call for help.</li>
+<li><strong>Never apply water to certain burning metals</strong> (sodium, potassium, calcium carbide); use dry sand or specialized extinguisher.</li>
+</ol>
+</section>
+<section id="record-keeping">
+<h2>Record Keeping and Quality Control</h2>
+<p><strong>Lab notebook:</strong></p>
+<ul>
+<li><strong>Date, time, and ambient temperature</strong> at the start of each experiment.</li>
+<li><strong>Chemicals used:</strong> Name, quantity, source, purity (if known).</li>
+<li><strong>Procedure:</strong> Step-by-step description of what you did.</li>
+<li><strong>Observations:</strong> Color changes, gas evolution, temperature, unusual behavior.</li>
+<li><strong>Results:</strong> Final yield, purity indicators, test results.</li>
+<li><strong>Issues:</strong> Problems encountered and how they were resolved.</li>
+</ul>
+<p><strong>Why it matters:</strong></p>
+<ul>
+<li>Replication: You can repeat a successful procedure.</li>
+<li>Troubleshooting: If a reaction fails, notes help identify what went wrong.</li>
+<li>Safety: Documentation shows what hazards were involved.</li>
+</ul>
+<p><strong>Quality control (for common products):</strong></p>
+<ul>
+<li><strong>Acid strength:</strong> Titration with a standard base.</li>
+<li><strong>Base strength:</strong> Titration with a standard acid.</li>
+<li><strong>Purity of salt:</strong> Recrystallization; compare crystalline form to known sample.</li>
+<li><strong>Yield:</strong> Weigh product; calculate percentage yield = (actual mass / theoretical mass) × 100.</li>
+</ul>
+</section>
+<section id="practical-checklist">
+<h2>Pre-Work Checklist</h2>
+<p>Before starting any chemistry work:</p>
+<div class="warning">
+<ul>
+<li>✓ Have a buddy present or nearby</li>
+<li>✓ Review the reaction procedure; identify hazards</li>
+<li>✓ Wear full PPE (goggles, gloves, apron, closed shoes)</li>
+<li>✓ Ensure ventilation is working (test with incense/match)</li>
+<li>✓ Have water, eyewash, and first aid kit nearby</li>
+<li>✓ Know the location of the nearest fire extinguisher</li>
+<li>✓ Have waste containers labeled and available</li>
+<li>✓ Store all chemicals properly before starting</li>
+<li>✓ Remove jewelry that could snag or conduct electricity</li>
+<li>✓ Tie back long hair</li>
+</ul>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="chemical-safety.html">Chemical Safety</a>
+<a href="homestead-chemistry.html">Homestead Chemistry</a>
+<a href="pressure-vessels.html">Pressure Vessels</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/goat-care-dairy.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Goat Care &amp; Dairying</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Food &amp; Agriculture</span> ›
+<span>Goat Care &amp; Dairying</span>
+</div>
+
+
+<h1>Goat Care &amp; Dairying</h1>
+<p class="subtitle">Select goat breeds for milk and meat, manage housing and grazing, milk by hand, diagnose common diseases, trim hooves, assist kidding, and process milk into cheese and yogurt.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~19 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#breed-selection">Breed Selection</a></li>
+<li><a href="#housing-fencing">Housing and Fencing</a></li>
+<li><a href="#feeding">Feeding Requirements</a></li>
+<li><a href="#milking">Milking Technique and Hygiene</a></li>
+<li><a href="#common-diseases">Common Diseases and Prevention</a></li>
+<li><a href="#hoof-care">Hoof Trimming</a></li>
+<li><a href="#kidding-and-breeding">Kidding (Birth) and Breeding Management</a></li>
+<li><a href="#dairy-processing">Milk Processing: Cheese and Yogurt</a></li>
+<li><a href="#summary">Summary: Goat Herd Management</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Goats are prolific milkers, adaptable to marginal land, and more disease-resistant than cattle. A single doe (female goat) produces 1–3 gallons of milk daily (in peak lactation), sufficient for a family's cheese and yogurt needs or modest commercial production. Goats are browsers—they prefer shrubs, woody plants, and brush over grass—making them excellent for land clearing and marginal pasture. This guide covers breed selection, housing, feeding, milking technique, disease recognition, hoof care, kidding (birth) assistance, and milk processing.</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" aria-label="Goat anatomy and milking guide diagram">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .surface { fill: var(--surface, #2d2416); }
+      .text-main { fill: var(--text, #f5f0e8); font-size: 16px; font-family: sans-serif; }
+      .text-label { fill: var(--text, #f5f0e8); font-size: 14px; font-family: sans-serif; }
+      .accent { stroke: var(--accent, #d4a574); fill: none; stroke-width: 2; }
+      .accent-fill { fill: var(--accent, #d4a574); }
+      .accent2 { stroke: var(--accent2, #8dd6c4); fill: none; stroke-width: 2; }
+      .accent2-fill { fill: var(--accent2, #8dd6c4); }
+      .border { stroke: var(--border, #4a5c4a); stroke-width: 1; }
+      .animal { fill: #8B7355; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="800" height="500"/>
+
+  <!-- Title -->
+  <text x="400" y="30" class="text-main" font-size="24" font-weight="bold" text-anchor="middle">Goat Care & Dairy Operations</text>
+
+  <!-- Left: Goat silhouette with anatomy -->
+  <g>
+    <text x="150" y="60" class="text-main" font-weight="bold" text-anchor="middle">Goat Anatomy</text>
+
+    <!-- Goat body (simplified) -->
+    <ellipse cx="150" cy="160" rx="60" ry="45" class="animal"/>
+    <!-- Head -->
+    <circle cx="90" cy="110" r="20" class="animal"/>
+    <!-- Legs -->
+    <rect x="115" y="195" width="8" height="50" class="animal"/>
+    <rect x="140" y="195" width="8" height="50" class="animal"/>
+    <rect x="165" y="195" width="8" height="50" class="animal"/>
+    <rect x="190" y="195" width="8" height="50" class="animal"/>
+    <!-- Tail -->
+    <path d="M 200 150 Q 220 140 230 160" stroke="#8B7355" stroke-width="6" fill="none"/>
+    <!-- Ears -->
+    <ellipse cx="75" cy="90" rx="8" ry="18" class="animal"/>
+    <ellipse cx="105" cy="85" rx="8" ry="18" class="animal"/>
+
+    <!-- Udder highlight -->
+    <ellipse cx="150" cy="210" rx="25" ry="20" fill="#c89050" opacity="0.4" class="border"/>
+    <text x="150" y="270" class="text-label" text-anchor="middle" font-size="12" font-weight="bold">Udder</text>
+    <text x="150" y="285" class="text-label" text-anchor="middle" font-size="11">(Two teats)</text>
+
+    <!-- Labels -->
+    <text x="50" y="115" class="text-label" font-size="11">Eyes</text>
+    <text x="220" y="120" class="text-label" font-size="11">Tail</text>
+    <text x="150" y="340" class="text-label" text-anchor="middle" font-size="10">Weight: 100-200 lbs</text>
+    <text x="150" y="355" class="text-label" text-anchor="middle" font-size="10">Milk: 1-3 gal/day</text>
+  </g>
+
+  <!-- Middle: Milking technique -->
+  <g>
+    <text x="400" y="60" class="text-main" font-weight="bold" text-anchor="middle">Hand-Milking Technique</text>
+
+    <!-- Udder detail -->
+    <ellipse cx="400" cy="130" rx="35" ry="45" fill="#c89050" opacity="0.3" class="border"/>
+    <text x="400" y="195" class="text-label" text-anchor="middle" font-weight="bold">Clean teats</text>
+    <text x="400" y="210" class="text-label" text-anchor="middle" font-size="11">with warm water</text>
+
+    <!-- Hand position -->
+    <g>
+      <ellipse cx="330" cy="270" rx="15" ry="20" fill="#d4a574" opacity="0.6" class="border"/>
+      <text x="330" y="310" class="text-label" text-anchor="middle" font-size="11">Thumb &</text>
+      <text x="330" y="325" class="text-label" text-anchor="middle" font-size="11">forefinger</text>
+      <text x="330" y="340" class="text-label" text-anchor="middle" font-size="10">at teat top</text>
+    </g>
+
+    <!-- Squeeze direction -->
+    <g>
+      <ellipse cx="400" cy="270" rx="15" ry="20" fill="#d4a574" opacity="0.6" class="border"/>
+      <path d="M 400 260 L 400 300" class="accent" stroke-width="2" marker-end="url(#arrowAccent)"/>
+      <text x="400" y="310" class="text-label" text-anchor="middle" font-size="11">Squeeze</text>
+      <text x="400" y="325" class="text-label" text-anchor="middle" font-size="11">downward</text>
+    </g>
+
+    <!-- Milk stream -->
+    <g>
+      <ellipse cx="470" cy="270" rx="15" ry="20" fill="#d4a574" opacity="0.6" class="border"/>
+      <path d="M 485 280 L 510 320" class="accent2" stroke-width="2"/>
+      <circle cx="515" cy="325" r="4" fill="#4a9fd8" opacity="0.6"/>
+      <text x="470" y="310" class="text-label" text-anchor="middle" font-size="11">Milk</text>
+      <text x="470" y="325" class="text-label" text-anchor="middle" font-size="11">stream</text>
+    </g>
+
+    <text x="400" y="380" class="text-label" text-anchor="middle" font-size="11">Duration: 3-5 min per side</text>
+    <text x="400" y="395" class="text-label" text-anchor="middle" font-size="11">Rhythm: ~1 sec per squeeze</text>
+  </g>
+
+  <!-- Right: Breeding & Kidding calendar -->
+  <g>
+    <text x="650" y="60" class="text-main" font-weight="bold" text-anchor="middle">Annual Cycle</text>
+
+    <!-- Breeding season box -->
+    <rect x="580" y="95" width="140" height="70" class="surface" class="border"/>
+    <text x="650" y="115" class="text-label" font-weight="bold" text-anchor="middle">Breeding</text>
+    <text x="650" y="130" class="text-label" text-anchor="middle" font-size="11">Aug-Oct</text>
+    <text x="650" y="145" class="text-label" text-anchor="middle" font-size="10">(150-day gestation)</text>
+    <text x="650" y="160" class="text-label" text-anchor="middle" font-size="10">↓</text>
+
+    <!-- Kidding season box -->
+    <rect x="580" y="175" width="140" height="70" class="surface" class="border"/>
+    <text x="650" y="195" class="text-label" font-weight="bold" text-anchor="middle">Kidding</text>
+    <text x="650" y="210" class="text-label" text-anchor="middle" font-size="11">Jan-Mar</text>
+    <text x="650" y="225" class="text-label" text-anchor="middle" font-size="10">(1-4 kids/doe)</text>
+    <text x="650" y="240" class="text-label" text-anchor="middle" font-size="10">↓</text>
+
+    <!-- Milking season box -->
+    <rect x="580" y="255" width="140" height="70" class="surface" class="border"/>
+    <text x="650" y="275" class="text-label" font-weight="bold" text-anchor="middle">Peak Milking</text>
+    <text x="650" y="290" class="text-label" text-anchor="middle" font-size="11">Mar-Sep</text>
+    <text x="650" y="305" class="text-label" text-anchor="middle" font-size="10">1-3 gal/day</text>
+
+    <!-- Hoof care schedule -->
+    <rect x="580" y="365" width="140" height="90" class="surface" class="border"/>
+    <text x="650" y="385" class="text-label" font-weight="bold" text-anchor="middle">Hoof Care</text>
+    <text x="650" y="405" class="text-label" text-anchor="middle" font-size="11">Every 6-8 weeks</text>
+    <text x="650" y="420" class="text-label" text-anchor="middle" font-size="10">Signs of</text>
+    <text x="650" y="435" class="text-label" text-anchor="middle" font-size="10">foot rot:</text>
+    <text x="650" y="450" class="text-label" text-anchor="middle" font-size="10">Foul smell</text>
+  </g>
+
+  <!-- Bottom: Common dairy breeds -->
+  <g>
+    <text x="150" y="430" class="text-main" font-weight="bold" text-anchor="middle">Top Dairy Breeds</text>
+
+    <!-- Nubian -->
+    <rect x="60" y="445" width="80" height="40" class="surface" class="border"/>
+    <text x="100" y="465" class="text-label" text-anchor="middle" font-weight="bold">Nubian</text>
+    <text x="100" y="480" class="text-label" text-anchor="middle" font-size="9">High butterfat</text>
+
+    <!-- Alpine -->
+    <rect x="160" y="445" width="80" height="40" class="surface" class="border"/>
+    <text x="200" y="465" class="text-label" text-anchor="middle" font-weight="bold">Alpine</text>
+    <text x="200" y="480" class="text-label" text-anchor="middle" font-size="9">High volume</text>
+
+    <!-- LaMancha -->
+    <rect x="260" y="445" width="80" height="40" class="surface" class="border"/>
+    <text x="300" y="465" class="text-label" text-anchor="middle" font-weight="bold">LaMancha</text>
+    <text x="300" y="480" class="text-label" text-anchor="middle" font-size="9">Friendly, small</text>
+  </g>
+
+  <!-- Bottom right: Dairy products -->
+  <g>
+    <text x="500" y="430" class="text-main" font-weight="bold" text-anchor="middle">Dairy Products</text>
+
+    <!-- Cheese -->
+    <rect x="430" y="445" width="70" height="40" class="surface" class="border"/>
+    <text x="465" y="460" class="text-label" text-anchor="middle" font-weight="bold">Cheese</text>
+    <text x="465" y="477" class="text-label" text-anchor="middle" font-size="9">1 gal = 1 oz</text>
+
+    <!-- Yogurt -->
+    <rect x="520" y="445" width="70" height="40" class="surface" class="border"/>
+    <text x="555" y="460" class="text-label" text-anchor="middle" font-weight="bold">Yogurt</text>
+    <text x="555" y="477" class="text-label" text-anchor="middle" font-size="9">Simple process</text>
+
+    <!-- Housing -->
+    <rect x="610" y="445" width="70" height="40" class="surface" class="border"/>
+    <text x="645" y="460" class="text-label" text-anchor="middle" font-weight="bold">Housing</text>
+    <text x="645" y="477" class="text-label" text-anchor="middle" font-size="9">15 sq ft/goat</text>
+
+    <!-- Fencing -->
+    <rect x="700" y="445" width="80" height="40" class="surface" class="border"/>
+    <text x="740" y="460" class="text-label" text-anchor="middle" font-weight="bold">Fencing</text>
+    <text x="740" y="477" class="text-label" text-anchor="middle" font-size="9">4-5 ft tall</text>
+  </g>
+
+  <defs>
+    <marker id="arrowAccent" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="var(--accent, #d4a574)"/>
+    </marker>
+  </defs>
+</svg>
+</p>
+</section>
+<section id="breed-selection">
+<h2>Breed Selection</h2>
+<p>Goat breeds differ in milk production, butterfat content (important for cheese), and meat quality. Dairy breeds (Alpine, Saanen, Nubian) are specialized milkers. Meat breeds (Boer, Kiko) grow faster and larger. Dual-purpose breeds (Oberhasli, LaMancha) balance milk and meat.</p>
+<h3>Dairy Breeds</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Breed</strong></th>
+<th><strong>Daily Milk Yield</strong></th>
+<th><strong>Butterfat %</strong></th>
+<th><strong>Temperament</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Alpine</strong></td>
+<td>2–3 gal/day</td>
+<td>3.5–3.7%</td>
+<td>Energetic, bold</td>
+<td>Best for commercial milk; hardy</td>
+</tr>
+<tr>
+<td><strong>Saanen</strong></td>
+<td>2–3.5 gal/day</td>
+<td>3.0–3.2%</td>
+<td>Calm, docile</td>
+<td>Highest milk volume; lean milk (lower fat)</td>
+</tr>
+<tr>
+<td><strong>Nubian</strong></td>
+<td>1.5–2.5 gal/day</td>
+<td>4.5–5.0%</td>
+<td>Friendly, loud</td>
+<td>Highest butterfat; excellent cheese milk; long ears, distinctive appearance</td>
+</tr>
+<tr>
+<td><strong>LaMancha</strong></td>
+<td>1.5–2.5 gal/day</td>
+<td>4.0–4.5%</td>
+<td>Docile, manageable</td>
+<td>Excellent for small-scale; tiny ears; very friendly</td>
+</tr>
+<tr>
+<td><strong>Oberhasli</strong></td>
+<td>1.5–2.5 gal/day</td>
+<td>3.6–4.0%</td>
+<td>Alert, independent</td>
+<td>Dual-purpose; good meat and milk balance</td>
+</tr>
+</tbody>
+</table>
+<h3>Dairy Herd Composition</h3>
+<p><strong>Starter herd (small family dairy):</strong></p>
+<ul>
+<li>2–4 does (females) in milk.</li>
+<li>1 buck (male) for breeding (can be purchased seasonally; many farmers lend bucks for $50–200 per season rather than keeping one year-round due to smell and behavior).</li>
+<li>1–2 wethers (castrated males) for meat or fiber (if fiber breed).</li>
+</ul>
+<p><strong>Breeding timeline</strong> (seasonal, temperate zones):</p>
+<ul>
+<li><strong>Breeding season</strong>: August–October (does come into heat as days shorten; gestation is 150 days).</li>
+<li><strong>Kidding (birth)</strong>: January–March (kids born after winter feed shortage; spring milk is abundant).</li>
+<li><strong>Peak milk</strong>: March–September; milk tails off in fall, stops 60 days before next kidding.</li>
+</ul>
+<div class="info-box">
+<p>One doe provides 6–10 gallons of milk per week at peak lactation—enough for a family to make cheese (a gallon of milk makes ~1 ounce of cheese) and yogurt with surplus to sell.</p>
+</div>
+</section>
+<section id="housing-fencing">
+<h2>Housing and Fencing</h2>
+<p>Goats need shelter from wind and rain, but require less space than cattle. They are escape artists; fencing must be solid and tall.</p>
+<h3>Housing Requirements</h3>
+<p><strong>Space per goat:</strong></p>
+<ul>
+<li><strong>Indoor shelter</strong>: 15 square feet per goat (to lie down, move, and escape dominant animals).</li>
+<li><strong>Pen area</strong>: 50–100 square feet per goat if confined (not ideal, but possible in bad weather).</li>
+<li><strong>Pasture/grazing area</strong>: 0.5–1 acre per goat (depends on forage quality; marginal land needs more area).</li>
+</ul>
+<p><strong>Shelter design:</strong></p>
+<ul>
+<li><strong>Floor</strong>: Sloped for drainage; straw or wood shavings bedding (change weekly to prevent ammonia buildup).</li>
+<li><strong>Ventilation</strong>: Open ridge or gable vents to prevent respiratory disease.</li>
+<li><strong>Roof</strong>: Tight; waterproof (goats need dry shelter).</li>
+<li><strong>Walls</strong>: 3-sided (open south-facing side in temperate zones, or fully enclosed in extreme cold).</li>
+<li><strong>Kidding pens</strong>: Separate 10×10 ft pen for does kidding; allows privacy and prevents injury to newborns.</li>
+</ul>
+<h3>Fencing</h3>
+<p>Goats escape by climbing, jumping, pushing, and using intelligence to exploit gaps. A 4-foot fence is minimum; 5 feet is better for athletic breeds.</p>
+<p><strong>Fence types:</strong></p>
+<ul>
+<li><strong>Woven wire (field fence)</strong>: 5-foot height, 2–4 inch spacing. Very effective; expensive ($1–2 per foot).</li>
+<li><strong>Electric net fencing</strong>: Portable; 4–5 feet tall; 2–inch openings. Good for rotational grazing.</li>
+<li><strong>Cattle panels (welded)</strong>: 5 feet tall, 2-inch spacing. Durable; moderate cost ($2–3 per foot).</li>
+<li><strong>Avoid</strong>: Barbed wire (snagging risk), wide-spaced fencing (heads get stuck), or anything &lt;4 feet (goats jump over).</li>
+</ul>
+<p><strong>Perimeter check:</strong></p>
+<ul>
+<li>Walk the fence line weekly looking for gaps, damage, or dug areas (goats dig under fences at weak points).</li>
+<li>Repair immediately (goats exploit any weakness).</li>
+</ul>
+<p><strong>Gates:</strong></p>
+<ul>
+<li>4 feet wide minimum (allows squeeze chute for handling).</li>
+<li>Heavy-duty hinges and latch; goats lean on gates.</li>
+</ul>
+<div class="warning">
+<p>Never leave goats unsupervised near ponds or streams in winter; they can fall through ice. Provide water in troughs; keep them away from ice-covered water.</p>
+</div>
+</section>
+<section id="feeding">
+<h2>Feeding Requirements</h2>
+<p>Goats are browsers and prefer shrubs/brush, but require supplemental grain and hay, especially during lactation and in winter.</p>
+<h3>Browse and Pasture</h3>
+<p><strong>Daily intake:</strong></p>
+<ul>
+<li>Goats eat 3–4% of body weight per day (150 lb goat = ~6 lbs forage daily).</li>
+<li>Prefer browse (shrubs, vines, leaves) over grass.</li>
+</ul>
+<p><strong>Browse species (nutritious, safe):</strong></p>
+<ul>
+<li>Willow, hazel, privet, poplar, alder.</li>
+<li>Avoid: Rhododendron, cherry/peach leaves (cyanide), oleander, yew (all toxic).</li>
+</ul>
+<p><strong>Pasture management:</strong></p>
+<ul>
+<li>Rotational grazing (move every 3–7 days) prevents parasites and allows pasture recovery.</li>
+<li>In sparse pasture, supplement with hay to prevent overgrazing.</li>
+</ul>
+<h3>Hay</h3>
+<p><strong>Quality:</strong></p>
+<ul>
+<li>Legume hay (alfalfa, clover) is best: 16–20% crude protein, palatable.</li>
+<li>Grass hay (timothy, orchard grass): 8–12% crude protein, adequate.</li>
+<li>Poor hay (moldy, weathered): Avoid; causes disease.</li>
+</ul>
+<p><strong>Daily requirement:</strong></p>
+<ul>
+<li>Non-lactating goat: 2–3 lbs hay/day.</li>
+<li>Lactating goat: 4–6 lbs hay/day (plus grain).</li>
+</ul>
+<p><strong>Storage:</strong></p>
+<ul>
+<li>Keep under cover to prevent mold and nutrient loss.</li>
+<li>Rotate stock; older hay loses digestibility.</li>
+</ul>
+<h3>Grain Supplementation</h3>
+<p>Lactating does require grain to support milk production. Grains provide energy and protein.</p>
+<p><strong>Daily grain requirement:</strong></p>
+<ul>
+<li><strong>Lactating does (peak milk)</strong>: 2–4 lbs grain/day (divided into 2 feedings at milking time).</li>
+<li><strong>Non-lactating does</strong>: 0.5–1 lb grain/day (or none if pasture/hay is excellent).</li>
+</ul>
+<p><strong>Grain types:</strong></p>
+<ul>
+<li><strong>Oats</strong>: 12% protein; palatable; safe.</li>
+<li><strong>Barley</strong>: 11% protein; good energy.</li>
+<li><strong>Cracked corn</strong>: High energy but low protein; typically mixed with other grains.</li>
+<li><strong>Commercial dairy mix</strong>: 16–18% protein; formulated for lactation.</li>
+</ul>
+<p><strong>Cost-effective mix</strong> (if grains available locally):</p>
+<ul>
+<li>50% oats + 25% barley + 25% alfalfa pellets = ~12% protein, ~2.50/day per goat.</li>
+</ul>
+<h3>Water</h3>
+<p><strong>Daily requirement:</strong> 2–3 gallons/day per goat (more in summer, peak lactation).</p>
+<ul>
+<li>Provide fresh, clean water at all times.</li>
+<li>Winter: Prevent freezing with heated waterers or frequent refill.</li>
+</ul>
+</section>
+<section id="milking">
+<h2>Milking Technique and Hygiene</h2>
+<p>Hand-milking is practical for 4–6 does. Machine milking requires investment but is faster (and necessary for &gt;10 does).</p>
+<h3>Hand-Milking Steps</h3>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Clean teats with warm water and cloth; dry thoroughly.</li>
+<li>Sit on a low stool beside the doe's hind legs.</li>
+<li>Position a clean bucket under the udder.</li>
+</ol>
+<p><strong>Technique:</strong></p>
+<ol>
+<li>Grasp one teat with thumb and forefinger at the top (don't pull).</li>
+<li>Close your fingers starting at the top, stripping the teat downward, forcing milk out.</li>
+<li>Release pressure as you reach the bottom teat; let it refill.</li>
+<li>Repeat, using a smooth rhythm (~1 second per squeeze).</li>
+<li>Switch teats every 5–10 squeezes; alternate sides.</li>
+<li>Continue 3–5 minutes per side until milk slows (hand stripping is complete when very little milk comes out).</li>
+</ol>
+<p><strong>Efficiency:</strong></p>
+<ul>
+<li>Experienced hand-milker (4 does): ~45 minutes total for morning and evening milking.</li>
+<li>Yields: 2–3 gallons/day per doe (peak lactation).</li>
+</ul>
+<p><strong>Hygiene (critical to prevent mastitis):</strong></p>
+<ul>
+<li>Wash hands before milking.</li>
+<li>Clean teats and udder before milking.</li>
+<li>Use clean bucket and jars.</li>
+<li>Milk into sanitized containers; strain milk through cheesecloth.</li>
+<li>Refrigerate immediately; chill to 40°F within 2 hours.</li>
+<li>Milk should have no off-odors or visible particles.</li>
+</ul>
+<div class="warning">
+<p>Poor milking hygiene causes mastitis (udder infection), painful for the doe and makes milk unsuitable for cheese/yogurt. Sanitize all equipment (boil or use bleach solution) after each milking.</p>
+</div>
+<h3>Machine Milking</h3>
+<p>If herd grows beyond 6 does, invest in a portable bucket-type milking machine ($300–1000).</p>
+<p><strong>System components:</strong></p>
+<ul>
+<li>Vacuum pump (hand pump or electric, ~15 pulsations/second).</li>
+<li>Teat cups (4, sized for goat teats; smaller than cow cups).</li>
+<li>Milk bucket with overflow.</li>
+<li>Hoses and strainer.</li>
+</ul>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Prepare and clean teats as above.</li>
+<li>Attach teat cups; vacuum draws milk out automatically.</li>
+<li>Milking completes in 5–10 minutes (faster than hand-milking).</li>
+<li>Remove cups and strain milk into jars.</li>
+<li>Sanitize all equipment after use (boil or use sanitizing solution).</li>
+</ol>
+</section>
+<section id="common-diseases">
+<h2>Common Diseases and Prevention</h2>
+<h3>Caprine Arthritis-Encephalitis (CAE)</h3>
+<p>Viral infection transmitted through colostrum (first milk after birth). Causes joint swelling and arthritis in kids, encephalitis (brain inflammation) in kids, and reduced milk production in does.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Test breeding stock (blood test); do not breed from positive animals.</li>
+<li>Feed colostrum from CAE-negative does, or pasteurized colostrum, or commercial colostrum replacer to kids.</li>
+<li>Do not allow kids to nurse from mothers for first 2 days; bottle-feed instead.</li>
+</ul>
+<p><strong>Signs</strong> (if infected):</p>
+<ul>
+<li>Swollen knees or other joints; lameness in kids 4–8 weeks old.</li>
+<li>Neurologic signs: tremor, loss of balance, progressive paralysis.</li>
+<li>Reduced milk production; longer lactation recovery.</li>
+</ul>
+<h3>Caseous Lymphadenitis (CL)</h3>
+<p>Bacterial infection (Corynebacterium pseudotuberculosis) causing abscesses in lymph nodes and internal organs.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Vaccinate with CL vaccine (if available) before abscesses appear.</li>
+<li>Separate and isolate infected does immediately.</li>
+<li>Disinfect equipment.</li>
+<li>Do not use unpasteurized milk from infected does.</li>
+</ul>
+<p><strong>Signs:</strong></p>
+<ul>
+<li>Hard, painful lumps under the jaw, behind the ears, or on legs.</li>
+<li>Abscesses may rupture, draining pus.</li>
+<li>Chronic condition; no cure.</li>
+</ul>
+<h3>Parasites (Internal and External)</h3>
+<p>Goats pick up internal parasites (roundworms, tapeworms) from pasture and external parasites (lice, mites) from contaminated bedding or contact with infected animals.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Rotational grazing (move to clean pasture every 3–7 days).</li>
+<li>Avoid heavily contaminated areas (pastures grazed continuously).</li>
+<li>Regular deworming (3–4 times/year, or as needed; monitor fecal samples).</li>
+<li>Clean, dry bedding; change weekly.</li>
+<li>Isolate and treat affected animals.</li>
+</ul>
+<p><strong>Signs:</strong></p>
+<ul>
+<li>Poor growth, pot-bellied appearance (worms).</li>
+<li>Scratching, hair loss, scabby skin (external parasites).</li>
+<li>Diarrhea or constipation.</li>
+<li>Anemia (pale mucous membranes).</li>
+</ul>
+<h3>Mastitis</h3>
+<p>Bacterial infection of the udder; common in lactating does.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Clean milking practices (sanitize teats, hands, equipment).</li>
+<li>Maintain excellent hygiene.</li>
+<li>Dry off lactation gradually (stop milking over 2 weeks, not abruptly).</li>
+</ul>
+<p><strong>Signs:</strong></p>
+<ul>
+<li>Swollen, hot, painful udder.</li>
+<li>Thick or discolored milk (clots, blood, pus).</li>
+<li>Fever; lethargy.</li>
+</ul>
+<p><strong>Treatment:</strong></p>
+<ul>
+<li>Stop milking affected side (let it dry off).</li>
+<li>Apply warm compresses; gently massage udder.</li>
+<li>Antibiotic (if available); consult a veterinarian.</li>
+<li>May lose affected quarter (one lobe of udder) permanently.</li>
+</ul>
+<h3>Bloat</h3>
+<p>Gas accumulation in the rumen, causing severe distension.</p>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Eating too much fresh legume (clover, alfalfa) rapidly.</li>
+<li>Ingesting foam-causing materials (certain plants, grain dust).</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Introduce legume pasture gradually.</li>
+<li>Don't let goats graze clover immediately after rain (when nitrogen content is high).</li>
+<li>Provide hay before legume grazing.</li>
+</ul>
+<p><strong>Signs:</strong></p>
+<ul>
+<li>Rapid distension (puffiness) on left side.</li>
+<li>Difficulty breathing, drooling.</li>
+<li>Severe discomfort; death if untreated.</li>
+</ul>
+<p><strong>Emergency treatment:</strong></p>
+<ul>
+<li>If bloat is severe and immediate, pass a tube (smooth dowel or stomach tube) into the rumen through the mouth to release gas.</li>
+<li>Move animal to a downslope position to aid gas escape.</li>
+</ul>
+<div class="danger">
+<p>Bloat can be fatal within hours. If a goat shows severe left-side distension and difficulty breathing, treat as an emergency.</p>
+</div>
+</section>
+<section id="hoof-care">
+<h2>Hoof Trimming</h2>
+<p>Goat hooves grow continuously and must be trimmed every 6–8 weeks to prevent overgrowth, lameness, and foot rot.</p>
+<h3>Trimming Technique</h3>
+<p><strong>Tools needed:</strong></p>
+<ul>
+<li>Hoof trimmers (pruning-type, designed for goats; ~$10–20).</li>
+<li>Rasp or file (for smoothing).</li>
+</ul>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Restrain goat (in a stand, or between your legs while sitting).</li>
+<li>Lift one hoof; clean with a pick to remove dirt and debris.</li>
+<li>Look at the sole (bottom of hoof); trim away excess horn, taking care not to cut into the pink sensitive area (corium).</li>
+<li>Trim until hooves are level and match the natural angle (not excessively long or short).</li>
+<li>Rasp the sole to smooth; aim for a slight concavity.</li>
+<li>Check for signs of foot rot (foul smell, black necrotic tissue); if found, trim away diseased tissue and treat with copper sulfate or iodine.</li>
+</ol>
+<p><strong>Frequency:</strong></p>
+<ul>
+<li>Every 4–6 weeks in wet climates (faster growth).</li>
+<li>Every 8 weeks in dry climates.</li>
+<li>More often if goats are confined (hooves don't wear naturally).</li>
+</ul>
+<p><strong>Signs of neglected hooves:</strong></p>
+<ul>
+<li>Overgrown, curled horn.</li>
+<li>Lameness or reluctance to walk.</li>
+<li>Foot rot smell.</li>
+</ul>
+</section>
+<section id="kidding-and-breeding">
+<h2>Kidding (Birth) and Breeding Management</h2>
+<h3>Breeding Timeline</h3>
+<p><strong>Breeding season</strong> (temperate climates):</p>
+<ul>
+<li>August–October (as day length shortens, does come into heat, called estrus or &quot;coming in heat&quot;).</li>
+<li>Estrus cycle: 21 days; each cycle lasts 24–48 hours.</li>
+<li>Signs of heat: Tail wagging, restlessness, bleating, swollen vulva, mucus discharge.</li>
+</ul>
+<p><strong>Buck (male) management:</strong></p>
+<ul>
+<li>Bucks are highly scented; separate from does (except during breeding).</li>
+<li>One buck services 10–20 does (during breeding season, mate daily or every other day).</li>
+<li>Bucks can be rented from other farms; many farmers offer buck service for $50–200 per season to avoid year-round care.</li>
+</ul>
+<h3>Gestation and Kidding</h3>
+<p><strong>Gestation period:</strong> 150 days (roughly 5 months).</p>
+<p><strong>Signs of imminent kidding</strong> (within 24 hours):</p>
+<ul>
+<li>Ligaments around the tailhead relax, feel soft.</li>
+<li>Udder swells and &quot;bags up.&quot;</li>
+<li>Vaginal discharge (mucus plug).</li>
+<li>Restlessness; doe may isolate herself.</li>
+</ul>
+<p><strong>Kidding process:</strong></p>
+<ol>
+<li>Early labor: Pacing, bleating, lying down and getting up. Lasts 1–4 hours.</li>
+<li>Active labor: Straining and pushing. First kid born within 30 minutes of strong pushing; subsequent kids every 15–30 minutes.</li>
+<li>Expulsion: Kids born nose-first, front legs extended (normal presentation). Birth takes 30 seconds to 2 minutes per kid.</li>
+</ol>
+<p><strong>Assistance (if needed):</strong></p>
+<ul>
+<li>If doe strains &gt;30 minutes without delivering, internal malpresentation may have occurred.</li>
+<li>Check position: Wash hands, reach into vagina, feel for feet/nose position. Normal is nose between front hooves.</li>
+<li>If malpresented (legs back, breech): Reposition if possible by gently repositioning limbs, or call for emergency veterinary help.</li>
+<li>If doe is exhausted, assist by gently pulling on forelimbs during contractions (not between).</li>
+</ul>
+<p><strong>After birth:</strong></p>
+<ol>
+<li>Clear mucus from kid's nose and mouth.</li>
+<li>Allow doe to lick and dry kid (bonding; licking stimulates respiration and circulation).</li>
+<li>Ensure kid nurses within 1 hour; colostrum (first milk) is critical for immunity.</li>
+<li>Monitor doe for passage of placenta (should follow within 2 hours); retained placenta requires veterinary intervention.</li>
+</ol>
+<div class="warning">
+<p>If doe fails to pass placenta, has excessive bleeding, or shows signs of illness (fever, lethargy) after kidding, seek veterinary help. Retained placenta can cause sepsis and death.</p>
+</div>
+<p><strong>Kid rearing:</strong></p>
+<ul>
+<li><strong>Bottle-fed kids</strong> (removed at birth to prevent CAE transmission): Feed colostrum (or replacer) within 1 hour. Feed 3–4 times daily initially; switch to 2 times daily by week 2. Wean at 8–12 weeks.</li>
+<li><strong>Dam-raised kids</strong> (allowed to nurse): Leave with doe; monitor milk production. Separate from dam at 8–12 weeks; kids already eating hay and grain.</li>
+</ul>
+</section>
+<section id="dairy-processing">
+<h2>Milk Processing: Cheese and Yogurt</h2>
+<h3>Cheese-Making (Fresh Cheese)</h3>
+<p><strong>Ricotta (simple fresh cheese):</strong></p>
+<p>Ingredients:</p>
+<ul>
+<li>1 gallon goat milk.</li>
+<li>1 tablespoon white vinegar or fresh lemon juice.</li>
+</ul>
+<p>Process:</p>
+<ol>
+<li>Heat milk to 185°F (85°C) in a heavy pot, stirring occasionally to prevent scorching.</li>
+<li>Add vinegar/lemon juice; stir gently for 1 minute. Curds will separate from whey.</li>
+<li>Let sit 10 minutes.</li>
+<li>Line a colander with cheesecloth; pour curds and whey through.</li>
+<li>Gather cloth corners; hang to drain 20–30 minutes.</li>
+<li>Serve fresh; add salt and herbs to taste.</li>
+</ol>
+<p>Yield: ~1 lb ricotta per gallon milk.</p>
+<p><strong>Chèvre (Fresh Spreadable Cheese):</strong></p>
+<p>Ingredients:</p>
+<ul>
+<li>1 gallon goat milk.</li>
+<li>1/4 teaspoon lipase powder (optional; adds piquancy).</li>
+<li>1/4 teaspoon salt.</li>
+<li>Mesophilic culture (if available; 1/4 packet per gallon).</li>
+</ul>
+<p>Process:</p>
+<ol>
+<li>Heat milk to 86°F (30°C).</li>
+<li>Add culture and lipase; stir, let sit 15 minutes.</li>
+<li>Add 1/4 teaspoon liquid rennet mixed in 1/4 cup cool water; stir 1 minute.</li>
+<li>Let sit 12 hours at ~75°F (room temperature, or wrap in blankets).</li>
+<li>Line colander with cheesecloth; pour curds through.</li>
+<li>Hang cloth; let drain 8–12 hours until cheese is thick and spreadable.</li>
+<li>Add salt and herbs; refrigerate.</li>
+</ol>
+<p>Yield: ~1.5 lbs chèvre per gallon milk.</p>
+<h3>Yogurt</h3>
+<p><strong>Simple Goat Milk Yogurt:</strong></p>
+<p>Ingredients:</p>
+<ul>
+<li>1 quart goat milk.</li>
+<li>1/4 cup plain yogurt with live cultures (as starter).</li>
+</ul>
+<p>Process:</p>
+<ol>
+<li>Heat milk to 180°F (82°C); let cool to 110°F (43°C).</li>
+<li>Mix in yogurt starter culture.</li>
+<li>Pour into jars; incubate at 110°F for 4–8 hours (in a warm place: cooler with hot water, heating pad, yogurt maker).</li>
+<li>Yogurt is set when it jiggles slightly (not fully firm yet); remove from heat.</li>
+<li>Chill immediately in refrigerator.</li>
+<li>Store 2–3 weeks.</li>
+</ol>
+<p>Yield: 1 quart milk makes 1 quart yogurt.</p>
+<div class="info-box">
+<p>Goat milk yogurt tastes slightly tangy; some people add honey or fruit for sweetness. Reserve a small portion of each batch as starter culture for the next batch; this works 3–4 times before cultures weaken.</p>
+</div>
+</section>
+<section id="summary">
+<h2>Summary: Goat Herd Management</h2>
+<ul>
+<li><strong>Breed selection</strong>: Nubians, LaManchas, and Alpines are best for small-scale dairy.</li>
+<li><strong>Housing</strong>: 15 sq ft per goat indoors; 4–5 foot fencing; dry shelter with ventilation.</li>
+<li><strong>Feeding</strong>: 3–4% body weight in forage + grain supplementation for lactating does.</li>
+<li><strong>Milking</strong>: Hand-milking works for ≤6 does; excellent hygiene prevents mastitis.</li>
+<li><strong>Disease prevention</strong>: CAE prevention (colostrum management), CL vaccination, parasite management, foot rot monitoring.</li>
+<li><strong>Hoof care</strong>: Trim every 6–8 weeks; monitor for foot rot.</li>
+<li><strong>Breeding and kidding</strong>: Seasonal (August–October); 150-day gestation; assist with difficult births.</li>
+<li><strong>Processing</strong>: Goat milk makes excellent fresh cheeses (ricotta, chèvre) and yogurt; simple processes requiring no special equipment.</li>
+</ul>
+<p>A small herd of 2–4 does provides 6–12 gallons of milk weekly, sufficient for family dairy needs with minimal labor investment.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="dairy-processing.html">Dairy Processing</a>
+<a href="dogs-working-animals.html">Working Dogs &amp; Animals</a>
+<a href="food-preservation.html">Food Preservation</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Progress - Offline Knowledge Compendium</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        .progress-page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .progress-page-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .progress-page-header h1 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-page-header p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .progress-overall {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius-xl);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .progress-overall-pct {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .progress-overall-label {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .progress-overall-bar {
+            height: 12px;
+            background: var(--border);
+            border-radius: 6px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        .progress-overall-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 6px;
+            transition: width 0.5s ease;
+        }
+
+
+        /* Reuse category-progress styles from main.css */
+        .category-progress {
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        /* Collapsible category items */
+        .progress-item {
+            cursor: pointer;
+        }
+
+        .progress-item .chevron {
+            font-size: 0.85rem;
+            color: var(--muted);
+            transition: transform 0.2s ease;
+            margin-right: 0.25rem;
+        }
+
+        .progress-item.expanded .chevron {
+            transform: rotate(90deg);
+        }
+
+        .progress-guides {
+            display: none;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+            margin-top: 0.75rem;
+        }
+
+        .progress-item.expanded .progress-guides {
+            display: block;
+        }
+
+        .progress-guide-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            text-decoration: none;
+            color: var(--text);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.15s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .progress-guide-link:hover {
+            background: rgba(212, 165, 116, 0.08);
+        }
+
+        .progress-guide-link.guide-done {
+            opacity: 0.55;
+            border-left-color: var(--accent2);
+        }
+
+        .progress-guide-link.guide-done .guide-title {
+            text-decoration: line-through;
+        }
+
+        .progress-guide-link .guide-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .progress-guide-link .guide-title {
+            flex: 1;
+        }
+
+        .progress-guide-link .guide-check {
+            color: var(--accent2);
+            font-size: 0.9rem;
+        }
+
+        .progress-guide-link.guide-medical {
+            border-left-color: #ff6b6b;
+        }
+
+        .progress-guide-link.guide-hazard-high {
+            border-left-color: #ff8c42;
+        }
+
+        .progress-guide-link.guide-hazard-medium {
+            border-left-color: #ffd700;
+        }
+
+        .tool-disclaimer-banner {
+            background: #2d1a1a;
+            border: 1px solid #d4a574;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 1rem auto;
+            max-width: 900px;
+            font-size: 0.9rem;
+            color: #f5f0e8;
+            line-height: 1.5;
+        }
+
+        .tool-disclaimer-banner a {
+            color: #d4a574;
+        }
+
+        .tool-disclaimer-banner a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-page-container">
+        <a href="../index.html" class="home-btn" aria-label="Home">🏠 Home</a>
+
+        <div class="tool-disclaimer-banner">
+            ⚠️ <strong>Important:</strong> Completion tracking reflects reading progress, not demonstrated competency or professional certification. Reading a guide does not qualify you to perform the activities described. Always seek professional training.
+            <a href="../disclaimer.html">Full Disclaimer</a>
+        </div>
+
+        <div class="progress-page-header">
+            <h1>📈 Your Progress</h1>
+            <p>Track your learning across all survival categories</p>
+        </div>
+
+        <div class="progress-overall" id="overall-progress">
+            <div class="progress-overall-pct" id="overall-pct">0%</div>
+            <div class="progress-overall-label"><span id="overall-read">0</span> of <span id="overall-total">0</span> guides completed (reading progress)</div>
+            <div class="progress-overall-bar">
+                <div class="progress-overall-fill" id="overall-fill" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <section id="next-up-section" style="margin-bottom:2rem;"></section>
+
+        <section id="phase-progress" style="margin-bottom:2rem;"></section>
+
+        <section id="review-section" style="margin-bottom:2rem;"></section>
+
+        <section id="category-progress" class="category-progress"></section>
+    </div>
+
+    <!-- Load generated category definitions for non-module scripts -->
+    <script src="../js/categories-data.js"></script>
+
+    <script type="module">
+        import * as storage from '../js/storage.js';
+
+        // Use window.CATEGORIES generated from data/categories.json
+        const categoryColors = window.CATEGORIES.categoryColors;
+        const categoryMap = window.CATEGORIES.categoryMap;
+        const categoryOrder = window.CATEGORIES.categoryOrder;
+
+        const milestoneMessages = {
+            25: '🌱 Growing strong!',
+            50: '⚡ Halfway there!',
+            75: '🎯 Almost finished reading!',
+            100: '🏆 All guides in category read!'
+        };
+
+        function getMilestone(pct) {
+            for (const m of [100, 75, 50, 25]) {
+                if (pct >= m) return milestoneMessages[m];
+            }
+            return '';
+        }
+
+        async function render() {
+            // Fetch all data in parallel
+            const [guidesRes, prereqRes, orderRes] = await Promise.all([
+                fetch('../data/guides.json'),
+                fetch('../data/prerequisite-map.json'),
+                fetch('../data/reading-order.json')
+            ]);
+            const guides = await guidesRes.json();
+            const prereqMap = await prereqRes.json();
+            const readingOrder = await orderRes.json();
+            const progress = storage.getProgress();
+            const completedSet = storage.getCompletedGuides();
+
+            // Build file-to-id map
+            const fileToId = {};
+            for (const g of guides) {
+                const filename = (g.file || g.url || '').split('/').pop();
+                if (filename) fileToId[filename] = g.id;
+            }
+
+            // Calculate category stats
+            const stats = {};
+            let totalRead = 0, totalGuides = 0;
+
+            for (const guide of guides) {
+                const cat = guide.category || 'uncategorized';
+                if (!stats[cat]) stats[cat] = { total: 0, read: 0 };
+                stats[cat].total++;
+                totalGuides++;
+                if (progress[guide.id]?.completed) {
+                    stats[cat].read++;
+                    totalRead++;
+                }
+            }
+
+            // Overall
+            const overallPct = totalGuides > 0 ? Math.round((totalRead / totalGuides) * 100) : 0;
+            document.getElementById('overall-pct').textContent = overallPct + '%';
+            document.getElementById('overall-read').textContent = totalRead;
+            document.getElementById('overall-total').textContent = totalGuides;
+            document.getElementById('overall-fill').style.width = overallPct + '%';
+
+            // === WHAT'S NEXT SECTION ===
+            renderNextUp(guides, prereqMap, completedSet, progress, readingOrder, fileToId);
+
+            // === PHASE PROGRESS SECTION ===
+            renderPhaseProgress(readingOrder, completedSet, fileToId);
+
+            // === REVIEW SECTION ===
+            renderReviewSection(guides, progress);
+
+            // === CATEGORIES ===
+            const container = document.getElementById('category-progress');
+            const ordered = [
+                ...categoryOrder.filter(c => c in stats),
+                ...Object.keys(stats).filter(c => !categoryOrder.includes(c) && c !== 'uncategorized').sort()
+            ];
+
+            // Build category → guides lookup
+            const catGuides = {};
+            for (const g of guides) {
+                const cat = g.category || 'uncategorized';
+                if (!catGuides[cat]) catGuides[cat] = [];
+                catGuides[cat].push(g);
+            }
+
+            for (const cat of ordered) {
+                const s = stats[cat];
+                const pct = s.total > 0 ? Math.round((s.read / s.total) * 100) : 0;
+                const color = categoryColors[cat] || '#d4a574';
+                const catData = categoryMap[cat] || {};
+                const icon = catData.icon || '📄';
+                const name = catData.name || cat;
+                const milestone = getMilestone(pct);
+
+                // Build guide list HTML with risk-level color coding
+                const guidesList = (catGuides[cat] || [])
+                    .sort((a, b) => (a.title || '').localeCompare(b.title || ''))
+                    .map(g => {
+                        const done = progress[g.id]?.completed;
+                        let riskClass = '';
+                        if (cat === 'medical') {
+                            riskClass = 'guide-medical';
+                        } else if (['chemistry', 'defense', 'weapons'].includes(cat)) {
+                            riskClass = 'guide-hazard-high';
+                        } else if (['power-generation', 'metalworking', 'building', 'transportation'].includes(cat)) {
+                            riskClass = 'guide-hazard-medium';
+                        }
+                        return `<a href="../${g.url}" class="progress-guide-link ${done ? 'guide-done' : ''} ${riskClass}" onclick="event.stopPropagation()">
+                            <span class="guide-icon">${g.icon || '📖'}</span>
+                            <span class="guide-title">${g.title}</span>
+                            ${done ? '<span class="guide-check">✓</span>' : ''}
+                        </a>`;
+                    }).join('');
+
+                const item = document.createElement('div');
+                item.className = 'progress-item';
+                item.innerHTML = `
+                    <div class="progress-header">
+                        <span class="progress-category-name">
+                            <span class="chevron">▶</span>
+                            <span class="progress-icon">${icon}</span>
+                            ${name}
+                        </span>
+                        <span class="progress-count">${s.read}/${s.total}</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${pct}%; background-color: ${color};"></div>
+                        </div>
+                        <div class="progress-text">${pct}%</div>
+                    </div>
+                    ${milestone ? `<div class="progress-milestone">${milestone}</div>` : ''}
+                    <div class="progress-guides">${guidesList}</div>
+                `;
+                item.addEventListener('click', () => item.classList.toggle('expanded'));
+                container.appendChild(item);
+            }
+
+            // Apply theme
+            const theme = localStorage.getItem('compendium-theme');
+            if (theme) document.documentElement.setAttribute('data-theme', theme);
+        }
+
+        function renderNextUp(guides, prereqMap, completedSet, progress, readingOrder, fileToId) {
+            const section = document.getElementById('next-up-section');
+            if (!section) return;
+
+            // Find guides with all prerequisites met but not yet read
+            const candidates = guides.filter(g => {
+                if (completedSet.has(g.id)) return false;
+                if (g.prerequisites && g.prerequisites.length > 0) {
+                    return g.prerequisites.every(pId => completedSet.has(pId));
+                }
+                return true;
+            });
+
+            // Score by: gateway impact, phase alignment, difficulty
+            const phaseAlignments = readingOrder?.phaseAlignments || {};
+            const currentPhase = (() => {
+                for (const phase of (readingOrder?.phases || [])) {
+                    const essentials = phase.tiers.essential;
+                    const allDone = essentials.every(g => {
+                        const id = fileToId[g.file];
+                        return id && completedSet.has(id);
+                    });
+                    if (!allDone) return phase.number;
+                }
+                return 5;
+            })();
+
+            const scored = candidates.map(g => {
+                const filename = (g.file || g.url || '').split('/').pop();
+                const alignment = phaseAlignments[filename];
+                let score = 0;
+                if (alignment) {
+                    score += (6 - Math.abs(alignment.phase - currentPhase)) * 100;
+                    if (alignment.tier === 'essential') score += 30;
+                    else if (alignment.tier === 'recommended') score += 20;
+                }
+                const unlocks = prereqMap.unlocks?.[g.id] || [];
+                score += unlocks.length * 15;
+                if (g.prerequisites && g.prerequisites.length > 0) score += 50;
+                return { ...g, score, unlocksCount: unlocks.length, phase: alignment?.phase, tier: alignment?.tier };
+            }).sort((a, b) => b.score - a.score).slice(0, 5);
+
+            // Also find newly unlocked guides (prereqs completed in last 7 days)
+            const newlyUnlocked = [];
+            for (const [guideId, dep] of Object.entries(prereqMap.dependencies || {})) {
+                if (completedSet.has(guideId)) continue;
+                const allMet = dep.requires.every(r => completedSet.has(r));
+                if (!allMet) continue;
+                const recent = dep.requires.some(r => {
+                    const p = progress[r];
+                    if (!p?.lastUpdated) return false;
+                    return (Date.now() - new Date(p.lastUpdated).getTime()) < 7 * 86400000;
+                });
+                if (recent) {
+                    const guide = guides.find(g => g.id === guideId);
+                    if (guide) newlyUnlocked.push(guide);
+                }
+            }
+
+            let html = '<h2 style="color:var(--accent2);margin-bottom:1rem;">📍 What\'s Next</h2>';
+
+            if (newlyUnlocked.length > 0) {
+                html += '<div style="background:rgba(83,216,168,0.15);border:1px solid var(--accent2);border-radius:8px;padding:1rem;margin-bottom:1rem;">';
+                html += '<div style="font-weight:700;color:var(--accent2);margin-bottom:0.5rem;">🔓 Recently Unlocked</div>';
+                for (const g of newlyUnlocked.slice(0, 3)) {
+                    html += `<a href="../${g.url}" style="display:block;padding:0.5rem;color:var(--text);text-decoration:none;border-radius:4px;" onmouseover="this.style.background='var(--card)'" onmouseout="this.style.background='transparent'">${g.icon || '📖'} <strong>${g.title}</strong> <span style="color:var(--muted);font-size:0.85rem;">— ${g.description?.slice(0, 60)}...</span></a>`;
+                }
+                html += '</div>';
+            }
+
+            if (scored.length > 0) {
+                html += '<div style="display:grid;gap:0.75rem;">';
+                for (const g of scored) {
+                    const tierBadge = g.tier === 'essential' ? '<span style="background:var(--accent);color:var(--bg);padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;">Essential</span>' :
+                                      g.tier === 'recommended' ? '<span style="background:var(--accent2);color:var(--bg);padding:2px 8px;border-radius:12px;font-size:0.75rem;font-weight:600;">Recommended</span>' : '';
+                    const unlocksBadge = g.unlocksCount > 0 ? `<span style="color:var(--accent2);font-size:0.85rem;">🔗 Related to ${g.unlocksCount}</span>` : '';
+                    html += `
+                    <a href="../${g.url}" style="display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--card);border:1px solid var(--border);border-radius:8px;text-decoration:none;border-left:4px solid var(--accent2);transition:transform 0.2s;" onmouseover="this.style.transform='translateX(4px)'" onmouseout="this.style.transform='none'">
+                        <span style="font-size:1.5rem;">${g.icon || '📖'}</span>
+                        <div style="flex:1;">
+                            <div style="color:var(--accent);font-weight:600;">${g.title}</div>
+                            <div style="color:var(--muted);font-size:0.85rem;margin-top:2px;">${g.description?.slice(0, 80) || ''}${g.phase !== undefined ? ' · Phase ' + g.phase : ''}</div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">${tierBadge}${unlocksBadge}</div>
+                    </a>`;
+                }
+                html += '</div>';
+            } else {
+                html += '<p style="color:var(--muted);">All recommended guides completed! Check supplementary materials.</p>';
+            }
+
+            section.innerHTML = html;
+        }
+
+        function renderPhaseProgress(readingOrder, completedSet, fileToId) {
+            const section = document.getElementById('phase-progress');
+            if (!section || !readingOrder?.phases) return;
+
+            let html = '<h2 style="color:var(--accent);margin-bottom:1rem;">🗺️ Phase Progress</h2>';
+            html += '<div style="display:grid;gap:0.75rem;">';
+
+            for (const phase of readingOrder.phases) {
+                let total = 0, done = 0;
+                for (const tier of Object.values(phase.tiers)) {
+                    for (const guide of tier) {
+                        total++;
+                        const id = fileToId[guide.file];
+                        if (id && completedSet.has(id)) done++;
+                    }
+                }
+                const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+                const isComplete = pct === 100;
+
+                html += `
+                <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem;${isComplete ? 'border-color:var(--accent2);' : ''}">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+                        <div>
+                            <span style="font-weight:700;color:var(--accent);font-size:1.1rem;">Phase ${phase.number}</span>
+                            <span style="color:var(--text);margin-left:0.5rem;">${phase.name}</span>
+                            <span style="color:var(--muted);font-size:0.85rem;margin-left:0.5rem;">${phase.timeframe}</span>
+                        </div>
+                        <div style="font-weight:700;color:${isComplete ? 'var(--accent2)' : 'var(--muted)'};">${pct}%</div>
+                    </div>
+                    <div style="height:8px;background:var(--border);border-radius:4px;overflow:hidden;">
+                        <div style="height:100%;background:${isComplete ? 'var(--accent2)' : 'var(--accent)'};width:${pct}%;border-radius:4px;transition:width 0.5s;"></div>
+                    </div>
+                    <div style="color:var(--muted);font-size:0.8rem;margin-top:0.5rem;">${done}/${total} guides · ${isComplete ? '✅ Complete!' : phase.goal.slice(0, 80) + '...'}</div>
+                </div>`;
+            }
+            html += '</div>';
+            section.innerHTML = html;
+        }
+
+        function renderReviewSection(guides, progress) {
+            const section = document.getElementById('review-section');
+            if (!section) return;
+
+            const now = Date.now();
+            const needsReview = [];
+
+            for (const [guideId, data] of Object.entries(progress)) {
+                if (!data.completed || !data.lastUpdated) continue;
+                const days = (now - new Date(data.lastUpdated).getTime()) / 86400000;
+                if (days >= 30) {
+                    const guide = guides.find(g => g.id === guideId);
+                    if (guide) needsReview.push({ ...guide, daysSince: Math.round(days) });
+                }
+            }
+
+            if (needsReview.length === 0) return;
+
+            needsReview.sort((a, b) => b.daysSince - a.daysSince);
+            const toShow = needsReview.slice(0, 5);
+
+            let html = '<h2 style="color:#fbbf24;margin-bottom:1rem;">🔄 Time to Review</h2>';
+            html += '<p style="color:var(--muted);font-size:0.9rem;margin-bottom:1rem;">These guides were completed over 30 days ago. A quick refresher can help retain key knowledge.</p>';
+            html += '<div style="display:grid;gap:0.5rem;">';
+            for (const g of toShow) {
+                html += `
+                <a href="../${g.url}" style="display:flex;align-items:center;gap:1rem;padding:0.75rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:6px;text-decoration:none;border-left:3px solid #fbbf24;">
+                    <span>${g.icon || '📖'}</span>
+                    <div style="flex:1;">
+                        <div style="color:var(--text);font-weight:500;">${g.title}</div>
+                        <div style="color:var(--muted);font-size:0.8rem;">Read ${g.daysSince} days ago</div>
+                    </div>
+                    <span style="color:#fbbf24;font-size:0.85rem;">Review →</span>
+                </a>`;
+            }
+            html += '</div>';
+            if (needsReview.length > 5) {
+                html += `<p style="color:var(--muted);font-size:0.85rem;margin-top:0.5rem;">+${needsReview.length - 5} more guides could use a review</p>`;
+            }
+            section.innerHTML = html;
+        }
+
+        render();
+    </script>
+
+    <div style="text-align: center; padding: 2rem 1rem; margin-top: 2rem; border-top: 1px solid rgba(212, 165, 116, 0.2); font-size: 0.85rem; color: #8b7355;">
+        <a href="../disclaimer.html" style="color: #d4a574; text-decoration: none;">Important Disclaimer</a> · <a href="../terms.html" style="color: #d4a574; text-decoration: none;">Terms of Use</a>
+    </div>
+<script src="disclaimer-dismiss.js"></script>
+</body>
+</html>

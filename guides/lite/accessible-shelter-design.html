@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/accessible-shelter-design.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessible Shelter &amp; Universal Design</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Building &amp; Engineering</span> ›
+<span>Accessible Shelter &amp; Universal Design</span>
+</div>
+
+
+<h1>Accessible Shelter &amp; Universal Design</h1>
+<p class="subtitle">Wheelchair accessibility, visual impairment accommodations, hearing impairment adaptations, elderly-friendly design, children-safe environments, one-handed operation fixtures, ground-level living design, grab bars and support features, wayfinding for vision-impaired, and inclusive community planning.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~32 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#universal-design-principle">Universal Design: Serving Everyone</a></li>
+<li><a href="#wheelchair-accessibility">Wheelchair Accessibility</a></li>
+<li><a href="#visual-impairment">Visual Impairment Accommodations</a></li>
+<li><a href="#hearing-impairment">Hearing Impairment Adaptations</a></li>
+<li><a href="#elderly-friendly">Elderly-Friendly Design</a></li>
+<li><a href="#children-safety">Children-Safe Environments</a></li>
+<li><a href="#one-handed-operation">One-Handed Operation Design</a></li>
+<li><a href="#ground-level-living">Ground-Level Living Design</a></li>
+<li><a href="#grab-bars-support">Grab Bars and Support Features</a></li>
+<li><a href="#community-planning">Inclusive Community Planning</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="universal-design-principle">
+<h2>Universal Design: Serving Everyone</h2>
+<p>Universal design is the principle that spaces and products should work for the widest range of people, regardless of ability. It benefits everyone:</p>
+<ul>
+<li><strong>Ramps</strong> help wheelchair users AND people pushing carts, parents with strollers, elderly with walking aids</li>
+<li><strong>Large text</strong> helps people with weak vision AND those reading in dim light</li>
+<li><strong>Wide doorways</strong> help wheelchairs AND allow moving large items</li>
+<li><strong>Light switches at mid-height</strong> help people in wheelchairs AND reduce awkward reaching for anyone</li>
+<li><strong>Grab bars</strong> help elderly AND assist anyone carrying load</li>
+</ul>
+<p>In rebuilding communities, accessibility design costs little more than inaccessible design but serves far more people.</p>
+<h3>Who Accessibility Serves</h3>
+<ul>
+<li><strong>Wheelchair users:</strong> ~2–3% of population; also temporarily injured people</li>
+<li><strong>Blind or low vision:</strong> ~1–2%; also aging people</li>
+<li><strong>Deaf or hard of hearing:</strong> ~1–2%; also people in noisy environments</li>
+<li><strong>Elderly:</strong> ~10–20% depending on population age</li>
+<li><strong>Children:</strong> Different proportions and needs</li>
+<li><strong>Able-bodied:</strong> Benefit from accessible design's usability</li>
+</ul>
+<p>Building for accessibility means building for everyone.</p>
+</section>
+<section id="wheelchair-accessibility">
+<h2>Wheelchair Accessibility</h2>
+<p>Wheelchairs require unobstructed, relatively smooth surfaces and adequate maneuvering space.</p>
+<h3>Ramps</h3>
+<p><strong>Slope (rise-to-run ratio):</strong></p>
+<ul>
+<li>Maximum slope: 1:12 (1 unit rise per 12 units horizontal distance)</li>
+<li>Example: To rise 1 meter, need 12 meters of ramp length</li>
+<li>Gentler is better for ease of use and safety</li>
+</ul>
+<p><strong>Width:</strong></p>
+<ul>
+<li>Minimum: 1 meter (single wheelchair, barely fits)</li>
+<li>Better: 1.2–1.5 meters (allows passing, some flexibility)</li>
+<li>Width measured clear of railings/edges</li>
+</ul>
+<p><strong>Surface:</strong></p>
+<ul>
+<li>Smooth, non-slip material (concrete, compacted gravel, wood)</li>
+<li>No loose gravel (wheels sink)</li>
+<li>No metal grating (wheel gets caught)</li>
+<li>Avoid ice/standing water (traction lost)</li>
+</ul>
+<p><strong>Railings:</strong></p>
+<ul>
+<li>Both sides recommended</li>
+<li>Height: 85–95 cm from ramp surface</li>
+<li>Diameter: 3–4 cm (hand-grip size)</li>
+<li>Graspable material (wood, metal, not slippery plastic)</li>
+</ul>
+<p><strong>Landings:</strong></p>
+<ul>
+<li>At top and bottom of ramp: flat area at least 1 meter × 1 meter</li>
+<li>Between long ramps: rest landing every 9 meters</li>
+<li>Prevents momentum loss, allows turning</li>
+</ul>
+<div class="tip">
+<p>Manual wheelchair users expend significant energy on ramps. Minimize ramp length. If multiple ramps possible, choose gentler slope over steeper.</p>
+</div>
+<h3>Doorways and Passages</h3>
+<p><strong>Door width:</strong></p>
+<ul>
+<li>Minimum: 75 cm (single wheelchair, tight fit)</li>
+<li>Better: 80–85 cm (comfortable, clear passage)</li>
+<li>Measured clear of door swing and frame</li>
+</ul>
+<p><strong>Door handles:</strong></p>
+<ul>
+<li>Type: Lever handles (not round knobs, not complex mechanisms)</li>
+<li>Height: 80–110 cm</li>
+<li>Accessible to one hand without gripping hard</li>
+<li>Avoid push-button doors (can't operate while holding mobility aid)</li>
+</ul>
+<p><strong>Thresholds:</strong></p>
+<ul>
+<li>Eliminate completely if possible</li>
+<li>If necessary: maximum 1 cm height (slightly beveled edge)</li>
+<li>Avoid sharp edges (damage wheelchair tires, create vibration)</li>
+</ul>
+<p><strong>Passage width:</strong></p>
+<ul>
+<li>Minimum: 80 cm (single wheelchair)</li>
+<li>Better: 1 meter (allows passing other wheelchair or person)</li>
+<li>Allow for turns: wider area at corners</li>
+</ul>
+<h3>Flooring</h3>
+<ul>
+<li><strong>Smooth and level:</strong> Wheelchair rolls easily</li>
+<li><strong>Non-slip surface:</strong> Prevents spinning, accidents</li>
+<li><strong>No loose edges:</strong> Carpet edges can catch wheels</li>
+<li><strong>Good lighting:</strong> Shadows create obstacles visually</li>
+</ul>
+<h3>Bathroom Accessibility</h3>
+<ul>
+<li><strong>Turning space:</strong> Clear floor area 1.5 m × 1.5 m (for turning wheelchair)</li>
+<li><strong>Toilet height:</strong> 45–50 cm (standard wheelchair transfer height)</li>
+<li><strong>Grab bars:</strong> Around toilet, next to tub/shower (installed into solid framing, supports 150+ kg weight)</li>
+<li><strong>Sink clearance:</strong> Knee space underneath (60 cm minimum) for wheelchair user to position close</li>
+<li><strong>Shower:</strong> Zero-threshold entry (no lip) or beveled threshold (&lt;1 cm)</li>
+</ul>
+</section>
+<section id="visual-impairment">
+<h2>Visual Impairment Accommodations</h2>
+<p>Blind and low-vision people navigate using non-visual cues: touch, sound, scent, memorization.</p>
+<h3>Tactile Indicators and Wayfinding</h3>
+<p><strong>Raised tactile dots (bumps):</strong></p>
+<ul>
+<li>Signal hazards or direction changes</li>
+<li>Placed at edge of stairs, platform edges</li>
+<li>Also used at street intersections, building entrances</li>
+<li>Dome-shaped bumps, spaced 60 cm apart in guiding strips</li>
+</ul>
+<p><strong>Texture changes:</strong></p>
+<ul>
+<li>Different flooring signals different spaces (carpet vs. concrete)</li>
+<li>Smooth vs. rough indicates hazard zones</li>
+<li>Helps blind users orient without asking directions</li>
+</ul>
+<p><strong>Walls and edges:</strong></p>
+<ul>
+<li>Consistent wall placement allows navigation by touch</li>
+<li>Aligned handrails provide guidance</li>
+<li>Open spaces feel disorienting; subtle guides help</li>
+</ul>
+<h3>Hazard Mitigation</h3>
+<p><strong>Head-height obstacles:</strong></p>
+<ul>
+<li>Overhanging signs, branches, lights must be &gt;2 meters high (above cane strike height)</li>
+<li>Alternatively, protect with railings so cane hits railing, not user's head</li>
+</ul>
+<p><strong>Floor-level obstacles:</strong></p>
+<ul>
+<li>Minimize protruding objects (chairs, boxes, loose items)</li>
+<li>Secure carpet edges so no tripping</li>
+</ul>
+<p><strong>Stairs:</strong></p>
+<ul>
+<li>Bold colored stripe on edges (visible to low-vision users)</li>
+<li>Even step heights (varied heights cause falls)</li>
+<li>Handrails on both sides with continuous grip</li>
+<li>Landing platforms with level surface</li>
+</ul>
+<h3>Lighting and Contrast</h3>
+<p><strong>General lighting:</strong></p>
+<ul>
+<li>Brighter is better for low-vision users (4–5x normal office brightness helpful)</li>
+<li>Even lighting (no dark shadows, not too bright to glare)</li>
+<li>Avoid flicker (causes discomfort, seizures)</li>
+</ul>
+<p><strong>Color contrast:</strong></p>
+<ul>
+<li>Dark on light or light on dark (avoid similar tones)</li>
+<li>Examples: white on black, light yellow on dark blue (avoid: gray on silver)</li>
+<li>Helps low-vision users distinguish spaces and objects</li>
+</ul>
+<h3>Information Access</h3>
+<ul>
+<li><strong>Signage:</strong> Text + tactile labels (Braille if readers available)</li>
+<li><strong>Verbal description:</strong> Audio tours or guides describing spaces</li>
+<li><strong>Important info:</strong> Posted in multiple formats (visual, audio, tactile)</li>
+</ul>
+</section>
+<section id="hearing-impairment">
+<h2>Hearing Impairment Adaptations</h2>
+<p>Deaf and hard-of-hearing people miss auditory information. Provide visual and tactile alternatives.</p>
+<h3>Visual Alerts</h3>
+<p><strong>Instead of buzzers/alarms:</strong></p>
+<ul>
+<li>Flashing lights (red for alarm, green for OK)</li>
+<li>Light placement: visible from anywhere in space</li>
+<li>Brightness: noticeably different from ambient</li>
+</ul>
+<p><strong>Doorbell/knock:</strong></p>
+<ul>
+<li>Visual indicator in home (flashing light)</li>
+<li>Vibrating alert (for portable use)</li>
+<li>Avoid audio-only notification</li>
+</ul>
+<h3>Written and Visual Communication</h3>
+<p><strong>Signs:</strong></p>
+<ul>
+<li>Written information accompanying any audio announcement</li>
+<li>Visual-friendly format (clear font, high contrast, not too small)</li>
+</ul>
+<p><strong>Meetings and events:</strong></p>
+<ul>
+<li>Designated note-taker or captionist</li>
+<li>Real-time written transcription of discussions</li>
+<li>Visual slides with key points</li>
+</ul>
+<h3>Acoustic Environment</h3>
+<p><strong>Reduce background noise:</strong></p>
+<ul>
+<li>Soft furnishings (curtains, carpets) absorb sound</li>
+<li>Separate noisy and quiet zones in buildings</li>
+<li>Allows those with hearing aids to hear better</li>
+</ul>
+<p><strong>Meeting spaces:</strong></p>
+<ul>
+<li>Consider those who lip-read (good lighting on speaker's face, no backlight)</li>
+<li>Face people when speaking (not to wall)</li>
+<li>Slow, clear speech helps people who read lips</li>
+</ul>
+</section>
+<section id="elderly-friendly">
+<h2>Elderly-Friendly Design</h2>
+<p>Aging brings reduced strength, flexibility, balance, and reaction time. Design compensates.</p>
+<h3>Mobility Support</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Benefit</th>
+<th>Placement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grab bars</td>
+<td>Stability, prevents falls</td>
+<td>Bathrooms, stairs, ramps</td>
+</tr>
+<tr>
+<td>Handrails</td>
+<td>Support when walking</td>
+<td>Along stairs, long hallways</td>
+</tr>
+<tr>
+<td>Railings</td>
+<td>Balance support</td>
+<td>Open edges, stairs</td>
+</tr>
+<tr>
+<td>Wider pathways</td>
+<td>Less claustrophobic, allows cane/walker</td>
+<td>Hallways, passages</td>
+</tr>
+<tr>
+<td>No ramps &gt;1:12 slope</td>
+<td>Easier for weak knees</td>
+<td>All ramps</td>
+</tr>
+</tbody>
+</table>
+<h3>Strength-Reducing Design</h3>
+<ul>
+<li><strong>Light door handles:</strong> Avoid heavy pull doors; use lever handles</li>
+<li><strong>Low-force switches:</strong> Light switches that don't require hard pressing</li>
+<li><strong>Cabinets/drawers:</strong> Minimalist latches; slides easily; open with light pressure</li>
+<li><strong>Faucets:</strong> Single-lever (not two-knob) design; minimum force required</li>
+</ul>
+<h3>Balance and Fall Prevention</h3>
+<ul>
+<li><strong>No loose rugs:</strong> Trip hazard</li>
+<li><strong>Even flooring:</strong> No sudden level changes</li>
+<li><strong>Clear sight lines:</strong> No clutter blocking view of path</li>
+<li><strong>Adequate lighting:</strong> Helps eyes adjust; prevents falls from poor visibility</li>
+<li><strong>Sit-down spaces:</strong> Benches, chairs at regular intervals for rest</li>
+</ul>
+<h3>Kitchen and Eating</h3>
+<ul>
+<li><strong>Counter height:</strong> Standard 85 cm is good (some elderly prefer 90 cm)</li>
+<li><strong>Stool:</strong> Allows sitting while preparing food (reduces fatigue)</li>
+<li><strong>Items at reachable height:</strong> No overhead cabinets (reaching difficult); mid-chest height better</li>
+<li><strong>Dishes/cups:</strong> Lightweight, thermal isolation (so hot water doesn't burn hands immediately)</li>
+</ul>
+<h3>Stairs and Steps</h3>
+<p><strong>Avoid when possible:</strong> Long-term aging, people cannot climb multiple flights.</p>
+<p><strong>If stairs necessary:</strong></p>
+<ul>
+<li>Even step height (7–20 cm, ideally uniform)</li>
+<li>Non-slip surface</li>
+<li>Handrails both sides, continuous grip</li>
+<li>Light-colored edges (visible to low-vision users)</li>
+<li>Landing platforms every 9 meters</li>
+</ul>
+</section>
+<section id="children-safety">
+<h2>Children-Safe Environments</h2>
+<p>Children are small, curious, and lack hazard awareness. Design protects while allowing play.</p>
+<h3>Size and Scale</h3>
+<ul>
+<li><strong>Furniture height:</strong> Accessible to children (not all fixtures at adult level)</li>
+<li><strong>Doorway heights:</strong> Minimum 2 meters (children won't hit head; adult stooping prevents)</li>
+<li><strong>Windows:</strong> Sills low enough for children to see out (learning, not just containment)</li>
+</ul>
+<h3>Hazard Elimination</h3>
+<table>
+<thead>
+<tr>
+<th>Hazard</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sharp edges/corners</td>
+<td>Round edges, padding, bumpers</td>
+</tr>
+<tr>
+<td>Choking hazards</td>
+<td>Objects &gt;3 cm diameter (not mouth-sized)</td>
+</tr>
+<tr>
+<td>Strangulation hazards</td>
+<td>No cords, strings &gt;20 cm near children</td>
+</tr>
+<tr>
+<td>Falls from height</td>
+<td>Railings on elevated areas (1.1 m high minimum)</td>
+</tr>
+<tr>
+<td>Hot surfaces</td>
+<td>Barriers around heat sources (stove, fire)</td>
+</tr>
+<tr>
+<td>Toxic substances</td>
+<td>Locked storage for poisons, chemicals, medicines</td>
+</tr>
+<tr>
+<td>Drowning</td>
+<td>Fenced water access, adult supervision</td>
+</tr>
+<tr>
+<td>Entrapment</td>
+<td>No spaces where head fits but body doesn't</td>
+</tr>
+</tbody>
+</table>
+<h3>Play Spaces</h3>
+<ul>
+<li><strong>Soft surfaces:</strong> Grass, wood chips, mulch under play equipment</li>
+<li><strong>Open sight lines:</strong> Adults can see entire play area</li>
+<li><strong>Equipment spacing:</strong> Objects spaced 2 meters apart minimum (prevents head contact if falling)</li>
+<li><strong>Age-appropriate:</strong> Younger children (&lt;5) separate from older children (&gt;8)</li>
+</ul>
+<h3>Supervision and Layout</h3>
+<ul>
+<li><strong>Clear entrances:</strong> Defined exit/entry points (prevents wandering away)</li>
+<li><strong>Seating for adults:</strong> Placed strategically so adults can monitor play</li>
+<li><strong>Fencing:</strong> Encloses play area from hazards (traffic, water)</li>
+</ul>
+</section>
+<section id="one-handed-operation">
+<h2>One-Handed Operation Design</h2>
+<p>People with one hand due to injury, amputation, or arthritis need accessible controls.</p>
+<h3>Door and Cabinet Handles</h3>
+<ul>
+<li><strong>Type:</strong> Lever handles (not round knobs requiring twist/rotation)</li>
+<li><strong>Force:</strong> Minimal pressure required (&lt;5 N / 0.5 kg weight)</li>
+<li><strong>Height:</strong> 80–110 cm (accessible whether standing or seated)</li>
+<li><strong>Placement:</strong> Clear of obstacles; easy to reach</li>
+</ul>
+<h3>Controls and Switches</h3>
+<ul>
+<li><strong>Light switches:</strong> Broad, flat buttons (easy to press with palm or fist)</li>
+<li><strong>Door openers:</strong> Lever or automatic (not narrow knobs)</li>
+<li><strong>Faucets:</strong> Single-lever (turn one lever) not two-knob (need both hands)</li>
+<li><strong>Locks:</strong> Accessible from one hand without twisting wrist unnaturally</li>
+</ul>
+<h3>Workspace</h3>
+<ul>
+<li><strong>Counter edges:</strong> Beveled (not sharp right angle) allows arm movement without injury</li>
+<li><strong>Shelving:</strong> Adjustable height; items at waist level (not requiring reaching)</li>
+<li><strong>Storage:</strong> Drawers instead of cabinets (easier one-handed access)</li>
+<li><strong>Workspace:</strong> Open sides so one-handed person can approach and work comfortably</li>
+</ul>
+<h3>Kitchen Design</h3>
+<ul>
+<li><strong>Counter surface:</strong> Continuous, smooth transition (no gaps)</li>
+<li><strong>Placement:</strong> Stove, sink, preparation space in triangle layout (minimizes movement)</li>
+<li><strong>Tools:</strong> Within arm's reach when positioned at counter</li>
+<li><strong>Support surfaces:</strong> Wide counters (not narrow) support one hand's stability</li>
+</ul>
+</section>
+<section id="ground-level-living">
+<h2>Ground-Level Living Design</h2>
+<p>Multiple floors limit accessibility. Single-level or ground-floor design serves more people.</p>
+<h3>Master Bedroom on Ground Floor</h3>
+<ul>
+<li>Elderly and disabled can sleep without stairs</li>
+<li>Reduces falls going up/down at night</li>
+<li>No need to relocate bedrooms for aging-in-place</li>
+</ul>
+<h3>Bathrooms on Ground Floor</h3>
+<ul>
+<li>Critical: bathroom access without stairs is vital</li>
+<li>Elderly and injured cannot navigate stairs for toileting</li>
+<li>Allows aging in home long-term</li>
+</ul>
+<h3>Kitchen/Eating on Ground Floor</h3>
+<ul>
+<li>Main living activities accessible without stairs</li>
+<li>Reduces trips carrying heavy items</li>
+<li>Socializing happens at accessible level</li>
+</ul>
+<h3>Layout: Avoiding Stairs</h3>
+<p><strong>When ground-level not possible:</strong></p>
+<ul>
+<li>Minimum: Entrance-level main living space (living room, kitchen)</li>
+<li>Bedrooms on level with main entrance (not basement or upper floors)</li>
+<li>Primary bathroom accessible without stairs</li>
+</ul>
+<p><strong>Slope instead of steps:</strong></p>
+<ul>
+<li>Gentle slope (ramp) easier than stairs for everyone</li>
+<li>Takes more space but universally accessible</li>
+</ul>
+</section>
+<section id="grab-bars-support">
+<h2>Grab Bars and Support Features</h2>
+<p>Physical support prevents falls and allows independent living for people with mobility limitations.</p>
+<h3>Bathroom Installation</h3>
+<p><strong>Toilet area:</strong></p>
+<ul>
+<li>Bars on both sides of toilet (85–95 cm high)</li>
+<li>60 cm from front edge of toilet</li>
+<li>Supports 150+ kg (installed into studs, not drywall alone)</li>
+</ul>
+<p><strong>Shower/tub:</strong></p>
+<ul>
+<li>Vertical bars at tub entrance (stability entering/exiting)</li>
+<li>Horizontal bar along tub edge (security while bathing)</li>
+<li>Placement: 75–95 cm high (for reaching while standing)</li>
+</ul>
+<p><strong>Overall bathroom:</strong></p>
+<ul>
+<li>Continuous handrails from toilet to tub/shower</li>
+<li>Handrails along entire tub edge</li>
+<li>Never leave gaps in protection</li>
+</ul>
+<h3>Installation Standards</h3>
+<ul>
+<li><strong>Mounting:</strong> Into wooden studs or solid backing; not into hollow drywall alone</li>
+<li><strong>Materials:</strong> Stainless steel or coated metal (not slippery; rust-resistant)</li>
+<li><strong>Diameter:</strong> 2.5–3 cm (hand-grip size)</li>
+<li><strong>Weight:</strong> Support minimum 150 kg (supports falling weight, not just standing)</li>
+<li><strong>Spacing:</strong> 60 cm centers for wall-mounted bars</li>
+</ul>
+<h3>Non-Bathroom Applications</h3>
+<ul>
+<li><strong>Stairs:</strong> Railings on both sides (85–95 cm high)</li>
+<li><strong>Ramps:</strong> Railings if steep</li>
+<li><strong>Hallways:</strong> Rails along walls in narrow passages</li>
+<li><strong>Entrances:</strong> Support at door threshold if slight step present</li>
+</ul>
+<div class="warning">
+<p>Improperly installed grab bars are dangerous: they give false confidence, then fail under load. Always install into solid framing; test before allowing regular use.</p>
+</div>
+</section>
+<section id="community-planning">
+<h2>Inclusive Community Planning</h2>
+<p>Accessibility is most effective when planned at community scale, not just building-by-building.</p>
+<h3>Accessible Routes</h3>
+<p><strong>Sidewalks and pathways:</strong></p>
+<ul>
+<li>Smooth, level surface (1–1.5 meters wide)</li>
+<li>Curb ramps at street crossings (1:12 slope, beveled edges)</li>
+<li>No obstacles (parked vehicles, overhanging branches, street furniture blocking path)</li>
+<li>Regular maintenance (avoid potholes, uneven settling)</li>
+</ul>
+<p><strong>Public buildings:</strong></p>
+<ul>
+<li>Accessible entrance (ramp or level entry)</li>
+<li>Accessible restrooms</li>
+<li>Accessible drinking fountain (height suitable for wheelchair users: 100 cm)</li>
+<li>Accessible seating in meeting spaces</li>
+</ul>
+<p><strong>Public transportation:</strong></p>
+<ul>
+<li>Vehicles with level boarding (no steps) or lifts</li>
+<li>Seats for elderly and disabled clearly marked</li>
+<li>Audio AND visual announcements of stops</li>
+<li>Drivers trained to assist passengers</li>
+</ul>
+<h3>Community Spaces</h3>
+<p><strong>Parks and recreation:</strong></p>
+<ul>
+<li>Accessible playgrounds (accessible route, adaptive equipment)</li>
+<li>Paved paths for wheeled mobility aids</li>
+<li>Benches at regular intervals (for rest)</li>
+<li>Accessible restrooms</li>
+</ul>
+<p><strong>Markets and shopping:</strong></p>
+<ul>
+<li>Accessible entrance and circulation</li>
+<li>Aisles wide enough for wheelchair navigation (1 meter)</li>
+<li>Shelving at varying heights (items visible and reachable)</li>
+<li>Checkout counter with accessible section (lowered height)</li>
+</ul>
+<p><strong>Community events:</strong></p>
+<ul>
+<li>Accessible venue (level entry, restrooms, seating)</li>
+<li>Accessible parking (if applicable)</li>
+<li>Sign language interpreter or captioning (for deaf attendees)</li>
+<li>Advance notice of accommodations available</li>
+</ul>
+<h3>Inclusionary Mindset</h3>
+<p>Accessible design requires:</p>
+<ul>
+<li><strong>Awareness:</strong> Recognizing disabilities as normal human variation</li>
+<li><strong>Accountability:</strong> Community expects accessibility; businesses provide it</li>
+<li><strong>Participation:</strong> Include disabled people in planning (those affected know best)</li>
+<li><strong>Iterative improvement:</strong> Start with basics; expand over time as capacity builds</li>
+</ul>
+<p><svg aria-label="Accessible design specifications showing dimensions and features for universal access" height="400" style="background-color: transparent;" viewBox="0 0 700 450" width="700">
+  <!-- Title -->
+  <text fill="var(--accent, #d4a574)" font-size="18" font-weight="bold" text-anchor="middle" x="350" y="25">Accessible Design Specifications</text>
+
+  <!-- LEFT SIDE: Ramp Specifications -->
+  <g>
+    <text fill="var(--accent, #d4a574)" font-size="13" font-weight="bold" x="50" y="60">Ramp Profile (1:12 slope)</text>
+
+    <!-- Ramp diagram -->
+    <line x1="50" y1="150" x2="250" y2="150" stroke="var(--border, #444)" stroke-width="1" stroke-dasharray="2,2"/>
+    <polygon points="50,150 250,150 250,162 50,162" fill="var(--surface, #1a2e1a)" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+
+    <!-- Height indicator -->
+    <line x1="250" y1="120" x2="250" y2="162" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <text fill="var(--text, #f5f0e8)" font-size="10" x="255" y="145">1 m rise</text>
+
+    <!-- Length indicator -->
+    <line x1="50" y1="170" x2="250" y2="170" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <text fill="var(--text, #f5f0e8)" font-size="10" x="135" y="185">12 m run</text>
+
+    <!-- Width dimension -->
+    <text fill="var(--text, #f5f0e8)" font-size="10" font-weight="bold" x="50" y="215">Width: 1-1.5 m</text>
+    <text fill="var(--text, #f5f0e8)" font-size="9" x="50" y="230">Railings both sides</text>
+    <text fill="var(--text, #f5f0e8)" font-size="9" x="50" y="243">Landing platforms every 9 m</text>
+  </g>
+
+  <!-- CENTER TOP: Door Dimensions -->
+  <g>
+    <text fill="var(--accent, #d4a574)" font-size="13" font-weight="bold" x="320" y="60">Doorway Requirements</text>
+
+    <!-- Door opening rectangle -->
+    <rect x="320" y="90" width="80" height="120" fill="none" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+
+    <!-- Width dimension -->
+    <line x1="315" y1="150" x2="320" y2="150" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+    <line x1="400" y1="150" x2="405" y2="150" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+    <line x1="315" y1="148" x2="405" y2="148" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+    <text fill="var(--text, #f5f0e8)" font-size="9" text-anchor="middle" x="360" y="165">80-85 cm</text>
+
+    <!-- Height dimension -->
+    <text fill="var(--text, #f5f0e8)" font-size="9" x="410" y="153">200 cm</text>
+
+    <!-- Handle placement -->
+    <circle cx="400" cy="130" r="3" fill="var(--accent, #d4a574)"/>
+    <text fill="var(--text, #f5f0e8)" font-size="8" x="407" y="133">Handle</text>
+    <text fill="var(--text, #f5f0e8)" font-size="8" x="407" y="145">80-110 cm</text>
+
+    <!-- Notes -->
+    <text fill="var(--text, #f5f0e8)" font-size="9" font-weight="bold" x="320" y="220">Clear width</text>
+    <text fill="var(--text, #f5f0e8)" font-size="8" x="320" y="233">Lever handles only</text>
+    <text fill="var(--text, #f5f0e8)" font-size="8" x="320" y="245">Minimize threshold</text>
+  </g>
+
+  <!-- RIGHT SIDE: Bathroom Layout -->
+  <g>
+    <text fill="var(--accent, #d4a574)" font-size="13" font-weight="bold" x="520" y="60">Accessible Bathroom</text>
+
+    <!-- Turning space -->
+    <rect x="480" y="95" width="100" height="100" fill="none" stroke="var(--border, #999)" stroke-width="1" stroke-dasharray="3,3"/>
+    <text fill="var(--muted, #999)" font-size="8" text-anchor="middle" x="530" y="148">1.5m×1.5m</text>
+    <text fill="var(--muted, #999)" font-size="8" text-anchor="middle" x="530" y="160">turning space</text>
+
+    <!-- Toilet -->
+    <ellipse cx="520" cy="130" rx="12" ry="18" fill="var(--card, #2d2416)" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+    <text fill="var(--text, #f5f0e8)" font-size="8" text-anchor="middle" x="520" y="134">WC</text>
+
+    <!-- Grab bars at toilet -->
+    <line x1="505" y1="110" x2="505" y2="150" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <line x1="535" y1="110" x2="535" y2="150" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <text fill="var(--text, #f5f0e8)" font-size="8" x="507" y="170">Grab</text>
+    <text fill="var(--text, #f5f0e8)" font-size="8" x="507" y="182">bars</text>
+
+    <!-- Tub/Shower -->
+    <rect x="470" y="190" width="50" height="30" fill="var(--card, #2d2416)" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+    <text fill="var(--text, #f5f0e8)" font-size="8" text-anchor="middle" x="495" y="209">Tub</text>
+
+    <!-- Sink -->
+    <circle cx="550" cy="210" r="15" fill="var(--card, #2d2416)" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+    <text fill="var(--text, #f5f0e8)" font-size="8" text-anchor="middle" x="550" y="213">Sink</text>
+    <text fill="var(--text, #f5f0e8)" font-size="7" x="540" y="233">Knee space</text>
+    <text fill="var(--text, #f5f0e8)" font-size="7" x="540" y="242">60cm min</text>
+
+    <!-- Features list -->
+    <text fill="var(--text, #f5f0e8)" font-size="9" font-weight="bold" x="480" y="270">Key Features:</text>
+    <text fill="var(--text, #f5f0e8)" font-size="8" x="480" y="284">✓ Level floor, non-slip</text>
+    <text fill="var(--text, #f5f0e8)" font-size="8" x="480" y="295">✓ Grab bars 150kg rated</text>
+    <text fill="var(--text, #f5f0e8)" font-size="8" x="480" y="306">✓ 45-50cm toilet height</text>
+  </g>
+
+  <!-- BOTTOM: Accessibility Features Matrix -->
+  <rect x="50" y="310" width="630" height="130" fill="var(--card, #2d2416)" stroke="var(--accent, #d4a574)" stroke-width="1" rx="4"/>
+
+  <text fill="var(--accent, #d4a574)" font-size="12" font-weight="bold" x="65" y="330">Quick Reference: Accessible Heights &amp; Dimensions</text>
+
+  <!-- Measurements table -->
+  <text fill="var(--text, #f5f0e8)" font-size="9" font-weight="bold" x="65" y="355">Doorway:</text>
+  <text fill="var(--text, #f5f0e8)" font-size="8" x="220" y="355">80-85 cm wide | Handles 80-110 cm high</text>
+
+  <text fill="var(--text, #f5f0e8)" font-size="9" font-weight="bold" x="65" y="372">Stairs:</text>
+  <text fill="var(--text, #f5f0e8)" font-size="8" x="220" y="372">Even height 7-20 cm | Handrails 85-95 cm | Both sides</text>
+
+  <text fill="var(--text, #f5f0e8)" font-size="9" font-weight="bold" x="65" y="389">Counter/Surface:</text>
+  <text fill="var(--text, #f5f0e8)" font-size="8" x="220" y="389">85 cm height | 60+ cm knee clearance | Smooth edge</text>
+
+  <text fill="var(--text, #f5f0e8)" font-size="9" font-weight="bold" x="65" y="406">Ramp:</text>
+  <text fill="var(--text, #f5f0e8)" font-size="8" x="220" y="406">1:12 slope (1m rise = 12m run) | 1-1.5m width | Railings both sides</text>
+
+  <text fill="var(--text, #f5f0e8)" font-size="9" font-weight="bold" x="65" y="423">Grab Bar:</text>
+  <text fill="var(--text, #f5f0e8)" font-size="8" x="220" y="423">2.5-3 cm diameter | 150+ kg support | Into studs only</text>
+</svg></p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="natural-building.html">Natural Building Materials</a>
+<a href="insulation-weatherproofing.html">Insulation &amp; Weatherproofing</a>
+<a href="community-organizing.html">Community Organizing &amp; Leadership</a>
+<a href="interior-finishes.html">Interior Finishes and Surfaces</a>
+<a href="primitive-shelter-construction.html">Primitive Shelter Construction Techniques</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/crop-rotation-planning.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crop Rotation Planning</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Food &amp; Agriculture</span> ›
+<span>Crop Rotation Planning</span>
+</div>
+
+
+<h1>Crop Rotation Planning</h1>
+<p class="subtitle">Nutrient cycling from heavy feeders to light feeders to legumes, disease break cycles, companion planting integration, 3-year and 4-year plans, cover crops, and record keeping.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~14 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#rotation-fundamentals">Rotation Fundamentals</a></li>
+<li><a href="#crop-families">Plant Families and Crop Classification</a></li>
+<li><a href="#rotation-plans">Rotation Plan Designs</a></li>
+<li><a href="#disease-breaks">Disease Break Cycles and Soil-Borne Pathogen Management</a></li>
+<li><a href="#nutrient-management">Nutrient Management Through Rotation</a></li>
+<li><a href="#companion-integration">Integrating Companion Planting</a></li>
+<li><a href="#cover-crops">Cover Crops and Rotation Integration</a></li>
+<li><a href="#planning-record-keeping">Planning and Record Keeping</a></li>
+<li><a href="#example-plans">Example Rotation Plans for Common Scenarios</a></li>
+<li><a href="#adjustments">Troubleshooting and Adjustments</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<p>Crop rotation is one of the most powerful and underutilized soil management tools. By systematically varying what you plant in each bed or field, you break pest and disease cycles, balance nutrient extraction, reduce fertilizer needs, and improve long-term soil health.</p>
+<section id="rotation-fundamentals">
+<h2>Rotation Fundamentals</h2>
+<h3>Why Rotate Crops?</h3>
+<p><strong>Pest and disease control:</strong></p>
+<ul>
+<li>Many pathogens and pests are crop-specific</li>
+<li>Continuous monoculture builds populations to damaging levels</li>
+<li>Removing the host crop for 2–3 years breaks the cycle</li>
+<li>Reduces need for pesticides</li>
+</ul>
+<p><strong>Soil nutrient balance:</strong></p>
+<ul>
+<li>Different crops extract different nutrients in different amounts</li>
+<li>Heavy feeders (tomatoes, corn, brassicas) deplete nitrogen and phosphorus</li>
+<li>Light feeders (root crops, onions, alliums) require fewer inputs</li>
+<li>Legumes (beans, peas) add nitrogen through symbiotic bacteria</li>
+</ul>
+<p><strong>Soil structure and organic matter:</strong></p>
+<ul>
+<li>Different root depths break compaction at different layers</li>
+<li>Different crop residues provide varying organic matter quality</li>
+<li>Rotation prevents decline in soil tilth</li>
+</ul>
+<p><strong>Economic efficiency:</strong></p>
+<ul>
+<li>Reduces pest and disease pressure → fewer inputs needed</li>
+<li>Builds soil fertility over time → less synthetic fertilizer needed</li>
+<li>More diverse production spreads labor and market risk</li>
+</ul>
+<h3>The Core Principle</h3>
+<p>Organize crops into <strong>plant families</strong> and rotate them:</p>
+<ol>
+<li><strong>Year 1:</strong> Heavy feeders (tomatoes, brassicas, corn) — apply compost</li>
+<li><strong>Year 2:</strong> Light feeders (root crops, onions, alliums) — minimal added inputs</li>
+<li><strong>Year 3:</strong> Legumes (beans, peas, clover) — fixes nitrogen</li>
+<li><strong>Year 4 (optional):</strong> Fallow or cover crop — soil rest and regeneration</li>
+</ol>
+<div class="info-box">
+<p>The key is that crops in the same plant family (which share pests and diseases) don't occupy the same space for at least 3 years. The 3-year minimum assumes perennial soil-dwelling pathogens.</p>
+</div>
+</section>
+<section id="crop-families">
+<h2>Plant Families and Crop Classification</h2>
+<p>Understanding plant families helps organize rotations effectively.</p>
+<h3>Heavy Feeders (High Nitrogen and Phosphorus Demand)</h3>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Crops</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brassicaceae (Mustard/Cabbage)</td>
+<td>Cabbage, broccoli, cauliflower, kale, Brussels sprouts, radishes, mustard, turnips</td>
+<td>Many brassica pests soil-borne; 3-year break critical</td>
+</tr>
+<tr>
+<td>Solanaceae (Nightshade)</td>
+<td>Tomatoes, peppers, eggplants, potatoes</td>
+<td>Phytophthora (late blight), Verticillium wilt persistent in soil</td>
+</tr>
+<tr>
+<td>Cucurbitaceae (Squash/Cucumber)</td>
+<td>Squash, cucumber, melon, pumpkin</td>
+<td>Fusarium and powdery mildew soil-borne; need 3+ year break</td>
+</tr>
+<tr>
+<td>Amaranthaceae (Amaranth/Beet)</td>
+<td>Spinach, chard, beets, quinoa</td>
+<td>Moderate feeders; some diseases soil-persistent</td>
+</tr>
+<tr>
+<td>Apiaceae (Carrot/Parsley)</td>
+<td>Carrots, parsnips, parsley, celery, dill, fennel</td>
+<td>Moderate-heavy feeders</td>
+</tr>
+</tbody>
+</table>
+<h3>Light Feeders (Low Nitrogen Demand)</h3>
+<ul>
+<li><strong>Allium family:</strong> Onions, garlic, leeks, chives (minimal fertility needs; help suppress diseases)</li>
+<li><strong>Root crops:</strong> Turnips, rutabagas, radishes (mine deep; tolerate poor soil)</li>
+<li><strong>Leafy greens:</strong> Lettuce, arugula, endive (leafy crops moderate feeders; can tolerate lower soil)</li>
+</ul>
+<h3>Legumes (Nitrogen Fixers)</h3>
+<ul>
+<li><strong>Fabaceae:</strong> Beans (snap, pole, bush), peas, lentils, chickpeas, clover (red, white), alfalfa, vetch</li>
+<li><strong>Rhizobia bacteria</strong> in root nodules fix atmospheric nitrogen into plant-available form</li>
+<li>Add 100–200 lbs N per acre if left to mature fully or incorporated</li>
+</ul>
+<h3>Biennials (Store energy first year, reproduce second year)</h3>
+<ul>
+<li>Carrots, beets, parsnips, celery, parsley, onions (some varieties), cabbage family crops</li>
+<li>Only set seed in year 2; if you harvest in year 1, they behave as annuals</li>
+</ul>
+</section>
+<section id="rotation-plans">
+<h2>Rotation Plan Designs</h2>
+<h3>Simple 3-Year Rotation</h3>
+<p>This is the most practical for small farms and home gardens.</p>
+<div class="rotation-diagram">
+PLOT A:        PLOT B:        PLOT C:
+Year 1:        Year 1:        Year 1:
+Heavy feeders  Light feeders  Legumes
+  (tomatoes)     (onions)      (beans)
+<p>Year 2:        Year 2:        Year 2:
+Light feeders  Legumes        Heavy feeders
+(onions)      (peas)        (tomatoes)</p>
+<p>Year 3:        Year 3:        Year 3:
+Legumes        Heavy feeders  Light feeders
+(beans)      (tomatoes)      (onions)</p>
+</div>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Simple to track (three phases, repeat)</li>
+<li>Most practical for small gardens (3+ beds needed)</li>
+<li>Balances soil depletion and rebuilding</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Doesn't address perennial diseases in some soils</li>
+<li>May need to repeat light-feeder phase if soil is heavily depleted</li>
+</ul>
+<h3>4-Year Rotation (with Fallow/Cover Crop)</h3>
+<div class="rotation-diagram">
+PLOT A:        PLOT B:        PLOT C:        PLOT D:
+Year 1:        Year 1:        Year 1:        Year 1:
+Heavy feeders  Light feeders  Legumes        Fallow/Cover
+  (tomatoes)     (onions)      (beans)        crop (clover)
+<p>Year 2:        Year 2:        Year 2:        Year 2:
+Light feeders  Legumes        Fallow/Cover   Heavy feeders
+(onions)      (peas)         crop          (tomatoes)</p>
+<p>Year 3:        Year 3:        Year 3:        Year 3:
+Legumes        Fallow/Cover   Heavy feeders  Light feeders
+(peas)       crop           (tomatoes)      (onions)</p>
+<p>Year 4:        Year 4:        Year 4:        Year 4:
+Fallow/Cover   Heavy feeders  Light feeders  Legumes
+crop           (tomatoes)     (onions)       (beans)</p>
+</div>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Fallow/cover crop phase rests soil and prevents weed buildup</li>
+<li>Greatest flexibility for long-season crops</li>
+<li>Best for severely depleted or disease-heavy soils</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Requires 4 separate beds/plots</li>
+<li>Fallow/cover crop phase produces no harvest</li>
+</ul>
+<h3>4-Year Rotation (Brassica-Focused)</h3>
+<p>For farms where brassicas are primary crop, use a 4-year plan to ensure longer disease break:</p>
+<p><strong>Year 1:</strong> Brassicas (cabbage, broccoli, kale) + compost
+<strong>Year 2:</strong> Legumes (beans, peas)
+<strong>Year 3:</strong> Other families (Solanaceae, Cucurbitaceae, Allium)
+<strong>Year 4:</strong> Light feeders or fallow/cover crop</p>
+<p>This ensures 3 years between brassica crops (optimal for breaking clubroot and other brassica soil diseases).</p>
+<div class="warning">
+<p>If you've had clubroot (Plasmodiophora brassicae) or other serious brassica diseases, extend the break to 4–5 years. Some pathogens can survive in soil longer than typical 3-year rotations.</p>
+</div>
+</section>
+<section id="disease-breaks">
+<h2>Disease Break Cycles and Soil-Borne Pathogen Management</h2>
+<h3>Common Soil-Borne Diseases and Required Break Periods</h3>
+<table>
+<thead>
+<tr>
+<th>Pathogen</th>
+<th>Crops Affected</th>
+<th>Break Period</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clubroot (<em>Plasmodiophora</em>)</td>
+<td>Brassicas</td>
+<td>4–5 years</td>
+<td>Spores survive in soil; very persistent</td>
+</tr>
+<tr>
+<td>Verticillium wilt</td>
+<td>Solanaceae, Cucurbitaceae</td>
+<td>3–4 years</td>
+<td>Deep-rooted; difficult to eliminate</td>
+</tr>
+<tr>
+<td>Fusarium wilt</td>
+<td>Cucurbitaceae, Solanaceae</td>
+<td>3+ years</td>
+<td>Soil-borne fungus; temperature-dependent</td>
+</tr>
+<tr>
+<td>Phytophthora (late blight)</td>
+<td>Solanaceae (potatoes, tomatoes)</td>
+<td>2–3 years</td>
+<td>Spreads via spores; cool, wet favors it</td>
+</tr>
+<tr>
+<td>Root knot nematodes</td>
+<td>Most crops (especially tomatoes)</td>
+<td>2–3 years without host</td>
+<td>Use resistant varieties when available</td>
+</tr>
+</tbody>
+</table>
+<h3>Extending Break Periods</h3>
+<p>If soil has heavy disease burden:</p>
+<ol>
+<li><strong>Crop selection:</strong> Use resistant varieties in the affected family if available (e.g., Fusarium-resistant tomatoes)</li>
+<li><strong>Extend rotation:</strong> Add extra years before replanting</li>
+<li><strong>Fallow with solarization:</strong> Use clear plastic to heat soil in summer, killing some pathogens (partial effectiveness)</li>
+<li><strong>Biofumigants:</strong> Plant mustard or rapeseed, incorporate, and let decompose — suppresses some pathogens</li>
+<li><strong>Resistant cover crops:</strong> Some cover crops (marigold, calendula, certain grasses) suppress nematodes and other pathogens</li>
+</ol>
+<div class="info-box">
+<p>Soil testing for specific pathogens is ideal but expensive. If you have a history of a specific disease, extend the break period as insurance.</p>
+</div>
+</section>
+<section id="nutrient-management">
+<h2>Nutrient Management Through Rotation</h2>
+<h3>Nitrogen Cycling</h3>
+<p><strong>Year 1 (Heavy Feeders):</strong></p>
+<ul>
+<li>Tomatoes, brassicas, corn extract 100–200 lbs N per acre</li>
+<li>Apply 4–6 inches compost or 100–150 lbs synthetic N per acre</li>
+<li>Incorporate cover crop residue if available</li>
+</ul>
+<p><strong>Year 2 (Light Feeders):</strong></p>
+<ul>
+<li>Onions, root crops need only 50–100 lbs N per acre</li>
+<li>Residual N from compost application still available</li>
+<li>Light or no added N needed</li>
+</ul>
+<p><strong>Year 3 (Legumes):</strong></p>
+<ul>
+<li>Beans, peas fix 50–150 lbs N per acre (depending on species, management, rainfall)</li>
+<li>Minimize other N additions; let legumes work</li>
+<li>Incorporate residues to release fixed N to next crop</li>
+</ul>
+<p><strong>Year 4 (if using):</strong></p>
+<ul>
+<li>Fallow with clover fixes 100–150 lbs N per acre</li>
+<li>Or light-feeding crop uses minimal N, allowing recovery</li>
+</ul>
+<h3>Phosphorus and Potassium</h3>
+<ul>
+<li>Less affected by crop extraction than nitrogen</li>
+<li>Build reserves through manure and mineral additions</li>
+<li>Legumes don't &quot;fix&quot; P or K — they come from soil or amendments</li>
+</ul>
+<h3>Organic Matter</h3>
+<ul>
+<li>Heavy feeders respond best to fresh compost/manure</li>
+<li>Light feeders maintain soil OM with minimal additions</li>
+<li>Legume residues add high-nitrogen OM; improves structure</li>
+</ul>
+</section>
+<section id="companion-integration">
+<h2>Integrating Companion Planting</h2>
+<p>Companion planting (strategic crop proximity) complements rotation.</p>
+<h3>Beneficials Pairings</h3>
+<ul>
+<li><strong>Tomatoes + basil/marigolds:</strong> Repel some pests; attract beneficial insects</li>
+<li><strong>Brassicas + thyme/sage:</strong> Deter cabbage moths; attract pollinators</li>
+<li><strong>Beans + squash/corn:</strong> &quot;Three Sisters&quot; — beans fix N, squash shades soil, corn provides support</li>
+<li><strong>Alliums + any crop:</strong> Onions, garlic deter many pests and suppress some soil diseases</li>
+</ul>
+<h3>Within-Rotation Integration</h3>
+<ul>
+<li><strong>Use alliums as border crops:</strong> Plant onions, garlic, chives around plot perimeter; pests less likely to find main crops</li>
+<li><strong>Intercrop legumes:</strong> In year 2 (light feeders), interplant beans with other crops to begin N contribution</li>
+<li><strong>Dedicate strip to beneficials:</strong> Calendula, nasturtiums, buckwheat attract pest predators and parasitoids</li>
+</ul>
+</section>
+<section id="cover-crops">
+<h2>Cover Crops and Rotation Integration</h2>
+<p>Cover crops (plants grown primarily to benefit soil, not harvest) integrate seamlessly into rotation.</p>
+<h3>Options</h3>
+<p><strong>Nitrogen-fixing legumes:</strong></p>
+<ul>
+<li>Clover (red, white, crimson), vetch, alfalfa, lupine</li>
+<li>Plant after harvest of summer crop; overwinter; incorporate in spring</li>
+</ul>
+<p><strong>Non-legume:</strong></p>
+<ul>
+<li>Rye, oats, barley (protect soil, add OM, suppress weeds)</li>
+<li>Buckwheat (summer cover, breaks compaction, attracts beneficials)</li>
+<li>Mustard/rapeseed (biofumigant; suppresses some soil pathogens)</li>
+</ul>
+<p><strong>Winter hardy (Northern climates):</strong></p>
+<ul>
+<li>Hairy vetch, winter rye, cereal rye</li>
+<li>Survive freeze; growth resumes in spring before incorporation</li>
+</ul>
+<p><strong>Warm-season (Southern climates):</strong></p>
+<ul>
+<li>Cowpeas, sunhemp (crotalaria), buckwheat</li>
+<li>Grow during humid season; suppress nematodes</li>
+</ul>
+<h3>Integration into 4-Year Rotation</h3>
+<p><strong>Year 3 → Year 4 transition:</strong></p>
+<ul>
+<li>After harvesting legumes in late fall, plant winter cover crop (rye + vetch)</li>
+<li>Overwinter; incorporate in spring</li>
+<li>By summer, soil is ready for heavy feeders in Year 4</li>
+</ul>
+<p><strong>Summer gaps:</strong></p>
+<ul>
+<li>After early spring crops (peas, lettuce), plant buckwheat in June; incorporate by August</li>
+<li>Prevents weed growth; attracts pollinators; improves soil</li>
+</ul>
+</section>
+<section id="planning-record-keeping">
+<h2>Planning and Record Keeping</h2>
+<h3>Creating Your Rotation Plan</h3>
+<ol>
+<li><strong>Divide land:</strong> Break garden/field into 3–4 equal beds/plots</li>
+<li><strong>Map crops and families:</strong> Write down what grows where and when</li>
+<li><strong>Identify problem pathogens:</strong> Note past disease issues; plan longer breaks if needed</li>
+<li><strong>Plan cover crops:</strong> Identify what fits in transitions</li>
+<li><strong>Assign fertilizer:</strong> Apply compost in heavy-feeder years; minimal in light-feeder/legume years</li>
+<li><strong>Track companions:</strong> Plan allium borders and legume intercropping</li>
+</ol>
+<h3>Record Keeping System</h3>
+<p><strong>Annual records (essential):</strong></p>
+<ul>
+<li>What was planted where and when</li>
+<li>Variety names (for pest/disease tracking)</li>
+<li>Fertilizer/compost applied</li>
+<li>Pest and disease pressures observed</li>
+<li>Yield and observations</li>
+<li>Weather patterns</li>
+</ul>
+<p><strong>5-year records:</strong></p>
+<ul>
+<li>Identify which crop families thrive in which plots</li>
+<li>Track disease recurrence and success of rotation breaks</li>
+<li>Adjust rotation plan based on data</li>
+</ul>
+<p><strong>Simple format:</strong></p>
+<pre><code>Year 2026 — Plot A (north bed, 20×4 ft)
+Q1: Peas (snap and snow), legume phase
+  Applied: 2 inches compost, March
+  Pests: Minor aphids, May (controlled by beneficials)
+  Yield: 8 lbs fresh peas
+  Notes: Excellent early season; replant peas next spring
+
+Q2-Q3: Buckwheat cover crop (June-Aug)
+  Purpose: Nematode suppression, pollinator attraction
+  Incorporated: Late August
+
+Q4: Garlic planted (late October)
+  Prep: 1 inch compost worked in
+  Expect: Harvest June 2027
+</code></pre>
+<div class="tip">
+<p>Use a simple spreadsheet or notebook. The key is tracking what was where and what happened. Over time, patterns emerge that inform your rotation decisions.</p>
+</div>
+<h3>Tools</h3>
+<ul>
+<li><strong>Garden planner software:</strong> (Growveg, Garden Planner, Almanac)</li>
+<li><strong>Spreadsheet template:</strong> Google Sheets or Excel with year, plot, crop, family, amendments, observations</li>
+<li><strong>Paper map:</strong> Hand-drawn garden plot with notes (simple, offline-friendly)</li>
+</ul>
+</section>
+<section id="example-plans">
+<h2>Example Rotation Plans for Common Scenarios</h2>
+<h3>Urban Container Garden (3 Pots, 3-Year)</h3>
+<p><strong>Pot 1:</strong></p>
+<ul>
+<li>Year 1: Tomato (heavy feeder) + basil + marigold</li>
+<li>Year 2: Lettuce (light feeder)</li>
+<li>Year 3: Peas (legume)</li>
+</ul>
+<p><strong>Pot 2:</strong></p>
+<ul>
+<li>Year 1: Lettuce</li>
+<li>Year 2: Peas</li>
+<li>Year 3: Tomato</li>
+</ul>
+<p><strong>Pot 3:</strong></p>
+<ul>
+<li>Year 1: Peas</li>
+<li>Year 2: Tomato</li>
+<li>Year 3: Lettuce</li>
+</ul>
+<h3>Small Farm (4 Raised Beds, 4-Year)</h3>
+<p><strong>Bed 1 (North, afternoon shade):</strong></p>
+<ul>
+<li>Year 1: Brassicas (kale, broccoli)</li>
+<li>Year 2: Legumes (beans, peas)</li>
+<li>Year 3: Alliums (garlic, onions)</li>
+<li>Year 4: Fallow/clover cover crop</li>
+</ul>
+<p><strong>Bed 2 (East, morning sun):</strong></p>
+<ul>
+<li>Year 1: Legumes</li>
+<li>Year 2: Alliums</li>
+<li>Year 3: Fallow/cover crop</li>
+<li>Year 4: Brassicas</li>
+</ul>
+<p><strong>Bed 3 (South, full sun):</strong></p>
+<ul>
+<li>Year 1: Alliums</li>
+<li>Year 2: Fallow/cover crop</li>
+<li>Year 3: Brassicas</li>
+<li>Year 4: Legumes</li>
+</ul>
+<p><strong>Bed 4 (West, afternoon heat):</strong></p>
+<ul>
+<li>Year 1: Fallow/cover crop</li>
+<li>Year 2: Brassicas</li>
+<li>Year 3: Legumes</li>
+<li>Year 4: Alliums</li>
+</ul>
+</section>
+<section id="adjustments">
+<h2>Troubleshooting and Adjustments</h2>
+<h3>If Soil Remains Depleted After 3-Year Rotation</h3>
+<ul>
+<li>Increase compost application in heavy-feeder years (to 6–8 inches)</li>
+<li>Extend legume phase or add legume cover crops</li>
+<li>Test soil (N, P, K, organic matter) to identify limiting nutrients</li>
+<li>Add mineral amendments if deficient (rock phosphate, kelp meal, greensand)</li>
+</ul>
+<h3>If Disease Returns Despite Rotation</h3>
+<ul>
+<li>Extend break period to 4–5 years</li>
+<li>Use resistant varieties if available</li>
+<li>Solarize severely infested beds (clear plastic, full sun, 4–6 weeks in summer)</li>
+<li>Incorporate biofumigant cover crop (mustard, rapeseed)</li>
+<li>Consult county extension agent for specific pathogen recommendations</li>
+</ul>
+<h3>If Space Is Limited</h3>
+<ul>
+<li>Use containers/pots to create separate &quot;plots&quot; (enables true rotation)</li>
+<li>Intercrop crops from different families (e.g., beans with squash)</li>
+<li>Use vertical growing (trellises) to stack different families in same footprint</li>
+<li>Accept longer crop family gaps (plant brassicas, then wait 1–2 years before replanting in different spot)</li>
+</ul>
+<div class="warning">
+<p>If you only have one bed/plot, crop rotation is impossible. You must implement deep soil amendment (compost, cover crops) and/or use resistant varieties to manage diseases. True rotation requires at least 3 separate spaces.</p>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusion</h2>
+<p>Crop rotation is a low-cost, chemical-free way to build soil fertility, break disease and pest cycles, and improve long-term farm/garden sustainability. A simple 3-year rotation (heavy feeders → light feeders → legumes) is enough to see significant benefits within a few years. Keep detailed records, learn from experience, and adjust your plan based on what works in your specific climate and soil.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="composting-systems.html">Composting Systems</a>
+<a href="cover-crops-green-manures.html">Cover Crops and Green Manures</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

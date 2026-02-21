@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/flood-response-remediation.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flood Response &amp; Post-Flood Remediation</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Immediate Survival</span> ›
+<span>Flood Response &amp; Post-Flood Remediation</span>
+</div>
+
+
+<h1>Flood Response &amp; Post-Flood Remediation</h1>
+<p class="subtitle">Flood warning signs and timeline, vertical evacuation, flash flood vs river flood, water depth hazards, swift water safety, post-flood building assessment, mold prevention, water damage restoration, well decontamination, flood-borne diseases, and recovery.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~26 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#warning-signs">Flood Warning Signs and Evacuation Timeline</a></li>
+<li><a href="#water-depth-hazards">Water Depth Hazard Assessment</a></li>
+<li><a href="#swift-water-safety">Swift Water Safety</a></li>
+<li><a href="#post-flood-building">Post-Flood Building Assessment</a></li>
+<li><a href="#mold-prevention">Mold Prevention and Remediation (48-Hour Window)</a></li>
+<li><a href="#water-restoration">Water System Decontamination After Flooding</a></li>
+<li><a href="#disease-prevention">Flood-Borne Disease Prevention</a></li>
+<li><a href="#document-salvage">Document and Food Salvage</a></li>
+<li><a href="#recovery-summary">Post-Flood Recovery Summary: First 30 Days</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>FLOOD SAFETY CRITICAL:</strong> Moving water is far more dangerous than you expect. 6 inches of moving water can sweep a person off their feet. 12 inches can carry away a car. 2 feet is lethal for most people. Never attempt to drive, walk, or wade through flooded areas. Floodwaters are contaminated with sewage, chemicals, and sharp debris. Skin contact causes infection. Drinking floodwater causes serious illness or death. Assume all floodwater is toxic. After flooding, contaminated drinking water and food supplies cause widespread disease outbreaks—prepare for waterborne illness epidemics in the post-flood period.</p>
+</div>
+<section id="overview">
+<h2>Overview</h2>
+<p>Floods are the most common natural disaster globally. They kill more people than earthquakes, hurricanes, or tornadoes in many regions. Flood deaths come from three mechanisms: (1) immediate drowning in swift water, (2) hypothermia in cold water, and (3) post-flood disease and dehydration during recovery.</p>
+<p>This guide covers recognizing flood danger and timeline, evacuating safely (including vertical evacuation), understanding water depth hazards, post-flood building assessment and remediation, preventing mold (which begins within 48 hours), restoring water systems, and managing flood-borne disease risks.</p>
+<p>The core principle: <strong>Act before the flood arrives.</strong> Once water rises, options vanish. Pre-flood preparation and early evacuation save lives. Post-flood recovery is a marathon, not a sprint—prevention of secondary hazards (mold, disease, contamination) is critical.</p>
+<p><svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" aria-label="Flood water depth hazard chart showing risks at 6, 12, 24, and 48 inch depths">
+  <!-- Background -->
+  <rect width="900" height="600" fill="var(--bg)"/>
+
+  <!-- Title -->
+  <text x="450" y="35" font-size="26" font-weight="bold" text-anchor="middle" fill="var(--text)">Flood Water Depth Hazard Chart</text>
+
+  <!-- Ground level reference line -->
+  <line x1="50" y1="530" x2="850" y2="530" stroke="var(--border)" stroke-width="2"/>
+  <text x="30" y="535" font-size="11" fill="var(--muted)">Ground Level</text>
+
+  <!-- DEPTH 1: 6 inches -->
+  <g>
+    <!-- Water column -->
+    <rect x="80" y="470" width="140" height="60" fill="var(--surface)" opacity="0.7" stroke="var(--accent)" stroke-width="2"/>
+
+    <!-- Depth label -->
+    <text x="150" y="460" font-size="14" font-weight="bold" fill="var(--accent)" text-anchor="middle">6 inches</text>
+    <text x="150" y="478" font-size="10" fill="var(--muted)" text-anchor="middle">(15 cm)</text>
+
+    <!-- Hazard icon: Person being swept -->
+    <circle cx="150" cy="500" r="10" fill="var(--text)"/>
+    <line x1="150" y1="510" x2="150" y2="525" stroke="var(--text)" stroke-width="2"/>
+    <!-- Arms up in distress -->
+    <line x1="140" y1="505" x2="130" y2="495" stroke="var(--text)" stroke-width="2"/>
+    <line x1="160" y1="505" x2="170" y2="495" stroke="var(--text)" stroke-width="2"/>
+
+    <!-- Arrow showing current -->
+    <path d="M 100 515 L 130 515" stroke="var(--accent2)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- Description box -->
+    <rect x="70" y="545" width="160" height="45" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <text x="150" y="560" font-size="11" font-weight="bold" fill="var(--text)" text-anchor="middle">Sweeps people off feet</text>
+    <text x="150" y="577" font-size="10" fill="var(--muted)" text-anchor="middle">Walking impossible</text>
+  </g>
+
+  <!-- DEPTH 2: 12 inches -->
+  <g>
+    <!-- Water column -->
+    <rect x="270" y="410" width="140" height="120" fill="var(--surface)" opacity="0.7" stroke="var(--accent)" stroke-width="2"/>
+
+    <!-- Depth label -->
+    <text x="340" y="395" font-size="14" font-weight="bold" fill="var(--accent)" text-anchor="middle">12 inches</text>
+    <text x="340" y="413" font-size="10" fill="var(--muted)" text-anchor="middle">(30 cm)</text>
+
+    <!-- Hazard icon: Car being swept -->
+    <rect x="320" y="445" width="40" height="25" fill="var(--text)" rx="3"/>
+    <circle cx="330" cy="460" r="3" fill="var(--bg)"/>
+    <circle cx="350" cy="460" r="3" fill="var(--bg)"/>
+
+    <!-- Arrow showing current - stronger -->
+    <path d="M 280 470 L 310 470" stroke="var(--accent2)" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M 280 475 L 310 475" stroke="var(--accent2)" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- Description box -->
+    <rect x="260" y="545" width="160" height="45" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <text x="340" y="560" font-size="11" font-weight="bold" fill="var(--text)" text-anchor="middle">Carries away vehicles</text>
+    <text x="340" y="577" font-size="10" fill="var(--muted)" text-anchor="middle">95% of cars float away</text>
+  </g>
+
+  <!-- DEPTH 3: 24 inches -->
+  <g>
+    <!-- Water column -->
+    <rect x="460" y="310" width="140" height="220" fill="var(--surface)" opacity="0.7" stroke="var(--accent)" stroke-width="2"/>
+
+    <!-- Depth label -->
+    <text x="530" y="290" font-size="14" font-weight="bold" fill="var(--accent)" text-anchor="middle">24 inches</text>
+    <text x="530" y="308" font-size="10" fill="var(--muted)" text-anchor="middle">(60 cm)</text>
+
+    <!-- Hazard icon: Large truck (less stable) -->
+    <rect x="485" y="370" width="55" height="30" fill="var(--text)" rx="3"/>
+    <circle cx="497" cy="390" r="5" fill="var(--bg)"/>
+    <circle cx="523" cy="390" r="5" fill="var(--bg)"/>
+    <!-- Tilt the truck -->
+    <polygon points="510,350 535,340 540,375 515,365" fill="var(--warning)" opacity="0.6"/>
+
+    <!-- Strong arrows showing current -->
+    <path d="M 470 400 L 450 400" stroke="var(--accent2)" stroke-width="5" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M 470 410 L 440 410" stroke="var(--accent2)" stroke-width="5" fill="none" marker-end="url(#arrowhead)"/>
+    <path d="M 470 420 L 430 420" stroke="var(--accent2)" stroke-width="5" fill="none" marker-end="url(#arrowhead)"/>
+
+    <!-- Description box -->
+    <rect x="450" y="545" width="160" height="45" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <text x="530" y="560" font-size="11" font-weight="bold" fill="var(--text)" text-anchor="middle">Drowning hazard</text>
+    <text x="530" y="577" font-size="10" fill="var(--muted)" text-anchor="middle">Cannot swim against current</text>
+  </g>
+
+  <!-- DEPTH 4: 48+ inches -->
+  <g>
+    <!-- Water column (very deep) -->
+    <rect x="650" y="150" width="140" height="380" fill="var(--surface)" opacity="0.7" stroke="var(--warning)" stroke-width="3"/>
+
+    <!-- Depth label -->
+    <text x="720" y="130" font-size="14" font-weight="bold" fill="var(--warning)" text-anchor="middle">>48 inches</text>
+    <text x="720" y="148" font-size="10" fill="var(--muted)" text-anchor="middle">(>120 cm)</text>
+
+    <!-- Hazard icon: Building being swept -->
+    <rect x="680" y="280" width="80" height="70" fill="var(--text)" rx="3"/>
+    <!-- Windows -->
+    <rect x="690" y="290" width="15" height="15" fill="var(--bg)"/>
+    <rect x="710" y="290" width="15" height="15" fill="var(--bg)"/>
+    <rect x="730" y="290" width="15" height="15" fill="var(--bg)"/>
+    <rect x="690" y="315" width="15" height="15" fill="var(--bg)"/>
+    <rect x="710" y="315" width="15" height="15" fill="var(--bg)"/>
+    <!-- Tilt/collapse -->
+    <polygon points="700,220 750,200 760,280 710,260" fill="var(--warning)" opacity="0.6"/>
+
+    <!-- Extreme current arrows -->
+    <path d="M 640 350 L 600 350" stroke="var(--warning)" stroke-width="6" fill="none" marker-end="url(#arrowhead-warn)"/>
+    <path d="M 640 370 L 590 370" stroke="var(--warning)" stroke-width="6" fill="none" marker-end="url(#arrowhead-warn)"/>
+    <path d="M 640 390 L 580 390" stroke="var(--warning)" stroke-width="6" fill="none" marker-end="url(#arrowhead-warn)"/>
+
+    <!-- Description box -->
+    <rect x="640" y="545" width="160" height="45" fill="var(--card)" stroke="var(--warning)" stroke-width="2" rx="3"/>
+    <text x="720" y="560" font-size="11" font-weight="bold" fill="var(--warning)" text-anchor="middle">TOTAL HAZARD</text>
+    <text x="720" y="577" font-size="10" fill="var(--muted)" text-anchor="middle">Vertical evacuation only</text>
+  </g>
+
+  <!-- Arrow markers definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--accent2)"/>
+    </marker>
+    <marker id="arrowhead-warn" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--warning)"/>
+    </marker>
+  </defs>
+
+  <!-- Safety rule at top -->
+  <rect x="50" y="50" width="800" height="35" fill="var(--card)" stroke="var(--warning)" stroke-width="2" rx="4"/>
+  <text x="450" y="72" font-size="12" font-weight="bold" text-anchor="middle" fill="var(--warning)">SAFETY RULE: If you cannot see the road/path through water, DO NOT ATTEMPT TO CROSS</text>
+
+  <!-- Legend -->
+  <g>
+    <text x="50" y="85" font-size="11" font-weight="bold" fill="var(--muted)">Moving water force increases with depth. Current speed determines danger more than depth alone.</text>
+  </g>
+</svg>
+</p>
+</section>
+<section id="warning-signs">
+<h2>Flood Warning Signs and Evacuation Timeline</h2>
+<p>Understanding your flood risk and preparing to evacuate early separates survivors from victims.</p>
+<h3>Flood Types and Behavior</h3>
+<p><strong>River Flooding</strong>: Slow-rising, predictable. Warning time ranges from hours to days. Gradual, visible water rise allows time for organized evacuation. You can observe water rising incrementally.</p>
+<p><strong>Flash Flooding</strong>: Rapid, unpredictable. Warning time is minutes to hours. Water appears suddenly, moving at high speed. Flash floods occur in narrow valleys, urban drainage areas, and after intense rainfall. The sound precedes the water—a roaring noise 30 seconds before water arrives.</p>
+<p><strong>Storm Surge (Coastal)</strong>: Rapid rise driven by hurricane/typhoon wind pressure and waves. Ocean water pushes inland, often with warning of 6-12 hours if meteorological alerts are available.</p>
+<h3>Warning Signs and Timeline</h3>
+<p><strong>Advance indicators (12-48 hours before)</strong>:</p>
+<ul>
+<li>Forecast alerts: Weather agencies issue flood watches 24-48 hours in advance if models show high probability</li>
+<li>Heavy rainfall: Rain that lasts 6+ hours or dumping &gt;2 inches per hour indicates flood potential</li>
+<li>Rapid temperature rise with snow/ice present: Snowmelt floods occur over hours to days</li>
+</ul>
+<p><strong>Immediate indicators (within hours)</strong>:</p>
+<ul>
+<li>Water rising visibly in streams, rivers, or storm drains</li>
+<li>Water overflowing creek banks or covering road low points</li>
+<li>Unusual water sounds: rushing, roaring noise from upstream (audible miles away for flash floods)</li>
+<li>Changing water color: clear water → brown/muddy (indicates upstream flooding)</li>
+</ul>
+<p><strong>Evacuation trigger</strong>: If you receive official evacuation orders, or if you observe water approaching your area, leave immediately. Do not wait for official orders in areas prone to flash flooding.</p>
+<h3>Evacuation Decision: When to Leave</h3>
+<p><strong>Leave immediately if:</strong></p>
+<ul>
+<li>Official evacuation order issued</li>
+<li>You observe water rising or flowing over roads in your area</li>
+<li>You hear roaring/rushing water approaching</li>
+<li>Water is within 5 feet of your building</li>
+<li>You are in a basement that could flood</li>
+</ul>
+<p><strong>Mandatory evacuation for:</strong></p>
+<ul>
+<li>Single-story homes (easiest to flood)</li>
+<li>Basement dwellings</li>
+<li>Mobile homes (easily swept away)</li>
+<li>Areas downstream of dams (dam failure causes wall of water)</li>
+</ul>
+<p><strong>Vertical evacuation (if evacuation route is cut off)</strong>:</p>
+<ul>
+<li>Move to upper floors/attic if building is multi-story</li>
+<li>Bring supplies (water, food, first aid, light)</li>
+<li>Signal from window if stranded (cloth, reflective material, lights)</li>
+<li>Wait for rescue; do not attempt to leave until water recedes</li>
+</ul>
+</section>
+<section id="water-depth-hazards">
+<h2>Water Depth Hazard Assessment</h2>
+<p>Moving water is deceptively dangerous. Depth measurements don't convey force.</p>
+<div class="water-depth-chart">
+<h3>Flood Water Depth and Associated Hazards</h3>
+<div class="depth-item">
+<strong>6 inches (15 cm)</strong><br>
+Force: Sweeps an average person off their feet. Walking is difficult; running is impossible. A 150 lb person loses footing in water moving at 2 mph.
+<br><br>
+Vehicle risk: Traction compromised. Vehicles lose control and are swept sideways.
+<br>
+<em>Safe action: Do not attempt to cross.</em>
+</div>
+<div class="depth-item">
+<strong>12 inches (30 cm)</strong><br>
+Force: Carries away most vehicles (except large trucks/SUVs). Pedestrians are swept away even if attempting to hold onto objects. Fast-moving water (>3 mph) is lethal.
+<br><br>
+Vehicle risk: 95% of vehicles lose traction and float. Swept downstream.
+<br>
+<em>Safe action: Turn around, do not drive.</em>
+</div>
+<div class="depth-item">
+<strong>18-24 inches (45-60 cm)</strong><br>
+Force: Sweeps away large trucks, SUVs, and heavy vehicles. Pedestrians cannot swim against the current. Drowning is likely for anyone in the water.
+<br><br>
+Building risk: Water enters ground floors; may reach first floor of single-story homes.
+<br>
+<em>Safe action: Evacuate to upper floors or roof if no evacuation route available.</em>
+</div>
+<div class="depth-item">
+<strong>Above 24 inches (>60 cm)</strong><br>
+Force: Total environmental hazard. All vehicles swept away. Structures can fail (water pressure and debris). Rescue is extremely difficult.
+<br><br>
+Building risk: Water enters upper floors. Attics flood in severe events.
+<br>
+<em>Safe action: Vertical evacuation to highest point. Signal for rescue.</em>
+</div>
+</div>
+<h3>Vehicle Safety in Floods</h3>
+<p><strong>The rule: If you can't see the road surface through the water, don't cross.</strong></p>
+<ul>
+<li>At 6 inches depth, you cannot see the road—don't assume the road is intact</li>
+<li>Debris, sinkholes, and washouts are invisible under water</li>
+<li>Floodwater can undermine road surfaces, creating dropoffs</li>
+<li>Even 2 mph water flow at 12 inches depth sweeps away cars</li>
+</ul>
+<p><strong>If your car stalls in floodwater:</strong></p>
+<ol>
+<li>Do not restart (may hydrolock engine)</li>
+<li>Get out immediately and move to higher ground</li>
+<li>Do not stay in the car</li>
+<li>Wade/swim to high ground if water is still rising</li>
+</ol>
+<p><strong>If your car is swept away:</strong></p>
+<ol>
+<li>Get out before the car sinks (modern cars are watertight; they become death traps underwater)</li>
+<li>Grasp floating debris</li>
+<li>Swim toward high ground, moving diagonally across current (not directly against it)</li>
+<li>Signal for rescue once on high ground</li>
+</ol>
+</section>
+<section id="swift-water-safety">
+<h2>Swift Water Safety</h2>
+<p>If you're caught in moving flood water, specific techniques can save your life.</p>
+<h3>If You Fall Into Swift Water</h3>
+<p><strong>Do not fight the current.</strong> You cannot overpower water.</p>
+<ol>
+<li><strong>Float on your back</strong>, head up and slightly back, face out of water</li>
+<li><strong>Point your feet downstream</strong> (protects head if you hit debris)</li>
+<li><strong>Use your arms for steering</strong>, not fighting</li>
+<li><strong>Move diagonally toward the near bank</strong> by angling your body and using arms to push yourself sideways across the current</li>
+<li><strong>Grasp high branches/logs</strong> as you drift toward them, but don't cling (the current can pin you against obstacles)</li>
+<li><strong>Once near a bank, work hand-over-hand toward shore</strong>, using the current to help float you shallower</li>
+</ol>
+<p><strong>Key principle</strong>: River current is your enemy. Work with gravity and buoyancy, not against the current.</p>
+<h3>If Stuck Against Debris</h3>
+<ul>
+<li>Do not attempt to climb over submerged obstacles</li>
+<li>Work free underwater if pinned</li>
+<li>Use your buoyancy to float up and around</li>
+<li>If trapped, conserve energy and signal for rescue</li>
+</ul>
+<h3>Hypothermia in Flood Water</h3>
+<p>Even warm-climate floods involve cold water. Cold water causes rapid heat loss.</p>
+<ul>
+<li>Shivering stops at core temperature around 90°F—at this point the person appears calm but is dying</li>
+<li>Water temperature 60°F causes loss of consciousness in 15 minutes</li>
+<li>Water temperature 40°F causes loss of consciousness in 3-5 minutes</li>
+</ul>
+<p><strong>Prevention</strong>: If rescue is available, wait for help rather than attempting self-rescue in cold water. Self-rescue only if you're confident you can reach safety.</p>
+<p><strong>Rescue approach</strong>: If rescuing someone from water:</p>
+<ul>
+<li>Use a rope or pole, don't jump in (makes it a 2-person rescue)</li>
+<li>Throw floating objects (logs, rafts) for them to hold</li>
+<li>If you must enter water, tie a rope around yourself first</li>
+<li>In cold water (&lt;60°F), CPR may be effective even after prolonged submersion—don't give up</li>
+</ul>
+</section>
+<section id="post-flood-building">
+<h2>Post-Flood Building Assessment</h2>
+<p>Once water recedes, you can return and assess structural damage. Do this systematically.</p>
+<h3>External Assessment First</h3>
+<p>Before entering your building:</p>
+<ol>
+<li>
+<p><strong>Check foundation and lower walls</strong>: Look for cracks, displacement, or shifting. Large cracks indicate severe structural damage. Do not enter if foundation is compromised.</p>
+</li>
+<li>
+<p><strong>Check roof and upper structure</strong>: Missing sections, sagging, or visible damage suggests structural failure risk during further collapse.</p>
+</li>
+<li>
+<p><strong>Check utility connections</strong>: Broken electrical connections (sparking, exposed wires), gas line leaks (smell), or water shutoff location.</p>
+</li>
+<li>
+<p><strong>Check for hazardous materials spilled</strong>: Fuel, chemicals, or other hazmat containers breached and leaking.</p>
+</li>
+<li>
+<p><strong>Check for debris/hazards</strong>: Downed power lines, sharp metal, broken glass, contaminated water still present.</p>
+</li>
+</ol>
+<p><strong>Red flags (do not enter building)</strong>:</p>
+<ul>
+<li>Visible structural damage (cracks &gt;1/2 inch, walls bowing, tilting)</li>
+<li>Smell of gas</li>
+<li>Presence of downed electrical lines</li>
+<li>Water still rising or at high level inside</li>
+<li>Signs of flooding above ground floor (indicates severe flood or building damage)</li>
+</ul>
+<h3>Interior Assessment</h3>
+<p>If external check passes, enter cautiously:</p>
+<ol>
+<li>
+<p><strong>Take photos of damage for insurance/documentation</strong> (before cleanup)</p>
+</li>
+<li>
+<p><strong>Assess water damage level</strong>:</p>
+<ul>
+<li>How high on walls did water reach? (Measure from floor)</li>
+<li>Which rooms were affected?</li>
+<li>Is water still present (standing water indicates drainage problems)?</li>
+</ul>
+</li>
+<li>
+<p><strong>Check for structural damage</strong>:</p>
+<ul>
+<li>Floors sagging or soft (indicates water-weakened joists)</li>
+<li>Walls bowing or soft</li>
+<li>Visible cracks in drywall/plaster</li>
+</ul>
+</li>
+<li>
+<p><strong>Document contamination</strong>: Sewage smell, visible sewage, chemicals, fuel (indicates hazmat contamination)</p>
+</li>
+<li>
+<p><strong>Check electrical systems</strong>: Outlets underwater (electrical hazard), breaker box flooded (don't touch—electrical shock risk)</p>
+</li>
+</ol>
+<p><strong>Yellow-flag items</strong> (proceed with caution, elevated risk):</p>
+<ul>
+<li>Basement flooded</li>
+<li>First-floor drywall saturated</li>
+<li>Musty/mold smell present</li>
+<li>Electrical systems wet</li>
+</ul>
+<p><strong>Red-flag items</strong> (leave building, seek professional assessment):</p>
+<ul>
+<li>Structural damage visible</li>
+<li>Gas smell</li>
+<li>Sewage contamination</li>
+<li>Electrical hazard</li>
+</ul>
+</section>
+<section id="mold-prevention">
+<h2>Mold Prevention and Remediation (48-Hour Window)</h2>
+<p>Mold begins growing within 24-48 hours of water exposure. Prevention during this window saves months of remediation later.</p>
+<div class="mold-timeline">
+<h3>The Mold Timeline</h3>
+<div class="timeline-phase">
+<strong>0-24 Hours After Water Exposure</strong><br>
+Mold spores have not yet germinated. Drying is your window of opportunity. Focus on removing water and beginning drying.
+<br>
+Action: Remove standing water, begin air circulation
+</div>
+<div class="timeline-phase">
+<strong>24-48 Hours After Water Exposure</strong><br>
+Mold spores begin to germinate if moisture remains above 60%. This is your last window for prevention.
+<br>
+Action: Complete removal of water, aggressive drying
+</div>
+<div class="timeline-phase">
+<strong>48+ Hours After Water Exposure</strong><br>
+Visible mold colonies are forming. Remediation becomes necessary. Without aggressive drying, mold will spread throughout the property.
+<br>
+Action: Professional remediation or labor-intensive manual removal
+</div>
+</div>
+<h3>Mold Prevention Procedure (First 48 Hours)</h3>
+<p><strong>Step 1: Remove standing water</strong> (0-6 hours)</p>
+<ul>
+<li>Use pumps, wet vacuums, or manually (bailing) to remove all standing water</li>
+<li>Do not wait for drainage—actively pump it out</li>
+<li>Remove water from walls (use towels, squeegees, or vacuums)</li>
+</ul>
+<p><strong>Step 2: Remove saturated materials</strong> (6-12 hours)</p>
+<ul>
+<li>Remove drywall that was underwater (cut out horizontal section 12 inches above water line)</li>
+<li>Remove carpet, padding (mold grows underneath)</li>
+<li>Remove insulation that's wet</li>
+<li>Save structural lumber and joists (needed for support, can dry in place)</li>
+<li>Save non-porous surfaces (tile, vinyl, concrete)—these don't support mold growth</li>
+</ul>
+<p><strong>Step 3: Dry the structure</strong> (12-48 hours)</p>
+<ul>
+<li>Open all windows for air circulation (weather permitting)</li>
+<li>Use fans to move air across wet surfaces</li>
+<li>Use dehumidifiers if available (draw moisture from air)</li>
+<li>Use portable dryers/heaters if available (accelerates drying)</li>
+<li>In cold/wet weather, create plastic barriers and heat the affected area</li>
+<li>Dry walls, floors, and remaining structural materials to below 20% moisture content (moisture meter recommended)</li>
+</ul>
+<p><strong>Step 4: Disinfect</strong> (24-48 hours)</p>
+<ul>
+<li>Spray affected surfaces with dilute bleach solution (1 cup bleach per gallon water) or vinegar</li>
+<li>This kills mold spores before they germinate</li>
+<li>Focus on surfaces that will remain (wood, concrete)</li>
+<li>Do not need to disinfect materials you're removing</li>
+</ul>
+<p><strong>Step 5: Prevent future moisture</strong> (ongoing)</p>
+<ul>
+<li>Monitor humidity (goal: below 50%)</li>
+<li>Continue drying for 1-2 weeks after visible water is gone</li>
+<li>Repair roof leaks, water entry points before wet season returns</li>
+</ul>
+<h3>Identifying Mold Colonies (If Prevention Failed)</h3>
+<p>If you miss the 48-hour window:</p>
+<ul>
+<li><strong>Black mold</strong>: Dark, slimy appearance. Toxic strain possible (Stachybotrys). Requires professional removal.</li>
+<li><strong>Green/white mold</strong>: Common indoor molds. Less toxic but still problematic.</li>
+<li><strong>Smell</strong>: Musty, earthy odor indicates mold presence even if not visible</li>
+</ul>
+<p><strong>If mold is present</strong>: Contact professionals for remediation. Manual removal of large mold colonies spreads spores and causes exposure.</p>
+</section>
+<section id="water-restoration">
+<h2>Water System Decontamination After Flooding</h2>
+<p>Floodwater contaminates wells, city supply systems, and stored water.</p>
+<h3>City Water System Restoration</h3>
+<p>After flooding, municipal water systems issue &quot;boil water advisories.&quot; These remain in effect until:</p>
+<ul>
+<li>Water tests negative for pathogens/bacteria</li>
+<li>System pressure has been restored throughout</li>
+<li>Lines have been flushed and disinfected</li>
+</ul>
+<p><strong>During boil water advisory:</strong></p>
+<ul>
+<li>Boil all tap water for 1 minute at rolling boil before drinking</li>
+<li>Do not drink untreated tap water</li>
+<li>Do not use tap water for teeth brushing</li>
+<li>Use bottled water if available</li>
+</ul>
+<p><strong>Duration</strong>: Boil water advisories last days to weeks. Some events have lasted months if significant contamination occurred.</p>
+<h3>Well Water Decontamination</h3>
+<p>If your well was exposed to floodwater:</p>
+<p><strong>Step 1: Assess contamination</strong> (visual inspection)</p>
+<ul>
+<li>Clear water: Likely surface contamination only</li>
+<li>Cloudy/brown water: Significant sediment contamination (clogged intake possible)</li>
+<li>Smell of sewage: Fecal contamination</li>
+</ul>
+<p><strong>Step 2: Flush the well</strong> (remove sediment)</p>
+<ul>
+<li>Run water continuously at high flow (garden hose flush) for 5-10 minutes</li>
+<li>Observe water clarity</li>
+<li>Continue until water runs clear (may take 30 minutes to hours)</li>
+</ul>
+<p><strong>Step 3: Disinfect</strong> (kill pathogens)</p>
+<ul>
+<li>Add unscented bleach to the well: 2-3 gallons per 1000 gallons of water</li>
+<li>Or use pickling lime (calcium hydroxide) if available</li>
+<li>Let sit for 24 hours</li>
+<li>Run water and discard until chlorine smell is gone (indicates bleach treatment)</li>
+<li>Test water with kit (see water purification guide for testing)</li>
+</ul>
+<p><strong>Step 4: Test water before use</strong></p>
+<ul>
+<li>Use test kit or boil all water for 1 minute until test results confirm safety</li>
+<li>If tests show pathogens, repeat disinfection or boil water long-term</li>
+</ul>
+<p><strong>If well is severely contaminated</strong>: Consider alternative water sources (bottled, brought in) until repair/professional remediation can be arranged.</p>
+<h3>Stored Water Contamination</h3>
+<p>Water stored in tanks before the flood should be safe if containers were sealed. However:</p>
+<ul>
+<li>If seal was broken or water level rose into tanks, assume contamination</li>
+<li>Boil or treat stored water if exposed</li>
+<li>Test before using</li>
+</ul>
+<p><strong>Rainwater catchment</strong>: Post-flood rainwater may be contaminated from roof runoff. Treat rainwater as you would other surface water sources.</p>
+</section>
+<section id="disease-prevention">
+<h2>Flood-Borne Disease Prevention</h2>
+<p>Floodwater contains pathogens from sewage, agricultural runoff, and dead animals. Post-flood disease outbreaks are common.</p>
+<h3>Common Waterborne Diseases After Floods</h3>
+<div class="disease-risk">
+<strong>Leptospirosis</strong><br>
+Source: Rodent urine in floodwater. Enters through cuts/abrasions or mucous membranes.
+<br>
+Symptoms: Fever, chills, headache, muscle aches (appears 5-14 days after exposure)
+<br>
+Prevention: Wear gloves when handling floodwater, cover cuts, avoid splashing in eyes
+<br>
+Treatment: Antibiotics (doxycycline) if available; seek medical help
+</div>
+<div class="disease-risk">
+<strong>Cholera</strong><br>
+Source: Contaminated water (inadequate sanitation/sewage overflow)
+<br>
+Symptoms: Severe watery diarrhea, vomiting, rapid dehydration, shock (appears within hours)
+<br>
+Prevention: Boil/treat all drinking water, practice hand hygiene
+<br>
+Treatment: Aggressive rehydration with ORS; antibiotics (tetracycline, ciprofloxacin) reduce duration
+</div>
+<div class="disease-risk">
+<strong>Hepatitis A</strong><br>
+Source: Contaminated water, fecal-oral transmission
+<br>
+Symptoms: Jaundice (yellowing of skin/eyes), abdominal pain, fatigue (appears 15-50 days after exposure)
+<br>
+Prevention: Boil water, hand hygiene, food safety
+<br>
+Treatment: Supportive care; vaccine effective for prevention if given before/early after exposure
+</div>
+<div class="disease-risk">
+<strong>Typhoid Fever</strong><br>
+Source: Contaminated water
+<br>
+Symptoms: High sustained fever, rose spots rash, delirium (appears 6-30 days after exposure)
+<br>
+Prevention: Boil water, food safety, vaccination if available
+<br>
+Treatment: Antibiotics (ciprofloxacin, ceftriaxone); mortality without treatment is 20%
+</div>
+<div class="disease-risk">
+<strong>Dysentery (Shigellosis)</strong><br>
+Source: Contaminated water, fecal contamination, poor sanitation
+<br>
+Symptoms: Bloody diarrhea, abdominal cramps, fever (appears 1-7 days after exposure)
+<br>
+Prevention: Boil water, sanitation, hand hygiene
+<br>
+Treatment: Supportive hydration with ORS; antibiotics if available (azithromycin)
+</div>
+<h3>Hygiene Practices During Recovery</h3>
+<ul>
+<li><strong>Hand washing</strong>: Critical. Wash hands with clean water and soap after handling floodwater, before eating, after toileting</li>
+<li><strong>Food preparation</strong>: Use boiled/treated water for cooking and cleaning food preparation surfaces</li>
+<li><strong>Wound care</strong>: Avoid immersing cuts/abrasions in floodwater. Cover with waterproof bandages if exposure unavoidable</li>
+<li><strong>Latrine/toilet</strong>: If sewage system is not functional, establish sanitation (pit toilet, chemical toilet) away from water sources and living areas</li>
+<li><strong>Garbage disposal</strong>: Flooded food spoils rapidly. Bury or incinerate waste away from water sources</li>
+</ul>
+<h3>Vaccines for High-Risk Scenarios</h3>
+<p>If you know a major flood event is likely and medical resources are available:</p>
+<ul>
+<li><strong>Hepatitis A</strong>: Effective vaccine</li>
+<li><strong>Typhoid</strong>: Available vaccine (less critical unless you're in endemic region)</li>
+<li><strong>Cholera</strong>: Oral vaccine available in some regions</li>
+</ul>
+<p>Vaccination requires 1-2 weeks before protection, so do this before flood season if possible.</p>
+</section>
+<section id="document-salvage">
+<h2>Document and Food Salvage</h2>
+<p>Post-flood recovery requires documentation and assessment of losses.</p>
+<h3>Document Protection</h3>
+<p><strong>Photos/video</strong>: Take detailed photos of damage for insurance claim. Document before cleanup:</p>
+<ul>
+<li>Full room views</li>
+<li>Close-ups of damaged items</li>
+<li>Water level marks on walls</li>
+<li>Damaged structural elements</li>
+</ul>
+<p><strong>Important documents</strong>: If documents are wet:</p>
+<ul>
+<li>Do not heat-dry (accelerates damage)</li>
+<li>Air-dry flat or hung (do not fold)</li>
+<li>Freeze if immediate drying is impossible (stops mold)</li>
+</ul>
+<p><strong>Insurance/official papers</strong>: Retrieve originals if possible. If destroyed:</p>
+<ul>
+<li>Contact issuer (bank, insurance, government) for replacements</li>
+<li>Take photos of what remains for proof</li>
+</ul>
+<h3>Food Assessment</h3>
+<p><strong>Perishable foods</strong> (dairy, meat, prepared foods):</p>
+<ul>
+<li>If submerged, discard (bacteria from floodwater infiltrate)</li>
+<li>If wet but not submerged, discard (mold risk)</li>
+</ul>
+<p><strong>Shelf-stable foods</strong> (canned, dry goods):</p>
+<ul>
+<li>If can is intact, no rust, and wasn't submerged for hours, salvageable</li>
+<li>Wash exterior with clean water</li>
+<li>Open carefully; discard if contents smell off</li>
+<li>Dried goods (pasta, flour, rice) salvageable if wet—rinse and re-dry</li>
+</ul>
+<p><strong>Food storage after flood</strong>:</p>
+<ul>
+<li>If refrigeration is lost, discard perishables within 2 hours (warmer climate) to 6 hours (cool climate)</li>
+<li>Boil water for cooking to reduce contamination risk</li>
+<li>Do not trust pre-flood food if it was exposed to floodwater</li>
+</ul>
+</section>
+<section id="recovery-summary">
+<h2>Post-Flood Recovery Summary: First 30 Days</h2>
+<div class="flood-matrix">
+<p><strong>Days 1-2: Immediate Safety</strong></p>
+<ul>
+<li>Ensure safe evacuation/shelter</li>
+<li>Document damage (photos)</li>
+<li>Contact insurance</li>
+<li>Assess utility safety (electricity, gas)</li>
+</ul>
+<p><strong>Days 3-5: Water and Sanitation</strong></p>
+<ul>
+<li>Restore water system or arrange alternative supply</li>
+<li>Begin boiling/treating all drinking water</li>
+<li>Establish sanitation (toilet/latrine if sewage system failed)</li>
+<li>Practice strict hygiene (handwashing before food, after exposure)</li>
+</ul>
+<p><strong>Days 6-14: Mold Prevention and Drying</strong></p>
+<ul>
+<li>Remove standing water</li>
+<li>Remove saturated materials (drywall, carpet)</li>
+<li>Begin drying (fans, heat, dehumidifiers)</li>
+<li>Disinfect remaining surfaces</li>
+<li>Monitor for mold growth</li>
+</ul>
+<p><strong>Days 15-30: Assessment and Planning</strong></p>
+<ul>
+<li>Complete structural repairs if feasible</li>
+<li>Finish drying (goal: &lt;20% moisture content)</li>
+<li>Address mold if prevention failed</li>
+<li>Plan winter weatherization (prevent re-entry of water)</li>
+<li>Continue water/food safety practices</li>
+<li>Monitor for delayed illness (fever, GI symptoms)</li>
+</ul>
+</div>
+<h3>Long-Term Considerations</h3>
+<ul>
+<li><strong>Repeat flooding</strong>: If floods are recurring, implement permanent solutions (elevation, barriers, drainage)</li>
+<li><strong>Building repair</strong>: Major damage requires professional contractors; obtain permits if required</li>
+<li><strong>Insurance recovery</strong>: Claims process can take months; maintain documentation</li>
+<li><strong>Psychological recovery</strong>: Post-disaster stress is common; seek support if symptoms persist</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="water-purification.html">Water Purification</a>
+<a href="sanitation.html">Sanitation &amp; Public Health</a>
+<a href="family-emergency-plan.html">Family Emergency Plan</a>
+<a href="home-inventory.html">Home Inventory</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

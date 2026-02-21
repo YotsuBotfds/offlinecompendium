@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/foundations-footings.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foundations and Footings - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.soil-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+.soil-table th, .soil-table td { padding: 0.75rem; border: 1px solid var(--border); text-align: left; }
+.soil-table th { background: var(--surface); font-weight: bold; }
+.footing-type { background: var(--card); border-left: 4px solid var(--accent); padding: 1rem; margin: 1rem 0; }
+.calc-box { background: var(--card); border: 1px solid var(--accent); padding: 1rem; font-family: monospace; margin: 1rem 0; }
+
+</style>
+<meta name="description" content="Soil bearing capacity assessment, frost lines, footing types (strip, pad, raft, pier), excavation and drainage, sizing calculations, reinforcement, concrete mix design, stone foundations, damp-proof courses, failure modes, and repairs.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/foundations-footings.html">
+<meta property="og:title" content="Foundations and Footings">
+<meta property="og:description" content="Soil bearing capacity assessment, frost lines, footing types (strip, pad, raft, pier), excavation and drainage, sizing calculations, reinforcement, concrete mix design, stone foundations, damp-proof courses, failure modes, and repairs.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Building &amp; Engineering", "item": "https://zerotoherohero.com/#sec-building"},
+    {"@type": "ListItem", "position": 3, "name": "Foundations and Footings", "item": "https://zerotoherohero.com/guides/foundations-footings.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Foundations and Footings",
+  "description": "Soil bearing capacity assessment, frost lines, footing types (strip, pad, raft, pier), excavation and drainage, sizing calculations, reinforcement, concrete mix design, stone foundations, damp-proof courses, failure modes, and repairs.",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-383">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-building">Building &amp; Engineering</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Foundations and Footings</span>
+</nav>
+<header>
+<h1>Foundations and Footings</h1>
+<p class="subtitle">Soil bearing capacity assessment, frost lines, footing types (strip, pad, raft, pier), excavation and drainage, sizing calculations, reinforcement, concrete mix design, stone foundations, damp-proof courses, failure modes, and repairs.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~23 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#soil-analysis">Soil Analysis and Bearing Capacity</a></li>
+<li><a href="#frost-line">Frost Line and Frost Heave</a></li>
+<li><a href="#footing-types">Footing Types</a></li>
+<li><a href="#footing-sizing">Footing Sizing Calculations</a></li>
+<li><a href="#excavation-safety">Excavation and Safety</a></li>
+<li><a href="#drainage-waterproofing">Drainage and Waterproofing</a></li>
+<li><a href="#reinforcement">Reinforcement Materials</a></li>
+<li><a href="#concrete-mix">Concrete Mix Design for Footings</a></li>
+<li><a href="#stone-foundations">Stone Foundation Construction</a></li>
+<li><a href="#damp-proof-course">Damp-Proof Courses (DPC)</a></li>
+<li><a href="#common-failures">Common Failure Modes</a></li>
+<li><a href="#repairs">Foundation Repair Techniques</a></li>
+<li><a href="#seismic">Seismic Considerations</a></li>
+<li><a href="#summary">Summary</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<h2 id="overview">Overview</h2>
+<p>A foundation is the interface between a building and the earth. Its job is to transfer the entire weight of the structure (dead load) plus all occupants, snow, wind, and seismic forces (live loads) safely into the soil without settlement, tilting, or bearing capacity failure.</p>
+<p>This guide covers soil types and bearing capacities, frost heave, footing types and sizing, excavation, drainage and waterproofing, reinforcement, and common failure modes and repairs.</p>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Cross-section showing strip foundation with footing, damp-proof course, drainage, and frost line">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text-label { font-family: Arial, sans-serif; font-size: 14px; fill: var(--text, #f5f0e8); font-weight: bold; }
+      .text-small { font-family: Arial, sans-serif; font-size: 12px; fill: var(--text, #f5f0e8); }
+      .soil-type-1 { fill: var(--surface, #2d2416); stroke: var(--border, #555); stroke-width: 1; }
+      .soil-type-2 { fill: var(--muted, #7a8570); stroke: var(--border, #555); stroke-width: 1; }
+      .concrete { fill: var(--card, #3a3a2e); stroke: var(--border, #555); stroke-width: 2; }
+      .brick { fill: var(--accent2, #a67c52); stroke: var(--border, #555); stroke-width: 1; }
+      .stone { fill: var(--accent, #d4a574); stroke: var(--border, #555); stroke-width: 1.5; }
+      .dpc { fill: var(--accent2, #a67c52); opacity: 0.7; stroke: var(--border, #555); stroke-width: 2; }
+      .gravel { fill: var(--muted, #7a8570); stroke: var(--border, #555); stroke-width: 0.5; }
+      .water { fill: #4a7a9f; opacity: 0.4; stroke: #4a7a9f; stroke-width: 0.5; }
+      .arrow { stroke: var(--accent, #d4a574); stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .line-label { stroke: var(--accent, #d4a574); stroke-width: 1.5; stroke-dasharray: 4,4; }
+      .pattern-stone { fill: none; stroke: var(--border, #555); stroke-width: 1; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--accent, #d4a574)"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" class="bg"/>
+
+  <!-- Top of building (above grade) -->
+  <rect x="150" y="10" width="500" height="60" class="brick"/>
+  <line x1="150" y1="35" x2="650" y2="35" stroke="var(--border, #555)" stroke-width="1"/>
+  <line x1="150" y1="45" x2="650" y2="45" stroke="var(--border, #555)" stroke-width="1"/>
+  <line x1="150" y1="55" x2="650" y2="55" stroke="var(--border, #555)" stroke-width="1"/>
+  <text x="50" y="40" class="text-label">WALL</text>
+  <text x="40" y="55" class="text-small">(masonry)</text>
+
+  <!-- Grade line (ground surface) -->
+  <line x1="50" y1="70" x2="750" y2="70" stroke="var(--accent, #d4a574)" stroke-width="3"/>
+  <text x="760" y="75" class="text-small">GRADE</text>
+
+  <!-- Topsoil/loose material -->
+  <rect x="50" y="70" width="700" height="30" class="soil-type-1"/>
+  <text x="60" y="90" class="text-small">loose topsoil (remove)</text>
+
+  <!-- Good compacted soil -->
+  <rect x="50" y="100" width="700" height="80" class="soil-type-2"/>
+  <text x="320" y="150" class="text-label">STABLE SOIL</text>
+
+  <!-- Frost line indicator -->
+  <line x1="40" y1="180" x2="60" y2="180" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+  <text x="70" y="185" class="text-label">FROST LINE</text>
+  <text x="70" y="200" class="text-small">depth 1.2–1.8 m</text>
+
+  <!-- Dashed line showing frost depth -->
+  <line x1="50" y1="180" x2="750" y2="180" stroke="var(--accent, #d4a574)" stroke-width="1" stroke-dasharray="5,5"/>
+
+  <!-- Below-footing gravel drainage layer -->
+  <rect x="100" y="160" width="600" height="15" class="gravel"/>
+  <text x="720" y="170" class="text-small">gravel</text>
+  <text x="710" y="185" class="text-small">layer</text>
+
+  <!-- Concrete footing -->
+  <rect x="100" y="175" width="600" height="50" class="concrete"/>
+  <text x="350" y="210" class="text-label">FOOTING (concrete or stone)</text>
+  <text x="340" y="225" class="text-small">Width = load ÷ bearing capacity</text>
+
+  <!-- Damp-proof course layer -->
+  <rect x="100" y="225" width="600" height="6" class="dpc"/>
+  <text x="720" y="232" class="text-small">DPC</text>
+  <text x="700" y="247" class="text-small">(bitumen</text>
+  <text x="700" y="262" class="text-small">or tar)</text>
+
+  <!-- Foundation wall above DPC -->
+  <rect x="150" y="231" width="500" height="50" class="brick"/>
+  <line x1="150" y1="240" x2="650" y2="240" stroke="var(--border, #555)" stroke-width="1"/>
+  <line x1="150" y1="250" x2="650" y2="250" stroke="var(--border, #555)" stroke-width="1"/>
+  <line x1="150" y1="260" x2="650" y2="260" stroke="var(--border, #555)" stroke-width="1"/>
+  <text x="40" y="260" class="text-label">WALL</text>
+
+  <!-- Connection between wall and building above -->
+  <rect x="150" y="281" width="500" height="30" class="concrete"/>
+  <text x="355" y="300" class="text-small">floor slab or beam</text>
+
+  <!-- Below footing soil section -->
+  <rect x="50" y="225" width="700" height="200" class="soil-type-2"/>
+
+  <!-- Perimeter French drain -->
+  <circle cx="80" cy="280" r="12" class="gravel"/>
+  <circle cx="720" cy="280" r="12" class="gravel"/>
+  <line x1="70" y1="280" x2="65" y2="280" stroke="var(--accent, #d4a574)" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="10" y="310" class="text-small">French</text>
+  <text x="10" y="325" class="text-small">drain</text>
+
+  <!-- Water table indication -->
+  <line x1="50" y1="350" x2="750" y2="350" stroke="#4a7a9f" stroke-width="2" stroke-dasharray="4,4"/>
+  <text x="760" y="355" class="text-small">water table</text>
+
+  <!-- Water in soil below water table -->
+  <rect x="50" y="350" width="700" height="100" class="water"/>
+
+  <!-- Rebar in footing (indicated by lines) -->
+  <line x1="150" y1="190" x2="650" y2="190" stroke="var(--accent, #d4a574)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="150" y1="200" x2="650" y2="200" stroke="var(--accent, #d4a574)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="200" y1="175" x2="200" y2="225" stroke="var(--accent, #d4a574)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="400" y1="175" x2="400" y2="225" stroke="var(--accent, #d4a574)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="600" y1="175" x2="600" y2="225" stroke="var(--accent, #d4a574)" stroke-width="1.5" opacity="0.7"/>
+  <text x="680" y="195" class="text-small">rebar</text>
+
+  <!-- Dimension lines and labels -->
+  <!-- Frost depth indicator -->
+  <line x1="30" y1="100" x2="40" y2="100" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="30" y1="180" x2="40" y2="180" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="35" y1="100" x2="35" y2="180" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <text x="8" y="145" class="text-small" text-anchor="end">1.2–1.8 m</text>
+
+  <!-- Footing width indicator -->
+  <line x1="100" y1="245" x2="100" y2="260" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="650" y1="245" x2="650" y2="260" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="100" y1="252" x2="650" y2="252" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <text x="375" y="275" class="text-small" text-anchor="middle">Footing width W</text>
+
+  <!-- Grade height indicator -->
+  <line x1="745" y1="70" x2="760" y2="70" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="745" y1="225" x2="760" y2="225" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="752" y1="70" x2="752" y2="225" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <text x="765" y="150" class="text-small">Foundation</text>
+  <text x="765" y="165" class="text-small">depth D</text>
+
+  <!-- Title -->
+  <text x="400" y="30" class="text-label" text-anchor="middle" font-size="18" opacity="0">Strip Foundation Cross-Section</text>
+
+  <!-- Legend -->
+  <text x="60" y="430" class="text-label">Key Components:</text>
+  <rect x="60" y="440" width="15" height="15" class="concrete"/>
+  <text x="82" y="453" class="text-small">Concrete footing</text>
+
+  <rect x="60" y="465" width="15" height="15" class="dpc"/>
+  <text x="82" y="478" class="text-small">Damp-proof course (DPC)</text>
+
+  <rect x="300" y="440" width="15" height="15" class="gravel"/>
+  <text x="322" y="453" class="text-small">Gravel drainage layer</text>
+
+  <line x1="300" y1="473" x2="315" y2="473" stroke="var(--accent, #d4a574)" stroke-width="1.5"/>
+  <text x="322" y="478" class="text-small">Rebar reinforcement</text>
+
+  <!-- Note -->
+  <text x="400" y="485" class="text-small" text-anchor="middle" fill="var(--muted, #7a8570)">Footing must be below frost line to prevent heave. DPC stops capillary moisture. Gravel allows drainage.</text>
+</svg>
+</p>
+<section id="soil-analysis">
+<h2>Soil Analysis and Bearing Capacity</h2>
+<p>Before designing any footing, determine what soil you are building on. Soil bearing capacity varies widely—from soft clay (unsuitable as-built) to rock (excellent).</p>
+<h3>Soil Types</h3>
+<table>
+<thead>
+<tr>
+<th>Soil Type</th>
+<th>Bearing Capacity (kg/m²)</th>
+<th>Characteristics</th>
+<th>Construction Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rock</strong></td>
+<td>20,000+</td>
+<td>Bedrock; very hard, unweathered</td>
+<td>Excellent; minimal settlement. Excavation is slow.</td>
+</tr>
+<tr>
+<td><strong>Dense gravel, sand</strong></td>
+<td>3,000–5,000</td>
+<td>Coarse particles; compact when dry</td>
+<td>Good. Do not over-excavate; compact backfill carefully.</td>
+</tr>
+<tr>
+<td><strong>Medium sand, gravel</strong></td>
+<td>1,500–3,000</td>
+<td>Medium particle size; medium density</td>
+<td>Acceptable if compacted. Avoid saturation.</td>
+</tr>
+<tr>
+<td><strong>Loose sand, silt</strong></td>
+<td>500–1,500</td>
+<td>Fine particles; low cohesion; prone to compaction</td>
+<td>Weak. Compact heavily or use larger footing. May require piles.</td>
+</tr>
+<tr>
+<td><strong>Stiff clay</strong></td>
+<td>1,500–2,500</td>
+<td>High cohesion; good when dry. Cracks when dry.</td>
+<td>Good bearing when undisturbed. Excavation stable. Watch frost heave.</td>
+</tr>
+<tr>
+<td><strong>Medium clay</strong></td>
+<td>1,000–1,500</td>
+<td>Cohesive but softer; moderate bearing</td>
+<td>Acceptable. Monitor for settlement over first year.</td>
+</tr>
+<tr>
+<td><strong>Soft clay, silt, peat</strong></td>
+<td>&lt; 1,000</td>
+<td>Very compressible; plastic when wet</td>
+<td>Poor. Consider piles, raft foundations, or soil replacement.</td>
+</tr>
+</tbody>
+</table>
+<h3>Simple On-Site Soil Test</h3>
+<p><strong>Visual and tactile assessment (5–10 minutes):</strong></p>
+<ol>
+<li>Excavate a small test hole (0.5 m deep) with hand tools.</li>
+<li><strong>Feel the soil:</strong> Is it gritty (sand/gravel) or smooth (clay/silt)?</li>
+<li><strong>Moisture:</strong> Is it wet or dry? Wet clay is weak; dry clay is stronger.</li>
+<li><strong>Cohesion:</strong> Roll wet soil in your hand. Does it hold a ball? (Clay does; sand does not.)</li>
+<li><strong>Compaction:</strong> Drop a fist-sized stone. Does it sink easily (soft) or bounce (hard)?</li>
+<li><strong>Growth:</strong> Do roots, plants, or insects suggest good drainage (gravel/sand) or poor drainage (clay)?</li>
+</ol>
+<p><strong>SPT Equivalent (simple test):</strong>
+Drop a 2 kg hammer 0.5 m onto the soil surface. Count how many blows it takes to penetrate 0.3 m:</p>
+<ul>
+<li>&lt; 5 blows = soft soil (BC &lt; 1,000 kg/m²)</li>
+<li>5–10 blows = medium soil (BC 1,000–2,000)</li>
+<li>10–20 blows = stiff soil (BC 2,000–4,000)</li>
+<li>
+<blockquote>
+<p>20 blows = very stiff or rock (BC &gt; 4,000)</p>
+</blockquote>
+</li>
+</ul>
+<div class="tip">
+<p>For important buildings (houses, bridges), hire a soil engineer to bore and test soil at depth. For small structures (sheds, decks) on visible stable soil, on-site assessment is often adequate.</p>
+</div>
+</section>
+<section id="frost-line">
+<h2>Frost Line and Frost Heave</h2>
+<p>In cold climates, water in the soil freezes, expanding and pushing the building upward—a process called <strong>frost heave</strong>. This can crack foundations and displace structures.</p>
+<h3>Frost Depth by Climate</h3>
+<table>
+<thead>
+<tr>
+<th>Region / Climate</th>
+<th>Frost Depth</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tropical (no frost)</strong></td>
+<td>0–0.3 m</td>
+<td>No heave risk; footing can be shallower (0.5–1.0 m)</td>
+</tr>
+<tr>
+<td><strong>Temperate (occasional frost)</strong></td>
+<td>0.6–1.0 m</td>
+<td>Monitor; above frost line is safer but may not be critical</td>
+</tr>
+<tr>
+<td><strong>Cold (regular winter frost)</strong></td>
+<td>1.2–1.8 m</td>
+<td>Standard for much of North America; critical depth</td>
+</tr>
+<tr>
+<td><strong>Very cold (deep frost)</strong></td>
+<td>2.0–3.0+ m</td>
+<td>Northern Canada, Scandinavia; significant excavation needed</td>
+</tr>
+</tbody>
+</table>
+<h3>Frost Heave Prevention</h3>
+<p><strong>Below the frost line:</strong> The safest and most common approach. Excavate the footing below the expected maximum frost depth. Below this depth, soil remains frozen year-round (in permafrost regions) or never freezes (in seasonal frost regions).</p>
+<p><strong>Example:</strong> In a region with 1.2 m frost depth, the footing depth should be ≥ 1.2 m below the lowest grade.</p>
+<p><strong>Above the frost line (with drainage):</strong> In some climates with excellent drainage and low water table, footings above the frost line have performed well. However, this is risky and not recommended unless soils are very well-drained (gravel, sand).</p>
+<p><strong>Moisture barrier:</strong> Install a layer of crushed stone (gravel, no fines) below the footing to prevent capillary wicking of moisture into the footing. This reduces frost heave risk even if the footing is above the frost line.</p>
+<div class="danger">
+<p>Building on a filled lot without knowing the frost depth or drainage is a leading cause of foundation failure in cold climates. Frost heave can lift a house 50–100 mm in a season, cracking walls, breaking utilities, and making doors jam. Always respect the local frost line.</p>
+</div>
+</section>
+<section id="footing-types">
+<h2>Footing Types</h2>
+<h3>Strip (Continuous) Footing</h3>
+<p>A continuous footing runs under an entire wall. Used for masonry or concrete walls bearing loads uniformly along their length.</p>
+<div class="footing-type">
+**Sizing:** Width = (design load per running meter) ÷ (soil bearing capacity)
+<p>Example: A stone wall 0.5 m thick carries 50 kN/m (load per meter). Soil BC = 150 kN/m² (1.5 kN per 100 mm width). Footing width = 50 ÷ 150 = 0.33 m (too narrow; round to 0.5 m).</p>
+<p><strong>Depth:</strong> Below frost line (1.2–1.8 m typical).</p>
+<p><strong>Reinforcement:</strong> Usually a continuous rebar mat (1–2 layers, 10 mm Ø bars at 0.2–0.3 m spacing) to resist bending. Bars run parallel to the wall and perpendicular (at wider spacing) to it.</p>
+</div>
+<h3>Pad (Isolated) Footing</h3>
+<p>A square or rectangular footing under a column. Each column has its own pad.</p>
+<div class="footing-type">
+**Sizing:** Area = design load ÷ soil bearing capacity
+<p>Example: A column load = 300 kN (30 tonnes). Soil BC = 200 kN/m² (2.0 kN per 100 mm width). Required area = 300 ÷ 200 = 1.5 m². For a square pad, width = √1.5 ≈ 1.23 m (round to 1.25 m).</p>
+<p><strong>Depth:</strong> Below frost line; minimum 0.5 m, typical 1.0–1.5 m.</p>
+<p><strong>Reinforcement:</strong> Rebar in both directions (grid pattern). Critical for shear at column-footing interface. Use pedestal (short column above footing) if footing is very thick relative to column width.</p>
+</div>
+<h3>Raft (Mat) Foundation</h3>
+<p>A single large slab under the entire building, with footings integrated. Used when bearing soil is weak (BC &lt; 500 kN/m²) and settlement is a concern.</p>
+<div class="footing-type">
+**Sizing:** Raft area ≥ total building load ÷ soil bearing capacity
+<p>Example: 3-story office building, total load 1,500 kN (150 tonnes). Soil BC = 100 kN/m². Raft area ≥ 1,500 ÷ 100 = 15 m². For a rectangular footprint 10 m × 20 m = 200 m², a 0.4–0.6 m thick raft suffices (load spreads evenly).</p>
+<p><strong>Advantage:</strong> Distributes loads evenly; reduces differential settlement (building tilts less).</p>
+<p><strong>Disadvantage:</strong> High concrete volume; expensive for medium/large buildings unless weak soil forces it.</p>
+<p><strong>Reinforcement:</strong> Heavy, two-way rebar grid, often with additional reinforcement at columns and edges.</p>
+</div>
+<h3>Pier and Pile Footings</h3>
+<p>When shallow soil is weak, foundations go deeper to reach stronger strata.</p>
+<p><strong>Drilled Piers:</strong> Large-diameter holes (0.5–1.5 m Ø) drilled to bedrock or dense soil, then filled with reinforced concrete and capped with a pier head or cap beam.</p>
+<p><strong>Driven Piles:</strong> Wooden, concrete, or steel piles driven into the ground using a hammer. Common in swamps, over water, or weak soil.</p>
+<p><strong>Micropiles:</strong> Small-diameter (25–150 mm) piles with high strength-to-size ratio. Useful for retrofitting weak buildings or in confined spaces.</p>
+<div class="tip">
+<p>Pile design requires specialized engineering and equipment. Use for significant structures or in known weak soil. For off-grid buildings on strong soil, shallow footings are simpler and cheaper.</p>
+</div>
+</section>
+<section id="footing-sizing">
+<h2>Footing Sizing Calculations</h2>
+<h3>Step 1: Determine Design Load</h3>
+<p>Sum all loads:</p>
+<ul>
+<li><strong>Dead load:</strong> Weight of structure (walls, roof, floors) — often 2–5 kN/m² per floor for timber frame, 4–8 for masonry.</li>
+<li><strong>Live load:</strong> People, snow, equipment — typically 1.5–3 kN/m² depending on use and climate.</li>
+<li><strong>Wind and seismic:</strong> Lateral forces; add to design if in high-wind or seismic zone.</li>
+</ul>
+<p><strong>Example:</strong> Single-story timber house, 10 m × 15 m (150 m²):</p>
+<ul>
+<li>Dead load: 3.5 kN/m² × 150 m² = 525 kN</li>
+<li>Snow load (cold climate): 2 kN/m² × 150 m² = 300 kN</li>
+<li><strong>Total: 825 kN (about 82 tonnes)</strong></li>
+</ul>
+<h3>Step 2: Estimate Load per Footing</h3>
+<p>Divide total load by number of footings. Assume uniform distribution if footings are arranged symmetrically.</p>
+<p><strong>Example (4 columns at corners):</strong> 825 kN ÷ 4 = 206 kN per column</p>
+<p><strong>Example (continuous wall):</strong> 825 kN ÷ perimeter. For a 2 × (10 + 15) = 50 m perimeter, load = 825 ÷ 50 = 16.5 kN per meter of wall.</p>
+<h3>Step 3: Calculate Required Footing Area</h3>
+<p>Area = Design Load ÷ Soil Bearing Capacity</p>
+<div class="calc-box">
+Footing area = 206 kN ÷ 200 kN/m² = 1.03 m²
+<p>Square footing: side = √1.03 ≈ 1.01 m → round to 1.0 m × 1.0 m</p>
+</div>
+<h3>Step 4: Apply Safety Factor</h3>
+<p>In practice, add a 10–20% margin to account for uncertainty in soil, loads, and construction quality.</p>
+<div class="calc-box">
+Revised area = 1.03 m² × 1.15 = 1.18 m²
+<p>Square footing: side = √1.18 ≈ 1.09 m → round to 1.1 m × 1.1 m</p>
+</div>
+<h3>Step 5: Check Bearing Stress</h3>
+<p>Verify the actual footing area provides adequate bearing stress:</p>
+<div class="calc-box">
+Actual bearing stress = Load ÷ Footing area
+= 206 kN ÷ (1.1 m × 1.1 m) = 206 ÷ 1.21 = 170 kN/m²
+<p>This is less than the soil BC of 200 kN/m². ✓ Acceptable.</p>
+</div>
+</section>
+<section id="excavation-safety">
+<h2>Excavation and Safety</h2>
+<h3>Excavation Sequence</h3>
+<ol>
+<li><strong>Lay out footing locations</strong> using batter boards and string lines. Mark corners with chalk or stakes.</li>
+<li><strong>Dig to frost depth</strong> (typically 1.2–1.8 m in cold climates, less in warm climates).</li>
+<li><strong>Maintain stable walls</strong> — see <strong>Trench Shoring</strong> section in the Scaffold and Shoring guide for deep excavations.</li>
+<li><strong>Expose stable soil:</strong> The footing must rest on undisturbed, competent soil. Remove any loose or fill soil.</li>
+<li><strong>Level the bottom:</strong> Use a straight-edge and level to check footing elevation. Uneven footings cause differential settlement and cracking.</li>
+<li><strong>Check for water:</strong> If the excavation fills with water, it indicates high water table. Install sump and pump, or raise the footing if possible.</li>
+</ol>
+<h3>Water Management During Construction</h3>
+<p>If groundwater is present:</p>
+<ul>
+<li><strong>Pump it out:</strong> Sump pump or manual bucket removal keeps the excavation dry so concrete or masonry can be placed.</li>
+<li><strong>Drain it:</strong> Install a perimeter French drain or gravel trench around the foundation to lower the water table before construction.</li>
+<li><strong>Waterproof later:</strong> If water cannot be drained, apply sealant (tar, bitumen) to the outside of the footing and foundation wall.</li>
+</ul>
+<div class="warning">
+<p>Do not pour concrete or lay masonry in a wet footing. Water weakens concrete and mortar. Wait for the soil to drain, or pump continuously during placement.</p>
+</div>
+</section>
+<section id="drainage-waterproofing">
+<h2>Drainage and Waterproofing</h2>
+<h3>Below-Footing Drainage</h3>
+<p>Water under the footing can freeze (frost heave), weaken the soil, or cause settlement. Install a moisture barrier:</p>
+<ol>
+<li>
+<p><strong>Gravel layer:</strong> 100–150 mm of clean crushed stone (no fines, 10–25 mm gravel) below the footing. This allows water to drain freely and prevents capillary action from wicking moisture up into the footing.</p>
+</li>
+<li>
+<p><strong>French drain (perimeter):</strong> A trench filled with gravel and perforated drain tile (PVC or clay) running around the building perimeter, 1–2 m away from the foundation. Drains to daylight or a sump pit.</p>
+</li>
+<li>
+<p><strong>Sump pump:</strong> If the water table is high and no daylight drainage is available, install a sump pit (hole 1–2 m deep) with a pump that evacuates water automatically.</p>
+</li>
+</ol>
+<h3>Footing and Wall Waterproofing</h3>
+<p><strong>Below-grade walls</strong> (basement walls, basement crawl spaces) require waterproofing:</p>
+<ol>
+<li>
+<p><strong>Interior approach:</strong> Seal the wall with a water-resistant paint or membrane on the inside. This is temporary—water is still penetrating the structure and will eventually fail. Use only if water infiltration is minor.</p>
+</li>
+<li>
+<p><strong>Exterior approach:</strong> Excavate around the wall, clean the surface, and apply bituminous coating, rubberized membrane, or rigid foam board. Extend a French drain at the base to carry water away. This is the correct approach.</p>
+</li>
+<li>
+<p><strong>Damp-proof course:</strong> A layer of tar, bitumen, or plastic membrane inserted between the footing and the foundation wall. Prevents capillary wicking of moisture from the wet footing into the wall above.</p>
+</li>
+</ol>
+<div class="tip">
+<p>The best waterproofing is good drainage. A foundation that stays dry needs minimal sealant. A foundation in perpetually wet soil will eventually fail despite sealant. Always design to keep water away from the building, not to seal it out.</p>
+</div>
+</section>
+<section id="reinforcement">
+<h2>Reinforcement Materials</h2>
+<h3>Rebar (Steel Reinforcement)</h3>
+<p>Concrete is strong in compression but weak in tension. Rebar resists tensile stresses (bending, pulling).</p>
+<p><strong>Typical footings use:</strong></p>
+<ul>
+<li>Rebar diameter: 10–16 mm (No. 3–5 in US sizing)</li>
+<li>Spacing: 0.2–0.3 m in both directions (grid pattern)</li>
+<li>Cover (distance from rebar to concrete surface): 75–100 mm (protects rebar from corrosion)</li>
+<li>Lap (overlap where two bars meet): 40× bar diameter (400 mm for 10 mm bars)</li>
+</ul>
+<p><strong>Example:</strong> A 1.5 m × 1.5 m pad footing with 0.6 m depth:</p>
+<ul>
+<li>Bottom layer (bottom 150 mm): 7–8 bars each direction at 0.2 m spacing</li>
+<li>Total bars: ~16 bars, each ~2 m long ≈ 32 m of 10 mm rebar</li>
+</ul>
+<h3>Natural (Stone, Timber) Alternatives</h3>
+<p>In off-grid settings where steel is unavailable, historical foundations used stone or timber:</p>
+<p><strong>Stone footings:</strong> Stacked stone with good bonding (clay or lime mortar). Less efficient than concrete rebar but proven by centuries of use. Key: large base stones, careful bonding, deep footing depth (1.5–2.0 m) to compensate for lower bearing stress.</p>
+<p><strong>Timber posts (wooden piers):</strong> Wooden posts set in the ground to carry column loads. These rot in wet soil unless preserved. Use rot-resistant woods (cedar, oak) or wrap the buried portion with tar/bitumen. Common in colonial-era buildings; effective but requires maintenance every 20–30 years.</p>
+</section>
+<section id="concrete-mix">
+<h2>Concrete Mix Design for Footings</h2>
+<p>Footings don't need high strength (no water exposure typically), but they do need durability and freeze-thaw resistance in cold climates.</p>
+<h3>Standard Footing Mix</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Ratio (by volume)</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portland cement</td>
+<td>1</td>
+<td>Binder; provides strength</td>
+</tr>
+<tr>
+<td>Sand (fine aggregate)</td>
+<td>2–2.5</td>
+<td>Filler; reduces shrinkage</td>
+</tr>
+<tr>
+<td>Gravel (coarse aggregate, 10–25 mm)</td>
+<td>3–3.5</td>
+<td>Load-bearing aggregate</td>
+</tr>
+<tr>
+<td>Water</td>
+<td>0.5–0.6</td>
+<td>Hydration catalyst; excess weakens concrete</td>
+</tr>
+<tr>
+<td>Air entrainment (if freeze-thaw risk)</td>
+<td>4–6% by volume</td>
+<td>Small bubbles; allow ice crystal expansion without cracking</td>
+</tr>
+</tbody>
+</table>
+<h3>Mixing and Placing</h3>
+<p><strong>By hand:</strong> 3–4 cubic meters per day (small footings). Mix in a pile on the ground with a shovel, or in a mixing drum.</p>
+<p><strong>By machine:</strong> Concrete mixer (rental) or ready-mix truck (larger projects).</p>
+<p><strong>Slump test</strong> (simple quality check): Fill a cone mold (0.3 m tall) with fresh concrete, lift it, and measure how much the concrete slumps:</p>
+<ul>
+<li>75–100 mm slump = good for footings (workable, not too wet)</li>
+<li>&lt; 50 mm = too stiff (difficult to place)</li>
+<li>
+<blockquote>
+<p>150 mm = too wet (weak, will segregate)</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>Curing:</strong> Keep concrete moist for 7 days (cover with plastic, wet burlap, or plastic sheeting). In cold weather (&lt; 5°C), protect with straw or blankets to prevent freezing before it hardens.</p>
+</section>
+<section id="stone-foundations">
+<h2>Stone Foundation Construction</h2>
+<p>Stone foundations are common in areas with abundant fieldstone or quarried stone.</p>
+<h3>Typical Stone Footing and Wall Assembly</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Material</th>
+<th>Depth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Base course</strong></td>
+<td>Large stones (300–600 mm), best faces down, set in lime or clay mortar</td>
+<td>0.3–0.5 m</td>
+</tr>
+<tr>
+<td><strong>2. Middle courses</strong></td>
+<td>Medium stones (200–300 mm), bonded with mortar, larger on perimeter, smaller/rubble in center</td>
+<td>0.4–0.8 m</td>
+</tr>
+<tr>
+<td><strong>3. Upper courses</strong></td>
+<td>Smaller, more uniform stones, laid level, good face outward, back-filled with rubble and mortar</td>
+<td>0.3–0.5 m</td>
+</tr>
+<tr>
+<td><strong>4. Damp-proof course</strong></td>
+<td>Tar, pitch, or slate layer; prevents capillary moisture</td>
+<td>~50 mm</td>
+</tr>
+<tr>
+<td><strong>5. Foundation wall above grade</strong></td>
+<td>Masonry or concrete</td>
+<td>varies</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Width:</strong> Stone footings are typically 1.5–2.0× the thickness of the wall above. Example: 0.5 m wall requires 0.75–1.0 m footing width.</p>
+<p><strong>Depth:</strong> Below frost line (1.2–1.8 m in cold climates). Shallow stone (0.5 m) is insufficient for long-term stability.</p>
+<div class="tip">
+<p>Stone foundations with lime mortar have survived 300+ years in many climates. The key is depth below frost, good drainage around the perimeter, and a damp-proof course to prevent rising damp. Stone-on-clay or clay mortar (without lime) is weaker and less durable.</p>
+</div>
+</section>
+<section id="damp-proof-course">
+<h2>Damp-Proof Courses (DPC)</h2>
+<p>Rising damp—moisture wicking up through the footing and into the wall—weakens mortar, masonry, and interior finishes. A damp-proof course (DPC) is a horizontal moisture barrier inserted at or near the top of the footing.</p>
+<h3>DPC Materials</h3>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>Cost</th>
+<th>Durability</th>
+<th>Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slate or tile</strong></td>
+<td>Moderate</td>
+<td>Excellent (100+ years)</td>
+<td>Historical; inserted as physical layer</td>
+</tr>
+<tr>
+<td><strong>Lime + tallow</strong></td>
+<td>Low</td>
+<td>50–80 years</td>
+<td>Historical; mixed into mortar course</td>
+</tr>
+<tr>
+<td><strong>Bitumen (tar, pitch)</strong></td>
+<td>Low</td>
+<td>50–75 years</td>
+<td>Modern; applied as 25–50 mm layer between courses</td>
+</tr>
+<tr>
+<td><strong>Plastic sheeting (polyethylene)</strong></td>
+<td>Low</td>
+<td>50+ years</td>
+<td>Modern; 0.5 mm sheet lapped and sealed</td>
+</tr>
+<tr>
+<td><strong>Bentonite clay</strong></td>
+<td>Moderate</td>
+<td>50+ years</td>
+<td>Expands when wet; self-sealing; good for existing walls</td>
+</tr>
+</tbody>
+</table>
+<h3>Installation</h3>
+<ol>
+<li>
+<p><strong>Horizontal placement:</strong> The DPC is installed 0.15–0.3 m above the lowest grade (ground level), so the footing remains below grade and protected, but the wall above stays dry.</p>
+</li>
+<li>
+<p><strong>Width:</strong> Must extend the full width of the wall and wrap around corners.</p>
+</li>
+<li>
+<p><strong>Lapping:</strong> If using sheet materials, lap seams by 0.1 m and seal with compatible material (tar for tar sheet, bitumen for plastic, etc.).</p>
+</li>
+<li>
+<p><strong>Transition:</strong> The DPC must bridge any thickness change (e.g., from footing to wall), or water will wick around it.</p>
+</li>
+</ol>
+</section>
+<section id="common-failures">
+<h2>Common Failure Modes</h2>
+<table>
+<thead>
+<tr>
+<th>Failure Mode</th>
+<th>Cause</th>
+<th>Signs</th>
+<th>Prevention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Differential settlement</strong></td>
+<td>Footing on variable soil (one end on clay, other on sand); uneven consolidation</td>
+<td>One corner of building tilts; cracks radiate from corners; doors jam</td>
+<td>Test soil thoroughly; use raft or adjust footing depth</td>
+</tr>
+<tr>
+<td><strong>Heave (frost or swelling soil)</strong></td>
+<td>Footing above frost line in freezing climate, or on expansive clay</td>
+<td>Building pushed up unevenly; cracks in walls and foundation; separation of wall from floor</td>
+<td>Excavate below frost line; use non-swelling soil beneath footing; drain moisture</td>
+</tr>
+<tr>
+<td><strong>Bearing capacity failure</strong></td>
+<td>Footing undersized or soil weaker than estimated</td>
+<td>Footing sinks unevenly; walls crack; structure tilts</td>
+<td>Recalculate bearing capacity; expand footing area; consider deeper piles</td>
+</tr>
+<tr>
+<td><strong>Water infiltration / rising damp</strong></td>
+<td>No DPC; poor drainage; high water table</td>
+<td>Wet walls, interior mold, spalling masonry; efflorescence (white salt stains)</td>
+<td>Install DPC; improve drainage; lower water table if possible</td>
+</tr>
+<tr>
+<td><strong>Rebar corrosion (concrete)</strong></td>
+<td>Carbonation of concrete or salt spray exposes rebar; rust expands, cracking concrete</td>
+<td>Rust stains leaking from cracks; concrete spalling and losing pieces</td>
+<td>Use air-entrained concrete; adequate rebar cover (75+ mm); water-resistant sealant</td>
+</tr>
+<tr>
+<td><strong>Frost spall (concrete)</strong></td>
+<td>Concrete exposed to freeze-thaw cycles with water; ice crystals form and break concrete</td>
+<td>Concrete surface scaling, pitting, or breaking away in layers</td>
+<td>Air-entrain the concrete; keep drainage good so concrete doesn't stay wet</td>
+</tr>
+<tr>
+<td><strong>Mortar erosion (masonry)</strong></td>
+<td>Poor mortar, high water content, freeze-thaw</td>
+<td>Mortar joints widening; stones starting to separate; water visible entering mortar joints</td>
+<td>Use lime mortar (not Portland) in cold climates; keep water away; repoint eroded joints</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="repairs">
+<h2>Foundation Repair Techniques</h2>
+<h3>Underpinning (Deepening a Foundation)</h3>
+<p>When a footing has failed or a building needs deeper support, underpinning (installing new footings or piles under the existing structure) can restore stability.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Excavate in small sections (1–1.5 m long) under the existing foundation, one at a time.</li>
+<li>Shore the existing foundation with temporary posts above each excavation.</li>
+<li>Build a new, deeper footing or set a pile under the excavation.</li>
+<li>Allow the new footing to cure (concrete) or settle (pile), then gradually transfer load from temporary posts to permanent footing.</li>
+<li>Repeat along the length of the building.</li>
+</ol>
+<p><strong>Cost and time:</strong> High; can take 2–6 months for a full house. Used only when failure is severe and the building is valuable.</p>
+<h3>Mud Jacking (Slab Jacking)</h3>
+<p>If a concrete slab settles unevenly, it can be re-leveled by pumping grout beneath it, lifting it back to grade.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Drill 25–50 mm holes through the slab.</li>
+<li>Pump a thick grout (lime, sand, cement, and water) beneath the slab under pressure.</li>
+<li>The grout fills voids and lifts the slab as the pressure builds.</li>
+<li>Seal the holes with a patch.</li>
+</ol>
+<p><strong>Limitation:</strong> This works for small slabs and non-structural settlement. Major structural failures require underpinning.</p>
+<h3>Repointing Masonry</h3>
+<p>If mortar joints are eroding (especially in stone or brick masonry), they can be re-mortared (&quot;repointed&quot;):</p>
+<ol>
+<li>Rake out the old mortar to a depth of 2–3× the joint width.</li>
+<li>Clean the joint of dust and debris.</li>
+<li>Wet the joint (but not saturated).</li>
+<li>Fill with new mortar (traditionally lime mortar, not Portland cement for old buildings).</li>
+<li>Tool the joint to match the original profile.</li>
+</ol>
+<p><strong>Timing:</strong> Repoint joints as soon as erosion is visible to prevent water infiltration and further damage.</p>
+</section>
+<section id="seismic">
+<h2>Seismic Considerations</h2>
+<p>In earthquake-prone regions, foundations must be designed to resist lateral (sideways) forces and prevent structures from sliding off their footings.</p>
+<h3>Key Measures</h3>
+<ol>
+<li>
+<p><strong>Continuous reinforcement:</strong> Rebar extending from footings up through the foundation wall and into the structure above ensures that the building stays connected during shaking.</p>
+</li>
+<li>
+<p><strong>Tie-downs:</strong> Anchor bolts or rebar &quot;U&quot; shapes embedded in footings and attached to the structure (typically the first floor framing) prevent uplifting during earthquakes.</p>
+</li>
+<li>
+<p><strong>Wider footings:</strong> Provide extra overturning resistance by increasing footing width (lateral resistance improves with footing size).</p>
+</li>
+<li>
+<p><strong>Shear walls and bracing:</strong> Design walls and framing to resist lateral forces (see guides on timber framing and lateral bracing).</p>
+</li>
+</ol>
+<div class="warning">
+<p>Earthquake design is complex. If building in a seismic zone (especially near major faults), consult a structural engineer or follow local seismic building codes. A foundation designed for static loads alone will fail in a moderate or large earthquake.</p>
+</div>
+</section>
+<h2 id="summary">Summary</h2>
+<p>Foundations are the most critical—and hardest to fix—part of a building. Success requires:</p>
+<ul>
+<li><strong>Soil understanding</strong> (type, bearing capacity, water table, frost line)</li>
+<li><strong>Adequate depth</strong> (always below the frost line in cold climates)</li>
+<li><strong>Proper sizing</strong> (calculate loads accurately; don't skimp on footing area)</li>
+<li><strong>Good drainage</strong> (keep water away; prevent frost heave and settlement)</li>
+<li><strong>Sound materials</strong> (concrete, reinforcement, or stone of good quality)</li>
+<li><strong>Careful construction</strong> (level, compact, cure properly)</li>
+</ul>
+<p>Take time during design and construction to get the foundation right. A weak foundation will cost 10–50× more to repair later than it would have cost to build properly from the start.</p>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="lime-cement.html">Lime, Cement &amp; Mortar</a>
+<a href="natural-building.html">Natural Building Materials</a>
+<a href="stone-masonry.html">Stone Masonry Construction</a>
+<a href="road-building.html">Road Building &amp; Paving</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

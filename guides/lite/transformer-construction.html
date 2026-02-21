@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/transformer-construction.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transformer Construction</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Power Generation</span> ›
+<span>Transformer Construction</span>
+</div>
+
+
+<h1>Transformer Construction</h1>
+<p class="subtitle">Build step-up, step-down, and isolation transformers. Covers core lamination, winding calculations, insulation, testing, mounting, efficiency, and safety.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~8 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#transformer-principles">Transformer Principles</a></li>
+<li><a href="#core-lamination">Core Lamination</a></li>
+<li><a href="#winding-calculations">Winding Calculations</a></li>
+<li><a href="#primary-winding">Primary Winding</a></li>
+<li><a href="#secondary-winding">Secondary Winding</a></li>
+<li><a href="#insulation">Insulation</a></li>
+<li><a href="#assembly-testing">Assembly &amp; Testing</a></li>
+<li><a href="#step-up-transformer-specifics">Step-Up Transformer Specifics</a></li>
+<li><a href="#step-down-transformer-specifics">Step-Down Transformer Specifics</a></li>
+<li><a href="#isolation-transformer-specifics">Isolation Transformer Specifics</a></li>
+<li><a href="#efficiency-losses">Efficiency &amp; Losses</a></li>
+<li><a href="#mounting-enclosure">Mounting &amp; Enclosure</a></li>
+<li><a href="#safety">Safety</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Transformers are the backbone of AC power distribution. They step voltage up for efficient long-distance transmission, then step it back down for safe use. Building transformers is essential for off-grid electrical systems: stepping 12V DC (from solar panels) to AC via an inverter, or stepping down 240V AC distribution to safer 48V or 12V.</p>
+<p>A transformer consists of two or more coils (windings) wrapped around a magnetically permeable core. When alternating current flows through the primary coil, the changing magnetic field induces voltage in the secondary coil. The voltage transformation depends on the ratio of turns—a 1:10 ratio steps 120V up to 1200V, or steps 1200V down to 120V.</p>
+<p>This guide covers salvaging and rebuilding transformers, core lamination, winding calculations, insulation, assembly, testing, and efficiency optimization.</p>
+<div class="info-box">
+<p><strong>Key fact:</strong> Transformers are 95–99% efficient. A well-built transformer loses only 3–5% of input power as heat—remarkable for a device with no moving parts.</p>
+</div>
+</section>
+<section id="transformer-principles">
+<h2>Transformer Principles</h2>
+<p><strong>Faraday's Law:</strong> A changing magnetic flux through a coil induces voltage:
+V = −N × (dΦ/dt)</p>
+<p>Where:</p>
+<ul>
+<li>V = induced voltage (volts)</li>
+<li>N = number of turns</li>
+<li>dΦ/dt = rate of change of magnetic flux (webers/second)</li>
+</ul>
+<p><strong>Voltage ratio:</strong> Assuming ideal transformer (zero losses):
+V_secondary / V_primary = N_secondary / N_primary</p>
+<p>Example: A 120V primary with 100 turns, and a secondary with 1000 turns:
+V_secondary = 120 × (1000 / 100) = 1200V</p>
+<p><strong>Current ratio:</strong> Power is conserved:
+P = V × I
+I_secondary / I_primary = N_primary / N_secondary</p>
+<p>So a 10:1 step-up transformer decreases current by 10× (and increases voltage by 10×). A 1:10 step-down transformer increases current by 10×.</p>
+<p><strong>Impedance transformation:</strong> Impedance also transforms by the square of the turns ratio:
+Z_secondary = Z_primary × (N_secondary / N_primary)²</p>
+<p>This is critical for impedance matching in audio and RF circuits.</p>
+<div class="warning">
+<p><strong>High voltage hazard:</strong> Step-up transformers output dangerous voltages. A 120V input with a 10:1 ratio produces 1200V—lethal even with brief contact. Never work on energized high-voltage windings.</p>
+</div>
+</section>
+<section id="core-lamination">
+<h2>Core Lamination</h2>
+<p>The core is the magnetically conductive path that couples the primary and secondary windings.</p>
+<h3>Material Selection</h3>
+<p><strong>Laminated steel (standard):</strong></p>
+<ul>
+<li>Electrical steel (silicon steel) with 0.5–3% silicon content reduces eddy current losses.</li>
+<li>Lamination thickness: 0.1–0.35 mm (thinner laminations → lower eddy losses).</li>
+<li>Grain orientation: Cold-rolled grain-oriented (CRGO) steel aligns domains, reducing core loss by 30% compared to non-oriented.</li>
+</ul>
+<p><strong>Core geometry:</strong></p>
+<ul>
+<li><strong>E-I core:</strong> E-shaped and I-shaped laminations interlock. The E piece is the primary flux path; the I piece closes the magnetic circuit. Easy to assemble; good for power transformers.</li>
+<li><strong>Toroidal core:</strong> Wound from a continuous strip, forming a doughnut. Better shielding (no external field), but difficult to build without special machinery.</li>
+<li><strong>C-core:</strong> Rolled into a cylinder, then cut. Simpler than toroidal; used in some power supplies.</li>
+</ul>
+<h3>Building an E-I Core from Salvaged Material</h3>
+<p><strong>Source:</strong> Salvage cores from old power supplies, tube radios, or distribution transformers.</p>
+<p><strong>Extraction steps:</strong></p>
+<ol>
+<li>Carefully disassemble the transformer (pry the tank apart with a screwdriver, working around the edges).</li>
+<li>Desolder or cut the primary and secondary leads.</li>
+<li>Remove the old core (it's often potted in tar or oil—heat the transformer slightly to soften the potting).</li>
+<li>Clean laminations to remove tar and old insulation.</li>
+</ol>
+<p><strong>Reusing salvaged cores:</strong></p>
+<ul>
+<li>Measure the cross-sectional area (A, in cm²) perpendicular to the flux path.</li>
+<li>Calculate the required turns: turns per volt = 1 / (4.44 × f × B_max × A × 10⁻⁴)
+<ul>
+<li>f = frequency (50 or 60 Hz)</li>
+<li>B_max = maximum flux density (1.2–1.5 Tesla for steel; use 1.2 to be conservative)</li>
+<li>A = core cross-section (cm²)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example:</strong> 50 Hz transformer with a core 4 cm × 5 cm (A = 20 cm²):
+Turns per volt = 1 / (4.44 × 50 × 1.2 × 20 × 10⁻⁴) = 1 / 0.0533 ≈ <strong>18.8 turns/volt</strong></p>
+<p>For a 120V primary: N_primary = 18.8 × 120 ≈ <strong>2260 turns</strong></p>
+<h3>Building a Core from Scratch</h3>
+<p><strong>Sheet steel laminations:</strong></p>
+<ol>
+<li>Obtain electrical steel sheet (0.2 mm thickness, if available).</li>
+<li>Lay out the E-I pattern on paper to scale.</li>
+<li>Hand-cut laminations using a hacksaw or angle grinder (slow and tedious for 100+ laminations).</li>
+<li>Stack the E and I laminations alternately, aligned on a wooden jig.</li>
+<li>Tighten with nylon cable ties or aluminum clamps (metal clamps can short-circuit laminations—avoid them).</li>
+</ol>
+<p><strong>Core stacking:</strong></p>
+<ul>
+<li>Maintain tight mechanical pressure (laminations should be snug, not loose).</li>
+<li>Alternate E and I pieces: E-I-E-I-... This interlocking pattern creates maximum flux coupling.</li>
+<li>For a 20 cm² cross-section, you'll need roughly 40–60 laminations (each ~0.5 cm thick when stacked).</li>
+</ul>
+<div class="tip">
+<p><strong>Quick core for prototype:</strong> If you can't source pre-laminated steel, solid steel will work but with 20–30% higher core loss. Acceptable for short-term testing, not for permanent installation.</p>
+</div>
+</section>
+<section id="winding-calculations">
+<h2>Winding Calculations</h2>
+<p>Calculating the correct number of turns is critical—too few turns overstress the core (saturation); too many increase copper loss (excessive resistance).</p>
+<h3>Primary Winding (Input Side)</h3>
+<p><strong>Formula (for 50/60 Hz AC):</strong>
+N_primary = V_primary × 10⁴ / (4.44 × f × B_max × A)</p>
+<p>Where:</p>
+<ul>
+<li>V_primary = input voltage (volts)</li>
+<li>f = frequency (50 or 60 Hz)</li>
+<li>B_max = maximum flux density (Tesla, typically 1.2–1.5 for steel)</li>
+<li>A = core cross-section area (cm²)</li>
+</ul>
+<p><strong>Example: 120V input at 60 Hz, core 20 cm²:</strong>
+N_primary = 120 × 10⁴ / (4.44 × 60 × 1.2 × 20) = 1,200,000 / 6,373 ≈ <strong>188 turns</strong></p>
+<h3>Secondary Winding (Output Side)</h3>
+<p><strong>Turns ratio approach:</strong>
+Desired voltage ratio: V_secondary / V_primary = turns ratio</p>
+<p>N_secondary = N_primary × (V_secondary / V_primary)</p>
+<p><strong>Example: 120V primary, desired 24V secondary:</strong>
+Turns ratio = 24 / 120 = 0.2
+N_secondary = 188 × 0.2 ≈ <strong>38 turns</strong></p>
+<h3>Wire Gauge Selection</h3>
+<p>Wire gauge is chosen based on the current flowing through it. Excessive current causes heating (I²R loss).</p>
+<p><strong>Current calculation:</strong>
+I = P / V</p>
+<p>Where P = power (watts).</p>
+<p><strong>Example: 500W step-down transformer, 120V primary:</strong>
+I_primary = 500 / 120 ≈ 4.2 A
+I_secondary = 500 / 24 = 20.8 A</p>
+<p><strong>Copper resistivity at 20°C:</strong> ρ = 0.01678 Ω·mm²/m</p>
+<p><strong>Wire resistance:</strong>
+R = ρ × L / A_wire</p>
+<p>Where:</p>
+<ul>
+<li>L = wire length (m)</li>
+<li>A_wire = cross-sectional area (mm²)</li>
+</ul>
+<p><strong>Allowable current density:</strong> 2–4 A/mm² (conservative for transformers to minimize heating).</p>
+<p>For I_primary = 4.2 A, use A_wire ≈ 4.2 / 3 ≈ 1.4 mm², which corresponds to <strong>16 AWG</strong> (1.6 mm²).
+For I_secondary = 20.8 A, use A_wire ≈ 20.8 / 3 ≈ 7 mm², which corresponds to <strong>8 AWG</strong> (8.4 mm²).</p>
+<p><strong>Rule of thumb:</strong> Use thicker gauge (lower AWG number) for secondary windings (higher current). Primary windings can use thinner wire.</p>
+<div class="info-box">
+<p><strong>Magnet wire:</strong> Windings are made from magnet wire (copper or aluminum, insulated with thin lacquer or enamel). This allows many turns to fit in a small space without insulation taking up excessive volume.</p>
+</div>
+</section>
+<section id="primary-winding">
+<h2>Primary Winding</h2>
+<h3>Preparation</h3>
+<ol>
+<li><strong>Mount the core:</strong> Clamp the core to a wooden frame or vise so it doesn't move during winding.</li>
+<li><strong>Prepare the bobbin:</strong> If winding directly on the core, lightly tape the first leg to hold it. If using a separate bobbin, position it for winding.</li>
+</ol>
+<h3>Winding Technique</h3>
+<ol>
+<li>
+<p><strong>Insert the starting wire:</strong> Tape one end of the magnet wire to the inside of the core (primary leg). This end will be your &quot;start&quot; terminal.</p>
+</li>
+<li>
+<p><strong>Wrap systematically:</strong></p>
+<ul>
+<li>Begin at one end of the coil window (the space between the E and I pieces).</li>
+<li>Wrap the wire around the core in neat, parallel layers.</li>
+<li>Keep tension constant (wrap snugly but don't over-tighten, which can break the insulation).</li>
+<li>Each completed layer: move one wire diameter outward and wrap again.</li>
+</ul>
+</li>
+<li>
+<p><strong>Layer transitions:</strong> As you complete one layer (e.g., 30 turns), move to the next layer. Thin electrical tape can separate layers to prevent insulation wear.</p>
+</li>
+<li>
+<p><strong>Count as you go:</strong> Mark every 10 or 20 turns with a wax pen on the core. This prevents miscounting.</p>
+</li>
+<li>
+<p><strong>Final layer:</strong> Once you've reached the correct number of turns (e.g., 188), tape the ending wire to the core. This is your &quot;end&quot; terminal.</p>
+</li>
+</ol>
+<h3>Insulation Between Windings</h3>
+<p>After the primary is complete, insulate the surface before beginning the secondary.</p>
+<ul>
+<li><strong>Mica tape:</strong> Apply 1–2 layers of mica-backed tape around the primary. Mica is thermally conductive and doesn't melt.</li>
+<li><strong>Kraft paper and varnish:</strong> Wrap the primary with kraft paper and coat with a thin varnish (allows heat transfer while providing electrical insulation).</li>
+<li><strong>Polyimide film:</strong> High-temperature plastic (Kapton), excellent insulation and thermal resistance.</li>
+</ul>
+<p>Aim for 0.5–1 mm of total insulation thickness.</p>
+</section>
+<section id="secondary-winding">
+<h2>Secondary Winding</h2>
+<h3>Winding</h3>
+<p>Follow the same technique as the primary:</p>
+<ol>
+<li>Anchor the starting wire to the insulation layer.</li>
+<li>Wrap neatly in parallel layers, counting continuously.</li>
+<li>Reach the desired turn count (e.g., 38 turns for the 24V output).</li>
+<li>Anchor the ending wire.</li>
+</ol>
+<h3>Winding Sequence Alternatives</h3>
+<p><strong>Concentric (layer by layer):</strong></p>
+<ul>
+<li>Complete all primary turns, then wrap all secondary turns on top.</li>
+<li>Advantages: Simple, good coupling.</li>
+<li>Disadvantages: Higher voltage stress between primary and secondary (worst-case insulation placement).</li>
+</ul>
+<p><strong>Interleaved (alternating sections):</strong></p>
+<ul>
+<li>Wind 20–30 primary turns, then 20–30 secondary turns, repeat.</li>
+<li>Advantages: Lower voltage stress between windings (secondary is &quot;closer&quot; to the primary, reducing edge effects).</li>
+<li>Disadvantages: More complex bookkeeping.</li>
+</ul>
+<p><strong>Bifilar (primary and secondary side-by-side):</strong></p>
+<ul>
+<li>Wind primary and secondary together on a single bobbin (two wires simultaneously).</li>
+<li>Advantages: Excellent coupling, minimal leakage inductance.</li>
+<li>Disadvantages: Difficult to manage two wires; requires thinner gauge wire.</li>
+</ul>
+<p>For a first-time build, concentric is simplest. Use extra insulation between layers if primary current is high.</p>
+</section>
+<section id="insulation">
+<h2>Insulation</h2>
+<p>Insulation prevents current leakage and arcing between windings and from windings to the core.</p>
+<h3>Insulation Classes</h3>
+<p>Transformers are rated by their thermal insulation class, which determines the maximum safe operating temperature:</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Max Temperature</th>
+<th>Material</th>
+<th>Typical Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>105°C</td>
+<td>Cellulose (paper, cotton)</td>
+<td>Small, low-power transformers</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>130°C</td>
+<td>Cellulose + synthetic resin</td>
+<td>Medium transformers</td>
+</tr>
+<tr>
+<td><strong>F</strong></td>
+<td>155°C</td>
+<td>Synthetic ester + fiberglass</td>
+<td>High-power transformers</td>
+</tr>
+<tr>
+<td><strong>H</strong></td>
+<td>180°C</td>
+<td>Silicone rubber + fiberglass</td>
+<td>Industrial, extreme applications</td>
+</tr>
+</tbody>
+</table>
+<p>Most homemade transformers are Class A or B (using paper and standard varnish).</p>
+<h3>Application Methods</h3>
+<ol>
+<li>
+<p><strong>Varnish coating (impregnation):</strong></p>
+<ul>
+<li>After winding, submerge the transformer in insulating varnish (or brush it on).</li>
+<li>The varnish fills air gaps, increasing dielectric strength and thermal conductivity.</li>
+<li><strong>Vacuum impregnation:</strong> Submerge in a vacuum chamber to remove air bubbles—produces superior results but requires equipment.</li>
+<li><strong>Brush application:</strong> Adequate for small transformers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Paper wrapping:</strong></p>
+<ul>
+<li>Wrap kraft paper between windings and around the entire coil assembly (before potting).</li>
+<li>Provides mechanical protection and additional electrical insulation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Oil immersion (for power transformers):</strong></p>
+<ul>
+<li>Large transformers are potted in mineral oil (cooling + insulation).</li>
+<li>Oil is dielectric (doesn't conduct electricity) and highly thermally conductive (disperses heat).</li>
+<li><strong>Caution:</strong> Oil is flammable; not suitable for enclosed spaces without fire suppression.</li>
+</ul>
+</li>
+</ol>
+<h3>Voltage Stress Calculation</h3>
+<p>The insulation must withstand the full voltage difference between primary and secondary.</p>
+<p><strong>Worst-case voltage per layer:</strong>
+If the primary has 100 V/turn (120 V / 188 turns × 1000 = 638 V per turn per 100 amp... actually, let's recalculate):</p>
+<p>Voltage per turn at primary: 120 V / 188 turns ≈ 0.64 V/turn
+Secondary: 24 V / 38 turns ≈ 0.63 V/turn</p>
+<p>The voltage stress is maximum between the outermost primary turn and the innermost secondary turn. If there are N_p turns in the primary and the insulation is T mm thick:</p>
+<p>E = V_total / T (volts per mm)</p>
+<p>For a 120V primary and 1 mm insulation: E = 120 / 1 = 120 V/mm</p>
+<p>Standard mica insulation withstands 15–25 kV/mm, so this is well within limits.</p>
+<div class="warning">
+<p><strong>For high-voltage designs:</strong> A 10:1 step-up transformer (120V → 1200V) requires robust insulation between windings. Use at least 2–3 mm of mica or multiple layers of kraft paper. Consider potting in oil.</p>
+</div>
+</section>
+<section id="assembly-testing">
+<h2>Assembly &amp; Testing</h2>
+<h3>Mechanical Assembly</h3>
+<ol>
+<li>
+<p><strong>Secure the coil:</strong> Clamp the wound primary-secondary assembly tightly to the core using nylon bands or wooden blocks.</p>
+</li>
+<li>
+<p><strong>Connect terminals:</strong> Solder the start and end wires of both primary and secondary to connector lugs (crimp-on connectors for safety).</p>
+</li>
+<li>
+<p><strong>Label clearly:</strong></p>
+<ul>
+<li>Primary input, Primary return</li>
+<li>Secondary output, Secondary return</li>
+<li>(Or P1, P2, S1, S2)</li>
+</ul>
+</li>
+<li>
+<p><strong>Potting (optional):</strong> For moisture protection and cooling, encapsulate the transformer in a potting compound:</p>
+<ul>
+<li>Epoxy resin (strong, thermally conductive if filled with ceramic powder)</li>
+<li>Polyurethane foam (lighter, easier to remove if repairs are needed)</li>
+<li>Mineral oil (traditional for power transformers)</li>
+</ul>
+</li>
+</ol>
+<h3>Testing Before Operation</h3>
+<p><strong>1. Continuity test (ohmmeter):</strong></p>
+<ul>
+<li>Primary winding: Should measure resistance consistent with the wire cross-section and length.
+<ul>
+<li>Formula: R = ρ × L / A = 0.01678 × L / A_mm²</li>
+<li>For 188 turns of 16 AWG wire (typical primary length ≈ 200 m), R ≈ 0.01678 × 200 / 1.6 ≈ 2.1 Ω</li>
+</ul>
+</li>
+<li>Secondary: Should measure proportionally lower (thicker wire, fewer turns).</li>
+</ul>
+<p><strong>2. Insulation resistance (megohmmeter or high-voltage ohmmeter):</strong></p>
+<ul>
+<li>Primary to secondary: Should exceed 10 MΩ (megaohms). Anything less indicates insulation breakdown.</li>
+<li>Primary to core: Should exceed 100 MΩ.</li>
+<li>Secondary to core: Should exceed 100 MΩ.</li>
+<li>Test voltage: 500V DC for low-voltage transformers, 1000V DC for higher-voltage designs.</li>
+</ul>
+<p><strong>3. Turns ratio test (optional but informative):</strong></p>
+<ul>
+<li>Apply a low voltage to the primary (e.g., 12V AC from a function generator).</li>
+<li>Measure the output voltage on the secondary.</li>
+<li>Calculated ratio should match design:
+<ul>
+<li>Measured V_out / Applied V_in = Measured turns ratio</li>
+<li>Should equal N_secondary / N_primary (or close, within 2–5%).</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. No-load current test:</strong></p>
+<ul>
+<li>Apply rated primary voltage (with current-limiting resistor or series ammeter for safety).</li>
+<li>Measure current drawn with no secondary load (light load only).</li>
+<li>A well-designed transformer draws 1–3% of full-load current (magnetizing current).</li>
+<li>Higher values indicate core saturation or insulation leakage.</li>
+</ul>
+<p><strong>5. Load test (small power):</strong></p>
+<ul>
+<li>Connect a small resistive load to the secondary (e.g., a 100W resistor).</li>
+<li>Measure input and output current and voltage.</li>
+<li>Verify the voltage step-up/down ratio (accounting for voltage drop across winding resistance).</li>
+</ul>
+<div class="warning">
+<p><strong>Safety during testing:</strong> High-voltage transformers can deliver lethal shocks even when unpowered (due to capacitance in the core/windings). Always discharge the secondary through a grounding stick (heavy wire attached to a resistor) before touching terminals.</p>
+</div>
+</section>
+<section id="step-up-transformer-specifics">
+<h2>Step-Up Transformer Specifics</h2>
+<p>Step-up transformers (e.g., 120V to 1200V, or 12V to 240V) require special attention to safety.</p>
+<p><strong>Design considerations:</strong></p>
+<ul>
+<li><strong>Lower primary current:</strong> A 10:1 step-up transformer drawing 1 A on the primary draws 0.1 A on the secondary—seeming safer. However, the secondary voltage is 10× higher, creating serious shock hazard.</li>
+<li><strong>Higher secondary voltage stress:</strong> Insulation must be much heavier. Use 3–5 mm of mica or potted in oil.</li>
+<li><strong>Leakage inductance effects:</strong> At step-up ratios, any leakage inductance (imperfect coupling) causes voltage ringing and transient spikes on the secondary. If the secondary is suddenly opened (no load), voltage can ring to 2–3× the nominal output. Protect with a varistor or snubber network.</li>
+</ul>
+<p><strong>Applications:</strong></p>
+<ul>
+<li>Inverters: Stepping 12V DC (via inverter) to 120V AC for distributed systems.</li>
+<li>AC power distribution: Stepping up generator voltage (e.g., 240V) for transmission over long distances, then stepping down at the load.</li>
+</ul>
+</section>
+<section id="step-down-transformer-specifics">
+<h2>Step-Down Transformer Specifics</h2>
+<p>Step-down transformers (e.g., 120V to 24V, or 240V to 12V) are common in off-grid and emergency systems.</p>
+<p><strong>Design considerations:</strong></p>
+<ul>
+<li><strong>Higher secondary current:</strong> A 5:1 step-down transformer drawing 1 A on the primary supplies 5 A on the secondary. Ensure the secondary winding uses thick enough wire (large cross-section).</li>
+<li><strong>Lower secondary voltage:</strong> Lower voltage is safer for the operator, but requires more robust wiring (lower resistance path) to avoid voltage drop over long cable runs.</li>
+<li><strong>Applications:</strong>
+<ul>
+<li>Step 120V AC to 12V AC for battery charging (with rectifier).</li>
+<li>Step 240V AC distribution to 48V or 12V for off-grid microgrids.</li>
+</ul>
+</li>
+</ul>
+<div class="tip">
+<p><strong>Impedance matching:</strong> For maximum power transfer, source and load impedances should match. A transformer can be designed to match impedances. For example, a 50-ohm antenna source feeding a 1 kW load (0.05 Ω impedance) requires a 1:32 step-down transformer (since impedance transforms as the square of the voltage ratio: 50 × (1/32)² ≈ 0.05 Ω).</p>
+</div>
+</section>
+<section id="isolation-transformer-specifics">
+<h2>Isolation Transformer Specifics</h2>
+<p>An isolation transformer (1:1 ratio) provides no voltage change but electrically isolates the secondary from the primary, breaking any conductive path to ground.</p>
+<p><strong>Purposes:</strong></p>
+<ul>
+<li><strong>Safety:</strong> Breaks the ground loop in AC circuits, preventing electrocution if one wire of the load becomes live.</li>
+<li><strong>Noise filtering:</strong> Isolation reduces conducted EMI (electromagnetic interference) from the primary side.</li>
+<li><strong>DC blocking:</strong> Even though AC is passed, any DC component on the input is blocked from the output.</li>
+</ul>
+<p><strong>Design:</strong></p>
+<ul>
+<li>Primary: Wound to match the input voltage (e.g., 120V for mains isolation).</li>
+<li>Secondary: Identical to primary (same number of turns).</li>
+<li>Insulation: Extra-heavy, since the full input voltage is applied across the primary-secondary gap.</li>
+</ul>
+<p><strong>Safety application:</strong> A sensitive electronic device (e.g., medical equipment) connected to an isolation transformer is protected from mains faults. If the primary is shorted to ground, the isolated secondary is still floating and safe to touch.</p>
+</section>
+<section id="efficiency-losses">
+<h2>Efficiency &amp; Losses</h2>
+<p>Transformers dissipate power in two ways:</p>
+<p><strong>1. Copper loss (I²R):</strong></p>
+<ul>
+<li>Resistance in the primary and secondary windings causes heating.</li>
+<li>P_copper = I_primary² × R_primary + I_secondary² × R_secondary</li>
+</ul>
+<p>For the example 500W transformer:</p>
+<ul>
+<li>I_primary = 4.2 A, R_primary ≈ 2.1 Ω → P₁ ≈ 37 W</li>
+<li>I_secondary = 20.8 A, R_secondary ≈ 0.05 Ω → P₂ ≈ 22 W</li>
+<li>Total copper loss ≈ 59 W (11.8% of 500W)</li>
+</ul>
+<p>Thicker wire reduces copper loss but increases cost and core size.</p>
+<p><strong>2. Core loss (hysteresis + eddy):</strong></p>
+<ul>
+<li>Hysteresis loss: Energy dissipated as the core material's magnetic domains repeatedly reverse.</li>
+<li>Eddy current loss: Current loops induced in the core (reduced by lamination).</li>
+<li>P_core ≈ k × f × B² × V (simplified)
+<ul>
+<li>f = frequency</li>
+<li>B = maximum flux density</li>
+<li>V = core volume</li>
+</ul>
+</li>
+</ul>
+<p>For a well-laminated steel core at 60 Hz: P_core ≈ 10–20 W for a 500W transformer.</p>
+<p><strong>Overall efficiency:</strong>
+η = P_out / (P_out + P_losses) = 500 / (500 + 59 + 15) ≈ 89% for a hand-built transformer.</p>
+<p>Industrial transformers achieve 95–99% efficiency through optimized lamination, larger cores, and careful winding geometry.</p>
+<div class="info-box">
+<p><strong>Efficiency trade-offs:</strong> Using larger core (lower core loss) increases cost and weight. Using thicker primary wire (lower copper loss) requires larger bobbin space. Designers balance these for the intended application.</p>
+</div>
+</section>
+<section id="mounting-enclosure">
+<h2>Mounting &amp; Enclosure</h2>
+<h3>Ventilation</h3>
+<p>Transformers generate heat during operation (from core loss and copper loss). Adequate ventilation is critical to prevent thermal damage to the insulation.</p>
+<ul>
+<li><strong>Passive cooling (natural convection):</strong> Mount the transformer vertically (for oil-cooled) or with fins/heat-sinks (for air-cooled).</li>
+<li><strong>Active cooling (forced air):</strong> Fan-cooled transformers can handle higher power densities.</li>
+<li><strong>Heat dissipation rule:</strong> Aim to keep the transformer surface below 80°C under full load (measure with an infrared thermometer or tactile feel—too hot to touch for &gt; 2 seconds indicates overheating).</li>
+</ul>
+<h3>Enclosure</h3>
+<ul>
+<li><strong>Open enclosure:</strong> Adequate for dry, indoor locations. The core and windings are exposed (requires user caution).</li>
+<li><strong>Sealed enclosure:</strong> Protects from moisture and dust. Must have ventilation holes or fan cooling.</li>
+<li><strong>Oil-filled tank:</strong> Traditional for high-power transformers; prevents moisture absorption and improves cooling. Requires secondary containment if rupture is possible.</li>
+</ul>
+<h3>Mounting hardware</h3>
+<ul>
+<li><strong>Vibration isolation:</strong> Mount transformers on rubber pads to reduce audible hum and prevent vibration transmission.</li>
+<li><strong>Mechanical clamps:</strong> Secure the transformer to prevent tip-over, especially if wall-mounted.</li>
+<li><strong>Thermal management:</strong> Leave at least 10 cm clearance around the transformer for air circulation.</li>
+</ul>
+</section>
+<section id="safety">
+<h2>Safety</h2>
+<div class="warning">
+<p><strong>Electrical hazard:</strong> Transformers handle high voltages (especially step-up types). Fatal shock is possible.</p>
+<ul>
+<li>Never work on live windings.</li>
+<li>Always discharge high-voltage windings before touching (use a grounding stick).</li>
+<li>Ensure all exposed terminals and connections are insulated or covered.</li>
+<li>Use appropriate fuses and circuit breakers (rated for the maximum secondary current).</li>
+<li>Test insulation resistance before energizing a newly built transformer.</li>
+</ul>
+</div>
+<p><strong>Thermal hazard:</strong></p>
+<ul>
+<li>Transformers become hot under load.</li>
+<li>Mount away from flammable materials.</li>
+<li>Do not rely on the transformer as a heater; it's inefficient (all dissipated power is waste).</li>
+</ul>
+<p><strong>Mechanical hazard:</strong></p>
+<ul>
+<li>Moving the core or windings during operation can cause mechanical failure.</li>
+<li>Secure all bolts and clamps to prevent loosening from vibration.</li>
+</ul>
+<p>For more on power distribution, see <a href="electrical-generation.html">Electrical Generation</a>, <a href="power-distribution.html">Power Distribution</a>, and <a href="microgrid-design-distribution.html">Microgrid Design &amp; Distribution</a>.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="microgrid-design-distribution.html">Micro-Grid Design &amp; Distribution</a>
+<a href="power-distribution.html">Power Distribution &amp; Micro-Grids</a>
+<a href="electrical-generation.html">Power Generation</a>
+<a href="electricity-basics-for-beginners.html">Electricity Basics for Beginners</a>
+<a href="electrical-wiring.html">Electrical Wiring</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Order — Offline Knowledge Compendium</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        /* Main layout */
+        .reading-order-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header controls */
+        .reading-order-header {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .stat-box {
+            background: var(--card);
+            padding: 1rem 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .control-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .control-btn:hover {
+            background: var(--accent2);
+            transform: translateY(-2px);
+        }
+
+        .control-btn.secondary {
+            background: var(--card);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .control-btn.secondary:hover {
+            background: var(--surface);
+            border-color: var(--accent);
+        }
+
+        .filter-toggle {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .filter-toggle label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .filter-toggle input {
+            cursor: pointer;
+        }
+
+        /* Timeline visualization */
+        .phase-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 500px) {
+            .phase-timeline {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+            }
+        }
+
+        .timeline-phase-bar {
+            background: var(--card);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-phase-bar:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .timeline-phase-bar.completed {
+            border-color: var(--accent2);
+            background: rgba(83, 216, 168, 0.1);
+        }
+
+        .timeline-phase-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-phase-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .timeline-phase-progress {
+            height: 6px;
+            background: var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 0.75rem;
+        }
+
+        .timeline-phase-progress-fill {
+            height: 100%;
+            background: var(--accent2);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Phases container */
+        .phases-container {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .phase {
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .phase.collapsed .phase-content {
+            display: none;
+        }
+
+        .phase:hover {
+            border-color: var(--accent);
+        }
+
+        /* Phase header (clickable to collapse) */
+        .phase-header {
+            background: var(--card);
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .phase-header:hover {
+            background: rgba(233, 69, 96, 0.1);
+        }
+
+        .phase-header-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex: 1;
+        }
+
+        .phase-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--bg);
+            font-size: 2rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .phase-info h2 {
+            font-size: 1.5rem;
+            color: var(--accent2);
+            margin: 0 0 0.3rem 0;
+        }
+
+        .phase-timeframe {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .phase-goal {
+            color: var(--text);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            max-width: 500px;
+        }
+
+        .phase-header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .phase-completion {
+            text-align: right;
+            min-width: 80px;
+        }
+
+        .completion-percent {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--accent2);
+        }
+
+        .completion-label {
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .collapse-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            color: var(--muted);
+        }
+
+        .phase:not(.collapsed) .collapse-icon {
+            transform: rotate(90deg);
+        }
+
+        /* Phase content */
+        .phase-content {
+            padding: 2rem;
+        }
+
+        .phase-goal-box {
+            background: rgba(83, 216, 168, 0.1);
+            border-left: 4px solid var(--accent2);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .phase-goal-box strong {
+            color: var(--accent2);
+        }
+
+        /* Tier sections - collapsible */
+        .tier-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .tier-collapsed .tier-content {
+            display: none;
+        }
+
+        .tier-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid var(--border);
+            cursor: pointer;
+            user-select: none;
+            border-radius: 6px 6px 0 0;
+            transition: background 0.2s;
+        }
+
+        .tier-header:hover {
+            background: rgba(212, 165, 116, 0.08);
+        }
+
+        .tier-chevron {
+            font-size: 0.9rem;
+            color: var(--muted);
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .tier-section:not(.tier-collapsed) .tier-chevron {
+            transform: rotate(90deg);
+        }
+
+        .tier-progress {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent2);
+            margin-left: auto;
+        }
+
+        .tier-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .tier-count {
+            background: var(--card);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-left: auto;
+        }
+
+        .tier-essential .tier-label {
+            color: var(--accent);
+        }
+
+        .tier-essential .tier-header {
+            border-bottom-color: var(--accent);
+        }
+
+        .tier-recommended .tier-label {
+            color: var(--accent2);
+        }
+
+        .tier-recommended .tier-header {
+            border-bottom-color: var(--accent2);
+        }
+
+        .tier-supplementary .tier-label {
+            color: var(--muted);
+        }
+
+        .tier-supplementary .tier-header {
+            border-bottom-color: var(--border);
+            border-bottom-style: dotted;
+        }
+
+        /* Guide list */
+        .guide-list {
+            display: grid;
+            gap: 1rem;
+            padding-top: 1rem;
+        }
+
+        .guide-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: var(--card);
+            border-radius: 6px;
+            border-left: 3px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .tier-essential .guide-item {
+            border-left-color: var(--accent);
+        }
+
+        .tier-recommended .guide-item {
+            border-left-color: var(--accent2);
+        }
+
+        .tier-supplementary .guide-item {
+            border-left-color: var(--muted);
+            opacity: 0.85;
+        }
+
+        .guide-item:hover {
+            background: rgba(233, 69, 96, 0.05);
+            transform: translateX(4px);
+        }
+
+        .guide-item.read {
+            opacity: 0.6;
+        }
+
+        .guide-item.read .guide-link {
+            text-decoration: line-through;
+            color: var(--muted);
+        }
+
+        .guide-checkbox {
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--accent2);
+        }
+
+        .guide-content {
+            flex: 1;
+        }
+
+        .guide-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .guide-link:hover {
+            color: var(--accent2);
+            text-decoration: underline;
+        }
+
+        .guide-description {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+            line-height: 1.4;
+        }
+
+        .guide-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .difficulty-dots {
+            display: inline-flex;
+            gap: 0.2rem;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--muted);
+        }
+
+        .dot.filled {
+            background: var(--accent);
+        }
+
+        .read-time {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Critical actions */
+        .critical-actions {
+            background: rgba(233, 69, 96, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .critical-actions h4 {
+            color: var(--accent);
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+        }
+
+        .critical-actions ul {
+            margin: 1rem 0 0 1.5rem;
+        }
+
+        .critical-actions li {
+            color: var(--text);
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .critical-actions strong {
+            color: var(--accent2);
+        }
+
+        /* Phase summary */
+        .phase-summary {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent2);
+            margin-bottom: 1.5rem;
+        }
+
+        .phase-summary strong {
+            color: var(--accent2);
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .phase-summary p {
+            margin: 0;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Hide read guides when filter is on */
+        .filter-unread .guide-item.read {
+            display: none;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            margin-bottom: 2rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: none;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent2);
+            transform: translateY(-4px);
+        }
+
+        .back-to-top.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Summary section */
+        .phase-summary-section {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border);
+        }
+
+        .phase-summary-section h4 {
+            color: var(--accent2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .phase-summary-section ul {
+            margin-left: 1.5rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .phase-summary-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* What's Next / Review / Category sections */
+        .insight-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .insight-section h2 {
+            font-size: 1.2rem;
+            margin: 0 0 1rem 0;
+        }
+
+        .badge {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-essential {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .badge-recommended {
+            background: var(--accent2);
+            color: var(--bg);
+        }
+
+        .badge-unlocks {
+            color: var(--accent2);
+            font-size: 0.85rem;
+        }
+
+        .review-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            text-decoration: none;
+            border-left: 3px solid #fbbf24;
+        }
+
+        .review-item:hover {
+            background: rgba(212, 165, 116, 0.08);
+        }
+
+        .review-title {
+            color: var(--text);
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .review-age {
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        .review-arrow {
+            color: #fbbf24;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+
+        @media (min-width: 700px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+        }
+
+        .cat-row {
+            background: var(--card);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: background 0.15s;
+            border: 1px solid transparent;
+        }
+
+        .cat-row:hover {
+            background: rgba(212, 165, 116, 0.08);
+        }
+
+        .cat-row.expanded {
+            border-color: var(--accent);
+            grid-column: 1 / -1;
+        }
+
+        .cat-row-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cat-row-chevron {
+            font-size: 0.7rem;
+            color: var(--muted);
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .cat-row.expanded .cat-row-chevron {
+            transform: rotate(90deg);
+        }
+
+        .cat-row-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .cat-row-name {
+            flex: 1;
+            font-weight: 500;
+            color: var(--text);
+            font-size: 0.9rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 0;
+        }
+
+        .cat-row-stats {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-shrink: 0;
+        }
+
+        .cat-row-count {
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+
+        .cat-row-pct {
+            font-weight: 600;
+            font-size: 0.8rem;
+            min-width: 3ch;
+            text-align: right;
+        }
+
+        .cat-bar {
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            margin-top: 0.4rem;
+            overflow: hidden;
+        }
+
+        .cat-bar-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.4s;
+        }
+
+        .cat-guides {
+            display: none;
+            padding-top: 0.75rem;
+            margin-top: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .cat-row.expanded .cat-guides {
+            display: block;
+        }
+
+        .cat-guide-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.4rem 0.75rem;
+            text-decoration: none;
+            color: var(--text);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border-left: 3px solid transparent;
+        }
+
+        .cat-guide-link:hover {
+            background: rgba(212, 165, 116, 0.08);
+        }
+
+        .cat-guide-link.done {
+            opacity: 0.55;
+            border-left-color: var(--accent2);
+        }
+
+        .cat-guide-link.done .cat-guide-title {
+            text-decoration: line-through;
+        }
+
+        .cat-guide-title {
+            flex: 1;
+        }
+
+        .cat-guide-check {
+            color: var(--accent2);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .phase-header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem 1.5rem;
+            }
+
+            .phase-header-left {
+                width: 100%;
+            }
+
+            .phase-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .phase-info h2 {
+                font-size: 1.2rem;
+            }
+
+            .phase-header-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .header-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .stat-box {
+                width: 100%;
+            }
+
+            .guide-item {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .guide-meta {
+                flex-wrap: wrap;
+            }
+
+            .phase-timeline {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .phase-content {
+                padding: 1rem;
+            }
+
+            .guide-item {
+                padding: 0.75rem;
+            }
+
+            .phase-timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .header-controls {
+                flex-direction: column;
+            }
+
+            .control-btn {
+                width: 100%;
+            }
+
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 1rem;
+                right: 1rem;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Disclaimer banner */
+        .tool-disclaimer-banner {
+            background: #2d1a1a;
+            border: 1px solid #d4a574;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 1rem auto;
+            max-width: 1200px;
+            font-size: 0.9rem;
+            color: #f5f0e8;
+            line-height: 1.5;
+        }
+
+        .tool-disclaimer-banner a {
+            color: #d4a574;
+            text-decoration: none;
+        }
+
+        .tool-disclaimer-banner a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hazard indicators */
+        .guide-hazard-badge {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .guide-hazard-badge.red {
+            background: #ef4444;
+        }
+
+        .guide-hazard-badge.orange {
+            background: #f97316;
+        }
+
+        .guide-hazard-badge.yellow {
+            background: #fbbf24;
+        }
+
+        /* Essential tier qualifier */
+        .tier-essential .tier-label::after {
+            content: " (Reading Priority)";
+            font-size: 0.7rem;
+            font-weight: normal;
+            opacity: 0.7;
+        }
+
+        /* Competency qualifier */
+        .phase-completion-qualifier {
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-top: 0.5rem;
+            font-weight: normal;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        /* Footer disclaimer */
+        .footer-disclaimer {
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(212, 165, 116, 0.2);
+            font-size: 0.85rem;
+            color: #8b7355;
+        }
+
+        .footer-disclaimer a {
+            color: #d4a574;
+            text-decoration: none;
+        }
+
+        .footer-disclaimer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <main class="reading-order-container">
+        <!-- Home Navigation -->
+        <div style="margin-top: 2rem; margin-bottom: 1rem;">
+            <a href="../index.html" class="home-btn" aria-label="Home">🏠 Home</a>
+        </div>
+
+        <!-- Liability Warning Banner -->
+        <div class="tool-disclaimer-banner">
+            ⚠️ <strong>Important:</strong> Completing a phase does not certify readiness for real-world application. This reading order is for educational reference only. Professional training, licensing, and supervision may be legally required for activities described in these guides.
+            <a href="../disclaimer.html">Full Disclaimer</a>
+        </div>
+
+        <!-- Header with stats and controls -->
+        <div class="reading-order-header">
+            <div class="header-stats">
+                <div class="stat-box">
+                    <div class="stat-number" id="overall-progress">0%</div>
+                    <div class="stat-label">Overall Progress</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="guides-read">0</div>
+                    <div class="stat-label">Guides Read</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="guides-remaining">284</div>
+                    <div class="stat-label">Remaining</div>
+                </div>
+            </div>
+
+            <div class="header-controls">
+                <button class="control-btn" id="jump-current-phase">↓ Jump to Current Phase</button>
+                <button class="control-btn secondary" id="toggle-expand">Expand/Collapse All</button>
+                <div class="filter-toggle">
+                    <input type="checkbox" id="filter-unread" />
+                    <label for="filter-unread">Show Unread Only</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Insights: Time to Review -->
+        <div id="review-section"></div>
+
+        <!-- Phase Timeline -->
+        <div class="phase-timeline" id="phase-timeline"></div>
+
+        <!-- Phases Container -->
+        <div class="phases-container" id="phases-container"></div>
+
+        <!-- Category Progress -->
+        <div id="category-section"></div>
+    </main>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="back-to-top" title="Back to top">↑</button>
+
+    <!-- Footer Disclaimer -->
+    <div class="footer-disclaimer">
+        <a href="../disclaimer.html">Important Disclaimer</a> · <a href="../terms.html">Terms of Use</a>
+    </div>
+
+    <!-- Include theme sync from main site -->
+    <script src="../shared/theme-sync.js"></script>
+
+    <!-- Load generated category definitions for non-module scripts -->
+    <script src="../js/categories-data.js"></script>
+
+    <script type="module">
+        import * as storage from '../js/storage.js';
+
+        let readingOrderData = null;
+        let guidesData = [];
+        let prereqMap = {};
+        let progressData = {};
+        let completedSet = new Set();
+        let fileToId = {};
+        let isAllExpanded = false;
+
+        const STATE_KEY = 'reading-order-ui-state';
+
+        // ── UI State persistence (back-button support) ──────────────
+        function saveUIState() {
+            const expandedPhases = [];
+            document.querySelectorAll('.phase').forEach(p => {
+                if (!p.classList.contains('collapsed')) expandedPhases.push(p.id);
+            });
+            const expandedTiers = [];
+            document.querySelectorAll('.tier-section').forEach((t, i) => {
+                if (!t.classList.contains('tier-collapsed')) expandedTiers.push(i);
+            });
+            sessionStorage.setItem(STATE_KEY, JSON.stringify({
+                expandedPhases,
+                expandedTiers,
+                scrollY: window.scrollY
+            }));
+        }
+
+        function restoreUIState() {
+            const raw = sessionStorage.getItem(STATE_KEY);
+            if (!raw) return;
+            try {
+                const state = JSON.parse(raw);
+                if (state.expandedPhases) {
+                    state.expandedPhases.forEach(id => {
+                        const el = document.getElementById(id);
+                        if (el) el.classList.remove('collapsed');
+                    });
+                }
+                if (state.expandedTiers) {
+                    const tiers = document.querySelectorAll('.tier-section');
+                    state.expandedTiers.forEach(i => {
+                        if (tiers[i]) tiers[i].classList.remove('tier-collapsed');
+                    });
+                }
+                if (typeof state.scrollY === 'number') {
+                    requestAnimationFrame(() => window.scrollTo(0, state.scrollY));
+                }
+            } catch (e) { /* ignore corrupt state */ }
+        }
+
+        // ── Helpers ─────────────────────────────────────────────────
+        function isGuideRead(file) {
+            const id = fileToId[file];
+            return id ? completedSet.has(id) : false;
+        }
+
+        function getHazardBadge(guide) {
+            if (guide.category && (guide.category === 'medical' || guide.tags?.includes('surgery') || guide.tags?.includes('field-medicine'))) {
+                return '<span class="guide-hazard-badge red" title="Medical/High Risk"></span>';
+            } else if (guide.category && (guide.category === 'chemical' || guide.category === 'weapons' || guide.category === 'defense' || guide.tags?.includes('explosives'))) {
+                return '<span class="guide-hazard-badge orange" title="Chemical/Weapons/High Risk"></span>';
+            } else if (guide.category && (guide.category === 'chemistry' || guide.tags?.includes('fire') || guide.tags?.includes('foraging') || guide.tags?.includes('food-preservation'))) {
+                return '<span class="guide-hazard-badge yellow" title="Caution: Fire/Foraging/Food Safety"></span>';
+            }
+            return '';
+        }
+
+        // ── Phase metadata (timeframe, goal, critical actions, outcomes) ──
+        const phaseMeta = {
+            '-1': {
+                name: 'Preparation',
+                timeframe: 'Before Disaster',
+                goal: 'Prepare now while resources and infrastructure are available — build your go-bag, document your household, and learn what to do when disaster-specific emergencies strike.',
+                criticalActions: [
+                    'Assemble a <strong>go-bag</strong> with 72-hour essentials for each family member',
+                    'Create a <strong>family emergency plan</strong> with meeting points and contacts',
+                    'Complete a <strong>home inventory</strong> of supplies, documents, and critical items',
+                    'Learn <strong>disaster-specific response</strong> protocols for your region (earthquake, hurricane, flood, etc.)',
+                    'Set up <strong>communication redundancy</strong> — radios, backup contacts, offline maps'
+                ],
+                outcomes: [
+                    'Every household member knows the emergency plan',
+                    'Go-bags are packed and accessible',
+                    'Home inventory is documented and backed up',
+                    'Regional disaster protocols are understood',
+                    'This app is cached and ready for offline use'
+                ]
+            },
+            0: {
+                name: 'Immediate Crisis',
+                timeframe: 'Days 1–30',
+                goal: 'Stabilize survival basics — treat injuries, secure water, shelter, food, and orient to surroundings.',
+                criticalActions: [
+                    'Establish <strong>water procurement and purification</strong>',
+                    'Treat <strong>injuries, infections, and acute medical conditions</strong>',
+                    'Build or find <strong>shelter appropriate to climate</strong>',
+                    'Secure <strong>immediate food sources</strong> (foraging, trapping, rationing)',
+                    'Establish <strong>basic sanitation</strong> to prevent disease'
+                ],
+                outcomes: [
+                    'All group members have access to safe water',
+                    'Acute medical emergencies are stabilized',
+                    'Shelter provides protection from elements',
+                    'Food sources identified and rationed',
+                    'Basic hygiene and waste protocols established'
+                ]
+            },
+            1: {
+                name: 'Settlement & Food Security',
+                timeframe: 'Months 1–6',
+                goal: 'Establish permanent shelter, begin agriculture, and build basic infrastructure for a sustainable settlement.',
+                criticalActions: [
+                    'Start <strong>crop cultivation</strong> and seed saving',
+                    'Build <strong>permanent structures</strong> (shelter, storage, workshop)',
+                    'Establish <strong>animal husbandry</strong> if livestock available',
+                    'Create <strong>food preservation</strong> systems (drying, smoking, fermenting)',
+                    'Build <strong>water infrastructure</strong> (wells, irrigation, distribution)'
+                ],
+                outcomes: [
+                    'First crops planted and growing',
+                    'Permanent shelter constructed',
+                    'Food preservation reduces waste',
+                    'Water systems provide reliable supply',
+                    'Community has basic construction capability'
+                ]
+            },
+            2: {
+                name: 'Crafts & Manufacturing',
+                timeframe: 'Months 6–24',
+                goal: 'Develop tool-making, textile production, and metalworking to become materially self-sufficient.',
+                criticalActions: [
+                    'Establish <strong>blacksmithing and basic metalworking</strong>',
+                    'Develop <strong>textile production</strong> (spinning, weaving, cordage)',
+                    'Build <strong>tool manufacturing</strong> capability',
+                    'Create <strong>pottery and ceramics</strong> workshop',
+                    'Develop <strong>woodworking and joinery</strong> skills'
+                ],
+                outcomes: [
+                    'Community can manufacture and repair metal tools',
+                    'Textile production meets basic clothing needs',
+                    'Pottery provides storage and cooking vessels',
+                    'Workshop established with organized tool inventory',
+                    'Skilled craftspeople identified and training apprentices'
+                ]
+            },
+            3: {
+                name: 'Technical Infrastructure',
+                timeframe: 'Years 2–5',
+                goal: 'Build power generation, communications, transportation, and chemical production systems.',
+                criticalActions: [
+                    'Establish <strong>electrical power generation</strong> (hydro, solar, wind)',
+                    'Build <strong>communications infrastructure</strong> (radio, telegraph, signals)',
+                    'Develop <strong>transportation systems</strong> (roads, carts, boats)',
+                    'Create <strong>chemical production</strong> capability (fuels, materials)',
+                    'Begin <strong>scientific measurement and documentation</strong>'
+                ],
+                outcomes: [
+                    'Reliable electrical power available',
+                    'Communication possible between settlements',
+                    'Transportation network supports trade',
+                    'Chemical processes provide essential materials',
+                    'Scientific knowledge being preserved and expanded'
+                ]
+            },
+            4: {
+                name: 'Society & Governance',
+                timeframe: 'Years 3–10',
+                goal: 'Formalize governance, economic systems, education, defense, and cultural institutions.',
+                criticalActions: [
+                    'Establish <strong>democratic governance</strong> and justice systems',
+                    'Develop <strong>economic structures</strong> (trade, currency, taxation)',
+                    'Create <strong>education and knowledge transfer</strong> systems',
+                    'Build <strong>defense and security</strong> infrastructure',
+                    'Preserve <strong>cultural knowledge</strong> and community identity'
+                ],
+                outcomes: [
+                    'Functioning governance with community participation',
+                    'Economic system supports trade and specialization',
+                    'Education system trains next generation',
+                    'Community can defend itself and resolve conflicts',
+                    'Cultural practices maintain morale and cohesion'
+                ]
+            },
+            5: {
+                name: 'Advanced Development',
+                timeframe: 'Years 10+',
+                goal: 'Expand into advanced manufacturing, long-range communications, and regional cooperation.',
+                criticalActions: [
+                    'Scale <strong>manufacturing and industrial processes</strong>',
+                    'Build <strong>regional trade and cooperation</strong> networks',
+                    'Advance <strong>medical and scientific</strong> capability',
+                    'Develop <strong>advanced power and computing</strong> systems'
+                ],
+                outcomes: [
+                    'Community is resilient and self-sustaining',
+                    'Regional cooperation provides mutual aid',
+                    'Technology level supports quality of life',
+                    'Knowledge base is growing and being transmitted'
+                ]
+            }
+        };
+
+        // ── Enrich reading-order data with guide metadata ─────────
+        // Handles two JSON formats:
+        //   Format A (minimal): { phases: [{ phase: 0, title: "...", tiers: { essential: ["slug1", ...] } }] }
+        //   Format B (rich):    { phases: [{ number: 0, name: "...", timeframe: "...", goal: "...",
+        //                          criticalActions: [...], outcomes: [...],
+        //                          tiers: { essential: [{ file: "...", title: "...", ... }] } }] }
+        function enrichReadingOrder(rawData, guides) {
+            const guideBySlug = {};
+            for (const g of guides) {
+                if (g.slug) guideBySlug[g.slug] = g;
+                const filename = (g.file || g.url || '').replace(/^guides\//, '').replace('.html', '');
+                if (filename) guideBySlug[filename] = g;
+            }
+
+            const difficultyMap = { beginner: 1, intermediate: 2, advanced: 3, expert: 4 };
+
+            return {
+                phases: rawData.phases.map(p => {
+                    // Detect format: use existing rich data if present, else look up from phaseMeta
+                    const phaseNum = p.number ?? p.phase ?? 0;
+                    const meta = phaseMeta[phaseNum] || {};
+
+                    const phaseName = p.name || meta.name || p.title || `Phase ${phaseNum}`;
+                    const timeframe = p.timeframe || meta.timeframe || '';
+                    const goal = p.goal || meta.goal || '';
+                    const criticalActions = p.criticalActions || meta.criticalActions || [];
+                    const outcomes = p.outcomes || meta.outcomes || [];
+
+                    // Enrich tier guides: handle both slug strings and already-rich objects
+                    const enrichedTiers = {};
+                    for (const [tierName, items] of Object.entries(p.tiers)) {
+                        enrichedTiers[tierName] = (items || []).map(item => {
+                            // Already a rich object (Format B)?
+                            if (typeof item === 'object' && item !== null && item.file) {
+                                return item;
+                            }
+
+                            // String slug (Format A) — enrich from guides.json
+                            const slug = typeof item === 'string' ? item : '';
+                            const guide = guideBySlug[slug];
+                            if (guide) {
+                                return {
+                                    file: slug + '.html',
+                                    title: guide.title || slug,
+                                    desc: guide.description || '',
+                                    difficulty: difficultyMap[guide.difficulty] || 2,
+                                    category: guide.category || '',
+                                    tags: guide.tags || [],
+                                    icon: guide.icon || ''
+                                };
+                            }
+                            // Fallback for guides not in guides.json
+                            return {
+                                file: slug + '.html',
+                                title: slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+                                desc: '',
+                                difficulty: 2,
+                                category: '',
+                                tags: [],
+                                icon: ''
+                            };
+                        });
+                    }
+
+                    return {
+                        number: phaseNum,
+                        name: phaseName,
+                        timeframe,
+                        goal,
+                        criticalActions,
+                        outcomes,
+                        tiers: enrichedTiers
+                    };
+                })
+            };
+        }
+
+        // ── Initialize ─────────────────────────────────────────────
+        async function init() {
+            try {
+                const [orderRes, guidesRes, prereqRes] = await Promise.all([
+                    fetch('../data/reading-order.json'),
+                    fetch('../data/guides.json'),
+                    fetch('../data/prerequisite-map.json')
+                ]);
+                const rawOrderData = await orderRes.json();
+                guidesData = await guidesRes.json();
+                prereqMap = await prereqRes.json();
+
+                // Enrich reading-order slugs with guide metadata
+                readingOrderData = enrichReadingOrder(rawOrderData, guidesData);
+
+                // Build file→id map
+                for (const g of guidesData) {
+                    const filename = (g.file || g.url || '').split('/').pop();
+                    if (filename) fileToId[filename] = g.id;
+                    // Also map slug-based filenames
+                    if (g.slug) fileToId[g.slug + '.html'] = g.id;
+                }
+
+                // Load progress (same format as guide-common.js)
+                progressData = storage.getProgress();
+                completedSet = storage.getCompletedGuides();
+
+                renderTimeline();
+                renderPhases();
+                renderReview();
+                renderCategories();
+                restoreUIState();
+                updateStats();
+                setupEventListeners();
+            } catch (error) {
+                console.error('Failed to load reading order data:', error);
+            }
+        }
+
+        // ── Timeline ────────────────────────────────────────────────
+        function renderTimeline() {
+            const timeline = document.getElementById('phase-timeline');
+            timeline.innerHTML = '';
+
+            readingOrderData.phases.forEach((phase) => {
+                const phaseProgress = calculatePhaseProgress(phase);
+                const bar = document.createElement('div');
+                bar.className = `timeline-phase-bar ${phaseProgress === 100 ? 'completed' : ''}`;
+                const phaseDisplay = phase.number === -1 ? '🛡️' : phase.number;
+                bar.innerHTML = `
+                    <div class="timeline-phase-number">${phaseDisplay}</div>
+                    <div class="timeline-phase-name">${phase.name}</div>
+                    <div class="timeline-phase-progress">
+                        <div class="timeline-phase-progress-fill" style="width: ${phaseProgress}%"></div>
+                    </div>
+                `;
+                bar.addEventListener('click', () => {
+                    const phaseEl = document.getElementById(`phase-${phase.number}`);
+                    if (phaseEl) phaseEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+                timeline.appendChild(bar);
+            });
+        }
+
+        // ── Phases ──────────────────────────────────────────────────
+        function renderPhases() {
+            const container = document.getElementById('phases-container');
+            container.innerHTML = '';
+
+            readingOrderData.phases.forEach((phase) => {
+                const phaseEl = document.createElement('div');
+                phaseEl.className = phase.number === -1 ? 'phase' : 'phase collapsed';
+                phaseEl.id = `phase-${phase.number}`;
+
+                const phaseProgress = calculatePhaseProgress(phase);
+
+                const phaseNumDisplay = phase.number === -1 ? '🛡️' : phase.number;
+                phaseEl.innerHTML = `
+                    <div class="phase-header">
+                        <div class="phase-header-left">
+                            <div class="phase-number">${phaseNumDisplay}</div>
+                            <div class="phase-info">
+                                <h2>${phase.name}</h2>
+                                <p class="phase-timeframe">${phase.timeframe}</p>
+                            </div>
+                        </div>
+                        <div class="phase-header-right">
+                            <div class="phase-completion">
+                                <div class="completion-percent">${phaseProgress}%</div>
+                                <div class="completion-label">Complete</div>
+                                <div class="phase-completion-qualifier">Reflects reading progress, not competency</div>
+                            </div>
+                            <div class="collapse-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="phase-content">
+                        <div class="phase-goal-box">
+                            <strong>Phase Goal:</strong> ${phase.goal}
+                        </div>
+                        <div class="critical-actions">
+                            <h4>Critical Actions</h4>
+                            <ul>
+                                ${phase.criticalActions.map(a => `<li>${a}</li>`).join('')}
+                            </ul>
+                        </div>
+                        ${renderTiers(phase)}
+                        <div class="phase-summary-section">
+                            <h4>Phase Outcomes</h4>
+                            <ul>
+                                ${phase.outcomes.map(o => `<li>${o}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+
+                const header = phaseEl.querySelector('.phase-header');
+                header.addEventListener('click', () => phaseEl.classList.toggle('collapsed'));
+                container.appendChild(phaseEl);
+            });
+        }
+
+        function renderTiers(phase) {
+            return ['essential', 'recommended', 'supplementary']
+                .map(t => renderTier(phase, t)).join('');
+        }
+
+        function renderTier(phase, tierName) {
+            const guides = phase.tiers[tierName];
+            if (!guides || guides.length === 0) return '';
+
+            const tierProgress = calculateTierProgress(phase, tierName);
+            const tierLabel = tierName.charAt(0).toUpperCase() + tierName.slice(1);
+
+            return `
+                <div class="tier-section tier-${tierName} tier-collapsed">
+                    <div class="tier-header">
+                        <span class="tier-chevron">▶</span>
+                        <h3 class="tier-label">${tierLabel}</h3>
+                        <span class="tier-count">${guides.length} guides</span>
+                        <span class="tier-progress">${tierProgress}% read</span>
+                    </div>
+                    <div class="tier-content">
+                        <div class="guide-list">
+                            ${guides.map(guide => renderGuide(guide)).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderGuide(guide) {
+            const guideId = fileToId[guide.file] || guide.file.replace('.html', '');
+            const isRead = isGuideRead(guide.file);
+            const difficultyDots = Array(4).fill(0).map((_, i) =>
+                `<span class="dot ${i < guide.difficulty ? 'filled' : ''}"></span>`
+            ).join('');
+            const hazardBadge = getHazardBadge(guide);
+
+            return `
+                <div class="guide-item ${isRead ? 'read' : ''}">
+                    <input type="checkbox" class="guide-checkbox"
+                        data-guide-id="${guideId}" data-file="${guide.file}"
+                        ${isRead ? 'checked' : ''} />
+                    <div class="guide-content">
+                        <a href="../guides/${guide.file}" class="guide-link">${hazardBadge}${guide.title}</a>
+                        <p class="guide-description">${guide.desc}</p>
+                        <div class="guide-meta">
+                            <span class="difficulty-dots" title="Difficulty level">${difficultyDots}</span>
+                            <span class="read-time">📖 ~${Math.ceil(guide.difficulty * 8)} min reading time (does not indicate time to competency)</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ── Time to Review ──────────────────────────────────────────
+        function renderReview() {
+            const section = document.getElementById('review-section');
+            if (!section) return;
+
+            const now = Date.now();
+            const needsReview = [];
+
+            for (const [guideId, data] of Object.entries(progressData)) {
+                if (!data?.completed) continue;
+                const updated = data.lastUpdated || data.date;
+                if (!updated) continue;
+                const days = (now - new Date(updated).getTime()) / 86400000;
+                if (days >= 30) {
+                    const guide = guidesData.find(g => g.id === guideId);
+                    if (guide) needsReview.push({ ...guide, daysSince: Math.round(days) });
+                }
+            }
+
+            if (needsReview.length === 0) { section.innerHTML = ''; return; }
+
+            needsReview.sort((a, b) => b.daysSince - a.daysSince);
+            const toShow = needsReview.slice(0, 5);
+
+            let html = '<div class="insight-section"><h2 style="color:#fbbf24;">🔄 Time to Review</h2>';
+            html += '<div class="next-up-list">';
+            for (const g of toShow) {
+                html += `
+                <a href="../${g.url}" class="review-item">
+                    <span>${g.icon || '📖'}</span>
+                    <span class="review-title">${g.title}</span>
+                    <span class="review-age">${g.daysSince}d ago</span>
+                    <span class="review-arrow">Review →</span>
+                </a>`;
+            }
+            html += '</div>';
+            if (needsReview.length > 5) {
+                html += `<p style="color:var(--muted);font-size:0.85rem;margin-top:0.5rem;">+${needsReview.length - 5} more guides could use a review</p>`;
+            }
+            html += '</div>';
+            section.innerHTML = html;
+        }
+
+        // ── Category Progress ───────────────────────────────────────
+        function renderCategories() {
+            const section = document.getElementById('category-section');
+            if (!section) return;
+
+            // Use window.CATEGORIES generated from data/categories.json
+            const categoryNames = window.CATEGORIES.categoryMap;
+            const categoryColors = window.CATEGORIES.categoryColors;
+            const categoryIcons = window.CATEGORIES.categoryMap;
+            const categoryOrder = window.CATEGORIES.categoryOrder;
+
+            const stats = {};
+            const catGuides = {};
+            for (const g of guidesData) {
+                const cat = g.category || 'uncategorized';
+                if (!stats[cat]) stats[cat] = { total: 0, read: 0 };
+                if (!catGuides[cat]) catGuides[cat] = [];
+                stats[cat].total++;
+                if (completedSet.has(g.id)) stats[cat].read++;
+                catGuides[cat].push(g);
+            }
+
+            const ordered = [
+                ...categoryOrder.filter(c => c in stats),
+                ...Object.keys(stats).filter(c => !categoryOrder.includes(c) && c !== 'uncategorized').sort()
+            ];
+
+            let html = '<div class="insight-section"><h2 style="color:var(--accent);">📊 Progress by Category</h2>';
+            html += '<div class="category-grid">';
+
+            for (const cat of ordered) {
+                const s = stats[cat];
+                const pct = s.total > 0 ? Math.round((s.read / s.total) * 100) : 0;
+                const color = categoryColors[cat] || '#d4a574';
+                const iconData = categoryIcons[cat];
+                const icon = iconData?.icon || '📄';
+                const name = categoryNames[cat]?.name || cat;
+
+                const guideLinks = (catGuides[cat] || [])
+                    .sort((a, b) => (a.title || '').localeCompare(b.title || ''))
+                    .map(g => {
+                        const done = completedSet.has(g.id);
+                        return `<a href="../${g.url}" class="cat-guide-link ${done ? 'done' : ''}">
+                            <span>${g.icon || '📖'}</span>
+                            <span class="cat-guide-title">${g.title}</span>
+                            ${done ? '<span class="cat-guide-check">✓</span>' : ''}
+                        </a>`;
+                    }).join('');
+
+                html += `
+                <div class="cat-row" onclick="this.classList.toggle('expanded')">
+                    <div class="cat-row-header">
+                        <span class="cat-row-chevron">▶</span>
+                        <span class="cat-row-icon">${icon}</span>
+                        <span class="cat-row-name">${name}</span>
+                        <span class="cat-row-stats">
+                            <span class="cat-row-count">${s.read}/${s.total}</span>
+                            <span class="cat-row-pct" style="color:${pct === 100 ? 'var(--accent2)' : 'var(--muted)'}">${pct}%</span>
+                        </span>
+                    </div>
+                    <div class="cat-bar"><div class="cat-bar-fill" style="width:${pct}%;background:${color};"></div></div>
+                    <div class="cat-guides" onclick="event.stopPropagation()">${guideLinks}</div>
+                </div>`;
+            }
+
+            html += '</div></div>';
+            section.innerHTML = html;
+        }
+
+        // ── Progress calculation ────────────────────────────────────
+        function calculatePhaseProgress(phase) {
+            let total = 0, read = 0;
+            Object.values(phase.tiers).forEach(guides => {
+                guides.forEach(guide => {
+                    total++;
+                    if (isGuideRead(guide.file)) read++;
+                });
+            });
+            return total === 0 ? 0 : Math.round((read / total) * 100);
+        }
+
+        function calculateTierProgress(phase, tierName) {
+            const guides = phase.tiers[tierName];
+            if (!guides || guides.length === 0) return 0;
+            const read = guides.filter(g => isGuideRead(g.file)).length;
+            return Math.round((read / guides.length) * 100);
+        }
+
+        function updateStats() {
+            const totalGuides = readingOrderData.phases.reduce((acc, phase) => {
+                return acc + Object.values(phase.tiers).reduce((t, guides) => t + guides.length, 0);
+            }, 0);
+
+            let guidesRead = 0;
+            readingOrderData.phases.forEach(phase => {
+                Object.values(phase.tiers).forEach(guides => {
+                    guides.forEach(g => { if (isGuideRead(g.file)) guidesRead++; });
+                });
+            });
+
+            const progress = totalGuides > 0 ? Math.round((guidesRead / totalGuides) * 100) : 0;
+            document.getElementById('overall-progress').textContent = progress + '%';
+            document.getElementById('guides-read').textContent = guidesRead;
+            document.getElementById('guides-remaining').textContent = totalGuides - guidesRead;
+
+            renderTimeline();
+
+            // Update per-phase completion percentages and tier progress labels in-place
+            readingOrderData.phases.forEach(phase => {
+                const phaseEl = document.getElementById(`phase-${phase.number}`);
+                if (!phaseEl) return;
+
+                const completionPercent = phaseEl.querySelector('.completion-percent');
+                if (completionPercent) {
+                    completionPercent.textContent = calculatePhaseProgress(phase) + '%';
+                }
+
+                Object.keys(phase.tiers).forEach(tierName => {
+                    const tierSection = phaseEl.querySelector(`.tier-section.tier-${tierName}`);
+                    if (tierSection) {
+                        const tierProgressEl = tierSection.querySelector('.tier-progress');
+                        if (tierProgressEl) {
+                            tierProgressEl.textContent = calculateTierProgress(phase, tierName) + '% read';
+                        }
+                    }
+                });
+            });
+        }
+
+        // ── Event listeners ─────────────────────────────────────────
+        function setupEventListeners() {
+            // Checkbox handlers — write in guide-common.js format
+            document.addEventListener('change', (e) => {
+                if (e.target.classList.contains('guide-checkbox')) {
+                    const guideId = e.target.dataset.guideId;
+                    if (e.target.checked) {
+                        progressData[guideId] = { completed: true, date: new Date().toISOString() };
+                        completedSet.add(guideId);
+                    } else {
+                        delete progressData[guideId];
+                        completedSet.delete(guideId);
+                    }
+                    storage.setProgress(progressData);
+                    e.target.closest('.guide-item').classList.toggle('read', e.target.checked);
+                    updateStats();
+                    renderReview();
+                    renderCategories();
+                }
+            });
+
+            // Jump to current phase
+            document.getElementById('jump-current-phase').addEventListener('click', () => {
+                const firstUnreadPhase = readingOrderData.phases.find(phase =>
+                    calculatePhaseProgress(phase) < 100
+                );
+                if (firstUnreadPhase) {
+                    const phaseEl = document.getElementById(`phase-${firstUnreadPhase.number}`);
+                    if (phaseEl) phaseEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+
+            // Toggle expand/collapse all
+            document.getElementById('toggle-expand').addEventListener('click', () => {
+                isAllExpanded = !isAllExpanded;
+                document.querySelectorAll('.phase').forEach(phase => {
+                    phase.classList.toggle('collapsed', !isAllExpanded);
+                });
+            });
+
+            // Tier header collapse/expand
+            document.addEventListener('click', (e) => {
+                const tierHeader = e.target.closest('.tier-header');
+                if (tierHeader) {
+                    tierHeader.closest('.tier-section').classList.toggle('tier-collapsed');
+                }
+            });
+
+            // Filter unread only
+            document.getElementById('filter-unread').addEventListener('change', (e) => {
+                document.getElementById('phases-container').classList.toggle('filter-unread', e.target.checked);
+            });
+
+            // Back to top button
+            window.addEventListener('scroll', () => {
+                const btn = document.getElementById('back-to-top');
+                btn.classList.toggle('show', window.scrollY > 300);
+            });
+
+            document.getElementById('back-to-top').addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Save UI state before navigating away (back button, link click, etc.)
+            window.addEventListener('pagehide', saveUIState);
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'hidden') saveUIState();
+            });
+        }
+
+        // Initialize on page load
+        init();
+    </script>
+<script src="disclaimer-dismiss.js"></script>
+</body>
+</html>

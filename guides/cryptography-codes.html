@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/cryptography-codes.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cryptography &amp; Codes - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+nav{max-width:1200px;margin:0 auto 3rem;background-color:var(--surface);padding:1rem;border-radius:8px;border-left:4px solid var(--accent)}nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:1.5rem}.section h2{color:var(--accent2);font-size:1.8rem;margin-bottom:1rem;border-bottom:2px solid var(--accent);padding-bottom:.5rem}.section h3{color:var(--accent);font-size:1.3rem;margin-top:1.5rem;margin-bottom:.8rem}.section p{margin-bottom:1rem;color:var(--text)}.section ul,.section ol{margin-left:2rem;margin-bottom:1rem}.section li{margin-bottom:.5rem}.example{background-color:rgba(83,216,168,0.1);border-left:4px solid var(--accent2);padding:1rem;margin:1rem 0;font-family:'Courier New',monospace;border-radius:4px}.cipher-table{width:100%;border-collapse:collapse;margin:1.5rem 0;background-color:var(--card);font-size:.9rem}.cipher-table th{background-color:var(--accent);color:var(--bg);padding:.75rem;text-align:center;font-weight:bold}.cipher-table td{border:1px solid var(--border);padding:.5rem;text-align:center}.cipher-table tr:nth-child(even){background-color:rgba(83,216,168,0.05)}.vigeinere-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:2rem;margin:2rem 0}.vigenere-table{font-size:.75rem;overflow-x:auto}.svg-container{display:flex;justify-content:center;margin:2rem 0;background-color:var(--card);padding:2rem;border-radius:8px;border:1px solid var(--border)}.highlight{background-color:rgba(233,69,96,0.2);padding:.2rem .4rem;border-radius:3px;color:var(--accent2)}.comparison-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:1.5rem 0}.comparison-card{background-color:var(--card);border:1px solid var(--border);border-radius:6px;padding:1.5rem;border-left:4px solid var(--accent)}.comparison-card h4{margin-top:0;color:var(--accent2)}
+
+</style>
+<meta name="description" content="Cipher systems, code books, one-time pads, steganography, secure communications, and intelligence tradecraft.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/cryptography-codes.html">
+<meta property="og:title" content="Cryptography &amp; Codes">
+<meta property="og:description" content="Cipher systems, code books, one-time pads, steganography, secure communications, and intelligence tradecraft.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Communications", "item": "https://zerotoherohero.com/#sec-communications"},
+    {"@type": "ListItem", "position": 3, "name": "Cryptography &amp; Codes", "item": "https://zerotoherohero.com/guides/cryptography-codes.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cryptography &amp; Codes",
+  "description": "Cipher systems, code books, one-time pads, steganography, secure communications, and intelligence tradecraft.",
+  "dateModified": "2026-02-19",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-147">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-communications">Communications</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Cryptography &amp; Codes</span>
+</nav>
+<header>
+<h1>Cryptography &amp; Codes</h1>
+<p class="subtitle">Cipher systems, code books, one-time pads, steganography, secure communications, and intelligence tradecraft.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~18 min read</span>
+<span class="last-updated">· Updated: 2026-02-19</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview-communication-security-through-encryption">Overview: Communication Security Through Encryption</a></li>
+<li><a href="#theory-of-operation-how-encryption-works">Theory of Operation: How Encryption Works</a></li>
+<li><a href="#equipment-amp-components-what-you-need">Equipment &amp; Components: What You Need</a></li>
+<li><a href="#setup-amp-configuration-preparing-for-secure-communication">Setup &amp; Configuration: Preparing for Secure Communication</a></li>
+<li><a href="#operating-procedures-using-encryption-in-practice">Operating Procedures: Using Encryption in Practice</a></li>
+<li><a href="#range-amp-performance-communication-distance-and-reliability">Range &amp; Performance: Communication Distance and Reliability</a></li>
+<li><a href="#troubleshooting-common-encryption-problems">Troubleshooting: Common Encryption Problems</a></li>
+<li><a href="#practical-cryptanalysis-tutorial">Practical Cryptanalysis Tutorial</a></li>
+<li><a href="#maintenance-protecting-your-encryption-system">Maintenance: Protecting Your Encryption System</a></li>
+<li><a href="#security-amp-encryption-keeping-communications-private">Security &amp; Encryption: Keeping Communications Private</a></li>
+<li><a href="#common-mistakes-and-how-to-avoid-them">Common Mistakes and How to Avoid Them</a></li>
+<li><a href="#operational-security-keeping-the-system-secure">Operational Security: Keeping the System Secure</a></li>
+<li><a href="#reference-tables-quick-lookup">Reference Tables: Quick Lookup</a></li>
+<li><a href="#key-distribution-strategies">Key Distribution Strategies</a></li>
+<li><a href="#safety-preventing-operational-security-disasters">Safety: Preventing Operational Security Disasters</a></li>
+<li><a href="#related-communication-methods">Related Communication Methods</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<h2 id="overview-communication-security-through-encryption">Overview: Communication Security Through Encryption</h2>
+<p>Cryptography is the science of protecting information from unauthorized access by transforming readable messages into unreadable ciphertext. For survival communities, isolated settlements, or anyone operating in low-connectivity environments, understanding classical cryptography enables secure communication without electronic systems.</p>
+<div class="info-box">
+<p><strong>Cryptography vs. Steganography:</strong> Cryptography scrambles messages into unreadable form—observers know a secret message exists but cannot read it. Steganography hides the message's existence entirely—observers see nothing suspicious. Both have survival applications.</p>
+</div>
+<p>The history of cryptography spans millennia. Ancient civilizations recognized that some information—military orders, trade secrets, personal matters—required protection. From the Caesar Cipher to complex mechanical systems, cryptographic methods have evolved alongside cryptanalytic techniques to break them. This guide covers both classical and practical methods suitable for resource-limited environments.</p>
+<h2 id="theory-of-operation-how-encryption-works">Theory of Operation: How Encryption Works</h2>
+<h3>The Mathematical Foundation</h3>
+<p>All encryption relies on a simple principle: transform plaintext (readable message) using a secret key into ciphertext (unreadable form). Only someone possessing the key can reverse the process.</p>
+<p><strong>Basic Encryption Formula:</strong>
+Plaintext + Key → Ciphertext</p>
+<p><strong>Decryption (reverse):</strong>
+Ciphertext + Key → Plaintext</p>
+<h3>Three Categories of Cryptographic Methods</h3>
+<p><strong>Substitution:</strong> Replace characters with different characters according to a key. The simplest method but vulnerable to frequency analysis.</p>
+<p><strong>Transposition:</strong> Rearrange characters in a fixed sequence. Changes order without replacing characters. Often combined with substitution for strength.</p>
+<p><strong>Combination:</strong> Modern systems use multiple layers—substitution, transposition, and additional mathematical operations—to defeat both frequency analysis and pattern recognition.</p>
+<div class="tip">
+<p>Combine multiple methods for stronger security. Encrypt a message, then rearrange the result using transposition. An attacker must defeat both layers.</p>
+</div>
+<h3>Key Principles</h3>
+<p><strong>Key Strength:</strong> Encryption strength depends on key quality, length, and randomness. A longer, more random key resists attack far better than a short, predictable one.</p>
+<p><strong>Algorithm Secrecy vs. Key Secrecy:</strong> Classical cryptography assumes the encryption method is known to the enemy. Security depends entirely on keeping the key secret, not the algorithm. This principle still applies today.</p>
+<p><strong>One-Way Functions:</strong> Some methods (like one-time pads) are mathematically perfect—unbreakable even with infinite computing power. Others (like substitution ciphers) are breakable given time and sufficient ciphertext.</p>
+<h2 id="equipment-amp-components-what-you-need">Equipment &amp; Components: What You Need</h2>
+<h3>Physical Materials</h3>
+<p><strong>Paper and Pen/Pencil:</strong> All classical methods work with paper. Pencil erases completely (important for security); pen is more permanent. Keep waterproof paper for damp environments.</p>
+<p><strong>Reference Materials:</strong></p>
+<ul>
+<li>Code books (printed, identical for sender and receiver)</li>
+<li>Cipher tables (Vigenère grid, reference sheets)</li>
+<li>Shared texts for book ciphers (specific book editions)</li>
+<li>Glossaries or phrase lists for semantic codes</li>
+</ul>
+<p><strong>Secure Storage:</strong></p>
+<ul>
+<li>Metal boxes or waterproof containers for key material</li>
+<li>Fireproof safe if available</li>
+<li>Locked cabinet with limited access</li>
+<li>Desiccant packets to prevent moisture damage</li>
+</ul>
+<h3>Optional Equipment</h3>
+<p><strong>Timing Devices:</strong> For synchronized one-time pad schedules, accurate clocks ensure sender and receiver coordinate key usage timing.</p>
+<p><strong>Randomization Tools:</strong></p>
+<ul>
+<li>Dice (for generating random keys)</li>
+<li>Shuffled playing cards</li>
+<li>Coin flips for binary randomization</li>
+<li>Spinning wheel with segments (for letter selection)</li>
+</ul>
+<p><strong>Recording Devices:</strong> Depending on communication method (radio, physical courier), you may need notebooks for message logging or encryption records.</p>
+<div class="warning">
+<p><strong>Security:</strong> Never store plaintext messages alongside encryption keys. Keep keys in separate, heavily secured locations. If keys are compromised, all encrypted messages become readable retroactively.</p>
+</div>
+<h2 id="setup-amp-configuration-preparing-for-secure-communication">Setup &amp; Configuration: Preparing for Secure Communication</h2>
+<h3>Establishing Shared Keys</h3>
+<p><strong>Pre-Arrangement Requirements:</strong></p>
+<ol>
+<li>
+<p><strong>Agree on Method:</strong> All parties must understand the encryption method—Caesar Cipher, Vigenère, one-time pad, code book, etc.</p>
+</li>
+<li>
+<p><strong>Exchange Keys Securely:</strong> Keys must be shared through channels the adversary cannot access:</p>
+<ul>
+<li>Face-to-face meetings (most secure)</li>
+<li>Trusted couriers traveling through safe routes</li>
+<li>Pre-positioned key material at rendezvous points</li>
+<li>Dead drops at agreed locations</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify Identical Keys:</strong> Confirm that sender and receiver possess identical keys. A single character difference makes decryption impossible.</p>
+</li>
+<li>
+<p><strong>Set Activation Date:</strong> For multi-party communication, specify when keys become active (critical for coordinated operations).</p>
+</li>
+</ol>
+<h3>Code Book Creation</h3>
+<p>For organizations needing rapid, frequent communication:</p>
+<p><strong>Step 1: Identify Common Communications</strong>
+List all message types your group regularly needs to transmit: weather alerts, supply requests, medical emergencies, &quot;all clear&quot; signals, arrival/departure notifications, threat warnings.</p>
+<p><strong>Step 2: Create Entries</strong>
+Assign a unique code (typically a 3-4 digit number) to each phrase or concept:</p>
+<ul>
+<li>0001: All clear, no threats detected</li>
+<li>0002: Medical emergency, supplies needed</li>
+<li>0003: Weather alert—severe storm approaching</li>
+<li>0004: Supply request—transmit list to follow</li>
+<li>0005: Arrival confirmed, team inbound</li>
+</ul>
+<p><strong>Step 3: Print and Distribute</strong>
+Create identical physical copies. Number them (Codebook #1, #2, #3) and distribute to authorized parties. Keep master copy secure.</p>
+<p><strong>Step 4: Establish Destruction Protocol</strong>
+When codebooks become obsolete (compromised or new version distributed), specify how pages are destroyed—burning preferred over shredding, which can be reconstructed.</p>
+<h3>One-Time Pad Preparation</h3>
+<p>For absolute security communication:</p>
+<p><strong>Step 1: Generate Random Key Material</strong>
+Use physical randomization (dice, cards, atmospheric noise) to create completely random character sequences. No pseudo-random methods—only physical randomness provides genuine unpredictability.</p>
+<p><strong>Step 2: Format Key Material</strong>
+Arrange random characters in blocks:</p>
+<pre><code>XMQRT JYPZW FKDGS HVNLB WRPQX CZFMY
+JGSHT WBLMK PDQVX ZFCRY JMHST VLWKP
+</code></pre>
+<p><strong>Step 3: Create Identical Copies</strong>
+Prepare at least two identical printed copies—one for sender, one for receiver. Handwrite to avoid electronic records.</p>
+<p><strong>Step 4: Distribute via Secure Courier</strong>
+Both parties must receive identical one-time pads through completely separate, secure routes. If one copy is intercepted in transit, the backup isn't compromised.</p>
+<p><strong>Step 5: Secure Storage</strong>
+Store one-time pad material in fireproof, waterproof container. Maintain strict access control. Only authorized personnel should know the key location.</p>
+<div class="tip">
+<p>For long-term security, memorize critical key information when possible. An encrypted message you cannot forget is more secure than one stored in writing.</p>
+</div>
+<h2 id="operating-procedures-using-encryption-in-practice">Operating Procedures: Using Encryption in Practice</h2>
+<h3>Encoding a Message Using Vigenère Cipher</h3>
+<p><strong>Given:</strong> Plaintext = &quot;MEET AT DAWN&quot; and Key = &quot;CIPHER&quot;</p>
+<p><strong>Step 1: Prepare Text and Key</strong>
+Remove spaces: MEETATDAWN
+Repeat key: CIPHERCIPE (aligning with plaintext length)</p>
+<p><strong>Step 2: Encrypt Each Letter</strong>
+Using the Vigenère table, find the plaintext letter in the left column, move across to the key letter's column, read the result:</p>
+<table>
+<thead>
+<tr>
+<th>Plaintext</th>
+<th>M</th>
+<th>E</th>
+<th>E</th>
+<th>T</th>
+<th>A</th>
+<th>T</th>
+<th>D</th>
+<th>A</th>
+<th>W</th>
+<th>N</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Key</td>
+<td>C</td>
+<td>I</td>
+<td>P</td>
+<td>H</td>
+<td>E</td>
+<td>R</td>
+<td>C</td>
+<td>I</td>
+<td>P</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Ciphertext</td>
+<td>O</td>
+<td>M</td>
+<td>T</td>
+<td>A</td>
+<td>E</td>
+<td>K</td>
+<td>F</td>
+<td>I</td>
+<td>L</td>
+<td>R</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> Ciphertext = &quot;OMTAEKFILR&quot;</p>
+<p><strong>Step 3: Transmit</strong>
+Encode the message &quot;OMTAEKFILR&quot; in groups of five letters: &quot;OMTAE KFILR&quot; for radio transmission or written dispatch.</p>
+<h3>Decoding Received Ciphertext</h3>
+<p><strong>Given:</strong> Ciphertext = &quot;OMTAEKFILR&quot; and Key = &quot;CIPHER&quot;</p>
+<p><strong>Step 1: Prepare Key</strong>
+Align key with ciphertext length: CIPHERCIPE</p>
+<p><strong>Step 2: Decrypt Each Letter</strong>
+Find the key letter row in the Vigenère table, locate the ciphertext letter in that row, read the plaintext letter at the top of that column.</p>
+<p><strong>Result:</strong> Plaintext = &quot;MEETATDAWN&quot;</p>
+<p><strong>Step 3: Verify Message</strong>
+Check that decrypted message makes sense. Gibberish indicates wrong key, transmission error, or incorrect decryption method.</p>
+<h3>Code Book Message Transmission</h3>
+<p><strong>Scenario:</strong> Emergency coordinator needs to alert the community about a storm.</p>
+<p><strong>Message to Encode:</strong> &quot;Severe storm approaching from west, expect high winds&quot;</p>
+<p><strong>Code Book Lookup:</strong></p>
+<ul>
+<li>0003: Weather alert—severe storm approaching</li>
+<li>0041: High winds expected</li>
+<li>0082: Approaching from west direction</li>
+</ul>
+<p><strong>Transmission:</strong> &quot;0003 0041 0082&quot;</p>
+<p><strong>Reception:</strong> Community member receives &quot;0003 0041 0082,&quot; consults code book, knows immediately what action to take without decryption delay.</p>
+<div class="warning">
+<p><strong>Code Book Limitation:</strong> Code books only work for pre-planned messages. Spontaneous communications or unusual situations require improvisation or fallback to ciphers.</p>
+</div>
+<h2 id="range-amp-performance-communication-distance-and-reliability">Range &amp; Performance: Communication Distance and Reliability</h2>
+<h3>Physical Delivery (Code Books, One-Time Pads)</h3>
+<p><strong>Maximum Range:</strong> Unlimited (limited only by geography and courier availability)</p>
+<p><strong>Reliability:</strong> 100% if courier successfully delivers; 0% if courier is intercepted or lost</p>
+<p><strong>Time to Delivery:</strong> Hours to weeks depending on distance and route</p>
+<p><strong>Environmental Factors:</strong> Terrain difficulty, weather, hostile forces, terrain obstacles</p>
+<p><strong>Practical Limitation:</strong> Requires trusted courier; communication is one-way until return journey</p>
+<h3>Radio Transmission with Encryption</h3>
+<p><strong>Radio Range Factors:</strong></p>
+<ul>
+<li>Equipment power output (typically 0.5W to 50W for field radio)</li>
+<li>Antenna efficiency and height</li>
+<li>Frequency band (VHF, HF, UHF)</li>
+<li>Terrain (line-of-sight preferred; hills/forests reduce range)</li>
+<li>Weather conditions</li>
+</ul>
+<p><strong>Typical Ranges with Standard Equipment:</strong></p>
+<ul>
+<li>VHF handheld (5W): 2-5 miles open terrain, &lt;1 mile forested</li>
+<li>HF radio (10-50W): 10-100 miles depending on atmospheric conditions</li>
+<li>Skywave propagation (bounce off ionosphere): 100+ miles possible at night</li>
+</ul>
+<p><strong>Encryption Impact on Performance:</strong></p>
+<ul>
+<li>Encryption adds no inherent range penalty</li>
+<li>Encrypted messages occupy same bandwidth as unencrypted</li>
+<li>Longer encryption delay when done manually (takes minutes for complex ciphers)</li>
+</ul>
+<h3>Message Density and Transmission Speed</h3>
+<p><strong>Fast Methods (minimal overhead):</strong></p>
+<ul>
+<li>Code books: Transmit &quot;0003&quot; instead of full phrase (25x faster)</li>
+<li>Short ciphers: &quot;OMTAE&quot; vs. &quot;MEETATDAWN&quot;</li>
+</ul>
+<p><strong>Slow Methods (high complexity):</strong></p>
+<ul>
+<li>One-time pad: Encrypt each character individually (time-consuming)</li>
+<li>Vigenère cipher with long key: Lookup each character manually (several minutes)</li>
+</ul>
+<div class="info-box">
+<p><strong>Accuracy vs. Speed:</strong> Rushing encryption increases error risk. A single character error breaks decryption completely. Plan adequate transmission time; don't sacrifice security for speed under pressure.</p>
+</div>
+<h3>Weather and Environmental Impact</h3>
+<p><strong>Paper-Based Methods (code books, one-time pads):</strong></p>
+<ul>
+<li>Rain: Waterproof storage essential; wet paper becomes illegible</li>
+<li>Temperature: Extreme cold doesn't damage encrypted text</li>
+<li>Humidity: Promotes mold; use desiccant</li>
+<li>Wind: Loose pages scatter easily (bind codebooks)</li>
+</ul>
+<p><strong>Radio Transmission:</strong></p>
+<ul>
+<li>Heavy rain: Reduces signal strength 10-20%</li>
+<li>Lightning storms: Dangerous to operate; pause transmission</li>
+<li>Temperature extremes: Radio equipment may malfunction below -10°C or above 50°C</li>
+<li>Solar activity: Affects ionospheric propagation (HF range varies)</li>
+</ul>
+<h2 id="troubleshooting-common-encryption-problems">Troubleshooting: Common Encryption Problems</h2>
+<h3>&quot;My Decryption is Gibberish&quot;</h3>
+<p><strong>Possible Causes:</strong></p>
+<ol>
+<li>
+<p><strong>Wrong Key:</strong> Verify key matches exactly. Even one character difference produces unreadable output.</p>
+<ul>
+<li>Solution: Obtain fresh key from secure source, compare character-by-character</li>
+</ul>
+</li>
+<li>
+<p><strong>Transmission Error:</strong> Message may have been garbled in transit.</p>
+<ul>
+<li>Solution: Request retransmission with error checking (ask sender to repeat message)</li>
+</ul>
+</li>
+<li>
+<p><strong>Wrong Method:</strong> Encrypted with Vigenère but attempted decryption using substitution cipher.</p>
+<ul>
+<li>Solution: Confirm encryption method with sender before attempting decryption</li>
+</ul>
+</li>
+<li>
+<p><strong>Key Position Misalignment:</strong> For Vigenère or similar repeated-key ciphers, starting position matters.</p>
+<ul>
+<li>Solution: Verify key alignment—key's first letter must match plaintext's first letter position</li>
+</ul>
+</li>
+</ol>
+<p><strong>Verification Test:</strong> Decrypt one known message using the same key. If it produces readable output, key and method are correct. If gibberish, investigate method or key.</p>
+<h3>&quot;Key Was Compromised—What Now?&quot;</h3>
+<p><strong>Immediate Actions:</strong></p>
+<ol>
+<li><strong>Stop Transmission:</strong> Cease using compromised key immediately</li>
+<li><strong>Assess Exposure:</strong> Determine how much time the compromised key was active</li>
+<li><strong>Destroy Key Material:</strong> Burn physical copies of compromised keys</li>
+<li><strong>Notify Recipients:</strong> Alert all parties that previous communications may be compromised</li>
+</ol>
+<p><strong>Damage Control:</strong></p>
+<ul>
+<li>All past messages encrypted with the compromised key are potentially readable by the attacker</li>
+<li>Future messages need new keys distributed via secure courier</li>
+<li>Consider any sensitive information in past messages as exposed</li>
+</ul>
+<p><strong>Preventive Measures:</strong></p>
+<ul>
+<li>Rotate keys periodically (weekly, monthly) even if no compromise suspected</li>
+<li>Maintain multiple redundant key copies in separate secure locations</li>
+<li>Limit key knowledge to essential personnel only</li>
+</ul>
+<h3>&quot;We Can't Agree on a Key&quot;</h3>
+<p><strong>When Sender and Receiver Cannot Meet:</strong></p>
+<p>Option 1: <strong>Book Cipher</strong> — Agree on a specific book (title, edition, publication year) that both can obtain publicly. Use the book as key material.</p>
+<p>Option 2: <strong>Delayed Communication</strong> — Arrange courier delivery of key material to a predetermined location before communication begins.</p>
+<p>Option 3: <strong>Multiple Couriers</strong> — Send identical keys via separate couriers; statistically, at least one reaches safely.</p>
+<p>Option 4: <strong>Prearranged Code</strong> — If parties agree on encryption method beforehand (even without seeing each other), one party can memorize basic method and teach recipient verbally.</p>
+<h3>&quot;Message is Too Long for Available Key&quot;</h3>
+<p><strong>One-Time Pad Problem:</strong> Key length doesn't exceed message length</p>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li><strong>Shorter Message:</strong> Break long message into multiple shorter ones, each with its own key</li>
+<li><strong>Compression:</strong> Remove unnecessary words; use abbreviations (&quot;THX&quot; instead of &quot;THANKS&quot;)</li>
+<li><strong>Code System:</strong> Pre-arrange phrase codes so one word represents many concepts</li>
+<li><strong>Sequential Transmission:</strong> Send message in parts, each encrypted with a different key section</li>
+</ol>
+<div class="tip">
+<p><strong>Practical Wisdom:</strong> In survival situations, brevity serves both security and efficiency. Concise messages encrypt faster, transmit quicker, and are less likely to contain sensitive details.</p>
+</div>
+<h2 id="practical-cryptanalysis-tutorial">Practical Cryptanalysis Tutorial</h2>
+<p>Understanding how to break ciphers—cryptanalysis—teaches you where encryption is vulnerable and how to strengthen your own security. This section covers fundamental techniques used to crack substitution and polyalphabetic ciphers.</p>
+<h3>Frequency Analysis: The Foundation of Cryptanalysis</h3>
+<p><strong>Principle:</strong> In any language, letters appear with predictable frequencies. English, for example:</p>
+<ul>
+<li>E is most common (~13% of letters)</li>
+<li>T, A, O, I, N follow (~8-10% each)</li>
+<li>Z, Q, X are rare (&lt;1% each)</li>
+</ul>
+<p>In a substitution cipher, the frequency distribution is preserved—if E encrypts to K, then K will appear with ~13% frequency in ciphertext.</p>
+<p><strong>Frequency analysis process:</strong></p>
+<ol>
+<li><strong>Count all letters</strong> in the ciphertext</li>
+<li><strong>Calculate frequency</strong> (percentage of each letter)</li>
+<li><strong>Compare to expected language distribution</strong></li>
+<li><strong>Make educated guesses</strong> about letter mapping</li>
+<li><strong>Test hypotheses</strong> by attempting decryption</li>
+</ol>
+<p><strong>Example frequency analysis:</strong></p>
+<p>Ciphertext: &quot;URYYB JBEYQ&quot; (11 letters total)</p>
+<ul>
+<li>Letter counts: R appears 2 times (18%), Y appears 2 times (18%), others 1 time each</li>
+<li>Most common letters in ciphertext: R and Y</li>
+<li>Most common in English: E and T</li>
+<li>Hypothesis: R→E, Y→T or R→T, Y→E</li>
+<li>Testing: If R=E and Y=T, &quot;URYYB&quot; becomes &quot;UETTE&quot; — doesn't look like English</li>
+<li>Testing: If R=E and Y=A, &quot;URYYB&quot; becomes &quot;UEAAB&quot; — doesn't look promising</li>
+<li>Continue testing until: R=E and Y=O gives &quot;UEOOB&quot; — still not obvious</li>
+<li>Stepping back: This is very short text; frequency analysis works best with 200+ letters. With few letters, frequency-based guesses are less reliable.</li>
+</ul>
+<p><strong>With longer ciphertext (200+ letters), frequency analysis becomes powerful.</strong></p>
+<h3>Pattern Recognition in Substitution Ciphers</h3>
+<p>Beyond frequency, look for patterns:</p>
+<p><strong>Double letters:</strong> In English, &quot;LL,&quot; &quot;EE,&quot; &quot;SS&quot; are common. If ciphertext shows &quot;XX&quot; appearing frequently, X likely represents a doubled letter (L, E, or S).</p>
+<p><strong>Word structure:</strong> Common short words in English: &quot;THE,&quot; &quot;AND,&quot; &quot;FOR,&quot; &quot;YOU,&quot; &quot;THAT&quot;</p>
+<ul>
+<li>If ciphertext shows a 3-letter word appearing many times, it's likely a common word</li>
+<li>If ciphertext shows a 2-letter word, likely &quot;THE&quot; is split across words</li>
+</ul>
+<p><strong>Digraphs (letter pairs):</strong> Common pairs in English: &quot;TH,&quot; &quot;HE,&quot; &quot;AN,&quot; &quot;IN,&quot; &quot;ER&quot;</p>
+<ul>
+<li>Look for repeated pairs in ciphertext</li>
+<li>If &quot;XY&quot; appears often in ciphertext and appears before vowels, XY might represent &quot;TH&quot;</li>
+</ul>
+<p><strong>Example pattern analysis:</strong>
+Ciphertext with lots of &quot;XY&quot; followed by vowels: &quot;XYA,&quot; &quot;XYE,&quot; &quot;XYI&quot;
+Hypothesis: XY = &quot;TH&quot; (THA, THE, THI)
+Confirmation: If XY=TH, decryption reveals many readable words → hypothesis confirmed</p>
+<h3>Known-Plaintext Attacks</h3>
+<p><strong>Principle:</strong> If you know part of the plaintext message, you can recover the key.</p>
+<p><strong>Scenario:</strong> You intercept a military message. You know it begins with &quot;ATTACK AT DAWN&quot; (common military communication).</p>
+<p>Ciphertext begins: &quot;JFFJLO JF KJVI&quot;
+Known plaintext: &quot;ATTACK AT DAWN&quot;</p>
+<p><strong>Recovery:</strong></p>
+<pre><code>Plaintext:  A T T A C K   A T   D A W N
+Ciphertext: J F F J L O   J F   K J V I
+
+Mapping discovered:
+A → J
+T → F
+C → L
+K → O
+D → K
+W → V
+N → I
+</code></pre>
+<p>With partial key recovered, try decrypting remaining ciphertext using these mappings. Fill in gaps using frequency analysis on remaining unknown letters.</p>
+<p><strong>Defense:</strong> Change keys frequently; assume enemy knows plaintext structure (time, date, weather reports).</p>
+<h3>Index of Coincidence Calculation</h3>
+<p><strong>Principle:</strong> The Index of Coincidence (IC) measures the probability that two randomly selected letters from a ciphertext are identical. Different cipher types produce different IC values:</p>
+<ul>
+<li>Substitution cipher: IC ≈ 0.065 (matches English IC)</li>
+<li>Random text: IC ≈ 0.038</li>
+<li>One-time pad: IC ≈ 0.038</li>
+</ul>
+<p><strong>Calculation (simplified):</strong></p>
+<ol>
+<li>Count frequency of each letter (A appears n_A times, B appears n_B times, etc.)</li>
+<li>Calculate IC = Σ n_i(n_i - 1) / [N(N-1)]
+where N = total letters, n_i = count of letter i</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>IC ≈ 0.065: Likely a substitution cipher (preserves frequency distribution)</li>
+<li>IC ≈ 0.038: Likely a polyalphabetic cipher or one-time pad</li>
+<li>IC between values: Partially polyalphabetic or mixed method</li>
+</ul>
+<p><strong>Practical use:</strong> When intercepting an unknown cipher, calculate IC to determine cipher type. This narrows your attack approach.</p>
+<h3>Kasiski Examination for Polyalphabetic Ciphers</h3>
+<p><strong>Principle:</strong> Polyalphabetic ciphers (like Vigenère) repeat the key. If the same plaintext sequence encrypts at positions where the key aligns, the ciphertext repeats.</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li><strong>Find repeated sequences</strong> in ciphertext (e.g., &quot;XYZ&quot; appears twice)</li>
+<li><strong>Calculate distance</strong> between repetitions (positions where &quot;XYZ&quot; appears)</li>
+<li><strong>Find common factors</strong> (factors common to all distances)</li>
+<li><strong>Key length likely</strong> is the greatest common divisor (GCD) of distances</li>
+</ol>
+<p><strong>Example:</strong>
+Ciphertext with &quot;JHKM&quot; appearing at positions 15 and 88.
+Distance = 88 - 15 = 73</p>
+<p>If &quot;JHKM&quot; also appears at position 161:
+Distance = 161 - 88 = 73</p>
+<p>GCD(73, 73) = 73</p>
+<p>Possible key lengths: 1, 73, or factors of 73.
+If key length = 73, that's very long; key length = 1 would be simple substitution.</p>
+<p>Test: If key length = 1, apply frequency analysis. If that fails, key is likely longer.</p>
+<p>With key length identified (say, 5), extract every 5th letter—these are encrypted with the same key character. Apply frequency analysis to each subset independently.</p>
+<h3>Index of Coincidence for Key Length Finding</h3>
+<p><strong>Alternative to Kasiski:</strong> Test various key lengths by calculating IC for subsets:</p>
+<ul>
+<li>Assume key length = 2, extract positions 1, 3, 5, ... (encrypted with key char 1)</li>
+<li>Calculate IC of this subset</li>
+<li>If IC ≈ 0.065, English-like distribution suggests correct key length</li>
+<li>If IC ≈ 0.038, try next key length</li>
+</ul>
+<p>Key length is confirmed when IC ≈ 0.065 for all subsets.</p>
+<h3>Worked Example: Breaking a Simple Vigenère Cipher</h3>
+<p><strong>Given ciphertext:</strong> &quot;LXFOPVEFRNHR&quot;</p>
+<p><strong>Step 1: Determine if it's substitution or polyalphabetic</strong>
+Calculate IC:</p>
+<ul>
+<li>Letter counts: L(1), X(1), F(2), O(1), P(1), V(1), E(2), R(2), N(1), H(1)</li>
+<li>IC = [2(1) + 2(1) + 2(1)] / [12 × 11] ≈ 0.045</li>
+</ul>
+<p>IC ≈ 0.045 suggests polyalphabetic cipher. Continue with Kasiski/key-length testing.</p>
+<p><strong>Step 2: Find repeated sequences</strong>
+&quot;R&quot; appears at positions 9 and 11 (distance 2)
+No longer repeats to get stronger signal. Test by assuming common key lengths: 2, 3, 4, 5.</p>
+<p><strong>Step 3: Test key length = 3</strong>
+Extract subsets:</p>
+<ul>
+<li>Positions 1, 4, 7, 10: L, P, R, R (frequency: R=50%, P=25%, L=25%)</li>
+<li>Positions 2, 5, 8, 11: X, V, E, H (all unique)</li>
+<li>Positions 3, 6, 9, 12: F, E, F, (only 2 at same position, not enough)</li>
+</ul>
+<p>High frequency of R in subset 1 suggests correct key length = 3.</p>
+<p><strong>Step 4: Apply frequency analysis to each subset</strong>
+Subset 1 (L, P, R, R): R appears 50% → likely &quot;E&quot; or &quot;T&quot;
+If R = E: LPEE (doesn't make sense with key char)
+If R = T: LPTT</p>
+<p>Test R = E in decryption of positions 1, 4, 7, 10. Try different plaintext candidates.</p>
+<p><strong>Step 5: Recover plaintext through trial</strong>
+Assuming key = &quot;CAT&quot; and testing against known words:</p>
+<ul>
+<li>Position 1: L + key char 1 (C) → if plaintext = &quot;A,&quot; key char 1 = L-A = 11th letter shift = K (not C)</li>
+<li>Continue testing.</li>
+</ul>
+<p>After systematic testing, discover key=&quot;CAT&quot; and plaintext=&quot;ATTACKATNOON&quot; → &quot;LXFOPVEFRNHR&quot;</p>
+<p><strong>Conclusion:</strong> Kasiski examination + frequency analysis breaks Vigenère with reasonable ciphertext length (100+ letters). Shorter ciphers require more trial, or known plaintext.</p>
+<div class="tip">
+<p><strong>Defend against cryptanalysis:</strong> Use one-time pads (unbreakable), rotate keys daily, ensure key length matches message length, combine substitution with transposition to obscure frequency patterns.</p>
+</div>
+<h2 id="maintenance-protecting-your-encryption-system">Maintenance: Protecting Your Encryption System</h2>
+<h3>Code Book Care and Rotation</h3>
+<p><strong>Physical Maintenance:</strong></p>
+<ul>
+<li>Store in waterproof, fireproof container</li>
+<li>Keep away from moisture, heat, and direct sunlight</li>
+<li>Check periodically for water damage or deterioration</li>
+<li>Maintain inventory of code book copies and locations</li>
+</ul>
+<p><strong>Periodic Rotation:</strong></p>
+<ul>
+<li>Change code books every 30-90 days (frequency depends on threat level)</li>
+<li>Announce new code book activation date in advance</li>
+<li>Destroy old code books completely (burning preferred)</li>
+<li>Maintain version numbers (Codebook v1, v2, v3, etc.)</li>
+</ul>
+<p><strong>Documentation:</strong></p>
+<ul>
+<li>Keep records of code book distribution (who received copy #1, #2, etc.)</li>
+<li>Note activation and expiration dates</li>
+<li>Log any suspicious activity or possible compromise</li>
+<li>Update recipient list when personnel change</li>
+</ul>
+<h3>One-Time Pad Management</h3>
+<p><strong>Accounting System:</strong>
+Keep careful records of key usage:</p>
+<ul>
+<li>Date key was used</li>
+<li>Message length</li>
+<li>Recipient or sender</li>
+<li>Purpose of message</li>
+</ul>
+<p>Never reuse any key material—even a single character of a one-time pad must be used exactly once.</p>
+<p><strong>Storage Protocol:</strong></p>
+<ul>
+<li>One-time pad material remains in secure storage until needed</li>
+<li>Upon use, mark sections as &quot;USED&quot; clearly</li>
+<li>Remove used pages and destroy them (burn with other sensitive material)</li>
+<li>Maintain strict chain of custody for all key material</li>
+</ul>
+<p><strong>Emergency Destruction:</strong>
+If compromise is imminent (enemy approaching, facility about to be raided), have rapid destruction procedure:</p>
+<ul>
+<li>Burn all key material in fireplace or metal barrel</li>
+<li>Use accelerant if necessary (alcohol, oil)</li>
+<li>Stir ashes to ensure complete destruction</li>
+<li>Scatter ashes far from location</li>
+</ul>
+<h3>Key Personnel Training</h3>
+<p><strong>Minimum Knowledge:</strong></p>
+<ul>
+<li>How to encrypt using assigned method</li>
+<li>How to decrypt messages received</li>
+<li>Why certain precautions exist (not just rules, but understanding)</li>
+<li>Emergency destruction procedures</li>
+</ul>
+<p><strong>Advanced Training:</strong></p>
+<ul>
+<li>Breaking simple ciphers (frequency analysis) to understand vulnerability</li>
+<li>Creating random keys using physical methods</li>
+<li>Detecting tampering or forgery in messages</li>
+<li>Operating in high-stress scenarios (time pressure, incomplete information)</li>
+</ul>
+<p><strong>Regular Drills:</strong></p>
+<ul>
+<li>Monthly encryption/decryption speed drills</li>
+<li>Quarterly key exchange simulations</li>
+<li>Annual review of emergency procedures</li>
+<li>Cross-training so knowledge isn't dependent on one person</li>
+</ul>
+<h2 id="security-amp-encryption-keeping-communications-private">Security &amp; Encryption: Keeping Communications Private</h2>
+<h3>Passive vs. Active Threats</h3>
+<p><strong>Passive Threat (Interception):</strong>
+Attacker listens to communications but doesn't interfere. Goal: read encrypted messages.</p>
+<ul>
+<li><strong>Defense:</strong> Strong encryption, sufficient key length, method switching</li>
+<li><strong>Example:</strong> Enemy radio operator tries to break intercepted messages</li>
+</ul>
+<p><strong>Active Threat (Interception + Modification):</strong>
+Attacker intercepts, modifies, and retransmits messages. Goal: cause confusion, sabotage operations.</p>
+<ul>
+<li><strong>Defense:</strong> Message authentication (signatures, agreed-upon markers), redundancy checking</li>
+<li><strong>Example:</strong> Enemy soldier intercepts supply request, modifies quantities</li>
+</ul>
+<p><strong>Threat-Specific Countermeasures:</strong></p>
+<p>For passive threats, encryption alone suffices. For active threats, add:</p>
+<ul>
+<li>Agreed-upon message format (helps detect corruption)</li>
+<li>Checksums or error-checking codes</li>
+<li>Message numbering (detect missing or reordered messages)</li>
+<li>Authenticator codes (brief phrases both parties know)</li>
+</ul>
+<h3>Frequency Analysis and Pattern Recognition</h3>
+<p><strong>Frequency Analysis Attack:</strong>
+Attacker counts character frequencies in ciphertext, compares to known language patterns.</p>
+<p><strong>Defense Against Frequency Analysis:</strong></p>
+<ul>
+<li>Use Vigenère or polyalphabetic methods (no consistent letter-to-letter mapping)</li>
+<li>Add null characters (meaningless padding) to obscure patterns</li>
+<li>Use code books for semantic security</li>
+<li>Employ one-time pads (perfect protection)</li>
+</ul>
+<p><strong>Pattern Recognition Attack:</strong>
+Attacker looks for repeated sequences in ciphertext to infer key length or recovery.</p>
+<p><strong>Defense Against Pattern Recognition:</strong></p>
+<ul>
+<li>Use long, random keys</li>
+<li>Avoid repeating encrypted phrases (causes repeated ciphertext sequences)</li>
+<li>Vary message format</li>
+<li>Combine transposition with substitution</li>
+</ul>
+<div class="warning">
+<p><strong>Common Mistake:</strong> Encrypting the same message with different keys and sending all versions—an attacker can compare versions to break both keys. Send only one encrypted version.</p>
+</div>
+<h3>Metadata Security (What You Reveal Without Saying It)</h3>
+<p>Even encrypted messages leak information through context:</p>
+<p><strong>Traffic Pattern:</strong> The frequency, timing, and direction of encrypted messages reveals activity level, urgency, and communication links.</p>
+<p><strong>Message Length:</strong> Ciphertext length correlates roughly with plaintext length, revealing message scale.</p>
+<p><strong>Transmission Timing:</strong> Regular transmissions at specific times reveal operational schedules.</p>
+<p><strong>Defenses:</strong></p>
+<ul>
+<li>Transmit dummy messages to obscure genuine traffic</li>
+<li>Vary transmission times and message lengths</li>
+<li>Avoid obvious patterns (weekly reports at same time)</li>
+<li>Use code books so encrypted form is much shorter than plaintext</li>
+</ul>
+<h3>Digital vs. Physical Security</h3>
+<p><strong>Physical Security (Code Books, One-Time Pads):</strong></p>
+<ul>
+<li>Cannot be hacked remotely; must be stolen physically</li>
+<li>Vulnerable to theft, loss, or capture</li>
+<li>No digital footprint; no email or server records</li>
+<li>Requires trusted courier for distribution</li>
+</ul>
+<p><strong>Digital Security (Electronic Encryption):</strong></p>
+<ul>
+<li>Cannot be lost or stolen physically</li>
+<li>Vulnerable to hacking, malware, server compromise</li>
+<li>Creates logs and digital records</li>
+<li>Easy to distribute but hard to guarantee deletion</li>
+</ul>
+<p><strong>Hybrid Approach:</strong> Use physical keys (one-time pads) for most sensitive communication; digital methods for routine or less critical messages.</p>
+<h3>Counter-Surveillance Awareness</h3>
+<p><strong>Identify Suspicious Activity:</strong></p>
+<ul>
+<li>Repeated questioning about communication methods or timing</li>
+<li>Unexpected interest in your code books or key material</li>
+<li>Communications being monitored or delayed</li>
+<li>Personnel movements that suggest surveillance</li>
+<li>Radio direction-finding equipment observing your area</li>
+</ul>
+<p><strong>Response Procedure:</strong></p>
+<ol>
+<li><strong>Cease Operation:</strong> Stop using compromised channels immediately</li>
+<li><strong>Change Keys:</strong> Assume keys may be compromised</li>
+<li><strong>Notify Network:</strong> Alert other parties (using alternate methods) of compromise</li>
+<li><strong>Analyze Exposure:</strong> Determine what messages may have been intercepted</li>
+<li><strong>Document Evidence:</strong> Record suspicious activity and timeline</li>
+</ol>
+<h2 id="common-mistakes-and-how-to-avoid-them">Common Mistakes and How to Avoid Them</h2>
+<h3>Mistake #1: Reusing One-Time Pad Material</h3>
+<p><strong>The Error:</strong> Encrypting two messages with overlapping key material from a one-time pad.</p>
+<p><strong>Why It's Dangerous:</strong></p>
+<pre><code>Message 1: Plaintext XOR Key = Ciphertext1
+Message 2: Plaintext XOR Key = Ciphertext2
+
+Attacker: Ciphertext1 XOR Ciphertext2 = Plaintext1 XOR Plaintext2
+</code></pre>
+<p>With two plaintext-like messages XORed together, frequency analysis recovers both.</p>
+<p><strong>Prevention:</strong> Maintain strict accounting of one-time pad usage. Cross off or mark used sections immediately. Before encrypting, verify no part of the key has been used.</p>
+<h3>Mistake #2: Short, Predictable Keys</h3>
+<p><strong>The Error:</strong> Using a memorized short phrase like &quot;CIPHER&quot; as Vigenère key for all messages.</p>
+<p><strong>Why It's Dangerous:</strong> Short keys create repeated patterns. An attacker detects key length (6 letters) through the Kasiski examination, then breaks each layer.</p>
+<p><strong>Prevention:</strong> Use longer keys (20+ characters minimum), random keys, or change keys frequently. If memorization is necessary, use phrase-based keys (first letters of longer phrases).</p>
+<h3>Mistake #3: Using Same Method for All Messages</h3>
+<p><strong>The Error:</strong> Always encrypting with Vigenère, never varying methods.</p>
+<p><strong>Why It's Dangerous:</strong> Attacker learns your preference, focuses cryptanalysis on that method, breaks all traffic.</p>
+<p><strong>Prevention:</strong> Use different methods for different sensitivity levels:</p>
+<ul>
+<li>Routine/low-sensitivity: Simple substitution</li>
+<li>Important: Vigenère with long key</li>
+<li>Critical: One-time pad</li>
+<li>Mixed methods confuse attackers</li>
+</ul>
+<h3>Mistake #4: Storing Key Near Encrypted Messages</h3>
+<p><strong>The Error:</strong> Keeping code book in same drawer as encrypted messages.</p>
+<p><strong>Why It's Dangerous:</strong> Single compromise exposes all encrypted messages simultaneously and retroactively.</p>
+<p><strong>Prevention:</strong> Separate key material physically and geographically:</p>
+<ul>
+<li>Code books locked in office safe</li>
+<li>Encrypted messages stored elsewhere</li>
+<li>Backup keys hidden in different location</li>
+<li>Mental note of critical keys; don't write them down</li>
+</ul>
+<h3>Mistake #5: Not Testing Decryption Before Critical Use</h3>
+<p><strong>The Error:</strong> Encrypting an important message, discovering later that recipient cannot decrypt (wrong method, key error, transmission corruption).</p>
+<p><strong>Prevention:</strong> Before deploying an encryption system for critical communication:</p>
+<ul>
+<li>Test with dummy messages using real equipment</li>
+<li>Verify sender encryption and receiver decryption match</li>
+<li>Confirm key material is identical on both ends</li>
+<li>Practice procedure under time pressure (simulating emergency)</li>
+</ul>
+<h3>Mistake #6: Incomplete Message Formatting</h3>
+<p><strong>The Error:</strong> Transmitting encrypted message without indicating encryption method, key identification, or recipient.</p>
+<p><strong>Example of Confusion:</strong>
+Sender transmits: &quot;OMTAEKFILR&quot;
+Receiver receives same, but wonders: Is this Vigenère or substitution cipher? Which key? Is it for me or someone else?</p>
+<p><strong>Prevention:</strong> Establish message format standard:</p>
+<ul>
+<li>Message format: [METHOD] [KEYID] [RECIPIENT] [CIPHERTEXT]</li>
+<li>Example: &quot;VIG KEY-047 OUTPOST-2 OMTAEKFILR&quot;</li>
+<li>Include message sequence number if transmitting multiple messages</li>
+<li>Add checksum or verification code if possible</li>
+</ul>
+<h3>Mistake #7: Transmitting Plaintext Before Encryption</h3>
+<p><strong>The Error:</strong> Drafting message, sending draft by radio without encryption, then later sending encrypted version. Or discussing message content openly, then sending encrypted version.</p>
+<p><strong>Why It's Dangerous:</strong> Listeners get plaintext and can compare to ciphertext, breaking the encryption instantly.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Compose sensitive messages in writing only</li>
+<li>Never discuss planned communication content openly</li>
+<li>Draft only when alone or with authorized personnel</li>
+<li>Encrypt before transmitting; never send draft versions</li>
+<li>Destroy drafts after encryption and transmission</li>
+</ul>
+<h3>Mistake #8: Ignoring Transmission Errors</h3>
+<p><strong>The Error:</strong> Receiving &quot;OMTAEKFILT&quot; instead of &quot;OMTAEKFILR&quot; and assuming it's minor, attempting decryption anyway.</p>
+<p><strong>Why It's Dangerous:</strong> Even one character error produces complete gibberish. Accepting corrupted ciphertext leads to wrong decryption and misunderstood messages.</p>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Request retransmission if message seems corrupted</li>
+<li>Use simple error-checking (ask recipient to repeat last 3 letters)</li>
+<li>Establish confirmation protocol: &quot;Did you receive OMTAE KFILR? Confirm final letter is R.&quot;</li>
+<li>Log any transmission errors and adjust procedures accordingly</li>
+</ul>
+<h2 id="operational-security-keeping-the-system-secure">Operational Security: Keeping the System Secure</h2>
+<h3>Personnel Security</h3>
+<p><strong>Clearance Standards:</strong> Only train encryption personnel who:</p>
+<ul>
+<li>Have demonstrated trustworthiness and commitment</li>
+<li>Have no financial desperation or obvious coercion vulnerability</li>
+<li>Are not known to be compromised by hostile forces</li>
+<li>Accept responsibility for encryption security</li>
+</ul>
+<p><strong>Knowledge Compartmentalization:</strong></p>
+<ul>
+<li>Not everyone needs to know all methods</li>
+<li>Radio operators don't need to understand one-time pad generation</li>
+<li>Key custodians don't need to know actual message content</li>
+<li>Couriers transport keys without understanding their use</li>
+</ul>
+<p><strong>Exit Procedure:</strong> When trained personnel leave the organization:</p>
+<ul>
+<li>Collect all key material they possessed</li>
+<li>Assume any keys they handled may be compromised</li>
+<li>Change relevant codes/keys</li>
+<li>Debrief them on security protocols they must maintain</li>
+<li>Document the departure in security records</li>
+</ul>
+<h3>Facility Security</h3>
+<p><strong>Physical Protection:</strong></p>
+<ul>
+<li>Store key material in locked container, preferably fireproof and waterproof</li>
+<li>Limit access to encryption area (no casual visitors)</li>
+<li>Establish check-in/check-out logs for key material</li>
+<li>Maintain clean desk policy (no plaintext or keys left visible)</li>
+<li>Use curtains or barriers to prevent sightseeing of encrypted messages</li>
+</ul>
+<p><strong>Environmental Hazards:</strong></p>
+<ul>
+<li>Protect against water damage (raised storage, desiccant)</li>
+<li>Protect against fire (fireproof container, but also backup copies)</li>
+<li>Protect against mold (temperature and humidity control)</li>
+<li>Protect against insect damage (sealed containers, occasional inspection)</li>
+</ul>
+<p><strong>Counter-Surveillance:</strong></p>
+<ul>
+<li>Vary location of encryption operations</li>
+<li>Use different buildings or rooms occasionally</li>
+<li>Maintain blackout curtains to prevent observation</li>
+<li>Shield radio transmissions if operating in hostile territory</li>
+</ul>
+<h3>Message Security</h3>
+<p><strong>Before Transmission:</strong></p>
+<ul>
+<li>Compose only when necessary</li>
+<li>Use briefest language possible (less content to encrypt)</li>
+<li>Avoid including unnecessary details</li>
+<li>Remove identifying information if operational security requires</li>
+</ul>
+<p><strong>During Transmission:</strong></p>
+<ul>
+<li>Use secure channel (not public radio if hostile listening expected)</li>
+<li>Vary transmission time and frequency</li>
+<li>Acknowledge receipt without repeating sensitive content</li>
+<li>Transmit only one encrypted version (no backups sent separately)</li>
+</ul>
+<p><strong>After Transmission:</strong></p>
+<ul>
+<li>Destroy plaintext drafts immediately</li>
+<li>Maintain encrypted copy for records (if necessary)</li>
+<li>Keep logs of what was sent, when, to whom (but not content)</li>
+<li>Periodically purge old encrypted archives per retention policy</li>
+</ul>
+<h3>Destruction Protocol</h3>
+<p><strong>Regular Destruction Schedule:</strong></p>
+<ul>
+<li>Destroy old code books when replaced (immediately, completely)</li>
+<li>Destroy used one-time pad pages (daily or after each message)</li>
+<li>Destroy plaintext drafts same day as transmission</li>
+<li>Destroy outdated keys according to security policy</li>
+</ul>
+<p><strong>Proper Destruction Methods:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>Method</th>
+<th>Verification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paper (code books, drafts)</td>
+<td>Burn in fireplace or barrel</td>
+<td>Stir ashes, confirm nothing legible</td>
+</tr>
+<tr>
+<td>One-time pads (if fireproof container not available)</td>
+<td>Burn completely</td>
+<td>Remove from heat only after turning to ash</td>
+</tr>
+<tr>
+<td>Ink documents</td>
+<td>Burn or shred then burn</td>
+<td>Shredding alone allows reconstruction</td>
+</tr>
+<tr>
+<td>Metal containers with keys</td>
+<td>Destroy if compromised; recycle if secure</td>
+<td>Cut with metal shears if available</td>
+</tr>
+</tbody>
+</table>
+<div class="warning">
+<p><strong>Never:</strong> Throw encrypted material in normal trash, bury where it might be excavated, or discard where reconstruction is possible. Assume hostile forces may recover your garbage.</p>
+</div>
+<h2 id="reference-tables-quick-lookup">Reference Tables: Quick Lookup</h2>
+<h3>Cipher Comparison Table</h3>
+<table>
+<thead>
+<tr>
+<th>Cipher Type</th>
+<th>Encryption Speed</th>
+<th>Security Level</th>
+<th>Key Length</th>
+<th>Vulnerability</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Caesar</td>
+<td>Very fast</td>
+<td>None</td>
+<td>1 number</td>
+<td>Brute force (26 options)</td>
+<td>Education only</td>
+</tr>
+<tr>
+<td>Substitution</td>
+<td>Fast</td>
+<td>Very weak</td>
+<td>26 characters</td>
+<td>Frequency analysis</td>
+<td>Casual obfuscation</td>
+</tr>
+<tr>
+<td>Vigenère</td>
+<td>Moderate</td>
+<td>Weak-Moderate</td>
+<td>6-100+ characters</td>
+<td>Kasiski examination</td>
+<td>Historical study, moderate threats</td>
+</tr>
+<tr>
+<td>Transposition</td>
+<td>Moderate</td>
+<td>Weak alone</td>
+<td>Variable</td>
+<td>Pattern recognition</td>
+<td>Best combined with substitution</td>
+</tr>
+<tr>
+<td>One-Time Pad</td>
+<td>Slow</td>
+<td>Perfect</td>
+<td>= plaintext length</td>
+<td>None (mathematically unbreakable)</td>
+<td>Highest sensitivity, small messages</td>
+</tr>
+<tr>
+<td>Book Cipher</td>
+<td>Moderate</td>
+<td>Moderate</td>
+<td>Entire book</td>
+<td>Known-plaintext attack if book identified</td>
+<td>Covert operations, historical</td>
+</tr>
+<tr>
+<td>Code Book</td>
+<td>Very fast</td>
+<td>Moderate</td>
+<td>Phrase list</td>
+<td>Capture of code book</td>
+<td>Military, emergency services</td>
+</tr>
+</tbody>
+</table>
+<h3>Quick Encryption Decision Matrix</h3>
+<p><strong>Choose Your Method by Threat Level:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Threat Level</th>
+<th>Recommended Method</th>
+<th>Why</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low (curious observers)</td>
+<td>Substitution cipher</td>
+<td>Fast, sufficient against casual reading</td>
+<td>Breaks in hours</td>
+</tr>
+<tr>
+<td>Moderate (interested adversary)</td>
+<td>Vigenère (long random key)</td>
+<td>Strong against hand decryption, fast</td>
+<td>Breaks in days with computer</td>
+</tr>
+<tr>
+<td>High (professional cryptanalyst)</td>
+<td>One-time pad or code book</td>
+<td>Proven secure or operational efficiency</td>
+<td>High logistics burden</td>
+</tr>
+<tr>
+<td>Critical (nation-state threat)</td>
+<td>One-time pad for most sensitive, book cipher for authentication</td>
+<td>Maximum security available classically</td>
+<td>Requires trusted distribution</td>
+</tr>
+</tbody>
+</table>
+<h3>Letter Frequency Reference (English Language)</h3>
+<p>For frequency analysis countermeasures, typical English plaintext frequencies:</p>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Letter</th>
+<th>Frequency</th>
+<th>Rank</th>
+<th>Letter</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>E</td>
+<td>12.7%</td>
+<td>14</td>
+<td>S</td>
+<td>6.3%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>T</td>
+<td>9.1%</td>
+<td>15</td>
+<td>D</td>
+<td>4.3%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A</td>
+<td>8.2%</td>
+<td>16</td>
+<td>L</td>
+<td>4.0%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>O</td>
+<td>7.5%</td>
+<td>17</td>
+<td>C</td>
+<td>2.8%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>I</td>
+<td>7.0%</td>
+<td>18</td>
+<td>U</td>
+<td>2.8%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>N</td>
+<td>6.7%</td>
+<td>19</td>
+<td>M</td>
+<td>2.4%</td>
+</tr>
+<tr>
+<td>7</td>
+<td>S</td>
+<td>6.3%</td>
+<td>20</td>
+<td>W</td>
+<td>2.4%</td>
+</tr>
+</tbody>
+</table>
+<p>Substitution ciphers preserve these frequencies, making them vulnerable. Vigenère and one-time pads do not.</p>
+<h2 id="key-distribution-strategies">Key Distribution Strategies</h2>
+<h3>Face-to-Face Exchange</h3>
+<p><strong>Most Secure Method:</strong> Direct, private meeting between authorized parties.</p>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Arrange secure, private location</li>
+<li>Both parties verify identity</li>
+<li>Exchange key material (code book, one-time pad sheets, agreed book title)</li>
+<li>Establish activation date and method-specific parameters</li>
+<li>Separate and maintain key security</li>
+</ol>
+<p><strong>Timeline:</strong> Can be accomplished in minutes</p>
+<p><strong>Risk:</strong> Requires both parties to be in same location at same time</p>
+<h3>Trusted Courier</h3>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Prepare key material in sealed envelope</li>
+<li>Provide courier with recognition phrase or signal</li>
+<li>Courier travels to recipient location via indirect route</li>
+<li>Recipient verifies courier identity before accepting envelope</li>
+<li>Courier destroys evidence of delivery (burns envelope if paper)</li>
+</ol>
+<p><strong>Timeline:</strong> Hours to days depending on distance</p>
+<p><strong>Risk:</strong> Courier could be intercepted, questioned, or compromised. Ideally, courier doesn't know key contents.</p>
+<h3>Multiple Redundant Routes</h3>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Prepare identical key material in three copies</li>
+<li>Send via three different couriers</li>
+<li>Each courier takes completely separate route</li>
+<li>Recipient waits for first successful delivery before encrypting</li>
+</ol>
+<p><strong>Timeline:</strong> Longest route sets the schedule</p>
+<p><strong>Risk:</strong> Statistically, attacker can't intercept all three routes. Some risk acceptable for critical keys.</p>
+<h3>Dead Drop Method</h3>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Pre-arrange dead drop location (park bench, tree hollow, building location)</li>
+<li>Pre-arrange activation date (&quot;key is active after 2026-03-15&quot;)</li>
+<li>Sender deposits key material at agreed location and time</li>
+<li>Recipient retrieves after sender departs</li>
+<li>Both parties report retrieval through secondary communication</li>
+</ol>
+<p><strong>Timeline:</strong> Flexible; doesn't require simultaneous presence</p>
+<p><strong>Risk:</strong> Key material remains vulnerable while at drop location. Must be secure location with minimal observation.</p>
+<h2 id="safety-preventing-operational-security-disasters">Safety: Preventing Operational Security Disasters</h2>
+<h3>Threat Identification Checklist</h3>
+<p>Before deploying any cryptographic system, assess actual threats:</p>
+<div class="tip">
+<p><strong>Reality Check:</strong> The level of encryption should match the actual threat level. Using one-time pads against casual eavesdroppers wastes resources; using substitution ciphers against professional cryptanalysts is inadequate.</p>
+</div>
+<p><strong>Questions to Answer:</strong></p>
+<ul>
+<li>Who specifically might want to intercept our communications? (Competitors, government, hostile military?)</li>
+<li>How much effort would they dedicate to breaking our encryption? (Casual interest vs. dedicated cryptanalysis?)</li>
+<li>What is the consequence if our message is intercepted? (Embarrassment vs. operational failure vs. death?)</li>
+<li>How sensitive is the information? (Personal preference vs. strategic plan vs. life-safety decision?)</li>
+<li>How long must the information remain secret? (Days vs. years vs. forever?)</li>
+</ul>
+<p><strong>Threat Assessment Results Guide Encryption Method Choice.</strong></p>
+<h3>Human Error Mitigation</h3>
+<p><strong>Training Reduces Errors:</strong></p>
+<ul>
+<li>Encrypt/decrypt practice before critical use</li>
+<li>Understand the method, don't just follow steps robotically</li>
+<li>Know what &quot;correct&quot; decryption looks like</li>
+<li>Understand consequences of errors</li>
+</ul>
+<p><strong>Redundancy Prevents Single Points of Failure:</strong></p>
+<ul>
+<li>Backup keys in separate locations</li>
+<li>Cross-train multiple people on critical methods</li>
+<li>Verify messages through secondary channel before action</li>
+<li>Keep spare code books in addition to primary copy</li>
+</ul>
+<p><strong>Stress Testing:</strong></p>
+<ul>
+<li>Practice encryption/decryption under time pressure</li>
+<li>Simulate incomplete or corrupted messages</li>
+<li>Drill emergency key destruction procedures</li>
+<li>Test system with missing personnel (key person is absent)</li>
+</ul>
+<h3>Escalation and Compromise Response</h3>
+<p><strong>If Encryption is Compromised:</strong></p>
+<ol>
+<li><strong>Immediate:</strong> Stop using compromised system</li>
+<li><strong>Notification:</strong> Inform all parties (through secondary channel)</li>
+<li><strong>Assessment:</strong> Determine scope of compromise—what messages were sent?</li>
+<li><strong>Damage:</strong> Assume all past messages encrypted with compromised key are readable</li>
+<li><strong>Prevention:</strong> Implement new key material immediately</li>
+<li><strong>Investigation:</strong> Determine how compromise occurred to prevent recurrence</li>
+<li><strong>Documentation:</strong> Record incident, response, and lessons learned</li>
+</ol>
+<p><strong>Post-Compromise Actions:</strong></p>
+<ul>
+<li>Change all encryption methods and keys</li>
+<li>Assume hostile force has captured code book or key material</li>
+<li>Review all recent communications for operational impact</li>
+<li>Alert recipients to change passwords or operational plans if revealed</li>
+<li>Increase counter-surveillance activities</li>
+</ul>
+<h3>Information Classification and Need-to-Know</h3>
+<p><strong>Classify Information by Sensitivity:</strong></p>
+<ul>
+<li><strong>Unclassified:</strong> Can be transmitted openly (weather, public information)</li>
+<li><strong>Restricted:</strong> Should be encrypted but lower security method acceptable (routine operational details)</li>
+<li><strong>Confidential:</strong> Requires strong encryption (specific plans, personal information)</li>
+<li><strong>Secret:</strong> Requires maximum security (strategic plans, life-safety decisions, military operations)</li>
+<li><strong>Top Secret:</strong> Only one-time pad or no transmission; face-to-face communication only</li>
+</ul>
+<p><strong>Limit Key Distribution to Need-to-Know:</strong></p>
+<ul>
+<li>Not everyone needs the same keys</li>
+<li>Compartmentalize so no individual has complete picture</li>
+<li>If one person is compromised, only their portion is exposed</li>
+<li>Cross-train on methods but not on all active keys</li>
+</ul>
+<h2 id="related-communication-methods">Related Communication Methods</h2>
+<p>For comprehensive communication security, combine cryptography with other survival communication methods:</p>
+<ul>
+<li><strong>Signals &amp; Communication:</strong> Morse code, radio protocols, semaphore for non-encrypted transmission</li>
+<li><strong>Archival Records:</strong> Document preservation and authenticity verification</li>
+<li><strong>Governance &amp; Organization:</strong> Establishing secure courier systems and trust networks</li>
+</ul>
+<p><svg aria-label="Codes, Ciphers &amp; Secure Communication diagram 1" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg"><text fill="#53d8a8" font-size="28" font-weight="bold" text-anchor="middle" x="500" y="40"> Vigenère Table (Tabula Recta) </text><text fill="#aaa" font-size="12" x="50" y="80"> Key → </text><g id="column-headers"><text fill="#e94560" font-size="11" text-anchor="middle" x="80" y="80"> A </text><text fill="#e94560" font-size="11" text-anchor="middle" x="100" y="80"> B </text><text fill="#e94560" font-size="11" text-anchor="middle" x="120" y="80"> C </text><text fill="#e94560" font-size="11" text-anchor="middle" x="140" y="80"> D </text><text fill="#e94560" font-size="11" text-anchor="middle" x="160" y="80"> E </text><text fill="#e94560" font-size="11" text-anchor="middle" x="180" y="80"> F </text><text fill="#e94560" font-size="11" text-anchor="middle" x="200" y="80"> G </text><text fill="#e94560" font-size="11" text-anchor="middle" x="220" y="80"> H </text><text fill="#e94560" font-size="11" text-anchor="middle" x="240" y="80"> I </text><text fill="#e94560" font-size="11" text-anchor="middle" x="260" y="80"> J </text></g><g id="row-labels"><text fill="#53d8a8" font-size="11" text-anchor="middle" x="70" y="100"> A </text><text fill="#53d8a8" font-size="11" text-anchor="middle" x="70" y="120"> B </text><text fill="#53d8a8" font-size="11" text-anchor="middle" x="70" y="140"> C </text><text fill="#53d8a8" font-size="11" text-anchor="middle" x="70" y="160"> D </text><text fill="#53d8a8" font-size="11" text-anchor="middle" x="70" y="180"> E </text><text fill="#53d8a8" font-size="11" text-anchor="middle" x="70" y="200"> F </text><text fill="#53d8a8" font-size="11" text-anchor="middle" x="70" y="220"> G </text><text fill="#53d8a8" font-size="11" text-anchor="middle" x="70" y="240"> H </text><text fill="#53d8a8" font-size="11" text-anchor="middle" x="70" y="260"> I </text><text fill="#53d8a8" font-size="11" text-anchor="middle" x="70" y="280"> J </text></g><text fill="#eee" font-size="10" text-anchor="middle" x="80" y="100"> A </text><text fill="#eee" font-size="10" text-anchor="middle" x="100" y="100"> B </text><text fill="#eee" font-size="10" text-anchor="middle" x="120" y="100"> C </text><text fill="#eee" font-size="10" text-anchor="middle" x="140" y="100"> D </text><text fill="#eee" font-size="10" text-anchor="middle" x="160" y="100"> E </text><text fill="#eee" font-size="10" text-anchor="middle" x="180" y="100"> F </text><text fill="#eee" font-size="10" text-anchor="middle" x="200" y="100"> G </text><text fill="#eee" font-size="10" text-anchor="middle" x="220" y="100"> H </text><text fill="#eee" font-size="10" text-anchor="middle" x="240" y="100"> I </text><text fill="#eee" font-size="10" text-anchor="middle" x="260" y="100"> J </text><text fill="#eee" font-size="10" text-anchor="middle" x="80" y="120"> B </text><text fill="#eee" font-size="10" text-anchor="middle" x="100" y="120"> C </text><text fill="#eee" font-size="10" text-anchor="middle" x="120" y="120"> D </text><text fill="#eee" font-size="10" text-anchor="middle" x="140" y="120"> E </text><text fill="#eee" font-size="10" text-anchor="middle" x="160" y="120"> F </text><text fill="#eee" font-size="10" text-anchor="middle" x="180" y="120"> G </text><text fill="#eee" font-size="10" text-anchor="middle" x="200" y="120"> H </text><text fill="#eee" font-size="10" text-anchor="middle" x="220" y="120"> I </text><text fill="#eee" font-size="10" text-anchor="middle" x="240" y="120"> J </text><text fill="#eee" font-size="10" text-anchor="middle" x="260" y="120"> K </text><text fill="#eee" font-size="10" text-anchor="middle" x="80" y="140"> C </text><text fill="#eee" font-size="10" text-anchor="middle" x="100" y="140"> D </text><text fill="#eee" font-size="10" text-anchor="middle" x="120" y="140"> E </text><text fill="#eee" font-size="10" text-anchor="middle" x="140" y="140"> F </text><text fill="#eee" font-size="10" text-anchor="middle" x="160" y="140"> G </text><text fill="#eee" font-size="10" text-anchor="middle" x="180" y="140"> H </text><text fill="#eee" font-size="10" text-anchor="middle" x="200" y="140"> I </text><text fill="#eee" font-size="10" text-anchor="middle" x="220" y="140"> J </text><text fill="#eee" font-size="10" text-anchor="middle" x="240" y="140"> K </text><text fill="#eee" font-size="10" text-anchor="middle" x="260" y="140"> L </text><text fill="#eee" font-size="10" text-anchor="middle" x="80" y="160"> D </text><text fill="#eee" font-size="10" text-anchor="middle" x="100" y="160"> E </text><text fill="#eee" font-size="10" text-anchor="middle" x="120" y="160"> F </text><text fill="#eee" font-size="10" text-anchor="middle" x="140" y="160"> G </text><text fill="#eee" font-size="10" text-anchor="middle" x="160" y="160"> H </text><text fill="#eee" font-size="10" text-anchor="middle" x="180" y="160"> I </text><text fill="#eee" font-size="10" text-anchor="middle" x="200" y="160"> J </text><text fill="#eee" font-size="10" text-anchor="middle" x="220" y="160"> K </text><text fill="#eee" font-size="10" text-anchor="middle" x="240" y="160"> L </text><text fill="#eee" font-size="10" text-anchor="middle" x="260" y="160"> M </text><text fill="#eee" font-size="10" text-anchor="middle" x="80" y="180"> E </text><text fill="#eee" font-size="10" text-anchor="middle" x="100" y="180"> F </text><text fill="#eee" font-size="10" text-anchor="middle" x="120" y="180"> G </text><text fill="#eee" font-size="10" text-anchor="middle" x="140" y="180"> H </text><text fill="#eee" font-size="10" text-anchor="middle" x="160" y="180"> I </text><text fill="#eee" font-size="10" text-anchor="middle" x="180" y="180"> J </text><text fill="#eee" font-size="10" text-anchor="middle" x="200" y="180"> K </text><text fill="#eee" font-size="10" text-anchor="middle" x="220" y="180"> L </text><text fill="#eee" font-size="10" text-anchor="middle" x="240" y="180"> M </text><text fill="#eee" font-size="10" text-anchor="middle" x="260" y="180"> N </text><text fill="#eee" font-size="10" text-anchor="middle" x="80" y="200"> F </text><text fill="#eee" font-size="10" text-anchor="middle" x="100" y="200"> G </text><text fill="#eee" font-size="10" text-anchor="middle" x="120" y="200"> H </text><text fill="#eee" font-size="10" text-anchor="middle" x="140" y="200"> I </text><text fill="#eee" font-size="10" text-anchor="middle" x="160" y="200"> J </text><text fill="#eee" font-size="10" text-anchor="middle" x="180" y="200"> K </text><text fill="#eee" font-size="10" text-anchor="middle" x="200" y="200"> L </text><text fill="#eee" font-size="10" text-anchor="middle" x="220" y="200"> M </text><text fill="#eee" font-size="10" text-anchor="middle" x="240" y="200"> N </text><text fill="#eee" font-size="10" text-anchor="middle" x="260" y="200"> O </text><text fill="#eee" font-size="10" text-anchor="middle" x="80" y="220"> G </text><text fill="#eee" font-size="10" text-anchor="middle" x="100" y="220"> H </text><text fill="#eee" font-size="10" text-anchor="middle" x="120" y="220"> I </text><text fill="#eee" font-size="10" text-anchor="middle" x="140" y="220"> J </text><text fill="#eee" font-size="10" text-anchor="middle" x="160" y="220"> K </text><text fill="#eee" font-size="10" text-anchor="middle" x="180" y="220"> L </text><text fill="#eee" font-size="10" text-anchor="middle" x="200" y="220"> M </text><text fill="#eee" font-size="10" text-anchor="middle" x="220" y="220"> N </text><text fill="#eee" font-size="10" text-anchor="middle" x="240" y="220"> O </text><text fill="#eee" font-size="10" text-anchor="middle" x="260" y="220"> P </text><text fill="#eee" font-size="10" text-anchor="middle" x="80" y="240"> H </text><text fill="#eee" font-size="10" text-anchor="middle" x="100" y="240"> I </text><text fill="#eee" font-size="10" text-anchor="middle" x="120" y="240"> J </text><text fill="#eee" font-size="10" text-anchor="middle" x="140" y="240"> K </text><text fill="#eee" font-size="10" text-anchor="middle" x="160" y="240"> L </text><text fill="#eee" font-size="10" text-anchor="middle" x="180" y="240"> M </text><text fill="#eee" font-size="10" text-anchor="middle" x="200" y="240"> N </text><text fill="#eee" font-size="10" text-anchor="middle" x="220" y="240"> O </text><text fill="#eee" font-size="10" text-anchor="middle" x="240" y="240"> P </text><text fill="#eee" font-size="10" text-anchor="middle" x="260" y="240"> Q </text><text fill="#eee" font-size="10" text-anchor="middle" x="80" y="260"> I </text><text fill="#eee" font-size="10" text-anchor="middle" x="100" y="260"> J </text><text fill="#eee" font-size="10" text-anchor="middle" x="120" y="260"> K </text><text fill="#eee" font-size="10" text-anchor="middle" x="140" y="260"> L </text><text fill="#eee" font-size="10" text-anchor="middle" x="160" y="260"> M </text><text fill="#eee" font-size="10" text-anchor="middle" x="180" y="260"> N </text><text fill="#eee" font-size="10" text-anchor="middle" x="200" y="260"> O </text><text fill="#eee" font-size="10" text-anchor="middle" x="220" y="260"> P </text><text fill="#eee" font-size="10" text-anchor="middle" x="240" y="260"> Q </text><text fill="#eee" font-size="10" text-anchor="middle" x="260" y="260"> R </text><text fill="#eee" font-size="10" text-anchor="middle" x="80" y="280"> J </text><text fill="#eee" font-size="10" text-anchor="middle" x="100" y="280"> K </text><text fill="#eee" font-size="10" text-anchor="middle" x="120" y="280"> L </text><text fill="#eee" font-size="10" text-anchor="middle" x="140" y="280"> M </text><text fill="#eee" font-size="10" text-anchor="middle" x="160" y="280"> N </text><text fill="#eee" font-size="10" text-anchor="middle" x="180" y="280"> O </text><text fill="#eee" font-size="10" text-anchor="middle" x="200" y="280"> P </text><text fill="#eee" font-size="10" text-anchor="middle" x="220" y="280"> Q </text><text fill="#eee" font-size="10" text-anchor="middle" x="240" y="280"> R </text><text fill="#eee" font-size="10" text-anchor="middle" x="260" y="280"> S </text><line stroke="#2a2a4a" stroke-width="1" x1="75" x2="265" y1="90" y2="90"></line><line stroke="#2a2a4a" stroke-width="1" x1="75" x2="265" y1="290" y2="290"></line><line stroke="#2a2a4a" stroke-width="1" x1="75" x2="75" y1="90" y2="290"></line><line stroke="#2a2a4a" stroke-width="1" x1="265" x2="265" y1="90" y2="290"></line><text fill="#53d8a8" font-size="14" x="500" y="350"><tspan dy="0" x="500"> To encrypt: Find plaintext letter in left row, </tspan><tspan dy="20" x="500"> follow across to key letter column, read cipher letter. </tspan></text><text fill="#e94560" font-size="13" x="500" y="400"><tspan dy="0" x="500"> Example: Plaintext 'A' + Key 'S' → Ciphertext 'S' </tspan><tspan dy="18" x="500"> (Find A row, follow to S column = S) </tspan></text><text fill="#aaa" font-size="12" x="500" y="470"><tspan dy="0" x="500"> The Vigenère Cipher was considered unbreakable for 300 years </tspan><tspan dy="16" x="500"> because the repeating key masks frequency patterns of single letters. </tspan></text></svg></p>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="ham-radio.html">Ham Radio &amp; Communications</a>
+<a href="postal-service-establishment.html">Postal Service &amp; Communication Networks</a>
+<a href="sign-language-communication.html">Visual Communication &amp; Sign Language</a>
+<a href="signals-communication.html">Signals &amp; Communication</a>
+<a href="telecommunications.html">Telecommunications</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

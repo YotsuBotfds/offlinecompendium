@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/gastroenteritis-diarrhea-management.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GI Illness, Diarrhea &amp; Dysentery Management</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Medical &amp; Health</span> ›
+<span>GI Illness, Diarrhea &amp; Dysentery Management</span>
+</div>
+
+<div class="danger">
+<strong>⚠ SAFETY WARNING</strong><br>This guide covers activities with significant risk of injury or harm. Professional training may be required.
+</div>
+
+<h1>GI Illness, Diarrhea &amp; Dysentery Management</h1>
+<p class="subtitle">Pathogen identification, clinical assessment, oral rehydration therapy (WHO-ORS), IV fluid protocols, dysentery vs watery diarrhea differential, cholera management, parasite treatment, antibiotic indications, zinc supplementation, prevention, and epidemic response.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~28 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview: Why Diarrhea Kills</a></li>
+<li><a href="#pathogen-identification">Pathogen Identification &amp; Clinical Presentation</a></li>
+<li><a href="#dehydration-assessment">Clinical Assessment of Dehydration (WHO Scale)</a></li>
+<li><a href="#ors-therapy">Oral Rehydration Therapy (ORS)</a></li>
+<li><a href="#iv-fluids">IV Fluid Therapy</a></li>
+<li><a href="#cholera">Cholera: Recognition &amp; Emergency Management</a></li>
+<li><a href="#dysentery-treatment">Dysentery &amp; Invasive Bacterial Diarrhea</a></li>
+<li><a href="#parasites">Parasite-Related Diarrhea</a></li>
+<li><a href="#zinc-supplementation">Zinc Supplementation in Children</a></li>
+<li><a href="#special-populations">Special Populations</a></li>
+<li><a href="#prevention">Prevention &amp; Epidemic Control</a></li>
+<li><a href="#complications">Complications &amp; When to Escalate Care</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>Medical Disclaimer:</strong> This guide is for austere/resource-limited settings where professional medical care is unavailable. In low-sanitation post-collapse scenarios, diarrheal illness is the #1 preventable cause of death. Oral rehydration therapy saves lives. Always seek professional care when available.</p>
+</div>
+<section id="overview">
+<h2>Overview: Why Diarrhea Kills</h2>
+<p>Diarrheal illness is the leading cause of death in low-sanitation environments—not because of the diarrhea itself, but because of the <strong>fluid and electrolyte losses</strong> that follow. A person can lose 10% of their body weight in water and salts within 24 hours. Children under 5, pregnant women, elderly, and malnourished individuals are highest risk.</p>
+<p><strong>The deadly cascade:</strong></p>
+<ol>
+<li>Pathogen invades or toxin damages bowel mucosa</li>
+<li>Fluid secretion overwhelms reabsorption capacity</li>
+<li>Rapid dehydration depletes blood volume</li>
+<li>Shock follows (systolic BP &lt;90, weak pulse, cold extremities, altered mental status)</li>
+<li>Multi-organ failure and death within hours to days without rehydration</li>
+</ol>
+<p><svg aria-label="WHO dehydration assessment flowchart with treatment decisions" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .box { fill: var(--card); stroke: var(--border); stroke-width: 2; }
+      .decision { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
+      .outcome { stroke: var(--border); stroke-width: 2; }
+      .no-dehy { fill: #53d8a860; }
+      .some-dehy { fill: #fbbf2460; }
+      .severe-dehy { fill: #e9456060; }
+      .text-label { fill: var(--text); font-size: 13px; font-family: sans-serif; }
+      .text-bold { fill: var(--text); font-size: 13px; font-weight: bold; font-family: sans-serif; }
+      .arrow { stroke: var(--text); stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .text-small { fill: var(--muted); font-size: 11px; font-family: sans-serif; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--text)" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="25" class="text-bold" text-anchor="middle" font-size="16">WHO Dehydration Assessment Flowchart</text>
+
+  <!-- Start box -->
+  <rect x="300" y="45" width="200" height="45" class="decision" rx="5" />
+  <text x="400" y="68" class="text-bold" text-anchor="middle">Patient with Diarrhea</text>
+  <text x="400" y="83" class="text-small" text-anchor="middle">Assess 2+ clinical signs</text>
+
+  <!-- Arrow down -->
+  <path d="M 400 90 L 400 110" class="arrow" />
+
+  <!-- Assessment box -->
+  <rect x="250" y="110" width="300" height="60" class="box" rx="5" />
+  <text x="400" y="130" class="text-bold" text-anchor="middle">Count Signs from WHO Scale:</text>
+  <text x="400" y="148" class="text-small" text-anchor="middle">Eyes, mouth, skin turgor, pulse,</text>
+  <text x="400" y="162" class="text-small" text-anchor="middle">mental status, BP, urine output</text>
+
+  <!-- Three outcome branches -->
+  <!-- Branch 1: No Dehydration -->
+  <path d="M 250 170 L 150 210" class="arrow" />
+  <rect x="50" y="210" width="200" height="75" class="outcome no-dehy" rx="5" />
+  <text x="150" y="235" class="text-bold" text-anchor="middle">NO DEHYDRATION</text>
+  <text x="150" y="252" class="text-label" text-anchor="middle">0–1 signs present</text>
+  <text x="150" y="270" class="text-label" text-anchor="middle">Management:</text>
+  <text x="150" y="285" class="text-small" text-anchor="middle">ORS maintenance</text>
+
+  <!-- Branch 2: Some Dehydration -->
+  <path d="M 400 170 L 400 210" class="arrow" />
+  <rect x="300" y="210" width="200" height="75" class="outcome some-dehy" rx="5" />
+  <text x="400" y="235" class="text-bold" text-anchor="middle">SOME DEHYDRATION</text>
+  <text x="400" y="252" class="text-label" text-anchor="middle">2+ signs in SOME column</text>
+  <text x="400" y="270" class="text-label" text-anchor="middle">Management:</text>
+  <text x="400" y="285" class="text-small" text-anchor="middle">ORS 50 mL/kg over 4h</text>
+
+  <!-- Branch 3: Severe Dehydration -->
+  <path d="M 550 170 L 650 210" class="arrow" />
+  <rect x="550" y="210" width="200" height="75" class="outcome severe-dehy" rx="5" />
+  <text x="650" y="235" class="text-bold" text-anchor="middle">SEVERE DEHYDRATION</text>
+  <text x="650" y="252" class="text-label" text-anchor="middle">2+ signs in SEVERE column</text>
+  <text x="650" y="270" class="text-label" text-anchor="middle">Management:</text>
+  <text x="650" y="285" class="text-small" text-anchor="middle">IV fluids RL 20 mL/kg</text>
+
+  <!-- Monitoring section -->
+  <text x="400" y="320" class="text-bold" text-anchor="middle" font-size="14">Reassess Every 1–2 Hours</text>
+
+  <!-- Red flags box -->
+  <rect x="100" y="335" width="600" height="140" class="box" stroke="#e94560" stroke-width="3" rx="5" />
+  <text x="400" y="358" class="text-bold" text-anchor="middle" fill="#e94560" font-size="12">SHOCK / SEVERE COMPLICATIONS → Immediate IV Resuscitation</text>
+
+  <text x="120" y="378" class="text-label">✗ Weak/absent radial pulse</text>
+  <text x="120" y="393" class="text-label">✗ Systolic BP &lt;90 mmHg</text>
+  <text x="120" y="408" class="text-label">✗ Altered mental status (confusion, lethargy, unconscious)</text>
+  <text x="120" y="423" class="text-label">✗ Cold extremities / mottled skin</text>
+  <text x="120" y="438" class="text-label">✗ Urine output &lt;0.5 mL/kg/hr despite fluids</text>
+  <text x="120" y="453" class="text-label">✗ Abdominal rigidity + bloody diarrhea (possible perforation)</text>
+
+</svg>
+</p>
+<p>This guide focuses on <strong>rapid assessment, evidence-based rehydration, and antibiotic use when appropriate</strong>—the three interventions that reduce mortality from ~20% (untreated cholera) to &lt;1% (with ORS + antibiotics).</p>
+</section>
+<section id="pathogen-identification">
+<h2>Pathogen Identification &amp; Clinical Presentation</h2>
+<h3>Viral vs. Bacterial vs. Parasitic</h3>
+<p><strong>Viral Diarrhea</strong> (Rotavirus, Norovirus, Adenovirus)</p>
+<ul>
+<li><strong>Onset:</strong> Sudden; often with fever, vomiting, myalgias</li>
+<li><strong>Stool:</strong> Watery, no blood or mucus (except some adenoviruses)</li>
+<li><strong>Duration:</strong> 3–7 days; self-limited</li>
+<li><strong>Treatment:</strong> Supportive (ORS); no antibiotics</li>
+<li><strong>Epidemiology:</strong> Rapid spread; often affects clusters (families, daycare)</li>
+</ul>
+<p><strong>Bacterial Diarrhea</strong> (E. coli, Salmonella, Shigella, Campylobacter, Vibrio cholerae)</p>
+<ul>
+<li><strong>Onset:</strong> Variable; hours to days</li>
+<li><strong>Stool:</strong> Watery ± blood/mucus (bloody = dysentery; see below)</li>
+<li><strong>Associated:</strong> Fever common; abdominal cramping</li>
+<li><strong>Duration:</strong> 3–7 days without antibiotics; 1–2 days with appropriate antibiotics</li>
+<li><strong>Epidemiology:</strong> Contaminated food/water; poor sanitation</li>
+</ul>
+<p><strong>Parasitic Diarrhea</strong> (Giardia, Cryptosporidium, Entamoeba histolytica, Hookworm)</p>
+<ul>
+<li><strong>Onset:</strong> Gradual; days to weeks</li>
+<li><strong>Stool:</strong> Watery or fatty (malabsorption); mucus; rarely bloody (except ameba)</li>
+<li><strong>Associated:</strong> Chronic diarrhea; weight loss; flatulence/bloating</li>
+<li><strong>Duration:</strong> Weeks to months without treatment; variable with antiparasitics</li>
+<li><strong>Epidemiology:</strong> Contaminated water; orofecal spread</li>
+</ul>
+<h3>Dysentery vs. Watery Diarrhea</h3>
+<p><strong>Watery Diarrhea</strong> (most common; ~80% of cases)</p>
+<ul>
+<li>Frequent loose stools (&gt;3/day) without blood</li>
+<li>Rapid fluid loss in short bursts</li>
+<li>Risk: Acute dehydration within hours</li>
+<li><strong>Management:</strong> Aggressive ORS rehydration</li>
+</ul>
+<p><strong>Dysentery</strong> (bloody diarrhea; ~10–20% of cases)</p>
+<ul>
+<li>Visible blood or mucus in stool</li>
+<li>Often accompanied by tenesmus (urgency/cramping after defecation)</li>
+<li>May indicate invasive pathogen (Shigella, Salmonella, E. coli O157:H7, Entamoeba)</li>
+<li>Risk: Both dehydration AND intestinal perforation/complications</li>
+<li><strong>Management:</strong> ORS + antibiotics (see section below)</li>
+</ul>
+</section>
+<section id="dehydration-assessment">
+<h2>Clinical Assessment of Dehydration (WHO Scale)</h2>
+<p>Accurate dehydration staging is <strong>critical</strong>—it determines whether ORS alone is sufficient, or if IV therapy is needed. The WHO classifies dehydration into three tiers:</p>
+<div class="dehydration-scale">
+<table>
+<thead>
+<tr>
+<th>Clinical Sign</th>
+<th>NO Dehydration</th>
+<th>SOME Dehydration</th>
+<th>SEVERE Dehydration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>General appearance</strong></td>
+<td>Normal, alert</td>
+<td>Restless, irritable</td>
+<td>Lethargy, unconscious</td>
+</tr>
+<tr>
+<td><strong>Eyes</strong></td>
+<td>Normal</td>
+<td>Slightly sunken</td>
+<td>Very sunken</td>
+</tr>
+<tr>
+<td><strong>Tears</strong></td>
+<td>Tears present</td>
+<td>Tears absent</td>
+<td>Tears absent</td>
+</tr>
+<tr>
+<td><strong>Mouth/tongue</strong></td>
+<td>Moist</td>
+<td>Dry</td>
+<td>Very dry</td>
+</tr>
+<tr>
+<td><strong>Skin turgor</strong>*</td>
+<td>Pinch goes back immediately</td>
+<td>Pinch goes back in &lt;2 sec</td>
+<td>Pinch goes back &gt;2 sec</td>
+</tr>
+<tr>
+<td><strong>Radial pulse</strong></td>
+<td>Normal</td>
+<td>Faster than normal</td>
+<td>Weak or undetectable</td>
+</tr>
+<tr>
+<td><strong>Systolic blood pressure</strong></td>
+<td>Normal</td>
+<td>Normal or low</td>
+<td>Low (shock)</td>
+</tr>
+<tr>
+<td><strong>Urine output</strong></td>
+<td>Normal</td>
+<td>Decreased</td>
+<td>Minimal or absent</td>
+</tr>
+</tbody>
+</table>
+<p>*<strong>Skin turgor test:</strong> Pinch the skin on the forearm or back of hand. In normal hydration, the pinch immediately flattens. In dehydration, it remains tented (elevated) for a measurable period.</p>
+</div>
+<p><strong>Decision Logic:</strong></p>
+<ul>
+<li><strong>0–1 signs of dehydration</strong> = No dehydration → <strong>ORS therapy</strong></li>
+<li><strong>2 or more signs from SOME column</strong> = Some dehydration → <strong>ORS + continued monitoring</strong></li>
+<li><strong>2 or more signs from SEVERE column</strong> = Severe dehydration → <strong>IV fluids (or NG tube + hypertonic ORS if IV unavailable)</strong></li>
+<li><strong>Shock</strong> (weak pulse, altered mental status, BP &lt;90 systolic) → <strong>Immediate IV resuscitation</strong></li>
+</ul>
+</section>
+<section id="ors-therapy">
+<h2>Oral Rehydration Therapy (ORS)</h2>
+<p>ORS is the <strong>gold standard</strong> for treating mild-to-moderate dehydration. The WHO-ORS formulation (used since 1975) contains a precise glucose:sodium:potassium ratio that maximizes water and electrolyte absorption.</p>
+<h3>WHO-ORS Recipe (makes 1 liter)</h3>
+<div class="ors-recipe">
+**Ingredients:**
+- 2.6 grams sodium chloride (table salt, or sea salt)
+- 2.9 grams trisodium citrate dihydrate (or 3.5g potassium chloride if citrate unavailable)
+- 1.5 grams potassium chloride (KCl)
+- 13.5 grams glucose (or sucrose, honey, rice flour)
+- 1 liter clean water (boiled and cooled if water safety is uncertain)
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Dissolve all ingredients in the water. Stir well.</li>
+<li>Taste test: Should taste like a slightly salty, slightly sweet soup.</li>
+<li>Use immediately or cover and refrigerate (safe for 24 hours refrigerated).</li>
+</ol>
+<p><strong>If exact chemicals unavailable:</strong> Use the <strong>salt-sugar solution</strong> below.</p>
+</div>
+<h3>Field-Improvised ORS Alternatives</h3>
+<p>When standard ORS is unavailable:</p>
+<p><strong>1. WHO Salt-Sugar Solution</strong></p>
+<ul>
+<li>1 teaspoon salt (5 mL; ~3–5 grams NaCl)</li>
+<li>8 teaspoons sugar (40 mL; ~20 grams glucose)</li>
+<li>1 liter clean water</li>
+</ul>
+<p>Stir well. Less effective than WHO-ORS (less optimal electrolyte ratio) but still <strong>saves lives</strong>. Higher sugar content may paradoxically increase stool output slightly in some infections, but the net effect is still net rehydration.</p>
+<p><strong>2. Rice Water Rehydration Solution</strong></p>
+<ul>
+<li>Boil rice in water (use a 1:3 ratio, rice:water). Strain off the starchy water.</li>
+<li>Add 1/2 teaspoon salt and 1 tablespoon sugar per 1 liter of rice water.</li>
+<li>Use immediately.</li>
+</ul>
+<p>Rice water reduces stool output by ~30% compared to ORS (less osmotic effect) and is particularly valuable in bacterial diarrhea and cholera.</p>
+<p><strong>3. Coconut Water</strong></p>
+<ul>
+<li>Fresh coconut water contains potassium and glucose naturally.</li>
+<li>Add a pinch of salt per liter if available.</li>
+<li><strong>Caution:</strong> Only if coconut is clean and freshly cracked; spoiled coconut water is unsafe.</li>
+</ul>
+<h3>ORS Administration Protocol</h3>
+<table>
+<thead>
+<tr>
+<th>Dehydration Level</th>
+<th>Rehydration Plan</th>
+<th>Maintenance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>None</strong> (Prevention only)</td>
+<td>—</td>
+<td>5–10 mL/kg ORS per diarrheal stool + 2 mL/kg per vomiting episode</td>
+</tr>
+<tr>
+<td><strong>Some</strong></td>
+<td>50 mL/kg ORS over 4 hours (e.g., 2.5 kg child = 125 mL/hour = ~2 mL/min)</td>
+<td>Same as above after rehydration</td>
+</tr>
+<tr>
+<td><strong>Severe</strong> (no IV available)</td>
+<td>100 mL/kg ORS via nasogastric tube over 4 hours</td>
+<td>Switch to IV if available; if NGT, continue 5–10 mL/kg per stool</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practical approach:</strong></p>
+<ul>
+<li>Give ORS in <strong>frequent small amounts</strong> (5–10 mL every few minutes) rather than large gulps, which may trigger vomiting.</li>
+<li>Use a spoon, syringe, or cup—whatever works for the patient.</li>
+<li>If the patient vomits, wait 10 minutes, then resume slowly.</li>
+<li>Continue ORS until dehydration signs resolve (skin turgor normal, tears present, alert).</li>
+</ul>
+</section>
+<section id="iv-fluids">
+<h2>IV Fluid Therapy</h2>
+<p><strong>Indications for IV rehydration:</strong></p>
+<ul>
+<li>Severe dehydration (skin turgor &gt;2 sec, altered mental status, weak pulse)</li>
+<li>Shock (BP &lt;90 systolic, cold extremities)</li>
+<li>Persistent vomiting preventing ORS intake</li>
+<li>Inability to drink (unconscious patient)</li>
+<li>Cholera with massive stool losses (10–20 L/day)</li>
+</ul>
+<h3>IV Fluid Solutions &amp; Administration</h3>
+<p><strong>First-line:</strong> Ringer's Lactate (or Normal Saline if RL unavailable). Ringer's Lactate more closely mimics plasma electrolyte composition and is preferred.</p>
+<p><strong>Volume calculations:</strong></p>
+<ul>
+<li>For shock: <strong>20 mL/kg rapid IV bolus</strong> in adult; <strong>10 mL/kg bolus</strong> in child. Repeat once if BP still &lt;90.</li>
+<li>For severe dehydration: <strong>50–100 mL/kg IV over 4–6 hours</strong> (50 mL/kg in children, 100 mL/kg in adults with ongoing losses).</li>
+</ul>
+<p><strong>After rehydration:</strong> Switch to maintenance + ongoing stool loss replacement:</p>
+<ul>
+<li>Maintenance: 5 mL/kg per stool + 2 mL/kg per vomiting episode</li>
+<li>In cholera (massive losses), patient may need 5–10 L IV/day; monitor urine output and vital signs hourly</li>
+</ul>
+<p><strong>Field-improvised IV fluid (Dhaka Solution):</strong></p>
+<p>When only dextrose, saline, and potassium are available:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Amount (per 1 liter)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dextrose 5%</td>
+<td>50 grams (D5W or dissolve glucose in saline)</td>
+</tr>
+<tr>
+<td>Sodium chloride</td>
+<td>3.5 grams (table salt)</td>
+</tr>
+<tr>
+<td>Potassium chloride</td>
+<td>1.5 grams</td>
+</tr>
+</tbody>
+</table>
+<p>Mix in sterile water. Use same volumes as Ringer's Lactate. Less optimal than RL but significantly better than saline alone.</p>
+</section>
+<section id="cholera">
+<h2>Cholera: Recognition &amp; Emergency Management</h2>
+<p><strong>Vibrio cholerae</strong> causes the most severe acute diarrhea and is the global paradigm for dehydration-focused emergency care.</p>
+<h3>Cholera Clinical Features</h3>
+<ul>
+<li><strong>Onset:</strong> Sudden; illness progresses to severe dehydration in 4–12 hours</li>
+<li><strong>Stool:</strong> Copious (10–20 L/day), watery, <strong>painless</strong>, no blood</li>
+<li><strong>Character:</strong> Classic <strong>&quot;rice-water stools&quot;</strong>—pale, turbid, watery with mucoid flecks</li>
+<li><strong>Vomiting:</strong> Frequent; clear fluid with mucus</li>
+<li><strong>Abdominal exam:</strong> <strong>No abdominal pain or cramping</strong> (unlike bacterial dysentery or virus)—this painlessness is diagnostically clue</li>
+<li><strong>Dehydration:</strong> Rapid; shock develops within hours in untreated cases</li>
+<li><strong>Post-rehydration:</strong> Patient feels well once fluids restored; alert and oriented</li>
+</ul>
+<h3>Cholera Management Protocol</h3>
+<ol>
+<li><strong>Immediate IV resuscitation:</strong> 20 mL/kg rapid bolus of Ringer's Lactate (or Dhaka solution if needed)</li>
+<li><strong>Check perfusion:</strong> Radial pulse, BP, skin turgor—reassess every 30 min</li>
+<li><strong>Once BP normalized:</strong> Continue IV replacement at 5–10 mL/kg per stool (~50–100 mL/kg/day in severe cholera)</li>
+<li><strong>Antibiotics:</strong> Doxycycline 300 mg once (or 100 mg × 3 days) reduces duration &amp; ongoing losses by ~50%
+<ul>
+<li><strong>Alternative if no doxycycline:</strong> Tetracycline 500 mg × 4 daily, or ciprofloxacin 500 mg × 3 daily</li>
+</ul>
+</li>
+<li><strong>Nutrition:</strong> Begin breastfeeding (infant) or glucose-containing foods once tolerated</li>
+<li><strong>Monitoring:</strong> Strict input/output; weigh daily if possible</li>
+<li><strong>Prevention in contacts:</strong> Vaccination if available; strict handwashing and water treatment</li>
+</ol>
+</section>
+<section id="dysentery-treatment">
+<h2>Dysentery &amp; Invasive Bacterial Diarrhea</h2>
+<p>Bloody diarrhea indicates mucosal invasion and requires antibiotics.</p>
+<h3>Antibiotic Selection (Empiric)</h3>
+<p><strong>First-line agents</strong> (adjust by susceptibility testing if available):</p>
+<table>
+<thead>
+<tr>
+<th>Pathogen/Indicator</th>
+<th>First Choice</th>
+<th>Alternative</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shigella</strong> or bloody diarrhea (endemic area)</td>
+<td>Azithromycin 500 mg × 3 days</td>
+<td>Ciprofloxacin 500 mg × 3 days</td>
+<td>3 days</td>
+</tr>
+<tr>
+<td><strong>Salmonella</strong> (non-typhi)</td>
+<td>Ceftriaxone 2 g IM/IV × 2 daily</td>
+<td>Ciprofloxacin or azithromycin</td>
+<td>3–5 days</td>
+</tr>
+<tr>
+<td><strong>Campylobacter</strong></td>
+<td>Azithromycin 500 mg × 3 days</td>
+<td>Fluoroquinolone</td>
+<td>3 days</td>
+</tr>
+<tr>
+<td><strong>E. coli O157:H7</strong> (EHEC/HUS risk)</td>
+<td><strong>NO antibiotics</strong> (increases HUS risk)</td>
+<td>Supportive care only</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Entamoeba histolytica</strong> (dysentery + amebiasis)</td>
+<td>Metronidazole 750 mg × 3 daily</td>
+<td>—</td>
+<td>10 days</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Field dosing in austere settings:</strong></p>
+<ul>
+<li><strong>Azithromycin (Z-pack):</strong> 500 mg day 1, then 250 mg daily × 4 days (or 500 mg × 3 days)</li>
+<li><strong>Ciprofloxacin:</strong> 500 mg × 2 daily for 3 days (or 1000 mg × 1 daily × 3 days)</li>
+<li><strong>Ceftriaxone:</strong> 2 g IM/IV daily (requires injection equipment)</li>
+<li><strong>Metronidazole:</strong> 750 mg × 3 daily × 10 days (for amebiasis)</li>
+</ul>
+<h3>When NOT to Use Antibiotics</h3>
+<ul>
+<li><strong>Watery diarrhea without blood</strong> (most viral &amp; many bacterial): Antibiotics do not reduce duration and may increase resistance</li>
+<li><strong>E. coli O157:H7 (Shiga toxin–producing):</strong> Antibiotics trigger Hemolytic Uremic Syndrome (HUS); supportive care only</li>
+<li><strong>Suspected viral:</strong> Antibiotics ineffective; supportive care</li>
+</ul>
+</section>
+<section id="parasites">
+<h2>Parasite-Related Diarrhea</h2>
+<p>Parasitic diarrhea is often <strong>chronic</strong> (weeks to months) and commonly overlooked in austere settings.</p>
+<h3>Common Parasites &amp; Treatment</h3>
+<table>
+<thead>
+<tr>
+<th>Parasite</th>
+<th>Presentation</th>
+<th>First-Line Drug</th>
+<th>Dose (Adult)</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Giardia lamblia</strong></td>
+<td>Watery diarrhea, bloating, malabsorption, foul stools</td>
+<td>Metronidazole</td>
+<td>250 mg × 3 daily</td>
+<td>5–7 days</td>
+</tr>
+<tr>
+<td><strong>Cryptosporidium</strong></td>
+<td>Watery diarrhea (severe in immunocompromised)</td>
+<td><strong>No specific treatment</strong></td>
+<td>Supportive care</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Entamoeba histolytica</strong></td>
+<td>Bloody diarrhea (dysentery), weight loss</td>
+<td>Metronidazole</td>
+<td>750 mg × 3 daily</td>
+<td>10 days</td>
+</tr>
+<tr>
+<td><strong>Hookworm</strong></td>
+<td>Chronic diarrhea, anemia, malabsorption</td>
+<td>Mebendazole</td>
+<td>500 mg single dose</td>
+<td>1 day</td>
+</tr>
+<tr>
+<td><strong>Ascaris (roundworm)</strong></td>
+<td>Large worm in stool, abdominal pain</td>
+<td>Mebendazole</td>
+<td>500 mg single dose</td>
+<td>1 day</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Diagnostic clue:</strong> Stool microscopy (wet mount or formal concentration) shows ova or trophozoites. In austere settings, persistent diarrhea lasting &gt;2 weeks warrants empiric parasite treatment.</p>
+</section>
+<section id="zinc-supplementation">
+<h2>Zinc Supplementation in Children</h2>
+<p>Zinc deficiency impairs immune function and mucosal healing. Supplementation in childhood diarrhea <strong>reduces duration and severity by ~25%</strong>.</p>
+<h3>Zinc Dosing &amp; Protocol</h3>
+<table>
+<thead>
+<tr>
+<th>Child Age</th>
+<th>Dose</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>6 months – &lt;6 years</strong></td>
+<td>10 mg elemental zinc daily</td>
+<td>10–14 days</td>
+</tr>
+<tr>
+<td><strong>≥6 years</strong></td>
+<td>20 mg elemental zinc daily</td>
+<td>10–14 days</td>
+</tr>
+<tr>
+<td><strong>Infants &lt;6 months</strong></td>
+<td>5 mg daily (if zinc supplement available)</td>
+<td>10–14 days</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Forms:</strong> Zinc sulfate, zinc acetate, or zinc gluconate. Begin during acute diarrhea; continue for 10–14 days regardless of diarrhea resolution to optimize mucosal repair.</p>
+<p><strong>Sources if supplement unavailable:</strong></p>
+<ul>
+<li>Meat, fish, shellfish, legumes, seeds, nuts</li>
+<li>Absorption is better from animal sources (meat) than plant sources</li>
+</ul>
+</section>
+<section id="special-populations">
+<h2>Special Populations</h2>
+<h3>Infants &amp; Breastfeeding</h3>
+<ul>
+<li><strong>Breastfeeding:</strong> Continue exclusively through diarrheal illness; reduces duration &amp; severity</li>
+<li><strong>ORS:</strong> Give ORS after breastfeeding, not before (maintains breast intake)</li>
+<li><strong>Supplementation:</strong> If non-exclusively breastfed, introduce appropriate foods early (rice, potatoes, eggs)</li>
+<li><strong>Zinc:</strong> 5 mg daily for infants &lt;6 months</li>
+</ul>
+<h3>Pregnancy</h3>
+<ul>
+<li><strong>ORS:</strong> Safe; essential for maternal and fetal health</li>
+<li><strong>IV fluids:</strong> Ringer's Lactate preferred; monitor for preterm labor (may be triggered by dehydration)</li>
+<li><strong>Antibiotics:</strong> Azithromycin and cephalosporins safe; avoid fluoroquinolones, metronidazole first trimester</li>
+<li><strong>Monitoring:</strong> Check fetal heart tones and uterine irritability if &gt;20 weeks</li>
+</ul>
+<h3>Severe Malnutrition</h3>
+<ul>
+<li>Dehydration occurs more rapidly; shock develops sooner</li>
+<li>Electrolyte abnormalities (hyponatremia, hypoglycemia) are more severe</li>
+<li><strong>Management:</strong> Lower IV rehydration rates (risk of refeeding syndrome); use hypertonic ORS cautiously; add glucose monitoring</li>
+<li><strong>Post-diarrhea:</strong> Begin nutrition carefully to avoid refeeding complications</li>
+</ul>
+</section>
+<section id="prevention">
+<h2>Prevention &amp; Epidemic Control</h2>
+<div class="prevention-grid">
+<div class="prevention-item">
+**Water Treatment**
+- Boil: Rolling boil for 1 minute (or 3 min at high altitude)
+- Chlorination: 0.5–2 mg/L chlorine (add bleach at 1:1000 ratio)
+- Filtration: 0.1 μm filter removes most bacteria & protozoa
+- SODIS (solar disinfection): Clear bottle in sun for 6 hours
+</div>
+<div class="prevention-item">
+**Sanitation & Handwashing**
+- Latrine placement: ≥30 meters from water sources; slope away from wells
+- Handwashing: After defecation & before eating; soap + water; alcohol-based sanitizer if water scarce
+- Hygiene: Separate food/water containers; no double-dipping
+</div>
+<div class="prevention-item">
+**Food Safety**
+- Cook meat thoroughly (internal temp 71°C / 160°F)
+- Avoid unpasteurized dairy
+- Peel vegetables; discard any rotted portions
+- Store cooked food <2 hours unrefrigerated
+</div>
+<div class="prevention-item">
+**Vaccination (if available)**
+- Oral cholera vaccine: 2-dose series, 7–14 days apart
+- Provides ~65% protection for 2–3 years
+- Limited supply; prioritize high-risk individuals
+</div>
+</div>
+<h3>Epidemic Response Protocol</h3>
+<p><strong>When &gt;5% of population reports diarrhea in &lt;1 week:</strong></p>
+<ol>
+<li><strong>Identify source:</strong> Contaminated water, food vendor, ill caregiver</li>
+<li><strong>Water safety:</strong> Boil water advisory; mass chlorination if possible</li>
+<li><strong>Case finding:</strong> Survey for cases; establish triage area</li>
+<li><strong>Isolation:</strong> Keep ill individuals in separate area if possible; strict handwashing</li>
+<li><strong>Rehydration stations:</strong> Set up ORS distribution points; train community health workers</li>
+<li><strong>Antibiotics:</strong> Reserve for dysentery only; ration supply</li>
+<li><strong>Sanitation surge:</strong> Additional latrines; hygiene education</li>
+<li><strong>Monitoring:</strong> Daily case counts; deaths; response efficacy</li>
+</ol>
+</section>
+<section id="complications">
+<h2>Complications &amp; When to Escalate Care</h2>
+<p><strong>Seek immediate higher-level care for:</strong></p>
+<ul>
+<li>Shock (weak pulse, altered mental status, BP &lt;90)</li>
+<li>Severe dehydration not responding to ORS/IV within 2 hours</li>
+<li>Abdominal pain + bloody diarrhea (possible surgical abdomen)</li>
+<li>Confusion, seizure, or severe lethargy (cerebral edema, severe electrolyte abnormality)</li>
+<li>Signs of hemolytic uremic syndrome (E. coli O157): Thrombocytopenia, renal failure, hemolytic anemia</li>
+<li>Severe malnutrition with diarrhea</li>
+<li>Intractable vomiting preventing oral intake</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="first-aid.html">First Aid and Emergency Response</a>
+<a href="water-purification.html">Water Purification</a>
+<a href="sanitation.html">Sanitation &amp; Public Health</a>
+<a href="medications.html">Essential Medications</a>
+<a href="pediatric-emergency-medicine.html">Pediatric Emergency Medicine</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

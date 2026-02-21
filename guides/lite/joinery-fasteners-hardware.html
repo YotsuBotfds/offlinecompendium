@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/joinery-fasteners-hardware.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joinery Fasteners and Hardware Making</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Crafts &amp; Trade Skills</span> ›
+<span>Joinery Fasteners and Hardware Making</span>
+</div>
+
+
+<h1>Joinery Fasteners and Hardware Making</h1>
+<p class="subtitle">Nail forging (cut nails, wire nails from salvage). Screw cutting and forming. Bolt and nut making. Rivet making and installation. Hinge forging (strap, T, butt). Latch and catch mechanisms. Hook and eye. Chain link making. Hardware tempering, assembly, and installation for off-grid construction.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~13 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview: Hand-Forged Hardware in Off-Grid Systems</a></li>
+<li><a href="#nail-forging">Nail Forging: Cut Nails and Wire Nails</a></li>
+<li><a href="#screw-cutting">Screw Cutting and Formation</a></li>
+<li><a href="#bolt-nut-production">Bolt and Nut Production</a></li>
+<li><a href="#rivets">Rivet Making and Installation</a></li>
+<li><a href="#hinge-forging">Hinge Forging</a></li>
+<li><a href="#latches-catches">Latches and Catch Mechanisms</a></li>
+<li><a href="#hooks-eyes-chains">Hooks, Eyes, and Chain Links</a></li>
+<li><a href="#tempering-hardening">Tempering and Hardening Hardware</a></li>
+<li><a href="#assembly-installation">Assembly and Installation Best Practices</a></li>
+<li><a href="#fastener-standards">Fastener Size Reference Table</a></li>
+<li><a href="#production-checklist">Hardware Production Workflow</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview: Hand-Forged Hardware in Off-Grid Systems</h2>
+<p>Modern construction relies on factory-manufactured fasteners (nails, bolts, screws) that are often unavailable or unreliable in off-grid scenarios. Learning to forge essential hardware (nails, bolts, hinges, latches) enables self-sufficiency in construction and repair.</p>
+<p><svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" aria-label="Hardware types: nails, bolts, rivets, hinges comparison">
+  <defs>
+    <style>
+      text { font-family: Arial, sans-serif; fill: var(--text); }
+      .title { font-size: 18px; font-weight: bold; }
+      .label { font-size: 12px; }
+      .hardware-label { font-size: 14px; font-weight: bold; }
+      .metal { fill: #888888; stroke: var(--text); stroke-width: 1; }
+      .metal-dark { fill: #555555; stroke: var(--text); stroke-width: 1; }
+      .grid { stroke: var(--card); stroke-width: 0.5; opacity: 0.3; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="500" y="30" text-anchor="middle" class="title">Forged Hardware Types and Dimensions</text>
+
+  <!-- HARDWARE 1: CUT NAIL -->
+  <g id="cut-nail">
+    <text x="130" y="70" text-anchor="middle" class="hardware-label">Cut Nail (8d)</text>
+
+    <!-- Nail shaft (square cross-section) -->
+    <rect x="110" y="100" width="8" height="90" class="metal" />
+    <rect x="118" y="100" width="4" height="90" fill="#666666" />
+
+    <!-- Head (rectangular, tapered) -->
+    <rect x="105" y="85" width="28" height="15" class="metal-dark" />
+    <path d="M 105 85 L 110 75 M 133 85 L 128 75" fill="none" stroke="var(--text)" stroke-width="0.5" />
+
+    <!-- Point (tapered) -->
+    <path d="M 110 190 L 114 200 M 118 190 L 114 200" fill="none" stroke="var(--text)" stroke-width="1" />
+
+    <!-- Dimensions -->
+    <text x="130" y="210" text-anchor="middle" class="label">Length: 65mm</text>
+    <text x="130" y="225" text-anchor="middle" class="label">Shaft: ~3.3mm dia</text>
+    <text x="130" y="240" text-anchor="middle" class="label">Head: ~8mm wide</text>
+    <text x="130" y="260" text-anchor="middle" class="label" font-weight="bold">Use: Framing,</text>
+    <text x="130" y="275" text-anchor="middle" class="label" font-weight="bold">siding, woodwork</text>
+  </g>
+
+  <!-- HARDWARE 2: WIRE NAIL -->
+  <g id="wire-nail">
+    <text x="300" y="70" text-anchor="middle" class="hardware-label">Wire Nail (6d)</text>
+
+    <!-- Round shaft -->
+    <rect x="290" y="100" width="6" height="80" class="metal" rx="3" />
+    <ellipse cx="293" cy="100" rx="3" ry="3" fill="#666666" />
+
+    <!-- Head (rounded) -->
+    <circle cx="293" cy="85" r="8" class="metal-dark" />
+
+    <!-- Point (fine) -->
+    <path d="M 291 180 L 293 190 M 295 180 L 293 190" fill="none" stroke="var(--text)" stroke-width="1" />
+
+    <!-- Dimensions -->
+    <text x="310" y="210" text-anchor="middle" class="label">Length: 40mm</text>
+    <text x="310" y="225" text-anchor="middle" class="label">Shaft: ~2.8mm dia</text>
+    <text x="310" y="240" text-anchor="middle" class="label">Head: ~6mm dia</text>
+    <text x="310" y="260" text-anchor="middle" class="label" font-weight="bold">Use: General</text>
+    <text x="310" y="275" text-anchor="middle" class="label" font-weight="bold">fastening</text>
+  </g>
+
+  <!-- HARDWARE 3: BOLT AND NUT -->
+  <g id="bolt-nut">
+    <text x="480" y="70" text-anchor="middle" class="hardware-label">Bolt & Nut (M8)</text>
+
+    <!-- Bolt head (hexagonal) -->
+    <polygon points="450,85 460,80 470,80 480,85 480,95 470,100 460,100 450,95" class="metal-dark" />
+
+    <!-- Bolt shaft -->
+    <rect x="460" y="100" width="10" height="70" class="metal" />
+
+    <!-- Thread indication -->
+    <line x1="458" y1="105" x2="472" y2="105" stroke="var(--text)" stroke-width="0.5" opacity="0.5" />
+    <line x1="458" y1="115" x2="472" y2="115" stroke="var(--text)" stroke-width="0.5" opacity="0.5" />
+    <line x1="458" y1="125" x2="472" y2="125" stroke="var(--text)" stroke-width="0.5" opacity="0.5" />
+    <line x1="458" y1="135" x2="472" y2="135" stroke="var(--text)" stroke-width="0.5" opacity="0.5" />
+    <line x1="458" y1="145" x2="472" y2="145" stroke="var(--text)" stroke-width="0.5" opacity="0.5" />
+    <line x1="458" y1="155" x2="472" y2="155" stroke="var(--text)" stroke-width="0.5" opacity="0.5" />
+    <line x1="458" y1="165" x2="472" y2="165" stroke="var(--text)" stroke-width="0.5" opacity="0.5" />
+
+    <!-- Nut (hexagonal) -->
+    <polygon points="450,180 460,175 470,175 480,180 480,190 470,195 460,195 450,190" class="metal-dark" />
+
+    <!-- Dimensions -->
+    <text x="510" y="140" class="label">M8 × 40mm</text>
+    <text x="510" y="155" class="label">Head: 13mm wide</text>
+    <text x="510" y="170" class="label">Thread: 1.25mm pitch</text>
+    <text x="510" y="195" class="label" font-weight="bold">Use: Structural</text>
+    <text x="510" y="210" class="label" font-weight="bold">connections,</text>
+    <text x="510" y="225" class="label" font-weight="bold">reusable fastening</text>
+  </g>
+
+  <!-- HARDWARE 4: RIVET -->
+  <g id="rivet">
+    <text x="700" y="70" text-anchor="middle" class="hardware-label">Rivet (installation)</text>
+
+    <!-- Before installation: loose rivet -->
+    <circle cx="680" cy="110" r="5" class="metal-dark" />
+    <rect x="675" y="115" width="10" height="40" class="metal" />
+    <text x="660" y="130" class="label" font-size="10">Before:</text>
+    <text x="660" y="145" class="label" font-size="10">loose</text>
+
+    <!-- After installation: set rivet with two heads -->
+    <circle cx="740" cy="110" r="7" class="metal-dark" />
+    <rect x="735" y="115" width="10" height="40" class="metal" />
+    <circle cx="740" cy="160" r="6" class="metal-dark" />
+    <text x="720" y="130" class="label" font-size="10">After:</text>
+    <text x="720" y="145" class="label" font-size="10">both heads</text>
+
+    <!-- Arrow between -->
+    <path d="M 700 135 L 720 135" stroke="var(--accent)" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+    <text x="710" y="130" class="label" font-size="9">Heat+hammer</text>
+
+    <!-- Dimensions -->
+    <text x="740" y="210" text-anchor="middle" class="label">Dia: 4-6mm</text>
+    <text x="740" y="225" text-anchor="middle" class="label">Length: 15-25mm</text>
+    <text x="740" y="245" text-anchor="middle" class="label" font-weight="bold">Use: Permanent</text>
+    <text x="740" y="260" text-anchor="middle" class="label" font-weight="bold">fastening</text>
+  </g>
+
+  <!-- HARDWARE 5: STRAP HINGE -->
+  <g id="strap-hinge">
+    <text x="150" y="350" text-anchor="middle" class="hardware-label">Strap Hinge</text>
+
+    <!-- Left leaf -->
+    <rect x="100" y="380" width="40" height="80" class="metal" />
+    <circle cx="107" cy="390" r="3" fill="var(--accent)" />
+    <circle cx="107" cy="405" r="3" fill="var(--accent)" />
+    <circle cx="107" cy="420" r="3" fill="var(--accent)" />
+    <circle cx="107" cy="445" r="3" fill="var(--accent)" />
+
+    <!-- Pin -->
+    <circle cx="120" cy="420" r="5" class="metal-dark" />
+    <line x1="120" y1="415" x2="120" y2="425" stroke="var(--text)" stroke-width="1" />
+
+    <!-- Right leaf -->
+    <rect x="140" y="380" width="40" height="80" class="metal" />
+    <circle cx="167" cy="390" r="3" fill="var(--accent)" />
+    <circle cx="167" cy="405" r="3" fill="var(--accent)" />
+    <circle cx="167" cy="420" r="3" fill="var(--accent)" />
+    <circle cx="167" cy="445" r="3" fill="var(--accent)" />
+
+    <!-- Curved end (aesthetic) -->
+    <path d="M 100 460 Q 95 470 100 480" fill="none" stroke="var(--text)" stroke-width="2" />
+    <path d="M 180 460 Q 185 470 180 480" fill="none" stroke="var(--text)" stroke-width="2" />
+
+    <!-- Dimensions -->
+    <text x="150" y="520" text-anchor="middle" class="label">Length: 75-150mm</text>
+    <text x="150" y="535" text-anchor="middle" class="label">Width: 25-50mm</text>
+    <text x="150" y="550" text-anchor="middle" class="label">Pin: 12-16mm</text>
+    <text x="150" y="570" text-anchor="middle" class="label" font-weight="bold">Use: Door hinges,</text>
+    <text x="150" y="585" text-anchor="middle" class="label" font-weight="bold">window frames</text>
+  </g>
+
+  <!-- HARDWARE 6: LATCH MECHANISM -->
+  <g id="latch">
+    <text x="400" y="350" text-anchor="middle" class="hardware-label">Norfolk Latch</text>
+
+    <!-- Frame -->
+    <rect x="350" y="375" width="100" height="110" fill="none" stroke="var(--text)" stroke-width="1" />
+
+    <!-- Bolt (L-shaped) -->
+    <rect x="370" y="420" width="40" height="8" class="metal" />
+    <rect x="370" y="420" width="8" height="30" class="metal" />
+
+    <!-- Lever (above) -->
+    <rect x="350" y="390" width="100" height="8" class="metal" />
+
+    <!-- Pivot pins -->
+    <circle cx="360" cy="418" r="3" fill="var(--accent)" />
+    <circle cx="440" cy="418" r="3" fill="var(--accent)" />
+
+    <!-- Strike plate (right side) -->
+    <rect x="460" y="425" width="20" height="30" class="metal" stroke="var(--text)" stroke-width="1" />
+
+    <!-- Dimensions -->
+    <text x="410" y="530" text-anchor="middle" class="label">Lever: 100mm</text>
+    <text x="410" y="545" text-anchor="middle" class="label">Bolt: 50mm stroke</text>
+    <text x="410" y="560" text-anchor="middle" class="label">Spring return</text>
+    <text x="410" y="580" text-anchor="middle" class="label" font-weight="bold">Use: Heavy doors,</text>
+    <text x="410" y="595" text-anchor="middle" class="label" font-weight="bold">traditional buildings</text>
+  </g>
+
+  <!-- HARDWARE 7: CHAIN LINKS -->
+  <g id="chain">
+    <text x="700" y="350" text-anchor="middle" class="hardware-label">Chain Links</text>
+
+    <!-- Five connected links -->
+    <ellipse cx="665" cy="410" rx="12" ry="18" fill="none" stroke="var(--text)" stroke-width="2" />
+    <ellipse cx="695" cy="410" rx="12" ry="18" fill="none" stroke="var(--text)" stroke-width="2" />
+    <ellipse cx="725" cy="410" rx="12" ry="18" fill="none" stroke="var(--text)" stroke-width="2" />
+    <ellipse cx="755" cy="410" rx="12" ry="18" fill="none" stroke="var(--text)" stroke-width="2" />
+
+    <!-- Connection points -->
+    <line x1="677" y1="410" x2="683" y2="410" stroke="var(--text)" stroke-width="2" />
+    <line x1="707" y1="410" x2="713" y2="410" stroke="var(--text)" stroke-width="2" />
+    <line x1="737" y1="410" x2="743" y2="410" stroke="var(--text)" stroke-width="2" />
+
+    <!-- Dimensions -->
+    <text x="710" y="460" text-anchor="middle" class="label">Dia: 6-8mm per link</text>
+    <text x="710" y="475" text-anchor="middle" class="label">Length: varies (custom)</text>
+    <text x="710" y="495" text-anchor="middle" class="label" font-weight="bold">Use: Suspension,</text>
+    <text x="710" y="510" text-anchor="middle" class="label" font-weight="bold">securing, decoration</text>
+  </g>
+
+  <!-- LEGEND -->
+  <g id="legend">
+    <text x="50" y="650" class="hardware-label">Forging & Tempering Guide:</text>
+    <text x="50" y="670" class="label">Cut nails → forge + temper to straw yellow. Wire nails → taper + temper. Bolts → form head + thread. Hinges → form leaves + pin. All require forge, anvil, tongs, quench medium.</text>
+  </g>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+</svg>
+</p>
+<p><strong>Key principles:</strong></p>
+<ol>
+<li><strong>Material recycling:</strong> Salvaged steel (old tools, vehicle parts, scrap) provides excellent raw material</li>
+<li><strong>Quality control:</strong> Hand-forged hardware is often superior to low-grade industrial fasteners (fewer impurities, better fit)</li>
+<li><strong>Specialization:</strong> Custom hardware (non-standard sizes, unique designs) is possible via forging</li>
+</ol>
+<p><strong>This guide covers:</strong></p>
+<ul>
+<li>Nail forging (cut nails, wire nails)</li>
+<li>Screw cutting and thread forming</li>
+<li>Bolt and nut production</li>
+<li>Rivet making and installation</li>
+<li>Hinge forging (strap, T, butt styles)</li>
+<li>Latch and catch mechanisms</li>
+<li>Hook and eye production</li>
+<li>Chain link making</li>
+<li>Tempering and final assembly</li>
+</ul>
+<div class="warning">
+<p>Metalworking requires proper safety precautions: eye protection (sparks), hand protection (gloves for handling hot material), ventilation (forge fumes), and proper tool handling. Never rush; quality is safer than speed.</p>
+</div>
+</section>
+<section id="nail-forging">
+<h2>Nail Forging: Cut Nails and Wire Nails</h2>
+<h3>Cut Nails (Square/Rectangular Shank)</h3>
+<p>Cut nails are forged from flat bar stock by cutting and forming. Traditional construction heavily used cut nails; they hold wood better than round wire nails due to square shank creating mechanical grip.</p>
+<p><strong>Nail sizing standards:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Penny Size</th>
+<th>Length (mm)</th>
+<th>Diameter (mm)</th>
+<th>Typical Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2d (10 penny)</strong></td>
+<td>25</td>
+<td>2.0</td>
+<td>Trim, thin boards</td>
+</tr>
+<tr>
+<td><strong>4d</strong></td>
+<td>38</td>
+<td>2.5</td>
+<td>Small framing</td>
+</tr>
+<tr>
+<td><strong>6d</strong></td>
+<td>40</td>
+<td>2.8</td>
+<td>Framing, siding</td>
+</tr>
+<tr>
+<td><strong>8d</strong></td>
+<td>65</td>
+<td>3.3</td>
+<td>Heavy framing</td>
+</tr>
+<tr>
+<td><strong>10d</strong></td>
+<td>75</td>
+<td>3.8</td>
+<td>Very heavy framing</td>
+</tr>
+<tr>
+<td><strong>16d</strong></td>
+<td>90</td>
+<td>4.4</td>
+<td>Timber construction</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Forging process (simplified):</strong></p>
+<ol>
+<li><strong>Stock preparation:</strong> Cut flat bar stock (typically 3–5mm thick, width matching nail body width)</li>
+<li><strong>Length cutting:</strong> Use hardy or cut hardie to cut to nail length (~25mm excess for forming)</li>
+<li><strong>Taper head:</strong> Heat tip white-hot, rotate and hammer to flatten slightly; create point by striking at angle</li>
+<li><strong>Head formation:</strong> Heat near handle, hammer up around square mandrel or hardy to form head</li>
+<li><strong>Final shape:</strong> Tap to refine, cool in water or oil</li>
+</ol>
+<p><strong>Head styles:</strong></p>
+<ul>
+<li><strong>Plain head:</strong> Flat or slightly domed</li>
+<li><strong>Rosette head:</strong> Decorative, made by hammering around fluted mandrel</li>
+<li><strong>Clench ring:</strong> Formed ring on shank for extra holding power (obsolete but historical)</li>
+</ul>
+<h3>Wire Nails from Salvage</h3>
+<p><strong>Material:</strong> Recycle old wire (fence wire, electrical wire, spring steel) into round-shank nails.</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li><strong>Stock preparation:</strong> Straighten salvaged wire (anneal if brittle, then straighten on tapered mandrel)</li>
+<li><strong>Cut to length:</strong> Use hardy or shears to cut wire</li>
+<li><strong>Taper point:</strong> Heat one end yellow-hot, hammer on rounded stake to form sharp point</li>
+<li><strong>Head formation:</strong> Heat opposite end, hammer around mandrel to form head</li>
+</ol>
+<p><strong>Advantages:</strong> Easier than cut nails (no flattening required), salvage material zero-cost.</p>
+<p><strong>Disadvantage:</strong> Slightly lower holding power than cut nails (round shank vs. square).</p>
+<h3>Nail Tempering</h3>
+<p>Nails require tempering for hardness without brittleness.</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li><strong>Quench:</strong> Cool hot nail in oil or water (creates hard martensitic structure)</li>
+<li><strong>Temper:</strong> Heat to dark straw color (~200°C), identified by oxide color: straw-yellow = good hardness, blue = too soft</li>
+</ol>
+<p><strong>Color chart (by temperature):</strong></p>
+<pre><code>Pale straw (160°C): Very hard, slightly brittle
+Straw yellow (180–200°C): Ideal for nails (medium hardness + toughness)
+Brown (220°C): Softer, more ductile
+Purple (250°C): Springs
+Blue (300°C): Very soft, tools
+</code></pre>
+<p><strong>Identification without temperature gauge:</strong> Heat nail to color in forge, observe oxide film:</p>
+<ul>
+<li>Very pale = too hard (quench immediately)</li>
+<li>Golden straw = good for nails (let cool in air or warm water)</li>
+<li>Dark brown = probably too soft (reheat slightly, retemper)</li>
+</ul>
+</section>
+<section id="screw-cutting">
+<h2>Screw Cutting and Formation</h2>
+<p>Forged screws are laborious but possible with hand tools. Most practical approach: salvage threads from old bolts/screws, reshape.</p>
+<h3>Screw Thread Cutting (By Hand)</h3>
+<p><strong>Tools needed:</strong></p>
+<ul>
+<li>Lathe or thread-cutting die (if available)</li>
+<li>Taps and dies (traditional hand tools)</li>
+<li>Bench vise</li>
+</ul>
+<p><strong>Process (using tap/die set):</strong></p>
+<ol>
+<li><strong>Blank preparation:</strong> Forge or salvage blank bolt/rod (diameter matching desired screw size)</li>
+<li><strong>Mark length:</strong> Mark thread-cutting length with scribe</li>
+<li><strong>Die application:</strong> Heat blank very slightly (warm, not hot; helps die cut without slipping), place in sturdy vise</li>
+<li><strong>First cut:</strong> Fit die around blank, align square to blank axis (critical), turn die clockwise (creating right-hand threads)</li>
+<li><strong>Gradual cuts:</strong> Multiple passes (turn die ~2–3 rotations per pass); after each pass, back off die 1/4 turn to clear chips</li>
+<li><strong>Depth control:</strong> Stop when thread depth reaches ~70% of blank diameter (safety margin for shank strength)</li>
+</ol>
+<p><strong>Threading difficulty:</strong> Manual thread cutting is very labor-intensive and requires significant skill. In off-grid contexts, it's often more practical to:</p>
+<ul>
+<li>Salvage old screws and reforge heads if needed</li>
+<li>Use simple screw-like fasteners (wooden dowels with spiral grooves)</li>
+<li>Substitute bolts with nuts + washers for quick fastening</li>
+</ul>
+<h3>Screw Head Forming</h3>
+<p><strong>Slotted head (slot for screwdriver):</strong></p>
+<ol>
+<li><strong>Head formation:</strong> Heat near blank end, hammer around mandrel to form rounded/conical head</li>
+<li><strong>Slot cutting:</strong> Once cool, use saw or chisel to cut vertical slot (perpendicular to grain)</li>
+</ol>
+<p><strong>Phillips head or square drive:</strong> Requires specialized dies or lathe; impractical for hand forging.</p>
+<div class="tip">
+<p>For off-grid fastening, prioritize bolts/nuts (easier to make, reusable) over screws. Screws are luxury fasteners; bolts are practical.</p>
+</div>
+</section>
+<section id="bolt-nut-production">
+<h2>Bolt and Nut Production</h2>
+<h3>Bolt Forging</h3>
+<p><strong>Process:</strong></p>
+<ol>
+<li><strong>Stock selection:</strong> Use salvaged rod or bar stock (diameter matching desired bolt size)</li>
+<li><strong>Length cutting:</strong> Cut to bolt length + head stock (~1.5× diameter excess)</li>
+<li><strong>Head formation:</strong>
+<ul>
+<li>Heat end to bright cherry-red</li>
+<li>Place in bolt header (if available) or shape over stake</li>
+<li>Hammer radially around stake, forming hexagonal/round head</li>
+<li>Refine shape with light taps</li>
+</ul>
+</li>
+<li><strong>Shank straightness:</strong> Cool, place in vise, tap gently to remove bends</li>
+<li><strong>Thread formation:</strong> See screw-cutting section (salvage threads when possible)</li>
+</ol>
+<p><strong>Head styles:</strong></p>
+<ul>
+<li><strong>Round head:</strong> Simple, forged directly over rounded stake</li>
+<li><strong>Hexagonal head:</strong> Forged in hexagonal header or shaped with side taps</li>
+<li><strong>Square head:</strong> Traditional, shaped with four anvil hits on corners</li>
+</ul>
+<p><strong>Standard sizes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Diameter</th>
+<th>Thread</th>
+<th>Length (typical)</th>
+<th>Hex Width</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>6mm</strong></td>
+<td>M6 (1.0)</td>
+<td>20–40mm</td>
+<td>10mm</td>
+</tr>
+<tr>
+<td><strong>8mm</strong></td>
+<td>M8 (1.25)</td>
+<td>25–50mm</td>
+<td>13mm</td>
+</tr>
+<tr>
+<td><strong>10mm</strong></td>
+<td>M10 (1.5)</td>
+<td>30–60mm</td>
+<td>15mm</td>
+</tr>
+<tr>
+<td><strong>12mm</strong></td>
+<td>M12 (1.75)</td>
+<td>40–80mm</td>
+<td>18mm</td>
+</tr>
+</tbody>
+</table>
+<h3>Nut Production</h3>
+<p>Nut forging is simpler than bolt production (no threading required on exterior).</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li><strong>Stock:</strong> Use salvage rod or forge from short blank (~15mm long for M6, scales with size)</li>
+<li><strong>Shape:</strong>
+<ul>
+<li>Heat to bright cherry-red</li>
+<li>Place in nut die/anvil pattern (hexagonal cutouts or square impressions)</li>
+<li>Strike to impress hex/square form</li>
+</ul>
+</li>
+<li><strong>Thread tapping:</strong>
+<ul>
+<li>Cool completely</li>
+<li>Clamp in vise, apply tap (same as bolt threading)</li>
+<li>Multiple passes, clearing chips between passes</li>
+<li>Stop at appropriate depth (ensure bolt fits without binding)</li>
+</ul>
+</li>
+</ol>
+<p><strong>Nut sizing (inside diameter):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Bolt Size</th>
+<th>Metric Thread</th>
+<th>Hex Width</th>
+<th>Thickness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M6</strong></td>
+<td>6.0</td>
+<td>10mm</td>
+<td>5mm</td>
+</tr>
+<tr>
+<td><strong>M8</strong></td>
+<td>8.0</td>
+<td>13mm</td>
+<td>6.5mm</td>
+</tr>
+<tr>
+<td><strong>M10</strong></td>
+<td>10.0</td>
+<td>15mm</td>
+<td>8mm</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tempering:</strong> Nuts benefit from light tempering (heat to pale straw, cool in air) for toughness; they don't require extreme hardness like screws.</p>
+<p>:::forging-temp
+<strong>Forging temperature identification (by color):</strong></p>
+<ul>
+<li>Black heat (barely visible) — too cool, don't forge</li>
+<li>Dark red (burgundy) — getting workable</li>
+<li>Cherry red (bright red) — excellent forging temperature</li>
+<li>Orange — getting hot, risk of scaling</li>
+<li>Yellow/white — very hot, rapid oxidation, reduced metal life
+:::</li>
+</ul>
+</section>
+<section id="rivets">
+<h2>Rivet Making and Installation</h2>
+<p>Rivets are permanent fasteners (cannot be removed) suited for overlapping sheet metal or heavy-duty joints.</p>
+<h3>Rivet Forging</h3>
+<p><strong>Process:</strong></p>
+<ol>
+<li><strong>Stock:</strong> Cut short lengths of rod (slightly larger diameter than desired rivet shaft)</li>
+<li><strong>Head formation:</strong> Heat to cherry-red, place rod end on stake (not anvil — to protect stake), hammer on rod tip to form head</li>
+<li><strong>Cool:</strong> Allow to cool slightly</li>
+<li><strong>Trim shaft:</strong> Cut shaft to appropriate length (slightly longer than material thickness + head height)</li>
+</ol>
+<p><strong>Rivet head styles:</strong></p>
+<ul>
+<li><strong>Button head:</strong> Rounded/domed (most common)</li>
+<li><strong>Flush head:</strong> Flat or slightly countersunk</li>
+<li><strong>Cone head:</strong> Tapered (decorative, strong)</li>
+</ul>
+<h3>Rivet Installation</h3>
+<p><strong>Process:</strong></p>
+<ol>
+<li><strong>Hole drilling:</strong> Drill hole through overlapped materials; hole diameter ~0.2mm larger than rivet</li>
+<li><strong>Insert rivet:</strong> Heat rivet to cherry-red (100–200 degrees below quenching temperature; rivet must stay soft)</li>
+<li><strong>Set:</strong> Place hot rivet in hole from underneath; strike hammer blows on exposed head, deforming hot shaft to fill hole and form second head</li>
+<li><strong>Hammer angle:</strong> Strike at slight angle, rotating rivet periodically to form uniform head</li>
+</ol>
+<p><strong>Skill requirement:</strong> High — perfect timing (temperature control) and even striking produce good rivets. Cold riveting (no heating) is weaker but possible for small rivets.</p>
+<p><strong>Uses:</strong> Boiler construction, sheet metal panels, high-stress applications where bolts aren't practical.</p>
+</section>
+<section id="hinge-forging">
+<h2>Hinge Forging</h2>
+<h3>Strap Hinges (Long, Heavy-Duty)</h3>
+<p>Strap hinges are the simplest hinges to forge; they're essentially two flat bars with holes and a pin joint.</p>
+<p><strong>Forging process:</strong></p>
+<ol>
+<li><strong>Leaves:</strong> Forge two flat bars (typically 50–100mm long, 25–40mm wide, 6–8mm thick)</li>
+<li><strong>Taper ends:</strong> Taper one end of each leaf to rounded point (for aesthetic appeal and to prevent splinters)</li>
+<li><strong>Hole punching:</strong> Heat, place on hardy, punch 3–4 holes per leaf (for bolting to frame/door)</li>
+<li><strong>Pin hole:</strong> Larger hole at one end (12–16mm diameter) accepts pintle pin</li>
+<li><strong>Pintle pin:</strong> Forge round pin (12–16mm diameter, 50–100mm long) with slight flange at one end to prevent migration</li>
+</ol>
+<p><strong>Assembly:</strong></p>
+<ul>
+<li>Sandwich pin between two leaves</li>
+<li>Pin enters hole in one leaf, sits on flange</li>
+<li>Allows rotation (door swing)</li>
+</ul>
+<p><strong>Advantages:</strong> Simple, strong, easily repaired if pin wears.</p>
+<h3>T-Hinges (Mid-Size, Decorative)</h3>
+<p>T-hinges have horizontal leaf and vertical leaf forming &quot;T&quot; shape.</p>
+<p><strong>Forging:</strong></p>
+<ol>
+<li><strong>Horizontal leaf:</strong> Flat bar (50–75mm wide, 6–8mm thick)</li>
+<li><strong>Vertical leaf:</strong> Bar bent into &quot;L&quot; or formed to vertical position (30–50mm wide)</li>
+<li><strong>Pin joint:</strong> Large hole at intersection allows pin to pass through both leaves</li>
+<li><strong>Holes:</strong> 3–4 bolt holes per leaf for fastening</li>
+</ol>
+<p><strong>Advantage:</strong> More visually refined than strap hinges; excellent strength.</p>
+<h3>Butt Hinges (Small, Mortise-Mount)</h3>
+<p>Butt hinges are compact, designed for mortising into door/frame edge.</p>
+<p><strong>Challenges:</strong> Requires precision; difficult to forge without specialized dies.</p>
+<p><strong>Simplified approach:</strong></p>
+<ol>
+<li>Forge two small rectangular leaves (~40mm × 15mm, 4mm thick)</li>
+<li>Form pin hole at one end</li>
+<li>Salvage actual hinge pin from old hardware (easier than forging small pin)</li>
+</ol>
+<p><strong>Note:</strong> Butt hinges are more practical to salvage and reuse than to forge from scratch.</p>
+</section>
+<section id="latches-catches">
+<h2>Latches and Catch Mechanisms</h2>
+<h3>Norfolk Latch (Traditional Heavy)</h3>
+<p>Norfolk latch is a mechanical fastener using lever and rotating bolt.</p>
+<p><strong>Components:</strong></p>
+<ol>
+<li><strong>Bolt:</strong> L-shaped rod or forged U-shape, rotates horizontally on pivot pins</li>
+<li><strong>Lever:</strong> Long bar pivots above bolt; lifting lever raises bolt</li>
+<li><strong>Keeper:</strong> Strike plate on frame catches bolt when pressed down</li>
+</ol>
+<p><strong>Forging:</strong></p>
+<ol>
+<li><strong>L-bolt:</strong> Forge from rod; heat, bend 90° at appropriate point</li>
+<li><strong>Lever bar:</strong> Flat bar with holes for pivot pins</li>
+<li><strong>Pivot pins:</strong> 6–8mm diameter rods serve as hinge pins</li>
+<li><strong>Strike plate:</strong> Flat steel bolted to door frame, shaped to catch bolt</li>
+</ol>
+<p><strong>Assembly:</strong></p>
+<ul>
+<li>Mount pivot pins to door frame</li>
+<li>Bolt rotates on pins below lever</li>
+<li>Pressing down on lever lifts bolt; releasing lets spring/weight lower bolt into keeper</li>
+</ul>
+<h3>Thumb Latch (Medieval/Simple)</h3>
+<p>Thumb latch uses thumb pressure on external lever to retract bolt.</p>
+<p><strong>Components:</strong></p>
+<ol>
+<li><strong>Bolt:</strong> Wooden or metal peg inside door, held by leather loop</li>
+<li><strong>Latch lever:</strong> External lever connected via rod to bolt mechanism</li>
+<li><strong>Spring:</strong> Simple loop or leaf spring returns bolt to locked position</li>
+</ol>
+<p><strong>Simplest construction:</strong></p>
+<ul>
+<li>Bolt: Wooden peg sliding in drilled holes</li>
+<li>Latch: Leather strap looped around peg, attached to external lever</li>
+<li>Pressing lever pulls leather strap, retracting peg; releasing lever allows peg to extend</li>
+</ul>
+<h3>Barrel Bolt (Simple Slide)</h3>
+<p>Barrel bolt is essentially a round rod that slides within a housing.</p>
+<p><strong>Forging:</strong></p>
+<ol>
+<li><strong>Rod:</strong> Smooth cylindrical shaft (12–16mm diameter), length matching door thickness + 50mm</li>
+<li><strong>Housing:</strong> Forged or fabricated sleeves/guides mounting on door face</li>
+<li><strong>Handle:</strong> Small cross-bar welded to rod end for gripping/turning</li>
+</ol>
+<p><strong>Advantages:</strong> Very simple, reliable, easy to repair.</p>
+</section>
+<section id="hooks-eyes-chains">
+<h2>Hooks, Eyes, and Chain Links</h2>
+<h3>Hook and Eye Fastening</h3>
+<p>Simple but effective for light-duty applications (cabinets, latches, hanging).</p>
+<p><strong>Eye forging:</strong></p>
+<ol>
+<li>Heat round rod (6–8mm diameter)</li>
+<li>Bend around tapered mandrel to form loop</li>
+<li>Overlap ends slightly, weld or bolt together</li>
+<li>Smooth any sharp edges</li>
+</ol>
+<p><strong>Hook forging:</strong></p>
+<ol>
+<li>Heat one end of rod</li>
+<li>Taper and curve into hook shape (typically 20–40mm radius)</li>
+<li>The opposite end becomes mounting point (drilled for bolt/rivet)</li>
+</ol>
+<p><strong>Installation:</strong> Bolt eye to frame, hook to door or sliding part. Hook engages eye for light holding.</p>
+<h3>Chain Link Making</h3>
+<p>Chain links are useful for secured tools, suspended components, or decorative hardware.</p>
+<p><strong>Simple chain forging (looped links):</strong></p>
+<ol>
+<li><strong>Stock:</strong> Use round rod (4–6mm diameter for light chain, 8–12mm for heavy)</li>
+<li><strong>Coil:</strong> Wrap rod around mandrel (forming circular loops)</li>
+<li><strong>Cut:</strong> Cut coil to separate individual loops</li>
+<li><strong>Weld:</strong> Heat overlapping ends until cherry-red, hammer to fuse</li>
+<li><strong>Link:</strong> Connect welded loops to previous links, building chain</li>
+</ol>
+<p><strong>Enhanced chain (open-and-close links):</strong></p>
+<ol>
+<li>Forge loops as above</li>
+<li>Leave one end of each link open (do not fully weld)</li>
+<li>When installing, slip new link through previous, then weld the open end</li>
+<li>Allows custom chain length without completely re-forging</li>
+</ol>
+<p><strong>Strength:</strong> Hand-forged chain suitable for suspension loads up to ~50kg per link (depends on material and welding quality). Test with proof load before trusting with critical applications.</p>
+</section>
+<section id="tempering-hardening">
+<h2>Tempering and Hardening Hardware</h2>
+<h3>Hardening (Quenching)</h3>
+<p>Hardening converts steel to a harder but brittler state through rapid cooling.</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li><strong>Heat:</strong> Bring steel to bright cherry-red (not hotter; hotter steel will degrade)</li>
+<li><strong>Quench:</strong> Plunge into cold medium:
+<ul>
+<li><strong>Water:</strong> Fastest cooling, best hardness, risk of cracking</li>
+<li><strong>Oil:</strong> Slower cooling, slightly less hard, lower crack risk (safer)</li>
+<li><strong>Brine (salt water):</strong> Intermediate, historical standard</li>
+</ul>
+</li>
+<li><strong>Cool completely:</strong> Leave in quench medium until no longer warm (5–10 min)</li>
+</ol>
+<p><strong>Quenching risk:</strong> Rapid cooling creates internal stresses. Large items (bolts &gt;12mm) risk cracking; smaller items (nails, hinges) are safer.</p>
+<p><strong>Reducing crack risk:</strong></p>
+<ul>
+<li>Use oil instead of water</li>
+<li>Pre-warm quench medium to ~20–40°C</li>
+<li>Don't plunge suddenly; cool gradually by withdrawing from heat first</li>
+<li>Larger items may need slow-quench (oil) + air cooling</li>
+</ul>
+<h3>Tempering (Stress Relief)</h3>
+<p>Tempering reduces brittleness while maintaining hardness by reheating quenched steel to lower temperatures.</p>
+<p><strong>Temperature control (without thermometer):</strong></p>
+<p>Oxidation colors indicate temperature:</p>
+<pre><code>Pale straw (160–180°C):  Very hard, slightly brittle — nails, cold chisels
+Straw yellow (180–200°C): Ideal for nails, screws — medium hardness + flexibility
+Brown (220–240°C):        Softer, more flexible — springs, tools needing toughness
+Purple (250–280°C):       Spring temper — leaf springs, coils
+Blue (300–320°C):         Very soft — not useful for most hardware
+</code></pre>
+<p><strong>Tempering process:</strong></p>
+<ol>
+<li><strong>Quench hardened part:</strong> Cool from bright red quench</li>
+<li><strong>Polish surface:</strong> Use wire brush to clean oxide layer (allows color observation)</li>
+<li><strong>Reheat slowly:</strong> Place on hot anvil or in warm section of forge; watch oxide color develop</li>
+<li><strong>Stop at correct color:</strong> When color reaches desired shade, cool immediately in air or water</li>
+<li><strong>Result:</strong> Part now has desired hardness + toughness balance</li>
+</ol>
+<p><strong>Example (nail tempering):</strong></p>
+<ol>
+<li>Quench nail from bright cherry-red in oil</li>
+<li>Polish surface with wire brush</li>
+<li>Reheat gently until oxide color reaches golden straw</li>
+<li>Cool in air or warm water</li>
+<li>Result: Hard nail that won't shatter if struck at angle</li>
+</ol>
+<div class="warning">
+<p>Tempering success depends on careful color observation. Work in dim light (dark forge helps), compare to reference samples if possible, and practice on less critical items first.</p>
+</div>
+</section>
+<section id="assembly-installation">
+<h2>Assembly and Installation Best Practices</h2>
+<h3>Bolt Assembly Sequence</h3>
+<ol>
+<li><strong>Clean threads:</strong> Remove any dirt/scale</li>
+<li><strong>Insert bolt:</strong> Pass through aligned holes</li>
+<li><strong>Hand-thread nut:</strong> Turn nut by hand until snug (avoid cross-threading)</li>
+<li><strong>Tighten:</strong> Use two wrenches (one on bolt head, one on nut) to tighten firmly</li>
+<li><strong>Final check:</strong> Bolt should not turn freely; slight resistance = good tension</li>
+</ol>
+<p><strong>Tightening force:</strong> Do not over-tighten (risk of stripping threads or shearing bolt). For wood applications, snug enough that bolt cannot rotate under moderate hand force.</p>
+<h3>Rivet Installation Quality Control</h3>
+<ol>
+<li><strong>Temperature:</strong> Rivet must be hot (cherry-red) but not smoking or orange</li>
+<li><strong>Set:</strong> Strike riveted end with steady, controlled blows (not wild swings)</li>
+<li><strong>Rotation:</strong> Rotate rivet slightly between strikes for symmetric head formation</li>
+<li><strong>Result:</strong> Both rivet heads should be uniform, with minimal gaps at joint</li>
+</ol>
+<p><strong>Inspection:</strong> Pull or flex joint to ensure rivet isn't loose (loose rivet will rattle/flex).</p>
+<h3>Hinge Installation</h3>
+<ol>
+<li><strong>Alignment:</strong> Doors must hang square; use shims if frame is out of plumb</li>
+<li><strong>Hinge spacing:</strong> Top hinge at 150–200mm from door top; bottom hinge at 150–200mm from bottom; middle hinge (if used) centered</li>
+<li><strong>Bolt pattern:</strong> Bolts distributed across hinge leaves; tighten evenly (no cross-threading)</li>
+<li><strong>Operation test:</strong> Door should swing smoothly; no binding at top/bottom</li>
+</ol>
+<h3>Hardware Maintenance</h3>
+<p><strong>Regular inspection:</strong></p>
+<ul>
+<li>Check bolt/nut tightness (monthly for doors/windows)</li>
+<li>Lubricate hinges with light oil (prevents squeaking, extends life)</li>
+<li>Inspect for rust (clean with wire brush, apply oil)</li>
+<li>Tighten loose fasteners immediately (prevent further loosening)</li>
+</ul>
+<p><strong>Seasonal adjustment:</strong></p>
+<ul>
+<li>Winter: Bolts may loosen due to wood shrinkage; re-tighten</li>
+<li>Summer: Wood expands; watch for hinge strain (loose bolts again)</li>
+</ul>
+</section>
+<section id="fastener-standards">
+<h2>Fastener Size Reference Table</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Material</th>
+<th>Diameter</th>
+<th>Length</th>
+<th>Temper</th>
+<th>Typical Qty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Framing (wood)</strong></td>
+<td>Mild steel</td>
+<td>4–5mm</td>
+<td>65–90mm</td>
+<td>Straw yellow</td>
+<td>500–1000</td>
+</tr>
+<tr>
+<td><strong>Heavy framing</strong></td>
+<td>Mild steel</td>
+<td>5–6mm</td>
+<td>90–150mm</td>
+<td>Straw yellow</td>
+<td>100–500</td>
+</tr>
+<tr>
+<td><strong>Door hinges</strong></td>
+<td>Medium steel</td>
+<td>8–10mm bolts</td>
+<td>40–60mm</td>
+<td>Pale straw</td>
+<td>6–12</td>
+</tr>
+<tr>
+<td><strong>Latches</strong></td>
+<td>Medium steel</td>
+<td>6–8mm rod</td>
+<td>50–100mm</td>
+<td>Brown</td>
+<td>4–8</td>
+</tr>
+<tr>
+<td><strong>Rivets</strong></td>
+<td>Mild steel</td>
+<td>4–6mm</td>
+<td>15–25mm</td>
+<td>Soft</td>
+<td>50–200</td>
+</tr>
+<tr>
+<td><strong>Chain</strong></td>
+<td>Medium steel</td>
+<td>6–8mm links</td>
+<td>Varies</td>
+<td>Pale straw</td>
+<td>Custom length</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="production-checklist">
+<h2>Hardware Production Workflow</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Sequence</th>
+<th>Estimated Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nail</strong></td>
+<td>Cut → taper point → form head → temper</td>
+<td>2–3 min/nail</td>
+</tr>
+<tr>
+<td><strong>Bolt</strong></td>
+<td>Cut → form head → thread → temper</td>
+<td>10–15 min/bolt</td>
+</tr>
+<tr>
+<td><strong>Nut</strong></td>
+<td>Forge hex → thread → temper</td>
+<td>5–8 min/nut</td>
+</tr>
+<tr>
+<td><strong>Hinge</strong></td>
+<td>Forge leaves → punch holes → form pin → assemble</td>
+<td>30–45 min/hinge</td>
+</tr>
+<tr>
+<td><strong>Rivet</strong></td>
+<td>Form head → test fit → assemble → install</td>
+<td>2–3 min/rivet</td>
+</tr>
+<tr>
+<td><strong>Latch</strong></td>
+<td>Forge lever → form bolt → assemble → test</td>
+<td>45–60 min/latch</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Safety checklist:</strong></p>
+<ul>
+<li>[ ] Eye protection (sparks)</li>
+<li>[ ] Hand protection (gloves for hot material)</li>
+<li>[ ] Secure workspace (organized, clear)</li>
+<li>[ ] Cool quench medium pre-prepared</li>
+<li>[ ] Proper ventilation (forge fumes)</li>
+<li>[ ] Fire extinguisher nearby</li>
+<li>[ ] First aid kit accessible</li>
+<li>[ ] No loose clothing or jewelry</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="blacksmithing.html">Blacksmithing</a>
+<a href="timber-framing-joinery.html">Timber Framing and Joinery</a>
+<a href="basic-tool-manufacturing.html">Basic Tool Manufacturing</a>
+<a href="metalworking.html">Metalworking &amp; Blacksmithing</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

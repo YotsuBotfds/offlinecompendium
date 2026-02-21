@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/machine-tools.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machine Tools &amp; Workshop - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.breadcrumb{margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}.breadcrumb a{color:var(--accent2);text-decoration:none;margin-right:.5rem}.breadcrumb a:hover{text-decoration:underline}.diagram-section{background:var(--surface);border-radius:12px;padding:2rem;margin:2rem 0;border:1px solid var(--border)}svg{max-width:100%;height:auto;display:block;margin:1rem auto}.diagram-label{fill:#eee;font-size:14px;font-family:Georgia,'Times New Roman',serif}.diagram-title{color:var(--accent);font-size:1.3rem;margin-bottom:1rem;text-align:center}.procedure{background:var(--surface);border-radius:8px;padding:1.5rem;margin:1rem 0;border-left:4px solid var(--accent2)}.procedure-step{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}.procedure-step:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}.step-number{display:inline-block;background:var(--accent);color:var(--bg);width:2rem;height:2rem;border-radius:50%;text-align:center;line-height:2rem;margin-right:.5rem;font-weight:600}.callout{background:var(--surface);border-left:4px solid var(--accent);padding:1rem 1.5rem;margin:1.5rem 0;border-radius:8px}.callout.important{border-left-color:#ff6b6b}.callout.tip{border-left-color:var(--accent2)}.footer-links{background:var(--surface);border-radius:12px;padding:2rem;margin-top:3rem;border-top:2px solid var(--accent)}.footer-links h3{margin-top:0}.footer-links ul{list-style:none;margin-left:0}.footer-links a{color:var(--accent2);text-decoration:none;display:inline-block;margin-right:1.5rem;margin-bottom:.5rem}.footer-links a:hover{text-decoration:underline}
+</style>
+<meta name="description" content="Lathe construction, milling, tool grinding, jigs and fixtures, precision measurement, workshop layout, and tool maintenance.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/machine-tools.html">
+<meta property="og:title" content="Machine Tools &amp; Workshop">
+<meta property="og:description" content="Lathe construction, milling, tool grinding, jigs and fixtures, precision measurement, workshop layout, and tool maintenance.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Building &amp; Engineering", "item": "https://zerotoherohero.com/#sec-building"},
+    {"@type": "ListItem", "position": 3, "name": "Machine Tools &amp; Workshop", "item": "https://zerotoherohero.com/guides/machine-tools.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Machine Tools &amp; Workshop",
+  "description": "Lathe construction, milling, tool grinding, jigs and fixtures, precision measurement, workshop layout, and tool maintenance.",
+  "dateModified": "2026-02-16",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-099">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-building">Building &amp; Engineering</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Machine Tools &amp; Workshop</span>
+</nav>
+<header>
+<h1>Machine Tools &amp; Workshop</h1>
+<p class="subtitle">Lathe construction, milling, tool grinding, jigs and fixtures, precision measurement, workshop layout, and tool maintenance.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●●○</span>
+<span class="read-time">📖 ~28 min read</span>
+<span class="last-updated">· Updated: 2026-02-16</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#workshop-layout-amp-setup">Workshop Layout &amp; Setup</a></li>
+<li><a href="#workbench">The Workbench</a></li>
+<li><a href="#hand-tools">Essential Hand Tools</a></li>
+<li><a href="#lathe">Lathe Fundamentals</a></li>
+<li><a href="#thread-cutting">Thread Cutting &amp; Tapping</a></li>
+<li><a href="#drill-press">Drill Press Operations</a></li>
+<li><a href="#grinding">Grinding &amp; Abrasives</a></li>
+<li><a href="#tools">Tool Maintenance &amp; Sharpening</a></li>
+<li><a href="#milling">Milling Basics</a></li>
+<li><a href="#jigs-fixtures">Jigs &amp; Fixtures</a></li>
+<li><a href="#precision-measurement">Precision Measurement</a></li>
+<li><a href="#power-sources">Power Sources &amp; Mechanical Drive</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#common-mistakes">Common Mistakes</a></li>
+<li><a href="#safety">Safety</a></li>
+<li><a href="#maintenance-schedule">Maintenance Schedule</a></li>
+<li><a href="#quick-reference">Quick Reference</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<!-- SVG-TODO: 1) Lathe anatomy diagram showing headstock/tailstock/tool rest/ways, 2) Sharpening angle reference chart visual, 3) Workshop layout floor plan, 4) Drill press speed chart visual -->
+<section id="introduction">
+<h2>Introduction</h2>
+<p>Machine tools are the backbone of any manufacturing capability. A workshop with even basic machine tools — a lathe, a drill press, a grinder — can produce replacement parts, fabricate new components, and maintain the tools that every other trade depends on. Without machine tools, you are limited to hand work; with them, you can achieve repeatable precision measured in fractions of a millimeter.</p>
+<p>This guide covers setting up a functional workshop from scratch or salvaged equipment, operating the core machine tools safely, maintaining cutting edges, and building the jigs and fixtures that turn one-off operations into repeatable processes. The focus is on practical capability with improvised or salvaged equipment, not factory-grade machinery.</p>
+<div class="info-box">
+<p><strong>Core Machine Tool Hierarchy:</strong> If you can only have one machine tool, make it a lathe. A lathe can build every other machine tool. If you can have two, add a drill press. Three: add a grinder. These three machines cover 90% of workshop needs.</p>
+</div>
+</section>
+<section id="workshop-layout">
+<p>For building a lathe from salvaged materials, see <a href="../lathe-construction-from-salvage.html">Lathe Construction from Salvage</a>.</p>
+<h2 id="workshop-layout-amp-setup">Workshop Layout &amp; Setup</h2>
+<p>A functional workshop needs adequate space, proper lighting, solid flooring, and a logical tool arrangement. Poor layout wastes time, causes accidents, and limits what you can build.</p>
+<p><strong>Minimum space requirements:</strong></p>
+<table>
+<thead><tr><th>Setup</th><th>Floor Space</th><th>Ceiling Height</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Minimal (bench + lathe)</td><td>3m × 4m (12 m²)</td><td>2.4m</td><td>Tight but workable for one person</td></tr>
+<tr><td>Basic workshop</td><td>5m × 6m (30 m²)</td><td>2.7m</td><td>Room for lathe, drill press, bench, storage</td></tr>
+<tr><td>Full shop</td><td>8m × 10m (80 m²)</td><td>3m+</td><td>Multiple machines, assembly area, material storage</td></tr>
+</tbody>
+</table>
+<p><strong>Layout principles:</strong></p>
+<p>Place the heaviest machine (usually the lathe) on the ground floor, on a concrete pad or heavy timber frame bolted to the floor. Vibration from an unanchored lathe ruins precision. Position the workbench near a window or under the strongest light source — hand work needs 500+ lux. Keep the grinder near the lathe so you can resharpen tools without crossing the shop. Store raw materials along one wall with a clear path to the main machines.</p>
+<div class="tip">
+<p>Orient your workbench so natural light comes from the left (for right-handed workers) or from the right (for left-handed). This prevents your hand from casting shadows on your work. Mount a secondary task light on an adjustable arm for detail work.</p>
+</div>
+<p><strong>Flooring:</strong> Concrete is ideal — stable, easy to clean, supports heavy machines. Packed earth works if compacted with gravel and topped with flat stones or salvaged concrete pavers. Avoid wood floors for heavy machines; they flex and vibrate.</p>
+<p><strong>Ventilation:</strong> Grinding produces metal dust; soldering and brazing produce fumes. Provide at minimum a large window and a cross-draft path. For grinding stations, a simple hood made from sheet metal ducted to the outside removes the worst of the dust. A salvaged bathroom fan provides enough airflow for a small grinding station.</p>
+<p><strong>Electrical requirements:</strong> If power is available, a lathe motor draws 1–3 HP (750W–2.2 kW). A grinder draws 500W–1 kW. Plan circuits accordingly. If no electricity is available, foot-powered treadle lathes and hand-cranked drill presses are fully viable — many precision instruments were made this way for centuries.</p>
+</section>
+<section id="workbench">
+<h2>The Workbench</h2>
+<p>The workbench is the most-used surface in any workshop. Build it heavy, flat, and at the correct height.</p>
+<p><strong>Height:</strong> Your workbench surface should sit at the height of your wrist when your arm hangs relaxed at your side — typically 85–95 cm (34–37 inches). Too high causes shoulder strain; too low causes back strain. For metalwork, add 5 cm over the woodworking standard since metal vise work requires more downward force.</p>
+<p><strong>Construction:</strong> The top should be at least 50 mm (2 inches) thick hardwood, or a lamination of thinner boards edge-glued together. Softwood tops dent too easily. A salvaged solid-core door makes an acceptable top in a pinch. Size the top at minimum 600 mm × 1500 mm (2 ft × 5 ft).</p>
+<p><strong>Leg construction:</strong> Use 100 mm × 100 mm (4×4) posts or doubled 50 mm × 100 mm (2×4) lumber. Brace diagonally — an unbraced bench will rack and wobble. The base should weigh enough that the bench does not move when you push a hand plane or strike a chisel. Add a lower shelf for tool storage and additional weight.</p>
+<p><strong>Vise mounting:</strong> Every metalworking bench needs a vise. Mount it at the left end of the bench (for right-handed workers) with the fixed jaw flush with the bench edge. Use at minimum a 100 mm (4-inch) jaw vise. A 125 mm (5-inch) vise is better. Bolt it through the benchtop, not just screwed into the surface — a vise takes enormous lateral loads.</p>
+<div class="warning">
+<p>Always bolt your vise through the full thickness of the bench with backing plates underneath. A vise that tears loose during heavy hammering becomes a dangerous projectile.</p>
+</div>
+</section>
+<section id="hand-tools">
+<h2>Essential Hand Tools</h2>
+<p>Before any machine tools, you need a core set of hand tools. These are listed in priority order — acquire the first items before the later ones.</p>
+<p><strong>Hammers:</strong> Start with a 450 g (1 lb) ball-peen hammer for metalwork and a 570 g (20 oz) claw hammer for general work. Add a 900 g (2 lb) cross-peen hammer for forging and a 1.8 kg (4 lb) sledge for heavy work. The ball-peen hammer is the most versatile single metalworking tool.</p>
+<p><strong>Files:</strong> Files are essential for fitting, deburring, and shaping. Start with a 250 mm (10-inch) bastard-cut flat file, a 200 mm (8-inch) second-cut half-round file, and a 150 mm (6-inch) smooth-cut flat file for finishing. Always use a file handle — a tang driven into your palm requires medical attention.</p>
+<p><strong>Chisels:</strong> Cold chisels for metalwork: 12 mm (½-inch) flat, 19 mm (¾-inch) flat, and a cape chisel for cutting keyways. Wood chisels: 6 mm, 12 mm, 19 mm, and 25 mm (¼, ½, ¾, 1 inch). Keep metal and wood chisels separate — they have different edge geometries.</p>
+<p><strong>Hacksaws:</strong> A standard 300 mm (12-inch) hacksaw frame with 18 TPI (teeth per inch) blades for general work, 24 TPI for thin tubing, and 32 TPI for sheet metal. Cut on the push stroke. Apply moderate pressure — forcing the cut dulls blades.</p>
+<p><strong>Measuring tools:</strong> A 300 mm steel rule (graduated in mm and inches), a combination square, a scriber, a center punch, and a set of calipers (vernier or dial). Accurate measurement is the foundation of all precision work. Without it, parts don't fit.</p>
+<div class="tip">
+<p>Protect your measuring tools obsessively. Never use a steel rule as a screwdriver, never store calipers loose in a drawer, and never let anyone use your combination square as a straightedge for cutting. Precision measuring tools that get damaged cost you accuracy on every subsequent job.</p>
+</div>
+<p><strong>Wrenches and pliers:</strong> Adjustable wrench (250 mm), combination wrench set (metric or imperial to match your fasteners), locking pliers (Vise-Grips), needle-nose pliers, and slip-joint pliers. A pipe wrench is essential if you do any plumbing or work with round stock.</p>
+</section>
+<section id="lathe">
+<h2>Lathe Fundamentals</h2>
+<p>The lathe is the single most important machine tool. It spins the workpiece while a stationary cutting tool removes material — this produces cylindrical shapes, flat faces, tapers, threads, and internal bores with high precision.</p>
+<p><strong>Key lathe components:</strong></p>
+<p>The <strong>headstock</strong> contains the spindle, bearings, and drive mechanism. It provides the rotational power. The <strong>tailstock</strong> slides along the bed and provides support for the opposite end of the workpiece, and holds drill bits for boring. The <strong>tool post</strong> holds the cutting tool and mounts on the <strong>cross slide</strong>, which moves the tool toward and away from the workpiece. The <strong>carriage</strong> moves the tool along the length of the workpiece. The <strong>bed</strong> is the precision-ground base that everything rides on — protect its surface above all else.</p>
+<p><strong>Lathe operations:</strong></p>
+<table>
+<thead><tr><th>Operation</th><th>Description</th><th>Speed Range</th><th>Tool Geometry</th></tr></thead>
+<tbody>
+<tr><td>Turning (roughing)</td><td>Reduce diameter of cylindrical stock</td><td>Low-medium</td><td>Positive rake, large nose radius</td></tr>
+<tr><td>Turning (finishing)</td><td>Final passes for surface finish</td><td>Medium-high</td><td>Slight positive rake, small nose radius</td></tr>
+<tr><td>Facing</td><td>Cut flat surface perpendicular to axis</td><td>Medium</td><td>Side-cutting edge angle</td></tr>
+<tr><td>Boring</td><td>Enlarge an existing hole</td><td>Medium-low</td><td>Boring bar, minimal overhang</td></tr>
+<tr><td>Threading</td><td>Cut screw threads (internal or external)</td><td>Low (¼ to ⅓ normal speed)</td><td>60° point for standard threads</td></tr>
+<tr><td>Knurling</td><td>Press diamond pattern into surface for grip</td><td>Low</td><td>Knurling tool with wheels</td></tr>
+<tr><td>Parting</td><td>Cut off finished piece from stock</td><td>Low (½ normal speed)</td><td>Narrow parting blade, exactly on center</td></tr>
+</tbody>
+</table>
+<p><strong>Cutting speed calculation:</strong></p>
+<p>RPM = (Cutting Speed × 1000) / (π × Diameter in mm)</p>
+<p>For mild steel, start with a cutting speed of 30 m/min. For aluminum, 90–150 m/min. For brass, 60 m/min. For cast iron, 20 m/min.</p>
+<p>Example: Turning a 50 mm diameter mild steel bar: RPM = (30 × 1000) / (3.14 × 50) = 191 RPM. Round to the nearest available speed on your lathe.</p>
+<div class="warning">
+<p>Never leave the chuck key in the chuck. This is the number one cause of lathe accidents. Build a habit: hand on chuck key means hand removes chuck key. Some shops tie the chuck key to a spring that retracts it — consider building this safety feature.</p>
+</div>
+<div class="tip">
+<p>When threading on a lathe, always engage the half-nuts at the same dial position for each pass. Take progressively shallower cuts: first pass 0.5 mm depth, subsequent passes 0.3 mm, final passes 0.1 mm. Check thread fit with a nut or gauge after every few passes. You can't add metal back.</p>
+</div>
+<p><strong>Improvised lathes:</strong> A functional lathe can be built from salvaged materials. The critical requirements are: a rigid bed (heavy steel channel or cast iron), precision bearings (salvage from automotive wheel hubs or electric motors), and a way to hold and spin the work (a salvaged chuck, or a faceplate made from a thick steel disc). Treadle-powered lathes with wooden beds were used for centuries to produce accurate work. The key is rigidity and bearing quality, not power.</p>
+</section>
+<section id="thread-cutting">
+<h2>Thread Cutting &amp; Tapping</h2>
+<p>Screw threads are among the most important parts in mechanical engineering. They hold assemblies together, transmit power, and provide precise positioning. Understanding how to cut, form, and measure threads is essential for any workshop.</p>
+<p><strong>External thread cutting (on the lathe):</strong></p>
+<p>Threading on a lathe requires that the tool feed be locked to the spindle speed via the leadscrew. For each revolution of the spindle, the tool advances by exactly one pitch (the distance between thread crests). The simplest threads use imperial or metric standard pitches.</p>
+<p>Standard metric coarse pitches: M3=0.5mm, M4=0.7mm, M5=0.8mm, M6=1.0mm, M8=1.25mm, M10=1.5mm, M12=1.75mm, M16=2.0mm, M20=2.5mm, M24=3.0mm.</p>
+<p><strong>Thread cutting procedure:</strong></p>
+<ol>
+<li>Set the lathe to a very low speed (¼ to ⅓ normal cutting speed — for mild steel, start at 40–50 RPM for M10 threads)</li>
+<li>Mount a 60° pointed HSS tool ground to the correct profile (or use a carbide insert thread tool)</li>
+<li>Position the tool at the exact center height of the workpiece; misalignment by even 0.5 mm ruins the thread form</li>
+<li>Advance the tool until it just scratches the work, then set your depth-of-cut dial to zero</li>
+<li>Engage the half-nuts (threading clutch) at the same position on the leadscrew dial for every pass — this ensures each cutting edge follows the previous path</li>
+<li>Take progressively lighter passes: first pass 0.5 mm depth, middle passes 0.3 mm, final passes 0.1 mm</li>
+<li>After each pass, disengage the half-nuts and reverse the spindle to back the tool out quickly — never try to stop the spindle and back out by hand, or you'll break the tool</li>
+<li>Check thread pitch with a nut or thread gauge after every 3–4 passes; you cannot add metal back if you cut too deep</li>
+</ol>
+<div class="warning">
+<p><strong>Never freewheel the lathe backwards by hand to back out during threading.</strong> If the tool catches or the spindle is still turning, you can lose control instantly. Use the spindle reverse control to back out at speed, or stop the spindle completely and disengage the half-nuts before manually backing the tool.</p>
+</div>
+<p><strong>Internal threads (tapping):</strong></p>
+<p>A tap is a hardened tool with cutting edges inside a hole to form an internal thread. Taps come in sets: taper tap (first cut, cuts only ¼ of the thread), plug tap (cuts ⅔ of the thread), and bottoming tap (cuts full depth, used only for through-holes once the plug tap has started).</p>
+<p>Procedure:</p>
+<ol>
+<li>Drill a hole slightly larger than the thread root diameter (the minor diameter). Use a <strong>tap drill size chart</strong> — too small and the tap breaks, too large and the thread is weak</li>
+<li>Mount the tap in a tap wrench (T-handle or adjustable chuck)</li>
+<li>Start the tap straight in the hole by feel — if it binds, back off ⅛ turn, apply cutting fluid (especially important for steel), and try again</li>
+<li>Make ¼ turn forward, then ⅛ turn reverse to break chips; the tap produces long, stringy chips that can jam</li>
+<li>Apply steady pressure but do not force — the tap will pull itself in as it cuts</li>
+<li>For a blind hole (doesn't go all the way through), alternate: ½ turn forward, ⅛ turn reverse, repeat until the tap bottoms</li>
+<li>Once bottomed, reverse the spindle or turn the wrench backward to remove the tap</li>
+</ol>
+<div class="tip">
+<p><strong>Use cutting fluid on every metal tap.</strong> Oil, kerosene, or any light cutting fluid dramatically reduces breaking taps. A broken tap inside a hole is extremely difficult to remove and may ruin the workpiece. Better to go slow and safe.</p>
+</div>
+<p><strong>Die cutting (external threads by hand):</strong></p>
+<p>A die cuts an external thread on a rod or shaft. Die holders have a split design — a screw on the side closes the die on the workpiece, allowing adjustment of thread tightness.</p>
+<ol>
+<li>Chamfer the end of the rod at 45° — this makes it far easier to start the die</li>
+<li>Mount the rod in a vise, leaving about 50 mm projecting</li>
+<li>Insert the die in its holder (with the holder open) and position it over the rod end</li>
+<li>Apply downward pressure and rotate ½ turn; if the die seats, rotate another ½ turn</li>
+<li>Apply cutting fluid and close the die holder screw about ⅛ turn</li>
+<li>Rotate the holder with steady pressure — it will pull itself onto the rod if the die is centered</li>
+<li>As you finish, reduce pressure and tighten the die holder slightly more to get a good finish</li>
+<li>Do not cut the full intended length on the first pass; cut ½ inch, back off, apply more fluid, and continue</li>
+</ol>
+<p><strong>Common thread problems:</strong></p>
+<ul>
+<li><strong>Torn threads in aluminum:</strong> Aluminum produces long, stringy chips that jam between the tool and work. Take shallower cuts and clear chips frequently. Use a spiral-flute tap if possible (flutes remove chips more efficiently)</li>
+<li><strong>Thread chatters (wavy crests):</strong> Speed too low or tool not held rigidly. Increase speed slightly and shorten tool overhang</li>
+<li><strong>Tap breaks in hole:</strong> Usually a jam from chips or binding from starting the tap off-center. Go slow on entry, apply fluid liberally, and be patient</li>
+<li><strong>Thread is too loose:</strong> Either the pitch is wrong (leadscrew setting error) or the depth is too shallow. Measure a cut thread against a gauge nut before finishing</li>
+</ul>
+</section>
+<section id="drill-press">
+<h2>Drill Press Operations</h2>
+<p>A drill press provides accuracy and repeatability that hand drilling cannot match. It drills perpendicular holes at controlled depths, and with accessories can ream, countersink, counterbore, and even do light milling.</p>
+<p><strong>Speed selection by material and drill size:</strong></p>
+<table>
+<thead><tr><th>Drill Diameter</th><th>Mild Steel</th><th>Aluminum</th><th>Brass</th><th>Wood</th></tr></thead>
+<tbody>
+<tr><td>3 mm (⅛")</td><td>3200 RPM</td><td>8000+ RPM</td><td>4800 RPM</td><td>3000+ RPM</td></tr>
+<tr><td>6 mm (¼")</td><td>1600 RPM</td><td>4800 RPM</td><td>2400 RPM</td><td>3000 RPM</td></tr>
+<tr><td>10 mm (⅜")</td><td>960 RPM</td><td>2900 RPM</td><td>1450 RPM</td><td>1500 RPM</td></tr>
+<tr><td>16 mm (⅝")</td><td>600 RPM</td><td>1800 RPM</td><td>900 RPM</td><td>750 RPM</td></tr>
+<tr><td>25 mm (1")</td><td>380 RPM</td><td>1150 RPM</td><td>580 RPM</td><td>500 RPM</td></tr>
+</tbody>
+</table>
+<p><strong>Drilling procedure:</strong></p>
+<ol>
+<li>Mark the hole center with a scriber on layout fluid or a fine marker</li>
+<li>Center-punch the mark — a firm, single blow. The punch mark prevents the drill from wandering</li>
+<li>Clamp the workpiece securely. Never hold work by hand for metal drilling — if the drill catches, it spins the part violently</li>
+<li>Install the correct drill bit and set the speed per the table above</li>
+<li>Start the drill and bring it down slowly until the point engages the punch mark</li>
+<li>Apply steady, moderate pressure. Let the drill cut — forcing it overheats the bit and work-hardens the material</li>
+<li>For holes deeper than 3× the drill diameter, peck-drill: advance 1–2 diameters, retract fully to clear chips, repeat</li>
+<li>Apply cutting fluid for steel (any light oil works — motor oil, vegetable oil in a pinch)</li>
+<li>Reduce pressure as the drill breaks through the far side to prevent grabbing</li>
+</ol>
+<div class="warning">
+<p><strong>Always clamp your work.</strong> A spinning workpiece driven by a caught drill bit can break fingers, gash arms, or throw the part across the shop. Use a drill press vise, C-clamps, or hold-down clamps. For round stock, use a V-block and clamp. No exceptions.</p>
+</div>
+<p><strong>Drill bit sharpening:</strong> A dull drill bit generates heat, wanders off center, and produces oversized holes. Sharpen freehand on a bench grinder or with a dedicated drill-sharpening jig. Standard point angle is 118° for general use, 135° for harder materials. The two cutting lips must be equal length and at equal angles — an uneven grind makes the drill cut oversized.</p>
+</section>
+<section id="grinding">
+<h2>Grinding &amp; Abrasives</h2>
+<p>The bench grinder is the third essential machine tool. It sharpens cutting tools, shapes metal quickly, removes weld spatter, and cleans up rough work. A grinder with a coarse wheel and a fine wheel covers most needs.</p>
+<p><strong>Grinding wheel selection:</strong></p>
+<p>Wheels are specified by abrasive type, grit size, grade (hardness), and bond. For a general workshop, two wheels cover most needs: a 36-grit aluminum oxide wheel (coarse, for rough shaping and tool grinding) and a 60-grit aluminum oxide wheel (medium, for finishing and sharpening).</p>
+<p><strong>Safe operation:</strong></p>
+<ul>
+<li>Stand to the side when starting a grinder — if a wheel is going to fail, it usually happens at startup</li>
+<li>Maintain the tool rest within 3 mm (⅛ inch) of the wheel face. A gap allows work to jam between the rest and the wheel, shattering the wheel</li>
+<li>Adjust the spark guard to within 6 mm (¼ inch) of the wheel</li>
+<li>Never grind on the side of a straight wheel — it is not designed for lateral loads and can shatter</li>
+<li>Dress the wheel regularly with a wheel dresser to keep it true and expose fresh abrasive</li>
+</ul>
+<div class="danger">
+<p><strong>Grinding wheel failure is explosive.</strong> A wheel spinning at full speed that shatters sends fragments at lethal velocity. Always wear safety glasses (goggles preferred) and a face shield when grinding. Never exceed the rated RPM of a wheel. Never use a wheel that has been dropped — internal cracks are invisible but will cause catastrophic failure.</p>
+</div>
+<p><strong>Hand sharpening with stones:</strong> For fine edge tools (chisels, plane blades, knives), use sharpening stones in sequence: coarse (220 grit), medium (1000 grit), fine (4000–6000 grit). Flatten your stones regularly on a concrete surface or sandpaper on glass — a hollow stone produces a convex edge.</p>
+</section>
+<section id="tools">
+<h2>Tool Maintenance &amp; Sharpening</h2>
+<p>Sharp tools cut faster, more accurately, and more safely than dull ones. Dull tools require excess force, which causes slipping, poor control, and accidents. Establish a sharpening routine and stick to it.</p>
+<p><strong>Sharpening angles by tool type:</strong></p>
+<table>
+<thead><tr><th>Tool</th><th>Bevel Angle</th><th>Method</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Pocket/utility knife</td><td>15–20°</td><td>Stones or guided sharpener</td><td>Lower angle = sharper but less durable</td></tr>
+<tr><td>Kitchen/butcher knife</td><td>20–25°</td><td>Stones or steel</td><td>Slightly more durable edge for hard use</td></tr>
+<tr><td>Wood chisels</td><td>25°</td><td>Stones, honing guide recommended</td><td>Add 5° micro-bevel for durability</td></tr>
+<tr><td>Plane blades</td><td>25–30°</td><td>Stones, honing guide essential</td><td>30° for hardwood, 25° for softwood</td></tr>
+<tr><td>Axes (felling)</td><td>25–30°</td><td>File, then stone</td><td>Convex grind for durability</td></tr>
+<tr><td>Axes (splitting)</td><td>35–40°</td><td>File only</td><td>Blunt wedge shape, not razor sharp</td></tr>
+<tr><td>Lathe tools (HSS)</td><td>Variable</td><td>Bench grinder</td><td>See lathe section for specifics</td></tr>
+<tr><td>Drill bits</td><td>59° (half of 118° point)</td><td>Grinder or jig</td><td>Both lips must be equal</td></tr>
+<tr><td>Scissors</td><td>60–75°</td><td>Fine file or stone</td><td>Sharpen only the beveled side</td></tr>
+</tbody>
+</table>
+<p><strong>File card:</strong> Clean files after every use with a wire brush (file card), stroking parallel to the teeth. Clogged teeth don't cut — they skid. This alone extends file life by 10×. Store files so they don't contact each other; the teeth chip when files bang together. Never use a file without a handle — the tang can impale your palm if the file catches.</p>
+<p><strong>Saw maintenance:</strong> Hand saws need three operations: sharpening (filing each tooth to a point), setting (bending alternate teeth left and right to create kerf width), and jointing (running a flat file along the tooth tips to make them all the same height). A properly maintained hand saw cuts faster than a dull power saw.</p>
+<p><strong>Burnishing:</strong> For cabinet scrapers, burnishing creates a hooked cutting edge from the existing metal rather than removing material. Draw a hardened steel burnishing rod along the edge at a slight angle (5–15° from the face) with firm pressure, 3–4 strokes per side. The resulting hook shaves wood fibers cleanly without tearing.</p>
+<div class="tip">
+<p>Keep a small container of oil-soaked rags near your tool storage. Wipe down steel tools after each use. A thin film of oil prevents rust far more effectively than drying alone. In humid climates, this is the difference between tools that last decades and tools that pit in months.</p>
+</div>
+</section>
+<section id="milling">
+<h2>Milling Basics</h2>
+<p>A milling machine moves a rotating cutter across a stationary (or slowly feeding) workpiece to produce flat surfaces, slots, keyways, and complex shapes. While less essential than a lathe, a mill dramatically expands what a workshop can produce.</p>
+<p><strong>Types of milling machines:</strong></p>
+<p>The <strong>vertical mill</strong> is the most common and versatile type for a small shop. The spindle is vertical, the table moves in X (left-right), Y (toward/away from the operator), and Z (up/down). A vertical mill can do almost everything a drill press can, plus flat surfacing, pocket cutting, and profile work.</p>
+<p>The <strong>horizontal mill</strong> has a horizontal spindle and is better suited for heavy slab milling and production work, but less versatile for general use.</p>
+<p><strong>Basic milling operations:</strong></p>
+<p>Face milling produces a flat surface using the bottom of the cutter. Peripheral milling (slab milling) uses the side of the cutter to produce a flat surface parallel to the cutter axis. Slot milling cuts a groove using both the bottom and sides of the cutter. Pocket milling removes material from an enclosed area.</p>
+<p><strong>Climb vs. conventional milling:</strong> In conventional milling, the cutter rotates against the direction of feed — the tooth enters at zero chip thickness and exits at maximum. This is safer on machines with backlash (most manual mills) because the cutting forces push the work against the direction of feed. In climb milling, the cutter rotates with the direction of feed — this gives a better surface finish but can pull the work into the cutter if there is backlash. Use conventional milling on manual machines unless you have eliminated backlash.</p>
+<p><strong>Feed and speed guidelines:</strong> Start conservative. For a high-speed steel end mill in mild steel, begin with a cutting speed of 20 m/min and a chip load of 0.05 mm per tooth. Adjust up if the cut sounds smooth and chips are the right color (silver for steel, not blue or brown, which indicate overheating). Reduce if there is chatter (vibration), squealing, or if chips are too thick.</p>
+<div class="tip">
+<p>When milling, listen to the cut. A smooth, consistent sound means good parameters. Chatter (rhythmic vibration) means either the speed is wrong, the tool is sticking out too far, or the workpiece is not rigid enough. Address rigidity first — it solves most chatter problems.</p>
+</div>
+<p><strong>Workholding for milling:</strong></p>
+<p>How you hold a workpiece determines both the accuracy of the result and the safety of the operation. A part that shifts during milling ruins the dimensions and can be ejected violently.</p>
+<p><strong>Machine vise:</strong> The primary holding method. A precision vise bolts to the mill table with the jaws parallel to the table travel. Clamp the work against one fixed jaw and tighten the screw jaws. For maximum rigidity, support the workpiece from below with parallels (hardened steel bars the same thickness as the opening you need) or thick shims. Never clamp directly on the table — the work will tilt under cutting forces. A 4-inch vise is the minimum useful size for milling; a 5-inch is better.</p>
+<p><strong>Clamping systems:</strong> Direct clamping uses bolts and clamp plates. The workpiece is drilled and tapped (or has holes), and clamp straps are bolted down. This works when you have time to set up and when the part geometry allows it. Magnetic chucks are excellent for iron and steel but cannot hold aluminum or non-ferrous metals.</p>
+<p><strong>V-blocks and fixtures:</strong> For cylindrical parts, a pair of V-blocks clamped in the vise holds round stock safely and repeatably. For complex shapes, build a one-off fixture from scrap angle iron and plate bolted to the vise jaws. A fixture that takes 30 minutes to build pays for itself instantly if you're making more than 3 identical parts.</p>
+<div class="info-box">
+<p><strong>Rule of thumb for workpiece support:</strong> The longer and thinner the workpiece overhang from the vise, the deeper your cuts must be. A part extending 100 mm from the vise jaws can take a heavier cut than one extending 300 mm. If chatter develops with a thin, long part, support the far end with a shop-built rest (even a simple block clamped to the table helps).</p>
+</div>
+</section>
+<section id="jigs-fixtures">
+<h2>Jigs &amp; Fixtures</h2>
+<p>A jig guides a cutting tool. A fixture holds the workpiece. Together, they let you repeat an operation identically across multiple parts without re-measuring and re-aligning each time. In a rebuilding scenario where you need 20 identical brackets or 50 matching pins, jigs and fixtures turn hours of fiddly layout work into minutes of consistent production.</p>
+<p><strong>Common jig types:</strong></p>
+<p>A <strong>drill jig</strong> is a plate with hardened guide bushings at the exact hole positions. Clamp it to the workpiece, drill through the bushings, and every hole is in the right place. Build drill jigs from scrap steel plate and salvaged hardened bushings (from automotive or industrial equipment).</p>
+<p>A <strong>filing jig</strong> holds a part at the correct angle for filing flat or to a specific dimension. Two parallel hardened rails set at the target height, with the part clamped between them — file down to the rails and every part comes out the same thickness.</p>
+<p><strong>V-blocks</strong> hold cylindrical parts for drilling, milling, or inspection. They are essential for any work on round stock. Make them from two pieces of steel with matching 90° grooves, hardened if possible.</p>
+<p><strong>Simple fixture principles:</strong></p>
+<ol>
+<li>Locate the part — determine where it sits (at least 3 points of contact for a flat surface, 5 for full constraint)</li>
+<li>Clamp the part — apply force to hold it against the locators without distorting it</li>
+<li>Support the part — prevent deflection under cutting forces (add supports under thin sections)</li>
+</ol>
+<div class="info-box">
+<p><strong>The 3-2-1 Principle:</strong> To fully constrain a rectangular part, place 3 locators on the bottom face (defines a plane), 2 on the long side (defines a line), and 1 on the short end (defines a point). This eliminates all 6 degrees of freedom (3 translations, 3 rotations) with no redundancy.</p>
+</div>
+<p>Build fixtures from scrap angle iron, flat bar, and bolts. Weld or bolt components to a base plate. Use toggle clamps (salvageable from many industrial and woodworking applications) for quick workpiece loading.</p>
+<p><strong>Clamp design principles:</strong></p>
+<p>A good clamp applies force to hold the part without distorting it. Excessive clamp pressure can bend thin parts or crush edges. A clamp should contact the workpiece on two parallel surfaces if possible, distributing pressure across a wider area.</p>
+<p><strong>Screw clamps</strong> (simple C-clamps or bar clamps) are the workhorse. For metal parts, they work well when applied perpendicular to the surface. Protect precision surfaces with a thin shim of soft material (copper, lead, plastic) under the clamp pad.</p>
+<p><strong>Toggle clamps</strong> are faster for repeated operations. A horizontal toggle clamp (like those on drill jigs) flips down and locks. The mechanical advantage means you don't need great force — the clamp does the work. These are perfect for production fixtures.</p>
+<p><strong>Spring clamps</strong> apply constant light pressure and are useful for holding thin sheet or parts you want to be able to quickly remove and reposition. They do not provide the holding force needed for heavy milling.</p>
+</section>
+<section id="precision-measurement">
+<h2>Precision Measurement</h2>
+<p>You cannot make what you cannot measure. Invest time in learning to read and care for measuring tools — they are the foundation of all precision work.</p>
+<p><strong>Steel rules:</strong> The most basic measuring tool. Read with the rule on edge (not lying flat) to eliminate parallax. A 300 mm (12-inch) rule with 0.5 mm graduations is the workhorse. For rough measurement, a tape measure is fine; for anything that must fit, use the steel rule.</p>
+<p><strong>Calipers:</strong> Vernier calipers read to 0.02–0.05 mm. Dial calipers read to 0.02 mm with easier reading. Digital calipers read to 0.01 mm. All three work well — choose based on availability. To read a vernier: read the main scale where the zero of the vernier aligns, then find which vernier line aligns best with a main scale line for the fractional reading.</p>
+<p>Close the caliper jaws on the work gently — squeezing gives a false reading. Measure at several points and take the average; a single measurement may hit a high or low spot.</p>
+<p><strong>Micrometers:</strong> Read to 0.01 mm (or 0.001 inches). Essential for lathe work where fits must be precise. Use the ratchet stop or thimble friction device — never tighten the thimble directly, as you will over-compress the part and get a false reading. Check zero before each use by closing on nothing (outside micrometer) or on a standard (inside micrometer).</p>
+<p><strong>Combination square:</strong> Tests squareness (90°), marks 45° angles, measures depth, and serves as a short rule. The most versatile layout tool in the shop. Test yours for accuracy: hold against a known flat surface and scribe a line, flip the square, and check if the line and the blade still align. Discard or adjust if they don't.</p>
+<div class="warning">
+<p>Never store precision measuring tools in the same drawer as hand tools, files, or loose hardware. A caliper jaw nicked by a screwdriver reads incorrectly for every future measurement. Dedicated storage — a felt-lined drawer, a wooden case, or even a clean cloth pouch — is essential.</p>
+</div>
+<p><strong>Dial indicators:</strong> Measure small movements and deviations with 0.01 mm resolution. Essential for truing lathe chucks (a 4-jaw chuck must be indicated in to within 0.05 mm for precision work), checking runout on spindles, and verifying flatness. Mount on a magnetic base and position the plunger against the surface to be measured.</p>
+</section>
+<section id="power-sources">
+<h2>Power Sources &amp; Mechanical Drive</h2>
+<p>While electricity is convenient, mechanical workshops have operated for centuries using foot power, water wheels, and wind. Understanding these alternatives is valuable in a low-electricity scenario and provides deep insight into machine tool design.</p>
+<p><strong>Treadle-powered machines:</strong></p>
+<p>A treadle is a foot-operated lever that drives a large flywheel. The operator's weight and rhythm power the flywheel, and the flywheel stores energy to smooth out the pulses of pedaling. Lathes, drill presses, and grinding wheels operated by treadle were the standard for over 200 years and are still used in many parts of the world.</p>
+<p>The advantage: zero external power needed, silent operation, operator control (no runaway speed). The disadvantage: limited speed range, operator fatigue on long jobs, and requires a large flywheel (20–50 kg) for smooth operation.</p>
+<p><strong>Building a treadle drive:</strong> A wooden frame about 1.2 m tall and 0.6 m wide supports a horizontal axle near the bottom. A treadle (a flat board 30 cm × 60 cm, or salvaged wood from a door) pivots on this axle. A large wheel (bicycle wheel, salvaged pulley wheel, or wooden disc) is mounted at the opposite end of the shaft. A connecting rod (metal rod or hardwood) joins the treadle to a crank pin on the large wheel, converting up-and-down motion to rotational motion. This connects via a belt to the machine tool spindle.</p>
+<p>Flywheel effect: A large wheel 60 cm in diameter, 5 cm thick, made of wood or steel, spinning at 60 RPM stores enough energy to keep a small lathe running smoothly even if pedaling rhythm is irregular. The weight matters more than the speed — a heavier wheel at lower speed is smoother than a light wheel at high speed.</p>
+<div class="tip">
+<p>For a treadle lathe, aim for 40–80 RPM on the spindle for general turning and 20–40 RPM for threading. The operator learns to modulate pedaling speed for different operations. A flywheel ratio of 2:1 or 3:1 (the flywheel is 2–3 times larger in diameter than the spindle pulley) gives good speed multiplication and smoothness.</p>
+</div>
+<p><strong>Water wheel drive:</strong></p>
+<p>Where water power is available (a stream with at least 1 meter of vertical drop or significant flow), a water wheel can power a workshop indefinitely. The simplest design is an overshot wheel — the stream flows into buckets near the top, gravity pulls the wheel down, and the exiting water provides additional momentum.</p>
+<p>An overshot wheel with 1 m³/second flow and 2 m of drop produces roughly 20 kW — enough to run a full metalworking shop. Even a much smaller wheel (1 m diameter, 0.1 m³/s) produces several kilowatts.</p>
+<p><strong>Belt drives and power transmission:</strong></p>
+<p>Whether driven by a motor, water wheel, or treadle, a single shaft needs to drive multiple machines. Belt drives are simple and safe — if a belt slips, power is lost but no machinery is broken.</p>
+<p><strong>V-belt drive:</strong> A V-shaped belt runs in a V-shaped pulley. The friction is very high, so power transmission is reliable. Pulleys can be stepped (different diameters) to provide variable speeds. For a lathe, a stepped spindle pulley (with diameters of 50 mm, 65 mm, 85 mm, 110 mm) lets the operator change speed by moving the belt to a different groove — no tools required.</p>
+<p><strong>Flat belts:</strong> Less efficient than V-belts but easier to make from canvas or leather. A flat belt 5 cm wide running at moderate tension can transmit several kilowatts.</p>
+<p><strong>Speed ratios:</strong> If the motor or treadle wheel is 100 mm diameter and the lathe spindle pulley is 200 mm, the spindle runs at half the motor speed but with double the torque. Conversely, a small spindle pulley (50 mm) on a motor-driven large wheel (200 mm) produces a spindle speed 4× higher than the motor, with ¼ the torque. Choose ratios based on what you need to cut.</p>
+<p><strong>Mechanical governors:</strong> On a treadle or water wheel drive, a governor maintains speed even if the operator (or flow) varies. The simplest is a friction governor — a pad on an arm presses against a rotating drum, slowing the system if speed increases. More sophisticated governors use weighted arms that spread outward as speed increases, automatically engaging a brake.</p>
+<div class="warning">
+<p>Never operate a belt-driven machine without guards over all moving belts and pulleys. A hand caught in a belt is drawn in instantly with severe laceration or broken bones. All belts on a workshop should be enclosed in metal guards or wooden covers.</p>
+</div>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting</h2>
+<p><strong>Chatter (vibration marks on work surface):</strong>
+The most common machining defect. Causes: tool extending too far from the holder, workpiece not rigid enough, speed too high for the setup, worn bearings in the machine. Fix by reducing tool overhang first — this is the most common cause. Then check workpiece clamping, reduce speed by 20%, and check machine bearing condition.</p>
+<p><strong>Poor surface finish:</strong>
+Rough, torn surface instead of smooth. Causes: dull tool, wrong cutting speed (usually too slow), insufficient cutting fluid, or wrong tool geometry. Sharpen the tool, increase speed slightly, and apply cutting fluid. For lathe finishing, use a tool with a larger nose radius and take a light final pass (0.1–0.2 mm depth).</p>
+<p><strong>Drill bit wandering:</strong>
+Hole starts in the wrong place. Cause: no center punch mark, dull drill, or too much speed. Always center-punch. If the drill has started off-center, use a cold chisel to cut a small groove on the side toward the desired center — the drill will drift toward the groove on the next plunge.</p>
+<p><strong>Overheating (blue or brown chips, smoke):</strong>
+Cutting speed too high, feed too low (the tool rubs instead of cutting), or no cutting fluid. Reduce speed, increase feed slightly, and apply fluid. Blue chips from steel mean the cutting zone exceeded 300°C — the tool is being damaged.</p>
+<p><strong>Tool breakage:</strong>
+Usually caused by excessive force, wrong speed, or a tool that is too small for the cut. Reduce depth of cut, check that the tool is sharp, and verify that the workpiece is not work-hardened from a previous dull-tool pass. When restarting a cut after a broken tool, take a light cleanup pass first to remove the damaged surface layer.</p>
+<p><strong>Taper on lathe work (diameter changes along length):</strong>
+The tailstock is not aligned with the headstock. Check alignment by cutting a test bar and measuring diameter at both ends. Adjust the tailstock laterally until the taper is eliminated. Also check for a worn bed — the carriage may not travel parallel to the spindle axis.</p>
+</section>
+<section id="common-mistakes">
+<h2>Common Mistakes</h2>
+<ol>
+<li>
+<p><strong>Not clamping the workpiece.</strong> The most dangerous mistake. Unclamped work spins, flies, or shifts, causing injuries and ruined parts. Clamp everything, every time.</p>
+</li>
+<li>
+<p><strong>Using dull tools.</strong> A dull tool requires more force, generates more heat, produces worse results, and is more likely to break or grab. Sharpen before every precision operation.</p>
+</li>
+<li>
+<p><strong>Wrong cutting speed.</strong> Too fast overheats and ruins the tool. Too slow causes rubbing, work-hardening, and poor finish. Look up the correct speed and calculate the RPM — don't guess.</p>
+</li>
+<li>
+<p><strong>Insufficient rigidity.</strong> A setup that vibrates cannot produce precision. Shorten tool overhang, add workpiece supports, tighten every bolt and clamp, and consider reducing depth of cut rather than fighting vibration.</p>
+</li>
+<li>
+<p><strong>Measuring once.</strong> Precision work requires measuring before cutting, during cutting, and after cutting. Measure from two different references if possible. A 1 mm error caught early is a quick fix; caught after the part is finished, it's scrap.</p>
+</li>
+<li>
+<p><strong>No cutting fluid on steel.</strong> Dry cutting of steel dramatically shortens tool life and produces poor surface finish. Even a drip of oil or a brush application of cutting fluid makes a significant difference. For aluminum, cutting fluid prevents chips from welding to the tool.</p>
+</li>
+<li>
+<p><strong>Forcing the drill through breakthrough.</strong> When a drill breaks through the far side of a hole, reduce pressure dramatically. The sudden engagement of the full drill diameter can grab, stall the machine, spin the workpiece, or snap the drill.</p>
+</li>
+<li>
+<p><strong>Ignoring maintenance.</strong> Oil the ways of your lathe daily. Clean chips from the cross slide. Grease the bearings per schedule. A neglected machine tool loses precision progressively — and the damage is often irreversible.</p>
+</li>
+</ol>
+</section>
+<section id="safety">
+<h2>Safety</h2>
+<p>Machine tools demand respect. They are powerful, fast, and completely unforgiving of carelessness.</p>
+<div class="danger">
+<p><strong>Entanglement is the primary killer.</strong> Loose clothing, dangling necklaces, long hair, untucked shirts, and gloves near rotating machinery will catch and pull you in faster than you can react. Roll sleeves above the elbow. Tie back long hair. Remove jewelry. Never wear gloves while operating a lathe, drill press, or mill.</p>
+</div>
+<p><strong>Eye protection:</strong> Mandatory whenever chips are being generated. Safety glasses with side shields as minimum; goggles for grinding. A face shield in addition to glasses when grinding, turning at high speed, or doing any operation that produces significant chips.</p>
+<p><strong>Emergency procedures:</strong></p>
+<ol>
+<li>Know the location of every machine's emergency stop (E-stop) before operating it</li>
+<li>If hair or clothing catches, hit the E-stop immediately — do not try to pull free</li>
+<li>Keep a first aid kit with pressure bandages, burn treatment, and eye wash within arm's reach</li>
+<li>Never operate machine tools alone if possible — a second person can hit E-stop if you cannot reach it</li>
+</ol>
+<p><strong>Housekeeping:</strong> Clean chips from the floor regularly — they are sharp and slippery. Sweep metal chips with a magnet on a stick, not a broom (brooms scatter them). Keep walkways clear. Wipe oil spills immediately.</p>
+<div class="warning">
+<p><strong>Never use compressed air to blow chips off a machine or your clothing.</strong> Metal chips driven by compressed air embed in skin and eyes. Use a brush or vacuum. If compressed air must be used on a machine, reduce pressure to below 30 PSI and wear eye protection.</p>
+</div>
+</section>
+<section id="maintenance-schedule">
+<h2>Maintenance Schedule</h2>
+<p>Regular maintenance prevents breakdowns and preserves precision. Post this schedule in your workshop and follow it.</p>
+<p><strong>Daily (before/after each use):</strong></p>
+<ul>
+<li>Wipe all precision surfaces (lathe bed, cross slide, tailstock) with an oiled rag</li>
+<li>Clear chips from all machines</li>
+<li>Check oil levels in gearboxes and reservoirs</li>
+<li>Verify the tool rest gap on the grinder (must be within 3 mm of wheel)</li>
+<li>Return all tools to their designated storage</li>
+</ul>
+<p><strong>Weekly:</strong></p>
+<ul>
+<li>Lubricate all way surfaces, leadscrews, and cross-feed screws</li>
+<li>Check belt tension and condition on all machines</li>
+<li>Inspect grinding wheels for cracks (tap lightly with a screwdriver handle — a clear ring means sound, a dull thud means cracked)</li>
+<li>Clean and oil all hand tools</li>
+<li>Flatten sharpening stones if used during the week</li>
+</ul>
+<p><strong>Monthly:</strong></p>
+<ul>
+<li>Check spindle bearing play (should be imperceptible for precision work)</li>
+<li>Check alignment of tailstock to headstock on the lathe</li>
+<li>Inspect all electrical connections and cords</li>
+<li>Clean and regrease any grease-lubricated bearings</li>
+<li>Test accuracy of measuring tools against known standards</li>
+</ul>
+<p><strong>Annually:</strong></p>
+<ul>
+<li>Full machine disassembly and cleaning of all sliding surfaces</li>
+<li>Replace worn belts, bearings, and gears as needed</li>
+<li>Repaint machines to prevent corrosion (after cleaning bare metal surfaces)</li>
+<li>Calibrate all measuring instruments</li>
+<li>Inventory consumables (abrasives, drill bits, cutting fluid) and restock</li>
+</ul>
+<div class="tip">
+<p>Keep a shop log. Record every maintenance action, every repair, and every unusual observation (strange noise, vibration, temperature). Over time, this log reveals patterns that let you predict failures before they happen, and it helps the next person who inherits your shop understand the equipment's history.</p>
+</div>
+</section>
+<section id="quick-reference">
+<h2>Quick Reference</h2>
+<table>
+<thead><tr><th>Parameter</th><th>Value</th><th>Application</th></tr></thead>
+<tbody>
+<tr><td>Cutting speed, mild steel</td><td>25–35 m/min</td><td>HSS tools on lathe or mill</td></tr>
+<tr><td>Cutting speed, aluminum</td><td>90–150 m/min</td><td>HSS tools, use cutting fluid</td></tr>
+<tr><td>Cutting speed, brass</td><td>50–70 m/min</td><td>HSS tools, no fluid needed</td></tr>
+<tr><td>Cutting speed, cast iron</td><td>15–25 m/min</td><td>HSS tools, no fluid (dry dust)</td></tr>
+<tr><td>Drill point angle (general)</td><td>118°</td><td>Standard twist drills</td></tr>
+<tr><td>Drill point angle (hard materials)</td><td>135°</td><td>Stainless, hardened steel</td></tr>
+<tr><td>Thread pitch, metric coarse M10</td><td>1.5 mm</td><td>Standard metric fastener</td></tr>
+<tr><td>Workbench height</td><td>85–95 cm</td><td>Wrist height when arms relaxed</td></tr>
+<tr><td>Minimum vise jaw width</td><td>100 mm (4")</td><td>General metalwork bench vise</td></tr>
+<tr><td>Grinding wheel gap to tool rest</td><td>≤3 mm</td><td>Safety requirement</td></tr>
+<tr><td>Grinding wheel gap to spark guard</td><td>≤6 mm</td><td>Safety requirement</td></tr>
+</tbody>
+</table>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="abrasives-manufacturing.html">Abrasives Manufacturing</a>
+<a href="bearing-manufacturing.html">Bearing Manufacturing</a>
+<a href="bicycle-construction.html">Bicycle Construction &amp; Repair</a>
+<a href="blacksmithing.html">Blacksmithing</a>
+<a href="bridges-dams.html">Bridges, Dams &amp; Infrastructure</a>
+<a href="construction.html">Construction &amp; Carpentry</a>
+<a href="engineering-repair.html">Engineering &amp; Repair</a>
+<a href="mechanical-drawing.html">Technical Drawing &amp; Drafting</a>
+<a href="mining-materials.html">Mining &amp; Materials Processing</a>
+<a href="natural-building.html">Natural Building Materials</a>
+<a href="plastic-production.html">Plastic Production</a>
+<a href="plumbing-pipes.html">Plumbing &amp; Water Systems</a>
+<a href="road-building.html">Road Building &amp; Paving</a>
+<a href="seals-gaskets.html">Seal &amp; Gasket Manufacturing</a>
+<a href="shipbuilding-boats.html">Boat Building &amp; Watercraft</a>
+<a href="steel-making.html">Steel Making</a>
+<a href="structural-safety-building-entry.html">Structural Safety for Building Entry</a>
+<a href="thatching-roofing.html">Thatching &amp; Roofing</a>
+<a href="well-drilling.html">Well Drilling &amp; Water Access</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

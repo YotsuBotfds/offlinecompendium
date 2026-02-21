@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/railroads.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Railroad Construction &amp; Operation</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Transportation</span> ›
+<span>Railroad Construction &amp; Operation</span>
+</div>
+
+
+<h1>Railroad Construction &amp; Operation</h1>
+<p class="subtitle">Building and operating rail systems for efficient heavy transport in resource-limited contexts. Gauge selection, roadbed engineering, rolling stock design, motive power options, and maintenance protocols.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~26 min</span>
+<span>Updated: 2026-02-16</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction to Rail Systems</a></li>
+<li><a href="#why">Why Railroads Matter</a></li>
+<li><a href="#efficiency">Transportation Efficiency Comparison</a></li>
+<li><a href="#gauge">Gauge Selection</a></li>
+<li><a href="#roadbed">Roadbed Construction</a></li>
+<li><a href="#track">Track Laying</a></li>
+<li><a href="#rolling-stock">Rolling Stock Design</a></li>
+<li><a href="#motive-power">Motive Power Options</a></li>
+<li><a href="#operations">Operations &amp; Maintenance</a></li>
+<li><a href="#economics">Economics of Rail Systems</a></li>
+<li><a href="#curve-banking">Curve Banking and Superelevation</a></li>
+<li><a href="#track-specification-table">Track Specification Reference</a></li>
+<li><a href="#hand-cart-design">Hand-Operated Rail Cart Design</a></li>
+<li><a href="#switching-turntables">Switches, Sidings, and Turntables</a></li>
+<li><a href="#signals-communication">Signals and Communication Systems</a></li>
+<li><a href="#rail-accidents">Common Rail System Failures and Prevention</a></li>
+<li><a href="#alternative-power">Alternative Motive Power: Compressed Air and Spring Systems</a></li>
+<li><a href="#common-mistakes">Common Mistakes in Rail System Development</a></li>
+<li><a href="#glossary">Rail System Terminology Quick Reference</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<!-- SVG-TODO: Track cross-section with gauge measurement, curve bankingdiagram for safe speed, grade percentage map for horse vs locomotive limits -->
+<section id="introduction">
+<h2>Introduction to Rail Systems</h2>
+<p>Railroads are the most mechanically efficient method to transport bulk goods in resource-constrained communities. The fundamental advantage is rolling resistance: steel wheels on steel rails produce 5-20 times less friction than rubber wheels on dirt roads, or rubber on asphalt. A single horse can pull 10× its road-load capacity on rails, multiplying the productive capacity of communities and enabling specialization. Even societies lacking fossil fuels can benefit enormously from rail infrastructure powered by animal traction or gravity.</p>
+<p>This guide covers site selection, track construction, gauge selection, rolling stock design, motive power options, and operational procedures—all scalable from small local tramways (600mm gauge, horse-drawn) to larger systems (standard gauge, locomotive-powered).</p>
+</section>
+<section id="why">
+<h2>Why Railroads Matter</h2>
+<p>Rail transport is dramatically more efficient than road transport. A single horse can pull roughly 10 times more weight on rails than on a road due to the low rolling resistance of steel wheels on steel rails. Even simple wooden-railed tramways with horse power represent a major transportation upgrade.</p>
+<p>In collapse scenarios, building rail systems (even small-scale) multiplies the productive capacity of communities. Raw materials can be moved efficiently, specialization becomes practical, and larger communities can connect into trade networks.</p>
+</section>
+<section id="efficiency">
+<h2>Transportation Efficiency Comparison</h2>
+<table><thead><tr><th scope="row">Mode</th><th scope="row">Typical Load</th><th scope="row">Power Source</th><th scope="row">Speed</th><th scope="row">Fuel/Cost</th></tr></thead><tbody><tr><td>Human hand-carry</td><td>20-30 kg (50 lbs)</td><td>Labor</td><td>3-4 km/h</td><td>Food (high cost)</td></tr><tr><td>Pack animal on road</td><td>90-150 kg (200-300 lbs)</td><td>Animal</td><td>4-5 km/h</td><td>Grain/forage (medium cost)</td></tr><tr><td>Animal on rail</td><td>2-5 tons (4400-11000 lbs)</td><td>Horse/mule</td><td>6-8 km/h</td><td>Grain/forage (medium cost)</td></tr><tr><td>Steam locomotive</td><td>20-100 tons (44000-220000 lbs)</td><td>Coal or wood</td><td>15-25 km/h</td><td>Fuel (medium cost per ton-km)</td></tr><tr><td>Gravity incline</td><td>20-50 tons (unlimited)</td><td>Gravity</td><td>2-6 km/h</td><td>None (very low cost)</td></tr></tbody></table>
+<h3>Efficiency Calculations</h3>
+<p>Rolling resistance coefficient on rails: 0.001-0.002 (steel wheel on steel rail). On dirt road: 0.05-0.10. On asphalt: 0.015-0.020. Coefficient of friction force = rolling resistance coefficient × normal force (weight). Example: 5-ton load on rails requires 5,000 kg × 9.81 m/s² × 0.002 = 98 N friction force. Same load on dirt road: 5,000 kg × 9.81 m/s² × 0.08 = 3,924 N friction force. Rail system requires 40× less force to move load!</p>
+<p>Practical implication: one horse on road can sustain 300 lbs pull force, moving 150 kg load at 4 km/h. Same horse on rails can pull 1.5 tons at 6 km/h sustained. The 10:1 multiplier is conservative—modern well-maintained rail can exceed 15:1 advantage.</p>
+<div class="info-box">
+<p><strong>Economic Threshold:</strong> A horse-drawn rail system becomes cost-effective when moving &gt;5 tons per day over &gt;1 km distance. Gravity systems (no fuel cost) break even at much lower volumes.</p>
+</div>
+</section>
+<section id="gauge">
+<h2>Gauge Selection</h2>
+<p><strong>Gauge</strong> is the distance between the rails (measured on the inside of the rail heads). Choice affects entire system design.</p>
+<h3>Standard Gauge (1435 mm / 4 ft 8.5 in)</h3>
+<ul>
+<li>Most common worldwide; enables interoperability</li>
+<li>Works well for mixed horse/locomotive operation</li>
+<li>Requires precise engineering and materials</li>
+<li>If salvaging existing rolling stock, standard gauge is likely</li>
+</ul>
+<h3>Narrow Gauge (600-1000 mm / 2 ft - 3 ft 4 in)</h3>
+<ul>
+<li>Easier and cheaper to build; 30-40% less rail/timber material vs standard gauge</li>
+<li>Better for tight curves (minimum radius 20 meters for narrow gauge vs 100+ meters standard gauge) and hilly terrain (grades up to 5-8% manageable vs 2-3% standard)</li>
+<li>Suitable for light industrial (mines, quarries), forestry, and agriculture applications</li>
+<li>Limited rolling stock availability (requires custom-built or salvaged narrow-gauge cars)</li>
+<li>Perfect for offline communities with limited manufacturing capability</li>
+<li>Historical precedent: 30+ countries still operate narrow-gauge main-line railroads (Switzerland, Japan, India)</li>
+<li>Load capacity reduced ~30% vs standard gauge for equivalent wheelbase (narrower gauge = less stable, requires lighter loads)</li>
+</ul>
+<h3>Very Narrow Gauge (&lt;600 mm)</h3>
+<ul>
+<li>Minimal material and land cost</li>
+<li>Suitable for short-distance tramways (mine-to-mill, farm-to-market)</li>
+<li>Tightest curves possible</li>
+<li>Limited load capacity; smaller vehicles needed</li>
+</ul>
+</section>
+<section id="roadbed">
+<h2>Roadbed Construction</h2>
+<h3>Grading &amp; Preparation</h3>
+<p>The foundation is critical. Poor roadbed causes derailments, track misalignment, and accelerated wear (ties deteriorate 50% faster in wet conditions). Proper roadbed extends tie life from 5-7 years to 20-30 years.</p>
+<ul>
+<li><strong>Clearing:</strong> Remove vegetation, rocks, roots to at least 1 meter beyond track edges. Grade should be firm and compacted. Vegetation grows 200-400 mm/year (in temperate climates); plan for maintenance intervals.</li>
+<li><strong>Grade slope:</strong> Establish proper slope for drainage. Optimal grade: 0-1% (slight downslope) for long-term stability. Heavy transport maximum grade: 2-3% for steam locomotives, 1-2% for horse-drawn continuous operation. Steeper grades (up to 8%) possible for gravity-assist tramways where counterweight provides downhill braking. Grades &gt;5% require mechanical braking to control descent speed.</li>
+<li><strong>Drainage:</strong> Excavate drainage ditches along both sides (minimum 500 mm deep, 1 meter wide). Water-logged roadbed degrades quickly: soft subgrade causes settling (track misalignment), ties rot, and washouts in heavy rain. Ensure water flows away from track at &lt;2% slope minimum.</li>
+<li><strong>Foundation layer:</strong> 30-50 cm of well-compacted earth or bedrock. Subgrade bearing capacity &gt;150 kPa required (supports 15 tons per square meter wheel load). Test by driving heavy loaded cart over area repeatedly; should show no settling after 10 passes. Poor subgrade requires stabilization (gravel, crushed stone) to build up bearing capacity.</li>
+</ul>
+<div class="warning">
+<p><strong>Drainage Failure Risk:</strong> In wet climates or clay soils, inadequate drainage causes complete system failure within 1-2 years. Prioritize drainage infrastructure investment over track quality—good roadbed + poor rails lasts 5 years, poor roadbed + good rails lasts 1 year.</p>
+</div>
+<h3>Ballast Layer</h3>
+<p>Ballast is the granular material (crushed rock, gravel, cinder, slag, broken stone) laid between the roadbed and ties. It provides:</p>
+<ul>
+<li><strong>Drainage:</strong> Water percolates through ballast (permeability 10⁻³ cm/s) rather than pooling under ties. Prevents mud and weak subgrade.</li>
+<li><strong>Support distribution:</strong> Tie loads concentrated at two contact points (rail seats). Ballast spreads these point loads across larger subgrade area, reducing bearing stress by 50-70%.</li>
+<li><strong>Lateral stability:</strong> Ballast wedges beside ties prevent horizontal movement during acceleration/braking. Curves with &gt;5 degree banking require additional ballast shoulder.</li>
+<li><strong>Elevation compensation:</strong> Small rocks fill voids, leveling track despite minor subgrade irregularities.</li>
+</ul>
+<p><strong>Ballast depth and width:</strong> 15-20 cm is standard depth (30 cm for heavy-load or steep-grade sections). Width 2.5-3.5 meters (rail to ballast edge). Wider ballast beds for curves and locations &gt;2% grade (heavier lateral forces). Inspect and refresh annually; ballast compacts 5-10 mm/year under load and degrades (sharp edges round, angular strength lost).</p>
+<p><strong>Ballast materials:</strong> Crushed granite or limestone: density 1600-1700 kg/m³, angular shape provides interlocking. River gravel: rounder, less interlocking, settles faster but acceptable for light applications. Slag (iron mill byproduct): similar performance to crushed stone, often cheaper. Avoid clay-containing materials (retain water) and fine materials (&lt;5 mm, wash away, provide no support).</p>
+<p><strong>Material calculation:</strong> 1 km of standard-gauge track with 2.5-meter ballast width and 15 cm depth requires approximately 3,750 m³ ballast material = 6,000-6,500 tons. Cost: $2-5 per ton (varies by region/material) = $12,000-32,500 material cost for 1 km. Labor for spreading and tamping: 50-100 labor-days depending on equipment availability.</p>
+</section>
+<section id="track">
+<h2>Track Laying</h2>
+<h3>Ties (Sleepers)</h3>
+<p><strong>Material:</strong> Hardwood ties last longest—oak, locust, cedar, chestnut. Softwood (pine) acceptable but requires treatment. Dimensions: approximately 20 x 15 cm cross-section, 2.4 m long (standard gauge).</p>
+<p><strong>Spacing:</strong> Typically 60 cm apart (center-to-center). Closer spacing for heavy loads or poor ballast. Farther spacing acceptable for light-duty tramways (up to 1 m).</p>
+<p><strong>Durability:</strong> Untreated ties last 3-7 years. Treated with char (light surface burning) or oil-based preservatives: 20-30 years or more. Alternative materials: stone blocks or concrete for permanent installations (greater initial cost but longer life).</p>
+<h3>Rail Installation</h3>
+<ul>
+<li><strong>Rail type:</strong> Steel rail (salvaged or fabricated) is ideal. Angle iron or flat bar spiked to wooden ties works for light-duty tramways. Wooden rails capped with iron strap were historically the first railroads.</li>
+<li><strong>Spiking:</strong> Secure rails to ties with spikes driven at slight angle (away from rail head). Three spikes per tie is standard.</li>
+<li><strong>Joint alignment:</strong> Rails must meet precisely at joints. Fish-plates (metal brackets) bolted across joints provide additional support.</li>
+<li><strong>Gauge verification:</strong> Measure distance between rails frequently during installation. Maintain tolerance of ±1/4 inch.</li>
+<li><strong>Alignment:</strong> Track should be straight except in designed curves. Check with a string line or surveying transit.</li>
+</ul>
+</section>
+<section id="rolling-stock">
+<h2>Rolling Stock Design</h2>
+<h3>Basic Flatcar</h3>
+<p>The simplest rail vehicle: a wooden platform on wheel-axle sets (trucks). Flanged wheels keep the car on rails.</p>
+<ul>
+<li><strong>Superstructure:</strong> Wooden deck (planks or boards) fastened to wooden or steel frame</li>
+<li><strong>Trucks:</strong> Wheel assemblies under each end. 2-3 wheels per side on small cars, more on large cars. Wheels should be 18-24 inches diameter for animal-drawn cars.</li>
+<li><strong>Flanged wheels:</strong> Wheels must have a flange (lip) on inner edge to prevent derailment. Salvage from industrial equipment or cast new ones.</li>
+<li><strong>Couplers:</strong> Simple hooks or chain couplers allow cars to be pulled in trains</li>
+<li><strong>Brakes:</strong> At minimum, a wooden friction brake (shoe pressed against wheel) operated by hand lever. Essential for controlling descents on grades.</li>
+<li><strong>Load capacity:</strong> Depends on wheel size, bearing quality, and track condition. Start conservatively: 2-3 tons for animal-drawn, up to 20+ tons for gravity-assist or locomotive.</li>
+</ul>
+<h3>Specialized Cars</h3>
+<ul>
+<li><strong>Ore/coal cars:</strong> Dump beds with side hinges for quick unloading</li>
+<li><strong>Flatbed with stakes:</strong> Posts around perimeter for securing bundled goods</li>
+<li><strong>Tank cars:</strong> Sealed cylinders for transporting liquids (water, oil, chemicals)</li>
+<li><strong>Passenger coaches:</strong> Bench seating, weather protection. Simple design: four walls, roof, wheels.</li>
+</ul>
+</section>
+<section id="motive-power">
+<h2>Motive Power Options</h2>
+<h3>Human Power</h3>
+<ul>
+<li><strong>Use:</strong> Maintenance, short-distance movement, mine/factory operations</li>
+<li><strong>Design:</strong> Push-rails or hand-crank mechanisms. Practical for small cars (1-2 tons).</li>
+<li><strong>Advantage:</strong> No fuel required; always available</li>
+<li><strong>Limitation:</strong> Very limited range and speed (walking pace)</li>
+</ul>
+<h3>Animal Power (Horse/Mule)</h3>
+<ul>
+<li><strong>Use:</strong> Primary transport for early rail systems. Most practical for offline communities.</li>
+<li><strong>Capacity:</strong> One horse can pull 2-5 tons on level rail (vs. 200-300 lbs on road). Team of 4-6 horses: 10-20 tons or more.</li>
+<li><strong>Speed:</strong> Walking pace 3-4 mph, trotting 6-8 mph sustained. Realistic average with load: 5-6 mph.</li>
+<li><strong>Endurance:</strong> 8-10 hours of work per day sustainable</li>
+<li><strong>Advantages:</strong> Familiar technology, self-replicating (breeding), uses local feed, universally available</li>
+<li><strong>Limitations:</strong> Slow, requires care and feeding, limited to daylight operations</li>
+</ul>
+<h3>Steam Locomotive</h3>
+<p>Requires advanced metalworking and engineering. Small 0-4-0 (four wheels, no trailing wheels) locomotives are simplest:</p>
+<ul>
+<li><strong>Boiler:</strong> Horizontal cylinder for steam generation. Requires precision engineering, quality steel, and safety management.</li>
+<li><strong>Firebox:</strong> Combustion chamber burning coal or wood. Must maintain 150-200+ psi steam pressure safely.</li>
+<li><strong>Drive wheels:</strong> Connected to pistons by rods and cranks. 0-4-0 means all four wheels are driving wheels.</li>
+<li><strong>Capacity:</strong> Small locomotive can pull 20-50 tons depending on grade. Larger locomotives: 50-200+ tons.</li>
+<li><strong>Speed:</strong> 10-20 mph typical. Fuel consumption: 15-30 lbs of coal per mile depending on load and gradient.</li>
+<li><strong>Advantages:</strong> High power, all-weather operation, long range</li>
+<li><strong>Disadvantages:</strong> Extremely complex to build, requires skilled operation, high fuel cost, significant maintenance required, safety hazards</li>
+</ul>
+<h3>Gravity Systems (Inclined Planes)</h3>
+<p>Uses gravity for downhill transport, counterweights or stored energy for uphill:</p>
+<ul>
+<li><strong>Loaded car descends downhill</strong> pulling a cable connected to an uphill empty car</li>
+<li><strong>Friction brake</strong> controls descent speed to a safe level (1-2 mph)</li>
+<li><strong>Practical for:</strong> Mines, quarries, mills on hillsides. Small-scale industrial operations.</li>
+<li><strong>Advantage:</strong> No fuel or animals required; nearly free operation after construction</li>
+<li><strong>Limitation:</strong> Only works where terrain permits grade of 2-8%. Requires strong cable and reliable braking.</li>
+</ul>
+</section>
+<section id="operations">
+<h2>Operations &amp; Maintenance</h2>
+<h3>Regular Maintenance Schedule</h3>
+<ul>
+<li><strong>Daily:</strong> Visual inspection for damage, broken spikes, misaligned rails, debris on track. Check for puddles (sign of drainage failure). Listen for unusual rail sounds during operation (cracking sound indicates broken rail).</li>
+<li><strong>Weekly:</strong> Re-spike any loose rails (spikes work out from vibration—tighten before rail shifts). Clear drainage ditches and culverts (prevent water backup). Lubricate wheel bearings and axles with grease (every 100 km operation). Remove weeds from ballast (competition for maintenance attention).</li>
+<li><strong>Monthly:</strong> Full gauge verification using standard gauge (±6 mm tolerance). Inspect 10% of ties for rot/damage. Refresh ballast in high-wear sections (especially curves). Test brake systems on all cars.</li>
+<li><strong>Seasonally:</strong> Replace visibly rotted ties (soft wood, splitting). Resurface worn rail sections (file high spots causing noise). Full track alignment check with transit or string line (curves should match design, straights within ±15 mm).</li>
+<li><strong>Annually:</strong> Major tie replacement if system carries heavy loads (replace 10-15% of ties showing age). Ballast replacement (remove compacted material, add fresh). Comprehensive inspection including rail head measurement (wear &gt;5 mm requires grinding or rail replacement), bearing inspection, coupling safety check.</li>
+</ul>
+<div class="tip">
+<p><strong>Preventive Maintenance Value:</strong> Spending 5% of capital cost annually on maintenance extends rail life from 10-15 years to 20-30 years and prevents catastrophic failures (derailments, rail breaks).</p>
+</div>
+<h3>Safety Protocols</h3>
+<ul>
+<li><strong>Operator accountability:</strong> Train operator responsible for vehicle and load at all times. Documented trip log (date, cargo weight, distance, time) enables identification of problems (excessive wear on particular sections, recurring brake failures).</li>
+<li><strong>Coupler inspection:</strong> Couplers checked before every train departure. Worn couplers slip during braking (uncontrolled train separation). Replacement cost &lt;$50; inspection time &lt;5 minutes; risk of losing cargo and derailment justifies priority.</li>
+<li><strong>Braking requirements:</strong> Descents &gt;2% grade must use brakes. Operator must test brakes before descent (apply brake, verify car decelerates). Loaded cars at 10 mph descending 3% grade require brake force = cargo weight × gravity × sin(grade) = consistent pressure to prevent runaway.</li>
+<li><strong>Speed limits:</strong> Speeds &gt;15 km/h (10 mph) dangerous without modern wheels/bearings/track. Early rail systems (unsprung axles, poor wheel quality): limit to 10-12 km/h sustained on level track. Curve speed formula: V(mph) = √(127 × D × e) where D = degree of curve (° of arc per 100 feet), e = superelevation (track banking). Without banking (e=0), 10-degree curve safe maximum speed = √(127 × 10 × 0) = very low—recommend &lt;5 mph on sharp curves.</li>
+<li><strong>Track clearance:</strong> No personnel on track while train moving. Track workers have absolute priority; moving trains must yield or stop (prevent accidents from inattention). Whistle signal before train movement (2 short blasts = warning).</li>
+</ul>
+<div class="danger">
+<p><strong>Derailment Risk:</strong> Most derailments cause at speeds &gt;15 km/h on sharp curves (&gt;15 degrees). Early rail systems with wood ties, poor wheel quality, and unbanked curves should operate &lt;10 km/h on curves &gt;5 degrees.</p>
+</div>
+</section>
+<section id="economics">
+<h2>Economics of Rail Systems</h2>
+<h3>Initial Cost for 1 km Narrow-Gauge (600 mm) Horse-Drawn Tramway</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Quantity</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Roadbed preparation (labor)</td>
+<td>40-80 labor-days</td>
+<td>40-80 labor-days (10-20% of skilled worker annual wage)</td>
+</tr>
+<tr>
+<td>Rail (36-40 lb/yard typical)</td>
+<td>1.6 tons</td>
+<td>$1,600-2,400 (steel ~$1-1.50/lb salvage, $2-3/lb new)</td>
+</tr>
+<tr>
+<td>Wooden ties (2400mm × 20cm × 15cm)</td>
+<td>600-700 ties</td>
+<td>$3,000-5,000 ($5-8 per tie)</td>
+</tr>
+<tr>
+<td>Ballast (gravel/stone)</td>
+<td>3,750 m³</td>
+<td>$7,500-18,750 ($2-5/m³)</td>
+</tr>
+<tr>
+<td>Spikes, fishplates, hardware</td>
+<td>Miscellaneous</td>
+<td>$500-1,000</td>
+</tr>
+<tr>
+<td>Flatcar (4-ton capacity)</td>
+<td>1 unit</td>
+<td>$2,000-5,000 (materials + 50-100 labor-hours)</td>
+</tr>
+<tr>
+<td><strong>Total Initial Capital</strong></td>
+<td>—</td>
+<td><strong>$14,600-32,150</strong></td>
+</tr>
+<tr>
+<td><strong>Labor-days equivalent</strong></td>
+<td>40-80 + 50-100</td>
+<td><strong>100-150 labor-days</strong></td>
+</tr>
+</tbody>
+</table>
+<p>A skilled worker earning $50/day: 150 labor-days = $7,500 labor cost. Total project cost equivalent to 2-3 months of skilled labor or ~5 horses.</p>
+<h3>Operating Cost</h3>
+<p><strong>Annual fixed costs:</strong></p>
+<ul>
+<li>Maintenance labor: 200-400 labor-hours/year = $10,000-20,000 (skilled labor)</li>
+<li>Tie replacement: Replace 5-10% ties every 5 years = $300-500/year averaged</li>
+<li>Rail resurfacing: Grinding or replacement every 7-10 years = $200-400/year averaged</li>
+<li><strong>Total: 10-15% of initial capital annually</strong></li>
+</ul>
+<p><strong>Variable costs (per ton-km moved):</strong></p>
+<ul>
+<li>Horse grain consumption: 0.5-1 kg grain per 10 ton-km (depends on horse conditioning)</li>
+<li>At $0.30/kg grain cost: $0.015-0.030 per ton-km</li>
+<li>Comparison: hand carrier cost $0.20-0.50 per ton-km (10-15× higher)</li>
+</ul>
+<h3>Payback Analysis</h3>
+<p><strong>Scenario:</strong> Moving aggregates from quarry to construction site, 3 km distance, 20 tons/day demand.</p>
+<p><strong>Without rail:</strong></p>
+<ul>
+<li>20 tons ÷ 0.3 tons per pack animal = 67 pack animals (or hand carriers)</li>
+<li>Daily labor: 2 handlers × 67 animals = 134 labor-days/year ÷ 250 working days = 0.54 workers</li>
+<li>Cost: 0.54 workers × $50/day × 250 days = $6,750/year labor</li>
+<li>Pack animal feed: 67 animals × 1.5 kg grain/day × 250 days/year × $0.30/kg = $7,537/year</li>
+<li><strong>Total annual cost without rail: $14,287/year</strong></li>
+</ul>
+<p><strong>With rail system:</strong></p>
+<ul>
+<li>Capital cost amortized: $20,000 (average) ÷ 10-year life = $2,000/year</li>
+<li>Operating cost: 15% × $20,000 = $3,000/year maintenance</li>
+<li>Horse/team for hauling: 1-2 horses × 1.5 kg grain/day × 250 days × $0.30 = $112-225/year</li>
+<li><strong>Total annual cost with rail: $5,112-5,225/year</strong></li>
+</ul>
+<p><strong>Savings: $14,287 - $5,225 = $9,062/year = 64% cost reduction</strong></p>
+<p><strong>Payback period: $20,000 initial cost ÷ $9,062 annual savings = 2.2 years</strong></p>
+<div class="info-box">
+<p><strong>Break-Even Threshold:</strong> Rail system becomes cost-effective at &gt;5 tons per day over &gt;1 km distance. Systems moving 20+ tons/day see payback in &lt;2 years.</p>
+</div>
+</section>
+<section id="curve-banking">
+<h2>Curve Banking and Superelevation</h2>
+<p>Unbanked curves (flat) limit safe speed dramatically. Properly banked curves (tilted) allow significantly higher speeds and reduce derailment risk.</p>
+<h3>Physics of Banking</h3>
+<p>When a train travels around a curve, centrifugal force (in the train's reference frame) pushes outward. A banked curve tilts the track inward, redirecting some of this force downward through the track instead of creating a derailment hazard.</p>
+<p><strong>Formula for safe speed on banked curve:</strong>
+V(mph) = √(127 × R × (tan θ + μ) / (1 - μ × tan θ))</p>
+<p>Where: R = curve radius (feet), θ = banking angle, μ = coefficient of friction between wheel and rail.</p>
+<p>For practical offline systems:</p>
+<ul>
+<li><strong>Unbanked curves:</strong> Safe speed V = √(4 × R) mph. Example: 100-foot radius = √400 = 20 mph max</li>
+<li><strong>Banked 6 degrees:</strong> Safe speed increases ~30%</li>
+<li><strong>Banked 12 degrees:</strong> Safe speed increases ~60%</li>
+</ul>
+<h3>Practical Banking Design</h3>
+<ul>
+<li><strong>Degree of curve:</strong> Measured as arc degrees per 100 feet of track. 1-degree curve (gentle) = 5,729-foot radius. 15-degree curve (sharp) = 382-foot radius.</li>
+<li><strong>Banking recommendation:</strong> Bank curves at 3-8 degrees depending on expected operating speed and terrain constraints.</li>
+<li><strong>Construction:</strong> Outer rail raised relative to inner rail (or track bed tilted). Difference: typically 2-4 inches for standard gauge.</li>
+<li><strong>Transition spirals:</strong> Insert gradual transition zones between straight and banked sections to prevent abrupt direction changes (reduces dynamic stress).</li>
+</ul>
+<div class="tip">
+<p><strong>Design practice:</strong> Even modest banking (3-4 degrees) on curves &gt;10 degrees of curvature significantly improves safety and allows faster operation without increased derailment risk.</p>
+</div>
+</section>
+<section id="track-specification-table">
+<h2>Track Specification Reference</h2>
+<p>Complete specifications for standard and narrow gauge systems:</p>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+<thead>
+<tr style="background-color: var(--card);">
+<th style="padding: 12px; text-align: left; border-right: 1px solid var(--border);">Feature</th>
+<th style="padding: 12px; text-align: left; border-right: 1px solid var(--border);">Standard Gauge (1435mm)</th>
+<th style="padding: 12px; text-align: left;">Narrow Gauge (600-1000mm)</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 12px; font-weight: bold;">Rail Section</td>
+<td style="padding: 12px;">45-60 lbs/yard (70-90 lbs/meter)</td>
+<td style="padding: 12px;">25-40 lbs/yard (40-60 lbs/meter)</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 12px; font-weight: bold;">Tie Spacing</td>
+<td style="padding: 12px;">60 cm (24 inches) center-to-center</td>
+<td style="padding: 12px;">50-60 cm (20-24 inches)</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 12px; font-weight: bold;">Tie Length</td>
+<td style="padding: 12px;">2.6-2.8 m (8.5-9 ft)</td>
+<td style="padding: 12px;">2.0-2.4 m (6.5-8 ft)</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 12px; font-weight: bold;">Tie Cross-Section</td>
+<td style="padding: 12px;">25 × 15 cm (10 × 6 inches)</td>
+<td style="padding: 12px;">20 × 12 cm (8 × 5 inches)</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 12px; font-weight: bold;">Ballast Depth</td>
+<td style="padding: 12px;">20-30 cm (8-12 inches)</td>
+<td style="padding: 12px;">15-20 cm (6-8 inches)</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 12px; font-weight: bold;">Ballast Width</td>
+<td style="padding: 12px;">3-3.5 m (10-11.5 ft)</td>
+<td style="padding: 12px;">2.5-3 m (8-10 ft)</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 12px; font-weight: bold;">Min. Curve Radius</td>
+<td style="padding: 12px;">100+ m (330 ft)</td>
+<td style="padding: 12px;">20-30 m (65-100 ft)</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 12px; font-weight: bold;">Max Grade (Gravity)</td>
+<td style="padding: 12px;">2-3% (standard operation)</td>
+<td style="padding: 12px;">5-8% (with braking)</td>
+</tr>
+<tr style="border-bottom: 1px solid var(--border);">
+<td style="padding: 12px; font-weight: bold;">Rail per km</td>
+<td style="padding: 12px;">2 rails × 1000m = 2000 m length</td>
+<td style="padding: 12px;">2 rails × 1000m = 2000 m length</td>
+</tr>
+<tr>
+<td style="padding: 12px; font-weight: bold;">Ties per km</td>
+<td style="padding: 12px;">~1,667 ties (60cm spacing)</td>
+<td style="padding: 12px;">~1,667 ties (60cm spacing)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hand-cart-design">
+<h2>Hand-Operated Rail Cart Design</h2>
+<p>For communities with limited animal or mechanical power, human-powered rail carts enable transport of 500-2000 lbs depending on design and track condition.</p>
+<h3>Basic Hand-Pumped Trolley</h3>
+<p>A two-person hand pump (like a railroad handcar used by maintenance crews) can move 1-2 tons on level track at walking pace.</p>
+<p><strong>Construction:</strong></p>
+<ul>
+<li>Wooden platform (4 × 6 feet)</li>
+<li>Four flanged wheels (12-16 inches diameter)</li>
+<li>Axles mounted on simple bearing blocks</li>
+<li>Pump mechanism: lever arm (6-8 feet long) connected to rotating shaft</li>
+<li>Two handles, alternating pumping motion</li>
+<li>Load capacity: 2-4 tons on level track with experienced operators</li>
+</ul>
+<p><strong>Speed:</strong> 3-5 mph sustainable; experienced teams achieve 8-10 mph in short bursts.</p>
+<p><strong>Advantages:</strong> No animal feed required, can be stored compactly, two people can operate indefinitely with rest breaks.</p>
+<p><strong>Disadvantages:</strong> Slower than animal-drawn cars, physically demanding, inefficient on grades &gt;1%.</p>
+<h3>Gravity-Assist Hand Cart</h3>
+<p>For downhill sections, hand carts become much more efficient. A rope-brake system allows controlled descent while gravity provides propulsion.</p>
+<div class="tip">
+<p><strong>Efficiency gain:</strong> Hand-pumped cart moving 2 tons uphill on 1% grade requires sustained 40-50 lbs per person pushing force. Same cart descending 2% grade with operator handling brake rope = two-person team can move 5-10 tons with minimal effort.</p>
+</div>
+</section>
+<section id="switching-turntables">
+<h2>Switches, Sidings, and Turntables</h2>
+<p>Simple rail infrastructure (switches, passing sidings, turntables) dramatically increases system efficiency.</p>
+<h3>Switches (Points)</h3>
+<p>A switch allows a train to change rails without derailment. Basic principle: movable rails that guide wheels onto one track or another.</p>
+<p><strong>Simple manual switch:</strong></p>
+<ul>
+<li>Two movable rails at junction point</li>
+<li>Hand lever (6-8 feet long) operates switch</li>
+<li>One operator can switch tracks manually in 30-60 seconds</li>
+<li>Cost: minimal (2 movable rails, hinges, lever arm)</li>
+<li>Reliability: high (mechanical, no power required)</li>
+</ul>
+<p><strong>Lock bar:</strong> Prevents accidental switching while train is approaching. Operator manually moves lock bar to &quot;safe&quot; position before switch operation.</p>
+<h3>Sidings (Passing Loops)</h3>
+<p>A parallel short section of track allows one train to wait while another passes. Essential for two-way traffic on single-track systems.</p>
+<p><strong>Minimum siding length:</strong> At least 1.5× the longest train expected. Example: if trains are ~100 feet long, siding should be 150+ feet.</p>
+<p><strong>Placement:</strong> Every 1-2 km of single-track rail, depending on traffic volume.</p>
+<h3>Turntables</h3>
+<p>A rotating platform allows locomotives or rail cars to reverse direction without backing up. Useful at terminals or where track ends at dead-end locations.</p>
+<p><strong>Simple turntable:</strong></p>
+<ul>
+<li>Circular platform (diameter = longest vehicle + 2 feet clearance)</li>
+<li>Center pivot bearing (may use large ball bearing or simple wood post)</li>
+<li>Track section built into platform surface (aligned with main track)</li>
+<li>Operator manually pushes platform to rotate (or use leverage bar/pry pole)</li>
+<li>Manual operation: 2-3 people can rotate 20-ton locomotive 180° in 2-3 minutes</li>
+</ul>
+</section>
+<section id="signals-communication">
+<h2>Signals and Communication Systems</h2>
+<p>In multi-train systems, coordinating movement prevents collisions and optimizes scheduling.</p>
+<h3>Visual Signal Systems</h3>
+<p><strong>Simple color-coded flags/discs:</strong> Mounted on poles at approach to stations or switches.</p>
+<ul>
+<li>Green flag: Track ahead is clear; proceed at normal speed</li>
+<li>Yellow flag: Caution; reduce speed, train approaching on main line or switch active</li>
+<li>Red flag: Stop immediately; obstruction or unsafe condition ahead</li>
+</ul>
+<p><strong>Bell codes:</strong> Sound patterns using locomotive whistle or hand-operated bell</p>
+<ul>
+<li>1 long blast: Warning; personnel on track should clear</li>
+<li>2 short blasts: Backing up</li>
+<li>3 short blasts: Starting forward</li>
+<li>Continuous: Emergency stop signal</li>
+</ul>
+<h3>Telegraph/Signal Timing</h3>
+<p>For longer routes with multiple stations, a simple telegraph system (wire-based electrical signals) enables station-to-station communication.</p>
+<p><strong>Offline alternative:</strong> Visual semaphore or mirror-flash morse code at ~1 km intervals along route. Requires trained operators.</p>
+<div class="warning">
+<p><strong>Coordination imperative:</strong> Without signal systems, two trains on the same track at different locations may collide. Implement strict scheduling + visual/auditory warning systems before adding second train.</p>
+</div>
+</section>
+<section id="rail-accidents">
+<h2>Common Rail System Failures and Prevention</h2>
+<p>Understanding failure modes prevents catastrophic accidents.</p>
+<h3>Derailment (Most Common Accident)</h3>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Excessive speed on curve (centrifugal force exceeds wheel flange strength)</li>
+<li>Worn or misaligned rails (wheel climbs rail head)</li>
+<li>Broken rail (wheel drops into gap)</li>
+<li>Debris on track (rope, rock, branch catches wheel flange)</li>
+<li>Unbanked sharp curves at speed</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Speed limits on curves (see curve banking section)</li>
+<li>Regular rail alignment checks (use string line)</li>
+<li>Daily track inspection for debris</li>
+<li>Adequate banking on curves &gt;5 degrees</li>
+<li>Replace rail sections showing &gt;0.5 inch wear</li>
+</ul>
+<h3>Broken Rails</h3>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Metal fatigue from repeated loading</li>
+<li>Impact damage (heavy shock load)</li>
+<li>Rust/corrosion weakening structure</li>
+<li>Poor quality material</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Annual rail head inspection (file or grind wear &gt;5 mm)</li>
+<li>Monitor for cracks (hairline cracks propagate rapidly)</li>
+<li>Use quality steel or salvaged industrial rail (not automotive axles)</li>
+<li>Keep rail protected from extreme weather</li>
+</ul>
+<h3>Coupling Failures</h3>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Worn coupling hooks (become rounded, slip under load)</li>
+<li>Improper coupling procedure (incomplete engagement)</li>
+<li>Jerky acceleration/deceleration causing shock loads</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Inspect couplers monthly for wear</li>
+<li>Replace worn couplers immediately</li>
+<li>Train operators in smooth acceleration/deceleration</li>
+<li>Use secondary safety cables between cars on steep grades</li>
+</ul>
+<h3>Brake Failures</h3>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Worn brake shoes (friction material depletes)</li>
+<li>Wet brake surfaces (rain reduces friction)</li>
+<li>Inadequate brake force for load/grade combination</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Test brakes before every trip (apply full brake, verify deceleration)</li>
+<li>Inspect brake shoe thickness monthly (replace when &lt;1/4 inch)</li>
+<li>Use dynamic braking (compression brake) on long descents (reduces wear on friction brakes)</li>
+<li>Limit cargo weight based on available brake force</li>
+</ul>
+</section>
+<section id="alternative-power">
+<h2>Alternative Motive Power: Compressed Air and Spring Systems</h2>
+<p>Beyond horses and locomotives, other power sources enable rail transport in resource-limited contexts.</p>
+<h3>Compressed Air Systems</h3>
+<p>Compressed air stored in a tank can drive a piston engine to propel a rail car.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Zero onsite emissions (air-powered)</li>
+<li>Simple mechanics (piston, cylinder, valve)</li>
+<li>Refueling: pump air with hand-powered compressor (labor-intensive but possible)</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Limited range (tank capacity)</li>
+<li>Slow speed (~5-10 mph)</li>
+<li>Requires precision engineering to seal cylinders</li>
+<li>Heavy tank weight reduces payload capacity</li>
+</ul>
+<p><strong>Feasibility:</strong> Possible for short shuttle runs (&lt; 5 km round-trip) with community hand-pumping effort to refill tank.</p>
+<h3>Spring-Powered Systems</h3>
+<p>Large mechanical springs (or multiple springs) can store energy and release it to drive wheels.</p>
+<p><strong>Example: Giant coil spring</strong></p>
+<ul>
+<li>Spring pre-wound and latched</li>
+<li>Gradual release mechanism (geared down to smooth acceleration)</li>
+<li>Car travels distance until spring energy exhausted</li>
+<li>Reload by hand-cranking or animal-powered winch</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Extremely heavy springs required (cubic meters of iron)</li>
+<li>Complex engineering (gearing, release mechanism)</li>
+<li>Labor-intensive reloading</li>
+<li>Limited range</li>
+</ul>
+<p><strong>Feasibility:</strong> Impractical for regular transport; only in special scenarios where horses unavailable.</p>
+<div class="info-box">
+<p><strong>Practical recommendation:</strong> For offline communities, stick to gravity (downhill transport), horses/animals (uphill), or simple hand-pumped trolleys. Compressed air and spring systems require expertise beyond typical offline capability.</p>
+</div>
+</section>
+<section id="common-mistakes">
+<h2>Common Mistakes in Rail System Development</h2>
+<p>Learning from failures of others prevents costly errors.</p>
+<h3>Mistake 1: Inadequate Roadbed Preparation</h3>
+<p><strong>Error:</strong> Rushing into track-laying without proper drainage and subgrade preparation.</p>
+<p><strong>Problem:</strong> First rainy season causes washouts, settling, and track misalignment. System becomes unusable within 2-3 years.</p>
+<p><strong>Fix:</strong> Invest 30-40% of initial capital into roadbed engineering. Proper drainage and subgrade are foundation; poor foundation dooms otherwise good track.</p>
+<h3>Mistake 2: Gauge Incompatibility</h3>
+<p><strong>Error:</strong> Building narrow-gauge system without considering that salvaged rolling stock may be standard gauge (or vice versa).</p>
+<p><strong>Problem:</strong> Can't use available salvaged cars, forcing custom-built rolling stock (expensive, complex).</p>
+<p><strong>Fix:</strong> Audit local salvaged rail equipment FIRST. Choose gauge to match available resources.</p>
+<h3>Mistake 3: Overestimating Animal Power</h3>
+<p><strong>Error:</strong> Planning to move 10 tons per load with a single horse.</p>
+<p><strong>Problem:</strong> Horse exhaustion, injury, or refusal. Actual capacity 2-5 tons max for sustained operation.</p>
+<p><strong>Fix:</strong> Design for 2-3 ton loads per horse. Team of 3-4 horses can reliably move 8-12 tons.</p>
+<h3>Mistake 4: Ignoring Maintenance Costs</h3>
+<p><strong>Error:</strong> Building system with capital, then not budgeting for ongoing maintenance.</p>
+<p><strong>Problem:</strong> Without maintenance, system degrades within 5-10 years. By then, capital is sunk cost with nothing to show.</p>
+<p><strong>Fix:</strong> Budget 10-15% of initial capital annually for maintenance. Preventive maintenance extends system life 2-3×.</p>
+<h3>Mistake 5: Single-Track Layout Without Sidings</h3>
+<p><strong>Error:</strong> Building single-track system without passing sidings.</p>
+<p><strong>Problem:</strong> Two trains going opposite directions causes deadlock. Must back up one train for miles to find a siding.</p>
+<p><strong>Fix:</strong> Install minimum one siding per 1-2 km of single-track. Small cost upfront saves huge operational headaches.</p>
+</section>
+<section id="glossary">
+<h2>Rail System Terminology Quick Reference</h2>
+<ul>
+<li><strong>Ballast:</strong> Granular material (rock, gravel) between ties and subgrade; provides drainage and load distribution</li>
+<li><strong>Bearing (wheel):</strong> Journal and axle assembly allowing wheel rotation; requires regular lubrication</li>
+<li><strong>Bung hole:</strong> Opening in barrel or tank for filling/draining</li>
+<li><strong>Cant (banking):</strong> Tilt of track through curve; tilts outward (creates super-elevation)</li>
+<li><strong>Coupler:</strong> Mechanical connection between cars (hook, draft gear, or modern coupler)</li>
+<li><strong>Dead-man switch:</strong> Automatic braking if operator releases control</li>
+<li><strong>Derailment:</strong> Train leaves rails, typically catastrophic accident</li>
+<li><strong>Draft gear:</strong> Spring device in coupler absorbing shock of acceleration/deceleration</li>
+<li><strong>Fishplate:</strong> Metal bracket bolted across rail joint for strength</li>
+<li><strong>Flange:</strong> Lip on inside of wheel that grips rail and prevents derailment</li>
+<li><strong>Grade:</strong> Slope of track (2% grade = 2 feet rise per 100 feet distance)</li>
+<li><strong>Gauge:</strong> Distance between inside of rail heads (1435 mm = standard)</li>
+<li><strong>Journal:</strong> Bearing housing on wheel axle</li>
+<li><strong>Siding:</strong> Secondary track allowing train to wait while other passes on main line</li>
+<li><strong>Spike:</strong> Large nail securing rail to tie</li>
+<li><strong>Stave:</strong> Wooden plank forming barrel side</li>
+<li><strong>Tie (sleeper):</strong> Wooden or concrete member supporting rails</li>
+<li><strong>Tramway:</strong> Light-duty narrow-gauge rail, typically horse-drawn</li>
+<li><strong>Truck:</strong> Wheel assembly (axles, bearings, flanges) under car</li>
+</ul>
+<div class="tip">
+<p>Knowing terminology enables communication with experienced rail operators and salvage specialists, speeding sourcing and problem-solving.</p>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="bridges-dams.html">Bridges, Dams &amp; Infrastructure</a>
+<a href="draft-animals.html">Draft Animals &amp; Working Livestock</a>
+<a href="internal-combustion.html">Internal Combustion Engines</a>
+<a href="road-building.html">Road Building &amp; Paving</a>
+<a href="transportation.html">Transportation &amp; Infrastructure</a>
+<a href="vehicle-conversion.html">Vehicle Conversion</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/scaffold-shoring.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scaffold and Shoring Systems</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Building &amp; Engineering</span> ›
+<span>Scaffold and Shoring Systems</span>
+</div>
+
+
+<h1>Scaffold and Shoring Systems</h1>
+<p class="subtitle">Temporary structural support systems: pole scaffolds, trestle scaffolds, suspended rigging, shoring for building stabilization and excavation, formwork for concrete, load calculations, lashing techniques, inspection, and failure prevention.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~22 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#load-basics">Load Basics and Safety Factors</a></li>
+<li><a href="#scaffold-types">Scaffold Types</a></li>
+<li><a href="#timber-scaffold-anatomy">Timber Scaffold Construction</a></li>
+<li><a href="#lashing-techniques">Lashing Techniques for Scaffold Joints</a></li>
+<li><a href="#base-requirements">Base Plate and Ground Preparation</a></li>
+<li><a href="#inspection-checklist">Scaffold Inspection Checklist</a></li>
+<li><a href="#shoring-systems">Shoring Systems</a></li>
+<li><a href="#excavation-shoring">Trench Shoring and Cave-In Prevention</a></li>
+<li><a href="#formwork">Formwork for Concrete</a></li>
+<li><a href="#height-limits">Scaffold Height Limits by Material</a></li>
+<li><a href="#dismantling">Dismantling Procedures</a></li>
+<li><a href="#failure-modes">Common Failure Modes and Prevention</a></li>
+<li><a href="#emergency-shoring">Emergency Shoring for Damaged Buildings</a></li>
+<li><a href="#summary">Summary</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<h2 id="overview">Overview</h2>
+<p>Scaffolding and shoring are temporary structural systems that enable safe construction, repair, and excavation work. Scaffolds support workers and materials during building erection or facade work. Shoring prevents structure collapse during construction, demolition, or after damage. Both require accurate load calculations, sound construction, regular inspection, and disciplined dismantling.</p>
+<p>This guide covers manual timber and pole scaffolds (the most practical for off-grid and low-infrastructure settings), basic engineering principles, lashing techniques for rigidity, and emergency shoring for structural stabilization.</p>
+<section id="load-basics">
+<h2>Load Basics and Safety Factors</h2>
+<p>All scaffold design rests on two principles: calculate the safe working load (SWL) and apply a safety factor (SF).</p>
+<p><strong>Working Load Limit (WLL):</strong> The maximum combined load of workers, tools, and materials that a scaffold component can safely carry.</p>
+<p><strong>Safety Factor:</strong> The ratio of material failure strength to permitted working load. Standard practice uses <strong>SF = 4:1</strong> for timber scaffolds—meaning if timber breaks at 4,000 kg per component, the permitted load is 1,000 kg.</p>
+<h3>Load Calculation Example</h3>
+<p>A 2 m × 4 m single-level scaffold (4 m² working surface) must support:</p>
+<ul>
+<li>4 workers at 100 kg each: 400 kg</li>
+<li>Tools, paint, buckets: 150 kg</li>
+<li>Distributed live load (code): 1.5 kN/m² = 6 kN = 600 kg for 4 m²</li>
+<li><strong>Total design load: ~1,150 kg</strong></li>
+</ul>
+<p>The scaffold must be sized so that no single component (standard, ledger, transoms) carries more than its SWL.</p>
+<div class="warning">
+<p>Never load a scaffold beyond its calculated capacity. A single overloaded joint can collapse the entire section. Mark safe load limits on the scaffold itself.</p>
+</div>
+</section>
+<section id="scaffold-types">
+<h2>Scaffold Types</h2>
+<h3>Pole Scaffolds (Modular Bamboo or Wood)</h3>
+<p>Used for facade work, repair, and decoration. Standards (vertical poles, typically 4–6 m tall) are lashed at intervals to horizontal ledgers. Quick to erect; requires skilled lashing.</p>
+<div class="scaffold-type-box">
+**Best for:** Facade repair, painting, exterior maintenance, short-term (weeks).
+**Materials:** Poles (bamboo 10–15 cm Ø, or timber 10×10 cm), ledgers (8×8 cm timber), cross-braces.
+**Height limit:** 15–20 m with proper internal bracing; beyond 20 m requires engineering.
+</div>
+<h3>Trestle Scaffolds (Frames)</h3>
+<p>A-frame or H-frame trestle pairs support wooden planks. Simple to build and move. Inherently stable up to 4–6 m height.</p>
+<div class="scaffold-type-box">
+**Best for:** Interior work, scaffolding on stable floors, movable platforms.
+**Materials:** Timber frames (2×4 or 2×6), cross-braced, with adjustable feet and casters if needed.
+**Height limit:** 2–6 m depending on frame stability and bracing.
+</div>
+<h3>Suspended Scaffolds (Swing Stages)</h3>
+<p>Platforms hung by rope or cable from roof anchors. Used for facade work on tall buildings where pole scaffolds are impractical.</p>
+<div class="scaffold-type-box">
+**Best for:** High-rise window cleaning, facade restoration, façade-only access.
+**Materials:** Steel platform (1.5 m × 0.7 m typical), wire rope (10–13 mm), rigging shackles, counterweight or roof anchor.
+**Safety:** Requires redundant rigging; if one rope fails, the other must hold full load with SF ≥ 4:1. Regular rope inspection (every 2 weeks) is mandatory.
+</div>
+<h3>Cantilever Scaffolds (Needle Beams)</h3>
+<p>Heavy timber or steel beams thrust through a wall or supported on brackets, cantilevering outward to carry a working platform. Used when internal floor structures support the outer scaffold.</p>
+<div class="scaffold-type-box">
+**Best for:** High-rise work where pole/suspended scaffolds are difficult; interior attachment points exist.
+**Design concern:** The internal anchorage point must be engineered to resist 3–4× the cantilever load as a moment. Risk of interior wall damage and collapse. Requires professional design.
+</div>
+</section>
+<section id="timber-scaffold-anatomy">
+<h2>Timber Scaffold Construction</h2>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Timber scaffold anatomy showing standards, ledgers, transoms, braces, putlogs, and toe boards labeled">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text-label { font-family: Arial, sans-serif; font-size: 14px; fill: var(--text, #f5f0e8); font-weight: bold; }
+      .text-small { font-family: Arial, sans-serif; font-size: 12px; fill: var(--text, #f5f0e8); }
+      .member-standard { fill: var(--accent2, #a67c52); stroke: var(--border, #555); stroke-width: 2; }
+      .member-ledger { fill: var(--accent, #d4a574); stroke: var(--border, #555); stroke-width: 2; }
+      .member-transoms { fill: var(--accent, #d4a574); stroke: var(--border, #555); stroke-width: 2; }
+      .member-brace { fill: var(--muted, #7a8570); stroke: var(--border, #555); stroke-width: 1.5; }
+      .member-toe { fill: var(--surface, #2d2416); stroke: var(--border, #555); stroke-width: 1.5; }
+      .platform { fill: var(--card, #3a3a2e); stroke: var(--border, #555); stroke-width: 2; }
+      .arrow { stroke: var(--accent, #d4a574); stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .line-label { stroke: var(--accent, #d4a574); stroke-width: 1.5; stroke-dasharray: 4,4; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--accent, #d4a574)"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" class="bg"/>
+
+  <!-- Ground line -->
+  <line x1="20" y1="450" x2="780" y2="450" stroke="var(--border, #555)" stroke-width="3"/>
+  <line x1="20" y1="450" x2="780" y2="460" stroke="var(--border, #555)" stroke-width="1" opacity="0.5"/>
+
+  <!-- Left standard with base plate -->
+  <rect x="40" y="420" width="35" height="30" class="platform" rx="2"/>
+  <text x="32" y="375" class="text-small">base plate</text>
+  <rect x="50" y="80" width="25" height="340" class="member-standard"/>
+  <text x="25" y="260" class="text-label">STANDARD</text>
+  <text x="20" y="280" class="text-small">(vertical)</text>
+
+  <!-- Right standard with base plate -->
+  <rect x="705" y="420" width="35" height="30" class="platform" rx="2"/>
+  <rect x="715" y="80" width="25" height="340" class="member-standard"/>
+  <text x="720" y="260" class="text-label">STANDARD</text>
+
+  <!-- First ledger (left side) -->
+  <rect x="50" y="200" width="690" height="20" class="member-ledger"/>
+  <text x="400" y="160" class="text-label">LEDGER</text>
+  <text x="380" y="175" class="text-small">(horizontal, along facade)</text>
+
+  <!-- Second ledger (right side) -->
+  <rect x="50" y="280" width="690" height="20" class="member-ledger"/>
+
+  <!-- Transoms (perpendicular to ledgers, supporting platform) -->
+  <rect x="130" y="210" width="20" height="80" class="member-transoms"/>
+  <rect x="260" y="210" width="20" height="80" class="member-transoms"/>
+  <rect x="390" y="210" width="20" height="80" class="member-transoms"/>
+  <rect x="520" y="210" width="20" height="80" class="member-transoms"/>
+  <rect x="650" y="210" width="20" height="80" class="member-transoms"/>
+
+  <!-- Label for transoms -->
+  <line x1="390" y1="160" x2="390" y2="190" class="line-label"/>
+  <text x="345" y="150" class="text-label">TRANSOMS</text>
+  <text x="335" y="165" class="text-small">(cross-members)</text>
+
+  <!-- Platform planks -->
+  <rect x="50" y="290" width="690" height="15" class="platform"/>
+  <rect x="50" y="310" width="690" height="15" class="platform"/>
+
+  <!-- Toe boards (edge protection) -->
+  <rect x="50" y="325" width="690" height="12" class="member-toe"/>
+  <text x="740" y="333" class="text-label">TOE</text>
+  <text x="740" y="348" class="text-label">BOARD</text>
+
+  <!-- Putlog diagonals (cross-bracing) -->
+  <!-- Left-side diagonals -->
+  <line x1="75" y1="200" x2="130" y2="280" stroke="var(--member-brace, #7a8570)" stroke-width="8" class="member-brace"/>
+  <line x1="130" y1="200" x2="75" y2="280" stroke="var(--member-brace, #7a8570)" stroke-width="8" class="member-brace"/>
+
+  <!-- Middle diagonals -->
+  <line x1="260" y1="200" x2="315" y2="280" stroke="var(--member-brace, #7a8570)" stroke-width="8" class="member-brace"/>
+  <line x1="315" y1="200" x2="260" y2="280" stroke="var(--member-brace, #7a8570)" stroke-width="8" class="member-brace"/>
+
+  <!-- Right-side diagonals -->
+  <line x1="650" y1="200" x2="705" y2="280" stroke="var(--member-brace, #7a8570)" stroke-width="8" class="member-brace"/>
+  <line x1="705" y1="200" x2="650" y2="280" stroke="var(--member-brace, #7a8570)" stroke-width="8" class="member-brace"/>
+
+  <!-- Label for putlogs -->
+  <line x1="200" y1="195" x2="220" y2="165" class="line-label"/>
+  <text x="170" y="155" class="text-label">PUTLOG</text>
+  <text x="155" y="170" class="text-small">(diagonal brace)</text>
+
+  <!-- Guard rails (top) -->
+  <line x1="50" y1="70" x2="740" y2="70" stroke="var(--border, #555)" stroke-width="4"/>
+  <text x="745" y="75" class="text-small">guard rail</text>
+
+  <!-- Vertical struts connecting guard rail to first ledger -->
+  <line x1="100" y1="70" x2="100" y2="200" stroke="var(--border, #555)" stroke-width="2" stroke-dasharray="3,3"/>
+  <line x1="300" y1="70" x2="300" y2="200" stroke="var(--border, #555)" stroke-width="2" stroke-dasharray="3,3"/>
+  <line x1="500" y1="70" x2="500" y2="200" stroke="var(--border, #555)" stroke-width="2" stroke-dasharray="3,3"/>
+  <line x1="700" y1="70" x2="700" y2="200" stroke="var(--border, #555)" stroke-width="2" stroke-dasharray="3,3"/>
+
+  <!-- Midrail -->
+  <line x1="50" y1="240" x2="740" y2="240" stroke="var(--border, #555)" stroke-width="3"/>
+  <text x="745" y="245" class="text-small">midrail</text>
+
+  <!-- Dimension annotations -->
+  <!-- Horizontal spacing (standards) -->
+  <line x1="50" y1="40" x2="180" y2="40" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="50" y1="35" x2="50" y2="45" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="180" y1="35" x2="180" y2="45" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <text x="100" y="30" class="text-small">1.5–2.5 m spacing</text>
+
+  <!-- Vertical spacing (ledgers) -->
+  <line x1="22" y1="200" x2="35" y2="200" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="22" y1="280" x2="35" y2="280" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="25" y1="200" x2="32" y2="200" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <line x1="25" y1="280" x2="32" y2="280" stroke="var(--accent, #d4a574)" stroke-width="1"/>
+  <text x="8" y="245" class="text-small">1.5–2 m</text>
+
+  <!-- Title -->
+  <text x="400" y="30" class="text-label" text-anchor="middle" font-size="18">Timber Scaffold Anatomy</text>
+
+  <!-- Cross-section note -->
+  <text x="400" y="485" class="text-small" text-anchor="middle" fill="var(--muted, #7a8570)">Front elevation showing pole scaffold framework with safety components</text>
+</svg>
+</p>
+<h3>Key Components</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+<th>Sizing Guide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Standards</strong> (verticals)</td>
+<td>Main load-bearing poles, usually bamboo Ø 10–15 cm or timber 10×10 cm</td>
+<td>Spaced 1.5–2.5 m apart horizontally</td>
+</tr>
+<tr>
+<td><strong>Ledgers</strong> (horizontals, running along facade)</td>
+<td>Connect standards at intervals; transmit loads down the structure</td>
+<td>8×8 cm timber; spaced 1.5–2 m vertically</td>
+</tr>
+<tr>
+<td><strong>Transoms</strong> (cross-members, perpendicular to ledgers)</td>
+<td>Support working platform; prevent ledger from sagging</td>
+<td>6×6 or 8×8 cm; spaced 1.2–1.5 m apart</td>
+</tr>
+<tr>
+<td><strong>Putlogs</strong> (cross-bracing within the scaffold)</td>
+<td>Diagonal members; reduce sway and improve lateral rigidity</td>
+<td>5×5 or 6×6 cm; spaced to form triangles</td>
+</tr>
+<tr>
+<td><strong>Toe boards</strong> (edge protection)</td>
+<td>Prevent tools/debris from falling; support worker feet</td>
+<td>2×6 cm boards on the working edge</td>
+</tr>
+<tr>
+<td><strong>Base plates</strong> (sole boards)</td>
+<td>Distribute vertical load onto the ground; prevent sinking</td>
+<td>5×10 cm or wider under each standard foot</td>
+</tr>
+</tbody>
+</table>
+<h3>Assembly Sequence</h3>
+<ol>
+<li>
+<p><strong>Preparation:</strong> Mark the ground. Spread and level base plates (sole boards) under each standard location. In soft soil, use wider boards (0.2 m²) or reinforce with gravel fill.</p>
+</li>
+<li>
+<p><strong>Erect standards:</strong> Stand the first pair of standards 1.5–2.5 m apart. Brace them lightly with temporary guy ropes to prevent toppling while other standards are being raised.</p>
+</li>
+<li>
+<p><strong>Attach first ledger:</strong> Lash or nail the first horizontal ledger to both standards at 1.5–2 m height, forming a rigid rectangular frame. This stabilizes the pair.</p>
+</li>
+<li>
+<p><strong>Repeat:</strong> Add more standard pairs and ledgers, working upward, until the full height is reached. Each rectangular grid must be complete before workers climb.</p>
+</li>
+<li>
+<p><strong>Add transoms and platform:</strong> Once ledgers are in place, lay transoms perpendicular to ledgers, spaced 1.2 m apart. Secure them with lashing (see below). Lay timber planks (5×25 cm or 5×30 cm) across the transoms, with no gaps wider than 2.5 cm.</p>
+</li>
+<li>
+<p><strong>Install diagonals and toe boards:</strong> Add putlog diagonals (45° cross-braces) in each section to triangulate and prevent lateral sway. Install toe boards on all open edges.</p>
+</li>
+<li>
+<p><strong>Guard rails:</strong> Add guardrails at 1.0–1.1 m height; midrails at ~0.5 m; bottom rails/toe boards at grade level.</p>
+</li>
+</ol>
+</section>
+<section id="lashing-techniques">
+<h2>Lashing Techniques for Scaffold Joints</h2>
+<p>Lashing—tying joints with rope—is faster and more adjustable than nailing for timber scaffolds. Use natural fiber rope (manila, sisal, 16–20 mm diameter) or synthetic (nylon, polypropylene, 10–16 mm).</p>
+<div class="tip">
+<p>Use a <strong>square lash</strong> for joining two members at 90°. Use a <strong>diagonal lash</strong> for cross-bracing. Use a <strong>shear lash</strong> when forces are along the axis (e.g., ledger to standard, vertical shear).</p>
+</div>
+<h3>Square Lash (Ledger to Standard)</h3>
+<ol>
+<li>Wrap the rope around the standard, then ledger, forming a loop.</li>
+<li>Pull tight (hand-tight, then use a lever to tension further).</li>
+<li>Make 4 wraps, alternating under and over each member.</li>
+<li>Add 2 <strong>frapping turns</strong> (diagonal cinches) between the wraps, pulling outward, to draw the joint tight.</li>
+<li>Finish with a <strong>reef knot</strong> (square knot). Tuck the end under a wrap to prevent unwrapping.</li>
+</ol>
+<h3>Diagonal Lash (Cross-Braces)</h3>
+<ol>
+<li>Position the diagonal member at 45° across two ledgers or standards.</li>
+<li>Wrap the rope around one ledger, across the diagonal, around the other ledger.</li>
+<li>Make 3–4 wraps in this figure-8 pattern.</li>
+<li>Frap tightly twice (perpendicular to the diagonal), cinching the joint.</li>
+<li>Finish with a reef knot.</li>
+</ol>
+<h3>Tension and Testing</h3>
+<p>After lashing, the joint should resist twisting and lateral motion. Test by hand:</p>
+<ul>
+<li>Push perpendicular to the joint; there should be minimal flex.</li>
+<li>Twist the members; no rotation should occur.</li>
+<li>If a joint flexes, add another wrap or increase rope diameter.</li>
+</ul>
+<p>Inspect lashes weekly. Rope creeps slightly under load; re-tension frapping turns as needed.</p>
+</section>
+<section id="base-requirements">
+<h2>Base Plate and Ground Preparation</h2>
+<p>The base is the foundation of all scaffold safety.</p>
+<p><strong>Base Plate Sizing:</strong></p>
+<ul>
+<li>Minimum area: Load per standard ÷ Bearing capacity of ground = plate area</li>
+<li>Clay (bearing capacity ~0.5 kg/cm²): For 500 kg per standard, need ~1,000 cm² (0.1 m²) per foot</li>
+<li>Sand, gravel (1–2 kg/cm²): Smaller plates acceptable</li>
+<li>Rock: Minimal; just level the surface</li>
+</ul>
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Excavate 5–10 cm of soft topsoil and replace with compacted gravel or sand.</li>
+<li>Level the ground to ±2.5 cm over the scaffold footprint (use a long straightedge).</li>
+<li>Place sole boards (base plates) under each standard. In soft soil, use boards ≥50 cm × 50 cm.</li>
+<li>Ensure boards are level front-to-back and side-to-side (use shims under corners).</li>
+<li>Compact soil or gravel around the base to prevent settling.</li>
+</ol>
+<div class="danger">
+<p>Uneven or compressible ground under scaffold feet can cause differential settlement, twisting the scaffold and overstressing joints. Collapse may follow. Check level every 2 weeks during use.</p>
+</div>
+</section>
+<section id="inspection-checklist">
+<h2>Scaffold Inspection Checklist</h2>
+<p>Perform a full scaffold inspection before first use and every <strong>7–14 days</strong> thereafter (or after weather events, vibration, or accidents).</p>
+<p><strong>Visual Inspection Points:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What to Look For</th>
+<th>Action if Failed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base plates and ground</td>
+<td>Settlement, tilt, gaps under feet</td>
+<td>Shimmed and re-level; excavate and reset if necessary</td>
+</tr>
+<tr>
+<td>Standards (vertical poles)</td>
+<td>Cracks, splits, rot, bending</td>
+<td>Replace the member; temporarily support the load</td>
+</tr>
+<tr>
+<td>Ledgers (horizontal beams)</td>
+<td>Sagging, splits, insect damage, rot</td>
+<td>Replace; do not allow loads until repaired</td>
+</tr>
+<tr>
+<td>Lashing at joints</td>
+<td>Rope frayed, cracked, pulled loose; knots loosened</td>
+<td>Re-lash immediately; increase rope diameter if recurring</td>
+</tr>
+<tr>
+<td>Transoms and platforms</td>
+<td>Broken planks, gaps &gt; 2.5 cm, rot, loose boards</td>
+<td>Remove from service; replace plank</td>
+</tr>
+<tr>
+<td>Diagonals and cross-braces</td>
+<td>Missing or cracked diagonals; scaffold swaying excessively</td>
+<td>Install missing braces; re-brace if swaying persists</td>
+</tr>
+<tr>
+<td>Toe boards</td>
+<td>Missing sections, cracked, leaning outward</td>
+<td>Repair or replace immediately</td>
+</tr>
+<tr>
+<td>Guard rails and midrails</td>
+<td>Cracked, loose, height incorrect (should be ~1.0–1.1 m)</td>
+<td>Repair or re-install at correct height</td>
+</tr>
+<tr>
+<td>Debris and obstructions</td>
+<td>Tools, excess material, ice, water pooling</td>
+<td>Remove; ensure drainage</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Load Test (if new or after major repair):</strong></p>
+<ul>
+<li>Place 1.5× the design load on the scaffold (workers, sandbags, or barrels of water).</li>
+<li>Wait 15 minutes; check for settlement, cracking, or movement.</li>
+<li>If any cracks or significant deflection appear, remove the load immediately, unload the scaffold, and investigate the failure before reuse.</li>
+</ul>
+</section>
+<section id="shoring-systems">
+<h2>Shoring Systems</h2>
+<p>Shoring is temporary structural bracing installed to prevent collapse or excessive movement in weakened buildings, during construction, or during excavation work.</p>
+<h3>Raking Shores (Angled Struts)</h3>
+<p>Used to brace unstable walls from the outside. Timber struts (usually 10×10 or 12×12 cm) are positioned at 45° from the ground to the wall, with base plates on the ground and upper attachment to the wall face.</p>
+<p><strong>Design:</strong></p>
+<ul>
+<li>Spacing: 2–3 m apart along the wall.</li>
+<li>Inclination: 45° ±5° (provides balanced compression in strut and shear at base).</li>
+<li>Length: For a 6 m tall wall, strut length ≈ 6 m ÷ sin(45°) ≈ 8.5 m.</li>
+<li>Base plate: At least 0.3 m × 0.3 m timber (10×10 cm), firmly grounded.</li>
+<li>Top attachment: Strut is lashed or bolted to a <strong>wall plate</strong> (horizontal beam lashed to wall), which distributes the load over several metres of wall.</li>
+</ul>
+<p><strong>Failure Mode:</strong> If the wall tilts outward, the raking shore strut becomes unstable (no longer 45°), and the compression load in the strut increases, potentially causing sudden buckling. Install multiple shores rather than relying on one.</p>
+<h3>Flying Shores (Horizontal Struts)</h3>
+<p>Used when raking shores cannot be installed (e.g., narrow street, existing structures in the way). Horizontal timbers are wedged between two facing walls (or between a wall and a braced frame), transferring load from one side to the other.</p>
+<p><strong>Design:</strong></p>
+<ul>
+<li>Horizontal strut (12×12 or larger), spaced 2 m apart vertically on each wall.</li>
+<li><strong>Needle beam</strong> (larger timber bearing plate) on each wall end, distributes load to the wall.</li>
+<li><strong>Wedges</strong> (wooden cunei) inserted under each end, allowing adjustment and tight fit.</li>
+<li>Typically 2–4 flying shores per wall section.</li>
+</ul>
+<p><strong>Advantage:</strong> No footprint outside the building; good for narrow streets or dense urban areas.</p>
+<h3>Dead Shores (Internal Props)</h3>
+<p>Vertical timber columns (posts) installed inside a building to prop up sagging floors or ceilings, or to support walls when windows/openings are enlarged during renovation.</p>
+<p><strong>Design:</strong></p>
+<ul>
+<li>Posts (10×10 or 12×12 cm timber) from floor to ceiling or roof.</li>
+<li>Base plate on the floor below; top plate bearing on the structure above.</li>
+<li>Adjustable <strong>screw jacks</strong> or <strong>folding wedges</strong> allow fine-tuning of load transfer and height adjustment.</li>
+<li>Typically 1–2 m spacing for major cuts in beams.</li>
+</ul>
+<p><strong>Installation sequence:</strong></p>
+<ol>
+<li>Position the prop with loose fit (slight gap).</li>
+<li>Tighten the jacks or wedges gradually over 2–3 days, increasing load incrementally.</li>
+<li>If done too quickly, the load can shift suddenly, causing cracking or collapse.</li>
+</ol>
+<div class="danger">
+<p>Over-tightening a dead shore can force the structure upward, cracking ceilings, floors, and walls. Increase load slowly (1–2 mm per day). Monitor the structure for cracks during and after loading.</p>
+</div>
+</section>
+<section id="excavation-shoring">
+<h2>Trench Shoring and Cave-In Prevention</h2>
+<p>Excavations (trenches, foundation holes, utility cuts) require temporary shoring to prevent collapse, which is a leading cause of death in construction.</p>
+<h3>Soil Classifications</h3>
+<ul>
+<li><strong>Type A:</strong> Cohesive soils (clay, silt) with unconfined compressive strength &gt; 1.5 kPa. Safe vertical cuts up to 1.25 m.</li>
+<li><strong>Type B:</strong> Sand, silt-sand mixes, loose clay. Safe vertical cuts up to 0.9 m.</li>
+<li><strong>Type C:</strong> Granular soil (loose sand, gravel), wet soil, soil near water table. Requires sloped or shored excavation.</li>
+</ul>
+<h3>Shoring Options</h3>
+<p><strong>Sloped Sides:</strong> The safest, lowest-cost option for deep excavations. Slope angle depends on soil type:</p>
+<ul>
+<li>Type A (clay): 1:1 slope (45°) or steeper.</li>
+<li>Type B (sand): 1.5:1 slope (33°).</li>
+<li>Type C (loose/wet): 1.5:1 or flatter.</li>
+</ul>
+<p>A 1 m deep trench with 1.5:1 slope requires the excavation to be 3 m wide at the top (1.5 m horizontal for every 1 m depth on each side).</p>
+<p><strong>Vertical Shoring (Sheet Piling, Timber):</strong></p>
+<ul>
+<li><strong>Timber sheets:</strong> 5×30 cm boards driven or inserted vertically into the trench wall, held by horizontal wales (beams) and braces.</li>
+<li><strong>Wales:</strong> Horizontal timers (8×10 or 10×12 cm) run along the trench wall at 0.5–1 m intervals vertically, and are tied back to anchors or cross-braced to the opposite wall.</li>
+<li><strong>Anchors:</strong> Ground anchors (screw anchors, soil deadmen) or rakers tied to walls on the surface stabilize the shoring.</li>
+</ul>
+<p><strong>Screw Anchors:</strong></p>
+<ol>
+<li>Auger or screw a metal rod into the ground at 45° angles away from the trench.</li>
+<li>Attach cable or rod from the anchor to the wale.</li>
+<li>Tension the cable to lock the shoring in place.</li>
+</ol>
+<p><strong>Cross-Bracing:</strong></p>
+<ul>
+<li>For narrow trenches (&lt; 3 m wide), cross-braces (diagonal or X-braces) connecting opposite wales prevent the trench walls from moving inward.</li>
+</ul>
+<div class="warning">
+<p>Cave-ins occur suddenly. Use sloped excavation or shoring in all soil types except very firm clay, and even then, inspect daily for cracks or bulges. Trenches &gt; 1.5 m deep must be shored or sloped per code. Never enter an unshored trench of questionable stability.</p>
+</div>
+</section>
+<section id="formwork">
+<h2>Formwork for Concrete</h2>
+<p>Formwork (temporary molds) supports wet concrete until it hardens. It must be rigid, leak-proof, and capable of bearing the lateral pressure of concrete (hydrostatic pressure increases with depth: P = ρ × g × h, where ρ = concrete density ~2,400 kg/m³).</p>
+<h3>Formwork Design</h3>
+<p><strong>Plywood panels</strong> (18–20 mm thickness) faced with timber studs on the back. Studs are typically 5×10 or 6×12 cm, spaced 0.5–1 m apart horizontally to resist concrete pressure.</p>
+<p><strong>Concrete Lateral Pressure (approximate):</strong></p>
+<ul>
+<li>At 1 m depth: ~2.4 kPa (0.24 kN/m²)</li>
+<li>At 2 m depth: ~4.8 kPa</li>
+<li>At 3 m depth: ~7.2 kPa</li>
+</ul>
+<p>A formwork panel 2 m tall, 1 m wide, with concrete pressure 4.8 kPa must resist a total load of 9.6 kN (about 1,000 kg) at the base. Studs must be sized and spaced accordingly.</p>
+<p><strong>Bracing:</strong> Diagonal braces (rakers) at 45° prevent the formwork panel from buckling or bowing outward under concrete pressure.</p>
+<p><strong>Stripping (Removal):</strong> Formwork can be partially removed after 7 days (concrete has reached ~50% strength); full removal after 14 days in normal conditions. Delay in very cold climates.</p>
+</section>
+<section id="height-limits">
+<h2>Scaffold Height Limits by Material</h2>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>Unbraced Height</th>
+<th>With Internal Bracing</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bamboo poles (Ø 10 cm)</td>
+<td>8 m</td>
+<td>15–20 m</td>
+<td>Subject to local custom and skills; wider spacing at height</td>
+</tr>
+<tr>
+<td>Timber standards (10×10 cm)</td>
+<td>12 m</td>
+<td>20+ m</td>
+<td>Requires engineered design above 20 m</td>
+</tr>
+<tr>
+<td>Steel tube (48.3 mm OD, welded)</td>
+<td>30+ m</td>
+<td>40+ m</td>
+<td>Commercial modular systems; engineered</td>
+</tr>
+<tr>
+<td>Aluminum tube</td>
+<td>20 m</td>
+<td>30+ m</td>
+<td>Lighter; used for interior work and light facades</td>
+</tr>
+</tbody>
+</table>
+<p>Heights beyond listed limits require a structural engineer's design and competent supervision.</p>
+</section>
+<section id="dismantling">
+<h2>Dismantling Procedures</h2>
+<p>Scaffold dismantling is as critical as erection. Poor dismantling can cause collapse and drop debris on people below.</p>
+<p><strong>Sequence:</strong></p>
+<ol>
+<li><strong>Remove working load first:</strong> Clear all tools, materials, and workers from the scaffold.</li>
+<li><strong>Remove from top down:</strong> Start removing guards, toe boards, and transoms from the highest platform level.</li>
+<li><strong>Remove diagonals and braces:</strong> Once transoms are off, remove putlog diagonals and cross-braces from top to bottom.</li>
+<li><strong>Remove ledgers:</strong> Once the section is clear of bracing, cut or untie ledger lashings and lower ledgers to the ground.</li>
+<li><strong>Remove standards:</strong> Carefully untie the standards, starting at the top. Brace each pair as the connecting ledgers are removed, or use guy ropes to prevent tipping.</li>
+<li><strong>Site cleanup:</strong> Dispose of all timber, rope, and metal. Check the ground for holes, debris, and hazards.</li>
+</ol>
+<div class="danger">
+<p>Dropped objects from scaffold disassembly are lethal. Use a debris chute or catch platform below the work area. No one should work or pass underneath an active dismantling site.</p>
+</div>
+</section>
+<section id="failure-modes">
+<h2>Common Failure Modes and Prevention</h2>
+<table>
+<thead>
+<tr>
+<th>Failure Mode</th>
+<th>Cause</th>
+<th>Prevention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Collapse due to overload</strong></td>
+<td>Exceeding designed WLL; improper load distribution</td>
+<td>Calculate SWL per section; mark and enforce limits; distribute load across multiple standards</td>
+</tr>
+<tr>
+<td><strong>Ledger failure (shear)</strong></td>
+<td>Insufficient lashing or degraded rope; concentrated load on one joint</td>
+<td>Use proper square/diagonal lashing; inspect weekly; use adequate rope diameter (16–20 mm)</td>
+</tr>
+<tr>
+<td><strong>Sway or oscillation</strong></td>
+<td>Missing or broken diagonals; high winds; workers moving in unison</td>
+<td>Install full diagonal bracing; reduce height if wind exposure is high; instruct workers not to bounce or run on the scaffold</td>
+</tr>
+<tr>
+<td><strong>Ground subsidence</strong></td>
+<td>Uncompacted soil, rain softening ground, poor base plates</td>
+<td>Use wider base plates; level and compact ground; re-check level every 2 weeks</td>
+</tr>
+<tr>
+<td><strong>Lateral buckling of standards</strong></td>
+<td>Standards too tall relative to diameter; inadequate bracing</td>
+<td>Reduce bracing intervals; increase standard diameter or add internal cross-bracing every 2–3 m</td>
+</tr>
+<tr>
+<td><strong>Slip/fall from platform</strong></td>
+<td>Wet planks, debris, missing toe boards</td>
+<td>Maintain dry working surface; clear debris; install and maintain toe boards; enforce harnesses for height &gt; 2 m</td>
+</tr>
+<tr>
+<td><strong>Dropped objects</strong></td>
+<td>Unsecured tools; overloaded buckets; unstable stacks</td>
+<td>Tether tools; use tool lanyards; limit bucket size and weight; stack materials no higher than 1.5 m</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="emergency-shoring">
+<h2>Emergency Shoring for Damaged Buildings</h2>
+<p>After structural damage (fire, explosion, seismic, water damage), buildings may be at imminent risk of collapse. Emergency shoring buys time for evacuation and professional repairs.</p>
+<p><strong>Quick Assessment:</strong></p>
+<ol>
+<li>Visible cracks (&gt; 5 mm width, diagonal orientation, widening).</li>
+<li>Floors sloping or sagging noticeably (&gt; 50 mm per 10 m span).</li>
+<li>Walls bulging or leaning.</li>
+<li>Support columns or beams visibly cracked or splintered.</li>
+</ol>
+<p><strong>Emergency Dead Shores (Prop Posts):</strong></p>
+<ol>
+<li>Install vertical timber posts (10×10 or 12×12 cm) under sagging beams or floors, using screw jacks for rapid load transfer.</li>
+<li>Space posts 1–2 m apart under the affected span.</li>
+<li>Tighten jacks gradually (0.5 mm per day) to avoid sudden load shifts.</li>
+<li>Install diagonals (rakers) from the posts to walls or to the ground to prevent lateral movement.</li>
+</ol>
+<p><strong>Temporary Walls:</strong>
+If an exterior wall is damaged (blown out), a temporary interior wall (2–3 m away) of heavy timber or steel frame can support the floor above while the wall is repaired. This prevents progressive collapse.</p>
+<p><strong>Evacuation Shoring:</strong>
+If a building is unsafe for occupancy, install shoring to prevent further collapse during evacuation and professional assessment. This is not a permanent fix, only a temporary safety measure.</p>
+<div class="warning">
+<p>Emergency shoring is often improvised under time pressure. Ensure at least one person on-site has structural knowledge, or contact a structural engineer by phone/radio for guidance. Inadequate emergency shoring can accelerate collapse rather than prevent it.</p>
+</div>
+</section>
+<h2 id="summary">Summary</h2>
+<p>Scaffolding and shoring are engineered temporary structures. Success requires:</p>
+<ul>
+<li><strong>Accurate load calculations</strong> (design load, safety factor 4:1, load per component).</li>
+<li><strong>Sound construction</strong> (proper timber sizing, lashing technique, full bracing).</li>
+<li><strong>Rigorous inspection</strong> (weekly checks, load testing before use).</li>
+<li><strong>Disciplined dismantling</strong> (top-to-bottom sequence, debris control).</li>
+<li><strong>Competent workforce</strong> (training in lashing, knot work, structural sense).</li>
+</ul>
+<p>Use these principles as the foundation for safe, efficient construction and repair work in any environment.</p>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="timber-framing-joinery.html">Timber Framing and Joinery</a>
+<a href="mechanical-advantage-construction.html">Mechanical Advantage in Construction</a>
+<a href="knots-rigging.html">Knots, Rope &amp; Rigging</a>
+<a href="rope-suspension-rigging.html">Rope Suspension and Rigging</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

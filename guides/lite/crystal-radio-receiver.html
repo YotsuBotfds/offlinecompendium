@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/crystal-radio-receiver.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crystal Radio Receiver</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Communications</span> ›
+<span>Crystal Radio Receiver</span>
+</div>
+
+
+<h1>Crystal Radio Receiver</h1>
+<p class="subtitle">Build crystal radios with galena detectors, tuned circuits, and earpieces. Covers antenna construction, coil winding, tuning capacitors, crystal detectors, and grounding.</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~7 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#how-crystal-radios-work">How Crystal Radios Work</a></li>
+<li><a href="#antenna-construction">Antenna Construction</a></li>
+<li><a href="#ground-connection">Ground Connection</a></li>
+<li><a href="#coil-winding">Coil Winding</a></li>
+<li><a href="#tuning-capacitor">Tuning Capacitor</a></li>
+<li><a href="#crystal-detector">Crystal Detector</a></li>
+<li><a href="#earpiece-headphone">Earpiece/Headphone</a></li>
+<li><a href="#assembly-wiring">Assembly &amp; Wiring</a></li>
+<li><a href="#tuning-operation">Tuning &amp; Operation</a></li>
+<li><a href="#improving-sensitivity">Improving Sensitivity</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>A crystal radio is a marvel of simplicity: it receives AM radio broadcasts using <strong>only the energy of the radio wave itself</strong>—no battery, no AC power, no active amplification. A properly tuned crystal radio can receive local AM stations up to 50+ km away, with just a headphone earpiece and a wire antenna. In a power-outage or post-collapse scenario, this is invaluable emergency communication.</p>
+<p>The physics is elegant: radio waves oscillate at specific frequencies (e.g., 1000 kHz for AM medium-wave broadcasts). Your antenna captures these oscillating electric fields. A tuned circuit (inductor + capacitor) selects one frequency, rejecting all others. A crystal detector (rectifier) then converts the oscillating AC signal into audio-frequency pulses that a headphone can play.</p>
+<div class="info-box">
+<p><strong>Key fact:</strong> Crystal radios are passive devices—they draw zero power from electricity. The broadcast station's transmitter supplies all energy. Range depends on antenna height, soil conductivity, and transmitter power (typically 50+ km for a 50 kW station).</p>
+</div>
+</section>
+<section id="how-crystal-radios-work">
+<h2>How Crystal Radios Work</h2>
+<p><strong>Signal path:</strong></p>
+<ol>
+<li><strong>Antenna:</strong> Captures radio waves (oscillating at 540–1700 kHz for AM band, 88–108 MHz for FM).</li>
+<li><strong>Tuned circuit (LC circuit):</strong> An inductor (coil) and capacitor form a resonant circuit. At the resonant frequency:
+<ul>
+<li>Impedance is minimal (maximum current).</li>
+<li>Other frequencies are attenuated.</li>
+<li>Formula: f_resonant = 1 / (2π√(LC))</li>
+</ul>
+</li>
+<li><strong>Detector:</strong> A nonlinear device (crystal rectifier) passes one half-cycle of the radio-frequency signal, blocking the other. This rectified signal is DC with audio-frequency ripples.</li>
+<li><strong>Filter:</strong> A blocking capacitor (0.01–0.1 µF) removes the RF carrier, leaving only audio (400–3000 Hz).</li>
+<li><strong>Earpiece:</strong> High-impedance (2000+ ohms) headphone converts current ripples to sound.</li>
+</ol>
+<p><strong>Why &quot;crystal&quot;?</strong> Early detectors used galena (lead sulfide), a natural crystal. When a fine wire (&quot;cat's whisker&quot;) touched the crystal surface, the crystal–metal junction acted as a rectifier—a one-way valve for current. Modern circuits use germanium diodes (more reliable) but the name persists.</p>
+</section>
+<section id="antenna-construction">
+<h2>Antenna Construction</h2>
+<p>The antenna is the most important component for range. Longer and higher = better reception.</p>
+<h3>Wire Antenna</h3>
+<p><strong>Specifications:</strong></p>
+<ul>
+<li><strong>Length:</strong> 30–100 m is ideal. Start with 50 m if possible.</li>
+<li><strong>Gauge:</strong> 18–24 AWG solid copper or stranded wire. Thinner wire reduces cost; thicker wire is more durable.</li>
+<li><strong>Insulation:</strong> Must be insulated (rubber or plastic jacketing). Bare copper oxidizes and loses conductivity.</li>
+<li><strong>Orientation:</strong> Run horizontally if possible (parallel to ground). Vertical monopole antennas work but with less efficiency.</li>
+</ul>
+<p><strong>Routing:</strong></p>
+<ul>
+<li>Run the wire as high as possible—roof lines, tall trees (on the sun-facing side to avoid shade, which degrades reception).</li>
+<li>Avoid running parallel to electrical power lines (40–60 Hz AC couples into the antenna as noise).</li>
+<li>Insulate the endpoints with porcelain standoff insulators or tree straps—do not let the wire sag into trees or touch structures (RF losses).</li>
+<li>The antenna should be taut but not stretched to breaking point; leave 2–3% sag.</li>
+</ul>
+<h3>Lead-In Wire</h3>
+<p>Connect the antenna to your receiver via a <strong>lead-in</strong> wire:</p>
+<ul>
+<li><strong>Length:</strong> 5–20 m (longer is acceptable but introduces more loss).</li>
+<li><strong>Routing:</strong> Run vertically down the antenna mast or along the building edge, again avoiding power lines.</li>
+<li><strong>Gauge:</strong> Same as antenna (22 AWG is typical for 50 m antenna).</li>
+<li><strong>Shielding:</strong> For short lead-ins (&lt; 10 m), unshielded is acceptable. For longer runs, consider a twisted pair to reduce interference pickup.</li>
+</ul>
+<div class="tip">
+<p><strong>Quick antenna:</strong> If 50 m is impractical, start with 25–30 m in the attic or under the eaves. Range will be reduced (5–15 km for strong local stations) but sufficient for testing.</p>
+</div>
+</section>
+<section id="ground-connection">
+<h2>Ground Connection</h2>
+<p>A good ground is nearly as important as the antenna. It completes the circuit and provides a return path for the antenna current.</p>
+<p><strong>Ground options (in order of preference):</strong></p>
+<ol>
+<li>
+<p><strong>Ground rod:</strong> Drive a copper or galvanized steel rod (1/2&quot; diameter, 2–3 m long) into moist soil. Attach the receiver ground lead with a copper clamp.</p>
+</li>
+<li>
+<p><strong>Water pipe:</strong> If your structure has a metal water supply pipe entering the ground, clamp to it (before the water meter, after verifying it's metal not plastic). <strong>Note:</strong> Not reliable in regions with plastic water lines.</p>
+</li>
+<li>
+<p><strong>Buried copper plate:</strong> Bury a 30 × 30 cm copper sheet 1 m deep in moist soil. Attach a wire and run it back to the receiver.</p>
+</li>
+<li>
+<p><strong>Salt-water earth:</strong> In dry climates, surround a ground rod with a 10 L bucket of salt water mixed 50:50 with water. Salt improves conductivity significantly.</p>
+</li>
+</ol>
+<p><strong>Connection:</strong> Use heavy gauge wire (12–16 AWG) from the ground source to your receiver. Keep runs short (&lt; 3 m). Poor grounding introduces noise and reduces sensitivity.</p>
+<div class="warning">
+<p><strong>Safety:</strong> Do NOT ground to a lightning rod, electrical panel, or power line ground. A lightning strike can conduct through the radio and kill the operator. If lightning risk is high, install a lightning arrestor (a spark gap device that shorts the antenna to ground at high voltage, protecting the receiver).</p>
+</div>
+</section>
+<section id="coil-winding">
+<h2>Coil Winding</h2>
+<p>The inductor (coil) is the variable frequency-tuning element. By varying its inductance (tapping different turns), you select which radio frequency resonates.</p>
+<h3>Specifications</h3>
+<ul>
+<li><strong>Turns:</strong> 60–80 turns for AM band (540–1700 kHz).</li>
+<li><strong>Wire gauge:</strong> 22–26 AWG magnet wire (with thin insulation).</li>
+<li><strong>Form diameter:</strong> 2.5–3 inches (64–76 mm)—a paper tube, plastic pipe, or cardboard tube works.</li>
+<li><strong>Form length:</strong> 3–4 inches (the winding should be bunched into a cylinder, not spread out).</li>
+</ul>
+<h3>Winding Technique</h3>
+<ol>
+<li><strong>Anchor the start:</strong> Attach one end of wire to the form using tape or a looped wire.</li>
+<li><strong>Wind uniformly:</strong> Wrap wire in tight, parallel turns (side-by-side). Try to keep spacing even.</li>
+<li><strong>Count turns:</strong> Mark every 10 turns with a small piece of tape.</li>
+<li><strong>60–80 turns total:</strong> Once complete, tape the end in place.</li>
+<li><strong>Tap points:</strong> You'll make electrical connections at <strong>10-turn intervals</strong> for coarse tuning. Gently scrape the insulation off the wire at 10, 20, 30, 40, 50, 60, 70, and 80 turns. Tinned copper wires can then be wrapped around these points as tap leads.</li>
+</ol>
+<h3>Inductance Calculation</h3>
+<p>Inductance (L in microhenries) ≈ (N²) / (l + 0.9d)</p>
+<p>Where N = turns, l = coil length (cm), d = form diameter (cm).</p>
+<p>For 70 turns on a 3&quot; diameter, 3&quot; long form:
+L ≈ 70² / (7.6 + 0.9 × 7.6) ≈ 4900 / 14 ≈ 350 µH</p>
+<p>This inductance, combined with a variable capacitor (see below), tunes to ~800 kHz (mid-AM band).</p>
+<div class="tip">
+<p><strong>Two-coil design:</strong> Build two coils—one primary (for tuning, 60–80 turns) and a smaller secondary (feedback or coupling, 10–20 turns) for better sensitivity. More advanced radios use secondary windings to couple the antenna to the tuned circuit, reducing loading.</p>
+</div>
+</section>
+<section id="tuning-capacitor">
+<h2>Tuning Capacitor</h2>
+<p>The variable capacitor adjusts the resonant frequency.</p>
+<h3>Variable Capacitor Options</h3>
+<p><strong>1. Salvaged variable capacitor (best):</strong></p>
+<ul>
+<li>Typical AM-band variable capacitor: 365 pF max capacitance.</li>
+<li>Often found in old radios—desolder carefully.</li>
+<li>Has a rotating shaft for easy tuning.</li>
+</ul>
+<p><strong>2. Sliding contact on coil:</strong></p>
+<ul>
+<li>Connect the capacitor across the coil using a sliding contact that bridges different numbers of turns.</li>
+<li>A metal slider riding on the bare (scraped) turns acts as a tuning dial.</li>
+<li>Cruder but functional.</li>
+</ul>
+<p><strong>3. Homemade plate capacitor:</strong></p>
+<ul>
+<li>Two aluminum plates (10 × 10 cm) separated by air gap (variable 0.5–3 mm).</li>
+<li>One plate is stationary; the other slides on insulating rods.</li>
+<li>Capacitance ≈ (8.85 × A) / (1000 × d) pF
+<ul>
+<li>A = area (cm²)</li>
+<li>d = gap (mm)</li>
+</ul>
+</li>
+<li>For 10 × 10 cm plates at 1 mm gap: C ≈ 88.5 / 1 ≈ 88 pF max.</li>
+<li>To increase range, stack 4 pairs in parallel = ~350 pF.</li>
+</ul>
+<h3>Frequency Coverage</h3>
+<p>Resonant frequency: f = 1 / (2π√(LC))</p>
+<p>With L = 350 µH and C = 365 pF:
+f_min = 1 / (2π√(350 × 10⁻⁶ × 365 × 10⁻¹²)) ≈ 280 kHz
+f_max ≈ 900 kHz</p>
+<p>This covers the full AM band (540–1700 kHz) partially. To cover higher frequencies, use a smaller inductance or add a second capacitor/coil.</p>
+</section>
+<section id="crystal-detector">
+<h2>Crystal Detector</h2>
+<p>This is the rectifying element—the &quot;heart&quot; of the crystal radio.</p>
+<h3>Galena Crystal Detector</h3>
+<ul>
+<li><strong>Material:</strong> Galena (lead sulfide), pyrite, or other natural crystal.</li>
+<li><strong>Construction:</strong> Mount a galena crystal in a holder. A fine wire (&quot;cat's whisker&quot;, typically tungsten or steel, 0.1–0.2 mm diameter) touches the crystal surface.</li>
+<li><strong>Setup:</strong> Position the wire to find the most sensitive spot on the crystal. A light spring press the wire against the crystal (adjustable with a thumbscrew).</li>
+<li><strong>Sensitivity:</strong> Very high but finicky—requires frequent adjustment.</li>
+</ul>
+<p><strong>Sourcing:</strong></p>
+<ul>
+<li>Salvage old crystal sets (antique/museum pieces).</li>
+<li>Synthetic galena can be purchased from electronics suppliers.</li>
+<li>Mining regions sometimes have natural galena.</li>
+</ul>
+<h3>Razor Blade &amp; Pencil Lead Detector</h3>
+<ul>
+<li><strong>Razor blade:</strong> Single-edge steel blade, held in a holder so the edge protrudes.</li>
+<li><strong>Pencil lead:</strong> A sharp wood pencil is sharpened to a point and positioned to touch the blade edge.</li>
+<li><strong>Rectification:</strong> The graphite–steel junction acts as a rectifier.</li>
+<li><strong>Sensitivity:</strong> Lower than galena, but more stable and easier to use.</li>
+</ul>
+<h3>Germanium Diode Detector</h3>
+<ul>
+<li><strong>Diode:</strong> 1N34A or 1N270 germanium diode (preferred over silicon, which has higher turn-on voltage and worse sensitivity at low power).</li>
+<li><strong>Bias:</strong> To improve sensitivity, a small bias voltage can be applied (optional—many circuits work without bias).</li>
+<li><strong>Reliability:</strong> Most reliable and consistent; the modern choice if available.</li>
+</ul>
+<p><strong>Diode orientation:</strong> The anode (banded end) connects to the antenna/LC circuit. The cathode connects to the output. Reversed bias produces no output.</p>
+<div class="info-box">
+<p><strong>Rectification mechanism:</strong> When the incoming RF signal swings positive, the diode conducts, allowing current to flow. When the signal swings negative, the diode blocks it. The result is a pulsating DC waveform that ripples at audio frequency (amplitude modulation carries the voice).</p>
+</div>
+</section>
+<section id="earpiece-headphone">
+<h2>Earpiece/Headphone</h2>
+<p>The final transducer must convert current ripples (at audio frequency) into sound.</p>
+<h3>Impedance Requirement</h3>
+<ul>
+<li><strong>Standard dynamic mic/speaker impedance:</strong> 4–16 ohms (too low—draws too much current).</li>
+<li><strong>High-impedance earpiece:</strong> 2000+ ohms (draws microamps, suitable for passive detection).</li>
+</ul>
+<p>High impedance is critical because a crystal radio produces only microvolts and microamps—a low-impedance load wastes precious signal.</p>
+<h3>Salvage Options</h3>
+<ol>
+<li>
+<p><strong>Vintage telephone earpiece (best):</strong></p>
+<ul>
+<li>Found in old rotary phones, switchboards, hearing aids.</li>
+<li>Typically 2000–8000 ohms.</li>
+<li>Two-conductor: one wire to ground, one to the detector output.</li>
+</ul>
+</li>
+<li>
+<p><strong>Piezo element / tweeter (acceptable):</strong></p>
+<ul>
+<li>Piezo buzzers are high-impedance (can be 5000+ ohms).</li>
+<li>Some produce audible output at the low power levels of a crystal radio.</li>
+<li>Cheap and readily available.</li>
+</ul>
+</li>
+<li>
+<p><strong>Transformer-coupled speaker (workaround):</strong></p>
+<ul>
+<li>If you only have low-impedance headphones, use a 1:8 or 1:16 audio transformer (step-up) to increase impedance.</li>
+<li>Connects between the detector and the headphone.</li>
+</ul>
+</li>
+</ol>
+<h3>Headphone Construction (if nothing is salvageable)</h3>
+<p>A simple homemade earpiece requires:</p>
+<ul>
+<li><strong>Magnet:</strong> Neodymium or permanent magnet from a salvaged hard drive (strong but small) or loudspeaker magnet.</li>
+<li><strong>Coil:</strong> 100–500 turns of 36 AWG wire (fine gauge, many turns).</li>
+<li><strong>Diaphragm:</strong> Thin steel sheet or aluminum foil (10 × 10 mm), positioned 1–2 mm from the magnet.</li>
+</ul>
+<p>As current flows through the coil, the magnetic field varies, attracting and repelling the diaphragm. The diaphragm vibrates at audio frequency, producing sound. Output is faint—suitable only for quiet listening.</p>
+</section>
+<section id="assembly-wiring">
+<h2>Assembly &amp; Wiring</h2>
+<p><strong>Circuit block diagram:</strong></p>
+<pre><code>Antenna → Ground-coupled coil → Tuned LC circuit → Detector (diode/crystal)
+                                                            ↓
+                                    Audio filter (blocking capacitor)
+                                                            ↓
+                                        Earpiece (high impedance)
+                                                            ↓
+                                                         Ground
+</code></pre>
+<p><strong>Component connections:</strong></p>
+<ol>
+<li><strong>Antenna</strong> connects to one end of the coil (primary winding).</li>
+<li><strong>Ground</strong> connects to the other end of the coil.</li>
+<li><strong>Variable capacitor</strong> is wired in parallel with the coil (across the two ends).</li>
+<li><strong>Detector diode (anode)</strong> connects to one end of the capacitor (antenna side).</li>
+<li><strong>Blocking capacitor</strong> (0.01 µF) connects from the diode cathode to the earpiece.</li>
+<li><strong>Earpiece</strong> (one terminal) connects to the output of the blocking capacitor.</li>
+<li><strong>Earpiece</strong> (other terminal) connects to ground.</li>
+</ol>
+<p><strong>Layout on breadboard or circuit board:</strong></p>
+<ul>
+<li>Keep antenna and ground leads short and well-separated (to avoid RF coupling).</li>
+<li>The LC tuned circuit should be tightly bunched (minimize loop area).</li>
+<li>The detector circuit should be isolated from AC power and strong RF sources (which cause interference).</li>
+</ul>
+<div class="warning">
+<p><strong>Shock hazard:</strong> If you connect the radio to AC power for any reason (e.g., via a transformer for impedance matching), ensure proper grounding and isolation to prevent AC current from reaching the earpiece or antenna during a fault.</p>
+</div>
+</section>
+<section id="tuning-operation">
+<h2>Tuning &amp; Operation</h2>
+<ol>
+<li>
+<p><strong>Set up the antenna and ground:</strong> Verify the antenna is high and the ground is solid (test by pushing on the ground rod—it should not move).</p>
+</li>
+<li>
+<p><strong>Don headphones:</strong> Insert the earpiece into your ear. You should hear faint static (a good sign—the receiver is working).</p>
+</li>
+<li>
+<p><strong>Tune the capacitor slowly:</strong> Adjust the variable capacitor dial (or sliding contact) through its full range. Listen for station carriers (a faint hum or &quot;whistle&quot; when tuned near an AM frequency).</p>
+</li>
+<li>
+<p><strong>Peak the signal:</strong> As you approach a station frequency, the carrier tone becomes louder. Adjust the capacitor dial back and forth to find the point of maximum signal (the resonant frequency for that station).</p>
+</li>
+<li>
+<p><strong>Fine-tune:</strong> Once the carrier is strong, adjust the capacitor slowly to center the tuning peak. You should hear the modulated audio (speech, music) beneath the carrier.</p>
+</li>
+<li>
+<p><strong>Adjust the crystal/cat's whisker (if using galena):</strong> If using an old galena detector, the cat's whisker position may need adjustment to maximize sensitivity. Rotate the thumbscrew slightly to find the sweet spot.</p>
+</li>
+</ol>
+<h3>Weak Signal Scenarios</h3>
+<ul>
+<li><strong>Distant station:</strong> Reduce any audio filter (if using one) to maximize gain. Tap the antenna or coil to see if it oscillates (sign of instability—reduce coupling).</li>
+<li><strong>Local interference:</strong> AM band is crowded with strong local stations. If two stations overlap, tuning is difficult—try a more selective circuit (add a second LC stage, or increase the Q-factor by reducing coil resistance with larger gauge wire).</li>
+</ul>
+</section>
+<section id="improving-sensitivity">
+<h2>Improving Sensitivity</h2>
+<p><strong>Basic improvements:</strong></p>
+<ul>
+<li><strong>Longer antenna:</strong> Every 10 m added can increase range by 10–30%.</li>
+<li><strong>Better ground:</strong> Ensure the ground rod is truly buried in moist soil (dry ground = poor conductivity).</li>
+<li><strong>Coil Q-factor:</strong> Higher-Q coils are more selective and efficient. Use large-gauge wire (18–20 AWG if possible) to reduce resistance. Avoid ferrite cores (they absorb power in this low-power regime).</li>
+</ul>
+<p><strong>Advanced designs:</strong></p>
+<ul>
+<li><strong>Two-stage tuning:</strong> Add a second LC stage (tuned to the same frequency) for extra selectivity and gain.</li>
+<li><strong>Regeneration (positive feedback):</strong> A small amount of positive feedback from the detector output back to the LC circuit increases sensitivity and selectivity. However, excessive feedback causes the circuit to oscillate (producing interference). This requires careful tuning.</li>
+<li><strong>Impedance matching:</strong> If using a low-impedance antenna, a small transformer can impedance-match the antenna to the receiver, reducing insertion loss.</li>
+</ul>
+<p>See <a href="electronics-repair-fundamentals.html">Electronics Repair Fundamentals</a> for component sourcing and salvage techniques.</p>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Likely Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No output at all</strong></td>
+<td>Poor ground or antenna</td>
+<td>Verify antenna is high, ground rod is driven deep, leads are soldered well. Test continuity.</td>
+</tr>
+<tr>
+<td><strong>Faint signal everywhere</strong></td>
+<td>Detector not biased correctly or broken</td>
+<td>Test diode with multimeter (should read ~0.3 V across it when forward-biased). Swap with a known good diode.</td>
+</tr>
+<tr>
+<td><strong>Can't tune to a specific frequency</strong></td>
+<td>Capacitor range too wide or too narrow</td>
+<td>Calculate frequency coverage. Adjust inductance (remove/add coil turns) or capacitor range (parallel/series additional capacitors).</td>
+</tr>
+<tr>
+<td><strong>Oscillation/whistling</strong></td>
+<td>Positive feedback or unstable circuit layout</td>
+<td>Reduce coil-to-detector coupling. Shorten leads. Add a 1M resistor from detector output to ground (light damping).</td>
+</tr>
+<tr>
+<td><strong>Strong local stations only</strong></td>
+<td>Poor selectivity (low Q)</td>
+<td>Increase coil Q by using larger gauge wire. Add a second tuned stage.</td>
+</tr>
+<tr>
+<td><strong>Crackling/noisy reception</strong></td>
+<td>RF interference or poor antenna</td>
+<td>Move antenna away from power lines. Twist the lead-in. Ground a twisted pair shield to the receiver ground.</td>
+</tr>
+</tbody>
+</table>
+<p>For more on radio theory, see <a href="ham-radio.html">Ham Radio</a> and <a href="electricity-basics-for-beginners.html">Electricity Basics for Beginners</a>.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="ham-radio.html">Ham Radio &amp; Communications</a>
+<a href="electronics-repair-fundamentals.html">Electronics Repair Fundamentals</a>
+<a href="telecommunications.html">Telecommunications</a>
+<a href="electricity-basics-for-beginners.html">Electricity Basics for Beginners</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

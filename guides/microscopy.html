@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/microscopy.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microscopy &amp; Magnification - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.technique-box { background: var(--surface); padding: 1em; border-radius: 4px; margin: 1em 0; }
+.staining-table { font-family: monospace; }
+
+</style>
+<meta name="description" content="Building and using microscopes for medical diagnosis, water quality testing, and scientific observation. Covers optical principles, simple and compound designs, sample preparation, and practical applications.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/microscopy.html">
+<meta property="og:title" content="Microscopy &amp; Magnification">
+<meta property="og:description" content="Building and using microscopes for medical diagnosis, water quality testing, and scientific observation. Covers optical principles, simple and compound designs, sample preparation, and practical applications.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Medical &amp; Health", "item": "https://zerotoherohero.com/#sec-medical"},
+    {"@type": "ListItem", "position": 3, "name": "Microscopy &amp; Magnification", "item": "https://zerotoherohero.com/guides/microscopy.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Microscopy &amp; Magnification",
+  "description": "Building and using microscopes for medical diagnosis, water quality testing, and scientific observation. Covers optical principles, simple and compound designs, sample preparation, and practical applications.",
+  "dateModified": "2026-02-16",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-362">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-medical">Medical &amp; Health</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Microscopy &amp; Magnification</span>
+</nav>
+<header>
+<h1>Microscopy &amp; Magnification</h1>
+<p class="subtitle">Building and using microscopes for medical diagnosis, water quality testing, and scientific observation. Covers optical principles, simple and compound designs, sample preparation, and practical applications.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~20 min read</span>
+<span class="last-updated">· Updated: 2026-02-16</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#why">Why Microscopy Matters</a></li>
+<li><a href="#optical">Fundamental Principles of Microscopy</a></li>
+<li><a href="#microscope-types">Microscope Types and Applications</a></li>
+<li><a href="#simple">Simple Magnifier Design</a></li>
+<li><a href="#compound">Compound Microscope Construction</a></li>
+<li><a href="#illumination">Illumination Systems</a></li>
+<li><a href="#measurement">Measurement and Observation Techniques</a></li>
+<li><a href="#sample">Sample Preparation</a></li>
+<li><a href="#formulas">Calculations and Optical Formulas</a></li>
+<li><a href="#water">Water Quality Testing</a></li>
+<li><a href="#medical">Medical Diagnostics</a></li>
+<li><a href="#advanced-diagnostics">Advanced Diagnostic Techniques</a></li>
+<li><a href="#maintenance">Maintenance &amp; Care</a></li>
+<li><a href="#quick-ref">Microscopy Quick-Reference Guide</a></li>
+<li><a href="#troubleshooting">Troubleshooting Common Microscopy Problems</a></li>
+<li><a href="#related">Related Guides</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<!-- SVG-TODO: Compound microscope cross-section with light path diagram; Simple magnifier ray optics diagram; Microscope optical formula and magnification relationships; Sample preparation workflow showing wet mount assembly -->
+<section id="why">
+<h2>Why Microscopy Matters</h2>
+<p>Many survival problems are invisible: pathogens in water, parasitic infections in the body, fungal diseases in crops, contamination in food. A microscope costing perhaps $100-200 in salvaged materials can save lives by enabling diagnosis and detection of unseen threats.</p>
+<p>In collapse scenarios where modern medical diagnostics are unavailable, a functioning microscope becomes a critical tool for community health. Combined with basic staining techniques, it can identify malaria, intestinal parasites, typhoid, dysentery, and other infectious diseases that account for countless preventable deaths.</p>
+<h3>Why Not Just Magnifying Glasses?</h3>
+<p>A magnifying glass provides 5-20× magnification—useful for reading, splinter removal, and inspecting small objects. However, medical diagnosis requires 100-400× magnification to visualize bacteria, parasitic eggs, and cellular structures. A simple magnifier cannot achieve this resolution effectively.</p>
+<h3>What Microscopy Reveals</h3>
+<p>At different magnifications, you can detect:</p>
+<ul>
+<li><strong>40-100×:</strong> Parasitic eggs (hookworm, roundworm), large fungal spores, water contaminants, tissue structure</li>
+<li><strong>200-400×:</strong> Individual bacteria (when stained), malaria parasites in blood, giardia cysts, fungi, cell nuclei</li>
+<li><strong>600-1000×:</strong> Bacterial structures, flagella, detailed parasite morphology (requires high-quality optics)</li>
+</ul>
+<div class="warning">
+<p><strong>Critical limitation:</strong> Without staining, most bacteria and parasites are transparent and nearly invisible even at high magnification. Staining adds contrast and makes organisms visible. This is why a microscope alone is insufficient—you must also understand sample preparation and staining.</p>
+</div>
+</section>
+<section id="optical">
+<h2>Fundamental Principles of Microscopy</h2>
+<h3>Magnification and Resolution</h3>
+<p><strong>Magnification</strong> is the ratio of image size to object size. A 10x magnification makes something appear 10 times larger. However, magnification alone reveals nothing—it must be paired with <strong>resolution</strong>, the ability to distinguish two objects as separate.</p>
+<p><strong>Resolution limit</strong> (Rayleigh criterion) for light microscopy: approximately 0.2 micrometers (1/5000 mm), determined by the wavelength of visible light (approximately 400-700 nm). This is a fundamental physical limit—no visible-light microscope can resolve objects closer than ~0.2 μm, regardless of magnification.</p>
+<p>This is why bacteria (0.5-2 μm) are visible at high magnification with staining, but internal bacterial structures (flagella, pili) are barely visible even at 1000x. And why viruses (20-300 nm) are completely invisible to light microscopy.</p>
+<p><strong>The magnification-resolution relationship:</strong></p>
+<p>$$M = \frac{\text{Field of View}}{\text{Specimen Size}} = \frac{f_{objective} + f_{eyepiece}}{f_{objective} \times f_{eyepiece}}$$</p>
+<p>For practical purposes: Total magnification = objective magnification × eyepiece magnification.</p>
+<p>Example: 10x objective + 10x eyepiece = 100x total magnification.</p>
+<h3>Simple Magnifier vs. Compound Microscope</h3>
+<p><strong>Simple magnifier:</strong> Single lens with short focal length (1-10 cm). Provides 5-30x magnification. Used for examining larger objects (insects, plant tissue, splinters).</p>
+<ul>
+<li>Advantage: Simple, portable, no alignment needed</li>
+<li>Disadvantage: Limited magnification, small field of view, difficult focus</li>
+</ul>
+<p><strong>Compound microscope:</strong> Two lens systems—objective (near specimen) and eyepiece (viewing end). Provides 40-1000x magnification with better image quality than simple magnifiers.</p>
+<ul>
+<li>Advantage: Higher magnification, better focus, larger field of view at high magnification</li>
+<li>Disadvantage: More complex to construct and align</li>
+</ul>
+<h3>Practical Magnification Values and &quot;Empty Magnification&quot;</h3>
+<p>Not all magnification is useful. Beyond a certain point, magnification without proportional resolution produces &quot;empty magnification&quot;—the image gets larger but blurrier.</p>
+<ul>
+<li><strong>Minimum useful:</strong> 500× magnification minimum for seeing stained bacteria</li>
+<li><strong>Optimal:</strong> 400-800× provides useful detail without being resolution-limited</li>
+<li><strong>Maximum practical:</strong> 1000× for exceptional optical quality; beyond this produces empty magnification (image enlarges but detail lost)</li>
+</ul>
+<p>A typical survival-context microscope: 10× eyepiece with 40× objective = 400× total magnification. This provides excellent resolution for bacterial identification, parasite detection, and water quality assessment.</p>
+<div class="info-box">
+<p><strong>Optical Magnification Formula:</strong> For a two-lens compound system:
+$$M_{total} = M_{obj} \times M_{eyepiece} = \frac{f_{eyepiece}}{f_{objective}}$$</p>
+<p>Where f is focal length (distance from lens where parallel light rays converge). A 5 mm objective focal length and 30 mm eyepiece focal length produce 6x magnification—less than expected because magnification depends on lens design, not just focal length. Full magnification requires proper tube length spacing (typically 150-160 mm for standard microscopes).</p>
+</div>
+<h3>Optical Aberrations and Lens Quality</h3>
+<p>Real lenses introduce distortions:</p>
+<ul>
+<li><strong>Spherical aberration:</strong> Light rays through lens edges focus at different distances than rays through center, blurring image</li>
+<li><strong>Chromatic aberration:</strong> Different wavelengths (colors) refract at different angles, causing color fringing</li>
+<li><strong>Barrel/pincushion distortion:</strong> Straight lines appear curved</li>
+<li><strong>Astigmatism:</strong> Different orientations focus at different distances</li>
+</ul>
+<p>High-quality objectives minimize these aberrations through multi-element design. Low-quality salvaged lenses (single glass elements) exhibit multiple aberrations. When salvaging lenses for microscopy, inspect carefully—test on known specimens (printed text, graph paper) to verify optical quality before committing to construction.</p>
+<div class="tip">
+<p><strong>Tip — Testing Salvaged Optics:</strong> Before using a salvaged lens in microscope construction, examine it under good light for: scratches (reduce brightness), cloudiness (contamination or internal fractures), and distortion (view through lens at a grid or window). Any of these will compromise image quality.</p>
+</div>
+</section>
+<section id="microscope-types">
+<h2>Microscope Types and Applications</h2>
+<p>Different microscope designs suit different purposes:</p>
+<h3>Simple Magnifiers</h3>
+<p>A single lens with strong magnification. Historical examples (Leeuwenhoek) achieved remarkable results. Advantages: cheap, simple, portable. Disadvantages: small field of view, difficult to focus, requires excellent eyesight.</p>
+<p><strong>Best for:</strong> Examining insects, plant tissue, textiles, examining wounds. Not suitable for identifying bacteria.</p>
+<h3>Compound Microscopes</h3>
+<p>Two lens systems providing higher magnification and better image quality. Advantages: higher magnification with better focus, larger field of view, easier to use. Disadvantages: more complex to construct, more fragile.</p>
+<p><strong>Best for:</strong> Medical diagnostics, water quality testing, parasite identification. This is the focus of most of this guide.</p>
+<h3>Stereo Microscopes</h3>
+<p>Two optical paths (one per eye) producing 3D visualization. Advantages: depth perception, comfortable for extended viewing. Disadvantages: lower magnification (typically 10-40×), more complex construction.</p>
+<p><strong>Best for:</strong> Surgical procedures, examining three-dimensional specimens. Lower priority for survival contexts unless you're performing surgery.</p>
+</section>
+<section id="simple">
+<h2>Simple Magnifier Design</h2>
+<h3>Leeuwenhoek-Style Microscope</h3>
+<p>Dutch scientist Antonie van Leeuwenhoek (1632-1723) built microscopes using tiny glass beads as lenses, achieving 200x magnification. Method:</p>
+<ol>
+<li>Fuse a thin glass rod tip in a flame until a sphere forms (glass bead lens)</li>
+<li>Mount the bead in a metal frame with a specimen holder</li>
+<li>Position a tiny drop of water or oil on the specimen</li>
+<li>Hold the bead very close (2-3 mm from eye) and look toward a light source</li>
+<li>Specimen sits on the slide just below the bead</li>
+</ol>
+<p><strong>Advantages:</strong> Simple, no tools required, produces excellent magnification (100-300x). <strong>Disadvantages:</strong> Difficult to focus, very limited working distance (hard to keep specimen in view), requires bright light source and good eyes.</p>
+<h3>Salvaged Magnifying Glass Magnifier</h3>
+<ul>
+<li>Obtain a powerful magnifying glass (20x or higher)</li>
+<li>Mount in a wooden or metal frame with adjustable height</li>
+<li>Add a specimen stage with fine-adjustment screw</li>
+<li>Position light source (candle, oil lamp, or mirror redirecting sunlight)</li>
+<li>Result: 15-40x magnification, easier to use than Leeuwenhoek-style</li>
+</ul>
+<div class="info-box">
+<p><strong>Why glass quality matters:</strong> Even small scratches and impurities in the lens reduce image quality. When salvaging lenses, inspect carefully under good light. Test on a known specimen (printed text) to verify clarity before committing to construction.</p>
+</div>
+</section>
+<section id="compound">
+<h2>Compound Microscope Construction</h2>
+<h3>Basic Design</h3>
+<p>A simple compound microscope requires:</p>
+<ul>
+<li><strong>Objective lens:</strong> 5-10 mm focal length. Produces 10-100x magnification. Salvage from camera, binocular, or magnifying lens assemblies.</li>
+<li><strong>Eyepiece lens:</strong> 25-50 mm focal length. Produces 5-15x magnification. Another salvaged lens or magnifying glass.</li>
+<li><strong>Tube:</strong> Metal or rigid plastic tube holding objective and eyepiece separated by tube length (typically 150-160 mm). For simple models, spacing between lenses = objective focal length + eyepiece focal length + 10-20 cm.</li>
+<li><strong>Specimen stage:</strong> Flat platform where slides sit. Horizontal positioning with fine-adjust screws.</li>
+<li><strong>Focus mechanism:</strong> Screw thread to raise/lower the objective or stage, enabling sharp focus. Even a simple rack-and-pinion mechanism works.</li>
+</ul>
+<h3>Tube Length and Optical Spacing</h3>
+<p>For a simple two-lens compound system, the tube length (distance between objective lens and eyepiece) is critical. Standard tube lengths:</p>
+<ul>
+<li><strong>Standard infinity-focus microscope:</strong> 160 mm (from nose piece to eyepiece)</li>
+<li><strong>Simplified non-infinity build:</strong> varies based on lens focal lengths</li>
+</ul>
+<p>For a simple survival-context build using salvaged lenses:</p>
+<ul>
+<li>Objective focal length: 5 mm</li>
+<li>Eyepiece focal length: 30 mm</li>
+<li>Recommended tube length: approximately 150-160 mm</li>
+<li>Total magnification: ~800x (though practical magnification is lower due to optical quality)</li>
+</ul>
+<p><strong>Formula for tube length spacing:</strong>
+$$L = f_o + f_e + d$$</p>
+<p>Where:</p>
+<ul>
+<li>$L$ = tube length (150-160 mm)</li>
+<li>$f_o$ = objective focal length</li>
+<li>$f_e$ = eyepiece focal length</li>
+<li>$d$ = distance between focal points (typically 80-100 mm)</li>
+</ul>
+<p>If spacing is too short, magnification drops and field of view becomes too dark. If spacing too long, image becomes dimmer and magnification exceeds practical limits.</p>
+<h3>Magnification Adjustment and Objectives</h3>
+<p>Different objectives provide different magnifications. Build two or three interchangeable objectives to enable switching:</p>
+<ul>
+<li><strong>10x objective:</strong> Focal length ~16 mm, longer, lower magnification, larger field of view, easiest to focus, best for locating specimens</li>
+<li><strong>40x objective:</strong> Focal length ~4 mm, medium magnification, medium field of view, medium difficulty</li>
+<li><strong>100x objective:</strong> Focal length ~1.8 mm, highest magnification, smallest field of view, hardest to focus, very short working distance</li>
+</ul>
+<p>For survival medical diagnostics, a 10x/40x pair (400-800× total magnification) is ideal. Attempting 100x objectives requires precision grinding or salvaging high-quality used microscope objectives—often not feasible with salvaged materials.</p>
+<h3>Working Distance</h3>
+<p><strong>Working distance</strong> is the distance between the objective lens and the specimen (slide) when in focus. Short focal length objectives (40x, 100x) have very small working distances (0.1-0.7 mm)—barely enough room to fit a thin cover slip.</p>
+<p>Long focal length objectives (10x) have larger working distances (5-10 mm), making specimen mounting easier.</p>
+<p>This is why high-power microscopy is difficult: the lens must be extremely close to the slide. Vibration, dust, and condensation all cause the objective to drift out of focus or crash into the slide, damaging the lens.</p>
+<div class="warning">
+<p><strong>Critical:</strong> Never focus downward (toward the slide) with high magnification. Always start at low magnification, focus roughly, then switch to higher objectives. If using a single objective at high magnification, approach from far distance and focus upward—if objective hits slide, it stops by collision rather than crashing through the slide and shattering the lens.</p>
+</div>
+<div class="tip">
+<p><strong>Start with low magnification:</strong> When examining a new specimen, always start at lowest magnification to locate the area of interest, identify specimen type, then increase magnification for detail. Starting at 400× wastes time and makes focusing difficult—the field of view is tiny and vibration-sensitive.</p>
+</div>
+</section>
+<section id="illumination">
+<h2>Illumination Systems</h2>
+<h3>Light Source</h3>
+<ul>
+<li><strong>Sunlight:</strong> Brightest and easiest. Position mirror to reflect sunlight through specimen.</li>
+<li><strong>Oil lamp or candle:</strong> Sufficient for magnifications up to 200x. Position close to or under the specimen stage.</li>
+<li><strong>Electrical:</strong> If power available, a simple LED bulb (bright white) mounted under stage is ideal.</li>
+</ul>
+<h3>Condenser Lens</h3>
+<p>A lens positioned between light source and specimen that focuses light onto the specimen. Not essential but dramatically improves image contrast and brightness.</p>
+<ul>
+<li>Focal length: 25-50 mm (a simple magnifying glass works)</li>
+<li>Position: 30-50 mm below specimen</li>
+<li>Adjustable height: Position closer for higher magnifications</li>
+</ul>
+<h3>Diaphragm</h3>
+<p>A variable aperture (opening) that controls light intensity. At high magnification, bright light helps see detail. At low magnification, bright light can overwhelm. A simple cardboard disk with holes of varying diameters works.</p>
+<h3>Dark-Field Illumination</h3>
+<p>For viewing translucent organisms (bacteria, protozoa), <strong>dark-field</strong> is excellent: light comes from the side, and specimens appear bright against a dark background.</p>
+<ul>
+<li>Position light source to the side of the specimen (not below)</li>
+<li>Block direct light with a simple obstruction (paper disk below specimen)</li>
+<li>Result: Excellent contrast, even small organisms are visible</li>
+</ul>
+</section>
+<section id="measurement">
+<h2>Measurement and Observation Techniques</h2>
+<h3>Measuring Specimen Size</h3>
+<p>Direct measurement at high magnification requires a calibration reference (eyepiece micrometer or known-size specimen). Without calibration, you can estimate size based on magnification and field of view.</p>
+<p><strong>Estimating field of view:</strong></p>
+<ol>
+<li>Place a ruler under the microscope at lowest magnification</li>
+<li>Count millimeters visible in the field of view—e.g., 3 mm at 100× magnification</li>
+<li>At 400× magnification, field of view becomes 3 mm ÷ 4 = 0.75 mm</li>
+<li>If specimen fills 1/5 of field of view, specimen size is approximately 0.75 mm ÷ 5 = 0.15 mm = 150 micrometers</li>
+</ol>
+<p><strong>For more precision, use an eyepiece micrometer:</strong></p>
+<ul>
+<li>A small glass disk with etched scale placed inside eyepiece</li>
+<li>Compare scale against specimen size</li>
+<li>Requires calibration against known distance (can be done with a stage micrometer—a slide with precisely etched spacing)</li>
+</ul>
+<h3>Depth of Field</h3>
+<p><strong>Depth of field</strong> is the thickness of the specimen that appears in focus at any given moment. At low magnification, depth of field is large (10+ micrometers visible). At high magnification, depth of field is tiny (&lt;1 micrometer).</p>
+<p>This means:</p>
+<ul>
+<li>At 100x, you focus on a single layer of cells, not the whole specimen</li>
+<li>To visualize the full 3D structure of a specimen, focus slowly up and down, observing which planes contain which structures</li>
+<li>Bacteria (0.5-2 μm) are entirely within the depth of field; protozoa (50-300 μm) are partially visible depending on focal plane</li>
+</ul>
+<h3>Observation Techniques</h3>
+<p><strong>Scanning:</strong> Slowly move the specimen stage while observing. Scan the entire slide systematically (left-to-right rows, moving downward) to identify regions of interest.</p>
+<p><strong>Focusing:</strong> Always focus downward cautiously (especially at high magnification). Never focus upward and hit the slide. Use both coarse (large-adjustment) and fine (small-adjustment) focus screws. Coarse adjustment for initial focus, fine adjustment for sharpness.</p>
+<p><strong>Time-based observation:</strong> Some specimens change with time. Wet mounts dry out (causes organisms to shrink and move). Organisms move (protozoa, flagellated bacteria). Observe the same specimen over 5-15 minutes to characterize behavior—moving organisms are usually living, while stationary ones may be dead or debris.</p>
+<p><strong>Contrast adjustment:</strong> Reduce light intensity (close diaphragm) at high magnification to increase contrast. Bright light overwhelms detail. Optimal illumination has visible shadows and edge definition, not a washed-out bright field.</p>
+<div class="info-box">
+<p><strong>Optical Constants and Magnification Relationships:</strong></p>
+<p>For any compound microscope:</p>
+<p>$$NA = n \sin(\theta)$$</p>
+<p>Where NA (numerical aperture) determines the light-gathering ability and resolution:</p>
+<ul>
+<li>n = refractive index of medium between objective and specimen (1.0 for air, 1.33 for water, 1.52 for immersion oil)</li>
+<li>θ = half-angle of light cone entering objective</li>
+</ul>
+<p>Higher NA = better resolution. Oil immersion increases NA to 1.4, allowing resolution of structures &lt;0.15 μm—limited only by light wavelength.</p>
+<p>For survival microscopy without immersion oils:</p>
+<ul>
+<li>Air NA ≈ 0.90 (achievable with good optics)</li>
+<li>Practical resolution limit ≈ 0.2-0.3 μm</li>
+<li>Minimum magnification to approach this limit: M ≥ 500×</li>
+</ul>
+</div>
+</section>
+<section id="sample">
+<h2>Sample Preparation</h2>
+<h3>Wet Mount</h3>
+<ol>
+<li>Place small drop of water or saline on glass slide</li>
+<li>Add specimen (drop of water containing organisms, or tissue sample)</li>
+<li>Place cover slip (thin glass or plastic sheet) on top at 45 degree angle</li>
+<li>Lower slowly to avoid air bubbles</li>
+<li>Excess liquid wicks away; organism is sandwiched between slides</li>
+</ol>
+<h3>Staining</h3>
+<p>Most microorganisms are nearly transparent and hard to see. Stains add color and contrast. In survival contexts, you'll use simple stains that require only common chemicals.</p>
+<table class="staining-table"><thead><tr><th scope="col">Stain</th><th scope="col">Preparation</th><th scope="col">Best For</th><th scope="col">Procedure Time</th></tr></thead><tbody><tr><td><strong>Methylene Blue</strong></td><td>0.3 g blue powder + 100 mL water</td><td>Bacteria, nuclei, general morphology</td><td>5 minutes</td></tr><tr><td><strong>Iodine</strong></td><td>Gram's iodine solution (grocery store)</td><td>Carbohydrates, parasitic cysts, starch</td><td>5 minutes</td></tr><tr><td><strong>Gram Stain</strong></td><td>Crystal violet, iodine, alcohol, safranin (4-part)</td><td>Differentiating bacterial types</td><td>10 minutes (multi-step)</td></tr><tr><td><strong>Acid-Fast Stain</strong></td><td>Carbol-fuchsin, acid-alcohol, methylene blue</td><td>Tuberculosis, mycobacteria</td><td>15 minutes (heating required)</td></tr></tbody></table>
+<h3>Simple Staining Protocol</h3>
+<ol>
+<li>Prepare wet mount on slide</li>
+<li>Add small drop of methylene blue stain at edge of cover slip</li>
+<li>Stain draws under cover slip by capillary action</li>
+<li>Excess stain wicks away with paper towel</li>
+<li>View under microscope</li>
+<li>Organisms should appear blue against lighter background</li>
+</ol>
+<p><strong>Timing:</strong> Staining requires 3-5 minutes for adequate color development. Rushing produces pale staining and weak image contrast. Patient staining is critical for diagnosis.</p>
+<h3>Advanced Preparation Techniques</h3>
+<p><strong>Gram staining (differential stain for bacteria classification):</strong>
+Gram staining separates bacteria into two categories based on cell wall composition:</p>
+<ol>
+<li>Prepare heat-fixed smear (air dry, then pass briefly through flame)</li>
+<li>Apply crystal violet (primary stain) for 1 minute</li>
+<li>Rinse with water</li>
+<li>Apply iodine (mordant) for 1 minute</li>
+<li>Decolorize with 95% ethanol for 30 seconds (careful—over-decolorizing ruins the stain)</li>
+<li>Apply safranin (counterstain) for 30-60 seconds</li>
+<li>Rinse and air dry</li>
+<li>View at 1000× (oil immersion if available)</li>
+</ol>
+<p>Result: <strong>Gram-positive bacteria retain purple/blue color. Gram-negative bacteria appear pink/red.</strong> This single observation helps narrow down bacterial identification significantly.</p>
+<p><strong>Acid-fast staining (for tuberculosis and mycobacteria):</strong>
+This requires controlled heat and multiple chemicals, making it more complex:</p>
+<ol>
+<li>Prepare heat-fixed smear</li>
+<li>Apply carbol-fuchsin (carbolic acid + basic fuchsin) and gently heat slide with flame underneath (3-4 minutes, keeping slide steaming but not boiling)</li>
+<li>Cool and rinse</li>
+<li>Decolorize with acid-alcohol (challenges acid-fast organisms specifically)</li>
+<li>Apply methylene blue counterstain</li>
+<li>Rinse and dry</li>
+<li>View at 1000×</li>
+</ol>
+<p>Result: <strong>Mycobacteria (including TB) appear pink/red. Other bacteria appear blue.</strong> Acid-fast is characteristic of TB diagnosis.</p>
+<div class="warning">
+<p><strong>Stain safety:</strong> Acid-fast staining requires heat and toxic chemicals. Never heat a slide with coverslip—pressure buildup can cause explosion. Heat only when slide is flat and uncovered. Some stain chemicals (carbol-fuchsin, acid-alcohol) can burn skin. Use gloves and ensure ventilation.</p>
+</div>
+<div class="tip">
+<p><strong>Staining tip:</strong> If organisms are invisible after staining, the problem is usually inadequate stain, incorrect staining time, or wrong focus depth. Refocus carefully through the depth of field before concluding organisms are absent. Some stains take longer to penetrate—allow 5-10 minutes before abandoning a slide.</p>
+</div>
+</section>
+<section id="formulas">
+<h2>Calculations and Optical Formulas</h2>
+<h3>Magnification Formulas</h3>
+<p><strong>Total magnification:</strong>
+$$M = M_{obj} \times M_{eyepiece}$$</p>
+<p><strong>Objective magnification from focal length:</strong>
+$$M_{obj} = \frac{160 \text{ mm (tube length)}}{f_{obj}}$$</p>
+<p>Example: If objective focal length is 4 mm, magnification = 160 / 4 = 40×</p>
+<p><strong>Eyepiece magnification from focal length:</strong>
+$$M_{eyepiece} = \frac{250 \text{ mm (near point distance)}}{f_{eyepiece}}$$</p>
+<p>Example: If eyepiece focal length is 25 mm, magnification = 250 / 25 = 10×</p>
+<h3>Field of View Calculation</h3>
+<p><strong>Field of view</strong> (diameter of visible area) decreases with magnification:</p>
+<p>$$\text{FOV (at magnification M)} = \frac{\text{FOV at 100×}}{M/100}$$</p>
+<p>If you measure 2 mm field of view at 100× magnification:</p>
+<ul>
+<li>At 200× magnification, FOV = 2 mm ÷ (200/100) = 2 mm ÷ 2 = 1 mm</li>
+<li>At 400× magnification, FOV = 2 mm ÷ (400/100) = 2 mm ÷ 4 = 0.5 mm</li>
+</ul>
+<h3>Resolution and Wavelength Relationship</h3>
+<p><strong>Rayleigh criterion for minimum resolvable distance:</strong></p>
+<p>$$d = \frac{0.61 \times \lambda}{NA}$$</p>
+<p>Where:</p>
+<ul>
+<li>d = minimum resolvable distance (micrometers)</li>
+<li>λ = wavelength of light (0.5 μm for visible light)</li>
+<li>NA = numerical aperture of the objective</li>
+</ul>
+<p>Example: With air NA = 0.9 and green light (0.5 μm):
+$$d = \frac{0.61 \times 0.5}{0.9} = 0.34 \text{ μm}$$</p>
+<p>This means two objects closer than 0.34 μm cannot be distinguished as separate—a fundamental limit of light microscopy.</p>
+<h3>Magnification Effectiveness</h3>
+<p>To effectively resolve objects at theoretical resolution limit:
+$$M_{\text{min}} = \frac{1000 \times d}{0.5 \text{ inch (eye limit)}}$$</p>
+<p>With d = 0.34 μm:
+$$M_{\text{min}} = \frac{1000 \times 0.34}{0.5} \approx 680×$$</p>
+<p>In practice, 500-800× magnification is optimal for effective observation at the resolution limit. Above this is empty magnification.</p>
+<div class="info-box">
+<p><strong>Practical Magnification Range:</strong></p>
+<p>For survival medical diagnostics, magnification should be:</p>
+<ul>
+<li><strong>Minimum:</strong> 400× (bacterial visibility with staining)</li>
+<li><strong>Optimal:</strong> 600-800× (detail without empty magnification)</li>
+<li><strong>Maximum useful:</strong> 1000× (only with excellent optics)</li>
+</ul>
+<p>A 10× eyepiece with 40-60× objectives achieves this range ideally (400-600× total).</p>
+</div>
+</section>
+<section id="water">
+<h2>Water Quality Testing</h2>
+<h3>Direct Observation</h3>
+<p>At 100x magnification, you can see:</p>
+<ul>
+<li>Algae (various shapes and colors, move slowly)</li>
+<li>Protozoans (amoebae, ciliates, flagellates; move actively)</li>
+<li>Large bacteria colonies and clumps (individual bacteria invisible, but colonies visible)</li>
+<li>Parasitic cysts (Giardia, Cryptosporidium; round/oval shapes)</li>
+</ul>
+<h3>Giardia Testing</h3>
+<p>Giardia lamblia causes severe diarrhea. Cysts are 8-15 micrometers, barely visible at 400x magnification but identifiable:</p>
+<ul>
+<li>Collect water sample in clean bottle</li>
+<li>Let settle for 12-24 hours</li>
+<li>Collect material from bottom with pipette</li>
+<li>Prepare wet mount</li>
+<li>View at 400x with staining (iodine stain highlights cysts)</li>
+<li>Cysts appear oval/pear-shaped with clear internal structure</li>
+</ul>
+<h3>Bacterial Contamination</h3>
+<p>Individual bacteria (0.5-2 micrometers) are not visible at 400x without staining. However:</p>
+<ul>
+<li>Large bacterial colonies (biofilms) are visible at 100-200x</li>
+<li>Cloudy water suggests bacterial growth</li>
+<li>Particulates and sediment visible at 100x</li>
+</ul>
+</section>
+<section id="medical">
+<h2>Medical Diagnostics</h2>
+<h3>Blood Smear (Malaria Testing)</h3>
+<ol>
+<li>Prick finger with clean needle to get small drop of blood</li>
+<li>Place drop on glass slide</li>
+<li>Smear across slide with another slide held at 45 degree angle</li>
+<li>Allow to dry</li>
+<li>Fix by passing briefly through flame (kills cells, prevents water damage)</li>
+<li>Stain with methylene blue or Giemsa stain (if available)</li>
+<li>Examine at 400-1000x</li>
+<li>Malaria parasites appear as crescents or rings inside red blood cells</li>
+</ol>
+<h3>Urine Microscopy</h3>
+<p>Reveals infections, kidney disease, diabetes, and other conditions:</p>
+<ul>
+<li>Collect fresh urine in clean container</li>
+<li>Centrifuge or let settle for 1-2 hours</li>
+<li>Collect sediment from bottom with pipette</li>
+<li>Prepare wet mount</li>
+<li>View at 100-400x</li>
+<li>Look for: red blood cells (intact or crenated), white blood cells (sign of infection), crystals (kidney stones), bacteria (infection), yeast (fungal infection), parasitic eggs (schistosomiasis, hookworm)</li>
+</ul>
+<h3>Stool Microscopy</h3>
+<p>Identifies intestinal parasites (hookworm, roundworm, whipworm, tapeworm, liver flukes):</p>
+<p><strong>Procedure for parasite identification:</strong></p>
+<ol>
+<li>Collect fresh stool sample in clean container (within 1-2 hours of defecation for best results—organisms begin degrading after that)</li>
+<li>Mix small portion (~1 gram, roughly match-head size) with water or saline</li>
+<li>If using saline, mix 1:3 ratio (stool:saline)</li>
+<li>Prepare wet mount on slide with cover slip</li>
+<li>View at 100x initially to locate specimens</li>
+<li>Increase to 200-400× magnification for detailed examination and egg identification</li>
+<li>If no eggs visible at 100×, repeat with multiple samples (some infections are light, and eggs are not in every sample)</li>
+<li>Parasite eggs are large (20-100 micrometers) and easily visible at 100× with wet mount</li>
+</ol>
+<p><strong>Common parasite eggs and identification features:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parasite</th>
+<th>Egg Size (μm)</th>
+<th>Shape</th>
+<th>Color</th>
+<th>Special Features</th>
+<th>Prevalence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Roundworm (Ascaris)</td>
+<td>75 × 45</td>
+<td>Large oval</td>
+<td>Brownish</td>
+<td>Thick shell, often contains larva</td>
+<td>Very common in tropics</td>
+</tr>
+<tr>
+<td>Hookworm</td>
+<td>65 × 40</td>
+<td>Small oval</td>
+<td>Clear</td>
+<td>Transparent, thin shell</td>
+<td>Tropical/subtropical</td>
+</tr>
+<tr>
+<td>Whipworm (Trichuris)</td>
+<td>50 × 22</td>
+<td>Barrel/lemon</td>
+<td>Brown</td>
+<td>Terminal mucoid plugs (distinctive &quot;knobs&quot;)</td>
+<td>Common in warm regions</td>
+</tr>
+<tr>
+<td>Tapeworm segments</td>
+<td>Variable</td>
+<td>Rectangular</td>
+<td>Cream</td>
+<td>Proglottids (segments), motile in fresh samples</td>
+<td>Meat eaters at risk</td>
+</tr>
+<tr>
+<td>Liver fluke (Opisthorchis)</td>
+<td>28 × 17</td>
+<td>Small oval</td>
+<td>Brown</td>
+<td>Operculum (lid-like structure) at one end</td>
+<td>Fish-eating populations</td>
+</tr>
+<tr>
+<td>Schistosome (blood fluke)</td>
+<td>120 × 60</td>
+<td>Oval with spine</td>
+<td>Brown</td>
+<td>Terminal or lateral spine</td>
+<td>Water contact in endemic areas</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Infection severity assessment:</strong>
+Light infections (1-5 eggs per wet mount): asymptomatic, may go untreated
+Moderate infections (5-20 eggs): anemia, malabsorption, fatigue
+Heavy infections (&gt;20 eggs): severe anemia, malnutrition, stunted growth, risk of obstruction</p>
+<div class="info-box">
+<p><strong>Quantitative Egg Count Technique:</strong></p>
+<p>For more objective assessment, use the <strong>Kato-Katz method</strong> (if supplies available):</p>
+<ol>
+<li>Place 41.7 mg of feces on slide (use template cutout from cardboard, 6mm × 6mm × 1mm)</li>
+<li>Cover with cellophane soaked in glycerin</li>
+<li>Press gently with thumbprint to spread uniformly thin</li>
+<li>Observe at 100× after 30-60 minutes</li>
+<li>Count eggs of each type</li>
+<li>Eggs per gram of feces = egg count × 24 (calibration factor)</li>
+</ol>
+<p>This gives objective measurement of infection load: &lt;500 eggs/gram = light, 500-5000 = moderate, &gt;5000 = heavy.</p>
+<p>Without a template, simple egg counts (present/absent or few/many) still guide treatment decisions.</p>
+</div>
+<div class="warning">
+<p><strong>Stool sample hygiene:</strong> Fresh stool contains potentially dangerous pathogens (including some parasites transmissible to the preparer). Wear gloves, use separate pipettes for different specimens, clean pipettes between uses (rinse with water and air dry), and avoid touching your face while examining specimens. After observation, seal all slides in bags marked &quot;biological waste&quot; for safe disposal.</p>
+</div>
+</section>
+<section id="advanced-diagnostics">
+<h2>Advanced Diagnostic Techniques</h2>
+<h3>Concentration Methods for Low-Level Infections</h3>
+<p>Light parasitic infections may have few eggs in a stool sample, making them easy to miss. Concentration methods increase the likelihood of finding infections:</p>
+<p><strong>Flotation method (simple, requires only salt/sugar):</strong></p>
+<ol>
+<li>Mix ~1 gram stool with water to create slurry</li>
+<li>Strain through cloth to remove large particles</li>
+<li>Add saturated salt solution (sodium chloride solution, specific gravity 1.20) to float eggs</li>
+<li>Eggs float to surface, feces and debris sink</li>
+<li>Skim surface layer with loop or pipette</li>
+<li>Examine on slide</li>
+</ol>
+<p><strong>Sedimentation method (for heavier eggs):</strong></p>
+<ol>
+<li>Mix ~1 gram stool with water, stir thoroughly</li>
+<li>Let sit for 2 minutes—heavy particles settle</li>
+<li>Pour top layer (containing eggs) into centrifuge tube or second container</li>
+<li>Let settle overnight or centrifuge if equipment available</li>
+<li>Collect sediment from bottom</li>
+<li>Examine on slide</li>
+</ol>
+<p>These concentration methods increase detection sensitivity approximately 10-100 fold.</p>
+<h3>Temperature Effects on Organism Behavior</h3>
+<p>Different organisms respond differently to temperature, providing diagnostic clues:</p>
+<p><strong>Motile organisms (moving, suggesting living):</strong></p>
+<ul>
+<li>Amoebae move with pseudopodia (false feet), leaving trails</li>
+<li>Flagellated bacteria move in straight lines or spirals</li>
+<li>Ciliated protozoans move rapidly with coordinated movement</li>
+<li>These are often living, infectious organisms</li>
+</ul>
+<p><strong>Non-motile or dead organisms:</strong></p>
+<ul>
+<li>Eggs (parasite ova) are typically non-motile</li>
+<li>Dead bacteria appear stationary</li>
+<li>Crystals and debris are completely static</li>
+</ul>
+<p><strong>Temperature sensitivity:</strong></p>
+<ul>
+<li>Most organisms are most active at body temperature (37°C)</li>
+<li>At room temperature, activity decreases</li>
+<li>In refrigerated samples (4°C), activity nearly stops, preserving specimens</li>
+</ul>
+<p>Keep fresh samples warm (place slide on warm surface, warm stage if available) to maximize organism motility and visibility.</p>
+<div class="tip">
+<p><strong>Diagnostic tip — Motility assessment:</strong> When viewing a specimen, observe motion for 30-60 seconds. Moving organisms are almost certainly living. Complete immobility after 2 minutes suggests dead organisms or non-living particles. Moving organisms in stool samples indicate acute infection.</p>
+</div>
+<h3>Serial Dilution Testing</h3>
+<p>For confirmation or quantification of dilute samples (water testing for contamination, confirming low parasite loads):</p>
+<ol>
+<li>Start with original sample concentration (10× or 100× dilution from source water)</li>
+<li>Prepare serial dilutions: 1:10, 1:100, 1:1000 (each dilution in water or saline)</li>
+<li>Examine each dilution at magnification identifying when organisms become visible</li>
+<li>Last dilution showing organisms indicates approximate concentration</li>
+</ol>
+<p>Example: If organisms visible at 1:100 dilution but not at 1:1000, original concentration was between 100-1000 organisms per mL.</p>
+</section>
+<section id="maintenance">
+<h2>Maintenance &amp; Care</h2>
+<h3>Lens Cleaning</h3>
+<ul>
+<li>Use lens paper only (ordinary paper scratches glass)</li>
+<li>Gentle circular motion from center outward</li>
+<li>For dried/stuck material: breathe warm moisture onto lens, then wipe gently</li>
+<li>Never use harsh solvents; water or very dilute ethanol (if available)</li>
+</ul>
+<h3>Focus Adjustment</h3>
+<ul>
+<li>Always start with lowest magnification objective</li>
+<li>Focus roughly with large-adjustment screw</li>
+<li>Use fine-adjustment screw for final focus</li>
+<li>Do not focus downward so hard that objective hits slide (causes damage)</li>
+</ul>
+<h3>Storage</h3>
+<ul>
+<li>Keep in dry, dust-free location</li>
+<li>Protect from temperature extremes (thermal stress warps lenses)</li>
+<li>Cover when not in use to prevent dust settling on optics</li>
+<li><strong>Never leave cover slips on specimens:</strong> Seals dry and becomes permanent</li>
+</ul>
+<h3>Environmental Challenges and Solutions</h3>
+<p><strong>Moisture:</strong> In humid climates, lens fungus (algae growth on glass) is a constant threat. Solutions: Store microscope in a sealed container with desiccant (silica gel, calcium chloride). Periodically open container and allow air circulation.</p>
+<p><strong>Temperature swings:</strong> Rapid cooling causes condensation inside the microscope. Allow the instrument to acclimate to room temperature before opening. Store in a stable location.</p>
+<p><strong>Dust and sand:</strong> Any gritty particle between lens and slide causes scratches. Always use lens paper, never touch glass surfaces with fingers, and keep slides clean.</p>
+<div class="danger">
+<p><strong>Catastrophic failure:</strong> A dropped microscope with cracked lenses cannot be repaired without precision equipment. Treat your microscope as a critical tool. When not in use, store safely at stable temperature.</p>
+</div>
+</section>
+<section id="quick-ref">
+<h2>Microscopy Quick-Reference Guide</h2>
+<table><thead><tr><th scope="col">Procedure</th><th scope="col">Sample Type</th><th scope="col">Magnification</th><th scope="col">Stain</th><th scope="col">What You're Looking For</th></tr></thead><tbody><tr><td><strong>Water Testing</strong></td><td>Water sample</td><td>100-400×</td><td>Iodine optional</td><td>Algae, protozoa, parasitic cysts, cloudiness</td></tr><tr><td><strong>Malaria Diagnosis</strong></td><td>Blood smear</td><td>400-1000×</td><td>Methylene blue or Giemsa</td><td>Crescent or ring-shaped parasites in RBCs</td></tr><tr><td><strong>Parasite ID</strong></td><td>Stool sample</td><td>100-400×</td><td>None needed</td><td>Eggs (20-100 μm), distinctive shapes per parasite</td></tr><tr><td><strong>Urine Analysis</strong></td><td>Urine sediment</td><td>100-400×</td><td>Optional</td><td>RBCs, WBCs, crystals, bacteria, casts</td></tr><tr><td><strong>Bacterial ID</strong></td><td>Liquid/smear</td><td>400-1000×</td><td>Methylene blue required</td><td>Individual bacteria (0.5-2 μm), morphology</td></tr><tr><td><strong>Fungal Detection</strong></td><td>Skin scraping</td><td>200-400×</td><td>KOH stain preferred</td><td>Hyphae, spores, branching patterns</td></tr></tbody></table>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting Common Microscopy Problems</h2>
+<h3>Optical Problems and Fixes</h3>
+<p><strong>Image is too dark:</strong></p>
+<ul>
+<li>Increase light intensity by moving light source closer, or use brighter light (LED instead of candle)</li>
+<li>Open diaphragm to larger aperture (too much closure restricts light)</li>
+<li>Clean the condenser lens—dust reduces light transmission by 20-50%</li>
+<li>Check for obstruction between light source and specimen (hands, materials blocking light path)</li>
+<li>Root cause: Inadequate illumination is the most common DIY microscope problem. Invest in brightest available light source.</li>
+</ul>
+<p><strong>Cannot focus at all:</strong></p>
+<ul>
+<li>Start at lowest magnification. Objective may be too close to slide, preventing any focus.</li>
+<li>Move stage downward (away from objective) and approach focus gently from far distance</li>
+<li>Specimen may not exist where you're looking. Scan the slide at lowest magnification to locate actual specimen</li>
+<li>Cover slip may be backward (shiny side down). Flip slide or remake preparation</li>
+<li>Fine-focus screw at limit of travel—reset coarse focus to middle position and try fine focus again</li>
+</ul>
+<p><strong>Image is blurry everywhere:</strong></p>
+<ul>
+<li>Eyepiece may be dirty. Remove eyepiece and clean with lens paper on both surfaces</li>
+<li>Objective is dirty or scratched. Clean gently with lens paper—scratches are permanent and reduce image quality</li>
+<li>Specimen is out of focus. Use coarse adjustment to search for focus plane by moving stage up and down slowly</li>
+<li>Tube length (spacing between objective and eyepiece) incorrect. Verify spacing matches microscope optical design</li>
+</ul>
+<p><strong>Image extremely bright/washed out, no contrast:</strong></p>
+<ul>
+<li>Reduce light intensity by moving light source away or using weaker light</li>
+<li>Close diaphragm to smaller aperture—creates shadows that reveal detail</li>
+<li>Reduce specimen thickness (wet mounts sometimes too thick—flatten with gentle pressure)</li>
+<li>Root cause: Contrast requires shadow. Excess light eliminates shadow and obscures detail.</li>
+</ul>
+<p><strong>Specimen dries out during observation:</strong></p>
+<ul>
+<li>Working quickly matters—wet mounts dry in 10-30 minutes depending on temperature/humidity</li>
+<li>Add water periodically at edge of coverslip—capillary action pulls fresh water under cover slip</li>
+<li>For extended observation (&gt;30 minutes), use sealed slide chamber or wax-seal edges</li>
+<li>In hot/dry climates, evaporation is rapid. Temperature-controlled observation chamber extends specimen lifespan</li>
+</ul>
+<p><strong>Light glare and washout:</strong></p>
+<ul>
+<li>Reduce light intensity (move light source away or close diaphragm)</li>
+<li>Specimen is being overwhelmed with light—too much brightness destroys contrast</li>
+<li>Clean optical surfaces (dust creates glare)</li>
+</ul>
+<p><strong>Floating particles that move across field:</strong></p>
+<ul>
+<li>These are dust on the coverslip or objective, not part of the specimen</li>
+<li>Rotate slide 90°—particles move with slide, whereas specimen organisms stay relatively stationary</li>
+<li>Clean coverslip with lens paper before making new mount</li>
+<li>Clean objective carefully with lens paper if particles visible in field</li>
+</ul>
+<p><strong>Image has colored fringes (red/blue colors at object edges):</strong></p>
+<ul>
+<li>This is chromatic aberration—lens defect present in cheap/salvaged lenses</li>
+<li>Accept it or reduce magnification (aberration less noticeable at lower magnification)</li>
+<li>Use monochrome light (blue or red filter) if available to reduce color spread</li>
+<li>Root cause: Cheap lenses cannot focus all colors at same point. High-quality objectives minimize this.</li>
+</ul>
+<h3>Specimen-Related Problems</h3>
+<p><strong>Organism is invisible despite adequate magnification:</strong></p>
+<ul>
+<li>Magnification adequate but staining inadequate. Add stain and wait 5 minutes for color development</li>
+<li>Organism too small or transparent. Increase magnification or improve illumination</li>
+<li>Focus depth wrong—refocus slowly up and down through 10+ micrometers to ensure organism in focus plane</li>
+<li>Organism dead/inactive. Prepare fresh specimen from living source</li>
+<li>Wrong specimen type for light microscopy. Viruses and some bacteria invisible at light magnifications (need electron microscope)</li>
+</ul>
+<p><strong>Specimen appears as colored smudge or blob, no detail visible:</strong></p>
+<ul>
+<li>Wet mount too thick. Crush coverslip slightly to spread material thinner</li>
+<li>Too much stain. Excess stain obscures detail—make fresh mount with less stain</li>
+<li>Specimen material too concentrated. Dilute 10-100 fold with water/saline before mounting</li>
+</ul>
+<p><strong>Cannot see any organisms despite expecting them:</strong></p>
+<ul>
+<li>Sample may be dead/inactive. Prepare fresh sample from current source</li>
+<li>Contamination during collection. Use clean tubes/slides only—do not touch specimen with fingers</li>
+<li>Sample too old. Parasitic eggs survive weeks; bacteria only hours. Use fresh samples whenever possible</li>
+<li>Wrong observation magnification. Some structures visible only at specific magnifications</li>
+</ul>
+<p><strong>Cannot fit slide under objective:</strong></p>
+<ul>
+<li>Some high-magnification objectives (40×, 100×) have very short working distance (0.1-0.7 mm)</li>
+<li>This is normal—work around it by using lower magnification initially, then switching to higher objective once focused at low power</li>
+<li>Use thin coverslips (#1 thickness, 0.13 mm) instead of thick ones</li>
+<li>Some microscope designs don't allow objective switching after focusing—note working distance before choosing objective</li>
+</ul>
+<h3>Focusing Issues</h3>
+<p><strong>Cannot achieve focus at high magnification:</strong></p>
+<ul>
+<li>Working distance too short—objective too close to slide for comfort</li>
+<li>Use medium magnification initially (10-20×), locate specimen, then switch to high magnification objective</li>
+<li>At high magnification, even small vibrations cause focus loss. Minimize vibration (place microscope on stable surface, avoid touching during observation)</li>
+</ul>
+<p><strong>Focus drifts constantly (won't stay in focus):</strong></p>
+<ul>
+<li>Specimen slide drying and shrinking. Keep specimen wet by adding water periodically</li>
+<li>Stage not level. Place microscope on level surface</li>
+<li>Mechanical play in focus screw—normal for DIY builds. Work carefully to minimize drift</li>
+<li>Temperature change causing lens expansion/contraction. Allow microscope to acclimate to room temperature</li>
+</ul>
+<h3>Advanced Troubleshooting</h3>
+<p><strong>Pro troubleshooting tip:</strong> Always compare results against a known positive specimen. If you have a slide with malaria parasites documented, examine that specimen first to confirm your microscope and technique are working correctly. Only then examine unknown specimens.</p>
+<p><strong>Systematic diagnostic approach:</strong> When microscope performance degrades:</p>
+<ol>
+<li>Test illumination: Is light reaching specimen? (Feel underneath stage for warmth from light source)</li>
+<li>Test optics: Look at empty slide—is field of view clear? (If not, optics may be dirty)</li>
+<li>Test focus: Can you achieve ANY focus at lowest magnification? (If not, objective probably too close to slide)</li>
+<li>Test specimen: Is specimen actually present? (Scan entire slide at lowest magnification)</li>
+<li>Conclusion: Usually problem is one of these four. Systematic elimination narrows troubleshooting significantly.</li>
+</ol>
+<div class="info-box">
+<p><strong>Microscope Maintenance Checklist:</strong></p>
+<p><strong>Weekly (if in use):</strong></p>
+<ul>
+<li>Wipe objective and eyepiece with lens paper if dusty</li>
+<li>Ensure stage is clean and dry</li>
+<li>Check illumination is working</li>
+</ul>
+<p><strong>Monthly:</strong></p>
+<ul>
+<li>Clean all glass surfaces carefully</li>
+<li>Verify focus mechanisms move smoothly</li>
+<li>Check for cracks in coverslips or slides</li>
+</ul>
+<p><strong>Quarterly:</strong></p>
+<ul>
+<li>Store in sealed container with desiccant (prevents fungus)</li>
+<li>Check for mechanical wear in focus mechanisms</li>
+<li>Test illumination quality</li>
+</ul>
+<p><strong>Annually:</strong></p>
+<ul>
+<li>Replace eyepieces if internal dust accumulates</li>
+<li>Recalibrate magnification if available (use known specimen)</li>
+<li>Consider sending to expert for optical cleaning if heavily used</li>
+</ul>
+</div>
+</section>
+<section id="related">
+<h2>Related Guides</h2>
+<ul>
+<li>Optics &amp; Lens Grinding (see Optics &amp; Vision guide)</li>
+<li><a href="medical-reference.html">Medical Reference</a></li>
+<li>Water Testing &amp; Purification (see Water Purification guide)</li>
+<li><a href="agriculture.html">Agriculture &amp; Crop Production</a></li>
+</ul>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="medical-reference.html">Medical &amp; Survival Medicine</a>
+<a href="optics-vision.html">Optics &amp; Vision Care</a>
+<a href="pest-control.html">Pest Control &amp; IPM</a>
+<a href="vision-correction-optometry.html">Vision Correction &amp; Field Optometry</a>
+<a href="water-purification.html">Water Purification</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

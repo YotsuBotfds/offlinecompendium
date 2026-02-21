@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/hydroelectric.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hydroelectric Power - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.hydro-specs { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+.hydro-specs th { background: var(--card); padding: 0.75rem; text-align: left; }
+.hydro-specs td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+.turbine-comparison { margin: 1.5rem 0; }
+.efficiency-chart { background: var(--surface); padding: 1rem; margin: 1rem 0; }
+
+</style>
+<meta name="description" content="Turbine types (Pelton, Francis, Kaplan), penstock design, micro/pico-hydro, waterwheels, and generator selection.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/hydroelectric.html">
+<meta property="og:title" content="Hydroelectric Power">
+<meta property="og:description" content="Turbine types (Pelton, Francis, Kaplan), penstock design, micro/pico-hydro, waterwheels, and generator selection.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Power Generation", "item": "https://zerotoherohero.com/#sec-power-generation"},
+    {"@type": "ListItem", "position": 3, "name": "Hydroelectric Power", "item": "https://zerotoherohero.com/guides/hydroelectric.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Hydroelectric Power",
+  "description": "Turbine types (Pelton, Francis, Kaplan), penstock design, micro/pico-hydro, waterwheels, and generator selection.",
+  "dateModified": "2026-02-16",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-116">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-power-generation">Power Generation</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Hydroelectric Power</span>
+</nav>
+<div class="warning">
+<strong>Safety Notice:</strong> This guide covers activities that carry some risk. Follow all safety precautions carefully. See our <a href="../disclaimer.html">liability disclaimer</a>.
+</div>
+<header>
+<h1>Hydroelectric Power</h1>
+<p class="subtitle">Turbine types (Pelton, Francis, Kaplan), penstock design, micro/pico-hydro, waterwheels, and generator selection.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●●○</span>
+<span class="read-time">📖 ~18 min read</span>
+<span class="last-updated">· Updated: 2026-02-16</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#fundamentals">Hydroelectric Fundamentals</a></li>
+<li><a href="#power-calc">Power Calculations &amp; Optimization</a></li>
+<li><a href="#turbine-types">Turbine Types &amp; Selection</a></li>
+<li><a href="#pelton-svg">Pelton Wheel Diagram</a></li>
+<li><a href="#ram-pump">Hydraulic Ram Pump (No External Power Required)</a></li>
+<li><a href="#penstock">Penstock Design &amp; Sizing</a></li>
+<li><a href="#head-flow">Head &amp; Flow Measurement Methods</a></li>
+<li><a href="#governor">Governor Control Systems</a></li>
+<li><a href="#formulas-reference">8. Essential Formulas &amp; Design Calculations</a></li>
+<li><a href="#system-design">Complete System Design Example</a></li>
+<li><a href="#materials-tools">Materials &amp; Tools</a></li>
+<li><a href="#quick-reference">Quick Reference Tables</a></li>
+<li><a href="#step-by-step">Step-by-Step Installation Process</a></li>
+<li><a href="#variations-alternatives">Variations &amp; Alternatives</a></li>
+<li><a href="#wire-sizing">9. Wire Sizing &amp; Electrical Protection</a></li>
+<li><a href="#electrical-safety">10. Electrical Hazards &amp; Electrocution Prevention</a></li>
+<li><a href="#water-hazards">11. Water Hazards &amp; Drowning Prevention</a></li>
+<li><a href="#mechanical-entanglement">12. Mechanical Entanglement &amp; Rotating Equipment Hazards</a></li>
+<li><a href="#seasonal-operation">13. Seasonal Operation &amp; Common Mistakes</a></li>
+<li><a href="#scaling-integration">14. Scaling Multiple Sources &amp; Integration with Battery Banks</a></li>
+<li><a href="#safety-guidelines">Safety Hazards Summary</a></li>
+<li><a href="#maintenance">Maintenance &amp; Troubleshooting</a></li>
+<li><a href="#optimization">Optimization Strategies</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>Penstock Pressure &amp; Fatigue Hazard:</strong> Pressurized penstocks (pipes) fail catastrophically if undersized, poorly installed, or subjected to water hammer. A 100-meter penstock filled with water contains energy equivalent to a 500-pound bomb. Penstock rupture causes:</p>
+<ul>
+<li>Water column acceleration (water hammer) creates pressure spikes 10× normal operating pressure</li>
+<li>Pipe failure: rupture at weakest point, whipping freely and flooding downslope</li>
+<li>Dam failure: water surge overflows intake, causing structural collapse or erosion</li>
+<li>Erosion: released water cuts deep channels, destroying downstream property
+Penstock design requires precise hydraulic calculations and proper pipe sizing (friction loss &lt; 5%). Always use schedule 40 minimum PVC or steel. Test system pressure before operation. Install pressure relief valves set 10% above normal operating pressure.</li>
+</ul>
+</div>
+<p><svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" aria-label="Hydroelectric system cross-section, Pelton wheel bucket design, penstock friction loss graph, head and flow measurement, turbine efficiency curves">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 13px; }
+      .label { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 11px; }
+      .water { fill: var(--accent2, #7fb3d5); stroke: none; opacity: 0.7; }
+      .terrain { fill: var(--muted, #5a6e5a); opacity: 0.5; }
+      .pipe { fill: none; stroke: var(--accent, #d4a574); stroke-width: 3; }
+      .structure { fill: var(--card, #3d3228); stroke: var(--border, #444); stroke-width: 1; }
+      .axis { stroke: var(--text, #f5f0e8); stroke-width: 2; }
+      .grid { stroke: var(--border, #444); stroke-width: 0.5; opacity: 0.3; }
+      .curve { stroke: var(--accent, #d4a574); stroke-width: 2.5; fill: none; }
+      .curve-alt { stroke: var(--accent2, #7fb3d5); stroke-width: 2.5; fill: none; }
+      .curve-alt2 { stroke: #4ecdc4; stroke-width: 2.5; fill: none; }
+      .box { fill: var(--surface, #2d2416); stroke: var(--border, #444); stroke-width: 1; }
+      .title-box { fill: var(--surface, #2d2416); stroke: var(--accent, #d4a574); stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="700" class="bg"/>
+
+  <!-- Title -->
+  <text x="20" y="30" class="text" font-weight="bold" font-size="16">Hydroelectric System Design: Cross-Section & Performance</text>
+
+  <!-- Left section: System cross-section -->
+  <g id="system-cross-section">
+    <text x="20" y="70" class="text" font-weight="bold">Hydroelectric System Layout (vertical cross-section):</text>
+
+    <!-- Terrain/mountain -->
+    <path d="M 0 200 Q 100 100 200 80 L 200 450 L 0 450 Z" class="terrain"/>
+    <path d="M 200 80 Q 300 50 400 60 L 400 450 L 200 450 Z" class="terrain"/>
+
+    <!-- Water source (reservoir) -->
+    <path d="M 100 200 Q 150 180 200 200 L 200 230 L 100 230 Z" class="water"/>
+    <text x="90" y="220" class="label" font-size="10">Reservoir</text>
+
+    <!-- Intake structure -->
+    <rect x="190" y="225" width="20" height="40" class="structure"/>
+    <text x="165" y="260" class="label" font-size="10">Intake</text>
+
+    <!-- Penstock (pipe) -->
+    <g id="penstock-pipe">
+      <path d="M 200 260 Q 280 320 350 400" class="pipe" stroke-width="4"/>
+      <text x="240" y="310" class="label" font-size="10" font-weight="bold">Penstock</text>
+      <text x="240" y="325" class="label" font-size="9">(pressure pipe)</text>
+
+      <!-- Head dimension -->
+      <line x1="370" y1="80" x2="370" y2="420" class="axis" stroke-dasharray="3,3" stroke-width="1"/>
+      <text x="380" y="250" class="label" font-weight="bold">Head (H)</text>
+      <text x="380" y="265" class="label" font-size="10">10-100+ m</text>
+    </g>
+
+    <!-- Powerhouse -->
+    <rect x="340" y="390" width="80" height="60" class="title-box" stroke-width="2"/>
+    <text x="360" y="425" class="label" font-weight="bold" font-size="11">Powerhouse</text>
+
+    <!-- Turbine wheel -->
+    <circle cx="380" cy="420" r="20" class="structure" stroke-width="2"/>
+    <circle cx="380" cy="420" r="14" fill="none" class="structure" stroke-width="1" opacity="0.5"/>
+    <!-- Bucket -->
+    <path d="M 395 415 Q 400 420 395 425" fill="var(--accent, #d4a574)"/>
+    <text x="365" y="450" class="label" font-size="9">Pelton wheel</text>
+
+    <!-- Generator -->
+    <rect x="435" y="405" width="50" height="30" class="structure"/>
+    <text x="438" y="425" class="label" font-size="10">Generator</text>
+
+    <!-- Tailrace (exit) -->
+    <path d="M 380 460 Q 400 480 450 490 L 450 450 L 380 450 Z" class="water"/>
+    <text x="385" y="480" class="label" font-size="9">Tailrace</text>
+    <text x="425" y="510" class="label" font-size="9">(return to stream)</text>
+  </g>
+
+  <!-- Middle-left: Pelton Wheel Bucket Design -->
+  <g id="pelton-wheel">
+    <text x="20" y="580" class="text" font-weight="bold">Pelton Wheel Bucket Design (side view):</text>
+
+    <!-- Bucket profile -->
+    <path d="M 100 600 Q 115 595 130 600 Q 130 610 115 615 Q 100 615 100 610 Z" class="structure" stroke-width="1.5"/>
+
+    <!-- Water jet -->
+    <path d="M 70 607 L 100 607" class="pipe" stroke-width="2"/>
+    <text x="60" y="600" class="label" font-size="9">Jet</text>
+
+    <!-- Force vectors -->
+    <path d="M 115 595 L 115 570" stroke="var(--accent, #d4a574)" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <text x="120" y="570" class="label" font-size="9" fill="var(--accent, #d4a574)">Force</text>
+
+    <!-- Bucket angles -->
+    <line x1="100" y1="600" x2="110" y2="615" stroke="var(--border, #444)" stroke-width="0.5" stroke-dasharray="2,2"/>
+    <text x="75" y="630" class="label" font-size="9">45° split angle</text>
+    <text x="75" y="642" class="label" font-size="9">(120° bucket spacing)</text>
+  </g>
+
+  <!-- Top-right: Turbine Efficiency Curves -->
+  <g id="efficiency-curves">
+    <text x="520" y="70" class="text" font-weight="bold">Turbine Efficiency Across Operating Range:</text>
+
+    <!-- Axes -->
+    <line x1="560" y1="50" x2="560" y2="300" class="axis"/>
+    <line x1="560" y1="300" x2="880" y2="300" class="axis"/>
+
+    <!-- Grid -->
+    <g class="grid">
+      <line x1="560" y1="100" x2="880" y2="100"/>
+      <line x1="560" y1="150" x2="880" y2="150"/>
+      <line x1="560" y1="200" x2="880" y2="200"/>
+      <line x1="560" y1="250" x2="880" y2="250"/>
+      <line x1="610" y1="290" x2="610" y2="310"/>
+      <line x1="660" y1="290" x2="660" y2="310"/>
+      <line x1="710" y1="290" x2="710" y2="310"/>
+      <line x1="760" y1="290" x2="760" y2="310"/>
+      <line x1="810" y1="290" x2="810" y2="310"/>
+      <line x1="860" y1="290" x2="860" y2="310"/>
+    </g>
+
+    <!-- Y scale (efficiency %) -->
+    <text x="535" y="305" class="label" text-anchor="end">0%</text>
+    <text x="535" y="255" class="label" text-anchor="end">25%</text>
+    <text x="535" y="205" class="label" text-anchor="end">50%</text>
+    <text x="535" y="155" class="label" text-anchor="end">75%</text>
+    <text x="535" y="105" class="label" text-anchor="end">85%</text>
+
+    <text x="520" y="180" class="text" font-weight="bold" transform="rotate(-90 520 180)" font-size="12">Efficiency %</text>
+
+    <!-- X scale (% flow) -->
+    <text x="610" y="325" class="label" text-anchor="middle">10%</text>
+    <text x="660" y="325" class="label" text-anchor="middle">30%</text>
+    <text x="710" y="325" class="label" text-anchor="middle">50%</text>
+    <text x="760" y="325" class="label" text-anchor="middle">75%</text>
+    <text x="810" y="325" class="label" text-anchor="middle">100%</text>
+    <text x="860" y="325" class="label" text-anchor="middle">125%</text>
+
+    <text x="720" y="350" class="text" font-weight="bold">% of Design Flow</text>
+
+    <!-- Efficiency curves for different turbine types -->
+    <!-- Pelton (high head) -->
+    <path d="M 560 270 L 610 180 L 660 120 L 710 100 L 760 110 L 810 150 L 860 220" class="curve"/>
+    <text x="865" y="220" class="label" font-size="10">Pelton (1000 m)</text>
+
+    <!-- Turgo (medium head) -->
+    <path d="M 560 280 L 610 200 L 660 140 L 710 110 L 760 100 L 810 120 L 860 200" class="curve-alt"/>
+    <text x="865" y="200" class="label" font-size="10" fill="var(--accent2, #7fb3d5)">Turgo (100 m)</text>
+
+    <!-- Crossflow (low-medium head) -->
+    <path d="M 560 290 L 610 230 L 660 170 L 710 130 L 760 110 L 810 110 L 860 140" class="curve-alt2"/>
+    <text x="865" y="140" class="label" font-size="10" fill="#4ecdc4">Crossflow (20 m)</text>
+
+    <text x="560" y="370" class="label" font-size="11">Peak efficiency at 70-85% of design flow. Efficiency drops sharply at low/high flow.</text>
+  </g>
+
+  <!-- Bottom-left: Head and Flow Measurement -->
+  <g id="measurement-section">
+    <rect x="20" y="410" width="480" height="270" class="title-box" rx="3"/>
+
+    <text x="40" y="435" class="text" font-weight="bold">Head and Flow Measurement Methods:</text>
+
+    <!-- Head measurement -->
+    <text x="40" y="460" class="label" font-weight="bold">Head (H) - Vertical distance from intake to turbine outlet:</text>
+
+    <!-- Method 1: GPS altimeter -->
+    <text x="50" y="480" class="label" font-size="10">1. GPS Altimeter/Phone app:</text>
+    <text x="65" y="495" class="label" font-size="10">— Record elevation at intake pool and powerhouse</text>
+    <text x="65" y="510" class="label" font-size="10">— H = elevation_intake - elevation_outlet</text>
+    <text x="65" y="525" class="label" font-size="10">— Accuracy: ±2-5 meters (typical smartphone)</text>
+
+    <!-- Method 2: Barometer -->
+    <text x="50" y="545" class="label" font-size="10">2. Barometric Pressure:</text>
+    <text x="65" y="560" class="label" font-size="10">— Record barometer reading at intake and outlet</text>
+    <text x="65" y="575" class="label" font-size="10">— H (meters) = 11,000 × ln(P_low / P_high)</text>
+    <text x="65" y="590" class="label" font-size="10">— Accuracy: ±1 meter over 10 meters</text>
+
+    <!-- Method 3: Surveying -->
+    <text x="50" y="610" class="label" font-size="10">3. Surveying (most accurate):</text>
+    <text x="65" y="625" class="label" font-size="10">— Use transit/level and measuring tape along penstock</text>
+    <text x="65" y="640" class="label" font-size="10">— Measure each vertical segment and sum</text>
+
+    <!-- Flow measurement -->
+    <text x="40" y="660" class="label" font-weight="bold">Flow (Q) - Volume of water per unit time:</text>
+    <text x="50" y="680" class="label" font-size="10">Bucket Test: Fill 20L bucket at intake stream outlet, time it with stopwatch</text>
+  </g>
+
+  <!-- Bottom-right: Friction Loss Graph -->
+  <g id="friction-section">
+    <rect x="520" y="410" width="460" height="270" class="title-box" rx="3"/>
+
+    <text x="540" y="435" class="text" font-weight="bold">Penstock Friction Loss vs Diameter (100 m pipe, 100 L/min):</text>
+
+    <!-- Axes -->
+    <line x1="560" y1="450" x2="560" y2="620" class="axis"/>
+    <line x1="560" y1="620" x2="920" y2="620" class="axis"/>
+
+    <!-- Grid -->
+    <g class="grid">
+      <line x1="560" y1="500" x2="920" y2="500"/>
+      <line x1="560" y1="550" x2="920" y2="550"/>
+      <line x1="600" y1="610" x2="600" y2="630"/>
+      <line x1="700" y1="610" x2="700" y2="630"/>
+      <line x1="800" y1="610" x2="800" y2="630"/>
+      <line x1="920" y1="610" x2="920" y2="630"/>
+    </g>
+
+    <!-- Scale Y -->
+    <text x="535" y="625" class="label" text-anchor="end">0 m</text>
+    <text x="535" y="575" class="label" text-anchor="end">5 m</text>
+    <text x="535" y="525" class="label" text-anchor="end">10 m</text>
+    <text x="535" y="475" class="label" text-anchor="end">15 m</text>
+
+    <text x="520" y="540" class="text" font-weight="bold" transform="rotate(-90 520 540)" font-size="11">Friction Loss (m)</text>
+
+    <!-- Scale X -->
+    <text x="600" y="645" class="label" text-anchor="middle">2"</text>
+    <text x="700" y="645" class="label" text-anchor="middle">3"</text>
+    <text x="800" y="645" class="label" text-anchor="middle">4"</text>
+    <text x="920" y="645" class="label" text-anchor="middle">6"</text>
+
+    <text x="740" y="670" class="text" font-weight="bold">Pipe Diameter</text>
+
+    <!-- Loss curve -->
+    <path d="M 600 570 L 700 510 L 800 480 L 920 450" class="curve" stroke-width="3"/>
+
+    <!-- Design region (5% loss) -->
+    <rect x="560" y="530" width="360" height="10" fill="var(--accent2, #7fb3d5)" opacity="0.3"/>
+    <text x="585" y="548" class="label" font-size="9">Design target: &lt;5% loss</text>
+
+    <!-- Overpressure region -->
+    <rect x="560" y="470" width="100" height="10" fill="#ff6b6b" opacity="0.2"/>
+    <text x="575" y="488" class="label" font-size="9" fill="#ffaaaa">Avoid: &gt;10% loss</text>
+  </g>
+</svg>
+</p>
+<h2 id="introduction">Introduction</h2>
+<p>Hydroelectric systems represent the most efficient renewable energy conversion available to off-grid communities. Unlike solar (20-25% efficient) and wind (35-45% efficient), well-designed hydro systems achieve 70-85% overall efficiency, converting flowing water directly to reliable electrical power. A modest stream with 10 meters of drop and 100 liters/second flow sustains a household indefinitely—something no wind turbine or solar array of reasonable size can match. This guide covers practical hydro system design from site survey through installation and troubleshooting. Success requires precision in head/flow measurement, careful penstock design, and turbine-generator matching.</p>
+<section id="fundamentals">
+<h2>Hydroelectric Fundamentals</h2>
+<h3>Energy Conversion Path</h3>
+<p>Gravitational potential energy (mgh) at water surface converts to kinetic energy (½mv²) as water falls. Turbine intercepts moving water, converting kinetic energy to rotational mechanical energy (torque × angular velocity). Generator converts mechanical rotation to electrical power. Overall efficiency: hydraulic (60-90%) × mechanical bearing losses (2-3%) × electrical generator (90-95%) = 50-80% system efficiency.</p>
+<h3>Power Available Formula</h3>
+<p>Power (watts) = 9800 × Head (meters) × Flow (m³/s) × Efficiency. Example: 5 meter head, 0.1 m³/s flow, 70% efficiency = 9800 × 5 × 0.1 × 0.7 = 3,430 watts continuous power. This is the same as 3.43 horsepower. A household using 5 kW average power needs higher flow or head to achieve continuous generation.</p>
+<h3>Efficiency Factors</h3>
+<p><strong>Hydraulic efficiency:</strong> Depends on turbine type matching head and flow. Pelton wheels highly efficient (85-90%) at high head. Crossflow turbines 60-75% at low head. Mis-matched turbine (high-head turbine on low head) produces poor efficiency.</p>
+<p><strong>Penstock friction loss:</strong> Water flowing through pipe loses energy to friction. Long pipes, small diameter, rough interior = high loss. 5% loss acceptable rule-of-thumb; aim for 3-5%.</p>
+<p><strong>Generator efficiency:</strong> Large generators 95%+ efficient. Small generators 85-90% efficient. Oversized generator running at 10% capacity loses efficiency; match generator to expected load.</p>
+<section id="power-calc">
+<h2>Power Calculations &amp; Optimization</h2>
+<h3>Head Measurement</h3>
+<p>Head = vertical distance from water surface at intake to water surface at discharge (tail water level). NOT pipe length (pipe runs along slope, head is vertical drop). Measure with: (1) Clinometer and distance (measure angle and distance from intake to discharge point), (2) Altimeter (measure elevation at intake and discharge), (3) Water barometer (measure pressure difference). For small systems: simple method is string with weight hanging in both locations, measuring vertical distance.</p>
+<h3>Flow Measurement</h3>
+<p>Simple method: bucket and stopwatch. Collect water in bucket for known time (30-60 seconds minimum for accuracy). Divide bucket volume by time in seconds = flow in liters/sec. Repeat 3-5 times, average. More accurate: Orifice plate or weir (notch in pipe), measuring water height and calculating flow from hydraulic tables. Seasonal variation important: winter (wet season) higher flow, summer (dry season) lower flow. Micro-hydro sizing should account for minimum expected flow.</p>
+<h3>System Power vs Load Power</h3>
+<p>Power available ≠ usable power. If system generates 5 kW but daily household load averages 2 kW, system is oversized. Excess water spills (wasted potential). Undersized system (2 kW available, 5 kW load) means load cannot be fully supplied continuously. Battery storage bridges difference: surplus power charges battery, loads discharge when generation insufficient. Storage size = (Peak load - Available power) × Hours autonomy.</p>
+<h3>Worked Examples: Real-World Power Calculations</h3>
+<p><strong>Example 1: Small Mountain Stream (Household System)</strong></p>
+<p>Site measurements:</p>
+<ul>
+<li>Head: 15 meters (measured with GPS altimeter)</li>
+<li>Flow: dry season 30 L/s, wet season 80 L/s</li>
+<li>Conservative design uses dry season flow: 30 L/s = 0.03 m³/s</li>
+<li>Estimated system efficiency: 70% (conservative for small turbine)</li>
+</ul>
+<p>Theoretical power available:
+Power = 9800 × 15 × 0.03 × 0.70 = 3,087 watts ≈ <strong>3.1 kW continuous (dry season)</strong></p>
+<p>This system powers 1-2 homes (typical household uses 2-5 kW continuous). In wet season, flow increases to 0.08 m³/s: Power = 9800 × 15 × 0.08 × 0.70 = 8,232 watts ≈ <strong>8.2 kW</strong> — excess diverted to battery or spill load.</p>
+<p><strong>Example 2: Medium Elevation Community System</strong></p>
+<p>Site measurements:</p>
+<ul>
+<li>Head: 45 meters (large elevation gain over 2 km distance)</li>
+<li>Flow: 150 L/s year-round (spring-fed, stable)</li>
+<li>System efficiency: 75% (larger turbine, optimized design)</li>
+</ul>
+<p>Theoretical power available:
+Power = 9800 × 45 × 0.15 × 0.75 = 49,613 watts ≈ <strong>49.6 kW continuous</strong></p>
+<p>This system powers 20-30 homes. Daily generation: 49.6 kW × 24 hours = 1,190 kWh/day. If community load averages 1,000 kWh/day, system can sell excess 190 kWh/day to grid or charge community battery.</p>
+<p><strong>Example 3: Penstock Head Loss Impact</strong></p>
+<p>Same 45m head, 150 L/s site, but penstock routing creates friction losses.</p>
+<p>Design choices:</p>
+<ul>
+<li>
+<p><strong>Option A:</strong> 100m penstock, 0.20m (200mm) diameter, velocity = 0.15 / (π × 0.1²) = 4.8 m/s</p>
+<ul>
+<li>Head loss = (0.025 × 100 × 4.8²) / (2 × 9.81 × 0.20) = 2.9 meters (6.4% loss)</li>
+<li>Effective head = 45 - 2.9 = 42.1 meters</li>
+<li>Power = 9800 × 42.1 × 0.15 × 0.75 = 46,446 watts</li>
+<li><strong>46.4 kW output (6.4% loss)</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Option B:</strong> 100m penstock, 0.25m (250mm) diameter, velocity = 0.15 / (π × 0.125²) = 3.1 m/s</p>
+<ul>
+<li>Head loss = (0.025 × 100 × 3.1²) / (2 × 9.81 × 0.25) = 1.2 meters (2.7% loss)</li>
+<li>Effective head = 45 - 1.2 = 43.8 meters</li>
+<li>Power = 9800 × 43.8 × 0.15 × 0.75 = 48,307 watts</li>
+<li><strong>48.3 kW output (2.7% loss)</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>Key lesson:</strong> Larger penstock (Option B) costs ~$1,500 more but delivers 1,861 additional watts continuous (2% improvement). Annual energy gain: 1,861 W × 8,760 hours = 16.3 MWh/year. At $0.10/kWh electricity price, this equals $1,630/year benefit. <strong>Penstock upgrade pays for itself within 1 year.</strong></p>
+<div class="info-box">
+<p><strong>Design Rule:</strong> When penstock friction loss exceeds 5%, upgrade diameter. Loss at 3-5% is acceptable but review economics. Loss &lt;3% is optimal (beyond this, bigger diameter costs exceed benefits).</p>
+</div>
+</section>
+<section id="turbine-types">
+<h2>Turbine Types &amp; Selection</h2>
+<h3>Pelton Wheel</h3>
+<p>High-head turbine (30-300m typical). Free-jet design: nozzle directs water stream onto buckets (cups) mounted on wheel. Each bucket has inner split (splitter) directing water away from next bucket without collision. Efficiency 85-90%. Speed: high head = high speed (can directly drive generator). Rotor buckets must be precisely machined for efficiency. Manual adjustment nozzle to decrease water flow and load when electricity demand drops.</p>
+<h3>Turgo Wheel</h3>
+<p>Similar to Pelton but jet angle (20-25°) allows water to enter and exit on different sides. More compact than Pelton, simpler buckets. Medium-head (10-30m). Efficiency 80-85%. Can operate at higher speeds (higher specific speed) than Pelton.</p>
+<h3>Francis Turbine</h3>
+<p>Reaction turbine: water pressure relative to atmosphere provides force (unlike Pelton's free-jet). Water enters spirally around rotor, traveling inward and downward over curved blades, exiting axially below. Medium head (5-20m), large flow. Efficiency 85-90%. More complex than Pelton; sensitive to size changes. Requires civil works (concrete spiral casing). Runner blades must be precisely manufactured.</p>
+<h3>Crossflow (Turgo-Like) Turbine</h3>
+<p>Simplest turbine for low head (1-10m), medium-high flow. Water enters curved bucket at 20° angle, crosses rotor, exits opposite side. Efficiency 60-75% (lower than high-tech turbines but simple). Can be fabricated from PVC pipe and welded steel. DIY-friendly: bucket welded together, runner disk bolted on. Low-cost, easy maintenance.</p>
+<h3>Water Screw (Archimedean)</h3>
+<p>Inclined screw rotated by flowing water. Recent development for micro-hydro. Very low head (0.5-5m). Efficiency 60-75%. Extremely fish-friendly (no pressure drop, damage, or turbulent mixing). Simple operation. Limited to low head; not suitable for moderate/high head sites.</p>
+</section>
+<section id="pelton-svg">
+<h2>Pelton Wheel Diagram</h2>
+<p><svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" aria-label="Hydroelectric system cross-section, Pelton wheel bucket design, penstock friction loss graph, head and flow measurement, turbine efficiency curves">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 13px; }
+      .label { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 11px; }
+      .water { fill: var(--accent2, #7fb3d5); stroke: none; opacity: 0.7; }
+      .terrain { fill: var(--muted, #5a6e5a); opacity: 0.5; }
+      .pipe { fill: none; stroke: var(--accent, #d4a574); stroke-width: 3; }
+      .structure { fill: var(--card, #3d3228); stroke: var(--border, #444); stroke-width: 1; }
+      .axis { stroke: var(--text, #f5f0e8); stroke-width: 2; }
+      .grid { stroke: var(--border, #444); stroke-width: 0.5; opacity: 0.3; }
+      .curve { stroke: var(--accent, #d4a574); stroke-width: 2.5; fill: none; }
+      .curve-alt { stroke: var(--accent2, #7fb3d5); stroke-width: 2.5; fill: none; }
+      .curve-alt2 { stroke: #4ecdc4; stroke-width: 2.5; fill: none; }
+      .box { fill: var(--surface, #2d2416); stroke: var(--border, #444); stroke-width: 1; }
+      .title-box { fill: var(--surface, #2d2416); stroke: var(--accent, #d4a574); stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="700" class="bg"/>
+
+  <!-- Title -->
+  <text x="20" y="30" class="text" font-weight="bold" font-size="16">Hydroelectric System Design: Cross-Section & Performance</text>
+
+  <!-- Left section: System cross-section -->
+  <g id="system-cross-section">
+    <text x="20" y="70" class="text" font-weight="bold">Hydroelectric System Layout (vertical cross-section):</text>
+
+    <!-- Terrain/mountain -->
+    <path d="M 0 200 Q 100 100 200 80 L 200 450 L 0 450 Z" class="terrain"/>
+    <path d="M 200 80 Q 300 50 400 60 L 400 450 L 200 450 Z" class="terrain"/>
+
+    <!-- Water source (reservoir) -->
+    <path d="M 100 200 Q 150 180 200 200 L 200 230 L 100 230 Z" class="water"/>
+    <text x="90" y="220" class="label" font-size="10">Reservoir</text>
+
+    <!-- Intake structure -->
+    <rect x="190" y="225" width="20" height="40" class="structure"/>
+    <text x="165" y="260" class="label" font-size="10">Intake</text>
+
+    <!-- Penstock (pipe) -->
+    <g id="penstock-pipe">
+      <path d="M 200 260 Q 280 320 350 400" class="pipe" stroke-width="4"/>
+      <text x="240" y="310" class="label" font-size="10" font-weight="bold">Penstock</text>
+      <text x="240" y="325" class="label" font-size="9">(pressure pipe)</text>
+
+      <!-- Head dimension -->
+      <line x1="370" y1="80" x2="370" y2="420" class="axis" stroke-dasharray="3,3" stroke-width="1"/>
+      <text x="380" y="250" class="label" font-weight="bold">Head (H)</text>
+      <text x="380" y="265" class="label" font-size="10">10-100+ m</text>
+    </g>
+
+    <!-- Powerhouse -->
+    <rect x="340" y="390" width="80" height="60" class="title-box" stroke-width="2"/>
+    <text x="360" y="425" class="label" font-weight="bold" font-size="11">Powerhouse</text>
+
+    <!-- Turbine wheel -->
+    <circle cx="380" cy="420" r="20" class="structure" stroke-width="2"/>
+    <circle cx="380" cy="420" r="14" fill="none" class="structure" stroke-width="1" opacity="0.5"/>
+    <!-- Bucket -->
+    <path d="M 395 415 Q 400 420 395 425" fill="var(--accent, #d4a574)"/>
+    <text x="365" y="450" class="label" font-size="9">Pelton wheel</text>
+
+    <!-- Generator -->
+    <rect x="435" y="405" width="50" height="30" class="structure"/>
+    <text x="438" y="425" class="label" font-size="10">Generator</text>
+
+    <!-- Tailrace (exit) -->
+    <path d="M 380 460 Q 400 480 450 490 L 450 450 L 380 450 Z" class="water"/>
+    <text x="385" y="480" class="label" font-size="9">Tailrace</text>
+    <text x="425" y="510" class="label" font-size="9">(return to stream)</text>
+  </g>
+
+  <!-- Middle-left: Pelton Wheel Bucket Design -->
+  <g id="pelton-wheel">
+    <text x="20" y="580" class="text" font-weight="bold">Pelton Wheel Bucket Design (side view):</text>
+
+    <!-- Bucket profile -->
+    <path d="M 100 600 Q 115 595 130 600 Q 130 610 115 615 Q 100 615 100 610 Z" class="structure" stroke-width="1.5"/>
+
+    <!-- Water jet -->
+    <path d="M 70 607 L 100 607" class="pipe" stroke-width="2"/>
+    <text x="60" y="600" class="label" font-size="9">Jet</text>
+
+    <!-- Force vectors -->
+    <path d="M 115 595 L 115 570" stroke="var(--accent, #d4a574)" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <text x="120" y="570" class="label" font-size="9" fill="var(--accent, #d4a574)">Force</text>
+
+    <!-- Bucket angles -->
+    <line x1="100" y1="600" x2="110" y2="615" stroke="var(--border, #444)" stroke-width="0.5" stroke-dasharray="2,2"/>
+    <text x="75" y="630" class="label" font-size="9">45° split angle</text>
+    <text x="75" y="642" class="label" font-size="9">(120° bucket spacing)</text>
+  </g>
+
+  <!-- Top-right: Turbine Efficiency Curves -->
+  <g id="efficiency-curves">
+    <text x="520" y="70" class="text" font-weight="bold">Turbine Efficiency Across Operating Range:</text>
+
+    <!-- Axes -->
+    <line x1="560" y1="50" x2="560" y2="300" class="axis"/>
+    <line x1="560" y1="300" x2="880" y2="300" class="axis"/>
+
+    <!-- Grid -->
+    <g class="grid">
+      <line x1="560" y1="100" x2="880" y2="100"/>
+      <line x1="560" y1="150" x2="880" y2="150"/>
+      <line x1="560" y1="200" x2="880" y2="200"/>
+      <line x1="560" y1="250" x2="880" y2="250"/>
+      <line x1="610" y1="290" x2="610" y2="310"/>
+      <line x1="660" y1="290" x2="660" y2="310"/>
+      <line x1="710" y1="290" x2="710" y2="310"/>
+      <line x1="760" y1="290" x2="760" y2="310"/>
+      <line x1="810" y1="290" x2="810" y2="310"/>
+      <line x1="860" y1="290" x2="860" y2="310"/>
+    </g>
+
+    <!-- Y scale (efficiency %) -->
+    <text x="535" y="305" class="label" text-anchor="end">0%</text>
+    <text x="535" y="255" class="label" text-anchor="end">25%</text>
+    <text x="535" y="205" class="label" text-anchor="end">50%</text>
+    <text x="535" y="155" class="label" text-anchor="end">75%</text>
+    <text x="535" y="105" class="label" text-anchor="end">85%</text>
+
+    <text x="520" y="180" class="text" font-weight="bold" transform="rotate(-90 520 180)" font-size="12">Efficiency %</text>
+
+    <!-- X scale (% flow) -->
+    <text x="610" y="325" class="label" text-anchor="middle">10%</text>
+    <text x="660" y="325" class="label" text-anchor="middle">30%</text>
+    <text x="710" y="325" class="label" text-anchor="middle">50%</text>
+    <text x="760" y="325" class="label" text-anchor="middle">75%</text>
+    <text x="810" y="325" class="label" text-anchor="middle">100%</text>
+    <text x="860" y="325" class="label" text-anchor="middle">125%</text>
+
+    <text x="720" y="350" class="text" font-weight="bold">% of Design Flow</text>
+
+    <!-- Efficiency curves for different turbine types -->
+    <!-- Pelton (high head) -->
+    <path d="M 560 270 L 610 180 L 660 120 L 710 100 L 760 110 L 810 150 L 860 220" class="curve"/>
+    <text x="865" y="220" class="label" font-size="10">Pelton (1000 m)</text>
+
+    <!-- Turgo (medium head) -->
+    <path d="M 560 280 L 610 200 L 660 140 L 710 110 L 760 100 L 810 120 L 860 200" class="curve-alt"/>
+    <text x="865" y="200" class="label" font-size="10" fill="var(--accent2, #7fb3d5)">Turgo (100 m)</text>
+
+    <!-- Crossflow (low-medium head) -->
+    <path d="M 560 290 L 610 230 L 660 170 L 710 130 L 760 110 L 810 110 L 860 140" class="curve-alt2"/>
+    <text x="865" y="140" class="label" font-size="10" fill="#4ecdc4">Crossflow (20 m)</text>
+
+    <text x="560" y="370" class="label" font-size="11">Peak efficiency at 70-85% of design flow. Efficiency drops sharply at low/high flow.</text>
+  </g>
+
+  <!-- Bottom-left: Head and Flow Measurement -->
+  <g id="measurement-section">
+    <rect x="20" y="410" width="480" height="270" class="title-box" rx="3"/>
+
+    <text x="40" y="435" class="text" font-weight="bold">Head and Flow Measurement Methods:</text>
+
+    <!-- Head measurement -->
+    <text x="40" y="460" class="label" font-weight="bold">Head (H) - Vertical distance from intake to turbine outlet:</text>
+
+    <!-- Method 1: GPS altimeter -->
+    <text x="50" y="480" class="label" font-size="10">1. GPS Altimeter/Phone app:</text>
+    <text x="65" y="495" class="label" font-size="10">— Record elevation at intake pool and powerhouse</text>
+    <text x="65" y="510" class="label" font-size="10">— H = elevation_intake - elevation_outlet</text>
+    <text x="65" y="525" class="label" font-size="10">— Accuracy: ±2-5 meters (typical smartphone)</text>
+
+    <!-- Method 2: Barometer -->
+    <text x="50" y="545" class="label" font-size="10">2. Barometric Pressure:</text>
+    <text x="65" y="560" class="label" font-size="10">— Record barometer reading at intake and outlet</text>
+    <text x="65" y="575" class="label" font-size="10">— H (meters) = 11,000 × ln(P_low / P_high)</text>
+    <text x="65" y="590" class="label" font-size="10">— Accuracy: ±1 meter over 10 meters</text>
+
+    <!-- Method 3: Surveying -->
+    <text x="50" y="610" class="label" font-size="10">3. Surveying (most accurate):</text>
+    <text x="65" y="625" class="label" font-size="10">— Use transit/level and measuring tape along penstock</text>
+    <text x="65" y="640" class="label" font-size="10">— Measure each vertical segment and sum</text>
+
+    <!-- Flow measurement -->
+    <text x="40" y="660" class="label" font-weight="bold">Flow (Q) - Volume of water per unit time:</text>
+    <text x="50" y="680" class="label" font-size="10">Bucket Test: Fill 20L bucket at intake stream outlet, time it with stopwatch</text>
+  </g>
+
+  <!-- Bottom-right: Friction Loss Graph -->
+  <g id="friction-section">
+    <rect x="520" y="410" width="460" height="270" class="title-box" rx="3"/>
+
+    <text x="540" y="435" class="text" font-weight="bold">Penstock Friction Loss vs Diameter (100 m pipe, 100 L/min):</text>
+
+    <!-- Axes -->
+    <line x1="560" y1="450" x2="560" y2="620" class="axis"/>
+    <line x1="560" y1="620" x2="920" y2="620" class="axis"/>
+
+    <!-- Grid -->
+    <g class="grid">
+      <line x1="560" y1="500" x2="920" y2="500"/>
+      <line x1="560" y1="550" x2="920" y2="550"/>
+      <line x1="600" y1="610" x2="600" y2="630"/>
+      <line x1="700" y1="610" x2="700" y2="630"/>
+      <line x1="800" y1="610" x2="800" y2="630"/>
+      <line x1="920" y1="610" x2="920" y2="630"/>
+    </g>
+
+    <!-- Scale Y -->
+    <text x="535" y="625" class="label" text-anchor="end">0 m</text>
+    <text x="535" y="575" class="label" text-anchor="end">5 m</text>
+    <text x="535" y="525" class="label" text-anchor="end">10 m</text>
+    <text x="535" y="475" class="label" text-anchor="end">15 m</text>
+
+    <text x="520" y="540" class="text" font-weight="bold" transform="rotate(-90 520 540)" font-size="11">Friction Loss (m)</text>
+
+    <!-- Scale X -->
+    <text x="600" y="645" class="label" text-anchor="middle">2"</text>
+    <text x="700" y="645" class="label" text-anchor="middle">3"</text>
+    <text x="800" y="645" class="label" text-anchor="middle">4"</text>
+    <text x="920" y="645" class="label" text-anchor="middle">6"</text>
+
+    <text x="740" y="670" class="text" font-weight="bold">Pipe Diameter</text>
+
+    <!-- Loss curve -->
+    <path d="M 600 570 L 700 510 L 800 480 L 920 450" class="curve" stroke-width="3"/>
+
+    <!-- Design region (5% loss) -->
+    <rect x="560" y="530" width="360" height="10" fill="var(--accent2, #7fb3d5)" opacity="0.3"/>
+    <text x="585" y="548" class="label" font-size="9">Design target: &lt;5% loss</text>
+
+    <!-- Overpressure region -->
+    <rect x="560" y="470" width="100" height="10" fill="#ff6b6b" opacity="0.2"/>
+    <text x="575" y="488" class="label" font-size="9" fill="#ffaaaa">Avoid: &gt;10% loss</text>
+  </g>
+</svg>
+</p>
+</section>
+<section id="ram-pump">
+<h2>Hydraulic Ram Pump (No External Power Required)</h2>
+<h3>Hydraulic Ram Principle</h3>
+<p>The hydraulic ram (or ram pump) is a unique mechanical pump powered entirely by flowing water. It requires only a water source with vertical drop and continuous flow. No electricity, fuel, or external power needed—the energy comes entirely from the water itself through water hammer effects.</p>
+<h4>Ram Pump Operation and Specifications</h4>
+<ul>
+<li><strong>Water Hammer Effect:</strong> When rapidly flowing water is suddenly stopped by an internal valve, the pressure surge momentarily exceeds normal static pressure many times over, creating a powerful pumping action.</li>
+<li><strong>Unique Performance Metric:</strong> Lifts approximately 10% of intake flow to 10 times the original head. Example: 3-foot head, 100 GPM intake flow → 10 GPM pumped uphill to 30-foot elevation.</li>
+<li><strong>No External Power:</strong> All energy comes from the flowing water itself. Unlike conventional pumps, requires no electricity or fuel input.</li>
+<li><strong>Efficiency Rating:</strong> Achieves 60-80% overall efficiency, which is excellent for a completely passive system.</li>
+<li><strong>Pulsing Operation:</strong> Produces rhythmic pulse (typically 40-80 pulses per minute). Becomes background noise, not objectionable.</li>
+<li><strong>Minimum Requirements:</strong> Needs at least 3+ feet of vertical head and 5-10 GPM continuous flow to operate efficiently.</li>
+</ul>
+<h4>Drive Pipe Design</h4>
+<p>The intake pipe carrying water to the ram pump requires careful design:</p>
+<ul>
+<li><strong>Optimal Length:</strong> Drive pipe should be 5-12 times the vertical drop length. Example: 10-foot head → 50-120 feet of drive pipe optimal.</li>
+<li><strong>Pipe Diameter:</strong> Larger diameter increases water momentum (better efficiency); smaller diameter makes pump pulse faster (more cycles per minute).</li>
+<li><strong>Material:</strong> Steel pipe preferred (better water hammer transmission); PVC acceptable if pressure-rated adequately.</li>
+</ul>
+</section>
+<section id="penstock">
+<h2>Penstock Design &amp; Sizing</h2>
+<h3>Penstock Pressure Calculation</h3>
+<p>The main penstock carrying water to the turbine must be designed for the maximum static pressure at the lowest point:</p>
+<p><strong>Pressure (PSI) = Head (feet) × 0.433</strong></p>
+<p>Example: 100-foot head creates 100 × 0.433 = 43.3 PSI at the bottom of the penstock. Pipe must be rated for this pressure plus a 25-50% safety margin (54+ PSI rating recommended).</p>
+<h3>Pipe Material Selection</h3>
+<p><strong>Steel:</strong> Strong, durable, heavy. Corroded by water with oxygen; requires interior/exterior coating. Cost $500-1500 per 100 meters installed. Lifespan 50+ years with maintenance.</p>
+<p><strong>Plastic (PVC, HDPE):</strong> Lightweight, easy install, no corrosion. PVC brittle (temperature sensitive), HDPE flexible. Cost $300-800 per 100 meters. Lifespan 20-30 years. Pressure rated 100-300 PSI typical.</p>
+<p><strong>Bamboo or wooden stave:</strong> Traditional in Asia, low cost if materials available. Requires banding and leakage acceptance. Lifespan 5-15 years.</p>
+<h3>Diameter Calculation</h3>
+<p>Larger diameter = lower friction loss = higher efficiency but higher cost. Rule of thumb: velocity in penstock 0.5-2 m/s (lower velocity = larger pipe but less loss). At 1 m/s: Diameter = 1.13 × √(Flow in m³/s). Example: 0.05 m³/s flow requires 0.25 m (250mm) diameter for 1 m/s velocity. Longer penstock requires larger diameter to keep velocity low (friction loss accumulates with distance).</p>
+<h3>Pressure Rating</h3>
+<p>Pressure = 0.1 × Head in meters (metric). A 100-meter head creates 10 bar (145 PSI) pressure at bottom of penstock. Pipe pressure rating must exceed this plus 20% safety margin (12 bar rating minimum). Higher head requires stronger (thicker wall or better material) pipe, increasing cost exponentially.</p>
+<h3>Friction Loss Calculation</h3>
+<p>Head loss (m) = (f × L × V²) / (2 × g × D) where f is friction factor (~0.02-0.03 for PVC), L is pipe length, V is velocity, D is diameter, g = 9.81. Example: 100m pipe, 0.05 m³/s flow, 0.25m diameter: V = 0.05/(π×0.125²) = 1 m/s. Head loss = (0.025 × 100 × 1²) / (2 × 9.81 × 0.25) = 0.51 meters. This is acceptable (0.5% of 100m head).</p>
+</section>
+<section id="head-flow">
+<h2>Head &amp; Flow Measurement Methods</h2>
+<h3>Measuring Head Accurately</h3>
+<p>Best method: Altimeter-based. Record elevation at water intake and discharge points using GPS with barometric altimeter. Elevation difference = head. Cost: GPS unit $100-300.</p>
+<p>Budget method: Water manometer (tube with water). Create siphon from intake water to discharge point, measuring height difference where water levels equalize. More complex but free materials.</p>
+<p>Field method: Clinometer and tape. Measure angle from intake to discharge using protractor/smartphone clinometer app. Distance = horizontal distance along stream / cos(angle). Head = distance × sin(angle).</p>
+<h3>Measuring Flow Seasonally</h3>
+<p>Flow varies throughout year. Measure at three seasons minimum: dry season (minimum expected flow), wet season (maximum), and spring runoff (if applicable). Use smallest seasonal flow for sizing (conservatively ensures system works year-round). System can shed excess water in high-flow season (spillway dam overflow). Micro-hydro systems typically generate variable power; battery storage buffers variability.</p>
+<h3>Site Survey Checklist</h3>
+<p>Water source location and elevation. Discharge point elevation. Distance from intake to powerhouse. Obstructions, cliffs, obstacles. Land access for construction. Permits required (water rights, environmental review). Proximity to buildings/roads (noise consideration). Maintenance access (annual cleanout of sediment in settling basin).</p>
+</section>
+<section id="governor">
+<h2>Governor Control Systems</h2>
+<h3>Mechanical Governor (Pelton Wheel)</h3>
+<p>Nozzle needle position controlled by flyweights (centrifugal governor). As load increases (water draws more power), frequency/speed drops slightly. Flyweights respond to drop in speed, mechanically moving needle to open nozzle wider (increase water). System stabilizes at new equilibrium where water input matches load. Droop: system runs at slightly lower frequency under load (typically 3-5% droop acceptable). Simple, no electricity needed.</p>
+<h3>Electronic Load Controller (ELC)</h3>
+<p>Senses generator frequency via voltage monitoring. When load drops (frequency rises), ELC diverts excess water to spill load (resistive heater or dump valve). When load increases (frequency drops), ELC closes spill load, restoring frequency. Spill load (100Ω resistor bank dissipating 5 kW as heat, or proportional valve dumping water) consumes excess power. Maintains constant frequency within 1% without mechanical governor adjustment.</p>
+<h3>Frequency Maintenance</h3>
+<p>Grid-connected systems must maintain 60 Hz (or 50 Hz in some countries) for synchronous operation with utility. Stand-alone systems can operate 50-65 Hz typically. Low frequency damages motors and electronic equipment. High frequency risks generator overspeed (mechanical failure). Frequency = (RPM × Poles) / 120. A 1800 RPM 4-pole generator = exactly 60 Hz. Slight RPM variation due to governor droop causes frequency drift.</p>
+</section>
+<section id="formulas-reference">
+<h2>8. Essential Formulas &amp; Design Calculations</h2>
+<h3>Core Power Formulas</h3>
+<p><strong>1. Power Available (Watts)</strong></p>
+<pre><code>Power = 9,800 × Head (meters) × Flow (m³/s) × Efficiency
+</code></pre>
+<p>Standard gravitational constant: 9.81 m/s² (often rounded 9,800 for Watts). Efficiency ranges 0.50–0.85 depending on turbine type and system design.</p>
+<p><strong>2. Pressure at Depth (Bar)</strong></p>
+<pre><code>Pressure (bar) = 0.1 × Head (meters)
+OR Pressure (PSI) = 0.433 × Head (feet)
+</code></pre>
+<p>Example: 100-meter head = 10 bar = 145 PSI at penstock bottom.</p>
+<p><strong>3. Frequency of AC Generator</strong></p>
+<pre><code>Frequency (Hz) = (RPM × Poles) / 120
+</code></pre>
+<p>Example: 1,800 RPM × 4 poles ÷ 120 = 60 Hz</p>
+<ul>
+<li>1,500 RPM × 4 poles = 50 Hz (European standard)</li>
+<li>Turbine must spin at correct RPM to match desired frequency</li>
+</ul>
+<p><strong>4. Current from Power</strong></p>
+<pre><code>Current (Amps) = Power (Watts) / Voltage (Volts)
+</code></pre>
+<p>Example: 10,000 Watts ÷ 240 Volts = 41.7 Amps continuous</p>
+<p><strong>5. Penstock Friction Loss (Darcy-Weisbach)</strong></p>
+<pre><code>Head Loss (m) = (f × L × V²) / (2 × g × D)
+
+Where:
+  f = friction factor (~0.02 for PVC, ~0.035 for rough steel)
+  L = penstock length (meters)
+  V = water velocity (m/s)
+  g = 9.81 m/s²
+  D = pipe diameter (meters)
+</code></pre>
+<p><strong>6. Water Velocity in Pipe</strong></p>
+<pre><code>Velocity (m/s) = Flow (m³/s) / [π × (Diameter/2)²]
+</code></pre>
+<p>Example: 0.05 m³/s through 0.15m diameter pipe = 0.05 / (π × 0.075²) = 2.83 m/s</p>
+<p><strong>7. Optimal Penstock Diameter (1 m/s velocity rule)</strong></p>
+<pre><code>Diameter (m) = √[Flow (m³/s) / π] × 1.13
+</code></pre>
+<p>Achieves approximately 1 m/s velocity (balance between friction loss and cost).</p>
+<p><strong>8. Generator Power Output (Accounting for Losses)</strong></p>
+<pre><code>Output Power = Available Power × Generator Efficiency × Controller Efficiency
+</code></pre>
+<p>Typical overall efficiency: (Turbine 80%) × (Bearing 97%) × (Generator 92%) × (Wiring 98%) = 72% system efficiency</p>
+<h3>Applied Calculations: System Sizing</h3>
+<p><strong>Battery Storage Size Calculation</strong></p>
+<pre><code>Battery Capacity (kWh) = (Peak Load - Available Hydro) × Hours Autonomy
+</code></pre>
+<p>Example: Peak load 15 kW, available hydro 5 kW, autonomy 4 hours = (15-5) × 4 = 40 kWh battery</p>
+<p><strong>Wire Gauge Selection (Copper)</strong></p>
+<pre><code>Voltage Drop (V) = (2 × ρ × I × L) / A
+
+Where:
+  ρ = resistivity of copper (0.0000173 Ω·m)
+  I = current (Amps)
+  L = wire length (meters)
+  A = wire cross-sectional area (m²)
+</code></pre>
+<p>Acceptable drop: &lt;3% for DC, &lt;5% for AC</p>
+<div class="tip">
+<p><strong>Quick Wire Chart Rule:</strong> For every 10 meters of distance, increase wire gauge by 2 steps if possible. Example: 20A current at 5m uses 10 AWG; at 15m use 8 AWG; at 30m use 6 AWG.</p>
+</div>
+<p><strong>Penstock Cost-Benefit Analysis</strong></p>
+<pre><code>Annual Energy Loss (kWh) = Head Loss (m) / Total Head (m) × 9800 × Flow × 8760 × Efficiency
+Cost Benefit ($/year) = Annual Loss × Electricity Price ($/kWh)
+</code></pre>
+<p>If cost benefit exceeds upgrade cost within 3-5 years, upgrade penstock diameter is justified.</p>
+</section>
+<section id="system-design">
+<h2>Complete System Design Example</h2>
+<h3>Site Specs</h3>
+<p>Head: 25 meters. Flow: 0.2 m³/s (200 liters/sec). Power available: 9800 × 25 × 0.2 × 0.7 = 34,300 watts (34.3 kW). Daily household load: 50 kWh (average 2.1 kW). Seasonal flow variation: minimum 0.1 m³/s (winter low), maximum 0.3 m³/s (spring runoff).</p>
+<h3>Component Selection</h3>
+<p><strong>Turbine:</strong> Turgo wheel for 25m head and 0.2 m³/s flow. Efficiency 85%. Matches head/flow profile well. Cost $5,000-8,000.</p>
+<p><strong>Generator:</strong> 30 kW 3-phase AC alternator (matches available power). Cost $3,000-5,000. Oversizing by 10% accounts for efficiency losses.</p>
+<p><strong>Penstock:</strong> 0.25m diameter steel pipe, 1 m/s velocity, 500m length. Head loss ≈ 2.5m (reduces effective head to 22.5m). Cost $15,000-20,000 (major expense).</p>
+<p><strong>Battery storage:</strong> Lithium battery 10 kWh for 5 hours autonomy (covers daily variation). Cost $5,000-8,000. Alternative: no storage, accept load variation (30-60 kW available, load requires 2.1 kW average + 5 kW peak).</p>
+<p><strong>Governor:</strong> Electronic load controller with 10 kW spill load (resistor heater) dumps excess power during low-load periods. Cost $2,000-3,000.</p>
+<h3>Total System Cost</h3>
+<p>Turbine + Generator + Penstock + Battery + Electronics + Civil works (dam, settling basin, powerhouse) = $40,000-60,000 installed. Annual output: 34 kW × 8760 hours × 0.7 efficiency = 207,000 kWh/year (valued at $20,000 at residential rates). Payback period: 2-3 years in ideal conditions (good head/flow, expensive local electricity).</p>
+</section>
+<section id="materials-tools">
+<h2>Materials &amp; Tools</h2>
+<p><strong>Site Survey &amp; Measurement:</strong></p>
+<ul>
+<li>Altimeter or GPS with barometric altitude (measure head) - $100-300</li>
+<li>Flow measurement bucket and stopwatch - $5-10</li>
+<li>Clinometer or smartphone clinometer app - free-$20</li>
+<li>Measuring tape (100m+) - $20-50</li>
+<li>Map and compass - $10-30</li>
+</ul>
+<p><strong>Penstock Materials:</strong></p>
+<ul>
+<li>Steel pipe: $1000-2000 per 100 meters (depends on diameter and wall thickness)</li>
+<li>PVC/HDPE plastic pipe: $300-800 per 100 meters</li>
+<li>Fittings (elbows, tees, unions) - $200-500</li>
+<li>Strapping/support materials - $100-300</li>
+<li>Valves (isolation, pressure relief) - $200-400</li>
+</ul>
+<p><strong>Turbine &amp; Generator:</strong></p>
+<ul>
+<li>Commercial Pelton wheel kit (complete): $5000-15000</li>
+<li>DIY-buildable crossflow turbine materials: $1000-3000</li>
+<li>Generator (3-10 kW AC alternator): $2000-5000</li>
+<li>Coupling and bearing blocks: $300-800</li>
+</ul>
+<p><strong>Civil Works &amp; Structure:</strong></p>
+<ul>
+<li>Concrete (dam/intake): $500-2000</li>
+<li>Lumber for penthouse/powerhouse: $1000-3000</li>
+<li>Settling basin materials: $300-1000</li>
+<li>Gates/screens: $200-500</li>
+</ul>
+<p><strong>Monitoring &amp; Control:</strong></p>
+<ul>
+<li>Pressure gauge - $20-50</li>
+<li>Multimeter - $15-50</li>
+<li>Frequency meter - $50-150</li>
+<li>Load controller (electronic) - $1500-3000</li>
+<li>Flow measurement device (orifice plate/weir) - $100-300</li>
+</ul>
+<p><strong>Field-Salvageable Alternatives:</strong></p>
+<ul>
+<li>Steel pipe from infrastructure salvage - free to $100/meter</li>
+<li>Copper wire from old motors (gen winding) - free salvage</li>
+<li>Bearing blocks from machinery - free salvage</li>
+<li>PVC pipe from demolition - free to $10/meter</li>
+</ul>
+</section>
+<section id="quick-reference">
+<h2>Quick Reference Tables</h2>
+<h3>Turbine Selection by Site Characteristics</h3>
+<table class="hydro-specs"><thead><tr><th scope="col">Head (m)</th><th scope="col">Flow (L/s)</th><th scope="col">Best Turbine</th><th scope="col">Power Output (approx)</th><th scope="col">Efficiency</th></tr></thead><tbody><tr><td>0.5-2</td><td>500+</td><td>Water screw</td><td>2-5 kW</td><td>60-75%</td></tr><tr><td>1-10</td><td>100-500</td><td>Crossflow</td><td>5-20 kW</td><td>60-75%</td></tr><tr><td>5-20</td><td>50-200</td><td>Francis</td><td>10-30 kW</td><td>80-90%</td></tr><tr><td>10-30</td><td>20-100</td><td>Turgo</td><td>5-15 kW</td><td>80-85%</td></tr><tr><td>30-300+</td><td>5-50</td><td>Pelton</td><td>10-100+ kW</td><td>85-90%</td></tr></tbody></table>
+<h3>System Efficiency Cascade</h3>
+<table class="hydro-specs"><thead><tr><th scope="col">Stage</th><th scope="col">Component</th><th scope="col">Typical Loss</th><th scope="col">Notes</th></tr></thead><tbody><tr><td>1</td><td>Intake/penstock</td><td>3-5%</td><td>Friction in pipe, optimize diameter</td></tr><tr><td>2</td><td>Turbine</td><td>10-25%</td><td>Depends on turbine type and match to head/flow</td></tr><tr><td>3</td><td>Generator</td><td>5-10%</td><td>Electrical losses, higher in small generators</td></tr><tr><td>4</td><td>Rectifier (if AC→DC)</td><td>2-5%</td><td>Diode losses, transformer losses</td></tr><tr><td>5</td><td>Controller/regulation</td><td>1-3%</td><td>Electronic controller minor loss</td></tr><tr><td colspan="2"><strong>Total System Efficiency</strong></td><td><strong>55-80%</strong></td><td>Product of all stages</td></tr></tbody></table>
+<div class="info-box">
+<p><strong>Key Insight:</strong> A 100-meter head site with 0.05 m³/s (50 L/s) flow theoretically generates 9800 × 100 × 0.05 = 49 kW. At 70% system efficiency, realistic output is 34 kW continuous. This powers 20-30 homes at typical consumption.</p>
+</div>
+<h3>System Sizing Input → Output Reference Table</h3>
+<table class="hydro-specs">
+<thead>
+<tr><th scope="col">Head (m)</th><th scope="col">Flow (L/s)</th><th scope="col">Theoretical Power (kW)</th><th scope="col">@70% Efficiency (kW)</th><th scope="col">Homes Powered</th><th scope="col">Typical Turbine</th></tr>
+</thead>
+<tbody>
+<tr><td>5</td><td>50</td><td>2.5</td><td>1.7</td><td>1</td><td>Crossflow</td></tr>
+<tr><td>10</td><td>75</td><td>7.4</td><td>5.2</td><td>2-3</td><td>Francis</td></tr>
+<tr><td>20</td><td>100</td><td>19.6</td><td>13.7</td><td>5-7</td><td>Turgo</td></tr>
+<tr><td>30</td><td>50</td><td>14.7</td><td>10.3</td><td>4-5</td><td>Turgo</td></tr>
+<tr><td>50</td><td>30</td><td>14.7</td><td>10.3</td><td>4-5</td><td>Pelton</td></tr>
+<tr><td>100</td><td>50</td><td>49.0</td><td>34.3</td><td>16-20</td><td>Pelton</td></tr>
+<tr><td>150</td><td>25</td><td>36.8</td><td>25.7</td><td>12-15</td><td>Pelton</td></tr>
+</tbody>
+</table>
+<div class="tip">
+<p><strong>Sizing Best Practice:</strong> Never over-size penstock diameter beyond what matches expected power output. A 500mm diameter penstock on a 5kW system is wasteful—over-engineered cost. A 150mm diameter penstock on a 500kW system causes excessive friction loss (unacceptable). Match penstock diameter to load profile.</p>
+</div>
+<div class="warning">
+<p><strong>Seasonal Flow Risk:</strong> Many hydro sites experience 50-80% flow reduction in dry season. Size system conservatively for minimum flow. Excess flow in wet season can be shed via spillway or diverted to spill load (resistive heater). Undersizing is easier to correct than oversizing.</p>
+</div>
+<div class="note">
+<p><strong>Maintenance Discipline:</strong> Hydro systems require seasonal sediment removal (autumn), bearing greasing (quarterly), and penstock inspection for leaks (bi-annual). Neglect results in catastrophic failures (penstock rupture, bearing seizure, turbine erosion). Schedule maintenance religiously.</p>
+</div>
+</section>
+<section id="step-by-step">
+<h2>Step-by-Step Installation Process</h2>
+<h3>Phase 1: Site Survey &amp; Measurement (Day 1-2)</h3>
+<ol>
+<li>
+<p><strong>Measure Head Accurately</strong></p>
+<ul>
+<li>Use GPS with barometric altimeter: record elevation at intake and discharge</li>
+<li>Or use altimeter device + clinometer: measure distance and angle</li>
+<li>Verify measurement 3 times (accuracy critical—1 meter error = 1% power loss)</li>
+<li>Record elevation change accounting for penstock routing</li>
+</ul>
+</li>
+<li>
+<p><strong>Measure Flow Throughout Year</strong></p>
+<ul>
+<li>Measure flow at dry season (minimum), wet season (maximum), spring runoff (if applicable)</li>
+<li>Use bucket-and-stopwatch method: collect water for 60 seconds minimum</li>
+<li>Repeat 3-5 times, average results</li>
+<li>Size system for minimum flow (ensures year-round operation)</li>
+</ul>
+</li>
+<li>
+<p><strong>Survey Route from Intake to Powerhouse</strong></p>
+<ul>
+<li>Mark penstock routing along slope (minimize pipe length = lower cost)</li>
+<li>Identify obstacles (trees, cliffs, buildings) affecting routing</li>
+<li>Measure horizontal distance (slope distance ÷ cos(angle) = actual ground distance)</li>
+<li>Assess construction access: can equipment/materials reach powerhouse location?</li>
+</ul>
+</li>
+<li>
+<p><strong>Calculate Theoretical Power</strong></p>
+<ul>
+<li>Power (W) = 9800 × Head (m) × Flow (m³/s) × 0.70 (efficiency estimate)</li>
+<li>Determine if power matches community load needs</li>
+<li>If undersized: reconsider system viability or load reduction</li>
+<li>If oversized: accept excess power or reduce penstock length to lower cost</li>
+</ul>
+</li>
+</ol>
+<h3>Phase 2: Design &amp; Procurement (Day 3-7)</h3>
+<ol start="5">
+<li>
+<p><strong>Select Turbine Type</strong></p>
+<ul>
+<li>Match head/flow profile to turbine curve (see quick reference table)</li>
+<li>High head (&lt;200m) + low flow = Pelton wheel</li>
+<li>Medium head (5-30m) + medium flow = Francis or Turgo</li>
+<li>Low head (&lt;10m) + high flow = Crossflow or water screw</li>
+</ul>
+</li>
+<li>
+<p><strong>Size Penstock</strong></p>
+<ul>
+<li>Calculate pipe diameter for 1 m/s velocity (balances friction loss vs cost)</li>
+<li>Formula: D (m) = 1.13 × √(Flow m³/s)</li>
+<li>Calculate pressure rating: Pressure (bar) = 0.1 × Head (m)</li>
+<li>Select pipe material (steel for high pressure/long lifespan; PVC for low pressure/ease)</li>
+<li>Procure fittings, valves, and support materials</li>
+</ul>
+</li>
+<li>
+<p><strong>Select Generator</strong></p>
+<ul>
+<li>Size 1.1-1.2× turbine power to match losses</li>
+<li>Choose AC alternator for ease of use (variable frequency less problematic)</li>
+<li>Verify speed match: turbine RPM × gear ratio = generator RPM (typically 1500-3600 RPM)</li>
+<li>Order coupling, bearings, and mounting hardware</li>
+</ul>
+</li>
+<li>
+<p><strong>Plan Civil Works</strong></p>
+<ul>
+<li>Design intake: settling basin (sediment removal), screen (debris), dam (if needed)</li>
+<li>Design penthouse: house turbine/generator, protect from weather</li>
+<li>Plan tailrace: water return to stream below powerhouse</li>
+<li>Estimate cost and labor hours</li>
+</ul>
+</li>
+</ol>
+<h3>Phase 3: Construction (Week 1-4, depending on scope)</h3>
+<ol start="9">
+<li>
+<p><strong>Build Intake Structure</strong></p>
+<ul>
+<li>Construct settling basin: 2m × 2m × 1m deep minimum, allows sediment to drop</li>
+<li>Install intake screen (1-2mm mesh) to prevent leaves/debris entry</li>
+<li>Build coarse trash rack (larger trash removal) upstream of screen</li>
+<li>Test intake: flow water through, verify sediment settling</li>
+</ul>
+</li>
+<li>
+<p><strong>Lay Penstock</strong></p>
+<ul>
+<li>Clear and grade route</li>
+<li>Lay support blocks every 1-2 meters (prevents sagging)</li>
+<li>Assemble penstock sections with proper fittings</li>
+<li>Pressure-test penstock at 1.5× maximum operating pressure before use</li>
+<li>Install isolation valve at penstock inlet (allows maintenance shutoff)</li>
+<li>Install relief valve at powerhouse (prevents overpressure if load suddenly drops)</li>
+</ul>
+</li>
+<li>
+<p><strong>Build Powerhouse Structure</strong></p>
+<ul>
+<li>Construct shelter for turbine/generator (protects from weather)</li>
+<li>Install concrete foundation pad (level, vibration-isolated)</li>
+<li>Position turbine inlet (verify gravity feed from penstock)</li>
+<li>Build tailrace channel (water return to stream)</li>
+</ul>
+</li>
+<li>
+<p><strong>Install Turbine &amp; Generator</strong></p>
+<ul>
+<li>Mount turbine securely to foundation</li>
+<li>Connect penstock to turbine inlet</li>
+<li>Install generator coupling and bearings</li>
+<li>Verify alignment: &lt;0.5mm runout between turbine and generator</li>
+<li>Test rotation: hand-spin to verify free movement</li>
+</ul>
+</li>
+<li>
+<p><strong>Electrical Connection</strong></p>
+<ul>
+<li>Run copper wires from generator to control location</li>
+<li>Install main disconnect breaker</li>
+<li>Install meter (measures output voltage, frequency, power)</li>
+<li>Ground generator frame to earth rod (safety)</li>
+<li>Install load controller (automatic frequency/voltage regulation)</li>
+</ul>
+</li>
+</ol>
+<h3>Phase 4: Testing &amp; Commissioning (Day 1-3)</h3>
+<ol start="14">
+<li>
+<p><strong>Initial No-Load Test</strong></p>
+<ul>
+<li>Open penstock valve slowly</li>
+<li>Observe turbine spin-up (should accelerate smoothly)</li>
+<li>Measure voltage, frequency, current (should be within specifications)</li>
+<li>Monitor temperature (should be room temperature, no heat signs)</li>
+<li>Run for 30 minutes, verify no leaks or vibration</li>
+</ul>
+</li>
+<li>
+<p><strong>Load Testing</strong></p>
+<ul>
+<li>Apply resistive load incrementally (light bulbs, heaters)</li>
+<li>Observe voltage regulation (should drop &lt;10% from no-load to full load)</li>
+<li>Verify frequency stability (within 1% of target)</li>
+<li>Record: output voltage at no-load and full load, frequency, current</li>
+<li>Run at various load points (25%, 50%, 75%, 100%) for 1 hour each</li>
+</ul>
+</li>
+<li>
+<p><strong>Establish Baseline Data</strong></p>
+<ul>
+<li>Document rated voltage, current, power at full load</li>
+<li>Record baseline frequency (should match grid if grid-connected)</li>
+<li>Note water level, pressure, temperature</li>
+<li>Take photos for maintenance reference</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="variations-alternatives">
+<h2>Variations &amp; Alternatives</h2>
+<h3>Micro-Hydro vs Pico-Hydro vs Standard Systems</h3>
+<p><strong>Micro-Hydro (1-10 kW):</strong> Typical for small community or household. Requires modest head (5-50m) and flow (0.01-0.1 m³/s). Cost $10,000-30,000. Powers 4-15 homes. Maintenance quarterly.</p>
+<p><strong>Pico-Hydro (100-1000 W):</strong> Minimal system, single home or small group. Can operate at very low head (1-5m) if flow adequate. Cost $2,000-8,000. Powers 1-3 homes. Low maintenance but limited scalability.</p>
+<p><strong>Standard Community System (50-500 kW):</strong> Larger sites with good head/flow. Requires civil works (concrete dam). Cost $100,000-500,000. Powers 50-500 homes. Annual maintenance, some equipment replacement.</p>
+<p><strong>Run-of-Stream vs Impoundment:</strong></p>
+<ul>
+<li><strong>Run-of-stream:</strong> No dam; water diverted directly from stream. Minimal environmental impact. Seasonal flow variability. Lower civil works cost.</li>
+<li><strong>Impoundment:</strong> Build dam to create reservoir. Constant flow (weather-independent). Higher environmental impact (flooding). Higher civil works cost ($20,000-100,000+).</li>
+</ul>
+<h3>Generator Alternatives</h3>
+<p><strong>AC Alternator + Rectifier + Battery:</strong> Most flexible. Works with any turbine RPM (variable frequency). Charges battery continuously. Inverter provides AC to appliances. Total efficiency 70-80%.</p>
+<p><strong>DC Generator (Dynamo):</strong> Direct DC output, no rectifier. Slightly simpler but heavier/more expensive. Better voltage regulation. Efficiency similar (80-85%). Requires brush maintenance.</p>
+<p><strong>Permanent Magnet Generator:</strong> Brushless design, low maintenance. More efficient (92-95%). Expensive ($5,000-10,000). Best for long-term reliability if budget allows.</p>
+<h3>Seasonal Flow Adaptation</h3>
+<p>Many sites experience 50%+ flow variation between wet/dry seasons. Strategies:</p>
+<p><strong>Storage (Battery or Pumped):</strong> Battery bank stores excess power in high-flow season, discharges in low-flow. Lithium: expensive but reliable; Lead-acid: cheaper but requires maintenance.</p>
+<p><strong>Spill Load:</strong> Excess power in high-flow season diverted to resistive heater (warm water for community use). No waste; practical use of surplus.</p>
+<p><strong>Load Reduction:</strong> Design system for minimum flow; expect shortages in drought. Community reduces consumption in low-flow season (reduced activities, lighting cutoff at certain times).</p>
+</section>
+<section id="wire-sizing">
+<h2>9. Wire Sizing &amp; Electrical Protection</h2>
+<h3>Wire Gauge Selection for Hydro Output</h3>
+<p>Undersized wiring causes voltage drop, heat generation, and potential fire hazard. Wire must be sized for continuous current output plus 25% margin. Use copper wire only (aluminum unsuitable for high-current hydro output). Calculate current from power and voltage:</p>
+<p><strong>Current (Amps) = Power (Watts) / Voltage (Volts)</strong></p>
+<p>Example: 10 kW system at 240V = 10,000 / 240 = 41.7 amps continuous. Wire must handle 41.7 × 1.25 = 52 amps safely.</p>
+<table class="hydro-specs">
+<thead>
+<tr><th scope="col">Continuous Current (A)</th><th scope="col">Wire Gauge (AWG)</th><th scope="col">Distance from Generator (m)</th><th scope="col">Voltage Drop @ 10m</th><th scope="col">Max Power Loss</th></tr>
+</thead>
+<tbody>
+<tr><td>10-15</td><td>8 AWG (8 mm²)</td><td>5-15</td><td>0.3V @ 240V</td><td>0.5%</td></tr>
+<tr><td>20-30</td><td>6 AWG (10 mm²)</td><td>10-25</td><td>0.4V @ 240V</td><td>0.7%</td></tr>
+<tr><td>40-60</td><td>4 AWG (16 mm²)</td><td>15-50</td><td>0.5V @ 240V</td><td>1.0%</td></tr>
+<tr><td>80-100</td><td>2 AWG (25 mm²)</td><td>20-100</td><td>0.6V @ 240V</td><td>1.5%</td></tr>
+<tr><td>150+</td><td>0 AWG (50 mm²) or larger</td><td>25-150</td><td>0.8V @ 240V</td><td>2.0%</td></tr>
+</tbody>
+</table>
+<div class="warning">
+<p><strong>Wire Installation Critical:</strong> All wiring in outdoor/wet environments requires conduit protection (UV-resistant plastic or galvanized steel tube). Bare copper wire corrodes in moisture, creating increased resistance and fire hazard. At minimum: PVC conduit indoors + buried conduit in trenches (0.6m minimum depth). Direct burial wire rated for burial (dual-sheath construction) acceptable if available.</p>
+</div>
+<div class="warning">
+<p><strong>Voltage Drop Limits:</strong> Voltage drop &gt;5% causes inefficiency and equipment malfunction. Maximum acceptable drop 3% for DC systems, 5% for AC systems. Test with multimeter at load point (measure voltage at first outlet farthest from generator). If voltage drops &gt;5%, upsize wire immediately.</p>
+</div>
+<h3>Overcurrent Protection Sizing</h3>
+<p>Every hydro system requires circuit breakers or fuses sized to protect wire, not load. Breaker must trip before wire melts from fault current. Typical rule: breaker capacity = wire ampacity × 80%.</p>
+<p>Example: 8 AWG wire is rated 50A continuous. Breaker capacity = 50 × 0.8 = 40A breaker installed.</p>
+<p>Install main disconnect breaker at generator output location (allows emergency shutdown). Secondary breaker at load entry (protects load circuits). Test breaker operation monthly (push test button).</p>
+<div class="warning">
+<p><strong>Grounding Essential for Safety:</strong> All generator frames, metal conduit, and metal equipment chassis must be grounded to earth rod (minimum 8 feet driven into ground, or multiple rods in dry climates). Grounding provides low-resistance path for fault current, triggering breaker trip rather than causing shock. Test ground resistance &lt;25 ohms with multimeter. Poor grounding is leading cause of electrocution in small hydro systems.</p>
+</div>
+</section>
+<section id="electrical-safety">
+<h2>10. Electrical Hazards &amp; Electrocution Prevention</h2>
+<p>Hydroelectric systems generate 240-480V 3-phase AC (or DC equivalents in battery systems). Electrocution at generator voltages is <strong>INVARIABLY FATAL</strong> — no recovery possible without immediate CPR and defibrillation.</p>
+<div class="danger">
+<p><strong>ELECTROCUTION RISK: Touching any uninsulated generator terminal, loose connector, or corroded wire contact while standing on damp ground or in water = INSTANT DEATH.</strong> 240V can stop heart within milliseconds; victim cannot release hand from conductor. Even brief contact (0.1 second) causes cardiac arrest. Never work on energized circuits. Verify with multimeter that circuit is de-energized before touching.</p>
+</div>
+<h3>Shock Prevention Protocols</h3>
+<ol>
+<li>
+<p><strong>Lock-Out/Tag-Out (LOTO):</strong> Before servicing generator, turn off main disconnect and physically lock breaker in OFF position. Attach warning tag: &quot;DO NOT OPERATE—MAINTENANCE IN PROGRESS.&quot; Only authorized person carries key.</p>
+</li>
+<li>
+<p><strong>Test Before Touch:</strong> Use multimeter set to AC voltage to verify de-energized state before touching any component. Touch multimeter probe to conductor, observe reading must be 0V (or within background noise &lt;2V).</p>
+</li>
+<li>
+<p><strong>Insulation Inspection:</strong> Monthly visual check of all wiring for cuts, abrasion, moisture exposure. Replace any damaged sections immediately. Wet insulation fails (no protection).</p>
+</li>
+<li>
+<p><strong>Wet Condition Hazard:</strong> Never work on electrical system in rain or wet conditions. Water conducts electricity, dramatically lowering resistance. Standing water on powerhouse floor increases risk. Dry powerhouse thoroughly, use non-conductive mat (rubber) during wet season maintenance.</p>
+</li>
+<li>
+<p><strong>No Jewelry:</strong> Remove all metal jewelry (rings, watches, bracelets) before working on electrical system. Metal conducts electricity; accidental contact creates deadly circuit.</p>
+</li>
+</ol>
+<div class="danger">
+<p><strong>NEVER IMPROVISE REPAIRS:</strong> Do not use aluminum foil, wet cloth, or jury-rigged conductors to bypass broken switches. Do not operate system with missing breaker covers. Do not work on energized circuit &quot;to save time.&quot; A 10-minute delay to properly de-energize the system is infinitely better than cardiac arrest.</p>
+</div>
+</section>
+<section id="water-hazards">
+<h2>11. Water Hazards &amp; Drowning Prevention</h2>
+<p>Hydroelectric systems create several water hazards: penstock entrapment, intake suction, fast-flowing water, and cold-water hypothermia. Drowning is typically silent (no time to call for help).</p>
+<div class="danger">
+<p><strong>PENSTOCK SUCTION ENTRAPMENT:</strong> Intake water flow creates powerful suction at penstock opening. A person or animal placed at intake is pulled underwater with force impossible to resist. Maximum suction = 9800 × Head (meters) × Flow (m³/s). Example: 10m head, 0.1 m³/s flow = 9,800 pascals suction pressure (135 pounds per square inch pulling inward). NO HUMAN CAN RESIST THIS FORCE. Screen intake with sturdy metal grate (prevent large objects). Keep area clear of people/animals during operation.</p>
+</div>
+<h3>Water Safety Best Practices</h3>
+<ol>
+<li>
+<p><strong>Intake Screening:</strong> Install 2-inch metal grate (prevent accidental entry) plus fine screen (1-2mm) to stop debris. Secure both firmly; do not allow loose gates or removable screens that could fall out.</p>
+</li>
+<li>
+<p><strong>Tailrace Hazards:</strong> Water exiting turbine is cold, fast-flowing, potentially turbulent. Mark tailrace area with warning signs. Fence tailrace if access possible. Never swim/wade in tailrace area during operation.</p>
+</li>
+<li>
+<p><strong>Cold Water Shock:</strong> Hydroelectric water often comes from mountain sources, ranging 4-12°C year-round. Sudden immersion causes gasping reflex (water inhalation), loss of muscle control, cardiac arrhythmia. Hypothermia develops within minutes (not hours as popular media suggests). Do not underestimate cold water—even strong swimmers succumb quickly.</p>
+</li>
+<li>
+<p><strong>Rescue Equipment:</strong> Keep rescue rope (30m+ length) near powerhouse, secured to fixed point. Train at least two people annually in water rescue (CPR, recovery technique). Have float/buoy available. In remote areas, hypothermia is likely FATAL without immediate medical intervention.</p>
+</li>
+</ol>
+<div class="warning">
+<p><strong>Wet Powerhouse Risk:</strong> Water splashing from penstock or tailrace creates slippery surface. Install non-slip flooring (grating or textured concrete). Proper drainage prevents water pooling. Slips/falls on wet surfaces near water can result in unintended immersion and drowning.</p>
+</div>
+</section>
+<section id="mechanical-entanglement">
+<h2>12. Mechanical Entanglement &amp; Rotating Equipment Hazards</h2>
+<p>Turbine and generator shafts rotate 300-3000 RPM depending on head and load. Rotating equipment presents entanglement hazard: hair, clothing, tools, or body parts caught in rotating shaft result in immediate amputation or death.</p>
+<div class="danger">
+<p><strong>ROTATING SHAFT ENTANGLEMENT:</strong> Turbine shaft spinning at 1500 RPM creates 25 rotations per second. If fingers caught in unguarded coupling, rotation rips hand apart before reflex withdrawal possible. Death results from massive hemorrhage and shock. NEVER reach into rotating equipment. ALWAYS lock out/tag out before service. Wear proper clothing (no loose sleeves, secure long hair).</p>
+</div>
+<h3>Guard &amp; Protection Requirements</h3>
+<ol>
+<li>
+<p><strong>Shaft Guards:</strong> All turbine and generator shafts must be fully enclosed by metal guards (½-inch steel mesh or solid cover) preventing finger insertion. Guards must remain in place during operation. Removable guards only during maintenance with system locked out.</p>
+</li>
+<li>
+<p><strong>Coupling Guards:</strong> Flexible coupling between turbine and generator is particularly hazard. Install solid metal guard covering entire coupling and 6 inches beyond on each side.</p>
+</li>
+<li>
+<p><strong>Belt &amp; Pulley (if used):</strong> If belt drive used for gearing, all belts and pulleys must be guarded. Rotating belts have immense pulling force; clothing or hair caught will draw body part into equipment.</p>
+</li>
+<li>
+<p><strong>Tool Discipline:</strong> Never leave tools or loose objects near rotating equipment. If tool dropped during operation, immediately shut down system before retrieving (dropped wrench caught in coupling = explosive failure, shrapnel hazard).</p>
+</li>
+</ol>
+<div class="warning">
+<p><strong>Startup Hazard:</strong> Always ensure clear area around turbine before opening penstock valve. Sudden start under full pressure can cause violent vibration or movement. Never stand directly in line with rotating shafts during startup (catastrophic failure debris could eject toward you).</p>
+</div>
+</section>
+<section id="seasonal-operation">
+<h2>13. Seasonal Operation &amp; Common Mistakes</h2>
+<h3>Dry Season Reduction</h3>
+<p>As dry season approaches (typically late summer/autumn in temperate zones), water flow declines 50-80%. Power output drops proportionally. For example, a system producing 10 kW in spring may produce only 2 kW in late summer. Design system for <strong>minimum expected flow,</strong> not average or peak flow.</p>
+<div class="warning">
+<p><strong>Undersizing Power: Critical Planning Error</strong> — Many builders size systems for wet season flow, discovering system cannot meet loads in dry season. This is worse than oversizing (excess power can be shed). A system unable to meet minimum load is unusable. Always measure flow at driest expected season (measure for 2-3 years to establish pattern). Size generator for that minimum power.</p>
+</div>
+<h3>Year-Round Maintenance Schedule</h3>
+<table class="hydro-specs">
+<thead>
+<tr><th scope="col">Interval</th><th scope="col">Task</th><th scope="col">Time Required</th><th scope="col">Neglect Consequence</th></tr>
+</thead>
+<tbody>
+<tr><td>Daily</td><td>Visual inspection: check for leaks, unusual sounds, vibration</td><td>5 min</td><td>Catastrophic failure unnoticed until system destroyed</td></tr>
+<tr><td>Weekly</td><td>Check pressure gauge, measure output voltage/current</td><td>10 min</td><td>Silent efficiency loss; system degrading undetected</td></tr>
+<tr><td>Monthly</td><td>Clean intake screen; greasing bearings; check grounding resistance</td><td>30 min</td><td>Screen blockage stops flow; bearing failure; electrical hazard</td></tr>
+<tr><td>Quarterly</td><td>Inspect penstock for leaks; test circuit breaker operation</td><td>1 hour</td><td>Large leak leads to system loss; breaker malfunction = no protection</td></tr>
+<tr><td>Annually</td><td>Pressure-test penstock (1.5× rated pressure); drain and inspect settling basin for sediment; generator shaft alignment check</td><td>4 hours</td><td>Undetected corrosion leads to rupture; sediment clogs turbine; misalignment causes bearing failure</td></tr>
+<tr><td>Bi-annually</td><td>Interior penstock inspection (drain); turbine bucket erosion assessment; replace bearing grease</td><td>6 hours</td><td>Undetected internal corrosion; turbine efficiency loss; bearing seizure</td></tr>
+</tbody>
+</table>
+<div class="note">
+<p><strong>Maintenance Logging:</strong> Keep detailed log (spiral notebook or digital) recording each maintenance task, observations, parts replaced, and hours worked. Over years, patterns emerge: &quot;bearings always require greasing by month 11&quot; or &quot;pressure always drops 5% in winter.&quot; Logging enables predictive maintenance (replace component before failure) rather than reactive (repair after failure, risking downtime).</p>
+</div>
+</section>
+<section id="scaling-integration">
+<h2>14. Scaling Multiple Sources &amp; Integration with Battery Banks</h2>
+<h3>Combining Hydro with Other Renewable Sources</h3>
+<p>Isolated sites with hydro potential often also have seasonal sun and wind. A hybrid system combining hydro + solar + wind provides more reliable year-round power.</p>
+<p><strong>Hydro-Primary Approach:</strong> Design hydro to meet base load (e.g., 5 kW continuous year-round). Add solar array (3 kW peak) for additional daytime power in dry season. Add small wind turbine (2 kW rated) for windy season. System never fully idle; seasonal sources compensate.</p>
+<p><strong>Power Blending:</strong> Hydro as stable baseload, solar/wind as variable peak sources. Hydro regulates constant voltage/frequency (mechanical regulation via governor); solar/wind feed through charge controller/inverter (electronic regulation). Battery acts as energy buffer (stores excess, supplies shortage).</p>
+<h3>Battery Bank Integration &amp; Load Management</h3>
+<p>Hydro systems with battery storage enable:</p>
+<ol>
+<li>
+<p><strong>Frequency stability:</strong> Excess hydro power continuously charges battery; shortage draws from battery. No load-following required from turbine.</p>
+</li>
+<li>
+<p><strong>Peak load handling:</strong> System generates 10 kW continuous but load demands 15 kW peak. Battery supplies 5 kW peak for 30 minutes, then load reduces back to 10 kW.</p>
+</li>
+<li>
+<p><strong>Seasonal smoothing:</strong> Wet season: excess hydro charges battery to 100% state-of-charge; battery remains full, excess shed to spill load. Dry season: hydro produces 3 kW; battery supplements to provide steady 5 kW to load.</p>
+</li>
+</ol>
+<p><strong>Battery Sizing Formula:</strong> Battery capacity (kWh) = (Peak load - Available hydro power) × Hours autonomy desired</p>
+<p>Example: Available hydro 5 kW, peak load 10 kW, autonomy desired 4 hours = (10 - 5) × 4 = 20 kWh battery required.</p>
+<div class="warning">
+<p><strong>Battery Chemistry Selection:</strong> Lithium-iron-phosphate (LiFePO4) preferred for hydro systems (3000+ cycle lifespan, 95% depth-of-discharge safe, temperature-stable). Lead-acid (2000 cycles, 50% depth-of-discharge safe, temperature-sensitive) much cheaper but requires active maintenance (watering, equalization). Hybrid systems: couple small LiFePO4 (peak smoothing) with larger lead-acid (seasonal storage) for cost-effectiveness.</p>
+</div>
+<h3>Load Scheduling &amp; Demand-Side Management</h3>
+<p>Low-flow seasons require careful load management. Prioritize essential loads: lighting, refrigeration, water pumping. Defer non-essential loads: space heating, hot water, manufacturing.</p>
+<p>Implement time-based scheduling: high-power activities (laundry, welding) scheduled for high-flow hours (night if river fed by snowmelt, daytime if fed by local rainfall). Critical loads run 24/7; flexible loads run during abundant power periods.</p>
+<div class="tip">
+<p><strong>Spill Load Strategy:</strong> Instead of wasting excess power as heat (traditional dump load), couple spill load to productive use: charge battery, heat water tank, run irrigation pump, operate community workshop tools. Economic optimization: excess power generation now economically valuable, not wasted.</p>
+</div>
+</section>
+<section id="safety-guidelines">
+<h2>Safety Hazards Summary</h2>
+<p><strong>Penstock Safety:</strong></p>
+<ul>
+<li>Never work on pressurized penstock (isolate with valve, verify pressure release)</li>
+<li>Pressure relief valve critical—prevents rupture if downstream valve closes</li>
+<li>High-velocity water jet from small opening can cause serious injury (severe laceration)</li>
+<li>Annual pressure testing detects corrosion/weakening</li>
+</ul>
+<p><strong>Turbine/Generator Safety:</strong></p>
+<ul>
+<li>Guard all rotating shafts (prevent entanglement)</li>
+<li>Main disconnect breaker accessible near operator</li>
+<li>Grounding essential (prevents shock hazard)</li>
+<li>Test voltage before touching any part</li>
+</ul>
+<p><strong>Environmental:</strong></p>
+<ul>
+<li>Maintain minimum flow to stream ecosystem (check local regulations)</li>
+<li>Filter/settle sediment (prevents turbine wear)</li>
+<li>Screen intake to prevent fish entrainment</li>
+<li>Noise control: place generator in acoustic enclosure if near homes</li>
+</ul>
+<p><strong>Maintenance Safety:</strong></p>
+<ul>
+<li>Lock out/tag out turbine before maintenance</li>
+<li>Never work alone on mechanical systems</li>
+<li>Test water temperature (can be very cold, hypothermia risk)</li>
+<li>Proper tool use prevents injuries from falling objects</li>
+</ul>
+</section>
+<section id="maintenance">
+<h2>Maintenance &amp; Troubleshooting</h2>
+<h3>Sediment Management</h3>
+<p>High water flow carries sediment (sand, silt, gravel). Settling basin (large pond before penstock intake) allows sediment to settle, protecting turbine buckets from abrasion and erosion. Annual cleanout required in areas with heavy sediment load. Screen at intake (1-2 mm mesh) prevents leaves and debris from entering penstock.</p>
+<h3>Freezing &amp; Seasonal</h3>
+<p>Cold climate: water in penstock may freeze (blocking flow). Insulation or burial 2+ meters deep prevents freezing. Winter start-up: warm water through system before applying full load to prevent thermal shock cracking. Dry season planning: assume 50% nominal flow for minimum system design.</p>
+<h3>Common Issues</h3>
+<p><strong>Low power output:</strong> Sediment clogging nozzle (clean intake screen). Penstock leak (loss visible). Bucket wear (buckets concave from erosion). Check frequency: if low, turbine not turning fast enough (flow reduction or governor not opening nozzle).</p>
+<p><strong>Noise:</strong> Cavitation (water boiling in low-pressure zones, creating bubble collapse noise). Occurs when water velocity too high or pressure drops too low. Reduce nozzle opening or increase penstock diameter.</p>
+<p><strong>Vibration:</strong> Unbalanced rotor (bucket damage). Out-of-alignment coupling between turbine and generator. Bearing wear (play in rotor).</p>
+<p><strong>Cavitation noise:</strong> Water boiling in low-pressure zones, creating bubble collapse noise. Indicates excessive velocity or pressure drop. Reduce nozzle opening or increase penstock diameter. Cavitation damages turbine buckets if prolonged. Stop operation if cavitation occurs; sustained operation degrades turbine within days.</p>
+<p><strong>Penstock leaks:</strong> Corrosion, external damage, or defect. Small leaks (drips) acceptable; large leaks (spray) require immediate repair. Isolate valve, drain penstock, patch or replace section. Check visually bi-annually; pressure losses &gt;10% indicate internal corrosion or external leak.</p>
+<div class="warning">
+<p><strong>Sediment Clogging in Dry Season:</strong> As flow decreases, sediment settles in low-velocity sections of penstock. Annual flushing required: fully open isolation valve at bottom of penstock (sediment flushes downstream), then close. Do this before dry season begins. Failure to flush: sediment hardens, partially blocking flow (reducing power 20-30%).</p>
+</div>
+</section>
+<section id="optimization">
+<h2>Optimization Strategies</h2>
+<h3>Efficiency Improvements</h3>
+<p><strong>Penstock Diameter Optimization:</strong> Larger diameter = lower friction loss but higher cost. Calculate total cost (pipe + installation) vs benefit (power increase). Sweet spot typically 0.5-1.0 m/s velocity through penstock.</p>
+<p><strong>Turbine-Generator Matching:</strong> Turbine efficiency varies across RPM range. Run turbine at design RPM for maximum efficiency. Mismatch creates 10-20% efficiency penalties. If variable speed is required, invest in high-quality variable-frequency-drive (VFD) to maintain efficiency across RPM range.</p>
+<p><strong>Intake Sediment Management:</strong> Sediment reduces turbine bucket life (erosion). Settling basin + screen + regular flushing maintains turbine performance 3-5× longer. Worth the investment.</p>
+<p><strong>Atmospheric Pressure Effects:</strong> High altitude reduces air density, affecting generator cooling. At 2000m elevation, atmospheric cooling 30% reduced compared to sea level. Downsize generator or accept lower power output at elevation.</p>
+<h3>Cost Reduction Strategies</h3>
+<p><strong>Salvage &amp; Reuse:</strong> Used generators, turbines, and pipe from industrial demolition save 30-50%. Inspect carefully; test before relying on salvage.</p>
+<p><strong>Simplified Design:</strong> Pico-hydro with minimal infrastructure costs $2000-5000 vs standard micro-hydro $20,000. Trade-off: lower power, seasonal limitation. Acceptable if expectations match.</p>
+<p><strong>Community Labor:</strong> Self-build powerhouse/penstock with volunteer labor saves 50%+ compared to professional installation. Requires technical skill and time.</p>
+<p><strong>Phased Installation:</strong> Build Phase 1 (minimal viability: intake, 100m penstock, small generator). Operate for 1-2 years, refinance from revenue, expand to Phase 2 (longer penstock, larger generator). Reduces upfront cost.</p>
+<h3>Common Oversights Leading to System Failure</h3>
+<ol>
+<li>
+<p><strong>Ignoring Seasonal Flow Variation:</strong> Builders measure flow in wet season, size system assuming year-round availability. System produces adequate power only 4-6 months/year. Design for minimum measurable flow (driest month) or accept seasonal shutdown.</p>
+</li>
+<li>
+<p><strong>Undersized Penstock Diameter:</strong> Velocity exceeds 3 m/s, causing friction loss &gt;10%. System underperforms; efficiency cascades downward. Re-piping later costs 3× original pipe cost due to labor + access difficulty.</p>
+</li>
+<li>
+<p><strong>No Settling Basin:</strong> Sediment directly enters penstock, clogs turbine nozzles within weeks. Turbine stops producing power. Emergency repair required. Settling basin costs &lt;$500; lack of it costs $5,000+ repair within first year.</p>
+</li>
+<li>
+<p><strong>Inadequate Grounding:</strong> Generator produces high AC voltage but ground path poor (single rod, dry soil). Fault current insufficient to trip breaker. Minor faults progress to catastrophic fire. Test grounding resistance quarterly (must be &lt;25 ohms).</p>
+</li>
+<li>
+<p><strong>Oversized Generator at Undersized Load:</strong> 50 kW generator powering 5 kW average load = generator running at 10% rated capacity. Efficiency plummets (generator optimized for 70-100% load). Chronic underperformance. Match generator to expected load profile, not theoretical peak.</p>
+</li>
+</ol>
+<div class="note">
+<p><strong>Revenue Recovery Path:</strong> A well-designed micro-hydro system pays for itself within 3-5 years through avoided electricity purchases. Community-sized (50+ kW) systems can generate revenue by selling excess power to grid (where net metering available). Start with conservative design (lower cost); expand to larger capacity once operational experience confirms site characteristics.</p>
+</div>
+</section>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="automotive-alternator-repurposing.html">Alternator Repurposing</a>
+<a href="blacksmithing.html">Blacksmithing</a>
+<a href="electrical-generation.html">Power Generation</a>
+<a href="electrical-wiring.html">Electrical Wiring</a>
+<a href="internal-combustion.html">Internal Combustion Engines</a>
+<a href="micro-hydro-turbine.html">Micro-Hydro Turbine Systems</a>
+<a href="power-distribution.html">Power Distribution &amp; Micro-Grids</a>
+<a href="water-distribution-systems.html">Community Water Distribution Systems</a>
+<a href="water-mills-windmills.html">Water Mills &amp; Windmills</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

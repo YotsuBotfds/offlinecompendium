@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/tool-hardening-edges.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tool Hardening &amp; Edge Maintenance - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.hardness-table th { background: var(--card); color: var(--text); }
+.hardness-table td { padding: 8px; border-bottom: 1px solid var(--border); }
+.tool-angles table { width: 100%; margin: 1rem 0; }
+.tool-angles th, .tool-angles td { text-align: left; padding: 10px; }
+
+</style>
+<meta name="description" content="Differential hardening, edge quenching, case hardening, and hardness testing for durable tool edges">
+<link rel="canonical" href="https://zerotoherohero.com/guides/tool-hardening-edges.html">
+<meta property="og:title" content="Tool Hardening &amp; Edge Maintenance">
+<meta property="og:description" content="Differential hardening, edge quenching, case hardening, and hardness testing for durable tool edges">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Metalworking", "item": "https://zerotoherohero.com/#sec-metalworking"},
+    {"@type": "ListItem", "position": 3, "name": "Tool Hardening &amp; Edge Maintenance", "item": "https://zerotoherohero.com/guides/tool-hardening-edges.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tool Hardening &amp; Edge Maintenance",
+  "description": "Differential hardening, edge quenching, case hardening, and hardness testing for durable tool edges",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-420">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-metalworking">Metalworking</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Tool Hardening &amp; Edge Maintenance</span>
+</nav>
+<header>
+<h1>Tool Hardening &amp; Edge Maintenance</h1>
+<p class="subtitle">Differential hardening, edge quenching, case hardening, and hardness testing for durable tool edges</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●●○</span>
+<span class="read-time">📖 ~18 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#why-hardening-matters">Why Hardening Matters</a></li>
+<li><a href="#edge-quenching-theory">Edge Quenching Theory</a></li>
+<li><a href="#differential-hardening-methods">Differential Hardening Methods</a></li>
+<li><a href="#file-hardening-special-case">File Hardening (Special Case)</a></li>
+<li><a href="#tempering-for-toughness">Tempering for Toughness</a></li>
+<li><a href="#edge-geometry-by-tool">Edge Geometry by Tool Type</a></li>
+<li><a href="#hardness-testing-field">Hardness Testing in the Field</a></li>
+<li><a href="#troubleshooting-hardening">Troubleshooting Hardening Failures</a></li>
+<li><a href="#maintaining-hard-edges">Maintaining Hard Edges in Service</a></li>
+<li><a href="#practical-example">Practical Example: Hardening a Kitchen Knife</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<p>Tool hardening transforms soft iron or medium-carbon steel into durable implements capable of holding a sharp edge and resisting deformation. This guide covers the science and field methods of hardening tool edges, testing hardness, and maintaining peak performance in low-infrastructure environments.</p>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Tool Hardening and Tempering Color Scale">
+  <defs>
+    <linearGradient id="tempering-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#d4a574;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#c9924a;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#8b6f47;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#4a5f7f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d2f5f;stop-opacity:1" />
+    </linearGradient>
+    <style>
+      .temp-label { font-family: Arial, sans-serif; font-size: 13px; fill: var(--text); }
+      .temp-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: var(--text); }
+      .temp-unit { font-family: Arial, sans-serif; font-size: 11px; fill: var(--muted); }
+      .edge-diagram { stroke: var(--text); stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="var(--bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="35" class="temp-title" text-anchor="middle">Tempering Colors &amp; Temperature Guide</text>
+
+  <!-- Color gradient bar -->
+  <rect x="50" y="70" width="700" height="40" fill="url(#tempering-gradient)" stroke="var(--border)" stroke-width="2"/>
+
+  <!-- Temperature scale labels below gradient -->
+  <text x="50" y="130" class="temp-label">150°C</text>
+  <text x="220" y="130" class="temp-label">200°C</text>
+  <text x="390" y="130" class="temp-label">250°C</text>
+  <text x="560" y="130" class="temp-label">300°C</text>
+  <text x="730" y="130" class="temp-label">350°C</text>
+
+  <!-- Color name and use cases -->
+  <g>
+    <!-- Pale Straw (150-170°C) -->
+    <rect x="50" y="160" width="130" height="80" fill="var(--card)" stroke="var(--border)" stroke-width="1"/>
+    <text x="60" y="180" class="temp-label" style="font-weight: bold;">Pale Straw</text>
+    <text x="60" y="200" class="temp-unit">150–170°C</text>
+    <text x="60" y="220" class="temp-unit">Knife blades</text>
+    <text x="60" y="235" class="temp-unit">Maximum hardness</text>
+  </g>
+
+  <g>
+    <!-- Straw (180-220°C) -->
+    <rect x="205" y="160" width="130" height="80" fill="var(--card)" stroke="var(--border)" stroke-width="1"/>
+    <text x="215" y="180" class="temp-label" style="font-weight: bold;">Straw</text>
+    <text x="215" y="200" class="temp-unit">180–220°C</text>
+    <text x="215" y="220" class="temp-unit">Chisels, axes</text>
+    <text x="215" y="235" class="temp-unit">Good balance</text>
+  </g>
+
+  <g>
+    <!-- Brown (220-280°C) -->
+    <rect x="360" y="160" width="130" height="80" fill="var(--card)" stroke="var(--border)" stroke-width="1"/>
+    <text x="370" y="180" class="temp-label" style="font-weight: bold;">Brown</text>
+    <text x="370" y="200" class="temp-unit">220–280°C</text>
+    <text x="370" y="220" class="temp-unit">Axe heads</text>
+    <text x="370" y="235" class="temp-unit">More toughness</text>
+  </g>
+
+  <g>
+    <!-- Dark Blue (300-350°C) -->
+    <rect x="515" y="160" width="130" height="80" fill="var(--card)" stroke="var(--border)" stroke-width="1"/>
+    <text x="525" y="180" class="temp-label" style="font-weight: bold;">Dark Blue</text>
+    <text x="525" y="200" class="temp-unit">300–350°C</text>
+    <text x="525" y="220" class="temp-unit">Springs</text>
+    <text x="525" y="235" class="temp-unit">Maximum flex</text>
+  </g>
+
+  <!-- Hardening process diagram -->
+  <text x="400" y="290" class="temp-title" text-anchor="middle">Differential Hardening Process</text>
+
+  <!-- Step 1: Before Heating -->
+  <g>
+    <text x="100" y="330" class="temp-label" style="font-weight: bold;">1. Raw Blade</text>
+    <rect x="50" y="345" width="100" height="40" fill="var(--surface)" stroke="var(--text)" stroke-width="1.5"/>
+    <line x1="50" y1="345" x2="150" y2="385" stroke="var(--text)" stroke-width="2"/>
+    <text x="60" y="455" class="temp-unit">Soft iron</text>
+  </g>
+
+  <!-- Step 2: With Clay Coat -->
+  <g>
+    <text x="280" y="330" class="temp-label" style="font-weight: bold;">2. Clay Coated</text>
+    <rect x="230" y="345" width="100" height="40" fill="var(--surface)" stroke="var(--text)" stroke-width="1.5"/>
+    <line x1="230" y1="345" x2="330" y2="385" stroke="var(--text)" stroke-width="2"/>
+    <!-- Clay coat -->
+    <path d="M 240 345 L 320 345 L 330 385 L 235 385 Z" fill="var(--muted)" opacity="0.5"/>
+    <text x="240" y="455" class="temp-unit">Clay insulates spine</text>
+  </g>
+
+  <!-- Step 3: Quenched -->
+  <g>
+    <text x="460" y="330" class="temp-label" style="font-weight: bold;">3. Quenched</text>
+    <rect x="410" y="345" width="100" height="40" fill="#3a3a4a" stroke="var(--accent)" stroke-width="2"/>
+    <line x1="410" y1="345" x2="510" y2="385" stroke="var(--accent)" stroke-width="2.5"/>
+    <!-- Water splash -->
+    <circle cx="420" cy="320" r="4" fill="var(--accent)" opacity="0.6"/>
+    <circle cx="440" cy="315" r="4" fill="var(--accent)" opacity="0.6"/>
+    <circle cx="500" cy="320" r="4" fill="var(--accent)" opacity="0.6"/>
+    <text x="420" y="455" class="temp-unit">Rapid cool edge</text>
+  </g>
+
+  <!-- Step 4: Tempered -->
+  <g>
+    <text x="640" y="330" class="temp-label" style="font-weight: bold;">4. Tempered</text>
+    <rect x="590" y="345" width="100" height="40" fill="var(--accent2)" stroke="var(--text)" stroke-width="1.5"/>
+    <line x1="590" y1="345" x2="690" y2="385" stroke="var(--text)" stroke-width="2"/>
+    <text x="600" y="455" class="temp-unit">Hard &amp; tough</text>
+  </g>
+
+  <!-- Legend -->
+  <g>
+    <rect x="50" y="485" width="15" height="15" fill="var(--surface)" stroke="var(--text)" stroke-width="1"/>
+    <text x="75" y="497" class="temp-unit">Soft / Annealed</text>
+
+    <rect x="280" y="485" width="15" height="15" fill="var(--muted)" stroke="var(--text)" stroke-width="1" opacity="0.6"/>
+    <text x="305" y="497" class="temp-unit">Clay insulation</text>
+
+    <rect x="520" y="485" width="15" height="15" fill="#3a3a4a" stroke="var(--accent)" stroke-width="1.5"/>
+    <text x="545" y="497" class="temp-unit">Hard / Brittle</text>
+
+    <rect x="700" y="485" width="15" height="15" fill="var(--accent2)" stroke="var(--text)" stroke-width="1"/>
+    <text x="725" y="497" class="temp-unit">Hardened &amp; Tempered</text>
+  </g>
+</svg>
+</p>
+<section id="why-hardening-matters">
+<h2>Why Hardening Matters</h2>
+<p>A soft steel blade bends, dulls instantly, and cannot hold a useful cutting edge. A properly hardened and tempered tool cuts cleanly, resists deformation under stress, and maintains sharpness far longer than annealed steel.</p>
+<p><strong>The hardness-toughness tradeoff:</strong> Steel can be made very hard (brittle, shatters on impact) or very tough (soft, dulls quickly). The goal is balance — a hard edge combined with a tough core that absorbs shock without cracking.</p>
+<p><strong>Why differential hardening:</strong> A knife edge quenched uniformly becomes too brittle and snaps. By hardening the edge while keeping the spine tough, you gain the best of both worlds: a sharp, wear-resistant blade that flexes without breaking.</p>
+<div class="tip">
+<p>The difference between a tool that lasts years and one that fails in weeks often comes down to correct heat treatment, not raw material quality. Even lower-carbon steel (under 1% C) can be differential-hardened to excellent service.</p>
+</div>
+</section>
+<section id="edge-quenching-theory">
+<h2>Edge Quenching Theory</h2>
+<p>When steel is heated past the critical temperature (roughly 730°C / 1350°F for plain carbon steel, varies with carbon content), the crystal structure transforms into austenite — a state that can hold much more carbon. Rapid cooling (quenching) locks in this high-carbon structure as hard, brittle martensite.</p>
+<p><strong>Critical temperature markers:</strong></p>
+<ul>
+<li><strong>Below 500°C (932°F):</strong> No transformation; still soft.</li>
+<li><strong>500–700°C (932–1292°F):</strong> Pearlite formation begins; color straw to light blue.</li>
+<li><strong>730°C+ (1346°F+):</strong> Austenite forms; cherry red to orange glow.</li>
+<li><strong>900–950°C (1650–1742°F):</strong> Ideal hardening range for high-carbon tools.</li>
+<li><strong>Tempering range:</strong> 150–400°C (302–752°F) depending on desired toughness.</li>
+</ul>
+<p><strong>Why quenching speed matters:</strong> Slow cooling in air produces soft pearlite. Fast cooling in water or oil creates hard martensite. The faster the cooling, the harder the steel—but also the more brittle.</p>
+</section>
+<section id="differential-hardening-methods">
+<h2>Differential Hardening Methods</h2>
+<p>The classic approach: heat the entire blade, then cool only the edge (the working surface) rapidly while the spine cools slowly.</p>
+<h3>Clay Coating Method (Simplest)</h3>
+<p>Apply a thin clay paste (clay + water + charcoal) to the spine and sides of the blade, leaving the edge bare. Heat uniformly to orange glow. Plunge edge-first into water, keep submerged for 3–5 seconds, then withdraw and allow the spine to cool in air. The insulated spine cools slowly (tough), while the exposed edge cools rapidly (hard).</p>
+<div class="warning">
+<p>Submerge vertically, edge-first. Plunging spine-first wastes the differential benefit and risks warping.</p>
+</div>
+<h3>Selective Quenching (Direct Method)</h3>
+<p>For thick tools (chisels, axes), quench only the working face:</p>
+<ol>
+<li>Heat the entire head to cherry red (750–800°C).</li>
+<li>Using tongs, dip just the working face into cold water for 2–3 seconds.</li>
+<li>Withdraw and allow the body to cool naturally in air.</li>
+<li>Wipe with a damp cloth to fine-tune cooling rate.</li>
+</ol>
+<p>This requires skill to avoid cracks from thermal shock.</p>
+<h3>Case Hardening with Carburizing Agents</h3>
+<p>If your steel is low-carbon (below 0.6% C), add carbon to the surface via heating in a carbon-rich environment.</p>
+<p><strong>Bone charcoal pack carburizing:</strong></p>
+<ol>
+<li>Bury the tool in a sealed steel container packed with bone charcoal (roasted, ground bone + charcoal powder, 1:1 ratio).</li>
+<li>Heat the sealed container to 900–950°C for 4–8 hours.</li>
+<li>Carbon diffuses into the steel surface, creating a hard outer layer.</li>
+<li>Quench directly from the hot container into water.</li>
+<li>Temper at 150–200°C (302–392°F) for 30 minutes to reduce brittleness.</li>
+</ol>
+<p><strong>Leather and hoof paste:</strong> Mix ground bone (or hoof shavings) with leather scraps and charcoal powder. Pack around the tool, wrap tightly in steel sheet, and heat. Less precise than sealed containers but functional.</p>
+<div class="tip">
+<p>Bone charcoal works because it releases CO gas at high temperature, which combines with surface iron to form iron carbide (Fe₃C), raising the carbon content of the outer steel.</p>
+</div>
+</section>
+<section id="file-hardening-special-case">
+<h2>File Hardening (Special Case)</h2>
+<p>Files and rasps need extreme hardness on the cutting faces. Traditional files are hardened steel (often 1.0–1.2% C) quenched in water.</p>
+<p><strong>Field procedure:</strong></p>
+<ol>
+<li>Heat the file to cherry red (750°C).</li>
+<li>Plunge the entire tool vertically into a bucket of cool (not cold) water.</li>
+<li>Quench for 10 seconds, then withdraw.</li>
+<li>Temper immediately by heating in air over a charcoal forge until a dark straw color appears (220–240°C).</li>
+<li>Quench again in water.</li>
+</ol>
+<p>Files are typically not drawn back to soften; they remain brittle by design, sacrificing toughness for extreme hardness. Handle them carefully to avoid dropping.</p>
+</section>
+<section id="tempering-for-toughness">
+<h2>Tempering for Toughness</h2>
+<p>After quenching, hardened steel is too brittle for practical use. Tempering reheats the quenched steel to a lower temperature, relaxing the brittle martensite slightly while maintaining most of the hardness.</p>
+<p><strong>Tempering temperature ranges (by color):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Steel Type</th>
+<th>Tempering Color</th>
+<th>Temp (°C)</th>
+<th>Temp (°F)</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Knife blade</td>
+<td>Pale straw</td>
+<td>150–170</td>
+<td>302–338</td>
+<td>Very hard, less tough</td>
+</tr>
+<tr>
+<td>Chisel</td>
+<td>Straw to brown</td>
+<td>170–220</td>
+<td>338–428</td>
+<td>Good balance</td>
+</tr>
+<tr>
+<td>Axe head</td>
+<td>Brown to dark blue</td>
+<td>220–280</td>
+<td>428–536</td>
+<td>Tough, moderate hardness</td>
+</tr>
+<tr>
+<td>Spring steel</td>
+<td>Dark blue</td>
+<td>300–350</td>
+<td>572–662</td>
+<td>Maximum flexibility</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tempering procedure:</strong></p>
+<ol>
+<li>Heat the hardened tool over a charcoal fire or on a hot metal plate.</li>
+<li>Watch the oxidation color creep across the surface from the thickest part toward the edge.</li>
+<li>When the desired color reaches the working edge, plunge the tool into water immediately.</li>
+<li>The color you see at the moment of quench is the final temper color.</li>
+</ol>
+<p><strong>Reading the colors:</strong></p>
+<ul>
+<li>Pale straw (150°C): Nearly colorless, barely visible change.</li>
+<li>Straw (170–190°C): Faint yellow, like straw color.</li>
+<li>Light brown (200–220°C): Darker yellow, approaching tan.</li>
+<li>Brown (230–250°C): Rich brown.</li>
+<li>Dark blue (300–320°C): Deep purple-blue.</li>
+</ul>
+<div class="warning">
+<p>Once a color appears, it spreads very quickly. Have water ready. Overshooting the temper color (heating too long) produces a soft, useless tool.</p>
+</div>
+</section>
+<section id="edge-geometry-by-tool">
+<h2>Edge Geometry by Tool Type</h2>
+<p>The cutting angle (bevel angle) depends on the tool's intended function. Harder, more aggressive tasks require thicker, more obtuse angles. Fine cutting requires acute angles.</p>
+<table class="tool-angles">
+<thead>
+<tr>
+  <th>Tool Type</th>
+  <th>Edge Angle</th>
+  <th>Rockwell (HRC)</th>
+  <th>Temper Color</th>
+  <th>Application</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Kitchen knife</td>
+  <td>15–20°</td>
+  <td>56–62</td>
+  <td>Pale straw</td>
+  <td>Slicing meat, vegetables</td>
+</tr>
+<tr>
+  <td>Butcher knife</td>
+  <td>25–30°</td>
+  <td>54–58</td>
+  <td>Straw</td>
+  <td>Bone breaking, tougher work</td>
+</tr>
+<tr>
+  <td>Woodcarving chisel</td>
+  <td>25°</td>
+  <td>58–62</td>
+  <td>Pale straw</td>
+  <td>Fine detail work</td>
+</tr>
+<tr>
+  <td>Mortise chisel</td>
+  <td>30–35°</td>
+  <td>54–58</td>
+  <td>Straw</td>
+  <td>Heavy chopping, prying</td>
+</tr>
+<tr>
+  <td>Axe head</td>
+  <td>30–35°</td>
+  <td>50–56</td>
+  <td>Brown to blue</td>
+  <td>Chopping wood, splitting</td>
+</tr>
+<tr>
+  <td>Machete</td>
+  <td>25°</td>
+  <td>54–58</td>
+  <td>Straw</td>
+  <td>Brush cutting, chopping</td>
+</tr>
+<tr>
+  <td>File</td>
+  <td>N/A</td>
+  <td>62–66</td>
+  <td>Pale straw</td>
+  <td>Metal cutting (teeth)</td>
+</tr>
+</tbody>
+</table>
+<div class="tip">
+<p>Acute angles (15–20°) cut finer but dull faster and require gentle use. Obtuse angles (30–35°) are more durable for heavy work but require more force to cut.</p>
+</div>
+</section>
+<section id="hardness-testing-field">
+<h2>Hardness Testing in the Field</h2>
+<p>Without lab equipment, use these simple tests to verify hardening success.</p>
+<h3>File Test (Rockwell Approximation)</h3>
+<p>Drag a hardened file across the tool edge at 45°. The file should bite (dig in) or skip depending on hardness:</p>
+<ul>
+<li><strong>File bites deeply:</strong> Tool is too soft (under 40 HRC). Reharden.</li>
+<li><strong>File skates smoothly with slight scratches:</strong> Good hardness (50–55 HRC).</li>
+<li><strong>File skates cleanly, little resistance:</strong> Very hard (56+ HRC).</li>
+</ul>
+<p>The harder the tool, the less the file bites. Practice with known-hardness files to calibrate your feel.</p>
+<h3>Brass Rod Test</h3>
+<p>Strike the tool edge against a piece of scrap brass rod. A properly hardened tool will not dent the brass but may dull slightly. An under-hardened tool will bend or dent the brass easily.</p>
+<h3>Visual Temper Verification</h3>
+<p>If the color was correctly observed during tempering, the surface should show:</p>
+<ul>
+<li><strong>Pale straw:</strong> Subtle golden tint.</li>
+<li><strong>Straw:</strong> Clear yellowish-brown color.</li>
+<li><strong>Brown:</strong> Dark tan, almost tan leather.</li>
+</ul>
+<p>If the tool is uniformly gray or black, it was over-tempered or not hardened properly. Repeat the process.</p>
+</section>
+<section id="troubleshooting-hardening">
+<h2>Troubleshooting Hardening Failures</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tool snaps during use</td>
+<td>Over-hardened, too brittle</td>
+<td>Reheat and temper to a darker color (higher temp)</td>
+</tr>
+<tr>
+<td>Tool dulls instantly</td>
+<td>Under-hardened</td>
+<td>Reharden and quench more aggressively</td>
+</tr>
+<tr>
+<td>Uneven hardness across edge</td>
+<td>Uneven heating or quenching</td>
+<td>Heat more slowly; quench more steadily</td>
+</tr>
+<tr>
+<td>Tool warps or cracks after quenching</td>
+<td>Thermal shock, fast cooling on thick section</td>
+<td>Use slower cooling (oil instead of water); clay coat the spine</td>
+</tr>
+<tr>
+<td>Grinding wheel gums up</td>
+<td>Tool is too hard</td>
+<td>Verify hardness with file test; may need diamond stone instead of conventional wheel</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="maintaining-hard-edges">
+<h2>Maintaining Hard Edges in Service</h2>
+<p>A hardened edge requires proper care to maintain its advantage.</p>
+<p><strong>Sharpening:</strong> Use appropriate sharpening stones. A very hard (60+ HRC) blade requires:</p>
+<ul>
+<li>Arkansas stone (fine oilstone), or</li>
+<li>Japanese water stones (water-lubricated), or</li>
+<li>Diamond plate (fastest, most aggressive).</li>
+</ul>
+<p>Do not use soft sandstone, which will glaze before cutting the hard steel.</p>
+<p><strong>Stropping:</strong> Regular stropping on leather with fine abrasive compound (metal oxide powder) realigns the edge without removing significant material. Strop before each use.</p>
+<p><strong>Storage:</strong> Keep edges protected. Wood sheath or cloth wrapping prevents oxidation and edge damage. Oil the spine quarterly to prevent rust.</p>
+<p><strong>Re-hardening:</strong> If an edge becomes permanently dull (micro-fractures), reheat, requench, and re-temper. A good tool can be re-hardened many times over its lifetime.</p>
+<div class="warning">
+<p>Never heat a hardened tool and allow it to cool slowly in air. It will become soft (annealed). Always quench after heating, then temper if desired.</p>
+</div>
+</section>
+<section id="practical-example">
+<h2>Practical Example: Hardening a Kitchen Knife</h2>
+<ol>
+<li><strong>Forge or stock steel:</strong> Use 1095 carbon steel (1% C) or similar high-carbon tool steel.</li>
+<li><strong>Shape the blade:</strong> Forge or grind to final shape, leaving 2–3mm extra thickness for scale removal.</li>
+<li><strong>Normalize:</strong> Heat to cherry red, cool in air. Repeat 3 times to refine grain structure.</li>
+<li><strong>Clay coating:</strong> Mix fine clay with charcoal dust and water. Coat the spine and sides, leaving a 3mm bare edge.</li>
+<li><strong>Heat to orange:</strong> Bring slowly to 850–900°C (bright cherry to orange glow) over 5 minutes. Aim for uniform color.</li>
+<li><strong>Quench:</strong> Plunge edge-first into room-temperature water. Keep submerged for 5 seconds, then withdraw.</li>
+<li><strong>Cool in air:</strong> Let the spine cool naturally. The blade should be fully hard in 15 minutes.</li>
+<li><strong>Clean:</strong> Use a wire brush to remove scale and clay.</li>
+<li><strong>Temper to straw color:</strong> Place on a hot plate or hold over a charcoal fire. Watch the color creep from the spine toward the edge.</li>
+<li><strong>Quench at straw:</strong> As soon as pale straw color reaches the edge, plunge the entire blade into water.</li>
+<li><strong>Finish:</strong> Clean, dry, and oil. The edge should hold a sharp finish for weeks of hard use.</li>
+</ol>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="blacksmithing.html">Blacksmithing</a>
+<a href="basic-tool-manufacturing.html">Basic Tool Manufacturing</a>
+<a href="spring-manufacturing.html">Spring Manufacturing</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

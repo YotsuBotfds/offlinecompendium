@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/paint-production-formulation.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paint Production &amp; Formulation</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Industrial Chemistry</span> ›
+<span>Paint Production &amp; Formulation</span>
+</div>
+
+
+<h1>Paint Production &amp; Formulation</h1>
+<p class="subtitle">Paint components (pigment, binder, solvent, additives), linseed oil paint, milk paint (casein-based), whitewash and lime wash, egg tempera, watercolor, tinting and color mixing, primers and sealers.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~14 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#paint-components">Paint Components</a></li>
+<li><a href="#linseed-paint">Linseed Oil Paint</a></li>
+<li><a href="#milk-paint">Milk Paint (Casein-Based)</a></li>
+<li><a href="#whitewash-limewash">Whitewash and Limewash</a></li>
+<li><a href="#egg-tempera">Egg Tempera</a></li>
+<li><a href="#watercolor">Watercolor</a></li>
+<li><a href="#primer-sealer">Primers and Sealers</a></li>
+<li><a href="#color-mixing">Tinting and Color Mixing</a></li>
+<li><a href="#troubleshooting">Troubleshooting Paint Problems</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<p>Paint is pigment suspended in a vehicle (binder + solvent) that dries/hardens to a durable coating. Understanding formulation allows you to make or customize paints for specific substrates and conditions.</p>
+<section id="paint-components">
+<h2>Paint Components</h2>
+<h3>Pigment</h3>
+<p><strong>Function:</strong> Provides color and hiding power (opacity)</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Particle size: 0.1–5 microns (very fine powders)</li>
+<li>Density: Some float (light pigments); others settle (heavy pigments)</li>
+<li>Percentage: 10–20% by weight typical (balance with binder)</li>
+</ul>
+<p><strong>Types:</strong></p>
+<ul>
+<li>Mineral (ochre, iron oxides, titanium white): Opaque, permanent</li>
+<li>Organic (lake pigments, synthetic): Bright colors, variable fastness</li>
+<li>Earth pigments (natural deposits): Inexpensive, permanent</li>
+</ul>
+<p><strong>Too much pigment:</strong> Paint becomes chalky, brittle (insufficient binder)
+<strong>Too little pigment:</strong> Paint is transparent, poor hiding power</p>
+<h3>Binder</h3>
+<p><strong>Function:</strong> Holds pigment suspended; solidifies to create durable film</p>
+<p><strong>Types:</strong></p>
+<ul>
+<li><strong>Linseed oil:</strong> Dries by oxidation; traditional</li>
+<li><strong>Acrylic resin (latex):</strong> Water-based; modern standard</li>
+<li><strong>Epoxy/polyurethane:</strong> Two-part; extreme durability</li>
+<li><strong>Shellac, varnish:</strong> Dissolves in solvent; film-forming</li>
+<li><strong>Casein (milk protein):</strong> Water-based; historical</li>
+<li><strong>Egg tempera:</strong> Emulsion; historical</li>
+<li><strong>Gum arabic:</strong> Binder for watercolor</li>
+</ul>
+<p><strong>Binder percentage:</strong> 70–85% by weight typical</p>
+<h3>Solvent (Vehicle)</h3>
+<p><strong>Function:</strong> Thins paint to brushable/sprayable consistency</p>
+<p><strong>Types:</strong></p>
+<ul>
+<li><strong>Water:</strong> For latex, watercolor, casein, milk paints</li>
+<li><strong>Mineral spirits (white spirit):</strong> For oil-based paints</li>
+<li><strong>Turpentine:</strong> Natural solvent for oil paints</li>
+<li><strong>Alcohols:</strong> For shellac, some lacquers</li>
+</ul>
+<p><strong>Evaporation:</strong> As solvent evaporates, paint film hardens/dries</p>
+<h3>Additives (Small Percentages)</h3>
+<table>
+<thead>
+<tr>
+<th>Additive</th>
+<th>Purpose</th>
+<th>Typical Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drier (cobalt, manganese)</td>
+<td>Accelerates hardening</td>
+<td>0.5–2% (oil-based)</td>
+</tr>
+<tr>
+<td>UV stabilizer</td>
+<td>Prevents fading</td>
+<td>1–5%</td>
+</tr>
+<tr>
+<td>Mildewcide</td>
+<td>Prevents mold growth</td>
+<td>0.5–2%</td>
+</tr>
+<tr>
+<td>Thickener</td>
+<td>Improves body, sag resistance</td>
+<td>0.5–2%</td>
+</tr>
+<tr>
+<td>Leveling agent</td>
+<td>Reduces brush marks</td>
+<td>0.2–1%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="linseed-paint">
+<h2>Linseed Oil Paint</h2>
+<p>Traditional, durable paint made from boiled linseed oil.</p>
+<h3>Formulation</h3>
+<div class="recipe-box">
+LINSEED OIL PAINT (exterior wood finish)
+- 100 parts boiled linseed oil (binder)
+- 15-20 parts pigment (iron oxide, ochre, titanium white, etc.)
+- 5-10 parts mineral spirits (thinner)
+- 1 part drier (optional; cobalt or manganese naphthenate)
+<p>Method:</p>
+<ol>
+<li>Warm binder and solvent together slightly</li>
+<li>Grind pigment very fine in mortar if clumpy</li>
+<li>Mix small amount of pigment with thin binder to paste</li>
+<li>Add to remaining binder slowly, stirring constantly</li>
+<li>Thin with mineral spirits to desired consistency</li>
+<li>Add drier if faster drying desired</li>
+<li>Strain through fine cloth to remove lumps</li>
+<li>Store in airtight container</li>
+</ol>
+<p>Properties:</p>
+<ul>
+<li>Dries by oxidation (slow; 1-3 days to tack-dry)</li>
+<li>Very durable (15+ years on exterior)</li>
+<li>Beautiful matte finish; enhanced wood grain</li>
+<li>Water-repellent when dry</li>
+<li>Can be sanded and recoated</li>
+</ul>
+</div>
+<h3>Storage and Maintenance</h3>
+<p><strong>Storage:</strong></p>
+<ul>
+<li>Cool, dark location</li>
+<li>Airtight container (oxidation ruins paint in open air)</li>
+<li>Months to years if sealed</li>
+</ul>
+<p><strong>Troubleshooting:</strong></p>
+<ul>
+<li>Thick/separated: Stir well, thin if needed</li>
+<li>Wrinkled surface (after painting): Too much drier, or too thick coat</li>
+<li>No hardening after days: Insufficient drier, or too cold (below 50°F)</li>
+</ul>
+<h3>Application</h3>
+<ol>
+<li>Thin wood surfaces: Sand, oil with boiled linseed oil, then paint</li>
+<li>Thin coats: Multiple thin coats better than one thick</li>
+<li>Drying time: 2–3 days between coats</li>
+<li>Cure time: 2–4 weeks to full hardness</li>
+</ol>
+</section>
+<section id="milk-paint">
+<h2>Milk Paint (Casein-Based)</h2>
+<p>Traditional, non-toxic paint; still available commercially and easy to make.</p>
+<h3>Formulation</h3>
+<div class="recipe-box">
+MILK PAINT (interior/exterior; flat finish)
+- 1 part casein powder (milk protein; from art supply)
+- 1 part water
+- 1/4 part hydrated lime (calcium hydroxide)
+- 15-20 parts pigment (earth pigments, iron oxides)
+- Salt or borax (0.5 tsp): Helps binding
+<p>Method:</p>
+<ol>
+<li>Mix casein with small amount of water to dissolve</li>
+<li>Heat gently (warm, don't boil)</li>
+<li>Add lime and salt; mixture thickens</li>
+<li>Grind/sift pigment fine</li>
+<li>Mix pigment into casein mixture thoroughly</li>
+<li>Use within 30 minutes (sets irreversibly)</li>
+<li>If thick, thin with water</li>
+</ol>
+<p>Properties:</p>
+<ul>
+<li>Sets by chemical reaction (hardens, doesn't evaporate)</li>
+<li>Non-toxic; historically child-safe</li>
+<li>Matte finish; natural appearance</li>
+<li>Water-resistant when dry (not waterproof)</li>
+<li>Adheres well to porous surfaces</li>
+</ul>
+</div>
+<h3>Application</h3>
+<ol>
+<li>Surfaces: Wood, plaster, drywall, masonry</li>
+<li>Thin coats: Multiple thin better than thick</li>
+<li>Drying: 2–4 hours to touch-dry; 24 hours for foot traffic</li>
+<li>Cannot be thinned once set (mix fresh for each session)</li>
+</ol>
+</section>
+<section id="whitewash-limewash">
+<h2>Whitewash and Limewash</h2>
+<h3>Whitewash (Traditional)</h3>
+<p>Simple coating with long history.</p>
+<div class="recipe-box">
+BASIC WHITEWASH
+- 2 gallons hot water
+- 6 lbs slaked lime (calcium hydroxide)
+- 3 lbs salt
+- 1 lb tallow or linseed oil (optional; waterproofs)
+- 1-2 gallons water for thinning
+<p>Method:</p>
+<ol>
+<li>Dissolve lime in hot water</li>
+<li>Add salt (helps adhesion)</li>
+<li>Add tallow/oil if desired</li>
+<li>Thin to consistency of thin milk</li>
+<li>Apply with brush (paint stain consistency)</li>
+<li>May require 2-3 coats</li>
+</ol>
+<p>Properties:</p>
+<ul>
+<li>Bright white; slightly reflective</li>
+<li>Very breathable</li>
+<li>Weathers; requires recoating 1-2 years</li>
+<li>Inexpensive</li>
+<li>Repaints easily</li>
+</ul>
+</div>
+<p><strong>Improvements:</strong></p>
+<ul>
+<li>Add casein: Better adhesion</li>
+<li>Add pigment: Colored whitewash</li>
+<li>Add glue (hide glue): Improved durability</li>
+</ul>
+<h3>Limewash (Commercial Lime Paint)</h3>
+<p>Modern lime paint with additives for better durability and color options.</p>
+<p><strong>Advantages over whitewash:</strong></p>
+<ul>
+<li>Available in colors (earth pigments)</li>
+<li>More durable (3–5 years)</li>
+<li>Better adhesion</li>
+<li>Professional appearance</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>More expensive than whitewash</li>
+<li>Still requires recoating periodically</li>
+<li>Less &quot;authentic&quot; (contains additives)</li>
+</ul>
+</section>
+<section id="egg-tempera">
+<h2>Egg Tempera</h2>
+<p>Ancient paint using egg yolk as emulsifier; creates beautiful matte finish.</p>
+<h3>Formulation</h3>
+<div class="recipe-box">
+EGG TEMPERA (interior decorative finish)
+- 1 egg yolk
+- 1 tbsp linseed oil
+- 1 tbsp water or vinegar
+- Earth pigments (finely ground)
+- Bit of salt
+<p>Method:</p>
+<ol>
+<li>Crack egg carefully; separate yolk from white</li>
+<li>Mix yolk with oil and water (emulsion)</li>
+<li>Grind pigments very fine in mortar</li>
+<li>Mix pigment into egg mixture thoroughly</li>
+<li>Store in cool place (egg-based; use within days)</li>
+<li>Thin with water if needed</li>
+</ol>
+<p>Properties:</p>
+<ul>
+<li>Emulsion of oil and water (egg lecithin is emulsifier)</li>
+<li>Dries matte (oil + water combination)</li>
+<li>Permanent (egg protein sets; becomes hard)</li>
+<li>Beautiful soft finish; historically used for fine art</li>
+<li>Can be varnished for protection</li>
+</ul>
+</div>
+<h3>Application</h3>
+<ol>
+<li>Interior walls (especially; not suitable for wet areas)</li>
+<li>Thin coats: Build color gradually</li>
+<li>Dry quickly (1–2 hours)</li>
+<li>Fresh egg tempera has limited shelf life (make small batches)</li>
+<li>Varnish for durability (linseed oil varnish, shellac, etc.)</li>
+</ol>
+</section>
+<section id="watercolor">
+<h2>Watercolor</h2>
+<p>Paint for artistic/fine detail work; suspended pigment in gum arabic.</p>
+<h3>Formulation (Simple)</h3>
+<div class="recipe-box">
+WATERCOLOR (artist quality)
+- Pigment powder (very fine, water-soluble)
+- Gum arabic solution (1 part gum : 1 part water)
+- Small amount honey or glycerin (plasticizer; prevents cracking)
+- Water for thinning
+<p>Method:</p>
+<ol>
+<li>Dissolve gum arabic in water</li>
+<li>Add honey/glycerin</li>
+<li>Grind pigment extremely fine with mortar</li>
+<li>Mix pigment into gum solution gradually</li>
+<li>Thin to desired consistency</li>
+<li>Store in sealed container</li>
+</ol>
+</div>
+<h3>Properties</h3>
+<ul>
+<li>Transparent (pigment suspended, not opaque)</li>
+<li>Reversible (water soluble; can be lifted)</li>
+<li>Layerable (light washes can be built)</li>
+<li>Permanent if using lightfast pigments</li>
+<li>Unsuitable for structural/outdoor use (water reactivates)</li>
+</ul>
+</section>
+<section id="primer-sealer">
+<h2>Primers and Sealers</h2>
+<h3>Primer Function</h3>
+<p>Creates bond between substrate and topcoat paint.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li>Good adhesion to substrate (wood, metal, drywall, etc.)</li>
+<li>Fills minor surface irregularities</li>
+<li>Seals porous materials (prevents excessive absorption)</li>
+<li>Stain-blocking (blocks tannins, watermarks)</li>
+<li>Usually lighter color than topcoat (allows fewer topcoats)</li>
+</ul>
+<h3>Primer Types</h3>
+<p><strong>Oil-based primer:</strong></p>
+<ul>
+<li>Traditional; excellent adhesion to wood, metal</li>
+<li>Slow drying (24+ hours)</li>
+<li>Good stain blocking</li>
+<li>Fumes and cleanup issues</li>
+</ul>
+<p><strong>Latex (acrylic) primer:</strong></p>
+<ul>
+<li>Modern; adequate adhesion</li>
+<li>Fast drying (1–2 hours)</li>
+<li>Low odor; water cleanup</li>
+<li>Less effective stain blocking (may need shellac primer for tough stains)</li>
+</ul>
+<p><strong>Shellac primer:</strong></p>
+<ul>
+<li>Specialized; blocks stains, odors, water marks</li>
+<li>Very fast drying (30 min)</li>
+<li>Excellent adhesion</li>
+<li>Must use latex or shellac topcoat (incompatible with oil topcoat)</li>
+</ul>
+<p><strong>Bonding primers:</strong></p>
+<ul>
+<li>Extra adhesion agents</li>
+<li>Use on slick surfaces (plastic, glossy finishes)</li>
+<li>More expensive but effective</li>
+</ul>
+<h3>Sealer Function</h3>
+<p>Final coating to protect paint and extend life.</p>
+<p><strong>Types:</strong></p>
+<ul>
+<li><strong>Polyurethane varnish:</strong> Very durable; glossy</li>
+<li><strong>Matte varnish:</strong> Durability + flat finish</li>
+<li><strong>Wax:</strong> Soft sheen; requires buffing</li>
+<li><strong>Oil:</strong> Penetrating protection (for wood)</li>
+<li><strong>Shellac:</strong> Fast, clear; water-sensitive</li>
+</ul>
+</section>
+<section id="color-mixing">
+<h2>Tinting and Color Mixing</h2>
+<h3>Primary + Secondary Colors</h3>
+<p><strong>Subtractive mixing (pigments):</strong></p>
+<ul>
+<li>Red + yellow = orange</li>
+<li>Yellow + blue = green</li>
+<li>Red + blue = purple</li>
+</ul>
+<p><strong>Mixing limitations:</strong></p>
+<ul>
+<li>Can't make bright pure colors from mixed pigments</li>
+<li>Mixing more than 3 colors = muddy (loss of saturation)</li>
+</ul>
+<h3>Tinting Base Paints</h3>
+<p><strong>Adding pigment to white paint:</strong></p>
+<ol>
+<li>Use 5–10% by weight maximum</li>
+<li>Grind pigment fine if clumpy</li>
+<li>Mix into paint thoroughly</li>
+<li>Test on sample first (color develops as it dries)</li>
+<li>Consistency: More pigment = darker; may require solvent thinning</li>
+</ol>
+<p><strong>Color shift as paint dries:</strong></p>
+<ul>
+<li>Wet paint color ≠ dry paint color</li>
+<li>Latex typically darkens slightly when dry</li>
+<li>Oil paint color develops over hours as oxidation occurs</li>
+<li>Always test dry sample before committing to large paint job</li>
+</ul>
+<h3>Matching Existing Colors</h3>
+<p><strong>Samples:</strong></p>
+<ul>
+<li>Paint test chips on substrate (drywall, wood, etc.)</li>
+<li>Dry before final judgment</li>
+<li>View in natural and artificial light</li>
+</ul>
+<p><strong>If matching failed:</strong></p>
+<ul>
+<li>Add small amount of complementary color to shift</li>
+<li>Add white to lighten; add black to darken (use sparingly; blacks can muddy)</li>
+<li>Adjust one variable at a time</li>
+</ul>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting Paint Problems</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paint won't flow smoothly</td>
+<td>Too thick; temperature too cold</td>
+<td>Thin with appropriate solvent; warm paint slightly</td>
+</tr>
+<tr>
+<td>Brush marks visible after drying</td>
+<td>Paint too thick; bristles dragging</td>
+<td>Thin paint; use better brush; apply thinner coats</td>
+</tr>
+<tr>
+<td>Paint drips/sags</td>
+<td>Too much applied; substrate too vertical</td>
+<td>Apply thinner coats; use thicker paint formulation</td>
+</tr>
+<tr>
+<td>Wrinkled surface</td>
+<td>Too much drier; too thick coat</td>
+<td>No quick fix; sand and repaint with less drier</td>
+</tr>
+<tr>
+<td>Chalking (powdery residue)</td>
+<td>UV degradation; poor quality paint</td>
+<td>Repaint with better paint; adequate primer</td>
+</tr>
+<tr>
+<td>Poor adhesion/peeling</td>
+<td>Substrate dirty/glossy; incompatible primer</td>
+<td>Strip, clean, sand; apply appropriate primer</td>
+</tr>
+<tr>
+<td>Color mismatch</td>
+<td>Sample tested in different light; batch variation</td>
+<td>Test in actual location/light; premix entire job</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="conclusion">
+<h2>Conclusion</h2>
+<p>Paint formulation is both art and science. Understanding components allows you to make paints suited to your substrate, climate, and requirements. Traditional paints (linseed oil, casein, milk) are sustainable and historically proven; modern paints (acrylic latex, polyurethane) offer convenience and durability. Quality preparation, proper primer selection, and careful application matter as much as paint formulation itself.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="pigments-dyes-industrial.html">Pigments &amp; Dyes Industrial Production</a>
+<a href="homestead-chemistry.html">Homestead Chemistry</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

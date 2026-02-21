@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/cra-07-primitive-weapons.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primitive Weapons</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Security &amp; Defense</span> ›
+<span>Primitive Weapons</span>
+</div>
+
+<div class="warning">
+<strong>Safety Notice:</strong> This guide covers activities that carry some risk. Follow all safety precautions carefully.
+</div>
+
+<h1>Primitive Weapons</h1>
+<p class="subtitle">Master construction of primitive hunting and defense weapons: bow making, arrow crafting, atlatl (spear-thrower) construction, sling creation, spear making, and mechanical trap design for hunting.</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~13 min</span>
+<span>Updated: 2026-02-16</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#bow-making">Bow Construction</a></li>
+<li><a href="#arrow-making">Arrow Crafting</a></li>
+<li><a href="#atlatl">Atlatl (Spear-Thrower)</a></li>
+<li><a href="#sling">Sling Construction &amp; Use</a></li>
+<li><a href="#spear-making">Spear &amp; Lance Making</a></li>
+<li><a href="#traps">Mechanical Trap Systems</a></li>
+<li><a href="#defensive">Defensive Weapons</a></li>
+<li><a href="#safety">Safety Considerations</a></li>
+<li><a href="#common-mistakes">Common Mistakes &amp; Solutions</a></li>
+<li><a href="#weapon-maintenance">Weapon Maintenance &amp; Care</a></li>
+<li><a href="#ammunition-production">Ammunition Production</a></li>
+<li><a href="#hunting-effectiveness">Hunting Effectiveness &amp; Game Selectivity</a></li>
+<li><a href="#trap-checking">Trap Checking &amp; Animal Dispatch</a></li>
+<li><a href="#defensive-strategies">Defensive Strategy &amp; Weapon Combinations</a></li>
+<li><a href="#weapon-comparison">Weapon Comparison &amp; Selection</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="warning">
+<p><strong>Lethality and Legal Warning:</strong> The weapons described in this guide (spears, bows, atlatls, slings) are capable of inflicting lethal injuries. Construction, possession, and use of weapons may be regulated in your jurisdiction. Proper training is essential — untrained use of these weapons poses danger to the user and bystanders. Never aim at anything you do not intend to destroy.</p>
+</div>
+<section id="bow-making">
+<h2>Bow Construction</h2>
+<p>Bows are among oldest weapons; properly made bows kill large game. Single bow takes 20-40 hours to craft but lasts decades with care.</p>
+<h3>Wood Selection:</h3>
+<ul>
+<li><strong>Yew:</strong> Superior elasticity; traditional bow wood. White sapwood bends easily; dark heartwood provides backing support. Limited availability in some regions.</li>
+<li><strong>Ash:</strong> Good flexibility; readily available in temperate forests. Less dense than yew but adequate for hunting bows.</li>
+<li><strong>Elm:</strong> Acceptable alternative; strong heartwood provides backing support.</li>
+<li><strong>Avoid:</strong> Pine, spruce (too flexible, won't store energy); oak (too brittle, shatters)</li>
+</ul>
+<div class="tip">
+<p><strong>Wood Selection Priority:</strong> If yew unavailable, ash is the most reliable alternative in most temperate climates. Test wood by bending a sample before committing to full bow construction—some ash or elm sources vary significantly in flexibility.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Wood Species</th>
+<th>Elasticity</th>
+<th>Availability</th>
+<th>Durability</th>
+<th>Learning Curve</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Yew</strong></td>
+<td>Excellent</td>
+<td>Low (specialized search)</td>
+<td>Very high (50+ years)</td>
+<td>Moderate</td>
+<td>Long-term bows, prize builds</td>
+</tr>
+<tr>
+<td><strong>Ash</strong></td>
+<td>Good</td>
+<td>High (common temperate)</td>
+<td>High (30+ years)</td>
+<td>Moderate</td>
+<td>Reliable hunting bows</td>
+</tr>
+<tr>
+<td><strong>Elm</strong></td>
+<td>Fair</td>
+<td>High (water sources)</td>
+<td>Moderate (15-20 years)</td>
+<td>Beginner</td>
+<td>First practice bows</td>
+</tr>
+<tr>
+<td><strong>Hickory</strong></td>
+<td>Very good</td>
+<td>Moderate (North America)</td>
+<td>High (40+ years)</td>
+<td>Moderate</td>
+<td>Springy, fast bows</td>
+</tr>
+<tr>
+<td><strong>Osage Orange</strong></td>
+<td>Very good</td>
+<td>Low (regional)</td>
+<td>Very high (60+ years)</td>
+<td>Advanced</td>
+<td>Advanced archers</td>
+</tr>
+</tbody>
+</table>
+<h3>Stave Preparation:</h3>
+<ol>
+<li>Select straight-grained branch 2-3 inches diameter, 5-6 feet long</li>
+<li>Split log (quarter or half—avoid pith which creates weakness)</li>
+<li>Allow drying 2-4 weeks (green wood becomes less brittle as water evaporates)</li>
+<li>Scrape/plane to remove bark and partial sapwood (exposes uniform surface)</li>
+<li>Shape to taper: thicker at center (handle), thinner at tips</li>
+</ol>
+<h3>Bow Profile Design:</h3>
+<p>Recurved bow (tips curve away from archer) stores more energy in shorter length. Straight bow is simpler to make. Longbow (6+ feet tall) efficient; shorter bow (3-4 feet) easier to handle in brush.</p>
+<h3>Bow Assembly:</h3>
+<ol>
+<li>Create handle (grip) at center: 1.2 inches diameter, 4-5 inches long</li>
+<li>Taper limbs: reduce diameter from handle to tip (1/8 inch at tips)</li>
+<li>Test thickness by attempting to bend (should bend uniformly without cracking)</li>
+<li>Create nocks (grooves for string at tip ends)</li>
+<li>String with sinew, plant fiber, or manufactured cord (minimum 50 lb pull weight)</li>
+<li>Test draw: archer should draw smoothly 28 inches with good back muscles</li>
+</ol>
+<h3>Bow Draw Weight &amp; Hunting Effectiveness:</h3>
+<table><thead><tr><th scope="row">Draw Weight</th><th scope="row">Hunting Suitability</th><th scope="row">Effective Distance</th></tr></thead><tbody><tr><td>30-40 lb</td><td>Small game only</td><td>20-30m</td></tr><tr><td>40-60 lb</td><td>Medium game (deer)</td><td>25-40m</td></tr><tr><td>60+ lb</td><td>Large game (elk, moose)</td><td>30-50m</td></tr></tbody></table>
+</section>
+<section id="arrow-making">
+<h2>Arrow Crafting</h2>
+<p>Quality arrows determine bow effectiveness. Poorly made arrows miss targets; well-made arrows fly true and penetrate deeply.</p>
+<h3>Shaft Material:</h3>
+<ul>
+<li><strong>Straight wood:</strong> Hazel, birch, or ash. Requires selecting completely straight sections. Soak then straighten while drying (tedious but effective).</li>
+<li><strong>Bamboo:</strong> Natural straight grain; naturally light weight; strongest material available</li>
+<li><strong>Cane/reed:</strong> Adequate if arrow selected for straightness</li>
+</ul>
+<h3>Arrow Construction Sequence:</h3>
+<ol>
+<li><strong>Shaft selection:</strong> Choose straight material 5-6mm diameter, 28 inches long</li>
+<li><strong>Fletching:</strong> Attach feathers (goose, turkey, or other large bird feathers) at rear. Typical: three fletches at 120-degree spacing, 2-3 inches long</li>
+<li><strong>Binding:</strong> Wrap plant fiber or sinew around fletches to secure them (0.5 inches above and below attachment)</li>
+<li><strong>Nock:</strong> Cut notch at rear (fits on bowstring). Typical notch: 1/2 inch deep, fits string snugly</li>
+<li><strong>Broadhead attachment:</strong> Tie or glue stone/bone/metal point to front (see point-making guides below)</li>
+<li><strong>Spine test:</strong> Arrow should deflect slightly under own weight when held horizontally</li>
+</ol>
+<h3>Arrow Points:</h3>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>Sharpness</th>
+<th>Durability</th>
+<th>Penetration</th>
+<th>Ease of Making</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bone</strong></td>
+<td>Very sharp</td>
+<td>Moderate (breaks after 5-10 hits)</td>
+<td>Good</td>
+<td>Easy (carving)</td>
+<td>Hunting small-medium game</td>
+</tr>
+<tr>
+<td><strong>Flint/stone</strong></td>
+<td>Excellent</td>
+<td>Low (knaps off)</td>
+<td>Excellent</td>
+<td>Hard (knapping skill)</td>
+<td>Pristine wilderness (no bone)</td>
+</tr>
+<tr>
+<td><strong>Antler</strong></td>
+<td>Very sharp</td>
+<td>Good (tougher than bone)</td>
+<td>Good</td>
+<td>Moderate (carving)</td>
+<td>Durable hunting solution</td>
+</tr>
+<tr>
+<td><strong>Iron/steel</strong></td>
+<td>Sharp</td>
+<td>Very high (last 100+ shots)</td>
+<td>Excellent</td>
+<td>Hard (forging required)</td>
+<td>If accessible, superior choice</td>
+</tr>
+<tr>
+<td><strong>Wood/hardened</strong></td>
+<td>Dull</td>
+<td>Poor</td>
+<td>Fair</td>
+<td>Very easy</td>
+<td>Emergency only</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bone points:</strong> Sharp, piercing well but brittle. Typical size: 1-2 inches long, small barbs for grip. Most practical for survival hunters.</p>
+<p><strong>Flint/stone points:</strong> Extremely sharp but fragile. Smaller than bone; require fine knapping skill. Best when bone unavailable.</p>
+<p><strong>Metal points:</strong> If available, iron points vastly superior. Triple the penetration of bone at same draw weight. Lasts for decades of hunting.</p>
+<div class="danger">
+<p><strong>Point Brittleness Risk:</strong> Stone and bone arrow points can shatter inside game, leaving fragments impossible to remove. Sharp stone breaks when hitting bone—plan for point loss. Carry 2-3 backup points per arrow for serious hunting.</p>
+</div>
+<h3>Accuracy Practice:</h3>
+<p>Begin shooting at 10-15m range. Groups should tighten as archer develops muscle memory. Expect 10-30m effective hunting distance after 50+ hours practice. Competition archers achieve excellent accuracy; survival hunters need basic competence.</p>
+<div class="info-box">
+<p><strong>Progressive Training Schedule:</strong> Week 1-2: 10-15m targeting (50+ arrows daily). Week 3-4: 20m shots (consistency building). Week 5-8: 30m shots and moving targets (game simulation). After 60+ hours practice, attempt hunting with supervision of experienced hunter.</p>
+</div>
+</section>
+<section id="atlatl">
+<h2>Atlatl (Spear-Thrower)</h2>
+<p>Atlatl extends arm length mechanically, increasing spear velocity 2-3x compared to hand throw. Effective hunting weapon for mid-size game.</p>
+<h3>Atlatl Construction:</h3>
+<ol>
+<li><strong>Shaft:</strong> Hardwood, 20-24 inches long, 1 inch diameter. Must be straight and balanced.</li>
+<li><strong>Handle:</strong> Carved groove fitting archer's hand. Proper grip critical for control.</li>
+<li><strong>Hook/socket:</strong> Rear end has hook or socket receiving spear butt. Hook design: 1-inch projection from shaft.</li>
+<li><strong>Counterweight:</strong> Optional stone or bone weight 5-10 inches from hook (improves leverage and accuracy). Weight: 2-3 pounds typical.</li>
+<li><strong>Strap:</strong> Leather or fiber strap connecting atlatl to archer's fingers (allows controlled release).</li>
+</ol>
+<h3>Spear Design (For Atlatl Use):</h3>
+<p>Shorter than hand-thrown spear (5-7 feet vs. 8-12 feet). Must balance on atlatl hook. Weight concentrated forward (heavy point). Rear butt fits hook precisely (sloppy fit reduces accuracy).</p>
+<h3>Throwing Technique:</h3>
+<p>Overhead motion similar to baseball pitch. Atlatl extends arm and stores energy in flex. Release occurs when arm extended forward; hook releases spear with high velocity. Effective distance: 40-80m for accuracy; kills at 30-50m.</p>
+<h3>Advantages vs. Bow:</h3>
+<ul>
+<li>Heavier projectile penetrates deeper (larger game capability)</li>
+<li>Shorter learning curve (basic competence in 20-30 hours)</li>
+<li>Less training required for consistent accuracy</li>
+<li>Easier to manufacture (fewer precision requirements)</li>
+</ul>
+</section>
+<section id="sling">
+<h2>Sling Construction &amp; Use</h2>
+<p>Sling propels projectile (stone or clay ball) with surprising velocity. Roman soldiers with slings were formidable soldiers. Concealable weapon requiring minimal materials.</p>
+<h3>Sling Construction:</h3>
+<ol>
+<li><strong>Pouch:</strong> Leather or woven fabric rectangle, 4x3 inches</li>
+<li><strong>Cords:</strong> Two cords of equal length (24-30 inches), attached to pouch ends</li>
+<li><strong>Release knot:</strong> One cord has knot tied at end (held by pinky/ring finger). Other cord has loop (held by thumb/forefinger).</li>
+<li><strong>Ammunition:</strong> Lead balls (1-2 ounces) ideal; smooth stones adequate</li>
+</ol>
+<h3>Sling Operation:</h3>
+<ol>
+<li>Place projectile in pouch</li>
+<li>Hold sling by both cords (knot in one hand, loop in other)</li>
+<li>Swing overhead in figure-eight motion (builds rotational speed)</li>
+<li>Complete 2-3 full rotations</li>
+<li>Release loop-end cord; knot remains held</li>
+<li>Projectile launches at 60-90 m/s velocity</li>
+</ol>
+<h3>Accuracy &amp; Lethality:</h3>
+<p>Effective distance: 30-60m for accurate shooting (difficult to master). Head shot kills; body shots stun or injure. Skilled slingers (professional soldiers) achieved remarkable accuracy. Modern recreation slingers consistently hit targets at 40m.</p>
+</section>
+<section id="spear-making">
+<h2>Spear &amp; Lance Making</h2>
+<p>Spears are most fundamental hunting weapons: simple, reliable, effective. Multiple points allow hunting with multiple spears without constant retrieval.</p>
+<h3>Hunting Spear (Hand-Thrown or Jabbing):</h3>
+<ol>
+<li><strong>Shaft:</strong> Straight wood 8-12 feet long, 1-1.5 inches diameter. Ash preferred (flexible, won't break).</li>
+<li><strong>Balance:</strong> Point weight 1-2 ounces; total spear 3-5 pounds. Balance point 1/3 from point end (ensures point-forward flight).</li>
+<li><strong>Point attachment:</strong> Bind bone/stone point with sinew using spiral binding (wraps prevent point rotation).</li>
+<li><strong>Grip section:</strong> Leave 1-2 inches of shaft bare (hand contact area). Grip should be slightly thinner than shaft (easier to grasp).</li>
+</ol>
+<h3>Fishing Spear (Multi-Pronged):</h3>
+<p>2-4 bone/wood prongs spreading 4-6 inches wide at point. Prongs 6-8 inches long; slightly barbed to catch fish. Spring assembly holds prongs together until fish impact spreads them (holding fish on prongs). Effective to 2-3 meter depth in clear water.</p>
+<h3>War Lance (Mounted Use):</h3>
+<p>Long spear (10-12 feet) designed for mounted warriors. Heavy point (4-8 ounces) stored energy from horse momentum. Shaft tapered to control weight distribution. Point narrower than hunting spear (penetrates armor).</p>
+</section>
+<section id="traps">
+<h2>Mechanical Trap Systems</h2>
+<p>Traps allow hunting without constant presence. Effective for small-to-medium game. Design determines species caught.</p>
+<h3>Deadfall Trap:</h3>
+<ol>
+<li><strong>Framework:</strong> Heavy log, rock, or wooden structure (10-100 pounds depending on game)</li>
+<li><strong>Trigger:</strong> Balanced stick holding deadfall suspended above game path</li>
+<li><strong>Bait:</strong> Placed under deadfall, attached to trigger stick</li>
+<li><strong>Operation:</strong> Animal pulls bait; trigger releases; deadfall falls killing animal instantly</li>
+<li><strong>Setting:</strong> Requires careful balance; deadfall must fall cleanly without getting stuck</li>
+</ol>
+<h3>Snare Trap:</h3>
+<ol>
+<li><strong>Loop:</strong> Cordage formed into running loop (diameter matches target animal)</li>
+<li><strong>Trigger:</strong> Hook or bent stick supporting loop, releasing when disturbed</li>
+<li><strong>Anchor:</strong> Secured to fixed point (tree, stake) preventing escape</li>
+<li><strong>Placement:</strong> Set where animals naturally travel (game trail)</li>
+<li><strong>Effectiveness:</strong> Strangles or holds animal until trapper arrives</li>
+</ol>
+<h3>Pit Trap:</h3>
+<ol>
+<li><strong>Dig:</strong> Hole 2-3 meters deep in game trail</li>
+<li><strong>Disguise:</strong> Cover with light branches and leaves (hides hole from sight)</li>
+<li><strong>Stakes:</strong> Optional sharpened stakes at bottom (increases lethality)</li>
+<li><strong>Effectiveness:</strong> Large animals (deer, boar) fall and are trapped. Small animals may escape.</li>
+</ol>
+<h3>Fish Trap (Weir):</h3>
+<p>Stone/wood structure in stream creating funnel leading into enclosure. Fish naturally swim upriver; funnel design prevents escape. Effective in streams with seasonal fish migrations.</p>
+</section>
+<section id="defensive">
+<h2>Defensive Weapons</h2>
+<h3>Shield Design:</h3>
+<p>Wooden frame (1.5-2m tall for body protection) covered with hide or woven material. Central boss (metal or wood) deflects blows. Weight: 4-8 pounds (requires strength for extended holding). Effective against primitive weapons (spears, arrows).</p>
+<h3>Club/Mace:</h3>
+<p>Hardwood shaft with heavy head (stone, bone, or metal). Simple and lethal. No maintenance required (unlike swords which need sharpening). Effective up to 3-4 meter range if mounted on horse.</p>
+<h3>Armor Concepts:</h3>
+<p>Leather armor (boiled/hardened) deflects slashing attacks. Multiple layers provide protection. Heavy armor (metal) is superior but requires metalworking capability (see forging guides). Helmet reduces head strike severity.</p>
+</section>
+<section id="safety">
+<h2>Safety Considerations</h2>
+<p>Primitive weapons are lethal. Accidents cause death or permanent injury. Practice safety protocols always.</p>
+<div class="danger">
+<p><strong>Weapon Lethality Reality:</strong> A 50-pound draw bow can kill a human at 30m. An atlatl penetrates leather armor. Slings crack skulls. Never assume &quot;just practice&quot;—treat every weapon as a life-taking tool. A moment of carelessness creates lifelong consequences.</p>
+</div>
+<h3>Archery Safety:</h3>
+<ul>
+<li>Never nock arrow unless shooting</li>
+<li>Always check target and beyond for people</li>
+<li>Shoot only on designated range with clear 100m+ safety zone</li>
+<li>Retrieve arrows only when no one shooting</li>
+<li>Never draw bow at person unless defending life</li>
+</ul>
+<h3>Spear/Atlatl Safety:</h3>
+<ul>
+<li>Clear throwing area completely before using</li>
+<li>Establish 100m+ radius safety zone</li>
+<li>Warn people before throwing</li>
+<li>Never retrieve while others might throw</li>
+</ul>
+<h3>Trap Safety:</h3>
+<ul>
+<li>Mark trap locations (prevents accidental triggering)</li>
+<li>Check traps daily (prevents spoilage, unnecessary animal suffering)</li>
+<li>Use minimum force necessary (kills instantly vs. slow death)</li>
+<li>Remove unsuccessful traps to prevent non-target captures</li>
+</ul>
+</section>
+<section id="common-mistakes">
+<h2>Common Mistakes &amp; Solutions</h2>
+<h3>Mistake 1: Poorly Shaped Bow Limbs</h3>
+<p><strong>Error:</strong> Bows with uneven limb thickness. Thicker limb stores more energy, bends less, resulting in off-target shots.</p>
+<p><strong>Solution:</strong> Test bend by hand before completing bow. Both limbs should bend identically under same force. Sand/scrape to equalize thickness.</p>
+<h3>Mistake 2: Improper Arrow Spine</h3>
+<p><strong>Error:</strong> Arrows too stiff or too flexible for bow draw weight. Stiff arrows fly left; flexible arrows fly right.</p>
+<p><strong>Solution:</strong> Test arrows by bending by hand (should match bow stiffness feel). Adjust fletching balance or weight to correct flight.</p>
+<h3>Mistake 3: Weak Trap Construction</h3>
+<p><strong>Error:</strong> Animal escapes trap due to loose binding or weak trigger mechanism. Wasted effort and animal suffering.</p>
+<p><strong>Solution:</strong> Test trigger before setting live bait. Use multiple binding/rope passes. Ensure deadfall/snare cannot be pushed open by animal thrashing.</p>
+</section>
+<section id="weapon-maintenance">
+<h2>Weapon Maintenance &amp; Care</h2>
+<h3>Bow Maintenance:</h3>
+<ul>
+<li><strong>Stringing:</strong> Check string before each use (fraying, separation indicate need for replacement)</li>
+<li><strong>Wood condition:</strong> Inspect for cracks, warping, splitting (wood changes with humidity)</li>
+<li><strong>Grip:</strong> Sand smooth if roughed; ensure comfort for extended shooting</li>
+<li><strong>Storage:</strong> Keep strung or unstrung? Debate continues; best practice: unstring when not in use (reduces wood stress)</li>
+<li><strong>Drying:</strong> If wet, hang unstrung to dry completely before use (wet wood loses stiffness)</li>
+</ul>
+<p>Properly maintained bow lasts decades; neglected bow becomes unsafe within years.</p>
+<h3>Arrow Shaft Care:</h3>
+<ul>
+<li><strong>Straightness:</strong> Store arrows in bundle, protected from bending</li>
+<li><strong>Fletching damage:</strong> Re-glue separated fletches; replace broken feathers</li>
+<li><strong>Point replacement:</strong> Dulled points replace easily; sharpen stone/bone points periodically</li>
+<li><strong>Spine checking:</strong> Test regularly (arrow should still deflect under weight)</li>
+</ul>
+<p>Damaged arrows miss targets or fail unpredictably; maintain spare arrows for critical hunting.</p>
+<h3>Spear Maintenance:</h3>
+<ul>
+<li><strong>Shaft condition:</strong> Check for warping, splintering</li>
+<li><strong>Point attachment:</strong> Verify binding is tight; retighten if loosened by impact</li>
+<li><strong>Balance point:</strong> After modifications, recheck balance (important for throw accuracy)</li>
+<li><strong>Repair:</strong> Replace broken shaft section using lashing/binding</li>
+</ul>
+<p>Well-maintained spears used for generations.</p>
+<div class="warning">
+<p><strong>Weapon Storage Safety:</strong> Store weapons away from living areas. Bows should be strung in secure location, arrow tips covered. Spears leaned in corner with point down/guarded. Prevent unauthorized access, especially by children.</p>
+</div>
+</section>
+<section id="ammunition-production">
+<h2>Ammunition Production</h2>
+<h3>Arrow Point Mass Production:</h3>
+<p>For hunters needing 10-20 arrows:</p>
+<ol>
+<li>Select appropriate material (stone, bone, or metal)</li>
+<li>Create template for consistent shape</li>
+<li>Rough-shape all points before finishing</li>
+<li>Final sharpening on whetstone</li>
+</ol>
+<p>Time: 30-60 minutes per point (depending on material). Stone points labor-intensive; bone/antler faster.</p>
+<h3>Projectile Creation (Slings):</h3>
+<p>Lead sling projectiles superior to stones:</p>
+<p><strong>Lead bullet casting:</strong></p>
+<ol>
+<li>Heat lead to liquid (400°C+; requires furnace or hot fire)</li>
+<li>Pour into stone/bone mold with cavity</li>
+<li>Cool completely</li>
+<li>Trim excess</li>
+<li>Result: uniform weight provides consistent flight</li>
+</ol>
+<p>Requires: lead source (salvaged batteries, old pipes), mold materials, heat source.</p>
+<p><strong>Stone projectiles:</strong></p>
+<ul>
+<li>Select smooth stones 1-1.5 inch diameter</li>
+<li>Check for cracks/weak spots (fail mid-flight if flawed)</li>
+<li>Round shape preferred; flat stones tumble unpredictably</li>
+</ul>
+<p>Abundant but inconsistent; test each projectile before relying on it.</p>
+</section>
+<section id="hunting-effectiveness">
+<h2>Hunting Effectiveness &amp; Game Selectivity</h2>
+<h3>Weapon Selection by Game Size:</h3>
+<table>
+<thead>
+<tr>
+<th>Game Size</th>
+<th>Best Weapon</th>
+<th>Effective Distance</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Small (rabbit, fox, fox)</strong></td>
+<td>Bow (30-40 lb) or sling</td>
+<td>15-25m</td>
+<td>Headshots critical; body shots may only wound</td>
+</tr>
+<tr>
+<td><strong>Medium (deer, goat)</strong></td>
+<td>Bow (50-60 lb) or atlatl</td>
+<td>20-40m</td>
+<td>Broadhead critical; placement must be vital organs</td>
+</tr>
+<tr>
+<td><strong>Large (elk, moose)</strong></td>
+<td>Bow (70+ lb) or spear (melee)</td>
+<td>20-35m</td>
+<td>Heavy draw weight necessary; multiple hits may be required</td>
+</tr>
+<tr>
+<td><strong>Very large (bear, large pig)</strong></td>
+<td>Spear (melee) with backup atlatl</td>
+<td>Contact + 30m</td>
+<td>Dangerous; melee riskier than ranged</td>
+</tr>
+</tbody>
+</table>
+<p>Successful hunting requires: weapon selection matching game size, accurate placement in vital organs, and field skills.</p>
+<h3>Vital Organ Placement:</h3>
+<ul>
+<li><strong>Heart:</strong> Immediately behind front shoulder; kills quickly</li>
+<li><strong>Lungs:</strong> Large target area; animal bleeds internally</li>
+<li><strong>Spine:</strong> Immobilizes instantly but difficult to hit moving target</li>
+<li><strong>Brain:</strong> Small target, instant death if hit</li>
+<li><strong>Major arteries (neck):</strong> Severe blood loss; animal dies within 1-2 minutes</li>
+</ul>
+<p>Understanding anatomy is critical for ethical, quick kills. Poor placement prolongs suffering.</p>
+<div class="danger">
+<p><strong>Ethical Responsibility:</strong> Wounded animals suffer. Hunters must be skilled enough to ensure quick kills. Never hunt if proficiency inadequate.</p>
+</div>
+</section>
+<section id="trap-checking">
+<h2>Trap Checking &amp; Animal Dispatch</h2>
+<h3>Daily Trap Rounds:</h3>
+<p>Proper trap management requires daily checking:</p>
+<ol>
+<li>Check traps early morning (animals more active at night; caught animals may escape given time)</li>
+<li>Approach cautiously (trapped animals dangerous when panicked)</li>
+<li>Dispatch captured animal quickly (reduces suffering)</li>
+<li>Reset trap immediately (time-sensitive for productivity)</li>
+</ol>
+<p>Missed traps or injured animals left languishing violates ethical standards.</p>
+<h3>Ethical Dispatch Methods:</h3>
+<p><strong>Quick methods:</strong> Minimize suffering</p>
+<ul>
+<li><strong>Blunt force (club):</strong> Strike head forcefully; instant unconsciousness/death</li>
+<li><strong>Bleeding:</strong> Severe neck wound; blood loss causes unconsciousness within seconds</li>
+<li><strong>Spine dislocation:</strong> Quick technique for small animals</li>
+</ul>
+<p><strong>Ineffective methods:</strong> Avoid</p>
+<ul>
+<li><strong>Strangulation:</strong> Prolonged process; animal panics, suffers</li>
+<li><strong>Suffocation:</strong> Slow; distressing</li>
+<li><strong>Exposure:</strong> Cruel; unnecessary prolonging</li>
+</ul>
+<h3>Trap Economics:</h3>
+<p>Successful traps: catch 1-5 animals monthly (varies by terrain, species, skill). Each catch: 2-3 kg meat + hide (valuable). Failed traps: consume resources for zero return.</p>
+<p>Experienced trappers achieve 15-20% success rate (1-2 animals caught per 5-10 traps set). Beginners: 5-10% success rate.</p>
+</section>
+<section id="defensive-strategies">
+<h2>Defensive Strategy &amp; Weapon Combinations</h2>
+<h3>Single Defender Setup:</h3>
+<p>Against multiple attackers, position is critical:</p>
+<ol>
+<li><strong>Elevated position:</strong> High ground provides advantage (attackers must climb/cover distance)</li>
+<li><strong>Obstacle advantage:</strong> Use terrain features (rocks, fallen trees) for cover</li>
+<li><strong>Weapon variety:</strong> Bow for ranged, spear for melee, shield for protection</li>
+<li><strong>Retreat plan:</strong> Always maintain escape route; defense only buys time</li>
+</ol>
+<p>Single defender cannot hold position indefinitely; survival requires escape capability.</p>
+<h3>Group Defense Formation:</h3>
+<p>For 3-5 defenders protecting settlement:</p>
+<ol>
+<li><strong>Perimeter security:</strong> Watchers positioned to see approach routes</li>
+<li><strong>Secondary line:</strong> Defenders positioned 20-30m behind front</li>
+<li><strong>Leadership/communication:</strong> Designated coordinator ensures coordinated response</li>
+<li><strong>Fallback positions:</strong> Inner defensive position if outer position overrun</li>
+</ol>
+<p>Organized defense 5-10x more effective than isolated defenders.</p>
+<h3>Weapon Degradation in Combat:</h3>
+<p>During extended fighting:</p>
+<ul>
+<li><strong>Bow strings snap:</strong> Carries backup string critical</li>
+<li><strong>Arrow loss:</strong> Arrows leave quiver; recovery impossible mid-fight; bring 3-4 quivers worth</li>
+<li><strong>Point dulling/damage:</strong> Blades dull rapidly from impact on bone/stone</li>
+<li><strong>Handle breakage:</strong> Wooden handles crack under stress; carry backup weapons</li>
+</ul>
+<p>Most fights decided by superior supplies (extra arrows, backup weapons) rather than skill alone.</p>
+<div class="tip">
+<p><strong>Historical Note:</strong> Battles often decided by logistics (who had more arrows/spears), not tactical brilliance. Survival suggests defensive position (arrows closer than attackers) and prepared supplies (multiple weapons, ammunition storage).</p>
+</div>
+</section>
+<section id="weapon-comparison">
+<h2>Weapon Comparison &amp; Selection</h2>
+<table>
+<thead>
+<tr>
+<th>Weapon</th>
+<th>Range</th>
+<th>Power</th>
+<th>Ease of Learning</th>
+<th>Maintenance</th>
+<th>Best Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bow</strong></td>
+<td>25-50m</td>
+<td>Medium-High</td>
+<td>1-2 months</td>
+<td>Moderate (strings, parts)</td>
+<td>Hunting, defense at range</td>
+</tr>
+<tr>
+<td><strong>Atlatl</strong></td>
+<td>40-80m</td>
+<td>High</td>
+<td>2-3 weeks</td>
+<td>Low (simple construction)</td>
+<td>Medium-large game</td>
+</tr>
+<tr>
+<td><strong>Sling</strong></td>
+<td>30-60m</td>
+<td>Medium</td>
+<td>3-4 weeks</td>
+<td>Very low (stone/clay)</td>
+<td>Defense, crowd control</td>
+</tr>
+<tr>
+<td><strong>Spear (thrown)</strong></td>
+<td>15-30m</td>
+<td>High</td>
+<td>1-2 weeks</td>
+<td>Low (simple)</td>
+<td>Close-range hunting</td>
+</tr>
+<tr>
+<td><strong>Spear (melee)</strong></td>
+<td>Contact</td>
+<td>Very High</td>
+<td>1 week</td>
+<td>Low</td>
+<td>Large game, defense</td>
+</tr>
+<tr>
+<td><strong>Club</strong></td>
+<td>Contact</td>
+<td>High</td>
+<td>None</td>
+<td>Very low</td>
+<td>Defense, hunting</td>
+</tr>
+</tbody>
+</table>
+<p>Choose based on: game available, learning time, available materials, personal preference.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="bone-tools.html">Bone Tools</a>
+<a href="cra-03-cordage-textiles.html">Cordage Making</a>
+<a href="improvised-weapons.html">Improvised Weapons and Defensive Tools</a>
+<a href="stone-tools.html">Stone Tool Making</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

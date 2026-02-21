@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/watercraft-propulsion.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watercraft Propulsion Systems - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<meta name="description" content="Master oars, paddles, sails (square, lateen, spritsail), pole propulsion, current utilization, water wheel propulsion, and steam propulsion basics. Includes hull resistance calculations and speed optimization.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/watercraft-propulsion.html">
+<meta property="og:title" content="Watercraft Propulsion Systems">
+<meta property="og:description" content="Master oars, paddles, sails (square, lateen, spritsail), pole propulsion, current utilization, water wheel propulsion, and steam propulsion basics. Includes hull resistance calculations and speed optimization.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Transportation", "item": "https://zerotoherohero.com/#sec-transportation"},
+    {"@type": "ListItem", "position": 3, "name": "Watercraft Propulsion Systems", "item": "https://zerotoherohero.com/guides/watercraft-propulsion.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Watercraft Propulsion Systems",
+  "description": "Master oars, paddles, sails (square, lateen, spritsail), pole propulsion, current utilization, water wheel propulsion, and steam propulsion basics. Includes hull resistance calculations and speed optimization.",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-468">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-transportation">Transportation</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Watercraft Propulsion Systems</span>
+</nav>
+<header>
+<h1>Watercraft Propulsion Systems</h1>
+<p class="subtitle">Master oars, paddles, sails (square, lateen, spritsail), pole propulsion, current utilization, water wheel propulsion, and steam propulsion basics. Includes hull resistance calculations and speed optimization.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~18 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#oars-paddles">Oars and Paddles</a></li>
+<li><a href="#sail-systems">Sail Systems: Square, Lateen, and Spritsail</a></li>
+<li><a href="#pole-propulsion-current">Pole Propulsion and Current Utilization</a></li>
+<li><a href="#water-wheels">Water Wheel Propulsion</a></li>
+<li><a href="#steam-propulsion">Steam Propulsion Basics</a></li>
+<li><a href="#hull-resistance-speed">Hull Resistance and Speed Calculations</a></li>
+<li><a href="#practical-selection">Practical Selection Guide</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Watercraft propulsion systems translate human effort, wind energy, water flow, or fuel into forward motion. Each system has distinct advantages: oars and paddles work in confined waters; sails harness wind for long voyages; poles work in shallow water; water wheels and steam propulsion power larger vessels or assist where wind is unreliable. This guide covers design principles, mechanical advantage calculations, and selection criteria for different water conditions.</p>
+<p>Hull resistance increases with the cube of speed—doubling speed requires eight times the power. Efficiency depends on matching the propulsion method to water conditions, vessel size, load, and available energy.</p>
+</section>
+<section id="oars-paddles">
+<h2>Oars and Paddles</h2>
+<p><strong>Oars</strong> are hinged at the gunwale (boat's edge) and use the water as a fulcrum. <strong>Paddles</strong> are held by the rower and push water backward. Oars provide greater mechanical advantage; paddles suit smaller craft and single operators.</p>
+<p><strong>Oar design:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Small Rowboat (16 ft)</strong></th>
+<th><strong>Barge or Tender (24 ft)</strong></th>
+<th><strong>Large Row Galley (40 ft)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Oar length</td>
+<td>8–10 ft</td>
+<td>10–14 ft</td>
+<td>14–18 ft</td>
+</tr>
+<tr>
+<td>Blade area</td>
+<td>25–35 sq ft</td>
+<td>35–50 sq ft</td>
+<td>50–80 sq ft</td>
+</tr>
+<tr>
+<td>Blade shape</td>
+<td>Narrow, tapering</td>
+<td>Teardrop or spoon</td>
+<td>Spoon (wide, rounded)</td>
+</tr>
+<tr>
+<td>Shaft diameter</td>
+<td>1.5–2 in</td>
+<td>2–3 in</td>
+<td>3–4 in</td>
+</tr>
+<tr>
+<td>Fulcrum (thole) height</td>
+<td>12–15 in above gunwale</td>
+<td>12–18 in</td>
+<td>15–20 in</td>
+</tr>
+<tr>
+<td>Crew per oar</td>
+<td>1 rower per oar (pair = 2 oars)</td>
+<td>2–4 rowers per oar (sweep)</td>
+<td>4–8 rowers per oar (galley sweep)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mechanical advantage of oars:</strong></p>
+<p>Oars use a lever system: Power × Power Arm = Resistance × Resistance Arm.</p>
+<pre><code>Power Arm = Distance from fulcrum (thole) to rower's grip (~6 ft for small rowboat)
+Resistance Arm = Distance from fulcrum to blade tip (~2.5 ft)
+Mechanical Advantage = 6 ft / 2.5 ft = 2.4
+
+A rower exerting 100 lbs of force produces ~240 lbs of force in the water.
+</code></pre>
+<p><strong>Paddling techniques:</strong></p>
+<p>Paddles are faster to accelerate but less efficient over distance. Typical paddle types:</p>
+<ul>
+<li><strong>Single-bladed paddle</strong> (canoe style): One blade, light, suited for solo paddlers. Requires J-stroke or C-stroke to maintain direction without rudder.</li>
+<li><strong>Double-bladed paddle</strong> (kayak style): Blades on both ends; easier balance; faster cadence; less steering correction needed.</li>
+<li><strong>Flat blade</strong> (work paddle): Wider blade, more power per stroke; slower cadence.</li>
+<li><strong>Spoon blade</strong> (touring): Scooped blade reduces water turbulence; smoother, quieter stroke.</li>
+</ul>
+<p><strong>Speed and endurance:</strong></p>
+<ul>
+<li><strong>Rowing</strong> (oars): 3–5 knots sustainable for hours; 6–8 knots in sprints.</li>
+<li><strong>Paddling</strong> (canoe, single paddle): 2–4 knots sustainable; requires frequent breaks.</li>
+<li><strong>Paddling</strong> (kayak, double blade): 3–5 knots sustainable; 6–7 knots in sprints.</li>
+</ul>
+<div class="tip">
+<p>Oars are most efficient at 4–5 knots. Slower, longer strokes are more efficient than fast, short strokes. Rest-stroke (oars in water, drifting) conserves energy on downwind legs.</p>
+</div>
+</section>
+<section id="sail-systems">
+<h2>Sail Systems: Square, Lateen, and Spritsail</h2>
+<p><strong>Square sails</strong> run perpendicular to the hull's centerline; ideal for downwind sailing and large vessels. <strong>Fore-and-aft sails</strong> (lateen, spritsail) run parallel to the hull; enable sailing upwind and tight maneuvering. Most efficient vessels combine both (mixed rig).</p>
+<h3>Square Sails</h3>
+<p>Historically the most common sail for trading ships. Best for large cargo vessels sailing consistent downwind routes.</p>
+<p><strong>Design:</strong></p>
+<ul>
+<li><strong>Dimensions</strong>: A 40-foot ship might carry 4 square sails: Main, Lower topsail, Upper topsail, Topgallant.</li>
+<li><strong>Total area</strong>: 3,000–5,000 sq ft on a large vessel.</li>
+<li><strong>Sail angle</strong>: Perpendicular to wind (runs across the vessel). Can be oriented 45–90° to the hull.</li>
+<li><strong>Efficiency in different winds</strong>:
+<ul>
+<li><strong>Dead downwind (0° relative wind)</strong>: 95–100% efficient.</li>
+<li><strong>Beam reach (90° relative wind)</strong>: 20–30% efficient (not recommended; use fore-and-aft sails instead).</li>
+<li><strong>Upwind</strong>: Ineffective (0–5% efficient).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Simple rigging, requires fewer lines.</li>
+<li>Enormous area possible; generates high power for large vessels.</li>
+<li>Runs best downwind with minimal crew effort.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Cannot sail upwind or across the wind efficiently.</li>
+<li>Requires large crew for handling (raising, lowering, reefing).</li>
+<li>Difficult to maneuver in narrow channels.</li>
+</ul>
+<h3>Lateen Sails</h3>
+<p>Triangular sail with leading edge (luff) forward; runs fore-and-aft. Historic Mediterranean design; used on modern sailing dinghies and small cruisers.</p>
+<p><strong>Design:</strong></p>
+<ul>
+<li><strong>Dimensions</strong>: A 30-foot vessel might use 1 lateen of 400–600 sq ft.</li>
+<li><strong>Boom angle</strong>: Leading edge at 15–25° to the mast; trailing edge loose (called the &quot;leech&quot;).</li>
+<li><strong>Efficiency range</strong>:
+<ul>
+<li><strong>Beam reach (90° relative wind)</strong>: 60–75% efficient (excellent).</li>
+<li><strong>Close-hauled (45° to wind)</strong>: 40–50% efficient.</li>
+<li><strong>Dead downwind</strong>: 50–60% (worse than square sails, but still functional).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Sails efficiently across a wide range of wind angles (45° to 160° apparent wind).</li>
+<li>Can sail upwind and reach tight anchorages.</li>
+<li>Single sail often sufficient for small vessels.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>The boom must be manually repositioned (&quot;tacking&quot;) when changing course across the wind—requires crew effort.</li>
+<li>Less efficient downwind than square sails.</li>
+<li>Center of effort high; can cause broaching (involuntary rotation) in strong wind.</li>
+</ul>
+<h3>Spritsail</h3>
+<p>Fore-and-aft sail using a long spar (sprit) extending diagonally from the mast to the opposite corner of the sail. Common on small boats, barges, and Thames-style craft.</p>
+<p><strong>Design:</strong></p>
+<ul>
+<li><strong>Dimensions</strong>: 300–1,200 sq ft depending on vessel size.</li>
+<li><strong>Sprit angle</strong>: 40–50° to the mast; extends aft and upward.</li>
+<li><strong>Efficiency</strong>: Similar to lateen (45–70% across a wide wind range); slightly less efficient upwind than Bermuda-rigged sails but easier to handle.</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Simple rigging; fewer lines than Bermuda rigging.</li>
+<li>Efficient upwind and across the wind.</li>
+<li>Sprit can be partially lowered (goosewing) for downwind sailing.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Sprit adds weight and complexity vs. simple square sails.</li>
+<li>Crew must handle sprit angle adjustments.</li>
+</ul>
+<h3>Mixed Rigs (Square + Fore-and-Aft)</h3>
+<p>Most historical trading vessels combined rigs for versatility:</p>
+<pre><code>Brigantine: Square-rigged foremast + fore-and-aft mainsail (aft mast)
+Barque: Square-rigged fore and main masts + fore-and-aft mizzen (aft mast)
+Schooner: All fore-and-aft sails (fore and main); largest and fastest fore-and-aft rig
+
+Advantage: Downwind power of square sails + upwind efficiency of fore-and-aft sails
+Trade-off: Larger crew needed; more complex handling
+</code></pre>
+<h3>Sail Trim and Speed</h3>
+<p>Maximum speed is achieved when sails are correctly angled to the wind and load is balanced:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Condition</strong></th>
+<th><strong>Heel Angle</strong></th>
+<th><strong>Leeway</strong></th>
+<th><strong>Speed</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Light winds (&lt;5 kt)</td>
+<td>&lt;5°</td>
+<td>&lt;3°</td>
+<td>1–2 kt</td>
+<td>Sails may not fill; use oars to supplement</td>
+</tr>
+<tr>
+<td>Moderate winds (8–12 kt)</td>
+<td>10–15°</td>
+<td>5–8°</td>
+<td>3–6 kt</td>
+<td>Optimal efficiency; vessel balanced</td>
+</tr>
+<tr>
+<td>Strong winds (15–20 kt)</td>
+<td>20–25°</td>
+<td>8–12°</td>
+<td>6–9 kt</td>
+<td>Reef sails to reduce area; heel increases</td>
+</tr>
+<tr>
+<td>Gale (25+ kt)</td>
+<td>&gt;25°</td>
+<td>&gt;15°</td>
+<td>Dangerous</td>
+<td>Reduce sail drastically; risk of capsize</td>
+</tr>
+</tbody>
+</table>
+<div class="warning">
+<p>Heel (tilt) increases water resistance exponentially. A 25° heel increases drag by 50% vs. a 15° heel. Reef (reduce) sail area if heel exceeds 20° or speed falls below hull speed.</p>
+</div>
+</section>
+<section id="pole-propulsion-current">
+<h2>Pole Propulsion and Current Utilization</h2>
+<p><strong>Poling</strong> moves a boat by pushing a pole against the bottom. Works in water &lt;15 feet deep and is silent, maneuverable, and requires no wind. <strong>Current utilization</strong> orients the boat to let flowing water do the work.</p>
+<h3>Poling Technique</h3>
+<p>A long pole (12–18 feet, bamboo or wood) is pushed against the bottom. The boat's momentum carries it forward; the pole is withdrawn and repositioned.</p>
+<p><strong>Pole design:</strong></p>
+<ul>
+<li><strong>Length</strong>: 12–20 feet for river navigation; 15–25 feet for shallow coastal bays.</li>
+<li><strong>Diameter</strong>: 2–4 inches (bamboo or oak).</li>
+<li><strong>Weight</strong>: 20–40 lbs; lighter poles reduce fatigue.</li>
+<li><strong>Tip</strong>: Flat or forked to prevent sinking into soft bottom.</li>
+</ul>
+<p><strong>Speed and endurance:</strong></p>
+<ul>
+<li><strong>Steady-state speed</strong>: 1–2 knots (slower than oars, but no fatigue limit if bottom is firm).</li>
+<li><strong>Burst speed</strong>: 3–4 knots for short sprints.</li>
+<li><strong>Endurance</strong>: Hours on firm bottom (sand, clay); minutes on soft mud (pole sinks; provides no traction).</li>
+</ul>
+<p><strong>Conditions suited to poling:</strong></p>
+<ul>
+<li><strong>Rivers</strong>: Upstream against current where wind cannot be relied upon; bottom firm.</li>
+<li><strong>Shallow bays</strong>: Marshes, flats 2–10 feet deep; allows access to areas too shallow for larger keeled vessels.</li>
+<li><strong>Calm, confined waters</strong>: Canals, locks; wind insufficient, oars cumbersome.</li>
+</ul>
+<p><strong>Mechanical advantage:</strong></p>
+<p>Poling uses a lever; the boat's waterline acts as the fulcrum.</p>
+<pre><code>Power Arm = Distance from pole tip to pole top (rower's hands) = ~15 ft
+Resistance Arm = Distance from boat center (waterline) to pole tip = ~3 ft
+Mechanical Advantage = 15 / 3 = 5
+
+A poler exerting 50 lbs propels 250 lbs of thrust.
+</code></pre>
+<h3>Current Utilization</h3>
+<p>Rivers and tidal flows can be harnessed instead of fighting them:</p>
+<p><strong>Downriver</strong>: Allow current to do all work. Boat drifts at current speed (0–3 knots typical); poling or light rowing guides direction.</p>
+<p><strong>Upriver (against current)</strong>:</p>
+<ul>
+<li><strong>Track (tow-path)</strong>: Use a line attached to the bank or an animal walking along shore. Current is neutralized; boat moves at walking speed (~3 knots).</li>
+<li><strong>Eddies and slack water</strong>: Navigate near banks where current slows due to friction. Hug curves where current is slowest on the inside of bends.</li>
+<li><strong>Shooting narrows</strong>: In a rapid, boats approach at an angle, using the faster current in the center to &quot;shoot through&quot; and exit upriver faster than the current. Dangerous; requires skill.</li>
+</ul>
+<p><strong>Tidal exploitation</strong> (in coastal rivers):</p>
+<p>Tides reverse flow twice daily. Sailing or rowing with the tide halves energy cost:</p>
+<pre><code>Current upriver: 2 knots
+Boat rowing speed: 4 knots
+Upriver speed with tide: 4 + 2 = 6 knots
+Upriver speed against tide: 4 – 2 = 2 knots
+
+Timing: Depart with tide. 6-hour tidal window carries 12 nautical miles; then wait 6 hours for next cycle, repeat.
+</code></pre>
+<div class="tip">
+<p>In strong rivers, wait for favorable tidal or seasonal flow. Upriver against a 2-knot current requires 2× the energy for half the speed. A 1-week voyage becomes 2 weeks; energy cost increases 4×.</p>
+</div>
+</section>
+<section id="water-wheels">
+<h2>Water Wheel Propulsion</h2>
+<p>Water wheels convert flowing water (river, tidal) into rotational motion. When attached to a boat, they propel it upstream against current. Efficiency is high (60–80%) compared to oars (40–50% when accounting for fatigue).</p>
+<p><strong>Types:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Best Current</strong></th>
+<th><strong>Speed</strong></th>
+<th><strong>Efficiency</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overshot wheel</td>
+<td>High-head (10+ ft drop); moving water</td>
+<td>2–4 knots</td>
+<td>75–85%</td>
+<td>Paddle blades on wheel rim; water pours over top</td>
+</tr>
+<tr>
+<td>Breast wheel</td>
+<td>Moderate-head (3–10 ft); moving water</td>
+<td>2–3 knots</td>
+<td>70–75%</td>
+<td>Buckets catch water at mid-height</td>
+</tr>
+<tr>
+<td>Undershot wheel</td>
+<td>Low-head (&lt;3 ft); fast-moving water</td>
+<td>2–4 knots</td>
+<td>55–70%</td>
+<td>Paddles dip into bottom of flow; simplest design</td>
+</tr>
+<tr>
+<td>Pelton wheel (impulse)</td>
+<td>Very high-head (&gt;50 ft); small flow</td>
+<td>3–6 knots</td>
+<td>80–90%</td>
+<td>Jet of water strikes small cups; high power density</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Boat-mounted water wheel design</strong> (overshot wheel, simplest for small craft):</p>
+<p><strong>Wheel dimensions:</strong></p>
+<ul>
+<li><strong>Diameter</strong>: 4–8 feet (larger wheels move more water; slower rotation).</li>
+<li><strong>Bucket capacity</strong>: 2–5 gallons per bucket; 12–16 buckets per wheel.</li>
+<li><strong>Axle diameter</strong>: 3–4 inches (wood or iron).</li>
+<li><strong>Paddle/blade width</strong>: 18–30 inches.</li>
+</ul>
+<p><strong>Power output:</strong></p>
+<pre><code>Power (watts) = Flow (cubic feet/second) × Head (feet) × 62.4 lbs/cubic foot × 9.81 m/s² × Efficiency
+
+Example: Small undershot wheel in 3-ft deep river with 2-ft/sec current
+Flow = 3 sq ft × 2 ft/sec = 6 cubic feet/second
+Head ≈ 2 feet (equivalent drop from current)
+Power = 6 × 2 × 62.4 × 9.81 × 0.65 = ~4,800 watts (~6.4 horsepower)
+
+For a 20-ton boat: 6.4 hp ÷ 5 hp per knot (average) = 1.3 knots sustained speed
+</code></pre>
+<p><strong>Mechanical coupling to propeller or paddle wheel:</strong></p>
+<p>The water wheel's shaft connects to a gearbox (reducing RPM, increasing torque) and then to a paddle wheel or propeller driving the boat:</p>
+<pre><code>Water wheel: 20 RPM
+Gear ratio: 1:4 (increase torque, decrease speed)
+Paddle wheel output: 5 RPM
+Paddle wheel diameter: 6 feet
+
+Thrust per paddle blade = water resistance at blade × 4 blades ≈ 1,000 lbs at 2 knots
+</code></pre>
+</section>
+<section id="steam-propulsion">
+<h2>Steam Propulsion Basics</h2>
+<p>Steam engines convert heat energy into mechanical work via high-pressure steam pushing a piston. Advantages: work any time (day/night, calm/storm); consistent power. Disadvantages: fuel consumption, maintenance complexity, safety hazards.</p>
+<p><strong>Key components:</strong></p>
+<ol>
+<li><strong>Boiler</strong>: Heats water to 150–200 psi. Iron or steel, typically cylindrical with internal fire tubes for surface area.</li>
+<li><strong>Engine</strong>: Single-acting (piston pushed one way) or double-acting (both directions). 1–50+ horsepower depending on cylinder bore and steam pressure.</li>
+<li><strong>Propeller</strong>: Paddle wheel (historical, for shallow draft) or screw propeller (modern, more efficient).</li>
+<li><strong>Condenser</strong>: Recycles steam to water (improves efficiency, reduces freshwater consumption).</li>
+</ol>
+<p><strong>Speed and range:</strong></p>
+<p>A modest paddle-wheel steamer with 10 hp and coal fuel:</p>
+<pre><code>Speed: 4–6 knots sustained
+Fuel consumption: 1–2 tons coal per day
+Range: 24–48 hours at sea (500–1,000 nautical miles with full coal load)
+Crew needs: 3–5 (engineer, fireman, helmsman, deckhand)
+</code></pre>
+<p><strong>Efficiency comparison:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Propulsion</strong></th>
+<th><strong>Power Source</strong></th>
+<th><strong>Sustained Speed</strong></th>
+<th><strong>Range/Endurance</strong></th>
+<th><strong>Crew</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Oars</td>
+<td>Human muscle (40–50% efficient)</td>
+<td>3–5 knots</td>
+<td>Until fatigue (6–10 hours)</td>
+<td>4–20</td>
+</tr>
+<tr>
+<td>Sails</td>
+<td>Wind (50–70% efficient)</td>
+<td>3–8 knots</td>
+<td>Unlimited (wind dependent)</td>
+<td>4–50</td>
+</tr>
+<tr>
+<td>Poling</td>
+<td>Human muscle (70% efficient)</td>
+<td>1–2 knots</td>
+<td>Hours on firm bottom</td>
+<td>1–2</td>
+</tr>
+<tr>
+<td>Water wheel</td>
+<td>River flow (65% efficient)</td>
+<td>2–4 knots</td>
+<td>Unlimited (river dependent)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Steam</td>
+<td>Fuel burning (20–30% efficient)</td>
+<td>4–8 knots</td>
+<td>Days (fuel dependent)</td>
+<td>3–5</td>
+</tr>
+</tbody>
+</table>
+<div class="warning">
+<p>Steam boilers under pressure are hazardous. Explosions occur if pressure exceeds boiler design limits. Always include a safety valve set 10–15% below max working pressure. Inspect regularly for corrosion and cracks.</p>
+</div>
+</section>
+<section id="hull-resistance-speed">
+<h2>Hull Resistance and Speed Calculations</h2>
+<p>Every vessel has a <strong>hull resistance curve</strong>—the drag force increases dramatically with speed. At a certain speed (hull speed), wave resistance dominates and further acceleration becomes inefficient.</p>
+<h3>Hull Speed</h3>
+<p>The theoretical maximum efficient speed for a displacement hull (not planing) is:</p>
+<pre><code>Hull Speed (knots) = 1.34 × √(waterline length in feet)
+
+Example: 40-foot vessel with 36-foot waterline
+Hull Speed = 1.34 × √36 = 1.34 × 6 = 8 knots
+
+Going faster requires 3× the power but yields &lt;10% speed increase.
+</code></pre>
+<h3>Resistance Components</h3>
+<p><strong>Wave-making resistance</strong>: Vessel pushes water aside, creating a bow wave and stern wave. Dominates at high speeds.</p>
+<p><strong>Friction resistance</strong>: Roughness of hull surface; increases with hull surface area.</p>
+<p><strong>Form drag</strong>: Shape inefficiency (blunt bow, high freeboard).</p>
+<p><strong>Total resistance</strong>: Sum of all three.</p>
+<pre><code>Total Resistance (lbs) = Friction Drag + Wave Drag + Form Drag
+
+Approximation for small vessels:
+Resistance ≈ 0.5 × Water Density × Velocity² × Wetted Surface Area × Drag Coefficient
+
+Water Density = 64 lbs/cubic foot (saltwater: 64.2 lbs/cubic foot)
+Velocity (ft/sec) = speed (knots) × 1.69
+Wetted Surface Area = underwater surface area of hull (sq ft)
+Drag Coefficient ≈ 1.0 for typical displacement hulls
+</code></pre>
+<h3>Power Required</h3>
+<p>Power = Resistance × Velocity</p>
+<pre><code>Example: 20-ton fishing boat at 5 knots
+Resistance ≈ 1,500 lbs (estimated from wetted surface and speed)
+Velocity = 5 knots × 1.69 = 8.45 ft/sec
+Power = 1,500 × 8.45 ÷ 550 = 23 horsepower
+
+To reach 8 knots (hull speed): 4,000 lbs resistance × 13.5 ft/sec ÷ 550 = 98 horsepower (4× the power for 1.6× the speed)
+</code></pre>
+<p><strong>Practical example:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Vessel Type</strong></th>
+<th><strong>Displacement</strong></th>
+<th><strong>Waterline Length</strong></th>
+<th><strong>Hull Speed</strong></th>
+<th><strong>Power at Hull Speed</strong></th>
+<th><strong>Propulsion Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row tender</td>
+<td>2 tons</td>
+<td>16 ft</td>
+<td>4.8 knots</td>
+<td>2 hp</td>
+<td>2 rowers</td>
+</tr>
+<tr>
+<td>Working barge</td>
+<td>50 tons</td>
+<td>40 ft</td>
+<td>8 knots</td>
+<td>15 hp</td>
+<td>4 large oars or 1 small engine</td>
+</tr>
+<tr>
+<td>Fishing cutter</td>
+<td>30 tons</td>
+<td>35 ft</td>
+<td>7.7 knots</td>
+<td>12 hp</td>
+<td>Sail + engine or 8 oars</td>
+</tr>
+<tr>
+<td>Merchant ship</td>
+<td>300 tons</td>
+<td>80 ft</td>
+<td>11.5 knots</td>
+<td>80 hp</td>
+<td>Sails (square-rigged) + auxiliary steam</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="practical-selection">
+<h2>Practical Selection Guide</h2>
+<p><strong>Choose oars/paddles when:</strong></p>
+<ul>
+<li>Water is confined (rivers, canals, harbors).</li>
+<li>Wind is unreliable.</li>
+<li>Stealth is needed (silent operation).</li>
+<li>Maneuverability matters more than speed.</li>
+<li>Load is &lt;20 tons; crew available.</li>
+</ul>
+<p><strong>Choose sails when:</strong></p>
+<ul>
+<li>Open water (coastal, ocean).</li>
+<li>Voyage duration is long (months).</li>
+<li>Wind is consistent.</li>
+<li>Fuel/fuel-equivalent (human energy) cost matters.</li>
+</ul>
+<p><strong>Choose poles when:</strong></p>
+<ul>
+<li>Water depth &lt;15 feet; bottom is firm.</li>
+<li>Speeds &gt;2 knots not needed.</li>
+<li>Silent approach desired (hunting, scouting).</li>
+</ul>
+<p><strong>Choose water wheels when:</strong></p>
+<ul>
+<li>River current is reliable (1+ knots).</li>
+<li>Fuel is scarce.</li>
+<li>Consistency matters more than speed.</li>
+</ul>
+<p><strong>Choose steam when:</strong></p>
+<ul>
+<li>Time is critical (military, express mail).</li>
+<li>Weather must not delay voyage.</li>
+<li>Fuel (coal, wood) is abundant.</li>
+<li>Load is heavy (&gt;100 tons).</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="shipbuilding-boats.html">Boat Building &amp; Watercraft</a>
+<a href="water-mills-windmills.html">Water Mills &amp; Windmills</a>
+<a href="mechanical-power-transmission.html">Mechanical Power Transmission</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

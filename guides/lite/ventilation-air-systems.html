@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/ventilation-air-systems.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ventilation and Air Circulation Systems</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Building &amp; Engineering</span> ›
+<span>Ventilation and Air Circulation Systems</span>
+</div>
+
+
+<h1>Ventilation and Air Circulation Systems</h1>
+<p class="subtitle">Natural and mechanical ventilation design principles. Stack effect calculations, cross-ventilation strategies, wind towers, roof ventilators, subfloor ventilation, fume extraction for kitchens and workshops, humidity control, and heat recovery ventilation concepts for off-grid buildings.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~10 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview: Why Ventilation Matters</a></li>
+<li><a href="#natural-ventilation-principles">Natural Ventilation Principles</a></li>
+<li><a href="#wind-catchers-wind-towers">Wind Catchers and Wind Towers</a></li>
+<li><a href="#mechanical-ventilation-roof-units">Mechanical Ventilation: Roof Units</a></li>
+<li><a href="#subfloor-ventilation">Subfloor Ventilation</a></li>
+<li><a href="#fume-extraction">Fume Extraction for Kitchens and Workshops</a></li>
+<li><a href="#humidity-control">Humidity Control</a></li>
+<li><a href="#heat-recovery-ventilation">Heat Recovery Ventilation (HRV) Concepts</a></li>
+<li><a href="#design-summary">Design Summary Checklist</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview: Why Ventilation Matters</h2>
+<p>Ventilation removes stale air, moisture, and pollutants (CO₂, formaldehyde, ammonia) while introducing fresh air. In sealed buildings without mechanical systems, poor ventilation causes condensation, mold, wood rot, and respiratory health issues. In occupied spaces (kitchens, workshops, occupied rooms), stagnant air traps heat, humidity, and fumes, reducing comfort and increasing disease transmission.</p>
+<p><strong>Core principle:</strong> Air must circulate continuously. Humans exhale CO₂ (~40,000 ppm) and moisture (~50g/hour in occupied space). Without exchange, CO₂ reaches hazardous levels (&gt;2000 ppm causes cognitive impairment) within 2-4 hours in sealed rooms.</p>
+<p><svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" aria-label="Stack effect ventilation diagram showing warm air rising and cool air entering">
+  <defs>
+    <style>
+      text { font-family: Arial, sans-serif; font-size: 14px; fill: var(--text); }
+      .title { font-size: 18px; font-weight: bold; }
+      .label { font-size: 12px; }
+      .arrow { stroke: var(--accent); stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .building { stroke: var(--text); stroke-width: 2; fill: var(--surface); }
+      .warm { stroke: #ff6b35; stroke-width: 2; fill: #ff6b3533; }
+      .cool { stroke: #4a90e2; stroke-width: 2; fill: #4a90e233; }
+      .grid { stroke: var(--card); stroke-width: 0.5; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="title">Stack Effect Ventilation Diagram</text>
+  <text x="400" y="50" text-anchor="middle" class="label">Warm air rises (low pressure zone); cool air enters below</text>
+
+  <!-- Building structure -->
+  <g id="building">
+    <!-- Outer walls -->
+    <rect x="150" y="80" width="300" height="450" class="building" />
+
+    <!-- Upper section (warmer) -->
+    <rect x="160" y="90" width="280" height="180" class="warm" />
+    <text x="300" y="190" text-anchor="middle" class="label">WARM AIR</text>
+    <text x="300" y="210" text-anchor="middle" class="label">(occupied space)</text>
+
+    <!-- Lower section (cooler) -->
+    <rect x="160" y="280" width="280" height="230" class="cool" />
+    <text x="300" y="420" text-anchor="middle" class="label">COOL AIR INTAKE</text>
+
+    <!-- Roof opening (exhaust) -->
+    <rect x="250" y="70" width="100" height="20" fill="var(--card)" stroke="var(--accent)" stroke-width="2" />
+    <text x="300" y="82" text-anchor="middle" class="label" fill="var(--bg)">EXHAUST</text>
+
+    <!-- Side intakes (lower) -->
+    <circle cx="130" cy="380" r="15" fill="var(--card)" stroke="var(--accent)" stroke-width="2" />
+    <text x="90" y="390" text-anchor="middle" class="label">INLET</text>
+
+    <circle cx="470" cy="380" r="15" fill="var(--card)" stroke="var(--accent)" stroke-width="2" />
+    <text x="510" y="390" text-anchor="middle" class="label">INLET</text>
+  </g>
+
+  <!-- Arrows showing air movement -->
+  <!-- Warm air rising -->
+  <path class="arrow" d="M 300 250 L 300 100" />
+  <text x="320" y="170" class="label" fill="#ff6b35">WARM AIR</text>
+  <text x="320" y="185" class="label" fill="#ff6b35">RISES</text>
+
+  <!-- Cool air entering left -->
+  <path class="arrow" d="M 130 380 L 160 380" />
+
+  <!-- Cool air entering right -->
+  <path class="arrow" d="M 470 380 L 440 380" />
+
+  <!-- Cool air rising inside -->
+  <path class="arrow" d="M 240 450 L 240 300" stroke="#4a90e2" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <path class="arrow" d="M 360 450 L 360 300" stroke="#4a90e2" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Temperature scale on right side -->
+  <g id="scale">
+    <text x="600" y="50" class="title">Temperature Difference</text>
+    <text x="600" y="75" class="label">Inside: 20°C (293K)</text>
+    <text x="600" y="95" class="label">Outside: 0°C (273K)</text>
+    <text x="600" y="115" class="label">ΔT = 20°C</text>
+
+    <text x="600" y="150" class="label" font-weight="bold">Height Difference</text>
+    <text x="600" y="170" class="label">h = 3m (example)</text>
+
+    <text x="600" y="210" class="label" font-weight="bold">Stack Pressure:</text>
+    <text x="600" y="230" class="label">ΔP ≈ 0.8 Pa</text>
+    <text x="600" y="250" class="label">(drives ~500-800 m³/h)</text>
+  </g>
+
+  <!-- Notes section -->
+  <g id="notes">
+    <text x="600" y="310" class="title">Key Points:</text>
+    <text x="600" y="330" class="label">• Strongest in winter</text>
+    <text x="600" y="350" class="label">(large ΔT)</text>
+    <text x="600" y="370" class="label">• Weakest in summer</text>
+    <text x="600" y="390" class="label">(small ΔT)</text>
+    <text x="600" y="410" class="label">• Use wind-driven</text>
+    <text x="600" y="430" class="label">ventilation in summer</text>
+  </g>
+
+  <!-- Grid background (optional) -->
+  <defs>
+    <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" class="grid" />
+    </pattern>
+  </defs>
+</svg>
+</p>
+<p><strong>Target air change rates:</strong></p>
+<ul>
+<li>Unoccupied storage: 0.3–0.5 air changes per hour (ACH)</li>
+<li>Occupied living space: 0.5–1.0 ACH (minimum)</li>
+<li>Kitchens with cooking: 2.0–6.0 ACH during cooking</li>
+<li>Workshops (solvent/dust): 3.0–10.0 ACH (depends on contaminant)</li>
+</ul>
+<p><strong>Two approaches:</strong> Natural ventilation (no fans, relies on wind + buoyancy) and mechanical ventilation (fans, requires electricity). Hybrid systems combine both.</p>
+</section>
+<section id="natural-ventilation-principles">
+<h2>Natural Ventilation Principles</h2>
+<h3>Stack Effect (Thermal Buoyancy)</h3>
+<p>Warm air is less dense than cool air. In a multi-story building, warm air naturally rises and exits through upper openings (stack outlets) while cool air enters through lower openings (stack intakes). This pressure difference drives airflow without fans.</p>
+<p><strong>Stack pressure formula:</strong></p>
+<pre><code>Δ P = (To - Ti) × (h / Ti) × ρ × g × 0.0034
+</code></pre>
+<p>Where:</p>
+<ul>
+<li>ΔP = pressure difference (Pa)</li>
+<li>To = outdoor temperature (K)</li>
+<li>Ti = indoor temperature (K)</li>
+<li>h = height difference between inlet/outlet (m)</li>
+<li>ρ = air density (~1.2 kg/m³ at sea level)</li>
+<li>g = gravity (9.81 m/s²)</li>
+</ul>
+<p><strong>Example:</strong> Indoor temperature 20°C (293K), outdoor 0°C (273K), height difference 3m:</p>
+<pre><code>ΔP = (293 - 273) × (3 / 293) × 1.2 × 9.81 × 0.0034
+ΔP ≈ 0.8 Pa
+</code></pre>
+<p>This 0.8 Pa drives roughly 500–800 m³/h through medium-sized openings (depends on opening area and duct resistance).</p>
+<div class="tip">
+<p><strong>Stack effect is strongest in winter</strong> (large temperature difference) and weakest in summer or when indoor/outdoor temperatures are similar. Summer ventilation requires wind-driven strategies.</p>
+</div>
+<h3>Wind-Driven Ventilation</h3>
+<p>Wind pressure on building surfaces creates pressure zones:</p>
+<ul>
+<li><strong>Windward side (upstream):</strong> Positive pressure (higher than ambient)</li>
+<li><strong>Leeward side (downwind):</strong> Negative pressure (lower than ambient)</li>
+</ul>
+<p>Pressure varies by building shape and terrain. Typical wind pressure at 10 m/s wind speed:</p>
+<pre><code>Pressure = 0.5 × Cₚ × ρ × V²
+</code></pre>
+<p>Where Cₚ = pressure coefficient (0.6 to +0.8 range) and V = wind speed.</p>
+<p><strong>Practical ventilation design:</strong> Place fresh air intakes on windward side and exhaust outlets on leeward side to maximize pressure difference.</p>
+<h3>Cross-Ventilation Strategy</h3>
+<p>Openings on opposite building sides (perpendicular to prevailing wind) allow wind to sweep through interior. Most effective when:</p>
+<ol>
+<li>Openings are large and well-positioned (not blocked by furniture)</li>
+<li>Prevailing wind direction is known and consistent</li>
+<li>Interior obstructions are minimized (open floor plans or strategic partition placement)</li>
+</ol>
+<p><strong>Effectiveness depends on opening area ratio.</strong> For 50% ventilation efficiency in typical rooms:</p>
+<pre><code>Required opening area = 5–10% of floor area (split between inlet and outlet)
+</code></pre>
+<p><strong>Example:</strong> 20 m² room (4m × 5m) needs roughly 1.0–2.0 m² total opening area distributed between opposite sides.</p>
+</section>
+<section id="wind-catchers-wind-towers">
+<h2>Wind Catchers and Wind Towers</h2>
+<h3>Traditional Wind Catcher Design</h3>
+<p>Wind catchers (used in Middle East, North Africa) are vertical towers with openings on multiple sides that redirect wind downward into occupied spaces. The tower captures wind at height (where velocity is higher) and cools air via evaporative surfaces or deep-cooling through earth tubes before distribution.</p>
+<p><strong>Basic construction:</strong></p>
+<ol>
+<li><strong>Tower structure:</strong> 4–8 sided (square or octagonal) framed with lightweight timber or stone</li>
+<li><strong>Intake openings:</strong> Face prevailing wind direction, allow wind to enter top of tower</li>
+<li><strong>Deflector plates:</strong> Internal baffles direct air downward (critical for effectiveness)</li>
+<li><strong>Exhaust pathway:</strong> Air descends through central shaft and exits into occupied space below</li>
+</ol>
+<p><strong>Height guidelines:</strong> Effective wind capture begins at 2–3m above surrounding obstructions. Taller towers (4–6m+) capture stronger, more consistent winds.</p>
+<h3>Wind Tower Construction Checklist</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Material</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frame</td>
+<td>Timber (structural) or stone/brick (mass)</td>
+<td>Mass towers provide thermal buffering</td>
+</tr>
+<tr>
+<td>Intake openings</td>
+<td>Fixed grille or adjustable louvers</td>
+<td>Louvers allow wind direction adaptation</td>
+</tr>
+<tr>
+<td>Deflector plates</td>
+<td>Wood or sheet metal, angled 45° downward</td>
+<td>Directs wind inward and downward</td>
+</tr>
+<tr>
+<td>Internal ducts</td>
+<td>Timber framing or stone channels</td>
+<td>Smooth surfaces reduce turbulence</td>
+</tr>
+<tr>
+<td>Exhaust manifold</td>
+<td>Distribute air to rooms via branches</td>
+<td>Prevent pressure buildup at exit</td>
+</tr>
+<tr>
+<td>Seal</td>
+<td>Caulk + weatherstripping around all seams</td>
+<td>Leakage bypasses tower intentionally; seal to control flow</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sizing:</strong> For 500 m³/h target airflow through a 4m tall tower:</p>
+<pre><code>Required intake opening area ≈ 0.5–1.0 m² (per opening side)
+</code></pre>
+<p>A 2m × 2m square tower with openings on 2 sides = ~2 m² total intake.</p>
+<h3>Evaporative Cooling Enhancement</h3>
+<p>Wind towers are sometimes paired with evaporative coolers (in dry climates):</p>
+<ol>
+<li><strong>Water-soaked textile or mesh</strong> placed in upper tower</li>
+<li>Wind flows through wet surface, evaporating water and cooling air by ~5–15°C (depends on humidity)</li>
+<li>Cool air drops into occupied space below</li>
+</ol>
+<p>This works in climates with &lt;50% relative humidity. High-humidity areas (&gt;70% RH) see minimal cooling benefit.</p>
+</section>
+<section id="mechanical-ventilation-roof-units">
+<h2>Mechanical Ventilation: Roof Units</h2>
+<h3>Roof Ventilators (Ridge and Gable Types)</h3>
+<p>Off-grid buildings often use roof ventilators powered by wind (no electricity required). Two main types:</p>
+<p><strong>1. Turbine ventilators (whirlybirds):</strong> Spinning head with internal turbine that accelerates outlet air, creating suction. Driven by wind; spinning speed increases with wind velocity, boosting exhaust flow. Typical exhaust rate: 300–600 m³/h in moderate wind (5 m/s).</p>
+<p><strong>Construction (simplified):</strong></p>
+<ul>
+<li>Rotating head mounted on bearing</li>
+<li>Internal fan blades (3–6 blades) on central shaft</li>
+<li>Tail vane for wind-direction alignment</li>
+<li>Base flange bolted to roof opening</li>
+</ul>
+<div class="warning">
+<p>Roof turbines require minimum wind speed (~2 m/s) to operate effectively. In calm weather, they provide no ventilation. Combine with natural draft strategies or secondary mechanical fans for reliability.</p>
+</div>
+<p><strong>2. Ridge ventilators:</strong> Static louver installed along roof ridge line (runs the full length). No moving parts; relies on stack effect and wind pressure. Continuous exhaust outlet; requires intake vents (soffits or gable vents) to draw air through attic/crawlspace.</p>
+<p><strong>Ridge vent sizing:</strong> For a 10m ridge line, typical ridge vent opening is 10 m × 0.15m = 1.5 m² total opening.</p>
+<h3>Soffit and Gable Vents</h3>
+<p><strong>Soffit vents:</strong> Louvered openings under eaves that allow cool fresh air to enter attic/crawlspace at the cooler perimeter. Install continuously around entire perimeter (typically every 0.5m spacing or continuous soffit vent runs).</p>
+<p><strong>Gable vents:</strong> Fixed louvered openings in gable walls (triangular wall section above roof line). Gable vents supplement ridge vents but are less effective at promoting convection.</p>
+<p><strong>Vent area requirements (for attic spaces):</strong></p>
+<pre><code>Total vent opening area = Attic floor area / 150 (with 50% inlet, 50% outlet)
+</code></pre>
+<p>Example: 100 m² attic needs ~0.67 m² total vent area (0.33 m² soffit intake + 0.33 m² ridge/gable outlet).</p>
+</section>
+<section id="subfloor-ventilation">
+<h2>Subfloor Ventilation</h2>
+<h3>Crawlspace Ventilation</h3>
+<p>Subfloor spaces (crawlspaces) accumulate moisture from ground contact, condensation, and water vapor. Stagnant crawlspaces develop mold, wood rot, and attract pests. Ventilation removes moisture.</p>
+<p><strong>Passive crawlspace vent design:</strong></p>
+<ul>
+<li>Vent openings on opposite sides (typically 2–4 openings per side for cross-ventilation)</li>
+<li>Vent height: typically 0.3–0.5m from ground (allows air exchange but prevents water intrusion from shallow puddles)</li>
+<li>Screen mesh (10mm × 10mm or smaller) prevents pest entry</li>
+<li>Dampers or louvers (optional) prevent cold air infiltration in winter</li>
+</ul>
+<p><strong>Vent opening sizing:</strong></p>
+<pre><code>Required opening area = Crawlspace floor area / 150
+</code></pre>
+<p>Example: 50 m² crawlspace needs ~0.33 m² total venting (split across multiple openings for airflow).</p>
+<h3>Pier and Post Buildings</h3>
+<p>Stilt or post-support buildings naturally have ventilation beneath. Ensure airflow pathways:</p>
+<ul>
+<li>Clear debris and obstruction under building</li>
+<li>Install grilles/screens if needed to prevent animal entry while allowing air circulation</li>
+<li>Grade slopes away from posts to prevent water pooling</li>
+</ul>
+</section>
+<section id="fume-extraction">
+<h2>Fume Extraction for Kitchens and Workshops</h2>
+<h3>Kitchen Range Hoods</h3>
+<p>Cooking generates heat, moisture, and grease aerosols. Range hoods extract these at the source (above stove), preventing distribution throughout the building.</p>
+<p><strong>Hood design essentials:</strong></p>
+<ol>
+<li><strong>Capture zone:</strong> Exhaust opening must surround stove burners, typically 0.3–0.5m above cooking surface</li>
+<li><strong>Airflow rate:</strong> 300–500 m³/h for residential cooking; 600–1000 m³/h for heavy cooking/grilling</li>
+<li><strong>Duct routing:</strong> Shortest possible path to outdoors (minimize duct length/bends to reduce resistance)</li>
+<li><strong>Make-up air:</strong> As hood exhausts indoor air, replacement air must enter (otherwise negative pressure develops, pulling air from unwanted sources)</li>
+</ol>
+<div class="info-box">
+<p><strong>Make-up air requirement:</strong> For every m³/h exhausted, fresh air must enter from infiltration, dedicated make-up vents, or window cracking. In tight homes, exhaust hoods create negative pressure that can back-draft combustion appliances (dangerous).</p>
+</div>
+<h3>Workshop Dust and Fume Extraction</h3>
+<p>Metalworking, woodworking, and chemical handling produce airborne contaminants:</p>
+<ul>
+<li><strong>Woodworking dust:</strong> Mechanical dust collection with cartridge filters</li>
+<li><strong>Welding smoke:</strong> Spot extraction arms near work area, or general room ventilation</li>
+<li><strong>Solvent vapors:</strong> Ductwork to outdoors; never recirculate solvent-laden air</li>
+</ul>
+<p><strong>Design approach:</strong></p>
+<ol>
+<li>Capture at source (extraction arm positioned close to work)</li>
+<li>Route through filter unit (dust/mist collector)</li>
+<li>Exhaust to outdoors (or recirculate if filtered adequately)</li>
+<li>Ensure make-up air supply (prevent negative pressure)</li>
+</ol>
+<p><strong>Minimum exhaust rates (by process):</strong></p>
+<ul>
+<li>Basic woodworking: 300–500 m³/h</li>
+<li>Heavy dust (angle grinder, sanding): 800–1500 m³/h</li>
+<li>Solvent work: 1000–2000 m³/h continuous</li>
+</ul>
+</section>
+<section id="humidity-control">
+<h2>Humidity Control</h2>
+<h3>Condensation and Moisture Problems</h3>
+<p>Indoor moisture comes from:</p>
+<ul>
+<li>Cooking and dishwashing (steam)</li>
+<li>Showers/bathing (water vapor)</li>
+<li>Occupant respiration (30–50g/hour per person)</li>
+<li>Ground seepage (crawlspaces, basements)</li>
+</ul>
+<p><strong>Condensation occurs when:</strong></p>
+<pre><code>Indoor dew point &gt; Surface temperature
+</code></pre>
+<p>Example: Indoor air at 20°C with 60% RH has dew point ~11°C. Window glass at 5°C will condensate.</p>
+<p><strong>Problems from excessive moisture (&gt;65% RH):</strong></p>
+<ul>
+<li>Mold growth (thrives at 60–80% RH)</li>
+<li>Wood rot</li>
+<li>Dust mite proliferation</li>
+<li>Structural damage</li>
+<li>Odors and poor air quality</li>
+</ul>
+<h3>Dehumidification Strategies (Non-Mechanical)</h3>
+<ol>
+<li><strong>Ventilation:</strong> Exchange stale, moist indoor air with drier outdoor air. Most effective in cool/dry climates.</li>
+<li><strong>Desiccant absorption:</strong> Unglazed pottery, silica gel, or calcium chloride absorb water vapor. Limited capacity; must be dried/replaced regularly.</li>
+<li><strong>Airflow over cold surfaces:</strong> Route warm indoor air over cold water (or cold surfaces outdoors) to condense moisture. Water collects; dry air returns indoors.</li>
+</ol>
+<h3>Desiccant Production (Calcium Chloride)</h3>
+<p>One low-tech desiccant: calcium chloride (CaCl₂). Can be harvested from seawater or produced:</p>
+<p><strong>Seawater-derived method:</strong></p>
+<ol>
+<li>Evaporate seawater in shallow trays until crystallization begins</li>
+<li>Collect salt crystals (mostly NaCl and MgCl₂)</li>
+<li>Dissolve in minimal water and evaporate again to concentrate MgCl₂ and CaCl₂ (these have lower freezing points and precipitate last)</li>
+<li>Dry in low-heat oven (60–80°C) to produce desiccant powder</li>
+</ol>
+<p><strong>Activation:</strong> Heat CaCl₂ to 120–150°C periodically to drive off absorbed moisture and reactivate.</p>
+</section>
+<section id="heat-recovery-ventilation">
+<h2>Heat Recovery Ventilation (HRV) Concepts</h2>
+<h3>Basic HRV Principle</h3>
+<p>Heat recovery ventilation systems exhaust stale indoor air through a heat exchanger while pulling in fresh outdoor air. The warm exhaust air transfers heat to incoming cold outdoor air, reducing heating load.</p>
+<p><strong>Effectiveness:</strong> Well-designed HRV recovers 60–80% of temperature difference.</p>
+<p><strong>Example:</strong> Indoor air at 20°C, outdoor air at 0°C, HRV efficiency 75%:</p>
+<pre><code>Incoming air temperature = 0 + (20 - 0) × 0.75 = 15°C
+</code></pre>
+<p>Instead of heating incoming air from 0°C to 20°C (20°C rise needed), heating only 0°C to 15°C (5°C rise) reduces heating energy by 75%.</p>
+<h3>HRV Heat Exchanger Types</h3>
+<p><strong>1. Cross-flow plate:</strong> Exhaust and intake ducts pass across adjacent plates (layers of aluminum or plastic). Heat transfers through plates via conduction. No moving parts; low maintenance.</p>
+<p><strong>2. Counter-flow plate:</strong> Exhaust and intake ducts run parallel but opposite directions, maximizing heat transfer surface area. More efficient (70–80%) than cross-flow (60–70%).</p>
+<p><strong>3. Rotary wheel (desiccant):</strong> Rotating wheel with absorbent material. Warm exhaust heats wheel; cool intake air drawn through wheel absorbs heat. Requires motor but highly efficient (75–85%).</p>
+<h3>DIY HRV Feasibility</h3>
+<p>Full HRV systems require balanced ducting, sealed connections, and often electric fans. In off-grid settings without reliable power, a simpler approach:</p>
+<p><strong>Earth tube HRV (passive):</strong> Bury a 0.1–0.2m diameter corrugated plastic pipe underground (1–1.5m depth) 30–50m long. Incoming outdoor air flows through pipe, exchanging heat with earth (earth stays ~10–15°C year-round). Air exits cooler in summer, pre-warmed in winter. No fans required; airflow driven by stack effect + wind.</p>
+<p><strong>Limitations:</strong> Low airflow (100–300 m³/h typical), significant depth required, installation intensive. Effective supplement to natural ventilation, not replacement.</p>
+</section>
+<section id="design-summary">
+<h2>Design Summary Checklist</h2>
+<p>When designing ventilation for an off-grid building:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Climate type</td>
+<td>Cold/temperate (favor stack effect) or hot/dry (favor wind/evaporative)</td>
+</tr>
+<tr>
+<td>Building orientation</td>
+<td>Align long axis perpendicular to prevailing wind for cross-ventilation</td>
+</tr>
+<tr>
+<td>Window placement</td>
+<td>High and low on opposite sides for cross-ventilation; operable for emergency override</td>
+</tr>
+<tr>
+<td>Roof vents</td>
+<td>Ridge vent (continuous) + soffit intake for attic; gable vents if no ridge vent</td>
+</tr>
+<tr>
+<td>Wind towers</td>
+<td>If consistent wind and space permits; excellent for hot climates</td>
+</tr>
+<tr>
+<td>Kitchen/workshop</td>
+<td>Exhaust hoods with dedicated make-up air source; never rely solely on infiltration</td>
+</tr>
+<tr>
+<td>Humidity</td>
+<td>Monitor with simple hygrometer; activate ventilation when RH &gt;60%</td>
+</tr>
+<tr>
+<td>Filters</td>
+<td>Dust/mist collectors for workshops; change/clean regularly</td>
+</tr>
+<tr>
+<td>Dampers</td>
+<td>Optional; allows seasonal adjustment (close soffit vents in winter if heating load is extreme)</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="natural-building.html">Natural Building Materials</a>
+<a href="insulation-weatherproofing.html">Insulation &amp; Weatherproofing</a>
+<a href="heat-management.html">Heat Management</a>
+<a href="building-construction-basics.html">building-construction-basics</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

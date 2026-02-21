@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/optics-lens-science-detailed.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optics &amp; Lens Science (Detailed)</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Foundational Sciences</span> ›
+<span>Optics &amp; Lens Science (Detailed)</span>
+</div>
+
+
+<h1>Optics &amp; Lens Science (Detailed)</h1>
+<p class="subtitle">Master geometric optics theory, lens equations and aberrations (spherical, chromatic), mirror optics, prism dispersion, optical instrument design (microscope, telescope, spectrometer), diffraction basics, and optical testing methods.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~17 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#geometric-optics-theory">Geometric Optics Fundamentals</a></li>
+<li><a href="#lens-types">Lens Types and Properties</a></li>
+<li><a href="#aberrations">Lens Aberrations and Correction</a></li>
+<li><a href="#mirror-optics">Mirror Optics</a></li>
+<li><a href="#prism-dispersion">Prism Dispersion and Spectroscopy</a></li>
+<li><a href="#optical-instruments">Optical Instrument Design</a></li>
+<li><a href="#diffraction-basics">Diffraction Basics</a></li>
+<li><a href="#optical-testing">Optical Testing Methods</a></li>
+<li><a href="#optical-design-example">Design Example: Simple Microscope</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Optics is the physics of light behavior. Geometric optics (ray approximation) describes lenses, mirrors, and optical systems. Understanding lens equations, aberrations, and instrument design enables design of optical systems (microscopes, telescopes, photography equipment) from basic materials or repair of existing systems.</p>
+<p>Key principle: Light travels in straight lines in uniform media; bends (refracts) at interfaces; reflects from surfaces. Lenses shape light paths to focus, magnify, or disperse light. Aberrations (deviations from ideal behavior) limit performance; understanding and correcting them is central to good optical design.</p>
+</section>
+<section id="geometric-optics-theory">
+<h2>Geometric Optics Fundamentals</h2>
+<p>Light rays travel in straight lines until they hit an optical interface (surface), where they refract (bend) or reflect.</p>
+<h3>Snell's Law (Refraction)</h3>
+<pre><code>n₁ × sin(θ₁) = n₂ × sin(θ₂)
+
+n₁, n₂ = Refractive indices (air = 1.0; glass ≈ 1.5; water ≈ 1.33)
+θ₁ = Incident angle (angle to normal from surface)
+θ₂ = Refracted angle
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code>Light entering glass from air at 45° angle
+n₁ × sin(45°) = n₂ × sin(θ₂)
+1.0 × 0.707 = 1.5 × sin(θ₂)
+sin(θ₂) = 0.471; θ₂ ≈ 28°
+
+Light bends toward normal (closer to perpendicular) in denser medium
+</code></pre>
+<h3>Lens Equation (Thin Lens Approximation)</h3>
+<pre><code>1/f = 1/dₒ + 1/dᵢ
+
+f = Focal length
+dₒ = Object distance (from lens)
+dᵢ = Image distance (from lens)
+</code></pre>
+<p><strong>Magnification:</strong></p>
+<pre><code>M = dᵢ / dₒ = - (height of image) / (height of object)
+
+Negative magnification = inverted image
+Positive magnification = upright image
+|M| &gt; 1 = magnified; |M| &lt; 1 = minified
+</code></pre>
+<p><strong>Example: Simple microscope (magnifying glass)</strong></p>
+<pre><code>Focal length: 1 inch (f = 1&quot;)
+Object distance: 0.5 inches (placed between lens and focal point; dₒ = 0.5&quot;)
+
+1/1 = 1/0.5 + 1/dᵢ
+1 = 2 + 1/dᵢ
+1/dᵢ = -1; dᵢ = -1 inch
+
+Negative dᵢ = virtual image (upright, behind lens)
+Magnification: M = -1 / 0.5 = -2 (2× magnification, upright)
+</code></pre>
+</section>
+<section id="lens-types">
+<h2>Lens Types and Properties</h2>
+<p><strong>Converging lenses</strong> (convex): Focus light to a point; create real images (invertible onto screen).</p>
+<p><strong>Diverging lenses</strong> (concave): Spread light; create virtual images (visible only by eye).</p>
+<h3>Power Prescription</h3>
+<pre><code>Diopters (D) = 1 / focal length (meters)
+
+Example: f = 0.5 meters (50 cm, relatively short focal length)
+Power = 1 / 0.5 = 2 diopters
+
+Reading glasses: +2 to +3 diopters (converging, magnify)
+Nearsighted prescription: -1 to -4 diopters (diverging, reduce magnification for distant objects)
+</code></pre>
+<h3>Focal Length Determination (Practical Method)</h3>
+<p><strong>Converging lens:</strong></p>
+<pre><code>1. Place lens in sunlight
+2. Form image of sun on paper (focus point where sun appears sharp)
+3. Measure distance from lens to paper = focal length
+
+Accuracy: ±5% (depends on focus sharpness)
+</code></pre>
+<p><strong>Diverging lens (indirect):</strong></p>
+<pre><code>1. Use converging lens of known f₁ = 10 cm
+2. Place diverging lens in contact; system acts as weaker converter
+3. Find focal point (f_combined)
+4. Use: 1/f_combined = 1/f₁ + 1/f₂
+   Solve: 1/f₂ = 1/f_combined - 1/f₁
+</code></pre>
+</section>
+<section id="aberrations">
+<h2>Lens Aberrations and Correction</h2>
+<p>Real lenses deviate from ideal behavior. Aberrations degrade image quality.</p>
+<h3>Spherical Aberration</h3>
+<p>Marginal rays (outer zone of lens) focus at different point than paraxial rays (central zone).</p>
+<pre><code>Effect: Blurry image with halos
+Severity: Increases with lens aperture and low f-number
+Correction: Use aspherical lens (parabolic surface), or stop down (use smaller aperture)
+
+Example:
+f = 10 cm lens, full aperture (D = 5 cm)
+Paraxial focus: 10.0 cm
+Marginal focus: 10.5 cm
+Difference (aberration): 0.5 cm (produces blurry image if both zones are used)
+
+Stop to D = 2 cm: Only central zone used, aberration negligible
+</code></pre>
+<h3>Chromatic Aberration</h3>
+<p>Different wavelengths (colors) refract differently; focus at different distances.</p>
+<pre><code>n_red ≈ 1.515 (lower index)
+n_blue ≈ 1.525 (higher index)
+
+f_red = longer focal length (red focuses farther)
+f_blue = shorter focal length (blue focuses closer)
+
+Effect: Color fringing at edges of objects; loss of sharpness
+
+Correction: Achromatic lens (pair of lenses, different glass, different index differences cancel chromatic effect)
+</code></pre>
+<h3>Coma and Astigmatism</h3>
+<p><strong>Coma:</strong> Off-axis objects have comet-shaped aberration (worse away from lens center).</p>
+<p><strong>Astigmatism:</strong> Different focal lengths in different meridians (horizontal vs. vertical); appears as line blur.</p>
+<p><strong>Correction:</strong> Complex lens designs (multiple elements); limits field of view vs. simple lenses.</p>
+<h3>Distortion</h3>
+<p>Image shape distorts (barrel or pincushion).</p>
+<pre><code>Barrel distortion: Straight lines curve outward (typical wide-angle lenses)
+Pincushion distortion: Straight lines curve inward (typical telephoto lenses)
+
+Severity: Increases away from optical axis
+Correction: Deliberate opposite distortion in another lens; or post-processing (digital)
+</code></pre>
+</section>
+<section id="mirror-optics">
+<h2>Mirror Optics</h2>
+<p><strong>Plane mirror:</strong> Reflects light; creates virtual image (upright, same size, reversed).</p>
+<p><strong>Concave mirror</strong> (converging): Focuses light; can create real or virtual images (depending on object distance).</p>
+<p><strong>Convex mirror</strong> (diverging): Spreads light; always creates virtual, minified image.</p>
+<h3>Curved Mirror Equation</h3>
+<pre><code>1/f = 1/dₒ + 1/dᵢ
+
+(Same as lens equation; interpretation differs)
+
+f = R / 2 (where R = radius of curvature)
+Concave (converging): f positive
+Convex (diverging): f negative
+</code></pre>
+<p><strong>Example: Parabolic mirror (satellite dish)</strong></p>
+<pre><code>Incoming parallel rays (from distant satellite) focus at focal point
+f = 30 cm (depends on dish size and curvature)
+Receiver antenna placed at focal point; collects all energy
+
+Advantage: Angle-independent (all rays from any angle within dish converge)
+Application: Radar, radio telescopes, satellite communication
+</code></pre>
+<h3>Aberrations in Mirrors</h3>
+<p><strong>Spherical aberration:</strong> Marginal rays focus at different point than central rays (same as lenses).</p>
+<p><strong>Correction:</strong> Parabolic mirror shape (instead of spherical); focuses all rays to single point.</p>
+<p><strong>Advantage:</strong> Mirrors can use simple geometry; single parabolic surface perfect for astronomy.</p>
+</section>
+<section id="prism-dispersion">
+<h2>Prism Dispersion and Spectroscopy</h2>
+<p><strong>Prism:</strong> Transparent triangular solid. Different wavelengths refract at different angles (dispersion).</p>
+<h3>Dispersion Formula</h3>
+<pre><code>n = Aλ + B/λ² + C/λ⁴ + ...
+
+(Cauchy equation; relates refractive index to wavelength)
+
+n_red ≈ 1.515 (red light, long wavelength)
+n_blue ≈ 1.525 (blue light, short wavelength)
+
+Difference (Δn) ≈ 0.01 for typical optical glass
+This small difference creates visible color separation
+</code></pre>
+<h3>Prism Spectrometer</h3>
+<pre><code>Light source (mixture of wavelengths)
+       ↓
+[Slit (collimator)]
+       ↓
+[Prism (disperses colors)]
+       ↓
+[Eyepiece or detector (observes rainbow)]
+
+Application: Identify elements (each element produces unique spectral lines)
+</code></pre>
+<h3>Dispersion Design</h3>
+<p>To separate colors:</p>
+<pre><code>Longer path through glass (higher dispersion): 2+ prisms, longer light path
+Higher dispersion glass (n varies more with λ): Crown glass vs. flint glass
+
+Crown glass: Δn ≈ 0.02 (low dispersion)
+Flint glass: Δn ≈ 0.04 (high dispersion)
+</code></pre>
+</section>
+<section id="optical-instruments">
+<h2>Optical Instrument Design</h2>
+<h3>Microscope</h3>
+<pre><code>[Object (on slide)]
+       ↓
+[Objective lens (high magnification, f ≈ 1–10 mm, high NA)]
+       ↓
+[Magnified real image]
+       ↓
+[Eyepiece (magnifies image further)]
+       ↓
+[Final magnified virtual image (visible to eye)]
+</code></pre>
+<p><strong>Design parameters:</strong></p>
+<pre><code>Objective: f = 5 mm, N.A. = 0.65 (aperture ≈ 20°)
+Eyepiece: f = 20 mm, magnification = 10×
+Total magnification: (tube length / f_obj) × (250 mm / f_eyepiece)
+                  = (160 mm / 5 mm) × (250 mm / 20 mm)
+                  = 32 × 12.5 = 400×
+
+Practical magnification limit: 1000× (limited by objective NA; further magnification shows no new detail)
+</code></pre>
+<h3>Telescope</h3>
+<pre><code>[Distant object]
+       ↓
+[Objective lens (large diameter, long f, collects light)]
+       ↓
+[Light focused]
+       ↓
+[Eyepiece (magnifies; small f)]
+       ↓
+[Final magnified virtual image]
+</code></pre>
+<p><strong>Design:</strong></p>
+<pre><code>Objective: f = 2000 mm, D = 100 mm (large to collect light)
+Eyepiece: f = 20 mm
+Magnification: f_obj / f_eyepiece = 2000 / 20 = 100×
+
+Light gathering: Proportional to D² (objective diameter)
+Larger objectives collect more light; allows observation of fainter stars
+</code></pre>
+<h3>Spectrometer (Spectrophotometer)</h3>
+<pre><code>[Light source (variable wavelength or white light)]
+       ↓
+[Prism or diffraction grating (disperses wavelengths)]
+       ↓
+[Slit (selects single wavelength)]
+       ↓
+[Sample (absorbs some wavelengths)]
+       ↓
+[Detector (measures transmitted light intensity)]
+
+Application: Measure absorption spectra; identify chemicals
+</code></pre>
+</section>
+<section id="diffraction-basics">
+<h2>Diffraction Basics</h2>
+<p>When light passes through narrow opening or edge, it bends. This diffraction sets fundamental limits on optical resolution.</p>
+<h3>Diffraction Limit</h3>
+<pre><code>Minimum resolvable separation: δ = 1.22 λ / D
+
+λ = Wavelength of light (500 nm typical for visible)
+D = Aperture diameter (lens or telescope opening)
+</code></pre>
+<p><strong>Example: Microscope objective</strong></p>
+<pre><code>D = 5 mm, λ = 500 nm
+δ = 1.22 × 500 nm / 5,000,000 nm = 0.12 micrometers
+
+Objects closer than 0.12 μm cannot be resolved (appear as single blob)
+This is the fundamental diffraction limit for visible light microscopy
+</code></pre>
+<p><strong>Example: Telescope (astronomy)</strong></p>
+<pre><code>D = 1 meter, λ = 500 nm
+δ = 1.22 × 500 nm / 1,000,000,000 nm = 0.0006 arcseconds
+
+Two stars separated by less than 0.0006 arcseconds appear as single star
+Larger telescopes have better resolution (larger D)
+</code></pre>
+<h3>Resolution and Magnification</h3>
+<pre><code>Useful magnification ≈ D / (1 mm)
+
+Magnification beyond this shows no new detail (empty magnification)
+
+Example: 100 mm telescope
+Useful magnification ≈ 100; magnifying beyond 100-200× shows no gain
+</code></pre>
+</section>
+<section id="optical-testing">
+<h2>Optical Testing Methods</h2>
+<h3>Geometric Testing (Focal Length)</h3>
+<pre><code>1. Place lens in sunlight or light source
+2. Form image on screen at various distances
+3. Find position where image is sharpest = focal point
+4. Measure distance = focal length
+</code></pre>
+<h3>Optical Testing (Aberrations)</h3>
+<p><strong>Optical bench method:</strong></p>
+<pre><code>Light source → Lens under test → Screen (observe image)
+
+Procedure:
+1. Place object at known distance (dₒ)
+2. Move screen to find focal point (dᵢ)
+3. Verify with lens equation: 1/f = 1/dₒ + 1/dᵢ
+4. Repeat for multiple object distances
+
+Deviation from ideal indicates aberrations
+</code></pre>
+<p><strong>Visual inspection:</strong></p>
+<pre><code>Look at image of known pattern (checkboard, ruler, star)
+- Blurry edges = spherical/coma/astigmatism
+- Color fringing = chromatic aberration
+- Curved straight lines = distortion
+- Uneven brightness = vignetting
+</code></pre>
+<h3>Modulation Transfer Function (MTF)</h3>
+<p>Advanced optical testing measures contrast transmission vs. spatial frequency.</p>
+<pre><code>Procedure:
+1. Photograph/observe test pattern (repeating bars of varying spacing)
+2. Measure contrast (bright to dark ratio) in image
+3. Compare to object contrast
+4. Ratio = MTF (higher MTF = better image quality)
+
+Interpretation:
+MTF = 100% at zero frequency (overall brightness preserved)
+MTF decreases at high frequencies (fine details lost)
+Cutoff frequency = resolution limit
+</code></pre>
+</section>
+<section id="optical-design-example">
+<h2>Design Example: Simple Microscope</h2>
+<p><strong>Goal:</strong> Magnify small objects 50× for educational use.</p>
+<p><strong>Design:</strong></p>
+<pre><code>Objective lens:
+- Type: Converging (biconvex)
+- Focal length: f = 10 mm (chosen for 10 mm working distance)
+- Diameter: D = 5 mm (limits light collection and defines cone angle)
+- N.A. ≈ 0.2 (sin(angle) ≈ D/2/f)
+
+Eyepiece lens:
+- Type: Converging
+- Focal length: f = 50 mm (higher f gives lower magnification; allows relaxed eye)
+- Diameter: D = 20 mm (full image utilization)
+
+Magnification:
+M = (250 mm / f_obj) × (f_eye / 250 mm) [if tube length 250 mm standard]
+M = (250 / 10) × (50 / 250) = 25 × 0.2 = 5× [WRONG]
+
+Correct formula (when object very close to focal point):
+M ≈ (tube length / f_obj) × (250 mm / f_eye) = (160 / 10) × (250 / 50) = 16 × 5 = 80×
+
+[Discrepancy because object at focal length produces image at infinity (relaxed eye viewing)]
+</code></pre>
+<p><strong>Assembly:</strong></p>
+<pre><code>[Objective (f = 10 mm)]
+            ↓ [160 mm tube length]
+            ↓
+[Eyepiece (f = 50 mm)]
+
+Object placed 10.5 mm from objective (just beyond focal point)
+Image formed at infinity (eye sees magnified virtual image)
+Magnification: 80×
+</code></pre>
+<p><strong>Testing:</strong></p>
+<pre><code>1. Use object slide (prepared microscope slide or printed pattern)
+2. Focus by adjusting objective position
+3. Verify magnification: Known-size object appears 80× larger
+4. Check image quality: Edges sharp? Color fringing? Aberrations?
+</code></pre>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="lens-grinding.html">Lens Grinding &amp; Optics</a>
+<a href="microscopy.html">Microscopy &amp; Magnification</a>
+<a href="mathematics-physics.html">mathematics-physics</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/brick-making-fired-earth.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brick Making &amp; Fired Earth</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Building &amp; Engineering</span> ›
+<span>Brick Making &amp; Fired Earth</span>
+</div>
+
+
+<h1>Brick Making &amp; Fired Earth</h1>
+<p class="subtitle">Make sun-dried adobe bricks, fired clay bricks, and brick molds. Covers clay testing, mix ratios, mold construction, drying, firing schedules, and quality testing.</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~7 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#clay-identification-testing">Clay Identification &amp; Testing</a></li>
+<li><a href="#mix-ratios">Mix Ratios &amp; Preparation</a></li>
+<li><a href="#brick-mold-construction">Brick Mold Construction</a></li>
+<li><a href="#sun-dried-adobe-bricks">Sun-Dried Adobe Bricks</a></li>
+<li><a href="#fired-clay-bricks">Fired Clay Bricks</a></li>
+<li><a href="#quality-testing">Quality Testing &amp; Standards</a></li>
+<li><a href="#troubleshooting">Common Problems &amp; Solutions</a></li>
+<li><a href="#safety">Safety &amp; Labor Considerations</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<h2 id="overview">Overview</h2>
+<p>Bricks are the foundational building material of civilizations. Earth-fired bricks have been made for over 10,000 years and require no sophisticated equipment—just clay, water, fiber reinforcement, and heat. A single brick-maker can produce 500–1000 bricks per day using hand labor. A household can build a modest structure from 3,000–5,000 bricks. Understanding clay and brick-making transforms raw earth into durable load-bearing components.</p>
+<div class="info-box">
+<p><strong>Why This Matters</strong>
+Fired bricks are weather-resistant, durable for centuries, compressive-strong (commonly 3-20 MPa depending on firing), and recyclable. A well-made brick requires only clay and labor—no Portland cement, no specialized tools. In post-collapse scenarios, brick production becomes one of the core manufacturing skills enabling reconstruction.</p>
+</div>
+<section id="clay-identification-testing">
+<h2>Clay Identification &amp; Testing</h2>
+<p>Not all soil is clay. You must identify true clay, measure its working properties, and determine if it's suitable for bricks before investing labor in production.</p>
+<h3>What Is Clay?</h3>
+<p>Clay consists of hydrous aluminum silicate minerals with particle size &lt;2 micrometers. Visible sand (&gt;63 micrometers) and silt (2–63 micrometers) contamination weaken bricks. A &quot;lean&quot; clay has high sand content and needs less additional sand. A &quot;fat&quot; clay has low sand content and needs more sand added.</p>
+<h3>The Drop Test</h3>
+<ol>
+<li><strong>Prepare a ball:</strong> Mix a handful of moist soil to workable paste, shape into a ball (~5 cm diameter), and let it dry fully in sun (3–7 days depending on climate).</li>
+<li><strong>Drop it:</strong> Drop the ball from 1 meter onto hard ground or concrete.</li>
+<li><strong>Inspect:</strong> If the ball shatters into many pieces (&gt;5 large fragments), it's clay-rich. If it deforms or breaks into 2–3 pieces, it has too much sand. If it stays nearly intact, it's poor quality for bricks.</li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li><strong>Excellent clay:</strong> Shatters cleanly, brittle when dry.</li>
+<li><strong>Good clay:</strong> Breaks into 3–5 pieces, hard when dry.</li>
+<li><strong>Poor clay:</strong> Deforms on impact, crumbly.</li>
+</ul>
+<h3>The Ribbon Test</h3>
+<ol>
+<li>Roll moist soil into a rope ~1 cm thick.</li>
+<li>Lift one end and see how far it stretches under its own weight before breaking.</li>
+<li><strong>&gt;30 cm:</strong> Very high clay content (fat clay, may crack when dried).</li>
+<li><strong>15–30 cm:</strong> Good balance (ideal for bricks).</li>
+<li><strong>&lt;15 cm:</strong> Low clay content (lean clay, needs clay added or high sand).</li>
+</ol>
+<h3>The Jar Settling Test</h3>
+<p>This tells you the exact clay/silt/sand proportions.</p>
+<ol>
+<li>
+<p>Fill a straight-sided glass jar half full with soil.</p>
+</li>
+<li>
+<p>Add water until 3/4 full, plus a drop of dish soap to help separation.</p>
+</li>
+<li>
+<p><strong>Seal and shake vigorously</strong> for 2 minutes.</p>
+</li>
+<li>
+<p><strong>Set on a level surface</strong> and observe settling over 24 hours:</p>
+<ul>
+<li>First 1 minute: Sand settles to bottom.</li>
+<li>First 1 hour: Silt settles on top of sand.</li>
+<li>Overnight: Clay settles last, forms a thin layer on top. Water remains clear above clay.</li>
+</ul>
+</li>
+<li>
+<p><strong>Measure the layers</strong> and calculate percentages:</p>
+</li>
+</ol>
+<pre><code>Total depth = 100%
+Sand (bottom) = % of total
+Silt (middle) = % of total
+Clay (near top, turbid layer) = % of total
+Water above clay = discarded
+</code></pre>
+<p><strong>Ideal for bricks:</strong> 30–40% clay, 50–60% sand, 10–15% silt.</p>
+</section>
+<section id="mix-ratios">
+<h2>Mix Ratios &amp; Preparation</h2>
+<p>Once you understand your soil's composition, adjust the mix to achieve optimal properties.</p>
+<h3>Sun-Dried Adobe Bricks</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Percentage</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clay</td>
+<td>30–40%</td>
+<td>Provides binding and strength</td>
+</tr>
+<tr>
+<td>Sand</td>
+<td>50–60%</td>
+<td>Reduces shrinkage and cracking</td>
+</tr>
+<tr>
+<td>Straw or fiber</td>
+<td>5–10%</td>
+<td>Reinforces and reduces cracking during drying</td>
+</tr>
+<tr>
+<td>Water</td>
+<td>as needed</td>
+<td>Just enough to make workable paste</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ratios by volume (practical):</strong></p>
+<ul>
+<li>1 part clay soil + 2 parts additional coarse sand + 1 handful of chopped straw per 3-liter batch = typical adobe mix.</li>
+<li>If your soil is lean (low clay), reduce added sand; if fat, increase added sand.</li>
+</ul>
+<h3>Fired Clay Bricks</h3>
+<p>Fired bricks can tolerate slightly higher clay content because firing bonds particles deeply. However, straw still helps reduce drying cracks.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clay</td>
+<td>40–50%</td>
+</tr>
+<tr>
+<td>Sand</td>
+<td>45–55%</td>
+</tr>
+<tr>
+<td>Straw/fiber</td>
+<td>5–8%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Preparation:</strong></p>
+<ol>
+<li>Screen soil through 6 mm mesh to remove stones and roots.</li>
+<li>Mix in additional sand if the jar settling test shows &lt;30% clay.</li>
+<li>Add chopped straw (5–10 cm lengths) and mix thoroughly.</li>
+<li>Wet incrementally until the mixture is stiff and plastic, not soupy—it should hold shape when pressed.</li>
+</ol>
+</section>
+<section id="brick-mold-construction">
+<h2>Brick Mold Construction</h2>
+<p>A simple wooden brick mold determines output quality and speed.</p>
+<h3>Standard Mold Dimensions</h3>
+<div class="brick-dimensions">
+<p><strong>Standard modern brick:</strong> 240 × 115 × 60 mm (9&quot; × 4.5&quot; × 2.4&quot;)
+<strong>Practical hand-mold:</strong> 230 × 110 × 55 mm (slightly smaller to allow removal)
+<strong>Large format:</strong> 300 × 150 × 75 mm (easier to handle, fewer bricks needed)</p>
+</div>
+<h3>Mold Assembly</h3>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>Hardwood (oak, acacia, or dense local hardwood) 20 mm thick</li>
+<li>Metal corners (iron or aluminum) to reinforce corners</li>
+<li>Wooden handles at short ends</li>
+</ul>
+<p><strong>Assembly steps:</strong></p>
+<ol>
+<li>Cut four side boards to length and width.</li>
+<li>Attach reinforcing corner brackets (bolted or screwed on outside).</li>
+<li>Attach wooden handles with 25 mm diameter holes for fingers.</li>
+<li><strong>Critical:</strong> The mold must be square and true—check diagonals with a string to ensure they're equal.</li>
+</ol>
+<h3>Release &amp; Ease of Removal</h3>
+<ul>
+<li><strong>Wet sand coating:</strong> Dust the interior with dry sand before each fill—this prevents sticking.</li>
+<li><strong>Water spray:</strong> Lightly mist the mold interior before filling.</li>
+<li><strong>Angled edges:</strong> Slightly bevel the interior top edges (chamfer 3–5 mm) so the brick doesn't catch during lift-off.</li>
+<li><strong>Wooden or plastic:</strong> Plastic molds (modern) release easier; wood requires more maintenance but is repairable.</li>
+</ul>
+<p><strong>Typical mold lifespan:</strong> A well-maintained wooden mold lasts 1,000–2,000 bricks before the wood warps or edges split.</p>
+</section>
+<section id="sun-dried-adobe-bricks">
+<h2>Sun-Dried Adobe Bricks</h2>
+<p>Adobe is the simplest brick method: mix, mold, and dry in the sun. No firing kiln required.</p>
+<h3>Mixing Process</h3>
+<ol>
+<li><strong>Dig or source clay</strong> in a designated area near your building site.</li>
+<li><strong>Trench method:</strong> Dig a shallow pit (30 cm deep), add the soil + sand mix, and trample or plow through it with oxen/horses until thoroughly mixed—15–30 minutes of steady trampling.</li>
+<li><strong>Add water and straw</strong> during mixing until the paste is stiff but plastic (workable).</li>
+<li><strong>Test consistency:</strong> A handful should hold shape, not slump, and not crack when twisted.</li>
+</ol>
+<h3>Molding &amp; Stacking</h3>
+<ol>
+<li><strong>Prepare the mold:</strong> Dust interior with dry sand or water-spray lightly.</li>
+<li><strong>Pack firmly:</strong> Press the mix into the mold with hands or a wooden block, overfill slightly, and strike the excess level with a wooden straightedge.</li>
+<li><strong>Lift the mold</strong> by the handles vertically upward in one smooth motion.</li>
+<li><strong>Stack on ground:</strong> Lay bricks flat (not on edge) in long rows, with 10–15 cm spacing between bricks to allow air circulation.</li>
+</ol>
+<h3>Drying Timeline</h3>
+<div class="drying-timeline">
+<div class="drying-stage">
+**Week 1–2: Green Stage**
+- Bricks still contain 30%+ moisture.
+- Turn bricks at day 5 so all sides dry evenly.
+- Surface cracks are normal; deep cracks (>5mm) suggest too much clay or not enough sand.
+</div>
+<div class="drying-stage">
+**Week 3–4: Leather Stage**
+- Moisture down to ~15%.
+- Bricks can be moved without distortion.
+- Continue air circulation.
+- Total time depends on humidity and sun exposure: 2–4 weeks typical.
+</div>
+<div class="drying-stage">
+**Week 5+: Full Cure**
+- Bricks reach <12% moisture.
+- Ready for stacking, storage, or use.
+- Well-dried adobe is surprisingly durable.
+</div>
+</div>
+<div class="warning">
+<p><strong>Drying Failure Risk</strong>
+Rain during drying softens and weakens bricks. Site production in the dry season (6+ weeks of low rainfall forecast). Cover stacks with thatch or cloth if rain threatens, but allow air movement underneath to prevent mold.</p>
+</div>
+<h3>Adobe Performance</h3>
+<p>A well-made adobe brick:</p>
+<ul>
+<li><strong>Compressive strength:</strong> 0.5–2 MPa (adequate for single-story walls, poor for multi-story)</li>
+<li><strong>Durability:</strong> Centuries in arid climates; poor in high-rainfall areas without protective plaster</li>
+<li><strong>Cost:</strong> Only labor and local soil—effectively free</li>
+<li><strong>Use:</strong> Excellent for walls below and at roof line when plastered; requires external weather protection</li>
+</ul>
+</section>
+<section id="fired-clay-bricks">
+<h2>Fired Clay Bricks</h2>
+<p>Firing dramatically increases strength and weather-resistance. Fired bricks can be load-bearing in multi-story construction and last centuries exposed to weather.</p>
+<h3>Preparation for Firing</h3>
+<ol>
+<li><strong>Dry bricks fully</strong> in sun to &lt;12% moisture (2–4 weeks).</li>
+<li><strong>Inspect for major flaws:</strong> Discard bricks with deep cracks (&gt;5 mm), soft zones, or large surface voids.</li>
+<li><strong>Stage in kiln or clamp</strong> based on the firing method chosen.</li>
+</ol>
+<h3>Simple Clamp Kiln</h3>
+<p>A clamp is the simplest and most practical fired-brick method for small-scale production.</p>
+<p><strong>Clamp dimensions:</strong> 3 m long × 2 m wide × 1.5 m high (typical) = ~2,000 bricks per firing.</p>
+<p><strong>Construction:</strong></p>
+<ol>
+<li><strong>Choose a site:</strong> Level ground, protected from wind, with access to fuel and water.</li>
+<li><strong>Create the base:</strong> Layer 4 rows of dried bricks (30 cm high) to form a rectangular chamber.</li>
+<li><strong>Fuel layers:</strong> Every 4–5 rows of bricks, insert a 10 cm layer of brushwood, dung, or coal.</li>
+<li><strong>Stack bricks:</strong> Load bricks in running bond (staggered), leaving gaps for gas flow.</li>
+<li><strong>Seal with mud:</strong> Coat the entire exterior with mud plaster (3–5 cm thick) except for chimneys and air holes.</li>
+<li><strong>Create chimneys:</strong> Leave 2–4 vertical channels (20 cm diameter) up the sides for smoke and hot gas to escape.</li>
+</ol>
+<h3>Firing Schedule</h3>
+<div class="firing-curve">
+<p><strong>Temperature Ramp (critical to avoid cracking):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Time (hours)</th>
+<th>Temp (°C)</th>
+<th>Rate</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0-24</td>
+<td>20 → 200</td>
+<td>7°C/hr</td>
+<td>Water evaporation, low heat</td>
+</tr>
+<tr>
+<td>24-48</td>
+<td>200 → 500</td>
+<td>12°C/hr</td>
+<td>Accelerate water loss</td>
+</tr>
+<tr>
+<td>48-72</td>
+<td>500 → 900</td>
+<td>13°C/hr</td>
+<td>Organic matter burns off</td>
+</tr>
+<tr>
+<td>72-96</td>
+<td>900 → 1000</td>
+<td>3°C/hr</td>
+<td>Final sintering, slow to avoid bloating</td>
+</tr>
+<tr>
+<td>96+</td>
+<td>1000 → 20</td>
+<td>5°C/hr</td>
+<td>Cool slowly (2 weeks typical)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practical control:</strong></p>
+<ul>
+<li>Days 1–2: Gentle fire at clamp entrance, light smoke.</li>
+<li>Days 3–4: Increase fuel, fire moves through clamp.</li>
+<li>Days 5–6: Hot zone at clamp center, reduce fuel slightly.</li>
+<li>Days 7–10: Clamp slowly cools (cover vents partially if cooling too fast).</li>
+</ul>
+</div>
+<div class="warning">
+<p><strong>Firing Hazards</strong></p>
+<ul>
+<li>Explosions: If bricks contain trapped moisture pockets that convert to steam rapidly, failure occurs. Always dry bricks fully first.</li>
+<li>Carbon monoxide: Maintain good ventilation around clamp. Never sleep downwind.</li>
+<li>Heat exhaustion: Work early morning/evening during summer firing. Provide water for workers.</li>
+</ul>
+</div>
+<h3>Expected Outcomes</h3>
+<p><strong>Well-fired brick (1000°C, slow cool):</strong></p>
+<ul>
+<li><strong>Color:</strong> Red, orange, or brown depending on iron oxide content.</li>
+<li><strong>Sound:</strong> Rings clearly when tapped with another brick (not dull thud).</li>
+<li><strong>Strength:</strong> 5–15 MPa compressive strength (sufficient for multi-story buildings, bridges).</li>
+<li><strong>Absorption:</strong> &lt;15% water absorption (durable in wet climates).</li>
+<li><strong>Durability:</strong> 100+ year lifespan, often centuries.</li>
+</ul>
+<p><strong>Under-fired brick (700–800°C):</strong></p>
+<ul>
+<li><strong>Color:</strong> Pale, uneven.</li>
+<li><strong>Sound:</strong> Dull, soft.</li>
+<li><strong>Strength:</strong> 1–3 MPa (adequate for single-story with skill).</li>
+<li><strong>Absorption:</strong> &gt;20% (weathers poorly, freeze-thaw damage).</li>
+</ul>
+<p><strong>Over-fired brick (&gt;1100°C):</strong></p>
+<ul>
+<li><strong>Appearance:</strong> Dark, often bloated or deformed.</li>
+<li><strong>Strength:</strong> Very high but brittle.</li>
+<li><strong>Use:</strong> Acceptable but wasteful of fuel.</li>
+</ul>
+</section>
+<section id="quality-testing">
+<h2>Quality Testing &amp; Standards</h2>
+<p>Test bricks before full-scale construction to ensure durability.</p>
+<h3>Ring Test</h3>
+<p>Tap a fired brick with a rubber mallet or another brick. A clear, high-pitched ring indicates proper firing. A dull thud suggests under-firing or internal cracks.</p>
+<h3>Absorption Test</h3>
+<ol>
+<li>Weigh a fully dried brick (Wdry).</li>
+<li>Submerge in water for 24 hours.</li>
+<li>Remove, wipe surface, and re-weigh (Wwet).</li>
+<li><strong>Absorption % = (Wwet − Wdry) / Wdry × 100</strong></li>
+</ol>
+<p><strong>Target:</strong> &lt;15% for durable bricks. &gt;20% indicates under-firing or poor clay.</p>
+<h3>Compressive Strength (Field Test)</h3>
+<p>Stack test bricks in a column (10–20 high) and load with known weights until failure occurs. Simple but gives rough data.</p>
+<p><strong>Expected failures:</strong></p>
+<ul>
+<li>Adobe: 0.5–2 MPa → fails under 3–5 adult humans standing on a platform on top</li>
+<li>Well-fired: 5–15 MPa → supports significantly larger loads</li>
+</ul>
+<h3>Freeze-Thaw Durability</h3>
+<p>For bricks used in cold climates:</p>
+<ol>
+<li>Saturate a brick fully.</li>
+<li>Freeze overnight at &lt;−5°C.</li>
+<li>Thaw in sun.</li>
+<li>Repeat 10 times.</li>
+<li><strong>Pass:</strong> No spalling or surface loss. <strong>Fail:</strong> Chips, flaking, or breakdown.</li>
+</ol>
+<p>Well-fired bricks pass; under-fired bricks fail within 2–3 cycles.</p>
+</section>
+<section id="troubleshooting">
+<h2>Common Problems &amp; Solutions</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cracks during drying</strong></td>
+<td>Too much clay or straw</td>
+<td>Add more sand, reduce fiber, slow dry time</td>
+</tr>
+<tr>
+<td><strong>Crumbling after firing</strong></td>
+<td>Under-firing or high salts in clay</td>
+<td>Increase firing temp, test clay with acid first</td>
+</tr>
+<tr>
+<td><strong>Warping</strong></td>
+<td>Uneven drying or loading</td>
+<td>Dry in open stacks, turn bricks daily</td>
+</tr>
+<tr>
+<td><strong>Pale color</strong></td>
+<td>Under-firing or low iron content</td>
+<td>Increase firing temperature</td>
+</tr>
+<tr>
+<td><strong>Spalling (surface flaking)</strong></td>
+<td>Water in clay freezes or over-fired</td>
+<td>Reduce water content, lower peak temperature</td>
+</tr>
+<tr>
+<td><strong>Low strength after firing</strong></td>
+<td>Clay too lean (high sand %) or poor clay bond</td>
+<td>Test clay first, increase firing time</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="safety">
+<h2>Safety &amp; Labor Considerations</h2>
+<div class="warning">
+<p><strong>Physical Labor</strong>
+Brick-making is strenuous: mixing soil, molding, stacking, and firing. Rotate workers regularly, provide water, and take breaks in heat. Repetitive motion (molding) causes joint strain—alternate tasks.</p>
+</div>
+<div class="warning">
+<p><strong>Kiln Firing</strong></p>
+<ul>
+<li>Smoke inhalation from dung fires can cause respiratory issues. Work upwind.</li>
+<li>Hot clamp surfaces can cause severe burns. Maintain barriers.</li>
+<li>Carbon monoxide builds up in enclosed areas near firing. Ensure ventilation.</li>
+</ul>
+</div>
+<div class="tip">
+<p><strong>Efficiency</strong></p>
+<ul>
+<li>Build two molding stations so one person fills while another carries or stacks.</li>
+<li>Pre-cut straw to 5–8 cm lengths and store dry.</li>
+<li>Mark mold interior with depth gauges to ensure consistent brick size.</li>
+<li>Use oxen or horses to tread soil during mixing—far more efficient than human feet.</li>
+</ul>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="construction-basics.html">construction-basics</a>
+<a href="lime-cement-mortar-production.html">lime-cement-mortar-production</a>
+<a href="pottery-kiln-construction.html">Pottery Kiln Construction</a>
+<a href="stone-masonry.html">Stone Masonry Construction</a>
+<a href="natural-building-techniques.html">natural-building-techniques</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

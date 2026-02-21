@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/greywater-recycling-treatment.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greywater Recycling &amp; Treatment</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Building &amp; Engineering</span> ›
+<span>Greywater Recycling &amp; Treatment</span>
+</div>
+
+
+<h1>Greywater Recycling &amp; Treatment</h1>
+<p class="subtitle">Distinguish greywater from blackwater, design treatment systems (settling, sand filtration, reed beds), assess water quality, select appropriate soaps, plan system maintenance, and integrate greywater for irrigation and toilet flushing.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~14 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#greywater-vs-blackwater">Greywater vs. Blackwater Classification</a></li>
+<li><a href="#treatment-systems">Treatment System Design</a></li>
+<li><a href="#water-quality-assessment">Water Quality Assessment</a></li>
+<li><a href="#soap-selection">Soap and Detergent Selection</a></li>
+<li><a href="#system-maintenance">System Maintenance and Troubleshooting</a></li>
+<li><a href="#reuse-applications">Greywater Reuse Applications</a></li>
+<li><a href="#design-example">Design Example: 4-Person Household Greywater System</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Greywater is wastewater from sinks, showers, washing machines, and laundry—containing soap, oils, food particles. It is distinct from blackwater (human waste from toilets), which requires treatment before reuse. Greywater, when treated simply, can irrigate gardens, flush toilets, or recharge groundwater, reducing freshwater demand by 30–50%.</p>
+<p>Untreated greywater contaminates soils and groundwater. Treatment methods range from simple (settling tanks) to complex (constructed wetlands, sand filters). Proper design and maintenance determine success.</p>
+</section>
+<section id="greywater-vs-blackwater">
+<h2>Greywater vs. Blackwater Classification</h2>
+<p><strong>Greywater sources:</strong></p>
+<ul>
+<li>Sink water (kitchen, bathroom).</li>
+<li>Shower/bath water.</li>
+<li>Washing machine discharge.</li>
+<li>Laundry water.</li>
+</ul>
+<p><strong>Blackwater sources:</strong></p>
+<ul>
+<li>Toilet discharge.</li>
+<li>Septic tank effluent (partially treated blackwater).</li>
+</ul>
+<p><strong>Distinction matters:</strong> Greywater contains food particles, soap, oils; blackwater contains pathogens and human feces. Greywater requires simple treatment (settling, filtration); blackwater requires advanced treatment (biological breakdown, chemical disinfection) or composting toilets.</p>
+<p><strong>Mixed water:</strong> If greywater and blackwater combine, treat as blackwater (more stringent).</p>
+<h3>Greywater Quality Parameters</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Kitchen Sink</strong></th>
+<th><strong>Bathroom Sink</strong></th>
+<th><strong>Shower</strong></th>
+<th><strong>Washing Machine</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Suspended solids</td>
+<td>High (food)</td>
+<td>Low–medium</td>
+<td>Low</td>
+<td>High (lint)</td>
+</tr>
+<tr>
+<td>Oil/grease</td>
+<td>Very high</td>
+<td>Medium</td>
+<td>Low–medium</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Organic matter (BOD)</td>
+<td>Very high</td>
+<td>Medium</td>
+<td>Low–medium</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Nutrients (nitrogen, phosphorus)</td>
+<td>High (food waste)</td>
+<td>Medium</td>
+<td>Low</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Typical reuse</td>
+<td>Not direct irrigation; settle first</td>
+<td>Direct irrigation OK</td>
+<td>Direct irrigation OK</td>
+<td>Settle before reuse</td>
+</tr>
+</tbody>
+</table>
+<p><strong>BOD (Biochemical Oxygen Demand):</strong> Measure of organic contamination.</p>
+<pre><code>Clean water: &lt;2 mg/L
+Greywater (average): 100–300 mg/L
+Acceptable for irrigation after treatment: &lt;50 mg/L
+</code></pre>
+</section>
+<section id="treatment-systems">
+<h2>Treatment System Design</h2>
+<p>Treatment removes solids and organic matter, making water suitable for irrigation or toilet reuse.</p>
+<h3>Settling Tank (Simplest)</h3>
+<p>Gravity separates solids (sink to bottom) from liquid (clear on top). Solids (sludge) accumulate; liquid is drawn off for irrigation or secondary treatment.</p>
+<p><strong>Design:</strong></p>
+<pre><code>Tank volume = 1–2 days worth of greywater flow
+
+Example: Household of 4 people
+Daily greywater: 80 gallons (200 L)
+Tank size: 160–320 gallons (2–3 days retention)
+
+Typical tank: 500-gallon tank allows 48-hour settling (fine for routine use)
+</code></pre>
+<p><strong>Retention time:</strong> 24–48 hours (longer settles more solids; reduces turbidity).</p>
+<p><strong>Construction:</strong></p>
+<pre><code>- Rectangular or cylindrical tank.
+- Inlet: 6–12 inches below surface (prevents floating debris from entering outlet).
+- Outlet: 6–12 inches below surface (draws off clearer water; avoids bottom sludge).
+- Overflow: Pipe directed to main sewer (if tank fills beyond capacity).
+- Access: Removable lid for cleanout.
+- Sludge outlet: Valve on tank bottom for periodic sludge removal.
+</code></pre>
+<p><strong>Maintenance:</strong></p>
+<ul>
+<li>Pump/remove sludge every 3–6 months (accumulates ~0.5 gallons per person per month).</li>
+<li>Check inlet/outlet pipes (blockages reduce flow).</li>
+<li>Clean tank interior annually (algae growth if exposed to light).</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Only removes solids; oils and dissolved organics remain.</li>
+<li>Outlet water still turbid if solids are colloidal (suspended, won't settle).</li>
+<li>Odor if anaerobic (oxygen-depleted).</li>
+</ul>
+<h3>Sand Filtration</h3>
+<p>Sand acts as a physical and biological filter. Water trickles through sand; particles are trapped; bacteria degrade organics.</p>
+<p><strong>Design (sand filter for greywater):</strong></p>
+<pre><code>Depth: 24–36 inches of sand (0.5–1 meter)
+Sand grain size: Medium to coarse (0.5–2 mm diameter)
+Support layer: 6–12 inches gravel beneath sand (prevents sand loss)
+Drainage layer: Perforated pipe in gravel (collects filtered water)
+
+Bed size: 1 square foot per 5 gallons per day
+Example: 100 gallons/day greywater → 20 square feet bed
+</code></pre>
+<p><strong>Operation:</strong></p>
+<ol>
+<li><strong>Settle greywater:</strong> Pre-treatment in settling tank (removes large solids).</li>
+<li><strong>Distribute:</strong> Water distributed evenly across sand surface (perforated manifold or drip line).</li>
+<li><strong>Infiltrate:</strong> Water percolates downward through sand.</li>
+<li><strong>Drainage:</strong> Filtered water exits through drainage layer; collected in underdrain pipe.</li>
+</ol>
+<p><strong>Performance:</strong></p>
+<ul>
+<li><strong>Turbidity reduction:</strong> 90%+ (water clarity improves dramatically).</li>
+<li><strong>BOD reduction:</strong> 50–80% (biological activity in sand breaks down organics).</li>
+<li><strong>Pathogen reduction:</strong> 90%+ (physical filtration + biological decay).</li>
+<li><strong>Effectiveness:</strong> Requires 48+ hours contact time (slow); not suitable for high-flow systems.</li>
+</ul>
+<h3>Constructed Wetlands (Reed Beds)</h3>
+<p>Wetland plants and soil biofilm treat water biologically; also removes nutrients (nitrogen, phosphorus).</p>
+<p><strong>Design:</strong></p>
+<pre><code>Configuration: Horizontal flow (water moves horizontally through planted bed) or vertical flow (water trickles downward)
+
+Dimensions (per 10 gallons/day flow):
+- Area: 1–2 square feet
+- Depth: 12–24 inches
+
+Substrate (growing medium):
+- Layer 1 (bottom): 3–6 inches gravel (drainage)
+- Layer 2: 8–12 inches sand/soil mix
+- Layer 3 (top): 2–6 inches topsoil (planting)
+
+Plants: Cattails, reeds, rushes (remove nutrients, provide habitat for microbes)
+</code></pre>
+<p><strong>Operation:</strong></p>
+<ol>
+<li><strong>Pre-treat:</strong> Settle greywater to remove large solids.</li>
+<li><strong>Distribute:</strong> Feed into inlet of reed bed at subsurface level.</li>
+<li><strong>Plant action:</strong> Plants uptake nitrogen/phosphorus; roots host biofilm bacteria.</li>
+<li><strong>Drainage:</strong> Water exits through outlet pipe; ready for reuse or discharge.</li>
+</ol>
+<p><strong>Performance:</strong></p>
+<ul>
+<li><strong>BOD reduction:</strong> 80–95%.</li>
+<li><strong>Nitrogen removal:</strong> 60–80% (plants + denitrification).</li>
+<li><strong>Phosphorus removal:</strong> 50–70% (soil absorption + plant uptake).</li>
+<li><strong>Pathogen reduction:</strong> 90%+.</li>
+<li><strong>Aesthetic:</strong> Green, planted bed (visually appealing vs. mechanical systems).</li>
+</ul>
+<p><strong>Maintenance:</strong></p>
+<ul>
+<li><strong>Vegetation:</strong> Trim annually (prevents overgrowth); replant as needed.</li>
+<li><strong>Substrate:</strong> Replace every 10+ years (accumulates sludge over time).</li>
+<li><strong>Inspection:</strong> Monitor water level (should remain subsurface); check outlet (blockages).</li>
+</ul>
+<h3>Comparison Table</h3>
+<table>
+<thead>
+<tr>
+<th><strong>System</strong></th>
+<th><strong>Cost</strong></th>
+<th><strong>Space</strong></th>
+<th><strong>Maintenance</strong></th>
+<th><strong>Performance</strong></th>
+<th><strong>Aesthetics</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Settling tank</td>
+<td>$500–1,500</td>
+<td>Small (2–3 sq ft footprint)</td>
+<td>Moderate (sludge removal)</td>
+<td>Low (solids only)</td>
+<td>Industrial</td>
+</tr>
+<tr>
+<td>Sand filter</td>
+<td>$1,500–3,000</td>
+<td>Medium (20 sq ft typical)</td>
+<td>Moderate (clogging, replacement)</td>
+<td>Moderate–high</td>
+<td>Utilitarian</td>
+</tr>
+<tr>
+<td>Reed bed</td>
+<td>$2,000–4,000</td>
+<td>Large (30+ sq ft)</td>
+<td>Low (vegetation management)</td>
+<td>High</td>
+<td>Natural, attractive</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="water-quality-assessment">
+<h2>Water Quality Assessment</h2>
+<p>Before reuse, test treated greywater to ensure safety.</p>
+<h3>Simple Tests (no equipment)</h3>
+<p><strong>Visual:</strong></p>
+<pre><code>Color: Clear = good; cloudy = suspended solids (requires further treatment)
+Odor: Neutral = good; sour/musty = organic decomposition (incomplete treatment)
+</code></pre>
+<p><strong>Settling test:</strong></p>
+<pre><code>Fill clear jar with treated water; observe for 24 hours.
+If solids settle to bottom, water is suitable for irrigation (gravity-separated).
+If cloudiness remains, requires sand filtration.
+</code></pre>
+<h3>Laboratory Tests (if available)</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Safe Level for Irrigation</strong></th>
+<th><strong>Test Method</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BOD</td>
+<td>&lt;50 mg/L</td>
+<td>Biochemical oxygen demand (microbial test, 5 days)</td>
+</tr>
+<tr>
+<td>Turbidity</td>
+<td>&lt;5 NTU</td>
+<td>Turbidity meter (measures light transmission)</td>
+</tr>
+<tr>
+<td>Nitrogen</td>
+<td>&lt;50 mg/L N</td>
+<td>Chemical test (Kjeldahl or equivalent)</td>
+</tr>
+<tr>
+<td>Phosphorus</td>
+<td>&lt;10 mg/L P</td>
+<td>Chemical test (colorimetric method)</td>
+</tr>
+<tr>
+<td>Pathogens</td>
+<td>&lt;100 CFU/100 mL</td>
+<td>Microbial culture (indicator organisms)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Simple testing substitutes:</strong></p>
+<pre><code>If testing unavailable, assume 50% reduction in each treatment stage:
+Settling tank: 50% BOD reduction
+Sand filter: Additional 70% reduction (cumulative 85% from raw greywater)
+Reed bed: Additional 90% reduction (cumulative 95%+)
+
+Conservative approach: Use treated greywater only for non-food crops or toilet flushing (does not require potable quality).
+</code></pre>
+</section>
+<section id="soap-selection">
+<h2>Soap and Detergent Selection</h2>
+<p>Soaps affect greywater quality and treatment efficacy. Some are compatible with plant irrigation; others accumulate and damage soil.</p>
+<h3>Soap Types and Compatibility</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Source</strong></th>
+<th><strong>Biodegradability</strong></th>
+<th><strong>Plant Effects</strong></th>
+<th><strong>Recommendation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bar soap (tallow/palm oil)</td>
+<td>Rendered animal fat or plant oil</td>
+<td>High (biodegrades in 5–7 days)</td>
+<td>Minimal (plants tolerate)</td>
+<td>Good for greywater systems</td>
+</tr>
+<tr>
+<td>Detergent (synthetic)</td>
+<td>Petroleum-based surfactants</td>
+<td>Variable (some resist breakdown)</td>
+<td>Sodium/phosphate buildup</td>
+<td>Limit or avoid</td>
+</tr>
+<tr>
+<td>Castile soap (plant oil)</td>
+<td>Coconut, olive, or other oil</td>
+<td>High</td>
+<td>Minimal</td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Gray-water specific soap</td>
+<td>Biodegradable, no additives</td>
+<td>Very high</td>
+<td>Minimal</td>
+<td>Ideal</td>
+</tr>
+<tr>
+<td>Typical shampoo/body wash</td>
+<td>Synthetic with fragrances, additives</td>
+<td>Variable</td>
+<td>Possible accumulation</td>
+<td>Avoid if possible</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Soil buildup risk:</strong></p>
+<pre><code>Synthetic detergents contain sodium salts and phosphates.
+Over time, they accumulate in soil, increasing pH and salinity.
+Accumulated sodium clogs soil pores, reducing water infiltration.
+Phosphate buildup causes algal blooms in surface waters if greywater drains to them.
+
+Solution: Use plant-based soaps; avoid high-phosphate laundry detergents.
+Test soil every 2 years (salinity, pH, phosphorus levels).
+</code></pre>
+<h3>Greywater-Safe Practices</h3>
+<p><strong>Choose soaps with:</strong></p>
+<ul>
+<li>No synthetic dyes or fragrances (persist in soil).</li>
+<li>No added sodium (sodium accumulates; use potassium-based soaps if labeled).</li>
+<li>Biodegradable surfactants (break down quickly).</li>
+</ul>
+<p><strong>Avoid soaps with:</strong></p>
+<ul>
+<li>Boron (toxic to plants in high concentrations).</li>
+<li>Bleach or oxidizing agents (kill soil microbes).</li>
+<li>Petroleum distillates or solvents (persist in soil).</li>
+</ul>
+<p><strong>Practical approach:</strong></p>
+<p>Make soap at home (rendered animal fat or vegetable oil + lye); or purchase commercial greywater-safe soaps. Cost ~$2–5 per pound (similar to conventional soap).</p>
+</section>
+<section id="system-maintenance">
+<h2>System Maintenance and Troubleshooting</h2>
+<p><strong>Monthly tasks:</strong></p>
+<ul>
+<li>Check inlet/outlet flows (blockages reduce efficiency).</li>
+<li>Observe water quality (settling tank: solids accumulation; sand filter: water clarity).</li>
+<li>Inspect vegetation (reed beds: wilting or disease).</li>
+<li>Monitor odors (sign of anaerobic breakdown or stagnation).</li>
+</ul>
+<p><strong>Quarterly tasks:</strong></p>
+<ul>
+<li>Remove sludge from settling tank (if accumulated &gt;6 inches).</li>
+<li>Check drainage pipes for blockages (root intrusion, sediment).</li>
+<li>Vegetation maintenance (reed beds: trim dead plants).</li>
+</ul>
+<p><strong>Annual tasks:</strong></p>
+<ul>
+<li>Flushing settling tank (remove accumulated sludge).</li>
+<li>Sand filter surface cleaning (remove clogged layer).</li>
+<li>Soil testing (reed beds: salinity, pH, phosphorus).</li>
+<li>System performance evaluation (compare treated water quality to baseline).</li>
+</ul>
+<p><strong>Troubleshooting:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Problem</strong></th>
+<th><strong>Cause</strong></th>
+<th><strong>Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slow drainage</td>
+<td>Clogged inlet/outlet pipes</td>
+<td>Flush with clean water; unclog with snake/pressure washer</td>
+</tr>
+<tr>
+<td>Foul odor</td>
+<td>Anaerobic conditions (low oxygen)</td>
+<td>Aerate (add oxygen); reduce organic input; increase flow</td>
+</tr>
+<tr>
+<td>Cloudy treated water</td>
+<td>Inadequate settling/filtration</td>
+<td>Extend retention time; add sand layer; increase filter depth</td>
+</tr>
+<tr>
+<td>Algae growth (in open tank)</td>
+<td>Light exposure + nutrients</td>
+<td>Cover tank; reduce nutrient input (food waste pre-screening)</td>
+</tr>
+<tr>
+<td>Plant wilting (reed beds)</td>
+<td>Poor drainage or waterlogging</td>
+<td>Check outlet; adjust water level</td>
+</tr>
+<tr>
+<td>Mosquito breeding</td>
+<td>Standing water</td>
+<td>Drain or treat standing water; maintain water circulation</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reuse-applications">
+<h2>Greywater Reuse Applications</h2>
+<p><strong>Potential uses (descending order of safety):</strong></p>
+<ol>
+<li><strong>Irrigation (non-food crops):</strong> Ornamental plants, trees, shrubs. Lowest safety concern (no direct human contact).</li>
+<li><strong>Toilet flushing:</strong> Multiple flushes/day; water never enters human system.</li>
+<li><strong>Cleaning/washing:</strong> Hard surfaces (not food-contact surfaces).</li>
+<li><strong>Food crop irrigation:</strong> Only after advanced treatment (nearly potable quality). Requires careful management.</li>
+</ol>
+<p><strong>Design example (household 4 people, 80 gallons/day greywater):</strong></p>
+<p><strong>System:</strong> Settling tank → Sand filter → Reuse tank.</p>
+<pre><code>Settling tank (240 gallons): 3-day retention
+Accumulation: 6 gallons sludge per month (remove quarterly)
+
+Sand filter bed (25 sq feet): 1.5 days contact time
+Output: ~70 gallons/day treated water
+
+Reuse applications:
+- Garden irrigation: 30–40 gallons (perennials, trees)
+- Toilet flushing (dual-flush): 20–30 gallons (4 people × 4–6 flushes/day)
+- Surplus: 10–15 gallons discharged or stored for dry-season use
+</code></pre>
+<p><strong>Toilet flushing system:</strong></p>
+<ul>
+<li>Separate greywater tank (300–500 gallons) from toilet supply.</li>
+<li>Float valve maintains level (refills from greywater discharge; falls back to main water if greywater insufficient).</li>
+<li>Cost: $500–1,500 (tank, plumbing, valve).</li>
+<li>Water savings: 20–30 gallons/day (30–40% reduction for typical household).</li>
+</ul>
+</section>
+<section id="design-example">
+<h2>Design Example: 4-Person Household Greywater System</h2>
+<p><strong>Household:</strong> 4 people; daily water use 200 gallons (50 gallons per person).</p>
+<p><strong>Greywater sources:</strong></p>
+<ul>
+<li>Shower: 50 gallons.</li>
+<li>Sink (kitchen/bath): 30 gallons.</li>
+<li>Laundry: 40 gallons.</li>
+<li><strong>Total: 120 gallons/day greywater.</strong></li>
+</ul>
+<p><strong>Blackwater (excluded from system):</strong> 40 gallons toilet discharge/day (treated separately with composting toilet or septic system).</p>
+<p><strong>Goal:</strong> Reuse greywater for toilet flushing and landscape irrigation; reduce freshwater demand by 50%.</p>
+<p><strong>System design:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Component</strong></th>
+<th><strong>Specification</strong></th>
+<th><strong>Cost</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Settling tank</td>
+<td>300-gallon (36-hour retention)</td>
+<td>$800</td>
+</tr>
+<tr>
+<td>Sand filter bed</td>
+<td>25 sq feet (1.5-foot depth)</td>
+<td>$1,200</td>
+</tr>
+<tr>
+<td>Reuse tank (toilet flushing)</td>
+<td>300-gallon</td>
+<td>$600</td>
+</tr>
+<tr>
+<td>Plumbing (valves, pipes, fittings)</td>
+<td>PVC, dual-flush toilet valve</td>
+<td>$400</td>
+</tr>
+<tr>
+<td><strong>Total system cost</strong></td>
+<td>-</td>
+<td><strong>$3,000</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Performance:</strong></p>
+<pre><code>Daily greywater: 120 gallons
+Treatment: Settling (50% improvement) + Sand filter (70% additional)
+Treated water: ~100–110 gallons suitable for reuse
+
+Daily uses:
+- Toilet flushing: 20–25 gallons (needs)
+- Garden irrigation: 60–70 gallons (nonpotable OK)
+- Excess/storage: 10–20 gallons
+
+Seasonal variation:
+- Summer (garden demand high): All treated water used
+- Winter (garden dormant): Toilet flushing needs 20–25 gallons; surplus 80–85 gallons (discharged or stored)
+
+Annual water savings: 120 gallons/day × 365 = 43,800 gallons (~$200–300 in water/sewer costs, depending on region)
+</code></pre>
+<p><strong>Payback period:</strong> 10–15 years (if accounting for water savings); faster if drought restrictions increase water costs.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="plumbing-pipes.html">Plumbing &amp; Water Systems</a>
+<a href="sanitation.html">Sanitation &amp; Public Health</a>
+<a href="composting-systems.html">Composting Systems</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

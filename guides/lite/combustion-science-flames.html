@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/combustion-science-flames.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Combustion Science &amp; Flame Characteristics</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Foundational Sciences</span> ›
+<span>Combustion Science &amp; Flame Characteristics</span>
+</div>
+
+
+<h1>Combustion Science &amp; Flame Characteristics</h1>
+<p class="subtitle">Fire triangle, combustion types, flame temperatures, draft, air-fuel ratios, smoke reading, safety</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~18 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#fire-triangle">The Fire Triangle</a></li>
+<li><a href="#ignition-temperature">Ignition Temperature</a></li>
+<li><a href="#combustion-types">Complete vs. Incomplete Combustion</a></li>
+<li><a href="#flame-temperature">Flame Temperature by Fuel Type</a></li>
+<li><a href="#draft-chimney">Draft and Chimney Design</a></li>
+<li><a href="#air-fuel-ratios">Air-Fuel Ratios and Stoichiometry</a></li>
+<li><a href="#smoke-reading">Smoke Reading (Visual Assessment of Combustion Efficiency)</a></li>
+<li><a href="#wood-gas-charcoal">Wood Gas Generation and Charcoal Making</a></li>
+<li><a href="#fire-safety">Fire Safety in Austere Conditions</a></li>
+<li><a href="#combustion-efficiency">Calculating Combustion Efficiency</a></li>
+<li><a href="#practical-example">Practical Example: Designing a Wood Stove</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<p>Combustion is a rapid chemical reaction between a fuel and oxidizer (usually oxygen) that releases heat and light. Understanding combustion science enables better stove design, safer fire management, and efficient fuel use.</p>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Fire Triangle, Flame Types, and Combustion Efficiency">
+  <defs>
+    <style>
+      .comb-label { font-family: Arial, sans-serif; font-size: 12px; fill: var(--text); }
+      .comb-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: var(--text); }
+      .triangle { stroke: var(--text); stroke-width: 2; }
+      .flame { fill: none; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="var(--bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="30" class="comb-title" text-anchor="middle">Fire Triangle, Flame Types &amp; Combustion Efficiency</text>
+
+  <!-- Fire Triangle -->
+  <g>
+    <text x="150" y="65" class="comb-title">The Fire Triangle (3 Elements Required):</text>
+
+    <!-- Triangle -->
+    <polygon points="80,200 200,80 200,200" class="triangle" fill="var(--surface)" opacity="0.3"/>
+
+    <!-- Vertices with labels -->
+    <!-- Fuel (top) -->
+    <circle cx="140" cy="90" r="20" fill="#c45a5a" class="triangle"/>
+    <text x="140" y="97" class="comb-label" text-anchor="middle" style="font-weight: bold; fill: white;">FUEL</text>
+
+    <!-- Oxygen (bottom-left) -->
+    <circle cx="70" cy="180" r="20" fill="#4a7c9f" class="triangle"/>
+    <text x="70" y="187" class="comb-label" text-anchor="middle" style="font-weight: bold; fill: white;">O₂</text>
+
+    <!-- Heat (bottom-right) -->
+    <circle cx="210" cy="180" r="20" fill="var(--accent)" class="triangle"/>
+    <text x="210" y="187" class="comb-label" text-anchor="middle" style="font-weight: bold;">HEAT</text>
+
+    <!-- Description -->
+    <text x="80" y="240" class="comb-label">Remove any one element:</text>
+    <text x="80" y="255" class="comb-label">→ Combustion stops</text>
+  </g>
+
+  <!-- Flame Types and Colors -->
+  <g>
+    <text x="320" y="65" class="comb-title">Flame Types &amp; Colors (by Combustion Type):</text>
+
+    <!-- Complete Combustion (Blue) -->
+    <g>
+      <rect x="320" y="85" width="180" height="120" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+      <!-- Blue flame -->
+      <polygon points="390,160 380,140 385,130 390,120 395,130 400,140" fill="#4a7c9f" opacity="0.8"/>
+      <polygon points="410,160 405,135 410,115 415,135" fill="#1a4f7f" opacity="0.6"/>
+      <!-- Labels -->
+      <text x="410" y="190" class="comb-label" text-anchor="middle" style="font-weight: bold;">Blue Flame</text>
+      <text x="410" y="205" class="comb-label" text-anchor="middle" style="font-size: 10px;">Complete combustion</text>
+      <text x="410" y="220" class="comb-label" text-anchor="middle" style="font-size: 9px;">Hottest, most efficient</text>
+    </g>
+
+    <!-- Incomplete Combustion (Yellow/Orange) -->
+    <g>
+      <rect x="520" y="85" width="180" height="120" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+      <!-- Yellow-orange flame -->
+      <polygon points="590,160 580,135 585,120 590,110 595,120 600,135" fill="#d4a574" opacity="0.9"/>
+      <polygon points="610,160 605,130 610,110 615,130" fill="#c45a5a" opacity="0.7"/>
+      <!-- Labels -->
+      <text x="610" y="190" class="comb-label" text-anchor="middle" style="font-weight: bold;">Yellow/Orange Flame</text>
+      <text x="610" y="205" class="comb-label" text-anchor="middle" style="font-size: 10px;">Incomplete combustion</text>
+      <text x="610" y="220" class="comb-label" text-anchor="middle" style="font-size: 9px;">Soot, smoke, cooler</text>
+    </g>
+  </g>
+
+  <!-- Flame Temperatures -->
+  <text x="50" y="260" class="comb-title">Flame Temperatures by Fuel Type:</text>
+
+  <!-- Propane (hottest, blue) -->
+  <g>
+    <rect x="50" y="280" width="140" height="70" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <rect x="55" y="290" width="130" height="12" fill="#4a7c9f"/>
+    <text x="120" y="307" class="comb-label" text-anchor="middle" style="font-weight: bold;">Propane (Gas)</text>
+    <text x="120" y="323" class="comb-label" text-anchor="middle">1900°C (Blue)</text>
+  </g>
+
+  <!-- Charcoal -->
+  <g>
+    <rect x="210" y="280" width="140" height="70" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <rect x="215" y="290" width="130" height="12" fill="#8b6f47"/>
+    <text x="280" y="307" class="comb-label" text-anchor="middle" style="font-weight: bold;">Charcoal</text>
+    <text x="280" y="323" class="comb-label" text-anchor="middle">1000–1200°C</text>
+  </g>
+
+  <!-- Wood -->
+  <g>
+    <rect x="370" y="280" width="140" height="70" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <rect x="375" y="290" width="130" height="12" fill="#8b5f3f"/>
+    <text x="440" y="307" class="comb-label" text-anchor="middle" style="font-weight: bold;">Wood</text>
+    <text x="440" y="323" class="comb-label" text-anchor="middle">800–1200°C (Orange)</text>
+  </g>
+
+  <!-- Hydrogen (hottest practical) -->
+  <g>
+    <rect x="530" y="280" width="140" height="70" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <rect x="535" y="290" width="130" height="12" fill="#ffffff" stroke="var(--text)" stroke-width="1"/>
+    <text x="600" y="307" class="comb-label" text-anchor="middle" style="font-weight: bold;">Hydrogen</text>
+    <text x="600" y="323" class="comb-label" text-anchor="middle">>2800°C (White)</text>
+  </g>
+
+  <!-- Smoke Reading Guide -->
+  <text x="50" y="400" class="comb-title">Smoke Reading (Combustion Assessment):</text>
+
+  <g>
+    <rect x="50" y="420" width="700" height="70" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+
+    <text x="70" y="440" class="comb-label" style="font-weight: bold;">No visible smoke</text>
+    <text x="70" y="455" class="comb-label" style="font-size: 10px;">Complete combustion, efficient (ideal)</text>
+
+    <text x="320" y="440" class="comb-label" style="font-weight: bold;">Light blue/barely visible</text>
+    <text x="320" y="455" class="comb-label" style="font-size: 10px;">Nearly complete, optimal efficiency</text>
+
+    <text x="600" y="440" class="comb-label" style="font-weight: bold;">Dark gray/black smoke</text>
+    <text x="600" y="455" class="comb-label" style="font-size: 10px;">Incomplete combustion, increase air supply</text>
+
+    <!-- Action line -->
+    <text x="70" y="475" class="comb-label" style="font-size: 9px; font-style: italic;">Action: Adjust damper to achieve light blue smoke for maximum efficiency</text>
+  </g>
+
+</svg>
+</p>
+<section id="fire-triangle">
+<h2>The Fire Triangle</h2>
+<p>Three elements are required for combustion:</p>
+<ol>
+<li><strong>Fuel:</strong> A substance that can oxidize (burn). Examples: wood, coal, gasoline, hydrogen.</li>
+<li><strong>Oxidizer:</strong> Usually oxygen (O₂) from air. Concentration must be &gt;5% for sustained combustion.</li>
+<li><strong>Heat (ignition temperature):</strong> Sufficient thermal energy to initiate the reaction.</li>
+</ol>
+<p><strong>The reaction:</strong></p>
+<pre><code>Fuel + Oxygen + Heat → Products (CO₂, H₂O, heat, light)
+</code></pre>
+<p><strong>Fire triangle implications:</strong></p>
+<ul>
+<li>Remove any one element, and combustion stops.</li>
+<li>High fuel concentration without sufficient oxygen = incomplete combustion (produces CO, soot, odor).</li>
+<li>Low fuel concentration (lean mixture) = weak flames, incomplete combustion.</li>
+<li>Ideal ratio = stoichiometric ratio (just enough oxygen to fully oxidize the fuel).</li>
+</ul>
+<p><strong>Extinguishing fires:</strong></p>
+<ul>
+<li>Remove fuel (turn off gas, allow wood to burn out).</li>
+<li>Remove oxygen (cover with blanket, use foam, create inert atmosphere with CO₂).</li>
+<li>Remove heat (water cools the fuel below ignition temperature).</li>
+</ul>
+<div class="warning">
+<p>Water should never be used on burning metal (sodium, potassium, magnesium) or oil fires. Cooling is ineffective or dangerous (oil splatters). Use dry powder or special extinguishers.</p>
+</div>
+</section>
+<section id="ignition-temperature">
+<h2>Ignition Temperature</h2>
+<p>The minimum temperature at which a fuel spontaneously ignites in air without an external spark or flame.</p>
+<p><strong>Ignition temperatures of common fuels:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Fuel</th>
+<th>Ignition Temp (°C)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wood (dry)</td>
+<td>250–350</td>
+</tr>
+<tr>
+<td>Coal</td>
+<td>400–600</td>
+</tr>
+<tr>
+<td>Charcoal</td>
+<td>300–400</td>
+</tr>
+<tr>
+<td>Gasoline vapor</td>
+<td>250–280</td>
+</tr>
+<tr>
+<td>Diesel oil</td>
+<td>250–350</td>
+</tr>
+<tr>
+<td>Natural gas (methane)</td>
+<td>595</td>
+</tr>
+<tr>
+<td>Hydrogen</td>
+<td>575</td>
+</tr>
+<tr>
+<td>Sulfur</td>
+<td>250</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practical implications:</strong></p>
+<ul>
+<li>Ignition temperature is the threshold; below it, the fuel won't ignite no matter how much oxygen is present.</li>
+<li>Dry materials ignite easier than wet (water absorbs heat, slowing temperature rise).</li>
+<li>Finely divided fuel (dust, powder) ignites more readily than lumps (larger surface area for heat absorption).</li>
+</ul>
+<p><strong>Spontaneous combustion:</strong> If a fuel's temperature rises naturally (through bacterial decomposition, chemical reaction, or sun exposure) to its ignition temperature, it ignites without external ignition source. Hay piles, coal stockpiles, and rags soaked in oil are risks.</p>
+</section>
+<section id="combustion-types">
+<h2>Complete vs. Incomplete Combustion</h2>
+<h3>Complete Combustion</h3>
+<p><strong>Definition:</strong> All fuel is oxidized to CO₂ and H₂O (for hydrogen-carbon fuels).</p>
+<p><strong>Equation (example: methane):</strong></p>
+<pre><code>CH₄ + 2O₂ → CO₂ + 2H₂O + energy
+</code></pre>
+<p><strong>Indicators:</strong></p>
+<ul>
+<li>Blue flame (efficient, hot).</li>
+<li>No smoke (complete products escape as gas).</li>
+<li>Efficient energy release (maximum heat per unit fuel).</li>
+</ul>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>Stoichiometric or excess oxygen (rich fuel mixture burns incompletely).</li>
+<li>Sufficient combustion chamber volume (reaction time).</li>
+<li>Adequate turbulence (mixing of fuel and oxygen).</li>
+</ul>
+<h3>Incomplete Combustion</h3>
+<p><strong>Definition:</strong> Insufficient oxygen; fuel produces CO (carbon monoxide), soot (unburned carbon), and other byproducts.</p>
+<p><strong>Equation (methane in limited oxygen):</strong></p>
+<pre><code>CH₄ + O₂ → CO + C + H₂O + energy (less energy)
+</code></pre>
+<p><strong>Indicators:</strong></p>
+<ul>
+<li>Yellow or orange flame (cooler, cooler combustion due to energy diverted to byproducts).</li>
+<li>Visible smoke (soot particles, CO).</li>
+<li>Odor (unburned hydrocarbons).</li>
+<li>Energy loss (incomplete oxidation leaves energy in CO and soot).</li>
+</ul>
+<p><strong>Problems:</strong></p>
+<ul>
+<li>Carbon monoxide (CO) is deadly (binds to hemoglobin, displacing oxygen).</li>
+<li>Soot deposits on surfaces, reducing heat transfer efficiency.</li>
+<li>Energy waste (30–40% less energy released than complete combustion).</li>
+</ul>
+<div class="danger">
+<p>Never operate fuel-burning equipment indoors without proper ventilation. Incomplete combustion produces CO, which accumulates in enclosed spaces and causes asphyxiation within minutes (lethal at &gt;400 ppm for 10 minutes).</p>
+</div>
+</section>
+<section id="flame-temperature">
+<h2>Flame Temperature by Fuel Type</h2>
+<p>Flame temperature depends on fuel chemical energy, stoichiometry, and combustion efficiency.</p>
+<p><strong>Adiabatic flame temperatures (theoretical maximum, no heat loss):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Fuel</th>
+<th>Flame Temp (°C)</th>
+<th>Flame Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wood</td>
+<td>800–1200</td>
+<td>Yellow-red</td>
+</tr>
+<tr>
+<td>Coal</td>
+<td>1100–1300</td>
+<td>Yellow-orange</td>
+</tr>
+<tr>
+<td>Charcoal</td>
+<td>1000–1200</td>
+<td>Orange</td>
+</tr>
+<tr>
+<td>Propane (gas)</td>
+<td>1900</td>
+<td>Blue-white</td>
+</tr>
+<tr>
+<td>Acetylene (oxy-fuel)</td>
+<td>3100</td>
+<td>White</td>
+</tr>
+<tr>
+<td>Hydrogen (pure O₂)</td>
+<td>&gt;2800</td>
+<td>White</td>
+</tr>
+<tr>
+<td>Methane-air</td>
+<td>1900</td>
+<td>Blue</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practical flame temperatures (with heat loss to surroundings):</strong></p>
+<ul>
+<li>400–600°C lower than theoretical due to convection, radiation, and imperfect mixing.</li>
+</ul>
+<p><strong>Flame color indicates combustion type:</strong></p>
+<ul>
+<li><strong>Blue flame:</strong> Complete combustion; hot; efficient (propane burner, bunsen burner).</li>
+<li><strong>Yellow-orange flame:</strong> Incomplete combustion or soot radiation; cooler; less efficient (wood fire, candle).</li>
+<li><strong>Red flame:</strong> Coolest; indicates low-temperature combustion or heavy smoke (damp wood).</li>
+</ul>
+</section>
+<section id="draft-chimney">
+<h2>Draft and Chimney Design</h2>
+<p>Draft is the natural flow of air and exhaust gases through a furnace or fire due to density differences.</p>
+<p><strong>Principle:</strong> Hot exhaust gas is less dense than cold incoming air, creating an upward pressure difference (buoyancy).</p>
+<p><strong>Draft pressure calculation (simplified):</strong></p>
+<div class="fire-box">
+ΔP = ρ_air · g · h · (T_flue - T_ambient) / T_ambient
+<p>Where:</p>
+<ul>
+<li>ρ_air = air density (~1.2 kg/m³)</li>
+<li>g = gravity (9.8 m/s²)</li>
+<li>h = chimney height (m)</li>
+<li>T_flue = flue temperature (K)</li>
+<li>T_ambient = ambient temperature (K)</li>
+</ul>
+</div>
+<p><strong>Example:</strong> 5-meter chimney, 200°C flue, 20°C ambient (293K):
+ΔP ≈ 1.2 × 9.8 × 5 × (473 - 293) / 293 ≈ 36 Pa (0.36 cmH₂O)</p>
+<p>This pressure pulls fresh air through the furnace and exhausts hot gases.</p>
+<p><strong>Factors affecting draft:</strong></p>
+<ul>
+<li><strong>Height:</strong> Taller chimneys produce better draft (proportional to height).</li>
+<li><strong>Temperature difference:</strong> Greater difference = stronger draft (hotter flue = stronger pulling force).</li>
+<li><strong>Insulation:</strong> Insulating the chimney keeps exhaust hot, maintaining draft.</li>
+<li><strong>Cross-section:</strong> Larger diameter = more gas flow; too small = back-pressure.</li>
+<li><strong>Leaks/cracks:</strong> Reduce draft by allowing gases to escape before reaching the top.</li>
+</ul>
+<p><strong>Chimney design for wood stoves:</strong></p>
+<ul>
+<li><strong>Minimum height:</strong> 4–6 meters above the stove (taller is better for draft).</li>
+<li><strong>Diameter:</strong> Typically 100–150 mm for small stoves; 150–200 mm for large stoves.</li>
+<li><strong>Insulation:</strong> Pipe should be insulated to maintain draft (uninsulated pipes cool and lose draft).</li>
+<li><strong>Slope:</strong> Horizontal sections should slope upward slightly (no dips that trap gases).</li>
+<li><strong>Number of bends:</strong> Minimize (each 90° turn reduces draft by ~5%).</li>
+</ul>
+<p><strong>Downdraft problems:</strong></p>
+<ul>
+<li>Tall buildings nearby create wind pressure that pushes air down the chimney.</li>
+<li>Solution: Install a draft regulator (damper) that opens to relieve excessive draft.</li>
+</ul>
+</section>
+<section id="air-fuel-ratios">
+<h2>Air-Fuel Ratios and Stoichiometry</h2>
+<p>The stoichiometric ratio is the exact amount of oxygen needed to completely oxidize a fuel.</p>
+<p><strong>Stoichiometric air-fuel ratio (mass basis):</strong></p>
+<ul>
+<li>Gasoline: 14.7:1 (14.7 kg air per 1 kg fuel for complete combustion).</li>
+<li>Diesel: 14.5:1.</li>
+<li>Natural gas: 17.2:1.</li>
+</ul>
+<p><strong>Practical operating conditions:</strong></p>
+<ul>
+<li><strong>Stoichiometric (λ = 1.0):</strong> Exact ratio; complete combustion; maximum thermal efficiency; minimum emissions (ideal for engines).</li>
+<li><strong>Lean mixture (λ &gt; 1.0):</strong> Excess air; incomplete combustion of fuel (some fuel escapes unburned); lower power but better fuel economy; lower temperature.</li>
+<li><strong>Rich mixture (λ &lt; 1.0):</strong> Insufficient air; incomplete combustion produces CO, soot; higher power but worse emissions; lower efficiency.</li>
+</ul>
+<p><strong>For furnaces and stoves:</strong></p>
+<ul>
+<li><strong>Target:</strong> Slightly lean (λ = 1.05–1.10) to ensure complete combustion while minimizing excess oxygen loss up the chimney.</li>
+<li><strong>Indicator:</strong> Smoke reading (see below).</li>
+</ul>
+</section>
+<section id="smoke-reading">
+<h2>Smoke Reading (Visual Assessment of Combustion Efficiency)</h2>
+<p>Smoke color and density indicate air-fuel ratio and combustion efficiency.</p>
+<p><strong>Smoke observations:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Smoke Color/Type</th>
+<th>Meaning</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No visible smoke</strong></td>
+<td>Complete combustion, good efficiency</td>
+<td>Continue operation; ideal state</td>
+</tr>
+<tr>
+<td><strong>Light blue/barely visible</strong></td>
+<td>Nearly complete combustion, slightly lean</td>
+<td>Optimal for efficiency</td>
+</tr>
+<tr>
+<td><strong>White/gray smoke</strong></td>
+<td>Partial combustion; excess moisture (damp wood) or incomplete oxidation</td>
+<td>Ensure wood is dry; increase air supply</td>
+</tr>
+<tr>
+<td><strong>Dark gray/black smoke</strong></td>
+<td>Incomplete combustion; fuel-rich; insufficient air</td>
+<td>Increase air supply (open damper, improve draft)</td>
+</tr>
+<tr>
+<td><strong>Yellow/orange smoke</strong></td>
+<td>Heavy soot production; very fuel-rich</td>
+<td>Significantly increase air supply; check burner adjustment</td>
+</tr>
+<tr>
+<td><strong>Oily/acrid smell + smoke</strong></td>
+<td>Unburned fuel vapors (tar)</td>
+<td>Increase temperature or air supply</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How to assess:</strong></p>
+<ol>
+<li>Hold a white sheet of paper 1 meter downwind of the exhaust.</li>
+<li>Observe the smoke deposited on the paper (or in the air).</li>
+<li>Light, almost invisible smoke = efficient. Dark smoke = inefficient.</li>
+<li>Adjust air damper (increase air supply) until smoke becomes light; stop before smoke disappears entirely (slight smoke = balanced operation).</li>
+</ol>
+<div class="tip">
+<p>A small amount of barely visible white/blue smoke is optimal. It indicates nearly complete combustion with slight excess oxygen, maximizing efficiency while ensuring complete fuel oxidation.</p>
+</div>
+</section>
+<section id="wood-gas-charcoal">
+<h2>Wood Gas Generation and Charcoal Making</h2>
+<h3>Wood Gas (Producer Gas)</h3>
+<p>In an oxygen-limited (anaerobic) environment, wood undergoes partial combustion and gasification, producing flammable gases.</p>
+<p><strong>Chemistry:</strong></p>
+<pre><code>Wood (C, H, O) + heat → CO + H₂ + CH₄ + CO₂ + tar + ash
+</code></pre>
+<p><strong>Reactor design (simplified gasifier):</strong></p>
+<ol>
+<li>Retort (sealed metal container) filled with wood, heated from below or externally.</li>
+<li>Limited air supply creates a reducing atmosphere.</li>
+<li>Gases are drawn off the top (CO, H₂, methane).</li>
+<li>These gases are combustible and can fuel engines, lamps, or stoves.</li>
+</ol>
+<p><strong>Energy content:</strong> Wood gas contains ~50% of the energy of the original wood but is gaseous (easier to control and transport).</p>
+<p><strong>Challenges:</strong></p>
+<ul>
+<li>Tar production (condensates in pipes, clogs burners).</li>
+<li>Incomplete gasification (requires high temperature, &gt;800°C).</li>
+<li>Complex gas cleanup (cooling, filtering, drying required before use).</li>
+</ul>
+<h3>Charcoal Making</h3>
+<p>Charcoal is nearly-pure carbon produced by heating wood in the absence of oxygen.</p>
+<p><strong>Chemistry:</strong></p>
+<pre><code>Wood (C, H, O) + heat (no oxygen) → Charcoal (mostly C) + Wood gas + water vapor
+</code></pre>
+<p><strong>Simple method (earth kiln):</strong></p>
+<ol>
+<li>Stack wood vertically in a conical pile.</li>
+<li>Partially bury in earth/sand (leaving a small vent at the top).</li>
+<li>Ignite wood through a bottom opening.</li>
+<li>Once burning, seal the vent (limited oxygen prevents full combustion).</li>
+<li>After 24–48 hours, allow to cool completely.</li>
+<li>Excavate charcoal (black, brittle carbon).</li>
+</ol>
+<p><strong>Yield:</strong> ~25–30% by mass of original wood (70% volatilizes as gases, vapor, tar).</p>
+<p><strong>Properties of charcoal:</strong></p>
+<ul>
+<li>Higher energy density than wood (per unit mass): ~30 MJ/kg vs. 15 MJ/kg for wood.</li>
+<li>Burns hotter and cleaner (less smoke; minimal tar).</li>
+<li>Better for cooking and metalworking furnaces.</li>
+<li>Can be powdered and used in filtering, medicine, or gunpowder.</li>
+</ul>
+</section>
+<section id="fire-safety">
+<h2>Fire Safety in Austere Conditions</h2>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Keep combustible materials (fabric, paper, wood) away from heat sources (&gt;30 cm minimum distance).</li>
+<li>Use fire-resistant surfaces (metal, stone, clay) around furnaces and stoves.</li>
+<li>Clear vegetation and debris around outdoor fires (fire breaks).</li>
+<li>Never leave fires unattended.</li>
+</ul>
+<p><strong>Extinguishing methods:</strong></p>
+<ul>
+<li><strong>Suffocation:</strong> Cover with metal/clay lid or damp cloth to cut off oxygen.</li>
+<li><strong>Cooling:</strong> Water (on wood, paper, organic fires; not on oil, metal fires). Wait for wood to stop steaming before removing water source.</li>
+<li><strong>Removal:</strong> Rake burning material away from flammable surroundings.</li>
+<li><strong>Sand/dirt:</strong> Smother small fires with dry sand (no water interaction).</li>
+</ul>
+<p><strong>Burn treatment (first aid):</strong></p>
+<ul>
+<li>Cool the burn with cold water for 10–20 minutes (reduces tissue damage).</li>
+<li>Remove tight clothing (before swelling prevents removal).</li>
+<li>Apply sterile dressing if available.</li>
+<li>Elevate burned limb if possible.</li>
+<li>Seek medical care for severe burns (&gt;10% body area, deep burns, burns on face/hands/genitals).</li>
+</ul>
+<p><strong>Smoke inhalation:</strong></p>
+<ul>
+<li>Move to fresh air immediately.</li>
+<li>Do not re-enter a smoke-filled area.</li>
+<li>Lay person on side (recovery position) if unconscious.</li>
+<li>Mouth-to-mouth resuscitation if breathing has stopped.</li>
+</ul>
+</section>
+<section id="combustion-efficiency">
+<h2>Calculating Combustion Efficiency</h2>
+<p>Combustion efficiency is the fraction of fuel's chemical energy converted to useful heat.</p>
+<p><strong>Formula:</strong></p>
+<div class="fire-box">
+Efficiency = (Heat output / Heat input from fuel) × 100%
+            = (1 - Heat loss / Heat input) × 100%
+</div>
+<p><strong>Heat losses in furnaces:</strong></p>
+<ol>
+<li><strong>Exhaust losses:</strong> Hot gases escape up the chimney (largest loss).</li>
+<li><strong>Radiation losses:</strong> Heat radiates through furnace walls.</li>
+<li><strong>Incomplete combustion losses:</strong> CO and unburned fuel waste energy.</li>
+<li><strong>Convection losses:</strong> Hot surfaces transfer heat to surroundings.</li>
+</ol>
+<p><strong>Improving efficiency:</strong></p>
+<ol>
+<li><strong>Lower flue temperature:</strong> Use a longer heat exchanger to extract heat from exhaust before it exits.</li>
+<li><strong>Insulate the furnace:</strong> Reduce radiation losses through walls.</li>
+<li><strong>Optimize air supply:</strong> Adjust to stoichiometric ratio (smoke reading confirms).</li>
+<li><strong>Preheat incoming air:</strong> Use exhaust heat to warm fresh combustion air.</li>
+</ol>
+<p><strong>Typical efficiencies:</strong></p>
+<ul>
+<li>Open fireplace: 10–15% (most heat goes up the chimney).</li>
+<li>Wood stove: 60–80%.</li>
+<li>Modern gas furnace: 85–98%.</li>
+<li>Industrial boiler: 80–90%.</li>
+</ul>
+</section>
+<section id="practical-example">
+<h2>Practical Example: Designing a Wood Stove</h2>
+<p><strong>Goal:</strong> A simple wood-burning stove for heating a small room.</p>
+<p><strong>Requirements:</strong></p>
+<ol>
+<li><strong>Heat output:</strong> 5 kW (roughly sufficient for a 50 m² room with moderate insulation).</li>
+<li><strong>Efficiency:</strong> 70% (achievable with good design).</li>
+<li><strong>Fuel consumption:</strong> 5 kW / (15 MJ/kg × 0.70) = 0.48 kg/hour.</li>
+</ol>
+<p><strong>Design steps:</strong></p>
+<ol>
+<li><strong>Firebox:</strong> Metal chamber (0.5 m × 0.5 m × 0.5 m) holds burning wood.</li>
+<li><strong>Grate:</strong> Iron bars allow ash to fall through; wood sits above.</li>
+<li><strong>Combustion chamber:</strong> Small chamber above burning wood where gases mix with secondary air.</li>
+<li><strong>Heat exchanger:</strong> Pipe coils or baffles surrounding the flue; gases pass through, heating the coils.</li>
+<li><strong>Damper:</strong> Adjustable opening to control air supply (smoke reading helps set optimal position).</li>
+<li><strong>Chimney:</strong> 5-meter insulated pipe for draft and exhaust.</li>
+</ol>
+<p><strong>Air supply:</strong></p>
+<ul>
+<li>Primary air (through grate): For the initial burn.</li>
+<li>Secondary air (above burning wood): For complete combustion of gas-phase volatiles.</li>
+<li>Total air requirement (stoichiometric): ~6 kg air per 1 kg wood.</li>
+</ul>
+<p><strong>Operation:</strong></p>
+<ol>
+<li>Load wood; open damper fully; ignite.</li>
+<li>Once burning, adjust damper until smoke becomes light blue/barely visible (optimal efficiency).</li>
+<li>Monitor temperature; if too hot, partially close damper to reduce air supply.</li>
+<li>Reload every 1–2 hours as wood burns.</li>
+</ol>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="charcoal-fuels.html">Charcoal &amp; Fuels</a>
+<a href="fire-by-friction.html">Fire by Friction Methods</a>
+<a href="biogas.html">biogas</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

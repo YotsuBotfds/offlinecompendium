@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/thermodynamics-heat-transfer.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thermodynamics &amp; Heat Transfer - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.thermo-table { width: 100%; margin: 1rem 0; }
+.thermo-table th, .thermo-table td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border); }
+.formula-box { margin: 1rem 0; padding: 1rem; background: var(--surface); border-left: 4px solid var(--accent); font-family: monospace; }
+
+</style>
+<meta name="description" content="Conduction, convection, radiation, thermal conductivity, insulation, heat exchangers, applications">
+<link rel="canonical" href="https://zerotoherohero.com/guides/thermodynamics-heat-transfer.html">
+<meta property="og:title" content="Thermodynamics &amp; Heat Transfer">
+<meta property="og:description" content="Conduction, convection, radiation, thermal conductivity, insulation, heat exchangers, applications">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Foundational Sciences", "item": "https://zerotoherohero.com/#sec-sciences"},
+    {"@type": "ListItem", "position": 3, "name": "Thermodynamics &amp; Heat Transfer", "item": "https://zerotoherohero.com/guides/thermodynamics-heat-transfer.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Thermodynamics &amp; Heat Transfer",
+  "description": "Conduction, convection, radiation, thermal conductivity, insulation, heat exchangers, applications",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-427">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-sciences">Foundational Sciences</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Thermodynamics &amp; Heat Transfer</span>
+</nav>
+<header>
+<h1>Thermodynamics &amp; Heat Transfer</h1>
+<p class="subtitle">Conduction, convection, radiation, thermal conductivity, insulation, heat exchangers, applications</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●●○</span>
+<span class="read-time">📖 ~18 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#heat-transfer-mechanisms">The Three Heat Transfer Mechanisms</a></li>
+<li><a href="#thermal-properties">Key Thermal Properties</a></li>
+<li><a href="#thermal-resistance">Thermal Resistance (R-values)</a></li>
+<li><a href="#heat-exchangers">Heat Exchanger Design</a></li>
+<li><a href="#furnace-efficiency">Furnace Efficiency Calculations</a></li>
+<li><a href="#thermal-mass">Thermal Mass and Energy Storage</a></li>
+<li><a href="#heat-management-applications">Practical Heat Management Applications</a></li>
+<li><a href="#practical-calculations">Worked Example: Designing an Insulated Container</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<p>Heat transfer is the movement of thermal energy from hot to cold regions. Understanding thermodynamics enables better furnace design, insulation strategies, cooking efficiency, and energy generation. This guide covers the three heat transfer mechanisms and practical calculations.</p>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Heat Transfer Mechanisms and Thermal Properties">
+  <defs>
+    <style>
+      .thermo-label { font-family: Arial, sans-serif; font-size: 12px; fill: var(--text); }
+      .thermo-title { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: var(--text); }
+      .heat-arrow { stroke: var(--accent); stroke-width: 2.5; marker-end: url(#arrowhead); }
+      .cold-arrow { stroke: #4a7c9f; stroke-width: 2.5; marker-end: url(#arrowhead-cold); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--accent)"/>
+    </marker>
+    <marker id="arrowhead-cold" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#4a7c9f"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="var(--bg)"/>
+
+  <!-- Title -->
+  <text x="400" y="30" class="thermo-title" text-anchor="middle">Three Heat Transfer Mechanisms</text>
+
+  <!-- Conduction -->
+  <g>
+    <text x="50" y="65" class="thermo-title">1. Conduction (Direct Transfer)</text>
+    <rect x="50" y="85" width="250" height="90" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <!-- Hot side -->
+    <rect x="60" y="95" width="40" height="40" fill="#c45a5a" class="thermo-label"/>
+    <text x="80" y="122" class="thermo-label" text-anchor="middle" style="font-size: 10px; fill: white;">Hot</text>
+    <!-- Material -->
+    <rect x="110" y="95" width="80" height="40" fill="var(--surface)" stroke="var(--text)" stroke-width="1"/>
+    <text x="150" y="122" class="thermo-label" text-anchor="middle" style="font-size: 10px;">Metal/Material</text>
+    <!-- Cold side -->
+    <rect x="200" y="95" width="40" height="40" fill="#4a7c9f"/>
+    <text x="220" y="122" class="thermo-label" text-anchor="middle" style="font-size: 10px; fill: white;">Cold</text>
+    <!-- Arrows showing heat flow -->
+    <path d="M 100 115 L 110 115" class="heat-arrow"/>
+    <path d="M 125 115 L 135 115" class="heat-arrow"/>
+    <path d="M 150 115 L 160 115" class="heat-arrow"/>
+    <path d="M 175 115 L 190 115" class="heat-arrow"/>
+    <!-- Formula -->
+    <text x="60" y="155" class="thermo-label" style="font-size: 10px;">Q = k·A·ΔT/d</text>
+    <text x="60" y="170" class="thermo-label" style="font-size: 9px;">k = thermal conductivity</text>
+  </g>
+
+  <!-- Convection -->
+  <g>
+    <text x="320" y="65" class="thermo-title">2. Convection (Fluid Motion)</text>
+    <rect x="320" y="85" width="250" height="90" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <!-- Container with fluid -->
+    <rect x="330" y="95" width="70" height="75" fill="#4a7c9f" opacity="0.3" stroke="var(--text)" stroke-width="1"/>
+    <!-- Heat source at bottom -->
+    <rect x="330" y="160" width="70" height="10" fill="#c45a5a" stroke="var(--text)" stroke-width="1"/>
+    <!-- Convection arrows -->
+    <path d="M 340 155 Q 330 140 340 125 Q 345 110 350 100" class="heat-arrow" stroke-width="2"/>
+    <path d="M 385 155 Q 395 140 385 125 Q 380 110 375 100" class="heat-arrow" stroke-width="2"/>
+    <text x="340" y="130" class="thermo-label" style="font-size: 9px; fill: var(--accent);">Rising</text>
+    <text x="375" y="130" class="thermo-label" style="font-size: 9px; fill: #4a7c9f;">Falling</text>
+    <!-- Formula -->
+    <text x="330" y="155" class="thermo-label" style="font-size: 10px;">Q = h·A·ΔT</text>
+    <text x="330" y="170" class="thermo-label" style="font-size: 9px;">h = convection coefficient</text>
+  </g>
+
+  <!-- Radiation -->
+  <g>
+    <text x="590" y="65" class="thermo-title">3. Radiation (Electromagnetic)</text>
+    <rect x="590" y="85" width="200" height="90" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="4"/>
+    <!-- Hot object -->
+    <circle cx="630" cy="130" r="15" fill="#c45a5a"/>
+    <!-- Radiation waves -->
+    <circle cx="630" cy="130" r="25" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="630" cy="130" r="35" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.4"/>
+    <!-- Cold object -->
+    <circle cx="700" cy="130" r="15" fill="#4a7c9f"/>
+    <!-- Arrows between -->
+    <path d="M 650 120 L 680 120" class="heat-arrow" stroke-width="2"/>
+    <path d="M 650 140 L 680 140" class="heat-arrow" stroke-width="2"/>
+    <!-- Formula -->
+    <text x="600" y="155" class="thermo-label" style="font-size: 10px;">Q = ε·σ·A·T⁴</text>
+    <text x="600" y="170" class="thermo-label" style="font-size: 9px;">No contact needed</text>
+  </g>
+
+  <!-- Thermal Conductivity Comparison -->
+  <text x="50" y="220" class="thermo-title">Thermal Conductivity (k) of Common Materials:</text>
+
+  <!-- Copper -->
+  <g>
+    <rect x="50" y="240" width="160" height="50" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <rect x="55" y="245" width="150" height="10" fill="#b87333" stroke="var(--text)" stroke-width="1"/>
+    <text x="130" y="265" class="thermo-label" text-anchor="middle" style="font-weight: bold;">Copper: 385 W/m·K</text>
+    <text x="130" y="282" class="thermo-label" text-anchor="middle" style="font-size: 10px;">(Excellent conductor)</text>
+  </g>
+
+  <!-- Water -->
+  <g>
+    <rect x="225" y="240" width="160" height="50" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <rect x="230" y="245" width="150" height="10" fill="#4a7c9f" stroke="var(--text)" stroke-width="1"/>
+    <text x="305" y="265" class="thermo-label" text-anchor="middle" style="font-weight: bold;">Water: 0.6 W/m·K</text>
+    <text x="305" y="282" class="thermo-label" text-anchor="middle" style="font-size: 10px;">(Poor conductor)</text>
+  </g>
+
+  <!-- Fiberglass -->
+  <g>
+    <rect x="400" y="240" width="160" height="50" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <rect x="405" y="245" width="150" height="10" fill="#9f9f9f" stroke="var(--text)" stroke-width="1"/>
+    <text x="480" y="265" class="thermo-label" text-anchor="middle" style="font-weight: bold;">Fiberglass: 0.04 W/m·K</text>
+    <text x="480" y="282" class="thermo-label" text-anchor="middle" style="font-size: 10px;">(Excellent insulator)</text>
+  </g>
+
+  <!-- Air -->
+  <g>
+    <rect x="575" y="240" width="160" height="50" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <rect x="580" y="245" width="150" height="10" fill="#d9d9d9" stroke="var(--text)" stroke-width="1"/>
+    <text x="655" y="265" class="thermo-label" text-anchor="middle" style="font-weight: bold;">Air: 0.026 W/m·K</text>
+    <text x="655" y="282" class="thermo-label" text-anchor="middle" style="font-size: 10px;">(Best insulator)</text>
+  </g>
+
+  <!-- Specific Heat Capacity -->
+  <text x="50" y="330" class="thermo-title">Specific Heat Capacity (c) — Energy to Raise 1 kg by 1°C:</text>
+
+  <!-- Water (highest) -->
+  <g>
+    <rect x="50" y="350" width="180" height="65" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <rect x="55" y="360" width="170" height="20" fill="#4a7c9f" stroke="var(--text)" stroke-width="1"/>
+    <text x="140" y="375" class="thermo-label" text-anchor="middle" style="font-weight: bold;">Water</text>
+    <text x="140" y="395" class="thermo-label" text-anchor="middle" style="font-size: 11px;">4186 J/kg·K</text>
+    <text x="140" y="410" class="thermo-label" text-anchor="middle" style="font-size: 10px;">Excellent heat storage</text>
+  </g>
+
+  <!-- Aluminum -->
+  <g>
+    <rect x="245" y="350" width="180" height="65" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <rect x="250" y="360" width="170" height="5" fill="#c0c0c0" stroke="var(--text)" stroke-width="1"/>
+    <text x="335" y="375" class="thermo-label" text-anchor="middle" style="font-weight: bold;">Aluminum</text>
+    <text x="335" y="395" class="thermo-label" text-anchor="middle" style="font-size: 11px;">897 J/kg·K</text>
+    <text x="335" y="410" class="thermo-label" text-anchor="middle" style="font-size: 10px;">Moderate heat storage</text>
+  </g>
+
+  <!-- Copper -->
+  <g>
+    <rect x="440" y="350" width="180" height="65" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <rect x="445" y="360" width="170" height="4" fill="#b87333" stroke="var(--text)" stroke-width="1"/>
+    <text x="530" y="375" class="thermo-label" text-anchor="middle" style="font-weight: bold;">Copper</text>
+    <text x="530" y="395" class="thermo-label" text-anchor="middle" style="font-size: 11px;">385 J/kg·K</text>
+    <text x="530" y="410" class="thermo-label" text-anchor="middle" style="font-size: 10px;">Low heat storage</text>
+  </g>
+
+  <!-- Latent Heat -->
+  <g>
+    <rect x="635" y="350" width="160" height="65" fill="var(--card)" stroke="var(--border)" stroke-width="1" rx="3"/>
+    <text x="715" y="368" class="thermo-label" text-anchor="middle" style="font-weight: bold;">Latent Heat (Phase Change)</text>
+    <text x="715" y="388" class="thermo-label" text-anchor="middle" style="font-size: 10px;">Ice → Water: 334 kJ/kg</text>
+    <text x="715" y="403" class="thermo-label" text-anchor="middle" style="font-size: 10px;">Water → Steam: 2260 kJ/kg</text>
+  </g>
+
+  <!-- Key insight box -->
+  <g>
+    <rect x="50" y="440" width="740" height="50" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5" rx="4"/>
+    <text x="70" y="460" class="thermo-label" style="font-weight: bold;">Key Insight:</text>
+    <text x="300" y="460" class="thermo-label">Water is ideal for thermal storage (high c); copper for heat transfer (high k); insulation (air/fiberglass) for blocking heat flow (low k)</text>
+  </g>
+
+</svg>
+</p>
+<section id="heat-transfer-mechanisms">
+<h2>The Three Heat Transfer Mechanisms</h2>
+<h3>1. Conduction</h3>
+<p>Heat flows directly through a material without bulk motion of the material itself. Atoms vibrate more violently at high temperature and transfer kinetic energy to neighboring atoms.</p>
+<p><strong>Conduction rate (Fourier's Law):</strong></p>
+<div class="formula-box">
+Q = k · A · ΔT / d
+<p>Where:</p>
+<ul>
+<li>Q = heat flow rate (Watts = Joules/second)</li>
+<li>k = thermal conductivity (W/m·K)</li>
+<li>A = cross-sectional area (m²)</li>
+<li>ΔT = temperature difference (K or °C)</li>
+<li>d = thickness (m)</li>
+</ul>
+</div>
+<p><strong>Thermal conductivity (k) of common materials:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>k (W/m·K)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Copper</td>
+<td>385</td>
+</tr>
+<tr>
+<td>Aluminum</td>
+<td>205</td>
+</tr>
+<tr>
+<td>Iron/Steel</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Water</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>Wood</td>
+<td>0.1–0.2</td>
+</tr>
+<tr>
+<td>Air</td>
+<td>0.026</td>
+</tr>
+<tr>
+<td>Fiberglass insulation</td>
+<td>0.04</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong> A copper rod 1 meter long, 1 cm² cross-section, with 100°C temperature difference:
+Q = 385 × (0.0001 m²) × (100 K) / (1 m) = 3.85 Watts</p>
+<p><strong>Practical implication:</strong> Metals conduct heat rapidly; insulators (air, wood, fiberglass) are poor conductors and slow heat transfer.</p>
+<div class="tip">
+<p>Double-layer insulation with an air gap works better than a single thick insulator because the air gap blocks conduction. The air layer's low thermal conductivity (k = 0.026 W/m·K) is the limiting factor.</p>
+</div>
+<h3>2. Convection</h3>
+<p>Heat is transferred by the bulk motion of fluids (liquids or gases). Hot fluid rises; cold fluid sinks. This creates circular convection currents.</p>
+<p><strong>Types:</strong></p>
+<ul>
+<li><strong>Natural convection:</strong> Density differences drive motion (no mechanical input).</li>
+<li><strong>Forced convection:</strong> A fan or pump moves the fluid.</li>
+</ul>
+<p><strong>Convection rate (simplified):</strong></p>
+<div class="formula-box">
+Q = h · A · ΔT
+<p>Where:</p>
+<ul>
+<li>h = convection coefficient (W/m²·K)</li>
+<li>A = surface area (m²)</li>
+<li>ΔT = temperature difference between surface and fluid (K)</li>
+</ul>
+</div>
+<p><strong>Typical h values:</strong></p>
+<ul>
+<li>Natural convection in air: 5–25 W/m²·K</li>
+<li>Forced convection in air: 25–250 W/m²·K</li>
+<li>Natural convection in water: 100–1000 W/m²·K</li>
+<li>Boiling water: 1000–100,000 W/m²·K</li>
+</ul>
+<p><strong>Practical implication:</strong> Forced convection (fan blowing over a hot surface) transfers heat 10× faster than natural convection. Boiling water is an extremely efficient heat transfer medium.</p>
+<h3>3. Radiation</h3>
+<p>All objects emit electromagnetic radiation based on their absolute temperature (in Kelvins).</p>
+<p><strong>Stefan-Boltzmann Law:</strong></p>
+<div class="formula-box">
+Q = ε · σ · A · T⁴
+<p>Where:</p>
+<ul>
+<li>ε = emissivity (0–1; perfect absorber/emitter = 1)</li>
+<li>σ = Stefan-Boltzmann constant (5.67 × 10⁻⁸ W/m²·K⁴)</li>
+<li>A = surface area (m²)</li>
+<li>T = absolute temperature (K)</li>
+</ul>
+</div>
+<p><strong>Emissivity of common surfaces:</strong></p>
+<ul>
+<li>Black surface: ε ≈ 1.0 (ideal radiator)</li>
+<li>Painted surfaces: ε ≈ 0.9</li>
+<li>Aluminum foil (shiny): ε ≈ 0.05</li>
+<li>Copper (shiny): ε ≈ 0.1</li>
+</ul>
+<p><strong>Practical implication:</strong> At room temperature, radiation is negligible compared to conduction/convection. But at high temperatures (furnace interiors, &gt;500°C), radiation becomes significant. Shiny (low-emissivity) surfaces like aluminum foil reflect radiant heat; black surfaces absorb it.</p>
+<div class="warning">
+<p>Never point a heat source (radiator, sunlight) directly at people or animals for extended periods. Radiant heating can cause burns even if the air temperature is moderate.</p>
+</div>
+</section>
+<section id="thermal-properties">
+<h2>Key Thermal Properties</h2>
+<h3>Thermal Conductivity (k)</h3>
+<p>How easily heat flows through a material. High k = good conductor; low k = good insulator.</p>
+<p><strong>Why metals conduct well:</strong> Free electrons transfer kinetic energy rapidly.
+<strong>Why insulators are poor conductors:</strong> Atoms are tightly bound; vibration energy transfers slowly.</p>
+<h3>Specific Heat Capacity (c)</h3>
+<p>The energy required to raise 1 kilogram of a material by 1°C (or 1 K).</p>
+<div class="formula-box">
+Q = m · c · ΔT
+<p>Where:</p>
+<ul>
+<li>Q = energy (Joules)</li>
+<li>m = mass (kg)</li>
+<li>c = specific heat (J/kg·K)</li>
+<li>ΔT = temperature change (K)</li>
+</ul>
+</div>
+<p><strong>Specific heat of common materials:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>c (J/kg·K)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Water</td>
+<td>4186</td>
+</tr>
+<tr>
+<td>Ice</td>
+<td>2090</td>
+</tr>
+<tr>
+<td>Aluminum</td>
+<td>897</td>
+</tr>
+<tr>
+<td>Iron</td>
+<td>449</td>
+</tr>
+<tr>
+<td>Copper</td>
+<td>385</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practical implication:</strong> Water has 10× the specific heat of aluminum. This means water stores far more energy per unit mass and heats/cools more slowly. A water thermal battery (large tank) can store heat for hours.</p>
+<p><strong>Example:</strong> Heating 100 kg of water from 20°C to 50°C requires:
+Q = 100 kg × 4186 J/kg·K × 30 K = 12,558,000 Joules ≈ 12.6 MJ</p>
+<h3>Latent Heat</h3>
+<p>Energy required to change phase without changing temperature.</p>
+<div class="formula-box">
+Q = m · L
+<p>Where:</p>
+<ul>
+<li>L = latent heat (J/kg)</li>
+<li>m = mass (kg)</li>
+</ul>
+</div>
+<p><strong>Latent heat values:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Process</th>
+<th>Water L (J/kg)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Melting (ice → water)</td>
+<td>334,000</td>
+</tr>
+<tr>
+<td>Boiling (water → steam)</td>
+<td>2,260,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Practical implication:</strong> Boiling water to steam requires 6.8× the energy of heating ice to water. Phase changes are intensive energy transfer mechanisms; they're critical in distillation and cooking.</p>
+</section>
+<section id="thermal-resistance">
+<h2>Thermal Resistance (R-values)</h2>
+<p>Resistance to heat flow through a material or assembly. Higher R = better insulation.</p>
+<div class="formula-box">
+R = d / k (for a single material)
+<p>Where:</p>
+<ul>
+<li>d = thickness (m)</li>
+<li>k = thermal conductivity (W/m·K)</li>
+</ul>
+<p>For layers in series:
+R_total = R₁ + R₂ + R₃ + ...</p>
+</div>
+<p><strong>Common insulation R-values (per inch of thickness):</strong></p>
+<ul>
+<li>Fiberglass: R-3.2 per inch</li>
+<li>Mineral wool: R-3.3 per inch</li>
+<li>Foam (polyurethane): R-6.0 per inch</li>
+<li>Air gap: R-1.0 per inch</li>
+</ul>
+<p><strong>Example:</strong> 4 inches of fiberglass + 2 inches of foam:
+R_total = (4 × 3.2) + (2 × 6.0) = 12.8 + 12.0 = 24.8 R</p>
+<p>This assembly will reduce heat flow to 1/24.8 = 4% of the uninsulated rate.</p>
+</section>
+<section id="heat-exchangers">
+<h2>Heat Exchanger Design</h2>
+<p>A heat exchanger transfers heat from one fluid to another without mixing them. Examples: car radiators, furnace recuperators, pot-in-pot coolers.</p>
+<p><strong>Basic principle:</strong></p>
+<ul>
+<li>Hot fluid (high T) flows on one side.</li>
+<li>Cold fluid (low T) flows on the other side.</li>
+<li>Heat conducts through the dividing wall.</li>
+<li>Efficiency depends on surface area and fluid contact time.</li>
+</ul>
+<p><strong>Effectiveness (ε):</strong></p>
+<div class="formula-box">
+ε = (T_hot_in - T_hot_out) / (T_hot_in - T_cold_in)
+<p>Range: 0–1 (higher is better)</p>
+</div>
+<p><strong>Typical values:</strong></p>
+<ul>
+<li>Shell-and-tube: ε = 0.5–0.8</li>
+<li>Plate-and-frame: ε = 0.7–0.95</li>
+<li>Cross-flow (typical radiator): ε = 0.4–0.7</li>
+</ul>
+<p><strong>Improving heat exchanger performance:</strong></p>
+<ol>
+<li><strong>Increase surface area:</strong> Use fins or tubes inside tubes.</li>
+<li><strong>Increase flow rate (forced convection):</strong> Use fans or pumps.</li>
+<li><strong>Thinner walls:</strong> Reduce conduction resistance.</li>
+<li><strong>Longer contact time:</strong> Allow fluids to interact longer.</li>
+</ol>
+<p><strong>Improvised heat exchanger (coil in water bath):</strong></p>
+<ol>
+<li>Coil a copper or steel tube into a spiral.</li>
+<li>Submerge in a container of water.</li>
+<li>Pass hot fluid (or steam) through the coil.</li>
+<li>Heat transfers through the tube wall to the surrounding water.</li>
+<li>Effectiveness can reach 0.6–0.7 with proper design.</li>
+</ol>
+</section>
+<section id="furnace-efficiency">
+<h2>Furnace Efficiency Calculations</h2>
+<p>Furnace efficiency is the fraction of heat energy released by fuel that is usefully captured.</p>
+<div class="formula-box">
+Efficiency = (Useful heat output / Energy input) × 100%
+<p>Equivalently:
+Efficiency = (1 - Heat loss / Energy input) × 100%</p>
+</div>
+<p><strong>Heat losses in a furnace:</strong></p>
+<ol>
+<li><strong>Exhaust gas losses:</strong> Hot gases exit the chimney (large loss if exhaust is hot).</li>
+<li><strong>Radiation losses:</strong> Heat radiates through furnace walls.</li>
+<li><strong>Conduction losses:</strong> Heat conducts through walls to surroundings.</li>
+<li><strong>Incomplete combustion:</strong> Fuel doesn't burn fully (chemical energy wasted).</li>
+</ol>
+<p><strong>Calculating exhaust losses:</strong></p>
+<div class="formula-box">
+Q_exhaust = ṁ_gas · c_p · (T_exhaust - T_ambient)
+<p>Where:</p>
+<ul>
+<li>ṁ_gas = mass flow rate of exhaust (kg/s)</li>
+<li>c_p = specific heat of exhaust (~1000 J/kg·K for hot air)</li>
+<li>T_exhaust = exhaust temperature (K)</li>
+<li>T_ambient = ambient temperature (K)</li>
+</ul>
+</div>
+<p><strong>Example:</strong> A wood furnace with 200°C exhaust, 1 kg/s gas flow:
+Q_exhaust = 1 × 1000 × (200 - 20) = 180,000 W = 180 kW lost up the chimney</p>
+<p>If the furnace is burning fuel at 500 kW:
+Efficiency = (500 - 180) / 500 × 100% = 64%</p>
+<p><strong>Improving furnace efficiency:</strong></p>
+<ol>
+<li><strong>Lower exhaust temperature:</strong> Use a larger heat exchanger or longer flue path.</li>
+<li><strong>Insulate the furnace:</strong> Reduce radiation losses.</li>
+<li><strong>Ensure complete combustion:</strong> Adequate air supply; proper fuel/air ratio.</li>
+<li><strong>Preheat inlet air:</strong> Use exhaust heat to warm incoming combustion air (recuperator).</li>
+</ol>
+</section>
+<section id="thermal-mass">
+<h2>Thermal Mass and Energy Storage</h2>
+<p>Thermal mass is the ability of a material to store heat. High thermal mass = slow temperature changes.</p>
+<div class="formula-box">
+Energy stored = m · c · ΔT
+<p>Time to heat/cool ≈ (m · c) / (h · A)
+(rougher approximation; depends on convection coefficient)</p>
+</div>
+<p><strong>Practical uses:</strong></p>
+<ul>
+<li><strong>Water tanks:</strong> 1000-liter tank provides stable temperature buffering for a day.</li>
+<li><strong>Stone walls:</strong> Thick stone walls (0.5 m) with high specific heat (c ≈ 900 J/kg·K) and density (ρ ≈ 2500 kg/m³) provide thermal inertia, smoothing temperature swings.</li>
+<li><strong>Earth tubes:</strong> Soil below ground maintains stable temperature (about 10–15°C year-round in temperate zones); ducting air through soil naturally temperature-conditions it.</li>
+</ul>
+<p><strong>Example:</strong> A 1 m³ water tank (1000 kg) heated from 20°C to 60°C:
+Q = 1000 × 4186 × 40 = 167,440,000 J ≈ 167 MJ</p>
+<p>This is equivalent to burning ~5 kg of wood (assuming 35 MJ/kg net calorific value).</p>
+</section>
+<section id="heat-management-applications">
+<h2>Practical Heat Management Applications</h2>
+<h3>Cooking Efficiency</h3>
+<p><strong>Pot selection:</strong> Thick-bottomed pots with good thermal contact to the heat source transfer heat efficiently. Copper-bottomed pots are ideal.</p>
+<p><strong>Boiling:</strong> Once water boils, additional heat doesn't raise temperature; it just vaporizes water faster (latent heat transfer). Use a lid to reduce evaporation and boiling time.</p>
+<p><strong>Oven cooking:</strong> Preheat the oven to allow thermal equilibrium; preheating uses extra fuel but ensures even cooking. Convection ovens (with fans) cook faster by improving heat transfer.</p>
+<h3>Insulation for Temperature Extremes</h3>
+<p><strong>Hot climate:</strong> Reflective insulation (foil facing outward) reflects solar radiation. Ventilated air gaps prevent interior heat buildup.</p>
+<p><strong>Cold climate:</strong> Dense insulation (fiberglass, mineral wool) with vapor barriers prevents cold air infiltration.</p>
+<p><strong>Passive solar:</strong> Dark thermal mass (water, stone) absorbs daytime solar heat; insulation prevents nighttime loss.</p>
+<h3>Water Heating</h3>
+<p><strong>Solar water heater:</strong> A black-painted tank or tube exposed to sunlight absorbs solar radiation. Convection and radiation heat the water. Efficiency: 40–80% depending on design and insolation.</p>
+<p><strong>Heat pipe:</strong> A sealed pipe containing a working fluid (water, methanol) that vaporizes at the hot end and condenses at the cold end, transferring heat very efficiently. No moving parts.</p>
+<h3>Distillation</h3>
+<p>Distillation separates components based on boiling points. Heat vaporizes the liquid; vapor cools and condenses in a separate chamber. The latent heat of boiling (2.26 MJ/kg for water) drives the separation; efficiency depends on cooling the condenser effectively.</p>
+</section>
+<section id="practical-calculations">
+<h2>Worked Example: Designing an Insulated Container</h2>
+<p><strong>Goal:</strong> Design an insulated box to keep 10 liters of water hot (50°C) for 8 hours in a 20°C environment.</p>
+<p><strong>Heat loss rate (simplified):</strong></p>
+<ul>
+<li>Assume 1 m² of exterior surface area.</li>
+<li>Insulation R-value = 10 (typical for 4 inches of fiberglass).</li>
+<li>Conduction: Q = A · ΔT / R = 1 × (50 - 20) / 10 = 3 Watts</li>
+<li>Convection (natural, h = 10 W/m²·K): Q = 10 × 1 × 30 = 300 Watts</li>
+<li>Total: ≈ 300 Watts (convection dominates).</li>
+</ul>
+<p><strong>Energy needed to maintain 50°C for 8 hours:</strong></p>
+<ul>
+<li>Heat loss: 300 W × (8 × 3600 s) = 8,640,000 J ≈ 8.6 MJ</li>
+<li>Additional energy to account for initial heating loss: ~2 MJ</li>
+<li><strong>Total: ~10.6 MJ required</strong></li>
+</ul>
+<p><strong>To supply this energy:</strong></p>
+<ul>
+<li>Burning wood (~35 MJ/kg): 10.6 / 35 ≈ 0.3 kg wood</li>
+<li>Solar heating: 1 m² × 800 W/m² (peak sunlight) × 4 hours ≈ 11.5 MJ (close!)</li>
+<li>Electric heating (assuming 2 kW for 1.5 hours): 2000 W × 5400 s = 10.8 MJ (match!)</li>
+</ul>
+<p><strong>Conclusion:</strong> A well-insulated 10-liter water container can maintain temperature for 8 hours with minimal additional heat input if:</p>
+<ul>
+<li>High-quality insulation (R-10+) is used.</li>
+<li>Convection is minimized (tight sealing, still air).</li>
+<li>Water is preheated to 50°C initially.</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="heat-management.html">Heat Management</a>
+<a href="insulation-weatherproofing.html">Insulation &amp; Weatherproofing</a>
+<a href="electrical-generation.html">Power Generation</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

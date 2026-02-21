@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/cart-wagon-construction.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart and Wagon Construction</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Building &amp; Engineering</span> ›
+<span>Cart and Wagon Construction</span>
+</div>
+
+
+<h1>Cart and Wagon Construction</h1>
+<p class="subtitle">Wheel construction (spoked and solid), axle systems, frame design, suspension, steering mechanisms, draft animal hitches, maintenance, and load capacity calculations</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~17 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#section-wheel-construction">Section: Wheel Construction</a></li>
+<li><a href="#section-axles-and-bearings">Section: Axles and Bearings</a></li>
+<li><a href="#section-cart-and-wagon-frame">Section: Cart and Wagon Frame</a></li>
+<li><a href="#section-suspension-and-braking">Section: Suspension and Braking</a></li>
+<li><a href="#section-load-capacity-and-practical-design">Section: Load Capacity and Practical Design</a></li>
+<li><a href="#section-maintenance-and-repair">Section: Maintenance and Repair</a></li>
+<li><a href="#section-hitch-systems-for-draft-animals">Section: Hitch Systems for Draft Animals</a></li>
+<li><a href="#section-road-requirements-and-terrain">Section: Road Requirements and Terrain</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<h2 id="introduction">Introduction</h2>
+<p>The wheel changed human civilization. A cart or wagon multiplies the load a team of draft animals can move by 5–10 times compared to packing. Understanding how to construct, maintain, and repair carts ensures that surplus can be moved to market, materials transported to building sites, and refugees evacuated. This guide covers the fundamentals of cart design, from solid-disk wheels to complex spoked constructions, and the systems that make them functional.</p>
+<p>A well-built cart will last decades. A poorly built one fails catastrophically — broken axles or wheels leave loads stranded and animals injured.</p>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Exploded diagram of spoked wheel showing hub, spokes, felloe rim segments, and iron tire with all parts labeled">
+  <defs>
+    <style>
+      .wheel-part { stroke: var(--border); stroke-width: 2; }
+      .hub-wood { fill: rgba(165, 100, 60, 0.8); }
+      .spoke-wood { fill: rgba(150, 85, 50, 0.8); }
+      .felloe-wood { fill: rgba(140, 80, 45, 0.8); }
+      .iron-tire { fill: rgba(80, 80, 80, 0.8); stroke: var(--border); stroke-width: 2; }
+      .label-text { font-size: 13px; fill: var(--text); font-weight: bold; }
+      .label-detail { font-size: 11px; fill: var(--muted); }
+      .arrow { stroke: var(--accent); stroke-width: 2; marker-end: url(#arrowhead); }
+      .accent-circle { stroke: var(--accent); stroke-width: 2; fill: none; stroke-dasharray: 3,3; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="var(--accent)" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="var(--surface)" />
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="label-text" style="font-size: 18px;">Exploded View: Spoked Wheel Assembly</text>
+
+  <!-- HUB (Center) -->
+  <circle cx="250" cy="250" r="35" class="wheel-part hub-wood" />
+  <circle cx="250" cy="250" r="25" fill="none" class="wheel-part" stroke-dasharray="4,4" />
+  <!-- Axle hole -->
+  <circle cx="250" cy="250" r="12" fill="none" class="wheel-part" />
+  <text x="250" y="255" text-anchor="middle" class="label-detail">Axle</text>
+
+  <!-- Spoke hole markers -->
+  <circle cx="276" cy="250" r="2" fill="var(--accent)" />
+  <circle cx="224" cy="250" r="2" fill="var(--accent)" />
+  <circle cx="250" cy="276" r="2" fill="var(--accent)" />
+  <circle cx="250" cy="224" r="2" fill="var(--accent)" />
+
+  <!-- Arrow and Label for Hub -->
+  <line x1="250" y1="180" x2="250" y2="120" class="arrow" />
+  <text x="265" y="140" class="label-text">HUB (Oak or Elm)</text>
+  <text x="265" y="155" class="label-detail">Dia: 12-20cm, tapered spoke holes</text>
+
+  <!-- SPOKES (radiating from hub) -->
+  <!-- Spoke 1 (top-right) -->
+  <line x1="276" y1="235" x2="380" y2="140" class="wheel-part spoke-wood" stroke-width="4" />
+  <circle cx="280" cy="232" r="3" fill="var(--accent)" />
+
+  <!-- Spoke 2 (bottom-right) -->
+  <line x1="276" y1="265" x2="380" y2="360" class="wheel-part spoke-wood" stroke-width="4" />
+  <circle cx="280" cy="268" r="3" fill="var(--accent)" />
+
+  <!-- Spoke 3 (bottom-left) -->
+  <line x1="224" y1="265" x2="120" y2="360" class="wheel-part spoke-wood" stroke-width="4" />
+  <circle cx="220" cy="268" r="3" fill="var(--accent)" />
+
+  <!-- Spoke 4 (top-left) -->
+  <line x1="224" cy="235" x2="120" y2="140" class="wheel-part spoke-wood" stroke-width="4" />
+  <circle cx="220" cy="232" r="3" fill="var(--accent)" />
+
+  <!-- Spoke label -->
+  <line x1="380" y1="100" x2="450" y2="60" class="arrow" />
+  <text x="455" y="65" class="label-text">SPOKES (Ash or Oak)</text>
+  <text x="455" y="80" class="label-detail">Tapered: 3-4cm at hub, 2-2.5cm at rim</text>
+  <text x="455" y="95" class="label-detail">Length: ~45-50cm per spoke</text>
+
+  <!-- FELLOE RIM SEGMENTS (outer rim in 4 pieces) -->
+  <!-- Top-right felloe -->
+  <path d="M 380 140 Q 420 100 460 140" fill="none" class="wheel-part felloe-wood" stroke-width="6" />
+  <circle cx="420" cy="110" r="3" fill="var(--accent)" />
+
+  <!-- Bottom-right felloe -->
+  <path d="M 380 360 Q 420 400 460 360" fill="none" class="wheel-part felloe-wood" stroke-width="6" />
+  <circle cx="420" cy="390" r="3" fill="var(--accent)" />
+
+  <!-- Bottom-left felloe -->
+  <path d="M 120 360 Q 80 400 40 360" fill="none" class="wheel-part felloe-wood" stroke-width="6" />
+  <circle cx="80" cy="390" r="3" fill="var(--accent)" />
+
+  <!-- Top-left felloe -->
+  <path d="M 120 140 Q 80 100 40 140" fill="none" class="wheel-part felloe-wood" stroke-width="6" />
+  <circle cx="80" cy="110" r="3" fill="var(--accent)" />
+
+  <!-- Felloe label -->
+  <line x1="460" y1="140" x2="530" y2="100" class="arrow" />
+  <text x="535" y="105" class="label-text">FELLOES (4–8 segments)</text>
+  <text x="535" y="120" class="label-detail">Curved hardwood rim pieces</text>
+  <text x="535" y="135" class="label-detail">Mortised to fit spokes</text>
+
+  <!-- IRON TIRE (outer ring) -->
+  <ellipse cx="400" cy="250" rx="105" ry="105" fill="none" class="iron-tire" stroke-width="7" />
+
+  <!-- Iron tire label -->
+  <line x1="470" y1="200" x2="550" y2="150" class="arrow" />
+  <text x="555" y="155" class="label-text">IRON TIRE</text>
+  <text x="555" y="170" class="label-detail">Width: 5-8cm, Thickness: 6-10mm</text>
+  <text x="555" y="185" class="label-detail">Hot-shrunk for tight binding</text>
+
+  <!-- Assembly indicators (mortise and tenon) -->
+  <!-- Show spoke-to-felloe connection detail -->
+  <g>
+    <rect x="380" y="135" width="12" height="10" fill="none" class="wheel-part" stroke-width="1.5" />
+    <text x="355" y="148" class="label-detail" font-size="10">Mortise</text>
+  </g>
+
+  <!-- Assembly notes -->
+  <text x="50" y="470" class="label-text" style="font-size: 12px;">Assembly: Hub → Spokes → Felloes (lapped & clamped) → Iron tire (hot-shrunk)</text>
+
+  <!-- Diameter indicator -->
+  <path d="M 30 250 L 750 250" stroke="var(--border)" stroke-width="1" stroke-dasharray="5,5" />
+  <line x1="30" y1="245" x2="30" y2="255" stroke="var(--border)" stroke-width="2" />
+  <line x1="750" y1="245" x2="750" y2="255" stroke="var(--border)" stroke-width="2" />
+  <text x="390" y="270" text-anchor="middle" class="label-detail">Typical wheel diameter: 100-150cm</text>
+
+</svg>
+</p>
+<h2 id="section-wheel-construction">Section: Wheel Construction</h2>
+<section id="wheel-construction">
+<p>The wheel is the critical component. Its design determines load capacity, durability, and whether a cart is usable on rough terrain or limited to smooth roads.</p>
+<h3>Solid-Disk Wheels</h3>
+<p>The simplest design: a circular disk of wood, typically 0.5–0.75m in diameter, 3–5cm thick, made from a single plank or glued laminations.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Fast to produce (no joinery)</li>
+<li>Requires no iron</li>
+<li>Suitable for light loads and short hauls</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Heavy (high rolling resistance)</li>
+<li>Prone to checking and splitting as wood dries</li>
+<li>Limited to walking-speed travel</li>
+<li>Poor on uneven terrain</li>
+</ul>
+<p><strong>Construction:</strong></p>
+<ol>
+<li>Select straight-grained wood (pine, elm, or fir)</li>
+<li>Mark circle using rope compass (radius = half desired diameter)</li>
+<li>Hew or saw to outline, then sand/plane to roundness</li>
+<li>Bore axle hole (6–8cm diameter) at exact center</li>
+<li>Apply oil or tar finish to inhibit water absorption and checking</li>
+</ol>
+<h3>Spoked Wheels</h3>
+<p>The complex design, used since antiquity, reduces weight dramatically while maintaining strength. A spoked wheel is built from four assemblies: hub, spokes, felloes (rim segments), and iron tire.</p>
+<h4>Hub</h4>
+<p>The hub is the wheel's heart — the thick, strong center where all spokes converge.</p>
+<p><strong>Dimensions:</strong> 12–20cm diameter, 10–15cm wide</p>
+<p><strong>Construction:</strong></p>
+<ol>
+<li>Select hardwood (oak, ash, elm) — soft wood fails under spoke stress</li>
+<li>Bore it to create the axle hole (6–10cm diameter, depending on axle thickness)</li>
+<li>Drill spoke holes around the circumference:
+<ul>
+<li>For 8-spoke wheels: 8 holes, 45° apart</li>
+<li>For 10-spoke wheels: 10 holes, 36° apart</li>
+<li>For 12-spoke wheels: 12 holes, 30° apart</li>
+</ul>
+</li>
+<li>Spoke holes are tapered (wider at the outer face) so spokes compress into a tight wedge fit</li>
+<li>Ensure all holes are equidistant from the center and at the same radius (called the &quot;spoke circle&quot;)</li>
+</ol>
+<p><strong>Hub Geometry:</strong></p>
+<p>For a cart wheel:</p>
+<ul>
+<li>Spoke circle diameter (where spokes meet hub): 8–12cm</li>
+<li>Axle hole diameter: 6–8cm (slightly less than axle diameter, which fits as a pressed/wedged joint)</li>
+</ul>
+<h4>Spokes</h4>
+<p>Spokes are the load-bearing radials connecting hub to rim. They are tapered: thick at the hub (where stress is highest) and thin at the rim.</p>
+<p><strong>Dimensions per spoke:</strong></p>
+<ul>
+<li>Hub end (butt): 3–4cm diameter</li>
+<li>Rim end (point): 2–2.5cm diameter</li>
+<li>Length: radius of wheel minus hub radius (e.g., for a 1m diameter wheel with 10cm hub, spoke length ≈ 45cm)</li>
+</ul>
+<p><strong>Material:</strong> Straight-grained hardwood (oak, ash, maple). Avoid wood with knots or grain deviation.</p>
+<p><strong>Construction:</strong></p>
+<ol>
+<li>Hew or turn spokes on a lathe, tapering from thick to thin</li>
+<li>Cut or chisel a tenon (peg) at the rim end to fit a mortise in the felloe</li>
+<li>At the hub end, fit a tapered wedge or shape the spoke to match the tapered hole</li>
+<li>Sand smooth to reduce stress concentration</li>
+</ol>
+<p><strong>Assembly Method:</strong></p>
+<ol>
+<li>Insert spokes into hub holes with a light hammer (they should wedge tightly)</li>
+<li>Do not fully drive them yet</li>
+<li>Once all spokes are loosely inserted, drive them fully, checking that the hub stays centered</li>
+<li>Tap spokes in a pattern (opposite spokes alternately) to balance stress</li>
+</ol>
+<h4>Felloes (Rim Segments)</h4>
+<p>The felloe is the curved rim, made from 4–12 segments depending on wheel size. Each segment spans 2–4 spokes.</p>
+<p><strong>Dimensions per felloe:</strong></p>
+<ul>
+<li>Oak or ash hardwood, 8–12cm wide, 4–6cm thick</li>
+<li>Length calculated from arc of the wheel</li>
+<li>For a 1m diameter wheel with 8 felloes: each felloe spans 45°; arc length ≈ 39cm</li>
+</ul>
+<p><strong>Construction:</strong></p>
+<ol>
+<li>Saw or hew straight-grained wood to approximate curve (slight curve, not the final arc)</li>
+<li>Steam or boil the wood for 1–2 hours to soften it</li>
+<li>Bend around a form (post or barrel) and clamp until dry (1–2 weeks)</li>
+<li>Mortise holes drilled where spokes will meet (typically one hole per spoke)</li>
+<li>Sand outer surface smooth</li>
+</ol>
+<p><strong>Assembly:</strong></p>
+<ol>
+<li>Dry-fit felloes around the spokes (no glue yet — assembly is mechanical)</li>
+<li>Secure each felloe to its spokes with wedged tenons (tenon inserted, then a wedge driven alongside to lock it)</li>
+<li>Clamp or band adjacent felloes together (tight fit, no gaps)</li>
+<li>Check for concentricity (wheel should be round and centered)</li>
+</ol>
+<h4>Iron Tire</h4>
+<p>A tire band of iron wraps around the felloes, binding them together and distributing load to all spokes. The tire is critical; without it, a wooden wheel is fragile.</p>
+<p><strong>Dimensions:</strong></p>
+<ul>
+<li>Width: 5–8cm</li>
+<li>Thickness: 6–10mm</li>
+<li>Circumference: precisely calculated from outer rim diameter (must be 0.5–1% less than the rim perimeter so it shrinks tight when cooled)</li>
+</ul>
+<p><strong>Fitting (Hot Shrinking):</strong></p>
+<ol>
+<li>Calculate tire circumference from final rim diameter</li>
+<li>Have a blacksmith forge the iron band to that length, overlapped and lap-welded (or riveted)</li>
+<li>Heat the tire in a forge until red-hot (700–800°C)</li>
+<li>Lift the hot tire with tools and slide it onto the wooden rim</li>
+<li>Work quickly: spoon cool water onto the contact line to accelerate shrinking and lock the tire</li>
+<li>The tire contracts as it cools, creating immense clamping force on the felloes</li>
+</ol>
+<p><strong>Safety During Tire-Fitting:</strong> The hot tire shrinks with tremendous force. If the wheel is not firmly secured or is unbalanced, the rim can collapse or the wheel fly apart. Secure the wheel (hub locked in a sturdy frame or vise) and keep bystanders clear.</p>
+<h3>Wheel Size and Load Capacity</h3>
+<p>Larger wheels roll more easily over rough terrain and distribute load over more ground. However, they are heavier and require taller draft animals.</p>
+<table>
+<thead>
+<tr>
+<th>Wheel Diameter</th>
+<th>Typical Use</th>
+<th>Load Capacity (with iron tire)</th>
+<th>Ground Pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.6m (2 ft)</td>
+<td>Light hand-carts, barrows</td>
+<td>100–200 kg</td>
+<td>High (low surface area)</td>
+</tr>
+<tr>
+<td>0.9m (3 ft)</td>
+<td>Farm carts, light loads</td>
+<td>300–600 kg</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>1.2m (4 ft)</td>
+<td>Standard wagon, general purpose</td>
+<td>600–1,200 kg</td>
+<td>Lower</td>
+</tr>
+<tr>
+<td>1.5m (5 ft)</td>
+<td>Heavy hauling (timber, ore)</td>
+<td>1,000–2,000 kg</td>
+<td>Low (easier over soft ground)</td>
+</tr>
+<tr>
+<td>1.8m (6 ft)</td>
+<td>Very heavy loads, swampy terrain</td>
+<td>1,500–3,000 kg</td>
+<td>Very low</td>
+</tr>
+</tbody>
+</table>
+<p>Larger wheels also have better angle-climbing ability. A 1.2m wheel can roll over an 8–10cm obstacle; a 0.6m wheel stops at 4–5cm.</p>
+<h3>Wheel Dish and Toe-In</h3>
+<p>A wheel is not perfectly vertical on its axle. Two geometric refinements improve durability:</p>
+<p><strong>Dish:</strong> The wheel is dished (conical), wider at the outer face than at the hub. Dish angles (2–3°) transfer load inward toward the axle and help prevent side-slip. Dishes are created by offsetting the spoke holes on each side of the hub.</p>
+<p><strong>Toe-In:</strong> The rim is angled inward at the top (like your toes pointing together). This geometry reduces stress on the lower rim during rolling and improves load distribution.</p>
+</section>
+<h2 id="section-axles-and-bearings">Section: Axles and Bearings</h2>
+<section id="axles-bearings">
+<p>The axle transmits load from the cart body to the wheels. Axle design determines whether wheels rotate freely or bind.</p>
+<h3>Axle Types</h3>
+<p><strong>Fixed Axle (Cart Axle)</strong></p>
+<p>The axle does not rotate; the wheel spins around it. This design is simpler and suits light-draft carts.</p>
+<ul>
+<li>Axle diameter: 4–6cm</li>
+<li>Bearing surface: wood-on-wood (hardwood axle, hardwood hub hole)</li>
+<li>Lubricant: animal tallow, plant oil, or graphite powder</li>
+<li>Advantage: simple, easy to repair</li>
+<li>Disadvantage: higher friction, axle can warp or crack under heavy load</li>
+</ul>
+<p><strong>Rotating Axle (Wagon Axle)</strong></p>
+<p>The axle rotates with the wheel, supported by fixed bearings on the cart body. Better for heavy loads and long hauling.</p>
+<ul>
+<li>Axle diameter: 5–8cm</li>
+<li>Bearing surface: iron bushing (wrapped around axle), housed in wooden axle bed</li>
+<li>Lubrication: essential — tallow mixed with oil, applied regularly</li>
+<li>Advantage: lower friction, better for heavy loads</li>
+<li>Disadvantage: more complex, requires iron fittings</li>
+</ul>
+<h3>Bearing Surfaces and Lubrication</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Material</th>
+<th>Friction</th>
+<th>Maintenance</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wood-on-wood</td>
+<td>Axle: oak/ash; hub: hornbeam</td>
+<td>High</td>
+<td>Oil weekly</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Hardwood + iron bushing</td>
+<td>Oak axle, iron collar, wood bearing</td>
+<td>Medium</td>
+<td>Grease fortnightly</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Iron-on-iron</td>
+<td>Iron axle, iron bushing</td>
+<td>Low</td>
+<td>Grease weekly</td>
+<td>High</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Best Lubricants:</strong></p>
+<ol>
+<li><strong>Animal tallow</strong> (rendered fat): cheap, available locally, water-resistant</li>
+<li><strong>Plant oils</strong> (linseed, walnut): good penetration, dries slightly (add tallow to prevent complete drying)</li>
+<li><strong>Graphite powder</strong> mixed with oil: reduces friction further, especially useful for rotating axles</li>
+<li><strong>Bone marrow</strong>: soft, penetrates easily, less water-resistant than tallow</li>
+</ol>
+<p><strong>Lubrication Schedule:</strong></p>
+<ul>
+<li>Light cart (hand-drawn): every 50 km</li>
+<li>Farm cart (horse-drawn, light load): every 100 km</li>
+<li>Heavy wagon (multiple animals, full load): every 50 km</li>
+<li>In dusty conditions: every 25 km (dust contaminates bearing and increases friction)</li>
+</ul>
+<h3>Axle Geometry: Box Vs Spindle</h3>
+<p><strong>Box Axle (Cart)</strong></p>
+<p>The axle is a simple square or round stock, the same diameter throughout. Wheels slide onto each end. Securing is either:</p>
+<ul>
+<li>Linch pin: a large cotter pin driven through the axle end to prevent wheel sliding off</li>
+<li>Wheel nut: a large hex nut threaded onto a tapered axle end</li>
+</ul>
+<p><strong>Spindle Axle (Wagon)</strong></p>
+<p>The axle has a thickened center (the &quot;body&quot;) and tapered ends (the &quot;spindles&quot;). Wheels slide onto the spindles; the tapered profile seats the wheel and hub tightly. Securing:</p>
+<ul>
+<li>Linch pin through a hole in the spindle end (most common)</li>
+<li>Threaded hub nut (less common, requires blacksmithing expertise)</li>
+</ul>
+</section>
+<h2 id="section-cart-and-wagon-frame">Section: Cart and Wagon Frame</h2>
+<section id="frame-design">
+<p>The frame holds the axles and body together. Design depends on load and terrain.</p>
+<h3>Two-Wheel Cart Frame</h3>
+<p>A simple two-wheel cart (suitable for hand-drawn or single-animal draft) has a minimal frame.</p>
+<p><strong>Components:</strong></p>
+<ol>
+<li>
+<p><strong>Shafts or tongue</strong>: Two wooden poles extending forward from the axle to the draft animal's harness. For a hand-cart, these angle backward (you push/pull). For an animal-drawn cart, they angle forward.</p>
+<ul>
+<li>Material: straight ash or birch</li>
+<li>Diameter: 5–8cm</li>
+<li>Attachment to axle: bolted or mortised into the axle bed</li>
+</ul>
+</li>
+<li>
+<p><strong>Axle bed</strong>: A wooden frame (typically 2–3 pieces bolted together) that houses the axle and connects to the shafts</p>
+</li>
+<li>
+<p><strong>Cargo bed</strong>: A flat platform or box mounted on the axle bed, supported on cross-beams</p>
+</li>
+<li>
+<p><strong>Footboard</strong>: A platform where the driver stands (on large carts)</p>
+</li>
+</ol>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>Shafts and frame: ash, oak, or birch (strength + flexibility)</li>
+<li>Cargo bed: pine or softwood (lighter, adequate strength)</li>
+</ul>
+<h3>Four-Wheel Wagon Frame</h3>
+<p>A larger wagon distributes load across four wheels, allowing heavier cargo. The frame is more complex.</p>
+<p><strong>Components:</strong></p>
+<ol>
+<li>
+<p><strong>Bolster (front and rear)</strong>: Heavy wooden beams (10×15cm cross-section) connecting the front and rear axles</p>
+</li>
+<li>
+<p><strong>Tongue</strong>: A single central pole extending forward (unlike carts' twin shafts) from the front bolster to the draft animals' yoke</p>
+</li>
+<li>
+<p><strong>Cross-beams</strong>: Connecting the two bolsters (typically called the wagon &quot;body&quot; frame)</p>
+</li>
+<li>
+<p><strong>Cargo bed</strong>: Usually a long, flat platform or slatted box</p>
+</li>
+<li>
+<p><strong>Tailgate</strong>: A removable or hinged rear gate for loading/unloading</p>
+</li>
+</ol>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>Bolsters and frame: oak or ash (high strength, durability)</li>
+<li>Cargo bed: pine or hardwood planks</li>
+</ul>
+<h3>Steering Mechanisms</h3>
+<p><strong>Two-Wheel Cart (Shafts)</strong></p>
+<p>Shafts provide steering naturally: the draft animal (human or horse) pulls on the shafts, and the cart turns. No additional mechanism needed. However:</p>
+<ul>
+<li>The axle must be mounted so it can rotate relative to the shafts (typically on a fixed axle with the wheel rotating around it, or a rotating axle with the cart body fixed)</li>
+<li>Shafts are usually connected to the axle via a loose bolted joint, allowing ~20° rotation left/right</li>
+</ul>
+<p><strong>Four-Wheel Wagon (Pivot Axle or Fifth Wheel)</strong></p>
+<p>A four-wheel wagon needs a steering mechanism to turn the front wheels.</p>
+<p><strong>Pivot Axle (Simple):</strong></p>
+<ul>
+<li>The front axle is mounted on a central pivot pin that allows it to rotate</li>
+<li>The tongue is connected to a cross-beam on the front axle</li>
+<li>When the driver pulls/pushes the tongue (or lines/reins connected to it), the front axle pivots and the front wheels turn</li>
+<li>Limitation: the angle is typically limited to ~20° to prevent overturning</li>
+</ul>
+<p><strong>Fifth Wheel (Advanced):</strong></p>
+<p>A fifth wheel is a large circular bearing that allows the front wagon body to rotate freely relative to the rear. Used primarily for detachable cargo bodies or semi-trailer systems.</p>
+<ul>
+<li>Rarely needed for single-unit wagons</li>
+<li>Requires iron work (rings, bearings) beyond basic carpentry</li>
+</ul>
+</section>
+<h2 id="section-suspension-and-braking">Section: Suspension and Braking</h2>
+<section id="suspension-braking">
+<p>Suspension absorbs shock from rough roads. Braking prevents runaway on hills.</p>
+<h3>Suspension Systems</h3>
+<p><strong>Leather Strap Suspension (Simple)</strong></p>
+<p>For two-wheel carts or light wagons:</p>
+<ul>
+<li>The cargo bed is hung from two leather straps (or hemp rope) attached to the shafts or frame above</li>
+<li>The straps absorb vertical shock by flexing</li>
+<li>Advantages: cheap, simple, adequate for slow speeds and rough terrain</li>
+<li>Disadvantages: straps wear quickly, creep under load, and offer limited shock absorption</li>
+</ul>
+<p><strong>Leaf Spring (Wood or Iron)</strong></p>
+<p>Curved wooden beams (or iron springs) attached to the axle and frame:</p>
+<ul>
+<li>Each spring is a flat, curved beam bolted at both ends</li>
+<li>When the wheel hits a bump, the spring flexes, absorbing energy</li>
+<li>Iron leaf springs are superior to wood but require blacksmithing</li>
+<li>Common on farm wagons and heavy hauling</li>
+</ul>
+<p><strong>C-Spring (Advanced)</strong></p>
+<p>Cylindrical iron coils wound to spiral shape, mounted vertically on each wheel. Offers smooth suspension but requires iron work and precision assembly. Rare in preindustrial settings.</p>
+<h3>Braking Systems</h3>
+<p><strong>Drag Shoe (Simplest)</strong></p>
+<p>A wooden shoe (block) dragged on the ground or against the wheel rim:</p>
+<ol>
+<li>Mounted on the cart frame via a lever and cable</li>
+<li>Driver pulls a lever, which lowers the drag shoe onto the ground</li>
+<li>Friction slows the cart</li>
+<li>Effective but noisy and wears quickly on paved surfaces</li>
+</ol>
+<p><strong>Lever Brake (Wheel)</strong></p>
+<p>A wooden shoe (or iron band) presses against the wheel rim:</p>
+<ol>
+<li>A lever arm (2–3 meters long) is fulcrumed on the cart frame</li>
+<li>At one end, the driver stands and presses down</li>
+<li>At the other end, a wooden block presses against the wheel</li>
+<li>Pressure is magnified by the lever ratio (e.g., 1:4 means the block presses with 4× the driver's force)</li>
+<li>Highly effective, especially on hills</li>
+</ol>
+<p><strong>Block Brake (Disc)</strong></p>
+<p>A stationary wooden block presses against the axle (or a disc mounted on it):</p>
+<ol>
+<li>Simple and cheap</li>
+<li>Less effective than wheel brakes (axles spin faster than wheels)</li>
+<li>Can overheat on long descents</li>
+</ol>
+<h3>Design Guidance</h3>
+<ul>
+<li>Carts and light wagons: drag shoe is adequate</li>
+<li>Farm wagons: lever brake on wheels recommended</li>
+<li>Heavy hauling or mountainous terrain: dual lever brakes (one per wheel) essential</li>
+<li>Long descents: alternate braking (apply brake, cool by stopping, repeat) prevents wheel fires</li>
+</ul>
+</section>
+<h2 id="section-load-capacity-and-practical-design">Section: Load Capacity and Practical Design</h2>
+<section id="load-capacity">
+<p>How much can a cart or wagon carry? The answer depends on wheel diameter, draft animal, road condition, and design.</p>
+<h3>Calculating Load Capacity</h3>
+<p><strong>Theoretical Maximum:</strong></p>
+<p>Load capacity depends on axle bending stress. The axle acts as a beam supported at two points (the wheels). Bending moment M = Load × (axle length / 4), and bending stress σ = M / (I / c), where I is the second moment of inertia and c is the distance from neutral axis to outer fiber. For a solid circular axle:</p>
+<pre><code>Bending stress σ = Load × Axle_length × (Axle_diameter / 2) / (π × Axle_diameter⁴ / 64)
+
+Simplified (for typical carts): Maximum load ≈ 100–150 kg per cm of axle diameter,
+                                 reduced by 20–40% depending on wheel diameter and design.
+</code></pre>
+<p>For a wooden cart with 100cm wheels and 6cm oak axle (oak: ~60 MPa bending strength):</p>
+<ul>
+<li>Estimated theoretical max ≈ 1,500–2,500 kg (practical engineering estimate, not empirical formula)</li>
+</ul>
+<p><strong>Practical Maximum:</strong></p>
+<p>Real-world limits are much lower due to friction, animal strength, and terrain:</p>
+<ul>
+<li><strong>Smooth road, light cart:</strong> 60–70% of theoretical</li>
+<li><strong>Rough road, standard wagon:</strong> 40–50% of theoretical</li>
+<li><strong>Muddy or sandy terrain:</strong> 20–30% of theoretical</li>
+</ul>
+<p><strong>Example:</strong> A hand-drawn cart with 80cm wheels and 5cm axle over smooth road could theoretically handle:</p>
+<ul>
+<li>Theoretical: ~800–1,200 kg (engineering estimate for 5cm axle)</li>
+<li>Practical (smooth road): ~500–800 kg</li>
+<li>Practical (rough field): ~300–400 kg</li>
+</ul>
+<p>(Note: Earlier formula &quot;Diameter × Axle × Factor = Load&quot; was an approximation; actual load capacity depends on detailed structural analysis.)</p>
+<h3>Draft Animal Capacity</h3>
+<p>Different animals have different pulling capacity:</p>
+<table>
+<thead>
+<tr>
+<th>Animal</th>
+<th>Sustainable Pulling Force</th>
+<th>Typical Load (smooth road)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Human (adult)</td>
+<td>50 kg-f</td>
+<td>200–400 kg</td>
+</tr>
+<tr>
+<td>Horse (medium)</td>
+<td>500 kg-f</td>
+<td>2,000–3,000 kg</td>
+</tr>
+<tr>
+<td>Ox (large)</td>
+<td>600 kg-f</td>
+<td>2,500–4,000 kg</td>
+</tr>
+<tr>
+<td>Donkey</td>
+<td>150 kg-f</td>
+<td>600–1,000 kg</td>
+</tr>
+<tr>
+<td>Reindeer</td>
+<td>100 kg-f</td>
+<td>400–600 kg</td>
+</tr>
+</tbody>
+</table>
+<p>These are <strong>sustainable loads</strong> over an 8-hour working day. Peak forces can be 2–3× higher for short distances (starting a loaded cart up a hill).</p>
+<h3>Practical Design Decisions</h3>
+<p><strong>For Light, Frequent Transport (market, short hauls):</strong></p>
+<ul>
+<li>2-wheel hand-cart or single-animal cart</li>
+<li>80–100cm wheels (good speed, manageable weight)</li>
+<li>Solid-disk or light-spoked wheels</li>
+<li>Fixed wood-on-wood axle (low maintenance)</li>
+<li>Load: 300–800 kg typical</li>
+</ul>
+<p><strong>For Heavy, Infrequent Transport (timber, stone, grain):</strong></p>
+<ul>
+<li>4-wheel wagon</li>
+<li>120–150cm wheels (high load capacity, better terrain)</li>
+<li>Spoked wheels with iron tire (durability)</li>
+<li>Rotating axle with iron bushings (lower friction)</li>
+<li>Lever brakes on wheels (essential for safety)</li>
+<li>Load: 1,500–4,000 kg typical</li>
+</ul>
+<p><strong>For Mixed-Use (farm work, trading, hauling):</strong></p>
+<ul>
+<li>2-wheel or 4-wheel (depends on budget; 2-wheel is more versatile)</li>
+<li>100–120cm wheels (compromise between speed and capacity)</li>
+<li>Spoked wheels (durable, not excessively heavy)</li>
+<li>Wood axle with good lubrication (adequate performance)</li>
+<li>Drag-shoe or simple lever brake</li>
+<li>Load: 600–2,000 kg typical</li>
+</ul>
+</section>
+<h2 id="section-maintenance-and-repair">Section: Maintenance and Repair</h2>
+<section id="maintenance-repair">
+<p>A well-maintained cart lasts decades. Neglected, it fails catastrophically.</p>
+<h3>Preventive Maintenance Schedule</h3>
+<p><strong>After Every Use:</strong></p>
+<ul>
+<li>Check wheels for damage (cracked rim, bent iron)</li>
+<li>Inspect axle for excessive wobble or grinding noise</li>
+<li>Verify cargo is secure and has not shifted</li>
+</ul>
+<p><strong>Every 100 km:</strong></p>
+<ul>
+<li>Lubricate axle (apply tallow + oil mixture)</li>
+<li>Check wheel for looseness (spin each wheel; should rotate freely with no grinding)</li>
+</ul>
+<p><strong>Seasonally (every 2–3 months):</strong></p>
+<ul>
+<li>Inspect wooden frame for rot, cracks, or warping</li>
+<li>Check iron fittings for rust; apply oil if needed</li>
+<li>Tighten all bolts and hardware</li>
+</ul>
+<p><strong>Annually:</strong></p>
+<ul>
+<li>Full wheel inspection: tap each spoke (should sound solid, not hollow); check rim for cracks</li>
+<li>Axle inspection: look for wear flats or deformation</li>
+<li>Wood inspection: apply sealant if weathered</li>
+<li>Replace worn leather straps (suspension) proactively</li>
+</ul>
+<h3>Common Repairs</h3>
+<p><strong>Broken Spoke</strong></p>
+<ol>
+<li>Remove wheel from cart</li>
+<li>Unbolt or unpin the iron tire (hot shrinking procedure in reverse: heat and pry off)</li>
+<li>Extract the broken spoke stub from the hub</li>
+<li>Carve or turn a new spoke to match the originals</li>
+<li>Fit the new spoke into the hub (tap in with hammer)</li>
+<li>Reassemble felloes and fit the iron tire (hot shrinking again)</li>
+</ol>
+<p><strong>Cracked or Split Rim</strong></p>
+<ol>
+<li>If the crack is small and the iron tire is holding, the cart may be usable as-is</li>
+<li>If the crack is spreading, the wheel must be rebuilt:
+<ul>
+<li>Remove the wheel</li>
+<li>Heat and pry off the tire</li>
+<li>Remove the damaged felloe</li>
+<li>Carve a replacement</li>
+<li>Reassemble and re-tire</li>
+</ul>
+</li>
+<li>Time-consuming but doable without outside help</li>
+</ol>
+<p><strong>Bent or Broken Axle</strong></p>
+<ul>
+<li>A wooden axle can warp under heavy load or repeated shock</li>
+<li>Minor bends are tolerable (check that wheel spins freely)</li>
+<li>Major bends or cracks require replacement (full re-assembly with new axle)</li>
+<li>Iron axles can bend slightly (heat and hammer-straightening) or crack (must be replaced)</li>
+</ul>
+<p><strong>Loose Wheel</strong></p>
+<ol>
+<li>Check linch pin: remove and reinspect; if bent or worn, hammer it straight or carve a new wood pin</li>
+<li>Check for wear flats on the axle end where the wheel hub bore has enlarged</li>
+<li>If the hole is enlarged, drill a new axle hole slightly offset and install a new linch pin</li>
+</ol>
+<h3>Storage and Preservation</h3>
+<p>When a cart is not in use:</p>
+<ul>
+<li>Store in a dry location (rot accelerates in damp)</li>
+<li>Block the cart frame so wheels are off the ground (prevents flat-spotting and bearing compression)</li>
+<li>Loosen wheel spokes slightly (reduces stress from wood shrinkage)</li>
+<li>Apply oil or sealant to wooden surfaces</li>
+<li>Cover iron parts with oil or tar to prevent rust</li>
+</ul>
+</section>
+<h2 id="section-hitch-systems-for-draft-animals">Section: Hitch Systems for Draft Animals</h2>
+<section id="draft-animal-hitch">
+<p>The hitch connects the cart to the draft animal and transmits pulling force. Poor hitch design causes injury, reduces efficiency, and strains the animal.</p>
+<h3>Yoke (Oxen or Multiple Animals)</h3>
+<p>A yoke is a wooden beam that sits across the shoulders or horns of large animals (oxen, buffalo) and is attached to the cart's tongue.</p>
+<p><strong>Components:</strong></p>
+<ol>
+<li><strong>Yoke beam</strong>: Curved hardwood (oak, ash), 8–10cm diameter, length matched to the team width (typically 2–3 meters for two oxen)</li>
+<li><strong>Bows (yoke arms)</strong>: Arcs that hug each animal's shoulders, allowing load transmission perpendicular to the pull direction</li>
+<li><strong>Tongue attachment</strong>: The yoke is bolted or pinned to the cart's tongue</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Even load distribution across both animals</li>
+<li>Historical proven design</li>
+<li>Can harness very large or unequal pairs</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Oxen can be injured if the yoke is poorly fitted</li>
+<li>Complex to adjust for different-sized animals</li>
+</ul>
+<h3>Harness (Horses and Single Animals)</h3>
+<p>A horse harness consists of straps distributing load across the chest and shoulders.</p>
+<p><strong>Components:</strong></p>
+<ol>
+<li><strong>Collar</strong>: A padded loop fitting around the horse's neck and chest; the trace chains attach here</li>
+<li><strong>Traces</strong>: Chains or rope connecting the collar to the cart shafts (or tonguefor single-horse wagon)</li>
+<li><strong>Bellyband</strong>: Straps encircling the torso to prevent the collar from shifting</li>
+<li><strong>Bridle and reins</strong>: For steering control</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Allows full range of shoulder motion</li>
+<li>Efficient for horses</li>
+<li>Comfortable for the animal if well-fitted</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Requires fitting individual to the horse</li>
+<li>Leather and hardware wear quickly</li>
+</ul>
+<h3>Singletree and Doubletree (Multi-Animal Rigs)</h3>
+<p>For two or more horses:</p>
+<ul>
+<li><strong>Singletree</strong>: A short wooden beam (0.5–1 meter) attached to a single horse's harness traces; it pivots and allows that horse to move independently while still being yoked to the cart</li>
+<li><strong>Doubletree</strong>: Two singletrees side-by-side, one for each of two horses, connected to the cart by a central tongue. Allows both horses to share the load and move together.</li>
+</ul>
+<p><strong>Geometry:</strong></p>
+<ul>
+<li>The doubletree is 1.5–2 meters wide</li>
+<li>Each singletree is 0.5–0.8 meters</li>
+<li>Chains connect from each singletree to the cart tongue or a central point</li>
+</ul>
+<p><strong>Advantage:</strong> Allows a team of horses to pull as a unit while distributing load evenly.</p>
+</section>
+<h2 id="section-road-requirements-and-terrain">Section: Road Requirements and Terrain</h2>
+<section id="road-requirements">
+<p>A cart's usability depends on the roads available.</p>
+<h3>Road Quality by Vehicle Type</h3>
+<table>
+<thead>
+<tr>
+<th>Road Type</th>
+<th>Cart Type</th>
+<th>Wheel Diameter</th>
+<th>Speed</th>
+<th>Typical Load</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paved (stone, packed)</td>
+<td>Any</td>
+<td>Any</td>
+<td>5–15 km/h</td>
+<td>80–90% capacity</td>
+</tr>
+<tr>
+<td>Rutted (wagon tracks)</td>
+<td>Heavy cart/wagon</td>
+<td>100+cm</td>
+<td>3–8 km/h</td>
+<td>60–70% capacity</td>
+</tr>
+<tr>
+<td>Rough field</td>
+<td>Wagon</td>
+<td>120+cm</td>
+<td>2–5 km/h</td>
+<td>30–50% capacity</td>
+</tr>
+<tr>
+<td>Mud/swamp</td>
+<td>Heavy wagon</td>
+<td>150+cm</td>
+<td>1–3 km/h</td>
+<td>20–30% capacity</td>
+</tr>
+<tr>
+<td>Sand/beach</td>
+<td>Wide wheels preferred</td>
+<td>120+cm+</td>
+<td>2–6 km/h</td>
+<td>40–50% capacity</td>
+</tr>
+</tbody>
+</table>
+<h3>Building Roads for Carts</h3>
+<p><strong>Establishing a Cart Road:</strong></p>
+<ol>
+<li><strong>Clear the path</strong>: Remove large rocks, roots, and vegetation</li>
+<li><strong>Establish drainage</strong>: Slight crown (higher center) so water sheds to sides; avoid standing water</li>
+<li><strong>Compact the surface</strong>: Repeated traffic; toss larger stones into soft areas</li>
+<li><strong>Annual maintenance</strong>: Fill ruts, reestablish crown, remove obstacles</li>
+</ol>
+<p><strong>Bridges for Carts:</strong></p>
+<ul>
+<li>Minimum width: 1.5× cart width (allows wiggle room)</li>
+<li>Load rating: bridge must support the loaded cart's weight concentrated on the wheels</li>
+<li>Two-wheel carts: lighter-duty bridges (10–30 metric tons typical)</li>
+<li>Four-wheel wagons: heavier-duty bridges (30–100+ metric tons)</li>
+</ul>
+<p><strong>Hill Crossings:</strong></p>
+<ul>
+<li>Grade steeper than ~15% requires braking controls</li>
+<li>On muddy or wet slopes, wider wheels (to reduce ground pressure) or even wooden tracks (distributed load platform) may be needed</li>
+</ul>
+</section>
+<h2 id="conclusion">Conclusion</h2>
+<p>Cart and wagon construction is learned through practice, but the fundamentals are unchanging: strong wheels, well-lubricated axles, solid frames, and careful load management. A community that can build its own carts is self-sufficient in transport — a cornerstone of trade, agriculture, and growth. The care devoted to construction and maintenance pays dividends for decades.</p>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="draft-animals.html">Draft Animals &amp; Working Livestock</a>
+<a href="timber-framing-joinery.html">Timber Framing and Joinery</a>
+<a href="blacksmithing.html">Blacksmithing</a>
+<a href="woodcarving-furniture.html">Woodcarving &amp; Furniture</a>
+<a href="road-building.html">Road Building &amp; Paving</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

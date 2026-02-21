@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/communication-redundancy-planning.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communication Redundancy Planning</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Communications</span> ›
+<span>Communication Redundancy Planning</span>
+</div>
+
+
+<h1>Communication Redundancy Planning</h1>
+<p class="subtitle">Single point of failure analysis, PACE planning, radio backup systems, visual signal backup, courier networks, communication schedules, dead drops, signal relay, communication security, testing drills.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~6 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview: Communication Resilience</a></li>
+<li><a href="#single-point">Single Point of Failure Analysis</a></li>
+<li><a href="#pace-planning">PACE Planning Framework</a></li>
+<li><a href="#radio-backup">Radio Backup Systems</a></li>
+<li><a href="#visual-backup">Visual Signal Systems</a></li>
+<li><a href="#courier-network">Courier Network Design</a></li>
+<li><a href="#schedule">Communication Schedules</a></li>
+<li><a href="#dead-drop">Dead Drop &amp; Message Cache Systems</a></li>
+<li><a href="#security">Communication Security</a></li>
+<li><a href="#testing">Testing &amp; Drill Schedule</a></li>
+<li><a href="#checklist">Communication Redundancy Checklist</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview: Communication Resilience</h2>
+<p>In a post-collapse world without global internet, communication becomes fragile. If your primary communication method (radio, messenger route, telegraph) fails, your settlement is cut off from the region. An emergency requires communication to request aid; inability to communicate means isolation and potential catastrophe.</p>
+<p>Communication redundancy planning ensures that if one method fails, backup systems maintain connectivity.</p>
+<p>The military planning framework for this is <strong>PACE planning:</strong></p>
+<ul>
+<li><strong>P:</strong> Primary (fastest, most reliable method)</li>
+<li><strong>A:</strong> Alternate (second choice if primary fails)</li>
+<li><strong>C:</strong> Contingency (third choice, slower or less reliable)</li>
+<li><strong>E:</strong> Emergency (last resort, very slow but always available)</li>
+</ul>
+<p>This guide covers PACE planning for settlements, practical backup systems, and testing procedures.</p>
+<div class="info-box">
+<p><strong>Military Lesson:</strong> Military units with no backup communication often fail their missions. Those with PACE planning maintain effectiveness even when primary systems are damaged. The principle applies directly to post-collapse settlements.</p>
+</div>
+</section>
+<section id="single-point">
+<h2>Single Point of Failure Analysis</h2>
+<p>Before designing redundancy, identify critical communication points.</p>
+<h3>Identifying Single Points of Failure</h3>
+<p>A system has a single point of failure if losing one component breaks the entire system.</p>
+<p><strong>Examples of single points of failure:</strong></p>
+<ol>
+<li><strong>Only radio:</strong> Settlement relies only on radio for regional communication. Radio breaks → total isolation.</li>
+<li><strong>Only one radio operator:</strong> Only one person knows how to operate the radio. Operator dies → radio unusable.</li>
+<li><strong>Only one messenger route:</strong> Merchants use only one road to reach the nearest settlement. Road floods → cut off.</li>
+<li><strong>Only one telegraph/signal line:</strong> A single telegraph wire connects to the next settlement. Wire cut → no contact.</li>
+<li><strong>Only one leader has communication authority:</strong> Only the mayor can send official messages. Mayor incapacitated → no communication.</li>
+</ol>
+<h3>Critical Communication Paths</h3>
+<p>Identify what must be communicated:</p>
+<ul>
+<li><strong>Emergency alarm:</strong> &quot;We are under attack, send aid&quot;</li>
+<li><strong>Trade inquiries:</strong> &quot;Do you have grain to trade?&quot;</li>
+<li><strong>Health alert:</strong> &quot;We have plague; quarantine in place&quot;</li>
+<li><strong>Status reports:</strong> Regular updates on settlement status</li>
+<li><strong>Diplomatic messages:</strong> Official communications between settlements</li>
+</ul>
+<p>Each of these should have independent backup paths.</p>
+<h3>Failure Modes</h3>
+<p>Understand how each communication method fails:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Failure Mode</th>
+<th>Prevention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Radio</strong></td>
+<td>Equipment failure, interference, operator death</td>
+<td>Backup equipment, trained operators, regular maintenance</td>
+</tr>
+<tr>
+<td><strong>Courier/Messenger</strong></td>
+<td>Route blockage, enemy interception, messenger death</td>
+<td>Multiple routes, multiple couriers, encrypted messages</td>
+</tr>
+<tr>
+<td><strong>Visual signals</strong></td>
+<td>Poor visibility (fog, rain, night), observer inattention</td>
+<td>Multiple signal types, verification systems, redundant observers</td>
+</tr>
+<tr>
+<td><strong>Smoke signals</strong></td>
+<td>High visibility but limited range, easily confused</td>
+<td>Standardized codes, multiple points, observer training</td>
+</tr>
+<tr>
+<td><strong>Telegraph</strong></td>
+<td>Wire damaged/cut, no operator, equipment failure</td>
+<td>Redundant lines, multiple operators, backup equipment</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pace-planning">
+<h2>PACE Planning Framework</h2>
+<p>Establish four levels of communication capability.</p>
+<h3>PACE Template</h3>
+<p><strong>Situation:</strong> Need to communicate &quot;Raiders approaching from east&quot;</p>
+<p><strong>P - Primary:</strong> Radio transmission to neighboring settlement (5 minute response time)</p>
+<ul>
+<li>Equipment: VHF radio on frequency 162.5 MHz</li>
+<li>Operator: Primary operator is Sarah; backup operator is John</li>
+<li>Procedure: Send message in phonetic alphabet</li>
+<li>Weakness: Requires equipment and trained operator</li>
+</ul>
+<p><strong>A - Alternate:</strong> Mounted messenger on horse to neighboring settlement (30 minute travel)</p>
+<ul>
+<li>Route: East road to settlement, 5 miles, typically clear</li>
+<li>Messenger: First choice is Tom; backup is Elena</li>
+<li>Message format: Written note in code</li>
+<li>Weakness: Only works in daylight, depends on horse being available</li>
+</ul>
+<p><strong>C - Contingency:</strong> Smoke signals from tower, pre-arranged code (30 minute signal time)</p>
+<ul>
+<li>Location: Bell tower on north hill, visible to neighboring settlement</li>
+<li>Code: 3 short puffs = raiders approaching; 5 short puffs = all-clear</li>
+<li>Weakness: Not usable in heavy fog or rain; limited information capacity</li>
+</ul>
+<p><strong>E - Emergency:</strong> Messenger on foot to neighboring settlement (2-3 hour travel)</p>
+<ul>
+<li>Route: East road, any able-bodied person can go</li>
+<li>Message: Same as alternate (written note)</li>
+<li>Weakness: Very slow, exhausting, only in desperate situations</li>
+</ul>
+<h3>Comprehensive PACE Matrix</h3>
+<p>For a small region with 3 settlements, create PACE for each settlement pair:</p>
+<table>
+<thead>
+<tr>
+<th scope="col">Settlement Pair</th>
+<th scope="col">Primary</th>
+<th scope="col">Alternate</th>
+<th scope="col">Contingency</th>
+<th scope="col">Emergency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A ↔ B (5 mi)</td>
+<td>Radio (5 min)</td>
+<td>Mounted messenger (30 min)</td>
+<td>Smoke signals (30 min)</td>
+<td>Foot messenger (2 hrs)</td>
+</tr>
+<tr>
+<td>B ↔ C (8 mi)</td>
+<td>Mounted messenger (45 min)</td>
+<td>Relay signal (30 min)</td>
+<td>Smoke signals (1 hr)</td>
+<td>Foot messenger (3 hrs)</td>
+</tr>
+<tr>
+<td>A ↔ C (12 mi)</td>
+<td>Relay radio via B (15 min)</td>
+<td>Foot messenger (4 hrs)</td>
+<td>Relay signal via B (1 hr)</td>
+<td>None (too far)</td>
+</tr>
+</tbody>
+</table>
+<h3>Resource Requirements</h3>
+<p>Implement PACE realistically:</p>
+<p><strong>Primary system requires:</strong></p>
+<ul>
+<li>Equipment (radio, telegraph, horse)</li>
+<li>Trained operators (2-3 people per system)</li>
+<li>Regular maintenance and testing</li>
+<li>Supply chain (fuel, parts, feed for animals)</li>
+</ul>
+<p><strong>Alternate/Contingency systems require:</strong></p>
+<ul>
+<li>Simpler equipment (messenger, signal materials)</li>
+<li>Basic training (how to ride, how to signal)</li>
+<li>Pre-positioned materials (message paper, ink, signal materials)</li>
+</ul>
+<p><strong>Emergency system requires:</strong></p>
+<ul>
+<li>Only willing people</li>
+<li>Minimal training (how to walk)</li>
+<li>Contingency supplies (food for journey)</li>
+</ul>
+</section>
+<section id="radio-backup">
+<h2>Radio Backup Systems</h2>
+<p>If radio is primary, prepare for equipment failure.</p>
+<h3>Equipment Redundancy</h3>
+<ul>
+<li><strong>Primary radio:</strong> High-quality VHF or HF transceiver in settlement center</li>
+<li><strong>Backup radio:</strong> Identical model stored with operator #2 (different location)</li>
+<li><strong>Portable radio:</strong> Smaller radio (walkie-talkie range) for emergency evacuation</li>
+</ul>
+<h3>Operator Training</h3>
+<ul>
+<li><strong>Operator #1:</strong> Primary, uses radio daily, maintains proficiency</li>
+<li><strong>Operator #2:</strong> Trained but infrequent use; conduct monthly refresher</li>
+<li><strong>Operator #3:</strong> Minimal training; knows only how to turn on, broadcast emergency signal</li>
+</ul>
+<p>This ensures someone can operate even if operators #1 and #2 are incapacitated.</p>
+<h3>Maintenance Schedule</h3>
+<ul>
+<li><strong>Daily:</strong> Turn on radio, confirm function, log frequency checks</li>
+<li><strong>Weekly:</strong> Full transmission test to backup settlement</li>
+<li><strong>Monthly:</strong> Check battery/power system; test all frequencies</li>
+<li><strong>Quarterly:</strong> Inspect antenna, cables, connections for damage</li>
+<li><strong>Annually:</strong> Full equipment inspection by trained technician</li>
+</ul>
+<h3>Emergency Broadcast Procedure</h3>
+<p>If immediate alert needed (attack, fire, medical emergency):</p>
+<ol>
+<li>Activate emergency broadcast: &quot;Emergency, emergency, all settlements, stand by&quot;</li>
+<li>Wait for response acknowledgment</li>
+<li>Transmit emergency message: &quot;We have [situation], need [aid]&quot;</li>
+<li>Repeat message 3-5 times</li>
+<li>Listen for responses</li>
+</ol>
+<p>Standardize this so receiving settlements recognize it and react immediately.</p>
+</section>
+<section id="visual-backup">
+<h2>Visual Signal Systems</h2>
+<p>When radio fails, visible signals work across distances.</p>
+<h3>Signal Types</h3>
+<p><strong>Smoke Signals:</strong></p>
+<ul>
+<li><strong>Method:</strong> Build small fires that produce smoke; cover/uncover to create puffs</li>
+<li><strong>Range:</strong> Visible 5-10 miles in clear weather</li>
+<li><strong>Code:</strong> Standardized pattern (e.g., 3 puffs = raiders, 1 puff = all-clear)</li>
+<li><strong>Limitations:</strong> Useless in rain/fog/night; takes 10+ minutes per message</li>
+</ul>
+<p><strong>Fire/Light Signals:</strong></p>
+<ul>
+<li><strong>Method:</strong> Large fires on hilltops, torches at night; cover/uncover to create flashes</li>
+<li><strong>Range:</strong> Visible 10+ miles at night</li>
+<li><strong>Code:</strong> Pre-arranged patterns (morse code, simple on/off)</li>
+<li><strong>Advantages:</strong> Works at night; fast (morse code transmission rate)</li>
+</ul>
+<p><strong>Flags/Cloth Signals:</strong></p>
+<ul>
+<li><strong>Method:</strong> Wave colored flags or cloth in patterns</li>
+<li><strong>Range:</strong> Visible 1-2 miles</li>
+<li><strong>Code:</strong> Different colors or positions = different meanings</li>
+<li><strong>Advantages:</strong> Works day/night (if visible), familiar system</li>
+</ul>
+<p><strong>Church Bells:</strong></p>
+<ul>
+<li><strong>Method:</strong> Ring bells in patterns</li>
+<li><strong>Range:</strong> Audible 2-5 miles depending on bell size</li>
+<li><strong>Code:</strong> Different ring patterns (e.g., 3 slow rings = danger; 1 fast ring = all-clear)</li>
+<li><strong>Advantages:</strong> Unmissable to population; works in darkness/fog</li>
+</ul>
+<h3>Signal Stations</h3>
+<p>Establish relay stations at key locations:</p>
+<ul>
+<li><strong>Central tower:</strong> High hill or structure with clear view of other settlements</li>
+<li><strong>Observer posts:</strong> 2-3 people stationed during daylight (rotating shifts)</li>
+<li><strong>Reception points:</strong> Multiple settlements have trained observers watching for signals</li>
+</ul>
+<h3>Code Standardization</h3>
+<p>Define codes in advance; write down and distribute:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Meaning</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raiders approaching</td>
+<td>Danger</td>
+<td>3 long fires / 3 bell rings</td>
+</tr>
+<tr>
+<td>Settlement under attack</td>
+<td>Crisis</td>
+<td>Continuous smoke / rapid bell ringing</td>
+</tr>
+<tr>
+<td>Safe passage/all clear</td>
+<td>Status</td>
+<td>1 fire / 1 bell ring</td>
+</tr>
+<tr>
+<td>Medical emergency</td>
+<td>Health</td>
+<td>2 fires / 2 bell rings</td>
+</tr>
+<tr>
+<td>Trade inquiry</td>
+<td>Commerce</td>
+<td>1 long + 2 short / irregular pattern</td>
+</tr>
+</tbody>
+</table>
+<p>Train all observers on codes quarterly.</p>
+</section>
+<section id="courier-network">
+<h2>Courier Network Design</h2>
+<p>For persistent inter-settlement communication, establish courier routes.</p>
+<h3>Route Network</h3>
+<p>Design network to reach all settlements with minimum redundancy:</p>
+<p><strong>Example: 5 settlements in a region</strong></p>
+<pre><code>[North Settlement]
+     ↓ (8 mi)
+[Central Hub] ← ↑ (7 mi) → [East Settlement]
+     ↑ (6 mi) ↓ (9 mi)
+[South Settlement] - [West Settlement] (10 mi)
+</code></pre>
+<p>Routes:</p>
+<ul>
+<li>Central Hub is hub; all other settlements connect to it</li>
+<li>Direct connections between neighbors reduce travel time</li>
+<li>Every settlement reachable within 1-2 days travel</li>
+</ul>
+<h3>Courier Rotation</h3>
+<ul>
+<li><strong>Full-time couriers:</strong> 2-3 people dedicated to regular runs</li>
+<li><strong>Part-time couriers:</strong> Merchants/travelers who carry messages along normal routes</li>
+<li><strong>Emergency couriers:</strong> Any able-bodied person can serve in crisis</li>
+</ul>
+<p>Schedule:</p>
+<ul>
+<li><strong>Monday/Thursday:</strong> Central Hub ↔ North Settlement</li>
+<li><strong>Tuesday/Friday:</strong> Central Hub ↔ East Settlement</li>
+<li><strong>Wednesday/Saturday:</strong> Central Hub ↔ South Settlement</li>
+<li><strong>Ad-hoc:</strong> West ↔ East, South ↔ North as needed</li>
+</ul>
+<h3>Courier Equipment</h3>
+<ul>
+<li><strong>Message containers:</strong> Sealed leather pouches (water-resistant)</li>
+<li><strong>Identity tokens:</strong> Proof courier is authorized (carved token, stamped pass)</li>
+<li><strong>Route maps:</strong> Knowledge of safe routes, waypoint locations</li>
+<li><strong>Supply caches:</strong> Pre-positioned food/water at rest points</li>
+</ul>
+<h3>Message Authentication</h3>
+<p>To prevent forged messages:</p>
+<ul>
+<li><strong>Seal/signature:</strong> Settlement leader's unique mark (wax seal, carved initials)</li>
+<li><strong>Tamper evidence:</strong> Message broken open; envelope sealed can't be re-sealed without visible damage</li>
+<li><strong>Witness system:</strong> Important messages witnessed by 2+ people at origin and destination</li>
+</ul>
+</section>
+<section id="schedule">
+<h2>Communication Schedules</h2>
+<p>Without regular schedules, important messages are missed.</p>
+<h3>Scheduled Communication</h3>
+<ul>
+<li><strong>Daily:</strong> Sunrise and sunset radio check (confirm equipment works)</li>
+<li><strong>Monday/Thursday:</strong> Formal status reports exchanged between settlements</li>
+<li><strong>First of month:</strong> Trade and weather reports compiled</li>
+<li><strong>Quarterly:</strong> Formal diplomatic communication and PACE review</li>
+</ul>
+<h3>Net Discipline (Radio)</h3>
+<p>When radio is primary, establish &quot;net&quot; (scheduled communication session):</p>
+<ul>
+<li><strong>Time:</strong> 9 AM and 6 PM daily</li>
+<li><strong>Duration:</strong> 30 minutes</li>
+<li><strong>Participants:</strong> One operator from each settlement</li>
+<li><strong>Agenda:</strong> Check-in, status updates, message traffic</li>
+</ul>
+<p><strong>Example Net Procedure:</strong></p>
+<ol>
+<li>Settlement A calls: &quot;Net control, Settlement A checking in&quot;</li>
+<li>Net control responds: &quot;Settlement A, good signal, go ahead&quot;</li>
+<li>A transmits status: &quot;All personnel accounted for, supplies adequate, no incidents&quot;</li>
+<li>Net control acknowledges and calls next settlement</li>
+<li>Repeat for all settlements</li>
+<li>Net control closes: &quot;This net is closed until 1800 hours&quot;</li>
+</ol>
+<p>Regular schedules ensure everyone is ready to receive at appointed times.</p>
+<h3>Schedule Flexibility</h3>
+<ul>
+<li><strong>Primary schedule:</strong> Strict adherence during normal times</li>
+<li><strong>Backup schedule:</strong> If primary time is missed, automatic retry at backup time (e.g., missed 9 AM, retry 11 AM)</li>
+<li><strong>Emergency override:</strong> Any settlement can call emergency net at any time; all settlements monitor emergency frequency</li>
+</ul>
+</section>
+<section id="dead-drop">
+<h2>Dead Drop &amp; Message Cache Systems</h2>
+<p>For covert communication or extreme backup:</p>
+<h3>Dead Drop Setup</h3>
+<p>A dead drop is a hidden location where messages are left and later retrieved.</p>
+<ul>
+<li><strong>Location:</strong> Remote but accessible (tree hollow, buried box, ruin)</li>
+<li><strong>Regular checking:</strong> One person checks the location weekly</li>
+<li><strong>Concealment:</strong> Hidden from casual observation</li>
+</ul>
+<h3>Dead Drop Protocol</h3>
+<ol>
+<li><strong>Message preparation:</strong> Sealed, waterproof container</li>
+<li><strong>Placement:</strong> Courier leaves message at agreed location</li>
+<li><strong>Signal:</strong> Leave agreed signal nearby (rock moved, branch bent) indicating message is present</li>
+<li><strong>Retrieval:</strong> Designated person checks location, retrieves message</li>
+<li><strong>Clearing:</strong> Remove dead drop signal to indicate message has been retrieved</li>
+</ol>
+<h3>Use Cases</h3>
+<ul>
+<li><strong>Covert intelligence:</strong> Spies leaving information for headquarters</li>
+<li><strong>Backup communication:</strong> If primary system completely fails, message can still be left</li>
+<li><strong>Asynchronous messaging:</strong> Sender and receiver don't need to be present simultaneously</li>
+</ul>
+<h3>Vulnerabilities</h3>
+<ul>
+<li><strong>Discovery:</strong> Enemy could find dead drop and read messages</li>
+<li><strong>Slow:</strong> Days to weeks between message and receipt</li>
+<li><strong>Unreliable:</strong> Message can be lost, damaged, or spoiled by weather</li>
+</ul>
+<p>Only use when other systems fail.</p>
+</section>
+<section id="security">
+<h2>Communication Security</h2>
+<p>Messages can be intercepted. Protect sensitive information.</p>
+<h3>Encryption Methods</h3>
+<p><strong>Simple code (substitution cipher):</strong></p>
+<ul>
+<li>Replace each letter with another (A→B, B→C, etc.)</li>
+<li>Easy to learn; easy to break</li>
+<li>Good for basic obfuscation against casual observers</li>
+</ul>
+<p><strong>Number code (book cipher):</strong></p>
+<ul>
+<li>Use a shared book; specify page/word number for each word in message</li>
+<li>Very secure if key is kept secret</li>
+<li>Requires sender and receiver have identical books</li>
+</ul>
+<p><strong>Phonetic spelling (dialect variation):</strong></p>
+<ul>
+<li>Spell sensitive words in non-standard ways only insiders understand</li>
+<li>Partially obscures meaning from outsiders</li>
+<li>Works for verbal communication</li>
+</ul>
+<p><strong>Full separation (information compartmentalization):</strong></p>
+<ul>
+<li>Don't send complete information in one message</li>
+<li>Send partial information via each route (courier, radio, signal)</li>
+<li>Enemy needs all pieces to understand; missing one piece = useless</li>
+</ul>
+<h3>Message Minimization</h3>
+<ul>
+<li><strong>Short messages:</strong> Fewer words to intercept/decode</li>
+<li><strong>Abbreviations:</strong> Use pre-agreed shorthand (&quot;WA&quot; = west approach, &quot;GEA&quot; = grain emergency alert)</li>
+<li><strong>Standardized formats:</strong> Template messages reduce variation</li>
+</ul>
+<h3>Courier Message Protection</h3>
+<ul>
+<li><strong>Sealed containers:</strong> Waterproof, tamper-evident</li>
+<li><strong>Distributed message:</strong> Send multiple copies via different routes</li>
+<li><strong>Decoy messages:</strong> Include false messages to confuse if captured</li>
+</ul>
+</section>
+<section id="testing">
+<h2>Testing &amp; Drill Schedule</h2>
+<p>Redundant systems only work if regularly tested.</p>
+<h3>Monthly Drills</h3>
+<p><strong>Drill 1 (First Monday):</strong> Radio test</p>
+<ul>
+<li>All operators turn on radio at 10 AM</li>
+<li>Each settlement transmits call sign and status</li>
+<li>Log signal strength and clarity</li>
+<li>Any problems documented and repaired</li>
+</ul>
+<p><strong>Drill 2 (Second Monday):</strong> Courier route test</p>
+<ul>
+<li>Send practice message via courier to next settlement</li>
+<li>Document travel time, message condition</li>
+<li>Identify any route problems</li>
+</ul>
+<p><strong>Drill 3 (Third Monday):</strong> Visual signal test</p>
+<ul>
+<li>Use smoke/fire signals to transmit practice code</li>
+<li>Verify all signal stations receive message</li>
+<li>Document visibility and clarity</li>
+</ul>
+<p><strong>Drill 4 (Fourth Monday):</strong> PACE drill</p>
+<ul>
+<li>Deactivate primary communication</li>
+<li>Verify alternate system works</li>
+<li>Fix any problems found</li>
+</ul>
+<h3>Quarterly Full Exercise</h3>
+<p>Simulate complete communication breakdown:</p>
+<ul>
+<li>All primary systems deactivated</li>
+<li>Relay entire situation status using only PACE alternate, contingency, and emergency systems</li>
+<li>Measure how long it takes to fully communicate via backup systems</li>
+<li>Identify bottlenecks and inefficiencies</li>
+</ul>
+<h3>Annual Review</h3>
+<ul>
+<li>Document all drills and results</li>
+<li>Identify any systems that failed or degraded</li>
+<li>Update PACE plans based on lessons learned</li>
+<li>Train new operators based on annual needs assessment</li>
+</ul>
+</section>
+<section id="checklist">
+<h2>Communication Redundancy Checklist</h2>
+<p><strong>PACE Planning:</strong></p>
+<ul>
+<li>[ ] Identify all critical communication needs</li>
+<li>[ ] Define Primary system (fastest, most reliable)</li>
+<li>[ ] Define Alternate system (second choice)</li>
+<li>[ ] Define Contingency system (third choice)</li>
+<li>[ ] Define Emergency system (last resort)</li>
+<li>[ ] Document response times for each system</li>
+<li>[ ] Document failure modes for each system</li>
+</ul>
+<p><strong>Radio System:</strong></p>
+<ul>
+<li>[ ] Procure primary and backup radios (identical models)</li>
+<li>[ ] Train 2-3 operators to competency</li>
+<li>[ ] Create maintenance schedule (daily, weekly, monthly, quarterly)</li>
+<li>[ ] Establish daily net discipline (check-in times)</li>
+<li>[ ] Create emergency broadcast procedure</li>
+</ul>
+<p><strong>Visual Signals:</strong></p>
+<ul>
+<li>[ ] Identify signal station locations</li>
+<li>[ ] Define standardized signal codes</li>
+<li>[ ] Train observers on codes</li>
+<li>[ ] Establish observer rotation schedule</li>
+<li>[ ] Test signals quarterly</li>
+</ul>
+<p><strong>Courier Network:</strong></p>
+<ul>
+<li>[ ] Design route network connecting all settlements</li>
+<li>[ ] Establish courier rotation (daily/weekly schedule)</li>
+<li>[ ] Create message authentication system</li>
+<li>[ ] Establish dead drop locations (if needed)</li>
+<li>[ ] Test routes monthly</li>
+</ul>
+<p><strong>Communication Security:</strong></p>
+<ul>
+<li>[ ] Define encryption method (if needed)</li>
+<li>[ ] Create code/cipher key</li>
+<li>[ ] Distribute keys to authorized personnel</li>
+<li>[ ] Establish message minimization standards</li>
+<li>[ ] Train on information compartmentalization</li>
+</ul>
+<p><strong>Testing &amp; Training:</strong></p>
+<ul>
+<li>[ ] Schedule monthly drills (radio, courier, signals, PACE)</li>
+<li>[ ] Schedule quarterly full exercise</li>
+<li>[ ] Document all drill results</li>
+<li>[ ] Conduct annual review and updates</li>
+<li>[ ] Train new operators annually</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="signals-communication.html">Signals &amp; Communication</a>
+<a href="ham-radio.html">Ham Radio &amp; Communications</a>
+<a href="message-authentication-courier.html">Message Authentication &amp; Courier Protocols</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/food-preservation.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Preservation</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Food &amp; Agriculture</span> ›
+<span>Food Preservation</span>
+</div>
+
+<div class="danger">
+<strong>⚠ CRITICAL SAFETY WARNING</strong><br>This guide contains procedures that can cause serious injury or death. Professional training and licensing may be required.
+</div>
+
+<h1>Food Preservation</h1>
+<p class="subtitle">Canning, smoking, drying, salting, fermentation, root cellaring, and long-term food storage techniques.</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~5 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#water-bath">Water Bath Canning</a></li>
+<li><a href="#pressure-canning">Pressure Canning</a></li>
+<li><a href="#smoking-curing">Smoking &amp; Curing Meat</a></li>
+<li><a href="#drying-dehydrating">Drying &amp; Dehydrating</a></li>
+<li><a href="#salting-brining">Salting &amp; Brining</a></li>
+<li><a href="#fermentation">Fermentation for Preservation</a></li>
+<li><a href="#root-cellaring">Root Cellaring &amp; Cold Storage</a></li>
+<li><a href="#rendering-fat">Rendering &amp; Fat Preservation</a></li>
+<li><a href="#sugar-preservation">Sugar Preservation</a></li>
+<li><a href="#long-term-storage">Long-Term Food Storage</a></li>
+<li><a href="#pemmican">Pemmican: High-Calorie Survival Food</a></li>
+<li><a href="#fruit-leather">Fruit Leather: Energy-Dense Dried Fruit</a></li>
+<li><a href="#vinegar">Making Vinegar &amp; Vinegar Mother (SCOBY)</a></li>
+<li><a href="#grain-storage-co2">Long-Term Grain Storage with CO2 (Dry Ice Method)</a></li>
+<li><a href="#nixtamalization">Nixtamalization: Alkaline Corn Treatment</a></li>
+<li><a href="#botulism-prevention">Botulism Prevention by Food Type</a></li>
+<li><a href="#pickling-ratios">Correct Pickling Brine Ratios</a></li>
+<li><a href="#grain-storage">Grain Storage: Moisture Content &amp; Mycotoxin Prevention</a></li>
+<li><a href="#root-cellar-humidity">Root Cellar Humidity by Crop Type</a></li>
+<li><a href="#pemmican-ratios">Pemmican: Fat:Meat Ratios for Rancidity Prevention</a></li>
+<li><a href="#jerky-drying">Jerky: Safe Drying Temperatures &amp; Times</a></li>
+<li><a href="#water-activity-mold">Water Activity Levels for Mold Prevention</a></li>
+<li><a href="#hardtack-mold-resistant">Hardtack: Recipe &amp; Mold-Resistant Baking</a></li>
+<li><a href="#smoking">Smoking (Cold and Hot)</a></li>
+<li><a href="#fermentation-2">Fermentation (Lacto-fermentation)</a></li>
+<li><a href="#salt-curing">Salt Curing (Dry and Brine Methods)</a></li>
+<li><a href="#root-cellaring-2">Root Cellaring (Cool Storage)</a></li>
+<li><a href="#evaporative-cooling">Evaporative Cooling (Passive Cooling, No Ice)</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="water-bath">
+<h2>Water Bath Canning</h2>
+<p>Water bath canning is the safest method for preserving high-acid foods (pH below 4.6). The boiling water temperature of 212°F (100°C) at sea level is sufficient to kill mold, yeast, and bacteria, but not spores of Clostridium botulinum. This method is ideal for fruits, pickles, tomatoes with added acid, and jams.</p>
+<h3>Equipment Needed</h3>
+<h4>Essential Equipment:</h4>
+<ul>
+<li><strong>Large stainless steel pot</strong> - minimum 21 quarts (20 liters), with rack that keeps jars off bottom</li>
+<li><strong>Glass canning jars</strong> - quart, pint, or half-pint sizes (use only approved canning jars, never recycled food jars)</li>
+<li><strong>Metal lids</strong> - flat metal discs with rubber compound that seal when heated</li>
+<li><strong>Screw bands</strong> - metal rings that hold lids in place during processing</li>
+<li><strong>Jar lifter</strong> - specialized tool for safely removing hot jars from boiling water</li>
+<li><strong>Bubble remover/headspace tool</strong> - plastic stick to remove air bubbles and measure headspace</li>
+<li><strong>Wide-mouth funnel</strong> - for easy filling without dripping</li>
+<li><strong>Clean towels</strong> - for handling hot jars</li>
+<li><strong>Reliable thermometer</strong> - to monitor water temperature (optional but recommended)</li>
+</ul>
+<h3>Jar Preparation</h3>
+<div class="highlight-box">
+<p><strong>Wash jars, lids, and bands</strong> in hot soapy water. For jams and jellies, sterilize jars by boiling for 10 minutes (add 1 minute per 1,000 feet of altitude above sea level). For foods processed more than 10 minutes, hot jar washing is sufficient. Do not sterilize if processing time exceeds 10 minutes.</p>
+<p><strong>Keep jars hot</strong> - Place filled jars directly into hot water bath to prevent thermal shock and breakage.</p>
+</div>
+<h3>Processing Times for High-Acid Foods</h3>
+<table><thead><tr><th scope="col">Food Item</th><th scope="col">Jar Size</th><th scope="col">Headspace</th><th scope="col">Processing Time (min)</th></tr></thead><tbody><tr><td>Applesauce</td><td>Pint/Quart</td><td>1/2 inch</td><td>15/20</td></tr><tr><td>Berries (raw pack)</td><td>Pint/Quart</td><td>1/2 inch</td><td>15/20</td></tr><tr><td>Berries (hot pack)</td><td>Pint/Quart</td><td>1/2 inch</td><td>10/15</td></tr><tr><td>Peaches/Pears</td><td>Pint/Quart</td><td>1/2 inch</td><td>20/25</td></tr><tr><td>Pickles (dill)</td><td>Pint/Quart</td><td>1/2 inch</td><td>15/15</td></tr><tr><td>Pickled vegetables</td><td>Pint/Quart</td><td>1/2 inch</td><td>10/15</td></tr><tr><td>Tomatoes (raw pack)</td><td>Pint/Quart</td><td>1/2 inch</td><td>40/45</td></tr><tr><td>Tomatoes (hot pack)</td><td>Pint/Quart</td><td>1/2 inch</td><td>35/40</td></tr><tr><td>Tomato juice</td><td>Pint/Quart</td><td>1/2 inch</td><td>15/15</td></tr><tr><td>Jam/Jelly</td><td>Half-pint/Pint</td><td>1/4 inch</td><td>5/10</td></tr><tr><td>Fruit sauces</td><td>Pint/Quart</td><td>1/2 inch</td><td>15/20</td></tr></tbody></table>
+<h3>Headspace Requirements</h3>
+<div class="tip">
+<p><strong>Critical Importance:</strong> Proper headspace (distance between food and jar rim) prevents overflow during processing and ensures proper sealing.</p>
+<ul>
+<li><strong>Jams, jellies, pickles, sauces:</strong> 1/4 inch headspace</li>
+<li><strong>Most fruits and vegetables:</strong> 1/2 inch headspace</li>
+<li><strong>Whole fruits or vegetables:</strong> 1/2 inch headspace</li>
+</ul>
+<p>Measure with the bubble remover/headspace tool. If headspace is too small, food may overflow into sealing surface. If too large, vacuum seal may not form properly.</p>
+</div>
+<h3>Processing Steps</h3>
+<ol>
+<li>Fill pot with water and bring to rolling boil. Water level must be 1-2 inches above jar lids.</li>
+<li>Remove jars from hot water one at a time. Fill with prepared food to proper headspace.</li>
+<li>Remove air bubbles by running a non-metallic spatula around inside of jar.</li>
+<li>Wipe jar rim clean with damp cloth to remove food particles.</li>
+<li>Place hot lid on jar and screw band down until finger-tight (not fully tight).</li>
+<li>Using jar lifter, place filled jars into boiling water bath, ensuring they don't touch.</li>
+<li>Ensure water covers jars by 1-2 inches. Add boiling water if needed.</li>
+<li>Cover pot and return to rolling boil. Start processing time when water returns to boil.</li>
+<li>After processing time ends, remove jars with jar lifter and place on towel or rack to cool.</li>
+<li>Do not tighten bands or move jars for 12-24 hours. Sealing occurs as contents cool.</li>
+</ol>
+<h3>Altitude Adjustments</h3>
+<p>At higher altitudes, water boils at lower temperatures, so processing times must be increased:</p>
+<table><thead><tr><th scope="col">Altitude (feet)</th><th scope="col">Time Increase</th></tr></thead><tbody><tr><td>Sea level to 1,000</td><td>No increase</td></tr><tr><td>1,001 to 2,000</td><td>Add 5 minutes</td></tr><tr><td>2,001 to 3,000</td><td>Add 10 minutes</td></tr><tr><td>3,001 to 4,000</td><td>Add 15 minutes</td></tr><tr><td>4,001 to 5,000</td><td>Add 20 minutes</td></tr><tr><td>5,001 to 6,000</td><td>Add 25 minutes</td></tr><tr><td>6,001 to 7,000</td><td>Add 30 minutes</td></tr><tr><td>Above 7,000</td><td>Add 35+ minutes</td></tr></tbody></table>
+<h3>Testing Jar Seals</h3>
+<div class="highlight-box">
+<p><strong>After 12-24 hours of cooling:</strong> Test the seal by pressing down on the center of each lid. A properly sealed lid will be concave (curved downward) and will not flex or pop. If the lid flexes up and down, the jar did not seal properly.</p>
+<p><strong>For non-sealed jars:</strong> Refrigerate immediately and use within 3-4 weeks, OR reprocess within 24 hours using a new lid (reheat food to proper temperature first), OR save for immediate consumption.</p>
+</div>
+<h3>Storage and Shelf Life</h3>
+<p>Store sealed jars in a cool (50-70°F), dark location away from direct sunlight. Properly sealed and stored water bath canned foods maintain quality for 1-2 years, though some nutrient loss and flavor change occurs after 1 year. Label all jars with contents and date.</p>
+</section>
+<section id="pressure-canning">
+<h2>Pressure Canning</h2>
+<p>Pressure canning is the only safe method for low-acid foods (pH 4.6 and above), including vegetables, meats, poultry, seafood, and soups. The pressure cooker raises water temperature above 212°F (100°C), creating conditions that kill Clostridium botulinum spores and eliminate risk of botulism poisoning.</p>
+<h3>Equipment and Safety</h3>
+<h4>Essential Equipment:</h4>
+<ul>
+<li><strong>Pressure canner</strong> - not pressure cooker; must have vent pipe, safety lock, operating vent pipe, pressure gauge, and safety fuse</li>
+<li><strong>Dial gauge (0-15 PSI)</strong> - for measuring pressure; requires annual testing at county extension office</li>
+<li><strong>Weighted gauge (10 PSI)</strong> - simpler alternative; operates at fixed pressure only</li>
+<li><strong>Glass canning jars</strong> - pint or quart sizes, never use for pressure canning</li>
+<li><strong>Metal lids and bands</strong> - same as water bath method</li>
+<li><strong>Jar lifter</strong> - essential for safe removal from canner</li>
+<li><strong>Bubble remover/headspace tool</strong> - for measuring headspace</li>
+<li><strong>Wide-mouth funnel</strong> - for filling without spillage</li>
+</ul>
+<h3>Pressure Requirements and Temperature</h3>
+<div class="tip">
+<p><strong>PSI (Pounds Per Square Inch) equals temperature:</strong></p>
+<ul>
+<li><strong>5 PSI:</strong> 228°F (109°C) - seldom used</li>
+<li><strong>10 PSI:</strong> 240°F (116°C) - standard for most vegetables and soups</li>
+<li><strong>15 PSI:</strong> 250°F (121°C) - required for meats and poultry</li>
+</ul>
+<p>Pressure requirements vary by altitude. At sea level to 2,000 feet, use 10 PSI for low-acid vegetables and 15 PSI for meats and poultry. Adjust pressure upward 1 PSI for every 2,000 feet of altitude.</p>
+</div>
+<h3>Dial vs Weighted Gauge</h3>
+<table><thead><tr><th scope="col">Feature</th><th scope="col">Dial Gauge</th><th scope="col">Weighted Gauge</th></tr></thead><tbody><tr><td>Pressure measurement</td><td>Precise, variable readings</td><td>Fixed pressure (10 or 15 PSI only)</td></tr><tr><td>Altitude adjustment</td><td>Easier to adjust for altitude</td><td>Less precise at high altitude</td></tr><tr><td>Maintenance</td><td>Requires annual testing and recalibration</td><td>No maintenance required</td></tr><tr><td>Cost</td><td>Higher initial cost</td><td>Lower cost</td></tr><tr><td>Reliability</td><td>Can drift out of calibration</td><td>Always reliable if functioning</td></tr></tbody></table>
+<h3>Processing Times for Low-Acid Foods</h3>
+<table><thead><tr><th scope="col">Food Item</th><th scope="col">Jar Size</th><th scope="col">Headspace</th><th scope="col">PSI Required</th><th scope="col">Time (minutes)</th></tr></thead><tbody><tr><td>Carrots (pieces)</td><td>Pint/Quart</td><td>1.25 inch</td><td>10</td><td>20/25</td></tr><tr><td>Green beans</td><td>Pint/Quart</td><td>1.25 inch</td><td>10</td><td>20/25</td></tr><tr><td>Corn (cream style)</td><td>Pint/Quart</td><td>1.25 inch</td><td>10</td><td>25/40</td></tr><tr><td>Corn (whole kernel)</td><td>Pint/Quart</td><td>1.25 inch</td><td>10</td><td>25/40</td></tr><tr><td>Peas (shelled)</td><td>Pint/Quart</td><td>1.25 inch</td><td>10</td><td>22/30</td></tr><tr><td>Potatoes (cubed)</td><td>Pint/Quart</td><td>1.25 inch</td><td>10</td><td>15/20</td></tr><tr><td>Beef (chunks)</td><td>Pint/Quart</td><td>1.25 inch</td><td>15</td><td>75/90</td></tr><tr><td>Chicken (pieces)</td><td>Pint/Quart</td><td>1.25 inch</td><td>15</td><td>75/90</td></tr><tr><td>Fish</td><td>Pint/Quart</td><td>1.25 inch</td><td>15</td><td>100/110</td></tr><tr><td>Vegetable soup</td><td>Pint/Quart</td><td>1.25 inch</td><td>10</td><td>60/75</td></tr><tr><td>Meat soup/stew</td><td>Pint/Quart</td><td>1.25 inch</td><td>15</td><td>75/90</td></tr></tbody></table>
+<h3>Altitude Adjustments for Pressure Canning</h3>
+<table><thead><tr><th scope="col">Altitude (feet)</th><th scope="col">Dial Gauge PSI</th><th scope="col">Weighted Gauge PSI</th></tr></thead><tbody><tr><td>0 to 2,000</td><td>10</td><td>10</td></tr><tr><td>2,001 to 4,000</td><td>11</td><td>15</td></tr><tr><td>4,001 to 6,000</td><td>12</td><td>15</td></tr><tr><td>6,001 to 8,000</td><td>13</td><td>15</td></tr><tr><td>8,001 to 10,000</td><td>14</td><td>15</td></tr><tr><td>Above 10,000</td><td>15</td><td>15</td></tr></tbody></table>
+<h3>Botulism Prevention</h3>
+<div class="highlight-box">
+<p><strong>Critical Safety Information:</strong> Clostridium botulinum produces deadly toxins in low-acid, anaerobic (oxygen-free) environments. Pressure canning is the ONLY method to prevent botulism in low-acid foods.</p>
+<ul>
+<li><strong>Never</strong> use water bath method for low-acid foods</li>
+<li><strong>Never</strong> use oven canning, aspiration, or untested recipes</li>
+<li><strong>Always</strong> follow tested recipes from USDA or National Center for Home Food Preservation</li>
+<li><strong>Always</strong> vent pressure canner for 10 minutes before closing valve</li>
+<li><strong>Always</strong> check pressure gauge is working (steam release) before use</li>
+</ul>
+<p>Botulism symptoms include weakness, paralysis, and respiratory failure. If any canned food smells sour, has bubbles, or looks abnormal, discard immediately without tasting.</p>
+</div>
+<p><svg aria-label="Food Preservation Reference Compendium diagram 1" height="400" viewBox="0 0 450 400" width="450" xmlns="http://www.w3.org/2000/svg"><text fill="#eee" font-size="18" font-weight="bold" text-anchor="middle" x="225" y="25"> Pressure Canner Cross-Section </text><ellipse cx="225" cy="280" fill="none" rx="140" ry="30" stroke="#eee" stroke-width="2"></ellipse><path d="M 85 280 L 85 150 Q 85 100 225 80 Q 365 100 365 150 L 365 280" fill="none" stroke="#eee" stroke-width="2"></path><ellipse cx="225" cy="280" fill="#16213e" rx="135" ry="28" stroke="none"></ellipse><path d="M 90 280 L 90 150 Q 90 105 225 85 Q 360 105 360 150 L 360 280" fill="#16213e" stroke="none"></path><rect fill="#e94560" height="20" rx="3" width="150" x="150" y="300"></rect><text fill="#eee" font-size="11" text-anchor="middle" x="225" y="313"> Heat Source </text><line stroke="#53d8a8" stroke-dasharray="5,5" stroke-width="2" x1="90" x2="360" y1="240" y2="240"></line><text fill="#eee" font-size="10" x="370" y="245"> Water </text><rect fill="#53d8a8" height="8" opacity="0.7" width="210" x="120" y="255"></rect><line stroke="#53d8a8" stroke-width="2" x1="150" x2="150" y1="255" y2="263"></line><line stroke="#53d8a8" stroke-width="2" x1="225" x2="225" y1="255" y2="263"></line><line stroke="#53d8a8" stroke-width="2" x1="300" x2="300" y1="255" y2="263"></line><text fill="#eee" font-size="10" x="375" y="263"> Rack </text><rect fill="#0f3460" height="50" stroke="#eee" stroke-width="1.5" width="35" x="130" y="190"></rect><rect fill="#0f3460" height="55" stroke="#eee" stroke-width="1.5" width="35" x="175" y="185"></rect><rect fill="#0f3460" height="55" stroke="#eee" stroke-width="1.5" width="35" x="245" y="185"></rect><rect fill="#0f3460" height="50" stroke="#eee" stroke-width="1.5" width="35" x="290" y="190"></rect><text fill="#eee" font-size="10" text-anchor="middle" x="225" y="270"> Jars </text><path d="M 90 145 Q 225 50 360 145 L 355 150 Q 225 55 95 150 Z" fill="#16213e" stroke="#eee" stroke-width="2"></path><circle cx="180" cy="80" fill="none" r="15" stroke="#eee" stroke-width="2"></circle><text fill="#eee" font-size="9" text-anchor="middle" x="180" y="85"> PSI </text><text fill="#e94560" font-size="10" font-weight="bold" text-anchor="middle" x="180" y="25"> Gauge </text><circle cx="270" cy="75" fill="#e94560" r="12" stroke="#eee" stroke-width="1.5"></circle><text fill="#eee" font-size="8" text-anchor="middle" x="270" y="80"> Valve </text><text fill="#e94560" font-size="10" font-weight="bold" text-anchor="middle" x="270" y="25"> Safety Valve </text><circle cx="320" cy="70" fill="none" r="8" stroke="#eee" stroke-width="2"></circle><line stroke="#eee" stroke-width="2" x1="320" x2="320" y1="55" y2="35"></line><text fill="#eee" font-size="10" x="335" y="45"> Vent </text><line stroke="#53d8a8" stroke-width="1.5" x1="115" x2="105" y1="150" y2="130"></line><text fill="#53d8a8" font-size="10" x="65" y="128"> Gasket </text></svg></p>
+<h3>Processing Steps for Pressure Canning</h3>
+<ol>
+<li>Add 2-3 inches of water to canner bottom. Bring to boil for 10 minutes while preparing jars.</li>
+<li>Prepare food according to tested recipe. Pack hot jars with food, leaving proper headspace (usually 1.25 inches).</li>
+<li>Remove air bubbles and wipe jar rims clean. Apply hot lids and finger-tight bands.</li>
+<li>Place trivet (rack) in canner bottom. Using jar lifter, arrange jars on trivet without touching.</li>
+<li>Fasten canner lid securely. Leave vent pipe open initially.</li>
+<li>Let steam exhaust from vent pipe for 10 minutes. This removes air from canner and ensures proper temperature.</li>
+<li>Close vent pipe or place weighted gauge on vent pipe opening.</li>
+<li>Pressure will begin rising. Allow it to reach the required PSI (10 or 15 PSI depending on food and altitude).</li>
+<li>Once pressure is reached, start processing timer and maintain constant pressure.</li>
+<li>If pressure drops below required level, bring it back up and restart processing timer from zero.</li>
+<li>When processing time is complete, turn off heat and allow pressure to return to zero naturally.</li>
+<li>Wait 5-10 minutes after pressure reaches zero before opening vent pipe (if not automatic).</li>
+<li>Open canner lid, tilting it away from you to avoid steam burns. Remove jars with jar lifter.</li>
+<li>Place jars on towel or rack to cool. Do not press on lids or move jars for 12-24 hours.</li>
+</ol>
+<h3>Storage and Shelf Life</h3>
+<p>Properly pressure canned low-acid foods maintain safety for 1-5 years depending on product. Store in cool (50-70°F), dark location. Label all jars with contents and canning date. After opening, refrigerate and use within 3-4 days.</p>
+</section>
+<section id="smoking-curing">
+<h2>Smoking &amp; Curing Meat</h2>
+<p>Smoking and curing are ancient methods of meat preservation that combine salt preservation, heat treatment, and antimicrobial properties of smoke to create shelf-stable protein sources. The combination is more effective than any single method alone.</p>
+<h3>Hot Smoking vs Cold Smoking</h3>
+<table><thead><tr><th scope="col">Feature</th><th scope="col">Hot Smoking</th><th scope="col">Cold Smoking</th></tr></thead><tbody><tr><td>Temperature</td><td>225-275°F (107-135°C)</td><td>68-90°F (20-32°C)</td></tr><tr><td>Cooking</td><td>Fully cooks meat during smoking</td><td>Does not cook meat; curing required</td></tr><tr><td>Shelf life</td><td>2-3 weeks (refrigerated)</td><td>Weeks to months if properly cured</td></tr><tr><td>Equipment</td><td>Simple smoker, heat source</td><td>Cold box, smoke chamber, insulation</td></tr><tr><td>Curing required</td><td>Optional but recommended</td><td>Required for safety</td></tr><tr><td>Time</td><td>4-48 hours depending on meat size</td><td>Days to weeks of smoking</td></tr></tbody></table>
+<h3>Smokehouse Construction</h3>
+<div class="highlight-box">
+<p><strong>Basic Smokehouse Design:</strong> A simple smokehouse can be built from a wooden shed, barrel, or covered box. Key requirements:</p>
+<ul>
+<li>Separate fire chamber below main chamber to generate smoke without excessive heat (for cold smoking)</li>
+<li>Insulation to maintain stable temperature</li>
+<li>Racks or hooks for hanging meat</li>
+<li>Ventilation holes to control smoke flow and prevent condensation buildup</li>
+<li>Door that can be sealed but allows smoke circulation</li>
+<li>Thermometer at meat level to monitor temperature</li>
+<li>Smoke source: hardwood fire in separate chamber connected by pipe</li>
+</ul>
+<p>For cold smoking, construct a smoke pipe 10-15 feet long underground or heavily insulated to cool smoke before it reaches meat.</p>
+</div>
+<p><svg aria-label="Food Preservation Reference Compendium diagram 2" height="350" viewBox="0 0 450 350" width="450" xmlns="http://www.w3.org/2000/svg"><text fill="#eee" font-size="18" font-weight="bold" text-anchor="middle" x="225" y="25"> Smokehouse Design </text><rect fill="#16213e" height="200" stroke="#eee" stroke-width="2" width="220" x="80" y="80"></rect><path d="M 80 80 L 85 70 L 285 70 L 290 80" fill="#16213e" stroke="#eee" stroke-width="2"></path><rect fill="#53d8a8" height="60" stroke="#eee" stroke-width="2" width="70" x="170" y="220"></rect><circle cx="235" cy="250" fill="#eee" r="4"></circle><text fill="#16213e" font-size="11" font-weight="bold" x="205" y="260"> Door </text><line opacity="0.6" stroke="#eee" stroke-width="3" x1="100" x2="280" y1="120" y2="120"></line><line opacity="0.6" stroke="#eee" stroke-width="3" x1="100" x2="280" y1="160" y2="160"></line><line opacity="0.6" stroke="#eee" stroke-width="3" x1="100" x2="280" y1="200" y2="200"></line><text fill="#53d8a8" font-size="11" x="15" y="165"> Racks </text><path d="M 120 125 Q 130 115 140 125" fill="none" opacity="0.7" stroke="#e94560" stroke-width="1.5"></path><path d="M 240 125 Q 250 115 260 125" fill="none" opacity="0.7" stroke="#e94560" stroke-width="1.5"></path><path d="M 130 165 Q 145 155 160 165" fill="none" opacity="0.7" stroke="#e94560" stroke-width="1.5"></path><path d="M 250 165 Q 260 155 270 165" fill="none" opacity="0.7" stroke="#e94560" stroke-width="1.5"></path><text fill="#e94560" font-size="10" x="295" y="145"> Smoke </text><rect fill="#e94560" height="12" stroke="#eee" stroke-width="1.5" width="40" x="200" y="65"></rect><text fill="#eee" font-size="9" text-anchor="middle" x="220" y="78"> Damper </text><line stroke="#eee" stroke-width="3" x1="70" x2="80" y1="240" y2="240"></line><path d="M 70 240 L 50 280 L 50 320" fill="none" stroke="#eee" stroke-width="2"></path><text fill="#eee" font-size="10" x="35" y="300"> Smoke </text><text fill="#eee" font-size="10" x="35" y="315"> Channel </text><rect fill="#16213e" height="50" stroke="#e94560" stroke-width="2" width="60" x="20" y="290"></rect><rect fill="#e94560" height="40" opacity="0.3" width="50" x="25" y="295"></rect><text fill="#e94560" font-size="11" font-weight="bold" text-anchor="middle" x="50" y="325"> Firebox </text><line opacity="0.5" stroke="#eee" stroke-width="2" x1="0" x2="450" y1="340" y2="340"></line><line stroke="#53d8a8" stroke-width="1.5" x1="92" x2="88" y1="85" y2="75"></line><text fill="#53d8a8" font-size="9" x="50" y="65"> Insulation </text><circle cx="230" cy="50" fill="none" r="6" stroke="#eee" stroke-width="2"></circle><line stroke="#eee" stroke-width="2" x1="230" x2="230" y1="35" y2="44"></line><text fill="#eee" font-size="10" x="250" y="56"> Outlet </text></svg></p>
+<h3>Wood Selection</h3>
+<div class="tip">
+<p><strong>Ideal Woods for Smoking:</strong></p>
+<ul>
+<li><strong>Hardwoods (best):</strong> Oak, hickory, apple, cherry, alder, mesquite</li>
+<li><strong>Use dry wood</strong> - green or wet wood produces harsh smoke and creosote buildup</li>
+<li><strong>Avoid softwoods:</strong> Pine, fir, spruce produce resinous smoke that taints meat</li>
+<li><strong>Flavor profiles:</strong> Hickory = strong, oak = medium, cherry/apple = mild and sweet</li>
+</ul>
+</div>
+<h3>Brining Formulas</h3>
+<div class="card">
+<h4>Wet Brine (for 1 gallon water):</h4>
+<p><strong>Basic formula:</strong> 1 cup salt, 1 cup sugar, 2 tablespoons sodium nitrite (or Prague Powder #1), 2 tablespoons pickling spice, 1 bay leaf, 6-8 peppercorns</p>
+<p>Submerge meat in brine, refrigerate 5-7 days for ham, 7-10 days for bacon, 3-5 days for smaller cuts like ribs.</p>
+</div>
+<div class="card">
+<h4>Dry Cure (per pound of meat):</h4>
+<p><strong>Basic formula:</strong> 1 tablespoon salt, 1 teaspoon sugar, 1/4 teaspoon sodium nitrite (Prague Powder #1), spices as desired</p>
+<p>Rub thoroughly on all surfaces. Layer in container with additional dry cure, cover, refrigerate 5-7 days per inch of thickness, turning occasionally.</p>
+</div>
+<h3>Cure Ratios and Chemistry</h3>
+<table><thead><tr><th scope="col">Ingredient</th><th scope="col">Function</th><th scope="col">Ratio (per lb meat)</th><th scope="col">Notes</th></tr></thead><tbody><tr><td>Salt</td><td>Preservative, flavor</td><td>1-2 tablespoons</td><td>Kills bacteria, removes moisture. 3.5% of weight is standard ratio</td></tr><tr><td>Sugar</td><td>Flavor balance, feed for beneficial bacteria</td><td>1-2 teaspoons</td><td>Offsets salt harshness. Brown sugar adds more flavor</td></tr><tr><td>Sodium Nitrite (Pink Salt/Prague #1)</td><td>Botulism prevention, red color</td><td>1/4 teaspoon per pound</td><td>Prevents Clostridium botulinum in low-oxygen environment. Always measure precisely</td></tr><tr><td>Sodium Nitrate (Prague #2)</td><td>Long-term preservation</td><td>1/8 teaspoon per pound</td><td>Slower acting than nitrite; used for long cures (months or years)</td></tr><tr><td>Spices (optional)</td><td>Flavor</td><td>To taste</td><td>Garlic, peppercorn, juniper, bay leaf, cinnamon</td></tr></tbody></table>
+<h3>Temperature and Time Guidelines</h3>
+<table><thead><tr><th scope="col">Product</th><th scope="col">Type</th><th scope="col">Temperature</th><th scope="col">Duration</th><th scope="col">Internal Temp</th></tr></thead><tbody><tr><td>Jerky</td><td>Hot smoked</td><td>160-180°F</td><td>4-12 hours</td><td>160°F</td></tr><tr><td>Bacon</td><td>Hot smoked</td><td>200-225°F</td><td>1-2 hours</td><td>150°F</td></tr><tr><td>Ham (whole)</td><td>Hot smoked</td><td>225-250°F</td><td>12-24 hours</td><td>160°F</td></tr><tr><td>Fish (hot)</td><td>Hot smoked</td><td>180-225°F</td><td>4-8 hours</td><td>145°F</td></tr><tr><td>Salmon (cold)</td><td>Cold smoked</td><td>68-90°F</td><td>2-4 weeks</td><td>N/A (no cook)</td></tr><tr><td>Pastrami</td><td>Hot smoked</td><td>225-250°F</td><td>4-6 hours</td><td>165°F</td></tr></tbody></table>
+<h3>Common Recipes</h3>
+<h4>Jerky (Simple Dry Cure)</h4>
+<div class="highlight-box">
+<ol>
+<li>Slice lean meat (beef, venison, elk) 1/4 inch thick, against the grain</li>
+<li>Mix: 1/4 cup salt, 2 tablespoons sugar, 1 tablespoon black pepper, 1 tablespoon garlic powder per 5 lbs meat</li>
+<li>Rub seasoning thoroughly into all meat surfaces</li>
+<li>Layer in glass container, cover, refrigerate 2-3 days</li>
+<li>Hang on jerky rack in smoker or dehydrator at 160-180°F for 4-12 hours until meat bends but doesn't break</li>
+<li>Cool completely before storage in airtight container</li>
+</ol>
+</div>
+<h4>Bacon (Wet Cure)</h4>
+<div class="highlight-box">
+<ol>
+<li>For 5 lb pork belly: combine 1 gallon water, 1 cup salt, 1/2 cup sugar, 2 tablespoons Prague Powder #1</li>
+<li>Submerge belly in brine, cover, refrigerate 7-10 days</li>
+<li>Remove, rinse thoroughly, pat dry</li>
+<li>Hang in smoker at 200-225°F for 1-2 hours with hickory or apple wood smoke</li>
+<li>Cool, slice to desired thickness, store in refrigerator wrapped in paper</li>
+<li>Use within 2-3 weeks or freeze for longer storage</li>
+</ol>
+</div>
+<h4>Ham (Dry Cure)</h4>
+<div class="highlight-box">
+<ol>
+<li>For 10-15 lb ham: mix 2 cups salt, 1 cup brown sugar, 3 tablespoons Prague Powder #1, 2 tablespoons black pepper</li>
+<li>Rub cure thoroughly on all surfaces and into any crevices</li>
+<li>Place in container, cover, refrigerate 12-14 days (approximately 1 day per pound)</li>
+<li>Turn ham every 3 days to ensure even curing</li>
+<li>After cure period, rinse thoroughly and hang to dry 3-5 days in cool place (below 60°F)</li>
+<li>Smoke at 225-250°F for 12-24 hours until internal temperature reaches 160°F</li>
+<li>Cool completely, wrap in cloth, store in cool location. Lasts 2-3 weeks at room temperature if well-smoked and dried</li>
+</ol>
+</div>
+<h4>Smoked Fish</h4>
+<div class="highlight-box">
+<ol>
+<li>Use firm-fleshed fish (salmon, mackerel, trout). Scale and clean, leaving skin on</li>
+<li>For 5 lbs fish: make brine with 1 quart water, 1/2 cup salt, 1/4 cup brown sugar, 1 tablespoon pickling spice</li>
+<li>Submerge fish 6-8 hours in refrigerated brine</li>
+<li>Remove, rinse, pat dry. Air-dry 1 hour until pellicle (glossy surface layer) forms</li>
+<li>Hot smoke at 160-225°F for 4-8 hours until flesh flakes easily, reaching 145°F internal temperature</li>
+<li>For extended storage, cold smoke at 68-85°F for 2-4 weeks after initial dry cure</li>
+<li>Store hot-smoked fish in refrigerator 2-3 weeks or freeze. Cold-smoked lasts longer at cooler temperatures</li>
+</ol>
+</div>
+</section>
+<section id="drying-dehydrating">
+<h2>Drying &amp; Dehydrating</h2>
+<p>Drying preserves food by removing moisture that bacteria, mold, and yeast need to grow. Traditional sun drying and modern dehydration both concentrate flavors and nutrients while creating lightweight, shelf-stable foods ideal for off-grid storage.</p>
+<h3>Sun Drying Method</h3>
+<div class="highlight-box">
+<p><strong>Best for:</strong> Herbs, tomatoes, peppers, apricots, plums, grapes (raisins)</p>
+<ul>
+<li><strong>Optimal conditions:</strong> Temperatures 85-100°F, low humidity below 30%, good air circulation, sunshine 6+ hours daily</li>
+<li><strong>Timeline:</strong> 2-4 weeks depending on food thickness, humidity, and temperature</li>
+<li><strong>Advantages:</strong> Free energy, no equipment needed, minimum labor</li>
+<li><strong>Disadvantages:</strong> Weather dependent, vulnerable to insects and rain, slower drying</li>
+</ul>
+</div>
+<h3>Solar Dehydrator Construction</h3>
+<p>A simple solar dehydrator can be built from wood, clear plastic, and screening material at minimal cost. The box design uses passive solar heating with natural convection.</p>
+<h4>Basic Solar Dehydrator Design:</h4>
+<ul>
+<li><strong>Box frame:</strong> Wooden frame 3-4 feet wide, 6 feet long, 1-2 feet tall (southern slope)</li>
+<li><strong>Top cover:</strong> Clear polycarbonate or glass panel angled at 45 degrees to catch sun</li>
+<li><strong>Drying racks:</strong> 4-6 removable racks with window screening or food-grade mesh, spaced 4-6 inches apart</li>
+<li><strong>Heat absorption:</strong> Black painted interior surfaces or containers of water to absorb and release heat</li>
+<li><strong>Ventilation:</strong> Inlet vents near bottom, outlet vents near top for natural convection airflow</li>
+<li><strong>Insulation:</strong> Straw or foam insulation on sides and back to maintain warmth</li>
+<li><strong>Door:</strong> Hinged or removable cover on south-facing side</li>
+</ul>
+<h3>Oven Drying Method</h3>
+<div class="tip">
+<p><strong>For small batches or supplemental drying:</strong></p>
+<ul>
+<li>Set oven to lowest temperature (150-200°F / 65-93°C)</li>
+<li>Crack door open 4-6 inches to allow moisture escape</li>
+<li>Place food on oven racks covered with parchment paper or mesh</li>
+<li>Dry for 4-12 hours depending on food and thickness</li>
+<li>Check every 1-2 hours to prevent over-drying</li>
+<li>Use oven thermometer to ensure consistent temperature</li>
+</ul>
+</div>
+<h3>Food Preparation for Dehydrating</h3>
+<table><thead><tr><th scope="col">Food Type</th><th scope="col">Preparation</th><th scope="col">Slice Thickness</th><th scope="col">Pretreatment</th><th scope="col">Drying Time</th></tr></thead><tbody><tr><td>Apples</td><td>Peel, core, slice</td><td>1/8 inch</td><td>Lemon juice to prevent browning</td><td>6-12 hours</td></tr><tr><td>Tomatoes</td><td>Whole or halved</td><td>1/2 inch</td><td>Salt lightly</td><td>12-24 hours</td></tr><tr><td>Peppers (hot)</td><td>Whole or halved</td><td>Whole</td><td>None</td><td>8-14 hours</td></tr><tr><td>Peppers (sweet)</td><td>Slice rings, remove seeds</td><td>1/4 inch</td><td>None</td><td>12-24 hours</td></tr><tr><td>Herbs</td><td>Tie in bundles or spread</td><td>Whole</td><td>None</td><td>2-4 hours</td></tr><tr><td>Mushrooms</td><td>Slice caps, stems optional</td><td>1/4 inch</td><td>None</td><td>6-10 hours</td></tr><tr><td>Berries</td><td>Whole, small fruits whole</td><td>Whole</td><td>Crack skins (boiling water dip)</td><td>24-48 hours</td></tr><tr><td>Green beans</td><td>Trim ends, blanch 3 minutes</td><td>Whole</td><td>Blanch required</td><td>8-12 hours</td></tr><tr><td>Zucchini</td><td>Slice lengthwise</td><td>1/8 inch</td><td>Blanch 2 minutes (optional)</td><td>8-12 hours</td></tr></tbody></table>
+<h3>Blanching Before Drying</h3>
+<div class="highlight-box">
+<p><strong>Blanching stops enzyme action</strong> that causes deterioration. For vegetables to be dried:</p>
+<ul>
+<li>Boil water, add vegetables 2-3 minutes until partially tender but still crisp</li>
+<li>Immediately plunge into ice water to stop cooking</li>
+<li>Drain thoroughly before dehydrating</li>
+<li>Blanching is optional for herbs, mushrooms, peppers, and tomatoes but recommended for beans, peas, and leafy greens</li>
+</ul>
+</div>
+<h3>Testing Dryness and Conditioning</h3>
+<div class="tip">
+<p><strong>Food is properly dried when:</strong></p>
+<ul>
+<li>No moisture beads appear when squeezed</li>
+<li>Brittle texture for vegetables and fruits</li>
+<li>Pliable but no moisture for some fruits (dates, apricots)</li>
+<li>Herbs crumble easily between fingers</li>
+</ul>
+<p><strong>Conditioning (equilibration):</strong> After drying, place food in sealed glass containers for 7-10 days at room temperature. Any remaining moisture distributes evenly. Shake containers daily. If condensation appears, food needs more drying.</p>
+</div>
+<h3>Rehydration Ratios</h3>
+<table><thead><tr><th scope="col">Food</th><th scope="col">Dried Quantity</th><th scope="col">Water to Add</th><th scope="col">Rehydration Time</th><th scope="col">Yield</th></tr></thead><tbody><tr><td>Mushrooms</td><td>1 cup</td><td>1.5-2 cups boiling water</td><td>10-15 minutes</td><td>2-2.5 cups</td></tr><tr><td>Apples</td><td>1 cup</td><td>1-1.5 cups hot water</td><td>20-30 minutes</td><td>2-2.5 cups</td></tr><tr><td>Tomatoes</td><td>1 cup</td><td>2-3 cups hot water</td><td>30-60 minutes</td><td>3-3.5 cups</td></tr><tr><td>Green beans</td><td>1 cup</td><td>3-4 cups boiling water</td><td>1-2 hours</td><td>4-5 cups</td></tr><tr><td>Peppers</td><td>1 cup</td><td>1.5-2 cups hot water</td><td>15-20 minutes</td><td>2.5-3 cups</td></tr></tbody></table>
+<h3>Storage Containers and Conditions</h3>
+<div class="highlight-box">
+<p><strong>Best storage options for dried foods:</strong></p>
+<ul>
+<li><strong>Glass jars with tight seals:</strong> Best for long-term storage, allows visual inspection</li>
+<li><strong>Vacuum-sealed bags with oxygen absorbers:</strong> Excellent for long-term storage, takes less space</li>
+<li><strong>Airtight plastic containers:</strong> Good short to medium term, protect from light</li>
+<li><strong>Paper bags (not recommended):</strong> Only if protected in outer waterproof container</li>
+</ul>
+<p><strong>Storage conditions:</strong> Cool (50-70°F), dry (below 15% humidity), dark location away from sunlight. Oxygen absorbers recommended for year-plus storage.</p>
+</div>
+<h3>Shelf Life of Dried Foods</h3>
+<table><thead><tr><th scope="col">Food Type</th><th scope="col">Shelf Life (room temp)</th><th scope="col">Shelf Life (cool storage)</th></tr></thead><tbody><tr><td>Herbs (dried)</td><td>6 months</td><td>1-2 years</td></tr><tr><td>Vegetables (dried)</td><td>6-12 months</td><td>1-2 years</td></tr><tr><td>Fruits (dried)</td><td>6-12 months</td><td>1-2 years</td></tr><tr><td>Mushrooms (dried)</td><td>6 months</td><td>1-2 years</td></tr></tbody></table>
+</section>
+<section id="salting-brining">
+<h2>Salting &amp; Brining</h2>
+<p>Salt preservation is one of humanity's oldest food preservation methods. Salt kills bacteria by drawing out moisture and creating an inhospitable environment. Salting works best for protein-rich foods like fish, meat, and vegetables.</p>
+<h3>Salt Preservation Principles</h3>
+<div class="highlight-box">
+<p><strong>How salt preserves:</strong></p>
+<ul>
+<li><strong>Osmosis:</strong> Salt draws water from cells, dehydrating food and bacteria</li>
+<li><strong>Plasmolysis:</strong> High salt concentration ruptures bacterial cell membranes</li>
+<li><strong>Enzyme inhibition:</strong> Salt slows enzymatic decay processes</li>
+<li><strong>pH alteration:</strong> Creates environment where harmful bacteria cannot survive</li>
+</ul>
+<p><strong>Effective salt concentration:</strong> Foods preserved with salt require at least 20% salt by weight (very salty) for extended shelf life, or 10-15% for medium-term storage (weeks to months).</p>
+</div>
+<h3>Dry Salting Technique</h3>
+<h4>Dry Salting Process:</h4>
+<ol>
+<li>Layer food (fish, meat, or vegetables) in glass or ceramic vessel</li>
+<li>Sprinkle salt layer (1/4 to 1/2 inch thick) on bottom</li>
+<li>Place single layer of food on salt bed</li>
+<li>Cover with generous salt layer (must completely cover food)</li>
+<li>Repeat layers ending with thick salt layer on top</li>
+<li>Weigh down with plate and heavy object to compress food</li>
+<li>Liquid (brine) will accumulate as salt draws water from food</li>
+<li>Keep submerged in brine. If brine level drops below food, make additional brine (20% salt solution) to top up</li>
+<li>Store in cool location. Properly salted foods last months to years</li>
+</ol>
+<h3>Brine Ratios for Different Foods</h3>
+<table><thead><tr><th scope="col">Food Type</th><th scope="col">Salt Ratio</th><th scope="col">Ratio per Gallon</th><th scope="col">Curing Time</th><th scope="col">Storage Life</th></tr></thead><tbody><tr><td>Fish (fillets)</td><td>15-20% salt</td><td>1-2 cups salt per gallon water</td><td>7-14 days</td><td>3-6 months</td></tr><tr><td>Fish (whole)</td><td>20-25% salt</td><td>2-3 cups salt per gallon water</td><td>14-21 days</td><td>6-12 months</td></tr><tr><td>Pork (salt pork)</td><td>15-20% salt</td><td>1-2 cups salt per gallon water</td><td>7-10 days</td><td>4-6 months</td></tr><tr><td>Vegetables (mixed)</td><td>10-15% salt</td><td>1-1.5 cups salt per gallon water</td><td>3-5 days</td><td>2-4 months</td></tr><tr><td>Cucumbers (pickles)</td><td>10-15% salt</td><td>1-1.5 cups salt per gallon water</td><td>3-5 days</td><td>2-3 months</td></tr></tbody></table>
+<h3>Salt Fish Preparation</h3>
+<div class="highlight-box">
+<ol>
+<li>Use fresh fish (caught that day is ideal). Gut and remove scales if desired (skin provides barrier)</li>
+<li>Layer fish in crock or glass container with coarse salt (1/2 cup salt per lb fish)</li>
+<li>Cover with plate and weight to compress. Fish will release brine.</li>
+<li>After 7-14 days (depending on fish size), fish is cured. Move to storage container with additional salt layer</li>
+<li>Store in cool location (50-60°F). Can last 1-2 years if kept dry and salted.</li>
+<li>To use: Soak salt fish in fresh water 12-24 hours, changing water 2-3 times to remove excess salt</li>
+<li>Cook by simmering 30-45 minutes with aromatics (onion, bay leaf)</li>
+</ol>
+</div>
+<h3>Salt Pork (Salt Beef)</h3>
+<div class="tip">
+<p><strong>Simple salt pork recipe:</strong></p>
+<ul>
+<li>Use fatty cuts: pork shoulder, belly, or beef brisket</li>
+<li>Cut into 2-3 inch thick blocks</li>
+<li>Mix cure: 1/4 cup salt + 1 tablespoon sugar + 1 tablespoon black pepper per 2 lbs meat</li>
+<li>Rub cure thoroughly into all surfaces and pack any crevices</li>
+<li>Layer in crock with additional cure, cover, refrigerate 7-10 days</li>
+<li>Turn meat every 2 days. After cure, drain brine and pack in salt in glass jars for storage</li>
+<li>Use within 4-6 months. To cook: rinse salt off, soak 2-4 hours, then simmer until tender (1-2 hours)</li>
+</ul>
+</div>
+<h3>Sauerkraut (Fermented Cabbage)</h3>
+<div class="highlight-box">
+<ol>
+<li>Remove outer leaves and core from cabbage. Reserve clean outer leaves.</li>
+<li>Slice cabbage thinly (1/4 inch). Measure weight.</li>
+<li>Layer in crock, sprinkling 2.5-3% salt by weight as you layer (approximately 2.5 tablespoons salt per 2 lb cabbage)</li>
+<li>Pound cabbage firmly to break cell walls and release brine</li>
+<li>Place reserved cabbage leaf on top, weigh down with plate and jar filled with water</li>
+<li>Keep in cool location (60-75°F). Fermentation begins in 3-7 days</li>
+<li>Skim off white film (kahm yeast) if it appears on surface. This is harmless but affects flavor.</li>
+<li>Fully fermented in 4-6 weeks. Taste regularly until desired sourness achieved.</li>
+<li>Transfer to cold storage. Sauerkraut lasts 4-6 months in cold conditions.</li>
+</ol>
+</div>
+<h3>Kimchi (Fermented Spicy Vegetables)</h3>
+<div class="highlight-box">
+<ol>
+<li>For 2 lb Napa cabbage: Remove outer leaves, quarter cabbage lengthwise, rinse.</li>
+<li>Make salt brine: 1 quart water + 2 tablespoons salt. Soak cabbage 4-8 hours until flexible.</li>
+<li>Drain, reserving brine. Layer cabbage in crock with filling: 2 tablespoons gochugaru (red pepper flakes), 4 cloves minced garlic, 1 tablespoon ginger, 2 green onions chopped, 1 tablespoon fish sauce or salt</li>
+<li>Pack tightly in crock, pressing down to submerge in brine. Weigh down.</li>
+<li>Keep at room temperature (60-75°F). Fermentation 3-5 weeks.</li>
+<li>Taste regularly. Move to cold storage when desired flavor achieved.</li>
+<li>Lasts 3-6 months refrigerated. Flavor continues to develop slowly.</li>
+</ol>
+</div>
+<h3>Equilibrium Curing (Precision Salt Method)</h3>
+<p>Most advanced salt curing method. Calculate exact salt needed based on meat weight for precise final salt content and even saturation.</p>
+<div class="card">
+<p><strong>Calculation:</strong> Salt needed (grams) = Meat weight (grams) × 0.025 (for 2.5% salt content)</p>
+<p>For example: 1000g meat × 0.025 = 25g salt needed</p>
+</div>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Weigh meat precisely in grams</li>
+<li>Calculate salt amount using formula above (2.5% is standard; can adjust 2-3% for different saltiness levels)</li>
+<li>Mix salt thoroughly into meat, ensuring even distribution</li>
+<li>Vacuum seal or wrap tightly in plastic</li>
+<li>Refrigerate 1-3 weeks depending on thickness (approximately 1 week per 2 inches of thickness)</li>
+<li>No rinsing required—salt has saturated evenly throughout</li>
+</ol>
+<p><strong>Advantages over other methods:</strong></p>
+<ul>
+<li>Produces most consistent results due to mathematical precision</li>
+<li>Uses less total salt than traditional wet brining</li>
+<li>Ideal for learning proper curing ratios before scaling to larger batches</li>
+<li>No risk of over-salting or under-salting</li>
+<li>Finished product has even salt distribution</li>
+</ul>
+<div class="tip">
+<p>Higher altitudes or dry climates may require slightly increased salt percentages (up to 3%) as environmental moisture affects curing dynamics.</p>
+</div>
+<h3>Olive Curing</h3>
+<div class="tip">
+<p><strong>Lye-cured olives (most common method):</strong></p>
+<ul>
+<li>Use firm, fresh olives. Make 1% lye solution: 1 tablespoon lye per gallon water (CAUTION: caustic)</li>
+<li>Submerge olives in lye solution. Check progress every 2-4 hours by cutting test olive - lye should have penetrated 2/3 through pit</li>
+<li>When properly lyed (12-48 hours depending on olive size and temperature), drain lye and rinse 3-4 times with fresh water over 8-12 hours, changing water frequently</li>
+<li>Place in brine: 5-6% salt solution (1/2 cup salt per gallon water). Store in cool location.</li>
+<li>Olives cure in brine 2-4 weeks. Last 6 months to 1 year in brine.</li>
+</ul>
+</div>
+</section>
+<section id="fermentation">
+<h2>Fermentation for Preservation</h2>
+<p>Fermentation preserves food through beneficial bacteria (primarily Lactobacillus) that produce lactic acid, creating an acidic environment hostile to pathogens. Lacto-fermentation enhances nutrition, creates probiotics, and stores vegetables for months without heat or pressure.</p>
+<h3>Lacto-Fermentation Basics</h3>
+<div class="highlight-box">
+<p><strong>Requirements for safe fermentation:</strong></p>
+<ul>
+<li><strong>Salt:</strong> Creates osmotic pressure that draws water from vegetables and salt-tolerant beneficial bacteria thrive</li>
+<li><strong>Anaerobic environment:</strong> Vegetables submerged in brine; no oxygen needed for Lactobacillus</li>
+<li><strong>Temperature:</strong> 60-75°F optimal; fermentation occurs slower below 50°F, faster above 75°F</li>
+<li><strong>Time:</strong> 3-8 weeks depending on temperature and desired sourness</li>
+<li><strong>No pathogenic bacteria:</strong> Salt and acid created by fermentation prevent botulism and pathogens</li>
+</ul>
+</div>
+<h3>Salt Ratios for Fermentation</h3>
+<div class="card">
+<h4>General fermentation salt formula:</h4>
+<p><strong>2-5% salt by weight of vegetables</strong></p>
+<ul>
+<li>2% salt = mild flavor, faster fermentation, good for delicate vegetables</li>
+<li>3% salt = balanced flavor and fermentation speed (most common)</li>
+<li>5% salt = slower fermentation, more sour, better for longer storage and warmer climates</li>
+</ul>
+<p><strong>Calculation example:</strong> For 10 pounds of vegetables at 3% salt, use 4.8 oz (approximately 1/2 cup) of salt.</p>
+</div>
+<h3>Common Fermented Vegetables</h3>
+<table><thead><tr><th scope="col">Vegetable</th><th scope="col">Preparation</th><th scope="col">Salt %</th><th scope="col">Fermentation Time</th><th scope="col">Storage Life</th></tr></thead><tbody><tr><td>Cabbage (red/green)</td><td>Shred finely</td><td>2-3%</td><td>4-8 weeks</td><td>4-6 months (cold)</td></tr><tr><td>Carrots</td><td>Slice or grate</td><td>3-5%</td><td>6-10 weeks</td><td>3-6 months (cold)</td></tr><tr><td>Green beans</td><td>Trim, blanch 2 min</td><td>3-5%</td><td>6-10 weeks</td><td>3-6 months (cold)</td></tr><tr><td>Cucumbers (pickles)</td><td>Use small, pack with dill</td><td>5%</td><td>3-8 weeks</td><td>3-6 months (cold)</td></tr><tr><td>Radishes</td><td>Slice thinly</td><td>3-5%</td><td>2-4 weeks</td><td>3-4 months (cold)</td></tr><tr><td>Turnips</td><td>Cube, blanch 2 min</td><td>3-5%</td><td>6-10 weeks</td><td>3-6 months (cold)</td></tr><tr><td>Onions</td><td>Slice rings</td><td>5%</td><td>4-6 weeks</td><td>2-4 months (cold)</td></tr></tbody></table>
+<h3>Fermented Hot Sauce</h3>
+<div class="highlight-box">
+<ol>
+<li>Destem and chop hot peppers (habanero, scotch bonnet, or jalapeño). Measure weight.</li>
+<li>For 2 lb peppers: calculate 3% salt = 1 oz salt (approximately 2 tablespoons)</li>
+<li>Add optional additions: 4 cloves garlic minced, 1 tablespoon ginger grated, 1/4 cup onion minced</li>
+<li>Mix peppers with salt and additions thoroughly in glass bowl</li>
+<li>Pack firmly into glass jar, pressing down to release juices. Peppers should be submerged in brine.</li>
+<li>Cover with cloth or coffee filter held on with rubber band to prevent dust while allowing air exchange</li>
+<li>Keep at room temperature (65-75°F). Ferment 4-12 weeks depending on desired flavor depth</li>
+<li>After fermentation, blend with vinegar (optional: 1/4 cup vinegar per cup fermented peppers) for smoother sauce</li>
+<li>Store in glass jars in cool location. Lasts 6-12 months or longer</li>
+</ol>
+</div>
+<h3>Fruit Wines</h3>
+<div class="tip">
+<p><strong>Basic fruit wine fermentation:</strong></p>
+<ul>
+<li>Crush fruit (berries, apples, grapes) to release juice. Mix 1 part fruit juice with 1 part water</li>
+<li>Add sugar: 1-2 pounds sugar per gallon liquid (higher sugar = higher alcohol)</li>
+<li>Add wild ferment starter or wine yeast (if available). Natural fermentation occurs slowly with wild yeasts.</li>
+<li>Keep in covered (but vented) carboy or jar at 60-75°F. Fermentation takes 3-6 months.</li>
+<li>Rack off sediment (siphon into new container) after first month, then monthly until clear</li>
+<li>Finished wine stores indefinitely in sealed bottles at cool temperature (50-60°F)</li>
+</ul>
+</div>
+<h3>Vinegar Making from Fermented Vegetables</h3>
+<div class="highlight-box">
+<ol>
+<li>Take finished fermented vegetable brine (sauerkraut, pickles, or other fermented vegetables)</li>
+<li>Transfer brine to wide-mouth jar or crock (wider mouth accelerates vinegar formation)</li>
+<li>Cover with cloth held on with rubber band. Keep at room temperature (65-75°F)</li>
+<li>Acetic acid bacteria from air will colonize the surface and convert alcohol to acetic acid</li>
+<li>Formation time: 4-12 weeks depending on temperature and initial alcohol content</li>
+<li>Vinegar is ready when it tastes sour and smells strongly of vinegar. Taste test after 4 weeks.</li>
+<li>Strain through cheesecloth, bottle, and seal. Vinegar stores indefinitely.</li>
+</ol>
+</div>
+<h3>Troubleshooting Fermentation Problems</h3>
+<table><thead><tr><th scope="col">Problem</th><th scope="col">Cause</th><th scope="col">Solution</th></tr></thead><tbody><tr><td>White film (kahm yeast) on surface</td><td>Harmless yeast growth</td><td>Skim off. Does not affect safety but can affect flavor.</td></tr><tr><td>Pink/orange mold</td><td>Contamination</td><td>Discard entire batch. Keep vegetables submerged.</td></tr><tr><td>Mushy vegetables</td><td>Fermentation too long, too warm, or contamination with pectinase enzyme</td><td>Use fresh vegetables, cooler temperature, shorter fermentation time</td></tr><tr><td>Insufficient bubbling/activity</td><td>Too cold, insufficient salt, or wrong vegetables</td><td>Move to warmer location (65-75°F), increase salt slightly, verify vegetables</td></tr><tr><td>Vegetables not submerged</td><td>Insufficient brine or loose weight</td><td>Make additional brine to submerge, ensure weight holds vegetables down</td></tr></tbody></table>
+</section>
+<section id="root-cellaring">
+<h2>Root Cellaring &amp; Cold Storage</h2>
+<p>Root cellaring stores fresh produce in cool, humid conditions near freezing (32-50°F), slowing respiration and decay. Properly designed and maintained root cellars can store vegetables for months without processing, maintaining nutritional value and quality better than any other method.</p>
+<h3>Root Cellar Construction</h3>
+<h4>Ideal Root Cellar Features:</h4>
+<ul>
+<li><strong>Location:</strong> Underground or semi-underground (basement, below-grade), or well-insulated above-ground box</li>
+<li><strong>Temperature:</strong> 32-40°F (0-4°C) for most produce. Separate zones optimal: 40-45°F for apples, onions; 35-40°F for most vegetables</li>
+<li><strong>Humidity:</strong> 85-95% for most produce. Use wet sand, burlap, or earth floor to maintain moisture.</li>
+<li><strong>Ventilation:</strong> Fresh air intake near floor, exhaust vent near ceiling to allow CO2 escape and O2 entry. Can be passive (open vents in cool months) or active (small fan)</li>
+<li><strong>Darkness:</strong> Exclude light to prevent sprouting and greening</li>
+<li><strong>Shelving:</strong> Wooden slat shelves for air circulation, not solid shelves</li>
+<li><strong>Partitioning:</strong> Separate ethylene-producing crops (apples, pears) from ethylene-sensitive crops (potatoes, carrots, leafy greens) to prevent premature ripening</li>
+<li><strong>Insulation:</strong> 4-6 inches for above-ground cellars. Underground cellars use earth as insulation.</li>
+</ul>
+<h3>Temperature and Humidity Zones</h3>
+<table><thead><tr><th scope="col">Zone</th><th scope="col">Temperature</th><th scope="col">Humidity</th><th scope="col">Best Crops</th></tr></thead><tbody><tr><td>Very Cold (Freezing area)</td><td>32-35°F (0-2°C)</td><td>90-95%</td><td>Cabbage, turnips, beets (limit ice formation)</td></tr><tr><td>Cold (Main storage)</td><td>35-40°F (2-4°C)</td><td>85-90%</td><td>Carrots, potatoes, onions, garlic, parsnips, rutabagas</td></tr><tr><td>Cool (Upper shelves)</td><td>40-45°F (4-7°C)</td><td>85-90%</td><td>Apples, pears, squash (early season)</td></tr><tr><td>Coolest shelf space</td><td>45-50°F (7-10°C)</td><td>90-95%</td><td>Pumpkins, winter squash, sweet potatoes</td></tr></tbody></table>
+<h3>Crops That Store Well in Root Cellars</h3>
+<table><thead><tr><th scope="col">Crop</th><th scope="col">Temperature</th><th scope="col">Humidity</th><th scope="col">Preparation</th><th scope="col">Storage Duration</th></tr></thead><tbody><tr><td>Apples</td><td>32-40°F</td><td>90-95%</td><td>Harvest at peak maturity, remove stems, store single layer in boxes</td><td>4-7 months</td></tr><tr><td>Cabbage (head)</td><td>32-40°F</td><td>90-95%</td><td>Harvest with roots, pull roots off, store in plastic bags</td><td>4-6 months</td></tr><tr><td>Carrots</td><td>32-40°F</td><td>90-95%</td><td>Remove greens, layer in sand or sawdust</td><td>6-9 months</td></tr><tr><td>Parsnips</td><td>32-40°F</td><td>90-95%</td><td>Remove greens, layer in sand or sawdust</td><td>6-9 months</td></tr><tr><td>Potatoes</td><td>35-40°F</td><td>85-90%</td><td>Cure 1-2 weeks at 60°F before storage. Store in dark bins.</td><td>4-6 months</td></tr><tr><td>Onions/Garlic</td><td>32-40°F</td><td>65-70%</td><td>Dry tops completely, braid or layer in mesh bags for air circulation</td><td>6-8 months</td></tr><tr><td>Pumpkins/Winter squash</td><td>50-60°F</td><td>50-70%</td><td>Cure 10-14 days at 75-80°F before storage. Store single layer on shelves.</td><td>3-6 months</td></tr><tr><td>Beets</td><td>32-40°F</td><td>90-95%</td><td>Remove greens, layer in sand or sawdust</td><td>4-6 months</td></tr><tr><td>Turnips/Rutabagas</td><td>32-40°F</td><td>90-95%</td><td>Remove greens, layer in sand or sawdust</td><td>4-6 months</td></tr></tbody></table>
+<h3>Sand Storage Method</h3>
+<div class="highlight-box">
+<p><strong>Sand storage prevents produce drying and maintains humidity:</strong></p>
+<ol>
+<li>Use clean sand (not salt-treated) or sawdust/peat moss</li>
+<li>Line wooden bins with plastic to prevent direct contact with walls (aids drying)</li>
+<li>Place 2-3 inches of sand on bottom</li>
+<li>Arrange root vegetables (carrots, beets, parsnips) in single layer without touching</li>
+<li>Cover with 2-3 inches sand and repeat layers, ending with sand layer</li>
+<li>Keep sand slightly moist but not waterlogged (test: handful of sand holds together barely)</li>
+<li>Vegetables remain dormant and fresh for 6-9 months</li>
+<li>Check monthly for deterioration; remove any spoiling vegetables immediately</li>
+</ol>
+</div>
+<h3>Hay Bale Cold Storage (Alternative)</h3>
+<div class="tip">
+<p><strong>Hay bale cold box for minimal insulation:</strong></p>
+<ul>
+<li>Build wooden frame (4x4 feet minimum, 18-24 inches deep) in shaded, well-drained location</li>
+<li>Surround frame with hay bales 18-24 inches thick on all sides</li>
+<li>Top with 12-18 inches hay and removable boards</li>
+<li>Bury frame bottom 6-12 inches in ground for earth insulation</li>
+<li>Line interior with burlap or heavy plastic</li>
+<li>Store vegetables in boxes inside. Maintains 40-50°F in cool months.</li>
+<li>Works best in climates with cool fall/winter. Not suitable for warm regions.</li>
+</ul>
+</div>
+<h3>Storage Duration by Crop</h3>
+<table><thead><tr><th scope="col">Crop</th><th scope="col">At 32-40°F / 90-95% humidity</th><th scope="col">At 40-50°F / 85-90% humidity</th><th scope="col">At room temperature (65-75°F)</th></tr></thead><tbody><tr><td>Apples</td><td>4-7 months</td><td>1-3 months</td><td>2-4 weeks</td></tr><tr><td>Carrots</td><td>6-9 months</td><td>3-4 months</td><td>2-3 weeks</td></tr><tr><td>Potatoes</td><td>4-6 months</td><td>2-3 months</td><td>2-3 weeks</td></tr><tr><td>Onions (dry)</td><td>6-8 months</td><td>3-4 months</td><td>4-6 weeks</td></tr><tr><td>Garlic</td><td>6-10 months</td><td>3-6 months</td><td>4-8 weeks</td></tr><tr><td>Winter squash</td><td>3-5 months</td><td>3-6 months</td><td>1-3 months</td></tr><tr><td>Cabbage</td><td>4-6 months</td><td>2-3 months</td><td>3-4 weeks</td></tr></tbody></table>
+</section>
+<section id="rendering-fat">
+<h2>Rendering &amp; Fat Preservation</h2>
+<p>Rendered fats (lard from pork, tallow from beef/mutton) are shelf-stable cooking mediums and valuable trade goods. Clarified butter (ghee) stores without refrigeration. Preserved fats provide essential calories and enable cooking when modern fuels are unavailable.</p>
+<h3>Rendering Lard (from Pork Fat)</h3>
+<div class="highlight-box">
+<ol>
+<li>Use pork fatback, leaf lard (around organs), or trim fat from any pork cuts</li>
+<li>Cut fat into 1-inch cubes. Remove any meat or blood clots.</li>
+<li>Place fat in heavy pot over very low heat. Stir occasionally as fat renders.</li>
+<li>Temperature should not exceed 200°F (93°C). Slow rendering produces best quality lard.</li>
+<li>Render until solids (cracklings) are light brown and crispy, approximately 2-3 hours for 10 lbs fat</li>
+<li>Strain hot lard through fine sieve lined with cheesecloth into clean jars</li>
+<li>Allow to cool to room temperature. Lard will solidify and clarify as it cools.</li>
+<li>Sealed, rendered lard stores at room temperature 6+ months, refrigerated 1+ years, or indefinitely in cool root cellar</li>
+</ol>
+</div>
+<h3>Rendering Tallow (from Beef Fat)</h3>
+<div class="tip">
+<p><strong>Tallow rendering is identical to lard but with these differences:</strong></p>
+<ul>
+<li>Use beef suet (hard fat around kidneys) or trim fat from beef butchering</li>
+<li>Cut into smaller 1/2 inch cubes and render slower to avoid scorching</li>
+<li>Render at even lower temperature (180°F/82°C) to prevent flavor degradation</li>
+<li>Takes longer to fully render - 4-5 hours for 15 lbs fat</li>
+<li>Tallow has stronger flavor than lard but stores even longer (1-2 years at room temperature)</li>
+<li>Best for cooking savory foods or soap making</li>
+</ul>
+</div>
+<h3>Clarified Butter (Ghee)</h3>
+<div class="highlight-box">
+<ol>
+<li>Use unsalted butter (salted butter has longer shelf life fresh). Melt slowly over low heat.</li>
+<li>Milk solids will separate and float to surface (foam layer) and sink to bottom</li>
+<li>Pour off clear golden liquid (ghee) into clean jar, leaving milk solids behind</li>
+<li>Ghee without milk solids stores without refrigeration for 6-12 months</li>
+<li>Alternatively: Strain through cheesecloth for absolute clarity and longer shelf life</li>
+<li>Ghee has higher smoke point than butter (450°F vs 350°F), better for cooking</li>
+</ol>
+</div>
+<h3>Storing Fats</h3>
+<h4>Fat Storage Best Practices:</h4>
+<ul>
+<li><strong>Containers:</strong> Glass jars with tight lids (best), food-grade plastic, or crocks</li>
+<li><strong>Temperature:</strong> Cool (50-70°F) is ideal. Room temperature works for 6+ months. Refrigeration extends to 1-2 years.</li>
+<li><strong>Light:</strong> Store in dark location away from sunlight. Light causes rancidity.</li>
+<li><strong>Air:</strong> Minimize air exposure. Vacuum seal or use oxygen absorbers for longest storage.</li>
+<li><strong>Signs of spoilage:</strong> Off-smell, mold growth, or rancid odor. Discard if any spoilage signs appear.</li>
+</ul>
+<h3>Pemmican (Preserved Meat/Fat Mixture)</h3>
+<p>Pemmican is a concentrated food combining dried meat, rendered fat, and dried berries. Properly made pemmican remains edible for years and provides complete nutrition for survival or extended travel.</p>
+<div class="highlight-box">
+<ol>
+<li>Prepare dried meat: Slice lean meat (venison, beef, elk) thin and dry to completely brittle (see Drying section)</li>
+<li>Pound dried meat into fine powder using mortar and pestle or rock</li>
+<li>Mix: 2 parts meat powder + 1 part rendered fat (melted but still warm) + 1 part dried berries (optional)</li>
+<li>Press firmly into jars or containers while fat is still warm and pliable</li>
+<li>Allow to solidify at room temperature. Once hard, seal jars.</li>
+<li>Pemmican keeps years in cool, dry storage without refrigeration</li>
+<li>Traditional ratio: High-fat pemmican (1:1 meat:fat) was more portable but rich. Use 2:1 ratio for better flavor balance.</li>
+</ol>
+</div>
+<h3>Using Fat for Soap Making</h3>
+<div class="tip">
+<p><strong>Basic rendered fat soap (requires safety precautions with lye):</strong></p>
+<ul>
+<li>Use rendered tallow or lard for highest quality, most natural soaps</li>
+<li>Soap making requires lye (sodium hydroxide) and water mixed carefully at precise ratios</li>
+<li>This is complex chemistry - follow established recipes with exact measurements for safety</li>
+<li>Benefits: Creates soap from available rendered fats, extremely valuable trade item in off-grid scenarios</li>
+</ul>
+<p>Note: Soap making instructions are beyond scope of this document. Consult specialized soap-making references for precise procedures and safety protocols.</p>
+</div>
+</section>
+<section id="sugar-preservation">
+<h2>Sugar Preservation</h2>
+<p>Sugar preserves through osmosis: high sugar concentration draws water from bacteria and mold, preventing growth. Sugar preservation includes jams, jellies, fruit preserves, fruit leathers, candied fruits, and honey storage.</p>
+<h3>Jam and Jelly Basics</h3>
+<div class="highlight-box">
+<p><strong>Key principles for successful jam/jelly:</strong></p>
+<ul>
+<li><strong>Pectin:</strong> Natural pectin in fruits (especially apple skins, lemon peels) gels preserves. Low-pectin fruits require added pectin (commercial or liquid) or extended cooking</li>
+<li><strong>Sugar ratio:</strong> Minimum 50% sugar by weight for shelf stability without processing (traditional preserves). For water bath canned jams, 55% sugar required for proper gel and preservation</li>
+<li><strong>Acid:</strong> Lemon juice or vinegar lowers pH and improves gel formation</li>
+<li><strong>Cooking temperature:</strong> Jam reaches setting point at 220°F (104°C) at sea level. Use candy/jelly thermometer.</li>
+</ul>
+</div>
+<h3>Fruit Preserves Sugar Ratios</h3>
+<table><thead><tr><th scope="col">Preserve Type</th><th scope="col">Fruit to Sugar Ratio</th><th scope="col">Pectin</th><th scope="col">Acid (lemon juice)</th><th scope="col">Yield per 5 lbs fruit</th></tr></thead><tbody><tr><td>Jam (low sugar)</td><td>1:1 (1 lb fruit to 1 lb sugar)</td><td>Optional (added)</td><td>2-3 tablespoons</td><td>3-4 pints</td></tr><tr><td>Jam (traditional)</td><td>1:1.2 (1 lb fruit to 1.2 lb sugar)</td><td>None if natural pectin</td><td>2-3 tablespoons</td><td>3-4 pints</td></tr><tr><td>Jelly (clear, strained)</td><td>1:0.75 (juice to sugar)</td><td>Optional</td><td>Variable</td><td>2-3 pints</td></tr><tr><td>Marmalade</td><td>1:1 (fruit to sugar)</td><td>None if high pectin</td><td>Built-in (citrus)</td><td>3-4 pints</td></tr><tr><td>Preserves (chunky)</td><td>1:1.25 (fruit to sugar)</td><td>Optional</td><td>1-2 tablespoons</td><td>3-4 pints</td></tr></tbody></table>
+<h3>Jam Making Process</h3>
+<div class="highlight-box">
+<ol>
+<li><strong>Prepare fruit:</strong> Wash, remove stems/blemishes. Cut or crush depending on desired texture.</li>
+<li><strong>Measure:</strong> Weigh prepared fruit. Calculate sugar amount based on desired ratio.</li>
+<li><strong>Combine:</strong> Place fruit in heavy pot (copper or stainless steel). Add sugar and lemon juice.</li>
+<li><strong>Cook:</strong> Bring to rolling boil over medium-high heat, stirring frequently to prevent sticking.</li>
+<li><strong>Skim foam:</strong> Remove foam from surface with slotted spoon as mixture cooks.</li>
+<li><strong>Test setting point:</strong> At 220°F (104°C), drop small spoonful on cold plate. If it wrinkles when pushed, setting point is reached (approximately 45 minutes to 2 hours depending on fruit).</li>
+<li><strong>Fill jars:</strong> Ladle hot jam into sterilized jars leaving 1/4 inch headspace. Apply lids.</li>
+<li><strong>Process:</strong> Water bath canning for 10-15 minutes at rolling boil (add 5 minutes per 2,000 feet altitude).</li>
+<li><strong>Cool:</strong> Remove jars and let cool 12-24 hours before checking seals.</li>
+</ol>
+</div>
+<h3>Fruit Leathers</h3>
+<p>Fruit leather is fruit puree dried to thin, pliable leather. Very shelf-stable and excellent for travel food.</p>
+<div class="tip">
+<ol>
+<li>Cook fruit (2-3 lbs) with minimal water until very soft, approximately 15-30 minutes</li>
+<li>Puree through sieve to remove seeds/skins</li>
+<li>Add optional sweetener: 1/4 to 1/2 cup honey or sugar per 2 lbs fruit puree</li>
+<li>Spread puree 1/8 to 1/4 inch thick on parchment paper on dehydrator trays or oven racks</li>
+<li>Dry at 140-160°F (60-71°C) for 8-24 hours until pliable but not sticky</li>
+<li>Roll fruit leather while still warm on parchment paper, or cut into strips after cooling</li>
+<li>Store in airtight containers. Lasts 6-12 months without refrigeration.</li>
+</ol>
+</div>
+<h3>Candied Fruit</h3>
+<div class="highlight-box">
+<ol>
+<li><strong>Prepare fruit:</strong> Use firm fruit (citrus peel, plums, apricots). Cut uniformly into 1/4 to 1/2 inch pieces.</li>
+<li><strong>Blanch:</strong> Boil fruit 5-10 minutes to soften slightly. Drain well.</li>
+<li><strong>Make syrup:</strong> For each pound blanched fruit, combine 1.5 cups water and 2.5 cups sugar. Bring to boil, dissolving sugar.</li>
+<li><strong>Candy process:</strong> Add blanched fruit to hot syrup. Simmer 30 minutes. Cool overnight. Repeat heating and cooling 3-4 times, extending cooking time slightly each time. This gradual sugar penetration creates candied fruit.</li>
+<li><strong>Final step:</strong> After final cooking, drain fruit and spread on racks to dry 2-3 days until no longer sticky.</li>
+<li><strong>Optional coating:</strong> Roll in granulated sugar while still slightly tacky.</li>
+<li><strong>Storage:</strong> Store in airtight jars with parchment between layers. Lasts 1-2 years at room temperature.</li>
+</ol>
+</div>
+<h3>Honey Preservation and Use</h3>
+<div class="tip">
+<p><strong>Honey is nature's perfect preservation:</strong></p>
+<ul>
+<li>Pure honey never spoils due to low moisture and antimicrobial properties</li>
+<li>May crystallize over time (normal; warm gently to return to liquid state)</li>
+<li>Store in sealed glass jars away from moisture</li>
+<li>Can be used as preservation medium: preserve fruits in honey (use 1:1 ratio fruit:honey)</li>
+<li>Honey preserves meats and fish when mixed with salt</li>
+<li>Use honey for mead making (fermented honey beverages)</li>
+</ul>
+</div>
+<h3>Maple Syrup Processing</h3>
+<p>Maple syrup processing requires access to maple trees and significant fuel for boiling. The process concentrates maple sap from ~2% sugar to 66% sugar (syrup) by boiling off water.</p>
+<div class="highlight-box">
+<ol>
+<li><strong>Sap collection:</strong> Tap maple trees (40+ year old trees) in early spring when sap begins flowing. Collect 5-10 gallons sap per day per tap.</li>
+<li><strong>Boiling:</strong> Boil sap in shallow pan over intense heat. Sap reduces dramatically (40-50 gallons sap makes 1 gallon syrup).</li>
+<li><strong>Temperature control:</strong> Syrup reaches proper consistency at 220°F (104°C), about 7°F above water's boiling point.</li>
+<li><strong>Filtering:</strong> Hot syrup must be filtered through felt or cheesecloth to remove sediment.</li>
+<li><strong>Bottling:</strong> Bottled hot in hot jars. Syrup will seal as it cools.</li>
+<li><strong>Storage:</strong> Properly processed maple syrup lasts indefinitely sealed at room temperature, or refrigerated after opening (lasts 1+ years open).</li>
+</ol>
+</div>
+</section>
+<section id="long-term-storage">
+<h2>Long-Term Food Storage</h2>
+<p>Long-term food storage for years requires managing oxygen, moisture, temperature, light, and pests. Modern methods use Mylar bags, oxygen absorbers, nitrogen gas, and food-grade containers to create shelf-stable storage lasting 10+ years.</p>
+<h3>Mylar Bags and Oxygen Absorbers</h3>
+<h4>Mylar Bag Storage System:</h4>
+<ul>
+<li><strong>Mylar bags:</strong> Aluminum-lined plastic bags that block light and oxygen. Thickness 4-6 mils recommended for long-term storage.</li>
+<li><strong>Oxygen absorbers:</strong> Packets of ferrous oxide that remove oxygen from sealed containers. Available in 100cc, 300cc, 500cc, 1000cc, and 2000cc sizes.</li>
+<li><strong>Desiccants (optional):</strong> Silica gel packets to absorb moisture. Use if storing in humid climate.</li>
+<li><strong>Sealing method:</strong> Heat seal bags using iron, hair straightener, or commercial heat sealer. Leave small opening, insert oxygen absorber, then seal completely.</li>
+<li><strong>Placement in buckets:</strong> Seal Mylar bag, place sealed bag in food-grade bucket with lid for rodent/moisture protection.</li>
+</ul>
+<h3>Nitrogen Packing</h3>
+<div class="tip">
+<p><strong>Professional nitrogen packing:</strong></p>
+<ul>
+<li>Displace oxygen with nitrogen gas (inert, won't support combustion or spoilage organisms)</li>
+<li>Fill container with food, seal nitrogen line into lid, flush container with nitrogen for 30-60 seconds</li>
+<li>Remove nitrogen line and seal completely</li>
+<li>More effective than oxygen absorbers for very long-term storage (10-20+ years)</li>
+<li>Requires nitrogen source (compressed cylinder or generator) - not practical for home storage unless commercial nitrogen available locally</li>
+</ul>
+</div>
+<h3>Food-Grade Buckets</h3>
+<div class="highlight-box">
+<p><strong>Five-gallon food-grade buckets with lids are ideal for long-term storage:</strong></p>
+<ul>
+<li>Capacity: ~35 lbs of flour/sugar, ~40 lbs of rice, ~30 lbs of beans</li>
+<li>Use only food-grade buckets (marked #2 or #5 recycling symbol, or labeled &quot;food grade&quot;)</li>
+<li>Line bucket with Mylar bag, fill with dry food, insert oxygen absorber, seal Mylar, close bucket lid</li>
+<li>Store in cool, dry location. Protect from direct sunlight and temperature fluctuations.</li>
+<li>Label buckets with contents and date clearly</li>
+<li>Buckets stack efficiently for space savings</li>
+</ul>
+</div>
+<h3>Rice, Bean, and Grain Storage</h3>
+<p>Properly stored whole grains and legumes remain viable for 10-30 years. The key is controlling moisture, temperature, pests, and oxygen.</p>
+<table><thead><tr><th scope="col">Food Type</th><th scope="col">Moisture Content</th><th scope="col">Storage Life (sealed, 70°F)</th><th scope="col">Oxygen Absorber Size</th><th scope="col">Notes</th></tr></thead><tbody><tr><td>White rice</td><td>10-12%</td><td>10-30 years</td><td>1000cc per 5-gal bucket</td><td>Most stable grain. Brown rice has shorter life (6-8 years) due to oil content.</td></tr><tr><td>Wheat berries (hard)</td><td>10-12%</td><td>10-30 years</td><td>1000cc per 5-gal bucket</td><td>Excellent storage. Can be ground into flour as needed. Most viable grain for sprouting.</td></tr><tr><td>Oats (whole groats)</td><td>10-12%</td><td>10-20 years</td><td>1000cc per 5-gal bucket</td><td>Good storage if whole oat groats (not rolled oats, which have shorter life).</td></tr><tr><td>Flour (white)</td><td>10-12%</td><td>5-10 years</td><td>300-500cc per 5-gal bucket</td><td>Has shorter life than whole grains due to pre-grinding. Add desiccant if humid.</td></tr><tr><td>Dried beans (all types)</td><td>10-12%</td><td>15-30 years</td><td>1000cc per 5-gal bucket</td><td>Extremely stable. Older beans take longer to cook but remain edible.</td></tr><tr><td>Lentils</td><td>10-12%</td><td>10-15 years</td><td>1000cc per 5-gal bucket</td><td>Good storage. Similar to beans in stability.</td></tr><tr><td>Pasta (dried)</td><td>10-12%</td><td>8-10 years</td><td>500cc per 5-gal bucket</td><td>Good storage life. Protect from breakage and pests.</td></tr><tr><td>Sugar</td><td>N/A (hygroscopic)</td><td>Indefinite</td><td>Desiccant recommended</td><td>Never spoils if kept dry. Crystallization is normal.</td></tr><tr><td>Salt</td><td>N/A</td><td>Indefinite</td><td>None</td><td>Never spoils. Store in sealed container to prevent caking.</td></tr></tbody></table>
+<h3>Pantry Rotation (FIFO)</h3>
+<div class="highlight-box">
+<p><strong>First-In-First-Out (FIFO) rotation maintains food quality:</strong></p>
+<ul>
+<li><strong>Organize by date:</strong> Label all stored food with purchase or canning date</li>
+<li><strong>Shelve oldest in front:</strong> Place older items forward, newer items behind</li>
+<li><strong>Use before expiration:</strong> Rotate stored foods into regular cooking and eating before they reach maximum shelf life</li>
+<li><strong>Track inventory:</strong> Maintain simple list of stored foods and quantities. Update as items are used or added.</li>
+<li><strong>Regular inspection:</strong> Check stored foods monthly for signs of spoilage, pest activity, or damage</li>
+<li><strong>Replace as used:</strong> When stored item is used, immediately replace with fresh supply</li>
+<li><strong>Benefits:</strong> Ensures food is always fresh, prevents waste, maintains maximum nutrition, builds experience with stored foods before emergency</li>
+</ul>
+</div>
+<h3>Shelf Life Reference Table</h3>
+<table><thead><tr><th scope="col">Food Category</th><th scope="col">Storage Method</th><th scope="col">Shelf Life</th><th scope="col">Storage Conditions</th></tr></thead><tbody><tr><td>Canned vegetables</td><td>Water bath canned</td><td>1-2 years (optimal quality)</td><td>Cool (50-70°F), dark, dry</td></tr><tr><td>Canned fruit</td><td>Water bath canned</td><td>1-2 years (optimal quality)</td><td>Cool (50-70°F), dark, dry</td></tr><tr><td>Jams &amp; jellies</td><td>Water bath canned</td><td>1-2 years (optimal quality)</td><td>Cool (50-70°F), dark</td></tr><tr><td>Pressure canned meats</td><td>Pressure canned</td><td>3-5 years</td><td>Cool (50-70°F), dark, dry</td></tr><tr><td>Dried vegetables</td><td>Sealed containers, cool storage</td><td>1-2 years</td><td>Cool (50-70°F), dark, &lt;15% humidity</td></tr><tr><td>Dried fruits</td><td>Sealed containers, cool storage</td><td>1-2 years</td><td>Cool (50-70°F), dark, &lt;15% humidity</td></tr><tr><td>Fermented vegetables</td><td>Sealed jar, refrigerated</td><td>3-6 months</td><td>Refrigerated (35-40°F)</td></tr><tr><td>Salted fish</td><td>Dry salted in containers</td><td>6-12 months</td><td>Cool (50-65°F), dry</td></tr><tr><td>Smoked meat</td><td>Wrapped, sealed</td><td>2-3 weeks (room temp), months (refrigerated)</td><td>Cool location or refrigerated</td></tr><tr><td>Rendered lard</td><td>Sealed jar</td><td>6 months (room temp), 1+ year (cool)</td><td>Cool (50-70°F), dark</td></tr><tr><td>Honey</td><td>Sealed jar</td><td>Indefinite</td><td>Room temperature, away from moisture</td></tr><tr><td>White rice</td><td>Mylar + oxygen absorber, sealed bucket</td><td>10-30 years</td><td>Cool (50-70°F), dark, dry</td></tr><tr><td>Dried beans</td><td>Mylar + oxygen absorber, sealed bucket</td><td>15-30 years</td><td>Cool (50-70°F), dark, dry</td></tr><tr><td>Wheat berries</td><td>Mylar + oxygen absorber, sealed bucket</td><td>10-30 years</td><td>Cool (50-70°F), dark, dry</td></tr><tr><td>Root vegetables (cellar)</td><td>Sand/sawdust storage, cool cellar</td><td>4-9 months</td><td>Cool (35-40°F), high humidity (90-95%)</td></tr></tbody></table>
+<h3>Storage Environment Recommendations</h3>
+<div class="tip">
+<p><strong>Optimal conditions for long-term storage:</strong></p>
+<ul>
+<li><strong>Temperature:</strong> 50-70°F is ideal. Consistent temperature better than fluctuating. Cooler extends shelf life dramatically (35-40°F can double storage life).</li>
+<li><strong>Humidity:</strong> Below 15% for grains and dried foods. Desiccant packs help in humid climates.</li>
+<li><strong>Light:</strong> Complete darkness prevents oxidation and sprouting. Use opaque containers or store in dark location.</li>
+<li><strong>Pests:</strong> Sealed containers and Mylar bags prevent insect infestation. Store buckets off ground on shelving.</li>
+<li><strong>Air quality:</strong> Good ventilation prevents mold. Monitor for condensation indicating moisture problem.</li>
+<li><strong>Rotation:</strong> Use older stock first. Track dates and rotate regularly.</li>
+</ul>
+</div>
+</section>
+<section id="pemmican">
+<h2>Pemmican: High-Calorie Survival Food</h2>
+<p>Pemmican is a concentrated food combining dried meat and fat with dried berries. A single pound provides 3,500+ calories and lasts years when properly made. Traditional food of hunters and travelers for extreme portability.</p>
+<div class="card">
+<p><strong>Classic Pemmican Ratio:</strong></p>
+<p>1 pound dried meat powder + 1 pound rendered fat + optional: 1/2 cup dried berries/nuts</p>
+</div>
+<h3>Step-by-Step Production</h3>
+<ol>
+<li><strong>Dry meat:</strong> Slice lean meat (all fat removed) into thin strips (1/4 inch). Sun-dry or smoke-dry until completely brittle (5-7 days). Must snap when bent.</li>
+<li><strong>Pound meat:</strong> Using rocks or mallet, pound dried meat into fine powder. Should be uniform powder, not chunks.</li>
+<li><strong>Render fat:</strong> Slowly heat fat trimmings over low flame until liquefied. Strain through cloth to remove solids.</li>
+<li><strong>Mix:</strong> Combine meat powder with warm (not hot) liquid fat in 1:1 weight ratio. Mix thoroughly.</li>
+<li><strong>Optional additions:</strong> Dried berries or nuts add flavor and nutrition (1/2 cup per batch).</li>
+<li><strong>Press into forms:</strong> Pack tightly into bark containers, logs, or molds. Press to remove air pockets.</li>
+<li><strong>Storage:</strong> Cool, dark place (below 60°F). Wrapped in cloth, lasts 10+ years without spoiling.</li>
+</ol>
+</section>
+<section id="fruit-leather">
+<h2>Fruit Leather: Energy-Dense Dried Fruit</h2>
+<p>Fruit leather is dried fruit puree providing quick carbohydrate energy in minimal weight. Any fruit works. Lasts 1-2 years.</p>
+<div class="card">
+<p><strong>Basic Formula:</strong></p>
+<p>5 pounds fresh fruit + 1/2 to 1 pound honey (optional) + water if needed</p>
+</div>
+<h3>Production Steps</h3>
+<ol>
+<li><strong>Prepare:</strong> Wash fruit, remove pits/seeds, chop roughly</li>
+<li><strong>Cook:</strong> Simmer with minimal water 15-20 minutes until soft</li>
+<li><strong>Sweeten:</strong> Add honey if desired (optional)</li>
+<li><strong>Spread:</strong> Pour 1/4 inch thick onto dehydrator trays lined with parchment</li>
+<li><strong>Dry:</strong> 135-145°F for 8-12 hours until no longer sticky but still flexible</li>
+<li><strong>Roll &amp; wrap:</strong> Cut into 2-3 inch strips, roll tight, wrap in parchment</li>
+<li><strong>Storage:</strong> Cool, dark place. Lasts 1-2 years.</li>
+</ol>
+</section>
+<section id="vinegar">
+<h2>Making Vinegar &amp; Vinegar Mother (SCOBY)</h2>
+<p>Homemade vinegar is an antimicrobial preservative and medicinal. Vinegar mother (SCOBY) is the living culture that converts alcohol to acetic acid, allowing continuous production.</p>
+<h3>Creating Vinegar Mother (4-8 weeks)</h3>
+<ol>
+<li><strong>Gather:</strong> Fruit juice (apple cider, grape) or wine</li>
+<li><strong>Container:</strong> Wide-mouth jar with cloth cover (allows air, prevents insects)</li>
+<li><strong>Process:</strong> Pour juice into jar, cover with cloth, place in warm location (65-75°F)</li>
+<li><strong>Timeline:</strong>
+<ul>
+<li>Weeks 1-2: Fermentation (sugar converts to alcohol)</li>
+<li>Weeks 2-4: Acetic acid bacteria colonize (alcohol converts to vinegar)</li>
+<li>Weeks 4-8: Mother develops (slime-like bacterial layer)</li>
+<li>Week 8: Mother established, vinegar ready</li>
+</ul>
+</li>
+<li><strong>Taste after week 4.</strong> When tart and no longer sweet, vinegar is ready.</li>
+</ol>
+<h3>Maintaining Vinegar Mother</h3>
+<ul>
+<li><strong>Continuous production:</strong> Every 2-3 weeks, feed with new juice (half the volume in jar). New vinegar ready in 2-4 weeks.</li>
+<li><strong>Storage:</strong> Cool place (50-70°F). Can dormant for months. Reactivate with fresh juice.</li>
+<li><strong>Appearance:</strong> Floating slime or sediment is normal and indicates healthy culture</li>
+<li><strong>Using:</strong> For pickling use 1 part vinegar to 2-3 parts brine. Medicinal: 1 tablespoon in water 2-3 times daily</li>
+</ul>
+</section>
+<section id="grain-storage-co2">
+<h2>Long-Term Grain Storage with CO2 (Dry Ice Method)</h2>
+<p>Properly sealed grains with CO2 can remain viable for 10-30 years. Carbon dioxide displaces oxygen, preventing insects, oxidation, and sprouting.</p>
+<h3>CO2 Storage Using Dry Ice</h3>
+<ol>
+<li><strong>Container:</strong> Food-grade bucket (tight-fitting lid) or Mylar bag (heat-sealable)</li>
+<li><strong>Fill grain:</strong> Pour wheat, corn, oats into container, leaving 2-3 inches headspace</li>
+<li><strong>Add dry ice:</strong> 1 pound per 5-gallon bucket (use tongs—never touch bare). As it sublimes, CO2 displaces oxygen.</li>
+<li><strong>Wait:</strong> 15-20 minutes until all dry ice converts to gas (watch for fog dissipating)</li>
+<li><strong>Seal immediately:</strong> Close bucket tight OR heat-seal Mylar while CO2 still releasing. This traps CO2 inside.</li>
+<li><strong>Storage:</strong> Cool (50-70°F), dark place. Grains viable 10-30 years.</li>
+</ol>
+<h3>Oxygen Absorber Alternative</h3>
+<ul>
+<li>If dry ice unavailable: Use oxygen absorber packets instead (2000cc per 5-gallon bucket)</li>
+<li>Place on top of grain, seal immediately</li>
+<li>Absorbers consume oxygen over 24-48 hours, creating anaerobic environment</li>
+<li>Same storage conditions and shelf life</li>
+</ul>
+<h3>Moisture Control</h3>
+<ul>
+<li><strong>Grain moisture must be below 12%</strong> before sealing. High moisture causes mold/sprouting.</li>
+<li><strong>Desiccant packs:</strong> Add food-grade silica gel or homemade (dried rice in cloth) to absorb moisture</li>
+<li><strong>Monitor:</strong> If condensation visible inside during storage, seal has failed—use contents sooner</li>
+</ul>
+<h3>Best Grains for Long-Term Storage</h3>
+<ul>
+<li><strong>Wheat berries:</strong> Highest protein, longest storage (30 years). White wheat stores longer than red.</li>
+<li><strong>White rice:</strong> Very stable (15-30 years). Brown rice 10-15 years due to oil content.</li>
+<li><strong>Dried corn:</strong> 10-15 years. Shelled corn lasts longer than ears.</li>
+<li><strong>Oats:</strong> 8-10 years (higher fat content reduces lifespan)</li>
+<li><strong>Dried beans:</strong> 15-30 years if stored properly</li>
+</ul>
+<h3>Testing Grain Viability</h3>
+<ul>
+<li><strong>Sprouting test:</strong> Soak 10 grains overnight, plant in soil. If 8+ sprout, viability is good.</li>
+<li><strong>Smell:</strong> Musty/off odor indicates mold—discard</li>
+<li><strong>Visual:</strong> Check for discoloration, insects, mold</li>
+</ul>
+</section>
+<section id="canning-calculator">
+<h3>🧮 Canning Altitude Adjustment Calculator</h3>
+<p>Adjust canning processing times and pressures for your altitude</p>
+<p>Your Altitude:</p>
+<p>feet</p>
+<p>Base Processing Time (at sea level):</p>
+<p>minutes</p>
+<p>Canning Method:Water Bath (high-acid foods)Pressure Canner (low-acid foods)</p>
+<p>Calculate Adjustment</p>
+</section>
+<section id="food-comparison">
+<h3>⚖️ Food Preservation Methods Comparison</h3>
+<p>By Shelf LifeBy Skill LevelBy RiskReset</p>
+<table id="food-table" style="width: 100%; border-collapse: collapse; min-width: 600px;"><thead><tr style="background: var(--accent2); color: var(--bg); font-weight: bold;"><th scope="col" style="padding: 12px; text-align: left; border: 1px solid var(--border);">Method</th><th scope="col" style="padding: 12px; text-align: center; border: 1px solid var(--border);">Shelf Life</th><th scope="col" style="padding: 12px; text-align: left; border: 1px solid var(--border);">Equipment Needed</th><th scope="col" style="padding: 12px; text-align: center; border: 1px solid var(--border);">Skill Level (1-5)</th><th scope="col" style="padding: 12px; text-align: left; border: 1px solid var(--border);">Best Foods</th><th scope="col" style="padding: 12px; text-align: left; border: 1px solid var(--border);">Energy Required</th><th scope="col" style="padding: 12px; text-align: center; border: 1px solid var(--border);">Risk Level</th></tr></thead><tbody><tr data-risk="1" data-shelflife="9" data-skill="2" style="background: var(--card); border: 1px solid var(--border);"><td style="padding: 12px; border: 1px solid var(--border); font-weight: bold;">Drying/Dehydrating</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">6-12 months</td><td style="padding: 12px; border: 1px solid var(--border);">Racks, sun/fire</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border); color: var(--accent);">2</td><td style="padding: 12px; border: 1px solid var(--border);">Fruits, herbs, meat, vegetables</td><td style="padding: 12px; border: 1px solid var(--border);">Low (sun) to Medium (fire)</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">Low</td></tr><tr data-risk="1" data-shelflife="24" data-skill="2" style="background: var(--bg); border: 1px solid var(--border);"><td style="padding: 12px; border: 1px solid var(--border); font-weight: bold;">Salt Curing</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">1-3 years</td><td style="padding: 12px; border: 1px solid var(--border);">Salt, containers</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border); color: var(--accent);">2</td><td style="padding: 12px; border: 1px solid var(--border);">Meat, fish, vegetables</td><td style="padding: 12px; border: 1px solid var(--border);">None</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">Low</td></tr><tr data-risk="2" data-shelflife="4" data-skill="3" style="background: var(--card); border: 1px solid var(--border);"><td style="padding: 12px; border: 1px solid var(--border); font-weight: bold;">Smoking</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">2-6 months</td><td style="padding: 12px; border: 1px solid var(--border);">Smokehouse</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border); color: var(--accent);">3</td><td style="padding: 12px; border: 1px solid var(--border);">Meat, fish, cheese</td><td style="padding: 12px; border: 1px solid var(--border);">Medium (fuel)</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">Medium</td></tr><tr data-risk="1" data-shelflife="12" data-skill="3" style="background: var(--bg); border: 1px solid var(--border);"><td style="padding: 12px; border: 1px solid var(--border); font-weight: bold;">Fermentation</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">6-18 months</td><td style="padding: 12px; border: 1px solid var(--border);">Crocks, salt</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border); color: var(--accent);">3</td><td style="padding: 12px; border: 1px solid var(--border);">Vegetables, dairy, grain</td><td style="padding: 12px; border: 1px solid var(--border);">None</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">Low</td></tr><tr data-risk="2" data-shelflife="36" data-skill="3" style="background: var(--card); border: 1px solid var(--border);"><td style="padding: 12px; border: 1px solid var(--border); font-weight: bold;">Canning (water bath)</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">1-5 years</td><td style="padding: 12px; border: 1px solid var(--border);">Jars, lids, pot</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border); color: var(--accent);">3</td><td style="padding: 12px; border: 1px solid var(--border);">High-acid foods, fruits, pickles</td><td style="padding: 12px; border: 1px solid var(--border);">High (fuel)</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">Medium</td></tr><tr data-risk="3" data-shelflife="36" data-skill="4" style="background: var(--bg); border: 1px solid var(--border);"><td style="padding: 12px; border: 1px solid var(--border); font-weight: bold;">Canning (pressure)</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">1-5 years</td><td style="padding: 12px; border: 1px solid var(--border);">Pressure canner, jars</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border); color: var(--accent);">4</td><td style="padding: 12px; border: 1px solid var(--border);">Low-acid foods, meat, beans</td><td style="padding: 12px; border: 1px solid var(--border);">High (fuel)</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">High</td></tr><tr data-risk="1" data-shelflife="4" data-skill="1" style="background: var(--card); border: 1px solid var(--border);"><td style="padding: 12px; border: 1px solid var(--border); font-weight: bold;">Root Cellaring</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">3-6 months</td><td style="padding: 12px; border: 1px solid var(--border);">Cool dark space</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border); color: var(--accent);">1</td><td style="padding: 12px; border: 1px solid var(--border);">Root vegetables, apples</td><td style="padding: 12px; border: 1px solid var(--border);">None</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">Low</td></tr><tr data-risk="1" data-shelflife="9" data-skill="1" style="background: var(--bg); border: 1px solid var(--border);"><td style="padding: 12px; border: 1px solid var(--border); font-weight: bold;">Freezing</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">6-12 months</td><td style="padding: 12px; border: 1px solid var(--border);">Freezer/ice house</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border); color: var(--accent);">1</td><td style="padding: 12px; border: 1px solid var(--border);">Almost anything</td><td style="padding: 12px; border: 1px solid var(--border);">High (continuous)</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">Low</td></tr><tr data-risk="1" data-shelflife="18" data-skill="2" style="background: var(--card); border: 1px solid var(--border);"><td style="padding: 12px; border: 1px solid var(--border); font-weight: bold;">Sugar Preserving</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">1-2 years</td><td style="padding: 12px; border: 1px solid var(--border);">Sugar, jars</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border); color: var(--accent);">2</td><td style="padding: 12px; border: 1px solid var(--border);">Fruits (jams, jellies)</td><td style="padding: 12px; border: 1px solid var(--border);">Medium</td><td style="padding: 12px; text-align: center; border: 1px solid var(--border);">Low</td></tr></tbody></table>
+</section>
+<section id="nixtamalization">
+<h2>Nixtamalization: Alkaline Corn Treatment</h2>
+<div class="danger">
+<p><strong>LIFE-THREATENING DEFICIENCY: Corn-dependent diets WITHOUT nixtamalization cause pellagra</strong> (niacin/B3 deficiency), resulting in dermatitis, diarrhea, dementia, and death. Nixtamalization RELEASES niacin trapped in corn's matrix, making it bioavailable. This is not optional for populations relying on corn as primary staple—it is literally life-or-death essential.</p>
+</div>
+<h3>Why Nixtamalization Matters</h3>
+<p>Corn contains niacin (vitamin B3) in a bound form that humans cannot absorb. Nixtamalization—treating corn with an alkaline substance—releases this niacin, making it bioavailable. This ancient Mesoamerican technique is survival-critical for populations relying on corn as a primary calorie source.</p>
+<h3>The Chemical Process</h3>
+<ul>
+<li><strong>Alkaline agent:</strong> Calcium hydroxide (slaked lime, &quot;cal&quot;), lye from wood ash, or pure sodium hydroxide</li>
+<li><strong>Reaction:</strong> Alkaline solution (pH 12-14) hydrolyzes the corn kernel hull and alters the protein structure</li>
+<li><strong>Result:</strong> Niacin becomes extractable; proteins become more complete amino acid profiles; calcium fortification occurs</li>
+<li><strong>Culinary bonus:</strong> Masa (nixtamalized corn dough) has superior texture and flavor</li>
+</ul>
+<h3>Step-by-Step Nixtamalization Process</h3>
+<div class="card">
+<p><strong>For 1 pound (450g) of dried corn:</strong></p>
+<ul>
+<li>1 gallon water</li>
+<li>1-2 tablespoons calcium hydroxide (cal/cal viva) OR 3-4 tablespoons wood ash solution OR equivalent lye</li>
+</ul>
+</div>
+<ol>
+<li><strong>Prepare alkali:</strong>
+<ul>
+<li><em>If using calcium hydroxide:</em> Mix powder with water; let settle 30 minutes, use clear liquid</li>
+<li><em>If using wood ash:</em> Soak hardwood ash in water (1 cup ash per 1 gallon water), let settle overnight, strain carefully—this makes lye water</li>
+</ul>
+</li>
+<li><strong>Boil corn:</strong> Bring water + alkali solution to boil in a non-reactive pot (stainless steel or ceramic, never aluminum)</li>
+<li><strong>Add corn:</strong> Pour dried corn into boiling alkaline water; maintain boil for 10-15 minutes. You should see the corn kernels' outer skins beginning to loosen</li>
+<li><strong>Rest:</strong> Remove from heat, cover, and let sit for 8-12 hours (overnight works perfectly)</li>
+<li><strong>Rinse:</strong> Drain through a colander; rinse corn kernels vigorously under running water while rubbing them between your hands to remove the loosened hulls. Rinse at least 3-5 times until water runs mostly clear</li>
+<li><strong>Dry or grind:</strong>
+<ul>
+<li>For storage: spread nixtamal on cloth to dry (2-3 days in sun/air)</li>
+<li>For immediate use: grind into masa with mortar and pestle, metate, or stone mill</li>
+</ul>
+</li>
+</ol>
+<h3>Masa Production from Nixtamal</h3>
+<p><strong>Fresh Masa (for tortillas, tamales):</strong></p>
+<div class="card">
+<p><strong>Basic ratio:</strong> 2 cups nixtamal : 1/2 cup water (adjust for dough texture)</p>
+<ul>
+<li>Grind nixtamal with water until fine, smooth paste forms</li>
+<li>Dough should hold together but not be sticky</li>
+<li>Use immediately for best results</li>
+<li>Keeps 2-3 days refrigerated</li>
+</ul>
+</div>
+<p><strong>Dried Masa Flour:</strong></p>
+<ul>
+<li>Dry nixtamal completely in sun (3-5 days) or low-heat oven (200°F for 2-3 hours)</li>
+<li>Grind to fine flour; store in sealed containers for 6+ months</li>
+<li>Rehydrate with warm water (2 parts flour : 1 part water) to make fresh masa</li>
+</ul>
+</section>
+<section id="botulism-prevention">
+<h2>Botulism Prevention by Food Type</h2>
+<div class="danger">
+<p><strong>CRITICAL:</strong> Clostridium botulinum is deadly. Incorrect processing = fatal toxin. Follow time/temperature/acidity precisely.</p>
+</div>
+<h3>Three Control Methods</h3>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;"><thead><tr><th scope="col" style="padding: 12px; text-align: left; background: var(--accent); color: var(--bg);">Control Method</th><th scope="col" style="padding: 12px; text-align: left; background: var(--accent); color: var(--bg);">Effectiveness</th><th scope="col" style="padding: 12px; text-align: left; background: var(--accent); color: var(--bg);">Spore Death Temp</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;">High Acidity (pH &lt; 4.6)</td><td style="padding: 12px;">Prevents germination</td><td style="padding: 12px;">Boiling (212°F) sufficient</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;">High Heat (Pressure canning)</td><td style="padding: 12px;">Destroys spores</td><td style="padding: 12px;">250°F+ (10 PSI pressure)</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;">Low Water Activity</td><td style="padding: 12px;">Prevents germination</td><td style="padding: 12px;">Not applicable (preservation method)</td></tr></tbody></table>
+<h3>By Food Type</h3>
+<div class="highlight-box">
+<p><strong>Low-Acid Foods (pH &gt; 4.6):</strong> Vegetables, meats, fish, soups</p>
+<ul>
+<li><strong>Method required:</strong> Pressure canning ONLY</li>
+<li><strong>Temperature:</strong> 240°F (dial gauge: 11 PSI at sea level, 10 PSI at &lt;1000 ft)</li>
+<li><strong>Minimum time:</strong> 75 minutes for quarts of low-acid vegetables; 90-100 min for meat/fish</li>
+<li><strong>No exceptions:</strong> Water bath canning WILL NOT work—spores survive boiling</li>
+</ul>
+</div>
+<div class="highlight-box">
+<p><strong>High-Acid Foods (pH &lt; 4.6):</strong> Fruits, pickles, jams, sauerkraut</p>
+<ul>
+<li><strong>Method:</strong> Water bath canning (boiling) sufficient</li>
+<li><strong>Temperature:</strong> 212°F (boiling)</li>
+<li><strong>Minimum times:</strong>
+<ul>
+<li>Jams/jellies: 10 minutes</li>
+<li>Pickles: 15-20 minutes (pints), 20 minutes (quarts)</li>
+<li>Fruit: 15-20 minutes (pints), 20-25 minutes (quarts)</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="highlight-box">
+<p><strong>Borderline Foods (pH 4.6-4.8):</strong> Tomatoes (canned plain), some pickled vegetables</p>
+<ul>
+<li><strong>Treatment:</strong> Add acid (citric acid, vinegar) to reach pH &lt; 4.6 OR use pressure canning</li>
+<li><strong>For tomatoes:</strong> Add 2 tablespoons white vinegar (5% acidity) per quart of tomatoes</li>
+<li><strong>Alternative:</strong> Add 1/4 teaspoon citric acid per pint</li>
+</ul>
+</div>
+<h3>Critical Processing Rules</h3>
+<ol>
+<li><strong>Never guess pH:</strong> Use pH strips or test kit for homemade fermented/lowered-acid foods</li>
+<li><strong>Never reduce processing time:</strong> Even by 5 minutes—this is where botulism risk lives</li>
+<li><strong>Never open/reprocess failed seals:</strong> Spores may have germinated during cooling. Discard the jar.</li>
+<li><strong>Never use water bath for low-acid foods:</strong> This is the single most common botulism mistake</li>
+<li><strong>High altitude adjustment:</strong> At 1000+ ft elevation, increase pressure canning pressure (see chart in previous section)</li>
+</ol>
+</section>
+<section id="pickling-ratios">
+<h2>Correct Pickling Brine Ratios</h2>
+<div class="warning">
+<p><strong>WARNING:</strong> Weak brine (less than 5% salt) allows botulism in low-acid pickles. Use tested ratios.</p>
+</div>
+<h3>Safe Pickling Salt Percentage</h3>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;"><thead><tr><th scope="col" style="padding: 12px; text-align: left; background: var(--accent); color: var(--bg);">Salt %</th><th scope="col" style="padding: 12px; text-align: left; background: var(--accent); color: var(--bg);">Type</th><th scope="col" style="padding: 12px; text-align: left; background: var(--accent); color: var(--bg);">Safety Level</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;">3-5%</td><td style="padding: 12px;">Weak brine (fermented pickling)</td><td style="padding: 12px;">Requires acidity (vinegar) + fermentation + refrigeration</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;">5-10%</td><td style="padding: 12px;">Standard brine (fermented/canned)</td><td style="padding: 12px;">Safe for fermented; canning requires vinegar addition</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;">10%+</td><td style="padding: 12px;">High-salt preservation</td><td style="padding: 12px;">Water activity reduced; safe long-term without canning</td></tr></tbody></table>
+<h3>Standard Pickling Brine Formulas</h3>
+<div class="card">
+<p><strong>For quick/refrigerated pickles (5% salt, high vinegar):</strong></p>
+<ul>
+<li>1 cup water</li>
+<li>1/2 cup white vinegar (5% acidity minimum)</li>
+<li>1 tablespoon salt (pickling salt, not iodized)</li>
+<li>Spices: dill, garlic, peppercorns, mustard seed as desired</li>
+</ul>
+<p><em>Shelf life: 2-4 weeks refrigerated. Not shelf-stable.</em></p>
+</div>
+<div class="card">
+<p><strong>For fermented pickles (8-10% salt, no vinegar initially):</strong></p>
+<ul>
+<li>Per 1 quart of vegetable weight:</li>
+<li>1 tablespoon + 1 teaspoon pickling salt</li>
+<li>Enough dechlorinated water to cover (typically 3-4 cups)</li>
+<li>Weight vegetables down to keep submerged (cheesecloth + plate + weight)</li>
+</ul>
+<p><em>Process: Ferment 3-7 days at cool room temperature until desired flavor. Vinegar taste develops naturally from lactobacillus. Transfer to cool storage. Shelf life: 2-3 months unrefrigerated if kept submerged, 6+ months refrigerated.</em></p>
+</div>
+<div class="card">
+<p><strong>For shelf-stable canned pickles (5% salt + vinegar, pressure/water-bath canned):</strong></p>
+<ul>
+<li>2 cups water</li>
+<li>1 cup white vinegar (5% acidity)</li>
+<li>2 tablespoons pickling salt</li>
+<li>Per jar: spices, vegetables packed densely</li>
+</ul>
+<p><em>Process: Water bath can (20 minutes quarts). Salt alone is NOT sufficient for shelf stability; acidity + heat processing required.</em></p>
+</div>
+</section>
+<section id="grain-storage">
+<h2>Grain Storage: Moisture Content &amp; Mycotoxin Prevention</h2>
+<h3>Critical Moisture Threshold</h3>
+<div class="highlight-box">
+<p><strong>Safe storage moisture:</strong> &lt;13% for long-term (6+ months) stability</p>
+<ul>
+<li><strong>&gt;13%:</strong> Mold and mycotoxin growth risk increases dramatically</li>
+<li><strong>12-13%:</strong> Marginal; acceptable with good ventilation and cool temps</li>
+<li><strong>&lt;12%:</strong> Safe for 1+ year if stored in airtight containers</li>
+</ul>
+</div>
+<h3>Moisture Testing</h3>
+<ul>
+<li><strong>Float test (rough):</strong> Fresh grain floats in water due to air pockets; properly dried grain sinks slowly</li>
+<li><strong>Tooth test:</strong> Properly dried wheat/corn should break with clean snap, not crush. If it bends, moisture is too high</li>
+<li><strong>Digital moisture meter:</strong> Most reliable; available at agricultural suppliers. Aim for 10-12% reading.</li>
+</ul>
+<h3>Drying Grain</h3>
+<ul>
+<li><strong>Sun drying:</strong> Spread on clean cloth, turn daily for 5-7 days (weather dependent)</li>
+<li><strong>Low-heat oven:</strong> 140°F with door slightly open, 2-4 hours per batch (energy intensive)</li>
+<li><strong>Natural ventilation:</strong> Suspended in thin layer with airflow (slowest, most efficient)</li>
+</ul>
+<h3>Mycotoxin Prevention</h3>
+<div class="danger">
+<p><strong>LIFE-THREATENING DANGER: Grain moisture MUST remain below 13% or mycotoxins develop.</strong> Aspergillus mold produces aflatoxin (causes liver cancer and immune system damage). Improper grain storage is a SILENT KILLER—toxins are invisible but extremely dangerous. This is not optional.</p>
+</div>
+<p><strong>Aflatoxins</strong> (from Aspergillus mold) are carcinogenic and deadly. To prevent:</p>
+<ul>
+<li><strong>Maximum moisture: 13% by weight</strong> (test with moisture meter for accuracy—visual inspection is unreliable)</li>
+<li>Store in cool (below 60°F if possible), dry location</li>
+<li>Use food-grade storage containers with oxygen absorbers</li>
+<li>Prevent condensation: Use desiccant packets (silica gel, dried lime) in sealed containers</li>
+<li>Inspect regularly; discard any grain with visible mold, insect infestation, or musty smell—toxins may be invisible</li>
+<li>Never store damp grain—mold growth can happen in 48 hours</li>
+<li>Discard immediately: Any grain showing visible mold, insect damage, or musty/off-odors—toxins may be present even if not visible</li>
+</ul>
+</section>
+<section id="root-cellar-humidity">
+<h2>Root Cellar Humidity by Crop Type</h2>
+<h3>Why Humidity Matters</h3>
+<p>Different crops have different moisture loss rates. Too dry = shriveling &amp; sprouting. Too moist = rot &amp; mold. Proper humidity extends storage life by weeks or months.</p>
+<h3>Humidity &amp; Temperature by Crop</h3>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;"><thead><tr><th scope="col" style="padding: 12px; text-align: left; background: var(--accent); color: var(--bg);">Crop</th><th scope="col" style="padding: 12px; text-align: left; background: var(--accent); color: var(--bg);">Temperature</th><th scope="col" style="padding: 12px; text-align: left; background: var(--accent); color: var(--bg);">Humidity</th><th scope="col" style="padding: 12px; text-align: left; background: var(--accent); color: var(--bg);">Storage Life</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;"><strong>Potato</strong></td><td style="padding: 12px;">35-45°F</td><td style="padding: 12px;">85-95% RH</td><td style="padding: 12px;">4-5 months</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;"><strong>Onion/Garlic</strong></td><td style="padding: 12px;">32-50°F</td><td style="padding: 12px;">60-70% RH</td><td style="padding: 12px;">4-8 months</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;"><strong>Carrot</strong></td><td style="padding: 12px;">32-40°F</td><td style="padding: 12px;">90-95% RH</td><td style="padding: 12px;">5-6 months</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;"><strong>Beet</strong></td><td style="padding: 12px;">32-40°F</td><td style="padding: 12px;">85-95% RH</td><td style="padding: 12px;">4-5 months</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;"><strong>Turnip/Rutabaga</strong></td><td style="padding: 12px;">32-40°F</td><td style="padding: 12px;">90-95% RH</td><td style="padding: 12px;">4-5 months</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;"><strong>Cabbage</strong></td><td style="padding: 12px;">32-40°F</td><td style="padding: 12px;">90-95% RH</td><td style="padding: 12px;">3-4 months</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;"><strong>Apple</strong></td><td style="padding: 12px;">30-40°F</td><td style="padding: 12px;">85-95% RH</td><td style="padding: 12px;">2-4 months</td></tr></tbody></table>
+<h3>Humidity Control Methods</h3>
+<ul>
+<li><strong>Increase humidity:</strong> Place shallow containers of water; mist produce lightly; use damp sawdust or sand around produce</li>
+<li><strong>Decrease humidity:</strong> Improve air circulation (passive ventilation to outside); open vents during dry days; use desiccants (lime, salt)</li>
+<li><strong>Monitor:</strong> Simple analog hygrometer ($5-10) tells you RH; check weekly</li>
+</ul>
+</section>
+<section id="pemmican-ratios">
+<h2>Pemmican: Fat:Meat Ratios for Rancidity Prevention</h2>
+<h3>What Pemmican Is</h3>
+<p>Pemmican is rendered fat mixed with dried, powdered meat—a shelf-stable, nutrient-dense food that lasts 10+ years. Fat acts as a preservative by sealing meat from oxygen (rancidity requires oxygen).</p>
+<h3>The Critical Fat:Meat Ratio</h3>
+<div class="card">
+<p><strong>Optimal ratio: 1:1 to 2:1 fat to dried meat (by weight)</strong></p>
+<ul>
+<li><strong>1:1 ratio:</strong> Leaner final product; more prone to rancidity if fat quality is poor; storage life ~5-7 years</li>
+<li><strong>1.5:1 ratio:</strong> Best balance of palatability and shelf life; easier to chew; storage life 7-10 years</li>
+<li><strong>2:1 ratio:</strong> Very fatty/rich; excellent insulation from oxygen; storage life 10-15+ years; higher calorie density (4700 kcal/lb)</li>
+</ul>
+</div>
+<h3>Fat Selection (Critical for Rancidity Prevention)</h3>
+<ul>
+<li><strong>Beef tallow:</strong> Highest oxidative stability; best for long-term pemmican (10+ years)</li>
+<li><strong>Bison fat:</strong> Excellent stability; traditional choice</li>
+<li><strong>Venison fat:</strong> Slightly less stable; use 1.5-2:1 ratio minimum</li>
+<li><strong>Pork lard:</strong> Moderate stability; use higher ratio (2:1); storage life ~5 years</li>
+<li><strong>Avoid:</strong> Poultry fat (very prone to rancidity), vegetable oils (oxidize quickly)</li>
+</ul>
+<h3>Step-by-Step Pemmican Making</h3>
+<ol>
+<li><strong>Render fat:</strong> Cut fat into small pieces, heat low and slow (never above 185°F) until fat is liquid and solids settle. Strain through cheesecloth.</li>
+<li><strong>Dry meat:</strong> Lean meat strips jerky-dried (see Jerky section), then pounded into fine powder with mortar/stone</li>
+<li><strong>Mix at temperature:</strong> Warm fat to 160-170°F (pour-able, not hot), mix with meat powder (ratio above)</li>
+<li><strong>Cool in molds:</strong> Pour into patties/bags/containers; cool at room temperature until solidified (2-3 hours)</li>
+<li><strong>Wrap &amp; seal:</strong> Wrap in cloth or paper; store in airtight containers in cool, dark place</li>
+</ol>
+<h3>Storage &amp; Rancidity Detection</h3>
+<ul>
+<li><strong>Shelf life:</strong> 5-15 years depending on fat choice and storage conditions</li>
+<li><strong>Best conditions:</strong> Below 50°F, low humidity, dark location</li>
+<li><strong>Rancidity signs:</strong> Bitter/soapy taste, off-smell, white powder on surface (fat oxidation). Discard.</li>
+<li><strong>Prevention:</strong> Vacuum seal if possible; limit air contact; consider adding salt (1-2 tsp per pound) for additional preservation</li>
+</ul>
+</section>
+<section id="jerky-drying">
+<h2>Jerky: Safe Drying Temperatures &amp; Times</h2>
+<h3>Why Temperature Matters</h3>
+<p>Too low (&lt;130°F) = slow drying, risk of pathogenic bacteria survival. Too high (&gt;180°F) = case hardening (outside dries before inside, trapping moisture). Optimal: 160-175°F.</p>
+<h3>Safe Temperature &amp; Time Guidelines</h3>
+<div class="card">
+<p><strong>Beef Jerky (lean meat, 1/4 inch thick strips):</strong></p>
+<ul>
+<li><strong>Temperature:</strong> 160-170°F</li>
+<li><strong>Time:</strong> 4-8 hours (depending on humidity and exact thickness)</li>
+<li><strong>Doneness:</strong> Bends slightly but doesn't break; no moisture beads on surface when squeezed</li>
+</ul>
+</div>
+<div class="card">
+<p><strong>Venison/Game (lean):</strong></p>
+<ul>
+<li><strong>Temperature:</strong> 160-165°F (game fat can turn rancid)</li>
+<li><strong>Time:</strong> 5-10 hours</li>
+<li><strong>Note:</strong> Remove visible fat; fat = rancidity risk</li>
+</ul>
+</div>
+<div class="card">
+<p><strong>Poultry Jerky (chicken/turkey breast, very lean):</strong></p>
+<ul>
+<li><strong>Temperature:</strong> 165-170°F (kill Salmonella)</li>
+<li><strong>Time:</strong> 3-6 hours</li>
+<li><strong>Doneness:</strong> Should break cleanly, not bend</li>
+</ul>
+</div>
+<h3>Pre-Drying Heat Treatment (Food Safety)</h3>
+<p>If drying below 165°F or using thin slices, pre-treat meat:</p>
+<ul>
+<li><strong>Oven method:</strong> Place marinated meat strips on racks; heat at 160°F for 10 minutes before transitioning to dehydrator</li>
+<li><strong>Marinade method:</strong> Use acidic marinade (vinegar + salt) for 6-12 hours; acid reduces pathogen load</li>
+<li><strong>Curing method:</strong> Dry-cure with salt (1 tablespoon per pound) for 24 hours before drying</li>
+</ul>
+<h3>Water Activity &amp; Storage</h3>
+<ul>
+<li><strong>Target water activity (Aw):</strong> 0.60 or lower for 6+ month shelf life</li>
+<li><strong>How to test:</strong> Properly dried jerky should be completely pliable but NOT moist. No moisture appears when squeezed hard.</li>
+<li><strong>If still soft/moist at 8 hours:</strong> Temperature may be too low or humidity too high. Continue drying, checking every 30 minutes.</li>
+<li><strong>Storage:</strong> Airtight containers in cool location (below 70°F). With vacuum sealing: 6-12 months unrefrigerated. Without: 2-4 weeks (then refrigerate or freeze).</li>
+</ul>
+</section>
+<section id="water-activity-mold">
+<h2>Water Activity Levels for Mold Prevention</h2>
+<h3>Understanding Water Activity (Aw)</h3>
+<p>Water activity is the percentage of &quot;free water&quot; available for microbial growth (0 = completely dry, 1.0 = pure water). Mold requires Aw &gt; 0.65 to grow. Foods with Aw &lt; 0.60 are shelf-stable indefinitely if protected from rehydration.</p>
+<h3>Target Aw by Food Type</h3>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;"><thead><tr><th scope="col" style="padding: 12px; text-align: left; background: var(--accent); color: var(--bg);">Food Type</th><th scope="col" style="padding: 12px; text-align: left; background: var(--accent); color: var(--bg);">Target Aw</th><th scope="col" style="padding: 12px; text-align: left; background: var(--accent); color: var(--bg);">Shelf Life</th></tr></thead><tbody><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;"><strong>Jerky</strong></td><td style="padding: 12px;">&lt;0.60</td><td style="padding: 12px;">6-12 months (unrefrigerated, sealed)</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;"><strong>Dried Fruit</strong></td><td style="padding: 12px;">&lt;0.65</td><td style="padding: 12px;">6-12 months</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;"><strong>Dried Vegetables</strong></td><td style="padding: 12px;">&lt;0.60</td><td style="padding: 12px;">1-2 years</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;"><strong>Pemmican</strong></td><td style="padding: 12px;">&lt;0.40</td><td style="padding: 12px;">5-15 years</td></tr><tr style="border-bottom: 1px solid var(--border);"><td style="padding: 12px;"><strong>Grain (&lt;13% moisture)</strong></td><td style="padding: 12px;">&lt;0.70</td><td style="padding: 12px;">1+ years</td></tr></tbody></table>
+<h3>Simple Aw Testing Without Equipment</h3>
+<ul>
+<li><strong>Squeezing test:</strong> Properly dried food releases NO liquid when squeezed hard. If moisture beads appear, Aw is too high.</li>
+<li><strong>Mold test:</strong> If mold appears during storage, Aw was too high (or moisture got back in).</li>
+<li><strong>Texture test:</strong> Jerky should be pliable but not moist. Dried fruit should be chewy. Dried vegetables should be brittle.</li>
+</ul>
+<h3>Rehydration Risk (Critical)</h3>
+<p>Once foods reach target Aw, they're only stable if protected from humidity:</p>
+<ul>
+<li><strong>Store in airtight containers:</strong> Glass jars with lids, vacuum-sealed bags, food-grade buckets with gamma seal lids</li>
+<li><strong>Use desiccants:</strong> Food-grade silica gel packets, dried lime, salt in center of container (prevents rehydration from air)</li>
+<li><strong>Keep cool:</strong> Below 70°F slows any residual microbial activity</li>
+<li><strong>Exclude light:</strong> Opaque containers prevent nutrient degradation</li>
+</ul>
+</section>
+<section id="hardtack-mold-resistant">
+<h2>Hardtack: Recipe &amp; Mold-Resistant Baking</h2>
+<h3>What Hardtack Is</h3>
+<p>Hardtack is a dense, low-moisture, shelf-stable biscuit that lasts 10+ years if kept dry. It's pure carbohydrate (flour + water + salt), extremely low Aw, and resistant to mold and pest infestation. Military and survival standard.</p>
+<h3>Hardtack Recipe</h3>
+<div class="card">
+<p><strong>Basic ratio (yields ~20 biscuits):</strong></p>
+<ul>
+<li>2 cups all-purpose flour (or whole wheat for nutrition)</li>
+<li>3/4 cup water (adjust for consistency)</li>
+<li>1 tablespoon salt (critical—acts as preservative)</li>
+<li>Optional: 1 tablespoon sugar (if available)</li>
+</ul>
+</div>
+<h3>Step-by-Step Baking Process</h3>
+<ol>
+<li><strong>Mix dough:</strong> Combine flour, salt, and optional sugar. Add water slowly while mixing until stiff dough forms. Do NOT knead excessively—you want a dense texture.</li>
+<li><strong>Roll &amp; cut:</strong> Roll dough 1/2 inch thick on floured surface. Cut into 2-3 inch squares. Prick each biscuit 10-15 times with fork (prevents large air pockets).</li>
+<li><strong>Bake low &amp; slow:</strong>
+<ul>
+<li>Temperature: 375°F</li>
+<li>Time: 30 minutes per side (flip halfway) OR 45-50 minutes per side for extra hardness</li>
+<li>Goal: Biscuits should be rock-hard, not chewy. They'll harden more as they cool.</li>
+</ul>
+</li>
+<li><strong>Cool completely:</strong> Let rest on racks for 24 hours. They will harden significantly.</li>
+<li><strong>Dry further (optional but recommended):</strong>
+<ul>
+<li>Place on racks in 200°F oven with door cracked for 2-3 hours to reduce moisture further</li>
+<li>Or air-dry in warm, dry location for 5-7 days</li>
+</ul>
+</li>
+</ol>
+<h3>Storage for Maximum Shelf Life</h3>
+<ul>
+<li><strong>Target moisture:</strong> &lt;8% (hardtack should be impossible to bite, requires soaking/softening)</li>
+<li><strong>Container:</strong> Airtight, food-grade (metal tin, vacuum-sealed bags, sealed bucket)</li>
+<li><strong>Desiccants:</strong> Include silica gel packets or lime in container</li>
+<li><strong>Conditions:</strong> Cool (below 70°F), dry location, no light exposure</li>
+<li><strong>Shelf life:</strong> 10-20+ years if protected from moisture and pests</li>
+</ul>
+<h3>Using Hardtack</h3>
+<ul>
+<li><strong>Soaking method:</strong> Soak in hot water, broth, or coffee for 15-30 minutes until softened</li>
+<li><strong>Boiling:</strong> Simmer in water/broth to make a porridge</li>
+<li><strong>Cooking:</strong> Fry in fat/oil with salt for hardtack cakes (traditional)</li>
+<li><strong>Warning:</strong> Hardtack can break teeth—always soften first. Risk of dental damage is real.</li>
+</ul>
+</section>
+<section id="smoking">
+<h2>Smoking (Cold and Hot)</h2>
+<p>Smoking preserves through dehydration, antimicrobial smoke compounds, and flavor development. Cold smoking (below 90°F) preserves without cooking. Hot smoking (160-225°F) both cooks and preserves.</p>
+<h3>Cold Smoking (Preservation Method)</h3>
+<p><strong>Purpose:</strong> Preserve without cooking; fish, cheese, meat can remain raw inside but surface-treated with smoke</p>
+<p><strong>Smokehouse construction:</strong></p>
+<ul>
+<li>Two chambers: firebox (separate, below ground) and smoking chamber (above ground, insulated)</li>
+<li>Tunnel smoke through 10-15 feet underground to cool it naturally</li>
+<li>Target temperature: 50-90°F (smoke entering chamber, not heat)</li>
+<li>Ventilation: slow smoke circulation (not drafty)</li>
+<li>Duration: 8-24 hours for light smoking, weeks for heavy smoking/complete preservation</li>
+</ul>
+<p><strong>Cold smoking process:</strong></p>
+<ol>
+<li>Fire hardwood (oak, hickory, applewood) in separate firebox to produce smoke, not heat</li>
+<li>Route smoke through tunnel system to cool it</li>
+<li>Hang food in smoking chamber on racks/hooks (don't let pieces touch)</li>
+<li>Smoke continuously for target duration (initial 8 hours gives flavor, 24+ hours gives preservation)</li>
+<li>Product ready when surface is dark/bronzed and feels dry to touch</li>
+<li>Continue smoking weekly for 4-6 weeks for deep preservation (shelf-stable months without refrigeration)</li>
+</ol>
+<p><strong>Cold-smoked products:</strong></p>
+<ul>
+<li>Fish (salmon, whitefish): mild smoking 8-16 hours, keeps 2-3 weeks unrefrigerated</li>
+<li>Cheese: 4-8 hours smoking, keeps 2-4 weeks unrefrigerated</li>
+<li>Salt-cured meat (already salted): 8-24 hours smoking, keeps months unrefrigerated</li>
+</ul>
+<div class="warning">
+<p><strong>Cold smoking is NOT suitable for beginners—botulism risk with insufficient salt cure.</strong> Cold smoking does not kill harmful bacteria. Only experienced curers with proper salt-curing knowledge should attempt cold smoking without professional guidance. Botulism can develop with inadequate salt concentration. Always combine cold smoking with heavy salt curing (20-25% by weight for 1-2 weeks) before smoking begins.</p>
+</div>
+<div class="tip">
+<p>Cold smoking requires consistent cool temperatures (difficult in summer). Best done fall/winter or in cool climates. Requires careful humidity control (too dry = brittle, too damp = mold risk).</p>
+</div>
+<h3>Hot Smoking (Cooking + Preservation)</h3>
+<p><strong>Purpose:</strong> Cook and add smoke flavor; moderate preservation (needs refrigeration or further curing)</p>
+<p><strong>Smoker construction:</strong></p>
+<ul>
+<li>Single chamber or firebox below/adjacent to smoking chamber</li>
+<li>Heat source: smoldering wood fire (hardwoods: oak, hickory, apple, mesquite)</li>
+<li>Temperature control: 160-225°F (use thermometer, adjust fire/vents to maintain)</li>
+<li>Ventilation: moderate airflow keeps smoke moving through</li>
+</ul>
+<p><strong>Hot smoking process:</strong></p>
+<ol>
+<li>Prepare meat/fish: brine with salt solution (5-6 hours) or dry-cure (12-24 hours)</li>
+<li>Rinse and air-dry on racks 1-2 hours (allows smoke ring formation)</li>
+<li>Set smoker to target temperature (160°F for fish, 225°F for thick meat pieces)</li>
+<li>Add wood chips to create smoke (soak chips 30 minutes to slow burn)</li>
+<li>Place food in smoker on racks, don't overcrowd</li>
+<li>Smoke for 4-12 hours depending on thickness (fish 4-6 hours, whole chickens 6-8 hours, thick meat pieces 8-12 hours)</li>
+<li>Product done when internal temperature reaches 160°F (meat) or 145°F (fish)</li>
+<li>Cool in open air, then refrigerate</li>
+</ol>
+<p><strong>Wood selection:</strong></p>
+<ul>
+<li><strong>Mild flavors:</strong> Apple, cherry, alder (delicate fish, poultry)</li>
+<li><strong>Medium flavors:</strong> Hickory, oak, maple (red meat, pork)</li>
+<li><strong>Strong flavors:</strong> Mesquite, walnut (thick cuts only)</li>
+<li><strong>Avoid:</strong> Softwoods like pine (resinous, bitter), treated wood (toxic)</li>
+</ul>
+<div class="danger">
+<p><strong>Botulism risk with smoking:</strong> Smoking alone does NOT eliminate botulism risk in low-acid foods (fish, meat). Smoking + vacuum sealing without refrigeration is dangerous. Either: (1) refrigerate hot-smoked foods, (2) combine smoking with salt curing for additional preservation, or (3) use pressure canning for maximum safety.</p>
+</div>
+</section>
+<section id="fermentation">
+<h2 id="fermentation-2">Fermentation (Lacto-fermentation)</h2>
+<p>Fermentation preserves through production of lactic acid by beneficial bacteria. Creates probiotics, increases digestibility, and stores for months/years. Naturally safe method with minimal botulism risk (acidic environment prevents botulism).</p>
+<h3>Fermentation Basics</h3>
+<p><strong>Principle:</strong> Lactobacillus bacteria naturally present on vegetables consume sugars and produce lactic acid (pH drops to 4.0), creating preservation environment</p>
+<p><strong>Essential ingredients:</strong></p>
+<ul>
+<li>Vegetables (cabbage, cucumbers, carrots, etc.)</li>
+<li>Salt (5-7% by weight, kills pathogenic bacteria while allowing lactobacillus to thrive)</li>
+<li>Water (to create brine)</li>
+<li>Time (3-7 days to 3+ weeks for fermentation)</li>
+</ul>
+<p><strong>Fermentation vessel:</strong></p>
+<ul>
+<li>Glass jars (quart or larger)</li>
+<li>Ceramic crocks (traditional, excellent)</li>
+<li>Avoid: metal containers (salt corrodes), plastic (scratches harbor bacteria)</li>
+<li>Cloth cover (breathable, prevents dust/insects but allows gas exchange)</li>
+</ul>
+<h3>Sauerkraut (Fermented Cabbage)</h3>
+<p><strong>Ingredients for 1 quart:</strong></p>
+<ul>
+<li>1.5 lbs cabbage (green or red)</li>
+<li>1-1.5 tablespoons salt (start with 1 tablespoon, adjust for taste)</li>
+</ul>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Remove outer leaves from cabbage, rinse, chop finely</li>
+<li>Layer cabbage in jar, sprinkling salt between layers</li>
+<li>Press cabbage with tamper or fist (release juice, submerge vegetables)</li>
+<li>Liquid should cover cabbage completely (if not enough, add light salt solution: 1 tablespoon salt per cup water)</li>
+<li>Weigh vegetables down with cabbage leaf, small jar, or glass weight (keep submerged)</li>
+<li>Cover with cloth, secure with rubber band (allows gas escape, prevents contamination)</li>
+<li>Ferment at room temperature (65-75°F ideal, but works 50-85°F)</li>
+<li>Taste daily starting day 3: ready when flavor is pleasant and tangy (3-10 days typically)</li>
+<li>Transfer to cold storage (cellar, spring house, refrigerator) when fermented to taste</li>
+</ol>
+<p><strong>Safety indicators:</strong></p>
+<ul>
+<li>Healthy: White cloudy yeast layer on surface (normal, skim if desired), fizzy when stirred, sour smell</li>
+<li>Spoiled: Pink/orange mold (discard entire batch), rotting smell (discard), slimy texture (discard)</li>
+</ul>
+<p><strong>Shelf life:</strong> Sealed jars in cool location (50-70°F) last 4-12 months. Warmer temperatures shorten life.</p>
+<h3>Fermented Pickles (Dill Pickles)</h3>
+<p><strong>Ingredients for 1 quart:</strong></p>
+<ul>
+<li>1.5 lbs small firm cucumbers (picked &lt;12 hours old)</li>
+<li>3 tablespoons salt (for 5% brine)</li>
+<li>2-3 sprigs fresh dill</li>
+<li>3-4 garlic cloves, crushed</li>
+<li>Spices (peppercorns, mustard seed, optional)</li>
+<li>2 cups water</li>
+</ul>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Pack cucumbers in jar with dill, garlic, spices</li>
+<li>Prepare brine: dissolve 3 tablespoons salt in 2 cups water</li>
+<li>Pour brine over cucumbers, submerge completely</li>
+<li>Weight down vegetables (keep under brine, prevent mold)</li>
+<li>Cover with cloth, ferment at room temperature</li>
+<li>Taste after 3 days: ready when flavor is tangy and crisp (3-14 days)</li>
+<li>Transfer to cool storage when desired flavor achieved</li>
+</ol>
+<p><strong>Doneness test:</strong> Cucumber should be green (not yellow) with firm texture, not mushy</p>
+<div class="warning">
+<p><strong>Fermentation safety:</strong> The only real risk is mold on exposed surface. Keep vegetables submerged at all times. Discard only if mold appears on surface. Fermented foods are naturally protective against botulism due to acidity and salt.</p>
+</div>
+</section>
+<section id="salt-curing">
+<h2>Salt Curing (Dry and Brine Methods)</h2>
+<p>Salt curing preserves through osmosis (salt draws water out of meat and bacteria, creating inhospitable environment). Combined with smoking and/or drying, creates long-term preservation (months to years).</p>
+<h3>Dry Curing (Salt Rubbed on Surface)</h3>
+<p><strong>Ratio:</strong> 1 tablespoon salt per pound of meat</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Prepare meat: trim excess fat (fat goes rancid), remove blood</li>
+<li>Mix salt with optional spices (black pepper, garlic, herbs)</li>
+<li>Rub salt mixture thoroughly on all surfaces of meat</li>
+<li>Place in non-metal container, cover with cloth</li>
+<li>Ferment in cool location (50-65°F): meat releases liquid, sits in its own brine</li>
+<li>Duration: 1-3 weeks depending on thickness (thin cuts 1-2 weeks, thick cuts 3+ weeks, calculate ~7 days per 2 inches)</li>
+<li>After curing, rinse briefly, air-dry on racks, then smoke and/or store in cool location</li>
+</ol>
+<p><strong>Products:</strong></p>
+<ul>
+<li><strong>Bacon (belly):</strong> 1-2 weeks curing, then smoke 4-6 hours, store cool/refrigerated</li>
+<li><strong>Hams (large cuts):</strong> 3-4 weeks curing, then smoke and/or hang to cure further</li>
+<li><strong>Prosciutto-style ham:</strong> 3-4 weeks dry cure, then hang in cool dry location for 3-12 months (no smoking)</li>
+</ul>
+<h3>Brine Curing (Wet Cure)</h3>
+<p><strong>Basic brine ratio:</strong> 5% salt solution (5 tablespoons salt per cup water)</p>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Prepare meat, cut into manageable pieces</li>
+<li>Make brine: boil water, dissolve salt, cool completely before using</li>
+<li>Submerge meat completely in brine</li>
+<li>Weight down meat (keep submerged, prevent mold)</li>
+<li>Ferment in cool location (50-65°F) for 1-3 weeks</li>
+<li>Salt penetrates center, meat develops cured taste</li>
+<li>Remove from brine, air-dry, then smoke/dry or store in cool location</li>
+</ol>
+<p><strong>Products:</strong></p>
+<ul>
+<li><strong>Corned beef:</strong> 1-2 weeks brine cure, then boil before use</li>
+<li><strong>Salt pork:</strong> 1-3 weeks brine, used as fat/seasoning in cooking</li>
+<li><strong>Preserved fish:</strong> 1-2 weeks brine, then air-dry (shelf-stable weeks to months)</li>
+</ul>
+<div class="danger">
+<p><strong>Nitrate/Nitrite Safety:</strong> Traditional curing used saltpeter (potassium nitrate, KNO₃). Modern curing may use sodium nitrite (NaNO₂). Both are toxic at high doses but effective in tiny amounts (100-200 ppm). Use only if:</p>
+<ol>
+<li>You understand precise measurement (weigh carefully, never estimate)</li>
+<li>You follow tested recipes with specific nitrite amounts</li>
+<li>You do NOT exceed recommended levels</li>
+</ol>
+<p>Never use sodium/potassium nitrite without specific tested recipes. Overdose causes poisoning/death. Many traditional preserved meats were safe due to additional smoking and drying, not just nitrite. If uncertain, skip nitrite and rely on salt + smoking + drying + cool storage.</p>
+</div>
+</section>
+<section id="root-cellaring">
+<h2 id="root-cellaring-2">Root Cellaring (Cool Storage)</h2>
+<p>Root cellaring preserves through cool temperature (slows respiration and microbial growth) and humidity control. Creates long-term storage (months) for root vegetables, apples, potatoes, and hardy crops.</p>
+<h3>Root Cellar Construction</h3>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>Temperature: 50-60°F (ideally 50-55°F for root vegetables, 55-60°F for fruit)</li>
+<li>Humidity: 85-95% (high humidity prevents drying but prevents mold)</li>
+<li>Darkness: no light (prevents sprouting of potatoes, greening of tubers)</li>
+<li>Ventilation: passive air exchange (prevents stale air and gas buildup)</li>
+<li>Location: below ground or well-insulated</li>
+</ul>
+<p><strong>Simple root cellar options:</strong></p>
+<ol>
+<li>Underground pit: Dig 4-6 feet deep, cover with insulated lid, natural temperature regulation</li>
+<li>Basement corner: Insulate exterior walls, use passive vents to keep cool</li>
+<li>Spring house: Small structure built over cool spring or groundwater source (naturally cool)</li>
+<li>Buried container: Food-grade barrel or box buried in earth, topped with insulated lid</li>
+<li>Shallow cellar: 2-3 feet deep in cool location, covered with straw, earth, and wooden roof</li>
+</ol>
+<p><strong>Ventilation strategy:</strong></p>
+<ul>
+<li>Two vents: intake (low, outside) and exhaust (high, inside) create natural convection</li>
+<li>Vents should have dampers to close in winter (prevent freezing)</li>
+<li>Summer dampers open to exchange warm air for cool night air</li>
+</ul>
+<h3>Storage Life by Crop</h3>
+<table>
+<thead>
+<tr>
+<th>Crop</th>
+<th>Temperature</th>
+<th>Humidity</th>
+<th>Preparation</th>
+<th>Storage Life</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Potatoes</strong></td>
+<td>50-55°F</td>
+<td>90-95%</td>
+<td>Cure 2 weeks at 65°F first (hardens skin)</td>
+<td>4-6 months</td>
+</tr>
+<tr>
+<td><strong>Carrots</strong></td>
+<td>50-55°F</td>
+<td>95%</td>
+<td>Remove tops, brush dirt, layer in sand</td>
+<td>4-6 months</td>
+</tr>
+<tr>
+<td><strong>Beets</strong></td>
+<td>50-55°F</td>
+<td>95%</td>
+<td>Remove tops, brush dirt</td>
+<td>3-4 months</td>
+</tr>
+<tr>
+<td><strong>Turnips/Rutabagas</strong></td>
+<td>50-55°F</td>
+<td>90-95%</td>
+<td>Remove tops, brush dirt</td>
+<td>4-6 months</td>
+</tr>
+<tr>
+<td><strong>Cabbage</strong></td>
+<td>50-55°F</td>
+<td>90-95%</td>
+<td>Leave roots on, store on slats (air circulation)</td>
+<td>3-4 months</td>
+</tr>
+<tr>
+<td><strong>Apples</strong></td>
+<td>55-60°F</td>
+<td>85-90%</td>
+<td>Keep cool, separate ethylene producers</td>
+<td>2-6 months</td>
+</tr>
+<tr>
+<td><strong>Onions/Garlic</strong></td>
+<td>50-55°F (onions), 60-65°F (garlic)</td>
+<td>65-75% (drier)</td>
+<td>Cure 2-3 weeks, braid or store in mesh</td>
+<td>4-8 months</td>
+</tr>
+<tr>
+<td><strong>Winter squash/pumpkin</strong></td>
+<td>55-60°F</td>
+<td>50-70%</td>
+<td>Cure 2 weeks, store on slats</td>
+<td>3-6 months</td>
+</tr>
+</tbody>
+</table>
+<h3>Storage Tips</h3>
+<ul>
+<li><strong>Ethylene producers separate:</strong> Apples and pears produce ethylene gas, ripen and rot nearby vegetables. Store separately or different shelves.</li>
+<li><strong>Layer in sand/peat:</strong> For root vegetables, alternating sand layers prevent touching (reduces disease transmission).</li>
+<li><strong>Inspect regularly:</strong> Remove any rotting specimens immediately (prevents spread).</li>
+<li><strong>Monitor temperature/humidity:</strong> Check weekly, adjust vents as needed.</li>
+</ul>
+</section>
+<section id="evaporative-cooling">
+<h2>Evaporative Cooling (Passive Cooling, No Ice)</h2>
+<p>In hot, dry climates without electricity or ice access, evaporative cooling passively reduces temperature through water evaporation.</p>
+<h3>Clay Pot Cooler (Zeer Pot)</h3>
+<p><strong>Construction (very simple):</strong></p>
+<ol>
+<li>Take two clay pots of different sizes (large outer pot, small inner pot)</li>
+<li>Place small pot inside large pot, seal bottom gap with sand or clay</li>
+<li>Fill gap between pots with wet sand, wet cloth, or wet straw</li>
+<li>Cover gap area with wet cloth (keep damp by adding water regularly)</li>
+<li>Place vegetables/food in inner pot, cover with cloth</li>
+<li>Evaporating water from sand/cloth cools interior pot to 20-30°F cooler than ambient air</li>
+</ol>
+<p><strong>Effectiveness:</strong> Can keep produce 20-30°F cooler than outside temperature (50-60°F in 80°F weather). Works best in dry, windy climates.</p>
+<p><strong>Maintenance:</strong> Keep sand/cloth wet by adding water every 1-2 days.</p>
+<h3>Underground Cooling</h3>
+<p><strong>Simple ground pit:</strong></p>
+<ol>
+<li>Dig pit in shaded location, 2-3 feet deep</li>
+<li>Line with straw, blankets, or insulation</li>
+<li>Partially bury clay pot coolers or sealed containers</li>
+<li>Natural ground temperature maintains cool even in summer (50-60°F below surface in many climates)</li>
+</ol>
+</section>
+<!-- Interactive widget: calculator for food-preservation -->
+<div class="calculator-widget" style="background: var(--surface); border: 2px solid var(--accent2); border-radius: 8px; padding: 20px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.2);"><h3 style="color: var(--accent2); margin-top: 0;"><span aria-hidden="true">🧮</span> Canning Altitude Adjustment Calculator</h3><p style="color: var(--muted); font-size: 0.9em; margin-bottom: 15px;">Adjust canning processing times and pressures for your altitude</p><div style="margin: 10px 0;"><label style="display: block; margin-bottom: 5px; color: var(--text); font-weight: 500;">Your Altitude:</label><div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--muted);min-width:60px;">feet</span></div>
+
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="agriculture.html">Agriculture &amp; Gardening</a>
+<a href="animal-husbandry.html">Animal Husbandry &amp; Veterinary</a>
+<a href="aquaculture.html">Aquaculture &amp; Fish Farming</a>
+<a href="beekeeping.html">Beekeeping &amp; Apiculture</a>
+<a href="butchering.html">Butchering &amp; Meat Processing</a>
+<a href="cold-storage-root-cellar.html">Cold Storage and Root Cellars</a>
+<a href="coopering-barrel-making.html">Coopering and Barrel Making</a>
+<a href="dairy-processing.html">Dairy Processing</a>
+<a href="dogs-working-animals.html">Working Dogs &amp; Animals</a>
+<a href="draft-animals.html">Draft Animals &amp; Working Livestock</a>
+<a href="famine-crops.html">Famine &amp; Emergency Crops</a>
+<a href="fermentation-baking.html">Fermentation &amp; Baking</a>
+<a href="food-rationing.html">Food Rationing &amp; Nutrition</a>
+<a href="foraging-hunting.html">Foraging, Hunting &amp; Fishing</a>
+<a href="forestry.html">Forestry &amp; Timber Management</a>
+<a href="grain-milling.html">Grain Milling &amp; Processing</a>
+<a href="greenhouse-coldframe.html">Greenhouses &amp; Cold Frames</a>
+<a href="heat-management.html">Heat Management</a>
+<a href="home-inventory.html">Home Inventory</a>
+<a href="indoor-farming.html">Indoor &amp; Hydroponic Farming</a>
+<a href="irrigation-water.html">Irrigation &amp; Water Management</a>
+<a href="marine-biology-ocean.html">Marine Biology &amp; Ocean Resources</a>
+<a href="mushroom-cultivation.html">Mushroom Cultivation</a>
+<a href="oil-pressing.html">Oil Pressing &amp; Extraction</a>
+<a href="pigeon-keeping-messenger.html">Pigeon Keeping &amp; Messenger Birds</a>
+<a href="plant-breeding-seed-saving.html">Plant Breeding &amp; Seed Saving</a>
+<a href="refrigeration-cooling.html">Refrigeration &amp; Cooling</a>
+<a href="seed-vault.html">Seed Vault &amp; Genetic Preservation</a>
+<a href="soil-science-remediation.html">Soil Science &amp; Land Remediation</a>
+<a href="spices-seasonings.html">Spices &amp; Seasonings</a>
+<a href="sugar-sweeteners.html">Sugar &amp; Sweeteners</a>
+<a href="tobacco-stimulants.html">Tobacco, Coffee &amp; Tea</a>
+<a href="vinegar-ferments.html">Vinegar &amp; Fermented Condiments</a>
+<a href="warehousing-inventory.html">Warehousing &amp; Inventory</a>
+<a href="wine-brewing.html">Wine, Brewing &amp; Distillation</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

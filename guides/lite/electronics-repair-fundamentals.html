@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/electronics-repair-fundamentals.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electronics Repair Fundamentals</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Foundational Sciences</span> ›
+<span>Electronics Repair Fundamentals</span>
+</div>
+
+
+<h1>Electronics Repair Fundamentals</h1>
+<p class="subtitle">Component identification, color codes, desoldering/resoldering, multimeter use, signal tracing, and PCB reverse engineering</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~18 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#passive-components">Passive Components: Resistors, Capacitors, and Diodes</a></li>
+<li><a href="#active-components">Active Components: Transistors and Integrated Circuits</a></li>
+<li><a href="#multimeter">Multimeter Use and Measurements</a></li>
+<li><a href="#soldering">Desoldering and Resoldering Techniques</a></li>
+<li><a href="#signal-tracing">Signal Tracing and Troubleshooting</a></li>
+<li><a href="#complex-circuit-troubleshooting">Complex Circuit Troubleshooting</a></li>
+<li><a href="#pcb-reverse">PCB Reverse Engineering Basics</a></li>
+<li><a href="#common-failures">Common Component Failure Modes</a></li>
+<li><a href="#summary">Summary: Practical Repair Workflow</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Electronic components are the building blocks of every device—from radios and flashlights to water pumps and medical equipment. When components fail, understanding their construction, function, and how to test them is the first step toward repair. This guide covers the essential skills needed to identify, test, and replace components in practical field conditions using only hand tools and a multimeter.</p>
+<p>Whether you're salvaging working parts from broken equipment, diagnosing a failed radio, or extending the lifespan of critical devices, mastering component fundamentals will dramatically improve your ability to restore and maintain electronics without access to replacement parts or professional technicians.</p>
+</section>
+<section id="passive-components">
+<h2>Passive Components: Resistors, Capacitors, and Diodes</h2>
+<h3>Resistor Identification and Color Codes</h3>
+<p>Resistors oppose the flow of electrical current and are marked with colored bands that indicate their resistance value in ohms. A standard resistor has either 4, 5, or 6 color bands. The first two (or three, for 5-band) bands represent the significant digits, the next band represents the multiplier (power of 10), and the final band indicates tolerance (accuracy).</p>
+<p><strong>Color value chart:</strong></p>
+<ul>
+<li>Black = 0</li>
+<li>Brown = 1</li>
+<li>Red = 2</li>
+<li>Orange = 3</li>
+<li>Yellow = 4</li>
+<li>Green = 5</li>
+<li>Blue = 6</li>
+<li>Violet = 7</li>
+<li>Gray = 8</li>
+<li>White = 9</li>
+<li>Gold = ÷10 (multiplier) or 5% tolerance</li>
+<li>Silver = ÷100 (multiplier) or 10% tolerance</li>
+</ul>
+<p><strong>Reading a 4-band resistor:</strong></p>
+<ul>
+<li>Band 1 (first digit) + Band 2 (second digit) + Band 3 (multiplier) + Band 4 (tolerance)</li>
+<li>Example: Brown-Black-Red-Gold = 1-0-×100-5% = 1000Ω ±5%</li>
+</ul>
+<p><strong>Reading a 5-band resistor:</strong></p>
+<ul>
+<li>Band 1 + Band 2 + Band 3 (significant digits) + Band 4 (multiplier) + Band 5 (tolerance)</li>
+<li>Example: Brown-Black-Brown-Red-Brown = 1-0-1-×100-1% = 10,100Ω ±1%</li>
+</ul>
+<div class="tip">
+<p>When reading resistor bands, look for the band with the wider gap—that gap comes before the tolerance band. If you're still unsure, measure with a multimeter set to the resistance (Ω) range.</p>
+</div>
+<p><strong>Testing resistors:</strong> Use a multimeter set to the appropriate Ω (ohms) range. The measured value should match the color code within the tolerance percentage. Resistors rarely fail completely (open circuit), but may drift in value when overheated or exposed to moisture.</p>
+<h3>Capacitor Identification</h3>
+<p>Capacitors store electrical charge and are marked with their capacitance value (in picofarads, nanofarads, or microfarads) and voltage rating. Markings vary by type—ceramic discs show values directly on the surface, while electrolytic capacitors have bands or printed text.</p>
+<p><strong>Capacitor types:</strong></p>
+<ul>
+<li><strong>Ceramic disc:</strong> Non-polarized, small, used in high-frequency circuits. Value may be printed as 100n (100 nanofarads) or use a 3-digit code (1st and 2nd digits, 3rd is multiplier in picofarads).</li>
+<li><strong>Electrolytic:</strong> Polarized (must be installed in correct direction), cylindrical, used in power circuits. Marked with capacitance (µF) and working voltage (e.g., 10µF 50V).</li>
+<li><strong>Film:</strong> Non-polarized, rectangular, stable value, used in audio and precision circuits.</li>
+</ul>
+<p><strong>Capacitance conversions:</strong> 1µF = 1000 nF = 1,000,000 pF</p>
+<div class="info-box">
+<p>Always note the voltage rating on electrolytic capacitors. Installing a 10µF 25V capacitor in a 50V circuit will cause it to fail, potentially explosively. When replacing, use the same or higher voltage rating.</p>
+</div>
+<p><strong>Testing capacitors:</strong> A multimeter resistance test may show initial charge/discharge (needle flick on analog meters), but this is not a reliable test for capacitor failure. If a capacitor is visibly bulged, cracked, or leaking, it has failed and must be replaced. Field testing for capacity requires a dedicated capacitor tester, which is impractical offline. Assume suspected failed capacitors are bad.</p>
+<h3>Diodes and LEDs</h3>
+<p>Diodes conduct current in only one direction (marked with a band at the cathode/negative end). They're used to convert AC to DC, protect circuits from polarity reversal, and detect radio signals. LEDs (light-emitting diodes) work the same way but emit light when forward-biased.</p>
+<p><strong>Diode band marking:</strong> The black/colored band indicates the cathode (negative). Current flows from the unmarked end (anode) to the banded end (cathode).</p>
+<p><strong>Testing diodes:</strong> Set a multimeter to diode mode (if available) or resistance mode. A good diode shows low resistance (~0.5–1 kΩ) in one direction and very high resistance (&gt;1 MΩ) in the reverse direction. If resistance is high in both directions or low in both directions, the diode is open or shorted.</p>
+<p><strong>LED testing:</strong> LEDs require forward bias voltage to illuminate during testing. Most digital multimeters will not provide enough voltage. A simple test is to touch the LED leads to a fresh battery: positive terminal to anode (longer lead), negative to cathode. If it lights, it's functional; if not, it's likely burned out or reversed.</p>
+</section>
+<section id="active-components">
+<h2>Active Components: Transistors and Integrated Circuits</h2>
+<h3>Transistor Types and Pinouts</h3>
+<p>Transistors are three-lead components that amplify or switch electrical signals. The two main types are bipolar junction transistors (BJTs) and field-effect transistors (FETs).</p>
+<p><strong>BJT common packages:</strong></p>
+<ul>
+<li><strong>TO-92:</strong> Small plastic package with three leads (Collector, Base, Emitter for NPN; or Emitter, Base, Collector for PNP). Requires a data sheet to determine pinout.</li>
+<li><strong>TO-220:</strong> Larger power transistor package with leads often in the order Base-Collector-Emitter, with a metal heat sink tab.</li>
+</ul>
+<p><strong>FET packages:</strong></p>
+<ul>
+<li><strong>TO-92 small signal:</strong> Gate, Drain, Source pins; pinout varies by manufacturer.</li>
+<li><strong>TO-220 power FET:</strong> Gate, Drain, Source with heat sink tab.</li>
+</ul>
+<div class="warning">
+<p>Transistor pinouts vary widely even within the same package type. Never assume pinout without checking a data sheet or testing with a multimeter in diode mode. Reversing a transistor's connections can destroy it and damage the circuit.</p>
+</div>
+<p><strong>Testing transistors:</strong> In resistance mode, a good NPN transistor will show:</p>
+<ul>
+<li>Low resistance (0.5–10 kΩ) between base and emitter</li>
+<li>High resistance (&gt;1 MΩ) between base and collector</li>
+<li>High resistance between collector and emitter</li>
+</ul>
+<p>Reverse these expectations for PNP. If all measurements show high resistance, the transistor is likely open. If you measure low resistance in all directions, it's shorted.</p>
+<h3>Integrated Circuits (ICs)</h3>
+<p>ICs are complex components with many pins and perform specialized functions (amplification, logic, timing, signal processing). They are identified by part numbers printed on the package (e.g., LM358, 74HC595, ATmega328P).</p>
+<p><strong>IC packages:</strong></p>
+<ul>
+<li><strong>DIP (Dual Inline Package):</strong> Two rows of pins on either side; easily hand-soldered on breadboards or PCBs.</li>
+<li><strong>SOIC/SOP:</strong> Surface mount, smaller, harder to solder by hand.</li>
+<li><strong>QFP/BGA:</strong> Very small, requires specialized equipment.</li>
+</ul>
+<p><strong>Finding IC data sheets:</strong> The part number is your key. With internet access (before going offline), download the data sheet from the manufacturer or electronics databases (<a href="http://datasheetspdf.com">datasheetspdf.com</a>, <a href="http://alldatasheet.com">alldatasheet.com</a>). A data sheet shows pinout, function of each pin, power requirements, and typical circuits.</p>
+<p><strong>Testing ICs:</strong> In the field, IC failure is assumed if:</p>
+<ul>
+<li>The device stops working after a power surge or lightning strike</li>
+<li>The IC is visibly charred or cracked</li>
+<li>Removing/replacing it restores function</li>
+</ul>
+<p>Continuity tests across power and ground pins may reveal internal shorts. Without a programmer or test equipment, replacement is usually the only repair option.</p>
+</section>
+<section id="multimeter">
+<h2>Multimeter Use and Measurements</h2>
+<p>A multimeter is the essential tool for electronics troubleshooting. It measures voltage (V), current (A), and resistance (Ω), and often has a diode test function.</p>
+<h3>Voltage Measurement</h3>
+<p><strong>Setting up:</strong> Select the voltage mode (DC or AC depending on circuit type). For DC circuits, choose a range that exceeds the expected voltage (e.g., 20V range for a 12V battery). Start high if unsure.</p>
+<p><strong>Measuring:</strong> Insert the black probe in the COM jack and red probe in the V/Ω jack. Touch the red probe to the positive point and black to ground (negative/0V reference). The meter displays the voltage difference. DC voltage polarity matters—reverse probes gives negative readings (the magnitude is correct).</p>
+<p><strong>Common measurements:</strong></p>
+<ul>
+<li><strong>Battery voltage:</strong> Touch probes to terminals; fresh 1.5V cell shows ~1.6V</li>
+<li><strong>Power supply output:</strong> Measure across the output terminals with load connected</li>
+<li><strong>Voltage across a component:</strong> Connect in parallel; does not disrupt circuit operation</li>
+</ul>
+<div class="tip">
+<p>Always identify the ground (0V reference) point in a circuit before measuring. This is usually the negative battery terminal or the chassis. Voltage measurements are only meaningful relative to a reference point.</p>
+</div>
+<h3>Resistance Measurement</h3>
+<p><strong>Setting up:</strong> Select the Ω (ohms) range. For small resistances (&lt;1 kΩ), use the ×1 range. For medium values (1–100 kΩ), use ×100 or ×1k. For large values (&gt;1 MΩ), use the highest range available.</p>
+<p><strong>Measuring:</strong> Always disconnect power from the circuit. Remove one end of the component from the circuit (or measure across it without removing, if isolated). Touch probes to both leads. The meter displays the resistance value.</p>
+<p><strong>Resistance of common items:</strong></p>
+<ul>
+<li>Wire (short): &lt;1 Ω</li>
+<li>Resistor (1 kΩ): 1000 Ω</li>
+<li>Diode forward-biased: ~0.5–1 kΩ</li>
+<li>Good insulation: &gt;1 MΩ</li>
+<li>Open circuit: ∞ Ω (no reading/OL for &quot;open line&quot;)</li>
+</ul>
+<h3>Current Measurement</h3>
+<p>Current measurement requires breaking the circuit and inserting the multimeter in series—more disruptive than voltage/resistance tests. It's less commonly needed for troubleshooting.</p>
+<p><strong>Setting up:</strong> Select the A (amps) or mA (milliamps) range. High current (&gt;200 mA) may exceed meter limits; consult the meter's manual.</p>
+<p><strong>Measuring:</strong> Insert the red probe into the mA or A jack (depending on expected current). Break the circuit at a convenient point. Connect the meter in series (power source → red probe, black probe → rest of circuit). Current flows through the meter, which displays the value.</p>
+<div class="warning">
+<p>Never measure current in a high-current circuit without knowing the expected magnitude. Exceeding the meter's rated current input can destroy the meter's fuse or internal shunt resistor.</p>
+</div>
+<h3>Continuity Testing</h3>
+<p>Continuity indicates an unbroken electrical path (resistance ≈ 0 Ω). Many multimeters have a dedicated continuity mode that beeps when resistance is very low.</p>
+<p><strong>Using continuity mode:</strong></p>
+<ul>
+<li>Select continuity (often marked with a sound wave symbol)</li>
+<li>Touch probes to both ends of the path being tested</li>
+<li>Meter beeps and shows near-zero resistance if path is complete</li>
+<li>Silence or very high reading indicates an open circuit</li>
+</ul>
+<p>Continuity is useful for tracing wires, detecting burned traces on PCBs, and identifying which solder joints are good.</p>
+</section>
+<section id="soldering">
+<h2>Desoldering and Resoldering Techniques</h2>
+<p>Soldering joins metal components using a low-melting-point metal alloy (solder) that flows when heated. Desoldering removes old solder; resoldering applies new solder to make good electrical and mechanical connections.</p>
+<h3>Hand Soldering Tools</h3>
+<p><strong>Soldering iron:</strong> 25–40 watts is adequate for most hand work. A 60W+ iron heats faster but risks thermal damage to small components. The tip should be clean (wiped on a damp sponge) and tinned (coated with a thin layer of fresh solder).</p>
+<p><strong>Solder composition:</strong> Lead-free solder (SAC, tin-silver-copper) has a higher melting point (~220°C) than lead-based solder (~180°C) but is safer. For offline work, lead-based solder is acceptable if handled carefully (wash hands after use).</p>
+<p><strong>Desoldering equipment:</strong></p>
+<ul>
+<li><strong>Solder wick (braid):</strong> Strips of braided copper that absorb molten solder. Heat the joint, press wick against it, solder wicks into the braid, and remove.</li>
+<li><strong>Solder sucker:</strong> Manual (spring-loaded plunger) or electric pump. Heat the joint, trigger the sucker to pull solder away. Requires two hands.</li>
+<li><strong>Desoldering iron:</strong> Soldering iron with a hollow tip and vacuum—combines heating and suction in one tool.</li>
+</ul>
+<h3>Desoldering a Through-Hole Component</h3>
+<ol>
+<li><strong>Heat the solder joint:</strong> Touch the iron tip to both the component lead and the PCB pad simultaneously, heating both to 250–260°C for 3–5 seconds.</li>
+<li><strong>Apply desoldering tool:</strong> While heating, use solder wick or sucker to remove molten solder.</li>
+<li><strong>Remove component:</strong> Once solder is gone, gently pull the lead away from the PCB. If it sticks, reheat.</li>
+<li><strong>Clean the hole:</strong> Use wick to remove residual solder from the pad, leaving a shiny surface.</li>
+</ol>
+<div class="warning">
+<p>Excessive heat (&gt;30 seconds per joint) damages the PCB by lifting copper pads and burning traces. Work quickly and efficiently. If you overheat, stop and let the joint cool before trying again.</p>
+</div>
+<h3>Resoldering a Joint</h3>
+<ol>
+<li><strong>Tin the iron:</strong> Apply a small amount of solder to the tip (this aids heat transfer).</li>
+<li><strong>Heat the joint:</strong> Touch the iron tip to both the component lead and the PCB pad simultaneously.</li>
+<li><strong>Feed solder:</strong> After 2–3 seconds, touch solder wire to the joint (not the iron tip). Solder should flow smoothly around the pad.</li>
+<li><strong>Remove solder, then iron:</strong> Let solder cool (2–3 seconds) before removing the iron. This ensures a solid joint.</li>
+</ol>
+<p><strong>Good vs. bad joints:</strong></p>
+<ul>
+<li><strong>Good:</strong> Shiny, smooth, cone-shaped solder fillet</li>
+<li><strong>Bad (cold joint):</strong> Dull, blobby, may crack under stress</li>
+<li><strong>Bad (too much):</strong> Solder bridges between adjacent pads</li>
+</ul>
+<p>A good solder joint requires both adequate heat and appropriate solder quantity. Too little heat = cold joint; too much solder = bridges; too much heat = pad damage.</p>
+</section>
+<section id="signal-tracing">
+<h2>Signal Tracing and Troubleshooting</h2>
+<p>Signal tracing uses a multimeter to follow the path of a signal through a circuit, identifying where the signal stops or becomes corrupted.</p>
+<h3>Voltage Tracing (DC Biasing)</h3>
+<p>In a powered circuit, each stage should have specific DC voltage levels at certain pins. Measure voltage at input, output, and power supply pins of each major stage (oscillator, amplifier, mixer, detector).</p>
+<p><strong>Example for a simple radio receiver:</strong></p>
+<ol>
+<li>Measure voltage at the power pin of the first transistor (should be close to battery voltage, e.g., 9V)</li>
+<li>Measure the base bias voltage (should be stable, typically 1–3V less than power)</li>
+<li>Measure the emitter voltage (usually 0.5–2V above ground)</li>
+<li>Compare to expected values from a working identical circuit or service manual</li>
+</ol>
+<p>If a stage has no voltage output but has input, the stage is likely powered but not working (transistor failure, open coupling capacitor, or short circuit).</p>
+<h3>AC Signal Tracing (Audio/RF)</h3>
+<p>AC signals (audio, radio frequency) require an oscilloscope or AC voltmeter, which are impractical offline. As a substitute:</p>
+<ul>
+<li><strong>Listen test:</strong> Connect a speaker or headphone to audio circuit outputs and listen for signal presence</li>
+<li><strong>Visual test:</strong> Measure resistance change when signal is applied (very rough indication)</li>
+<li><strong>Substitution test:</strong> Replace suspected bad components with known-good ones</li>
+</ul>
+<h3>Logic Signal Tracing (Digital Circuits)</h3>
+<p>In digital circuits, signals are either high (logic 1, ~5V) or low (logic 0, ~0V). Use voltage measurements to confirm signals are switching between these levels at expected rates.</p>
+<p><strong>Technique:</strong></p>
+<ol>
+<li>Identify the signal path (input → logic gate → output)</li>
+<li>Measure voltage at each node with the circuit operating</li>
+<li>Inputs should show switching; outputs should respond to input changes</li>
+<li>A stuck high or stuck low voltage indicates a failure upstream</li>
+</ol>
+</section>
+<section id="complex-circuit-troubleshooting">
+<h2>Complex Circuit Troubleshooting</h2>
+<p>Troubleshooting multi-stage circuits requires systematic approaches to isolate failures across many interconnected components. This section covers diagnosis of common failure patterns in amplifiers, power supplies, and oscillators.</p>
+<h3>Multi-Stage Amplifier Failure Diagnosis</h3>
+<p>Amplifiers often have multiple transistor stages cascaded (output of one feeds input of the next). Failure in any stage stops the signal downstream.</p>
+<p><strong>Typical 3-stage amplifier:</strong>
+Input → Pre-amp Stage 1 (low level) → Driver Stage 2 (intermediate) → Power Stage 3 (high level) → Output</p>
+<p><strong>Diagnosis workflow:</strong></p>
+<ol>
+<li>
+<p><strong>Measure power supply voltages:</strong> Confirm power at each stage. If stage 2 has no power but stage 1 does, suspect open circuit in power distribution or shorted component on stage 2.</p>
+</li>
+<li>
+<p><strong>Check bias voltages:</strong> Each transistor should have stable DC voltage at base/gate (input). If bias voltage is zero or at supply voltage, suspect transistor failure or coupling capacitor failure.</p>
+</li>
+<li>
+<p><strong>Signal trace through stages:</strong></p>
+<ul>
+<li>Check for signal at input of stage 1 (should show AC variations on top of DC bias)</li>
+<li>Check output of stage 1 (should be amplified)</li>
+<li>If output is missing, stage 1 has failed</li>
+<li>If output present, trace stage 2</li>
+</ul>
+</li>
+<li>
+<p><strong>Identify failure point:</strong></p>
+<ul>
+<li>Stage 1 output: No signal, but power/bias OK → Transistor Q1 shorted or coupling capacitor C1 open</li>
+<li>Stage 1 output: Weak signal (should be larger) → Q1 gain reduced or feedback problem</li>
+<li>Stage 1 output: Signal present but severely distorted → Q1 biased incorrectly or supply voltage sagging</li>
+</ul>
+</li>
+</ol>
+<p><strong>Common multi-stage failures:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Failure</th>
+<th>Symptoms</th>
+<th>Test</th>
+<th>Likely Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No output, but input present</td>
+<td>Signal stops at stage 2</td>
+<td>Measure voltage at stage 2 input; if present but output missing</td>
+<td>Open coupling capacitor, shorted transistor Q2, or open collector resistor</td>
+</tr>
+<tr>
+<td>Very weak output</td>
+<td>Each stage produces small signal, gains don't multiply</td>
+<td>Measure base voltage of each transistor; should be stable bias</td>
+<td>Leaky coupling capacitor reducing gain, or feedback reducing amplification</td>
+</tr>
+<tr>
+<td>Distorted output (clipping)</td>
+<td>Output signal cuts off at peaks/troughs</td>
+<td>Examine output waveform; if flat-topped</td>
+<td>Power supply sagging (load too high), or transistor biased in non-linear region</td>
+</tr>
+<tr>
+<td>Oscillation/ringing</td>
+<td>Output oscillates at high frequency even with steady input</td>
+<td>Listen for high-pitched tone; measure output with multimeter (AC voltage shows ripple)</td>
+<td>Feedback instability, coupling capacitor too small, or poor ground connections</td>
+</tr>
+</tbody>
+</table>
+<h3>Power Supply Regulation Failures</h3>
+<p>Regulated power supplies maintain constant output voltage despite input or load changes. Failures in regulation cause output voltage to sag or fluctuate.</p>
+<p><strong>Typical linear regulated supply:</strong>
+Transformer → Rectifier → Filter Capacitor → Voltage Regulator IC → Load</p>
+<p><strong>Diagnosis:</strong></p>
+<ol>
+<li>
+<p><strong>Measure output voltage at no load (supply off, load disconnected):</strong></p>
+<ul>
+<li>Should equal regulated voltage (e.g., 12V, 5V) ±5%</li>
+<li>If too low (e.g., 10V instead of 12V), regulator or filter failed</li>
+<li>If too high (e.g., 15V instead of 12V), regulator shorted</li>
+</ul>
+</li>
+<li>
+<p><strong>Measure output voltage under load:</strong></p>
+<ul>
+<li>Connect a moderate load (light bulb, resistor)</li>
+<li>Measure voltage; should remain stable</li>
+<li>If voltage sags &gt;10% under load, filter capacitor is weak or regulator IC is failing</li>
+</ul>
+</li>
+<li>
+<p><strong>Check ripple (AC voltage component):</strong></p>
+<ul>
+<li>Set multimeter to AC voltage mode at output</li>
+<li>Should read near zero (ideally &lt;100mV)</li>
+<li>If ripple is significant, filter capacitor is failing; capacitor needs replacement</li>
+</ul>
+</li>
+<li>
+<p><strong>Locate failure in the chain:</strong></p>
+<ul>
+<li>No output at all? Check transformer output and rectifier diodes</li>
+<li>Output present but unregulated (jumps with load)? Regulator IC or feedback circuit failed</li>
+<li>Output very noisy (high ripple)? Filter capacitor failed</li>
+</ul>
+</li>
+</ol>
+<p><strong>Common power supply failures:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Failure</th>
+<th>Symptoms</th>
+<th>Test</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No output voltage</td>
+<td>Load gets no power; transformer warm</td>
+<td>Measure transformer secondary (before regulator); if present, regulator failed</td>
+<td>Shorted regulator IC or rectifier diode shorted</td>
+</tr>
+<tr>
+<td>Output sags under load</td>
+<td>Light bulb dims when switched on; voltage drops 20-30%</td>
+<td>Measure output with and without load</td>
+<td>Weak filter capacitor (age, drying out) or regulator current limit exceeded</td>
+</tr>
+<tr>
+<td>High ripple</td>
+<td>Buzzing sound in speakers (60Hz hum); multimeter reads 2-5V AC at output</td>
+<td>Measure AC ripple component</td>
+<td>Filter capacitor open or severely degraded</td>
+</tr>
+<tr>
+<td>Regulator overheating</td>
+<td>Regulator IC too hot to touch</td>
+<td>Check load current draw</td>
+<td>Load drawing excessive current, or regulator in current limit condition; reduce load or replace regulator</td>
+</tr>
+</tbody>
+</table>
+<h3>Oscillator Circuit Problems</h3>
+<p>Oscillators generate repeating signals (clocks, RF carriers, audio tones). Failures prevent oscillation or produce unstable frequency.</p>
+<p><strong>Typical LC oscillator components:</strong>
+Transistor (amplifier) + LC Tank (frequency selection) + Feedback (sustains oscillation)</p>
+<p><strong>Diagnosis:</strong></p>
+<ol>
+<li>
+<p><strong>Confirm no oscillation:</strong></p>
+<ul>
+<li>Measure output voltage; should show AC signal (multimeter in AC mode)</li>
+<li>If DC voltage only (no AC component), oscillator has failed</li>
+<li>Check frequency with audio (if audio-range oscillator, should hear tone)</li>
+</ul>
+</li>
+<li>
+<p><strong>Check power and bias:</strong></p>
+<ul>
+<li>Measure transistor bias voltage (should be mid-supply or stable)</li>
+<li>Measure transistor power supply (should be normal)</li>
+<li>If bias is zero or at supply, transistor failed</li>
+</ul>
+</li>
+<li>
+<p><strong>Check tank circuit:</strong></p>
+<ul>
+<li>L and C components determine frequency</li>
+<li>Open inductor or capacitor → oscillation stops</li>
+<li>Measure inductance and capacitance with multimeter resistance mode (inductors show low resistance, capacitors show charging behavior)</li>
+</ul>
+</li>
+<li>
+<p><strong>Check feedback path:</strong></p>
+<ul>
+<li>Oscillators require feedback from output back to input to sustain oscillation</li>
+<li>Open coupling capacitor in feedback path → stops oscillation</li>
+<li>Measure voltage along feedback path; should show signal</li>
+</ul>
+</li>
+</ol>
+<p><strong>Common oscillator failures:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Failure</th>
+<th>Symptoms</th>
+<th>Test</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No oscillation</td>
+<td>No output signal; DC voltage present</td>
+<td>Measure AC at output; if none, oscillator failed</td>
+<td>Transistor failed, LC tank open, or feedback path broken</td>
+</tr>
+<tr>
+<td>Frequency drifts</td>
+<td>Output frequency unstable; slow drift over minutes</td>
+<td>Measure frequency periodically; if changing, temperature sensitivity</td>
+<td>Component aging (capacitor value drifting), or poor thermal management</td>
+</tr>
+<tr>
+<td>Weak oscillation</td>
+<td>Output signal very small, may be unstable</td>
+<td>Measure AC output voltage; should be large (near supply voltage)</td>
+<td>Feedback too weak; feedback coupling capacitor too small, or transistor gain reduced</td>
+</tr>
+<tr>
+<td>Oscillation at wrong frequency</td>
+<td>Oscillates but at different frequency than expected</td>
+<td>Calculate expected frequency from L and C; measure actual frequency</td>
+<td>Component values off (capacitor value marked wrong), or LC calculation error</td>
+</tr>
+</tbody>
+</table>
+<h3>Signal Path Tracing Methodology</h3>
+<p>For complex circuits with many stages, systematic signal tracing isolates failures:</p>
+<ol>
+<li><strong>Start at input:</strong> Apply known test signal (audio tone, DC voltage, digital square wave)</li>
+<li><strong>Trace forward:</strong> Check signal presence at each major node (input → stage 1 → stage 2 → stage 3 → output)</li>
+<li><strong>Identify last good node:</strong> Find the last point where signal appears correctly</li>
+<li><strong>Focus on next stage:</strong> The failing stage is immediately after the last good signal point</li>
+<li><strong>Diagnose that stage:</strong> Use component testing on suspected failed stage (transistor, IC, capacitor)</li>
+<li><strong>Replace and retest:</strong> Replace suspected component and verify signal reappears downstream</li>
+</ol>
+<h3>Diagnostic Decision Tree for Common Failure Patterns</h3>
+<p>Use this decision tree to narrow down failures:</p>
+<pre><code>DEVICE DEAD (No power)
+├─ Battery voltage at device?
+│  ├─ NO → Check battery or power connections
+│  └─ YES → Measure voltage inside device (at power rails)
+│     ├─ Voltage present inside → Internal short, fuse blown
+│     └─ No voltage → Power supply failed or main fuse open
+│
+DEVICE HAS POWER (LED on) but doesn't work
+├─ Does it have output signal?
+│  ├─ YES → Signal present but wrong (weak, distorted, wrong frequency)
+│  │  ├─ Weak signal → Check amplifier; test transistor gains, capacitor values
+│  │  ├─ Distorted signal → Check biasing, check for clipping, test coupling capacitors
+│  │  └─ Wrong frequency → Check LC values, crystal frequency
+│  └─ NO → No output signal at all
+│     ├─ Is power at the output stage?
+│     │  ├─ YES but no output → Output driver transistor failed, output coupling cap open
+│     │  └─ NO → Trace backwards to find where power stops
+│     └─ Measure signal at input of each stage
+│        ├─ Signal stops at some stage → That stage failed
+│        └─ No signal appears anywhere → Input problem (input connector, input coupling cap open)
+│
+INTERMITTENT FAILURE (Works sometimes, fails randomly)
+├─ Temperature dependent? (fails when hot or cold)
+│  └─ YES → Suspect electrolytic capacitors (drying with age), or transistor gain temperature sensitive
+├─ Load dependent? (fails under heavy load)
+│  └─ YES → Power supply sag, check filter capacitors, regulator current limit
+└─ Voltage sag on power supply under load?
+   ├─ YES → Filter capacitor weak, supply undersized
+   └─ NO → Cold solder joint (intermittent connection); inspect solder joints visually
+</code></pre>
+<div class="tip">
+<p><strong>Complex circuit repair strategy:</strong> Start simple, work systematically. Don't try to replace everything at once. Test each repair before moving to the next suspected component. Document your findings as you go—you may need to revisit your diagnosis if early repairs don't fix the problem.</p>
+</div>
+</section>
+<section id="pcb-reverse">
+<h2>PCB Reverse Engineering Basics</h2>
+<p>When a schematic is unavailable, reverse engineering the PCB involves visually mapping components, tracing connections, and rebuilding a schematic for troubleshooting.</p>
+<h3>Visual Inspection</h3>
+<ul>
+<li><strong>Document layout:</strong> Photograph or sketch the PCB layout, noting component positions and orientation.</li>
+<li><strong>Identify components:</strong> Read all component markings and cross-reference to data sheets.</li>
+<li><strong>Trace signals:</strong> Follow PCB copper traces from input to output, noting where they split or merge.</li>
+<li><strong>Identify key stages:</strong> Look for recognizable circuits—oscillators (crystal, high-frequency transistor), amplifiers (transistor with emitter resistor), power supplies (large capacitors, voltage regulators).</li>
+</ul>
+<h3>Reconstruction</h3>
+<p>On paper or in a circuit design tool, draw connections based on traced PCB paths:</p>
+<ol>
+<li>Connect power and ground buses</li>
+<li>Place components in logical stages (input → first stage → second stage → output)</li>
+<li>Draw connections matching PCB traces</li>
+<li>Label all component values and pin names</li>
+</ol>
+<h3>Using the Reverse-Engineered Schematic</h3>
+<p>Once you have a working schematic, apply normal troubleshooting:</p>
+<ul>
+<li>Measure voltages at predicted points</li>
+<li>Identify which stage is not working</li>
+<li>Focus repair efforts on that stage</li>
+</ul>
+<div class="tip">
+<p>Reverse engineering is time-consuming but invaluable for repairing orphaned or legacy equipment. Store your reconstructed schematics with the device for future technicians. Consider photographing PCB both sides before attempting repair.</p>
+</div>
+</section>
+<section id="common-failures">
+<h2>Common Component Failure Modes</h2>
+<p>Understanding how components typically fail accelerates diagnosis and repair.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Failure Mode</th>
+<th>Symptoms</th>
+<th>Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resistor</td>
+<td>Open circuit (usually)</td>
+<td>No current flow, stage not working</td>
+<td>Measure resistance ≈ infinity</td>
+</tr>
+<tr>
+<td>Capacitor (electrolytic)</td>
+<td>Dried out, shorted</td>
+<td>Voltage sags, circuit fails to start</td>
+<td>Replace; measure ESR if possible</td>
+</tr>
+<tr>
+<td>Diode</td>
+<td>Shorted, open</td>
+<td>Reversed current, signal loss</td>
+<td>Measure resistance both ways</td>
+</tr>
+<tr>
+<td>Transistor</td>
+<td>Shorted junctions, open</td>
+<td>No amplification, stage dead</td>
+<td>Measure resistance between all pins</td>
+</tr>
+<tr>
+<td>IC</td>
+<td>Internal short, burned</td>
+<td>No output, hot to touch</td>
+<td>Replace; measure continuity from pins to ground</td>
+</tr>
+<tr>
+<td>Solder joint (cold)</td>
+<td>High resistance, intermittent</td>
+<td>Intermittent operation, noise</td>
+<td>Inspect visually, reheat joint</td>
+</tr>
+<tr>
+<td>PCB trace</td>
+<td>Cracked, lifted pad</td>
+<td>Open circuit in that trace path</td>
+<td>Visual inspection, multimeter continuity</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Failure pattern assessment:</strong></p>
+<ul>
+<li><strong>Sudden, catastrophic failure:</strong> Look for power surges (lightning, short circuit), burned traces, or overheated components</li>
+<li><strong>Gradual, intermittent failure:</strong> Often capacitor aging or weak transistor; may be temperature-dependent</li>
+<li><strong>Stage-specific failure:</strong> Narrow down to that stage's components and power supply</li>
+</ul>
+</section>
+<section id="summary">
+<h2>Summary: Practical Repair Workflow</h2>
+<ol>
+<li><strong>Document the failure:</strong> Describe symptoms (no power, weak signal, intermittent, etc.)</li>
+<li><strong>Inspect visually:</strong> Look for burned components, cracked solder joints, lifted pads, bulging capacitors</li>
+<li><strong>Measure power supply voltage:</strong> Confirm the device is getting correct power</li>
+<li><strong>Voltage trace each stage:</strong> Identify the stage where signal stops</li>
+<li><strong>Component testing:</strong> Use multimeter to test resistors, capacitors, diodes, and transistors in the failing stage</li>
+<li><strong>Repair:</strong> Desolder and replace the bad component; reheat adjacent joints</li>
+<li><strong>Test:</strong> Power on and verify function</li>
+</ol>
+<p>With a multimeter, solder iron, and patience, you can diagnose and repair a wide range of electronic devices. Keep data sheets, service manuals, and your reverse-engineered schematics accessible for reference—they are invaluable offline resources.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="building-materials-salvage.html">Building Materials Salvage &amp; Recovery</a>
+<a href="electricity.html">Electricity &amp; Magnetism</a>
+<a href="ham-radio.html">Ham Radio &amp; Communications</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

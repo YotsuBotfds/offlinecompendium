@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/cra-03-cordage-textiles.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cordage Making</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Crafts &amp; Trade Skills</span> ›
+<span>Cordage Making</span>
+</div>
+
+
+<h1>Cordage Making</h1>
+<p class="subtitle">Master fiber processing and cord production: fiber source identification and extraction, spinning techniques, twisting, rope making, net construction, and fishing line production for survival self-sufficiency.</p>
+<div class="meta">
+<span>●○○○ beginner</span>
+<span>~10 min</span>
+<span>Updated: 2026-02-16</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#fiber-sources">Fiber Sources &amp; Identification</a></li>
+<li><a href="#fiber-extraction">Fiber Extraction Techniques</a></li>
+<li><a href="#fiber-prep">Fiber Preparation &amp; Drying</a></li>
+<li><a href="#spinning">Spinning Techniques</a></li>
+<li><a href="#twisting">Twisting &amp; Cabling</a></li>
+<li><a href="#rope-making">Rope Making Methods</a></li>
+<li><a href="#net-making">Net Construction</a></li>
+<li><a href="#fishing-line">Fishing Line &amp; Specialized Cordage</a></li>
+<li><a href="#common-mistakes">Common Mistakes &amp; Solutions</a></li>
+<li><a href="#production-rates">Cordage Production Rates</a></li>
+<li><a href="#fiber-quality">Advanced Fiber Selection</a></li>
+<li><a href="#specialized-cordage">Specialized Cordage Applications</a></li>
+<li><a href="#cordage-storage">Cordage Storage &amp; Preservation</a></li>
+<li><a href="#cordage-table">Cordage Reference Table</a></li>
+<li><a href="#safety-considerations">Safety During Cordage Work</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="fiber-sources">
+<h2>Fiber Sources &amp; Identification</h2>
+<p>Cordage quality depends on fiber source. Different plants and animals provide fibers with varying properties: strength, flexibility, weather resistance, and durability.</p>
+<h3>Plant Fibers:</h3>
+<table><thead><tr><th scope="row">Fiber Source</th><th scope="row">Characteristics</th><th scope="row">Strength</th><th scope="row">Best Uses</th></tr></thead><tbody><tr><td>Nettle</td><td>Fine, strong, durable</td><td>Very High</td><td>Nets, rope, cloth</td></tr><tr><td>Flax</td><td>Long staple, smooth, lustrous</td><td>Very High</td><td>Rope, cloth, fishing line</td></tr><tr><td>Hemp</td><td>Coarse, weather-resistant, strong</td><td>High</td><td>Marine rope, binding</td></tr><tr><td>Jute</td><td>Coarse, bulky, biodegradable</td><td>Medium</td><td>Binding, mats, twine</td></tr><tr><td>Palm fibers</td><td>Stiff, fibrous, weather-resistant</td><td>Medium</td><td>Rope, matting, baskets</td></tr><tr><td>Bark (inner)</td><td>Fibrous, flexible when processed</td><td>Low-Medium</td><td>Binding, rough cord</td></tr></tbody></table>
+<h3>Animal Fibers:</h3>
+<ul>
+<li><strong>Hair (horse, cow, deer):</strong> Coarse but strong; excellent for rough cordage and brushes</li>
+<li><strong>Intestine:</strong> Natural tubes useful for containers; can be twisted into cordage</li>
+<li><strong>Sinew (tendon):</strong> Extremely strong; primary cordage for bows and fishing line</li>
+</ul>
+</section>
+<section id="fiber-extraction">
+<h2>Fiber Extraction Techniques</h2>
+<h3>Water Retting (Softening Plant Fibers):</h3>
+<ol>
+<li>Harvest plant stems in morning (before heat reduces sap)</li>
+<li>Bundle stems and submerge in pond/stream water</li>
+<li>Soak 1-2 weeks (until fibers separate easily from woody core)</li>
+<li>Remove from water; spread on ground for drying (2-3 days)</li>
+<li>Break dried stems to expose fibers</li>
+<li>Beat softly with wooden mallet to separate fibers</li>
+<li>Comb with crude comb (remove short fibers, wood fragments)</li>
+</ol>
+<h3>Dry Retting (Alternative):</h3>
+<p>Bundle plants; expose to sun/rain for 2-3 weeks. Weather breaks down pectin naturally. Slower than water retting but requires less water.</p>
+<h3>Bark Processing:</h3>
+<ol>
+<li>Harvest bark from softwood tree (birch, willow, cedar) in spring (sap facilitates peeling)</li>
+<li>Score bark vertically; peel away from trunk</li>
+<li>Separate inner bark from outer bark (inner bark contains fibers)</li>
+<li>Soak inner bark 1-2 days; beat to separate fibers</li>
+<li>Dry and prepare for spinning</li>
+</ol>
+<h3>Sinew Extraction:</h3>
+<ol>
+<li>Remove large tendons from animal legs/spine immediately after slaughter</li>
+<li>Dry sinew fully (2-4 weeks) before processing</li>
+<li>Beat dried sinew to separate into fibers</li>
+<li>Soak briefly to restore flexibility</li>
+<li>Twist fibers together to create cordage</li>
+</ol>
+</section>
+<section id="fiber-prep">
+<h2>Fiber Preparation &amp; Drying</h2>
+<h3>Cleaning:</h3>
+<p>Remove plant matter, dirt, and debris from extracted fibers. Soak in water, then beat gently with wooden mallet. Repeat until water runs clear. Dry thoroughly before spinning (moisture prevents twisting).</p>
+<h3>Sorting by Length:</h3>
+<p>Long fibers (combed out) are &quot;line fibers&quot;—suitable for strong cordage. Short fibers remaining are &quot;tow&quot;—used for coarser cordage or padding. Separate by carding (combing action) with two wire brushes.</p>
+<h3>Storage:</h3>
+<p>Keep dried fibers in cool, dry location protected from insects. Bundle fibers in handfuls; wrap loosely to prevent mold. Use within 1-2 years of drying (fibers deteriorate gradually).</p>
+</section>
+<section id="spinning">
+<h2>Spinning Techniques</h2>
+<h3>Simple Hand Spinning (No Equipment):</h3>
+<ol>
+<li>Roll prepared fibers between palms, twisting as you roll</li>
+<li>As yarn builds, extend hands apart to create length</li>
+<li>Fibers naturally align and bind together during twisting</li>
+<li>Build yarn gradually (0.5-1 meter per minute pace)</li>
+<li>Weak spots appear as necks in the yarn; add extra twist when necks appear</li>
+</ol>
+<h3>Drop Spindle Spinning:</h3>
+<p>Spindle (wooden shaft with whorl for momentum) hangs by thread while twisting fibers. Preparation: loop fibers into hanging thread. Work: hold fibers at top of spindle; allow spindle weight to twist fibers while gradually extending arm to create yarn. Efficiency: 2-4 meters per minute. Superior to hand spinning for consistent results.</p>
+<p><strong>Drop Spindle Construction &amp; Technique:</strong></p>
+<ol>
+<li><strong>Spindle shaft:</strong> Wooden dowel or stick 20-30cm long, 5-10mm diameter. Should be relatively straight and balanced.</li>
+<li><strong>Whorl (weight disk):</strong> Wooden disk (5-8cm diameter, 1-2cm thick) attached to spindle shaft 5cm from bottom. Weight provides momentum; heavier whorl (added lead weight) increases twist rate.</li>
+<li><strong>Hook or notch:</strong> Small hook at top of spindle (notch carved or nail inserted) catches thread to prevent slipping.</li>
+<li><strong>Preparation:</strong> Tie existing thread or yarn to hook; loop fibers into hanging thread; spindle hangs freely.</li>
+<li><strong>Spinning technique:</strong>
+<ul>
+<li>Hold fiber bundle at shoulder height with dominant hand</li>
+<li>Pinch fibers with thumb/forefinger at desired thickness (controls yarn diameter)</li>
+<li>Allow spindle weight to twist fibers naturally (clockwise rotation typical)</li>
+<li>As spindle turns, extend arm downward (increases yarn length created)</li>
+<li>When spindle reaches hip level, stop (reset by winding created yarn onto spindle shaft)</li>
+<li>Repeat process continuously</li>
+</ul>
+</li>
+<li><strong>Consistency improvement:</strong> Maintain even hand position and controlled release rate. Rhythm becomes automatic after 100+ meters of practice.</li>
+</ol>
+<p><strong>Common errors:</strong> Pinching too tightly (fiber doesn't twist evenly), releasing too quickly (yarn becomes weak), inconsistent rhythm (creates lumps). Practice improves dramatically over time.</p>
+<h3>Spinning Wheel:</h3>
+<p>Mechanical device creating continuous twist. Treadle-powered wheel ideal for survival situations (no electricity). Consistency: much faster and more uniform than spindle (10-20 meters per minute possible). Requires wheel construction or salvage, but investment pays dividends in production speed.</p>
+<p><strong>Spinning Wheel Components:</strong></p>
+<ol>
+<li><strong>Large wheel:</strong> Main spinning wheel (30-50cm diameter) powered by treadle. Wheel rotates continuously, driving flyer.</li>
+<li><strong>Flyer:</strong> Bobbin-shaped component with twisted fiber guide. Rotates faster than main wheel (gear ratio amplifies speed 3-5x).</li>
+<li><strong>Bobbin:</strong> Spool receiving spun yarn. Rotates at flyer speed, winding finished yarn.</li>
+<li><strong>Treadle:</strong> Foot-powered pedal driving main wheel through belt or crank. Operator controls speed by pedal rhythm.</li>
+<li><strong>Fiber input:</strong> Fibers fed through tension guide (controls twist rate) into flyer (creates spiral twist).</li>
+</ol>
+<p><strong>Operating technique:</strong></p>
+<ul>
+<li>Begin pedaling smoothly (maintain steady rhythm)</li>
+<li>Feed fiber into flyer opening; allow tension guide to control twist rate</li>
+<li>Guide fiber to bobbin opening (controlled winding)</li>
+<li>Pedal speed determines yarn thickness (faster pedaling = finer yarn)</li>
+<li>Maintain continuous treadle motion for uniform results</li>
+</ul>
+<p><strong>Advantage:</strong> Produces 10-20 meters per minute (5-10x spindle speed). Enables one-person production meeting community needs. Disadvantage: requires initial investment/salvage of wheel; takes 1-2 weeks to master.</p>
+<h3>Yarn Properties:</h3>
+<ul>
+<li><strong>Ply:</strong> Twist angle affects strength. Tight twist = stronger but stiffer; loose twist = more elastic but weaker</li>
+<li><strong>Weight:</strong> Thinner yarn requires more twist; thicker yarn requires less twist</li>
+<li><strong>Smoothness:</strong> Consistent twist produces uniform appearance; variable twist looks coarse</li>
+</ul>
+</section>
+<section id="twisting">
+<h2>Twisting &amp; Cabling</h2>
+<h3>Two-Ply Twist:</h3>
+<ol>
+<li>Spin two separate yarns (approximately equal thickness for balanced result)</li>
+<li>Hold ends together at one point; secure ends with temporary knot</li>
+<li>Twist both yarns together in opposite direction to their individual twist (if yarns twisted clockwise, twist ply counter-clockwise)</li>
+<li>Result: balanced yarn with doubled strength, improved elasticity, and uniform appearance</li>
+</ol>
+<p><strong>Two-ply details:</strong> Tension must remain consistent between two yarns (uneven tension creates lumpy ply). Walk backward while twisting to maintain even twist rate (similar to hand spinning technique).</p>
+<h3>Three-Ply or Higher:</h3>
+<p>Twist multiple yarns together for even greater strength. Four-ply typical for rope-weight cordage. Twist direction: alternate direction from previous ply for mechanical binding.</p>
+<p><strong>Ply calculation:</strong> Each additional ply multiplies strength approximately. Three-ply shows 2.5-3x single yarn strength. Four-ply approximately 3-3.5x. Five-ply and higher show diminishing returns (complexity increases faster than strength gain).</p>
+<p><strong>Multi-ply technique:</strong></p>
+<ol>
+<li>Spin 3-4 base yarns to thickness equal to final single strand</li>
+<li>Hold together at top; secure with temporary tie</li>
+<li>Separate slightly (two in each hand) and begin counter-rotation</li>
+<li>Gradually bring hands together while maintaining twist tension</li>
+<li>Continue walking backward as twist forms throughout length</li>
+<li>Result: multi-ply cord ready for rope making</li>
+</ol>
+<h3>Cabling (Creating Large Rope):</h3>
+<ol>
+<li>Prepare multiple 3-4 ply cords (each cord 8-10mm diameter typical)</li>
+<li>Bundle 3 cords together (arrange in triangle formation for balanced cabling)</li>
+<li>Twist bundle in opposite direction to cord twist</li>
+<li>Creates rope with excellent strength and flexibility</li>
+<li>Typical rope: 3 cords x 4-ply each = very strong cordage (supports 500+ kg load)</li>
+</ol>
+<p><strong>Cabling process details:</strong></p>
+<ol>
+<li>Secure three cords at one end; spread to triangle formation (each cord separated by 120 degrees)</li>
+<li>Clamp one person at far end; second person begins counter-twisting at working end</li>
+<li>As twist progresses, walk backward (increases cabling tension and uniformity)</li>
+<li>Watch for barrel-shaped thickening (indicates over-twisting; reduce pressure)</li>
+<li>Twist approximately 50-60 rotations per meter of rope (slightly less than single-strand rope)</li>
+<li>Secure final end by binding (prevents unraveling)</li>
+</ol>
+<p><strong>Cabling strength factors:</strong> Cord quality (consistency in ply prevents weak spots), twist angle (45-50 degrees optimal), tension uniformity (maintains structural integrity). Professional rope makers achieve 90-95% of theoretical strength; initial attempts often 70-80%.</p>
+<div class="info-box">
+<p><strong>Rope strength hierarchy:</strong> Single yarn &lt; 2-ply cord &lt; 3-ply cord &lt; 3-strand rope &lt; cabled rope. Cabled rope of same diameter as 3-strand rope provides 20-30% additional strength at cost of complexity.</p>
+</div>
+</section>
+<section id="rope-making">
+<h2>Rope Making Methods</h2>
+<h3>Three-Strand Rope (Most Common):</h3>
+<ol>
+<li>Prepare 3 equal-length cords (minimum 1.5m for functional rope 50cm long)</li>
+<li>Bundle cords together at one end; tie temporary knot</li>
+<li>Separate into 3 strands; hold with one hand</li>
+<li>Twist strands in opposite direction while walking backward with other hand</li>
+<li>Each step increases rope length and tightness</li>
+<li>Complete approximately 100 twists per meter of rope</li>
+<li>Secure end with binding (prevents unraveling)</li>
+</ol>
+<h3>Four-Strand Rope:</h3>
+<p>Superior strength with same diameter compared to three-strand. Construction identical except 4 strands instead of 3. Slightly slower to braid but more durable result.</p>
+<h3>Testing Rope Quality:</h3>
+<p>Bend rope into circle—should return to straight form. Rope that remains bent lacks adequate twist. Pull rope with force—should not slip or unravel. Properly made rope withstands 80-90% of component fiber strength.</p>
+<div class="tip">
+<p><strong>Tip:</strong> Create trial ropes from readily available materials (cattail fluff, dried grass) before using valuable fibers. Technique improves significantly over 10-20 practice ropes.</p>
+</div>
+</section>
+<section id="net-making">
+<h2>Net Construction</h2>
+<h3>Simple Hand-Tied Net (Fishing or Trapping):</h3>
+<ol>
+<li>Prepare cordage: 6-8 meters length, 3-5mm diameter</li>
+<li>Create frame: bend cordage into rectangle or triangle</li>
+<li>Tie cross-strings at 10-15cm intervals creating grid</li>
+<li>Tie diagonal strings creating diamond-shaped mesh (typical fish net opening: 2-3cm)</li>
+<li>Secure all intersections with square knots</li>
+<li>Complete net: 1-2 square meters size, 2-3 hours labor</li>
+</ol>
+<p><strong>Net construction technique:</strong></p>
+<ul>
+<li>Frame should be rigid (use flexible but strong cordage; birch or willow branches acceptable for temporary nets)</li>
+<li>Cross-strings should have slight tension (prevents sagging)</li>
+<li>Diagonal strings create strength through triangulation</li>
+<li>Knot placement: all knots at same distance from intersection (creates uniform appearance and equal stress distribution)</li>
+<li>Test loading: apply tension to net before deployment (identify weak spots for reinforcement)</li>
+</ul>
+<h3>Knot Mesh Method:</h3>
+<p>Alternative: create mesh by tying individual knots rather than weaving. Knots ensure mesh openings remain uniform. Typical knot: square knot between adjacent lines. More secure but slower than woven mesh.</p>
+<p><strong>Knot mesh advantages:</strong> All openings identical size (important for size-selective fishing), redundant structure (if one section fails, others remain intact), easier mesh adjustment (tie knots closer for smaller openings, farther for larger).</p>
+<p><strong>Drawback:</strong> Time-intensive (each knot requires multiple steps). Practical for 0.5-1 square meter nets; larger nets impractical using this method.</p>
+<h3>Weighted Edges (Fish Nets):</h3>
+<p>Attach weights (stones wrapped in cordage, or bone/clay weights) to bottom edge. Weights keep net bottom submerged while floats (wood or cork) keep top above water. Fish entering net push it down, creating collapse that traps fish.</p>
+<p><strong>Weight calculation:</strong> Use approximately 50-100g per 10cm perimeter (varies by water depth/current). Test net in water before deployment—should sink bottom edge immediately while float line supports top edge.</p>
+<p><strong>Float selection:</strong> Cork preferred (excellent buoyancy, durable). Wood pieces acceptable (birch, pine). Seal wood with oil/paint to prevent water absorption (waterlogged wood loses buoyancy).</p>
+<p><strong>Installation:</strong> Tie floats to top edge at 30-50cm intervals; tie weights to bottom edge at same intervals (symmetrical spacing improves stability).</p>
+</section>
+<section id="fishing-line">
+<h2>Fishing Line &amp; Specialized Cordage</h2>
+<h3>Fine Fishing Line from Sinew:</h3>
+<ol>
+<li>Prepare sinew fibers (very thin, 1-2mm)</li>
+<li>Twist 3-4 fibers together lightly</li>
+<li>Result: extremely strong line (sufficient to land fish 2-5kg)</li>
+<li>Knot strength: use clinch knot or improved clinch knot</li>
+<li>Diameter: 1-2mm; invisible underwater</li>
+</ol>
+<h3>Hair/Intestine Fishing Line:</h3>
+<p>Horse hair bundled and twisted creates surprisingly strong fishing line (2-3kg test strength). Intestine (gut) from fish or animal dried and twisted creates very fine, strong line. Both materials less visible underwater than plant fiber cordage.</p>
+<h3>Specialized Knots for Fishing:</h3>
+<ul>
+<li><strong>Palomar knot:</strong> Strong, simple, reliable for attaching lure/hook</li>
+<li><strong>Clinch knot:</strong> Excellent strength; requires 5-7 wraps</li>
+<li><strong>Surgeon's knot:</strong> Joins two lines with strength</li>
+</ul>
+</section>
+<section id="common-mistakes">
+<h2>Common Mistakes &amp; Solutions</h2>
+<h3>Mistake 1: Inadequate Fiber Preparation</h3>
+<p><strong>Error:</strong> Spinning fibers that still contain woody material or dirt. Results: weak cordage that breaks during use, poor twist consistency.</p>
+<p><strong>Solution:</strong> Thoroughly clean and comb fibers before spinning. Remove short fibers and fragments. Allow proper drying (moisture content 10-15% optimal).</p>
+<h3>Mistake 2: Inconsistent Twist</h3>
+<p><strong>Error:</strong> Varying twist rate while spinning. Some sections over-twisted, others under-twisted. Results: weak cordage that breaks at under-twisted sections.</p>
+<p><strong>Solution:</strong> Establish consistent pace and hand positions. Practice spinning on simple materials first. Rhythm is more important than speed.</p>
+<h3>Mistake 3: Insufficient Final Twist in Rope</h3>
+<p><strong>Error:</strong> Twisting strands together only 50-70 times per meter. Rope lacks sufficient tightness to bind fibers. Results: fibers slip under load.</p>
+<p><strong>Solution:</strong> Twist at least 80-100 times per meter of rope. Rope should appear very tight and dense. Test-load rope to verify strength before trusting with critical tasks.</p>
+<h3>Mistake 4: Poor Knot Selection in Net</h3>
+<p><strong>Error:</strong> Using simple overhand knots in fishing nets. Knots slip under load as fish struggles. Results: net unravels during use.</p>
+<p><strong>Solution:</strong> Use square knots, improved clinch knots, or other reliable knots. Test knot strength by pulling hard before completing entire net.</p>
+</section>
+<section id="production-rates">
+<h2>Cordage Production Rates</h2>
+<h3>Hand Spinning Output:</h3>
+<ul>
+<li>Beginner: 0.3-0.5 meters per minute (20-30 m/hour)</li>
+<li>Intermediate: 1-2 meters per minute (60-120 m/hour)</li>
+<li>Advanced: 2-3 meters per minute (120-180 m/hour)</li>
+</ul>
+<p><strong>Note:</strong> Speed varies by fiber type. Flax/nettle produces faster than hemp. Thinner yarn requires higher twist rate, reducing speed.</p>
+<p><strong>Optimization factors:</strong> Pre-prepared fibers (cleaned, dried, sorted by length) increase speed 20-30% compared to working with raw fibers. Consistent hand position and rhythm improve speed more than aggressive hand motion. Experienced spinners develop automatic muscle memory enabling speed without concentration.</p>
+<h3>Drop Spindle Production:</h3>
+<ul>
+<li>Beginner: 1-2 meters per minute (60-120 m/hour)</li>
+<li>Intermediate: 2-4 meters per minute (120-240 m/hour)</li>
+<li>Advanced: 4-6 meters per minute (240-360 m/hour)</li>
+</ul>
+<p>Spindle speed 2-3x hand spinning for most operators. Slight learning curve (20-50 meters needed to develop rhythm) but sustainable once technique established.</p>
+<h3>Spinning Wheel Production:</h3>
+<ul>
+<li>Beginner (learning): 5-8 meters per minute (300-480 m/hour)</li>
+<li>Intermediate: 10-15 meters per minute (600-900 m/hour)</li>
+<li>Advanced: 15-20 meters per minute (900-1200 m/hour)</li>
+</ul>
+<p>Wheel provides 5-10x spindle speed once operator masters treadle coordination. Initial 2-4 weeks of practice required to reach intermediate efficiency.</p>
+<h3>Rope Making Output:</h3>
+<p>Three-strand rope production: 1-3 meters per hour (includes gathering strands, twisting, securing ends). Team production (two people): one person twists, one person walks backward for tension—doubles output (2-6 meters per hour).</p>
+<p><strong>Rope production calculation:</strong> To produce 100 meters rope requires approximately: 300-400 meters 3-strand cord (each strand 30-40cm per 10cm rope), or 6-8 hours single-operator time. Team doubles output to 3-4 hours.</p>
+<h3>Annual Production Potential:</h3>
+<p>One skilled cordage maker, working 6 hours daily, 300 days yearly = 1,800-2,200 meters rope annually. Sufficient for: tool handles (50-100 items), nets (5-10 units), binding/rigging (extensive use), trading stock.</p>
+<p><strong>Team production (2-3 people):</strong> 5,000-8,000 meters annual production. Enables commercial operation: supply local community, regional markets, trade goods for other essentials.</p>
+<p><strong>Bottleneck analysis:</strong> Fiber preparation typically requires 40% of total time; spinning 35%; rope making 25%. Parallel workflow (one person prepares fiber while another spins, third makes rope) maximizes throughput for group operations.</p>
+</section>
+<section id="fiber-quality">
+<h2>Advanced Fiber Selection</h2>
+<h3>Fiber Microbiology:</h3>
+<p>Properly retted fiber: microbes break down pectins (plant glue holding fiber to wood). Under-retting: pectins remain, fiber stiff. Over-retting: fiber weakens, breaks during processing. Ideal retting shows: fibers separate easily from woody core without tearing.</p>
+<h3>Climate Effects on Retting:</h3>
+<ul>
+<li><strong>Cool climate (10-15°C):</strong> Retting takes 3-4 weeks; slower but produces superior fiber</li>
+<li><strong>Warm climate (20-25°C):</strong> Retting takes 1-2 weeks; faster but requires careful timing</li>
+<li><strong>Very warm (&gt;25°C):</strong> Retting can complete in 5-7 days; risk of over-retting increases</li>
+</ul>
+<h3>Fiber Testing:</h3>
+<p>Test retting completion: bend fiber bundle sharply. Properly retted: fibers separate easily, woody core breaks cleanly. Under-retted: fibers resist separation, bend without breaking.</p>
+<div class="warning">
+<p><strong>Over-Retting Risk:</strong> Extended retting produces weak fiber. Mushy consistency when wet indicates over-retting—fibers have begun deteriorating. Start fresh if over-retted.</p>
+</div>
+<div class="info-box">
+<p><strong>Fiber Quality Hierarchy:</strong> Premium fiber (long, uniform, clean) can be spun finer and stronger. Lower-quality fiber (short, woody debris) produces thicker, weaker cordage. Sort fibers by length before spinning for consistent results.</p>
+</div>
+</section>
+<section id="specialized-cordage">
+<h2>Specialized Cordage Applications</h2>
+<h3>Water-Resistant Cordage (Tar Coating):</h3>
+<p>Traditional sailors coated rope with tar to waterproof. Application:</p>
+<ol>
+<li>Heat tar to liquid state (70-80°C)</li>
+<li>Dip finished rope briefly (1-2 seconds)</li>
+<li>Hang to cool</li>
+<li>Result: water-resistant coating extends rope life in marine use</li>
+</ol>
+<p>Disadvantage: tar makes rope stiff; reduces flexibility.</p>
+<h3>Emergency Cordage (Bark/Plant Alternatives):</h3>
+<p>If conventional fibers unavailable:</p>
+<ul>
+<li><strong>Willow/birch bark strips:</strong> Soak and strip inner bark, twist into cordage</li>
+<li><strong>Grass bundles:</strong> Dry grass twisted produces weak but usable cordage (temporary use only)</li>
+<li><strong>Vine/root cordage:</strong> Flexible but weaker than plant fiber cordage</li>
+</ul>
+<h3>Double-Twisted Cordage (Maximum Strength):</h3>
+<p>For critical applications (safety lines, load-bearing):</p>
+<ol>
+<li>Create initial twisted cordage normally</li>
+<li>Twist cordage again in opposite direction</li>
+<li>Result: reinforced cordage 20-30% stronger than single twist</li>
+</ol>
+<p>Drawback: time-consuming; rarely justified except for life-safety applications.</p>
+<div class="danger">
+<p><strong>Critical Cordage Safety:</strong> Any cordage used for life-safety (climbing, water safety, rescue) requires maximum strength and reliability. Use best-quality fiber, double-twist technique, and extensive testing before deployment. Cordage failure during rescue operation is catastrophic.</p>
+</div>
+</section>
+<section id="cordage-storage">
+<h2>Cordage Storage &amp; Preservation</h2>
+<h3>Proper Storage:</h3>
+<ul>
+<li><strong>Location:</strong> Cool, dry, dark (heat/moisture/sunlight degrade fiber)</li>
+<li><strong>Coiling:</strong> Coil rope loosely (tight coiling creates permanent kinks)</li>
+<li><strong>Support:</strong> Hang on pegs or store on racks (prevents kinking)</li>
+<li><strong>Moisture control:</strong> Separate pieces with paper (prevents mildew)</li>
+</ul>
+<h3>Shelf Life:</h3>
+<p>Properly stored cordage: 2-3 years with minimal deterioration. Beyond 5 years: strength declines 20-30%. Very old cordage: visible weakness (brittleness, discoloration).</p>
+<h3>Mold Prevention:</h3>
+<p>Signs of mold: dark spots, musty smell, sliminess. Prevention:</p>
+<ul>
+<li>Keep storage dry (ventilation crucial)</li>
+<li>Remove moldy pieces immediately (prevents spread)</li>
+<li>Dry damp cordage in sun before storage</li>
+</ul>
+<p>Moldy cordage: attempt drying in sun/heat (sometimes recovers); otherwise discard.</p>
+</section>
+<section id="cordage-table">
+<h2>Cordage Reference Table</h2>
+<table>
+<thead>
+<tr>
+<th>Cordage Type</th>
+<th>Strength</th>
+<th>Stretch</th>
+<th>Rot Resistance</th>
+<th>Best Uses</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flax/Linen</strong></td>
+<td>Very High</td>
+<td>Low</td>
+<td>Good</td>
+<td>Fishing line, fine rope</td>
+<td>Smooth, pleasant handling</td>
+</tr>
+<tr>
+<td><strong>Hemp</strong></td>
+<td>High</td>
+<td>Medium</td>
+<td>Excellent</td>
+<td>Marine rope, rigging</td>
+<td>Traditional, weather-resistant</td>
+</tr>
+<tr>
+<td><strong>Nettle</strong></td>
+<td>Very High</td>
+<td>Low</td>
+<td>Good</td>
+<td>Nets, fine cordage</td>
+<td>Labor-intensive to process</td>
+</tr>
+<tr>
+<td><strong>Sinew</strong></td>
+<td>Very High</td>
+<td>Low</td>
+<td>Fair</td>
+<td>Bowstrings, fine line</td>
+<td>Requires animal butchering</td>
+</tr>
+<tr>
+<td><strong>Bark</strong></td>
+<td>Medium</td>
+<td>High</td>
+<td>Fair</td>
+<td>Binding, rough cordage</td>
+<td>Quick production</td>
+</tr>
+<tr>
+<td><strong>Jute</strong></td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Poor</td>
+<td>Binding, twine</td>
+<td>Biodegradable</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="safety-considerations">
+<h2>Safety During Cordage Work</h2>
+<h3>Repetitive Strain Prevention:</h3>
+<p>Spinning and rope making involve repetitive motions. Prevent injury:</p>
+<ul>
+<li><strong>Breaks:</strong> Every hour, take 10-minute break; stretch arms and shoulders</li>
+<li><strong>Posture:</strong> Maintain upright position; don't hunch over work</li>
+<li><strong>Tool design:</strong> Use ergonomic spindle grip to reduce hand fatigue</li>
+<li><strong>Rotation:</strong> Alternate between spinning, fiber preparation, other tasks</li>
+</ul>
+<h3>Chemical Safety (Retting):</h3>
+<p>Water retting produces: organic materials, microbes, hydrogen sulfide gas (bad smell). Safety precautions:</p>
+<ul>
+<li>Work outdoors or in ventilated area</li>
+<li>Avoid prolonged exposure to retting water (causes skin irritation)</li>
+<li>Drain retting water away from living areas</li>
+<li>Avoid ingesting retting water (contains bacteria)</li>
+</ul>
+<h3>Sharp Tool Safety (Fiber Combing):</h3>
+<p>Cards and combs have sharp metal teeth. Prevent cuts:</p>
+<ul>
+<li>Keep hands clear of teeth during use</li>
+<li>Don't hand cards to others while fingers engaged</li>
+<li>Store cards with protective covers</li>
+<li>Use proper technique to avoid hand-to-teeth contact</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="basketry-coiling-twining.html">Basketry: Coiling and Twining Techniques</a>
+<a href="bone-tools.html">Bone Tools</a>
+<a href="cordage-plant-fiber.html">Plant Fiber Cordage Production</a>
+<a href="cra-01-forging-metalwork.html">Forging &amp; Metalwork</a>
+<a href="cra-05-weaving-textiles.html">Weaving &amp; Textiles</a>
+<a href="cra-07-primitive-weapons.html">Primitive Weapons</a>
+<a href="knots-rigging.html">Knots, Rope &amp; Rigging</a>
+<a href="spinning-fiber-production.html">Spinning and Fiber Production</a>
+<a href="waterproofing-textiles.html">Waterproofing Textiles</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

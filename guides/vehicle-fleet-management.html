@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/vehicle-fleet-management.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vehicle Fleet Management - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.maint-table th { background: var(--card); padding: 8px; }
+.schedule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.schedule-grid .card { padding: 12px; }
+.parts-priority { border-left: 4px solid var(--accent); padding-left: 12px; margin: 12px 0; }
+
+</style>
+<meta name="description" content="Managing vehicle maintenance without modern dealerships, preventive maintenance schedules, common repair procedures, parts inventory management, fuel rationing, and fleet communication and dispatch systems.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/vehicle-fleet-management.html">
+<meta property="og:title" content="Vehicle Fleet Management">
+<meta property="og:description" content="Managing vehicle maintenance without modern dealerships, preventive maintenance schedules, common repair procedures, parts inventory management, fuel rationing, and fleet communication and dispatch systems.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Transportation", "item": "https://zerotoherohero.com/#sec-transportation"},
+    {"@type": "ListItem", "position": 3, "name": "Vehicle Fleet Management", "item": "https://zerotoherohero.com/guides/vehicle-fleet-management.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Vehicle Fleet Management",
+  "description": "Managing vehicle maintenance without modern dealerships, preventive maintenance schedules, common repair procedures, parts inventory management, fuel rationing, and fleet communication and dispatch systems.",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-517">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-transportation">Transportation</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Vehicle Fleet Management</span>
+</nav>
+<header>
+<h1>Vehicle Fleet Management</h1>
+<p class="subtitle">Managing vehicle maintenance without modern dealerships, preventive maintenance schedules, common repair procedures, parts inventory management, fuel rationing, and fleet communication and dispatch systems.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~12 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction to Fleet Management</a></li>
+<li><a href="#fleet-assessment">Fleet Assessment and Inventory</a></li>
+<li><a href="#preventive-maintenance">Preventive Maintenance Schedules</a></li>
+<li><a href="#common-repairs">Common Repair Procedures</a></li>
+<li><a href="#parts-inventory">Parts Inventory Management</a></li>
+<li><a href="#fuel-management">Fuel Rationing and Allocation</a></li>
+<li><a href="#dispatch-communication">Fleet Communication and Dispatch</a></li>
+<li><a href="#long-term-planning">Long-Term Fleet Planning</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>Vehicle Operation Hazards:</strong> Poorly maintained vehicles kill operators and bystanders. Brake failure, steering failure, tire blowouts, and structural collapse from rust or fatigue cracking can all cause fatal accidents. Never operate a vehicle with known safety defects. Fuel handling creates fire and explosion risk — always store fuel away from living quarters and ignition sources. Exhaust fumes (carbon monoxide) are lethal in enclosed spaces — never run engines inside buildings without forced ventilation. Jack and lift failures crush and kill — always use jack stands, never work under a vehicle supported only by a jack.</p>
+</div>
+<section id="introduction">
+<h2>Introduction to Fleet Management</h2>
+<p>In a post-infrastructure environment, functioning vehicles represent one of the most valuable and irreplaceable community assets. Every truck, car, motorcycle, and tractor that breaks down permanently reduces your community's capacity for transportation, trade, defense, and agriculture. Unlike most other resources, vehicles cannot be manufactured from scratch with basic tools — they must be maintained, repaired, and managed with extreme care to maximize their operational lifespan.</p>
+<p>Fleet management is the systematic approach to keeping vehicles running as long as possible while allocating their use efficiently across community needs. This guide covers the core disciplines: preventive maintenance scheduling, common repair procedures achievable without dealership tools, parts inventory and salvage strategy, fuel rationing and allocation, and communication systems for coordinating vehicle dispatch.</p>
+<div class="info-box">
+<p><strong>Fleet Size Reality Check:</strong> Most small communities (50-200 people) will have access to 10-40 vehicles of various types. Of these, expect only 40-60% to be operational at any given time without active fleet management. With disciplined maintenance programs, that figure can rise to 70-85%. The difference between these numbers — perhaps 5-10 additional working vehicles — can determine whether your community thrives or merely survives.</p>
+</div>
+<p>The principles in this guide apply whether you are managing two pickup trucks or fifty mixed vehicles. The key insight is that reactive maintenance (fixing things when they break) is far more expensive in parts, time, and risk than proactive maintenance (preventing failures before they happen). In a world where replacement parts are finite and new vehicles are not being manufactured, every preventable failure is a permanent loss.</p>
+<p>For foundational knowledge about how internal combustion engines work, see <a href="../internal-combustion.html">Internal Combustion</a>. For converting vehicles to alternative fuels, see <a href="../vehicle-conversion.html">Vehicle Conversion</a>.</p>
+</section>
+<section id="fleet-assessment">
+<h2>Fleet Assessment and Inventory</h2>
+<h3>Initial Vehicle Census</h3>
+<p>Before you can manage a fleet, you must know exactly what you have. Conduct a thorough census of every vehicle in the community, whether operational or not. Record the following for each vehicle:</p>
+<ul>
+<li><strong>Identification:</strong> Make, model, year, VIN (if readable), color, license plate</li>
+<li><strong>Type classification:</strong> Passenger car, pickup truck, cargo truck, SUV, van, motorcycle, tractor, ATV, heavy equipment</li>
+<li><strong>Current condition:</strong> Operational, repairable (estimate hours/parts), parts-only (cannibalize for other vehicles), or scrap</li>
+<li><strong>Fuel type:</strong> Gasoline, diesel, propane, electric, hybrid</li>
+<li><strong>Mileage/hours:</strong> Odometer reading or engine hour meter</li>
+<li><strong>Tire condition:</strong> Tread depth, sidewall damage, spare availability</li>
+<li><strong>Known defects:</strong> List every known issue, no matter how minor</li>
+<li><strong>Skill required:</strong> Basic (oil change level), intermediate (brake replacement), advanced (engine/transmission work)</li>
+</ul>
+<div class="tip">
+<p><strong>Document Everything in Writing:</strong> Create a physical logbook for each vehicle. Paper records survive power outages, electromagnetic events, and software corruption. Use a bound notebook (not loose-leaf) and write in pen. Record every maintenance action, fuel addition, and operational issue. This historical data becomes invaluable for predicting future failures and planning parts needs.</p>
+</div>
+<h3>Vehicle Triage and Prioritization</h3>
+<p>Not every vehicle deserves equal investment of scarce parts and labor. Prioritize based on utility:</p>
+<p><strong>Tier 1 — Mission-Critical:</strong> Vehicles that directly support survival functions. Medical transport, water hauling, agricultural equipment (tractors), primary supply vehicles. These receive first priority for parts, fuel, and maintenance labor.</p>
+<p><strong>Tier 2 — Community Support:</strong> General-purpose transport, patrol vehicles, trade convoy vehicles. These receive maintenance on a regular schedule but yield parts priority to Tier 1 vehicles.</p>
+<p><strong>Tier 3 — Reserve/Specialty:</strong> Backup vehicles, recreational vehicles, vehicles with limited remaining life. Maintained at minimum operational level. May be cannibalized for Tier 1 or 2 needs.</p>
+<p><strong>Tier 4 — Donor Vehicles:</strong> Non-operational vehicles kept solely as parts sources. Organize and catalog their usable parts. Store them under cover (tarps at minimum) to slow deterioration of rubber, plastic, and electrical components.</p>
+<h3>Standardization Strategy</h3>
+<p>Where possible, standardize your fleet around common makes and models. If your community has three Ford F-150s, two Toyota Tacomas, and eight other unique vehicles, invest most heavily in the F-150s and Tacomas. Parts interchangeability between same-model vehicles dramatically extends fleet life. Many components also interchange across model years within the same platform — a 2010-2014 F-150 shares hundreds of parts.</p>
+<p>For information about broader logistics planning, see <a href="../road-networks-logistics.html">Road Networks &amp; Logistics</a>.</p>
+</section>
+<section id="preventive-maintenance">
+<h2>Preventive Maintenance Schedules</h2>
+<h3>Why Preventive Maintenance Matters More Now</h3>
+<p>In the old world, skipping an oil change meant a slightly shorter engine life and an eventual trip to the dealership. In the new world, a seized engine means one fewer vehicle — permanently. The cost-benefit calculation has shifted dramatically: labor is relatively abundant, but parts and vehicles are finite and irreplaceable.</p>
+<h3>Essential Maintenance Schedule</h3>
+<p>Adapt the following schedule based on your operating conditions. Dusty, muddy, or extreme-temperature environments require more frequent service intervals.</p>
+<table class="maint-table"><thead><tr><th scope="col">Interval</th><th scope="col">Task</th><th scope="col">Skill Level</th><th scope="col">Consequences of Neglect</th></tr></thead>
+<tbody>
+<tr><td><strong>Every use</strong></td><td>Visual walk-around: tires, leaks, lights, fluid levels</td><td>Basic</td><td>Undetected damage worsens rapidly</td></tr>
+<tr><td><strong>Weekly</strong></td><td>Tire pressure check, battery terminal inspection, belt tension</td><td>Basic</td><td>Blowouts, starting failures, belt failure</td></tr>
+<tr><td><strong>Every 3,000 mi / 200 hrs</strong></td><td>Oil and filter change</td><td>Basic</td><td>Engine bearing wear, eventual seizure</td></tr>
+<tr><td><strong>Every 6,000 mi / 400 hrs</strong></td><td>Air filter, fuel filter, inspect brakes</td><td>Basic-Intermediate</td><td>Power loss, fuel system damage, brake failure</td></tr>
+<tr><td><strong>Every 12,000 mi / 800 hrs</strong></td><td>Coolant flush, transmission fluid check, spark plugs (gas), valve adjustment</td><td>Intermediate</td><td>Overheating, transmission failure, misfires</td></tr>
+<tr><td><strong>Every 24,000 mi / 1600 hrs</strong></td><td>Timing belt/chain inspection, differential fluid, suspension components</td><td>Advanced</td><td>Catastrophic engine damage (interference engines), drivetrain failure</td></tr>
+<tr><td><strong>Every 50,000 mi / 3000 hrs</strong></td><td>Full brake system overhaul, cooling system hoses, all fluids</td><td>Intermediate-Advanced</td><td>Complete brake failure, cooling failure</td></tr>
+</tbody></table>
+<div class="warning">
+<p><strong>Timing Belt Failures Are Catastrophic:</strong> On interference engines (most modern engines), a broken timing belt causes pistons to strike valves, destroying the engine beyond field repair. If you do not know whether an engine is interference or non-interference, treat it as interference. Replace timing belts at or before the manufacturer's recommended interval — usually 60,000-100,000 miles. This single item is worth more attention than almost any other maintenance task.</p>
+</div>
+<h3>Fluid Substitution and Extension</h3>
+<p>When manufactured fluids run out, you must find alternatives or extend existing supplies:</p>
+<ul>
+<li><strong>Engine oil:</strong> Can be partially cleaned and reused by settling and filtering through fine cloth, then activated charcoal. This extends usable life but does not restore full additive packages. Used oil quality degrades with each reuse cycle — limit to 2-3 cycles maximum.</li>
+<li><strong>Coolant:</strong> In emergencies, clean water works but provides no corrosion protection or freeze protection. Add a small amount of soluble oil if available to provide some lubrication to the water pump seal.</li>
+<li><strong>Brake fluid:</strong> Hygroscopic (absorbs moisture from air). Moisture-contaminated brake fluid boils at lower temperatures, causing sudden brake failure during heavy use. No field substitute exists — ration and protect your brake fluid supply carefully.</li>
+<li><strong>Transmission fluid:</strong> No viable field substitute. Ration aggressively. Automatic transmissions are particularly sensitive to fluid quality — consider converting critical vehicles to manual transmission from donor vehicles when possible.</li>
+</ul>
+<div class="tip">
+<p><strong>Salvage Fluid Sources:</strong> Auto parts stores, dealerships, quick-lube shops, and warehouse stores had large inventories of fluids. A single auto parts store may contain enough oil, filters, and fluids to maintain a small fleet for 5-10 years. Prioritize these locations in your <a href="../supply-chain-logistics.html">salvage operations</a>.</p>
+</div>
+</section>
+<section id="common-repairs">
+<h2>Common Repair Procedures</h2>
+<h3>Repairs Every Fleet Mechanic Must Master</h3>
+<p>The following repairs account for roughly 80% of vehicle downtime and are achievable with basic hand tools:</p>
+<p><strong>Brake pad/shoe replacement:</strong> The most safety-critical common repair. Requires basic socket set, C-clamp (for caliper pistons), and brake cleaner. Inspect rotors/drums for scoring — resurface if possible, replace from donor vehicles if not. Never allow pads to wear to metal-on-metal contact, which destroys rotors.</p>
+<p><strong>Battery maintenance and replacement:</strong> Clean terminals with baking soda solution and wire brush. Check electrolyte level in serviceable batteries (distilled water only). Load test with headlights — if voltage drops below 10.5V under load, battery is failing. See <a href="../batteries.html">Batteries</a> for reconditioning techniques.</p>
+<p><strong>Cooling system repairs:</strong> Radiator leaks can be temporarily sealed with epoxy putty (external) or commercial stop-leak products. Hose failures require replacement — stockpile various diameters of universal hose and hose clamps. Thermostat failures cause overheating or overcooling — remove the thermostat entirely as an emergency measure (engine will run cooler but functional).</p>
+<p><strong>Starter and alternator replacement:</strong> Both are bolt-on components on most vehicles. The challenge is obtaining replacements. Alternators can sometimes be rebuilt by replacing brushes and bearings. Starters can be rebuilt by replacing the solenoid, brushes, and drive gear. See <a href="../electrical-generation.html">Electrical Generation</a> for alternator repurposing.</p>
+<p><strong>Tire repair:</strong> Plug kits handle most punctures. Sidewall damage cannot be safely repaired — the tire must be replaced. When tires are unavailable, solid rubber or foam-filled tires can be improvised for low-speed applications, but ride quality and handling suffer dramatically.</p>
+<h3>Fabrication and Improvisation</h3>
+<p>When exact replacement parts are unavailable:</p>
+<ul>
+<li><strong>Gaskets:</strong> Can be cut from appropriate gasket material, cork sheet, or in emergencies, multiple layers of brown paper bag coated with high-temperature sealant</li>
+<li><strong>Hoses:</strong> Sections of garden hose, surgical tubing, or rubber sheet wrapped and clamped can substitute for coolant hoses at reduced pressure</li>
+<li><strong>Belts:</strong> V-belts can be spliced from flat belt material or even heavy leather in short-term emergencies</li>
+<li><strong>Electrical connections:</strong> Solder and heat-shrink are ideal. Crimped connections with quality connectors are acceptable. Wire nuts and electrical tape are temporary fixes only</li>
+</ul>
+<div class="warning">
+<p><strong>Improvised Parts Are Temporary:</strong> Any improvised repair should be treated as a temporary measure and replaced with proper parts at the first opportunity. Document all improvised repairs in the vehicle logbook so they can be tracked and replaced. An improvised radiator hose that works fine at idle may fail catastrophically under load.</p>
+</div>
+</section>
+<section id="parts-inventory">
+<h2>Parts Inventory Management</h2>
+<h3>Critical Spares List</h3>
+<p>Maintain an organized inventory of the following parts, prioritized by failure frequency and consequence:</p>
+<p><strong>Priority A — Stock Immediately:</strong></p>
+<ul>
+<li>Oil filters (for each engine type in fleet)</li>
+<li>Air filters</li>
+<li>Fuel filters</li>
+<li>Brake pads/shoes (for each vehicle type)</li>
+<li>Serpentine/drive belts</li>
+<li>Radiator hoses (upper and lower, for each model)</li>
+<li>Spark plugs (gasoline engines)</li>
+<li>Fuses (assorted automotive)</li>
+<li>Light bulbs (headlights, taillights, turn signals)</li>
+<li>Wiper blades</li>
+</ul>
+<p><strong>Priority B — Stock When Available:</strong></p>
+<ul>
+<li>Alternators and starters (rebuilt or new)</li>
+<li>Water pumps</li>
+<li>Thermostats</li>
+<li>Wheel bearings</li>
+<li>Tie rod ends and ball joints</li>
+<li>Brake rotors/drums</li>
+<li>Ignition coils</li>
+<li>Fuel pumps</li>
+<li>CV axles/U-joints</li>
+</ul>
+<p><strong>Priority C — Stockpile Opportunistically:</strong></p>
+<ul>
+<li>Timing belts/chains and tensioners</li>
+<li>Clutch kits (manual transmission vehicles)</li>
+<li>Radiators</li>
+<li>Transmissions (complete)</li>
+<li>Engines (complete, for critical vehicle models)</li>
+</ul>
+<h3>Storage and Organization</h3>
+<p>Parts deteriorate even in storage. Proper storage dramatically extends shelf life:</p>
+<ul>
+<li><strong>Rubber components</strong> (belts, hoses, seals): Store in cool, dark, dry location away from ozone sources (electric motors, welding equipment). UV light degrades rubber rapidly. Shelf life: 5-10 years if stored properly, 1-2 years if exposed.</li>
+<li><strong>Electrical components:</strong> Keep dry. Moisture corrodes contacts and circuit boards. Store with desiccant packets in sealed containers.</li>
+<li><strong>Fluids:</strong> Store in original sealed containers. Keep cool and out of direct sunlight. Rotate stock — use oldest first.</li>
+<li><strong>Metal parts:</strong> Light oil coating prevents rust. Store off the ground on shelving. Organize by vehicle type and system.</li>
+</ul>
+<div class="tip">
+<p><strong>The Salvage Yard System:</strong> Designate a secure area as your community parts yard. Strip donor vehicles systematically — remove all usable parts, label them (vehicle source, part name, date removed), and store them organized by system (brakes, electrical, engine, suspension). A well-organized parts yard is worth more than a warehouse of random parts.</p>
+</div>
+</section>
+<section id="fuel-management">
+<h2>Fuel Rationing and Allocation</h2>
+<h3>Fuel Inventory and Tracking</h3>
+<p>Fuel is likely the single most constrained resource for fleet operations. Track every liter:</p>
+<ul>
+<li>Maintain a central fuel log recording all additions to and withdrawals from fuel storage</li>
+<li>Every vehicle fueling event must be logged: date, vehicle ID, quantity, odometer reading, purpose of trip</li>
+<li>Calculate consumption rates per vehicle (liters per 100 km or miles per gallon) and track trends — increasing consumption indicates developing mechanical problems</li>
+</ul>
+<h3>Allocation Priority System</h3>
+<p>Establish a clear priority system for fuel allocation:</p>
+<ol>
+<li><strong>Medical emergencies:</strong> Always reserve fuel for emergency medical transport. Maintain a minimum reserve (suggest 50 liters gasoline + 50 liters diesel) that is never used for routine operations.</li>
+<li><strong>Water and food supply:</strong> Hauling water, agricultural operations (tractors), and food distribution runs.</li>
+<li><strong>Security patrols:</strong> If vehicle patrols are part of your defense plan, allocate fuel on a fixed schedule.</li>
+<li><strong>Trade and supply runs:</strong> Scheduled trips for salvage, trade, or inter-community coordination.</li>
+<li><strong>General transport:</strong> Moving people, construction materials, and other non-urgent cargo.</li>
+<li><strong>Training and testing:</strong> New driver training, post-repair test drives.</li>
+</ol>
+<div class="warning">
+<p><strong>Fuel Storage Safety:</strong> Gasoline vapor is heavier than air and pools in low areas. A single spark can ignite a fuel storage area. Store fuel in approved containers, outdoors or in a well-ventilated dedicated structure, at least 50 feet from any occupied building. Diesel is less volatile but still flammable. Never store more than 20 liters inside any building. Post no-smoking signs and keep fire extinguishers nearby. See <a href="../chemical-safety.html">Chemical Safety</a> for detailed storage protocols.</p>
+</div>
+<h3>Fuel Preservation</h3>
+<p>Gasoline degrades over time. Without stabilizer additives, gasoline begins to degrade within 3-6 months. Degraded fuel causes varnish deposits in fuel systems, clogged injectors, and hard starting.</p>
+<ul>
+<li>Add fuel stabilizer (Sta-Bil or equivalent) to all stored gasoline — extends usable life to 12-24 months</li>
+<li>When stabilizer is unavailable, rotate fuel stock — use oldest fuel first, always in vehicles that are driven regularly</li>
+<li>Diesel fuel lasts longer (12-18 months unstabilized) but grows algae and fungus in storage. Diesel biocide additives prevent this. Filter diesel through a 10-micron fuel filter before use if it has been stored more than 6 months.</li>
+<li>Consider transitioning critical vehicles to diesel — diesel fuel is more stable, and diesel engines are generally more robust and fuel-efficient than gasoline engines</li>
+</ul>
+<p>For alternative fuel production, see <a href="../vehicle-conversion.html">Vehicle Conversion</a> and <a href="../biodiesel-production.html">Biodiesel Production</a>.</p>
+</section>
+<section id="dispatch-communication">
+<h2>Fleet Communication and Dispatch</h2>
+<h3>Dispatch System Design</h3>
+<p>A fleet dispatch system coordinates vehicle use across community needs. Without one, vehicles are used inefficiently — multiple trips where one combined trip would suffice, vehicles sitting idle while others are overworked, and no one knowing where vehicles are at any given time.</p>
+<p><strong>Core dispatch functions:</strong></p>
+<ul>
+<li>Maintain a status board showing every vehicle: location, assigned driver, current task, expected return</li>
+<li>Receive and prioritize trip requests from community members and departments</li>
+<li>Combine trips when possible — a supply run and a medical check on a distant community member can share the same vehicle</li>
+<li>Track cumulative mileage/hours to ensure maintenance schedules are met</li>
+<li>Maintain driver qualification records</li>
+</ul>
+<h3>Communication Methods</h3>
+<p>Vehicle-to-base communication options, in order of reliability:</p>
+<ol>
+<li><strong>CB radio (27 MHz):</strong> Range 5-15 km depending on terrain. No infrastructure required. Battery powered. Every fleet vehicle should have one. See <a href="../signals-communication.html">Signals &amp; Communication</a>.</li>
+<li><strong>VHF/UHF handheld radios:</strong> Range 3-10 km (more with repeaters). Compact, rechargeable batteries.</li>
+<li><strong>Scheduled check-in times:</strong> If radio equipment is limited, establish fixed times for drivers to check in at designated locations or via radio.</li>
+<li><strong>Runner/messenger system:</strong> For short-range or when radio is unavailable. Pre-designated message drop points along common routes.</li>
+</ol>
+<div class="tip">
+<p><strong>Trip Logging Prevents Waste:</strong> Require every driver to complete a trip log: start time, destination, purpose, cargo, passengers, start and end odometer, fuel added, and any vehicle issues noticed. Analyzing trip logs weekly reveals patterns — routes that can be combined, unnecessary trips, vehicles that are being overused or underused, and developing mechanical problems (increasing fuel consumption, unusual noises reported by drivers).</p>
+</div>
+<h3>Driver Management</h3>
+<p>Not every community member should drive fleet vehicles. Establish standards:</p>
+<ul>
+<li><strong>Basic competency test:</strong> Can the person safely operate the vehicle type? Manual transmission proficiency for manual vehicles.</li>
+<li><strong>Maintenance awareness:</strong> Every driver should be able to check tire pressure, oil level, coolant level, and perform a basic walk-around inspection.</li>
+<li><strong>Reporting discipline:</strong> Drivers must report any unusual sounds, smells, handling changes, or warning lights immediately — not &quot;next time I see the mechanic.&quot;</li>
+<li><strong>Fuel discipline:</strong> No unauthorized fueling, no personal use of fleet vehicles without dispatch approval.</li>
+</ul>
+</section>
+<section id="long-term-planning">
+<h2>Long-Term Fleet Planning</h2>
+<h3>Attrition Planning</h3>
+<p>Vehicles will eventually fail beyond repair. Plan for this:</p>
+<ul>
+<li>Project fleet attrition rate based on vehicle age, condition, and parts availability. A realistic estimate: 5-10% of the fleet will be permanently lost each year without a parts manufacturing capability.</li>
+<li>Identify which vehicles are most critical and ensure they have donor vehicles or complete spare parts kits.</li>
+<li>Develop alternative transportation for when vehicles are unavailable: <a href="../bicycle-construction.html">bicycles</a>, <a href="../draft-animals.html">draft animals</a>, <a href="../cart-wagon-construction.html">carts and wagons</a>.</li>
+</ul>
+<h3>Skill Development</h3>
+<p>Train multiple community members in vehicle repair. A single mechanic is a single point of failure.</p>
+<ul>
+<li><strong>Level 1 (all drivers):</strong> Fluid checks, tire changes, jump starts, basic troubleshooting</li>
+<li><strong>Level 2 (trained assistants):</strong> Oil changes, brake work, belt replacement, battery service, filter changes</li>
+<li><strong>Level 3 (fleet mechanics):</strong> Engine diagnostics, electrical troubleshooting, transmission service, welding and fabrication</li>
+<li><strong>Level 4 (master mechanics):</strong> Engine rebuilding, transmission rebuilding, machine shop operations, training others</li>
+</ul>
+<div class="tip">
+<p><strong>Apprenticeship Model:</strong> Pair every Level 3+ mechanic with at least two Level 1-2 apprentices. Every repair is a teaching opportunity. The community that loses its only skilled mechanic — to injury, illness, or departure — and has no one trained to replace them faces catastrophic fleet degradation.</p>
+</div>
+<h3>Record-Keeping for the Future</h3>
+<p>Your vehicle maintenance records serve a purpose beyond tracking individual vehicles. They create a knowledge base:</p>
+<ul>
+<li>Which repairs are most common on which vehicle types (informs salvage priorities)</li>
+<li>How long various components actually last under your operating conditions</li>
+<li>Which improvised repairs worked and which failed</li>
+<li>Fuel consumption trends that reveal developing problems</li>
+<li>Total cost (in parts, labor hours, and fuel) per vehicle — identifying which vehicles are worth continued investment</li>
+</ul>
+<p>Maintain these records in a central location with copies stored separately. They represent irreplaceable institutional knowledge. See <a href="../archival-records.html">Archival Records</a> for preservation techniques.</p>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="vehicle-conversion.html">Vehicle Conversion</a>
+<a href="internal-combustion.html">Internal Combustion Engines</a>
+<a href="transportation.html">Transportation &amp; Infrastructure</a>
+<a href="road-networks-logistics.html">Road Networks &amp; Logistics Planning</a>
+<a href="small-engines.html">Small Engines &amp; Mechanical Power</a>
+<a href="bicycle-construction.html">Bicycle Construction &amp; Repair</a>
+<a href="draft-animals.html">Draft Animals &amp; Working Livestock</a>
+<a href="mechanical-power-transmission.html">Mechanical Power Transmission</a>
+<a href="supply-chain-logistics.html">Supply Chain Management &amp; Logistics</a>
+<a href="measurement-standards.html">Measurement and Standards</a>
+<a href="rationing-distribution.html">Rationing &amp; Equitable Distribution</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

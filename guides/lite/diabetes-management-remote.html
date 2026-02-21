@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/diabetes-management-remote.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diabetes Management in Resource-Poor Settings</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Medical &amp; Health</span> ›
+<span>Diabetes Management in Resource-Poor Settings</span>
+</div>
+
+
+<h1>Diabetes Management in Resource-Poor Settings</h1>
+<p class="subtitle">Type 1 vs type 2 differentiation, blood glucose monitoring alternatives, insulin storage without refrigeration, dietary management, DKA recognition and treatment, hypoglycemia management, foot care and wound management, long-term complications, insulin rationing strategies.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~31 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#type-1-vs-2">Type 1 vs. Type 2 Differentiation</a></li>
+<li><a href="#glucose-monitoring">Blood Glucose Monitoring Alternatives</a></li>
+<li><a href="#insulin-storage">Insulin Storage Without Refrigeration</a></li>
+<li><a href="#dietary-management">Dietary Management</a></li>
+<li><a href="#dka-recognition">Diabetic Ketoacidosis (DKA): Recognition and Management</a></li>
+<li><a href="#hypoglycemia">Hypoglycemia Management</a></li>
+<li><a href="#foot-care">Foot Care and Wound Management</a></li>
+<li><a href="#long-term-complications">Long-Term Complications</a></li>
+<li><a href="#rationing-strategies">Insulin Rationing in Austere Settings</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<div class="danger">
+<p>Diabetes is manageable in austere settings with discipline and knowledge, but emergencies (DKA, severe hypoglycemia) are immediately life-threatening. Insulin is critical for type 1 diabetes; without it, patients die within days. Resource constraints demand careful prioritization and rationing.</p>
+</div>
+<section id="type-1-vs-2">
+<h2>Type 1 vs. Type 2 Differentiation</h2>
+<p>Understanding the type is essential because management differs fundamentally.</p>
+<div class="diabetes-section">
+<h3>Type 1 Diabetes (Insulin-Dependent)</h3>
+<p><strong>Pathophysiology:</strong> Autoimmune destruction of pancreatic beta cells; pancreas cannot produce insulin.</p>
+<p><strong>Typical presentation:</strong></p>
+<ul>
+<li>Age of onset: Usually &lt;30 years (can occur at any age; &quot;juvenile diabetes&quot;)</li>
+<li>Speed of onset: Rapid (weeks to months)</li>
+<li>Body habitus: Lean, not overweight</li>
+<li>Family history: 5–10% of relatives affected (autoimmune pattern)</li>
+</ul>
+<p><strong>Initial symptoms:</strong></p>
+<ul>
+<li>Polyuria (frequent urination)</li>
+<li>Polydipsia (excessive thirst)</li>
+<li>Polyphagia (excessive hunger) despite eating</li>
+<li>Weight loss (rapid, 5–10 lbs over weeks)</li>
+<li>Fatigue, weakness</li>
+<li>Fruity breath odor (ketones; suggests DKA risk)</li>
+</ul>
+<p><strong>Diagnostic labs (if available):</strong></p>
+<ul>
+<li>Fasting glucose &gt;126 mg/dL (or random &gt;200 mg/dL)</li>
+<li>Hemoglobin A1C &gt;6.5% (average blood sugar past 3 months)</li>
+<li>C-peptide LOW (&lt;0.6 ng/mL indicates minimal beta cell function)</li>
+<li>Positive anti-GAD65, anti-IA2, or ICA antibodies (autoimmune markers)</li>
+</ul>
+<p><strong>Management:</strong> INSULIN REQUIRED. Without insulin, DKA develops within days and is fatal.</p>
+<h3>Type 2 Diabetes (Insulin-Resistant)</h3>
+<p><strong>Pathophysiology:</strong> Insulin resistance (body's cells don't respond to insulin) + eventual pancreatic exhaustion (beta cells fail over time).</p>
+<p><strong>Typical presentation:</strong></p>
+<ul>
+<li>Age of onset: Usually &gt;45 years (increasingly common in young adults)</li>
+<li>Speed of onset: Gradual (years)</li>
+<li>Body habitus: Overweight or obese</li>
+<li>Family history: 40–50% of relatives affected (genetic + environmental)</li>
+</ul>
+<p><strong>Initial symptoms:</strong> Often asymptomatic; discovered incidentally on blood tests.</p>
+<ul>
+<li>Mild polyuria/polydipsia</li>
+<li>Fatigue</li>
+<li>Blurred vision</li>
+<li>Numbness in extremities (neuropathy from chronically elevated glucose)</li>
+</ul>
+<p><strong>Diagnostic labs:</strong></p>
+<ul>
+<li>Fasting glucose &gt;126 mg/dL (or random &gt;200 mg/dL)</li>
+<li>Hemoglobin A1C &gt;6.5%</li>
+<li>C-peptide NORMAL or HIGH (pancreas still producing insulin, but body's cells resistant)</li>
+<li>Negative autoimmune antibodies</li>
+</ul>
+<p><strong>Management:</strong> Lifestyle + oral medications (if available), then insulin if glucose uncontrolled.</p>
+<h3>Differentiation in Austere Settings</h3>
+<p>Without labs, clinical clues:</p>
+<ul>
+<li><strong>Young + rapid onset + weight loss:</strong> Type 1; needs insulin urgently</li>
+<li><strong>Older + gradual onset + overweight:</strong> Type 2; try diet/exercise first, then medication</li>
+</ul>
+</div>
+</section>
+<section id="glucose-monitoring">
+<h2>Blood Glucose Monitoring Alternatives</h2>
+<h3>Standard Glucose Meter (If Available)</h3>
+<ul>
+<li><strong>Finger-stick:</strong> Prick fingertip with lancet; apply blood to test strip; meter displays glucose within 5 seconds</li>
+<li><strong>Normal fasting:</strong> 70–100 mg/dL</li>
+<li><strong>Normal 2 hours after meal:</strong> &lt;140 mg/dL</li>
+<li><strong>Target ranges:</strong> Fasting 80–130 mg/dL (diabetic); 2-hour post-meal &lt;180 mg/dL</li>
+</ul>
+<h3>Urine Testing (Ketones and Glucose)</h3>
+<p><strong>Urine glucose test:</strong></p>
+<ul>
+<li>Glucose appears in urine when blood glucose &gt;180 mg/dL (renal threshold)</li>
+<li>Positive test = blood glucose definitely elevated, but negative doesn't mean normal (may be normal or moderately elevated)</li>
+<li><strong>Utility:</strong> Screening only; less precise than blood testing</li>
+</ul>
+<p><strong>Urine ketone test:</strong></p>
+<ul>
+<li>Ketones appear in urine during DKA or starvation</li>
+<li>Positive ketones = urgency (DKA risk)</li>
+<li><strong>Critical finding:</strong> Positive urine ketones + elevated glucose = assume DKA until proven otherwise</li>
+</ul>
+<h3>Clinical Monitoring (No Tests Available)</h3>
+<p><strong>Hyperglycemia symptoms:</strong></p>
+<ul>
+<li>Polyuria (frequent urination)</li>
+<li>Polydipsia (excessive thirst)</li>
+<li>Blurred vision</li>
+<li>Fatigue</li>
+<li>Fruity breath (ketones; DKA sign)</li>
+</ul>
+<p><strong>Hypoglycemia symptoms:</strong></p>
+<ul>
+<li>Shakiness, tremor</li>
+<li>Sweating</li>
+<li>Anxiety, nervousness</li>
+<li>Rapid heartbeat</li>
+<li>Hunger (intense)</li>
+<li>Confusion, disorientation, loss of consciousness (severe)</li>
+</ul>
+<p><strong>Monitor trends:</strong> Patients know their own body. If symptoms worsen, glucose likely rising; if improved after eating, confirmed hypoglycemia.</p>
+</section>
+<section id="insulin-storage">
+<h2>Insulin Storage Without Refrigeration</h2>
+<p>Insulin is temperature-sensitive. Optimal storage is 2–8°C (refrigerator). In austere settings without refrigeration, alternative storage extends viability.</p>
+<h3>Normal Storage (Refrigerated)</h3>
+<ul>
+<li><strong>Unopened vials:</strong> 2–8°C; stable until expiration date (typically 1–2 years)</li>
+<li><strong>Opened vials:</strong> 2–8°C; stable for 28 days (some types 42 days)</li>
+<li><strong>Once removed from refrigeration:</strong> Insulin gradually loses potency; estimate 25–50% loss per week at room temperature</li>
+</ul>
+<h3>Room Temperature Storage (No Refrigeration)</h3>
+<ul>
+<li><strong>Inject immediately after removing from refrigerator:</strong> Once removed, use within 28 days at room temperature (68–77°F / 20–25°C)</li>
+<li><strong>Extend viability with cool packs:</strong> Insulated bag with ice packs keeps insulin cooler longer; replace ice packs 2–3× daily</li>
+<li><strong>Evaporative cooling:</strong> Wrap insulin bottle in damp cloth; evaporation cools bottle below ambient temperature (effective in dry climates; loses effectiveness in humid environments)</li>
+</ul>
+<h3>DIY Evaporative Cooler (Clay Pot Cooler)</h3>
+<p>For extremely austere settings:</p>
+<ol>
+<li><strong>Obtain two clay pots:</strong> One smaller, fits inside larger</li>
+<li><strong>Create gap:</strong> Place smaller pot inside larger, creating 2–3 cm gap between walls</li>
+<li><strong>Fill gap with sand:</strong> Pour wet sand into gap between pots</li>
+<li><strong>Place insulin in inner pot:</strong> Close with lid</li>
+<li><strong>Keep sand damp:</strong> Add water daily</li>
+<li><strong>Mechanism:</strong> Water evaporation from sand cools inner pot; can achieve 10–20°C cooler than ambient temperature</li>
+</ol>
+<p><strong>Effectiveness:</strong> In dry climates, can keep insulin viable several weeks longer than unrefrigerated storage.</p>
+<h3>Monitoring Insulin Viability</h3>
+<ul>
+<li><strong>Visual inspection:</strong> Cloudy insulin (NPH, long-acting) should be uniform when gently rolled; clear insulins (rapid-acting, basal) should be clear. Precipitation, clumping, or discoloration = discarded</li>
+<li><strong>Function test:</strong> Patient notices less effect of insulin (blood glucose rises despite normal dose) = insulin weakened; increase dose by 10–20% or consider it expired</li>
+<li><strong>Date marking:</strong> Mark date when vial opened; discard after 28 days regardless of appearance</li>
+</ul>
+</section>
+<section id="dietary-management">
+<h2>Dietary Management</h2>
+<p>Diet is cornerstone of diabetes control. Without medication, diet alone can manage many type 2 cases.</p>
+<h3>Carbohydrate Management</h3>
+<p><strong>Carbohydrate counting:</strong></p>
+<ul>
+<li><strong>Goal:</strong> Consistent carbohydrate intake per meal (stabilizes blood glucose)</li>
+<li><strong>Typical targets:</strong> 45–60g carbs per meal (type 2), adjusted per insulin dose (type 1)</li>
+<li><strong>Sources to limit:</strong> Refined carbs (white bread, sugar, sweets); favor complex carbs (whole grains, legumes, vegetables)</li>
+</ul>
+<p><strong>Glycemic index (GI):</strong></p>
+<ul>
+<li><strong>Low GI foods:</strong> Slow glucose rise; better for blood sugar control</li>
+<li><strong>Examples:</strong> Oatmeal, beans, nuts, most vegetables</li>
+<li><strong>High GI foods:</strong> Rapid glucose spike; avoid</li>
+<li><strong>Examples:</strong> White bread, sugary drinks, processed foods</li>
+</ul>
+<h3>Protein and Fat</h3>
+<ul>
+<li><strong>Protein:</strong> 25–30% of calories; slows carbohydrate digestion, reduces glucose spike</li>
+<li><strong>Fat:</strong> Limit saturated fat; emphasize unsaturated (olive oil, avocado, nuts) to protect cardiovascular health</li>
+</ul>
+<h3>Practical Diet (Limited Resources)</h3>
+<p>In austere settings, diet simplification:</p>
+<ol>
+<li><strong>Emphasize starches:</strong> Rice, beans, lentils, potatoes (complex carbs)</li>
+<li><strong>Add protein:</strong> Eggs, legumes, fish, meat (when available)</li>
+<li><strong>Include vegetables:</strong> Leafy greens, carrots, tomatoes (non-starchy)</li>
+<li><strong>Avoid sugar:</strong> No sweets, sugared beverages, refined flour</li>
+</ol>
+<p><strong>Example day:</strong></p>
+<ul>
+<li><strong>Breakfast:</strong> Oatmeal + eggs + vegetable</li>
+<li><strong>Lunch:</strong> Beans + rice + vegetables</li>
+<li><strong>Dinner:</strong> Fish/meat + legumes + vegetables</li>
+<li><strong>Snacks:</strong> Nuts, fruit (limited), unsweetened tea</li>
+</ul>
+<p><strong>Effect:</strong> Consistent, simple diet maintains stable blood glucose with less insulin.</p>
+</section>
+<section id="dka-recognition">
+<h2>Diabetic Ketoacidosis (DKA): Recognition and Management</h2>
+<p>DKA is life-threatening metabolic emergency. Without treatment, mortality approaches 100%; with treatment, &lt;5%.</p>
+<div class="emergency-box">
+<h3>Recognition</h3>
+<p><strong>Classic presentation:</strong></p>
+<ul>
+<li><strong>Symptoms:</strong> Polyuria, polydipsia, fatigue, nausea/vomiting, abdominal pain</li>
+<li><strong>Respiratory:</strong> Kussmaul breathing (deep, rapid, fruity-smelling breath)</li>
+<li><strong>Mental status:</strong> Confusion, disorientation, loss of consciousness (severe cases)</li>
+<li><strong>Physical findings:</strong> Dehydration signs (dry mouth, poor skin turgor), fruity breath odor</li>
+</ul>
+<p><strong>Risk factors:</strong></p>
+<ul>
+<li>Type 1 diabetes (most common)</li>
+<li>Infection (urinary, respiratory, other)</li>
+<li>Insulin omission or inadequate dose</li>
+<li>Acute illness or stress</li>
+</ul>
+<p><strong>Lab findings (if available):</strong></p>
+<ul>
+<li><strong>Glucose:</strong> Usually &gt;250 mg/dL (can be &lt;250 in euglycemic DKA; diagnosis tricky)</li>
+<li><strong>pH:</strong> &lt;7.35 (acidemia)</li>
+<li><strong>Bicarbonate:</strong> &lt;18 mEq/L (low; metabolic acidosis)</li>
+<li><strong>Anion gap:</strong> &gt;12 (wide, due to ketone accumulation)</li>
+<li><strong>Beta-hydroxybutyrate or acetoacetate:</strong> Elevated (ketones)</li>
+</ul>
+<p><strong>Clinical diagnosis (without labs):</strong></p>
+<ul>
+<li>Patient with known type 1 diabetes (or undiagnosed, presenting acutely) + polyuria + polydi... + fruity breath + respiratory distress = assume DKA until proven otherwise</li>
+</ul>
+<h3>Immediate Management</h3>
+<p><strong>Airway/Breathing/Circulation:</strong></p>
+<ol>
+<li><strong>Airway:</strong> Ensure patent airway; patient may be drowsy or unconscious</li>
+<li><strong>Breathing:</strong> Observe for Kussmaul breathing (deep, rapid)</li>
+<li><strong>Circulation:</strong> Establish large-bore IV; begin normal saline bolus (dehydration is severe; DKA patients 5–10 liters fluid deficit)</li>
+</ol>
+<p><strong>Insulin and Fluids:</strong></p>
+<ol>
+<li><strong>IV fluids:</strong> 1–2 liters normal saline over 1–2 hours; then slower infusion</li>
+<li><strong>Insulin:</strong> 0.1 units/kg IV bolus (e.g., 70 kg person = 7 units), then 0.1 units/kg/hr infusion
+<ul>
+<li><strong>Critical:</strong> Give insulin AFTER initiating fluids (fluids alone don't cause dangerous hypoglycemia; insulin does)</li>
+<li><strong>Purpose:</strong> Stops ketone production; reverses acidosis</li>
+</ul>
+</li>
+<li><strong>Electrolytes:</strong> Potassium often dangerously depleted; add to IV fluids when urine output confirmed (typically 20–30 mEq/L)</li>
+</ol>
+<p><strong>Monitoring:</strong></p>
+<ul>
+<li><strong>Glucose:</strong> Check every 1–2 hours; goal is slow decline (100 mg/dL every 1–2 hours)</li>
+<li><strong>Electrolytes:</strong> Recheck every 4–6 hours</li>
+<li><strong>pH:</strong> Monitor improvement in acidosis</li>
+</ul>
+<p><strong>Resolution:</strong> When pH &gt;7.35, glucose &lt;250 mg/dL, and nausea subsided = DKA resolved. Transition to subcutaneous insulin.</p>
+<p><strong>Without hospital resources:</strong></p>
+<ul>
+<li>If IV fluids/insulin unavailable, patient will likely die</li>
+<li>Field management limited to oral fluids if conscious (delays death but not curative)</li>
+</ul>
+</div>
+</section>
+<section id="hypoglycemia">
+<h2>Hypoglycemia Management</h2>
+<p>Low blood glucose is immediately symptomatic and dangerous. Rapid treatment essential.</p>
+<h3>Recognition</h3>
+<table>
+<thead>
+<tr>
+<th>Mild-Moderate</th>
+<th>Severe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shakiness, tremor</td>
+<td>Loss of consciousness</td>
+</tr>
+<tr>
+<td>Sweating</td>
+<td>Seizures</td>
+</tr>
+<tr>
+<td>Anxiety, nervousness</td>
+<td>Inability to swallow or drink</td>
+</tr>
+<tr>
+<td>Hunger (intense)</td>
+<td>Glucagon injection needed</td>
+</tr>
+<tr>
+<td>Difficulty concentrating</td>
+<td></td>
+</tr>
+<tr>
+<td>Rapid heartbeat</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Treatment (Conscious Patient)</h3>
+<p><strong>&quot;Rule of 15&quot;:</strong></p>
+<ol>
+<li>Give 15g fast-acting carbohydrate (glucose tablet, sugar, juice)</li>
+<li>Wait 15 minutes</li>
+<li>Recheck glucose (if available) or reassess symptoms</li>
+<li>Repeat if still low</li>
+</ol>
+<p><strong>Fast carbs (15g):</strong></p>
+<ul>
+<li>3–4 glucose tablets</li>
+<li>1 tablespoon honey/sugar</li>
+<li>4 ounces fruit juice (not diet)</li>
+<li>1 small piece fruit</li>
+</ul>
+<p><strong>Follow-up:</strong></p>
+<ul>
+<li>After symptoms resolve, eat complex carbohydrate + protein (peanut butter on bread, cheese, nuts) to prevent relapse</li>
+</ul>
+<h3>Severe Hypoglycemia (Unconscious)</h3>
+<p><strong>Glucagon injection (if available):</strong></p>
+<ul>
+<li><strong>Dose:</strong> 1 mg IM or SC</li>
+<li><strong>Effect:</strong> Raises blood glucose within 10–15 minutes</li>
+<li><strong>Procedure:</strong> Inject into deltoid or thigh muscle</li>
+<li><strong>Follow-up:</strong> Once patient conscious, give fast carbs + complex carbs</li>
+</ul>
+<p><strong>Without glucagon:</strong></p>
+<ul>
+<li><strong>If patient can swallow:</strong> Place sugar/honey inside cheek; monitor for aspiration</li>
+<li><strong>If unconscious:</strong> Do NOT force food/liquid (aspiration risk). Place in recovery position; monitor airway.</li>
+<li><strong>Evacuate:</strong> Severe hypoglycemia without reversible treatment is medical emergency</li>
+</ul>
+<h3>Prevention</h3>
+<ul>
+<li><strong>Carry fast carbs:</strong> Always have glucose tablets, candy, juice box</li>
+<li><strong>Never skip meals:</strong> Regular eating maintains stable glucose</li>
+<li><strong>Identify patterns:</strong> If low-glucose episodes occur at specific times, adjust insulin dose or meal timing</li>
+<li><strong>Alcohol reduction:</strong> Alcohol impairs liver's ability to release stored glucose; increases hypoglycemia risk</li>
+</ul>
+</section>
+<section id="foot-care">
+<h2>Foot Care and Wound Management</h2>
+<p>High blood glucose causes nerve damage (neuropathy) and poor circulation, increasing infection risk. Foot ulcers are leading cause of non-traumatic lower limb amputation in diabetics.</p>
+<h3>Neuropathy (Nerve Damage)</h3>
+<p><strong>Signs:</strong></p>
+<ul>
+<li>Numbness or tingling in toes/feet</li>
+<li>Loss of sensation to pain/temperature</li>
+<li>Weakness in legs</li>
+</ul>
+<p><strong>Result:</strong> Patient unaware of injuries; small cuts become infected and progress to ulceration.</p>
+<h3>Circulation Problems</h3>
+<p>High glucose damages blood vessels; poor circulation reduces ability to heal.</p>
+<h3>Foot Care Protocol</h3>
+<ol>
+<li><strong>Daily inspection:</strong> Look at feet daily. Check between toes, heels, soles for cuts, blisters, redness, swelling</li>
+<li><strong>Wash daily:</strong> Warm (not hot) water and soap; pat dry (moisture promotes fungal infection)</li>
+<li><strong>Moisturize:</strong> Apply lotion to dry areas (not between toes; moisture there is harmful)</li>
+<li><strong>Trim toenails:</strong> Cut straight across; don't cut too short (risk of infection)</li>
+<li><strong>Wear proper shoes:</strong> Comfortable, protective footwear; avoid walking barefoot</li>
+<li><strong>Protect from trauma:</strong> Avoid stubbing, stepping on sharp objects</li>
+</ol>
+<h3>Wound Management</h3>
+<p><strong>For any cut/blister:</strong></p>
+<ol>
+<li><strong>Clean immediately:</strong> Wash with soap and clean water</li>
+<li><strong>Apply antibiotic ointment:</strong> Neomycin, polymyxin B, bacitracin (if available)</li>
+<li><strong>Cover loosely:</strong> Sterile bandage; change daily</li>
+<li><strong>Monitor closely:</strong> Any sign of infection (redness, warmth, pus, increasing pain) = serious; needs aggressive treatment</li>
+<li><strong>Offload pressure:</strong> If on foot, use crutches to avoid pressure on wound</li>
+<li><strong>Elevation:</strong> Reduces swelling, improves circulation</li>
+</ol>
+<p><strong>Infection signs (severe wounds):</strong></p>
+<ul>
+<li>Spreading redness</li>
+<li>Warmth, swelling</li>
+<li>Pus or malodorous discharge</li>
+<li>Fever, chills</li>
+<li>Black/dead tissue (gangrene)</li>
+</ul>
+<p><strong>If infected:</strong></p>
+<ul>
+<li>Antibiotics (if available): Dicloxacillin or cephalexin (Staph/Strep coverage)</li>
+<li>Surgical debridement: Dead tissue must be removed; risk of amputation if infection spreads to bone</li>
+</ul>
+</section>
+<section id="long-term-complications">
+<h2>Long-Term Complications</h2>
+<p>High blood glucose, over years, damages organs. Prevention through good glucose control is essential.</p>
+<h3>Retinopathy (Eye Damage)</h3>
+<ul>
+<li>High glucose damages retinal blood vessels</li>
+<li>May cause blindness if untreated</li>
+<li>Prevention: Tight glucose control, yearly eye exams</li>
+<li>Treatment: Laser surgery (if access to ophthalmology)</li>
+</ul>
+<h3>Nephropathy (Kidney Damage)</h3>
+<ul>
+<li>Damages kidney filtering system (glomeruli)</li>
+<li>Early: Protein leakage into urine (albuminuria)</li>
+<li>Late: Kidney failure, need for dialysis</li>
+<li>Prevention: Tight glucose control, blood pressure control, ACE inhibitor use (protects kidneys)</li>
+<li>Monitoring: Check urine for protein annually (dipstick test)</li>
+</ul>
+<h3>Neuropathy (Nerve Damage)</h3>
+<ul>
+<li>Damages peripheral nerves (feet, hands primarily)</li>
+<li>Causes numbness, pain, weakness</li>
+<li>Irreversible once established; prevention crucial</li>
+<li>Consequences: Foot ulcers (infection risk), falls, injury</li>
+</ul>
+<h3>Cardiovascular Disease</h3>
+<ul>
+<li>High glucose + hypertension + high cholesterol accelerates atherosclerosis</li>
+<li>Increases risk of heart attack, stroke</li>
+<li>Prevention: Tight glucose control, blood pressure management, low-fat diet, exercise</li>
+</ul>
+<h3>Immune Dysfunction</h3>
+<ul>
+<li>High glucose impairs white blood cell function</li>
+<li>Increases infection risk (especially fungal, urinary, skin)</li>
+<li>Prevention: Tight glucose control</li>
+</ul>
+</section>
+<section id="rationing-strategies">
+<h2>Insulin Rationing in Austere Settings</h2>
+<p>If insulin supply is limited, rationing strategies can extend supply while minimizing harm.</p>
+<h3>Baseline Calculation</h3>
+<ul>
+<li><strong>Typical daily insulin:</strong> 0.5–1 unit/kg body weight (varies by individual, type of diabetes, diet)</li>
+<li><strong>Example:</strong> 70 kg person = 35–70 units/day baseline</li>
+</ul>
+<h3>Rationing Priorities</h3>
+<ol>
+<li><strong>Type 1 patients first:</strong> Insulin is life-sustaining; without it, death within days</li>
+<li><strong>Children second:</strong> Growth, development, and future life years</li>
+<li><strong>Type 2 patients:</strong> Lower priority if oral medications available as alternative</li>
+</ol>
+<h3>Dose Reduction Strategies</h3>
+<p><strong>Modest reduction (75% of normal dose):</strong></p>
+<ul>
+<li>Provides 75% glucose control</li>
+<li>Acceptable if supply shortage temporary</li>
+<li>Monitor for DKA signs (fruity breath, polyuria); if appear, restart full dose</li>
+</ul>
+<p><strong>Aggressive reduction (50% of normal dose):</strong></p>
+<ul>
+<li>Provides 50% glucose control</li>
+<li>Higher DKA risk</li>
+<li>Only if supply extremely limited and temporary</li>
+</ul>
+<p><strong>Temporary cessation (high-risk):</strong></p>
+<ul>
+<li>If oral medications available for type 2: Switch to dietary management + oral meds (insulin sparing)</li>
+<li>Type 1 without insulin: Will develop DKA within 3–7 days; death likely if continues</li>
+</ul>
+<h3>Monitoring During Rationing</h3>
+<ul>
+<li><strong>Daily glucose testing:</strong> Track glucose trends; if rising rapidly, DKA risk increases</li>
+<li><strong>Symptom monitoring:</strong> Fruity breath, polyuria, fatigue = warning signs</li>
+<li><strong>Keto strips:</strong> Positive urine ketones = DKA risk; increase insulin immediately if available</li>
+</ul>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="medications.html">Essential Medications</a>
+<a href="medical-reference.html">Medical &amp; Survival Medicine</a>
+<a href="pediatric-emergency-medicine.html">Pediatric Emergency Medicine</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/composting-toilets-reclamation.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Composting Toilets &amp; Human Waste Reclamation</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Food &amp; Agriculture</span> ›
+<span>Composting Toilets &amp; Human Waste Reclamation</span>
+</div>
+
+
+<h1>Composting Toilets &amp; Human Waste Reclamation</h1>
+<p class="subtitle">Design batch and continuous composting toilets, achieve thermophilic composting (55°C+ for pathogen kill), manage urine diversion, assess humanure safety, establish maintenance schedules, and test compost maturity before soil application.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~15 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#composting-toilet-types">Composting Toilet Types: Batch and Continuous</a></li>
+<li><a href="#thermophilic-composting">Thermophilic Composting and Pathogen Kill</a></li>
+<li><a href="#urine-diversion">Urine Diversion</a></li>
+<li><a href="#humanure-safety">Humanure Safety and Pathogen Testing</a></li>
+<li><a href="#maintenance">Maintenance Schedule and Troubleshooting</a></li>
+<li><a href="#integration-example">Integration Example: Household System (4 People)</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Composting toilets decompose human waste (feces + urine) into stabilized compost suitable for soil amendment. Instead of sewage pipes and treatment plants (requiring water and energy), composting toilets use biological breakdown on-site. The resulting compost returns nutrients to soil—closing the nutrient cycle.</p>
+<p>Safety requires thermophilic composting (55°C+, which kills pathogens), adequate carbon-to-nitrogen ratio, and proper compost maturity testing. Poorly managed composting toilets create health hazards; well-managed systems are safe and regenerative.</p>
+</section>
+<section id="composting-toilet-types">
+<h2>Composting Toilet Types: Batch and Continuous</h2>
+<p><strong>Batch system:</strong> User accumulates waste in one chamber; when full, closes it and begins filling second chamber. Full chamber composts while second is in use.</p>
+<p><strong>Continuous system:</strong> Single chamber; waste is continuously added; compost is gradually removed from bottom (auger system) or removed periodically (dig-out method).</p>
+<h3>Batch System Design</h3>
+<p>Simplest, most controllable for small-scale (1–6 people).</p>
+<p><strong>Configuration:</strong></p>
+<pre><code>                   ┌─────────────────┐
+                   │ Toilet seat     │
+                   │ Diverter valve  │
+                   │ (diverts urine) │
+                   └────────┬────────┘
+                            │
+                            ├──→ [Urine diversion, separate container]
+                            │
+            ┌───────────────┘
+            │
+        ┌───┴────┐
+        │ Cabinet │
+        │ drop   │
+        └───┬────┘
+            │
+        ┌───┴────────────────────┐
+        │ Chamber A (in use)     │
+        │ Feces + sawdust        │
+        │ (~24 inches deep)      │
+        │ 2 gallons capacity     │
+        └───┬────────────────────┘
+            │
+            │ [When full (~1 month for 1 person)]
+            │
+        ┌───┴────────────────────┐
+        │ Chamber B (composting) │
+        │ Seals; thermophilic   │
+        │ composting begins      │
+        │ (6–12 months)          │
+        └───┬────────────────────┘
+            │
+            │ [After composting, mature compost removed]
+            │
+        [Return to soil]
+</code></pre>
+<p><strong>Specifications:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Component</strong></th>
+<th><strong>Size</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Toilet seat</td>
+<td>Standard</td>
+<td>User interface; comfortable</td>
+</tr>
+<tr>
+<td>Diverter valve</td>
+<td>1.5–2 inch diameter</td>
+<td>Separates urine from feces</td>
+</tr>
+<tr>
+<td>Drop chute</td>
+<td>2–4 inches diameter</td>
+<td>Feces gravity-feed to chamber</td>
+</tr>
+<tr>
+<td>Chamber</td>
+<td>2–5 gallon capacity</td>
+<td>Holds feces + carbon until full</td>
+</tr>
+<tr>
+<td>Ventilation</td>
+<td>2–4 inch pipe</td>
+<td>Removes gases; prevents odor</td>
+</tr>
+<tr>
+<td>Access door</td>
+<td>Bottom of cabinet</td>
+<td>Emptying/maintenance</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Materials:</strong></p>
+<ul>
+<li>Cabinet: Wood or plastic, insulated (temperature stability helps composting).</li>
+<li>Chamber: 5-gallon bucket with lid, or rigid plastic bin.</li>
+<li>Ventilation: PVC pipe vented through roof or wall.</li>
+</ul>
+<p><strong>Cost:</strong> $300–800 (DIY materials); $1,000–3,000 (commercial system).</p>
+<h3>Continuous System Design</h3>
+<p>More complex; suitable for larger groups (6+ people) or commercial applications.</p>
+<p><strong>Configuration:</strong></p>
+<pre><code>[Toilet seat with diverter]
+        ↓
+[Feces drop chute]
+        ↓
+[Rotating drum or single chamber with auger]
+        ↓
+[Compost removed from bottom by auger/screw]
+        ↓
+[Gravity into collection bin]
+        ↓
+[Curing bin (finishing compost)]
+        ↓
+[Ready for soil application]
+</code></pre>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Continuous use (no &quot;switch to second chamber&quot; downtime).</li>
+<li>Mechanical removal (less manual labor).</li>
+<li>Larger capacity (handles multiple users).</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>More complex (mechanical systems require maintenance).</li>
+<li>Higher cost ($2,000–8,000).</li>
+<li>Electricity required (auger motor, ventilation fan).</li>
+</ul>
+</section>
+<section id="thermophilic-composting">
+<h2>Thermophilic Composting and Pathogen Kill</h2>
+<p>Thermophilic (heat-loving) bacteria decompose waste and generate heat. Temperatures above 55°C (131°F) for sustained periods kill pathogens (bacteria, viruses, parasites, worm eggs).</p>
+<h3>Temperature and Time Requirements</h3>
+<p><strong>Pathogen survival at different temperatures:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Temperature</strong></th>
+<th><strong>Bacteria Kill Time</strong></th>
+<th><strong>Virus Kill Time</strong></th>
+<th><strong>Parasite Eggs Kill</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>50°C (122°F)</td>
+<td>Days–weeks</td>
+<td>Weeks–months</td>
+<td>Months–years</td>
+</tr>
+<tr>
+<td>55°C (131°F)</td>
+<td>Hours–days</td>
+<td>Days–weeks</td>
+<td>Weeks–months</td>
+</tr>
+<tr>
+<td>65°C (149°F)</td>
+<td>Minutes–hours</td>
+<td>Hours–days</td>
+<td>Hours–days</td>
+</tr>
+<tr>
+<td>75°C (167°F)</td>
+<td>&lt;1 hour</td>
+<td>&lt;1 hour</td>
+<td>&lt;1 hour</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Standard requirement:</strong> 55°C for 1 year, OR 60°C for 1 month, OR 65°C for 1 week.</p>
+<p><strong>Batch system timeline:</strong></p>
+<pre><code>Weeks 1–2: Chamber fills (feces + carbon)
+Weeks 3–4: Chamber sealed; thermophilic phase begins (temperature rises to 55–65°C)
+Months 2–6: Thermophilic phase (maintains &gt;55°C; pathogens killed)
+Months 7–12: Mesophilic phase (temperature drops to 20–40°C; decomposition continues)
+Month 12+: Compost mature (dark, crumbly, no recognizable material)
+
+Total timeline: 12–18 months from feces deposition to finished compost
+</code></pre>
+<h3>Achieving Thermophilic Conditions</h3>
+<p><strong>Carbon-to-nitrogen ratio critical:</strong></p>
+<p>Composting bacteria need carbon (energy) and nitrogen (protein). Imbalance prevents heat generation.</p>
+<pre><code>Ideal C:N ratio: 25:1 to 30:1
+- Feces: ~6:1 (nitrogen-rich, not enough carbon)
+- Sawdust: ~500:1 (carbon-rich, no nitrogen)
+- Mix: 3 parts sawdust + 1 part feces = ~25:1 (thermophilic)
+
+Example: 1 gallon feces (8 oz by weight) + 1.5 gallons sawdust (12 oz)
+C:N ratio ≈ 25:1; generates 60–65°C within 2–3 days
+</code></pre>
+<p><strong>Other carbon sources (if sawdust unavailable):</strong></p>
+<ul>
+<li>Wood chips (coarser; slower decomposition).</li>
+<li>Shredded leaves (2–3 times drier material by weight).</li>
+<li>Straw (1.5 times drier material by weight).</li>
+<li>Newspaper shreds (high carbon, but slow decomposition).</li>
+</ul>
+<p><strong>Moisture management:</strong></p>
+<p>Compost should be moist (like squeezed sponge; 50–60% water content).</p>
+<pre><code>Too dry: Microbial activity slows; no heat generation
+Too wet: Anaerobic (oxygen-starved); foul odor; no thermophilic phase
+
+If too dry: Add water (1 pint per gallon feces)
+If too wet: Add more carbon material; increase ventilation
+</code></pre>
+<p><strong>Aeration:</strong></p>
+<p>Oxygen is required for thermophilic decomposition. Ventilation pipe draws in fresh air; convection circulates it through chamber.</p>
+<pre><code>Passive ventilation: PVC pipe 2–4 inches diameter vented through roof
+- Stack effect: Hot air rises; cooler air enters at bottom
+- Wind effect: Wind across vent opening creates draft
+
+Active ventilation (if available): Small fan (12V solar) to increase air flow
+</code></pre>
+</section>
+<section id="urine-diversion">
+<h2>Urine Diversion</h2>
+<p>Human urine is sterile (if person is healthy) and nutrient-rich (nitrogen, potassium). Diverting urine:</p>
+<ol>
+<li>Reduces nitrogen in feces (prevents odor, improves compost).</li>
+<li>Preserves nutrients (urine can be applied directly to soil or diluted for plant fertilizer).</li>
+<li>Reduces chamber size (urine is 90% of human waste volume; removing it dramatically reduces daily waste).</li>
+</ol>
+<h3>Urine Diversion Toilet Seat</h3>
+<p><strong>Mechanism:</strong></p>
+<p>A valve separates feces from urine. Urine is gravity-drained to separate container; feces fall into composting chamber.</p>
+<p><strong>Design:</strong></p>
+<pre><code>Toilet user sits on slightly sloped seat (downward toward front)
+Front edge separates urine (flows forward to drainage pipe) from feces (flows backward to feces chute)
+Drainage pipe directs urine to container below or via pipe to storage tank
+</code></pre>
+<p><strong>Collection:</strong></p>
+<p>Urine is gravity-drained into 5-gallon buckets or larger containers (one per 1–2 people per week).</p>
+<h3>Urine Storage and Use</h3>
+<p><strong>Fresh urine properties:</strong></p>
+<ul>
+<li><strong>Sterile:</strong> No pathogens if person is healthy.</li>
+<li><strong>Acidic:</strong> pH ~6 (mild acidity preserves nitrogen).</li>
+<li><strong>Nitrogen content:</strong> 10–15 grams per liter (high; comparable to diluted liquid fertilizer).</li>
+<li><strong>Odor:</strong> Minimal if fresh; developing ammonia smell after 1–2 weeks.</li>
+</ul>
+<p><strong>Storage:</strong></p>
+<ul>
+<li>Container: Any opaque bucket/tank (light causes algae growth, degradation).</li>
+<li>Duration: Fresh (1–2 weeks) is ideal; can store 1–3 months if cool/covered.</li>
+<li>Temperature: Cool location extends storage life; warm temperature increases ammonia loss (loss of nitrogen).</li>
+</ul>
+<p><strong>Application:</strong></p>
+<p>Dilute urine 1:1 with water (reduces nitrogen concentration to safe level for plants). Apply to:</p>
+<ul>
+<li>Vegetable gardens (50% dilution with water).</li>
+<li>Fruit trees (10:1 dilution; urine is strong).</li>
+<li>Ornamental plants (20:1 dilution; low nitrogen desired).</li>
+</ul>
+<p><strong>Nutrient value:</strong></p>
+<pre><code>Urine (1 liter per person per day)
+Nitrogen: 10–15 grams
+Potassium: 2–3 grams
+Phosphorus: 1 gram
+
+Annual nitrogen per person: 3.5–5.5 kg
+(Equivalent to 10–15 lbs commercial fertilizer at 10% N)
+
+Monetary value: $0.50–1.50 per liter if purchased as fertilizer
+Household collection (5 people, 5 liters/day): $750–2,250 per year in nutrient value
+</code></pre>
+</section>
+<section id="humanure-safety">
+<h2>Humanure Safety and Pathogen Testing</h2>
+<p>Finished compost from humanure composting can be used on non-food crops and (with caution) food crops if properly matured.</p>
+<h3>Pathogen Indicators</h3>
+<p>Before using finished compost, verify pathogen kill:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Indicator</strong></th>
+<th><strong>Meaning</strong></th>
+<th><strong>Safety</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temperature history (maintained &gt;55°C for 12+ months)</td>
+<td>Pathogens likely killed</td>
+<td>Safe if thermal record documented</td>
+</tr>
+<tr>
+<td>Visual appearance (dark, crumbly, no recognizable material)</td>
+<td>Decomposition complete</td>
+<td>Good indicator of maturity</td>
+</tr>
+<tr>
+<td>Odor (earthy, pleasant)</td>
+<td>Stable organic matter, no foul smell</td>
+<td>Foul smell suggests incomplete decomposition</td>
+</tr>
+<tr>
+<td>Germination test (seeds sprouted in compost)</td>
+<td>Phytotoxins degraded; safe for plants</td>
+<td>Good sign; suggests plant-safe compost</td>
+</tr>
+<tr>
+<td>Indicator organism testing (coliform test)</td>
+<td>Presence of E. coli or fecal coliforms</td>
+<td>Indicates pathogenic bacteria still present</td>
+</tr>
+</tbody>
+</table>
+<h3>Compost Maturity Testing</h3>
+<p><strong>Germination test (simple):</strong></p>
+<ol>
+<li>Moisten finished compost.</li>
+<li>Plant radish or bean seeds in compost sample.</li>
+<li>Observe over 5–10 days.</li>
+<li>If seeds germinate normally (&gt;80% germination rate vs. control soil), compost is mature.</li>
+<li>If seeds fail to germinate, compost has phytotoxins (immature); requires additional aging.</li>
+</ol>
+<p><strong>Coliform testing (if available):</strong></p>
+<p>Lab test identifies presence of E. coli/fecal coliforms.</p>
+<pre><code>Target: &lt;1 CFU/gram (colony-forming units per gram)
+Acceptable: &lt;100 CFU/g for non-food crops
+Food crops: Require &lt;1 CFU/g (virtually undetectable)
+</code></pre>
+<p><strong>Chemical testing (if available):</strong></p>
+<pre><code>pH: Should be neutral (6.5–8.0); acidic compost (&lt;6) indicates immaturity
+Carbon-to-nitrogen ratio: Should be &lt;15:1 (lower is more stable)
+Pathogens (microscopic): Salmonella, roundworm eggs absence confirms safety
+</code></pre>
+<h3>Application Guidelines</h3>
+<p><strong>Non-food crops (ornamental plants, landscaping):</strong> 1-year compost acceptable if temperature-monitored.</p>
+<p><strong>Food crop application:</strong></p>
+<ul>
+<li><strong>Best practice:</strong> 12–18 month compost + germination test passed + no visual/olfactory red flags.</li>
+<li><strong>Conservative:</strong> Do not apply directly to food crops; compost only on soil amendments, fallow ground.</li>
+<li><strong>Moderate:</strong> Apply 12+ months compost to food crops; avoid root vegetables and leafy greens (greater contamination risk).</li>
+</ul>
+<p><strong>Application rate:</strong></p>
+<pre><code>Annual amendment: 1–2 inches of finished humanure compost per year
+For 1,000 sq ft garden:
+- 1 inch = 3 cubic yards = ~150 lbs compost
+- Cost equivalent: Free (self-produced) vs. $50–100 if purchased
+</code></pre>
+</section>
+<section id="maintenance">
+<h2>Maintenance Schedule and Troubleshooting</h2>
+<h3>Routine Maintenance (Batch System, 1–2 people)</h3>
+<p><strong>Daily:</strong></p>
+<ul>
+<li>Add carbon (sawdust, leaves) after each use (1–2 handfuls).</li>
+<li>Divert urine to separate container.</li>
+</ul>
+<p><strong>Weekly:</strong></p>
+<ul>
+<li>Observe chamber for moisture (adjust if too dry/wet).</li>
+<li>Verify ventilation (smell should be earthy, not foul).</li>
+</ul>
+<p><strong>Monthly:</strong></p>
+<ul>
+<li>Empty urine container (or more frequently if accumulating).</li>
+<li>Monitor chamber fill level (empty when 80% full, move to second chamber).</li>
+</ul>
+<p><strong>Quarterly:</strong></p>
+<ul>
+<li>Check ventilation pipe (remove blockages).</li>
+<li>Inspect cabinet for cracks/damage.</li>
+<li>Temperature check (if thermometer installed; should maintain &gt;50°C during active decomposition).</li>
+</ul>
+<h3>Problem Troubleshooting</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Problem</strong></th>
+<th><strong>Cause</strong></th>
+<th><strong>Solution</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Foul odor (ammonia, rotten egg)</td>
+<td>Anaerobic decomposition</td>
+<td>Add more carbon; increase ventilation</td>
+</tr>
+<tr>
+<td>Flies/insects</td>
+<td>Exposed feces; inadequate carbon</td>
+<td>Add carbon immediately; cover each deposit</td>
+</tr>
+<tr>
+<td>Wet, muddy chamber</td>
+<td>Excess moisture</td>
+<td>Add more carbon; reduce water input; increase ventilation</td>
+</tr>
+<tr>
+<td>Slow decomposition (compost not ready after 12 months)</td>
+<td>Low temperature; low nitrogen; compacted material</td>
+<td>Add nitrogen source (grass clippings, food waste); aerate by mixing; increase ventilation</td>
+</tr>
+<tr>
+<td>Leakage</td>
+<td>Cracked chamber or seal failure</td>
+<td>Replace chamber; check seals</td>
+</tr>
+</tbody>
+</table>
+<h3>Commercial System Maintenance</h3>
+<p>Continuous systems with augers/mechanics:</p>
+<p><strong>Monthly:</strong></p>
+<ul>
+<li>Motor/auger function check.</li>
+<li>Drainage verification (compost flows freely).</li>
+<li>Odor inspection.</li>
+</ul>
+<p><strong>Quarterly:</strong></p>
+<ul>
+<li>Mechanical inspection (bearings, belts, seals).</li>
+<li>Oil/lubrication if applicable.</li>
+</ul>
+<p><strong>Annually:</strong></p>
+<ul>
+<li>Full system inspection (replace worn parts).</li>
+<li>Compost batch testing (germination, coliform).</li>
+</ul>
+</section>
+<section id="integration-example">
+<h2>Integration Example: Household System (4 People)</h2>
+<p><strong>Household:</strong> 4 people; 5 uses per person per day = 20 uses per day.</p>
+<p><strong>System design:</strong></p>
+<ul>
+<li>Batch composting toilet with urine diversion.</li>
+<li>Two 5-gallon chambers (alternate weekly).</li>
+<li>Urine collection (5 liters/day).</li>
+</ul>
+<p><strong>Material flow:</strong></p>
+<pre><code>Daily waste:
+- Feces: 100 grams × 4 people = 400 grams
+- Urine: 1.5 liters × 4 people = 6 liters
+
+Carbon addition:
+- Sawdust: 600 grams/day (1.5:1 ratio for thermophilic C:N)
+</code></pre>
+<p><strong>Chamber filling:</strong></p>
+<pre><code>5-gallon chamber holds ~40 pounds (capacity)
+Daily deposit: 400g feces + 600g sawdust = 1 kg
+Chamber full in: 40 days ≈ 1 month
+
+Process:
+Week 1–2: Chamber A fills (user 1)
+Week 3–4: Switch to Chamber B (user 2)
+Month 2–12: Chamber A seals and composts (thermophilic phase)
+Month 13: Chamber A mature; harvest compost (~20 lbs finished)
+Month 13–24: Chamber A refills while Chamber B composts
+</code></pre>
+<p><strong>Compost harvest (annual):</strong></p>
+<pre><code>Per 5-gallon chamber: ~20–25 lbs finished compost per year
+Both chambers: ~40–50 lbs finished compost per household per year
+
+Use:
+- Ornamental garden (front yard): 50 lbs applied at 1 inch depth over 500 sq ft = 0.1 inch
+- Vegetable garden (back yard): Mixed into soil amendments annually
+</code></pre>
+<p><strong>Cost savings:</strong></p>
+<pre><code>Compared to conventional sewage:
+- No septic tank (cost: $3,000–5,000)
+- No municipal sewer connection fee ($1,000–3,000)
+- No sewage treatment (cost: $0.50–2.00 per 1,000 gallons)
+- Nutrient recovery: ~$100–200/year (urine + compost fertilizer value)
+
+Initial investment: $500–1,500 (DIY/simple system)
+Annual maintenance: &lt;$50 (sawdust, occasional repair)
+Payback period: 2–5 years (including avoided conventional system costs)
+</code></pre>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="sanitation.html">Sanitation &amp; Public Health</a>
+<a href="composting-systems.html">Composting Systems</a>
+<a href="greywater-recycling-treatment.html">Greywater Recycling &amp; Treatment</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

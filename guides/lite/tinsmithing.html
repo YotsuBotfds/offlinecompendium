@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/tinsmithing.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tinsmithing and Sheet Metal Work</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Crafts &amp; Trade Skills</span> ›
+<span>Tinsmithing and Sheet Metal Work</span>
+</div>
+
+
+<h1>Tinsmithing and Sheet Metal Work</h1>
+<p class="subtitle">Master pattern layout and development, cutting techniques, forming on stakes and mandrels, seaming methods, soldering tin-plate, and riveting to produce practical tinware.</p>
+<div class="meta">
+<span>●●○○ intermediate</span>
+<span>~17 min</span>
+<span>Updated: 2026-02-19</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#pattern-layout">Pattern Layout and Development</a></li>
+<li><a href="#cutting-techniques">Cutting Techniques and Tools</a></li>
+<li><a href="#forming-techniques">Forming: Stakes and Mandrels</a></li>
+<li><a href="#seaming-methods">Seaming Methods: Grooved, Lap, and Locked Seams</a></li>
+<li><a href="#soldering">Soldering Tin-Plate</a></li>
+<li><a href="#punching-riveting">Punching and Riveting Techniques</a></li>
+<li><a href="#common-products">Common Tinware Products</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>Tinsmithing is the craft of shaping thin sheet metal (tin-coated steel, copper, or pure sheet metal) into functional vessels, funnels, stovepipes, and decorative items. Unlike blacksmithing, which shapes metal through heat and hammering, tinsmithing works cold metal using specialized tools: shears, stakes, mandrels, hammers, and soldering equipment.</p>
+<p>Historically, tinware was essential: tin-coated steel containers prevented rust and food contamination, making tinsmithed cups, buckets, and cans central to food storage, cooking, and trade. The craft remains valuable for producing custom containers, repairs, and specialized items.</p>
+<p>This guide covers pattern development, cutting, forming, seaming, and assembly techniques for common tinware items.</p>
+</section>
+<section id="pattern-layout">
+<h2>Pattern Layout and Development</h2>
+<p>A tinsmith starts with a pattern—a precise, flat template that, when cut and shaped, becomes the finished product.</p>
+<h3>Geometric Principles</h3>
+<p>Common tinware items use simple geometric forms:</p>
+<p><strong>Cylinder (cup, can, lantern barrel):</strong></p>
+<ul>
+<li>Pattern is a rectangle with height = finished height, width = circumference of the finished cylinder.</li>
+<li>Example: a cup 3 inches in diameter, 4 inches tall has a pattern 3π (9.42&quot;) × 4&quot;.</li>
+</ul>
+<p><strong>Cone (funnel, strainer):</strong></p>
+<ul>
+<li>Pattern is a sector (pie slice) of a circle.</li>
+<li>Radius of the sector = slant height of the finished cone.</li>
+<li>Arc length of the sector = base circumference of the finished cone.</li>
+<li>Angle of the sector = 360° × (base radius / slant height).</li>
+</ul>
+<p><strong>Tapered cylinder (cone with flat top and bottom, like a pail):</strong></p>
+<ul>
+<li>More complex; requires calculation of the intermediate radius at the seam line and the included angles.</li>
+<li>Often drafted using the principle of similar triangles.</li>
+</ul>
+<h3>Layout Process</h3>
+<ol>
+<li><strong>Determine dimensions:</strong> Measure or design the finished object's dimensions (height, diameter, taper, etc.).</li>
+<li><strong>Calculate pattern size:</strong> Using geometric principles, determine the pattern's dimensions.</li>
+<li><strong>Draw the pattern:</strong> On heavy paper or thin cardboard, draw the full-scale pattern.</li>
+<li><strong>Add margins:</strong> Add 1/2 to 1 inch on seam edges for overlapping and sealing.</li>
+<li><strong>Mark fold lines and seam positions:</strong> Indicate where the metal will be folded, seamed, or attached.</li>
+</ol>
+<h3>Template Creation</h3>
+<p>Once the paper pattern is finalized:</p>
+<ol>
+<li><strong>Transfer to metal:</strong> If the pattern will be used repeatedly, transfer it to thin brass or aluminum sheet (which won't rust).</li>
+<li><strong>Mark with center punch:</strong> Use a center punch and hammer to create small indentations along the pattern outline on the metal template.</li>
+<li><strong>Use as a guide:</strong> Lay the metal template on the sheet metal blank and trace around it with a scribe (a sharp metal pointed tool).</li>
+</ol>
+</section>
+<section id="cutting-techniques">
+<h2>Cutting Techniques and Tools</h2>
+<p>Sheet metal cutting requires sharp, properly maintained tools and careful technique.</p>
+<h3>Tin Snips (Shears)</h3>
+<p>Tin snips are large scissors designed for cutting sheet metal. Several types exist:</p>
+<p><strong>Straight-cut snips:</strong></p>
+<ul>
+<li>Recommended for general work and straight cuts.</li>
+<li>Cut in a straight line away from the body.</li>
+</ul>
+<p><strong>Right-curve and left-curve snips:</strong></p>
+<ul>
+<li>Right-curve snips have an angled upper blade that curves right (useful for cutting curves clockwise).</li>
+<li>Left-curve snips curve left (counter-clockwise cuts).</li>
+<li>Using the correct curve direction reduces hand strain and produces cleaner cuts.</li>
+</ul>
+<p><strong>Compound-action snips:</strong></p>
+<ul>
+<li>Mechanical advantage through lever action; require less hand force.</li>
+<li>Suitable for thicker metal (up to 20 gauge).</li>
+</ul>
+<p><strong>Method:</strong></p>
+<ol>
+<li>Secure the metal sheet to a bench with clamps or in a vise, leaving the cut line free.</li>
+<li>Open the snips fully and position the lower blade under the metal, upper blade above.</li>
+<li>Cut with smooth, continuous strokes, advancing along the scribe line.</li>
+<li>Don't force the snips; let the sharp blades do the work.</li>
+<li>For tight curves, use small cuts progressively rather than trying to cut deeply in one motion.</li>
+</ol>
+<h3>Cold Chisels (Sheet Metal Chisels)</h3>
+<p>A cold chisel can cut metal or separate pieces at a seam.</p>
+<ol>
+<li>Place the chisel blade perpendicular to the metal.</li>
+<li>Strike with a hammer, advancing the chisel along the cut line.</li>
+<li>Useful for straight edges or deliberate cuts; less precise than snips.</li>
+</ol>
+<h3>Shearing Equipment (Guillotine Shears, Throatless Shears)</h3>
+<p>In a workshop with more equipment:</p>
+<p><strong>Guillotine shears:</strong></p>
+<ul>
+<li>A large, manually operated or foot-operated machine with upper and lower blades.</li>
+<li>Excellent for cutting straight edges on sheet metal up to 18 gauge (1/16 inch).</li>
+</ul>
+<p><strong>Throatless shears:</strong></p>
+<ul>
+<li>Blades move in a vertical shearing action; no &quot;throat&quot; (fixed space) restricts the depth of cuts.</li>
+<li>Useful for cutting curves and accessing interior portions of a sheet.</li>
+</ul>
+<h3>Layout Methods and Tools</h3>
+<p><strong>Scribe and Dividers:</strong></p>
+<ul>
+<li>Scribe: Sharp metal point tool for marking precise lines on sheet metal (creates visible scratch)</li>
+<li>Dividers: Two-pointed tool for drawing arcs and circles, maintaining exact radius</li>
+<li>Method: Hold dividers firmly, rotate around center point while maintaining consistent pressure</li>
+</ul>
+<p><strong>Template Transfer:</strong></p>
+<ul>
+<li>Prepare pattern from paper or cardboard at full scale</li>
+<li>Place template on metal sheet, weight it down (prevent slipping)</li>
+<li>Use center punch to mark key points (corners, arc centers) directly through template holes</li>
+<li>Use scribe to trace template outline onto metal</li>
+<li>Remove template and connect punch marks with straight/curved lines as needed</li>
+</ul>
+<p><strong>Trammel for Large Diameters:</strong></p>
+<ul>
+<li>Wooden or metal bar with two sharp points/scribes at variable distance</li>
+<li>Used for marking large circles and arcs beyond divider reach</li>
+<li>Adjust spacing for desired radius, lock in place with set screw</li>
+<li>Rotate around fixed center point while keeping trammel bar level</li>
+</ul>
+<p><strong>Chalk or Soapstone Marking:</strong></p>
+<ul>
+<li>Alternative to scribe for visibility (especially on dark or reflective metal)</li>
+<li>Mark with chalk stick or soapstone block</li>
+<li>Marks rub off but sufficient for one-time cuts; reapply if needed between layout and cutting</li>
+</ul>
+<h3>Cutting Technique Details by Gauge</h3>
+<p><strong>Heavy Gauge (10-14 gauge, 2-3mm):</strong></p>
+<ul>
+<li>Tin snips struggle; use cold chisel or shearing equipment</li>
+<li>Cold chisel method: strike evenly, make multiple passes if needed</li>
+<li>Guillotine shears: align blade carefully; sheet should support fully (no overhang)</li>
+<li>Compound-action snips reduce hand fatigue</li>
+</ul>
+<p><strong>Medium Gauge (16-20 gauge, 1-2mm):</strong></p>
+<ul>
+<li>Standard straight-cut snips ideal</li>
+<li>Compound-action snips allow cutting without hand strain</li>
+<li>Right/left-curve snips for curved cuts</li>
+<li>Two-hand technique: hold snips firmly, advance metal into blades rather than forcing snips</li>
+</ul>
+<p><strong>Light Gauge (22-28 gauge, 0.5-1mm):</strong></p>
+<ul>
+<li>Straight-cut tin snips excellent</li>
+<li>Compound-action snips allow fine control</li>
+<li>Throatless shears enable interior cuts without access from edge</li>
+</ul>
+<h3>Edge Finishing After Cutting</h3>
+<p><strong>Folded Edge (Safety &amp; Finish):</strong></p>
+<ul>
+<li>Cut metal edges are sharp and dangerous</li>
+<li>Fold edges 1/4-1/2 inch back on itself, then flatten with hammer to create double-thick edge</li>
+<li>Significantly reduces cutting risk</li>
+<li>Also strengthens edge structurally and prevents unraveling of seams</li>
+</ul>
+<p><strong>Wired Edge (Decorative &amp; Structural):</strong></p>
+<ul>
+<li>Insert wire (iron or brass) into folded edge</li>
+<li>Fold edge over wire and flatten, locking wire in place</li>
+<li>Provides stiffness and decorative finish (wire style/material affects appearance)</li>
+<li>Common on cups, buckets, and decorative items</li>
+</ul>
+<p><strong>Beading (Decorative Pattern):</strong></p>
+<ul>
+<li>Use special bead tool (wooden or metal form) to create rolled pattern along edge</li>
+<li>Strike bead tool with hammer, progressively working around edge perimeter</li>
+<li>Creates visual pattern and structural reinforcement</li>
+<li>Purely decorative on some items; functional on lamp shades, ventilation edges</li>
+</ul>
+<h3>Seam Types and Construction Methods</h3>
+<p><strong>Grooved Seam (Single Seam):</strong></p>
+<ul>
+<li>Overlap two sheet edges 1/2 inch</li>
+<li>Hammer flat, then fold overlap using seaming stake edge</li>
+<li>Solder the seam from inside for waterproofing</li>
+<li>Most common seam for cylindrical forms (cups, cans)</li>
+<li>Strong and reliable; allows reworking if needed before soldering</li>
+</ul>
+<p><strong>Folded Seam (Double Seam, Most Secure):</strong></p>
+<ul>
+<li>Fold 1/4 inch edge on each piece, creating lip</li>
+<li>Interlock two folded edges (hook them together like interlocking fingers)</li>
+<li>Hammer flat to compress seam</li>
+<li>Solder both sides for maximum strength</li>
+<li>Used on water-holding vessels and items under pressure</li>
+<li>Nearly impossible to separate once complete</li>
+</ul>
+<p><strong>Flanged Seam (Flat Overlap):</strong></p>
+<ul>
+<li>No folding; simply overlap two sheets 1/2 inch</li>
+<li>Hammer flat to compress edges together</li>
+<li>Solder along seam line</li>
+<li>Less strong than folded but simpler to execute</li>
+<li>Acceptable for low-stress applications (storage boxes, stove pipes)</li>
+</ul>
+<p><strong>Riveted Seam (Mechanical Joint):</strong></p>
+<ul>
+<li>Puncture or drill holes 1/2-1 inch apart</li>
+<li>Insert rivets and form heads with rivet set and hammer</li>
+<li>No soldering needed; purely mechanical joint</li>
+<li>Visible but strong; used on stove pipes and removable sections</li>
+</ul>
+<h3>Step-by-Step Layout and Cutting Workflow</h3>
+<ol>
+<li><strong>Calculate pattern dimensions</strong> (using geometric principles described in Pattern Layout section)</li>
+<li><strong>Prepare metal blank</strong> slightly larger than pattern (allow 1-2 inches for handling/trimming)</li>
+<li><strong>Mark reference lines</strong> using chalk or soapstone (centerlines, fold lines)</li>
+<li><strong>Transfer pattern</strong> using template/scribe or trammel for curves</li>
+<li><strong>Punch key points</strong> with center punch for divider/trammel placement</li>
+<li><strong>Verify layout</strong> by measuring multiple dimensions before cutting (small errors amplify during forming)</li>
+<li><strong>Secure metal</strong> in bench vise or clamp to prevent movement during cutting</li>
+<li><strong>Cut straight lines</strong> using snips or chisel, working methodically along scribed line</li>
+<li><strong>Cut curves</strong> using appropriate right/left-curve snips, making small bites rather than forcing</li>
+<li><strong>Remove waste material</strong> and check finished blank against pattern</li>
+<li><strong>Finish edges</strong> by filing, folding, or wiring as appropriate for the design</li>
+<li><strong>Inspect for defects</strong> before proceeding to forming stage (rework is easier now than after forming)</li>
+</ol>
+</section>
+<section id="forming-techniques">
+<h2>Forming: Stakes and Mandrels</h2>
+<p>Once cut, the pattern is shaped into its final 3D form using stakes (anvil-like tools with shaped surfaces) and hammers.</p>
+<h3>Stakes (Forming Tools)</h3>
+<p>Stakes are blocks of hardened steel with shaped upper surfaces, mounted on a long shaft that fits into a stake hole in the workbench.</p>
+<p><strong>Common stake types:</strong></p>
+<ol>
+<li>
+<p><strong>Bench stake (general forming):</strong></p>
+<ul>
+<li>Flat, rectangular top for general hammering and flattening.</li>
+<li>Used to straighten edges, flatten wrinkled metal, and prepare surfaces for soldering.</li>
+</ul>
+</li>
+<li>
+<p><strong>Peen stakes (rounding):</strong></p>
+<ul>
+<li>Top is rounded or domed.</li>
+<li>Used to round and shape curved surfaces; the convex surface distributes hammer blows over a wider area.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cone stake (for cones and tapered forms):</strong></p>
+<ul>
+<li>Tapered, conical surface.</li>
+<li>Ideal for shaping funnels and tapered vessels.</li>
+</ul>
+</li>
+<li>
+<p><strong>Block stake (for seaming):</strong></p>
+<ul>
+<li>Flat top with sharp edges.</li>
+<li>Used to support the metal directly under where seams will be formed.</li>
+</ul>
+</li>
+</ol>
+<h3>Forming a Cylinder</h3>
+<p>To form a flat rectangular pattern into a cylinder:</p>
+<ol>
+<li><strong>Position on the peen stake:</strong> Lay the rectangular blank on a peen stake with the long axis horizontal.</li>
+<li><strong>Light hammering:</strong> Begin light, uniform strokes with a tinsmith's hammer (a specialized lightweight hammer with a flat head).</li>
+<li><strong>Progress around:</strong> Gradually curl the metal by advancing along the length, striking gently and uniformly.</li>
+<li><strong>Avoid overlap:</strong> Work toward the overlapping seam edges; don't ham those yet.</li>
+<li><strong>Test fit:</strong> Periodically lift the partially formed piece and test its curvature against a mandrel (see below) of the desired diameter.</li>
+<li><strong>Final shaping:</strong> Once the cylinder is nearly round, move to the block stake and use the sharp edge to fully straighten the seam edges.</li>
+</ol>
+<h3>Mandrels (Sizing Tools)</h3>
+<p>Mandrels are tapered metal forms used to shape and size the metal precisely.</p>
+<p><strong>Tapered mandrel (for various diameters):</strong></p>
+<ul>
+<li>A cone-shaped metal rod that can accept sheet metal of various diameters.</li>
+<li>Used to check the roundness and size of a forming cylinder.</li>
+<li>Also used to support the metal while hammering the seam.</li>
+</ul>
+<p><strong>Ring mandrel (for consistent diameter):</strong></p>
+<ul>
+<li>A cylindrical form of a specific diameter, sometimes with a flat top.</li>
+<li>Placed under the formed metal, and the metal is hammered and rolled over the mandrel to achieve exact diameter.</li>
+</ul>
+<p><strong>Method:</strong></p>
+<ol>
+<li>Insert the mandrel into the partially formed cylinder.</li>
+<li>Support the mandrel in a vise or stake hole.</li>
+<li>Using a smooth, rounded hammer head, gently strike the metal around the circumference, advancing in small increments.</li>
+<li>The metal slowly stretches and molds itself to the mandrel's shape.</li>
+<li>Continue until the cylinder is perfectly round and the desired diameter.</li>
+</ol>
+<div class="warning">
+<p>Mandrels can be very hard and cold. Wear gloves and protect your hands—a slip of the hammer can cause serious injury. Never strike a mandrel directly; strike only the metal being shaped.</p>
+</div>
+</section>
+<section id="seaming-methods">
+<h2>Seaming Methods: Grooved, Lap, and Locked Seams</h2>
+<p>The seam is where two edges of the metal meet and are joined. Different seaming techniques suit different applications.</p>
+<h3>Grooved Seam (Single Seam, for Cylinders)</h3>
+<p>A simple, strong seam suitable for most cylindrical forms.</p>
+<p><strong>Method:</strong></p>
+<ol>
+<li>
+<p><strong>Overlap preparation:</strong> Position the cylindrical blank so the two overlapping edges (both 1/2 inch wide) are aligned, slightly staggered so the top edge overlaps the bottom edge by about 1/4 inch.</p>
+</li>
+<li>
+<p><strong>Hammer the overlap:</strong></p>
+<ul>
+<li>Use the hammer to strike the overlapping section gently, flattening the two layers together.</li>
+<li>Work your way around the cylinder, ensuring the overlap is uniform and flat.</li>
+</ul>
+</li>
+<li>
+<p><strong>Groove formation:</strong></p>
+<ul>
+<li>Once flat, use a special seaming tool (a grooved hammer or seaming stake edge) to fold and crimp the seam into a tight groove.</li>
+<li>The crimp locks the two layers together mechanically, even before soldering.</li>
+</ul>
+</li>
+<li>
+<p><strong>Soldering:</strong> Solder the seam from the inside to lock it permanently (see Soldering, below).</p>
+</li>
+</ol>
+<h3>Lap Seam (for Flat Sheets and Junctions)</h3>
+<p>Used where a flat sheet meets another surface at an angle or edge.</p>
+<ol>
+<li><strong>Position overlapping edges:</strong> One piece overlaps the other by 1/2 to 1 inch.</li>
+<li><strong>Hammer flat:</strong> Strike the overlap until both layers are compressed together.</li>
+<li><strong>Solder:</strong> Apply solder along the seam line to create a permanent joint.</li>
+</ol>
+<h3>Locked Seam (Double Seam, Most Secure)</h3>
+<p>The most secure seam, used for water-holding vessels and items under stress.</p>
+<ol>
+<li><strong>Preparation:</strong> Fold the edges of two pieces 1/4 inch, creating a lip on each.</li>
+<li><strong>Interlock:</strong> Hook the two folded edges together so they nest (like two interlocking fingers).</li>
+<li><strong>Hammer:</strong> Strike the interlocked seam to flatten and compress the joint.</li>
+<li><strong>Solder:</strong> Apply solder on both sides of the seam for maximum strength.</li>
+</ol>
+</section>
+<section id="soldering">
+<h2>Soldering Tin-Plate</h2>
+<p>Soldering joins the metal edges chemically (and physically) using a fusible metal alloy (solder) that melts at a lower temperature than the base metal.</p>
+<h3>Soldering Basics</h3>
+<p><strong>Solder composition:</strong></p>
+<ul>
+<li>Traditional soft solder: 50% tin, 50% lead (melting point ~400°F). Lead is toxic; modern solder uses tin-silver-copper or tin-copper-silver alloys.</li>
+<li>Modern tin-copper-silver solder: Melting point ~430–450°F, lead-free, slightly more expensive.</li>
+</ul>
+<p><strong>Flux (chemical cleaner):</strong></p>
+<ul>
+<li>Flux removes oxide from the metal surface, allowing solder to flow and bond.</li>
+<li>Types: rosin flux (mild, suitable for electrical work), zinc chloride flux (more aggressive), or homemade flux (salt, zinc, and water paste).</li>
+</ul>
+<h3>Soldering Process</h3>
+<ol>
+<li>
+<p><strong>Clean the seam:</strong></p>
+<ul>
+<li>Use a stiff wire brush to remove any oxidation or dirt from the metal surfaces.</li>
+<li>For old metal or heavily oxidized seams, use a file or sandpaper.</li>
+</ul>
+</li>
+<li>
+<p><strong>Apply flux:</strong></p>
+<ul>
+<li>Brush or paste flux along the entire seam line.</li>
+<li>This prevents oxidation during heating and allows solder to flow.</li>
+</ul>
+</li>
+<li>
+<p><strong>Heat the metal:</strong></p>
+<ul>
+<li>Use a soldering iron (electric) or a tinsmith's iron (heated on a stove or over a fire).</li>
+<li>The iron should be hot enough to melt solder on contact (about 450–500°F).</li>
+<li>Heat both sides of the seam jointly; don't just heat the iron and the solder.</li>
+</ul>
+</li>
+<li>
+<p><strong>Apply solder:</strong></p>
+<ul>
+<li>Touch the solder to the heated seam; it should melt and flow into the joint.</li>
+<li>Use just enough solder to fill the seam; excess solder is wasteful and can make the joint look rough.</li>
+<li>Work along the entire seam, moving the iron progressively.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cool slowly:</strong></p>
+<ul>
+<li>Allow the joint to cool without disturbance. Moving or tapping a warm solder joint can create a weak &quot;cold joint&quot; (where solder is solid but not properly bonded).</li>
+</ul>
+</li>
+</ol>
+<p><strong>Flux residue:</strong> After soldering, clean off any excess flux with water or vinegar (rosin flux residue can be acidic and promotes corrosion if left on the metal).</p>
+</section>
+<section id="punching-riveting">
+<h2>Punching and Riveting Techniques</h2>
+<p>Some seams are mechanically riveted rather than soldered, or additionally riveted for extra strength.</p>
+<h3>Punching Rivet Holes</h3>
+<ol>
+<li>
+<p><strong>Mark hole positions:</strong> Using a center punch and ruler, mark rivet hole positions along the seam, typically spaced 1/2 to 1 inch apart.</p>
+</li>
+<li>
+<p><strong>Use a punch and hammer:</strong></p>
+<ul>
+<li>A hollow punch (a tool that removes a circular piece of metal) creates a clean hole.</li>
+<li>Place the punch perpendicular to the metal and strike with the hammer.</li>
+<li>The hollow punch cuts a clean circle; the slug (cut-out piece) drops out, leaving a round hole.</li>
+</ul>
+</li>
+<li>
+<p><strong>Alternatively, drill holes:</strong> For precision, drill holes using a hand drill or bit, slightly undersized to the rivet diameter.</p>
+</li>
+</ol>
+<h3>Riveting</h3>
+<p><strong>Soft rivet method (for tin-plate):</strong></p>
+<ol>
+<li>
+<p><strong>Insert the rivet:</strong> A rivet is a short metal pin with a head on one end. Insert it through the hole from the front (the pretty side).</p>
+</li>
+<li>
+<p><strong>Support the back:</strong> Place a rivet set (a metal block with a depression matching the rivet head) against the back of the rivet while supporting it with a lightweight hammer.</p>
+</li>
+<li>
+<p><strong>Hammer the protruding end:</strong></p>
+<ul>
+<li>The protruding end of the rivet (the back side) is struck with a hammer.</li>
+<li>Each blow expands the rivet, forming a second head that locks the rivet in place and compresses the metal layers.</li>
+</ul>
+</li>
+<li>
+<p><strong>Even strikes:</strong> Use steady, moderate-force strikes; excessive force can bend the rivet off-center, creating a loose joint.</p>
+</li>
+<li>
+<p><strong>Finished rivet:</strong> The front of the rivet should show a clean, slightly domed head; the back should show a formed head slightly larger than the hole.</p>
+</li>
+</ol>
+</section>
+<section id="common-products">
+<h2>Common Tinware Products</h2>
+<p>Traditional tinsmithing produced a wide variety of essential household items.</p>
+<h3>Cups and Drinking Vessels</h3>
+<p><strong>Construction:</strong></p>
+<ul>
+<li>Cylindrical form (rolled on a mandrel and seamed).</li>
+<li>Flat bottom (riveted or soldered).</li>
+<li>Handle (twisted wire or flat strap) riveted to the sides.</li>
+</ul>
+<p><strong>Size range:</strong> 2–6 inches tall, 2–4 inches diameter. Holds 4–12 ounces.</p>
+<h3>Funnels and Strainers</h3>
+<p><strong>Construction:</strong></p>
+<ul>
+<li>Conical form (shaped on a cone stake and seamed).</li>
+<li>Open top (larger diameter), tapering to a narrow spout at the bottom.</li>
+<li>Handle (optional, riveted or formed from the metal itself).</li>
+</ul>
+<p><strong>Refinement:</strong> Strainers have holes punched in the bottom; funnels have a narrow spout for pouring.</p>
+<h3>Lanterns and Light Containers</h3>
+<p><strong>Construction:</strong></p>
+<ul>
+<li>Cylindrical barrel with one or more flat metal sides cut out and replaced with glass panes or mica (heat-transparent material).</li>
+<li>Metal frame holds the transparent material.</li>
+<li>Open bottom to accept a candle or oil lamp inside.</li>
+<li>Vents at the top allow heat and smoke to escape.</li>
+</ul>
+<p><strong>Functional design:</strong> The metal container protects the light source from wind and directs light outward; the transparent material allows light to pass.</p>
+<h3>Stovepipe and Ductwork</h3>
+<p><strong>Construction:</strong></p>
+<ul>
+<li>Cylindrical form, often with a larger diameter at the bottom (where it connects to the stove) and smaller diameter as it rises (to accommodate furniture or walls).</li>
+<li>Seams are grooved or locked.</li>
+<li>Removable sections allow for cleaning.</li>
+</ul>
+<p><strong>Joints:</strong> Stovepipe sections overlap and are secured with rivets (to allow separation for cleaning) or crimped edges.</p>
+<h3>Baking Pans and Molds</h3>
+<p><strong>Construction:</strong></p>
+<ul>
+<li>Flat sheets are shaped (usually on stakes) into shallow rectangular forms or around mandrels for cylindrical forms.</li>
+<li>Edges are folded and sometimes sealed with solder.</li>
+<li>Bottoms may be reinforced with riveted supports to prevent warping under heat.</li>
+</ul>
+<hr>
+<p>Tinsmithing is a practical craft that produces beautiful, long-lasting functional objects. The combination of geometry, careful measurement, and hand-skill makes it deeply rewarding.</p>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="blacksmithing.html">Blacksmithing</a>
+<a href="building-materials-salvage.html">Building Materials Salvage &amp; Recovery</a>
+<a href="non-ferrous-metalworking.html">Non-Ferrous Metalworking</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

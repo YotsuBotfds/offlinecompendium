@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<!-- Lite/e-ink version — Generated from content/guides/microgrid-design-distribution.md -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micro-Grid Design &amp; Distribution</title>
+<style>
+/* Inline styles — no external deps, works on Kindle browser and sideloaded HTML */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:serif;font-size:1.1em;line-height:1.6;color:#000;background:#fff;
+  max-width:42em;margin:0 auto;padding:1em}
+h1{font-size:1.6em;margin:0 0 .3em;border-bottom:2px solid #000;padding-bottom:.3em}
+h2{font-size:1.3em;margin:1.5em 0 .5em;border-bottom:1px solid #666;padding-bottom:.2em}
+h3{font-size:1.1em;margin:1.2em 0 .4em}
+h4{font-size:1em;margin:1em 0 .3em;font-style:italic}
+p{margin:.6em 0}
+a{color:#000;text-decoration:underline}
+ul,ol{margin:.5em 0 .5em 1.5em}
+li{margin:.2em 0}
+table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.95em}
+th,td{border:1px solid #000;padding:.4em .6em;text-align:left;vertical-align:top}
+th{font-weight:bold;background:#ddd}
+tr:nth-child(even){background:#eee}
+code{font-family:monospace;font-size:.9em;background:#eee;padding:.1em .3em}
+pre{background:#eee;padding:.8em;overflow-x:auto;margin:.8em 0;font-size:.85em;border:1px solid #999}
+pre code{background:none;padding:0}
+img{max-width:100%;height:auto;display:block;margin:.5em 0}
+svg{max-width:100%;height:auto;display:block;margin:.5em 0}
+blockquote{border-left:3px solid #666;padding-left:1em;margin:.8em 0;font-style:italic}
+
+/* Container blocks — all rendered as simple bordered boxes */
+.warning,.danger{border:2px solid #000;padding:.8em;margin:.8em 0;background:#eee}
+.warning::before{content:"⚠ WARNING";display:block;font-weight:bold;margin-bottom:.3em}
+.danger::before{content:"⚠ DANGER";display:block;font-weight:bold;margin-bottom:.3em}
+.tip,.note,.info-box,.callout,.highlight-box,.card,.construction-note,.section-importance{
+  border:1px solid #666;padding:.8em;margin:.8em 0}
+.tip::before{content:"💡 TIP";display:block;font-weight:bold;margin-bottom:.3em}
+.note::before{content:"NOTE";display:block;font-weight:bold;margin-bottom:.3em}
+.info-box::before{content:"ℹ INFO";display:block;font-weight:bold;margin-bottom:.3em}
+
+/* Header metadata */
+.meta{color:#333;font-size:.9em;margin-bottom:1em}
+.meta span{margin-right:1em}
+.subtitle{font-style:italic;color:#333;margin-bottom:.5em}
+
+/* TOC */
+.toc{border:1px solid #666;padding:.8em 1.2em;margin:1em 0;background:#f5f5f5}
+.toc h2{font-size:1.1em;margin:0 0 .5em;border:none;padding:0}
+.toc ol{margin:.2em 0 0 1.2em}
+.toc li{margin:.15em 0}
+
+/* Related guides */
+.related{border-top:1px solid #666;margin-top:2em;padding-top:.8em}
+.related h3{font-size:1em;margin-bottom:.4em}
+.related a{display:inline-block;margin-right:1em}
+
+/* Footer */
+footer{border-top:1px solid #999;margin-top:2em;padding-top:.5em;font-size:.8em;color:#666}
+
+/* Nav */
+.nav{font-size:.85em;margin-bottom:1em}
+.nav a{margin-right:.5em}
+
+/* Hide interactive widgets — they won't work on e-ink */
+.interactive-widget,script{display:none}
+</style>
+</head>
+<body>
+<div class="nav">
+<a href="../index-lite.html">Home</a> ›
+<span>Power Generation</span> ›
+<span>Micro-Grid Design &amp; Distribution</span>
+</div>
+
+
+<h1>Micro-Grid Design &amp; Distribution</h1>
+<p class="subtitle">Design stand-alone or grid-tied microgrids for communities. Load assessment, generation sizing, battery bank design, distribution wiring, protection systems (fuses, breakers, grounding), metering, and multi-source integration.</p>
+<div class="meta">
+<span>●●●○ advanced</span>
+<span>~19 min</span>
+<span>Updated: 2026-02-20</span>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#load-assessment">Load Assessment and Demand Forecasting</a></li>
+<li><a href="#generation-sizing">Generation Sizing and Source Selection</a></li>
+<li><a href="#battery-design">Battery Bank Design and Storage Sizing</a></li>
+<li><a href="#distribution-wiring">Distribution Wiring and Sizing</a></li>
+<li><a href="#control-metering">Metering and Control Systems</a></li>
+<li><a href="#multi-source-integration">Multi-Source Integration and Synchronization</a></li>
+<li><a href="#design-example">Design Example: 50-Home Rural Microgrid</a></li>
+<li><a href="#commissioning">System Commissioning and Maintenance</a></li>
+</ol>
+</div>
+
+<div id="main-content">
+<section id="overview">
+<h2>Overview</h2>
+<p>A <strong>microgrid</strong> is a localized, self-contained electrical system serving a community, village, or industrial site. Microgrids can operate independently (islanding) or interconnect with larger grids. Modern microgrids blend multiple generation sources (solar, wind, hydro, generator), energy storage (batteries), and intelligent controls to balance supply and demand.</p>
+<p>This guide covers planning and design for a 20–500 kW microgrid serving 30–100 homes or a small industrial site. Scaling principles extend to larger systems.</p>
+</section>
+<section id="load-assessment">
+<h2>Load Assessment and Demand Forecasting</h2>
+<p><strong>Load assessment</strong> calculates the total electrical demand to be served. Mismatch—sizing too small leaves demands unmet; too large wastes capital.</p>
+<h3>Load Categories</h3>
+<p><strong>Continuous (baseload):</strong> Refrigeration, lighting, water pumping, communications. Runs 24/7; minimum 30–40% of peak load.</p>
+<p><strong>Peak:</strong> Air conditioning, heating, electric welding, simultaneous cooking. Lasts 1–4 hours per day; 3–5× baseload.</p>
+<p><strong>Standby:</strong> Seldom-used loads (backup pump, emergency lighting). Must be available but not counted in routine planning.</p>
+<h3>Load Survey</h3>
+<p>For a 50-home village:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Category</strong></th>
+<th><strong>Load (kW)</strong></th>
+<th><strong>Daily Hours</strong></th>
+<th><strong>Daily Energy</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Residential lighting</td>
+<td>5</td>
+<td>8</td>
+<td>40 kWh</td>
+<td>100W × 50 homes × 8 hrs</td>
+</tr>
+<tr>
+<td>Refrigeration (community)</td>
+<td>2</td>
+<td>24</td>
+<td>48 kWh</td>
+<td>Shared cold storage</td>
+</tr>
+<tr>
+<td>Water pumping</td>
+<td>3</td>
+<td>6</td>
+<td>18 kWh</td>
+<td>Morning and evening fills</td>
+</tr>
+<tr>
+<td>Clinic + radio (24/7)</td>
+<td>1</td>
+<td>24</td>
+<td>24 kWh</td>
+<td>Essential services</td>
+</tr>
+<tr>
+<td>School computers (day)</td>
+<td>0.5</td>
+<td>8</td>
+<td>4 kWh</td>
+<td>Limited, shared</td>
+</tr>
+<tr>
+<td>Small workshop</td>
+<td>2</td>
+<td>10</td>
+<td>20 kWh</td>
+<td>Saw mill, grinding</td>
+</tr>
+<tr>
+<td><strong>Baseload total</strong></td>
+<td><strong>6</strong></td>
+<td>-</td>
+<td><strong>~70 kWh/day</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Peak (concurrent use)</strong></td>
+<td><strong>15</strong></td>
+<td><strong>2–4</strong></td>
+<td><strong>30–60 kWh</strong></td>
+<td>All loads + AC/heating</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total daily demand:</strong> ~150 kWh/day; peak load 15 kW.</p>
+<h3>Forecasting Seasonal Demand</h3>
+<p>Load varies seasonally (heating in winter, cooling in summer, harvest seasons with increased milling/processing).</p>
+<pre><code>Winter: +20–30% demand (heating, longer nights)
+Summer: +50–100% demand (cooling, longer days, harvest processing)
+
+Sizing must accommodate seasonal peak; excess capacity sits unused in off-peak seasons.
+</code></pre>
+<p><strong>Growth projection:</strong> Plan for 10–30% demand growth over 5–10 years (population increase, economic development).</p>
+<p>Example: Start with 150 kWh/day demand; 20% growth over 5 years = 180 kWh/day by year 5.</p>
+</section>
+<section id="generation-sizing">
+<h2>Generation Sizing and Source Selection</h2>
+<p>Multiple generation sources reduce dependence on any single resource and smooth intermittency.</p>
+<h3>Hydro Power</h3>
+<p><strong>Capacity factor</strong> (ratio of actual output to theoretical maximum): 60–85% for year-round flow; 20–40% for seasonal rivers.</p>
+<pre><code>Hydro power (kW) = Flow (cubic feet/second) × Head (feet) × 0.0118 × Efficiency
+
+Example: 2 cfs flow, 50-foot head, 80% efficiency
+Power = 2 × 50 × 0.0118 × 0.8 = 9.44 kW (continuous baseline)
+</code></pre>
+<p><strong>Sizing for 150 kWh/day demand:</strong></p>
+<p>If hydro provides 10 kW baseline (86 kWh/day), supplemental generation is 64 kWh/day from solar/wind/generator.</p>
+<h3>Solar Power</h3>
+<p><strong>Capacity factor:</strong> 20–30% in temperate climates; 25–35% in sunny locations; 10–15% in cloudy regions.</p>
+<pre><code>Peak solar output (kW) = Demand (kWh/day) ÷ (Capacity factor × 24 hours)
+
+Example: 150 kWh/day demand, 25% capacity factor
+Solar array output needed: 150 ÷ (0.25 × 24) = 25 kW (rated peak power)
+
+Actual installation: 25 kW peak = ~70 solar panels × 360W each (if modules are 360W peak each)
+</code></pre>
+<p><strong>Seasonal variability:</strong></p>
+<ul>
+<li><strong>Summer peak:</strong> Array produces 30–40 kW peak during midday; curtailment needed (battery overcharge protection).</li>
+<li><strong>Winter minimum:</strong> Array produces 5–10 kW peak; demand supplemented by hydro/wind/generator.</li>
+</ul>
+<h3>Wind Power</h3>
+<p><strong>Capacity factor:</strong> 25–40% for good wind sites; 10–20% for marginal sites.</p>
+<pre><code>Wind power = 0.5 × Air density × Rotor area × Velocity³ × Efficiency
+
+Example: 20-meter diameter turbine (286 sq meter rotor), 12 mph avg wind, 40% efficiency
+Air density at sea level: 0.0765 lbs/cubic foot
+Power = 0.5 × 0.0765 × 286 × (12 × 1.47)³ × 0.4 ≈ 8 kW average
+
+Actual turbine nameplate: 15 kW (accounting for peak gusts exceeding average)
+</code></pre>
+<p><strong>Capacity factor calculation:</strong></p>
+<p>Average annual output / Theoretical maximum = Capacity factor</p>
+<p>For 12 mph average wind site with 15 kW turbine:</p>
+<pre><code>Theoretical max (8,760 hours/year at 15 kW): 131,400 kWh/year
+Actual (25% capacity factor): 32,850 kWh/year
+Daily average: 90 kWh/day
+</code></pre>
+<h3>Diesel/Gas Generator</h3>
+<p>Backup to intermittent renewables. Runtime minimized to save fuel; efficiency drops below 50% at partial loads.</p>
+<pre><code>Generator efficiency: 30–35% at 25% load, 40–45% at full load.
+
+Cost: $0.50–$1.50 per kWh generated (fuel + maintenance).
+Full-load runtime: 3,000–5,000 hours before major overhaul (need spares or repair capability).
+</code></pre>
+<p><strong>Generator sizing for 150 kWh/day demand:</strong></p>
+<p>A 25 kW generator running 6 hours at full load = 150 kWh. But generators shouldn't run at very low part-load (poor efficiency). Better: 50 kW generator for 3 hours/day at better efficiency (40%+ load).</p>
+<h3>Mixed Generation Example</h3>
+<p><strong>150 kWh/day demand, microgrid design:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Source</strong></th>
+<th><strong>Capacity</strong></th>
+<th><strong>Daily Output (avg)</strong></th>
+<th><strong>Capacity Factor</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hydro</td>
+<td>10 kW</td>
+<td>86 kWh</td>
+<td>85% (constant flow)</td>
+<td>Year-round baseline</td>
+</tr>
+<tr>
+<td>Solar array</td>
+<td>25 kW peak</td>
+<td>40 kWh</td>
+<td>25% (seasonal avg)</td>
+<td>Variable; 60 kWh summer, 20 kWh winter</td>
+</tr>
+<tr>
+<td>Wind turbine</td>
+<td>15 kW</td>
+<td>20 kWh</td>
+<td>25% (avg site)</td>
+<td>Variable; complements solar</td>
+</tr>
+<tr>
+<td>Diesel generator</td>
+<td>50 kW</td>
+<td>~10 kWh/day</td>
+<td>Variable</td>
+<td>Backup; run 2–3 hours/week for shortfalls</td>
+</tr>
+<tr>
+<td><strong>Total production</strong></td>
+<td>-</td>
+<td><strong>~150 kWh/day</strong></td>
+<td>-</td>
+<td>Sized to meet annual average; storage buffers daily mismatch</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="battery-design">
+<h2>Battery Bank Design and Storage Sizing</h2>
+<p>Batteries buffer mismatches between generation and demand. Storage is sized to handle worst-case scenarios (multi-day cloudiness, dead calm, etc.).</p>
+<h3>Storage Duration Sizing</h3>
+<p><strong>Reserve capacity:</strong> The number of days of autonomy without external generation (solar/wind down, hydro seasonal low).</p>
+<p>Typical reserve: 1–7 days depending on reliability required.</p>
+<pre><code>For a community, 3-day reserve is reasonable compromise (covers most weather patterns; excessive storage is expensive).
+
+Daily demand: 150 kWh
+Reserve: 3 days
+Total capacity needed: 150 × 3 = 450 kWh
+</code></pre>
+<p><strong>Depth of discharge (DoD):</strong> Battery storage is not 100% usable. Lead-acid batteries are cycled 50% DoD (50% of capacity remains unused to extend lifespan); lithium-ion can do 80–90% DoD.</p>
+<pre><code>If using lead-acid with 50% DoD:
+Usable capacity: 450 kWh
+Total battery capacity: 450 ÷ 0.5 = 900 kWh
+
+Cost estimate: Lead-acid $150–250/kWh; total ~$135,000–$225,000
+Lithium: $200–400/kWh; total ~$90,000–$180,000 (lower capacity needed if 80% DoD)
+</code></pre>
+<h3>Battery Chemistry</h3>
+<p><strong>Lead-acid (flooded, AGM, gel):</strong></p>
+<ul>
+<li><strong>Cycle life:</strong> 2,000–5,000 cycles (10–20 years at 1 cycle/day).</li>
+<li><strong>Efficiency:</strong> 85% round-trip.</li>
+<li><strong>Cost:</strong> $100–200/kWh installed.</li>
+<li><strong>Maintenance:</strong> Flooded cells need water top-offs; AGM/gel sealed.</li>
+</ul>
+<p><strong>Lithium-ion (LiFePO4 preferred for safety):</strong></p>
+<ul>
+<li><strong>Cycle life:</strong> 5,000–15,000 cycles (15–40 years).</li>
+<li><strong>Efficiency:</strong> 92–97% round-trip.</li>
+<li><strong>Cost:</strong> $200–400/kWh installed; falling.</li>
+<li><strong>Maintenance:</strong> Minimal; BMS (battery management system) handles charging/discharging.</li>
+</ul>
+<p><strong>Supercapacitors (buffer, not long-term storage):</strong></p>
+<ul>
+<li><strong>Duration:</strong> Minutes to hours.</li>
+<li><strong>Power density:</strong> High (useful for surge loads like pump startup).</li>
+<li><strong>Cost:</strong> $1,000–5,000 per 50 kW capacity; not cost-effective for day+ storage.</li>
+</ul>
+<h3>Battery Sizing Example</h3>
+<p><strong>450 kWh demand, 3-day reserve, lead-acid 50% DoD:</strong></p>
+<p>Battery capacity: 900 kWh</p>
+<p><strong>Configuration options:</strong></p>
+<p><strong>String 1:</strong> 48V system</p>
+<pre><code>Voltage: 48V nominal (25 cells × 1.92V each for lead-acid)
+Capacity: 900 kWh = 900,000 Wh ÷ 48V = 18,750 amp-hours
+Cost: 18,750 Ah × $8–15/Ah = $150,000–$281,000
+</code></pre>
+<p><strong>String 2:</strong> 96V system (higher voltage = smaller conductors, lower loss)</p>
+<pre><code>Voltage: 96V nominal (50 cells)
+Capacity: 900,000 Wh ÷ 96V = 9,375 Ah
+Cost: Similar per Wh, but conductors are smaller/cheaper.
+</code></pre>
+<p><strong>String 3:</strong> 480V system (industrial, 250 cells)</p>
+<pre><code>Voltage: 480V (used in industrial grids)
+Capacity: 900,000 Wh ÷ 480V = 1,875 Ah
+Cost: Very small conductors; excellent efficiency.
+Complexity: Requires high-voltage training and safety systems.
+</code></pre>
+<p>For a village microgrid, <strong>48V or 96V is practical</strong> (safe to work on; standard components available).</p>
+</section>
+<section id="distribution-wiring">
+<h2>Distribution Wiring and Sizing</h2>
+<p>Wires carry current from generation and storage to loads. Undersized wires lose power; oversized wires waste cost.</p>
+<h3>Wire Sizing Rule</h3>
+<pre><code>Wire cross-sectional area (square mm) = (2 × ρ × L × I) / (Allowable voltage drop)
+
+ρ = Resistivity of copper: 0.0173 ohm·mm²/meter
+L = One-way distance (meters)
+I = Current (amps)
+Allowable voltage drop: 3% for distribution, 2% for critical loads
+</code></pre>
+<p><strong>Example: 48V feeder, 100 amp load, 200 meter run to remote homestead</strong></p>
+<pre><code>Wire size = (2 × 0.0173 × 200 × 100) / (48V × 0.03)
+          = 692 / 1.44
+          = 481 square mm
+
+Standard wire: ~400 mm² or two 250 mm² (AWG 0000) in parallel.
+Voltage drop: (400 × 1.44) / 692 = 0.83% (acceptable)
+</code></pre>
+<p><strong>Simplified table for 48V distribution:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Distance</strong></th>
+<th><strong>Current</strong></th>
+<th><strong>Wire Size (AWG)</strong></th>
+<th><strong>Voltage Drop</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>50 m, 50 A</td>
+<td>50</td>
+<td>2/0</td>
+<td>1.2%</td>
+</tr>
+<tr>
+<td>100 m, 100 A</td>
+<td>100</td>
+<td>4/0</td>
+<td>2.4%</td>
+</tr>
+<tr>
+<td>200 m, 50 A</td>
+<td>50</td>
+<td>2/0 duplex</td>
+<td>1.2%</td>
+</tr>
+<tr>
+<td>500 m, 10 A</td>
+<td>10</td>
+<td>8</td>
+<td>1.8%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conductor types:</strong></p>
+<ul>
+<li><strong>Copper:</strong> Superior conductivity, higher cost; standard in utility systems.</li>
+<li><strong>Aluminum:</strong> 1.6× resistivity of copper; requires larger gauge; cheaper overall cost; used for long-distance transmission.</li>
+<li><strong>Underground cable:</strong> Insulated multi-core; protects from weather and tampering; expensive for large distances.</li>
+<li><strong>Overhead:</strong> Bare stranded conductor on poles; visible; easy to inspect/repair; susceptible to weather damage.</li>
+</ul>
+<h3>Protection Devices</h3>
+<p><strong>Overcurrent protection</strong> (fuses, circuit breakers): Prevent conductors from overheating and causing fires.</p>
+<pre><code>Fuse/breaker current rating: 125% of continuous load current
+
+Example: 100 amp feeder
+Breaker rating: 100 × 1.25 = 125 amp (use standard 125 amp breaker)
+</code></pre>
+<p><strong>Grounding:</strong> All equipment frames, neutral wires, and lightning arrestors tied to ground (earth rod, metal plate buried in moist soil).</p>
+<pre><code>Ground resistance target: &lt;25 ohms (measured with ground resistance tester)
+
+Achieved by driving 10–15 foot copper rod into moist soil; or burying copper plate in conductive layer.
+
+Grounding prevents electrocution (fault current flows safely to earth instead of through person) and reduces lightning damage.
+</code></pre>
+</section>
+<section id="control-metering">
+<h2>Metering and Control Systems</h2>
+<p><strong>Energy meters</strong> track generation and consumption. <strong>Control systems</strong> optimize dispatch (which generator runs, when batteries charge/discharge, load shedding if demand exceeds supply).</p>
+<h3>Metering</h3>
+<p><strong>AC meters</strong> (grid-connected systems):</p>
+<ul>
+<li><strong>Utility-grade:</strong> 1–2% accuracy; measure real + reactive power; cost $500–2,000.</li>
+<li><strong>Submeter (load):</strong> Tracks individual household or process load; $50–300 each.</li>
+</ul>
+<p><strong>DC meters</strong> (battery-based systems):</p>
+<ul>
+<li><strong>Shunt-based:</strong> Measure current and voltage; calculate power in real-time. Accuracy ±2%; cost $50–500.</li>
+<li><strong>Wireless monitors:</strong> Display generation + consumption in real-time; aid optimization.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>150 kWh/day system should have:</p>
+<ul>
+<li>1 main meter (generation source aggregate).</li>
+<li>1 meter on battery (charge/discharge rate).</li>
+<li>5–10 submeters on critical loads (clinic, pumping, cold storage).</li>
+</ul>
+<p><strong>Cost:</strong> $1,000–$3,000 for metering infrastructure.</p>
+<h3>Control Strategies</h3>
+<p><strong>Simple (manual dispatch):</strong></p>
+<p>Operator monitors generation + demand; switches loads on/off and starts generator as needed. Works for small systems; labor-intensive; relies on operator skill.</p>
+<p><strong>Automatic (controller-based):</strong></p>
+<p>A <strong>microcontroller</strong> (microcomputer, PLC) monitors all meters and automates decisions.</p>
+<pre><code>Decision tree example:
+IF battery voltage &gt; 95% of max:
+  - Reduce solar charging (divert excess to dump load—heater, pump, etc.)
+  - Don't start generator
+ELSE IF battery voltage &lt; 40%:
+  - Start diesel generator
+  - Stop non-essential loads (e.g., irrigation, ice-making)
+ELSE IF demand &gt; supply:
+  - Discharge battery at maximum rate
+  - If battery &lt; 50%, shed lowest-priority loads
+</code></pre>
+<p><strong>Smart metering (advanced):</strong></p>
+<p>Monitors weather, load forecasts, and electricity prices. Optimizes charging/discharging and generator dispatch to minimize fuel consumption and cost.</p>
+<p><strong>Cost:</strong> $2,000–$10,000 depending on complexity.</p>
+</section>
+<section id="multi-source-integration">
+<h2>Multi-Source Integration and Synchronization</h2>
+<p>Different generation sources operate at different frequencies (AC generators at 50/60 Hz; solar/wind inverters also output 50/60 Hz). Combining them requires careful synchronization.</p>
+<h3>Inverter-Based Coordination</h3>
+<p><strong>Solar and wind inverters</strong> convert DC power to AC and must synchronize with grid frequency and voltage. Modern inverters use PLL (phase-locked loop) circuits to track the AC bus.</p>
+<p><strong>Design principle:</strong> One source is the &quot;master&quot; (dominant frequency setter); others synchronize to it.</p>
+<pre><code>Option 1: Hydro generator is master (stable frequency); solar/wind inverters sync to it.
+Option 2: Battery inverter is master; hydro/solar/wind all sync to battery system.
+Option 3: Composite sync—controller adjusts multiple inverter frequency setpoints to balance supply and demand.
+</code></pre>
+<p><strong>Frequency stability:</strong></p>
+<p>If demand exceeds supply, the AC bus frequency drops (generator slowing down). This signals to battery inverter and generator controller to:</p>
+<ol>
+<li>Increase generator output (if running).</li>
+<li>Discharge battery at higher rate.</li>
+<li>Shed loads to match supply.</li>
+</ol>
+<p><strong>Voltage regulation:</strong></p>
+<p>Inverters also regulate AC voltage (220V or 120V nominal in typical systems). Voltage droops under heavy load; voltage rises under light load with excess generation.</p>
+<pre><code>Acceptable voltage variation: ±5% (209–231V for 220V nominal).
+If voltage drops &gt;5%, load shedding is initiated to reduce current and stabilize voltage.
+</code></pre>
+<h3>Failover and Blackstart</h3>
+<p><strong>Failover:</strong> If main generator or inverter fails, backup system automatically takes over within 100 milliseconds (human-imperceptible).</p>
+<p>Requires:</p>
+<ul>
+<li>Dual inverters in parallel with load-sharing (each supplies 50% of load).</li>
+<li>Automatic switch to backup if main fails.</li>
+</ul>
+<p><strong>Blackstart:</strong> If the entire grid collapses, it must be restarted from scratch. Diesel generator is best blackstart source (doesn't depend on grid frequency to start); solar/hydro inverters need grid to sync and may not auto-start.</p>
+<pre><code>Blackstart procedure:
+1. Start diesel generator alone (isolated from rest of system).
+2. Once generator is stable at 50/60 Hz and 220V, connect battery inverter (syncs to generator).
+3. Once stable, connect loads gradually.
+4. Once stable, reconnect solar/wind/hydro inverters (sync to the now-stable AC bus).
+</code></pre>
+</section>
+<section id="design-example">
+<h2>Design Example: 50-Home Rural Microgrid</h2>
+<p><strong>Community:</strong> 50 homes, small clinic, school, water system. 150 kWh/day demand, 20 kW peak.</p>
+<p><strong>Site conditions:</strong> Year-round stream (10 kW hydro viable); average solar 4 peak sun hours/day; moderate wind (12 mph average).</p>
+<p><strong>Generation mix:</strong></p>
+<ul>
+<li><strong>Hydro:</strong> 10 kW (86 kWh/day year-round baseline).</li>
+<li><strong>Solar:</strong> 20 kW array (40 kWh/day summer average; 15 kWh/day winter).</li>
+<li><strong>Wind:</strong> 15 kW turbine (25 kWh/day average; 5–40 kWh/day range).</li>
+<li><strong>Diesel generator:</strong> 50 kW (backup; 10 kWh/day on shortfall days).</li>
+</ul>
+<p><strong>Daily example (summer):</strong></p>
+<pre><code>Hydro: 86 kWh (constant)
+Solar: 50 kWh (sunny day)
+Wind: 15 kWh (light wind)
+Total generation: 151 kWh ≈ demand
+
+Battery: Balanced (charge midday from solar, discharge evening/morning).
+Diesel: Not needed.
+
+Diesel would start if cloud cover reduces solar to &lt;15 kWh.
+</code></pre>
+<p><strong>Battery storage:</strong> 450 kWh total capacity (900 kWh installed, 50% DoD), lead-acid, 48V system.</p>
+<p><strong>Distribution:</strong></p>
+<ul>
+<li><strong>Main AC bus:</strong> 48V → 220/120V inverter/charger (10 kVA capacity).</li>
+<li><strong>Feeder routes:</strong> 4 branches from central battery house to neighborhoods (50–300 meters).</li>
+<li><strong>Wire sizing:</strong> 2/0 AWG copper (standard for 48V, 100–150 amp feeders).</li>
+<li><strong>Protection:</strong> Fused disconnect switches at each neighborhood; individual breakers at homes.</li>
+</ul>
+<p><strong>Metering:</strong></p>
+<ul>
+<li>Central generation meter.</li>
+<li>Battery monitor (shunt-based).</li>
+<li>Clinic + water pump: individual submeters.</li>
+<li>Community meetings monthly to review consumption and optimize load shifting.</li>
+</ul>
+<p><strong>Cost estimate:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Component</strong></th>
+<th><strong>Cost</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hydro turbine + intake</td>
+<td>$30,000</td>
+</tr>
+<tr>
+<td>Solar array (100 panels)</td>
+<td>$40,000</td>
+</tr>
+<tr>
+<td>Wind turbine</td>
+<td>$50,000</td>
+</tr>
+<tr>
+<td>Battery bank (900 kWh)</td>
+<td>$180,000</td>
+</tr>
+<tr>
+<td>Diesel generator + installation</td>
+<td>$25,000</td>
+</tr>
+<tr>
+<td>Inverter, controller, metering</td>
+<td>$15,000</td>
+</tr>
+<tr>
+<td>Wiring, poles, labor</td>
+<td>$60,000</td>
+</tr>
+<tr>
+<td><strong>Total capital</strong></td>
+<td><strong>$400,000</strong></td>
+</tr>
+<tr>
+<td><strong>Per home</strong></td>
+<td><strong>$8,000</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Operating cost:</strong> ~$5,000/year (diesel, maintenance, technician salary) = $100/home/year.</p>
+</section>
+<section id="commissioning">
+<h2>System Commissioning and Maintenance</h2>
+<p><strong>Before startup:</strong></p>
+<ol>
+<li><strong>Insulation test:</strong> Megohm meter on all wiring (&gt;1 megohm resistance confirms safety).</li>
+<li><strong>Load test:</strong> Each source and inverter tested individually, then in parallel.</li>
+<li><strong>Protection test:</strong> Intentionally trigger breakers/fuses; verify they trip and restore properly.</li>
+<li><strong>Sync test:</strong> Parallelize sources gradually; monitor voltage and frequency for stability.</li>
+</ol>
+<p><strong>Monthly maintenance:</strong></p>
+<ul>
+<li>Battery voltage and temperature check.</li>
+<li>Diesel generator load bank test (30-minute run at 75% capacity).</li>
+<li>Inverter efficiency check (kW in vs. kW out).</li>
+<li>Meter verification (spot-check against handheld meter).</li>
+</ul>
+<p><strong>Annual maintenance:</strong></p>
+<ul>
+<li>Solar array cleaning (dust accumulation reduces output 5–20%).</li>
+<li>Wind turbine inspection (blade cracks, bearing lubrication).</li>
+<li>Hydro intake cleaning (leaves, silt).</li>
+<li>Battery equalization (flooded lead-acid) or cell voltage balancing (lithium).</li>
+<li>Diesel generator oil/filter change, valve clearance check.</li>
+<li>Full system load test (simulate peak demand; verify all sources respond).</li>
+</ul>
+<div class="warning">
+<p>Microgrids operate unsupervised in many communities. Overcharging batteries causes explosion (hydrogen gas); undercharging causes permanent damage. Install automatic voltage controls (setpoints programmed into charge controller) and thermal monitoring. Train a local technician in basic troubleshooting and component replacement.</p>
+</div>
+</section>
+
+</div>
+
+<div class="related">
+<h3>Related Guides</h3>
+<a href="electrical-wiring.html">Electrical Wiring</a>
+<a href="electrical-generation.html">Power Generation</a>
+<a href="hydroelectric.html">Hydroelectric Power</a>
+<a href="mechanical-power-transmission.html">Mechanical Power Transmission</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Lite/E-ink Edition</p>
+</footer>
+</body>
+</html>

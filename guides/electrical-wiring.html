@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/electrical-wiring.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrical Wiring - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.ampacity-table th { background: var(--accent); color: var(--bg); }
+.wiring-formula { background: var(--surface); padding: 1em; font-family: monospace; margin: 1em 0; border-radius: 4px; }
+.danger-box { border-left: 4px solid #d9534f; }
+.warning-box { border-left: 4px solid #f0ad4e; }
+
+</style>
+<meta name="description" content="Wire sizing, circuit design, fuse and breaker selection, grounding, junction boxes, outlet wiring, and electrical safety codes for off-grid and survival electrical systems">
+<link rel="canonical" href="https://zerotoherohero.com/guides/electrical-wiring.html">
+<meta property="og:title" content="Electrical Wiring">
+<meta property="og:description" content="Wire sizing, circuit design, fuse and breaker selection, grounding, junction boxes, outlet wiring, and electrical safety codes for off-grid and survival electrical systems">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Power Generation", "item": "https://zerotoherohero.com/#sec-power-generation"},
+    {"@type": "ListItem", "position": 3, "name": "Electrical Wiring", "item": "https://zerotoherohero.com/guides/electrical-wiring.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Electrical Wiring",
+  "description": "Wire sizing, circuit design, fuse and breaker selection, grounding, junction boxes, outlet wiring, and electrical safety codes for off-grid and survival electrical systems",
+  "dateModified": "2026-02-16",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-231">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-power-generation">Power Generation</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Electrical Wiring</span>
+</nav>
+<header>
+<h1>Electrical Wiring</h1>
+<p class="subtitle">Wire sizing, circuit design, fuse and breaker selection, grounding, junction boxes, outlet wiring, and electrical safety codes for off-grid and survival electrical systems</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~28 min read</span>
+<span class="last-updated">· Updated: 2026-02-16</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">1. Overview: Electrical Wiring for Off-Grid Systems</a></li>
+<li><a href="#site-assessment">2. Site Assessment &amp; Load Planning</a></li>
+<li><a href="#wire-sizing">3. Wire Sizing Calculations</a></li>
+<li><a href="#ampacity">4. Ampacity Tables &amp; Derating</a></li>
+<li><a href="#overcurrent">5. Overcurrent Protection: Fuses &amp; Breakers</a></li>
+<li><a href="#grounding">7. Grounding &amp; Bonding</a></li>
+<li><a href="#junctions-conduit">8. Junction Boxes &amp; Conduit</a></li>
+<li><a href="#outlets">9. Outlet &amp; Switch Wiring</a></li>
+<li><a href="#three-phase">10. Three-Phase Wiring</a></li>
+<li><a href="#voltage-drop">11. Voltage Drop Calculations &amp; Effects</a></li>
+<li><a href="#storage-energy">12. Stored Energy &amp; Safety Hazards</a></li>
+<li><a href="#basic-circuit">13. Basic Circuit Diagrams</a></li>
+<li><a href="#material-alternatives">Material Alternatives for Low-Resource Wiring</a></li>
+<li><a href="#safety-practices">Electrical Safety Practices</a></li>
+<li><a href="#portable-generation">Connecting Portable Generators Safely</a></li>
+<li><a href="#wiring-quick-ref">Electrical Wiring Quick Reference</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<div class="danger">
+<p><strong>ELECTROCUTION HAZARD:</strong> Electrical current as low as 20 milliamps (0.02 amps) across the heart can cause fatal cardiac arrest. All electrical work must be performed with circuits de-energized and locked out. NEVER work on live circuits. Backfeeding power into utility lines (connecting a generator without a transfer switch) can electrocute utility workers and is illegal. All electrical work should comply with local electrical codes and be inspected by qualified personnel.</p>
+</div>
+<p><svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg" aria-label="Wire ampacity derating, voltage drop chart, three-phase configurations, GFCI/AFCI comparison, off-grid wiring diagram, wire gauge flowchart">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 13px; }
+      .label { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 11px; }
+      .axis { stroke: var(--text, #f5f0e8); stroke-width: 2; }
+      .grid { stroke: var(--border, #444); stroke-width: 0.5; opacity: 0.3; }
+      .chart { stroke: var(--accent, #d4a574); stroke-width: 2; fill: none; }
+      .chart-alt { stroke: var(--accent2, #7fb3d5); stroke-width: 2; fill: none; }
+      .component { fill: var(--card, #3d3228); stroke: var(--border, #444); stroke-width: 1; }
+      .wire { stroke: var(--accent, #d4a574); stroke-width: 2; fill: none; }
+      .box { fill: var(--surface, #2d2416); stroke: var(--border, #444); stroke-width: 1; }
+      .title-box { fill: var(--surface, #2d2416); stroke: var(--accent, #d4a574); stroke-width: 2; }
+      .good { fill: #1a3a1a; stroke: #44aa44; }
+      .warning { fill: #3a2a1a; stroke: #ffaa44; }
+      .danger { fill: #3a1a1a; stroke: #ff6b6b; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="800" class="bg"/>
+
+  <!-- Title -->
+  <text x="20" y="30" class="text" font-weight="bold" font-size="16">Electrical Wiring: Ampacity, Voltage Drop, and Off-Grid Design</text>
+
+  <!-- Section 1: Wire Ampacity Derating Chart (top left) -->
+  <g id="ampacity-section">
+    <text x="20" y="70" class="text" font-weight="bold">Wire Ampacity Derating (Ambient Temperature & Bundling):</text>
+
+    <!-- Axes -->
+    <line x1="60" y1="50" x2="60" y2="280" class="axis"/>
+    <line x1="60" y1="280" x2="380" y2="280" class="axis"/>
+
+    <!-- Grid -->
+    <g class="grid">
+      <line x1="60" y1="100" x2="380" y2="100"/>
+      <line x1="60" y1="150" x2="380" y2="150"/>
+      <line x1="60" y1="200" x2="380" y2="200"/>
+      <line x1="60" y1="250" x2="380" y2="250"/>
+      <line x1="110" y1="270" x2="110" y2="290"/>
+      <line x1="160" y1="270" x2="160" y2="290"/>
+      <line x1="210" y1="270" x2="210" y2="290"/>
+      <line x1="260" y1="270" x2="260" y2="290"/>
+      <line x1="310" y1="270" x2="310" y2="290"/>
+      <line x1="360" y1="270" x2="360" y2="290"/>
+    </g>
+
+    <!-- Scale Y -->
+    <text x="25" y="285" class="label" text-anchor="end">0%</text>
+    <text x="25" y="235" class="label" text-anchor="end">25%</text>
+    <text x="25" y="185" class="label" text-anchor="end">50%</text>
+    <text x="25" y="135" class="label" text-anchor="end">75%</text>
+    <text x="25" y="85" class="label" text-anchor="end">100%</text>
+
+    <text x="40" y="295" class="text" font-weight="bold" transform="rotate(-90 40 295)" font-size="12">Derate %</text>
+
+    <!-- Scale X -->
+    <text x="110" y="310" class="label" text-anchor="middle">20°C</text>
+    <text x="160" y="310" class="label" text-anchor="middle">30°C</text>
+    <text x="210" y="310" class="label" text-anchor="middle">40°C</text>
+    <text x="260" y="310" class="label" text-anchor="middle">50°C</text>
+    <text x="310" y="310" class="label" text-anchor="middle">60°C</text>
+    <text x="360" y="310" class="label" text-anchor="middle">70°C</text>
+
+    <text x="210" y="335" class="text" font-weight="bold">Ambient Temperature (°C)</text>
+
+    <!-- Deration curves -->
+    <path d="M 60 60 L 110 85 L 160 110 L 210 145 L 260 200 L 310 245 L 360 275" class="chart"/>
+    <text x="365" y="270" class="label" font-size="10">1 wire in air</text>
+
+    <path d="M 60 80 L 110 105 L 160 130 L 210 165 L 260 220 L 310 260 L 360 280" class="chart-alt"/>
+    <text x="365" y="280" class="label" font-size="10" fill="var(--accent2, #7fb3d5)">3+ wires bundled</text>
+  </g>
+
+  <!-- Section 2: Voltage Drop Chart (top middle) -->
+  <g id="voltage-drop-section">
+    <text x="430" y="70" class="text" font-weight="bold">Voltage Drop vs Distance (at 20A load):</text>
+
+    <!-- Axes -->
+    <line x1="470" y1="50" x2="470" y2="280" class="axis"/>
+    <line x1="470" y1="280" x2="790" y2="280" class="axis"/>
+
+    <!-- Grid -->
+    <g class="grid">
+      <line x1="470" y1="100" x2="790" y2="100"/>
+      <line x1="470" y1="150" x2="790" y2="150"/>
+      <line x1="470" y1="200" x2="790" y2="200"/>
+      <line x1="470" y1="250" x2="790" y2="250"/>
+      <line x1="520" y1="270" x2="520" y2="290"/>
+      <line x1="570" y1="270" x2="570" y2="290"/>
+      <line x1="620" y1="270" x2="620" y2="290"/>
+      <line x1="670" y1="270" x2="670" y2="290"/>
+      <line x1="720" y1="270" x2="720" y2="290"/>
+      <line x1="770" y1="270" x2="770" y2="290"/>
+    </g>
+
+    <!-- Scale Y -->
+    <text x="435" y="285" class="label" text-anchor="end">0%</text>
+    <text x="435" y="235" class="label" text-anchor="end">2%</text>
+    <text x="435" y="185" class="label" text-anchor="end">4%</text>
+    <text x="435" y="135" class="label" text-anchor="end">6%</text>
+    <text x="435" y="85" class="label" text-anchor="end">8%</text>
+
+    <text x="450" y="295" class="text" font-weight="bold" transform="rotate(-90 450 295)" font-size="12">VD %</text>
+
+    <!-- Scale X -->
+    <text x="520" y="310" class="label" text-anchor="middle">50 ft</text>
+    <text x="570" y="310" class="label" text-anchor="middle">100 ft</text>
+    <text x="620" y="310" class="label" text-anchor="middle">150 ft</text>
+    <text x="670" y="310" class="label" text-anchor="middle">200 ft</text>
+    <text x="720" y="310" class="label" text-anchor="middle">300 ft</text>
+    <text x="770" y="310" class="label" text-anchor="middle">500 ft</text>
+
+    <text x="620" y="335" class="text" font-weight="bold">Distance (feet)</text>
+
+    <!-- VD curves for different gauges -->
+    <path d="M 470 260 L 520 235 L 570 200 L 620 160 L 670 110 L 720 60 L 770 50" class="chart"/>
+    <text x="770" y="45" class="label" font-size="9">#10 AWG</text>
+
+    <path d="M 470 270 L 520 250 L 570 220 L 620 180 L 670 130 L 720 80 L 770 60" class="chart-alt"/>
+    <text x="770" y="55" class="label" font-size="9" fill="var(--accent2, #7fb3d5)">#12 AWG</text>
+  </g>
+
+  <!-- Section 3: Three-Phase Configurations (right side) -->
+  <g id="three-phase-section">
+    <text x="840" y="70" class="text" font-weight="bold">3-Phase: Wye vs Delta</text>
+
+    <!-- Wye configuration -->
+    <text x="840" y="100" class="label" font-weight="bold">Wye (Y) - Star</text>
+    <line x1="880" y1="120" x2="920" y2="140" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <line x1="880" y1="120" x2="920" y2="160" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <line x1="880" y1="120" x2="920" y2="180" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <circle cx="880" cy="120" r="3" fill="var(--accent, #d4a574)"/>
+    <text x="925" y="145" class="label" font-size="9">Phase A</text>
+    <text x="925" y="165" class="label" font-size="9">Phase B</text>
+    <text x="925" y="185" class="label" font-size="9">Phase C</text>
+    <text x="840" y="210" class="label" font-size="10">Line voltage = √3 × phase</text>
+    <text x="840" y="225" class="label" font-size="10">208V, 277V, 480V systems</text>
+
+    <!-- Delta configuration -->
+    <text x="840" y="255" class="label" font-weight="bold">Delta (Δ) - Triangle</text>
+    <path d="M 880 270 L 920 270 L 900 300 Z" fill="none" stroke="var(--accent2, #7fb3d5)" stroke-width="2"/>
+    <text x="925" y="275" class="label" font-size="9">A-B</text>
+    <text x="925" y="295" class="label" font-size="9">B-C</text>
+    <text x="920" y="315" class="label" font-size="9">C-A</text>
+    <text x="840" y="330" class="label" font-size="10">Line voltage = phase voltage</text>
+    <text x="840" y="345" class="label" font-size="10">240V, 480V systems (high current)</text>
+  </g>
+
+  <!-- Section 4: GFCI vs AFCI Comparison (middle-left) -->
+  <g id="protection-section">
+    <rect x="20" y="360" width="400" height="180" class="title-box" rx="3"/>
+
+    <text x="35" y="380" class="text" font-weight="bold">Circuit Protection Comparison:</text>
+
+    <text x="35" y="405" class="label" font-weight="bold">GFCI (Ground Fault Circuit Interrupter):</text>
+    <text x="50" y="422" class="label" font-size="10">✓ Detects ground faults (person touching hot wire)</text>
+    <text x="50" y="437" class="label" font-size="10">✓ Trips at ~5 mA leakage current</text>
+    <text x="50" y="452" class="label" font-size="10">✓ Used: bathrooms, kitchens, outdoor outlets</text>
+    <text x="50" y="467" class="label" font-size="10">✗ Does not protect against short circuits</text>
+
+    <text x="35" y="492" class="label" font-weight="bold">AFCI (Arc Fault Circuit Interrupter):</text>
+    <text x="50" y="509" class="label" font-size="10">✓ Detects dangerous arcing (frayed wires)</text>
+    <text x="50" y="524" class="label" font-size="10">✓ Trips at ~1.5 A arcing current</text>
+    <text x="50" y="539" class="label" font-size="10">✓ Used: bedrooms, living areas, kitchen counters</text>
+  </g>
+
+  <!-- Section 5: Off-Grid Wiring Diagram (middle-right and bottom) -->
+  <g id="offgrid-section">
+    <rect x="450" y="360" width="530" height="420" class="title-box" rx="3"/>
+
+    <text x="470" y="380" class="text" font-weight="bold">Off-Grid System Wiring Layout:</text>
+
+    <!-- Solar array -->
+    <rect x="480" y="400" width="80" height="50" class="component"/>
+    <text x="495" y="432" class="label" font-size="10" text-anchor="middle">Solar</text>
+    <text x="495" y="445" class="label" font-size="10" text-anchor="middle">Array</text>
+
+    <!-- Charge controller -->
+    <path d="M 560 425 L 620 425" class="wire"/>
+    <rect x="630" y="405" width="80" height="50" class="component"/>
+    <text x="670" y="432" class="label" font-size="9" text-anchor="middle">Charge</text>
+    <text x="670" y="445" class="label" font-size="9" text-anchor="middle">Controller</text>
+
+    <!-- Battery bank -->
+    <path d="M 710 425 L 750 425" class="wire"/>
+    <rect x="760" y="390" width="80" height="100" class="component"/>
+    <text x="800" y="438" class="label" font-size="10" text-anchor="middle">Battery</text>
+    <text x="800" y="452" class="label" font-size="10" text-anchor="middle">Bank</text>
+    <text x="800" y="466" class="label" font-size="9" text-anchor="middle">48V DC</text>
+
+    <!-- Inverter -->
+    <path d="M 800 490 L 800 530" class="wire"/>
+    <rect x="750" y="540" width="100" height="50" class="component"/>
+    <text x="800" y="567" class="label" font-size="10" text-anchor="middle">Inverter</text>
+    <text x="800" y="580" class="label" font-size="9" text-anchor="middle">48V DC→240V AC</text>
+
+    <!-- Main breaker -->
+    <path d="M 800 590 L 800 620" class="wire"/>
+    <rect x="770" y="625" width="60" height="30" class="component"/>
+    <text x="800" y="644" class="label" font-size="9" text-anchor="middle">Main Breaker</text>
+
+    <!-- Sub-panel -->
+    <path d="M 800 655 L 800 690" class="wire"/>
+    <rect x="740" y="695" width="120" height="50" class="component"/>
+    <text x="800" y="722" class="label" font-size="10" text-anchor="middle">Sub-Panel</text>
+
+    <!-- Loads -->
+    <path d="M 860 720 L 910 720" class="wire"/>
+    <rect x="920" y="700" width="50" height="40" class="component"/>
+    <text x="945" y="725" class="label" font-size="9" text-anchor="middle">Loads</text>
+
+    <!-- Generator (backup) -->
+    <rect x="480" y="500" width="80" height="50" class="component"/>
+    <text x="520" y="527" class="label" font-size="10" text-anchor="middle">Backup</text>
+    <text x="520" y="540" class="label" font-size="10" text-anchor="middle">Generator</text>
+    <path d="M 560 525 L 630 525 L 630 425" class="wire" stroke-dasharray="3,3"/>
+    <text x="610" y="475" class="label" font-size="9" fill="var(--muted, #5a6e5a)">Transfer switch</text>
+
+    <!-- Wind turbine (optional) -->
+    <rect x="480" y="590" width="80" height="50" class="component" opacity="0.6"/>
+    <text x="520" y="617" class="label" font-size="10" text-anchor="middle">Wind Turbine</text>
+    <path d="M 560 615 L 620 615 L 620 425" class="wire" opacity="0.6" stroke-dasharray="3,3"/>
+  </g>
+
+  <!-- Section 6: Wire Gauge Selection Flowchart (bottom) -->
+  <g id="flowchart-section">
+    <text x="20" y="580" class="text" font-weight="bold">Wire Gauge Selection Flowchart:</text>
+
+    <!-- Step 1: Get amperage -->
+    <rect x="20" y="600" width="100" height="40" class="component" rx="3"/>
+    <text x="70" y="625" class="label" text-anchor="middle" font-size="9">Step 1: Get</text>
+    <text x="70" y="637" class="label" text-anchor="middle" font-size="9">circuit amperage</text>
+
+    <!-- Arrow -->
+    <path d="M 130 620 L 160 620" class="wire"/>
+
+    <!-- Step 2: Account for distance -->
+    <rect x="170" y="600" width="100" height="40" class="component" rx="3"/>
+    <text x="220" y="625" class="label" text-anchor="middle" font-size="9">Step 2: Calculate</text>
+    <text x="220" y="637" class="label" text-anchor="middle" font-size="9">voltage drop</text>
+
+    <!-- Arrow -->
+    <path d="M 280" y="620" L 310 620" class="wire"/>
+
+    <!-- Step 3: Select wire -->
+    <rect x="320" y="600" width="100" height="40" class="component" rx="3"/>
+    <text x="370" y="625" class="label" text-anchor="middle" font-size="9">Step 3: Select</text>
+    <text x="370" y="637" class="label" text-anchor="middle" font-size="9">gauge (VD &lt;5%)</text>
+
+    <!-- Arrow -->
+    <path d="M 430" y="620" L 460 620" class="wire"/>
+
+    <!-- Step 4: Derate -->
+    <rect x="470" y="600" width="100" height="40" class="component" rx="3"/>
+    <text x="520" y="625" class="label" text-anchor="middle" font-size="9">Step 4: Derate</text>
+    <text x="520" y="637" class="label" text-anchor="middle" font-size="9">for temperature</text>
+
+    <!-- Arrow -->
+    <path d="M 580" y="620" L 610 620" class="wire"/>
+
+    <!-- Step 5: Choose breaker -->
+    <rect x="620" y="600" width="100" height="40" class="component" rx="3"/>
+    <text x="670" y="625" class="label" text-anchor="middle" font-size="9">Step 5: Match</text>
+    <text x="670" y="637" class="label" text-anchor="middle" font-size="9">breaker rating</text>
+
+    <!-- Key rule -->
+    <rect x="20" y="670" width="700" height="50" class="box" rx="3"/>
+    <text x="40" y="690" class="label" font-weight="bold">⚠ KEY RULE: Breaker size always determined by wire ampacity, NOT load</text>
+    <text x="40" y="705" class="label" font-size="11">Example: 20A load on 12 AWG wire requires 20A breaker. If wire is #14, breaker must drop to 15A (over-protect wire).</text>
+  </g>
+</svg>
+</p>
+<section id="overview">
+<h2>1. Overview: Electrical Wiring for Off-Grid Systems</h2>
+<p>Electrical wiring is the nervous system of any power generation setup—solar, wind, hydro, or generator. Proper wiring ensures energy reaches loads safely and efficiently. Poor wiring causes fires, electrocution, equipment damage, and power loss. This guide covers sizing, protection, grounding, and troubleshooting for survival and off-grid contexts where professional electricians may be unavailable.</p>
+<div class="info-box">
+<p><strong>Key principle:</strong> Wire size and breaker rating always determined by the smallest ampacity in the circuit. Under-sizing any component creates bottleneck and fire hazard; over-sizing wastes materials and reduces protection.</p>
+</div>
+<h3>Why Electrical Safety Matters in Collapse Scenarios</h3>
+<p>In off-grid living, you cannot call an electrician. Mistakes persist indefinitely and compound. A single mis-wired circuit can:</p>
+<ul>
+<li>Cause gradual insulation failure (months to fire)</li>
+<li>Enable backfeed (electrocuting someone touching utility line)</li>
+<li>Prevent circuit breaker from protecting loads</li>
+<li>Create shock hazard touching metal fixtures</li>
+<li>Destroy expensive equipment (inverters, charge controllers, batteries)</li>
+</ul>
+<p>This guide provides practical methods to wire safely using available materials and tools.</p>
+</section>
+<section id="site-assessment">
+<h2>2. Site Assessment &amp; Load Planning</h2>
+<p>Before wiring anything, assess what power you need and where it comes from.</p>
+<h3>Power Source Evaluation</h3>
+<p><strong>Solar system (5 kW nominal):</strong> Produces peak 5 kW midday on clear day, averaging 2.5 kW over 8-hour daylight period = 20 kWh/day. Winter output 50% of summer. Run thick DC cables from array to combiner box, then to charge controller. Typical combiner box combines 4-8 strings of 40A each; main cable 150A capable.</p>
+<p><strong>Wind turbine (10 kW):</strong> Outputs 10 kW at 12 m/s wind; average 3-4 kW continuous assuming moderate site. Must size main cable for maximum current: 10 kW at 48V DC = 208A, requiring 2/0 AWG cable (195A capacity). AC turbines output 240V three-phase; requires main breaker and disconnect.</p>
+<p><strong>Hydroelectric (steady 15 kW):</strong> Most predictable. Turbine output is constant water flow conversion. Size wiring for continuous 15 kW output = 62.5A at 240V, requiring 6 AWG cable (65A capacity at 75°C).</p>
+<p><strong>Generator (portable 5 kW):</strong> Temporary backup. Sized for peak loads. Never wired directly to house panel; must use manual transfer switch.</p>
+<div class="tip">
+<p>Best practice: Size main service cable for combined capacity of all sources. A 10 kW solar + 5 kW wind + 10 kW hydro + 5 kW generator = 30 kW combined capacity. Main service cable should be 150A at 240V (aluminum 2 AWG or copper 4 AWG).</p>
+</div>
+<h3>Load Assessment &amp; Circuit Planning</h3>
+<p>Identify every load: lighting, water pump, refrigeration, tools, heating. Estimate power and duty cycle.</p>
+<p><strong>Typical off-grid loads:</strong></p>
+<ul>
+<li>LED lighting: 5W per fixture × 10 fixtures × 4 hours/day = 200 Wh/day</li>
+<li>Refrigerator: 150W compressor × 8 hours/day = 1200 Wh/day</li>
+<li>Water pump: 2 kW × 2 hours/day = 4000 Wh/day</li>
+<li>Heating (electric resistance): 5 kW × 6 hours/day = 30,000 Wh/day (rarely continuous in off-grid)</li>
+<li>Tools &amp; appliances: 3000 W × 3 hours/day = 9000 Wh/day</li>
+</ul>
+<p><strong>Total: 44,400 Wh/day (44.4 kWh/day).</strong> If solar provides 20 kWh/day, must store 24.4 kWh in batteries (3 days winter = 73 kWh battery minimum).</p>
+<p>Wiring must handle peak simultaneous load: If pump (2 kW) + heating (5 kW) + fridge (150W) + tools (3 kW) = 10.15 kW simultaneous (occurs rarely), main feeder must handle 10.15 kW.</p>
+</section>
+<section id="wire-sizing">
+<h2>3. Wire Sizing Calculations</h2>
+<p>Wire ampacity (maximum safe current) determined by: wire diameter, insulation material, ambient temperature, conduit crowding, and duty cycle. Undersizing causes fires; oversizing wastes material and reduces overcurrent protection.</p>
+<h3>Ampacity &amp; Temperature Rating</h3>
+<p>Wire ampacity depends on: (1) Copper cross-sectional area, (2) Insulation type and temperature rating, (3) Ambient temperature, (4) Number of conductors in conduit, (5) Type of load (continuous vs intermittent). Standard insulation ratings: 60°C (older, rarely used), 75°C (most common residential), 90°C (high-temp industrial). Higher rating allows higher ampacity in same wire size.</p>
+<p><strong>Formula 1: Ampacity (base formula)</strong></p>
+<pre><code>I_max = (π × d²) / (4 × ρ × L_allowable)
+where d = wire diameter (mm), ρ = resistivity (Ω·mm²/m),
+L_allowable = maximum voltage drop per foot
+</code></pre>
+<p>More practically, use tables (shown in section 4); hand calculation rarely needed.</p>
+<h3>Copper vs Aluminum Wire</h3>
+<p>Copper has lower resistance than aluminum: ~1.68 µΩ·cm vs 2.82 µΩ·cm. Using same size, aluminum carries 60-70% the current of copper at same temperature. Aluminum requires larger size than copper for equivalent ampacity. Aluminum cost is 30-40% lower but volume/weight disadvantage often makes copper preferable. Aluminum connections require corrosion-resistant hardware to prevent galvanic corrosion at dissimilar-metal contacts.</p>
+<h3>Voltage Drop Calculations</h3>
+<p>Voltage drop represents power lost as heat in the wire itself. Long circuits or high currents create excessive drop, starving loads of voltage.</p>
+<p><strong>Formula 2: Voltage drop (two-wire AC circuit)</strong></p>
+<pre><code>VD (%) = (2 × K × I × L) / (V × A)
+where K = 10.4 (copper, SI units)
+I = current (amperes)
+L = one-way conductor length (feet)
+V = nominal system voltage (120, 240, 480, etc.)
+A = wire cross-sectional area (circular mils)
+</code></pre>
+<p><strong>Code limit:</strong> 3% voltage drop for feeder circuit, 5% total (feeder + branch). Example: 20A circuit 100 feet with 10 AWG (10,380 circular mils):</p>
+<pre><code>VD = (2 × 10.4 × 20 × 100) / (240 × 10,380) = 41,600 / 2,491,200 = 0.0167 = 1.67%
+Result: Acceptable (under 5%).
+</code></pre>
+<p>But the same 20A at 150 feet:</p>
+<pre><code>VD = (2 × 10.4 × 20 × 150) / (240 × 10,380) = 62,400 / 2,491,200 = 0.0250 = 2.5%
+Result: Still acceptable.
+</code></pre>
+<p>With 12 AWG (6,530 circular mils) at 150 feet:</p>
+<pre><code>VD = (2 × 10.4 × 20 × 150) / (240 × 6,530) = 62,400 / 1,567,200 = 0.0398 = 3.98%
+Result: Acceptable for branch (under 5%), but marginal.
+</code></pre>
+<p><strong>Practical rule:</strong> For every 50 feet of distance at 20A, go up one wire size to stay under 5% drop.</p>
+<div class="warning">
+<p>Excessive voltage drop causes: (1) Lights dimming when motors start, (2) Motor overheating and stalling (insufficient torque), (3) Inverter shutdown (input voltage too low), (4) Battery charging fails (insufficient voltage to charge). Always check drop calculation before finalizing wire size.</p>
+</div>
+<h3>Continuous vs Non-Continuous Load</h3>
+<p><strong>Continuous load</strong> (operating 3 or more hours continuously): wire and breaker must be rated for 125% of the continuous current. Example: refrigerator draws 12A continuously (compressor on 8 hours). Size as 12A × 1.25 = 15A minimum, which rounds to 20A wire and breaker.</p>
+<p><strong>Non-continuous load</strong> (less than 3 hours): size wire and breaker to actual load current. Example: space heater used 1 hour at 10A; size as 10A breaker (no 1.25× factor).</p>
+<p><strong>Formula 3: Continuous load sizing</strong></p>
+<pre><code>I_wire = I_load × 1.25 (for continuous operation 3+ hours)
+I_breaker = I_wire (breaker rating must equal wire ampacity)
+</code></pre>
+<p>This protects against insulation degradation and breaker heating. A wire continuously at 80% its rated capacity (16A wire carrying 16A) runs hot; 125% sizing keeps temperature within safe limits.</p>
+</section>
+<section id="ampacity">
+<h2>4. Ampacity Tables &amp; Derating</h2>
+<p>Ampacity tables are the foundation of wire selection. Always use tables rated for your specific insulation temperature and conditions.</p>
+<table class="ampacity-table">
+<thead>
+<tr>
+<th scope="col">Wire Size (AWG)</th>
+<th scope="col">Diameter (mm)</th>
+<th scope="col">Resistance (Ω/km)</th>
+<th scope="col">60°C Insul.</th>
+<th scope="col">75°C Insul.</th>
+<th scope="col">90°C Insul.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>14</td>
+<td>1.63</td>
+<td>9.80</td>
+<td>15A</td>
+<td>15A</td>
+<td>20A</td>
+</tr>
+<tr>
+<td>12</td>
+<td>2.05</td>
+<td>4.88</td>
+<td>20A</td>
+<td>20A</td>
+<td>30A</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2.59</td>
+<td>3.08</td>
+<td>30A</td>
+<td>30A</td>
+<td>40A</td>
+</tr>
+<tr>
+<td>8</td>
+<td>3.26</td>
+<td>1.93</td>
+<td>40A</td>
+<td>50A</td>
+<td>55A</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4.11</td>
+<td>1.21</td>
+<td>55A</td>
+<td>65A</td>
+<td>75A</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5.19</td>
+<td>0.76</td>
+<td>70A</td>
+<td>85A</td>
+<td>95A</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6.54</td>
+<td>0.49</td>
+<td>95A</td>
+<td>115A</td>
+<td>130A</td>
+</tr>
+<tr>
+<td>1</td>
+<td>7.35</td>
+<td>0.39</td>
+<td>110A</td>
+<td>130A</td>
+<td>150A</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> Ampacity values shown at 30°C ambient (room temperature). <strong>Always use 75°C column for typical wiring</strong> (it's most common residential/off-grid insulation). Use 90°C only if insulation specifically rated and ambient temperature verified.</p>
+<h3>Derating Factors</h3>
+<p>Wire ampacity is reduced in hot environments or crowded conduits. These reductions are mandatory.</p>
+<p><strong>Ambient temperature derating:</strong></p>
+<ul>
+<li>30-40°C: multiply ampacity × 0.82</li>
+<li>40-50°C: multiply × 0.71</li>
+<li>50-60°C: multiply × 0.58</li>
+</ul>
+<p><strong>Bundled conductor derating (when &gt;3 wires in same conduit):</strong></p>
+<ul>
+<li>4-6 conductors: multiply ampacity × 0.80</li>
+<li>7-9 conductors: multiply × 0.70</li>
+<li>10-20 conductors: multiply × 0.50</li>
+</ul>
+<p><strong>Example: Four 12 AWG wires in metal conduit, ambient 40°C, 75°C insulation</strong></p>
+<pre><code>Base ampacity (75°C): 20A
+Temperature derate: 20A × 0.82 = 16.4A
+Bundled derate: 16.4A × 0.80 = 13.1A
+Safe maximum: 13A per wire
+</code></pre>
+<div class="danger">
+<p>Failure to derate wires in hot, crowded conduits causes insulation to degrade and fail within months. Combined derating can reduce ampacity by 40-50%. Always apply both factors when applicable.</p>
+</div>
+<h3>Practical Wire &amp; Breaker Selection</h3>
+<p><strong>Golden rule:</strong> Wire ampacity ≥ Breaker rating ≥ Load current.</p>
+<p>Example 1 (correct):</p>
+<pre><code>Load: 15A continuous (refrigerator compressor)
+Wire: 12 AWG (20A @ 75°C)
+Breaker: 20A
+✓ Correct: 12A × 1.25 (continuous) = 15A ≤ 20A breaker ≤ 20A wire
+</code></pre>
+<p>Example 2 (incorrect):</p>
+<pre><code>Load: 15A continuous
+Wire: 14 AWG (15A @ 75°C)
+Breaker: 15A
+✗ Wrong: Wire undersized for continuous load. Should use 12 AWG + 20A breaker
+</code></pre>
+<p>Example 3 (incorrect):</p>
+<pre><code>Load: 10A non-continuous
+Wire: 12 AWG (20A @ 75°C)
+Breaker: 20A
+✗ Wrong: Breaker oversized. Should use 15A breaker (10A load doesn't need 20A protection). Wire fine, but breaker must match load, not wire.
+</code></pre>
+<div class="warning">
+<p>Oversized breaker (20A protecting 10A load) means wire must fail before breaker trips. If wire corrodes or is damaged, breaker won't trip until ampacity exceeded—potentially after insulation already burning.</p>
+</div>
+</section>
+<section id="overcurrent">
+<h2>5. Overcurrent Protection: Fuses &amp; Breakers</h2>
+<p>Overcurrent protection detects faults and prevents fires. A breaker or fuse is the safety mechanism—never remove or bypass.</p>
+<h3>When Overcurrent Occurs</h3>
+<p><strong>Overload:</strong> Legitimate current exceeds wire capacity. Example: Three space heaters (3 kW each = 12.5A) on single 15A circuit = 37.5A (2.5× capacity). Breaker should trip in 10-30 seconds. Wire heats gradually.</p>
+<p><strong>Short circuit:</strong> Hot and neutral conductors touch (zero resistance path). Current can reach thousands of amps. Breaker should trip in milliseconds. Magnetic component responds (10× breaker rating).</p>
+<p><strong>Ground fault:</strong> Current leaks to ground (via wet hands, damaged insulation, etc.). Small fault (few mA) detected by GFCI; large fault detected by breaker.</p>
+<h3>Fuse Operation</h3>
+<p>Fuse is sacrificial conductor that melts when current exceeds rating, opening circuit. I²t characteristic determines when fuse melts: current must exceed rating for specific time.</p>
+<p><strong>Types:</strong></p>
+<ul>
+<li><strong>Fast-blow:</strong> Melts instantly at ~1.5× rated current. For electronics and control circuits.</li>
+<li><strong>Slow-blow (time-delay):</strong> Tolerates brief overcurrent (motor inrush current, transformer magnetizing surge) for 0.1-1 second, then trips at ~1.35× rated sustained. For motor and transformer protection.</li>
+</ul>
+<h3>Breaker Operation</h3>
+<p>Thermal-magnetic breaker has two protection elements:</p>
+<ol>
+<li><strong>Thermal:</strong> Bimetallic strip heats with sustained high current, bends and trips breaker. Provides inverse-time characteristic (higher overcurrent trips faster).</li>
+<li><strong>Magnetic:</strong> Coil generates magnetic field, pulling armature to trip breaker at extreme current (typically 10× breaker rating). Provides instantaneous protection for short circuits.</li>
+</ol>
+<p><strong>Response times:</strong></p>
+<ul>
+<li>100A short circuit: trips in 1-5 milliseconds (magnetic)</li>
+<li>20A continuous overload on 15A breaker: trips in 30-60 seconds (thermal)</li>
+</ul>
+<p>Breaker reusable; fuse one-time use (must be replaced).</p>
+<h3>Breaker Amp Rating Selection</h3>
+<p>Breaker amperage determined by: (1) Wire ampacity, (2) Load current, (3) Continuous vs non-continuous duty.</p>
+<p><strong>Formula 4: Breaker rating selection</strong></p>
+<pre><code>I_breaker = max(I_load_continuous × 1.25, I_load_non_continuous)
+I_breaker ≤ Wire ampacity (always)
+</code></pre>
+<p>Circuit with 12 AWG wire (20A @ 75°C): maximum breaker is 20A, regardless of load. If load is 15A continuous, size breaker to 20A (15A × 1.25 = 18.75A rounds to 20A). Wire and breaker both 20A.</p>
+<h3>Series Rating &amp; Arc Flash Coordination</h3>
+<p>Series rating: downstream breaker coordinates with upstream to limit arc energy during fault. Improves safety and reduces panel damage. Some older panels lack series rating; main breaker must protect all downstream breakers.</p>
+<p><strong>Arc flash:</strong> When main breaker clears a fault slowly, arc energy can exceed 1000°C, igniting equipment and clothing. Proper coordination keeps fault clearing time under 10 milliseconds for high-current faults.</p>
+<div class="danger">
+<p>Arc flash from 480V three-phase panel can cause severe burns up to 10 feet away. Always apply proper PPE and training when working near industrial panels. A flash suit rated for the arc flash category (cal/cm²) is mandatory for work on energized equipment.</p>
+</div>
+<h3>Series vs Parallel Circuits</h3>
+<p><strong>Series:</strong> Current same throughout. Resistances add: Total R = R₁ + R₂ + R₃. Voltage divides across resistances. One failed component breaks circuit. Used for additive effects (indicator lights).</p>
+<p><strong>Parallel:</strong> Voltage same across each branch. Currents add: Total I = I₁ + I₂ + I₃. Conductances add: 1/Total R = 1/R₁ + 1/R₂ + 1/R₃. One failed component doesn't affect others. Most power distribution uses parallel (outlets and light fixtures independently switched).</p>
+<h3>Circuit Breaker Selectivity</h3>
+<p>Breaker upstream (main) should trip slower than downstream (branch). Coordination ensures fault damages smallest portion of circuit. Time-current curves show this: main breaker at 200A curves right of 20A breaker curve. Selective coordination critical in industrial systems; residential typically overlooks this detail.</p>
+<h3>Load Calculation for Homes</h3>
+<p>Residential load estimation: lighting 3 VA/ft², general outlets 1.5 VA/ft² (minimum), kitchen 1500 VA per outlet, dryer 5000 VA, electric range 8000-12000 VA, air conditioner 15,000+ VA. Total for 2000 ft² home: lighting 6000 + outlets 3000 + kitchen 3000 + misc 4000 = 16000 VA minimum. Add diversity factor 0.7 for practical load = 11,200 W. Breaker panel 100-150 A typical for modern home.</p>
+</section>
+<section id="grounding">
+<h2>7. Grounding &amp; Bonding</h2>
+<h3>Grounding Purpose</h3>
+<p>Equipment grounding provides low-resistance path for fault current to return to source, allowing breaker to trip. Bonding connects metal enclosures and equipment frames to ground, equalizing potential and preventing shock hazard. Earth grounding (service entrance to earth electrode) provides reference potential for system. All three types essential for safety.</p>
+<h3>Grounding Wire Sizing</h3>
+<p>Equipment ground conductor (green or bare) sized according to breaker amperage: 15-20A breaker = 14 AWG minimum, 25-30A = 12 AWG, 40-60A = 10 AWG, 70-100A = 8 AWG, 125-200A = 6 AWG. Ground conductor runs with circuit conductors in same conduit or raceway—never in separate conduit (increases impedance, slows fault clearing).</p>
+<h3>Grounding Electrode System</h3>
+<p>Buried copper or copper-clad steel rod 8-10 feet deep. Two electrodes required if first one has &gt;25Ω resistance. Connected with 6 AWG copper wire minimum to service entrance panel. Concrete-encased electrode (rebar in foundation) or ring electrode (loop around building buried 2.5 feet deep) alternative methods. Grounding resistance target &lt;25Ω.</p>
+<h3>GFCI &amp; AFCI Protection</h3>
+<p><strong>Ground-fault circuit interrupter (GFCI):</strong> Detects imbalance between hot and neutral (indicating fault to ground). Trips at 4-6 mA, faster than breaker. Protects against electrocution in wet areas (bathrooms, kitchens, outdoor outlets). Test GFCI monthly by pressing test button (outlet de-energizes); reset with reset button.</p>
+<p><strong>Arc-fault circuit interrupter (AFCI):</strong> Detects arcing faults that precede fires (frayed wires, loose connections, rodent damage). Trips in milliseconds when arc detected. Required in bedrooms by code. Can be outlet type or breaker type protecting entire circuit. More sensitive than GFCI.</p>
+<div class="warning">
+<p>Grounding wire must be continuous from source to load and all metal enclosures. A single broken connection prevents breaker from tripping on fault. Never splice ground wires without crimped connectors and heat shrink insulation.</p>
+</div>
+</section>
+<section id="junctions-conduit">
+<h2>8. Junction Boxes &amp; Conduit</h2>
+</section>
+<h3>Junction Box Sizing</h3>
+<p>Junction boxes must contain all wire bends, splices, and terminations without crushing insulation. Size determined by: number and size of conductors, number of bends, whether box serves as pull point. Minimum: 4&quot;×4&quot;×2.125&quot; for one 12 AWG wire. Formula for maximum fill: sum of conductor volumes ≤ 40% of box volume. Conductors ≥ 6 AWG use de-rating tables.</p>
+<h3>Wire Fill &amp; Conductor Spacing</h3>
+<p>Bend radius determines space needed: conductors 14-10 AWG need 6×wire diameter bend radius minimum (12 times if inside conduit). Larger conductors need proportionally larger bends. Tight bends damage insulation and create failure points. Multiple conductors in tight space generate heat; use larger conduit to improve cooling.</p>
+<h3>Conduit Types &amp; Selection</h3>
+<p><strong>Rigid metal (RMC):</strong> Heavy steel, excellent mechanical protection. Requires fittings and locknuts. More difficult to install but very durable in harsh environments.</p>
+<p><strong>Electrical metallic tubing (EMT):</strong> Thin-wall steel, lighter than RMC, easier to bend. Common in commercial. Requires bushings at outlets to protect wire insulation from sharp edges.</p>
+<p><strong>PVC:</strong> Non-metallic, no corrosion, good in wet areas. Cannot be used in locations exceeding 50°C. Requires bonding jumper across conduit to maintain ground continuity.</p>
+<p><strong>Flexible metal (AC/BX):</strong> Corrugated metal spiral. Easy to route around obstacles. Serves as ground path itself. Common in residential wiring.</p>
+</section>
+<section id="outlets">
+<h2>9. Outlet &amp; Switch Wiring</h2>
+<h3>NEMA Outlet Configurations</h3>
+<p><strong>5-15R (standard household):</strong> 120V, 15A. Two vertical slots (hot/neutral) and round hole (ground). Used in every room.</p>
+<p><strong>5-20R:</strong> 120V, 20A. Horizontal neutral slot accepts both 15A and 20A plugs. Requires 12 AWG wire and 20A breaker.</p>
+<p><strong>6-20R:</strong> 240V, 20A. Commonly used for heavy appliances. Single large slot and smaller slot plus ground.</p>
+<p><strong>14-30R:</strong> 240V, 30A. Electric range typical use. Requires 10 AWG wire and 30A breaker minimum.</p>
+<h3>Proper Outlet Installation</h3>
+<p>Hot wire (typically black) connects to brass terminal (hot side, right), neutral (white) to silver terminal (left), ground (green/bare) to green screw. Test with multimeter: should read 120V between hot and neutral, 120V between hot and ground, 0V between neutral and ground. Reversed polarity (hot/neutral swapped) is code violation and shock hazard.</p>
+<h3>Duplex Outlet Wiring</h3>
+<p>Standard duplex (two outlets stacked) wired with incoming wires to top outlet, pigtail jumpers from top to bottom (or incoming wires split to both). Test jumpers for proper connection. Some outlets have separate circuits for each side (split-wired); require careful jumper configuration or disconnection tab removal.</p>
+<h3>Switch Wiring</h3>
+<p>Switch always breaks (opens) hot conductor. Hot wire to switch, return wire from switch to light fixture. Neutral goes directly to fixture without switch. Ground from source to fixture and switch. Three-way switch: three terminals (common, top, bottom); requires 3-conductor cable between switches. Four-way switch: same as three-way but in middle of circuit, allowing control from 3+ locations.</p>
+</section>
+<section id="three-phase">
+<h2>10. Three-Phase Wiring</h2>
+<h3>Three-Phase Voltage &amp; Current Relationships</h3>
+<p>Three-phase system uses three separate AC voltages 120 degrees apart, rotating continuously. This produces smoother torque for motors and higher power density than single-phase.</p>
+<p><strong>Formula 5: Three-phase power</strong></p>
+<pre><code>P = √3 × V_line-to-line × I × PF
+where V = line-to-line voltage (480V, 208V, etc.)
+I = line current (amperes per phase)
+PF = power factor (typically 0.85-1.0)
+</code></pre>
+<p><strong>Example:</strong> 480V three-phase motor, 10A per phase, PF = 0.90:</p>
+<pre><code>P = 1.732 × 480 × 10 × 0.90 = 7,468 W ≈ 7.5 kW
+</code></pre>
+<p>Typical three-phase systems: 208V/120V (small commercial), 277V/480V (larger facilities), 600V (industrial).</p>
+<h3>Delta vs Wye Configuration</h3>
+<p><strong>Delta:</strong> Three phases connected end-to-end forming triangle. No neutral (4-wire delta rare). Line-to-line voltage = phase voltage. Used in older systems and industrial high-voltage distribution.</p>
+<p><strong>Wye (star):</strong> Three phases meet at central point (neutral). Neutral provides return path. Line-to-neutral voltage = phase voltage / √3 = 0.577 × line-to-line voltage. Most common in modern systems. 480V/277V Wye typical commercial.</p>
+<h3>Single-Phase from Three-Phase</h3>
+<p>Two of three phase legs provide single-phase voltage equal to line-to-line voltage. A 480V three-phase system provides 480V single-phase by using two phases, no neutral. Common for large motors and loads. Cannot use single-phase 277V (line-to-neutral) loads with three-phase only service—requires step-down transformer.</p>
+</section>
+<section id="voltage-drop">
+<h2>11. Voltage Drop Calculations &amp; Effects</h2>
+<h3>Voltage Drop Formula &amp; Application</h3>
+<p>Two-wire circuit: VD = (2 × K × I × L) / A where K = 10.4 (copper, SI), I is amperes, L is length one-way (feet), A is wire area in circular mils (or multiply by 0.01639 if using mm²). Three-phase: VD = (√3 × K × I × L) / A. Example: 20A circuit 150 feet with 12 AWG (6530 circular mils): VD = (2 × 10.4 × 20 × 150) / 6530 = 9.5V (7.9% drop, exceeds 5% code limit).</p>
+<h3>Effect on Load Devices</h3>
+<p>Motor starting current 5-7× running current; voltage drop at start can be extreme. 3% voltage drop during steady-state means 10-15% during motor start, reducing starting torque and speed. Lights dimming indicates excessive voltage drop. Motor overheating possible if sustained voltage drop &gt;5%. Size feeders generously for circuits with motor or large inductive loads.</p>
+<h3>Correction Methods</h3>
+<p>Use larger wire (next size up cuts resistance ~20%). Reduce circuit length (relocate breaker panel). Use higher voltage for distribution (higher voltage = same power at lower current and voltage drop). Voltage regulator (step-up transformer) restores voltage at load end but adds cost and losses. Remote disconnect: run small-gauge control wire to disconnect rather than full-size power wire.</p>
+</section>
+<section id="storage-energy">
+<h2>12. Stored Energy &amp; Safety Hazards</h2>
+<p>Electrical systems store energy in three ways: electrochemical (batteries), electromagnetic (inductors, transformer cores), and electrostatic (capacitors). All three can release energy suddenly and cause injury.</p>
+<h3>Battery Energy</h3>
+<p><strong>Lithium or lead-acid batteries:</strong> Store significant chemical energy. A 48V 100Ah lithium battery contains:</p>
+<pre><code>Energy = V × Ah × 3.6 = 48 × 100 × 3.6 = 17,280 Wh = 17.3 kWh
+Equivalent TNT: 17,280 Wh ÷ 1,055 = 16 lbs TNT (for perspective)
+</code></pre>
+<p>If battery short-circuited (wrench across terminals), thousands of amps flow in milliseconds. Thermal runaway possible (fire, explosion).</p>
+<p><strong>Safety:</strong></p>
+<ul>
+<li>Treat all batteries as energized</li>
+<li>Insulate tools when working on terminals</li>
+<li>Wear safety glasses (arc flash, flying debris)</li>
+<li>Never reverse-charge batteries incorrectly</li>
+</ul>
+<h3>Inductor Energy in Motors &amp; Transformers</h3>
+<p>When powered coil is suddenly disconnected, magnetic field collapses and induces high voltage transient (can be 5-10× system voltage). This voltage causes arcing at contacts.</p>
+<p><strong>Example:</strong> 240V single-phase motor with 50 mH inductance, 20A running current. If disconnect switch opened:</p>
+<pre><code>V_transient = L × (dI/dt)
+If switch opens in 10 ms:
+V_transient = 0.050 × (20 / 0.010) = 0.050 × 2000 = 100V additional voltage spike
+Circuit voltage momentarily reaches 240 + 100 = 340V, causing arcing
+</code></pre>
+<p><strong>Prevention:</strong> Use surge suppression (snubber capacitors, surge arresters) or soft-starters that gradually reduce current.</p>
+<div class="danger">
+<p>Stored energy in inductors or capacitors can exist AFTER disconnect switch opened. Never assume circuit is de-energized just because main disconnect is off. Always verify with multimeter before touching conductors. A 480V AC motor capacitor can retain 1000+ volts for hours after power removed.</p>
+</div>
+<h3>Capacitor Charge</h3>
+<p>AC systems commonly have power-factor correction capacitors (10-50 µF). These charge to peak system voltage (~340V for 240V RMS). If discharged through hand, current spike can cause:</p>
+<ul>
+<li>Heart fibrillation (even at low amperage, if timing matches heart rhythm)</li>
+<li>Severe muscle contraction</li>
+<li>Burns at entry/exit points</li>
+</ul>
+<p>Capacitor discharge procedure: switch off power, wait 5 minutes (safe decay time), then short capacitor terminals together with an insulated tool to fully discharge.</p>
+<section id="basic-circuit">
+<h2>13. Basic Circuit Diagrams</h2>
+<p><svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg" aria-label="Wire ampacity derating, voltage drop chart, three-phase configurations, GFCI/AFCI comparison, off-grid wiring diagram, wire gauge flowchart">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 13px; }
+      .label { fill: var(--text, #f5f0e8); font-family: Arial, sans-serif; font-size: 11px; }
+      .axis { stroke: var(--text, #f5f0e8); stroke-width: 2; }
+      .grid { stroke: var(--border, #444); stroke-width: 0.5; opacity: 0.3; }
+      .chart { stroke: var(--accent, #d4a574); stroke-width: 2; fill: none; }
+      .chart-alt { stroke: var(--accent2, #7fb3d5); stroke-width: 2; fill: none; }
+      .component { fill: var(--card, #3d3228); stroke: var(--border, #444); stroke-width: 1; }
+      .wire { stroke: var(--accent, #d4a574); stroke-width: 2; fill: none; }
+      .box { fill: var(--surface, #2d2416); stroke: var(--border, #444); stroke-width: 1; }
+      .title-box { fill: var(--surface, #2d2416); stroke: var(--accent, #d4a574); stroke-width: 2; }
+      .good { fill: #1a3a1a; stroke: #44aa44; }
+      .warning { fill: #3a2a1a; stroke: #ffaa44; }
+      .danger { fill: #3a1a1a; stroke: #ff6b6b; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="800" class="bg"/>
+
+  <!-- Title -->
+  <text x="20" y="30" class="text" font-weight="bold" font-size="16">Electrical Wiring: Ampacity, Voltage Drop, and Off-Grid Design</text>
+
+  <!-- Section 1: Wire Ampacity Derating Chart (top left) -->
+  <g id="ampacity-section">
+    <text x="20" y="70" class="text" font-weight="bold">Wire Ampacity Derating (Ambient Temperature & Bundling):</text>
+
+    <!-- Axes -->
+    <line x1="60" y1="50" x2="60" y2="280" class="axis"/>
+    <line x1="60" y1="280" x2="380" y2="280" class="axis"/>
+
+    <!-- Grid -->
+    <g class="grid">
+      <line x1="60" y1="100" x2="380" y2="100"/>
+      <line x1="60" y1="150" x2="380" y2="150"/>
+      <line x1="60" y1="200" x2="380" y2="200"/>
+      <line x1="60" y1="250" x2="380" y2="250"/>
+      <line x1="110" y1="270" x2="110" y2="290"/>
+      <line x1="160" y1="270" x2="160" y2="290"/>
+      <line x1="210" y1="270" x2="210" y2="290"/>
+      <line x1="260" y1="270" x2="260" y2="290"/>
+      <line x1="310" y1="270" x2="310" y2="290"/>
+      <line x1="360" y1="270" x2="360" y2="290"/>
+    </g>
+
+    <!-- Scale Y -->
+    <text x="25" y="285" class="label" text-anchor="end">0%</text>
+    <text x="25" y="235" class="label" text-anchor="end">25%</text>
+    <text x="25" y="185" class="label" text-anchor="end">50%</text>
+    <text x="25" y="135" class="label" text-anchor="end">75%</text>
+    <text x="25" y="85" class="label" text-anchor="end">100%</text>
+
+    <text x="40" y="295" class="text" font-weight="bold" transform="rotate(-90 40 295)" font-size="12">Derate %</text>
+
+    <!-- Scale X -->
+    <text x="110" y="310" class="label" text-anchor="middle">20°C</text>
+    <text x="160" y="310" class="label" text-anchor="middle">30°C</text>
+    <text x="210" y="310" class="label" text-anchor="middle">40°C</text>
+    <text x="260" y="310" class="label" text-anchor="middle">50°C</text>
+    <text x="310" y="310" class="label" text-anchor="middle">60°C</text>
+    <text x="360" y="310" class="label" text-anchor="middle">70°C</text>
+
+    <text x="210" y="335" class="text" font-weight="bold">Ambient Temperature (°C)</text>
+
+    <!-- Deration curves -->
+    <path d="M 60 60 L 110 85 L 160 110 L 210 145 L 260 200 L 310 245 L 360 275" class="chart"/>
+    <text x="365" y="270" class="label" font-size="10">1 wire in air</text>
+
+    <path d="M 60 80 L 110 105 L 160 130 L 210 165 L 260 220 L 310 260 L 360 280" class="chart-alt"/>
+    <text x="365" y="280" class="label" font-size="10" fill="var(--accent2, #7fb3d5)">3+ wires bundled</text>
+  </g>
+
+  <!-- Section 2: Voltage Drop Chart (top middle) -->
+  <g id="voltage-drop-section">
+    <text x="430" y="70" class="text" font-weight="bold">Voltage Drop vs Distance (at 20A load):</text>
+
+    <!-- Axes -->
+    <line x1="470" y1="50" x2="470" y2="280" class="axis"/>
+    <line x1="470" y1="280" x2="790" y2="280" class="axis"/>
+
+    <!-- Grid -->
+    <g class="grid">
+      <line x1="470" y1="100" x2="790" y2="100"/>
+      <line x1="470" y1="150" x2="790" y2="150"/>
+      <line x1="470" y1="200" x2="790" y2="200"/>
+      <line x1="470" y1="250" x2="790" y2="250"/>
+      <line x1="520" y1="270" x2="520" y2="290"/>
+      <line x1="570" y1="270" x2="570" y2="290"/>
+      <line x1="620" y1="270" x2="620" y2="290"/>
+      <line x1="670" y1="270" x2="670" y2="290"/>
+      <line x1="720" y1="270" x2="720" y2="290"/>
+      <line x1="770" y1="270" x2="770" y2="290"/>
+    </g>
+
+    <!-- Scale Y -->
+    <text x="435" y="285" class="label" text-anchor="end">0%</text>
+    <text x="435" y="235" class="label" text-anchor="end">2%</text>
+    <text x="435" y="185" class="label" text-anchor="end">4%</text>
+    <text x="435" y="135" class="label" text-anchor="end">6%</text>
+    <text x="435" y="85" class="label" text-anchor="end">8%</text>
+
+    <text x="450" y="295" class="text" font-weight="bold" transform="rotate(-90 450 295)" font-size="12">VD %</text>
+
+    <!-- Scale X -->
+    <text x="520" y="310" class="label" text-anchor="middle">50 ft</text>
+    <text x="570" y="310" class="label" text-anchor="middle">100 ft</text>
+    <text x="620" y="310" class="label" text-anchor="middle">150 ft</text>
+    <text x="670" y="310" class="label" text-anchor="middle">200 ft</text>
+    <text x="720" y="310" class="label" text-anchor="middle">300 ft</text>
+    <text x="770" y="310" class="label" text-anchor="middle">500 ft</text>
+
+    <text x="620" y="335" class="text" font-weight="bold">Distance (feet)</text>
+
+    <!-- VD curves for different gauges -->
+    <path d="M 470 260 L 520 235 L 570 200 L 620 160 L 670 110 L 720 60 L 770 50" class="chart"/>
+    <text x="770" y="45" class="label" font-size="9">#10 AWG</text>
+
+    <path d="M 470 270 L 520 250 L 570 220 L 620 180 L 670 130 L 720 80 L 770 60" class="chart-alt"/>
+    <text x="770" y="55" class="label" font-size="9" fill="var(--accent2, #7fb3d5)">#12 AWG</text>
+  </g>
+
+  <!-- Section 3: Three-Phase Configurations (right side) -->
+  <g id="three-phase-section">
+    <text x="840" y="70" class="text" font-weight="bold">3-Phase: Wye vs Delta</text>
+
+    <!-- Wye configuration -->
+    <text x="840" y="100" class="label" font-weight="bold">Wye (Y) - Star</text>
+    <line x1="880" y1="120" x2="920" y2="140" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <line x1="880" y1="120" x2="920" y2="160" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <line x1="880" y1="120" x2="920" y2="180" stroke="var(--accent, #d4a574)" stroke-width="2"/>
+    <circle cx="880" cy="120" r="3" fill="var(--accent, #d4a574)"/>
+    <text x="925" y="145" class="label" font-size="9">Phase A</text>
+    <text x="925" y="165" class="label" font-size="9">Phase B</text>
+    <text x="925" y="185" class="label" font-size="9">Phase C</text>
+    <text x="840" y="210" class="label" font-size="10">Line voltage = √3 × phase</text>
+    <text x="840" y="225" class="label" font-size="10">208V, 277V, 480V systems</text>
+
+    <!-- Delta configuration -->
+    <text x="840" y="255" class="label" font-weight="bold">Delta (Δ) - Triangle</text>
+    <path d="M 880 270 L 920 270 L 900 300 Z" fill="none" stroke="var(--accent2, #7fb3d5)" stroke-width="2"/>
+    <text x="925" y="275" class="label" font-size="9">A-B</text>
+    <text x="925" y="295" class="label" font-size="9">B-C</text>
+    <text x="920" y="315" class="label" font-size="9">C-A</text>
+    <text x="840" y="330" class="label" font-size="10">Line voltage = phase voltage</text>
+    <text x="840" y="345" class="label" font-size="10">240V, 480V systems (high current)</text>
+  </g>
+
+  <!-- Section 4: GFCI vs AFCI Comparison (middle-left) -->
+  <g id="protection-section">
+    <rect x="20" y="360" width="400" height="180" class="title-box" rx="3"/>
+
+    <text x="35" y="380" class="text" font-weight="bold">Circuit Protection Comparison:</text>
+
+    <text x="35" y="405" class="label" font-weight="bold">GFCI (Ground Fault Circuit Interrupter):</text>
+    <text x="50" y="422" class="label" font-size="10">✓ Detects ground faults (person touching hot wire)</text>
+    <text x="50" y="437" class="label" font-size="10">✓ Trips at ~5 mA leakage current</text>
+    <text x="50" y="452" class="label" font-size="10">✓ Used: bathrooms, kitchens, outdoor outlets</text>
+    <text x="50" y="467" class="label" font-size="10">✗ Does not protect against short circuits</text>
+
+    <text x="35" y="492" class="label" font-weight="bold">AFCI (Arc Fault Circuit Interrupter):</text>
+    <text x="50" y="509" class="label" font-size="10">✓ Detects dangerous arcing (frayed wires)</text>
+    <text x="50" y="524" class="label" font-size="10">✓ Trips at ~1.5 A arcing current</text>
+    <text x="50" y="539" class="label" font-size="10">✓ Used: bedrooms, living areas, kitchen counters</text>
+  </g>
+
+  <!-- Section 5: Off-Grid Wiring Diagram (middle-right and bottom) -->
+  <g id="offgrid-section">
+    <rect x="450" y="360" width="530" height="420" class="title-box" rx="3"/>
+
+    <text x="470" y="380" class="text" font-weight="bold">Off-Grid System Wiring Layout:</text>
+
+    <!-- Solar array -->
+    <rect x="480" y="400" width="80" height="50" class="component"/>
+    <text x="495" y="432" class="label" font-size="10" text-anchor="middle">Solar</text>
+    <text x="495" y="445" class="label" font-size="10" text-anchor="middle">Array</text>
+
+    <!-- Charge controller -->
+    <path d="M 560 425 L 620 425" class="wire"/>
+    <rect x="630" y="405" width="80" height="50" class="component"/>
+    <text x="670" y="432" class="label" font-size="9" text-anchor="middle">Charge</text>
+    <text x="670" y="445" class="label" font-size="9" text-anchor="middle">Controller</text>
+
+    <!-- Battery bank -->
+    <path d="M 710 425 L 750 425" class="wire"/>
+    <rect x="760" y="390" width="80" height="100" class="component"/>
+    <text x="800" y="438" class="label" font-size="10" text-anchor="middle">Battery</text>
+    <text x="800" y="452" class="label" font-size="10" text-anchor="middle">Bank</text>
+    <text x="800" y="466" class="label" font-size="9" text-anchor="middle">48V DC</text>
+
+    <!-- Inverter -->
+    <path d="M 800 490 L 800 530" class="wire"/>
+    <rect x="750" y="540" width="100" height="50" class="component"/>
+    <text x="800" y="567" class="label" font-size="10" text-anchor="middle">Inverter</text>
+    <text x="800" y="580" class="label" font-size="9" text-anchor="middle">48V DC→240V AC</text>
+
+    <!-- Main breaker -->
+    <path d="M 800 590 L 800 620" class="wire"/>
+    <rect x="770" y="625" width="60" height="30" class="component"/>
+    <text x="800" y="644" class="label" font-size="9" text-anchor="middle">Main Breaker</text>
+
+    <!-- Sub-panel -->
+    <path d="M 800 655 L 800 690" class="wire"/>
+    <rect x="740" y="695" width="120" height="50" class="component"/>
+    <text x="800" y="722" class="label" font-size="10" text-anchor="middle">Sub-Panel</text>
+
+    <!-- Loads -->
+    <path d="M 860 720 L 910 720" class="wire"/>
+    <rect x="920" y="700" width="50" height="40" class="component"/>
+    <text x="945" y="725" class="label" font-size="9" text-anchor="middle">Loads</text>
+
+    <!-- Generator (backup) -->
+    <rect x="480" y="500" width="80" height="50" class="component"/>
+    <text x="520" y="527" class="label" font-size="10" text-anchor="middle">Backup</text>
+    <text x="520" y="540" class="label" font-size="10" text-anchor="middle">Generator</text>
+    <path d="M 560 525 L 630 525 L 630 425" class="wire" stroke-dasharray="3,3"/>
+    <text x="610" y="475" class="label" font-size="9" fill="var(--muted, #5a6e5a)">Transfer switch</text>
+
+    <!-- Wind turbine (optional) -->
+    <rect x="480" y="590" width="80" height="50" class="component" opacity="0.6"/>
+    <text x="520" y="617" class="label" font-size="10" text-anchor="middle">Wind Turbine</text>
+    <path d="M 560 615 L 620 615 L 620 425" class="wire" opacity="0.6" stroke-dasharray="3,3"/>
+  </g>
+
+  <!-- Section 6: Wire Gauge Selection Flowchart (bottom) -->
+  <g id="flowchart-section">
+    <text x="20" y="580" class="text" font-weight="bold">Wire Gauge Selection Flowchart:</text>
+
+    <!-- Step 1: Get amperage -->
+    <rect x="20" y="600" width="100" height="40" class="component" rx="3"/>
+    <text x="70" y="625" class="label" text-anchor="middle" font-size="9">Step 1: Get</text>
+    <text x="70" y="637" class="label" text-anchor="middle" font-size="9">circuit amperage</text>
+
+    <!-- Arrow -->
+    <path d="M 130 620 L 160 620" class="wire"/>
+
+    <!-- Step 2: Account for distance -->
+    <rect x="170" y="600" width="100" height="40" class="component" rx="3"/>
+    <text x="220" y="625" class="label" text-anchor="middle" font-size="9">Step 2: Calculate</text>
+    <text x="220" y="637" class="label" text-anchor="middle" font-size="9">voltage drop</text>
+
+    <!-- Arrow -->
+    <path d="M 280" y="620" L 310 620" class="wire"/>
+
+    <!-- Step 3: Select wire -->
+    <rect x="320" y="600" width="100" height="40" class="component" rx="3"/>
+    <text x="370" y="625" class="label" text-anchor="middle" font-size="9">Step 3: Select</text>
+    <text x="370" y="637" class="label" text-anchor="middle" font-size="9">gauge (VD &lt;5%)</text>
+
+    <!-- Arrow -->
+    <path d="M 430" y="620" L 460 620" class="wire"/>
+
+    <!-- Step 4: Derate -->
+    <rect x="470" y="600" width="100" height="40" class="component" rx="3"/>
+    <text x="520" y="625" class="label" text-anchor="middle" font-size="9">Step 4: Derate</text>
+    <text x="520" y="637" class="label" text-anchor="middle" font-size="9">for temperature</text>
+
+    <!-- Arrow -->
+    <path d="M 580" y="620" L 610 620" class="wire"/>
+
+    <!-- Step 5: Choose breaker -->
+    <rect x="620" y="600" width="100" height="40" class="component" rx="3"/>
+    <text x="670" y="625" class="label" text-anchor="middle" font-size="9">Step 5: Match</text>
+    <text x="670" y="637" class="label" text-anchor="middle" font-size="9">breaker rating</text>
+
+    <!-- Key rule -->
+    <rect x="20" y="670" width="700" height="50" class="box" rx="3"/>
+    <text x="40" y="690" class="label" font-weight="bold">⚠ KEY RULE: Breaker size always determined by wire ampacity, NOT load</text>
+    <text x="40" y="705" class="label" font-size="11">Example: 20A load on 12 AWG wire requires 20A breaker. If wire is #14, breaker must drop to 15A (over-protect wire).</text>
+  </g>
+</svg>
+</p>
+</section>
+<section id="material-alternatives">
+<h2>Material Alternatives for Low-Resource Wiring</h2>
+<p>In survival/post-collapse scenarios, ideal materials may be unavailable. Understanding alternatives enables safe electrical systems from salvaged or improvised materials.</p>
+<h3>Copper Wire Salvage &amp; Reclamation</h3>
+<p>Copper wire is valuable and widely available from decommissioned equipment:</p>
+<p><strong>Sources:</strong> Old buildings (abandoned wire-in-conduit), discarded motors, transformer windings, telecommunications cables</p>
+<p><strong>Reclamation process:</strong></p>
+<ol>
+<li>Remove insulation (burn off in controlled fire, mechanical stripping, or chemical dissolution)</li>
+<li>Clean copper surface with wire brush (removes oxidation)</li>
+<li>Measure cross-section using caliper or compare to known-good wire</li>
+<li>Test conductivity using continuity tester (should show zero ohms)</li>
+</ol>
+<p><strong>Cautions:</strong></p>
+<ul>
+<li>Burned insulation may contain toxins; work outdoors</li>
+<li>Corroded copper has reduced conductivity; inspect carefully</li>
+<li>Verify wire size precisely before using — misidentified wire is fire hazard</li>
+</ul>
+<h3>Aluminum Wire Reuse</h3>
+<p>Aluminum wire common in older installations (1960s-1970s). Salvageable but presents challenges:</p>
+<p><strong>Challenges:</strong></p>
+<ul>
+<li>Aluminum oxidizes rapidly in air; oxide layer (aluminum oxide) is insulator</li>
+<li>Connections must be tight and corrosion-prevented (otherwise contact resistance increases, heating wire)</li>
+<li>Cannot mix aluminum to copper directly (galvanic corrosion); requires special connectors</li>
+</ul>
+<p><strong>Acceptable use:</strong> Low-voltage DC circuits (12V systems) where voltage drop less critical. Not recommended for main AC distribution in survival context without proper connectors and anti-corrosion treatment.</p>
+<h3>Improvised Insulation</h3>
+<p>If standard plastic insulation unavailable:</p>
+<ul>
+<li><strong>Cloth wrapping:</strong> Wind cotton cloth around wire, soak in shellac or wax, dry. Provides insulation and mechanical protection (historically used)</li>
+<li><strong>Paper tape:</strong> Wrap paper tape around wire (electrical tape equivalent); reinforce with wax</li>
+<li><strong>Rubber tubing:</strong> Slip rubber tubing over wire; old inner tubes can be cut lengthwise and wrapped</li>
+</ul>
+<p><strong>Limitations:</strong> Improvised insulation less durable than plastic; vulnerable to deterioration, mechanical damage, moisture. Suitable for temporary installations or low-voltage systems. Avoid for high-voltage (&gt;120V) or permanent installations.</p>
+<div class="warning">
+<p>Insulation failure risks electrical shock and fire. If improvising insulation, test voltage drop periodically. Any heat generation at wire connections indicates poor insulation causing leakage. Replace immediately.</p>
+</div>
+<h3>DC Power Systems (Simplified Wiring)</h3>
+<p>In off-grid/low-tech scenarios, DC systems (batteries, solar panels) may be more practical than AC:</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Simpler grounding requirements</li>
+<li>No transformer losses</li>
+<li>Direct from battery to load</li>
+<li>Lower shock hazard (typically 12-48V, non-lethal)</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li>Voltage drop becomes critical (long runs impractical)</li>
+<li>Power loss increases I²R (higher current for same power = more waste)</li>
+<li>Limited device availability (most appliances designed for AC)</li>
+</ul>
+<p><strong>Wiring rules for DC:</strong></p>
+<ul>
+<li>Use same wire sizing as AC, or slightly larger (voltage drop more critical)</li>
+<li>No grounding required (direct return to battery)</li>
+<li>Fuse/breaker sizing same as AC (based on wire ampacity)</li>
+<li>Polarity critical: positive and negative must not reverse (polarity-sensitive devices damaged or destroyed)</li>
+</ul>
+</section>
+<section id="safety-practices">
+<h2>Electrical Safety Practices</h2>
+<h3>Arc Flash &amp; Shock Hazards</h3>
+<p>Electricity is invisible and creates multiple hazards. Respect protocols:</p>
+<p><strong>Shock hazard (current through body):</strong></p>
+<ul>
+<li>1 mA: Mild tingle</li>
+<li>5 mA: Pain, loss of muscular control</li>
+<li>10-20 mA: Ventricular fibrillation (heart stops) — death if not immediately defibrillated</li>
+<li>100+ mA: Severe burns, muscle contraction</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Treat all circuits as energized (never assume de-energized)</li>
+<li>Test with meter before touching</li>
+<li>Use insulated tools</li>
+<li>Never work on live circuits if possible</li>
+<li>Wear insulated gloves for high-voltage work</li>
+</ul>
+<p><strong>Arc flash (electrical arc hazard):</strong></p>
+<ul>
+<li>Arc at fault reaches thousands of degrees</li>
+<li>Clothes ignite, skin burns from radiant heat</li>
+<li>Violent explosive force from arc expansion</li>
+</ul>
+<p><strong>Prevention:</strong></p>
+<ul>
+<li>Proper circuit breaker coordination (fault clears quickly)</li>
+<li>AFCI protection in living areas</li>
+<li>Never &quot;jump over&quot; a problem — find and fix root cause</li>
+</ul>
+<h3>Maintenance &amp; Inspection Schedule</h3>
+<p><strong>Monthly:</strong></p>
+<ul>
+<li>Visual inspection of outlets, cords, switches for damage or scorching</li>
+<li>Test GFCI outlets (press test button; outlet de-energizes)</li>
+<li>Listen for unusual humming (could indicate overload)</li>
+</ul>
+<p><strong>Quarterly:</strong></p>
+<ul>
+<li>Check all visible wire connections (should be tight, no corrosion)</li>
+<li>Inspect breaker panel (check for blown fuses, tripped breakers)</li>
+<li>Test arc-fault breakers if present</li>
+</ul>
+<p><strong>Annually:</strong></p>
+<ul>
+<li>Full circuit test by qualified electrician</li>
+<li>Thermal imaging (if available) to identify hot spots</li>
+<li>Update documentation (wiring diagrams, circuit list)</li>
+</ul>
+<h3>Common Mistakes &amp; Hazards</h3>
+<p><strong>Mistake 1: Undersized wire</strong></p>
+<ul>
+<li>Symptoms: Outlets warm to touch, lights dim when appliance starts, device operates poorly</li>
+<li>Cause: Wire gauge too small for circuit length/load</li>
+<li>Fix: Install larger wire; recalculate for voltage drop</li>
+</ul>
+<p><strong>Mistake 2: Overloaded circuit</strong></p>
+<ul>
+<li>Symptoms: Breaker trips frequently during use; need high-amperage device</li>
+<li>Cause: Multiple devices exceed circuit capacity</li>
+<li>Fix: Separate into different circuits; install larger feed wire and breaker if practical</li>
+</ul>
+<p><strong>Mistake 3: Improper bonding/grounding</strong></p>
+<ul>
+<li>Symptoms: Shock hazard when touching metal; equipment damaged by static; sensitive devices fail</li>
+<li>Cause: Missing or corroded ground connections</li>
+<li>Fix: Verify ground conductor continuity; replace corroded bonding jumpers</li>
+</ul>
+<p><strong>Mistake 4: Rodent/water damage to wire insulation</strong></p>
+<ul>
+<li>Symptoms: Intermittent faults, breaker nuisance trips, smoke smell</li>
+<li>Cause: Damaged insulation exposing conductor</li>
+<li>Fix: Replace affected section; address rodent/moisture source to prevent recurrence</li>
+</ul>
+<div class="tip">
+<p>Prevention better than repair: Use conduit to protect wires, maintain dry environment, seal wire entries, control rodent populations. Once insulation fails, that section is compromised.</p>
+</div>
+</section>
+<section id="portable-generation">
+<h2>Connecting Portable Generators Safely</h2>
+<p>In collapse/post-collapse scenarios, portable generators provide temporary power. Improper connection creates hazards — electrocution, backfeed (energizing utility lines), or generator damage.</p>
+<h3>Backfeed Prevention</h3>
+<p><strong>Problem:</strong> If generator connected to household circuit during utility outage, generator output feeds back onto utility lines, electrocuting utility workers repairing lines.</p>
+<p><strong>Solution:</strong> Never directly connect generator to household wiring (this is code violation and dangerous).</p>
+<p><strong>Correct methods:</strong></p>
+<ol>
+<li>
+<p><strong>Manual Transfer Switch:</strong></p>
+<ul>
+<li>Install manual switch that selects either utility or generator (never both simultaneously)</li>
+<li>Requires turning off main breaker and manually switching loads to generator</li>
+<li>Safe because switch prevents backfeed</li>
+<li>Accessible method for survival scenarios</li>
+</ul>
+</li>
+<li>
+<p><strong>Generator Cable:</strong></p>
+<ul>
+<li>Plug generator into portable cord, run cord to loads</li>
+<li>Loads powered directly from generator outlet, not building wiring</li>
+<li>Safe because no connection to utility lines</li>
+<li>Practical for temporary use (days/weeks)</li>
+</ul>
+</li>
+<li>
+<p><strong>Isolated Generator System:</strong></p>
+<ul>
+<li>Dedicated sub-panel powered only by generator (no utility connection possible)</li>
+<li>More complex but cleanest long-term solution</li>
+<li>Requires electrician installation</li>
+</ul>
+</li>
+</ol>
+<h3>Generator Wiring to Temporary Loads</h3>
+<p><strong>Safe generator use:</strong></p>
+<ol>
+<li>Plug generator into portable device (hair dryer, lamp, heater) using standard extension cord (12 AWG minimum for 15A)</li>
+<li>Never plug appliance directly into generator without extension cord (creates tripping hazard, cord damage)</li>
+<li>Use GFCI outlet or plug-in GFCI device for safety</li>
+<li>Never operate generator indoors (carbon monoxide risk, fire hazard)</li>
+<li>Place generator outside, at least 20 feet from building (exhaust fumes, noise)</li>
+</ol>
+<p><strong>Load management:</strong></p>
+<ul>
+<li>Most portable generators 5-10 kW capacity</li>
+<li>Starting current (inductive loads) may exceed rated capacity</li>
+<li>Stagger start-up: start air conditioner first, then add other loads</li>
+<li>Monitor load meter on generator (if available)</li>
+</ul>
+<div class="danger">
+<p>Carbon monoxide from generator exhaust is lethal. Never operate in basement, garage, attic, or partially enclosed space. Fumes penetrate into living areas. Hundreds die annually from improperly used generators.</p>
+</div>
+</section>
+<section id="wiring-quick-ref">
+<h2>Electrical Wiring Quick Reference</h2>
+<table class="ampacity-table">
+<thead>
+<tr>
+<th scope="col">Situation</th>
+<th scope="col">Key Parameter</th>
+<th scope="col">Practical Value</th>
+<th scope="col">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>20A circuit, 100 ft run</strong></td>
+<td>Wire size & voltage drop</td>
+<td>Use 10 AWG (3% drop), not 12 AWG (4.6% drop)</td>
+<td>Code maximum 5% total; long runs need larger wire</td>
+</tr>
+<tr>
+<td><strong>Motor inrush protection</strong></td>
+<td>Fuse/breaker type</td>
+<td>Slow-blow fuse or motor-duty breaker</td>
+<td>Fast-blow fuse will nuisance-trip on motor start</td>
+</tr>
+<tr>
+<td><strong>Wet location outlet</strong></td>
+<td>Protection required</td>
+<td>GFCI breaker or GFCI outlet (4-6 mA trip)</td>
+<td>Prevents electrocution in bathrooms, kitchens, outdoors</td>
+</tr>
+<tr>
+<td><strong>Bedroom circuit</strong></td>
+<td>Arc-fault protection</td>
+<td>AFCI breaker or AFCI outlet on lighting circuit</td>
+<td>Detects arcing faults that could cause fires</td>
+</tr>
+<tr>
+<td><strong>Voltage drop calculation</strong></td>
+<td>Formula check</td>
+<td>% drop = (2 × I × L × K) / (V × A)</td>
+<td>If exceeds 5%, use larger wire</td>
+</tr>
+<tr>
+<td><strong>Grounding wire size</strong></td>
+<td>Ground conductor selection</td>
+<td>Match breaker rating: 20A → 12 AWG green, 30A → 10 AWG</td>
+<td>Must be same conduit as hot/neutral</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="batteries.html">Battery Construction</a>
+<a href="chlorine-bleach-production.html">Chlorine &amp; Bleach Production</a>
+<a href="electrical-generation.html">Power Generation</a>
+<a href="electrical-motors.html">Electric Motors</a>
+<a href="emergency-power-bootstrap.html">Emergency Power Bootstrap</a>
+<a href="engineering-repair.html">Engineering &amp; Repair</a>
+<a href="hydroelectric.html">Hydroelectric Power</a>
+<a href="power-distribution.html">Power Distribution &amp; Micro-Grids</a>
+<a href="solar-technology.html">Solar Technology</a>
+<a href="telecommunications.html">Telecommunications</a>
+<a href="transistors.html">Transistors &amp; Semiconductors</a>
+<a href="vehicle-conversion.html">Vehicle Conversion</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>

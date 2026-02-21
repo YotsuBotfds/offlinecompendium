@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<!-- Generated from content/guides/basic-tool-manufacturing.md — DO NOT EDIT DIRECTLY -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Tool Manufacturing - Offline Knowledge Compendium</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.forge-spec { background: var(--card); border-left: 4px solid var(--accent); padding: 1rem; margin: 1rem 0; }
+.tool-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+.tool-table th, .tool-table td { padding: 0.75rem; border: 1px solid var(--border); text-align: left; }
+.tool-table th { background: var(--surface); font-weight: bold; }
+.sequence-steps { counter-reset: seq-counter; margin: 1.5rem 0; }
+.sequence-steps li { margin-bottom: 1rem; }
+.temp-guide { font-family: monospace; background: var(--card); border: 1px solid var(--accent); padding: 1rem; margin: 1rem 0; }
+
+</style>
+<meta name="description" content="Forging hand tools from raw materials: hammers (cross-peen, ball-peen, sledge), chisels, files, punches, tongs, wrenches, screwdrivers, saw blades. Hardening and tempering, tool steel identification, handle fitting, and maintenance of edge tools.">
+<link rel="canonical" href="https://zerotoherohero.com/guides/basic-tool-manufacturing.html">
+<meta property="og:title" content="Basic Tool Manufacturing">
+<meta property="og:description" content="Forging hand tools from raw materials: hammers (cross-peen, ball-peen, sledge), chisels, files, punches, tongs, wrenches, screwdrivers, saw blades. Hardening and tempering, tool steel identification, handle fitting, and maintenance of edge tools.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zerotoherohero.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Metalworking", "item": "https://zerotoherohero.com/#sec-metalworking"},
+    {"@type": "ListItem", "position": 3, "name": "Basic Tool Manufacturing", "item": "https://zerotoherohero.com/guides/basic-tool-manufacturing.html"}
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Basic Tool Manufacturing",
+  "description": "Forging hand tools from raw materials: hammers (cross-peen, ball-peen, sledge), chisels, files, punches, tongs, wrenches, screwdrivers, saw blades. Hardening and tempering, tool steel identification, handle fitting, and maintenance of edge tools.",
+  "dateModified": "2026-02-20",
+  "author": {"@type": "Organization", "name": "Offline Knowledge Compendium"}
+}</script>
+</head>
+<body data-guide-id="GD-384">
+<main role="main">
+<div class="container">
+<nav class="breadcrumb" aria-label="Breadcrumb">
+<a href="../index.html">🏠 Home</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<a href="../index.html#sec-metalworking">Metalworking</a>
+<span class="breadcrumb-sep" aria-hidden="true">›</span>
+<span class="breadcrumb-current" aria-current="page">Basic Tool Manufacturing</span>
+</nav>
+<header>
+<h1>Basic Tool Manufacturing</h1>
+<p class="subtitle">Forging hand tools from raw materials: hammers (cross-peen, ball-peen, sledge), chisels, files, punches, tongs, wrenches, screwdrivers, saw blades. Hardening and tempering, tool steel identification, handle fitting, and maintenance of edge tools.</p>
+<div class="top-controls">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle dark/light mode">☀️</button>
+<button class="mark-read-btn" id="mark-read-btn" aria-label="Mark this guide as read" title="Mark as completed">Mark as Read</button>
+<button class="print-btn" id="print-btn" aria-label="Print this guide" title="Print or save as PDF">🖨️ Print</button>
+</div>
+<div class="guide-metadata">
+<span class="difficulty">Difficulty: ●●○○</span>
+<span class="read-time">📖 ~25 min read</span>
+<span class="last-updated">· Updated: 2026-02-20</span>
+</div>
+</header>
+
+<nav class="toc" role="navigation" aria-label="Table of contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#essential-tools">Why Make Tools Instead of Buying?</a></li>
+<li><a href="#material-sources">Material Sources and Selection</a></li>
+<li><a href="#hammer-forging">Forging a Cross-Peen Hammer (0.5–1 kg Head)</a></li>
+<li><a href="#chisel-forging">Forging a Straight Chisel (12–25 mm wide)</a></li>
+<li><a href="#file-making">File Making (Flat or Round, 200–300 mm)</a></li>
+<li><a href="#punch-drift">Punch and Drift Making</a></li>
+<li><a href="#tongs-forging">Tong Forging</a></li>
+<li><a href="#wrench-forging">Open-End Wrench Forging</a></li>
+<li><a href="#screwdriver">Screwdriver Forging</a></li>
+<li><a href="#saw-blade">Saw Blade Manufacturing</a></li>
+<li><a href="#hardening-tempering">Hardening and Tempering</a></li>
+<li><a href="#handle-fitting">Handle Fitting and Wedging</a></li>
+<li><a href="#tool-steel-id">Tool Steel Identification (Spark Testing Refresher)</a></li>
+<li><a href="#resharpening">Maintaining and Resharpening Hand Tools</a></li>
+<li><a href="#summary">Summary</a></li>
+</ol>
+</nav>
+
+<div id="main-content">
+<h2 id="overview">Overview</h2>
+<p>Tool manufacturing is the foundation of all other crafts. A well-made hammer enables blacksmithing, woodworking, and construction. A sharp chisel enables furniture making and stonework. This guide teaches you to forge basic tools from scrap metal (automotive axles, railroad spikes, coil springs, bandsaw blades, leaf springs) using hand tools and a forge.</p>
+<p>These techniques require no industrial equipment—only a forge (coal or wood-fired), anvil, basic tongs, and the skills covered here. The tools you make will outlast factory equivalents if properly heat-treated and maintained.</p>
+<section id="essential-tools">
+<h2>Why Make Tools Instead of Buying?</h2>
+<p>In off-grid or low-infrastructure settings:</p>
+<ul>
+<li><strong>Supply disruption:</strong> Imported factory tools may be unavailable or prohibitively expensive.</li>
+<li><strong>Customization:</strong> Forge-made tools can be tailored to your exact needs (hammer weight, chisel width, wrench size).</li>
+<li><strong>Repair:</strong> A broken tool can be re-forged rather than replaced.</li>
+<li><strong>Resource efficiency:</strong> Scrap metal is often free; casting/stamping new tools is impossible.</li>
+<li><strong>Skill building:</strong> Making tools teaches metallurgy, heat treatment, and blacksmithing—skills that enable all other crafts.</li>
+</ul>
+<p><strong>Essential first tools to make:</strong> hammer (cross-peen), straight chisel, nail punch. These three enable you to make almost every other tool.</p>
+</section>
+<section id="material-sources">
+<h2>Material Sources and Selection</h2>
+<h3>Scrap Metal Suitable for Tool Forging</h3>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Material</th>
+<th>Suitability</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Automotive axles</strong></td>
+<td>Medium-carbon steel (0.35–0.55% C)</td>
+<td>Excellent</td>
+<td>Heavy, easy to forge, good hardness after heat-treat. Salvage from wrecked vehicles.</td>
+</tr>
+<tr>
+<td><strong>Railroad spikes</strong></td>
+<td>Medium-carbon steel</td>
+<td>Good</td>
+<td>Smaller stock; good for punches, small chisels, horseshoes. Often hardenable.</td>
+</tr>
+<tr>
+<td><strong>Leaf springs</strong></td>
+<td>Medium-high carbon steel (0.50–0.70% C)</td>
+<td>Excellent</td>
+<td>Pre-hardened, so re-forging requires careful annealing. Great for chisels, wrenches.</td>
+</tr>
+<tr>
+<td><strong>Coil springs</strong></td>
+<td>Medium-high carbon steel</td>
+<td>Good</td>
+<td>Similar to leaf springs; smaller diameter makes some tools difficult.</td>
+</tr>
+<tr>
+<td><strong>Bandsaw blades</strong></td>
+<td>Spring steel; high carbon (0.70–1.0% C)</td>
+<td>Excellent</td>
+<td>Excellent for saw blades, files, punches. Already hardened; must anneal before forging.</td>
+</tr>
+<tr>
+<td><strong>Wrought iron (old hinges, hardware)</strong></td>
+<td>Iron with &lt; 0.3% carbon</td>
+<td>Poor</td>
+<td>Very soft; not suitable for edge tools. Use only for decorative work or structural repairs.</td>
+</tr>
+<tr>
+<td><strong>Cast iron (old cookware)</strong></td>
+<td>Iron with 2.5–4% carbon</td>
+<td>Poor</td>
+<td>Brittle; shatters when forged. Do not attempt.</td>
+</tr>
+</tbody>
+</table>
+<div class="tip">
+<p>Always test unknown scrap metal by attempting to file it or spark-test it (see <strong>Spark Testing</strong> section below) before investing time in forging. Wrought iron and cast iron waste fuel and effort.</p>
+</div>
+<h3>Spark Testing (Quick Steel ID)</h3>
+<p>Strike a piece of scrap with a grinder or file against a spinning wheel and observe the sparks:</p>
+<ul>
+<li><strong>Bright yellow sparks, few branches, short trails:</strong> Iron or very low-carbon steel (&lt; 0.2% C). Too soft for tools.</li>
+<li><strong>Yellow-white sparks, few branches, medium trails:</strong> Low-carbon steel (0.2–0.4% C). Acceptable for chisels and hammers if properly heat-treated.</li>
+<li><strong>Yellow-white sparks, many fine branches, longer trails:</strong> Medium-carbon steel (0.4–0.6% C). Ideal for most hand tools.</li>
+<li><strong>Bright sparks, heavy branching, long trails, some red:</strong> High-carbon steel (0.6–1.0% C). Excellent for files, saws, punches.</li>
+<li><strong>Dull orange/red sparks, few branches:</strong> Cast iron or very low-quality steel. Avoid.</li>
+</ul>
+</section>
+<section id="hammer-forging">
+<h2>Forging a Cross-Peen Hammer (0.5–1 kg Head)</h2>
+<p>A cross-peen hammer is the most useful multipurpose hammer—the peen (opposite face) can draw out metal, straighten, and seat rivets.</p>
+<h3>Raw Material</h3>
+<p>An automotive axle section (150–250 mm long, 20–30 mm diameter, medium-carbon steel) or a piece of leaf spring stock.</p>
+<h3>Forge and Heat Treatment</h3>
+<p><strong>Forge temperature:</strong> 1,100–1,200°C (cherry red to bright orange). At this temperature, the steel is soft and plastic and can be shaped by hand tools without cracking.</p>
+<p><strong>Annealing (if material is pre-hardened, like spring steel):</strong></p>
+<ul>
+<li>Heat to 900°C (dark red), hold 10 minutes, cool slowly (in ash or sand, not water).</li>
+<li>This softens the steel so you can forge without it cracking.</li>
+</ul>
+<h3>Forging Sequence</h3>
+<p><svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-label="Hammer forging sequence: 5 steps - draw out, punch eye, drift eye, shape head, handle fitting">
+  <defs>
+    <style>
+      .bg { fill: var(--bg, #1a2e1a); }
+      .text-label { font-family: Arial, sans-serif; font-size: 13px; fill: var(--text, #f5f0e8); font-weight: bold; }
+      .text-desc { font-family: Arial, sans-serif; font-size: 11px; fill: var(--text, #f5f0e8); }
+      .steel { fill: var(--card, #3a3a2e); stroke: var(--border, #555); stroke-width: 1.5; }
+      .steel-hot { fill: var(--accent2, #a67c52); stroke: var(--accent2, #a67c52); stroke-width: 2; }
+      .anvil { fill: var(--surface, #2d2416); stroke: var(--border, #555); stroke-width: 2; }
+      .handle-wood { fill: var(--accent, #d4a574); stroke: var(--border, #555); stroke-width: 1; }
+      .eye { fill: none; stroke: var(--border, #555); stroke-width: 2; }
+      .arrow-text { fill: var(--accent, #d4a574); font-size: 14px; font-weight: bold; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" class="bg"/>
+
+  <!-- Title -->
+  <text x="400" y="25" class="text-label" text-anchor="middle" font-size="16">Hammer Head Forging Sequence (5 Steps)</text>
+
+  <!-- STEP 1: Draw Out -->
+  <g>
+    <!-- Anvil -->
+    <rect x="20" y="80" width="120" height="30" class="anvil" rx="3"/>
+    <rect x="15" y="105" width="130" height="15" class="anvil"/>
+
+    <!-- Initial stock (hot) -->
+    <rect x="50" y="65" width="60" height="20" class="steel-hot"/>
+    <text x="80" y="77" class="text-desc" text-anchor="middle">hot stock</text>
+
+    <!-- Hammer striking -->
+    <rect x="35" y="45" width="20" height="15" class="steel" opacity="0.7"/>
+    <text x="44" y="52" class="text-desc" text-anchor="middle">strike</text>
+
+    <!-- Arrow down -->
+    <line x1="44" y1="60" x2="44" y2="65" stroke="var(--accent, #d4a574)" stroke-width="2" marker-end="url(#arrowdown)"/>
+
+    <!-- Result (drawn out) -->
+    <rect x="40" y="140" width="90" height="18" class="steel-hot"/>
+    <text x="85" y="154" class="text-desc" text-anchor="middle">head formed</text>
+
+    <!-- Step label -->
+    <text x="80" y="200" class="text-label" text-anchor="middle">Step 1: Draw Out</text>
+    <text x="80" y="215" class="text-desc" text-anchor="middle">Hammer broadens stock</text>
+    <text x="80" y="228" class="text-desc" text-anchor="middle">into rough head shape</text>
+  </g>
+
+  <!-- STEP 2: Punch Eye -->
+  <g>
+    <!-- Anvil -->
+    <rect x="150" y="80" width="120" height="30" class="anvil" rx="3"/>
+    <rect x="145" y="105" width="130" height="15" class="anvil"/>
+
+    <!-- Head on anvil -->
+    <rect x="160" y="65" width="100" height="20" class="steel-hot"/>
+
+    <!-- Punch tool -->
+    <circle cx="200" cy="45" r="8" class="steel"/>
+    <line x1="200" y1="53" x2="200" y2="65" stroke="var(--steel, #3a3a2e)" stroke-width="6"/>
+    <text x="220" y="52" class="text-desc">punch</text>
+
+    <!-- Arrow down -->
+    <line x1="200" y1="54" x2="200" y2="65" stroke="var(--accent, #d4a574)" stroke-width="2" marker-end="url(#arrowdown)"/>
+
+    <!-- Result -->
+    <ellipse cx="210" cy="145" rx="50" ry="12" class="steel-hot"/>
+    <circle cx="210" cy="145" r="10" class="eye"/>
+    <text x="210" y="160" class="text-desc" text-anchor="middle">eye started</text>
+
+    <!-- Step label -->
+    <text x="210" y="200" class="text-label" text-anchor="middle">Step 2: Punch Eye</text>
+    <text x="210" y="215" class="text-desc" text-anchor="middle">Punch creates hole from</text>
+    <text x="210" y="228" class="text-desc" text-anchor="middle">both sides, then drift through</text>
+  </g>
+
+  <!-- STEP 3: Drift Eye -->
+  <g>
+    <!-- Anvil -->
+    <rect x="280" y="80" width="120" height="30" class="anvil" rx="3"/>
+    <rect x="275" y="105" width="130" height="15" class="anvil"/>
+
+    <!-- Head on anvil -->
+    <ellipse cx="340" cy="75" rx="55" ry="11" class="steel-hot"/>
+    <circle cx="340" cy="75" r="8" class="eye"/>
+
+    <!-- Drift tool (tapered) -->
+    <line x1="325" y1="40" x2="335" y2="65" stroke="var(--steel, #3a3a2e)" stroke-width="8"/>
+    <circle cx="325" cy="40" r="5" class="steel"/>
+    <text x="345" y="52" class="text-desc">drift</text>
+
+    <!-- Arrow down -->
+    <line x1="330" y1="50" x2="330" y2="65" stroke="var(--accent, #d4a574)" stroke-width="2" marker-end="url(#arrowdown)"/>
+
+    <!-- Result -->
+    <ellipse cx="340" cy="145" rx="55" ry="12" class="steel-hot"/>
+    <circle cx="340" cy="145" r="13" class="eye"/>
+    <text x="340" y="160" class="text-desc" text-anchor="middle">eye enlarged</text>
+
+    <!-- Step label -->
+    <text x="340" y="200" class="text-label" text-anchor="middle">Step 3: Drift Eye</text>
+    <text x="340" y="215" class="text-desc" text-anchor="middle">Tapered drift expands</text>
+    <text x="340" y="228" class="text-desc" text-anchor="middle">hole to final size</text>
+  </g>
+
+  <!-- STEP 4: Shape Head (Face & Peen) -->
+  <g>
+    <!-- Anvil -->
+    <rect x="410" y="80" width="120" height="30" class="anvil" rx="3"/>
+    <rect x="405" y="105" width="130" height="15" class="anvil"/>
+
+    <!-- Head on anvil (ready for shaping) -->
+    <ellipse cx="470" cy="75" rx="55" ry="11" class="steel-hot"/>
+    <circle cx="470" cy="75" r="10" class="eye"/>
+
+    <!-- Hammer shaping -->
+    <rect x="440" y="45" width="20" height="15" class="steel" opacity="0.7"/>
+    <text x="455" y="52" class="text-desc" text-anchor="middle">refine</text>
+
+    <!-- Arrow -->
+    <path d="M 455 60 L 460 70" stroke="var(--accent, #d4a574)" stroke-width="2" fill="none" marker-end="url(#arrowdown)"/>
+
+    <!-- Result (finished head) -->
+    <g>
+      <!-- Main body -->
+      <rect x="435" y="135" width="70" height="22" class="steel" rx="2"/>
+      <!-- Flat face (left) -->
+      <rect x="435" y="135" width="15" height="22" class="steel"/>
+      <!-- Peen (right, wedge shape) -->
+      <path d="M 490 135 L 510 146 L 490 157 Z" class="steel"/>
+      <!-- Eye -->
+      <circle cx="470" cy="146" r="11" class="eye"/>
+    </g>
+    <text x="470" y="168" class="text-desc" text-anchor="middle">shaped head</text>
+
+    <!-- Step label -->
+    <text x="470" y="200" class="text-label" text-anchor="middle">Step 4: Shape Head</text>
+    <text x="470" y="215" class="text-desc" text-anchor="middle">Refine face (flat) and</text>
+    <text x="470" y="228" class="text-desc" text-anchor="middle">peen (wedge) shape</text>
+  </g>
+
+  <!-- STEP 5: Handle Fitting -->
+  <g>
+    <!-- Complete hammer -->
+    <!-- Head -->
+    <rect x="570" y="65" width="70" height="22" class="steel" rx="2"/>
+    <rect x="570" y="65" width="15" height="22" class="steel"/>
+    <path d="M 625 65 L 645 76.5 L 625 88 Z" class="steel"/>
+    <circle cx="605" cy="76" r="11" class="eye"/>
+
+    <!-- Handle -->
+    <line x1="605" y1="87" x2="605" y2="180" stroke="var(--handle-wood, #d4a574)" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="605" cy="180" r="6" class="handle-wood"/>
+
+    <!-- Wedge being driven in -->
+    <rect x="603" y="82" width="4" height="25" class="steel" opacity="0.8"/>
+    <text x="620" y="102" class="text-desc" font-size="10">wedge</text>
+
+    <!-- Hammer complete label -->
+    <text x="605" y="200" class="text-label" text-anchor="middle">Step 5: Handle</text>
+    <text x="605" y="215" class="text-desc" text-anchor="middle">Wood handle fitted</text>
+    <text x="605" y="228" class="text-desc" text-anchor="middle">and wedged in place</text>
+  </g>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowdown" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0,0 10,5 0,10" fill="var(--accent, #d4a574)"/>
+    </marker>
+  </defs>
+
+  <!-- Bottom note -->
+  <text x="400" y="480" class="text-desc" text-anchor="middle" fill="var(--muted, #7a8570)">After shaping, the head is hardened and tempered. Typical 0.5–1 kg head takes 2–4 hours to forge.</text>
+</svg>
+</p>
+<p><strong>Step 1: Draw out the head material</strong></p>
+<ol>
+<li>Heat the axle section to 1,150°C (bright orange).</li>
+<li>Place one end on the anvil horn (the curved end).</li>
+<li>Strike with a hand-hammer or power-hammer to elongate and broaden the end into a rough head shape. Rotate the piece 90° after each few strikes to build it up evenly.</li>
+<li>Aim for a rough rectangular head ~60 mm long, 40 mm wide, and 35 mm thick.</li>
+</ol>
+<p><strong>Step 2: Punch the eye hole</strong></p>
+<ol>
+<li>Heat the piece again to 1,100°C.</li>
+<li>Place the rough head on the anvil, positioned so the intended eye location (about 20 mm from the handle end) is over the center.</li>
+<li>Using a <strong>punch</strong> (a tapered tool with a slightly domed tip, 12–16 mm diameter), strike it firmly into the steel to create a depression.</li>
+<li>Flip the piece and repeat from the opposite side.</li>
+<li>The two depressions should nearly meet, leaving a thin web of metal in the center.</li>
+</ol>
+<p><strong>Step 3: Drift the eye to full size</strong></p>
+<ol>
+<li>Heat again to 1,100°C.</li>
+<li>Place the piece on the anvil so the eye hole is aligned with a <strong>drift</strong> (a slightly tapered tool, 18–22 mm diameter, matching your desired handle diameter).</li>
+<li>Drive the drift through the eye hole, enlarging and shaping it. Strike the top of the drift firmly.</li>
+<li>Do not leave the drift in too long—it will stick. Once it moves freely (1–2 seconds), remove it.</li>
+<li>Repeat if necessary to reach the desired size. The eye should fit your handle (typically 24–28 mm diameter) snugly.</li>
+</ol>
+<p><strong>Step 4: Shape and refine the head</strong></p>
+<ol>
+<li>Heat once more to 1,100°C.</li>
+<li>Draw the peen (the opposite face from the main striking face) to a slight point or wedge shape using light strikes on the anvil horn. Alternate between face and peen to keep the head balanced.</li>
+<li>Refine the face (the flat striking surface) so it is square and flat, not domed.</li>
+<li>The head should now be roughly shaped: rectangular, with a flat face on one end and a wedge-shaped peen on the other.</li>
+</ol>
+<p><strong>Step 5: Harden and temper</strong> (see section below)</p>
+<h3>Finishing the Head</h3>
+<p>Once hard and tempered, clean the head by grinding or filing to remove scale and sharp edges. The eye can be widened slightly by tapping a drift of the desired handle size in and out a few times once the head is hardened.</p>
+<h3>Handle Fitting</h3>
+<p>See <strong>Handle Fitting and Wedging</strong> section below.</p>
+</section>
+<section id="chisel-forging">
+<h2>Forging a Straight Chisel (12–25 mm wide)</h2>
+<p>A straight chisel (or cold chisel) is used for cutting stone, metal, and wood (in context where a dedicated wood chisel is not practical).</p>
+<h3>Raw Material</h3>
+<p>A piece of medium-carbon steel bar (12–25 mm wide, 6–8 mm thick, 200–250 mm long) or a coil spring section or bandsaw blade.</p>
+<h3>Forging Steps</h3>
+<ol>
+<li>
+<p><strong>Annealing (if needed):</strong> If the material is pre-hardened (spring, bandsaw blade), anneal it first by heating to 900°C and cooling slowly.</p>
+</li>
+<li>
+<p><strong>Tapering the cutting end:</strong></p>
+<ul>
+<li>Heat to 1,100°C.</li>
+<li>Place the bar flat on the anvil.</li>
+<li>Strike the cutting end at an angle to taper it gradually toward a point.</li>
+<li>The taper should be about 40–50 mm long.</li>
+<li>The goal is a wedge shape, thinner toward the cutting edge, thicker toward the handle.</li>
+</ul>
+</li>
+<li>
+<p><strong>Flattening the cutting edge:</strong></p>
+<ul>
+<li>Heat to 1,100°C again.</li>
+<li>Place the wedge-shaped end on the anvil.</li>
+<li>Strike the very tip to flatten and refine the cutting edge.</li>
+<li>The edge should be as thin as possible without being fragile (0.5–1 mm).</li>
+<li>Keep both long sides of the chisel parallel (not angled) for straight cuts.</li>
+</ul>
+</li>
+<li>
+<p><strong>Shaping the heel (opposite end):</strong></p>
+<ul>
+<li>Some chisels have a rounded or beveled heel (non-striking end) to prevent the handle from splitting when struck.</li>
+<li>Heat the heel and slightly round it using light strikes and the anvil horn.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hardening and tempering</strong> (see below).</p>
+</li>
+</ol>
+<h3>Thickness and Edge Angle</h3>
+<p><strong>Width (cutting edge):</strong> 12–25 mm depending on intended use. Wider (20+ mm) for heavy stonework; narrower (12 mm) for fine woodwork or detailing.</p>
+<p><strong>Thickness:</strong> 6–10 mm is typical. Thicker = more robust but heavier; thinner = easier to drive but dulls faster.</p>
+<p><strong>Edge bevel:</strong> A 25–30° included angle (ground after hardening, not forged) is standard. Some metalworkers prefer a secondary bevel (30° primary, 45° secondary) for a tough yet sharp edge.</p>
+</section>
+<section id="file-making">
+<h2>File Making (Flat or Round, 200–300 mm)</h2>
+<p>A file is a hardened steel tool with a textured surface that cuts softer metals and wood. Files must be very hard to retain their teeth.</p>
+<h3>Raw Material</h3>
+<p>A piece of mild steel bar (12×25 mm or 16×32 mm, 200–300 mm long) or a broken file (which can be re-forged if not shattered).</p>
+<h3>Forging Steps</h3>
+<ol>
+<li>
+<p><strong>Annealing:</strong> Heat to 900°C and cool slowly so the steel is soft enough to forge without cracking.</p>
+</li>
+<li>
+<p><strong>Tapering:</strong> Heat to 1,100°C and taper one end to a tang (handle attachment point). The tang should be 6–8 mm square and taper gradually over 50–75 mm to the main body.</p>
+</li>
+<li>
+<p><strong>Straightening:</strong> While cooling, lay the file on a flat surface and tap any bends out with a rubber mallet.</p>
+</li>
+<li>
+<p><strong>Heat-treating:</strong> Files are hardened to maximum hardness (65–70 HRC is typical). Heat to 800°C (pale cherry red) for medium-carbon steel, or 750°C for high-carbon steel, and quench in water or oil. Then temper at 200–250°C (light blue color) for 15–30 minutes.</p>
+</li>
+<li>
+<p><strong>Cutting teeth:</strong> Once hardened and tempered, the teeth are cut using a specialty <strong>file-cutting tool</strong> (a hammer and chisel-like tool) or a rotary file-cutter if available. This is time-consuming. For simple tools, you can use a file without hand-cut teeth—just file it flat and use it as a grinding surface.</p>
+</li>
+</ol>
+<div class="tip">
+<p>Hand-cutting file teeth is labor-intensive. For off-grid tool-making, prioritize hammers and chisels (which are used and resharpened frequently), and buy or scavenge old files if available. If you must make a file, focus on the tang and hardening; teeth can be added later or replaced by improvised scraping surfaces.</p>
+</div>
+</section>
+<section id="punch-drift">
+<h2>Punch and Drift Making</h2>
+<p>Punches and drifts are simple, essential tools used in forging. A punch creates holes; a drift enlarges them.</p>
+<h3>Punch (12–20 mm diameter, hardened)</h3>
+<p><strong>Raw material:</strong> A piece of medium-carbon steel rod or bar stock, 12–20 mm diameter, 150–200 mm long.</p>
+<p><strong>Forging:</strong></p>
+<ol>
+<li>No forging needed if using rod stock. Simply:</li>
+<li>Heat to 1,100°C.</li>
+<li>Taper one end (the striking end) to a point or slight dome using the anvil horn.</li>
+<li>Shape the working end (the end that enters the steel) to be flat and slightly domed (not sharp—a sharp point will catch and break).</li>
+<li>Harden and temper at 600–650°C for toughness (you want it hard but not brittle).</li>
+</ol>
+<p><strong>Result:</strong> A tapered punch, ~20 mm diameter at the base, 10 mm at the tip, with a domed striking end.</p>
+<h3>Drift (18–30 mm, tapered, tempered for flexibility)</h3>
+<p><strong>Raw material:</strong> Medium-carbon steel rod, 18–30 mm diameter, 150–250 mm long.</p>
+<p><strong>Forging:</strong></p>
+<ol>
+<li>Heat to 1,100°C.</li>
+<li>Taper one end using the anvil horn and side strikes.</li>
+<li>The working end should be 2–3 mm smaller than the punch—e.g., punch 16 mm, drift 14 mm—so it can pass through the eye hole without jamming.</li>
+<li>The other end (striking end) is typically a rounded dome.</li>
+<li>Harden and temper at <strong>650–700°C</strong> (light straw color) for resilience. Drifts must be less hard than punches so they don't shatter on impact.</li>
+</ol>
+</section>
+<section id="tongs-forging">
+<h2>Tong Forging</h2>
+<p>Tongs are essential for safely holding hot metal in the forge. Making your own ensures a proper fit for the specific work.</p>
+<h3>Flat-Jaw Tongs (for bar stock, 10–40 mm wide)</h3>
+<p><strong>Raw material:</strong> Two pieces of medium-carbon steel bar (16×8 mm, 250 mm long) or spring steel.</p>
+<p><strong>Forging:</strong></p>
+<ol>
+<li>Heat both pieces to 1,100°C.</li>
+<li>On each piece, forge a <strong>flat jaw</strong> (16×8 mm at the working end, no change needed) and a <strong>handle</strong> (the 250 mm length is already the handle).</li>
+<li>Heat both pieces together to 1,100°C.</li>
+<li>Overlap the handles about 30–50 mm (so the jaws are 30–50 mm apart when handles are closed).</li>
+<li>Rivet or forge-weld the overlap (see <strong>Forge Welding</strong> below). If forge-welding, heat the overlapped section to 1,150°C and hammer the edges together.</li>
+<li>Cool and test: the jaws should close tightly without the handles bending or splaying.</li>
+</ol>
+<h3>Round-Jaw Tongs (for round stock, 10–25 mm diameter)</h3>
+<p><strong>Raw material:</strong> Two pieces of medium-carbon steel bar, 16×8 mm, 250 mm long.</p>
+<p><strong>Forging:</strong></p>
+<ol>
+<li>On each piece, forge the jaw end to a tapered, semi-circular profile (using the anvil horn to curve it).</li>
+<li>The jaw should be concave when the two pieces are together, fitting snugly around round stock.</li>
+<li>Assemble and rivet or forge-weld the handles as with flat-jaw tongs.</li>
+</ol>
+<div class="tip">
+<p>Tongs do not need to be hardened to full strength. Keep them soft (anneal after forging) so the jaws won't chip or shatter when they slip and hit the anvil. A softer tong is safer and easier to repair.</p>
+</div>
+</section>
+<section id="wrench-forging">
+<h2>Open-End Wrench Forging</h2>
+<p>An open-end wrench is useful for nuts and bolts. A basic wrench is a simple rectangular bar with two jaws.</p>
+<h3>Raw Material</h3>
+<p>A piece of medium-carbon steel bar (20×10 mm, 150–200 mm long) or a leaf spring section.</p>
+<h3>Forging Steps</h3>
+<ol>
+<li>
+<p><strong>Annealing:</strong> Heat to 900°C and cool slowly.</p>
+</li>
+<li>
+<p><strong>Shaping the first jaw:</strong></p>
+<ul>
+<li>Heat to 1,100°C.</li>
+<li>Place the bar on the anvil horn with one end overhanging.</li>
+<li>Strike the overhang to bend it upward at a 90° angle, forming the first jaw.</li>
+<li>The jaw should be about 25–40 mm long, depending on desired wrench size.</li>
+</ul>
+</li>
+<li>
+<p><strong>Shaping the second jaw:</strong></p>
+<ul>
+<li>Flip the bar and repeat on the opposite end to create a second jaw.</li>
+<li>Grind or file the jaw openings after hardening to match the bolt/nut size.</li>
+</ul>
+</li>
+<li>
+<p><strong>Thinning the jaws (optional):</strong></p>
+<ul>
+<li>If the jaw opening is too thick for your intended fasteners, you can forge-thin the jaw opening by striking the inside edge to make it fit tighter.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hardening and tempering</strong> (see below).</p>
+</li>
+<li>
+<p><strong>Final fitting:</strong> After hardening, test-fit the wrench on actual bolts/nuts and file the opening to a snug fit.</p>
+</li>
+</ol>
+</section>
+<section id="screwdriver">
+<h2>Screwdriver Forging</h2>
+<p>A flathead screwdriver requires only a tapered blade and a handle.</p>
+<h3>Raw Material</h3>
+<p>A piece of medium-carbon steel bar (10×8 mm, 150–200 mm long) or an old screwdriver that has broken.</p>
+<h3>Forging Steps</h3>
+<ol>
+<li>Heat to 1,100°C.</li>
+<li>Taper one end (the working end) to a flat blade about 5–8 mm thick, 12–20 mm wide, and 30–40 mm long.</li>
+<li>Leave the opposite end as a handle (square or octagonal for grip).</li>
+<li>Flatten the blade by striking it against the anvil face to create a thin, flat working edge.</li>
+<li>Harden and temper at 600–650°C (the blade must be hard enough to hold an edge, but not so brittle that it snaps).</li>
+</ol>
+<h3>Cross-Slot Screwdrivers (Phillips Head)</h3>
+<p>These require a more sophisticated approach—cutting a cross into the blade after hardening using a rotary tool or hand chisel. For off-grid tool-making, focus on flathead screwdrivers; Phillips-head is unnecessary if you're also making the fasteners.</p>
+</section>
+<section id="saw-blade">
+<h2>Saw Blade Manufacturing</h2>
+<p>A handsaw blade (hacksaw, bow saw, or straightsaw) is a hardened steel strip with teeth cut along one edge.</p>
+<h3>Raw Material</h3>
+<p><strong>Bandsaw blade stock</strong> (if available; often scavenged from broken industrial machinery) is ideal. Otherwise, a flat piece of high-carbon steel bar (20×2 mm, 300–600 mm long).</p>
+<h3>Forging and Hardening</h3>
+<ol>
+<li>
+<p><strong>Annealing (if pre-hardened stock):</strong> Heat to 900°C and cool slowly.</p>
+</li>
+<li>
+<p><strong>Straightening:</strong> Lay on a flat surface and tap out any bends with a rubber mallet while slightly warm.</p>
+</li>
+<li>
+<p><strong>Taper the ends:</strong> Heat to 1,100°C and forge the ends to tapered points or tabs (for mounting in the saw frame).</p>
+</li>
+<li>
+<p><strong>Hardening:</strong> Heat to 750–800°C (high-carbon steel; lower temp than chisels) and quench in water or oil. The blade must be very hard (65+ HRC).</p>
+</li>
+<li>
+<p><strong>Tempering:</strong> For saw blades, temper at 200–250°C for 20–30 minutes. This relieves some hardness, making the blade less brittle and less prone to cracking during cutting.</p>
+</li>
+<li>
+<p><strong>Tooth cutting:</strong> Once hardened and tempered, cut teeth using a saw-tooth file or specialty cutter. Teeth are typically:</p>
+<ul>
+<li><strong>Spacing:</strong> 5–10 mm apart (finer for metal, coarser for wood)</li>
+<li><strong>Height:</strong> 2–4 mm</li>
+<li><strong>Angle:</strong> Slightly angled (alternating teeth) for better chip clearance</li>
+</ul>
+</li>
+</ol>
+<h3>Tension</h3>
+<p>After teeth are cut, saw blades are often put under <strong>tension</strong> (stretched slightly) using a bow saw frame or a wedging system. This prevents the blade from flexing and wandering during cutting. Tension is critical for straighter cuts.</p>
+</section>
+<section id="hardening-tempering">
+<h2>Hardening and Tempering</h2>
+<p>Hardening and tempering are the two heat-treatments that define tool performance.</p>
+<h3>Hardening (Quenching)</h3>
+<p>Heating steel above its critical temperature (800–900°C depending on carbon content) and then cooling it rapidly turns it hard and brittle. The speed of cooling matters:</p>
+<ul>
+<li><strong>Fast cooling (water, oil):</strong> Hard and brittle; good for cutting edges.</li>
+<li><strong>Slow cooling (air, ash):</strong> Softer and tougher; good for tools that take impacts.</li>
+</ul>
+<p><strong>Critical temperature by carbon content:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Carbon (%)</th>
+<th>Critical Temp (°C)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.3–0.4 (low)</td>
+<td>800–850</td>
+<td>Difficult to harden; low-carbon steel does not respond well.</td>
+</tr>
+<tr>
+<td>0.4–0.6 (medium)</td>
+<td>850–900</td>
+<td>Standard for hammers, chisels, wrenches. Easy to control.</td>
+</tr>
+<tr>
+<td>0.6–1.0 (high)</td>
+<td>750–850</td>
+<td>Files, saws, punches. Must be heated carefully to avoid over-heating (grain growth, brittleness).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hardening procedure:</strong></p>
+<ol>
+<li>
+<p>Heat the tool slowly to the critical temperature. Do NOT overheat—use color as a guide:</p>
+<ul>
+<li>700°C = dark cherry red</li>
+<li>750°C = bright cherry red</li>
+<li>800°C = orange</li>
+<li>850°C = pale orange to yellow</li>
+</ul>
+</li>
+<li>
+<p>Hold at temperature for 1–2 minutes (longer for thick pieces).</p>
+</li>
+<li>
+<p><strong>Quench:</strong> Immediately plunge into a quenching medium:</p>
+<ul>
+<li><strong>Water:</strong> Fast cooling; hard but more brittle. Risk of cracking if thin sections are present.</li>
+<li><strong>Oil:</strong> Slower cooling; slightly less hard but tougher. Lower cracking risk.</li>
+<li><strong>Brine (salt water):</strong> Very fast; hardest result; highest cracking risk.</li>
+</ul>
+</li>
+<li>
+<p>Move the tool around in the quench medium to ensure even cooling.</p>
+</li>
+<li>
+<p>Remove and cool to room temperature (5–10 minutes).</p>
+</li>
+</ol>
+<h3>Tempering (Drawing Back)</h3>
+<p>Hardening makes tools brittle and prone to breaking. Tempering reheats the hardened tool to a lower temperature, relieving stress and adding toughness at the cost of some hardness. The temperature determines the final hardness:</p>
+<div class="temp-guide">
+150–200°C (faint straw): Maximum hardness, very brittle. For files, saws, punches.
+200–250°C (light straw): Good for chisels, scribes, engraving tools.
+250–300°C (straw yellow): Medium hardness, more toughness. For drills, reamers.
+300–350°C (brown): Softer, tougher. For springs, shear blades.
+350–400°C (light purple): Low hardness, high toughness. For anvils, forming dies.
+400–450°C (purple): Very soft and tough. For woodworking tools that must withstand impacts.
+</div>
+<p><strong>Tempering procedure:</strong></p>
+<ol>
+<li>Heat the hardened tool slowly to the desired temperature. Use <strong>color</strong> as the guide (see above).</li>
+<li>When the tool reaches the desired color, <strong>stop heating immediately</strong> and cool in air or water (tempering is reversible, so rapid cooling here prevents over-tempering).</li>
+<li>The tool is now tempered and ready for use.</li>
+</ol>
+<h3>Color Guide (Critical!)</h3>
+<p>Tempering colors are the traditional way to judge temperature without a thermometer:</p>
+<ul>
+<li><strong>Straw yellow (light):</strong> ~200°C</li>
+<li><strong>Straw yellow (full):</strong> ~220°C</li>
+<li><strong>Brown:</strong> ~260°C</li>
+<li><strong>Purple-blue:</strong> ~300°C</li>
+<li><strong>Light blue:</strong> ~330°C</li>
+</ul>
+<p>Practice tempering on scrap pieces first. The color changes rapidly in the 200–300°C range, so keep one eye on the steel and one hand on a water bucket.</p>
+<div class="tip">
+<p>If the tool becomes too hard and brittle after hardening, re-heat to the desired tempering temperature and it will soften. If it becomes too soft, you can re-harden and re-temper. The process is reversible up to about 600°C; above that, the steel loses its hardness memory.</p>
+</div>
+</section>
+<section id="handle-fitting">
+<h2>Handle Fitting and Wedging</h2>
+<p>Once the tool head is hardened and tempered, it must be fitted with a handle (haft).</p>
+<h3>Handle Material</h3>
+<ul>
+<li><strong>Wood (best):</strong> Hardwoods (hickory, ash, oak, fruit wood) are strong, shock-absorbing, and comfortable. Softwoods (pine, fir) are cheaper but wear faster.</li>
+<li><strong>Bamboo:</strong> Excellent where available; lightweight, strong, and renewable.</li>
+<li><strong>Metal:</strong> Iron or steel handles are durable but cold and tiring to swing.</li>
+</ul>
+<h3>Handle Shaping</h3>
+<ol>
+<li>
+<p><strong>Diameter:</strong> Match the tool eye. A hammer eye might be 24–26 mm; a chisel tang might be 20 mm square. The handle should fit snugly inside the eye—loose handles are dangerous.</p>
+</li>
+<li>
+<p><strong>Length:</strong> Depends on the tool:</p>
+<ul>
+<li><strong>Hammer:</strong> 30–40 cm (12–16 inches) for a 0.5–1 kg head</li>
+<li><strong>Chisel:</strong> 10–20 cm handle, 3–5 cm above the tool head for striking</li>
+<li><strong>Punch/drift:</strong> 15–25 cm for comfortable overhead swinging</li>
+</ul>
+</li>
+<li>
+<p><strong>Taper:</strong> The handle should taper slightly from the eye (thicker) to the end (thinner), which distributes stress and prevents splitting.</p>
+</li>
+<li>
+<p><strong>Shaping method:</strong> Use a draw knife (curved blade) or spoke shave to carve the handle to a round or octagonal cross-section. Sand smooth with fine sand (if available) or sharpen to a sharp edge and scrape.</p>
+</li>
+</ol>
+<h3>Wedging (Eye Tools: Hammer, Chisel)</h3>
+<p>Hammers and chisels are secured to their handles using a <strong>wedge</strong>:</p>
+<ol>
+<li>
+<p><strong>Slot the handle:</strong> Saw a vertical slot down the center of the handle, about 5 cm long, right up to where it enters the eye.</p>
+</li>
+<li>
+<p><strong>Create a wedge:</strong> From hardwood (oak, hickory), carve or split a tapered wedge about 25–30 mm long, 8–10 mm thick at the base, and 1–2 mm thick at the point.</p>
+</li>
+<li>
+<p><strong>Insert the handle:</strong> Drive the handle into the tool eye. The eye should be tight enough that the handle is difficult to remove by hand.</p>
+</li>
+<li>
+<p><strong>Tap the wedge:</strong> Once the handle is seated, tap the wooden wedge into the slot from the top. As the wedge goes in, it spreads the end of the handle and locks the tool head to the handle.</p>
+</li>
+<li>
+<p><strong>Trim excess:</strong> Cut or sand the excess handle flush with the top of the tool head.</p>
+</li>
+</ol>
+<h3>Alternative Wedging (Metal Wedge)</h3>
+<p>For high-impact tools (sledgehammers, mauls), a <strong>metal wedge</strong> can be used:</p>
+<ol>
+<li>After the wooden handle is seated, drill a hole through the eye perpendicular to the slot.</li>
+<li>Forge a tapered metal wedge (iron or mild steel, 5–8 mm thick, 30 mm long).</li>
+<li>Drive the metal wedge through the hole, locking the tool and handle together even tighter.</li>
+</ol>
+<h3>Tang Tools (Chisels, Screwdrivers)</h3>
+<p>For tools with a tapered <strong>tang</strong> (like a chisel or screwdriver):</p>
+<ol>
+<li>The tang is inserted into a drilled hole in the handle (usually 20 mm deep for a 150 mm handle).</li>
+<li>If the handle is wooden, you can drive a metal or wooden wedge through the handle at an angle to lock the tang in place.</li>
+<li>Alternatively, epoxy or plant-based adhesive (if available) can be applied to the tang before insertion, providing additional grip.</li>
+</ol>
+</section>
+<section id="tool-steel-id">
+<h2>Tool Steel Identification (Spark Testing Refresher)</h2>
+<p>You will frequently inherit, scavenge, or receive unknown metal stock. Here's how to quickly assess its suitability for tool-making without lab testing:</p>
+<h3>Visual and Physical Tests</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Test</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hardness</strong></td>
+<td>Try to file it with a medium-hand file.</td>
+<td>If file cuts easily: low carbon (&lt; 0.4%), suitable for structural work, not edges. If file slips: medium or high carbon, suitable for tools.</td>
+</tr>
+<tr>
+<td><strong>Brittleness</strong></td>
+<td>Hit it with a hammer.</td>
+<td>If it breaks into pieces: cast iron (useless). If it bends or dents: wrought iron or low-carbon steel (weak).</td>
+</tr>
+<tr>
+<td><strong>Grain (after breaking)</strong></td>
+<td>Break or saw a small piece and observe the fracture surface.</td>
+<td>Fine, even grain: good steel. Large, coarse crystals: overheated or poor quality.</td>
+</tr>
+</tbody>
+</table>
+<h3>Spark Test (Most Reliable)</h3>
+<p>Strike the metal with a file against a spinning wheel or grinder:</p>
+<ul>
+<li><strong>Few yellow sparks, &lt; 1 m trail:</strong> Iron, &lt; 0.2% carbon. Too soft.</li>
+<li><strong>Yellow sparks, light branching, ~1 m trail:</strong> Low carbon (0.2–0.4%). Acceptable for some tools with difficulty.</li>
+<li><strong>Yellow-white sparks, fine branching, 1.5 m trail:</strong> Medium carbon (0.4–0.6%). Ideal for most tools.</li>
+<li><strong>White sparks, heavy branching, 2+ m trail:</strong> High carbon (0.6–1.0%). Excellent for files, saws, punches.</li>
+<li><strong>Few red/orange sparks, no branching:</strong> Cast iron. Avoid.</li>
+</ul>
+<p>With practice, you can distinguish steel quality within 5 seconds of spark testing.</p>
+</section>
+<section id="resharpening">
+<h2>Maintaining and Resharpening Hand Tools</h2>
+<p>Well-made tools last longer if cared for properly.</p>
+<h3>Storage</h3>
+<ul>
+<li><strong>Keep dry:</strong> Rust destroys tools. Store in a dry location; coat metal surfaces with a light oil (linseed, machine oil, or any available vegetable oil) if humidity is high.</li>
+<li><strong>Sharp edges protected:</strong> Wrap chisels and saws with cloth or keep them in a tool rack.</li>
+<li><strong>Handles maintained:</strong> Check wooden handles annually for cracks or splitting. Treat with linseed oil annually to prevent drying and cracking.</li>
+</ul>
+<h3>Resharpening</h3>
+<p><strong>Chisels, punches, and flat tools:</strong></p>
+<ol>
+<li>Use a coarse grindstone or file to restore the edge.</li>
+<li>For chisels, maintain a 25–30° bevel.</li>
+<li>Test sharpness by attempting to cut a hair or thin paper; a sharp tool will cut cleanly.</li>
+</ol>
+<p><strong>Saws:</strong></p>
+<ol>
+<li>Saw-tooth files are used to re-sharpen teeth. This is time-consuming but extends blade life.</li>
+<li>If teeth are too far gone, re-forge the blade (annealing it back to soft, then re-cutting teeth).</li>
+</ol>
+<p><strong>Hammers:</strong></p>
+<ol>
+<li>If the face becomes mushroomed (edges raised from impact), grind the face flat.</li>
+<li>Check for cracks (which will propagate and cause failure); replace the handle if a crack is found.</li>
+</ol>
+<div class="tip">
+<p>Properly hardened and maintained tools should last 10–50 years. Dull tools are frustrating and dangerous (require excessive force, slip easily). Sharpen tools regularly—a sharp tool is a safe tool.</p>
+</div>
+</section>
+<h2 id="summary">Summary</h2>
+<p>Tool manufacturing is an investment that pays dividends. By making your own tools, you:</p>
+<ul>
+<li>Gain control over quality and customization</li>
+<li>Build the metallurgical knowledge to repair or remake broken tools</li>
+<li>Enable all other crafts that depend on sharp, strong tools</li>
+<li>Reduce dependence on supply chains and imports</li>
+</ul>
+<p>Start with a simple hammer and chisel, master hardening and tempering, and branch out to specialized tools as needed. Each tool you forge will teach you something new about materials, heat, and design.</p>
+
+</div>
+
+<div class="related" role="navigation" aria-label="Related guides">
+<h3>Related Guides</h3>
+<a href="blacksmithing.html">Blacksmithing</a>
+<a href="stone-tools.html">Stone Tool Making</a>
+<a href="woodcarving-furniture.html">Woodcarving &amp; Furniture</a>
+<a href="spring-manufacturing.html">Spring Manufacturing</a>
+<a href="metallurgy-basics.html">Metallurgy Fundamentals</a>
+</div>
+
+<footer>
+<p>Offline Knowledge Compendium — Offline Reference | <a href="../disclaimer.html">Liability Disclaimer</a></p>
+</footer>
+</div>
+</main>
+<button id="back-to-top" title="Back to top" aria-label="Back to top">↑</button>
+<script src="../shared/theme-sync.js"></script>
+<script src="js/guide-common.js"></script>
+<script src="js/shared.js"></script>
+
+</body>
+</html>
